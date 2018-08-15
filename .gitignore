@@ -1,0 +1,8 @@
+.idea/
+config.php
+/web/uploads/
+/vendor/
+/composer.phar
+
+#stuff I added
+.DS_Store
