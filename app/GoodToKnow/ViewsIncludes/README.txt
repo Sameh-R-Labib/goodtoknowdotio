@@ -1,0 +1,1 @@
+This folder contains php scripts which get used as includes in view scripts.
