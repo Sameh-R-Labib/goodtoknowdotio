@@ -49,3 +49,10 @@ require $path4;
  * WE DETERMINE ALL THIS BASED ON THE ROUTE SPECIFIED
  * BY THE HTTP REQUEST
  */
+
+/**
+ * Compose $route_segments_array
+ * First element becomes the controller name
+ * Second element becomes the method name
+ * Remaining elements become parameters for the method
+ */
