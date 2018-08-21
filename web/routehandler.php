@@ -41,7 +41,7 @@ require $path4;
 //}
 
 /**
- * Major Section Title
+ * Section Description:
  * HERE WE DETERMINE WHICH CONTROLLER
  *                   WHICH METHOD
  *                   WHAT PARAMETERS TO PASS TO THE METHOD
@@ -51,8 +51,23 @@ require $path4;
  */
 
 /**
- * Compose $route_segments_array
- * First element becomes the controller name
- * Second element becomes the method name
- * Remaining elements become parameters for the method
+ * An array of the segments supplied
+ * by the user in the HTTP request
  */
+$route_segments_array = [];
+
+/**
+ * $_SERVER['PATH_INFO']
+ * If the URI portion of the URL starts with /# then the value of
+ * $_SERVER['PATH_INFO'] will be everything that follows the /# portion of the URI.
+ */
+
+if (!empty($_SERVER['PATH_INFO'])) {
+    $route = rtrim($_SERVER['PATH_INFO'], '/ ');
+    $route = ltrim($route, '/');
+    // The FILTER_SANITIZE_URL filter removes all illegal URL characters from a string.
+    // This filter allows all letters, digits and $-_.+!*'(),{}|\\^~[]`"><#%;/?:@&=
+    $route = filter_var($route, FILTER_SANITIZE_URL);
+    $route_segments_array = explode('/', $route);
+}
+
