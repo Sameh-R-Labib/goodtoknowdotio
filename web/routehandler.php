@@ -29,8 +29,6 @@ $path4 = WEB_DIR . DIRSEP . 'functions.php';
 require $path3;
 require $path4;
 
-new FrontController();
-
 // Define Stripe Keys
 //if (ENVIRONMENT == 'development') {
 //    $myStripePubKey = TESTSTRIPEPUB;
@@ -41,3 +39,13 @@ new FrontController();
 //} else {
 //    die('I do not know which environment I am in.');
 //}
+
+/**
+ * Major Section Title
+ * HERE WE DETERMINE WHICH CONTROLLER
+ *                   WHICH METHOD
+ *                   WHAT PARAMETERS TO PASS TO THE METHOD
+ * AND THEN WE CALL THIS METHOD GIVING IT THE PARAMETERS
+ * WE DETERMINE ALL THIS BASED ON THE ROUTE SPECIFIED
+ * BY THE HTTP REQUEST
+ */
