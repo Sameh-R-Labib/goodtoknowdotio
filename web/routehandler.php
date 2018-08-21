@@ -71,3 +71,19 @@ if (!empty($_SERVER['PATH_INFO'])) {
     $route_segments_array = explode('/', $route);
 }
 
+$controller_name = 'Home';    // Default controller
+
+if (!empty($route_segments_array[0])) {
+    $file_path_to_controller = PROJ_ROOT . DIRSEP . 'app' . 'GoodToKnow' . DIRSEP . 'Controllers' . DIRSEP .
+        "{$route_segments_array[0]}.php";
+    if (file_exists($file_path_to_controller)) {
+        $controller_name = $route_segments_array[0];
+        unset($route_segments_array[0]);
+    }
+}
+
+$file_path_to_controller = PROJ_ROOT . DIRSEP . 'app' . 'GoodToKnow' . DIRSEP . 'Controllers' . DIRSEP .
+    "{$controller_name}.php";
+
+require $file_path_to_controller;
+
