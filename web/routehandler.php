@@ -87,3 +87,7 @@ $file_path_to_controller = PROJ_ROOT . DIRSEP . 'app' . 'GoodToKnow' . DIRSEP . 
 
 require $file_path_to_controller;
 
+$fully_qualified_controller_name = 'GoodToKnow\Controllers\\' . $controller_name;
+
+$controller_object = new $fully_qualified_controller_name;
+
