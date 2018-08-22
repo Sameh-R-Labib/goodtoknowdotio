@@ -71,6 +71,11 @@ if (!empty($_SERVER['PATH_INFO'])) {
     $route_segments_array = explode('/', $route);
 }
 
+/**
+ * Figure out which controller
+ * and instantiate its object
+ */
+
 $controller_name = 'Home';    // Default controller
 
 if (!empty($route_segments_array[0])) {
@@ -86,3 +91,24 @@ $fully_qualified_controller_name = 'GoodToKnow\Controllers\\' . $controller_name
 
 $controller_object = new $fully_qualified_controller_name;
 
+/**
+ * Figure out which method
+ * and call it
+ */
+
+$method_name = 'page';
+
+if (!empty($route_segments_array[1])) {
+    if (method_exists($controller_object, $route_segments_array[1])) {
+        $method_name = $route_segments_array[1];
+        unset($route_segments_array[1]);
+    }
+}
+
+$parameters_array = [];
+
+if (!empty($route_segments_array)) {
+    $parameters_array = array_values($route_segments_array);
+}
+
+call_user_func_array([$controller_object, $method_name], $parameters_array);
