@@ -40,8 +40,8 @@ class Home
          */
         $html_title = 'GoodToKnow.io';
 
-        require VIEWSINCLUDES . 'top.php';
-        require VIEWS . 'homepage.php';
-        require VIEWSINCLUDES . 'bottom.php';
+        require TOP;
+        require VIEWS . DIRSEP . 'homepage.php';
+        require BOTTOM;
     }
 }

@@ -6,8 +6,6 @@
  * Time: 8:22 PM
  */
 
-use \GoodToKnow\Controllers\FrontController;
-
 require(__DIR__ . '/../config.php');
 
 define('DIRSEP', DIRECTORY_SEPARATOR);
@@ -21,6 +19,9 @@ define('VENDOR_DIR', PROJ_ROOT . DIRSEP . 'vendor');
  */
 define('VIEWS', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Views');
 define('VIEWSINCLUDES', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsIncludes');
+
+define('TOP', VIEWSINCLUDES . DIRSEP . 'top.php');
+define('BOTTOM', VIEWSINCLUDES . DIRSEP . 'bottom.php');
 
 /**
  * More require statements
