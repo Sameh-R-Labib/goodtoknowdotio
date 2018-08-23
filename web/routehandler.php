@@ -19,6 +19,7 @@ define('VENDOR_DIR', PROJ_ROOT . DIRSEP . 'vendor');
  * of the directory for view includes and for
  * the files for view includes.
  */
+define('VIEWS', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Views');
 define('VIEWSINCLUDES', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsIncludes');
 
 /**

@@ -38,5 +38,10 @@ class Home
         /**
          * Show the page
          */
+        $html_title = 'GoodToKnow.io';
+
+        require VIEWSINCLUDES . 'top.php';
+        require VIEWS . 'homepage.php';
+        require VIEWSINCLUDES . 'bottom.php';
     }
 }
