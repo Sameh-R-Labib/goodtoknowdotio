@@ -8,6 +8,6 @@
 
 use function Composer\Autoload\includeFile;
 
-includeFile('functions.php');
+include 'functions.php';
 
 redirect_to('#');
