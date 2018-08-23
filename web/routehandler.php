@@ -6,11 +6,6 @@
  * Time: 8:22 PM
  */
 
-// Debug code
-echo "You got to line 10 in routehandler.php";
-die('Die statement.');
-
-
 require(__DIR__ . '/../config.php');
 
 define('DIRSEP', DIRECTORY_SEPARATOR);
