@@ -12,6 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/styles.css">
     <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $page_title_in_head_tag; ?></title>
+        echo $html_title; ?></title>
 </head>
 <body>
