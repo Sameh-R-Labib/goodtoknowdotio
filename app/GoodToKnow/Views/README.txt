@@ -1,1 +1,1 @@
-View classes go in this folder.
+View templates go in this folder.
