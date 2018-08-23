@@ -10,4 +10,4 @@ use function Composer\Autoload\includeFile;
 
 include 'functions.php';
 
-redirect_to('#');
+redirect_to('ax1');
