@@ -31,9 +31,9 @@
 </div>
 <!-- communities -->
 <div id="communities">
-    <p>👪: <a href="#">My First Group</a> ↬ <a href="#">My Second Group</a> ↬ <a href="#">My Third Group</a>
-        ↬ <a href="#">My Fourth Group</a> ↬ <a href="#">My Fifth Group</a> ↬ <a href="#">My Fifth Group</a>
-        ↬ <a href="#">My Sixth Group</a> ↬ <a href="#">My Seventh Group</a></p>
+    <p>👪: <a href="#">My First Community</a> ↬ <a href="#">My Second Community</a> ↬ <a href="#">My Third Community</a>
+        ↬ <a href="#">My Fourth Community</a> ↬ <a href="#">My Fifth Community</a> ↬ <a href="#">My Fifth Community</a>
+        ↬ <a href="#">My Sixth Community</a> ↬ <a href="#">My Seventh Community</a></p>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
