@@ -25,13 +25,15 @@
 <!-- topbar -->
 <div id="topbar">
     <a href="https://goodtoknow.io/ax1"><img src="/topbarlogo.png" alt="GoodToKnow.io" height="70" style="float: left"></a>
-    <div id="sendmessage"><p><a href="#">&phone; Text Admin</a></p></div>
-    <div id="inboxlink"><p><a href="#">🖌 Inbox</a></p></div>
+    <div id="sendmessage"><p><a href="#">🖌 Text Admin</a></p></div>
+    <div id="inboxlink"><p><a href="#">📧 Inbox</a></p></div>
     <div id="logindiv"><p><a href="#">🚪 Log In &amp; Out</a></p></div>
 </div>
 <!-- communities -->
 <div id="communities">
-    <p>Here I'll put links for switching communities.</p>
+    <p>👪 ↬ <a href="#">My First Group</a> ↬ <a href="#">My Second Group</a> ↬ <a href="#">My Third Group</a>
+        ↬ <a href="#">My Fourth Group</a> ↬ <a href="#">My Fifth Group</a> ↬ <a href="#">My Fifth Group</a>
+        ↬ <a href="#">My Sixth Group</a> ↬ <a href="#">My Seventh Group</a></p>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
