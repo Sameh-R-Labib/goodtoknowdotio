@@ -25,6 +25,7 @@
 <div id="topbar">
     <img src="/topbarlogo.png" alt="GoodToKnow.io" height="70" style="float: left">
     <div id="sendmessage"><p><a href="#">&phone; Text Admin</a></p></div>
+    <div id="inboxlink"><p><a href="#">✉ Inbox</a></p></div>
     <p>Put login logout link</p>
 </div>
 <div id="communities">

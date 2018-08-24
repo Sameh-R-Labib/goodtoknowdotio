@@ -120,3 +120,10 @@ h2 + p {
     margin: auto;
     float: left;
 }
+
+#inboxlink {
+    background-color: aliceblue;
+    width: 171px;
+    margin: auto;
+    float: left;
+}
