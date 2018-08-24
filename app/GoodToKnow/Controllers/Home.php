@@ -18,7 +18,7 @@ class Home
         /**
          * Get data from the session
          */
-        $message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
+        $sessionMessage = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
         $user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
         $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
         // The name of community which the user wants to see.
