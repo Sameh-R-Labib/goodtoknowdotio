@@ -22,17 +22,20 @@
         echo $html_title; ?></title>
 </head>
 <body>
+<!-- topbar -->
 <div id="topbar">
     <a href="https://goodtoknow.io/ax1"><img src="/topbarlogo.png" alt="GoodToKnow.io" height="70" style="float: left"></a>
     <div id="sendmessage"><p><a href="#">&phone; Text Admin</a></p></div>
     <div id="inboxlink"><p><a href="#">🖌 Inbox</a></p></div>
-    <p>Put login logout link</p>
+    <div id="logindiv"><p><a href="#">🚪 Log In &amp; Out</a></p></div>
 </div>
+<!-- communities -->
 <div id="communities">
     <p>Here I'll put links for switching communities.</p>
 </div>
+<!-- breadcrumbs -->
 <div id="breadcrumbs">
     <p>Here I'll put breadcrumbs.</p>
 </div>
+<!-- maincontent -->
 <div id="maincontent">
-    <p>Here the main view stuff.</p>

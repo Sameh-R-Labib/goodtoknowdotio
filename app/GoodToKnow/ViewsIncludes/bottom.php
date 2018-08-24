@@ -7,6 +7,7 @@
  */
 ?>
 </div><!-- End maincontent -->
+<!-- footerbar -->
 <div id="footerbar">
     <p align="center" style="font-size: 1em;">Copyright 2018 - Sameh Ramzy Labib</p>
 </div>
