@@ -75,7 +75,7 @@ h2 + p {
 }
 
 #communities {
-    background-color: gold;
+    background-color: lightskyblue;
     position: relative;
     top: 20px;
     width: 865px;
@@ -85,7 +85,7 @@ h2 + p {
 }
 
 #breadcrumbs {
-    background-color: aquamarine;
+    background-color: gainsboro;
     position: relative;
     top: 40px;
     width: 865px;
