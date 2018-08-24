@@ -68,6 +68,7 @@ h2 + p {
     background-color: white;
     position: relative;
     width: 865px;
+    margin: auto;
     border: 3px solid green;
     clear: both;
 }
@@ -77,6 +78,7 @@ h2 + p {
     position: relative;
     top: 20px;
     width: 865px;
+    margin: auto;
     border: 3px solid green;
     clear: both;
 }
@@ -86,6 +88,7 @@ h2 + p {
     position: relative;
     top: 40px;
     width: 865px;
+    margin: auto;
     border: 3px solid green;
     clear: both;
 }
@@ -95,6 +98,7 @@ h2 + p {
     position: relative;
     top: 70px;
     width: 865px;
+    margin: auto;
     border: 3px solid green;
     clear: both;
 }
@@ -104,6 +108,7 @@ h2 + p {
     position: relative;
     top: 100px;
     width: 865px;
+    margin: auto;
     border: 3px solid green;
     clear: both;
 }
