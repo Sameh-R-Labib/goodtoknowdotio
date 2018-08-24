@@ -37,7 +37,8 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p>Here I'll put breadcrumbs.</p>
+    <p>🗄 → <a href="#">Current Community</a> → <a href="#">Current Topic</a> → <a href="#"></a>
+        → <a href="#">Current Post</a></p>
 </div>
 <!-- maincontent -->
 <div id="maincontent">
