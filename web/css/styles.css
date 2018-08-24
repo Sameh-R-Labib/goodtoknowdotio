@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #1a1a1a;
     color: #1b1b1b;
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
     margin: 2% 5% 2%;
@@ -65,6 +65,7 @@ h2 + p {
 }
 
 #topbar {
+    background-color: white;
     position: relative;
     width: 830px;
     border: 3px solid green;
@@ -72,6 +73,7 @@ h2 + p {
 }
 
 #communities {
+    background-color: white;
     position: relative;
     top: 20px;
     width: 830px;
@@ -80,6 +82,7 @@ h2 + p {
 }
 
 #breadcrumbs {
+    background-color: white;
     position: relative;
     top: 40px;
     width: 830px;
@@ -88,6 +91,7 @@ h2 + p {
 }
 
 #maincontent {
+    background-color: white;
     position: relative;
     top: 70px;
     width: 830px;
@@ -96,6 +100,7 @@ h2 + p {
 }
 
 #footerbar {
+    background-color: white;
     position: relative;
     top: 100px;
     width: 830px;
