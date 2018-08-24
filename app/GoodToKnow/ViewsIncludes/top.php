@@ -23,7 +23,7 @@
 </head>
 <body>
 <div id="topbar">
-    <img src="/topbarlogo.png">
+    <img src="/topbarlogo.png" alt="GoodToKnow.io" height="73">
     <p>Here I'll put the logo, message Bubba, and login logout.</p>
 </div>
 <div id="communities">
