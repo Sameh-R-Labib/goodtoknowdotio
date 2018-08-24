@@ -67,7 +67,7 @@ h2 + p {
 #topbar {
     background-color: white;
     position: relative;
-    width: 830px;
+    width: 865px;
     border: 3px solid green;
     clear: both;
 }
@@ -76,7 +76,7 @@ h2 + p {
     background-color: white;
     position: relative;
     top: 20px;
-    width: 830px;
+    width: 865px;
     border: 3px solid green;
     clear: both;
 }
@@ -85,7 +85,7 @@ h2 + p {
     background-color: white;
     position: relative;
     top: 40px;
-    width: 830px;
+    width: 865px;
     border: 3px solid green;
     clear: both;
 }
@@ -94,7 +94,7 @@ h2 + p {
     background-color: white;
     position: relative;
     top: 70px;
-    width: 830px;
+    width: 865px;
     border: 3px solid green;
     clear: both;
 }
@@ -103,7 +103,7 @@ h2 + p {
     background-color: white;
     position: relative;
     top: 100px;
-    width: 830px;
+    width: 865px;
     border: 3px solid green;
     clear: both;
 }
