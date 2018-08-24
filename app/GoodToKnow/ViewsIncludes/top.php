@@ -23,6 +23,7 @@
 </head>
 <body>
 <div id="topbar">
+    <img src="/topbarlogo.png">
     <p>Here I'll put the logo, message Bubba, and login logout.</p>
 </div>
 <div id="communities">
