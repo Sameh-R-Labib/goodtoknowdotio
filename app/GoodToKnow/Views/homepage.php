@@ -5,4 +5,5 @@
  * Date: 8/22/18
  * Time: 11:11 PM
  */
-echo "<p>Hi there!</p>\n";
+?>
+<p>Hi there!</p>
