@@ -24,6 +24,7 @@
 <body>
 <div id="topbar">
     <img src="/topbarlogo.png" alt="GoodToKnow.io" height="63" style="float: left">
+    <div id="sendmessage"><p><a href="#">&phone; Text Admin</a></p></div>
     <p>Here I'll put the logo, message Bubba, and login logout.</p>
 </div>
 <div id="communities">

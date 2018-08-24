@@ -112,3 +112,10 @@ h2 + p {
     border: 3px solid #0000bf;
     clear: both;
 }
+
+#sendmessage {
+    background-color: mediumseagreen;
+    width: 120px;
+    margin: auto;
+    float: left;
+}
