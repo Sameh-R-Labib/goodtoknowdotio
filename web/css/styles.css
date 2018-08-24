@@ -75,7 +75,7 @@ h2 + p {
 }
 
 #communities {
-    background-color: white;
+    background-color: gold;
     position: relative;
     top: 20px;
     width: 865px;
@@ -85,7 +85,7 @@ h2 + p {
 }
 
 #breadcrumbs {
-    background-color: white;
+    background-color: aquamarine;
     position: relative;
     top: 40px;
     width: 865px;

@@ -31,14 +31,13 @@
 </div>
 <!-- communities -->
 <div id="communities">
-    <p>👪 ↬ <a href="#">My First Group</a> ↬ <a href="#">My Second Group</a> ↬ <a href="#">My Third Group</a>
+    <p>👪: <a href="#">My First Group</a> ↬ <a href="#">My Second Group</a> ↬ <a href="#">My Third Group</a>
         ↬ <a href="#">My Fourth Group</a> ↬ <a href="#">My Fifth Group</a> ↬ <a href="#">My Fifth Group</a>
         ↬ <a href="#">My Sixth Group</a> ↬ <a href="#">My Seventh Group</a></p>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p>🗄 → <a href="#">Current Community</a> → <a href="#">Current Topic</a> → <a href="#"></a>
-        → <a href="#">Current Post</a></p>
+    <p>⛺: <a href="#">Current Community</a> → <a href="#">Current Topic</a> → <a href="#">Current Post</a></p>
 </div>
 <!-- maincontent -->
 <div id="maincontent">
