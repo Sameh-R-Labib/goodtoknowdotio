@@ -124,6 +124,7 @@ h2 + p {
 #inboxlink {
     background-color: aliceblue;
     width: 171px;
+    height: 70px;
     margin: auto;
     float: left;
 }
