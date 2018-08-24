@@ -4,49 +4,101 @@ body {
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
     margin: 2% 5% 0;
 }
+
 p {
     font-size: 1.25em;
 }
+
 select, input {
     font-size: 0.875em;
 }
+
 table {
     max-width: 1000px;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
     margin: 0 auto 20px 50px;
 }
+
 th {
     background-color: #ddd;
     color: #555;
     padding: 0.5em 1em;
     text-align: left;
 }
+
 td {
     vertical-align: top;
     padding: 0.25em 1em;
 }
+
 tr {
     border-bottom: 1px solid #c9c9c9;
 }
+
 tr:nth-child(even) {
     background-color: #e7edf6;
 }
+
 fieldset {
     border: none;
     margin-left: 50px;
     padding: 1px 0;
 }
+
 fieldset p {
     margin: 0.5em 0 0.5em 30px;
 }
+
 legend {
     font-variant: small-caps;
     font-size: 1.5em;
 }
+
 h2 {
     margin: 0.5em 0;
 }
+
 h2 + p {
     margin: 0 0 0 40px;
+}
+
+#topbar {
+    position: relative;
+    top: 10px;
+    width: 50%;
+    border: 3px solid green;
+    clear: both;
+}
+
+#communities {
+    position: relative;
+    top: 50px;
+    width: 76%;
+    border: 3px solid green;
+    clear: both;
+}
+
+#breadcrumbs {
+    position: relative;
+    top: 50px;
+    width: 76%;
+    border: 3px solid green;
+    clear: both;
+}
+
+#maincontent {
+    position: relative;
+    top: 50px;
+    width: 76%;
+    border: 3px solid green;
+    clear: both;
+}
+
+#footerbar {
+    position: relative;
+    top: 50px;
+    width: 70%;
+    border: 3px solid green;
+    clear: both;
 }

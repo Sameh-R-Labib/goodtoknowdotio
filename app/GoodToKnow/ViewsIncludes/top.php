@@ -22,3 +22,14 @@
         echo $html_title; ?></title>
 </head>
 <body>
+<div id="topbar">
+    <p>Here I'll put the logo, message Bubba, and login logout.</p>
+</div>
+<div id="communities">
+    <p>Here I'll put links for switching communities.</p>
+</div>
+<div id="breadcrumbs">
+    <p>Here I'll put breadcrumbs.</p>
+</div>
+<div id="maincontent">
+    <p>Here the main view stuff.</p>
