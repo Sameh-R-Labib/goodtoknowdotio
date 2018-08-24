@@ -104,7 +104,7 @@ h2 + p {
 }
 
 #footerbar {
-    background-color: white;
+    background-color: lightslategray;
     position: relative;
     top: 100px;
     width: 865px;
