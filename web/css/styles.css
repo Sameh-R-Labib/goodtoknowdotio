@@ -66,7 +66,7 @@ h2 + p {
 #topbar {
     position: relative;
     top: 10px;
-    width: 50%;
+    width: 830px;
     border: 3px solid green;
     clear: both;
 }
@@ -74,7 +74,7 @@ h2 + p {
 #communities {
     position: relative;
     top: 50px;
-    width: 76%;
+    width: 830px;
     border: 3px solid green;
     clear: both;
 }
@@ -82,7 +82,7 @@ h2 + p {
 #breadcrumbs {
     position: relative;
     top: 50px;
-    width: 76%;
+    width: 830px;
     border: 3px solid green;
     clear: both;
 }
@@ -90,7 +90,7 @@ h2 + p {
 #maincontent {
     position: relative;
     top: 50px;
-    width: 76%;
+    width: 830px;
     border: 3px solid green;
     clear: both;
 }
@@ -98,7 +98,7 @@ h2 + p {
 #footerbar {
     position: relative;
     top: 50px;
-    width: 70%;
+    width: 830px;
     border: 3px solid green;
     clear: both;
 }
