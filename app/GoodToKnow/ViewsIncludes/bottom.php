@@ -8,7 +8,7 @@
 ?>
 </div><!-- End maincontent -->
 <div id="footerbar">
-    <p style="align-self: center">Copyright 2018 - Sameh Ramzy Labib</p>
+    <p align="center">Copyright 2018 - Sameh Ramzy Labib</p>
 </div>
 <script src="/js/script.js"></script>
 </body>
