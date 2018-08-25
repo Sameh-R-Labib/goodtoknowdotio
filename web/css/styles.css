@@ -4,6 +4,10 @@ body {
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
+a {
+    text-decoration-line: none;
+}
+
 p {
     font-size: 1.25em;
     margin-left: 27px;
