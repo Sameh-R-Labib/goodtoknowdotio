@@ -111,6 +111,7 @@ h2 + p {
     position: relative;
     top: 28px;
     width: 865px;
+    padding: 25px 50px 75px 100px;
     margin: auto;
     border: 3px solid #0000bf;
     clear: both;
