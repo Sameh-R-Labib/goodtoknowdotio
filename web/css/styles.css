@@ -94,10 +94,20 @@ h2 + p {
     clear: both;
 }
 
+#scriptoutput {
+    background-color: white;
+    position: relative;
+    top: 60px;
+    width: 865px;
+    margin: auto;
+    border: 3px solid #0000bf;
+    clear: both;
+}
+
 #maincontent {
     background-color: white;
     position: relative;
-    top: 70px;
+    top: 90px;
     width: 865px;
     margin: auto;
     border: 3px solid #0000bf;
@@ -118,6 +128,14 @@ h2 + p {
     background-color: mediumseagreen;
     width: 181px;
     height: 70px;
+    margin: auto;
+    float: left;
+}
+
+#sendtoauthor {
+    background-color: gold;
+    width: 185px;
+    height: 90px;
     margin: auto;
     float: left;
 }

@@ -39,5 +39,9 @@
 <div id="breadcrumbs">
     <p>⛺: <a href="#">Current Community</a> → <a href="#">Current Topic</a> → <a href="#">Current Post</a></p>
 </div>
+<!-- scriptoutput -->
+<div id="scriptoutput">
+    <div id="sendtoauthor"><p><a href="#">🖌 Text Author</a></p></div>
+</div>
 <!-- maincontent -->
 <div id="maincontent">
