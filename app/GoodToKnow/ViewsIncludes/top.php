@@ -43,8 +43,7 @@
 <!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="sendtoauthor"><p><a href="#">🖌 Text Author</a></p></div>
-    <div id="scriptmessage"><p>This is an example of what a session message would look like (especially if
-            it was long enough to take up more than one line inside this div section. Hopefully it won't look weird.</p>
+    <div id="scriptmessage"><p>😏 System Message: [none]</p>
     </div>
 </div>
 <!-- maincontent -->
