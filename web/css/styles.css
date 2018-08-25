@@ -8,6 +8,9 @@ p {
     font-size: 1.25em;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+p #maincontent {
     text-align: justify;
 }
 
