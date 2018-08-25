@@ -1,6 +1,6 @@
 body {
     background-color: #1c1c21;
-    color: #1b1b1b;
+    color: #3b3b3b;
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
@@ -14,7 +14,6 @@ p {
 }
 
 #maincontent p {
-    color: #090909;
     text-align: justify;
     margin-left: 62px;
     margin-right: 58px;
