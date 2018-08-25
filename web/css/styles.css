@@ -99,7 +99,7 @@ h2 + p {
     position: relative;
     top: 60px;
     width: 865px;
-    height: 91px;
+    height: 94px;
     margin: auto;
     border: 3px solid #0000bf;
     clear: both;
@@ -133,10 +133,16 @@ h2 + p {
     float: left;
 }
 
+#scriptmessage {
+    background-color: aliceblue;
+    margin: auto;
+    float: left;
+}
+
 #sendtoauthor {
     background-color: gold;
     width: 185px;
-    height: 90px;
+    height: 94px;
     margin: auto;
     float: left;
 }
