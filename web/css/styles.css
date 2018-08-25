@@ -10,7 +10,7 @@ p {
     margin-right: 30px;
 }
 
-p #maincontent {
+#maincontent p {
     text-align: justify;
 }
 
