@@ -99,7 +99,7 @@ h2 + p {
     position: relative;
     top: 60px;
     width: 865px;
-    height: 94px;
+    height: 204px;
     margin: auto;
     border: 3px solid #0000bf;
     clear: both;
@@ -142,7 +142,7 @@ h2 + p {
 #sendtoauthor {
     background-color: gold;
     width: 185px;
-    height: 94px;
+    height: 204px;
     margin: auto;
     float: left;
 }
