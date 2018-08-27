@@ -110,8 +110,9 @@ if (!empty($_SERVER['PATH_INFO'])) {
 /*
  * Debug
  */
-var_dump($route_segments_array);
-die('End here');
+//var_dump($route_segments_array);
+//die('End here');
+// array(2) { [0]=> string(4) "Home" [1]=> string(4) "page" } End here
 
 
 /**
@@ -124,6 +125,13 @@ $controller_name = 'LoginForm';    // Default controller
 if (!empty($route_segments_array[0])) {
     $file_path_to_controller = PROJ_ROOT . DIRSEP . 'app' . 'GoodToKnow' . DIRSEP . 'Controllers' . DIRSEP .
         "{$route_segments_array[0]}.php";
+
+    /**
+     * Debug
+     */
+    echo "The file path to controller is: " . $file_path_to_controller;
+    die(' period.');
+
     if (file_exists($file_path_to_controller)) {
         $controller_name = $route_segments_array[0];
         unset($route_segments_array[0]);
