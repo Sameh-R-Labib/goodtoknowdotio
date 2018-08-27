@@ -147,4 +147,12 @@ if (!empty($route_segments_array)) {
     $parameters_array = array_values($route_segments_array);
 }
 
+/**
+ * Debug
+ */
+echo "<p>Controller name is: {$controller_name}</p>\n";
+echo "<p>Method name is: {$method_name}</p>\n";
+die('Stop');
+
+
 call_user_func_array([$controller_object, $method_name], $parameters_array);
