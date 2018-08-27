@@ -15,6 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/css/loginform.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,5 +30,17 @@
 <body>
 <?php require SESSIONMESSAGE; ?>
 <p>I'm here on LoginForm.</p>
+<div class="login">
+    <h2>Log In</h2>
+    <fieldset>
+        <input type="email" placeholder="Username"/>
+        <input type="password" placeholder="Password"/>
+    </fieldset>
+    <input type="submit" value="Log In"/>
+    <div class="utilities">
+        <a href="#">Have invite?</a>
+        <a href="#">Sign Up &rarr;</a>
+    </div>
+</div>
 </body>
 </html>
