@@ -107,6 +107,13 @@ if (!empty($_SERVER['PATH_INFO'])) {
     $route_segments_array = explode('/', $route);
 }
 
+/*
+ * Debug
+ */
+var_dump($route_segments_array);
+die('End here');
+
+
 /**
  * Figure out which controller
  * and instantiate its object
