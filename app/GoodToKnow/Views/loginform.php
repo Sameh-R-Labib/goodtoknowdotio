@@ -28,5 +28,6 @@
 </head>
 <body>
 <?php require SESSIONMESSAGE; ?>
+<p>I'm here on LoginForm.</p>
 </body>
 </html>
