@@ -3,6 +3,11 @@ body {
     background: #137f4f;
 }
 
+p {
+    color: pink;
+    font-size: 13px;
+}
+
 .login {
     width: 340px;
     background-color: #1ea167;

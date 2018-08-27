@@ -32,7 +32,7 @@
 <div class="login">
     <h2>Log In</h2>
     <fieldset>
-        <input type="email" placeholder="Username"/>
+        <input type="text" placeholder="Username"/>
         <input type="password" placeholder="Password"/>
     </fieldset>
     <input type="submit" value="Log In"/>
