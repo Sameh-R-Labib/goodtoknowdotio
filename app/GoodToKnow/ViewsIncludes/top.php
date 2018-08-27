@@ -43,7 +43,9 @@
 <!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="sendtoauthor"><p><a href="#">🖌 Text Author</a></p></div>
-    <div id="scriptmessage"><p>😏 System Message: [none]</p>
+    <div id="scriptmessage">
+        <p>😏 System Message: </p>
+        <?php require SESSIONMESSAGE; ?>
     </div>
 </div>
 <!-- maincontent -->

@@ -6,7 +6,6 @@
  * Time: 11:11 PM
  */
 ?>
-<?php require SESSIONMESSAGE; ?>
 <p>Hi there!</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum ipsum quis massa pretium, ut dapibus

@@ -83,6 +83,16 @@ h2 + p {
     clear: both;
 }
 
+#adminhometop {
+    background-color: white;
+    position: relative;
+    width: 865px;
+    height: 70px;
+    margin-right: auto;
+    border: 3px solid #0000bf;
+    clear: both;
+}
+
 #communities {
     background-color: peru;
     position: relative;
