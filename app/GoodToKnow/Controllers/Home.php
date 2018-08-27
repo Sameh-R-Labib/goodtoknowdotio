@@ -13,6 +13,12 @@ class Home
 {
     public function page()
     {
+        global $is_logged_in;
+
+        if (!$is_logged_in) {
+            redirect_to("/ax1/LoginForm/page");
+        }
+
         $html_title = 'GoodToKnow.io';
 
         require TOP;
