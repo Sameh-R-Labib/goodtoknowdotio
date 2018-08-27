@@ -16,11 +16,11 @@ class Home
         global $is_logged_in;
 
         //testing
-        $is_logged_in = true;
-
-        if (!$is_logged_in) {
-            redirect_to("/ax1/LoginForm/page");
-        }
+//        $is_logged_in = true;
+//
+//        if (!$is_logged_in) {
+//            redirect_to("/ax1/LoginForm/page");
+//        }
 
         $html_title = 'GoodToKnow.io';
 
