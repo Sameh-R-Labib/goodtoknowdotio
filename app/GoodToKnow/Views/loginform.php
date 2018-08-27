@@ -29,7 +29,6 @@
 </head>
 <body>
 <?php require SESSIONMESSAGE; ?>
-<p>I'm here on LoginForm.</p>
 <div class="login">
     <h2>Log In</h2>
     <fieldset>
@@ -40,6 +39,7 @@
     <div class="utilities">
         <a href="#">Have invite?</a>
         <a href="#">Sign Up &rarr;</a>
+        <p>I'm here on LoginForm.</p>
     </div>
 </div>
 </body>
