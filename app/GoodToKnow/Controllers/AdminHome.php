@@ -20,7 +20,7 @@ class AdminHome
             redirect_to("/ax1/LoginForm/page");
         }
 
-        $html_title = 'Admin Home Page';
+        $html_title = 'Admin';
 
         require VIEWS . DIRSEP . 'adminhome.php';
     }
