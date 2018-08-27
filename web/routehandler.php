@@ -76,7 +76,7 @@ $is_logged_in = (!empty($user_id)) ? true : false;
 /**
  * Debug
  */
-$is_logged_in = true;
+$is_logged_in = false;
 
 
 $is_admin = ($role === 'admin') ? true : false;
