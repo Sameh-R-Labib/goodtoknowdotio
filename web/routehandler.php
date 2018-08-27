@@ -73,6 +73,12 @@ $page_id = (isset($_SESSION['page_id'])) ? $_SESSION['page_id'] : 0;
 
 $is_logged_in = (!empty($user_id)) ? true : false;
 
+/**
+ * Debug
+ */
+$is_logged_in = true;
+
+
 $is_admin = ($role === 'admin') ? true : false;
 
 
