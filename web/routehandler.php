@@ -107,14 +107,6 @@ if (!empty($_SERVER['PATH_INFO'])) {
     $route_segments_array = explode('/', $route);
 }
 
-/*
- * Debug
- */
-//var_dump($route_segments_array);
-//die('End here');
-// array(2) { [0]=> string(4) "Home" [1]=> string(4) "page" } End here
-
-
 /**
  * Figure out which controller
  * and instantiate its object
@@ -125,13 +117,6 @@ $controller_name = 'LoginForm';    // Default controller
 if (!empty($route_segments_array[0])) {
     $file_path_to_controller = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Controllers' . DIRSEP .
         "{$route_segments_array[0]}.php";
-
-    /**
-     * Debug
-     */
-//    echo "The file path to controller is: " . $file_path_to_controller;
-//    die(' period.');
-
     if (file_exists($file_path_to_controller)) {
         $controller_name = $route_segments_array[0];
         unset($route_segments_array[0]);
@@ -161,13 +146,5 @@ $parameters_array = [];
 if (!empty($route_segments_array)) {
     $parameters_array = array_values($route_segments_array);
 }
-
-/**
- * Debug
- */
-echo "<p>Controller name is: {$controller_name}</p>\n";
-echo "<p>Method name is: {$method_name}</p>\n";
-die('Stop');
-
 
 call_user_func_array([$controller_object, $method_name], $parameters_array);
