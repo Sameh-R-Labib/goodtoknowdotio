@@ -13,6 +13,12 @@ class LoginForm
 {
     public function page()
     {
+        global $is_logged_in;
+
+        if ($is_logged_in) {
+            redirect_to("/ax1/Home/page");
+        }
+
         $html_title = 'LoginForm';
 
         require VIEWS . DIRSEP . 'loginform.php';
