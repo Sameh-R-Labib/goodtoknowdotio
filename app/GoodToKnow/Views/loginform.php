@@ -37,9 +37,9 @@
     </fieldset>
     <input type="submit" value="Log In"/>
     <div class="utilities">
-        <a href="#">Have invite?</a>
-        <a href="#">Sign Up &rarr;</a>
-        <p>I'm here on LoginForm.</p>
+        <a href="#">Forgot password?</a>
+        <a href="#">Invited to join? &rarr;</a>
+        <?php require SESSIONMESSAGE; ?>
     </div>
 </div>
 </body>
