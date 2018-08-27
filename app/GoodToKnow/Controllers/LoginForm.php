@@ -19,7 +19,7 @@ class LoginForm
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'LoginForm';
+        $html_title = 'GoodToKnow.io';
 
         require VIEWS . DIRSEP . 'loginform.php';
     }
