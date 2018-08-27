@@ -80,7 +80,7 @@ $is_admin = ($role === 'admin') ? true : false;
  * Temporary development values
  */
 $is_logged_in = true;
-//$is_admin = true;
+$is_admin = true;
 
 
 
