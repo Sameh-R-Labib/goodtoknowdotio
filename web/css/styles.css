@@ -180,7 +180,6 @@ h2 + p {
 }
 
 #sendtoauthor {
-    display: block;
     float: left;
     background-color: gold;
     width: 123px;
@@ -189,7 +188,6 @@ h2 + p {
 }
 
 #admindiv {
-    display: block;
     float: left;
     background-color: gold;
     width: 123px;
