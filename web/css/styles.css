@@ -171,6 +171,14 @@ h2 + p {
     float: left;
 }
 
+#leftsodiv {
+    background-color: white;
+    width: 123px;
+    height: 185px;
+    margin: auto;
+    float: left;
+}
+
 #adminsysmsgblock {
     background-color: lightcoral;
     width: 865px;

@@ -42,8 +42,10 @@
 </div>
 <!-- scriptoutput -->
 <div id="scriptoutput">
-    <div id="sendtoauthor"><p><a href="#">🖌 Text Author</a></p></div>
-    <div id="admindiv"><a href="#"><img src="/cpicon.png" alt="Admin Panel" height="123" width="123"></a></div>
+    <div id="leftsodiv">
+        <div id="sendtoauthor"><p><a href="#">🖌 Author</a></p></div>
+        <div id="admindiv"><a href="#"><img src="/cpicon.png" alt="Admin Panel" height="123" width="123"></a></div>
+    </div>
     <div id="scriptmessage">
         <p>😏 System Message: </p>
         <?php require SESSIONMESSAGE; ?>
