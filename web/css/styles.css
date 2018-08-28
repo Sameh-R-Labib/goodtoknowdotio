@@ -124,6 +124,17 @@ h2 + p {
     clear: both;
 }
 
+#adminsysmsgdiv {
+    background-color: white;
+    position: relative;
+    top: 7px;
+    width: 865px;
+    height: 185px;
+    margin: auto;
+    border: 3px solid #0000bf;
+    clear: both;
+}
+
 #maincontent {
     background-color: white;
     position: relative;
@@ -156,6 +167,14 @@ h2 + p {
 #scriptmessage {
     background-color: lightcoral;
     width: 680px;
+    height: 185px;
+    margin: auto;
+    float: left;
+}
+
+#adminsysmsgblock {
+    background-color: lightcoral;
+    width: 865px;
     height: 185px;
     margin: auto;
     float: left;

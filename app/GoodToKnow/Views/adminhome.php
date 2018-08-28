@@ -27,6 +27,12 @@
     <a href="https://goodtoknow.io/ax1"><img src="/topbarlogo.png" alt="GoodToKnow.io" height="70" width="302"
                                              style="float: left"></a>
 </div>
+<div id="adminsysmsgdiv">
+    <div id="adminsysmsgblock">
+        <p>😏 System Message: </p>
+        <?php require SESSIONMESSAGE; ?>
+    </div>
+</div>
 <!-- footerbar -->
 <div id="footerbar">
     <p align="center" style="font-size: 1em;">Copyright 2018 - Sameh Ramzy Labib</p>
