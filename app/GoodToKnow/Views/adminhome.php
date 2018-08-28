@@ -26,6 +26,9 @@
 <div id="adminhometop">
     <a href="https://goodtoknow.io/ax1"><img src="/topbarlogo.png" alt="GoodToKnow.io" height="70" width="302"
                                              style="float: left"></a>
+    <div id="sendmessage"><p><a href="#">🖌 Text User</a></p></div>
+    <div id="inboxlink"><p><a href="#">📧 Inbox</a></p></div>
+    <div id="logindiv"><p><a href="#">🚪 Log In &amp; Out</a></p></div>
 </div>
 <div id="adminsysmsgdiv">
     <div id="adminsysmsgblock">
