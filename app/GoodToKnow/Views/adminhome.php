@@ -36,6 +36,14 @@
         <?php require SESSIONMESSAGE; ?>
     </div>
 </div>
+<!-- communities -->
+<div id="communities">
+    &nbsp;
+</div>
+<!-- breadcrumbs -->
+<div id="breadcrumbs">
+    &nbsp;
+</div>
 <!-- maincontent -->
 <div id="maincontent">
     <h2>Admin Scripts</h2>
