@@ -180,19 +180,19 @@ h2 + p {
 }
 
 #sendtoauthor {
+    display: block;
     background-color: gold;
     width: 123px;
     height: 62px;
     margin: auto;
-    float: left;
 }
 
 #admindiv {
+    display: block;
     background-color: gold;
     width: 123px;
     height: 123px;
     margin: auto;
-    float: left;
 }
 
 #inboxlink {
