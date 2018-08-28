@@ -36,6 +36,13 @@
         <?php require SESSIONMESSAGE; ?>
     </div>
 </div>
+<!-- maincontent -->
+<div id="maincontent">
+    <h2>Admin Scripts</h2>
+    <ul>
+        <li><a href="#">Generate a pass code for new user registration</a></li>
+    </ul>
+</div>
 <!-- footerbar -->
 <div id="footerbar">
     <p align="center" style="font-size: 1em;">Copyright 2018 - Sameh Ramzy Labib</p>
