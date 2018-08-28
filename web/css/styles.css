@@ -19,6 +19,16 @@ p {
     margin-right: 58px;
 }
 
+#maincontent h2 {
+    margin-left: 20px;
+    margin-right: 58px;
+}
+
+#maincontent ul {
+    margin-left: 20px;
+    margin-right: 58px;
+}
+
 select, input {
     font-size: 0.875em;
 }
