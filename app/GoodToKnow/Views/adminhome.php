@@ -30,12 +30,6 @@
     <div id="inboxlink"><p><a href="#">📧 Inbox</a></p></div>
     <div id="logindiv"><p><a href="#">🚪 Log In &amp; Out</a></p></div>
 </div>
-<div id="adminsysmsgdiv">
-    <div id="adminsysmsgblock">
-        <p>😏 System Message: </p>
-        <?php require SESSIONMESSAGE; ?>
-    </div>
-</div>
 <!-- communities -->
 <div id="communities">
     &nbsp;
@@ -43,6 +37,12 @@
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
     &nbsp;
+</div>
+<div id="adminsysmsgdiv">
+    <div id="adminsysmsgblock">
+        <p>😏 System Message: </p>
+        <?php require SESSIONMESSAGE; ?>
+    </div>
 </div>
 <!-- maincontent -->
 <div id="maincontent">
