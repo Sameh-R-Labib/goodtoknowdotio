@@ -165,7 +165,7 @@ h2 + p {
 
 #scriptmessage {
     background-color: lightcoral;
-    width: 680px;
+    width: 742px;
     height: 185px;
     margin: auto;
     float: left;
@@ -181,8 +181,16 @@ h2 + p {
 
 #sendtoauthor {
     background-color: gold;
-    width: 185px;
-    height: 185px;
+    width: 123px;
+    height: 62px;
+    margin: auto;
+    float: left;
+}
+
+#admindiv {
+    background-color: gold;
+    width: 123px;
+    height: 123px;
     margin: auto;
     float: left;
 }
