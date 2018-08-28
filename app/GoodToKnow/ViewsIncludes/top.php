@@ -24,7 +24,7 @@
 <body>
 <!-- topbar -->
 <div id="topbar">
-    <a href="https://goodtoknow.io/ax1"><img src="/topbarlogo2.png" alt="GoodToKnow.io" height="70" width="302"
+    <a href="https://goodtoknow.io/ax1"><img src="/topbarlogo.png" alt="GoodToKnow.io" height="70" width="302"
                                              style="float: left"></a>
     <div id="sendmessage"><p><a href="#">🖌 Text Admin</a></p></div>
     <div id="inboxlink"><p><a href="#">📧 Inbox</a></p></div>
