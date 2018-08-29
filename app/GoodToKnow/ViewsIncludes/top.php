@@ -47,17 +47,14 @@
         <div id="admindiv">
             <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
                                                                     width="123"
-                                                                    title="If you're not Admin then please don't click here!"></a>
-                <span class="tooltiptext">Tooltip text</span>
+                                                                    title="If not Admin don't click image of panel"></a>
+                <span class="tooltiptext">If not Admin don't click image of panel</span>
             </div>
         </div>
     </div>
     <div id="scriptmessage">
         <p>😏 System Message: </p>
         <?php require SESSIONMESSAGE; ?>
-        <div class="tooltip">Hover over me
-            <span class="tooltiptext">Tooltip text</span>
-        </div>
     </div>
 </div>
 <!-- maincontent -->
