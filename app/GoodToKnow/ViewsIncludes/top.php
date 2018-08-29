@@ -46,9 +46,8 @@
         <div id="sendtoauthor"><p><a href="#">🖌 Author</a></p></div>
         <div id="admindiv">
             <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
-                                                                    width="123"
-                                                                    title="If not Admin don't click image of panel"></a>
-                <span class="tooltiptext">If not Admin don't click image of panel</span>
+                                                                    width="123"></a>
+                <span class="tooltiptext">If not Admin don't click image</span>
             </div>
         </div>
     </div>
