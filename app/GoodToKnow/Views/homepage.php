@@ -6,6 +6,12 @@
  * Time: 11:11 PM
  */
 ?>
+<div id="testerdiv">
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext">Tooltip text</span>
+    </div>
+</div>
+
 <p>Hi there!</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum ipsum quis massa pretium, ut dapibus
