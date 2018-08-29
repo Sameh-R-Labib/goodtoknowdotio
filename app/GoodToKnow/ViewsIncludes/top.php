@@ -85,8 +85,11 @@
     <div id="leftsodiv">
         <div id="sendtoauthor"><p><a href="#">🖌 Author</a></p></div>
         <div id="admindiv">
-            <a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123" width="123"
-                                               title="If you're not Admin then please don't click here!"></a>
+            <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
+                                                                    width="123"
+                                                                    title="If you're not Admin then please don't click here!"></a>
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
         </div>
     </div>
     <div id="scriptmessage">
