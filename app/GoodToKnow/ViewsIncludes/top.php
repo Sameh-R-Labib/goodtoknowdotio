@@ -45,14 +45,11 @@
     <div id="leftsodiv">
         <div id="sendtoauthor"><p><a href="#">🖌 Author</a></p></div>
         <div id="admindiv">
-            <div class="tooltip">
-                <a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123" width="123"></a>
-                <span class="tooltiptext">Don't click if you're not Admin.</span>
-            </div>
+            <a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123" width="123"></a>
         </div>
     </div>
     <div id="scriptmessage">
-        <p class="tooltip">😏 System Message: <span class="tooltiptext">Don't click if you're not Admin.</span></p>
+        <p>😏 System Message: </p>
         <?php require SESSIONMESSAGE; ?>
     </div>
 </div>
