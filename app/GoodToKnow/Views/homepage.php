@@ -8,7 +8,8 @@
 ?>
 <p>Hi there!</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum ipsum quis massa pretium, ut dapibus
+<p>Lorem ipsum <span class="tooltip-bottom">sit<span class="tooltiptext">Tooltip text</span></span> amet, consectetur
+    adipiscing elit. Phasellus condimentum ipsum quis massa pretium, ut dapibus
     tellus fermentum. Vivamus id elementum orci. Pellentesque habitant morbi tristique senectus et netus et malesuada
     fames ac turpis egestas. Cras volutpat sagittis odio consectetur fringilla. Phasellus in nulla ipsum. Nunc mauris
     nisi, ornare a fermentum vitae, maximus at justo. Nulla tincidunt magna id erat luctus lacinia. Aliquam nec iaculis
