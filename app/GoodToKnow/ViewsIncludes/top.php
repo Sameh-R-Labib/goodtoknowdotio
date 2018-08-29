@@ -92,6 +92,9 @@
     <div id="scriptmessage">
         <p>😏 System Message: </p>
         <?php require SESSIONMESSAGE; ?>
+        <div class="tooltip">Hover over me
+            <span class="tooltiptext">Tooltip text</span>
+        </div>
     </div>
 </div>
 <!-- maincontent -->
