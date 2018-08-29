@@ -47,7 +47,7 @@
         <div id="admindiv">
             <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
                                                                     width="123"></a>
-                <span class="tooltip-right">If not Admin don't click image</span>
+                <span class="tooltip-left">If not Admin don't click image</span>
             </div>
         </div>
     </div>
