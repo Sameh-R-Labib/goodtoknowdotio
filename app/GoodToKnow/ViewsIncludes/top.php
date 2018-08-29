@@ -44,8 +44,13 @@
 <div id="scriptoutput">
     <div id="leftsodiv">
         <div id="sendtoauthor"><p><a href="#">🖌 Author</a></p></div>
-        <div id="admindiv"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
-                                                              width="123"></a></div>
+        <div id="admindiv">
+            <div class="tooltip">
+                <a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
+                                                   width="123"></a>
+                <span class="tooltiptext">Don't click if you're not Admin.</span>
+            </div>
+        </div>
     </div>
     <div id="scriptmessage">
         <p>😏 System Message: </p>
