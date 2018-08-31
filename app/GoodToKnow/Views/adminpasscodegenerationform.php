@@ -68,6 +68,14 @@
                 <span>Howard and Anne Arundel school bus driver community</span>
             </div>
         </label>
+
+        <label for="choice-6">
+            <input type="radio" id="choice-6" name="choice" value="23"/>
+            <div>
+                Test
+                <span>Comment</span>
+            </div>
+        </label>
         <button type="submit" name="submit" value="Submit">Submit</button>
     </form>
 </div> <!-- .form-wrapper -->
