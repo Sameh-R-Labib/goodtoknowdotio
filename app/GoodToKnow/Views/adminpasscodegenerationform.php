@@ -25,6 +25,7 @@
 <body>
 <div class="form-wrapper">
     <h2>Generate Pass-Code</h2>
+    <?php require SESSIONMESSAGE; ?>
     <p>A pass-code gets used to create a new user account or to add a community membership to an existing account.</p>
     <form action="/ax1/AdminPassCodeGenFormProcessor/script">
         <label for="choice-1">
