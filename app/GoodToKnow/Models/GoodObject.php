@@ -65,6 +65,9 @@ abstract class GoodObject
     /**
      * Gets db-escaped attributes (as array) from this object.
      * These attributes may (or may not) include the id attribute
+     *
+     * @param \mysqli $db
+     * @return array
      */
     protected function sanitized_attributes(\mysqli $db)
     {
@@ -98,6 +101,10 @@ abstract class GoodObject
      *
      * This object's id must not be set (!isset())
      * because the id table field is autoincrement.
+     *
+     * @param \mysqli $db
+     * @param string $error
+     * @return bool
      */
     protected function create(\mysqli $db, string &$error)
     {

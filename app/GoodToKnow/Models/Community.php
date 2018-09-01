@@ -11,13 +11,28 @@ namespace GoodToKnow\Models;
 
 class Community extends GoodObject
 {
+    /**
+     * @var string
+     */
     protected static $table_name = "communities";
 
+    /**
+     * @var array
+     */
     protected static $fields = ['id', 'community_name', 'community_description'];
 
-    public $community_id;
+    /**
+     * @var int
+     */
+    public $id;
 
+    /**
+     * @var string
+     */
     public $community_name;
 
+    /**
+     * @var string
+     */
     public $community_description;
 }
