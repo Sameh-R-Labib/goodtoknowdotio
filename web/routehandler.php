@@ -54,6 +54,7 @@ require $path4;
 session_start();
 
 $sessionMessage = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
+$_SESSION['message'] = '';
 
 $user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
