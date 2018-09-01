@@ -54,12 +54,3 @@ function db_connect(string &$error)
     }
     return $db;
 }
-
-function report_error(string $error, string $message, SRLabib\UnderdogZone\AdminBundle\Session $session)
-{
-    if (!empty($error)) {
-        $message .= $error;
-        $session->message($message);
-        redirect_to("/app");
-    }
-}
