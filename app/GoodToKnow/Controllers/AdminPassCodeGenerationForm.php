@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
+
+
 class AdminPassCodeGenerationForm
 {
     public function page()
@@ -40,7 +43,7 @@ class AdminPassCodeGenerationForm
         }
 
         // Community::find_all() should return the array we are looking for (see above)
-        $all_communities = Community::find_all();
+        $all_communities = Community::find_all($db, $sessionMessage);
 
         $html_title = 'Admin Pass-Code Generation Form';
 
