@@ -92,7 +92,7 @@ abstract class GoodObject
      * to VALID values.
      *
      * Creates/Inserts a new row in the table based on
-     * the attributes of this object.
+     * the attributes of this object AND assigns $this->id.
      *
      * Returns true on success false on failure.
      *
@@ -112,6 +112,7 @@ abstract class GoodObject
         }
 
         try {
+            // Gets array of this object's attributes
             $attributes = $this->sanitized_attributes($db);
 
             // Pop off the first element
@@ -147,7 +148,7 @@ abstract class GoodObject
             $this->id = $insert_id;
             return true;
         } else {
-            $error .= ' The DocTitle create() method failed to insert a row. ';
+            $error .= ' The GoodObject create() method failed to insert a row. ';
             return false;
         }
     }
