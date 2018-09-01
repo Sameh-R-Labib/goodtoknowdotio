@@ -30,4 +30,75 @@ class GoodObject
      * field == static::$db_fields $field
      */
 
+    // Class Helpers
+
+    private static function instantiate($record)
+    {
+
+    }
+
+    public function attributes()
+    {
+
+    }
+
+    protected function sanitized_attributes()
+    {
+
+    }
+
+    private function has_attribute($attribute)
+    {
+
+    }
+
+    //~~~
+    // CRUD (Create Read Update Delete)
+
+    // Create
+
+    protected function create()
+    {
+
+    }
+
+    public function save()
+    {
+
+    }
+
+    // Read
+
+    public static function count_all()
+    {
+
+    }
+
+    public static function find_all()
+    {
+
+    }
+
+    public static function find_by_id($id = 0)
+    {
+
+    }
+
+    public static function find_by_sql($sql = "")
+    {
+
+    }
+
+    // Update
+
+    protected function update()
+    {
+
+    }
+
+    // Delete
+    public function delete()
+    {
+
+    }
 }
