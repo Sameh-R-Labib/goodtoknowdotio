@@ -62,7 +62,7 @@ class GoodObject
 
     }
 
-    public function save()
+    public function save(\mysqli $db)
     {
 
     }

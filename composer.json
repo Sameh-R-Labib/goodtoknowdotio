@@ -1,4 +1,7 @@
 {
+  "require": {
+    "ext-mysqli": "*"
+  },
   "autoload": {
     "psr-4": {
       "Codecourse\\": "app/Codecourse",
