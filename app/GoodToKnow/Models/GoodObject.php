@@ -23,7 +23,7 @@ class GoodObject
     /* Terms:
      * table == database table
      * record == associative array mimicking a table row
-     *             - each element's key is a field name
+     *             - each element's key represents a field name
      *             - each element's value the corresponding value
      * object == objectified record
      * array == array of records
@@ -62,9 +62,19 @@ class GoodObject
 
     }
 
-    public function save(\mysqli $db)
+    /**
+     * This function takes a database object and saves its
+     * data to the database.
+     * This function behaves differently depending on whether
+     * or not the database object being saved is new to the database.
+     * This function is a wrapper for update() and create().
+     * Basically, it runs update() if isset($this->id).
+     * Otherwise, it runs create().
+     */
+    public function save(\mysqli $db, string &$error)
     {
-
+        // A database object without an id is one that has never been saved in the database.
+        return isset($this->id) ? $this->update($db, $error) : $this->create($db, $error);
     }
 
     // Read
