@@ -9,7 +9,7 @@
 namespace GoodToKnow\Models;
 
 
-class Community
+class Community extends GoodObject
 {
 
 }
