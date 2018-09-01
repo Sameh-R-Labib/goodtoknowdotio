@@ -92,12 +92,12 @@ abstract class GoodObject
      * to VALID values.
      *
      * Creates/Inserts a new row in the table based on
-     * the attributes of this in memory object.
+     * the attributes of this object.
      *
      * Returns true on success false on failure.
      *
-     * This in memory object must not have an id value
-     * since the id table field is autoincrement.
+     * This object's id must not be set (!isset())
+     * because the id table field is autoincrement.
      */
     protected function create(\mysqli $db, string &$error)
     {
