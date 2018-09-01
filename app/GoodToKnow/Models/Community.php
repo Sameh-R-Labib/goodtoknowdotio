@@ -13,7 +13,7 @@ class Community extends GoodObject
 {
     protected static $table_name = "communities";
 
-    protected static $fields = ['community_id', 'community_name', 'community_description'];
+    protected static $fields = ['id', 'community_name', 'community_description'];
 
     public $community_id;
 
