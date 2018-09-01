@@ -13,8 +13,10 @@ namespace GoodToKnow\Models;
 
 abstract class GoodObject
 {
-// ATTRIBUTES
-    public $id; // I have this so phpstorm won't mark id as undefined in this class.
+// ATTRIBUTES (all are dummies/abstract)
+    public $id;
+    protected static $fields = ['id'];
+    protected static $table_name = "goodobjects";
 
 // METHODS
 
@@ -38,14 +40,40 @@ abstract class GoodObject
 
     }
 
+    /**
+     * Returns an associative ARRAY which mimics the objects attributes.
+     *
+     * attributes() will get an ARRAY element for every field specified in $fields.
+     * However, if that field doesn't have a matching value in the object then the value
+     * assigned to the element will be an empty string. In every case we will have
+     * an id as the first field. So, this rule will always apply to new objects.
+     *
+     * attributes() won't get an ARRAY element that's not for a property for the class
+     * of this object.
+     */
     public function attributes()
     {
-
+        $attributes = [];
+        foreach (static::$fields as $field) {
+            if (property_exists($this, $field)) {
+                $attributes[$field] = $this->$field;
+            }
+        }
+        return $attributes;
     }
 
-    protected function sanitized_attributes()
+    /**
+     * Gets db-escaped attributes (as array) from this object.
+     * These attributes may (or may not) include the id attribute
+     */
+    protected function sanitized_attributes(\mysqli $db)
     {
+        $clean_attributes = [];
 
+        foreach ($this->attributes() as $key => $value) {
+            $clean_attributes[$key] = $db->real_escape_string($value);
+        }
+        return $clean_attributes;
     }
 
     private function has_attribute($attribute)
@@ -84,9 +112,43 @@ abstract class GoodObject
         }
 
         try {
+            $attributes = $this->sanitized_attributes($db);
 
+            // Pop off the first element
+            $array_keys_array = array_keys($attributes);
+            array_shift($array_keys_array);
+            $array_values_array = array_values($attributes);
+            array_shift($array_values_array);
+
+            $sql = 'INSERT INTO ' . static::$table_name;
+            $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ('";
+            $sql .= join("', '", $array_values_array) . "')";
+
+            $db->query($sql);
+
+            $query_error = $db->error;
+            if (!empty($query_error)) {
+                $error .= ' The insert failed. The reason given by mysqli is: ' . $query_error . ' ';
+                return false;
+            }
+
+            $num_affected_rows = $db->affected_rows;
+            $insert_id = $db->insert_id;
         } catch (\Exception $e) {
             $error .= ' GoodObject create() method caught a thrown exception: ' . $e->getMessage() . ' ';
+        }
+
+        if (!empty($error)) {
+            return false;
+        }
+
+        if ($num_affected_rows) {
+            // Set the id of this object to the insert_id from mysqli.
+            $this->id = $insert_id;
+            return true;
+        } else {
+            $error .= ' The DocTitle create() method failed to insert a row. ';
+            return false;
         }
     }
 
