@@ -46,11 +46,11 @@ function db_connect(string &$error)
     try {
         $db = new \mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
         if ($db->connect_error) {
-            $error .= $db->connect_error;
+            $error .= ' ' . $db->connect_error . ' ';
         }
         $db->set_charset('utf8');
     } catch (\Exception $e) {
-        $error .= ' ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5);
+        $error .= ' ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
     }
     return $db;
 }

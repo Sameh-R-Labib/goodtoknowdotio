@@ -11,9 +11,10 @@
 namespace GoodToKnow\Models;
 
 
-class GoodObject
+abstract class GoodObject
 {
 // ATTRIBUTES
+    public $id; // I have this so phpstorm won't mark id as undefined in this class.
 
 // METHODS
 
@@ -57,9 +58,36 @@ class GoodObject
 
     // Create
 
-    protected function create()
+    /**
+     * WARNING: This method will fail if the object you are trying
+     * to insert in the table does not have ALL its attributes set
+     * to VALID values.
+     *
+     * Creates/Inserts a new row in the table based on
+     * the attributes of this in memory object.
+     *
+     * Returns true on success false on failure.
+     *
+     * This in memory object must not have an id value
+     * since the id table field is autoincrement.
+     */
+    protected function create(\mysqli $db, string &$error)
     {
+        $num_affected_rows = 0;
+        $insert_id = 0;
 
+        if ($this->id) {
+            $error .= ' GoodObject create() method says: Whichever code is calling create() is trying
+            to insert a new table row using an object which already exists in the table. We know this
+            because that object already has an id. ';
+            return false;
+        }
+
+        try {
+
+        } catch (\Exception $e) {
+            $error .= ' GoodObject create() method caught a thrown exception: ' . $e->getMessage() . ' ';
+        }
     }
 
     /**
