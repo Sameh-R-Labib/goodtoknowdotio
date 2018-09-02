@@ -237,9 +237,13 @@ abstract class GoodObject
         return array_shift($row);
     }
 
-    public static function find_all()
+    /**
+     * Gives me an array of all the objects.
+     * Or gives me false when in error state.
+     */
+    public static function find_all(\mysqli $db, string &$error)
     {
-
+        return static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name);
     }
 
     public static function find_by_id($id = 0)
@@ -247,9 +251,33 @@ abstract class GoodObject
 
     }
 
-    public static function find_by_sql($sql = "")
+    /**
+     * Gives me an array of objects for the sql I give it.
+     */
+    public static function find_by_sql(\mysqli $db, string &$error, $sql = "")
     {
+        $object_array = [];
 
+        try {
+            $result = $db->query($sql);
+
+            $query_error = $db->error;
+            if (!empty($query_error)) {
+                $error .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . $query_error . ' ';
+                return false;
+            }
+        } catch (\Exception $e) {
+            $error .= ' GoodObject find_by_sql() caught a thrown exception: ' . $e->getMessage() . ' ';
+        }
+
+        if (!empty($error)) {
+            return false;
+        }
+
+        while ($row = $result->fetch_assoc()) {
+            $object_array[] = static::array_to_object($row);
+        }
+        return $object_array;
     }
 
     // Update
