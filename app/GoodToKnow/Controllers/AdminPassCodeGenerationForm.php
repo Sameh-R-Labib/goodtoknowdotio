@@ -20,6 +20,21 @@ class AdminPassCodeGenerationForm
         global $is_admin;
         global $sessionMessage;
 
+
+        /**
+         * Debug code
+         */
+        echo "\n\n<p>You are in Admin Passcode Generation Form code base.</p>\n\n";
+        echo "\n\n<p>A var dump of \$is_logged_in gives: </p>\n\n";
+        var_dump($is_logged_in);
+        echo "\n\n<p>A var dump of \$is_admin gives: </p>\n\n";
+        var_dump($is_admin);
+        echo "\n\n<p>A var dump of \$sessionMessage gives: </p>\n\n";
+        var_dump($sessionMessage);
+        die("\n\n<p>Die statement.</p>\n\n");
+
+
+
         if (!$is_logged_in OR !$is_admin) {
             $sessionMessage .= ' You need to be the Admin to follow that request route.';
             $_SESSION['message'] = $sessionMessage;
