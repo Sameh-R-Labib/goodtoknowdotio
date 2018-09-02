@@ -240,6 +240,10 @@ abstract class GoodObject
     /**
      * Gives me an array of all the objects.
      * Or gives me false when in error state.
+     *
+     * @param \mysqli $db
+     * @param string $error
+     * @return array|bool
      */
     public static function find_all(\mysqli $db, string &$error)
     {
@@ -253,6 +257,11 @@ abstract class GoodObject
 
     /**
      * Gives me an array of objects for the sql I give it.
+     *
+     * @param \mysqli $db
+     * @param string $error
+     * @param string $sql
+     * @return array|bool
      */
     public static function find_by_sql(\mysqli $db, string &$error, $sql = "")
     {
