@@ -52,8 +52,7 @@
         </div>
     </div>
     <div id="scriptmessage">
-        <p>😏 System Message: </p>
-        <?php require SESSIONMESSAGE; ?>
+        <p>😏 System Message: <?php require SESSIONMESSAGE; ?></p>
     </div>
 </div>
 <!-- maincontent -->

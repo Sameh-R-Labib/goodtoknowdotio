@@ -28,7 +28,6 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<?php require SESSIONMESSAGE; ?>
 <div class="login">
     <h2>Log In</h2>
     <fieldset>
@@ -39,7 +38,7 @@
     <div class="utilities">
         <a href="#">Forgot password?</a>
         <a href="#">Invited to join? &rarr;</a>
-        <?php require SESSIONMESSAGE; ?>
+        <p><?php require SESSIONMESSAGE; ?></p>
     </div>
 </div>
 </body>
