@@ -45,6 +45,12 @@ class AdminPassCodeGenerationForm
         // Community::find_all() should return the array we are looking for (see above)
         $all_communities = Community::find_all($db, $sessionMessage);
 
+        /**
+         * Debug Code
+         */
+        var_dump($all_communities);
+        die("\n\n<p>My die statement executed here.</p>\n\n");
+
         $html_title = 'Admin Pass-Code Generation Form';
 
         require VIEWS . DIRSEP . 'adminpasscodegenerationform.php';
