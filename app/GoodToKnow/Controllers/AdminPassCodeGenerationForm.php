@@ -37,17 +37,6 @@ class AdminPassCodeGenerationForm
          */
         $db = db_connect($sessionMessage);
 
-        /**
-         * Debug
-         */
-        echo "\n\n<p>Var dump \$db </p>\n\n";
-        var_dump($db);
-        echo "\n\n<p>Var dump \$db->error </p>\n\n";
-        var_dump($db->error);
-        echo "\n\n<p>Var dump \$sessionMessage </p>\n\n";
-        var_dump($sessionMessage);
-        die("\n\n<p>Die here now!</p>\n\n");
-
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1");

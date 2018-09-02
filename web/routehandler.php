@@ -83,7 +83,10 @@ $is_admin = ($role === 'admin') ? true : false;
 $is_logged_in = true;
 $is_admin = true;
 
-
+/**
+ * Debug Code
+ */
+$sessionMessage .= " A session message for debugging session messages. ";
 
 
 /**
