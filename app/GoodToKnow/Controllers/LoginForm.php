@@ -14,8 +14,10 @@ class LoginForm
     public function page()
     {
         global $is_logged_in;
+        global $sessionMessage;
 
         if ($is_logged_in) {
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
