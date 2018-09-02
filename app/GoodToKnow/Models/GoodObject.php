@@ -6,6 +6,12 @@
  * Time: 9:44 PM
  *
  * Parent class for all other database object.
+ *
+ * To create a new object do:
+ *   1. Create an associative array containing the attribute names and values.
+ *   WARNING: Do Not include id attribute. Do Include all other attributes and assign them values.
+ *   2. Call array_to_object($array) to create the object in memory.
+ *   3. Save that object to the database using save().
  */
 
 namespace GoodToKnow\Models;
@@ -39,6 +45,7 @@ abstract class GoodObject
     {
 
     }
+
 
     /**
      * Returns an associative ARRAY which mimics the objects attributes.
@@ -79,9 +86,35 @@ abstract class GoodObject
         return $clean_attributes;
     }
 
-    private function has_attribute($attribute)
+    /**
+     * Returns a newly formulated (in-memory) object based on values gleaned from
+     * an array which you provide as parameter.
+     *
+     * @param array $array
+     * @return GoodObject
+     */
+    public static function array_to_object(array $array)
     {
+        $object_in_memory = new static();
+        foreach ($array as $key => $value) {
+            if ($object_in_memory->has_attribute($key)) {
+                $object_in_memory->$key = $value;
+            }
+        }
+        return $object_in_memory;
+    }
 
+    /**
+     * Returns TRUE if $possible_attribute is one of the attributes of the object.
+     * More, specifically it gets an associative array copy of this object's attributes
+     * and determines whether $possible_attribute is a key in that array.
+     *
+     * @param string $possible_attribute
+     * @return bool
+     */
+    protected function has_attribute(string $possible_attribute)
+    {
+        return array_key_exists($possible_attribute, $this->attributes());
     }
 
     //~~~
