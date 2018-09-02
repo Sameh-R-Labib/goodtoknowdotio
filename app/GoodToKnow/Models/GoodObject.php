@@ -176,7 +176,7 @@ abstract class GoodObject
             $num_affected_rows = $db->affected_rows;
             $insert_id = $db->insert_id;
         } catch (\Exception $e) {
-            $error .= ' GoodObject create() method caught a thrown exception: ' . $e->getMessage() . ' ';
+            $error .= ' GoodObject create() caught a thrown exception: ' . $e->getMessage() . ' ';
         }
 
         if (!empty($error)) {
@@ -214,10 +214,35 @@ abstract class GoodObject
 
     // Read
 
-    public static function count_all()
+    public static function count_all(\mysqli $db, string &$error)
     {
+        $sql = "SELECT COUNT(*) FROM " . static::$table_name;
 
+        try {
+            $result = $db->query($sql);
+
+            $query_error = $db->error;
+            if (!empty($query_error)) {
+                $error .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
+                return false;
+            }
+        } catch (\Exception $e) {
+            $error .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+        }
+
+        if (!empty($error)) {
+            return false;
+        }
+
+        if (!$result->num_rows) {
+            $error .= ' count_all failed. ';
+            return false;
+        }
+
+        $row = $result->fetch_row();
+        return array_shift($row);
     }
+
 
     public static function find_all()
     {
