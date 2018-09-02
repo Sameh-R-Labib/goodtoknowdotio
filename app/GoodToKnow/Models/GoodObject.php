@@ -168,6 +168,10 @@ abstract class GoodObject
      * This function is a wrapper for update() and create().
      * Basically, it runs update() if isset($this->id).
      * Otherwise, it runs create().
+     *
+     * @param \mysqli $db
+     * @param string $error
+     * @return bool
      */
     public function save(\mysqli $db, string &$error)
     {
@@ -199,9 +203,74 @@ abstract class GoodObject
 
     // Update
 
-    protected function update()
+    /**
+     * Basically update() updates the existing database record
+     * field values by replacing them with the values found
+     * in the attributes of this object.
+     *
+     * @param \mysqli $db
+     * @param string $error
+     * @return bool
+     */
+    protected function update(\mysqli $db, string &$error)
     {
+        $num_affected_rows = 0;
 
+        if ($this->id < 1 || !is_numeric($this->id)) {
+            $error .= 'GoodObject update() says: Whichever code is calling this method is trying
+            to update a table row using an object which has a negative or non-numeric id. ';
+            return false;
+        }
+
+        try {
+            $attributes = $this->sanitized_attributes($db);
+            array_shift($attributes);
+
+            /*
+             * Sql example for an update:
+             *
+             * UPDATE table
+             * SET column1 = expression1,
+             *     column2 = expression2,
+             *     ...
+             * WHERE conditions;
+             *
+             * UPDATE customers
+             * SET last_name = 'Jefferson'
+             * WHERE customer_id = 800;
+             *
+             */
+
+            // Create an array of the "column = expression" pairs
+            $attribute_pairs = [];
+            foreach ($attributes as $key => $value) {
+                $attribute_pairs[] = "`{$key}`='{$value}'";
+            }
+
+            $sql = "UPDATE " . static::$table_name . " SET ";
+            $sql .= join(", ", $attribute_pairs);
+            $sql .= " WHERE `id`=" . $db->real_escape_string($this->id);
+
+            $db->query($sql);
+
+            $query_error = $db->error;
+            if (!empty($query_error)) {
+                $error .= ' The update failed. The reason given by mysqli is: ' . $query_error . ' ';
+                return false;
+            }
+
+            $num_affected_rows = $db->affected_rows;
+        } catch (\Exception $e) {
+            $error .= ' GoodObject update() threw exception: ' . $e->getMessage() . ' ';
+        }
+
+        if ($num_affected_rows == 1) {
+            return true;
+        } else {
+            $error .= ' GoodObject update() FAILED to update its row. ';
+            $error .= ' The number of affected rows is ' . $num_affected_rows . '. ';
+            return false;
+        }
     }
 
     // Delete
