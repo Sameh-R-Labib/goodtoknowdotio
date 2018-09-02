@@ -250,9 +250,24 @@ abstract class GoodObject
         return static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name);
     }
 
-    public static function find_by_id($id = 0)
+    /**
+     * Gives me a GoodObject for the id specified.
+     *
+     * @param \mysqli $db
+     * @param string $error
+     * @param $id
+     * @return bool|mixed
+     */
+    public static function find_by_id(\mysqli $db, string &$error, $id)
     {
+        $result_array = static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name . "
+			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
 
+        if (!empty($error)) {
+            return false;
+        }
+
+        return !empty($result_array) ? array_shift($result_array) : false;
     }
 
     /**
