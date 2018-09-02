@@ -31,15 +31,21 @@ class AdminPassCodeGenerationForm
         var_dump($is_admin);
         echo "\n\n<p>A var dump of \$sessionMessage gives: </p>\n\n";
         var_dump($sessionMessage);
-        die("\n\n<p>Die statement.</p>\n\n");
+//        die("\n\n<p>Die statement.</p>\n\n");
 
 
 
         if (!$is_logged_in OR !$is_admin) {
+            die("\n\n<p>Somehow this condition was true</p>\n\n");
             $sessionMessage .= ' You need to be the Admin to follow that request route.';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /**
+         * Debug Code
+         */
+        die("\n\n<p>So that condition was not true.</p>\n\n");
 
         /**
          * Here we need to have an enumerated array
