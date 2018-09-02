@@ -30,16 +30,6 @@ class Home
 
         $html_title = 'GoodToKnow.io';
 
-        /**
-         * Debug Code
-         */
-        echo "\n\n<p>We are in the Home page method.</p>\n\n";
-        echo "\n\n<p>Here I will show the value of \$sessionMessage: </p>\n\n";
-        var_dump($sessionMessage);
-        echo "\n\n<p>Here I will show the value of constant SESSIONMESSAGE: </p>\n\n";
-        var_dump(SESSIONMESSAGE);
-        echo "\n\n";
-        die("And here in Home page is where I stop\n\n");
 
         require TOP;
 
