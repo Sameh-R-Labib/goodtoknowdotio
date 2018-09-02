@@ -41,12 +41,6 @@ abstract class GoodObject
 
     // Class Helpers
 
-    private static function instantiate($record)
-    {
-
-    }
-
-
     /**
      * Returns an associative ARRAY which mimics the objects attributes.
      *
@@ -242,7 +236,6 @@ abstract class GoodObject
         $row = $result->fetch_row();
         return array_shift($row);
     }
-
 
     public static function find_all()
     {
