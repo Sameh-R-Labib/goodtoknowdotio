@@ -29,46 +29,19 @@
     <p>A pass-code gets used to create a new user account or to add a community membership to an existing account.</p>
     <p>Which community do I want this user to become a member of?</p>
     <form action="/ax1/AdminPassCodeGenFormProcessor/script">
-        <label for="choice-1">
-            <input type="radio" id="choice-1" name="choice" value="2"/>
-            <div>
-                GoodStack
-                <span>Documentation for technologies used by GoodToKnow.io</span>
-            </div>
-        </label>
 
-        <label for="choice-2">
-            <input type="radio" id="choice-2" name="choice" value="4"/>
-            <div>
-                C++
-                <span>UMBC CMSC related C++ notes</span>
-            </div>
-        </label>
+        <?php /** @noinspection PhpUndefinedVariableInspection */
+        foreach ($all_communities as $key => $value): ?>
+            <label for="choice-<?php echo $key + 1; ?>">
+                <input type="radio" id="choice-<?php echo $key + 1; ?>" name="choice"
+                       value="<?php echo $value->id; ?>"/>
+                <div>
+                    <?php echo $value->community_name; ?>
+                    <span><?php echo $value->community_description; ?></span>
+                </div>
+            </label>
 
-        <label for="choice-3">
-            <input type="radio" id="choice-3" name="choice" value="5"/>
-            <div>
-                C
-                <span>UMBC CMSC related C programming notes</span>
-            </div>
-        </label>
-
-        <label for="choice-4">
-            <input type="radio" id="choice-4" name="choice" value="6"/>
-            <div>
-                GoodFamily
-                <span>Knowledge shared within the family of Sameh Ramzy Labib</span>
-            </div>
-        </label>
-
-        <label for="choice-5">
-            <input type="radio" id="choice-5" name="choice" value="7"/>
-            <div>
-                School Bus Drivers
-                <span>Howard and Anne Arundel school bus driver community</span>
-            </div>
-        </label>
-
+        <?php endforeach; ?>
         <button type="submit" name="submit" value="Submit">Submit</button>
     </form>
 </div> <!-- .form-wrapper -->
