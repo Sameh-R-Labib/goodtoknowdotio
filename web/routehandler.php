@@ -63,8 +63,8 @@ $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 // The name of community which the user wants to see.
 $community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
 
-// The names of communities the user belongs to.
-$community_name_array = (isset($_SESSION['community_name_array'])) ? $_SESSION['community_name_array'] : [];
+// The communities (objects) the user belongs to.
+$community_array = (isset($_SESSION['community_name_array'])) ? $_SESSION['community_name_array'] : [];
 
 $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 

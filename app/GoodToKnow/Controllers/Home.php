@@ -16,13 +16,13 @@ class Home
         global $is_logged_in;
         global $sessionMessage;
         global $is_admin;
-        global $user_id;
-        global $role;
-        global $community_name;
-        global $community_id;
-        global $community_name_array;
-        global $topic_id;
-        global $page_id;
+        global $user_id;              // int value
+        global $role;                 // string value
+        global $community_name;       // string value
+        global $community_id;         // int value
+        global $community_array;      // array of objects (Communities the user belongs to)
+        global $topic_id;             // int value
+        global $page_id;              // int value
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
