@@ -28,7 +28,7 @@
     <p><?php require SESSIONMESSAGE; ?></p>
     <p>A pass-code gets used to create a new user account or to add a community membership to an existing account.</p>
     <p>Which community do I want this user to become a member of?</p>
-    <form action="/ax1/AdminPassCodeGenFormProcessor/script">
+    <form action="/ax1/AdminPassCodeGenFormProcessor/script" method="post">
 
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($all_communities as $key => $value): ?>
