@@ -20,7 +20,7 @@ class AdminHome
         global $role;
 
         if (!$is_logged_in OR !$is_admin) {
-            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
             redirect_to("/ax1/LoginForm/page");
         }
 

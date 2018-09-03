@@ -17,7 +17,7 @@ class LoginForm
         global $sessionMessage;
 
         if ($is_logged_in) {
-            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
             redirect_to("/ax1/Home/page");
         }
 
