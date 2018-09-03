@@ -30,17 +30,7 @@ class AdminPassCodeGenFormProcessor
         }
 
         /**
-         * Debug Code
+         * Do something with the submitted post data $_POST['choice']
          */
-        echo "\n\n<p>Begin debug code output.</p>\n\n";
-        echo "\n\n<p>Var_dump of \$_POST array: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($_POST);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Print_r of \$_POST array: </p>\n\n";
-        echo "\n\n<pre>";
-        print_r($_POST);
-        echo "</pre>\n\n";
-        die("\n\n<p>End of debug code output.</p>\n\n");
     }
 }
