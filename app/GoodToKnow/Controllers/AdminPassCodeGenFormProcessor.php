@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
+
+
 class AdminPassCodeGenFormProcessor
 {
     public function page()
@@ -47,6 +50,11 @@ class AdminPassCodeGenFormProcessor
         /**
          * If we don't have $community_array yet then get it
          */
+        if (empty($community_array)) {
+            $db = db_connect($sessionMessage);
+            $community_array = Community::find_all($db, $sessionMessage);
+            $_SESSION['community_array'] = $community_array;
+        }
 
         /**
          * Make sure the value of $_POST[''] is one of the existing community ids.

@@ -19,6 +19,13 @@ class AdminPassCodeGenerationForm
         global $is_logged_in;
         global $is_admin;
         global $sessionMessage;
+        global $user_id;
+        global $role;
+        global $community_name;
+        global $community_id;
+        global $community_array;
+        global $topic_id;
+        global $page_id;
 
         if (!$is_logged_in OR !$is_admin) {
             $sessionMessage .= ' You need to be the Admin to follow that request route.';
@@ -44,7 +51,8 @@ class AdminPassCodeGenerationForm
         }
 
         // Community::find_all() should return the array we are looking for (see above)
-        $all_communities = Community::find_all($db, $sessionMessage);
+        $community_array = Community::find_all($db, $sessionMessage);
+        $_SESSION['community_array'] = $community_array;
 
 
         $html_title = 'Admin Pass-Code Generation Form';

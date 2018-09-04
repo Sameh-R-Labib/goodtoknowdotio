@@ -64,7 +64,7 @@ $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 $community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
 
 // The communities (objects) the user belongs to.
-$community_array = (isset($_SESSION['community_name_array'])) ? $_SESSION['community_name_array'] : [];
+$community_array = (isset($_SESSION['community_array'])) ? $_SESSION['community_array'] : [];
 
 $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 

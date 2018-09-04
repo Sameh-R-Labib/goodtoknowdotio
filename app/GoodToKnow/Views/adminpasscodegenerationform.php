@@ -31,7 +31,7 @@
     <form action="/ax1/AdminPassCodeGenFormProcessor/script" method="post">
 
         <?php /** @noinspection PhpUndefinedVariableInspection */
-        foreach ($all_communities as $key => $value): ?>
+        foreach ($community_array as $key => $value): ?>
             <label for="choice-<?php echo $key + 1; ?>">
                 <input type="radio" id="choice-<?php echo $key + 1; ?>" name="choice"
                        value="<?php echo $value->id; ?>"/>
