@@ -60,24 +60,17 @@ class AdminPassCodeGenFormProcessor
          * Make sure the value of $_POST['choice'] is one of the existing community ids.
          * Otherwise, give error and redirect
          */
-
-
-        /**
-         * So, what would $community_array look like?
-         */
-        /**
-         * Debug Code
-         */
-        echo "\n\n<p>Begin debug code output.</p>\n\n";
-        echo "\n\n<p>Var_dump of \$community_array: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($community_array);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Print_r of \$community_array: </p>\n\n";
-        echo "\n\n<pre>";
-        print_r($community_array);
-        echo "</pre>\n\n";
-        die("\n\n<p>End of debug code output.</p>\n\n");
+        $is_found = false;
+        foreach ($community_array as $value) {
+            if ($value->id == $_POST['choice']) {
+                $is_found = true;
+                continue;
+            }
+        }
+        if (!$is_found) {
+            $_SESSION['message'] .= " Aborted! choice is not valid. ";
+            redirect_to("/ax1/LoginForm/page");
+        }
 
 
         $html_title = 'Admin Pass-Code Gen Form Processor';
