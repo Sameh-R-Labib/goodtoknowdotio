@@ -20,7 +20,7 @@ class AdminPassCodeGenFormProcessor
         global $role;
         global $community_name;
         global $community_id;
-        global $community_name_array;
+        global $community_array;
         global $topic_id;
         global $page_id;
 
@@ -39,15 +39,9 @@ class AdminPassCodeGenFormProcessor
          * Otherwise, give error and redirect
          */
 
-        /**
-         * Make sure the value of $_POST[''] is numeric
-         * (Is it a numeric string? Is it it an integer?)
-         * Otherwise, give error and redirect
-         */
 
         /**
-         * We need it to be stored as a string because of
-         * the way we are going to do comparison in the next step.
+         * If we don't have $community_array yet then get it
          */
 
         /**
