@@ -72,6 +72,10 @@ $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
 $page_id = (isset($_SESSION['page_id'])) ? $_SESSION['page_id'] : 0;
 
+$saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
+
+$saved_str02 = (isset($_SESSION['saved_str02'])) ? $_SESSION['saved_str02'] : '';
+
 $is_logged_in = (!empty($user_id)) ? true : false;
 
 $is_admin = ($role === 'admin') ? true : false;

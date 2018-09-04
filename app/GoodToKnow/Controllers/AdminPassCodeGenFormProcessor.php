@@ -26,6 +26,8 @@ class AdminPassCodeGenFormProcessor
         global $community_array;
         global $topic_id;
         global $page_id;
+        global $saved_str01;
+        global $saved_str02;
 
         if (!$is_logged_in OR !$is_admin) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
@@ -72,7 +74,16 @@ class AdminPassCodeGenFormProcessor
             redirect_to("/ax1/LoginForm/page");
         }
 
+        /**
+         * Save choice in the session
+         */
+        $_SESSION['saved_str01'] = $_POST['choice'];
 
+
+        /**
+         * Present a form where Admin can enter comments
+         * about new person/user.
+         */
         $html_title = 'Admin Pass-Code Gen Form Processor';
 
         require VIEWS . DIRSEP . 'adminpasscodegenformprocessor.php';

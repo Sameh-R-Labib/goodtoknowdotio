@@ -23,6 +23,8 @@ class Home
         global $community_array;      // array of objects (Communities the user belongs to)
         global $topic_id;             // int value
         global $page_id;              // int value
+        global $saved_str01;          // string value (temporary storage)
+        global $saved_str02;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
