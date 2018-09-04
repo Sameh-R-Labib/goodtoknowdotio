@@ -38,6 +38,10 @@ class AdminPassCodeGenFormProcessor
          * (Is it set? Is it empty?)
          * Otherwise, give error and redirect
          */
+        if (empty($_POST['choice'])) {
+            $_SESSION['message'] .= " Aborted! Expected submission of choice not found. ";
+            redirect_to("/ax1/LoginForm/page");
+        }
 
 
         /**
