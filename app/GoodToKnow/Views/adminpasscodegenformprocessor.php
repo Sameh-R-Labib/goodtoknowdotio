@@ -23,11 +23,11 @@
 </head>
 <body>
 <form action="/ax1/AdminPasscodeGenTextareaForm/page" method="post">
-    <h1>Rough Description</h1>
+    <h1>Account Details</h1>
     <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
-    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+    <p>Required fields have <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
-        <h2>Contact information</h2>
+        <h2>Log in credentials</h2>
         <fieldset>
             <legend>Title</legend>
             <ul>
@@ -47,28 +47,28 @@
         </fieldset>
         <p>
             <label for="name">
-                <span>Name: </span>
+                <span>Username: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
             <input type="text" id="name" name="username">
         </p>
         <p>
-            <label for="mail">
-                <span>E-mail: </span>
+            <label for="first-try">
+                <span>Password 1st try: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="email" id="mail" name="usermail">
+            <input type="password" id="first-try" name="first-try">
         </p>
         <p>
             <label for="pwd">
-                <span>Password: </span>
+                <span>Password 2nd try: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
             <input type="password" id="pwd" name="password">
         </p>
         <p>
             <label for="box1">
-                <span>Label Text: </span>
+                <span>Person description: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
             <textarea name="comment" id="box1" rows="10" cols="80" placeholder="How'd we meet?" maxlength="800"
@@ -83,9 +83,16 @@
                 <span>Card type:</span>
             </label>
             <select id="card" name="usercard">
-                <option value="visa">Visa</option>
-                <option value="mc">Mastercard</option>
-                <option value="amex">American Express</option>
+                <option value="caucasian-american">Caucasian American</option>
+                <option value="caucasian-european">Caucasian European</option>
+                <option value="black-american">Black American</option>
+                <option value="black-african">Black African</option>
+                <option value="asian">Asian</option>
+                <option value="mexican">Mexican</option>
+                <option value="greek">Greek</option>
+                <option value="middle-eastern-christian">Middle Eastern Christian</option>
+                <option value="middle-eastern-moslem">Middle Eastern Christian</option>
+                <option value="native-american">Native American</option>
             </select>
         </p>
         <p>
@@ -97,7 +104,7 @@
         </p>
         <p>
             <label for="date">
-                <span>Expiration date:</span>
+                <span>Today's date:</span>
                 <strong><abbr title="required">*</abbr></strong>
                 <em>formatted as mm/yy</em>
             </label>
@@ -106,7 +113,7 @@
     </section>
     <section>
         <p>
-            <button type="submit" name="submit" value="Submit">Validate the payment</button>
+            <button type="submit" name="submit" value="Submit">Create account</button>
         </p>
     </section>
 </form>
