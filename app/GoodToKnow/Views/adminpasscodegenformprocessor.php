@@ -108,7 +108,7 @@
     </section>
     <section>
         <p>
-            <input type="submit" name="submit" value="Submit">
+            <button type="submit" name="submit" value="Submit">Validate the payment</button>
         </p>
     </section>
 </form>
