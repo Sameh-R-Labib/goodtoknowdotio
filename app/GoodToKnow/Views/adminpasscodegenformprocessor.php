@@ -66,21 +66,12 @@
             </label>
             <input type="password" id="pwd" name="password">
         </p>
-        <p>
-            <label for="box1">
-                <span>Person description: </span>
-                <strong><abbr title="required">*</abbr></strong>
-            </label>
-            <textarea name="comment" id="box1" rows="10" cols="80" placeholder="How'd we meet?" maxlength="800"
-                      wrap="soft">
-            </textarea>
-        </p>
     </section>
     <section>
-        <h2>Payment information</h2>
+        <h2>Our Encounter</h2>
         <p>
             <label for="card">
-                <span>Card type:</span>
+                <span>Race:</span>
             </label>
             <select id="card" name="usercard">
                 <option value="caucasian-american">Caucasian American</option>
@@ -96,17 +87,19 @@
             </select>
         </p>
         <p>
-            <label for="number">
-                <span>Card number:</span>
+            <label for="box1">
+                <span>Description: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="text" id="number" name="cardnumber">
+            <textarea name="comment" id="box1" rows="10" cols="80" maxlength="800" wrap="soft">
+                How'd we meet?
+            </textarea>
         </p>
         <p>
             <label for="date">
                 <span>Today's date:</span>
                 <strong><abbr title="required">*</abbr></strong>
-                <em>formatted as mm/yy</em>
+                <em>formatted: dd/mm/yyyy</em>
             </label>
             <input type="text" id="date" name="expiration">
         </p>
