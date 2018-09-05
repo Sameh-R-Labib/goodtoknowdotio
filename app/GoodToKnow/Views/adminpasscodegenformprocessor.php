@@ -22,7 +22,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/AdminPasscodeGenTextareaForm/page" method="post">
+<form action="/ax1/AdminCreateUser/page" method="post">
     <h1>User</h1>
     <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
     <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
