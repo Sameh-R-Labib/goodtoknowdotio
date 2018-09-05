@@ -91,15 +91,13 @@
                 <span>Description: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <textarea name="comment" id="box1" rows="10" cols="80" maxlength="800" wrap="soft">
-                How'd we meet?
-            </textarea>
+            <textarea name="comment" id="box1" rows="10" cols="80" maxlength="800" wrap="soft">How'd we meet?</textarea>
         </p>
         <p>
             <label for="date">
                 <span>Today's date:</span>
                 <strong><abbr title="required">*</abbr></strong>
-                <em>formatted: dd/mm/yyyy</em>
+                <em>format dd/mm/yyyy</em>
             </label>
             <input type="text" id="date" name="expiration">
         </p>
