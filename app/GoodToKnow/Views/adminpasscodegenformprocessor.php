@@ -23,11 +23,11 @@
 </head>
 <body>
 <form action="/ax1/AdminPasscodeGenTextareaForm/page" method="post">
-    <h1>Account Details</h1>
+    <h1>User</h1>
     <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
     <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
-        <h2>New Credentials</h2>
+        <h2>Log-in Credentials</h2>
         <p>
             <label for="name">
                 <span>Username: </span>
@@ -51,7 +51,7 @@
         </p>
     </section>
     <section>
-        <h2>Remember</h2>
+        <h2>Person's Characteristics</h2>
         <fieldset>
             <legend>Title</legend>
             <ul>
