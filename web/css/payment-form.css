@@ -1,3 +1,9 @@
+body {
+    background-color: #1c1c21;
+    color: #202020;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
 h1 {
     margin-top: 0;
 }
@@ -9,6 +15,7 @@ ul {
 }
 
 form {
+    background-color: white;
     margin: 0 auto;
     width: 400px;
     padding: 1em;
