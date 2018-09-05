@@ -25,26 +25,9 @@
 <form action="/ax1/AdminPasscodeGenTextareaForm/page" method="post">
     <h1>Account Details</h1>
     <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
-    <p>Required fields have <strong><abbr title="required">*</abbr></strong>.</p>
+    <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
-        <h2>Log in credentials</h2>
-        <fieldset>
-            <legend>Title</legend>
-            <ul>
-                <li>
-                    <label for="title_1">
-                        <input type="radio" id="title_1" name="title" value="M.">
-                        Mister
-                    </label>
-                </li>
-                <li>
-                    <label for="title_2">
-                        <input type="radio" id="title_2" name="title" value="Ms.">
-                        Miss
-                    </label>
-                </li>
-            </ul>
-        </fieldset>
+        <h2>New credentials</h2>
         <p>
             <label for="name">
                 <span>Username: </span>
@@ -68,7 +51,24 @@
         </p>
     </section>
     <section>
-        <h2>Our Encounter</h2>
+        <h2>Remember</h2>
+        <fieldset>
+            <legend>Title</legend>
+            <ul>
+                <li>
+                    <label for="title_1">
+                        <input type="radio" id="title_1" name="title" value="M.">
+                        Mister
+                    </label>
+                </li>
+                <li>
+                    <label for="title_2">
+                        <input type="radio" id="title_2" name="title" value="Ms.">
+                        Miss
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
         <p>
             <label for="card">
                 <span>Race:</span>
