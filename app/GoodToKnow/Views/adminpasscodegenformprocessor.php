@@ -24,7 +24,7 @@
 <body>
 <form action="/ax1/AdminPasscodeGenTextareaForm/page" method="post">
     <h1>Account Details</h1>
-    <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
+    <p><font color="red">Is this red.<?php require SESSIONMESSAGE; ?></font></p>
     <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
         <h2>New Credentials</h2>
