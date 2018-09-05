@@ -47,7 +47,7 @@
 <div id="maincontent">
     <h2>Admin Scripts</h2>
     <ul>
-        <li><a href="/ax1/AdminPassCodeGenerationForm/page">Generate a pass code for new user registration</a></li>
+        <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
     </ul>
 </div>
 <!-- footerbar -->
