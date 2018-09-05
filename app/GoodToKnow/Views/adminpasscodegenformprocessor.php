@@ -22,11 +22,9 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<h2>Textarea</h2>
-<p>The textarea element defines a multi-line input field.</p>
-
 <form action="/ax1/AdminPasscodeGenTextareaForm/page" method="post">
     <h1>Rough Description</h1>
+    <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
     <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
         <h2>Contact information</h2>
