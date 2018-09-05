@@ -27,7 +27,7 @@
     <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
     <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
-        <h2>New credentials</h2>
+        <h2>New Credentials</h2>
         <p>
             <label for="name">
                 <span>Username: </span>
@@ -76,13 +76,14 @@
             <select id="card" name="usercard">
                 <option value="caucasian-american">Caucasian American</option>
                 <option value="caucasian-european">Caucasian European</option>
+                <option value="black-european">Black European</option>
                 <option value="black-american">Black American</option>
                 <option value="black-african">Black African</option>
                 <option value="asian">Asian</option>
                 <option value="mexican">Mexican</option>
                 <option value="greek">Greek</option>
                 <option value="middle-eastern-christian">Middle Eastern Christian</option>
-                <option value="middle-eastern-moslem">Middle Eastern Christian</option>
+                <option value="middle-eastern-moslem">Middle Eastern Moslem</option>
                 <option value="native-american">Native American</option>
             </select>
         </p>
@@ -104,7 +105,7 @@
     </section>
     <section>
         <p>
-            <button type="submit" name="submit" value="Submit">Create account</button>
+            <button type="submit" name="submit" value="Submit">Create Account</button>
         </p>
     </section>
 </form>
