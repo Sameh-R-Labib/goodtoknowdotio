@@ -28,10 +28,16 @@
     <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
         <h2>Log-in Credentials</h2>
+        <p>The rules for the username: Must consist of two words separated by an underscore.
+            The first word must start with an upper case letter.
+            That first letter is the only uppercase letter.
+            The first word must be 4 to 9 characters in length.
+            The second word is numeric two digits long.</p>
         <p>
             <label for="name">
                 <span>Username: </span>
                 <strong><abbr title="required">*</abbr></strong>
+                <em>example Buddy_52</em>
             </label>
             <input type="text" id="name" name="username">
         </p>
@@ -53,7 +59,7 @@
     <section>
         <h2>Person's Characteristics</h2>
         <fieldset>
-            <legend>Title</legend>
+            <legend>Title <strong><abbr title="required">*</abbr></strong></legend>
             <ul>
                 <li>
                     <label for="title_1">
@@ -71,7 +77,7 @@
         </fieldset>
         <p>
             <label for="card">
-                <span>Race:</span>
+                <span>Race: <strong><abbr title="required">*</abbr></strong></span>
             </label>
             <select id="card" name="race">
                 <option value="caucasian-american">Caucasian American</option>
