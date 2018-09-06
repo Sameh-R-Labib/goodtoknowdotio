@@ -44,9 +44,10 @@ class AdminCreateUser
          */
     }
 
-    public static function is_username(string $username)
+    public static function is_username(string &$username)
     {
         /**
+         * Trim it.
          * Can't be empty.
          * Must consist of two words separated by an underscore.
          * The first word must start with an upper case letter.
@@ -56,35 +57,104 @@ class AdminCreateUser
          * The username can't already exist in the database.
          */
 
+        $username = trim($username);
+
+        if (empty($username)) {
+            return false;
+        }
+
+        $words = explode('_', $username);
+
+        /**
+         * If array $words doesn't have exactly two elements then fail.
+         */
+        if (count($words) != 2) {
+            return false;
+        }
+
+        $last_word = $words[1];
+        $first_word = $words[0];
+
+        /**
+         * The first word must be all alphabetical letters.
+         */
+        $is_all_alpha = ctype_alpha($first_word);
+        if (!$is_all_alpha) {
+            return false;
+        }
+
+        /**
+         * The first word must start with an upper case letter.
+         */
+        $arr_of_chars = str_split($first_word);
+        $first_char_as_string = $arr_of_chars[0];
+        $is_cap = ctype_upper($first_char_as_string);
+        if (!$is_cap) {
+            return false;
+        }
+
+        /**
+         * That first letter is the only uppercase letter.
+         */
+        $rest = substr($first_word, 1);
+        $is_lower = ctype_lower($rest);
+        if (!$is_lower) {
+            return false;
+        }
+
+        /**
+         * The first word must be 4 to 9 characters in length.
+         */
+        $length = strlen($first_word);
+        if ($length > 9 || $length < 4) {
+            return false;
+        }
+
+        /**
+         * The second word is numeric two digits long.
+         */
+        $length_of_second_word = strlen($last_word);
+        if ($length_of_second_word != 2) {
+            return false;
+        }
+        if (!is_numeric($last_word)) {
+            return false;
+        }
+
+        return true;
     }
 
-    public static function is_password(string $str01, $str02)
+    public static function is_password(string &$str01, &$str02)
     {
         /**
+         * Trim it.
          * Can't be empty.
          * Make sure the two strings match and work as password.
          */
     }
 
-    public static function is_title(string $title)
+    public static function is_title(string &$title)
     {
         /**
+         * Trim it.
          * Can't be empty.
          * Mr and Ms are the only valid values for title.
          */
     }
 
-    public static function is_race(string $race)
+    public static function is_race(string &$race)
     {
         /**
+         * Trim it.
          * Can't be empty.
          * Must be one of the ones I have in the form.
          */
     }
 
-    public static function is_comment(string $comment)
+    public static function is_comment(string &$comment)
     {
         /**
+         * Trim it.
          * Can't be empty.
          * Must be less than 800 characters long.
          * Can't contain any html tags
