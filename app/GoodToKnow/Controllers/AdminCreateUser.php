@@ -49,6 +49,14 @@ class AdminCreateUser
         /**
          * Make use of the fact that some validation functions update $sessionMessage.
          */
+
+        /**
+         * Store user.
+         */
+
+        /**
+         * Store association between user and community.
+         */
     }
 
     public static function is_username(\mysqli $db, string &$message, string &$username)
