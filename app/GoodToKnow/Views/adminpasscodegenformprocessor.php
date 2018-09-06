@@ -37,7 +37,7 @@
             <label for="name">
                 <span>Username: </span>
                 <strong><abbr title="required">*</abbr></strong>
-                <em>example Buddy_52</em>
+                <em>like Buddy_52</em>
             </label>
             <input type="text" id="name" name="username">
         </p>
@@ -58,8 +58,9 @@
     </section>
     <section>
         <h2>Person's Characteristics</h2>
+        <p><abbr title="required">*</abbr></strong></p>
         <fieldset>
-            <legend>Title <strong><abbr title="required">*</abbr></strong></legend>
+            <legend>Title <strong></legend>
             <ul>
                 <li>
                     <label for="title_1">
