@@ -58,7 +58,7 @@
     </section>
     <section>
         <h2>Person's Characteristics</h2>
-        <p align="right"><abbr title="required">*</abbr></strong></p>
+        <p align="center"><abbr title="required">*</abbr></strong></p>
         <fieldset>
             <legend>Title <strong></legend>
             <ul>
@@ -105,7 +105,7 @@
             <label for="date">
                 <span>Today's date:</span>
                 <strong><abbr title="required">*</abbr></strong>
-                <em>format dd/mm/yyyy</em>
+                <em>like dd/mm/yyyy</em>
             </label>
             <input type="text" id="date" name="date">
         </p>
