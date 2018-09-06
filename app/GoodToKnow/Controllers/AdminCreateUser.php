@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\User;
+
+
 class AdminCreateUser
 {
     public function page()
@@ -42,9 +45,13 @@ class AdminCreateUser
          * If any of the submitted fields is invalid
          * then store a session message and redirect to /ax1/LoginForm/page
          */
+
+        /**
+         * Make use of the fact that some validation functions update $sessionMessage.
+         */
     }
 
-    public static function is_username(string &$username)
+    public static function is_username(\mysqli $db, string &$message, string &$username)
     {
         /**
          * Trim it.
@@ -120,6 +127,11 @@ class AdminCreateUser
         if (!is_numeric($last_word)) {
             return false;
         }
+
+        /**
+         * The username can't already exist in the database.
+         */
+        $is_in_use = User::username_is_already_taken($db, $message);
 
         return true;
     }
