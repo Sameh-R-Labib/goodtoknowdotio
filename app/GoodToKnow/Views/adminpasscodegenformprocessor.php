@@ -36,11 +36,11 @@
             <input type="text" id="name" name="username">
         </p>
         <p>
-            <label for="first-try">
+            <label for="first_try">
                 <span>Password 1st try: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="password" id="first-try" name="first-try">
+            <input type="password" id="first_try" name="first_try">
         </p>
         <p>
             <label for="pwd">
@@ -57,13 +57,13 @@
             <ul>
                 <li>
                     <label for="title_1">
-                        <input type="radio" id="title_1" name="title" value="M.">
+                        <input type="radio" id="title_1" name="title" value="Mr">
                         Mister
                     </label>
                 </li>
                 <li>
                     <label for="title_2">
-                        <input type="radio" id="title_2" name="title" value="Ms.">
+                        <input type="radio" id="title_2" name="title" value="Ms">
                         Miss
                     </label>
                 </li>
@@ -73,7 +73,7 @@
             <label for="card">
                 <span>Race:</span>
             </label>
-            <select id="card" name="usercard">
+            <select id="card" name="race">
                 <option value="caucasian-american">Caucasian American</option>
                 <option value="caucasian-european">Caucasian European</option>
                 <option value="black-european">Black European</option>
@@ -100,7 +100,7 @@
                 <strong><abbr title="required">*</abbr></strong>
                 <em>format dd/mm/yyyy</em>
             </label>
-            <input type="text" id="date" name="expiration">
+            <input type="text" id="date" name="date">
         </p>
     </section>
     <section>
