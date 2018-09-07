@@ -59,7 +59,7 @@
     </section>
     <section>
         <h2>Person's Characteristics</h2>
-        <p align="center"><abbr title="required">*</abbr></strong></p>
+        <p align="center"><strong><abbr title="required">*</abbr></strong></p>
         <fieldset>
             <legend>Title <strong></legend>
             <ul>
