@@ -49,10 +49,22 @@ class AdminCreateUser
          */
 
         /**
+         * I can't assume these post variables exist so I do the following.
+         */
+        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+        $submitted_first_try = (isset($_POST['first_try'])) ? $_POST['first_try'] : '';
+        $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
+        $submitted_title = (isset($_POST['title'])) ? $_POST['title'] : '';
+        $submitted_race = (isset($_POST['race'])) ? $_POST['race'] : '';
+        $submitted_comment = (isset($_POST['comment'])) ? $_POST['comment'] : '';
+        $submitted_date = (isset($_POST['date'])) ? $_POST['date'] : '';
+        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
+
+        /**
          * If any of the submitted fields is invalid
          * then store a session message and redirect to /ax1/LoginForm/page
          */
-        if (!self::is_username($db, $sessionMessage, $_POST['username'])) {
+        if (!self::is_username($db, $sessionMessage, $submitted_username)) {
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
