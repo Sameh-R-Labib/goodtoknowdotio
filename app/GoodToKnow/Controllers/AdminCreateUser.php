@@ -14,6 +14,9 @@ use GoodToKnow\Models\User;
 
 class AdminCreateUser
 {
+    /**
+     *
+     */
     public function page()
     {
 
@@ -76,7 +79,12 @@ class AdminCreateUser
 
         /**
          * Store user.
+         *
+         * The password needs to be processed before save().
          */
+        $hash_of_submitted_password = password_hash($submitted_password, PASSWORD_DEFAULT);
+
+        // Begin save
 
         /**
          * Store association between user and community.
