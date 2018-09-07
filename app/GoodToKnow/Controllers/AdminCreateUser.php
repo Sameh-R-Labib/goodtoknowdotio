@@ -83,6 +83,8 @@ class AdminCreateUser
          */
     }
 
+    // Helpers for the page() method
+
     /**
      * @param \mysqli $db
      * @param string $message
