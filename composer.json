@@ -1,7 +1,8 @@
 {
   "require": {
     "ext-mysqli": "*",
-    "ext-ctype": "*"
+    "ext-ctype": "*",
+    "ext-mbstring": "*"
   },
   "autoload": {
     "psr-4": {

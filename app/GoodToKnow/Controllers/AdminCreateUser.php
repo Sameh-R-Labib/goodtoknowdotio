@@ -84,6 +84,11 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
+        if (!self::is_comment($sessionMessage, $submitted_comment)) {
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
         /**
          * Make use of the fact that some validation functions update $sessionMessage.
          */
@@ -318,6 +323,11 @@ class AdminCreateUser
         return true;
     }
 
+    /**
+     * @param $message
+     * @param string $comment
+     * @return bool
+     */
     public static function is_comment(&$message, string &$comment)
     {
         /**
@@ -327,5 +337,29 @@ class AdminCreateUser
          * Can't contain any html tags
          * Can't have any non ascii characters.
          */
+        $comment = trim($comment);
+
+        if (empty($comment)) {
+            $message .= " Your comment is missing. ";
+            return false;
+        }
+
+        $length = strlen($comment);
+        if ($length > 800) {
+            $message .= " Your comment is too long. ";
+            return false;
+        }
+
+        if ($comment != strip_tags($comment)) {
+            $message .= " Your comment includes html. We don't allow that in this field. ";
+            return false;
+        }
+
+        if (!mb_detect_encoding($comment, 'ASCII', true)) {
+            $message .= " Your comment includes one or more non ascii characters. We don't allow that in this field. ";
+            return false;
+        }
+
+        return true;
     }
 }
