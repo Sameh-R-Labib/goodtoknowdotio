@@ -35,6 +35,13 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
+        $db = db_connect($sessionMessage);
+
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
         /**
          * Variables to work with:
          *   $saved_str01, $_POST['username'], $_POST['first_try'], $_POST['password'],
@@ -45,6 +52,10 @@ class AdminCreateUser
          * If any of the submitted fields is invalid
          * then store a session message and redirect to /ax1/LoginForm/page
          */
+        if (!self::is_username($db, $sessionMessage, $_POST['username'])) {
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
 
         /**
          * Make use of the fact that some validation functions update $sessionMessage.
@@ -59,6 +70,12 @@ class AdminCreateUser
          */
     }
 
+    /**
+     * @param \mysqli $db
+     * @param string $message
+     * @param string $username
+     * @return bool
+     */
     public static function is_username(\mysqli $db, string &$message, string &$username)
     {
         /**
@@ -139,7 +156,11 @@ class AdminCreateUser
         /**
          * The username can't already exist in the database.
          */
-        $is_in_use = User::username_is_already_taken($db, $message);
+        $is_in_use = User::is_taken_username($db, $message, $username);
+        if ($is_in_use) {
+            $message .= " The username is taken. Find a different one and try again. ";
+            return false;
+        }
 
         return true;
     }
