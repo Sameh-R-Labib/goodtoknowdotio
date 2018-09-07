@@ -107,7 +107,7 @@
             <label for="date">
                 <span>Today's date:</span>
                 <strong><abbr title="required">*</abbr></strong>
-                <em>like dd/mm/yyyy</em>
+                <em>USA mm/dd/yyyy</em>
             </label>
             <input type="text" id="date" name="date">
         </p>

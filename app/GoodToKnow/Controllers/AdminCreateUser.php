@@ -64,27 +64,12 @@ class AdminCreateUser
          * If any of the submitted fields is invalid
          * then store a session message and redirect to /ax1/LoginForm/page
          */
-        if (!self::is_username($db, $sessionMessage, $submitted_username)) {
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        if (!self::is_password($sessionMessage, $submitted_first_try, $submitted_password)) {
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        if (!self::is_title($sessionMessage, $submitted_title)) {
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        if (!self::is_race($sessionMessage, $submitted_race)) {
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        if (!self::is_comment($sessionMessage, $submitted_comment)) {
+        if (!self::is_username($db, $sessionMessage, $submitted_username) ||
+            !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
+            !self::is_title($sessionMessage, $submitted_title) ||
+            !self::is_race($sessionMessage, $submitted_race) ||
+            !self::is_comment($sessionMessage, $submitted_comment) ||
+            !self::is_date($sessionMessage, $submitted_date)) {
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
@@ -405,6 +390,54 @@ class AdminCreateUser
 
         if (!mb_detect_encoding($comment, 'ASCII', true)) {
             $message .= " Your comment includes one or more non ascii characters. We don't allow that in this field. ";
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * @param $message
+     * @param string $date
+     * @return bool
+     */
+    public static function is_date(&$message, string &$date)
+    {
+        /**
+         * Trim it.
+         * Can't be empty.
+         * Must have two forward slashes.
+         * Must have 2 digits / 2 digits / 4 digits
+         * Must be a valid date.
+         */
+
+        $date = trim($date);
+
+        if (empty($date)) {
+            $message .= " The date is missing. ";
+            return false;
+        }
+
+        $number_of_slashes = substr_count($date, '/');
+        if ($number_of_slashes != 2) {
+            $message .= " You don't have two slashes in date. ";
+            return false;
+        }
+
+        /**
+         * Split date into its pars.
+         */
+        $words = explode('/', $date);
+//        $dd = $words[0];
+//        $mm = $words[1];
+//        $yyyy = $words[2];
+
+        if (!is_numeric($words[0]) || !is_numeric($words[1]) || !is_numeric($words[1])) {
+            $message .= " The date should consist of numeric digits and 2 forward slashes. And, it does not! ";
+        }
+
+        if (!checkdate($words[0], $words[1], $words[2])) {
+            $message .= " That's not a valid date. ";
             return false;
         }
 
