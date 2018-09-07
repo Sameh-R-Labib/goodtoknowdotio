@@ -58,7 +58,7 @@ class AdminCreateUser
         $submitted_race = (isset($_POST['race'])) ? $_POST['race'] : '';
         $submitted_comment = (isset($_POST['comment'])) ? $_POST['comment'] : '';
         $submitted_date = (isset($_POST['date'])) ? $_POST['date'] : '';
-        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
+//        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
 
         /**
          * If any of the submitted fields is invalid
@@ -73,10 +73,6 @@ class AdminCreateUser
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
-
-        /**
-         * Make use of the fact that some validation functions update $sessionMessage.
-         */
 
         /**
          * Store user.
