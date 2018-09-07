@@ -64,6 +64,13 @@ class AdminCreateUser
 //        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
 
         /**
+         * $new_user_role needs to have a value
+         * since there is a role field in the users table
+         */
+        $new_user_role = '';
+        $new_user_is_suspended = 0;
+
+        /**
          * If any of the submitted fields is invalid
          * then store a session message and redirect to /ax1/LoginForm/page
          */
@@ -73,7 +80,7 @@ class AdminCreateUser
             !self::is_race($sessionMessage, $submitted_race) ||
             !self::is_comment($sessionMessage, $submitted_comment) ||
             !self::is_date($sessionMessage, $submitted_date)) {
-            $_SESSION['message'] .= $sessionMessage;
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -85,9 +92,41 @@ class AdminCreateUser
         $hash_of_submitted_password = password_hash($submitted_password, PASSWORD_DEFAULT);
 
         // Begin save
+        $array_of_submitted_data = ['username' => $submitted_username,
+            'password' => $hash_of_submitted_password,
+            'id_of_default_community' => $saved_str01,
+            'title' => $submitted_title,
+            'role' => $new_user_role,
+            'race' => $submitted_race,
+            'is_suspended' => $new_user_is_suspended,
+            'date' => $submitted_date,
+            'comment' => $submitted_comment];
+
+        $new_user_object = User::array_to_object($array_of_submitted_data);
+
+        $consequence_of_save = $new_user_object->save($db, $sessionMessage);
+
+        if (!$consequence_of_save) {
+            $sessionMessage .= ' The save method returned false. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        if (!empty($sessionMessage)) {
+            $sessionMessage .= ' The save method did not return false but it did send back a message.
+             Therefore, it probably did not create your account. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
 
         /**
          * Store association between user and community.
+         */
+
+
+        /**
+         * Assumed success.
+         * Set $sessionMessage and redirect.
          */
     }
 
