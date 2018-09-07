@@ -83,11 +83,12 @@
             <select id="card" name="race">
                 <option value="caucasian-american">Caucasian American</option>
                 <option value="caucasian-european">Caucasian European</option>
+                <option value="caucasian-african">Caucasian African</option>
                 <option value="black-european">Black European</option>
                 <option value="black-american">Black American</option>
                 <option value="black-african">Black African</option>
                 <option value="asian">Asian</option>
-                <option value="mexican">Mexican</option>
+                <option value="south-american">South American</option>
                 <option value="greek">Greek</option>
                 <option value="middle-eastern-christian">Middle Eastern Christian</option>
                 <option value="middle-eastern-moslem">Middle Eastern Moslem</option>

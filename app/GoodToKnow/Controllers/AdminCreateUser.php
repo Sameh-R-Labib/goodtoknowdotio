@@ -79,6 +79,11 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
+        if (!self::is_race($sessionMessage, $submitted_race)) {
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
         /**
          * Make use of the fact that some validation functions update $sessionMessage.
          */
@@ -194,6 +199,12 @@ class AdminCreateUser
         return true;
     }
 
+    /**
+     * @param $message
+     * @param string $str01
+     * @param string $str02
+     * @return bool
+     */
     public static function is_password(&$message, string &$str01, string &$str02)
     {
         /**
@@ -250,6 +261,11 @@ class AdminCreateUser
         return true;
     }
 
+    /**
+     * @param $message
+     * @param string $title
+     * @return bool
+     */
     public static function is_title(&$message, string &$title)
     {
         /**
@@ -273,6 +289,11 @@ class AdminCreateUser
         return true;
     }
 
+    /**
+     * @param $message
+     * @param string $race
+     * @return bool
+     */
     public static function is_race(&$message, string &$race)
     {
         /**
@@ -280,6 +301,21 @@ class AdminCreateUser
          * Can't be empty.
          * Must be one of the ones I have in the form.
          */
+        $race = trim($race);
+        if (empty($race)) {
+            $message .= " The value for race is missing. ";
+            return false;
+        }
+
+        $races = ['caucasian-american', 'caucasian-european', 'caucasian-african', 'black-european', 'black-american',
+            'black-african', 'asian', 'south-american', 'greek', 'middle-eastern-christian', 'middle-eastern-moslem',
+            'native-american'];
+        if (!in_array($race, $races)) {
+            $message .= " Your race field does not contain a valid value. ";
+            return false;
+        }
+
+        return true;
     }
 
     public static function is_comment(&$message, string &$comment)
