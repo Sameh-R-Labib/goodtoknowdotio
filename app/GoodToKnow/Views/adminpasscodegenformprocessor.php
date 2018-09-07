@@ -61,7 +61,7 @@
         <h2>Person's Characteristics</h2>
         <p align="center"><strong><abbr title="required">*</abbr></strong></p>
         <fieldset>
-            <legend>Title <strong></legend>
+            <legend>Title</legend>
             <ul>
                 <li>
                     <label for="title_1">
