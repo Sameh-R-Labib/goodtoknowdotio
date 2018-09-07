@@ -74,6 +74,11 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
+        if (!self::is_title($sessionMessage, $submitted_title)) {
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
         /**
          * Make use of the fact that some validation functions update $sessionMessage.
          */
