@@ -113,6 +113,7 @@ class AdminCreateUser
          * If array $words doesn't have exactly two elements then fail.
          */
         if (count($words) != 2) {
+            $message .= " The username must have two parts separated by an underscore character. ";
             return false;
         }
 
@@ -124,6 +125,7 @@ class AdminCreateUser
          */
         $is_all_alpha = ctype_alpha($first_word);
         if (!$is_all_alpha) {
+            $message .= " The username's first part must have alphabet characters only. ";
             return false;
         }
 
@@ -134,6 +136,7 @@ class AdminCreateUser
         $first_char_as_string = $arr_of_chars[0];
         $is_cap = ctype_upper($first_char_as_string);
         if (!$is_cap) {
+            $message .= " The username needs to start with a capital letter. ";
             return false;
         }
 
@@ -143,6 +146,7 @@ class AdminCreateUser
         $rest = substr($first_word, 1);
         $is_lower = ctype_lower($rest);
         if (!$is_lower) {
+            $message .= " The username's first part has a letter with improper case. ";
             return false;
         }
 
@@ -151,6 +155,7 @@ class AdminCreateUser
          */
         $length = strlen($first_word);
         if ($length > 9 || $length < 4) {
+            $message .= " The username's first part doesn't have a proper length. ";
             return false;
         }
 
@@ -159,9 +164,11 @@ class AdminCreateUser
          */
         $length_of_second_word = strlen($last_word);
         if ($length_of_second_word != 2) {
+            $message .= " The username's second part is not two digits. ";
             return false;
         }
         if (!is_numeric($last_word)) {
+            $message .= " The username's second part is not numeric. ";
             return false;
         }
 
@@ -180,10 +187,20 @@ class AdminCreateUser
     public static function is_password(string &$str01, &$str02)
     {
         /**
-         * Trim it.
          * Can't be empty.
          * Make sure the two strings match and work as password.
+         * The length must be 10 to 18 characters long.
+         * It can't have a space character.
+         * It can't have weird characters.
          */
+
+        /**
+         * It can't be empty. So I will trim it then check if there is anything left.
+         */
+        $trimmed = trim($str01);
+        if (empty($trimmed)) {
+            return false;
+        }
     }
 
     public static function is_title(string &$title)
