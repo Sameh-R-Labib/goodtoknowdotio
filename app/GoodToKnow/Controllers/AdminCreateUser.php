@@ -69,6 +69,11 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
+        if (!self::is_password($sessionMessage, $submitted_first_try, $submitted_password)) {
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
         /**
          * Make use of the fact that some validation functions update $sessionMessage.
          */
@@ -184,11 +189,11 @@ class AdminCreateUser
         return true;
     }
 
-    public static function is_password(string &$str01, &$str02)
+    public static function is_password(&$message, string &$str01, string &$str02)
     {
         /**
          * Can't be empty.
-         * Make sure the two strings match and work as password.
+         * Make sure the two strings match.
          * The length must be 10 to 18 characters long.
          * It can't have a space character.
          * It can't have weird characters.
@@ -199,11 +204,48 @@ class AdminCreateUser
          */
         $trimmed = trim($str01);
         if (empty($trimmed)) {
+            $message .= " The password field is required. ";
             return false;
         }
+
+        /**
+         * Make sure the two strings match.
+         */
+        $are_equal = ($str01 === $str02);
+        if (!$are_equal) {
+            $message .= " Your two passwords don't match. ";
+            return false;
+        }
+
+        /**
+         * The length must be 10 to 18 characters long.
+         */
+        $length = strlen($str01);
+        if ($length > 18 || $length < 10) {
+            $message .= " The length of your password must be 10 to 18 characters. ";
+            return false;
+        }
+
+        /**
+         * It can't have a space character.
+         */
+        if (strpos($str01, ' ')) {
+            $message .= " Non-conforming password because it contains space. ";
+            return false;
+        }
+
+        /**
+         * It can't have weird characters.
+         */
+        if (preg_match('/[\'$?<>=]/', $str01)) {
+            $message .= " Non-conforming password because it contains one or more disallowed characters. ";
+            return false;
+        }
+
+        return true;
     }
 
-    public static function is_title(string &$title)
+    public static function is_title(&$message, string &$title)
     {
         /**
          * Trim it.
@@ -212,7 +254,7 @@ class AdminCreateUser
          */
     }
 
-    public static function is_race(string &$race)
+    public static function is_race(&$message, string &$race)
     {
         /**
          * Trim it.
@@ -221,7 +263,7 @@ class AdminCreateUser
          */
     }
 
-    public static function is_comment(string &$comment)
+    public static function is_comment(&$message, string &$comment)
     {
         /**
          * Trim it.
