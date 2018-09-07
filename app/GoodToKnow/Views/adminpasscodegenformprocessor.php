@@ -55,6 +55,7 @@
             </label>
             <input type="password" id="pwd" name="password">
         </p>
+        <p>The rules for the password: 10 to 18 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
     </section>
     <section>
         <h2>Person's Characteristics</h2>

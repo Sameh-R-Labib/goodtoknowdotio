@@ -263,6 +263,54 @@ class AdminCreateUser
             return false;
         }
 
+        // count how many lowercase, uppercase, and digits are in the password
+        $uc = 0;
+        $lc = 0;
+        $num = 0;
+        $other = 0;
+        for ($i = 0, $j = strlen($str01); $i < $j; $i++) {
+            // Get current character
+            $char = substr($str01, $i, 1);
+            // if $char is uppercase
+            if (preg_match('/^[[:upper:]]$/', $char)) {
+                $uc++;
+            } elseif (preg_match('/^[[:lower:]]$/', $char)) {
+                // if $char is lowercase
+                $lc++;
+            } elseif (preg_match('/^[[:digit:]]$/', $char)) {
+                // if $char is a numeric digit
+                $num++;
+            } else {
+                $other++;
+            }
+        }
+
+        $max = $j - 6;
+        if ($uc > $max) {
+            $message .= " The password has too many upper case characters. ";
+            return false;
+        }
+        if ($lc > $max) {
+            $message .= " The password has too many lower case characters. ";
+            return false;
+        }
+        if ($num > $max) {
+            $message .= " The password has too many numeric characters. ";
+            return false;
+        }
+        if ($num < 2) {
+            $message .= " Your password needs at least two digit. ";
+            return false;
+        }
+        if ($other < 2) {
+            $message .= " Your password needs at least two non-alphanumeric characters. ";
+            return false;
+        }
+        if ($other > $max) {
+            $message .= " The password has too many special characters. ";
+            return false;
+        }
+
         return true;
     }
 
