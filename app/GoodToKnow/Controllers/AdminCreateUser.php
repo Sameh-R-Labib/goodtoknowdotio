@@ -252,6 +252,20 @@ class AdminCreateUser
          * Can't be empty.
          * Mr and Ms are the only valid values for title.
          */
+        $title = trim($title);
+
+        if (empty($title)) {
+            $message .= " Your title is missing. ";
+            return false;
+        }
+
+        $possible = ['Mr', 'Ms'];
+        if (!in_array($title, $possible)) {
+            $message .= " Your title field does not contain a valid value. ";
+            return false;
+        }
+
+        return true;
     }
 
     public static function is_race(&$message, string &$race)
