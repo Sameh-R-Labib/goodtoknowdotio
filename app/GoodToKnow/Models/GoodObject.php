@@ -279,7 +279,7 @@ abstract class GoodObject
      * @param string $sql
      * @return array|bool
      */
-    public static function find_by_sql(\mysqli $db, string &$error, $sql = "")
+    public static function find_by_sql(\mysqli $db, string &$error, string $sql)
     {
         $object_array = [];
 
