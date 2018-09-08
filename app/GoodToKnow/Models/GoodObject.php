@@ -12,6 +12,14 @@
  *   WARNING: Do Not include id attribute. Do Include all other attributes and assign them values.
  *   2. Call array_to_object($array) to create the object in memory.
  *   3. Save that object to the database using save().
+ *
+ * Sanitize manually SQL variable values
+ * when using find_by_sql()
+ * If you code other methods for this class or its
+ * children make sure you sanitize.
+ *
+ * Sanitizing prepares sql variable values
+ * for use in sql.
  */
 
 namespace GoodToKnow\Models;
