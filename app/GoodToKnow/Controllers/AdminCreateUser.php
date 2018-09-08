@@ -122,6 +122,7 @@ class AdminCreateUser
         /**
          * Store association between user and community.
          */
+//        $array_of_user_to_community_row_data = ['user_id', 'community_id' => $saved_str01];
 
 
         /**

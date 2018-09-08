@@ -91,4 +91,28 @@ class User extends GoodObject
 
         return true;
     }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param string $username
+     * @return bool|mixed
+     */
+    public static function find_by_username(\mysqli $db, string &$error, string $username)
+    {
+        /**
+         * You give it a username and it returns the
+         * corresponding User object or false.
+         */
+        $sql = 'SELECT username FROM `users`
+                WHERE `username` = "' . $username . '" LIMIT 1';
+
+        $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
+
+        if (!$array_of_User_objects || !empty($error)) {
+            return false;
+        }
+
+        return array_shift($array_of_User_objects);
+    }
 }
