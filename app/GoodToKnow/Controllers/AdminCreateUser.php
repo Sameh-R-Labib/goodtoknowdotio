@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\User;
+use GoodToKnow\Models\UserToCommunity;
 
 
 class AdminCreateUser
@@ -107,13 +108,13 @@ class AdminCreateUser
         $consequence_of_save = $new_user_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
-            $sessionMessage .= ' The save method returned false. ';
+            $sessionMessage .= ' The save method for User returned false. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
 
         if (!empty($sessionMessage)) {
-            $sessionMessage .= ' The save method did not return false but it did send back a message.
+            $sessionMessage .= ' The save method for User did not return false but it did send back a message.
              Therefore, it probably did not create your account. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
@@ -122,13 +123,45 @@ class AdminCreateUser
         /**
          * Store association between user and community.
          */
-//        $array_of_user_to_community_row_data = ['user_id', 'community_id' => $saved_str01];
 
+        /**
+         * Get the user from the database so we
+         * can know the user's id
+         */
+        $our_just_added_user = User::find_by_username($db, $sessionMessage, $submitted_username);
+
+        if (!$our_just_added_user || !empty($sessionMessage)) {
+            $sessionMessage .= ' In AdminCreateUser page find_by_username failed to give us a user object. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        $array_of_user_to_community_row_data = ['user_id' => $our_just_added_user->id, 'community_id' => $saved_str01];
+
+        $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
+
+        $consequence_of_save = $new_user_to_community_object->save($db, $sessionMessage);
+
+        if (!$consequence_of_save) {
+            $sessionMessage .= ' The save method for UserToCommunity returned false. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        if (!empty($sessionMessage)) {
+            $sessionMessage .= ' The save method for UserToCommunity did not return false but it did send back a message.
+             Therefore, it probably did not create the association for your account. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
 
         /**
          * Assumed success.
          * Set $sessionMessage and redirect.
          */
+        $sessionMessage .= " The new user account was created! ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/LoginForm/page");
     }
 
     // Helpers for the page() method
