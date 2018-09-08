@@ -81,7 +81,7 @@ class User extends GoodObject
     public static function is_taken_username(\mysqli $db, string &$error, string $username)
     {
         $sql = 'SELECT username FROM `users`
-                WHERE `username` = "' . $username . '" LIMIT 1';
+                WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
 
@@ -105,7 +105,7 @@ class User extends GoodObject
          * corresponding User object or false.
          */
         $sql = 'SELECT username FROM `users`
-                WHERE `username` = "' . $username . '" LIMIT 1';
+                WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
 

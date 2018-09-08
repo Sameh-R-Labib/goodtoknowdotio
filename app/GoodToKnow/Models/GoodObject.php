@@ -270,6 +270,7 @@ abstract class GoodObject
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 
+    // Make sure to sanitize values used in $sql.
     /**
      * Gives me an array of objects for the sql I give it.
      *
