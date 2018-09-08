@@ -353,7 +353,7 @@ abstract class GoodObject
 
             $sql = "UPDATE " . static::$table_name . " SET ";
             $sql .= join(", ", $attribute_pairs);
-            $sql .= " WHERE `id`=" . $db->real_escape_string($this->id);
+            $sql .= " WHERE `id`=" . $db->real_escape_string($this->id) . " LIMIT 1";
 
             $db->query($sql);
 
@@ -372,14 +372,43 @@ abstract class GoodObject
             return true;
         } else {
             $error .= ' GoodObject update() FAILED to update its row. ';
-            $error .= ' The number of affected rows is ' . $num_affected_rows . '. ';
             return false;
         }
     }
 
     // Delete
-    public function delete()
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @return bool
+     */
+    public function delete(\mysqli $db, string &$error)
     {
 
+        $sql = "DELETE FROM " . static::$table_name . " ";
+        $sql .= "WHERE `id`=" . $db->real_escape_string($this->id);
+        $sql .= " LIMIT 1";
+
+        try {
+            $db->query($sql);
+
+            $query_error = $db->error;
+            if (!empty($query_error)) {
+                $error .= ' The delete failed. The reason given by mysqli is: ' . $query_error . ' ';
+                return false;
+            }
+
+            $num_affected_rows = $db->affected_rows;
+        } catch (\Exception $e) {
+            $error .= ' GoodObject delete() caught a thrown exception: ' . $e->getMessage() . ' ';
+        }
+
+        if ($num_affected_rows == 1) {
+            return true;
+        } else {
+            $error .= ' GoodObject delete() FAILED to delete a row. ';
+            return false;
+        }
     }
 }
