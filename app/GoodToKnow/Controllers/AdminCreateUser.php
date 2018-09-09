@@ -85,7 +85,7 @@ class AdminCreateUser
 //            $_SESSION['message'] = $sessionMessage;
 
             /**
-             * Debug Code
+             * Debug Code 1
              */
             echo "\n\n<p>Begin debug</p>\n\n";
             echo "\n\n<p>Print_r \$sessionMessage: </p>\n\n";
@@ -94,6 +94,13 @@ class AdminCreateUser
 
             redirect_to("/ax1/LoginForm/page");
         }
+
+
+        /**
+         * Debug Code 1
+         */
+        die("\n\n<p>We made outside past the if.</p>\n\n");
+
 
         /**
          * Store user.
