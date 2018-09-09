@@ -90,7 +90,7 @@ class AdminCreateUser
             echo "<p>Begin debug</p>";
             echo "\n<p>Print_r \$sessionMessage: </p>\n";
             echo "\n<pre>";
-            print_r();
+            print_r($sessionMessage);
             echo "</pre>\n";
             die("\n<p>End debug</p>\n");
 
