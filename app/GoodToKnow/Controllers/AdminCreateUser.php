@@ -97,7 +97,8 @@ class AdminCreateUser
          */
         $hash_of_submitted_password = password_hash($submitted_password, PASSWORD_DEFAULT);
 
-        // Begin save
+        // See steps in GoodObject for storing a new object.
+        // First step:
         $array_of_submitted_data = ['username' => $submitted_username,
             'password' => $hash_of_submitted_password,
             'id_of_default_community' => $saved_str01,
@@ -108,8 +109,10 @@ class AdminCreateUser
             'date' => $submitted_date,
             'comment' => $submitted_comment];
 
+        // Second step
         $new_user_object = User::array_to_object($array_of_submitted_data);
 
+        // Third step
         $consequence_of_save = $new_user_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
@@ -128,20 +131,8 @@ class AdminCreateUser
         /**
          * Store association between user and community.
          */
-
-        /**
-         * Get the user from the database so we
-         * can know the user's id
-         */
-        $our_just_added_user = User::find_by_username($db, $sessionMessage, $submitted_username);
-
-        if (!$our_just_added_user || !empty($sessionMessage)) {
-            $sessionMessage .= ' In AdminCreateUser page find_by_username failed to give us a user object. ';
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        $array_of_user_to_community_row_data = ['user_id' => $our_just_added_user->id, 'community_id' => $saved_str01];
+        // The three steps again
+        $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $saved_str01];
 
         $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
 
