@@ -508,34 +508,6 @@ class AdminCreateUser
         $dd = $words[1];
         $yyyy = $words[2];
 
-//        $x = strlen($mm);
-//        $y = strlen($dd);
-//        $z = strlen($yyyy);
-
-
-        /**
-         * Debug Code
-         */
-//        echo "\n<p>Begin debug</p>\n";
-//        echo "\n<p>Var_dump \$mm: </p>\n";
-//        echo "\n<pre>";
-//        var_dump($mm);
-//        echo "</pre>\n";
-//        echo "\n<p>Var_dump \$dd: </p>\n";
-//        echo "\n<pre>";
-//        var_dump($dd);
-//        echo "</pre>\n";
-//        echo "\n<p>Var_dump \$yyyy: </p>\n";
-//        echo "\n<pre>";
-//        var_dump($yyyy);
-//        echo "</pre>\n";
-//        echo "\n<p>Var_dump \$words: </p>\n";
-//        echo "\n<pre>";
-//        var_dump($words);
-//        echo "</pre>\n";
-//        die("\n<p>End debug</p>\n\n");
-
-
         if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy) != 4) {
             $message .= " You did not use correct mm/dd/yyyy date format. ";
             return false;
