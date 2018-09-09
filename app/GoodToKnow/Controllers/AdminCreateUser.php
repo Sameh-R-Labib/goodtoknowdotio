@@ -82,27 +82,13 @@ class AdminCreateUser
             !self::is_race($sessionMessage, $submitted_race) ||
             !self::is_comment($sessionMessage, $submitted_comment) ||
             !self::is_date($sessionMessage, $submitted_date)) {
-//            $_SESSION['message'] = $sessionMessage;
-
-            /**
-             * Debug Code 1
-             */
-            echo "<p>Begin debug</p>";
-            echo "\n<p>Print_r \$sessionMessage: </p>\n";
-            echo "\n<pre>";
-            print_r($sessionMessage);
-            echo "</pre>\n";
-            die("\n<p>End debug</p>\n");
-
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
 
-
         /**
-         * Debug Code 1
+         * So far so good!
          */
-        die("\n\n<p>We made outside past the if.</p>\n\n");
-
 
         /**
          * Store user.
