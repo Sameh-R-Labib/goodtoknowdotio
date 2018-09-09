@@ -87,10 +87,12 @@ class AdminCreateUser
             /**
              * Debug Code 1
              */
-            echo "\n\n<p>Begin debug</p>\n\n";
-            echo "\n\n<p>Print_r \$sessionMessage: </p>\n\n";
-            echo "\n\n<pre>";
-            die("\n\n<p>End debug</p>\n\n");
+            echo "<p>Begin debug</p>";
+            echo "\n<p>Print_r \$sessionMessage: </p>\n";
+            echo "\n<pre>";
+            print_r();
+            echo "</pre>\n";
+            die("\n<p>End debug</p>\n");
 
             redirect_to("/ax1/LoginForm/page");
         }
