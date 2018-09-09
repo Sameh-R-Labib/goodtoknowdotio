@@ -207,6 +207,7 @@ class AdminCreateUser
         $username = trim($username);
 
         if (empty($username)) {
+            $message .= " The username field was empty. ";
             return false;
         }
 
@@ -526,12 +527,19 @@ class AdminCreateUser
          * Split date into its pars.
          */
         $words = explode('/', $date);
-//        $dd = $words[0];
-//        $mm = $words[1];
-//        $yyyy = $words[2];
+        $mm = $words[0];
+        $dd = $words[1];
+        $yyyy = $words[2];
 
-        if (!is_numeric($words[0]) || !is_numeric($words[1]) || !is_numeric($words[1])) {
-            $message .= " The date should consist of numeric digits and 2 forward slashes. And, it does not! ";
+        if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy != 4)) {
+            $message .= " You did not use correct mm/dd/yyy date format. ";
+            return false;
+        }
+
+        if (!is_numeric($mm) || !is_numeric($dd) || !is_numeric($yyyy)) {
+            $message .= " The date should consist of numeric digits and 2 forward slashes. And, it does not have
+            numeric digits! ";
+            return false;
         }
 
         if (!checkdate($words[0], $words[1], $words[2])) {
