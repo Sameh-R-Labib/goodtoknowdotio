@@ -73,51 +73,8 @@ class AdminCreateUser
 
 
         /**
-         * Debug Code
-         */
-        echo "\n\n<p>Begin debug code output.</p>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_username: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_username);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_first_try: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_first_try);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_password: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_password);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_title: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_title);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_race: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_race);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_comment: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_comment);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$submitted_date: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($submitted_date);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$saved_str01: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($saved_str01);
-        echo "</pre>\n\n";
-        echo "\n\n<p>Var_dump of \$sessionMessage: </p>\n\n";
-        echo "\n\n<pre>";
-        var_dump($sessionMessage);
-        echo "</pre>\n\n";
-        die("\n\n<p>End of debug code output.</p>\n\n");
-
-
-        /**
-         * If any of the submitted fields is invalid
-         * then store a session message and redirect to /ax1/LoginForm/page
+         * If any of the submitted fields are invalid
+         * store a session message and redirect to /ax1/LoginForm/page
          */
         if (!self::is_username($db, $sessionMessage, $submitted_username) ||
             !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
