@@ -183,20 +183,18 @@ h2 + p {
 
 #leftsodiv {
     background-color: white;
-    width: 120px;
+    width: 123px;
     height: 185px;
     margin: auto;
     float: left;
-    border-left: 3px ridge #2a2aea;
 }
 
 #adminsysmsgblock {
     background-color: #ffefe1;
-    width: 862px;
+    width: 865px;
     height: 185px;
     margin: auto;
     float: left;
-    border-left: 3px ridge #2a2aea;
 }
 
 #sendtoauthor {
