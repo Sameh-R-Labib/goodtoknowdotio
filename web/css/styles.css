@@ -225,6 +225,7 @@ h2 + p {
     height: 70px;
     margin: auto;
     float: left;
+    border-left: 3px ridge #2a2aea;
 }
 
 .tooltip {
