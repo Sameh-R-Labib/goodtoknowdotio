@@ -170,6 +170,56 @@ body:before {
     border-bottom: 8px solid rgba(231, 76, 60, 0.9);
 }
 
+.form-wrapper form label:nth-of-type(6) input[type="radio"]:checked + div span {
+    background-color: #2ecc71;
+}
+
+.form-wrapper form label:nth-of-type(6) input[type="radio"]:checked + div span:before {
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(46, 204, 113, 0.9);
+}
+
+.form-wrapper form label:nth-of-type(7) input[type="radio"]:checked + div span {
+    background-color: #3498db;
+}
+
+.form-wrapper form label:nth-of-type(7) input[type="radio"]:checked + div span:before {
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(52, 152, 219, 0.9);
+}
+
+.form-wrapper form label:nth-of-type(8) input[type="radio"]:checked + div span {
+    background-color: #f1c40f;
+}
+
+.form-wrapper form label:nth-of-type(8) input[type="radio"]:checked + div span:before {
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(241, 196, 15, 0.9);
+}
+
+.form-wrapper form label:nth-of-type(9) input[type="radio"]:checked + div span {
+    background-color: #9b59b6;
+}
+
+.form-wrapper form label:nth-of-type(9) input[type="radio"]:checked + div span:before {
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(155, 89, 182, 0.9);
+}
+
+.form-wrapper form label:nth-of-type(10) input[type="radio"]:checked + div span {
+    background-color: #e74c3c;
+}
+
+.form-wrapper form label:nth-of-type(10) input[type="radio"]:checked + div span:before {
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(231, 76, 60, 0.9);
+}
+
 .form-wrapper form button {
     position: relative;
     display: block;
