@@ -38,6 +38,7 @@
 <div id="breadcrumbs">
     &nbsp;
 </div>
+<!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="adminsysmsgblock">
         <p>😏 System Message: <?php require SESSIONMESSAGE; ?></p>
