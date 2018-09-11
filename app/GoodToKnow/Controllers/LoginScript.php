@@ -47,6 +47,13 @@ class LoginScript
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /**
+         * Verify that the username and hash of the password are found.
+         * If not found redirect.
+         * If found then somehow mark user as logged in on the session.
+         */
+
     }
 
     public static function is_username(string &$message, string &$username)

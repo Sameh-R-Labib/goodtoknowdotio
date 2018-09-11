@@ -86,9 +86,6 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
-        /**
-         * So far so good!
-         */
 
         /**
          * Store user.
