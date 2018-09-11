@@ -23,12 +23,13 @@ p {
     padding: 20px;
     background-image: -webkit-linear-gradient(90deg, #168d59, #1ea167);
     position: absolute;
-    top: 50%;
+    /*top: 50%;*/
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    /*-ms-transform: translate(-50%, -50%);*/
+    /*transform: translate(-50%, -50%);*/
     /*top: 100px;*/
-    /*margin-left: -170px;*/
+    top: 100px;
+    margin-left: -170px;
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
