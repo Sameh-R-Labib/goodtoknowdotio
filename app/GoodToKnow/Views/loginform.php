@@ -26,8 +26,8 @@
 <form class="login" action="/ax1/LoginScript/page" method="post">
     <h2>Log In</h2>
     <fieldset>
-        <input type="text" placeholder="Username"/>
-        <input type="password" placeholder="Password"/>
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
     </fieldset>
     <input type="submit" value="Log In"/>
     <div class="utilities">
