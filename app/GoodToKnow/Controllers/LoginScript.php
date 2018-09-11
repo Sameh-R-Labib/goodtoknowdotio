@@ -17,7 +17,7 @@ class LoginScript
         global $sessionMessage;
 
         if ($is_logged_in) {
-            redirect_to("/prevent_infinite_loop.html");
+            redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
