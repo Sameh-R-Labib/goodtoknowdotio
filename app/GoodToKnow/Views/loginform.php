@@ -4,11 +4,6 @@
  * User: samehlabib
  * Date: 8/26/18
  * Time: 9:17 AM
- *
- * This view template is unusual in that
- * it must output all parts (top middle
- * bottom and session message) of the html
- * page.
  */
 ?><!DOCTYPE html>
 <html lang="en">
