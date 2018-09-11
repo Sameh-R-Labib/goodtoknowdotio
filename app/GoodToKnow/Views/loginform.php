@@ -28,7 +28,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<div class="login">
+<form class="login">
     <h2>Log In</h2>
     <fieldset>
         <input type="text" placeholder="Username"/>
@@ -40,6 +40,6 @@
         <a href="#">Invited to join? &rarr;</a>
         <p><?php require SESSIONMESSAGE; ?></p>
     </div>
-</div>
+</form>
 </body>
 </html>
