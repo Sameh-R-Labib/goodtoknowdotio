@@ -54,6 +54,8 @@ class LoginScript
          * If found then somehow mark user as logged in on the session.
          */
 
+        // WTF
+
     }
 
     public static function is_username(string &$message, string &$username)
