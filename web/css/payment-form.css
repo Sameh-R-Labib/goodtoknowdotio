@@ -1,5 +1,6 @@
 body {
-    color: #202020;
+    color: black;
+    opacity: 0.68;
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
     /*background-color: #1c1c21;*/
     background-color: whitesmoke;
