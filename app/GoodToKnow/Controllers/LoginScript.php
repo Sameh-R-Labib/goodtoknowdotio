@@ -54,7 +54,6 @@ class LoginScript
          * If found then somehow mark user as logged in on the session.
          */
 
-        // WTF
 
     }
 

@@ -86,7 +86,6 @@ class AdminCreateUser
             redirect_to("/ax1/LoginForm/page");
         }
 
-        // WTF
 
         /**
          * Store user.
