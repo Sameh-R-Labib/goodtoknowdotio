@@ -31,6 +31,12 @@ class LoginScript
         /**
          * Variables to work with:
          *   $_POST['username'], $_POST['password']
+         *
+         * I can't assume these post variables exist so I do the following.
          */
+
+        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+        $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
+
     }
 }
