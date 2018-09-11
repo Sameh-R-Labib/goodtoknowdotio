@@ -28,7 +28,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form class="login">
+<form class="login" action="/ax1/LoginScript/page" method="post">
     <h2>Log In</h2>
     <fieldset>
         <input type="text" placeholder="Username"/>
