@@ -1,7 +1,7 @@
 body {
     /*background-color: #1c1c21;*/
     background-color: whitesmoke;
-    opacity: 0.65;
+    opacity: 0.68;
     background: url("https://images.unsplash.com/photo-1447433819943-74a20887a81e") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -98,7 +98,6 @@ h2 + p {
 
 #topbar {
     background-color: white;
-    opacity: 48%;
     position: relative;
     width: 865px;
     height: 70px;
@@ -109,7 +108,6 @@ h2 + p {
 
 #adminhometop {
     background-color: #ba330b;
-    opacity: 48%;
     position: relative;
     width: 865px;
     height: 70px;
@@ -120,7 +118,6 @@ h2 + p {
 
 #communities {
     background-color: #d0883d;
-    opacity: 48%;
     position: relative;
     top: 7px;
     width: 865px;
@@ -131,7 +128,6 @@ h2 + p {
 
 #breadcrumbs {
     background-color: gainsboro;
-    opacity: 48%;
     position: relative;
     top: 14px;
     width: 865px;
@@ -142,7 +138,6 @@ h2 + p {
 
 #scriptoutput {
     background-color: white;
-    opacity: 48%;
     position: relative;
     top: 21px;
     width: 865px;
@@ -154,7 +149,6 @@ h2 + p {
 
 #maincontent {
     background-color: white;
-    opacity: 48%;
     position: relative;
     top: 28px;
     width: 865px;
@@ -166,7 +160,6 @@ h2 + p {
 
 #footerbar {
     background-color: seagreen;
-    opacity: 48%;
     position: relative;
     top: 35px;
     width: 865px;
@@ -177,7 +170,6 @@ h2 + p {
 
 #sendmessage {
     background-color: #008A70;
-    opacity: 48%;
     width: 178px;
     height: 70px;
     margin: auto;
@@ -187,7 +179,6 @@ h2 + p {
 
 #scriptmessage {
     background-color: #ffefe1;
-    opacity: 48%;
     width: 739px;
     height: 185px;
     margin: auto;
@@ -197,7 +188,6 @@ h2 + p {
 
 #leftsodiv {
     background-color: white;
-    opacity: 48%;
     width: 123px;
     height: 185px;
     margin: auto;
@@ -206,7 +196,6 @@ h2 + p {
 
 #adminsysmsgblock {
     background-color: #ffefe1;
-    opacity: 48%;
     width: 865px;
     height: 185px;
     margin: auto;
@@ -216,7 +205,6 @@ h2 + p {
 #sendtoauthor {
     float: left;
     background-color: #d9b039;
-    opacity: 48%;
     width: 123px;
     height: 62px;
     margin: auto;
@@ -225,7 +213,6 @@ h2 + p {
 #admindiv {
     float: left;
     background-color: dimgray;
-    opacity: 48%;
     width: 123px;
     height: 123px;
     margin: auto;
@@ -233,7 +220,6 @@ h2 + p {
 
 #inboxlink {
     background-color: lightslategray;
-    opacity: 48%;
     width: 168px;
     height: 70px;
     margin: auto;
@@ -243,7 +229,6 @@ h2 + p {
 
 #logindiv {
     background-color: #ff86aa;
-    opacity: 48%;
     width: 208px;
     height: 70px;
     margin: auto;
