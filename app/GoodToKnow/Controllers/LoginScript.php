@@ -58,6 +58,7 @@ class LoginScript
 
         if ($user === false || !empty($sessionMessage)) {
             $sessionMessage .= " Authentication failed! ";
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -70,6 +71,7 @@ class LoginScript
          */
         if ($user->is_suspended) {
             $sessionMessage .= " Your account is not active! ";
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -83,6 +85,7 @@ class LoginScript
 
 
         $sessionMessage .= " Welcome {$user->username}! ";
+        $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
 
