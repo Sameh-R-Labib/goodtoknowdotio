@@ -171,14 +171,14 @@ abstract class GoodObject
 
             $query_error = $db->error;
             if (!empty($query_error)) {
-                $error .= ' The insert failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $error .= ' The insert failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_QUOTES | ENT_HTML5) . ' ';
                 return false;
             }
 
             $num_affected_rows = $db->affected_rows;
             $insert_id = $db->insert_id;
         } catch (\Exception $e) {
-            $error .= ' GoodObject create() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $error .= ' GoodObject create() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
         }
 
         if (!empty($error)) {
@@ -279,6 +279,7 @@ abstract class GoodObject
     }
 
     // Make sure to sanitize values used in $sql.
+
     /**
      * Gives me an array of objects for the sql I give it.
      *
@@ -296,11 +297,11 @@ abstract class GoodObject
 
             $query_error = $db->error;
             if (!empty($query_error)) {
-                $error .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $error .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_QUOTES | ENT_HTML5) . ' ';
                 return false;
             }
         } catch (\Exception $e) {
-            $error .= ' GoodObject find_by_sql() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $error .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
         }
 
         if (!empty($error)) {
@@ -367,13 +368,13 @@ abstract class GoodObject
 
             $query_error = $db->error;
             if (!empty($query_error)) {
-                $error .= ' The update failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $error .= ' The update failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_QUOTES | ENT_HTML5) . ' ';
                 return false;
             }
 
             $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
-            $error .= ' GoodObject update() threw exception: ' . $e->getMessage() . ' ';
+            $error .= ' GoodObject update() threw exception: ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
         }
 
         if ($num_affected_rows == 1) {
@@ -403,13 +404,13 @@ abstract class GoodObject
 
             $query_error = $db->error;
             if (!empty($query_error)) {
-                $error .= ' The delete failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $error .= ' The delete failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_QUOTES | ENT_HTML5) . ' ';
                 return false;
             }
 
             $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
-            $error .= ' GoodObject delete() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $error .= ' GoodObject delete() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
         }
 
         if ($num_affected_rows == 1) {

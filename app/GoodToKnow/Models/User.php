@@ -74,7 +74,46 @@ class User extends GoodObject
 
     public static function authenticate(\mysqli $db, string &$error, string $username, string $password)
     {
+        /**
+         * What you see here could have been done using the find_by_sql
+         * but I chose to do this explicitly using a prepared statement since
+         * that helps rebuff sql injection attacks.
+         */
+        try {
+            $sql = 'SELECT *
+                    FROM `users`
+                    WHERE `username` = ?
+                    LIMIT 1';
+            $stmt = $db->stmt_init();
+            if (!$stmt->prepare($sql)) {
+                $error .= $stmt->error . ' ';
+                return false;
+            } else {
+                $stmt->bind_param('s', $username);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $numrows = $result->num_rows;
+                if (!$numrows) {
+                    $stmt->close();
+                    return false;
+                } else {
+                    $user = $result->fetch_object('\GoodToKnow\Models\User');
+                    $stmt->close();
+                }
+            }
+        } catch (\Exception $e) {
+            $error .= ' User::authenticate() caught a thrown exception: ' .
+                htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
+        }
+        if (!empty($error)) {
+            return false;
+        }
+        if (!password_verify($password, $user->password)) {
+            $error .= " Authentication failed! ";
+            return false;
+        }
 
+        return $user;
     }
 
     /**
