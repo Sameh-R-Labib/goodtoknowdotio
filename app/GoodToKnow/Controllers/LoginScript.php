@@ -82,6 +82,13 @@ class LoginScript
         $_SESSION['role'] = $user->role;
         $_SESSION['community_id'] = $user->id_of_default_community;
         $_SESSION['is_suspended'] = $user->is_suspended;
+        /**
+         * There are other ones but I need to add the code for getting them to authenticate.
+         *
+         *
+         *
+         *
+         */
 
 
         $sessionMessage .= " Welcome {$user->username}! ";

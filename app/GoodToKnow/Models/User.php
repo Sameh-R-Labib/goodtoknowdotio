@@ -72,6 +72,13 @@ class User extends GoodObject
      */
     public $comment;
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param string $username
+     * @param string $password
+     * @return bool|object|\stdClass
+     */
     public static function authenticate(\mysqli $db, string &$error, string $username, string $password)
     {
         /**
@@ -112,6 +119,15 @@ class User extends GoodObject
             $error .= " Authentication failed! ";
             return false;
         }
+
+        /**
+         * Add code which gets info about community membership.
+         * This gets used for convenient storage ad retrieval from session.
+         *
+         *
+         *
+         *
+         */
 
         return $user;
     }
