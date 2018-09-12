@@ -96,6 +96,11 @@ class LoginScript
         redirect_to("/ax1/Home/page");
     }
 
+    /**
+     * @param string $message
+     * @param string $username
+     * @return bool
+     */
     public static function is_username(string &$message, string &$username)
     {
         /**
@@ -178,6 +183,11 @@ class LoginScript
         return true;
     }
 
+    /**
+     * @param string $message
+     * @param string $password
+     * @return bool
+     */
     public static function is_password(string &$message, string &$password)
     {
         /**
