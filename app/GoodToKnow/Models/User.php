@@ -72,6 +72,11 @@ class User extends GoodObject
      */
     public $comment;
 
+    public static function authenticate(\mysqli $db, string &$error, string $username, string $password)
+    {
+
+    }
+
     /**
      * @param \mysqli $db
      * @param string $error

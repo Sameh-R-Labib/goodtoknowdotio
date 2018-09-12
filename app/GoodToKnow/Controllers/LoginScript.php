@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\User;
+
+
 class LoginScript
 {
     public function page()
@@ -49,10 +52,9 @@ class LoginScript
         }
 
         /**
-         * Verify that the username and hash of the password are found.
-         * If not found redirect.
-         * If found then somehow mark user as logged in on the session.
-         */
+         * authenticate never returns true it returns an object instead.
+         **/
+        $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
 
 
     }
