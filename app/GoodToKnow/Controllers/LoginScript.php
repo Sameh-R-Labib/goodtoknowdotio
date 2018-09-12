@@ -56,7 +56,34 @@ class LoginScript
          **/
         $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
 
+        if ($user === false || !empty($sessionMessage)) {
+            $sessionMessage .= " Authentication failed! ";
+            redirect_to("/ax1/LoginForm/page");
+        }
 
+        /**
+         * So we have a User object.
+         */
+
+        /**
+         * If this user is suspended don't let them in.
+         */
+        if ($user->is_suspended) {
+            $sessionMessage .= " Your account is not active! ";
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        /**
+         * Put user's data in session.
+         */
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['role'] = $user->role;
+        $_SESSION['community_id'] = $user->id_of_default_community;
+        $_SESSION['is_suspended'] = $user->is_suspended;
+
+
+        $sessionMessage .= " Welcome {$user->username}! ";
+        redirect_to("/ax1/Home/page");
     }
 
     public static function is_username(string &$message, string &$username)
