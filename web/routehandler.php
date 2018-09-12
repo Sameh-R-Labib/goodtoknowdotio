@@ -60,13 +60,18 @@ $user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
 $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 
-// The name of community which the user wants to see.
+// Current community
 $community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
-
-// The communities (objects) the user belongs to.
-$community_array = (isset($_SESSION['community_array'])) ? $_SESSION['community_array'] : [];
-
 $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
+
+/**
+ * communities for this user
+ *
+ * The structure of that associative array:
+ *  - Key   is a community id
+ *  - Value is a community name
+ */
+$communities_for_this_user = (isset($_SESSION['communities_for_this_user'])) ? $_SESSION['communities_for_this_user'] : [];
 
 $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 

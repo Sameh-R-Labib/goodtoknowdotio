@@ -19,15 +19,6 @@ class AdminPassCodeGenFormProcessor
         global $is_logged_in;
         global $sessionMessage;
         global $is_admin;
-        global $user_id;
-        global $role;
-        global $community_name;
-        global $community_id;
-        global $community_array;
-        global $topic_id;
-        global $page_id;
-        global $saved_str01;
-        global $saved_str02;
 
         if (!$is_logged_in OR !$is_admin) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
@@ -49,14 +40,8 @@ class AdminPassCodeGenFormProcessor
         }
 
 
-        /**
-         * If we don't have $community_array yet then get it
-         */
-        if (empty($community_array)) {
-            $db = db_connect($sessionMessage);
-            $community_array = Community::find_all($db, $sessionMessage);
-            $_SESSION['community_array'] = $community_array;
-        }
+        $db = db_connect($sessionMessage);
+        $community_array = Community::find_all($db, $sessionMessage);
 
         /**
          * Make sure the value of $_POST['choice'] is one of the existing community ids.

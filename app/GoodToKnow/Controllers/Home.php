@@ -16,14 +16,14 @@ class Home
         global $is_logged_in;
         global $sessionMessage;
         global $is_admin;
-        global $user_id;              // int value
-        global $role;                 // string value
-        global $community_name;       // string value
-        global $community_id;         // int value
-        global $community_array;      // array of objects (Communities the user belongs to)
-        global $topic_id;             // int value
-        global $page_id;              // int value
-        global $saved_str01;          // string value (temporary storage)
+        global $user_id;                    // int value
+        global $role;                       // string value
+        global $community_name;             // string value
+        global $community_id;               // int value
+        global $communities_for_this_user;  // array (key: id of community, value: name of community)
+        global $topic_id;                   // int value
+        global $page_id;                    // int value
+        global $saved_str01;                // string value (temporary storage)
         global $saved_str02;
 
         if (!$is_logged_in) {

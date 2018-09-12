@@ -19,15 +19,6 @@ class AdminPassCodeGenerationForm
         global $is_logged_in;
         global $is_admin;
         global $sessionMessage;
-        global $user_id;
-        global $role;
-        global $community_name;
-        global $community_id;
-        global $community_array;
-        global $topic_id;
-        global $page_id;
-        global $saved_str01;
-        global $saved_str02;
 
         if (!$is_logged_in OR !$is_admin) {
             $sessionMessage .= ' You need to be the Admin to follow that request route.';
