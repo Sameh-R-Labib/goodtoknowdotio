@@ -9,7 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
 use GoodToKnow\Models\User;
+use GoodToKnow\Models\UserToCommunity;
 
 
 class LoginScript
@@ -87,10 +89,62 @@ class LoginScript
          *
          * Things we want to put in session:
          *  - community_name (corresponds with community_id)
-         *  - communities_for_this_user (array of Community objects)
+         *  - communities_for_this_user (array described below)
          */
 
+        /**
+         * I need to use a method of UserToCommunity to
+         * find out which communities this user belongs to.
+         * Then I'll use that information along with information
+         * from the communities table to be able to have
+         * an array of the communities corresponding
+         * to the current user.
+         *
+         * The structure of that array:
+         *  - associative
+         *  - Key is a community id
+         *  - Value is a community name
+         */
 
+        /**
+         * So, the first get all the communities
+         * for the user.
+         */
+        $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user->id;
+        $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
+
+        if (!$user_to_community_array) {
+            $sessionMessage .= " LoginScript page() says unexpected no user_to_community_array. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        /**
+         * Build the array I'm looking for.
+         */
+        $communities_for_this_user = [];
+        foreach ($user_to_community_array as $value) {
+            // Talking about the right side of the assignment statement
+            // First we're getting a Community object
+            $communities_for_this_user[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
+            if (!$communities_for_this_user[$value->community_id]) {
+                $sessionMessage .= " LoginScript page() says err_no 80848. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/LoginForm/page");
+            }
+            // Then we're getting the community_name from that object
+            $communities_for_this_user[$value->community_id] = $communities_for_this_user[$value->community_id]->community_name;
+        }
+
+        /**
+         * Finally save them to session
+         */
+        $_SESSION['community_name'] = $communities_for_this_user[$user->id_of_default_community];
+        $_SESSION['communities_for_this_user'] = $communities_for_this_user;
+
+        /**
+         * Report success
+         */
         $sessionMessage .= " Welcome {$user->username}! ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
