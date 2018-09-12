@@ -120,15 +120,6 @@ class User extends GoodObject
             return false;
         }
 
-        /**
-         * Add code which gets info about community membership.
-         * This gets used for convenient storage ad retrieval from session.
-         *
-         *
-         *
-         *
-         */
-
         return $user;
     }
 

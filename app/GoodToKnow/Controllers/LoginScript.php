@@ -70,7 +70,7 @@ class LoginScript
          * If this user is suspended don't let them in.
          */
         if ($user->is_suspended) {
-            $sessionMessage .= " Your account is not active! ";
+            $sessionMessage .= " No active account exists for this username. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
@@ -83,11 +83,11 @@ class LoginScript
         $_SESSION['community_id'] = $user->id_of_default_community;
         $_SESSION['is_suspended'] = $user->is_suspended;
         /**
-         * There are other ones but I need to add the code for getting them to authenticate.
+         * There are other ones but I need to add the code for getting them.
          *
-         *
-         *
-         *
+         * Things we want to put in session:
+         *  - community_name (corresponds with community_id)
+         *  - communities_for_this_user (array of Community objects)
          */
 
 
