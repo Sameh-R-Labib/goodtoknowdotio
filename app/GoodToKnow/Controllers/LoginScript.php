@@ -26,6 +26,11 @@ class LoginScript
             redirect_to("/ax1/Home/page");
         }
 
+        /*
+         * For denial of service attacks
+         */
+        sleep(7);
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage)) {
