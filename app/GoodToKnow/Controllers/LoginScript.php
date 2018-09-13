@@ -44,28 +44,6 @@ class LoginScript
         $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
 
         /**
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "\n<p>var dump \$is_logged_in: </p>\n";
-        echo "\n<pre>";
-        var_dump($is_logged_in);
-        echo "</pre>\n";
-        echo "\n<p>Var dump \$sessionMessage: </p>\n";
-        echo "\n<pre>";
-        var_dump($sessionMessage);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$submitted_password: </p>\n";
-        echo "\n<pre>";
-        print_r($submitted_password);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$submitted_username: </p>\n";
-        echo "\n<pre>";
-        print_r($submitted_username);
-        echo "</pre>\n";
-        die("\n<p>End debug</p>\n");
-
-        /**
          * If any of the submitted fields are invalid
          * store a session message and redirect to /ax1/LoginForm/page
          */
@@ -74,6 +52,11 @@ class LoginScript
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /**
+         * Debug
+         */
+        die("<p>We have well formed username and password.</p>");
 
         /**
          * authenticate never returns true it returns an object instead.
