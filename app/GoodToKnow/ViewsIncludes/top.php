@@ -32,9 +32,7 @@
 </div>
 <!-- communities -->
 <div id="communities">
-    <p>👪: <a href="#">My First Community</a> ↬ <a href="#">My Second Community</a> ↬ <a href="#">My Third Community</a>
-        ↬ <a href="#">My Fourth Community</a> ↬ <a href="#">My Fifth Community</a> ↬ <a href="#">My Fifth Community</a>
-        ↬ <a href="#">My Sixth Community</a> ↬ <a href="#">My Seventh Community</a></p>
+    <p>👪: <?php require COMMUNITIESFORTHISUSER; ?></p>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">

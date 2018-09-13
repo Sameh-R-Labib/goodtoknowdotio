@@ -25,6 +25,7 @@ define('VIEWSINCLUDES', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIR
 define('TOP', VIEWSINCLUDES . DIRSEP . 'top.php');
 define('BOTTOM', VIEWSINCLUDES . DIRSEP . 'bottom.php');
 define('SESSIONMESSAGE', VIEWSINCLUDES . DIRSEP . 'sessionmessage.php');
+define('COMMUNITIESFORTHISUSER', VIEWSINCLUDES . DIRSEP . 'communitiesforthisuser.php');
 
 /**
  * More require statements
