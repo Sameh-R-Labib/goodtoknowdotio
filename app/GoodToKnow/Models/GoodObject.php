@@ -280,6 +280,10 @@ abstract class GoodObject
 
     // Make sure to sanitize values used in $sql.
 
+    // CAVEAT: It returns field values ONLY as strings.
+    //         If this is not acceptable then create a
+    //         custom Read method for the child class
+    //         which uses prepared statement mysqli functions.
     /**
      * Gives me an array of objects for the sql I give it.
      *
