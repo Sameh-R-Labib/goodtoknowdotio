@@ -145,7 +145,7 @@ class LoginScript
          */
         $sessionMessage .= " Welcome {$user->username}! ";
         $_SESSION['message'] = $sessionMessage;
-        redirect_to("/ax1/AdminDebugShowSession/page");
+        redirect_to("/ax1/LoginForm/page");
     }
 
     /**
