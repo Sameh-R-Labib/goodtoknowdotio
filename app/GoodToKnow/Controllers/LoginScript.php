@@ -54,11 +54,6 @@ class LoginScript
         }
 
         /**
-         * Debug
-         */
-        die("<p>We have well formed username and password.</p>");
-
-        /**
          * authenticate never returns true it returns an object instead.
          **/
         $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
@@ -72,6 +67,20 @@ class LoginScript
         /**
          * So we have a User object.
          */
+
+        /**
+         * Debug
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "\n<p>Var_dump \$user: </p>\n";
+        echo "\n<pre>";
+        var_dump($user);
+        echo "</pre>\n";
+        echo "\n<p>Print_r \$user: </p>\n";
+        echo "\n<pre>";
+        print_r($user);
+        echo "</pre>\n";
+        die("\n<p>We were authenticated.</p>\n");
 
         /**
          * If this user is suspended don't let them in.
