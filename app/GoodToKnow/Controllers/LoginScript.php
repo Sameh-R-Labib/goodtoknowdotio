@@ -117,21 +117,6 @@ class LoginScript
             redirect_to("/ax1/LoginForm/page");
         }
 
-        /*
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "\n<p>Var_dump \$user_to_community_array: </p>\n";
-        echo "\n<pre>";
-        var_dump($user_to_community_array);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$user_to_community_array: </p>\n";
-        echo "\n<pre>";
-        print_r($user_to_community_array);
-        echo "</pre>\n";
-        die("\n<p>The value should be an array of objects. It should have one object. That object should
-        contain the following attributes: 'id', 'user_id', 'community_id'</p>\n");
-
         /**
          * Build the array I'm looking for.
          */
@@ -148,6 +133,20 @@ class LoginScript
             // Then we're getting the community_name from that object
             $communities_for_this_user[$value->community_id] = $communities_for_this_user[$value->community_id]->community_name;
         }
+
+        /*
+         * Debug
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "\n<p>Var_dump \$communities_for_this_user: </p>\n";
+        echo "\n<pre>";
+        var_dump($communities_for_this_user);
+        echo "</pre>\n";
+        echo "\n<p>Print_r \$communities_for_this_user: </p>\n";
+        echo "\n<pre>";
+        print_r($communities_for_this_user);
+        echo "</pre>\n";
+        die("\n<p>End debug</p>\n");
 
         /**
          * Finally save them to session
