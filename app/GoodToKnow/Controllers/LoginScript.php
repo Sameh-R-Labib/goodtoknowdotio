@@ -69,20 +69,6 @@ class LoginScript
          */
 
         /**
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "\n<p>Var_dump \$user: </p>\n";
-        echo "\n<pre>";
-        var_dump($user);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$user: </p>\n";
-        echo "\n<pre>";
-        print_r($user);
-        echo "</pre>\n";
-        die("\n<p>We were authenticated.</p>\n");
-
-        /**
          * If this user is suspended don't let them in.
          */
         if ($user->is_suspended) {
@@ -90,6 +76,11 @@ class LoginScript
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /*
+         * Debug
+         */
+        die("<p>We are not suspended.</p>");
 
         /**
          * Put user's data in session.
