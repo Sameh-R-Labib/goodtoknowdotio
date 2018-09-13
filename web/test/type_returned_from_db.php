@@ -89,6 +89,16 @@ if (!empty($error)) {
 }
 
 while ($row = $result->fetch_assoc()) {
+    /*
+     * Debug
+     *
+     * Here is where we can get our first
+     * glimpse into the types returned.
+     */
+    echo "<p>This is the array we get when we do \$result->fetch_assoc(): </p><pre>";
+    var_dump($row);
+    echo "</pre>";
+
     $object_array[] = array_to_object($row);
 }
 
