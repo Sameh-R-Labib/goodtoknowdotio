@@ -134,20 +134,6 @@ class LoginScript
             $communities_for_this_user[$value->community_id] = $communities_for_this_user[$value->community_id]->community_name;
         }
 
-        /*
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "\n<p>Var_dump \$communities_for_this_user: </p>\n";
-        echo "\n<pre>";
-        var_dump($communities_for_this_user);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$communities_for_this_user: </p>\n";
-        echo "\n<pre>";
-        print_r($communities_for_this_user);
-        echo "</pre>\n";
-        die("\n<p>End debug</p>\n");
-
         /**
          * Finally save them to session
          */
