@@ -146,6 +146,7 @@ h2 + p {
 }
 
 #maincontent {
+    opacity: 0.80;
     background-color: white;
     position: relative;
     top: 28px;
