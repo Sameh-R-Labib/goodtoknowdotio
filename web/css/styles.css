@@ -114,7 +114,7 @@ h2 + p {
 }
 
 #communities {
-    opacity: 0.38;
+    opacity: 0.24;
     background-color: #d0883d;
     position: relative;
     top: 7px;
@@ -125,7 +125,7 @@ h2 + p {
 }
 
 #breadcrumbs {
-    opacity: 0.38;
+    opacity: 0.24;
     background-color: gainsboro;
     position: relative;
     top: 14px;
@@ -158,7 +158,7 @@ h2 + p {
 }
 
 #footerbar {
-    opacity: 0.38;
+    opacity: 0.24;
     background-color: seagreen;
     position: relative;
     top: 35px;
@@ -169,7 +169,7 @@ h2 + p {
 }
 
 #sendmessage {
-    opacity: 0.38;
+    opacity: 0.24;
     background-color: #008A70;
     width: 178px;
     height: 70px;
@@ -188,7 +188,7 @@ h2 + p {
 }
 
 #leftsodiv {
-    opacity: 0.38;
+    opacity: 0.24;
     background-color: white;
     width: 123px;
     height: 185px;
@@ -221,7 +221,7 @@ h2 + p {
 }
 
 #inboxlink {
-    opacity: 0.38;
+    opacity: 0.24;
     background-color: lightslategray;
     width: 168px;
     height: 70px;
