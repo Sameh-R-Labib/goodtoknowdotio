@@ -221,6 +221,7 @@ h2 + p {
 }
 
 #inboxlink {
+    opacity: 0.68;
     background-color: lightslategray;
     width: 168px;
     height: 70px;
