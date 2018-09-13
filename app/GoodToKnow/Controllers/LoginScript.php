@@ -77,11 +77,6 @@ class LoginScript
             redirect_to("/ax1/LoginForm/page");
         }
 
-        /*
-         * Debug
-         */
-        die("<p>We are not suspended.</p>");
-
         /**
          * Put user's data in session.
          */
@@ -90,9 +85,7 @@ class LoginScript
         $_SESSION['community_id'] = $user->id_of_default_community;
         $_SESSION['is_suspended'] = $user->is_suspended;
         /**
-         * There are other ones but I need to add the code for getting them.
-         *
-         * Things we want to put in session:
+         * Other things we want to put in session:
          *  - community_name (corresponds with community_id)
          *  - communities_for_this_user (array described below)
          */
@@ -123,6 +116,21 @@ class LoginScript
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /*
+         * Debug
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "\n<p>Var_dump \$user_to_community_array: </p>\n";
+        echo "\n<pre>";
+        var_dump($user_to_community_array);
+        echo "</pre>\n";
+        echo "\n<p>Print_r \$user_to_community_array: </p>\n";
+        echo "\n<pre>";
+        print_r($user_to_community_array);
+        echo "</pre>\n";
+        die("\n<p>The value should be an array of objects. It should have one object. That object should
+        contain the following attributes: 'id', 'user_id', 'community_id'</p>\n");
 
         /**
          * Build the array I'm looking for.
