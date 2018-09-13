@@ -47,13 +47,13 @@ class LoginScript
          * Debug
          */
         echo "\n<p>Begin debug</p>\n";
-        echo "\n<p>Print_r \$is_logged_in: </p>\n";
+        echo "\n<p>var dump \$is_logged_in: </p>\n";
         echo "\n<pre>";
-        print_r($is_logged_in);
+        var_dump($is_logged_in);
         echo "</pre>\n";
-        echo "\n<p>Print_r \$sessionMessage: </p>\n";
+        echo "\n<p>Var dump \$sessionMessage: </p>\n";
         echo "\n<pre>";
-        print_r($sessionMessage);
+        var_dump($sessionMessage);
         echo "</pre>\n";
         echo "\n<p>Print_r \$submitted_password: </p>\n";
         echo "\n<pre>";
