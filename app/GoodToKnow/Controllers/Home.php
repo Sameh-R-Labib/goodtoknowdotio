@@ -33,7 +33,6 @@ class Home
 
         $html_title = 'GoodToKnow.io';
 
-
         require VIEWS . DIRSEP . 'home.php';
     }
 }
