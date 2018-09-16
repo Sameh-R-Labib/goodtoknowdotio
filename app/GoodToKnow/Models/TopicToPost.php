@@ -37,6 +37,12 @@ class TopicToPost extends GoodObject
     public $post_id;
 
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $topic_id
+     * @return array|bool
+     */
     public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, $topic_id)
     {
         /**
@@ -106,5 +112,36 @@ class TopicToPost extends GoodObject
         }
 
         return $array_of_Posts;
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $topic_id
+     * @return array|bool
+     */
+    public static function special_get_posts_array_for_a_topic(\mysqli $db, string &$error, $topic_id)
+    {
+        /**
+         * This function is like (and uses) get_posts_array_for_a_topic
+         * but it is different in that:
+         *   the array structure it returns is different
+         * Here is the array structure:
+         *  - Each item key is a post id
+         *  - Each item value is the post title for that post id
+         */
+
+        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
+        if (empty($posts_array) || $posts_array === false) {
+            $error .= ' TopicToPost special_get_posts_array_for_a_topic() say: Either topic has no posts or unexpected error. ';
+            return false;
+        }
+
+        $special_posts_array = [];
+        foreach ($posts_array as $item) {
+            $special_posts_array[$item->id] = $item->title;
+        }
+
+        return $special_posts_array;
     }
 }
