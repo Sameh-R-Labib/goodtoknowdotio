@@ -144,6 +144,9 @@ class LoginScript
          */
         $_SESSION['community_name'] = $communities_for_this_user[$user->id_of_default_community];
         $_SESSION['communities_for_this_user'] = $communities_for_this_user;
+        $_SESSION['type_of_resource_being_requested'] = 'community';
+        $_SESSION['topic_id'] = 0;
+        $_SESSION['post_id'] = 0;
 
         /**
          * Report success
