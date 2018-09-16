@@ -76,7 +76,9 @@ $communities_for_this_user = (isset($_SESSION['communities_for_this_user'])) ? $
 
 $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
-$page_id = (isset($_SESSION['page_id'])) ? $_SESSION['page_id'] : 0;
+$post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
+
+$type_of_resource_being_requested = (isset($_SESSION['type_of_resource_being_requested'])) ? $_SESSION['type_of_resource_being_requested'] : '';
 
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 

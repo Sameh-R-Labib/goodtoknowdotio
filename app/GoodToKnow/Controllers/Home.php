@@ -22,9 +22,10 @@ class Home
         global $community_id;               // int value
         global $communities_for_this_user;  // array (key: id of community, value: name of community)
         global $topic_id;                   // int value
-        global $page_id;                    // int value
+        global $post_id;                    // int value
         global $saved_str01;                // string value (temporary storage)
         global $saved_str02;
+        global $type_of_resource_being_requested;  // result of running SetHomePageCommunityTopicPost
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
