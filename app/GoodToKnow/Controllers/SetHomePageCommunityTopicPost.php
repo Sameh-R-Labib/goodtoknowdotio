@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\TopicToPost;
 
 
 class SetHomePageCommunityTopicPost
@@ -135,7 +136,7 @@ class SetHomePageCommunityTopicPost
          * But before we get started let's establish whether or not
          * $post_id is not some post id from amongst the posts belonging to the $topic_id
          */
-        $special_post_array = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
         if (!$special_post_array) {
             $sessionMessage .= " SetHomePageCommunityTopicPost page says: unable to get posts for the specified topic. ";
             $_SESSION['message'] .= $sessionMessage;
