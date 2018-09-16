@@ -57,7 +57,7 @@ class CommunityToTopic extends GoodObject
         $community_to_topic_array = CommunityToTopic::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$community_to_topic_array) {
-            $sessionMessage .= " CommunityToTopic get_topics_array_for_a_community() this community
+            $error .= " CommunityToTopic get_topics_array_for_a_community() this community
              has no topics. Otherwise something else went wrong. ";
             return false;
         }
@@ -71,7 +71,7 @@ class CommunityToTopic extends GoodObject
             // First we're getting a Community object
             $topics_for_this_community[$value->topic_id] = Topic::find_by_id($db, $sessionMessage, $value->topic_id);
             if (!$topics_for_this_community[$value->topic_id]) {
-                $sessionMessage .= " CommunityToTopic get_topics_array_for_a_community() says err_no 70737. ";
+                $error .= " CommunityToTopic get_topics_array_for_a_community() says err_no 70737. ";
                 return false;
             }
             // Then we're getting the community_name from that object
