@@ -46,13 +46,6 @@ class SetHomePageCommunityTopicPost
             redirect_to("/ax1/LoginForm/page");
         }
 
-
-        /**
-         * Debug
-         */
-        die("it didn't redirect");
-
-
         /**
          * Make sure the three parameters were specified in the request.
          */
@@ -61,6 +54,22 @@ class SetHomePageCommunityTopicPost
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /**
+         * Debug
+         */
+        echo "\n<p>Var_dump \$community_id: </p>\n";
+        echo "\n<pre>";
+        var_dump($community_id);
+        echo "\n<p>Var_dump \$topic_id: </p>\n";
+        echo "\n<pre>";
+        var_dump($topic_id);
+        echo "\n<p>Var_dump \$post_id: </p>\n";
+        echo "\n<pre>";
+        var_dump($post_id);
+        die('It did not redirect after checking if all three parameters were set.')
+
+
 
         if (!is_numeric($community_id) || !is_numeric($topic_id) || !is_numeric($post_id)) {
             $sessionMessage .= " SetHomePageCommunityTopicPost page says: malformed request type 2. ";
