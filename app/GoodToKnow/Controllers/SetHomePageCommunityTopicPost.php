@@ -58,7 +58,7 @@ class SetHomePageCommunityTopicPost
          * Make sure the community_id belongs to one of the user's communities.
          */
         if (!array_key_exists($community_id, $communities_for_this_user)) {
-            $sessionMessage .= " SetHomePageCommunityTopicPost page says: invalid community_id request. ";
+            $sessionMessage .= " Invalid community_id. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
