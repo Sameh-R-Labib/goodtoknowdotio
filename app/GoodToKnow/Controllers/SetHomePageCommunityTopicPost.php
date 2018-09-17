@@ -31,6 +31,14 @@ class SetHomePageCommunityTopicPost
          */
 
 
+        /**
+         * Debug Code
+         */
+        die("<p>So, far so good</p>");
+
+
+
+
         global $is_logged_in;
         global $sessionMessage;
         global $communities_for_this_user;  // array (key: id of community, value: name of community)
