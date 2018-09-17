@@ -67,7 +67,7 @@ class SetHomePageCommunityTopicPost
         echo "\n<p>Var_dump \$post_id: </p>\n";
         echo "\n<pre>";
         var_dump($post_id);
-        die('It did not redirect after checking if all three parameters were set.')
+        die('It did not redirect after checking if all three parameters were set.');
 
 
 
