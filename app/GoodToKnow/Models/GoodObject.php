@@ -315,6 +315,11 @@ abstract class GoodObject
         while ($row = $result->fetch_assoc()) {
             $object_array[] = static::array_to_object($row);
         }
+
+        if (empty($object_array)) {
+            return false;
+        }
+
         return $object_array;
     }
 
