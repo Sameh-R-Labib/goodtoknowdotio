@@ -50,20 +50,9 @@ class SetHomePageCommunityTopicPost
          * Make sure the three parameters were specified in the request.
          *
          * Actually it would cause Fatal Error if any of the parameters was not set
+         *
+         * Also, there's no need to check to see if the params are numeric.
          */
-
-        if (!is_numeric($community_id) || !is_numeric($topic_id) || !is_numeric($post_id)) {
-            $sessionMessage .= " SetHomePageCommunityTopicPost page says: malformed request type 2. ";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-
-        /**
-         * Debug
-         */
-        die('It did not redirect because all params are numeric.');
-
 
         /**
          * Make sure the community_id belongs to one of the user's communities.
@@ -73,6 +62,13 @@ class SetHomePageCommunityTopicPost
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+
+        /**
+         * Debug
+         */
+        die("It did not redirect because the user belongs to the community you specified.");
+
 
 
         // Make sure the resource request is well formed and reasonable
