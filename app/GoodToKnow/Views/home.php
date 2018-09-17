@@ -28,7 +28,7 @@
                                              style="float: left"></a>
     <div id="sendmessage"><p><a href="#">♠👔♠ admin</a></p></div>
     <div id="inboxlink"><p><a href="#">🎫 inbox</a></p></div>
-    <div id="logindiv"><p><a href="/ax1/Logout/page">🚪 log out</a></p></div>
+    <div id="logindiv"><p><a href="/ax1/Logout/page">👋 log out</a></p></div>
 </div>
 <!-- communities -->
 <div id="communities">
