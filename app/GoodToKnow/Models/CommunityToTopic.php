@@ -63,8 +63,6 @@ class CommunityToTopic extends GoodObject
         $community_to_topic_array = CommunityToTopic::find_by_sql($db, $error, $sql);
 
         if (!$community_to_topic_array) {
-            $error .= " CommunityToTopic get_topics_array_for_a_community() this community
-             has no topics. Otherwise something else went wrong. ";
             return false;
         }
 
