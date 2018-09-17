@@ -34,39 +34,6 @@ class SetHomePageCommunityTopicPost
         global $sessionMessage;
         global $communities_for_this_user;  // array (key: id of community, value: name of community)
 
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "\n<p>Var_dump \$is_logged_in: </p>\n";
-        echo "\n<pre>";
-        var_dump($is_logged_in);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$is_logged_in: </p>\n";
-        echo "\n<pre>";
-        print_r($is_logged_in);
-        echo "</pre>\n";
-        echo "\n<p>Var_dump \$sessionMessage: </p>\n";
-        echo "\n<pre>";
-        var_dump($sessionMessage);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$sessionMessage: </p>\n";
-        echo "\n<pre>";
-        print_r($sessionMessage);
-        echo "</pre>\n";
-        echo "\n<p>Var_dump \$communities_for_this_user: </p>\n";
-        echo "\n<pre>";
-        var_dump($communities_for_this_user);
-        echo "</pre>\n";
-        echo "\n<p>Print_r \$communities_for_this_user: </p>\n";
-        echo "\n<pre>";
-        print_r($communities_for_this_user);
-        echo "</pre>\n";
-        die("\n<p>End debug</p>\n");
-
-
-
         if (!$is_logged_in) {
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
@@ -78,6 +45,13 @@ class SetHomePageCommunityTopicPost
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+
+        /**
+         * Debug
+         */
+        die("it didn't redirect");
+
 
         /**
          * Make sure the three parameters were specified in the request.
