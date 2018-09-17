@@ -60,7 +60,7 @@ class CommunityToTopic extends GoodObject
          * In other words we need an array of CommunityToTopic objects for $community_id
          */
         $sql = 'SELECT * FROM community_to_topic WHERE `community_id`=' . $community_id;
-        $community_to_topic_array = CommunityToTopic::find_by_sql($db, $sessionMessage, $sql);
+        $community_to_topic_array = CommunityToTopic::find_by_sql($db, $error, $sql);
 
         if (!$community_to_topic_array) {
             $error .= " CommunityToTopic get_topics_array_for_a_community() this community
@@ -75,7 +75,7 @@ class CommunityToTopic extends GoodObject
         foreach ($community_to_topic_array as $value) {
             // Talking about the right side of the assignment statement
             // First we're getting a Community object
-            $topics_for_this_community[$value->topic_id] = Topic::find_by_id($db, $sessionMessage, $value->topic_id);
+            $topics_for_this_community[$value->topic_id] = Topic::find_by_id($db, $error, $value->topic_id);
             if (!$topics_for_this_community[$value->topic_id]) {
                 $error .= " CommunityToTopic get_topics_array_for_a_community() says err_no 70737. ";
                 return false;
