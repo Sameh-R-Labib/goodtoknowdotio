@@ -26,7 +26,7 @@
 <div id="topbar">
     <a href="https://goodtoknow.io/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="302"
                                              style="float: left"></a>
-    <div id="sendmessage"><p><a href="#">🖌 Admin</a></p></div>
+    <div id="sendmessage"><p><a href="#"><font size="9"> </font></a></p></div>
     <div id="inboxlink"><p><a href="#">🎫 Inbox</a></p></div>
     <div id="logindiv"><p><a href="/ax1/Logout/page">🚪 Log Out</a></p></div>
 </div>
@@ -41,7 +41,7 @@
 <!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="leftsodiv">
-        <div id="sendtoauthor"><p><a href="#">🖌 Author</a></p></div>
+        <div id="sendtoauthor"><p><a href="#">🛎</a></p></div>
         <div id="admindiv">
             <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
                                                                     width="123"></a>
