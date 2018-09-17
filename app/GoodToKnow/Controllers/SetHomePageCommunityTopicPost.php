@@ -63,14 +63,6 @@ class SetHomePageCommunityTopicPost
             redirect_to("/ax1/LoginForm/page");
         }
 
-
-        /**
-         * Debug
-         */
-        die("It did not redirect because the user belongs to the community you specified.");
-
-
-
         // Make sure the resource request is well formed and reasonable
 
         /**
@@ -95,10 +87,24 @@ class SetHomePageCommunityTopicPost
          */
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
         if (!$special_topic_array) {
-            $sessionMessage .= " SetHomePageCommunityTopicPost page says: unable to get topics for the specified community. ";
+            $sessionMessage .= " No topics in the specified community. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
+
+        /**
+         * Debug
+         */
+        echo "<p>Got a special topic array.</p>\n";
+        echo "<p>Var_dump \$special_topic_array: </p>\n<pre>";
+        var_dump($special_topic_array);
+        echo "</pre>\n";
+        die("<p>That was for community id {$community_id}. Make sure that when I specify community 2 I get topics 1,2,3,4.
+        if I specify communities 4,6 I should be redirected with reason: no topics in the specified community.</p>");
+
+
+
+
         if (array_key_exists($topic_id, $special_topic_array)) {
             $is_valid_topic = true;
         } else {
