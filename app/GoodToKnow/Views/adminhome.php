@@ -41,7 +41,7 @@
 <!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="adminsysmsgblock">
-        <p>😏 System Message:&nbsp;&nbsp;<?php require SESSIONMESSAGE; ?></p>
+        <p>😏:&nbsp;&nbsp;<?php require SESSIONMESSAGE; ?></p>
     </div>
 </div>
 <!-- maincontent -->
