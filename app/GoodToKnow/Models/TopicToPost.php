@@ -77,7 +77,6 @@ class TopicToPost extends GoodObject
                 $numrows = $result->num_rows;
                 if (!$numrows) {
                     $stmt->close();
-                    $error .= ' TopicToPost::get_posts_array_for_a_topic() says: There are no posts for this topic. ';
                     return false;
                 } else {
                     while ($array_of_TopicToPost[] = $result->fetch_object('\GoodToKnow\Models\TopicToPost')) {
@@ -133,7 +132,6 @@ class TopicToPost extends GoodObject
 
         $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
         if (empty($posts_array) || $posts_array === false) {
-            $error .= ' TopicToPost special_get_posts_array_for_a_topic() say: Either topic has no posts or unexpected error. ';
             return false;
         }
 

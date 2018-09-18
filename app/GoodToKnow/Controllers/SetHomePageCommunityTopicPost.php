@@ -131,7 +131,7 @@ class SetHomePageCommunityTopicPost
          */
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
         if (!$special_post_array) {
-            $sessionMessage .= " SetHomePageCommunityTopicPost page says: unable to get posts for the specified topic. ";
+            $sessionMessage .= " Unable to get posts for the specified topic. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }
