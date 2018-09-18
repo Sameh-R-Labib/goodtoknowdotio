@@ -115,20 +115,6 @@ class SetHomePageCommunityTopicPost
 
 
         /**
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$is_valid_topic: </p>\n<pre>";
-        var_dump($is_valid_topic);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
-        print_r($type_of_resource_being_requested);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
-
-        /**
          * At this point we know we have a $community_id which is valid.
          * We know whether or not the request is for a community.
          * We know whether or not the request is for topic_or_post
@@ -169,6 +155,24 @@ class SetHomePageCommunityTopicPost
             redirect_to("/ax1/LoginForm/page");
         }
 
+
+        /**
+         * Debug
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$is_valid_post: </p>\n<pre>";
+        var_dump($is_valid_post);
+        echo "</pre>\n";
+        echo "<p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
+        print_r($type_of_resource_being_requested);
+        echo "</pre>\n";
+        echo "<p>Var_dump \$sessionMessage: </p>\n<pre>";
+        var_dump($sessionMessage);
+        echo "</pre>\n";
+        die("<p>community: {$community_id}, topic: {$topic_id}, post: {$post_id}</p>\n");
+
+
+
         /**
          * At this point we know that the request is valid and
          * we know which type of request it is. So now all we
@@ -179,6 +183,7 @@ class SetHomePageCommunityTopicPost
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;
+        $_SESSION['message'] .= $sessionMessage;
         redirect_to("/ax1/LoginForm/page");
     }
 }
