@@ -122,39 +122,55 @@ class SetHomePageCommunityTopicPost
          * We know that $post_id is set. It SHOULD BE set to 0 or some
          * post id from amongst the posts belonging to $topic_id.
          *
-         * Let us make sure.
+         * If the request is for a post then let us
+         * make sure that post id is valid.
          */
 
-        /**
-         * But before we get started let's establish whether or not
-         * $post_id is not some post id from amongst the posts belonging to the $topic_id
-         */
-        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
-        if (!$special_post_array) {
-            $sessionMessage .= " Unable to get posts for the specified topic. ";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-        if (array_key_exists($post_id, $special_post_array)) {
-            $is_valid_post = true;
-        } else {
-            $is_valid_post = false;
+
+        if ($type_of_resource_being_requested === 'topic_or_post') {
+            if ($post_id === 0 && $topic_id !== 0) {
+                $type_of_resource_being_requested = 'topic';
+            } elseif ($post_id !== 0 && $topic_id !== 0) {
+                $type_of_resource_being_requested = 'post';
+            } else {
+                $sessionMessage .= " Anomalous situation #2954. ";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/LoginForm/page");
+            }
         }
 
-        if ($post_id == 0 && $type_of_resource_being_requested === 'topic_or_post') {
-            $type_of_resource_being_requested = 'topic';
-        } elseif ($post_id != 0 && $type_of_resource_being_requested === 'community') {
-            $sessionMessage .= " Your resource request is defective. (errno 3)";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        } elseif ($is_valid_topic && $is_valid_post) {
-            $type_of_resource_being_requested = 'post';
-        } else {
-            $sessionMessage .= " Your resource request is defective.  (errno 4)";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
 
+        if ($type_of_resource_being_requested === 'post') {
+            /**
+             * But before we get started let's establish whether or not
+             * $post_id is not some post id from amongst the posts belonging to the $topic_id
+             */
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            if (!$special_post_array) {
+                $sessionMessage .= " Unable to get posts for the specified topic. ";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/LoginForm/page");
+            }
+            if (array_key_exists($post_id, $special_post_array)) {
+                $is_valid_post = true;
+            } else {
+                $is_valid_post = false;
+            }
+
+            if ($post_id == 0 && $type_of_resource_being_requested === 'topic_or_post') {
+                $type_of_resource_being_requested = 'topic';
+            } elseif ($post_id != 0 && $type_of_resource_being_requested === 'community') {
+                $sessionMessage .= " Your resource request is defective. (errno 3)";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/LoginForm/page");
+            } elseif ($is_valid_topic && $is_valid_post) {
+                $type_of_resource_being_requested = 'post';
+            } else {
+                $sessionMessage .= " Your resource request is defective.  (errno 4)";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/LoginForm/page");
+            }
+        }
 
         /**
          * Debug
