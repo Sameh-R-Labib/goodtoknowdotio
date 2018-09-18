@@ -139,6 +139,7 @@ class SetHomePageCommunityTopicPost
             }
         }
 
+        $is_valid_post = false;
 
         if ($type_of_resource_being_requested === 'post') {
             /**
