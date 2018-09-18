@@ -63,7 +63,7 @@ class TopicToPost extends GoodObject
         $array_of_TopicToPost = [];
         $count = 0;
         $sql = 'SELECT *
-                FROM `TopicToPost`
+                FROM `topic_to_post`
                 WHERE `topic_id` = ?';
         try {
             $stmt = $db->stmt_init();
