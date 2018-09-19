@@ -18,7 +18,6 @@ class Home
         global $is_admin;
         global $user_id;                    // int value
         global $role;                       // string value
-        global $community_name;             // string value
         global $community_id;               // int value
         global $communities_for_this_user;  // array (key: id of community, value: name of community)
         global $topic_id;                   // int value

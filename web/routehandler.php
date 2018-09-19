@@ -61,8 +61,6 @@ $user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
 $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 
-// Current community
-$community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
 $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 
 /**
