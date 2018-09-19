@@ -32,10 +32,10 @@ class Home
          * Debug
          */
         echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$sessionMessage: </p>\n";
+        echo "<p>Var_dump \$sessionMessage: </p>\n<pre>";
         var_dump($sessionMessage);
         echo "</pre>\n";
-        echo "<br><p>Var_dump \$user_id: </p>\n";
+        echo "<br><p>Var_dump \$user_id: </p>\n<pre>";
         var_dump($user_id);
         echo "</pre>\n";
         echo "<br><p>Var_dump \$community_id: </p>\n<pre>";
