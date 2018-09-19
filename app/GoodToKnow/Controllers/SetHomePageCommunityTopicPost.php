@@ -174,23 +174,6 @@ class SetHomePageCommunityTopicPost
         }
 
         /**
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$is_valid_post: </p>\n<pre>";
-        var_dump($is_valid_post);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
-        print_r($type_of_resource_being_requested);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$sessionMessage: </p>\n<pre>";
-        var_dump($sessionMessage);
-        echo "</pre>\n";
-        die("<p>community: {$community_id}, topic: {$topic_id}, post: {$post_id}</p>\n");
-
-
-
-        /**
          * At this point we know that the request is valid and
          * we know which type of request it is. So now all we
          * need to do is put this information in the session and
