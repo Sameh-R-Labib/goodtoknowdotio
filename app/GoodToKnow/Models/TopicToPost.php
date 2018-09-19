@@ -103,23 +103,22 @@ class TopicToPost extends GoodObject
          */
         $array_of_Posts = [];
 
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$array_of_TopicToPost: </p>\n<pre>";
-        var_dump($array_of_TopicToPost);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$array_of_TopicToPost: </p>\n<pre>";
-        print_r($array_of_TopicToPost);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
-
-
         foreach ($array_of_TopicToPost as $item) {
+
+
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Begin debug</p>\n";
+            echo "<p>Var_dump \$item: </p>\n<pre>";
+            var_dump($item);
+            echo "</pre>\n";
+            echo "<p>Var_dump \$item: </p>\n<pre>";
+            print_r($item);
+            echo "</pre>\n";
+            die("<p>End debug</p>\n");
+
+
             $array_of_Posts[] = Post::find_by_id($db, $error, $item->post_id);
         }
         if (empty($array_of_Posts)) {
