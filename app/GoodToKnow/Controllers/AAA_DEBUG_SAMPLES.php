@@ -9,4 +9,4 @@ echo "</pre>\n";
 echo "<br><p>Print_r \$: </p>\n<pre>";
 print_r();
 echo "</pre>\n";
-die("<p>End debug</p>\n");
+die("<br><p>End debug</p>\n");
