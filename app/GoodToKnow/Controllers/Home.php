@@ -31,28 +31,28 @@ class Home
         /**
          * Debug
          */
-        echo "\n<p>Begin debug</p><br>\n";
-        echo "<p>Var_dump \$sessionMessage: </p>\n<pre>";
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$sessionMessage: </p>\n";
         var_dump($sessionMessage);
         echo "</pre><br>\n";
-        echo "<p>Var_dump \$user_id: </p>\n<pre>";
+        echo "<pre><p>Var_dump \$user_id: </p>\n";
         var_dump($user_id);
         echo "</pre><br>\n";
         echo "<p>Var_dump \$community_id: </p>\n<pre>";
         var_dump($community_id);
-        echo "</pre><br>\n";
-        echo "<p>Var_dump \$communities_for_this_user: </p>\n<pre>";
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$communities_for_this_user: </p>\n<pre>";
         var_dump($communities_for_this_user);
-        echo "</pre><br>\n";
-        echo "<p>Var_dump \$topic_id: </p>\n<pre>";
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$topic_id: </p>\n<pre>";
         var_dump($topic_id);
-        echo "</pre><br>\n";
-        echo "<p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
-        print_r($type_of_resource_being_requested);
-        echo "</pre><br>\n";
-        echo "<p>Var_dump \$post_id: </p>\n<pre>";
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
+        var_dump($type_of_resource_being_requested);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$post_id: </p>\n<pre>";
         var_dump($post_id);
-        echo "</pre><br>\n";
+        echo "</pre>\n";
         die("<p>End debug</p>\n");
 
 

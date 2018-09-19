@@ -2,11 +2,11 @@
 /**
  * Debug Code
  */
-echo "\n<p>Begin debug</p><br>\n";
-echo "<p>Var_dump \$: </p>\n<pre>";
+echo "\n<p>Begin debug</p>\n";
+echo "<pre><p>Var_dump \$: </p>\n";
 var_dump();
-echo "</pre><br>\n";
-echo "<p>Print_r \$: </p>\n<pre>";
+echo "</pre>\n";
+echo "<pre><p>Print_r \$: </p>\n";
 print_r();
-echo "</pre><br>\n";
+echo "</pre>\n";
 die("<p>End debug</p>\n");
