@@ -34,11 +34,11 @@ class Home
         echo "\n<p>Begin debug</p>\n";
         echo "<p>Var_dump \$sessionMessage: </p>\n";
         var_dump($sessionMessage);
-        echo "</pre><br>\n";
-        echo "<pre><p>Var_dump \$user_id: </p>\n";
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$user_id: </p>\n";
         var_dump($user_id);
-        echo "</pre><br>\n";
-        echo "<p>Var_dump \$community_id: </p>\n<pre>";
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$community_id: </p>\n<pre>";
         var_dump($community_id);
         echo "</pre>\n";
         echo "<br><p>Var_dump \$communities_for_this_user: </p>\n<pre>";
