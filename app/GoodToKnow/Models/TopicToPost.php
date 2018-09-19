@@ -102,6 +102,23 @@ class TopicToPost extends GoodObject
          * get (in array) all the posts listed in $array_of_TopicToPost.
          */
         $array_of_Posts = [];
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$array_of_TopicToPost: </p>\n<pre>";
+        var_dump($array_of_TopicToPost);
+        echo "</pre>\n";
+        echo "<p>Var_dump \$array_of_TopicToPost: </p>\n<pre>";
+        print_r($array_of_TopicToPost);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
+
+
         foreach ($array_of_TopicToPost as $item) {
             $array_of_Posts[] = Post::find_by_id($db, $error, $item->post_id);
         }
@@ -129,18 +146,6 @@ class TopicToPost extends GoodObject
          *  - Each item key is a post id
          *  - Each item value is the post title for that post id
          */
-
-
-        /**
-         * Debug
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$topic_id: </p>\n<pre>";
-        var_dump($topic_id);
-        echo "</pre>\n";
-        die("<p>End debug inside function</p>\n");
-
-
 
         $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
         if (empty($posts_array) || $posts_array === false) {
