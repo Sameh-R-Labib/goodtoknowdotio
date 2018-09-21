@@ -23,7 +23,7 @@ class LoginScript
 
         if ($is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
+            redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
 
         /*
@@ -153,7 +153,7 @@ class LoginScript
          */
         $sessionMessage .= " Welcome {$user->username} 😀.";
         $_SESSION['message'] = $sessionMessage;
-        redirect_to("/ax1/LoginForm/page");
+        redirect_to("/ax1/Home/page");
     }
 
     /**

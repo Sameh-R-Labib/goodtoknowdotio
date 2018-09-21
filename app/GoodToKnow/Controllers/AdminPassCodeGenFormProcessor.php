@@ -22,7 +22,7 @@ class AdminPassCodeGenFormProcessor
 
         if (!$is_logged_in OR !$is_admin) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         /**
@@ -36,7 +36,7 @@ class AdminPassCodeGenFormProcessor
          */
         if (empty($_POST['choice'])) {
             $_SESSION['message'] .= " Aborted! Expected submission of choice not found. ";
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
 
@@ -56,7 +56,7 @@ class AdminPassCodeGenFormProcessor
         }
         if (!$is_found) {
             $_SESSION['message'] .= " Aborted! choice is not valid. ";
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         /**

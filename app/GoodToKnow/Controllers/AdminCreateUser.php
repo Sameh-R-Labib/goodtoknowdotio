@@ -27,14 +27,14 @@ class AdminCreateUser
 
         if (!$is_logged_in OR !$is_admin) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         /**
@@ -74,7 +74,7 @@ class AdminCreateUser
             !self::is_comment($sessionMessage, $submitted_comment) ||
             !self::is_date($sessionMessage, $submitted_date)) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
 
@@ -106,14 +106,14 @@ class AdminCreateUser
         if (!$consequence_of_save) {
             $sessionMessage .= ' The save method for User returned false. ';
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         if (!empty($sessionMessage)) {
             $sessionMessage .= ' The save method for User did not return false but it did send back a message.
              Therefore, it probably did not create your account. ';
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         /**
@@ -129,14 +129,14 @@ class AdminCreateUser
         if (!$consequence_of_save) {
             $sessionMessage .= ' The save method for UserToCommunity returned false. ';
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         if (!empty($sessionMessage)) {
             $sessionMessage .= ' The save method for UserToCommunity did not return false but it did send back a message.
              Therefore, it probably did not create the association for your account. ';
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         /**
@@ -145,7 +145,7 @@ class AdminCreateUser
          */
         $sessionMessage .= " The new user account was created! ";
         $_SESSION['message'] = $sessionMessage;
-        redirect_to("/ax1/LoginForm/page");
+        redirect_to("/ax1/Home/page");
     }
 
     // Helpers for the page() method

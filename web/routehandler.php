@@ -128,7 +128,7 @@ if (!empty($_SERVER['PATH_INFO'])) {
  * and instantiate its object
  */
 
-$controller_name = 'LoginForm';    // Default controller
+$controller_name = 'Home';    // Default controller
 
 if (!empty($route_segments_array[0])) {
     $file_path_to_controller = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Controllers' . DIRSEP .

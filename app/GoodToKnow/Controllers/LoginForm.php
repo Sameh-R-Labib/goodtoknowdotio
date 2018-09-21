@@ -18,7 +18,7 @@ class LoginForm
 
         if ($is_logged_in) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            redirect_to("/ax1/Home/page");
+            redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
 
         $html_title = 'GoodToKnow.io';

@@ -43,7 +43,7 @@ class SetHomePageCommunityTopicPost
 
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         /**
@@ -60,7 +60,7 @@ class SetHomePageCommunityTopicPost
         if (!array_key_exists($community_id, $communities_for_this_user)) {
             $sessionMessage .= " Invalid community_id. ";
             $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         // Make sure the resource request is well formed and reasonable
@@ -89,7 +89,7 @@ class SetHomePageCommunityTopicPost
         if (!$special_topic_array) {
             $sessionMessage .= " No topics in the specified community. ";
             $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         if (array_key_exists($topic_id, $special_topic_array)) {
@@ -103,14 +103,14 @@ class SetHomePageCommunityTopicPost
             if ($post_id != 0) {
                 $sessionMessage .= " Your resource request is defective. (errno 1)";
                 $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/LoginForm/page");
+                redirect_to("/ax1/Home/page");
             }
         } elseif ($is_valid_topic) {
             $type_of_resource_being_requested = 'topic_or_post';
         } else {
             $sessionMessage .= " Your resource request is defective.  (errno 2)";
             $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
 
@@ -135,7 +135,7 @@ class SetHomePageCommunityTopicPost
             } else {
                 $sessionMessage .= " Anomalous situation #2954. ";
                 $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/LoginForm/page");
+                redirect_to("/ax1/Home/page");
             }
         }
 
@@ -150,7 +150,7 @@ class SetHomePageCommunityTopicPost
             if (!$special_post_array) {
                 $sessionMessage .= " Unable to get posts for the specified topic. ";
                 $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/LoginForm/page");
+                redirect_to("/ax1/Home/page");
             }
             if (array_key_exists($post_id, $special_post_array)) {
                 $is_valid_post = true;
@@ -163,13 +163,13 @@ class SetHomePageCommunityTopicPost
             } elseif ($post_id != 0 && $type_of_resource_being_requested === 'community') {
                 $sessionMessage .= " Your resource request is defective. (errno 3)";
                 $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/LoginForm/page");
+                redirect_to("/ax1/Home/page");
             } elseif ($is_valid_topic && $is_valid_post) {
                 $type_of_resource_being_requested = 'post';
             } else {
                 $sessionMessage .= " Your resource request is defective.  (errno 4)";
                 $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/LoginForm/page");
+                redirect_to("/ax1/Home/page");
             }
         }
 
@@ -184,6 +184,6 @@ class SetHomePageCommunityTopicPost
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
-        redirect_to("/ax1/LoginForm/page");
+        redirect_to("/ax1/Home/page");
     }
 }

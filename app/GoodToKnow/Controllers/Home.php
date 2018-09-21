@@ -28,7 +28,7 @@ class Home
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/InfiniteLoopPrevent/page");
+            redirect_to("/ax1/LoginForm/page");
         }
 
         $html_title = 'GoodToKnow.io';

@@ -23,7 +23,7 @@ class AdminPassCodeGenerationForm
         if (!$is_logged_in OR !$is_admin) {
             $sessionMessage .= ' You need to be the Admin to follow that request route.';
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
 
@@ -40,7 +40,7 @@ class AdminPassCodeGenerationForm
 
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1");
+            redirect_to("/ax1/Home/page");
         }
 
         // Community::find_all() should return the array we are looking for (see above)
