@@ -87,7 +87,7 @@ class SetHomePageCommunityTopicPost
          */
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
         if (!$special_topic_array) {
-            $sessionMessage .= " No topics in the specified community. ";
+            $sessionMessage .= " Did not switch communities because there are no topics in the community you wanted to switch to. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
