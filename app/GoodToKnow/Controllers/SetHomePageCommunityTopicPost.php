@@ -175,10 +175,15 @@ class SetHomePageCommunityTopicPost
 
         /**
          * At this point we know that the request is valid and
-         * we know which type of request it is. So now all we
-         * need to do is put this information in the session and
-         * redirect to the home page.
+         * we know which type of request it is.
+         *
+         * Now we need to store some things in the session and redirect.
          */
+        if ($type_of_resource_being_requested === 'community') {
+            $_SESSION['special_topic_array'] = $special_topic_array;
+        } else {
+            $_SESSION['special_topic_array'] = [];
+        }
         $_SESSION['type_of_resource_being_requested'] = $type_of_resource_being_requested;
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;

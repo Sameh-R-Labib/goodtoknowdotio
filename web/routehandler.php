@@ -26,6 +26,7 @@ define('TOP', VIEWSINCLUDES . DIRSEP . 'top.php');
 define('BOTTOM', VIEWSINCLUDES . DIRSEP . 'bottom.php');
 define('SESSIONMESSAGE', VIEWSINCLUDES . DIRSEP . 'sessionmessage.php');
 define('COMMUNITIESFORTHISUSER', VIEWSINCLUDES . DIRSEP . 'communitiesforthisuser.php');
+define('CURRENTTOPIC', VIEWSINCLUDES . DIRSEP . 'currenttopic.php');
 
 /**
  * More require statements
@@ -77,6 +78,8 @@ $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 $post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 
 $type_of_resource_being_requested = (isset($_SESSION['type_of_resource_being_requested'])) ? $_SESSION['type_of_resource_being_requested'] : '';
+
+$special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
 
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 
