@@ -184,21 +184,19 @@ class SetHomePageCommunityTopicPost
         /**
          * Debug
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
-        var_dump($type_of_resource_being_requested);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
-        var_dump($special_topic_array);
-        echo "</pre>\n";
-        die("<br><p>I expect the type to be (string) community and the array to have elements.</p>\n");
+//        echo "\n<p>Begin debug</p>\n";
+//        echo "<br><p>Var_dump \$type_of_resource_being_requested: </p>\n<pre>";
+//        var_dump($type_of_resource_being_requested);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
+//        var_dump($special_topic_array);
+//        echo "</pre>\n";
+//        die("<br><p>I expect the type to be (string) community and the array to have elements.</p>\n");
 
 
 
         if ($type_of_resource_being_requested === 'community') {
             $_SESSION['special_topic_array'] = $special_topic_array;
-        } else {
-            $_SESSION['special_topic_array'] = [];
         }
         $_SESSION['type_of_resource_being_requested'] = $type_of_resource_being_requested;
         $_SESSION['community_id'] = $community_id;
