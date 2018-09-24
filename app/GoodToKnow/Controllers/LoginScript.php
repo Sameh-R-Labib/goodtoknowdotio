@@ -151,7 +151,7 @@ class LoginScript
         /**
          * Report success
          */
-        $sessionMessage .= " Hallow {$user->username}.";
+        $sessionMessage .= " Hello {$user->username}.";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
