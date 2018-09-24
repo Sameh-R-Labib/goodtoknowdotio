@@ -36,17 +36,17 @@ class Home
         /**
          * Debug code
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Print_r \$type_of_resource_being_requested: </p>\n<pre>";
-        print_r($type_of_resource_being_requested);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
-        var_dump($special_topic_array);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$topic_id: </p>\n<pre>";
-        print_r($topic_id);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+//        echo "\n<p>Begin debug</p>\n";
+//        echo "<br><p>Print_r \$type_of_resource_being_requested: </p>\n<pre>";
+//        print_r($type_of_resource_being_requested);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
+//        var_dump($special_topic_array);
+//        echo "</pre>\n";
+//        echo "<br><p>Print_r \$topic_id: </p>\n<pre>";
+//        print_r($topic_id);
+//        echo "</pre>\n";
+//        die("<br><p>End debug</p>\n");
 
 
 
