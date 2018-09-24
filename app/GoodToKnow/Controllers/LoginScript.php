@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Community;
+use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 
@@ -147,6 +148,16 @@ class LoginScript
         $_SESSION['type_of_resource_being_requested'] = 'community';
         $_SESSION['topic_id'] = 0;
         $_SESSION['post_id'] = 0;
+
+        /**
+         * Find and save in session a value for special_topic_array.
+         */
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $user->id_of_default_community);
+        if (!$special_topic_array) {
+            $sessionMessage .= " I did'nt find any topics for your default community. ";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Report success
