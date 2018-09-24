@@ -158,6 +158,7 @@ class LoginScript
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+        $_SESSION['special_topic_array'] = $special_topic_array;
 
         /**
          * Report success
