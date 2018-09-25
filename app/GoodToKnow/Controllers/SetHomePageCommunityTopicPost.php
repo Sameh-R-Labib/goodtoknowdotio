@@ -108,12 +108,8 @@ class SetHomePageCommunityTopicPost
                 $_SESSION['message'] .= $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
-        } elseif ($is_valid_topic) {
-            $type_of_resource_being_requested = 'topic_or_post';
         } else {
-            $sessionMessage .= " Your resource request is defective.  (errno 2)";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/Home/page");
+            $type_of_resource_being_requested = 'topic_or_post';
         }
 
 
