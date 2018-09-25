@@ -102,14 +102,14 @@ class SetHomePageCommunityTopicPost
         }
 
         if ($topic_id == 0) {
-            $type_of_resource_being_requested = 'community';
+            $type_of_resource_requested = 'community';
             if ($post_id != 0) {
                 $sessionMessage .= " Your resource request is defective. (errno 1)";
                 $_SESSION['message'] .= $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
         } else {
-            $type_of_resource_being_requested = 'topic_or_post';
+            $type_of_resource_requested = 'topic_or_post';
         }
 
 
@@ -126,7 +126,7 @@ class SetHomePageCommunityTopicPost
          */
 
 
-        if ($type_of_resource_being_requested === 'topic_or_post') {
+        if ($type_of_resource_requested === 'topic_or_post') {
             // Either way we need this
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
             if (!$special_post_array) {
@@ -136,9 +136,9 @@ class SetHomePageCommunityTopicPost
             }
             // Which is it?
             if ($post_id === 0 && $topic_id !== 0) {
-                $type_of_resource_being_requested = 'topic';
+                $type_of_resource_requested = 'topic';
             } elseif ($post_id !== 0 && $topic_id !== 0) {
-                $type_of_resource_being_requested = 'post';
+                $type_of_resource_requested = 'post';
             } else {
                 $sessionMessage .= " Anomalous situation #2954. ";
                 $_SESSION['message'] .= $sessionMessage;
@@ -146,7 +146,7 @@ class SetHomePageCommunityTopicPost
             }
         }
 
-        if ($type_of_resource_being_requested === 'post') {
+        if ($type_of_resource_requested === 'post') {
             if (!array_key_exists($post_id, $special_post_array)) {
                 $sessionMessage .= " Your resource request is defective.  (errno 4)";
                 $_SESSION['message'] .= $sessionMessage;
@@ -165,9 +165,9 @@ class SetHomePageCommunityTopicPost
          *
          * Now we need to store some things in the session and redirect.
          */
-        if ($type_of_resource_being_requested === 'community') {
+        if ($type_of_resource_requested === 'community') {
             $_SESSION['special_topic_array'] = $special_topic_array;
-        } elseif ($type_of_resource_being_requested === 'topic') {
+        } elseif ($type_of_resource_requested === 'topic') {
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['special_post_array'] = $special_post_array;
         } else {
@@ -175,7 +175,7 @@ class SetHomePageCommunityTopicPost
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['post_content'] = $post_content;
         }
-        $_SESSION['type_of_resource_being_requested'] = $type_of_resource_being_requested;
+        $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;

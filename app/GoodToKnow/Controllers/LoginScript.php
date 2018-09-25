@@ -144,7 +144,7 @@ class LoginScript
          * Finally save them to session
          */
         $_SESSION['special_community_array'] = $special_community_array;
-        $_SESSION['type_of_resource_being_requested'] = 'community';
+        $_SESSION['type_of_resource_requested'] = 'community';
         $_SESSION['topic_id'] = 0;
         $_SESSION['post_id'] = 0;
 

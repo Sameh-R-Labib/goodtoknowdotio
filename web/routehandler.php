@@ -78,7 +78,7 @@ $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
 $post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 
-$type_of_resource_being_requested = (isset($_SESSION['type_of_resource_being_requested'])) ? $_SESSION['type_of_resource_being_requested'] : '';
+$type_of_resource_requested = (isset($_SESSION['type_of_resource_requested'])) ? $_SESSION['type_of_resource_requested'] : '';
 
 $special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
 

@@ -13,21 +13,21 @@ class Home
 {
     public function page()
     {
-        global $is_logged_in;
-        global $sessionMessage;
         global $role;                       // string value
         global $user_id;                    // int value
         global $community_id;               // int value
         global $topic_id;                   // int value
         global $post_id;                    // int value
-        global $is_admin;
-        global $saved_str01;                // string value (temporary storage)
-        global $saved_str02;
-        global $type_of_resource_being_requested;  // result of running SetHomePageCommunityTopicPost
-        global $special_community_array;  // array (key: id of community, value: name of community)
+        global $special_community_array;    // array (key: id of community, value: name of community)
         global $special_topic_array;        // array of topics for current community.
         global $special_post_array;         // array of posts for current topic
         global $post_content;               // string containing the html for current post
+        global $type_of_resource_requested;  // result of running SetHomePageCommunityTopicPost
+        global $sessionMessage;
+        global $is_logged_in;
+        global $is_admin;
+        global $saved_str01;                // string value (temporary storage)
+        global $saved_str02;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;

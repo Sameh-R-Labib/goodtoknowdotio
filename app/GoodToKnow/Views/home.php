@@ -57,7 +57,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <?php if ($type_of_resource_being_requested === 'community') include LISTTOPICS; ?>
+    <?php if ($type_of_resource_requested === 'community') include LISTTOPICS; ?>
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
