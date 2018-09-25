@@ -33,6 +33,7 @@ class SetHomePageCommunityTopicPost
         global $is_logged_in;
         global $sessionMessage;
         global $communities_for_this_user;  // array (key: id of community, value: name of community)
+        global $special_topic_array;
 
         if (!$is_logged_in) {
             $_SESSION['message'] .= $sessionMessage;
@@ -95,7 +96,9 @@ class SetHomePageCommunityTopicPost
         if (array_key_exists($topic_id, $special_topic_array)) {
             $is_valid_topic = true;
         } else {
-            $is_valid_topic = false;
+            $sessionMessage .= " Your resource request is defective.  (errno 6)";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
         }
 
         if ($topic_id == 0) {
@@ -150,21 +153,7 @@ class SetHomePageCommunityTopicPost
                 $_SESSION['message'] .= $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
-            if (array_key_exists($post_id, $special_post_array)) {
-                $is_valid_post = true;
-            } else {
-                $is_valid_post = false;
-            }
-
-            if ($post_id == 0 && $type_of_resource_being_requested === 'topic_or_post') {
-                $type_of_resource_being_requested = 'topic';
-            } elseif ($post_id != 0 && $type_of_resource_being_requested === 'community') {
-                $sessionMessage .= " Your resource request is defective. (errno 3)";
-                $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            } elseif ($is_valid_topic && $is_valid_post) {
-                $type_of_resource_being_requested = 'post';
-            } else {
+            if (!array_key_exists($post_id, $special_post_array)) {
                 $sessionMessage .= " Your resource request is defective.  (errno 4)";
                 $_SESSION['message'] .= $sessionMessage;
                 redirect_to("/ax1/Home/page");
