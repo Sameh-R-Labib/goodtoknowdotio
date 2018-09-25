@@ -26,6 +26,8 @@ class Home
         global $saved_str02;
         global $type_of_resource_being_requested;  // result of running SetHomePageCommunityTopicPost
         global $special_topic_array;        // array of topics for current community.
+        global $special_post_array;         // array of posts for current topic
+        global $post_content;               // string containing the html for current post
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;

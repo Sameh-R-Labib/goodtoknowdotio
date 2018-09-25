@@ -82,6 +82,10 @@ $type_of_resource_being_requested = (isset($_SESSION['type_of_resource_being_req
 
 $special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
 
+$special_post_array = (isset($_SESSION['special_post_array'])) ? $_SESSION['special_post_array'] : [];
+
+$post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
+
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 
 $saved_str02 = (isset($_SESSION['saved_str02'])) ? $_SESSION['saved_str02'] : '';

@@ -93,9 +93,7 @@ class SetHomePageCommunityTopicPost
             redirect_to("/ax1/Home/page");
         }
 
-        if (array_key_exists($topic_id, $special_topic_array)) {
-            $is_valid_topic = true;
-        } elseif ($topic_id != 0) {
+        if (!array_key_exists($topic_id, $special_topic_array) && $topic_id != 0) {
             $sessionMessage .= " Your resource request is defective.  (errno 6)";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
@@ -168,7 +166,7 @@ class SetHomePageCommunityTopicPost
         } elseif ($type_of_resource_being_requested === 'topic') {
             $_SESSION['special_post_array'] = $special_post_array;
         } else {
-            $_SESSION['post'] = $post_content;
+            $_SESSION['post_content'] = $post_content;
         }
         $_SESSION['type_of_resource_being_requested'] = $type_of_resource_being_requested;
         $_SESSION['community_id'] = $community_id;
