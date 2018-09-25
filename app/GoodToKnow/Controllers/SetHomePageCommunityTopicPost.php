@@ -139,8 +139,6 @@ class SetHomePageCommunityTopicPost
             }
         }
 
-        $is_valid_post = false;
-
         if ($type_of_resource_being_requested === 'post') {
             /**
              * But before we get started let's establish whether or not
