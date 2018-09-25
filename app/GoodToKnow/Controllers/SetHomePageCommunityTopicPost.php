@@ -34,6 +34,8 @@ class SetHomePageCommunityTopicPost
         global $sessionMessage;
         global $communities_for_this_user;  // array (key: id of community, value: name of community)
         global $special_topic_array;
+        global $special_post_array;
+        global $post_content;
 
         if (!$is_logged_in) {
             $_SESSION['message'] .= $sessionMessage;
@@ -166,8 +168,11 @@ class SetHomePageCommunityTopicPost
         if ($type_of_resource_being_requested === 'community') {
             $_SESSION['special_topic_array'] = $special_topic_array;
         } elseif ($type_of_resource_being_requested === 'topic') {
+            $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['special_post_array'] = $special_post_array;
         } else {
+            $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['post_content'] = $post_content;
         }
         $_SESSION['type_of_resource_being_requested'] = $type_of_resource_being_requested;
