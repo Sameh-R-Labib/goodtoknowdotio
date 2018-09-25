@@ -154,6 +154,7 @@ class SetHomePageCommunityTopicPost
                 $_SESSION['message'] .= $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
+            $post_content = '';
         }
 
         /**
@@ -164,6 +165,10 @@ class SetHomePageCommunityTopicPost
          */
         if ($type_of_resource_being_requested === 'community') {
             $_SESSION['special_topic_array'] = $special_topic_array;
+        } elseif ($type_of_resource_being_requested === 'topic') {
+            $_SESSION['special_post_array'] = $special_post_array;
+        } else {
+            $_SESSION['post'] = $post_content;
         }
         $_SESSION['type_of_resource_being_requested'] = $type_of_resource_being_requested;
         $_SESSION['community_id'] = $community_id;
