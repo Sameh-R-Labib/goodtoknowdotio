@@ -150,6 +150,10 @@ class SetHomePageCommunityTopicPost
                 $_SESSION['message'] .= $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
+
+            /**
+             * Later on I need to make sure the file content exist and retrieve it.
+             */
             $post_content = '';
         }
 
