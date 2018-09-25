@@ -95,7 +95,7 @@ class SetHomePageCommunityTopicPost
 
         if (array_key_exists($topic_id, $special_topic_array)) {
             $is_valid_topic = true;
-        } else {
+        } elseif ($topic_id != 0) {
             $sessionMessage .= " Your resource request is defective.  (errno 6)";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
