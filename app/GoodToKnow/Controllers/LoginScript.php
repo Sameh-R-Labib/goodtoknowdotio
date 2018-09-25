@@ -93,7 +93,7 @@ class LoginScript
         /**
          * Other things we want to put in session:
          *  - community_name (corresponds with community_id)
-         *  - communities_for_this_user (array described below)
+         *  - special_community_array (array described below)
          */
 
         /**
@@ -126,25 +126,25 @@ class LoginScript
         /**
          * Build the array I'm looking for.
          */
-        $communities_for_this_user = [];
+        $special_community_array = [];
         foreach ($user_to_community_array as $value) {
             // Talking about the right side of the assignment statement
             // First we're getting a Community object
-            $communities_for_this_user[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
-            if (!$communities_for_this_user[$value->community_id]) {
+            $special_community_array[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
+            if (!$special_community_array[$value->community_id]) {
                 $sessionMessage .= " LoginScript page() says err_no 80848. ";
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/LoginForm/page");
             }
             // Then we're getting the community_name from that object
-            $communities_for_this_user[$value->community_id] = $communities_for_this_user[$value->community_id]->community_name;
+            $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
         }
 
         /**
          * Finally save them to session
          */
-        $_SESSION['community_name'] = $communities_for_this_user[$user->id_of_default_community];
-        $_SESSION['communities_for_this_user'] = $communities_for_this_user;
+        $_SESSION['community_name'] = $special_community_array[$user->id_of_default_community];
+        $_SESSION['special_community_array'] = $special_community_array;
         $_SESSION['type_of_resource_being_requested'] = 'community';
         $_SESSION['topic_id'] = 0;
         $_SESSION['post_id'] = 0;

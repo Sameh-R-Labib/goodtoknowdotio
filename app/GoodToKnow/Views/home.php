@@ -37,7 +37,7 @@
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
     <p>⛺:
-        <a href="/ax1/SetHomePageCommunityTopicPost/page/<?php echo $community_id; ?>/0/0"><?php echo $communities_for_this_user[$community_id]; ?></a>
+        <a href="/ax1/SetHomePageCommunityTopicPost/page/<?php echo $community_id; ?>/0/0"><?php echo $special_community_array[$community_id]; ?></a>
         <?php require CURRENTTOPIC; ?> → <a href="#">Current Post</a></p>
 </div>
 <!-- scriptoutput -->

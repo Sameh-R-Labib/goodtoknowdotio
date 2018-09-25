@@ -32,7 +32,7 @@ class SetHomePageCommunityTopicPost
 
         global $is_logged_in;
         global $sessionMessage;
-        global $communities_for_this_user;  // array (key: id of community, value: name of community)
+        global $special_community_array;  // array (key: id of community, value: name of community)
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
@@ -60,7 +60,7 @@ class SetHomePageCommunityTopicPost
         /**
          * Make sure the community_id belongs to one of the user's communities.
          */
-        if (!array_key_exists($community_id, $communities_for_this_user)) {
+        if (!array_key_exists($community_id, $special_community_array)) {
             $sessionMessage .= " Invalid community_id. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");

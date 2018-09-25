@@ -72,7 +72,7 @@ $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] :
  *  - Key   is a community id
  *  - Value is a community name
  */
-$communities_for_this_user = (isset($_SESSION['communities_for_this_user'])) ? $_SESSION['communities_for_this_user'] : [];
+$special_community_array = (isset($_SESSION['special_community_array'])) ? $_SESSION['special_community_array'] : [];
 
 $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
