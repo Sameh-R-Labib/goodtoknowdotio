@@ -125,6 +125,14 @@ class SetHomePageCommunityTopicPost
 
 
         if ($type_of_resource_being_requested === 'topic_or_post') {
+            // Either way we need this
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            if (!$special_post_array) {
+                $sessionMessage .= " Unable to get posts for the specified topic. ";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            // Which is it?
             if ($post_id === 0 && $topic_id !== 0) {
                 $type_of_resource_being_requested = 'topic';
             } elseif ($post_id !== 0 && $topic_id !== 0) {
@@ -137,16 +145,6 @@ class SetHomePageCommunityTopicPost
         }
 
         if ($type_of_resource_being_requested === 'post') {
-            /**
-             * But before we get started let's establish whether or not
-             * $post_id is not some post id from amongst the posts belonging to the $topic_id
-             */
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
-            if (!$special_post_array) {
-                $sessionMessage .= " Unable to get posts for the specified topic. ";
-                $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
             if (!array_key_exists($post_id, $special_post_array)) {
                 $sessionMessage .= " Your resource request is defective.  (errno 4)";
                 $_SESSION['message'] .= $sessionMessage;
