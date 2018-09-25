@@ -156,7 +156,7 @@ class SetHomePageCommunityTopicPost
             /**
              * Later on I need to make sure the file content exist and retrieve it.
              */
-            $post_content = '';
+            $post_content = "<p>Post #{$post_id}. This feature has yet to be implemented.</p>";
         }
 
         /**
