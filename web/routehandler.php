@@ -28,6 +28,7 @@ define('SESSIONMESSAGE', VIEWSINCLUDES . DIRSEP . 'sessionmessage.php');
 define('COMMUNITIESFORTHISUSER', VIEWSINCLUDES . DIRSEP . 'communitiesforthisuser.php');
 define('CURRENTTOPIC', VIEWSINCLUDES . DIRSEP . 'currenttopic.php');
 define('LISTTOPICS', VIEWSINCLUDES . DIRSEP . 'listtopics.php');
+define('LISTPOSTS', VIEWSINCLUDES . DIRSEP . 'listposts.php');
 
 /**
  * More require statements
