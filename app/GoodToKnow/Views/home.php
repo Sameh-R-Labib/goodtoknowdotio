@@ -45,8 +45,8 @@
     <div id="leftsodiv">
         <div id="sendtoauthor"><p><a href="#">🛎 author</a></p></div>
         <div id="admindiv">
-            <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="123"
-                                                                    width="123"></a>
+            <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="90"
+                                                                    width="90"></a>
                 <span class="tooltiptext tooltip-top">Don't click</span>
             </div>
         </div>
