@@ -57,5 +57,17 @@ class DefaultCommunityProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        $user_object->id_of_default_community = $_POST['choice'];
+        $was_updated = $user_object->save($db, $sessionMessage);
+        if (!$was_updated) {
+            $sessionMessage .= " Failed to update your user record. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // User will know default community by logging out then in.
+        $sessionMessage .= " Your default community has been changed to {$special_community_array[$_POST['choice']]}. ";
+        redirect_to("/ax1/Home/page");
     }
 }
