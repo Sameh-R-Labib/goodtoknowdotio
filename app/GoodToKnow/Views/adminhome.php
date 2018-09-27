@@ -42,6 +42,7 @@
     <h2>Admin Scripts</h2>
     <ul>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
+        <li><a href="/ax1/DefaultCommunity/page">Change My Default Community</a></li>
     </ul>
 </div>
 <!-- footerbar -->
