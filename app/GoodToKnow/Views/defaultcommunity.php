@@ -20,7 +20,7 @@
     <h2>Switch Default Community</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>Which of my communities do I want to be the default?</p>
-    <form action="/ax1/DefaultCommunityProcessor/script" method="post">
+    <form action="/ax1/DefaultCommunityProcessor/page" method="post">
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_community_array as $key => $value): ?>
             <label for="choice-<?php echo $key; ?>">
