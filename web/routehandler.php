@@ -32,6 +32,7 @@ define('LISTPOSTS', VIEWSINCLUDES . DIRSEP . 'listposts.php');
 define('CURRENTPOST', VIEWSINCLUDES . DIRSEP . 'currentpost.php');
 define('CONTROLPANELLINK', VIEWSINCLUDES . DIRSEP . 'controlpanellink.php');
 define('SENDMESSAGELINK', VIEWSINCLUDES . DIRSEP . 'sendmessagelink.php');
+define('MESSAGETHEAUTHOR', VIEWSINCLUDES . DIRSEP . 'messagetheauthor.php');
 
 /**
  * More require statements

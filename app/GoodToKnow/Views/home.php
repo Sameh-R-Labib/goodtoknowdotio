@@ -36,7 +36,7 @@
 <!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="leftsodiv">
-        <div id="sendtoauthor"><p><a href="#">🛎 author</a></p></div>
+        <div id="sendtoauthor"><?php require MESSAGETHEAUTHOR; ?></p></div>
         <div id="admindiv">
             <?php require CONTROLPANELLINK; ?>
         </div>
