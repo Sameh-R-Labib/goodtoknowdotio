@@ -59,6 +59,7 @@
 <div id="maincontent">
     <?php if ($type_of_resource_requested === 'community') include LISTTOPICS; ?>
     <?php if ($type_of_resource_requested === 'topic') include LISTPOSTS; ?>
+    <?php if ($type_of_resource_requested === 'post') echo $post_content; ?>
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
