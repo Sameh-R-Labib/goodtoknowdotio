@@ -15,11 +15,11 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<!-- adminhometop -->
-<div id="adminhometop">
+<!-- topbar -->
+<div id="topbar">
     <a href="https://goodtoknow.io/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="302"
                                              style="float: left"></a>
-    <div id="sendmessage"><p><a href="#">👲 user</a></p></div>
+    <div id="sendmessage"><p><a href="#">♠👔♠ admin</a></p></div>
     <div id="inboxlink"><p><a href="#">🎫 inbox</a></p></div>
     <div id="logindiv"><p><a href="/ax1/Logout/page">👋 log out</a></p></div>
 </div>
@@ -39,9 +39,9 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h2>Admin Scripts</h2>
+    <h2>User Scripts</h2>
     <ul>
-        <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
+        <li><a href="/ax1/ScriptRouteName/page">Script Name</a></li>
     </ul>
 </div>
 <!-- footerbar -->

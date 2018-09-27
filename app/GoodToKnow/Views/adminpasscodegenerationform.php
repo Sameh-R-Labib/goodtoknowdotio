@@ -1,11 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 8/27/18
- * Time: 10:05 PM
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
