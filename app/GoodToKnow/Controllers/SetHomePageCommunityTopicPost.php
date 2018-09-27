@@ -175,6 +175,22 @@ class SetHomePageCommunityTopicPost
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['post_content'] = $post_content;
         }
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$_SESSION['post_content']: </p>\n<pre>";
+        var_dump($_SESSION['post_content']);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$type_of_resource_requested: </p>\n<pre>";
+        print_r($type_of_resource_requested);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
         $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;
