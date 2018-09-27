@@ -29,6 +29,25 @@ class Home
         global $saved_str01;                // string value (temporary storage)
         global $saved_str02;
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$post_content: </p>\n<pre>";
+        var_dump($post_content);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$type_of_resource_requested: </p>\n<pre>";
+        print_r($type_of_resource_requested);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$_SESSION: </p>\n<pre>";
+        var_dump($_SESSION);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
