@@ -19,10 +19,9 @@ class DefaultCommunityProcessor
         global $user_id;
         global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
         global $special_community_array;
 
-        if (!$is_logged_in OR $is_admin) {
+        if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
