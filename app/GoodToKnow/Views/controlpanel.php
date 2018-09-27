@@ -41,7 +41,7 @@
 <div id="maincontent">
     <h2>User Scripts</h2>
     <ul>
-        <li><a href="/ax1/ScriptRouteName/page">Script Name</a></li>
+        <li><a href="/ax1/DefaultCommunity/page">Default Community</a></li>
     </ul>
 </div>
 <!-- footerbar -->

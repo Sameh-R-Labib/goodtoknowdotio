@@ -17,18 +17,18 @@
 </head>
 <body>
 <div class="form-wrapper">
-    <h2>Create Account</h2>
+    <h2>Switch Default Community</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>Which community do I want this user to become a member of?</p>
-    <form action="/ax1/AdminPassCodeGenFormProcessor/page" method="post">
+    <p>Which of my communities do I want to be the default?</p>
+    <form action="/ax1/DefaultCommunityProcessor/script" method="post">
         <?php /** @noinspection PhpUndefinedVariableInspection */
-        foreach ($community_array as $key => $value): ?>
-            <label for="choice-<?php echo $key + 1; ?>">
-                <input type="radio" id="choice-<?php echo $key + 1; ?>" name="choice"
-                       value="<?php echo $value->id; ?>"/>
+        foreach ($special_community_array as $key => $value): ?>
+            <label for="choice-<?php echo $key; ?>">
+                <input type="radio" id="choice-<?php echo $key; ?>" name="choice"
+                       value="<?php echo $key; ?>"/>
                 <div>
-                    <?php echo $value->community_name; ?>
-                    <span><?php echo $value->community_description; ?></span>
+                    <?php echo $value; ?>
+                    <span><?php echo "Do I want this one?"; ?></span>
                 </div>
             </label>
         <?php endforeach; ?>
