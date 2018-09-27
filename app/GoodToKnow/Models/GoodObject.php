@@ -373,19 +373,6 @@ abstract class GoodObject
             $sql .= join(", ", $attribute_pairs);
             $sql .= " WHERE `id`=" . $db->real_escape_string($this->id) . " LIMIT 1";
 
-
-            /**
-             * Debug Code
-             */
-            echo "\n<p>Begin debug</p>\n";
-            echo "<br><p>Print_r \$sql: </p>\n<pre>";
-            print_r($sql);
-            echo "</pre>\n";
-            die("<br><p>End debug</p>\n");
-
-
-
-
             $db->query($sql);
 
             $query_error = $db->error;

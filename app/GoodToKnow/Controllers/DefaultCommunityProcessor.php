@@ -9,7 +9,8 @@
 namespace GoodToKnow\Controllers;
 
 
-use GoodToKnow\Models\UserToCommunity;
+use GoodToKnow\Models\User;
+
 
 class DefaultCommunityProcessor
 {
@@ -51,7 +52,7 @@ class DefaultCommunityProcessor
          * Get the user object from the database.
          */
         $db = db_connect($sessionMessage);
-        $user_object = UserToCommunity::find_by_id($db, $sessionMessage, $user_id);
+        $user_object = User::find_by_id($db, $sessionMessage, $user_id);
         if (!$user_object) {
             $sessionMessage .= " Expected submission of choice not found. ";
             $_SESSION['message'] = $sessionMessage;
