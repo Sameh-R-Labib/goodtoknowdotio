@@ -38,10 +38,7 @@
     <div id="leftsodiv">
         <div id="sendtoauthor"><p><a href="#">🛎 author</a></p></div>
         <div id="admindiv">
-            <div class="tooltip"><a href="/ax1/AdminHome/page"><img src="/cpicon.png" alt="Admin Panel" height="81"
-                                                                    width="81"></a>
-                <span class="tooltiptext tooltip-top">Don't click</span>
-            </div>
+            <?php require CONTROLPANELLINK; ?>
         </div>
     </div>
     <div id="scriptmessage">
