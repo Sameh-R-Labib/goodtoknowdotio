@@ -38,7 +38,7 @@
 <div id="breadcrumbs">
     <p>⛺:
         <a href="/ax1/SetHomePageCommunityTopicPost/page/<?php echo $community_id; ?>/0/0"><?php echo $special_community_array[$community_id]; ?></a>
-        <?php require CURRENTTOPIC; ?> → <a href="#">Current Post</a></p>
+        <?php require CURRENTTOPIC; ?><?php require CURRENTPOST; ?></p>
 </div>
 <!-- scriptoutput -->
 <div id="scriptoutput">

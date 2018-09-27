@@ -29,6 +29,7 @@ define('COMMUNITIESFORTHISUSER', VIEWSINCLUDES . DIRSEP . 'communitiesforthisuse
 define('CURRENTTOPIC', VIEWSINCLUDES . DIRSEP . 'currenttopic.php');
 define('LISTTOPICS', VIEWSINCLUDES . DIRSEP . 'listtopics.php');
 define('LISTPOSTS', VIEWSINCLUDES . DIRSEP . 'listposts.php');
+define('CURRENTPOST', VIEWSINCLUDES . DIRSEP . 'currentpost.php');
 
 /**
  * More require statements
