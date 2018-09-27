@@ -35,7 +35,8 @@ class AdminPassCodeGenFormProcessor
          * Otherwise, give error and redirect
          */
         if (empty($_POST['choice'])) {
-            $_SESSION['message'] .= " Aborted! Expected submission of choice not found. ";
+            $sessionMessage .= " Aborted! Expected submission of choice not found. ";
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
@@ -55,7 +56,8 @@ class AdminPassCodeGenFormProcessor
             }
         }
         if (!$is_found) {
-            $_SESSION['message'] .= " Aborted! choice is not valid. ";
+            $sessionMessage .= " Aborted! choice is not valid. ";
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 

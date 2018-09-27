@@ -9,10 +9,13 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\UserToCommunity;
+
 class DefaultCommunityProcessor
 {
     public function page()
     {
+        global $user_id;
         global $is_logged_in;
         global $sessionMessage;
         global $is_admin;
@@ -24,7 +27,8 @@ class DefaultCommunityProcessor
         }
 
         if (empty($_POST['choice'])) {
-            $_SESSION['message'] .= " Expected submission of choice not found. ";
+            $sessionMessage .= " Expected submission of choice not found. ";
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
@@ -34,23 +38,24 @@ class DefaultCommunityProcessor
         $is_found = false;
         if (array_key_exists($_POST['choice'], $special_community_array)) $is_found = true;
         if (!$is_found) {
-            $_SESSION['message'] .= " Choice is not valid. ";
+            $sessionMessage .= " Choice is not valid. ";
+            $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
         /**
-         * Debug Code
+         * Update the user's record with the new default community id
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$is_found: </p>\n<pre>";
-        var_dump($is_found);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$_POST['choice']: </p>\n<pre>";
-        print_r($_POST['choice']);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$special_community_array: </p>\n<pre>";
-        print_r($special_community_array);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
+        /**
+         * Get the user object from the database.
+         */
+        $db = db_connect($sessionMessage);
+        $user_object = UserToCommunity::find_by_id($db, $sessionMessage, $user_id);
+        if (!$user_object) {
+            $sessionMessage .= " Expected submission of choice not found. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
     }
 }
