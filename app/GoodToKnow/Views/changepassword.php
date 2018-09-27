@@ -34,7 +34,7 @@
         </p>
         <p>
             <label for="new_password">
-                <span>Reenter New P/W: </span>
+                <span>Reenter it: </span>
             </label>
             <input type="password" id="new_password" name="new_password">
         </p>
