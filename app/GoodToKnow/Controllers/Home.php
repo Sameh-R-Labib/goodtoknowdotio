@@ -29,7 +29,6 @@ class Home
         global $saved_str01;                // string value (temporary storage)
         global $saved_str02;
 
-
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
