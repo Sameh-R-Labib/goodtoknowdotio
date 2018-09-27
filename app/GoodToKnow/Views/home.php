@@ -57,11 +57,6 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <?php echo "<p>\$post_content: </p>";
-    echo $post_content;
-    echo "<p>\$type_of_resource_requested: </p><pre>";
-    var_dump($type_of_resource_requested);
-    echo "</pre>"; ?>
     <?php if ($type_of_resource_requested === 'community') include LISTTOPICS; ?>
     <?php if ($type_of_resource_requested === 'topic') include LISTPOSTS; ?>
     <?php if ($type_of_resource_requested === 'post') echo $post_content; ?>
