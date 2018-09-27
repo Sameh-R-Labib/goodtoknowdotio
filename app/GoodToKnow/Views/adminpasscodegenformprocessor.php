@@ -24,7 +24,7 @@
 <body>
 <form action="/ax1/AdminCreateUser/page" method="post">
     <h1>User</h1>
-    <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
+    <?php require SESSIONMESSAGE; ?>
     <p>Required = <strong><abbr title="required">*</abbr></strong>.</p>
     <section>
         <h2>Log-in Credentials</h2>

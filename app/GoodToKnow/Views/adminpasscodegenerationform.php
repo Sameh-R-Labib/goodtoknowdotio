@@ -25,7 +25,7 @@
 <body>
 <div class="form-wrapper">
     <h2>Create Account</h2>
-    <p><font color="red"><?php require SESSIONMESSAGE; ?></font></p>
+    <?php require SESSIONMESSAGE; ?>
     <p>Which community do I want this user to become a member of?</p>
     <form action="/ax1/AdminPassCodeGenFormProcessor/script" method="post">
 

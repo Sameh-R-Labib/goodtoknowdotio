@@ -52,7 +52,7 @@
         </div>
     </div>
     <div id="scriptmessage">
-        <p>😏:&nbsp;&nbsp;<?php require SESSIONMESSAGE; ?></p>
+        <?php require SESSIONMESSAGE; ?>
     </div>
 </div>
 <!-- maincontent -->

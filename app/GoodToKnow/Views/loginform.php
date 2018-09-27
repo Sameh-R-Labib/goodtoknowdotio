@@ -33,7 +33,7 @@
     <div class="utilities">
         <a href="#">Forgot password?</a>
         <a href="#">Invited to join? &rarr;</a>
-        <p><?php require SESSIONMESSAGE; ?></p>
+        <?php require SESSIONMESSAGE; ?>
     </div>
 </form>
 </body>
