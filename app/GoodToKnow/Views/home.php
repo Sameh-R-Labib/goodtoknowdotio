@@ -25,11 +25,11 @@
 </div>
 <!-- communities -->
 <div id="communities">
-    <p>👪: <?php require COMMUNITIESFORTHISUSER; ?></p>
+    <p>👪:&nbsp;&nbsp;<?php require COMMUNITIESFORTHISUSER; ?></p>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p>⛺:
+    <p>⛺:&nbsp;&nbsp;
         <a href="/ax1/SetHomePageCommunityTopicPost/page/<?php echo $community_id; ?>/0/0"><?php echo $special_community_array[$community_id]; ?></a>
         <?php require CURRENTTOPIC; ?><?php require CURRENTPOST; ?></p>
 </div>
