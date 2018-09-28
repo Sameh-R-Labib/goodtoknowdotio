@@ -32,6 +32,22 @@ class ChangePasswordProcessor
             redirect_to("/ax1/Home/page");
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$_POST: </p>\n<pre>";
+        var_dump($_POST);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$user_id: </p>\n<pre>";
+        print_r($user_id);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         /**
          * We should have some post variables. These include:
          *  - current_password
