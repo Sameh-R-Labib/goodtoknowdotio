@@ -17,9 +17,10 @@
 </head>
 <body>
 <div class="form-wrapper">
-    <h2>Switch Default Community</h2>
+    <h2>Create New Post</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>In which of these topics do I my new post to exist?</p>
+    <p>(Keep in mind these are only the topics in my current community.) In which topic do I want my new post to
+        exist?</p>
     <form action="/ax1/CreateNewPostProcessor/page" method="post">
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_topic_array as $key => $value): ?>
