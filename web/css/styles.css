@@ -163,6 +163,16 @@ h2 + p {
     clear: both;
 }
 
+#soplaceholder {
+    background-color: #fbfcf9;
+    position: relative;
+    top: 21px;
+    width: 865px;
+    margin: auto;
+    border: 3px ridge #3f3fef;
+    clear: both;
+}
+
 #maincontent {
     background-color: white;
     position: relative;

@@ -31,11 +31,9 @@
 <div id="breadcrumbs">
     &nbsp;
 </div>
-<!-- scriptoutput -->
-<div id="scriptoutput">
-    <div id="adminsysmsgblock">
-        <?php require SESSIONMESSAGE; ?>
-    </div>
+<!-- soplaceholder -->
+<div id="soplaceholder">
+    <?php require SESSIONMESSAGE; ?>
 </div>
 <!-- maincontent -->
 <div id="maincontent">
