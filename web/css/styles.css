@@ -31,6 +31,16 @@ p {
     margin-right: 58px;
 }
 
+#maincontent h1 {
+    margin-left: 18px;
+    margin-right: 58px;
+}
+
+#maincontent h3 {
+    margin-left: 52px;
+    margin-right: 58px;
+}
+
 #maincontent ul {
     font-size: 1.25em;
     margin-left: 72px;
