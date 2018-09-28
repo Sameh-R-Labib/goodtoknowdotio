@@ -51,6 +51,10 @@ class DefaultCommunityProcessor
          * Get the user object from the database.
          */
         $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
         if (!$user_object) {
             $sessionMessage .= " Expected submission of choice not found. ";

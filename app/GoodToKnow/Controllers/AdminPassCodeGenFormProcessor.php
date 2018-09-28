@@ -42,6 +42,10 @@ class AdminPassCodeGenFormProcessor
 
 
         $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
         $community_array = Community::find_all($db, $sessionMessage);
 
         /**
