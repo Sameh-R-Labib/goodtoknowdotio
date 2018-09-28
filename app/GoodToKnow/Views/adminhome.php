@@ -39,8 +39,6 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h1>For Comparison</h1>
-    <h2>For Comparison</h2>
     <h3>Admin Scripts</h3>
     <ul>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
