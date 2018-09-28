@@ -53,8 +53,7 @@ class ChangePasswordProcessor
          * valid submission.
          */
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
-        $hash_of_submitted_password = password_hash($current_password, PASSWORD_DEFAULT);
-        if ($hash_of_submitted_password !== $user_object->password) {
+        if (!password_verify($current_password, $user_object->password)) {
             $sessionMessage .= " The value you entered as Current Password not correct. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
