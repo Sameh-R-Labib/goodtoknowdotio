@@ -88,6 +88,16 @@ class ChangePasswordProcessor
             redirect_to("/ax1/Home/page");
         }
 
+
+        /**
+         * Debug
+         */
+        die("<p>So the current password is the new one already.</p>");
+
+
+
+
+
         /**
          * By running the AdminCreateUser::is_password method
          * we can make sure the new password is acceptable.
