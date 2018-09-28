@@ -27,17 +27,20 @@ p {
 }
 
 #maincontent h2 {
+    font-size: 1.75em;
     margin-left: 44px;
     margin-right: 58px;
 }
 
 #maincontent h1 {
-    margin-left: 18px;
+    font-size: 2.25em;
+    margin-left: 24px;
     margin-right: 58px;
 }
 
 #maincontent h3 {
-    margin-left: 52px;
+    font-size: 1.33em;
+    margin-left: 67px;
     margin-right: 58px;
 }
 
