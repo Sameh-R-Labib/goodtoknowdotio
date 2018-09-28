@@ -44,7 +44,6 @@
         <li><a href="/ax1/DefaultCommunity/page">Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
     </ul>
-    <p>Check how far unordered lists are indented by the CSS.</p>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
