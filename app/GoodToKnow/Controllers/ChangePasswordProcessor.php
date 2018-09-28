@@ -47,6 +47,18 @@ class ChangePasswordProcessor
         $first_try = (isset($_POST['first_try'])) ? $_POST['first_try'] : '';
         $new_password = (isset($_POST['new_password'])) ? $_POST['new_password'] : '';
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>This should be the value I entered for current password</p>\n";
+        echo "<br><p>Var_dump \$current_password: </p>\n<pre>";
+        var_dump($current_password);
+        echo "</pre>\n";
+
+
+
+
         /**
          * Get the user object for the current user
          * and make sure $current_password is a
@@ -55,6 +67,22 @@ class ChangePasswordProcessor
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
         $hash_of_submitted_password = password_hash($current_password, PASSWORD_DEFAULT);
         if ($hash_of_submitted_password !== $user_object->password) {
+
+
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Obviously the hashes didn't match. But why?</p>\n";
+            echo "<br><p>Var_dump \$hash_of_submitted_password: </p>\n<pre>";
+            var_dump($hash_of_submitted_password);
+            echo "</pre>\n";
+            echo "<br><p>Var_dump \$user_object->password: </p>\n<pre>";
+            var_dump($user_object->password);
+            echo "</pre>\n";
+            die("<br><p>End debug</p>\n");
+
+
+
             $sessionMessage .= " The value you entered as Current Password not correct. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
