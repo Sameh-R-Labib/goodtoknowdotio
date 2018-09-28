@@ -60,7 +60,35 @@ class ChangePasswordProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * By running the AdminCreateUser::is_password method
+         * we can make sure the new password is acceptable.
+         */
+        $is_password = AdminCreateUser::is_password($sessionMessage, $first_try, $new_password);
+        if (!$is_password) {
+            $sessionMessage .= " The values you entered for a new password have something wrong with them. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
-        // Make sure to sanitize values used in $sql.
+        /**
+         * Put the hash of the new password in the user object.
+         */
+        $user_object->password = password_hash($new_password, PASSWORD_DEFAULT);
+
+        // Save the user object
+        $is_saved = $user_object->save($db, $sessionMessage);
+        if (!$is_saved || !empty($sessionMessage)) {
+            $sessionMessage .= " Failed to update your record. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Report success and redirect.
+         */
+        $sessionMessage .= " Your password change has been saved. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }
