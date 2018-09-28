@@ -164,6 +164,7 @@ h2 + p {
 }
 
 #soplaceholder {
+    opacity: 0.35;
     background-color: #fbfcf9;
     position: relative;
     top: 21px;
