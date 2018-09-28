@@ -15,9 +15,6 @@ use GoodToKnow\Models\UserToCommunity;
 
 class AdminCreateUser
 {
-    /**
-     *
-     */
     public function page()
     {
         global $is_logged_in;

@@ -119,7 +119,7 @@ abstract class GoodObject
         return array_key_exists($possible_attribute, $this->attributes());
     }
 
-    //~~~
+
     // CRUD (Create Read Update Delete)
 
     // Create
