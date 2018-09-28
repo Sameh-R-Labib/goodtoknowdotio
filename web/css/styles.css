@@ -30,6 +30,7 @@ p {
     font-size: 1.75em;
     margin-left: 44px;
     margin-right: 58px;
+    margin-top: 62px;
 }
 
 #maincontent h1 {
@@ -42,8 +43,8 @@ p {
     font-size: 1.33em;
     margin-left: 67px;
     margin-right: 58px;
-    margin-top: 50px;
-    margin-bottom: 3px;
+    margin-top: 46px;
+    margin-bottom: -5px;
 }
 
 #maincontent ul {
