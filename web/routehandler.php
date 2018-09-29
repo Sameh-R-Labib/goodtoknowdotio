@@ -95,6 +95,10 @@ $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : ''
 
 $saved_str02 = (isset($_SESSION['saved_str02'])) ? $_SESSION['saved_str02'] : '';
 
+$saved_int01 = (isset($_SESSION['saved_int01'])) ? $_SESSION['saved_int01'] : null;
+
+$saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : null;
+
 $is_logged_in = (!empty($user_id)) ? true : false;
 
 $is_admin = ($role === 'admin') ? true : false;

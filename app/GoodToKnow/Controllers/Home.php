@@ -28,6 +28,8 @@ class Home
         global $is_admin;
         global $saved_str01;                // string value (temporary storage)
         global $saved_str02;
+        global $saved_int01;
+        global $saved_int02;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
