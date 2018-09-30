@@ -20,11 +20,12 @@
     <h2>Where to put the new post?</h2>
     <?php require SESSIONMESSAGE; ?>
     <form action="/ax1/CreateNewPostInsertPointProcessor/page" method="post">
-        <label for="relate">Put it </label>
-        <select id="relate" name="relate">
-            <option value="before">Before</option>
-            <option value="after">After</option>
-        </select>
+        <div>Put it
+            <select id="relate" name="relate">
+                <option value="before">Before</option>
+                <option value="after">After</option>
+            </select>
+        </div>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_post_array as $key => $value): ?>
             <label for="choice-<?php echo $key; ?>">
