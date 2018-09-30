@@ -19,7 +19,7 @@
 <div class="form-wrapper">
     <h2>Where to put the new post?</h2>
     <?php require SESSIONMESSAGE; ?>
-    <form action="/ax1/CreateNewPostInsertPointProcessor/page" method="post">
+    <form action="/ax1/CreateNewPostIPProcessor/page" method="post">
         <div>Put it
             <select id="relate" name="relate">
                 <option value="before">Before</option>
