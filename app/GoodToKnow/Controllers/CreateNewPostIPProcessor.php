@@ -38,16 +38,24 @@ class CreateNewPostIPProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * I can't assume these post variables exist so I do the following.
+         */
+        $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
+        $chosen_post_id = (isset($_POST['choice'])) ? $_POST['choice'] : null;
+
+        // Handle bad submit.
+        if (empty($relate) || empty($chosen_post_id)) {
+            $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
-         * Debug Code
+         * I made a flowchart for the algorithm used to
+         * come up with the sequence number for the new
+         * post. The code below implements that algorithm.
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$_POST: </p>\n<pre>";
-        var_dump($_POST);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
 
     }
 }
