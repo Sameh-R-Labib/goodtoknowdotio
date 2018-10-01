@@ -32,6 +32,7 @@ class CreateNewPostIPProcessor
          */
         global $is_logged_in;
         global $sessionMessage;
+        global $special_post_array;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
@@ -48,6 +49,18 @@ class CreateNewPostIPProcessor
         if (empty($relate) || empty($chosen_post_id)) {
             $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
             $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if ($relate !== 'before' && $relate !== 'after') {
+            $sessionMessage .= " CreateNewPostIPProcessor: Error 034455. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if (!array_key_exists($chosen_post_id, $special_post_array)) {
+            $sessionMessage .= " CreateNewPostIPProcessor: Error 421218. ";
+            $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
