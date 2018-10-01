@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\TopicToPost;
+
+
 class CreateNewPostIPProcessor
 {
     public function page()
@@ -33,9 +36,28 @@ class CreateNewPostIPProcessor
         global $is_logged_in;
         global $sessionMessage;
         global $special_post_array;
+        global $saved_int01;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $db = db_connect($sessionMessage);
+
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Make sure we are NOT dealing with a topic which has zero
+         * posts.
+         */
+        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+        if (!$special_post_array) {
+            $sessionMessage .= " CreateNewPostIPProcessor: Error 074346. ";
+            $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
@@ -69,6 +91,38 @@ class CreateNewPostIPProcessor
          * come up with the sequence number for the new
          * post. The code below implements that algorithm.
          */
+
+        /**
+         * Figure out the sequence number of chosen post.
+         * Chosen post is the post the user chose in the form.
+         * We know its id but we need its sequence number.
+         */
+        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+        if (!$all_posts_as_objects) {
+            $sessionMessage .= " CreateNewPostIPProcessor: Error 971249. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $chosen_post_sequence_number = -1;
+        foreach ($all_posts_as_objects as $key => $object) {
+            if ($object->id == $chosen_post_id) $chosen_post_sequence_number = $object->sequence_number;
+        }
+        if ($chosen_post_sequence_number == -1) {
+            $sessionMessage .= " CreateNewPostIPProcessor: Error 537384. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if ($relate == 'after') {
+            $sequence_number = self::get_sequence_number_in_case_after();
+        } else {
+            $sequence_number = self::get_sequence_number_in_case_before();
+        }
+    }
+
+
+    public static function get_sequence_number_in_case_after()
+    {
 
     }
 }
