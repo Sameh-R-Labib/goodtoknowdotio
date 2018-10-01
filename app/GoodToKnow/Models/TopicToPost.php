@@ -174,7 +174,10 @@ class TopicToPost extends GoodObject
 
         while ($count > 0) {
             $sorted = self::post_having_lowest_sequence_number($temp);
+            $count -= 1;
         }
+
+        $post_objects = $sorted;
     }
 
     public static function post_having_lowest_sequence_number(array &$temp)
