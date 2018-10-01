@@ -114,15 +114,33 @@ class CreateNewPostIPProcessor
         }
 
         if ($relate == 'after') {
-            $sequence_number = self::get_sequence_number_in_case_after();
+            $sequence_number = self::get_sequence_number_in_case_after($all_posts_as_objects, $chosen_post_sequence_number);
         } else {
             $sequence_number = self::get_sequence_number_in_case_before();
         }
     }
 
 
-    public static function get_sequence_number_in_case_after()
+    public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
+        /**
+         * If there are no posts which have a sequence number higher
+         * than the sequence number of the chosen post then we will
+         * assign $following_post_sequence_number the value 1000000.
+         */
+        $found_a_post_with_higher_sequence_number = false;
+        foreach ($all_posts_as_objects as $key => $object) {
+            if ($object->sequence_number > $chosen_post_sequence_number) {
+                $found_a_post_with_higher_sequence_number = true;
+            }
+        }
+        if (!$found_a_post_with_higher_sequence_number) {
+            $following_post_sequence_number = 1000000;
+        }
 
+        /**
+         * I need to order the posts by sequence number.
+         */
+        TopicToPost::order_posts_by_sequence_number($all_posts_as_objects);
     }
 }
