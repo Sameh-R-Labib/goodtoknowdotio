@@ -146,6 +146,9 @@ class TopicToPost extends GoodObject
         return $special_posts_array;
     }
 
+    /**
+     * @param array $post_objects
+     */
     public static function order_posts_by_sequence_number(array &$post_objects)
     {
         /**
@@ -180,6 +183,10 @@ class TopicToPost extends GoodObject
         $post_objects = $sorted;
     }
 
+    /**
+     * @param array $temp
+     * @return mixed
+     */
     public static function post_having_lowest_sequence_number(array &$temp)
     {
         /**
