@@ -143,5 +143,50 @@ class CreateNewPostIPProcessor
          */
         TopicToPost::order_posts_by_sequence_number($all_posts_as_objects);
 
+        /**
+         * At this point we know whether $following_post_sequence_number
+         * is going to be 1000000 or not be 1000000.
+         *
+         * If it's not going to be 1000000 then we need to know what it is.
+         *
+         * Also we do have the posts in order by increasing sequence number.
+         */
+        if ($found_a_post_with_higher_sequence_number) {
+            foreach ($all_posts_as_objects as $key => $object) {
+                if ($object->sequence_number >= $chosen_post_sequence_number) {
+                    $following_post_sequence_number = $object->sequence_number;
+                    break;
+                }
+            }
+        }
+
+        if (empty($following_post_sequence_number)) {
+            $_SESSION['message'] = " CreateNewPostIPProcessor::get_sequence_number_in_case_after says Error 764516. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+
+        /**
+         * At this point we we have values for both $chosen_post_sequence_number and
+         * $following_post_sequence_number.
+         *
+         * This brings us closer to getting $sequence_number and returning it.
+         */
+
+        $difference = $following_post_sequence_number - $chosen_post_sequence_number;
+
+        /**
+         * If the difference between $chosen_post_sequence_number and $following_post_sequence_number
+         * is less than 2 then error out.
+         */
+        if (($difference) < 2) {
+            $_SESSION['message'] = " CreateNewPostIPProcessor::get_sequence_number_in_case_after says: Choose another
+             place to put the post. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $increase = intdiv($difference, 2);
+
+        return $chosen_post_sequence_number + $increase;
     }
 }
