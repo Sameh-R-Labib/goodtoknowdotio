@@ -145,4 +145,25 @@ class TopicToPost extends GoodObject
 
         return $special_posts_array;
     }
+
+    public static function order_posts_by_sequence_number(array &$post_objects)
+    {
+        /**
+         * Here's how we're going to do this.
+         * We're going to build a new array called $sorted
+         * We are going to keep iterating over the $original array until it becomes empty.
+         * During each iteration we are going to take away the element with the lowest sequence
+         * number and put it at the end of $sorted. Finally we assign $post_objects the
+         * value of $sorted.
+         *
+         * Note: It is possible for two posts to have the same sequence number.
+         *
+         * Note: This function will kill your script if $post_objects is an empty array.
+         */
+
+        if (empty($post_objects)) {
+            $_SESSION['message'] = " TopicToPost::order_posts_by_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
+            redirect_to("/ax1/Home/page");
+        }
+    }
 }

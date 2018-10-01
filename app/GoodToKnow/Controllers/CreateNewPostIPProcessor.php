@@ -142,5 +142,6 @@ class CreateNewPostIPProcessor
          * I need to order the posts by sequence number.
          */
         TopicToPost::order_posts_by_sequence_number($all_posts_as_objects);
+
     }
 }
