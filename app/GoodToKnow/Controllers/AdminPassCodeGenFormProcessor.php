@@ -56,7 +56,7 @@ class AdminPassCodeGenFormProcessor
         foreach ($community_array as $value) {
             if ($value->id == $_POST['choice']) {
                 $is_found = true;
-                continue;
+                break;
             }
         }
         if (!$is_found) {
