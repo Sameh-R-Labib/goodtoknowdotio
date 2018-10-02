@@ -229,5 +229,17 @@ class CreateNewPostIPProcessor
                 }
             }
         }
+
+        $difference = $chosen_post_sequence_number - $leading_post_sequence_number;
+
+        if (($difference) < 2) {
+            $_SESSION['message'] = " CreateNewPostIPProcessor::get_sequence_number_in_case_after says: Choose another
+             place to put the post. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $decrease = intdiv($difference, 2);
+
+        return $chosen_post_sequence_number - $decrease;
     }
 }
