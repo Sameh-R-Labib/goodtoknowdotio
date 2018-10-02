@@ -91,12 +91,6 @@ class CreateNewPostIPProcessor
          * come up with the sequence number for the new
          * post. The code below implements that algorithm.
          */
-
-        /**
-         * Figure out the sequence number of chosen post.
-         * Chosen post is the post the user chose in the form.
-         * We know its id but we need its sequence number.
-         */
         $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
         if (!$all_posts_as_objects) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 971249. ";
