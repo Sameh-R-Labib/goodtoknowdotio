@@ -112,6 +112,9 @@ class CreateNewPostIPProcessor
         } else {
             $sequence_number = self::get_sequence_number_in_case_before($all_posts_as_objects, $chosen_post_sequence_number);
         }
+
+        $_SESSION['$saved_int02'] = $sequence_number;
+        redirect_to("/ax1/CreateNewPostTitle/page");
     }
 
     /**

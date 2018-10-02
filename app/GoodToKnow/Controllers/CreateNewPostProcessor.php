@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\TopicToPost;
+
+
 class CreateNewPostProcessor
 {
     public function page()
@@ -49,7 +52,22 @@ class CreateNewPostProcessor
 
         /**
          * Redirect
+         *
+         * Where we redirect depends on whether or not
+         * there is more than one post in the chosen topic.
          */
-        redirect_to("/ax1/CreateNewPostInsertPoint/page");
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $posts = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $chosen_topic_id);
+        $count = count($posts);
+        if ($count > 0) {
+            redirect_to("/ax1/CreateNewPostInsertPoint/page");
+        } else {
+            $_SESSION['$saved_int02'] = 500000;
+            redirect_to("/ax1/CreateNewPostTitle/page");
+        }
     }
 }

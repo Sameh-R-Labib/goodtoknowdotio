@@ -23,6 +23,10 @@ class CreateNewPostInsertPoint
          * The user answers two questions:
          *  1) Before or After?
          *  2) Which post?
+         *
+         * Note: Here it is assumed there is at
+         * least one post in the chosen topic.
+         * Otherwise, this route wil have had been skipped.
          */
         global $is_logged_in;
         global $sessionMessage;
