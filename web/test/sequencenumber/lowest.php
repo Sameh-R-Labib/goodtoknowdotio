@@ -76,7 +76,7 @@ echo "<pre>";
 print_r($post_with_lowest_sequence_number);
 echo "</pre>";
 
-echo "<pre>";
 echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
+echo "<pre>";
 print_r($array_of_posts);
 echo "</pre>";
