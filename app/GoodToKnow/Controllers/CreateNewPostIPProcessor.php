@@ -120,7 +120,11 @@ class CreateNewPostIPProcessor
         }
     }
 
-
+    /**
+     * @param array $all_posts_as_objects
+     * @param int $chosen_post_sequence_number
+     * @return int
+     */
     public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
         /**
@@ -190,6 +194,11 @@ class CreateNewPostIPProcessor
         return $chosen_post_sequence_number + $increase;
     }
 
+    /**
+     * @param array $all_posts_as_objects
+     * @param int $chosen_post_sequence_number
+     * @return int
+     */
     public static function get_sequence_number_in_case_before(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
         /**
