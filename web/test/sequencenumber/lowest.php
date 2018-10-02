@@ -50,6 +50,7 @@ function post_having_lowest_sequence_number(array &$array_of_posts)
 {
     if (empty($array_of_posts)) {
         echo "Error: The array of posts is empty.";
+        exit(1);
     }
 
     $key_of_lowest = -1;
@@ -64,6 +65,7 @@ function post_having_lowest_sequence_number(array &$array_of_posts)
 
     if ($key_of_lowest == -1) {
         echo "Error: Anomaly because there can not be no key of lowest.";
+        exit(1);
     }
 
     $post_with_lowest_sequence_number = $array_of_posts[$key_of_lowest];
