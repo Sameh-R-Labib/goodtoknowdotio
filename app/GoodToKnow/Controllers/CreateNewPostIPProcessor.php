@@ -116,7 +116,7 @@ class CreateNewPostIPProcessor
         if ($relate == 'after') {
             $sequence_number = self::get_sequence_number_in_case_after($all_posts_as_objects, $chosen_post_sequence_number);
         } else {
-            $sequence_number = self::get_sequence_number_in_case_before();
+            $sequence_number = self::get_sequence_number_in_case_before($all_posts_as_objects, $chosen_post_sequence_number);
         }
     }
 
@@ -153,7 +153,7 @@ class CreateNewPostIPProcessor
          */
         if ($found_a_post_with_higher_sequence_number) {
             foreach ($all_posts_as_objects as $key => $object) {
-                if ($object->sequence_number >= $chosen_post_sequence_number) {
+                if ($object->sequence_number > $chosen_post_sequence_number) {
                     $following_post_sequence_number = $object->sequence_number;
                     break;
                 }
@@ -188,5 +188,46 @@ class CreateNewPostIPProcessor
         $increase = intdiv($difference, 2);
 
         return $chosen_post_sequence_number + $increase;
+    }
+
+    public static function get_sequence_number_in_case_before(array $all_posts_as_objects, int $chosen_post_sequence_number)
+    {
+        /**
+         * If there are no posts which have a sequence number lower
+         * than the sequence number of the chosen post then we will
+         * assign $leading_post_sequence_number the value 0.
+         */
+        $found_a_post_with_lower_sequence_number = false;
+        foreach ($all_posts_as_objects as $key => $object) {
+            if ($object->sequence_number < $chosen_post_sequence_number) {
+                $found_a_post_with_lower_sequence_number = true;
+            }
+        }
+        if (!$found_a_post_with_lower_sequence_number) {
+            $leading_post_sequence_number = 0;
+        }
+
+        /**
+         * I need to order the posts by sequence number.
+         */
+        TopicToPost::order_posts_by_sequence_number($all_posts_as_objects);
+
+        /**
+         * At this point we know whether $leading_post_sequence_number
+         * is going to be 0 or not be 0.
+         *
+         * If it's not going to be 0 then we need to know what it is.
+         *
+         * Also we do have the posts in order by increasing sequence number.
+         */
+        $reversed = array_reverse($all_posts_as_objects);
+        if ($found_a_post_with_lower_sequence_number) {
+            foreach ($reversed as $key => $object) {
+                if ($object->sequence_number < $chosen_post_sequence_number) {
+                    $leading_post_sequence_number = $object->sequence_number;
+                    break;
+                }
+            }
+        }
     }
 }
