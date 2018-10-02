@@ -46,30 +46,35 @@ $array_of_posts = [$post02, $post01, $post04, $post05, $post03];
 
 
 // Now we begin the code of the function
-
-if (empty($array_of_posts)) {
-    echo "Error: The array of posts is empty.";
-}
-
-$key_of_lowest = -1;
-$lowest_sequence_number = 1000001;
-
-foreach ($array_of_posts as $key => $object) {
-    if ($object->sequence_number <= $lowest_sequence_number) {
-        $key_of_lowest = $key;
-        $lowest_sequence_number = $object->sequence_number;
+function post_having_lowest_sequence_number()
+{
+    if (empty($array_of_posts)) {
+        echo "Error: The array of posts is empty.";
     }
+
+    $key_of_lowest = -1;
+    $lowest_sequence_number = 1000001;
+
+    foreach ($array_of_posts as $key => $object) {
+        if ($object->sequence_number <= $lowest_sequence_number) {
+            $key_of_lowest = $key;
+            $lowest_sequence_number = $object->sequence_number;
+        }
+    }
+
+    if ($key_of_lowest == -1) {
+        echo "Error: Anomaly because there can not be no key of lowest.";
+    }
+
+    $post_with_lowest_sequence_number = $array_of_posts[$key_of_lowest];
+    unset($array_of_posts[$key_of_lowest]);
+
+    return $post_with_lowest_sequence_number;
 }
 
-if ($key_of_lowest == -1) {
-    echo "Error: Anomaly because there can not be no key of lowest.";
-}
-
-$post_with_lowest_sequence_number = $array_of_posts[$key_of_lowest];
+// main
 echo "The post with the lowest sequence number is post #";
 echo $post_with_lowest_sequence_number->id;
-
-unset($array_of_posts[$key_of_lowest]);
 
 echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
 echo "<pre>";
