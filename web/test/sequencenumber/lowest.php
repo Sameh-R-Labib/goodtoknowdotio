@@ -72,7 +72,11 @@ echo $post_with_lowest_sequence_number->id;
 unset($array_of_posts[$key_of_lowest]);
 
 echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
+echo "<pre>";
 print_r($post_with_lowest_sequence_number);
+echo "</pre>";
 
-echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.<br><br>";
+echo "<pre>";
+echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
 print_r($array_of_posts);
+echo "</pre>";
