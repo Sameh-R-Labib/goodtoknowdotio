@@ -22,29 +22,6 @@ class Post
     public $sequence_number;
 }
 
-$post01 = new Post;
-$post01->id = 1;
-$post01->sequence_number = 500000;
-
-$post02 = new Post;
-$post02->id = 2;
-$post02->sequence_number = 750000;
-
-$post03 = new Post;
-$post03->id = 3;
-$post03->sequence_number = 0;
-
-$post04 = new Post;
-$post04->id = 4;
-$post04->sequence_number = 1000000;
-
-$post05 = new Post;
-$post05->id = 5;
-$post05->sequence_number = 875000;
-
-$array_of_posts = [$post02, $post01, $post04, $post05, $post03];
-
-
 // Now we begin the code of the function
 function post_having_lowest_sequence_number(array &$array_of_posts)
 {
@@ -93,5 +70,27 @@ function order_posts_by_sequence_number(array &$post_objects)
 
 
 // main 1
+
+$post01 = new Post;
+$post01->id = 1;
+$post01->sequence_number = 500000;
+
+$post02 = new Post;
+$post02->id = 2;
+$post02->sequence_number = 750000;
+
+$post03 = new Post;
+$post03->id = 3;
+$post03->sequence_number = 0;
+
+$post04 = new Post;
+$post04->id = 4;
+$post04->sequence_number = 1000000;
+
+$post05 = new Post;
+$post05->id = 5;
+$post05->sequence_number = 875000;
+
+$array_of_posts = [$post02, $post01, $post04, $post05, $post03];
 
 
