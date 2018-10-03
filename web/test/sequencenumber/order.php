@@ -1,226 +1,155 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/16/18
- * Time: 4:42 PM
+ * Testing (in general) the code for finding a sequence number for the new post.
+ * Testing (specifically) the code for post_having_lowest_sequence_number.
+ * I will make a modified version of the code I'm testing.
+ * The modifications are so that the code can work in this testing
+ * environment.
  */
 
-namespace GoodToKnow\Models;
-
-
-class TopicToPost extends GoodObject
+/**
+ * The code starts off with an array of post objects.
+ * These post objects all belong to one topic.
+ * Hence their sequence_number make sense in that context.
+ *
+ * The code finds the post which has the lowest sequence number
+ * and removes it from the array of post objects.
+ */
+// Make the array of post objects
+class Post
 {
-    /**
-     * @var string
-     */
-    protected static $table_name = "topic_to_post";
-
-    /**
-     * @var array
-     */
-    protected static $fields = ['id', 'topic_id', 'post_id'];
-
-    /**
-     * @var int
-     */
     public $id;
-
-    /**
-     * @var int
-     */
-    public $topic_id;
-
-    /**
-     * @var int
-     */
-    public $post_id;
-
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $topic_id
-     * @return array|bool
-     */
-    public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, $topic_id)
-    {
-        /**
-         * This time the array will be an array of objects
-         *
-         * What I'm getting is an array of Post objects.
-         * The objects I'm getting are the ones which belong
-         * to a particular topic.
-         *
-         * First I will get (in array) all the TopicToPost objects with
-         * a particular $topic_id.
-         *
-         * Then I will get (in array) all the posts listed in the first array.
-         */
-
-
-        // get (in array) all the TopicToPost objects with a particular $topic_id.
-        $array_of_TopicToPost = [];
-        $count = 0;
-        $x = null;
-        $sql = 'SELECT *
-                FROM `topic_to_post`
-                WHERE `topic_id` = ?';
-        try {
-            $stmt = $db->stmt_init();
-            if (!$stmt->prepare($sql)) {
-                $error .= ' ' . $stmt->error . ' ';
-                return false;
-            } else {
-                $stmt->bind_param('i', $topic_id);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                $numrows = $result->num_rows;
-                if (!$numrows) {
-                    $stmt->close();
-                    return false;
-                } else {
-                    while ($x = $result->fetch_object('\GoodToKnow\Models\TopicToPost')) {
-                        $array_of_TopicToPost[] = $x;
-                        $count += 1;
-                    }
-                    $stmt->close();
-                    $result->close();
-                }
-            }
-        } catch (\Exception $e) {
-            $error .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
-                htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
-        }
-        if (!empty($error)) {
-            return false;
-        }
-        if ($count < 1) {
-            $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
-            return false;
-        }
-
-        /**
-         * get (in array) all the posts listed in $array_of_TopicToPost.
-         */
-        $array_of_Posts = [];
-
-        foreach ($array_of_TopicToPost as $item) {
-            $array_of_Posts[] = Post::find_by_id($db, $error, $item->post_id);
-        }
-        if (empty($array_of_Posts)) {
-            $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
-            return false;
-        }
-
-        return $array_of_Posts;
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $topic_id
-     * @return array|bool
-     */
-    public static function special_get_posts_array_for_a_topic(\mysqli $db, string &$error, $topic_id)
-    {
-        /**
-         * This function is like (and uses) get_posts_array_for_a_topic
-         * but it is different in that:
-         *   the array structure it returns is different
-         * Here is the array structure:
-         *  - Each item key is a post id
-         *  - Each item value is the post title for that post id
-         */
-
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
-        if (empty($posts_array) || $posts_array === false) {
-            return false;
-        }
-
-        $special_posts_array = [];
-        foreach ($posts_array as $item) {
-            $special_posts_array[$item->id] = $item->title;
-        }
-
-        return $special_posts_array;
-    }
-
-    /**
-     * @param array $post_objects
-     */
-    public static function order_posts_by_sequence_number(array &$post_objects)
-    {
-        /**
-         * Here's how we're going to do this.
-         * We're going to build a new array called $sorted
-         * We are going to keep iterating over the $original array until it becomes empty.
-         * During each iteration we are going to take away the element with the lowest sequence
-         * number and put it at the end of $sorted. Finally we assign $post_objects the
-         * value of $sorted.
-         *
-         * Note: It is possible for two posts to have the same sequence number.
-         *
-         * Note: This function will kill your script if $post_objects is an empty array.
-         */
-
-        if (empty($post_objects)) {
-            $_SESSION['message'] = " TopicToPost::order_posts_by_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
-            redirect_to("/ax1/Home/page");
-        }
-
-        $sorted = [];
-
-        $count = count($post_objects);
-
-        $temp = $post_objects;
-
-        while ($count > 0) {
-            $sorted = self::post_having_lowest_sequence_number($temp);
-            $count -= 1;
-        }
-
-        $post_objects = $sorted;
-    }
-
-    /**
-     * @param array $temp
-     * @return mixed
-     */
-    public static function post_having_lowest_sequence_number(array &$temp)
-    {
-        /**
-         * This function removes and returns the post which has the
-         * lowest sequence number.
-         */
-        if (empty($temp)) {
-            $_SESSION['message'] = " TopicToPost::post_having_lowest_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
-            redirect_to("/ax1/Home/page");
-        }
-
-        $key_of_lowest = -1;
-        $lowest_sequence_number = 1000001;
-
-        foreach ($temp as $key => $object) {
-            if ($object->sequence_number <= $lowest_sequence_number) {
-                $key_of_lowest = $key;
-                $lowest_sequence_number = $object->sequence_number;
-            }
-        }
-
-        if ($key_of_lowest == -1) {
-            $_SESSION['message'] = " TopicToPost::post_having_lowest_sequence_number says: Error 624312. ";
-            redirect_to("/ax1/Home/page");
-        }
-
-        /**
-         * At this point $key_of_lowest has the key of the element
-         * we want to remove and return.
-         */
-        $post_with_lowest_sequence_number = $temp[$key_of_lowest];
-
-        unset($temp[$key_of_lowest]);
-
-        return $post_with_lowest_sequence_number;
-    }
+    public $sequence_number;
 }
+
+$post01 = new Post;
+$post01->id = 1;
+$post01->sequence_number = 500000;
+
+$post02 = new Post;
+$post02->id = 2;
+$post02->sequence_number = 750000;
+
+$post03 = new Post;
+$post03->id = 3;
+$post03->sequence_number = 0;
+
+$post04 = new Post;
+$post04->id = 4;
+$post04->sequence_number = 1000000;
+
+$post05 = new Post;
+$post05->id = 5;
+$post05->sequence_number = 875000;
+
+$array_of_posts = [$post02, $post01, $post04, $post05, $post03];
+
+
+// Now we begin the code of the function
+function post_having_lowest_sequence_number(array &$array_of_posts)
+{
+    if (empty($array_of_posts)) {
+        echo "Error: The array of posts is empty.";
+        return false;
+    }
+
+    $key_of_lowest = -1;
+    $lowest_sequence_number = 1000001;
+
+    foreach ($array_of_posts as $key => $object) {
+        if ($object->sequence_number <= $lowest_sequence_number) {
+            $key_of_lowest = $key;
+            $lowest_sequence_number = $object->sequence_number;
+        }
+    }
+
+    if ($key_of_lowest == -1) {
+        echo "Error: Anomaly because there can not be no key of lowest.";
+        return false;
+    }
+
+    $post_with_lowest_sequence_number = $array_of_posts[$key_of_lowest];
+    unset($array_of_posts[$key_of_lowest]);
+
+    return $post_with_lowest_sequence_number;
+}
+
+
+// main 1
+$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
+echo "The post with the lowest sequence number is post #";
+echo $post_with_lowest_sequence_number->id;
+
+echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
+echo "<pre>";
+print_r($post_with_lowest_sequence_number);
+echo "</pre>";
+
+echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre><br><br>";
+
+// main 2
+$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
+echo "The post with the lowest sequence number is post #";
+echo $post_with_lowest_sequence_number->id;
+
+echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
+echo "<pre>";
+print_r($post_with_lowest_sequence_number);
+echo "</pre>";
+
+echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre><br><br>";
+
+// main 3
+$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
+echo "The post with the lowest sequence number is post #";
+echo $post_with_lowest_sequence_number->id;
+
+echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
+echo "<pre>";
+print_r($post_with_lowest_sequence_number);
+echo "</pre>";
+
+echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre><br><br>";
+
+// main 4
+$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
+echo "The post with the lowest sequence number is post #";
+echo $post_with_lowest_sequence_number->id;
+
+echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
+echo "<pre>";
+print_r($post_with_lowest_sequence_number);
+echo "</pre>";
+
+echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre><br><br>";
+
+// main 5
+$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
+echo "The post with the lowest sequence number is post #";
+echo $post_with_lowest_sequence_number->id;
+
+echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
+echo "<pre>";
+print_r($post_with_lowest_sequence_number);
+echo "</pre>";
+
+echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre><br><br>";
+
+// main 6
+$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
+echo "<br><br>The line of code right above this one should say: Error: The array of posts is empty.";
