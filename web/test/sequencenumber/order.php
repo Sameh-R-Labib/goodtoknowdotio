@@ -64,7 +64,7 @@ function post_having_lowest_sequence_number(array &$array_of_posts)
     }
 
     if ($key_of_lowest == -1) {
-        echo "Error: Anomaly because there can not be no key of lowest.";
+        echo "post_having_lowest_sequence_number says: Anomaly because there can not be no key of lowest.";
         return false;
     }
 
@@ -72,6 +72,22 @@ function post_having_lowest_sequence_number(array &$array_of_posts)
     unset($array_of_posts[$key_of_lowest]);
 
     return $post_with_lowest_sequence_number;
+}
+
+function order_posts_by_sequence_number(array &$post_objects)
+{
+    if (empty($post_objects)) {
+        echo "order_posts_by_sequence_number says: The array of posts is empty.";
+        return false;
+    }
+    $sorted = [];
+    $count = count($post_objects);
+    $temp = $post_objects;
+    while ($count > 0) {
+        $sorted = post_having_lowest_sequence_number($temp);
+        $count -= 1;
+    }
+    $post_objects = $sorted;
 }
 
 
