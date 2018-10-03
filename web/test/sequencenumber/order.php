@@ -61,7 +61,7 @@ function order_posts_by_sequence_number(array &$post_objects)
     $count = count($post_objects);
     $temp = $post_objects;
     while ($count > 0) {
-        $sorted = post_having_lowest_sequence_number($temp);
+        $sorted[] = post_having_lowest_sequence_number($temp);
         $count -= 1;
     }
     $post_objects = $sorted;
