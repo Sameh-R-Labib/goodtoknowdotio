@@ -88,84 +88,10 @@ function order_posts_by_sequence_number(array &$post_objects)
         $count -= 1;
     }
     $post_objects = $sorted;
+    return true;
 }
 
 
 // main 1
-$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
-echo "The post with the lowest sequence number is post #";
-echo $post_with_lowest_sequence_number->id;
 
-echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
-echo "<pre>";
-print_r($post_with_lowest_sequence_number);
-echo "</pre>";
 
-echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
-echo "<pre>";
-print_r($array_of_posts);
-echo "</pre><br><br>";
-
-// main 2
-$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
-echo "The post with the lowest sequence number is post #";
-echo $post_with_lowest_sequence_number->id;
-
-echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
-echo "<pre>";
-print_r($post_with_lowest_sequence_number);
-echo "</pre>";
-
-echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
-echo "<pre>";
-print_r($array_of_posts);
-echo "</pre><br><br>";
-
-// main 3
-$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
-echo "The post with the lowest sequence number is post #";
-echo $post_with_lowest_sequence_number->id;
-
-echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
-echo "<pre>";
-print_r($post_with_lowest_sequence_number);
-echo "</pre>";
-
-echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
-echo "<pre>";
-print_r($array_of_posts);
-echo "</pre><br><br>";
-
-// main 4
-$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
-echo "The post with the lowest sequence number is post #";
-echo $post_with_lowest_sequence_number->id;
-
-echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
-echo "<pre>";
-print_r($post_with_lowest_sequence_number);
-echo "</pre>";
-
-echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
-echo "<pre>";
-print_r($array_of_posts);
-echo "</pre><br><br>";
-
-// main 5
-$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
-echo "The post with the lowest sequence number is post #";
-echo $post_with_lowest_sequence_number->id;
-
-echo "<br><br>Here is a print_r of \$post_with_lowest_sequence_number";
-echo "<pre>";
-print_r($post_with_lowest_sequence_number);
-echo "</pre>";
-
-echo "<br><br>Here is a print_r of \$array_of_posts. It should be missing the post we removed.";
-echo "<pre>";
-print_r($array_of_posts);
-echo "</pre><br><br>";
-
-// main 6
-$post_with_lowest_sequence_number = post_having_lowest_sequence_number($array_of_posts);
-echo "<br><br>The line of code right above this one should say: Error: The array of posts is empty.";
