@@ -93,4 +93,22 @@ $post05->sequence_number = 875000;
 
 $array_of_posts = [$post02, $post01, $post04, $post05, $post03];
 
-
+/**
+ * Can order_posts_by_sequence_number take $array_of_posts
+ * and return an array of posts which is ordered by sequence
+ * number from lowest to highest?
+ */
+echo "<p>Here is the original array of posts: </p>";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre>";
+$result = order_posts_by_sequence_number($array_of_posts);
+if ($result) {
+    echo "<p>order_posts_by_sequence_number returned true</p>";
+} else {
+    echo "<p>order_posts_by_sequence_number returned false</p>";
+}
+echo "<p>Here is the sorted array of posts: </p>";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre>";
