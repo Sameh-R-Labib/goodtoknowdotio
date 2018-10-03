@@ -77,7 +77,7 @@ $post01->sequence_number = 500000;
 
 $post02 = new Post;
 $post02->id = 2;
-$post02->sequence_number = 750000;
+$post02->sequence_number = 500000;
 
 $post03 = new Post;
 $post03->id = 3;
