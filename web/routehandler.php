@@ -99,20 +99,6 @@ $saved_int01 = (isset($_SESSION['saved_int01'])) ? $_SESSION['saved_int01'] : nu
 
 $saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : null;
 
-
-/**
- * Debug Code
- */
-echo "\n<p>Begin debug</p>\n";
-echo "<br><p>Var_dump \$saved_int02: </p>\n<pre>";
-var_dump($saved_int02);
-echo "</pre>\n";
-echo "<br><p>Print_r \$_SESSION['saved_int02']: </p>\n<pre>";
-print_r($_SESSION['saved_int02']);
-echo "</pre>\n";
-die("<br><p>End debug</p>\n");
-
-
 $is_logged_in = (!empty($user_id)) ? true : false;
 
 $is_admin = ($role === 'admin') ? true : false;
