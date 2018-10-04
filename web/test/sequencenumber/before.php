@@ -1,21 +1,5 @@
 <?php
-/**
- * Testing (in general) the code for finding a sequence number for the new post.
- * Testing (specifically) the code for post_having_lowest_sequence_number.
- * I will make a modified version of the code I'm testing.
- * The modifications are so that the code can work in this testing
- * environment.
- */
 
-/**
- * The code starts off with an array of post objects.
- * These post objects all belong to one topic.
- * Hence their sequence_number make sense in that context.
- *
- * The code finds the post which has the lowest sequence number
- * and removes it from the array of post objects.
- */
-// Make the array of post objects
 class Post
 {
     public $id;
@@ -101,20 +85,64 @@ function get_sequence_number_in_case_after(array $all_posts_as_objects, int $cho
     }
 
     if (empty($following_post_sequence_number)) {
-        echo "<p>get_sequence_number_in_case_after says:  Error 734516.</p>";
+        echo "get_sequence_number_in_case_after says:  Error 734516..";
         return false;
     }
 
     $difference = $following_post_sequence_number - $chosen_post_sequence_number;
 
     if (($difference) < 2) {
-        echo "<p>get_sequence_number_in_case_after says: Choose another place to put the post.</p>";
+        echo "get_sequence_number_in_case_after says: Choose another place to put the post. ";
         return false;
     }
 
     $increase = intdiv($difference, 2);
 
     return $chosen_post_sequence_number + $increase;
+}
+
+function get_sequence_number_in_case_before(array $all_posts_as_objects, int $chosen_post_sequence_number)
+{
+    /**
+     * What it does:
+     *  It takes an array of posts belonging to a single topic.
+     *  It takes the sequence number of the chosen post.
+     *  It assumes the user wants to put the new post before the chosen post.
+     *  It returns the sequence number which the new post should have.
+     */
+    $found_a_post_with_lower_sequence_number = false;
+    foreach ($all_posts_as_objects as $key => $object) {
+        if ($object->sequence_number < $chosen_post_sequence_number) {
+            $found_a_post_with_lower_sequence_number = true;
+            break;
+        }
+    }
+    if (!$found_a_post_with_lower_sequence_number) {
+        $leading_post_sequence_number = 0;
+    }
+
+    order_posts_by_sequence_number($all_posts_as_objects);
+
+    $reversed = array_reverse($all_posts_as_objects);
+    if ($found_a_post_with_lower_sequence_number) {
+        foreach ($reversed as $key => $object) {
+            if ($object->sequence_number < $chosen_post_sequence_number) {
+                $leading_post_sequence_number = $object->sequence_number;
+                break;
+            }
+        }
+    }
+
+    $difference = $chosen_post_sequence_number - $leading_post_sequence_number;
+
+    if (($difference) < 2) {
+        echo "<p>get_sequence_number_in_case_after says: Choose another place to put the post.</p>";
+        return false;
+    }
+
+    $decrease = intdiv($difference, 2);
+
+    return $chosen_post_sequence_number - $decrease;
 }
 
 
@@ -150,18 +178,18 @@ echo "<p>Here is the original array of posts: </p>";
 echo "<pre>";
 print_r($array_of_posts);
 echo "</pre>";
-$result = get_sequence_number_in_case_after($array_of_posts, 0);
+$result = get_sequence_number_in_case_before($array_of_posts, 500000);
 echo "<p>Here is what it looks like ordered: </p>";
 echo "<pre>";
 order_posts_by_sequence_number($array_of_posts);
 print_r($array_of_posts);
 echo "</pre>";
-echo "<p>The line of code we are running: \$result = get_sequence_number_in_case_after(\$array_of_posts, 0);</p>";
+echo "<p>The line of code we are running: \$result = get_sequence_number_in_case_after(\$array_of_posts, 500000);</p>";
 echo "<p>And now that it has run we know that: </p>";
 if (!$result) {
-    echo "<p>get_sequence_number_in_case_after returned false.</p>";
+    echo "<p>get_sequence_number_in_case_before returned false.</p>";
 } else {
-    echo "<p>get_sequence_number_in_case_after returned a sequence number.</p>";
+    echo "<p>get_sequence_number_in_case_before returned a sequence number.</p>";
     echo "<p>Here is that sequence number: </p>";
     echo "<pre>";
     print_r($result);
