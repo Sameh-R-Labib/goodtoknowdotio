@@ -22,6 +22,17 @@ class CreateNewPostTitle
             redirect_to("/ax1/Home/page");
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$_SESSION: </p>\n<pre>";
+        var_dump($_SESSION);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
         echo "<p>The sequence number for the new post will be {$saved_int02}</p>";
     }
 }
