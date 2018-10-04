@@ -22,8 +22,8 @@
     <form action="/ax1/CreateNewPostIPProcessor/page" method="post">
         <div>Put it
             <select id="relate" name="relate">
-                <option value="before">Before</option>
-                <option value="after">After</option>
+                <option value="after">after</option>
+                <option value="before">before</option>
             </select>
         </div>
         <?php /** @noinspection PhpUndefinedVariableInspection */
