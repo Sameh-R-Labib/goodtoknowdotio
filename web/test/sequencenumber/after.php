@@ -118,3 +118,44 @@ function get_sequence_number_in_case_after(array $all_posts_as_objects, int $cho
 
 
 // main 1
+$post01 = new Post;
+$post01->id = 1;
+$post01->sequence_number = 500000;
+
+$post02 = new Post;
+$post02->id = 2;
+$post02->sequence_number = 500000;
+
+$post03 = new Post;
+$post03->id = 3;
+$post03->sequence_number = 0;
+
+$post04 = new Post;
+$post04->id = 4;
+$post04->sequence_number = 1000000;
+
+$post05 = new Post;
+$post05->id = 5;
+$post05->sequence_number = 875000;
+
+$array_of_posts = [$post02, $post01, $post04, $post05, $post03];
+
+/**
+ * The function we are testing is: get_sequence_number_in_case_after
+ *
+ * Can it correctly give us the sequence number after a chosen post?
+ */
+echo "<p>Here is the original array of posts: </p>";
+echo "<pre>";
+print_r($array_of_posts);
+echo "</pre>";
+$result = get_sequence_number_in_case_after($array_of_posts, 875000);
+if (!$result) {
+    echo "<p>get_sequence_number_in_case_after returned false.</p>";
+} else {
+    echo "<p>get_sequence_number_in_case_after returned a sequence number.</p>";
+    echo "<p>Here is that sequence number: </p>";
+    echo "<pre>";
+    print_r($result);
+    echo "</pre>";
+}
