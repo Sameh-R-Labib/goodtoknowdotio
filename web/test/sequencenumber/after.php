@@ -77,6 +77,43 @@ function get_sequence_number_in_case_after(array $all_posts_as_objects, int $cho
      *  It assumes the user wants to put the new post after the chosen post.
      *  It returns the sequence number which the new post should have.
      */
+
+    $found_a_post_with_higher_sequence_number = false;
+    foreach ($all_posts_as_objects as $key => $object) {
+        if ($object->sequence_number > $chosen_post_sequence_number) {
+            $found_a_post_with_higher_sequence_number = true;
+        }
+    }
+    if (!$found_a_post_with_higher_sequence_number) {
+        $following_post_sequence_number = 1000000;
+    }
+
+    order_posts_by_sequence_number($all_posts_as_objects);
+
+    if ($found_a_post_with_higher_sequence_number) {
+        foreach ($all_posts_as_objects as $key => $object) {
+            if ($object->sequence_number > $chosen_post_sequence_number) {
+                $following_post_sequence_number = $object->sequence_number;
+                break;
+            }
+        }
+    }
+
+    if (empty($following_post_sequence_number)) {
+        echo "get_sequence_number_in_case_after says:  Error 734516..";
+        return false;
+    }
+
+    $difference = $following_post_sequence_number - $chosen_post_sequence_number;
+
+    if (($difference) < 2) {
+        echo "get_sequence_number_in_case_after says: Choose another place to put the post. ";
+        return false;
+    }
+
+    $increase = intdiv($difference, 2);
+
+    return $chosen_post_sequence_number + $increase;
 }
 
 
