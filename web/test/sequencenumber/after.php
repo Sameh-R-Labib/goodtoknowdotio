@@ -161,3 +161,5 @@ if (!$result) {
     print_r($result);
     echo "</pre>";
 }
+echo "<p>Notes to self: Try the function with \$chosen_post_sequence_numbers: 1000000, 500000, 0.</p>";
+echo "<p>Try making changes to the posts in the \$array_of_posts</p>";
