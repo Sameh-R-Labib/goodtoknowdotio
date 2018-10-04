@@ -140,6 +140,7 @@ class CreateNewPostIPProcessor
         foreach ($all_posts_as_objects as $key => $object) {
             if ($object->sequence_number > $chosen_post_sequence_number) {
                 $found_a_post_with_higher_sequence_number = true;
+                break;
             }
         }
         if (!$found_a_post_with_higher_sequence_number) {
@@ -214,6 +215,7 @@ class CreateNewPostIPProcessor
         foreach ($all_posts_as_objects as $key => $object) {
             if ($object->sequence_number < $chosen_post_sequence_number) {
                 $found_a_post_with_lower_sequence_number = true;
+                break;
             }
         }
         if (!$found_a_post_with_lower_sequence_number) {
