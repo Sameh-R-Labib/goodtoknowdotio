@@ -149,13 +149,13 @@ echo "<p>Here is the original array of posts: </p>";
 echo "<pre>";
 print_r($array_of_posts);
 echo "</pre>";
-$result = get_sequence_number_in_case_after($array_of_posts, 500000);
+$result = get_sequence_number_in_case_after($array_of_posts, 1000000);
 echo "<p>Here is what it looks like ordered: </p>";
 echo "<pre>";
 order_posts_by_sequence_number($array_of_posts);
 print_r($array_of_posts);
 echo "</pre>";
-echo "<p>The line of code we are running: \$result = get_sequence_number_in_case_after(\$array_of_posts, 500000);</p>";
+echo "<p>The line of code we are running: \$result = get_sequence_number_in_case_after(\$array_of_posts, 1000000);</p>";
 echo "<p>And now that it has run we know that: </p>";
 if (!$result) {
     echo "<p>get_sequence_number_in_case_after returned false.</p>";
