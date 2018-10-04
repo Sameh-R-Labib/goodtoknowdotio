@@ -150,6 +150,8 @@ echo "<pre>";
 print_r($array_of_posts);
 echo "</pre>";
 $result = get_sequence_number_in_case_after($array_of_posts, 875000);
+echo "<p>The line of code we are running: \$result = get_sequence_number_in_case_after(\$array_of_posts, 875000);</p>";
+echo "<p>And now that it has run we know that: </p>";
 if (!$result) {
     echo "<p>get_sequence_number_in_case_after returned false.</p>";
 } else {
