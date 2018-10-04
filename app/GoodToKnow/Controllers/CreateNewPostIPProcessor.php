@@ -125,6 +125,13 @@ class CreateNewPostIPProcessor
     public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
         /**
+         * What it does:
+         *  It takes an array of posts belonging to a single topic.
+         *  It takes the sequence number from the chosen post.
+         *  It assumes the user wants to put the new post after the chosen post.
+         *  It returns the sequence number which the new post should have.
+         */
+        /**
          * If there are no posts which have a sequence number higher
          * than the sequence number of the chosen post then we will
          * assign $following_post_sequence_number the value 1000000.
