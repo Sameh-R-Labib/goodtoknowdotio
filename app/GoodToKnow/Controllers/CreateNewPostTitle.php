@@ -28,6 +28,8 @@ class CreateNewPostTitle
             redirect_to("/ax1/Home/page");
         }
 
+        $html_title = 'What is the title?';
 
+        require VIEWS . DIRSEP . 'createnewposttitle.php';
     }
 }
