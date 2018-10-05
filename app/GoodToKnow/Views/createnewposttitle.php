@@ -22,10 +22,11 @@
         The title extension is like meta data (It will be added to the main title when the post title is displayed
         outside the context of a specific topic). An example of a main title is
         'Pronouns'. And its extension is "in the Greek Language".</p>
+    <p>UTF-8 characters allowed &mdash; including emoji</p>
     <form action="/ax1/CreateNewPostTitleProcessor/page" method="post">
-        Main title:<br>
+        <br>Main title:<br>
         <input type="text" name="main_title" value="">
-        <br>
+        <br><br>
         Title extension:<br>
         <input type="text" name="title_extension" value="">
         <br><br>
