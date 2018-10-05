@@ -13,15 +13,21 @@ class CreateNewPostTitle
 {
     public function page()
     {
+        /**
+         * The goal is to present a form
+         * for entering the two parts
+         * which comprise the title of
+         * the new post.
+         */
+
         global $is_logged_in;
         global $sessionMessage;
-        global $saved_int02;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
-        echo "<p>The sequence number for the new post will be {$saved_int02}</p>";
+
     }
 }
