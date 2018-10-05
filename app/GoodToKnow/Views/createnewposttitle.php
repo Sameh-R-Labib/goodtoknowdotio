@@ -23,6 +23,7 @@
         outside the context of a specific topic). An example of a main title is
         'Pronouns'. And its extension is "in the Greek Language".</p>
     <p>UTF-8 characters allowed &mdash; including emoji</p>
+    <p>* both required</p>
     <form action="/ax1/CreateNewPostTitleProcessor/page" method="post">
         <br>Main title:<br>
         <input type="text" name="main_title" value="">
