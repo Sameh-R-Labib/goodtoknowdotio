@@ -48,7 +48,7 @@ class CreateNewPostProcessor
         /**
          * Save it in the session
          */
-        $_SESSION['saved_int01'] = $chosen_topic_id;
+        $_SESSION['saved_int01'] = (int)$chosen_topic_id;
 
         /**
          * Redirect
