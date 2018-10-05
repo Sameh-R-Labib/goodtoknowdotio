@@ -39,7 +39,7 @@ class CreateNewPostTitleProcessor
         $title_extension = trim($title_extension);
 
         // Required fields
-        if (empty($relate) || empty($chosen_post_id)) {
+        if (empty($main_title) || empty($title_extension)) {
             $sessionMessage .= " Either you did not fill out both fields or the session expired. Start over. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
