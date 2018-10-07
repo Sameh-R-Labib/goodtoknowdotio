@@ -27,23 +27,17 @@ class CreateNewPostSave
         }
 
         /**
-         * Debug Code
+         * Overview
+         *   Mainly we are here to store the new post.
+         *
+         * So far we have:
+         *   - $user_id
+         *   - $saved_str01 (main title)
+         *   - $saved_str02 (title extension)
+         *   - $saved_int01 (topic id)
+         *   - $saved_int02 (sequence number)
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$user_id: </p>\n<pre>";
-        var_dump($user_id);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$saved_str01 (main title): </p>\n<pre>";
-        var_dump($saved_str01);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$saved_str02 (title extension): </p>\n<pre>";
-        var_dump($saved_str02);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$saved_int01 (topic id): </p>\n<pre>";
-        var_dump($saved_int01);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$saved_int02 (sequence number): </p>\n<pre>";
-        var_dump($saved_int02);
-        echo "</pre>\n";
+
+
     }
 }
