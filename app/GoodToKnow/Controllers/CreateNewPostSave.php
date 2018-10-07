@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Post;
+use GoodToKnow\Models\TopicToPost;
 
 class CreateNewPostSave
 {
@@ -67,11 +68,53 @@ class CreateNewPostSave
             'user_id' => $user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
         $post = Post::array_to_object($post_as_array);
 
-
+        // Verify that our sequence number hasn't been taken.
         /**
-         * CANT DO IT YET
+         * Get all the posts in out topic.
          */
+        $result = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+        if (!$result) {
+            $sessionMessage .= " CreateNewPostSave::page says: Unexpected no posts in topic. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $sequence_number_already_exists_in_db = false;
+        foreach ($result as $object) {
+            if ($object->sequence_number == $saved_int02) {
+                $sequence_number_already_exists_in_db = true;
+                break;
+            }
+        }
+        if ($sequence_number_already_exists_in_db) {
+            $sessionMessage .= " Unfortunately someone was putting a post in the same spot while you were
+            trying to do the same and they beat you to the punch. Please start over. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Save the new Post
+        $result = $post->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= " CreateNewPostSave::page says: Unexpected save was unable to save the new post. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         // Assemble the TopicToPost object
-        $topictopost_as_array = ['topic_id' => $saved_int01, 'post_id' => -1];
+        $topictopost_as_array = ['topic_id' => $saved_int01, 'post_id' => $post->id];
+        $topictopost = TopicToPost::array_to_object($topictopost_as_array);
+
+        // Save the new TopicToPost
+        $result = $topictopost->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= " CreateNewPostSave::page says: Unexpected save was unable to save the TopicToPost. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Redirect
+        $sessionMessage .= " Congratulations! Your new post has been crated. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }
