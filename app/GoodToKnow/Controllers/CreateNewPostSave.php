@@ -9,6 +9,8 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Post;
+
 class CreateNewPostSave
 {
     public function page()
@@ -56,6 +58,20 @@ class CreateNewPostSave
          * our topic which has the sequence number.
          */
 
+        $created = time();
+        $markdown_file = "KjeuJHnedoOpPKidErYuUjHeWdWQrfcS.md";
+        $html_file = "KjeuJHnedoOpPKidErYuUjHeWdWQrfcS.html";
 
+        // Assemble the Post object
+        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extesionfortitle' => $saved_str02,
+            'user_id' => $user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
+        $post = Post::array_to_object($post_as_array);
+
+
+        /**
+         * CANT DO IT YET
+         */
+        // Assemble the TopicToPost object
+        $topictopost_as_array = ['topic_id' => $saved_int01, 'post_id' => -1];
     }
 }
