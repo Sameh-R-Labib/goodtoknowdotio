@@ -113,7 +113,7 @@ class CreateNewPostSave
         }
 
         // Redirect
-        $sessionMessage .= " Congratulations! Your new post has been crated. ";
+        $sessionMessage .= " Congratulations! Your new post has been created. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
