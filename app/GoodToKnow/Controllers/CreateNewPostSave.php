@@ -26,16 +26,34 @@ class CreateNewPostSave
             redirect_to("/ax1/Home/page");
         }
 
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * Overview
-         *   Mainly we are here to store the new post.
+         *   Mainly we are here to store the new
+         * Post and its TopicToPost record. Then
+         * redirect to Home page with a confirmation
+         * message.
          *
          * So far we have:
-         *   - $user_id
-         *   - $saved_str01 (main title)
-         *   - $saved_str02 (title extension)
+         *   - $user_id     (user_id)
+         *   - $saved_str01 (title)
+         *   - $saved_str02 (extesionfortitle)
          *   - $saved_int01 (topic id)
-         *   - $saved_int02 (sequence number)
+         *   - $saved_int02 (sequence_number)
+         *
+         * Attributes we need to find values for:
+         *   o $created
+         *   o $markdown_file (just the file name)
+         *   o $html_file (just the file name)
+         *
+         * Note: Before we save we will (again) verify
+         * that nobody has inserted a post in
+         * our topic which has the sequence number.
          */
 
 
