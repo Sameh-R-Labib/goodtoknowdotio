@@ -41,7 +41,8 @@
     <ul>
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
-        <li><a href="/ax1/CreateNewPost/page">Create New Post</a></li>
+        <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
+        <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
     </ul>
 </div>
 <!-- footerbar -->

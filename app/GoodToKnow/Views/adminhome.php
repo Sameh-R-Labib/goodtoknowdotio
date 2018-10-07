@@ -40,9 +40,10 @@
     <h3>Admin Scripts</h3>
     <ul>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
-        <li><a href="/ax1/DefaultCommunity/page">Change My Default Community</a></li>
-        <li><a href="/ax1/ChangePassword/page">Change My Password</a></li>
-        <li><a href="/ax1/CreateNewPost/page">Create My New Post</a></li>
+        <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
+        <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
+        <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
+        <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
     </ul>
 </div>
 <!-- footerbar -->
