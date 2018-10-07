@@ -64,26 +64,9 @@ class CreateNewPostSave
         $html_file = "KjeuJHnedoOpPKidErYuUjHeWdWQrfcS.html";
 
         // Assemble the Post object
-        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extesionfortitle' => $saved_str02,
+        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extensionfortitle' => $saved_str02,
             'user_id' => $user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
         $post = Post::array_to_object($post_as_array);
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$post: </p>\n<pre>";
-        var_dump($post);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$post_as_array: </p>\n<pre>";
-        print_r($post_as_array);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
-
-
 
         // Verify that our sequence number hasn't been taken.
         /**
