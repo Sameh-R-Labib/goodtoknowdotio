@@ -89,13 +89,7 @@ class SetHomePageCommunityTopicPost
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
          */
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
-        if (!$special_topic_array) {
-            $sessionMessage .= " I did'nt switch communities because we don't have any topics in the community you asked for. ";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-
-        if ($topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
+        if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
             $sessionMessage .= " Your resource request is defective.  (errno 6)";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
