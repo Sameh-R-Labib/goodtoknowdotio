@@ -128,9 +128,7 @@ class SetHomePageCommunityTopicPost
             // Either way we need this
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
             if (!$special_post_array) {
-                $sessionMessage .= " Unable to get posts for the specified topic. ";
-                $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/Home/page");
+                $special_post_array = [];
             }
             // Which is it?
             if ($post_id === 0 && $topic_id !== 0) {
