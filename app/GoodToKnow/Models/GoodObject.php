@@ -390,22 +390,6 @@ abstract class GoodObject
             return true;
         } else {
             $error .= ' GoodObject update() FAILED to update its row. ';
-
-
-            /**
-             * Debug Code
-             */
-            echo "\n<p>Begin debug</p>\n";
-            echo "<br><p>Var_dump \$num_affected_rows: </p>\n<pre>";
-            var_dump($num_affected_rows);
-            echo "</pre>\n";
-            echo "<br><p>Print_r \$sql: </p>\n<pre>";
-            print_r($sql);
-            echo "</pre>\n";
-            die("<br><p>End debug</p>\n");
-
-
-
             return false;
         }
     }
