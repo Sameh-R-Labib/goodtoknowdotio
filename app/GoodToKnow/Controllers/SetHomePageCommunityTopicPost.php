@@ -95,6 +95,10 @@ class SetHomePageCommunityTopicPost
             redirect_to("/ax1/Home/page");
         }
 
+        if (!$special_topic_array) {
+            $special_topic_array = [];
+        }
+
         if ($topic_id == 0) {
             $type_of_resource_requested = 'community';
             if ($post_id != 0) {
