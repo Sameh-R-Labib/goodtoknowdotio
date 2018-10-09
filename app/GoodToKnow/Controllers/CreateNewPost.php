@@ -30,6 +30,12 @@ class CreateNewPost
             redirect_to("/ax1/Home/page");
         }
 
+        if (empty($special_topic_array)) {
+            $sessionMessage .= " Aborted! The reason is you can't create a new post if your community has no topics. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         $html_title = 'Which topic does the post go in?';
 
         require VIEWS . DIRSEP . 'createnewpost.php';
