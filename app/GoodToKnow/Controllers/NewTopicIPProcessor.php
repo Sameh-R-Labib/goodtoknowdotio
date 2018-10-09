@@ -62,5 +62,32 @@ class NewTopicIPProcessor
          *   We know it's got at least one topic.
          *   We should have $_POST[relate] and $_POST[choice]
          */
+
+        /**
+         * I can't assume these post variables exist so I do the following.
+         */
+        $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
+        $chosen_topic_id = (isset($_POST['choice'])) ? $_POST['choice'] : null;
+
+        // Handle bad submit.
+        if (empty($relate) || empty($chosen_topic_id)) {
+            $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if ($relate !== 'before' && $relate !== 'after') {
+            $sessionMessage .= " NewTopicIPProcessor::page says: Error 99885. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
+            $sessionMessage .= " NewTopicIPProcessor::page says: Error 124213. ";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+
     }
 }
