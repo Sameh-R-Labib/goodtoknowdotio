@@ -19,6 +19,8 @@
 <div class="form-wrapper">
     <h2>Where to put the new post?</h2>
     <?php require SESSIONMESSAGE; ?>
+    <p>It is recommended that you change communities and come back to the current one to make sure you have a complete
+        set of the topics. If you can't do that then at least log out and log back in.</p>
     <form action="/ax1/NewTopicIPProcessor/page" method="post">
         <div>Put it
             <select id="relate" name="relate">
