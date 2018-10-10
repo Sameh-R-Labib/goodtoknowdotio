@@ -43,7 +43,7 @@ class TopicToPost extends GoodObject
      * @param $topic_id
      * @return array|bool
      */
-    public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, $topic_id)
+    public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, int $topic_id)
     {
         /**
          * This time the array will be an array of objects

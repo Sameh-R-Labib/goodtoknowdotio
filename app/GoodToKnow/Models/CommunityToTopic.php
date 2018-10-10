@@ -37,8 +37,60 @@ class CommunityToTopic extends GoodObject
     public $topic_id;
 
 
-    public static function get_array_of_topic_objects_for_a_community(\mysqli $db, string &$error, $community_id)
+    public static function get_array_of_topic_objects_for_a_community(\mysqli $db, string &$error, int $community_id)
     {
+        // get (in array) all the CommunityToTopic objects with a particular $community_id.
+        $array_of_CommunityToTopic = [];
+        $count = 0;
+        $x = null;
+        $sql = 'SELECT *
+                FROM `community_to_topic`
+                WHERE `community_id` = ?';
+        try {
+            $stmt = $db->stmt_init();
+            if (!$stmt->prepare($sql)) {
+                $error .= ' ' . $stmt->error . ' ';
+                return false;
+            } else {
+                $stmt->bind_param('i', $community_id);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $numrows = $result->num_rows;
+                if (!$numrows) {
+                    $stmt->close();
+                    return false;
+                } else {
+                    while ($x = $result->fetch_object('\GoodToKnow\Models\CommunityToTopic')) {
+                        $array_of_CommunityToTopic[] = $x;
+                        $count += 1;
+                    }
+                    $stmt->close();
+                    $result->close();
+                }
+            }
+        } catch (\Exception $e) {
+            $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
+                htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
+        }
+        if (!empty($error)) {
+            return false;
+        }
+        if ($count < 1) {
+            $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
+            return false;
+        }
+
+        // get (in array) all the posts listed in $array_of_CommunityToTopic.
+        $array_of_Topics = [];
+        foreach ($array_of_CommunityToTopic as $item) {
+            $array_of_Topics[] = Topic::find_by_id($db, $error, $item->topic_id);
+        }
+        if (empty($array_of_Topics)) {
+            $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
+            return false;
+        }
+
+        return $array_of_Topics;
     }
 
 
