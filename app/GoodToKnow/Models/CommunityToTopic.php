@@ -37,13 +37,18 @@ class CommunityToTopic extends GoodObject
     public $topic_id;
 
 
+    public static function get_array_of_topic_objects_for_a_community(\mysqli $db, string &$error, $community_id)
+    {
+    }
+
+
     /**
      * @param \mysqli $db
      * @param string $error
      * @param $community_id
      * @return array|bool
      */
-    public static function get_topics_array_for_a_community(\mysqli $db, string &$error, $community_id)
+    public static function get_topics_array_for_a_community(\mysqli $db, string &$error, int $community_id)
     {
         /**
          * Gets an associative array where the key is the topic_id

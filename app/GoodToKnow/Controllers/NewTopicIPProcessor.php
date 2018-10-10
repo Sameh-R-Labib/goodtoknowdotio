@@ -88,6 +88,8 @@ class NewTopicIPProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        // Determine the sequence number for the new topic
 
+//        $topic_objects_array = ;
     }
 }
