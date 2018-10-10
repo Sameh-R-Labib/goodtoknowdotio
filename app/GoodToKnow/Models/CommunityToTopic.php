@@ -36,7 +36,12 @@ class CommunityToTopic extends GoodObject
      */
     public $topic_id;
 
-
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param int $community_id
+     * @return array|bool
+     */
     public static function get_array_of_topic_objects_for_a_community(\mysqli $db, string &$error, int $community_id)
     {
         // get (in array) all the CommunityToTopic objects with a particular $community_id.
@@ -97,7 +102,7 @@ class CommunityToTopic extends GoodObject
     /**
      * @param \mysqli $db
      * @param string $error
-     * @param $community_id
+     * @param int $community_id
      * @return array|bool
      */
     public static function get_topics_array_for_a_community(\mysqli $db, string &$error, int $community_id)
