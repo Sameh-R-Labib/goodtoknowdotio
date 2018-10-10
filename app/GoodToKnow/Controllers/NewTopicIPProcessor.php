@@ -90,6 +90,31 @@ class NewTopicIPProcessor
 
         // Determine the sequence number for the new topic
 
-//        $topic_objects_array = ;
+        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+
+        if (!$topic_objects_array) {
+            $sessionMessage .= " NewTopicIPProcessor::page says: Error 860138. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $chosen_topic_sequence_number = -1;
+        foreach ($topic_objects_array as $key => $object) {
+            if ($object->id == $chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
+        }
+        if ($chosen_topic_sequence_number == -1) {
+            $sessionMessage .= " NewTopicIPProcessor::page says: Error 426273. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if ($relate == 'after') {
+            $sequence_number = self::get_sequence_number_in_case_after($topic_objects_array, $chosen_topic_sequence_number);
+        } else {
+            $sequence_number = self::get_sequence_number_in_case_before($topic_objects_array, $chosen_topic_sequence_number);
+        }
+
+        $_SESSION['saved_int01'] = $sequence_number;
+        redirect_to("/ax1/NewTopicName/page");
     }
 }
