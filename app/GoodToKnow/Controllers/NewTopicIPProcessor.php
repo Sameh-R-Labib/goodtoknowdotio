@@ -118,6 +118,11 @@ class NewTopicIPProcessor
         redirect_to("/ax1/NewTopicName/page");
     }
 
+    /**
+     * @param array $topic_objects_array
+     * @param int $chosen_topic_sequence_number
+     * @return int
+     */
     public static function get_sequence_number_in_case_after(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
         if ($chosen_topic_sequence_number == 1000000) {
@@ -160,5 +165,46 @@ class NewTopicIPProcessor
         $increase = intdiv($difference, 2);
 
         return $chosen_topic_sequence_number + $increase;
+    }
+
+    public static function get_sequence_number_in_case_before(array $topic_objects_array, int $chosen_topic_sequence_number)
+    {
+        if ($chosen_topic_sequence_number == 0) {
+            $_SESSION['message'] = " Please choose another place to put the topic. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $found_a_topic_with_lower_sequence_number = false;
+        foreach ($topic_objects_array as $key => $object) {
+            if ($object->sequence_number < $chosen_topic_sequence_number) {
+                $found_a_topic_with_lower_sequence_number = true;
+                break;
+            }
+        }
+        if (!$found_a_topic_with_lower_sequence_number) {
+            return 0;
+        }
+
+        CommunityToTopic::order_topics_by_sequence_number($topic_objects_array);
+
+        $reversed = array_reverse($topic_objects_array);
+
+        foreach ($reversed as $key => $object) {
+            if ($object->sequence_number < $chosen_topic_sequence_number) {
+                $leading_topic_sequence_number = $object->sequence_number;
+                break;
+            }
+        }
+
+        $difference = $chosen_topic_sequence_number - $leading_topic_sequence_number;
+
+        if (($difference) < 2) {
+            $_SESSION['message'] = " Please choose another place to put the topic. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $decrease = intdiv($difference, 2);
+
+        return $chosen_topic_sequence_number - $decrease;
     }
 }
