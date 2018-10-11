@@ -117,4 +117,48 @@ class NewTopicIPProcessor
         $_SESSION['saved_int01'] = $sequence_number;
         redirect_to("/ax1/NewTopicName/page");
     }
+
+    public static function get_sequence_number_in_case_after(array $topic_objects_array, int $chosen_topic_sequence_number)
+    {
+        if ($chosen_topic_sequence_number == 1000000) {
+            $_SESSION['message'] = " Choose another place to put the topic. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $found_a_topic_with_higher_sequence_number = false;
+        foreach ($topic_objects_array as $key => $object) {
+            if ($object->sequence_number > $chosen_topic_sequence_number) {
+                $found_a_topic_with_higher_sequence_number = true;
+                break;
+            }
+        }
+        if (!$found_a_topic_with_higher_sequence_number) {
+            return 1000000;
+        }
+
+        CommunityToTopic::order_topics_by_sequence_number($topic_objects_array);
+
+        foreach ($topic_objects_array as $key => $object) {
+            if ($object->sequence_number > $chosen_topic_sequence_number) {
+                $following_topic_sequence_number = $object->sequence_number;
+                break;
+            }
+        }
+
+        if (empty($following_topic_sequence_number)) {
+            $_SESSION['message'] = " NewTopicIPProcessor::get_sequence_number_in_case_after says Error 563506. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $difference = $following_topic_sequence_number - $chosen_topic_sequence_number;
+
+        if (($difference) < 2) {
+            $_SESSION['message'] = " Please choose another place to put the topic. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $increase = intdiv($difference, 2);
+
+        return $chosen_topic_sequence_number + $increase;
+    }
 }

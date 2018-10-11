@@ -125,7 +125,7 @@ class CreateNewPostIPProcessor
     public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
         if ($chosen_post_sequence_number == 1000000) {
-            $_SESSION['message'] = " Choose another place to put the post. ";
+            $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
         }
         /**
@@ -193,7 +193,7 @@ class CreateNewPostIPProcessor
          * is less than 2 then error out.
          */
         if (($difference) < 2) {
-            $_SESSION['message'] = " Choose another place to put the post. ";
+            $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
         }
 
@@ -210,7 +210,7 @@ class CreateNewPostIPProcessor
     public static function get_sequence_number_in_case_before(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
         if ($chosen_post_sequence_number == 0) {
-            $_SESSION['message'] = " Choose another place to put the post. ";
+            $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
         }
         /**
@@ -255,7 +255,7 @@ class CreateNewPostIPProcessor
         $difference = $chosen_post_sequence_number - $leading_post_sequence_number;
 
         if (($difference) < 2) {
-            $_SESSION['message'] = " Choose another place to put the post. ";
+            $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
         }
 
