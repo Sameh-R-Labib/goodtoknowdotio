@@ -167,6 +167,11 @@ class NewTopicIPProcessor
         return $chosen_topic_sequence_number + $increase;
     }
 
+    /**
+     * @param array $topic_objects_array
+     * @param int $chosen_topic_sequence_number
+     * @return int
+     */
     public static function get_sequence_number_in_case_before(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
         if ($chosen_topic_sequence_number == 0) {
