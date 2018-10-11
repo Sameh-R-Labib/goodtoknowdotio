@@ -98,7 +98,6 @@ class CommunityToTopic extends GoodObject
         return $array_of_Topics;
     }
 
-
     /**
      * @param \mysqli $db
      * @param string $error
@@ -145,5 +144,62 @@ class CommunityToTopic extends GoodObject
         }
 
         return $topics_for_this_community;
+    }
+
+    /**
+     * @param array $topic_objects
+     */
+    public static function order_topics_by_sequence_number(array &$topic_objects)
+    {
+        if (empty($topic_objects)) {
+            $_SESSION['message'] = " CommunityToTopic::order_topics_by_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $sorted = [];
+
+        $count = count($topic_objects);
+
+        $temp = $topic_objects;
+
+        while ($count > 0) {
+            $sorted[] = self::topic_having_lowest_sequence_number($temp);
+            $count -= 1;
+        }
+
+        $topic_objects = $sorted;
+    }
+
+    /**
+     * @param array $temp
+     * @return mixed
+     */
+    public static function topic_having_lowest_sequence_number(array &$temp)
+    {
+        if (empty($temp)) {
+            $_SESSION['message'] = " CommunityToTopic::topic_having_lowest_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $key_of_lowest = -1;
+        $lowest_sequence_number = 1000001;
+
+        foreach ($temp as $key => $object) {
+            if ($object->sequence_number <= $lowest_sequence_number) {
+                $key_of_lowest = $key;
+                $lowest_sequence_number = $object->sequence_number;
+            }
+        }
+
+        if ($key_of_lowest == -1) {
+            $_SESSION['message'] = " CommunityToTopic::topic_having_lowest_sequence_number says: Error 124212. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $topic_with_lowest_sequence_number = $temp[$key_of_lowest];
+
+        unset($temp[$key_of_lowest]);
+
+        return $topic_with_lowest_sequence_number;
     }
 }
