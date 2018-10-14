@@ -52,18 +52,16 @@ class NewTopicSave
          * Get all the topics in out community.
          */
         $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
-        if (!$result) {
-            $sessionMessage .= " NewTopicSave::page says: Unexpected no topics in community. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
         $sequence_number_already_exists_in_db = false;
-        foreach ($result as $object) {
-            if ($object->sequence_number == $saved_int01) {
-                $sequence_number_already_exists_in_db = true;
-                break;
+        if ($result != false) {
+            foreach ($result as $object) {
+                if ($object->sequence_number == $saved_int01) {
+                    $sequence_number_already_exists_in_db = true;
+                    break;
+                }
             }
         }
+
         if ($sequence_number_already_exists_in_db) {
             $sessionMessage .= " Unfortunately someone was putting a topic in the same spot while you were
             trying to do the same and they beat you to the punch. Please start over. ";
