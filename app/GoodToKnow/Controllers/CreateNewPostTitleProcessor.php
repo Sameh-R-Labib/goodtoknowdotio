@@ -46,7 +46,7 @@ class CreateNewPostTitleProcessor
         }
 
         if (strlen($main_title) > 200 || strlen($title_extension) > 200) {
-            $sessionMessage .= " The title or its extension was too long (max 200.) Start over. ";
+            $sessionMessage .= " The title or its extension was too long (max 200 bytes.) Start over. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
