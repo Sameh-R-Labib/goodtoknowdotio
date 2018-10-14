@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: samehlabib
+ * Date: 10/14/18
+ * Time: 4:29 PM
+ */
+
+namespace GoodToKnow\Controllers;
+
+
+class NewTopicSave
+{
+    public function page()
+    {
+        global $sessionMessage;
+        global $is_logged_in;
+        global $community_id;
+        global $saved_str01;                // The topic name
+        global $saved_int01;                // The sequence number
+
+        if (!$is_logged_in) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+    }
+}
