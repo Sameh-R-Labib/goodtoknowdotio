@@ -16,14 +16,17 @@
         echo $html_title; ?></title>
 <body>
 <div class="form-wrapper">
-    <h2>Name the topic</h2>
+    <h2>Name and describe the topic</h2>
     <?php require SESSIONMESSAGE; ?>
     <p></p>
     <p>UTF-8 characters allowed &mdash; including emoji</p>
     <p>* both required</p>
     <form action="/ax1/NewTopicNameProcessor/page" method="post">
-        <br>Main title:<br>
+        <br>Name:<br>
         <input type="text" name="topic_name" value="">
+        <br><br>
+        <br>Description:<br>
+        <input type="text" name="topic_description" value="">
         <br><br>
         <button type="submit" name="submit" value="Submit">Submit</button>
     </form>

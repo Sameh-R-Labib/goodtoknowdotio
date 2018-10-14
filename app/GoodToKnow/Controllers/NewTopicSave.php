@@ -17,6 +17,7 @@ class NewTopicSave
         global $is_logged_in;
         global $community_id;
         global $saved_str01;                // The topic name
+        global $saved_str02;                // The topic description
         global $saved_int01;                // The sequence number
 
         if (!$is_logged_in) {

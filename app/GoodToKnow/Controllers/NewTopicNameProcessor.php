@@ -34,24 +34,29 @@ class NewTopicNameProcessor
          * I can't assume these post variables exist so I do the following.
          */
         $topic_name = (isset($_POST['topic_name'])) ? $_POST['topic_name'] : '';
+        $topic_description = (isset($_POST['topic_description'])) ? $_POST['topic_description'] : '';
 
         $topic_name = trim($topic_name);
+        $topic_description = trim($topic_description);
 
-        if (empty($topic_name)) {
-            $sessionMessage .= " Either you did not fill out the input field or the session expired. Start over. ";
+        if (empty($topic_name) || empty($topic_description)) {
+            $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
-        if (strlen($topic_name) > 200) {
-            $sessionMessage .= " The topic name you specified was too long (max 200 bytes.) Start over. ";
+        if (strlen($topic_name) > 200 || strlen($topic_description) > 230) {
+            $sessionMessage .= " Maybe the topic name was too long (max 200 bytes.) Or maybe the description was too
+            long (max 230 bytes.) Start over. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
         $topic_name = htmlentities($topic_name, ENT_QUOTES);
+        $topic_description = htmlentities($topic_description, ENT_QUOTES);
 
         $_SESSION['saved_str01'] = $topic_name;
+        $_SESSION['saved_str02'] = $topic_description;
 
         redirect_to("/ax1/NewTopicSave/page");
     }
