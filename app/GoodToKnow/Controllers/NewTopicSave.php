@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\Topic;
+
 class NewTopicSave
 {
     public function page()
@@ -40,5 +43,56 @@ class NewTopicSave
          * Topic $fields = ['id', 'sequence_number', 'topic_name', 'topic_description']
          * CommunityToTopic $fields = ['id', 'community_id', 'topic_id']
          */
+        $topic_as_array = ['sequence_number' => $saved_int01, 'topic_name' => $saved_str01,
+            'topic_description' => $saved_str02];
+        $topic = Topic::array_to_object($topic_as_array);
+
+        // Verify that our sequence number hasn't been taken.
+        /**
+         * Get all the topics in out community.
+         */
+        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+        if (!$result) {
+            $sessionMessage .= " NewTopicSave::page says: Unexpected no topics in community. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $sequence_number_already_exists_in_db = false;
+        foreach ($result as $object) {
+            if ($object->sequence_number == $saved_int01) {
+                $sequence_number_already_exists_in_db = true;
+                break;
+            }
+        }
+        if ($sequence_number_already_exists_in_db) {
+            $sessionMessage .= " Unfortunately someone was putting a topic in the same spot while you were
+            trying to do the same and they beat you to the punch. Please start over. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Save the new Topic
+        $result = $topic->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= " NewTopicSave::page says: Unexpected save was unable to save the new topic. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Assemble the CommunityToTopic object
+        $communitytotopic_as_array = ['community_id' => $community_id, 'topic_id' => $topic->id];
+        $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
+
+        $result = $communitytotopic->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= " NewTopicSave::page says: Unexpected save was unable to save the CommunityToTopic. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Redirect
+        $sessionMessage .= " Congratulations! Your new topic has been created. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }
