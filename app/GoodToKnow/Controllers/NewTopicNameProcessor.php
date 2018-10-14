@@ -45,15 +45,14 @@ class NewTopicNameProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        $topic_name = htmlentities($topic_name, ENT_QUOTES);
+        $topic_description = htmlentities($topic_description, ENT_QUOTES);
+
         if (strlen($topic_name) > 200 || strlen($topic_description) > 230) {
-            $sessionMessage .= " Maybe the topic name was too long (max 200 bytes.) Or maybe the description was too
-            long (max 230 bytes.) Start over. ";
+            $sessionMessage .= " Either your topic name or description was too long. Start over. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
-        $topic_name = htmlentities($topic_name, ENT_QUOTES);
-        $topic_description = htmlentities($topic_description, ENT_QUOTES);
 
         $_SESSION['saved_str01'] = $topic_name;
         $_SESSION['saved_str02'] = $topic_description;
