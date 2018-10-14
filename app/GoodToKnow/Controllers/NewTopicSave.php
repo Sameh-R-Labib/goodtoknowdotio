@@ -29,5 +29,15 @@ class NewTopicSave
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Create some variables and their values
+         * which will be needed for the two objects
+         * we'll be saving. Those two objects are
+         * Topic and CommunityToTopic.
+         *
+         * Topic $fields = ['id', 'sequence_number', 'topic_name', 'topic_description']
+         * CommunityToTopic $fields = ['id', 'community_id', 'topic_id']
+         */
     }
 }
