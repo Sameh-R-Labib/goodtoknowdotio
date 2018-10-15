@@ -89,6 +89,12 @@ $special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['sp
 
 $special_post_array = (isset($_SESSION['special_post_array'])) ? $_SESSION['special_post_array'] : [];
 
+$last_refresh_communities = (isset($_SESSION['last_refresh_communities'])) ? $_SESSION['last_refresh_communities'] : 0;
+
+$last_refresh_topics = (isset($_SESSION['last_refresh_topics'])) ? $_SESSION['last_refresh_topics'] : 0;
+
+$last_refresh_posts = (isset($_SESSION['last_refresh_posts'])) ? $_SESSION['last_refresh_posts'] : 0;
+
 $post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
 
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';

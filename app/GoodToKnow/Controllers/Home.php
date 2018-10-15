@@ -9,6 +9,8 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\TopicToPost;
 use GoodToKnow\Models\UserToCommunity;
 use GoodToKnow\Models\Community;
 
@@ -77,6 +79,43 @@ class Home
                 $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
             }
             $_SESSION['special_community_array'] = $special_community_array;
+            $_SESSION['last_refresh_communities'] = time();
+        }
+
+        /**
+         * If the type_of_resource_requested == 'community'
+         * and the special_topic_array has not been refreshed
+         * for a period longer than 12 minutes then refresh it.
+         */
+        $time_since_refresh = time() - $last_refresh_topics;
+        if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
+            $db = db_connect($sessionMessage);
+
+            if (!empty($sessionMessage)) {
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+            $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['last_refresh_topics'] = time();
+        }
+
+        /**
+         * If the type_of_resource_requested == 'topic'
+         * and the special_post_array has not been refreshed
+         * for a period longer than 3 minutes then refresh it.
+         */
+        $time_since_refresh = time() - $last_refresh_posts;
+        if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
+            $db = db_connect($sessionMessage);
+
+            if (!empty($sessionMessage)) {
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['last_refresh_posts'] = time();
         }
 
         $html_title = 'GoodToKnow.io';

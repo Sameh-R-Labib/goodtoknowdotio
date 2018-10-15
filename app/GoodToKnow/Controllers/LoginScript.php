@@ -144,6 +144,7 @@ class LoginScript
          * Finally save them to session
          */
         $_SESSION['special_community_array'] = $special_community_array;
+        $_SESSION['last_refresh_communities'] = time();
         $_SESSION['type_of_resource_requested'] = 'community';
         $_SESSION['topic_id'] = 0;
         $_SESSION['post_id'] = 0;
@@ -158,6 +159,7 @@ class LoginScript
             redirect_to("/ax1/Home/page");
         }
         $_SESSION['special_topic_array'] = $special_topic_array;
+        $_SESSION['last_refresh_topics'] = time();
 
         /**
          * Report success

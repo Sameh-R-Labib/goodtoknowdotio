@@ -163,12 +163,17 @@ class SetHomePageCommunityTopicPost
          */
         if ($type_of_resource_requested === 'community') {
             $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['last_refresh_topics'] = time();
         } elseif ($type_of_resource_requested === 'topic') {
             $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['last_refresh_topics'] = time();
             $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['last_refresh_posts'] = time();
         } else {
             $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['last_refresh_topics'] = time();
             $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['last_refresh_posts'] = time();
             $_SESSION['post_content'] = $post_content;
         }
         $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
