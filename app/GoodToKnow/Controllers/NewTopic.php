@@ -40,6 +40,18 @@ class NewTopic
             $is_empty = true;
         }
 
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$is_empty: </p>\n<pre>";
+        var_dump($is_empty);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \sizeof($special_topic_array): </p>\n<pre>";
+        print_r(sizeof($special_topic_array));
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
         if ($is_empty) {
             $_SESSION['$saved_int01'] = 500000;
             redirect_to("/ax1/NewTopicName/page");
