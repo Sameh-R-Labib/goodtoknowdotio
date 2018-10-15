@@ -88,6 +88,11 @@ class NewTopicSave
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Save a fresh copy of special_topic_array
+         */
+        $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+
         // Redirect
         $sessionMessage .= " Congratulations! Your new topic has been created. ";
         $_SESSION['message'] = $sessionMessage;
