@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\CommunityToTopic;
+
+
 class NewTopicInsertPoint
 {
     public function page()
@@ -26,14 +29,26 @@ class NewTopicInsertPoint
          * Otherwise, this route will have had been skipped.
          */
 
+        global $community_id;
         global $is_logged_in;
         global $sessionMessage;
-        global $special_topic_array;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Refresh
+         */
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+        $_SESSION['special_topic_array'] = $special_topic_array;
+        $_SESSION['last_refresh_topics'] = time();
 
         $html_title = 'Where will the new topic go?';
 
