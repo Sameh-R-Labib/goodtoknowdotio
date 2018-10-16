@@ -45,6 +45,8 @@ class Home
             redirect_to("/ax1/LoginForm/page");
         }
 
+        $db = 'not connected';
+
         /**
          * If the special_community_array has not been
          * refreshed for a period of time longer than
@@ -53,7 +55,6 @@ class Home
         $time_since_refresh = time() - $last_refresh_communities;  // seconds
         if ($time_since_refresh > 10800) {
             $db = db_connect($sessionMessage);
-
             if (!empty($sessionMessage)) {
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/Home/page");
@@ -89,11 +90,12 @@ class Home
          */
         $time_since_refresh = time() - $last_refresh_topics;
         if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
-            $db = db_connect($sessionMessage);
-
-            if (!empty($sessionMessage)) {
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
+            if ($db == 'not connected') {
+                $db = db_connect($sessionMessage);
+                if (!empty($sessionMessage)) {
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/Home/page");
+                }
             }
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
             $_SESSION['special_topic_array'] = $special_topic_array;
@@ -107,11 +109,12 @@ class Home
          */
         $time_since_refresh = time() - $last_refresh_posts;
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
-            $db = db_connect($sessionMessage);
-
-            if (!empty($sessionMessage)) {
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
+            if ($db == 'not connected') {
+                $db = db_connect($sessionMessage);
+                if (!empty($sessionMessage)) {
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/Home/page");
+                }
             }
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
             $_SESSION['special_post_array'] = $special_post_array;
