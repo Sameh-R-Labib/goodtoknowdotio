@@ -19,6 +19,7 @@ class CreateNewPostSave
         global $sessionMessage;
         global $is_logged_in;
         global $user_id;
+        global $topic_id;
         global $saved_str01;                // The main title
         global $saved_str02;                // The title extension
         global $saved_int01;                // The topic id
@@ -109,6 +110,13 @@ class CreateNewPostSave
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Refresh special_post_array
+         */
+        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+        $_SESSION['special_post_array'] = $special_post_array;
+        $_SESSION['last_refresh_posts'] = time();
 
         // Redirect
         $sessionMessage .= " Congratulations! Your new post has been created. ";
