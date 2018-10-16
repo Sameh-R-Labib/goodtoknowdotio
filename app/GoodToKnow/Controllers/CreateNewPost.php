@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\CommunityToTopic;
+
+
 class CreateNewPost
 {
     public function page()
@@ -23,15 +26,28 @@ class CreateNewPost
          */
         global $is_logged_in;
         global $sessionMessage;
-        global $special_topic_array;
+        global $community_id;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Refresh special_topic_array
+         */
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+        $_SESSION['special_topic_array'] = $special_topic_array;
+        $_SESSION['last_refresh_topics'] = time();
+
+        // Abort if the community doesn't have any topics yet
         if (empty($special_topic_array)) {
-            $sessionMessage .= " Aborted! The reason is you can't create a new post if your community has no topics. ";
+            $sessionMessage .= " Aborted because is you can't create a new post in a community which has no topics. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

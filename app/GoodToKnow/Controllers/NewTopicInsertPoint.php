@@ -39,7 +39,7 @@ class NewTopicInsertPoint
         }
 
         /**
-         * Refresh
+         * Refresh special_topic_array
          */
         $db = db_connect($sessionMessage);
         if (!empty($sessionMessage)) {
