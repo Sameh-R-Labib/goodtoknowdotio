@@ -110,6 +110,21 @@ class CommunityToTopic extends GoodObject
     {
         $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $error, $community_id);
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$topics_array: </p>\n<pre>";
+        var_dump($topics_array);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$community_id: </p>\n<pre>";
+        print_r($community_id);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
         if (empty($topics_array) || $topics_array === false) {
             return false;
         }
