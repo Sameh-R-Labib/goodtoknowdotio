@@ -60,26 +60,26 @@ class SetHomePageCommunityTopicPost
         /**
          * Debug Code
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$is_logged_in: </p>\n<pre>";
-        var_dump($is_logged_in);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$sessionMessage: </p>\n<pre>";
-        var_dump($sessionMessage);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$special_community_array: </p>\n<pre>";
-        var_dump($special_community_array);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
-        var_dump($special_topic_array);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$special_post_array: </p>\n<pre>";
-        var_dump($special_post_array);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$post_content: </p>\n<pre>";
-        var_dump($post_content);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+//        echo "\n<p>Begin debug</p>\n";
+//        echo "<br><p>Var_dump \$is_logged_in: </p>\n<pre>";
+//        var_dump($is_logged_in);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$sessionMessage: </p>\n<pre>";
+//        var_dump($sessionMessage);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$special_community_array: </p>\n<pre>";
+//        var_dump($special_community_array);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
+//        var_dump($special_topic_array);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$special_post_array: </p>\n<pre>";
+//        var_dump($special_post_array);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$post_content: </p>\n<pre>";
+//        var_dump($post_content);
+//        echo "</pre>\n";
+//        die("<br><p>End debug</p>\n");
 
 
 
@@ -136,6 +136,24 @@ class SetHomePageCommunityTopicPost
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
          */
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
+        var_dump($special_topic_array);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$community_id: </p>\n<pre>";
+        print_r($community_id);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
+
         if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
             $sessionMessage .= " Your resource request is defective.  (errno 6)";
             $_SESSION['message'] .= $sessionMessage;
