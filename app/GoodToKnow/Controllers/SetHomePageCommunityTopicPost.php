@@ -22,17 +22,17 @@ class SetHomePageCommunityTopicPost
         /**
          * Debug Code
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$community_id: </p>\n<pre>";
-        var_dump($community_id);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$topic_id: </p>\n<pre>";
-        var_dump($topic_id);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$post_id: </p>\n<pre>";
-        var_dump($post_id);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+//        echo "\n<p>Begin debug</p>\n";
+//        echo "<br><p>Var_dump \$community_id: </p>\n<pre>";
+//        var_dump($community_id);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$topic_id: </p>\n<pre>";
+//        var_dump($topic_id);
+//        echo "</pre>\n";
+//        echo "<br><p>Var_dump \$post_id: </p>\n<pre>";
+//        var_dump($post_id);
+//        echo "</pre>\n";
+//        die("<br><p>End debug</p>\n");
 
 
 
@@ -55,6 +55,34 @@ class SetHomePageCommunityTopicPost
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$is_logged_in: </p>\n<pre>";
+        var_dump($is_logged_in);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$sessionMessage: </p>\n<pre>";
+        var_dump($sessionMessage);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$special_community_array: </p>\n<pre>";
+        var_dump($special_community_array);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
+        var_dump($special_topic_array);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$special_post_array: </p>\n<pre>";
+        var_dump($special_post_array);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$post_content: </p>\n<pre>";
+        var_dump($post_content);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
 
         if (!$is_logged_in) {
             $_SESSION['message'] .= $sessionMessage;
