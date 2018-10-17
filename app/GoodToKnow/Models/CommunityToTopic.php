@@ -95,6 +95,8 @@ class CommunityToTopic extends GoodObject
             return false;
         }
 
+        self::order_topics_by_sequence_number($array_of_Topics);
+
         return $array_of_Topics;
     }
 
@@ -106,44 +108,19 @@ class CommunityToTopic extends GoodObject
      */
     public static function get_topics_array_for_a_community(\mysqli $db, string &$error, int $community_id)
     {
-        /**
-         * Gets an associative array where the key is the topic_id
-         * and the value is the topic name for all the topics which
-         * belong to a particular community.
-         *
-         * I'm using this static method in SetHomePageCommunityTopicPost.
-         * But, it will be useful in other places. That is why I'm making it
-         * broad in scope.
-         */
+        $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $error, $community_id);
 
-        /**
-         * First we need all the CommunityToTopic objects for $community_id
-         * In other words we need an array of CommunityToTopic objects for $community_id
-         */
-        $sql = 'SELECT * FROM community_to_topic WHERE `community_id`=' . $community_id;
-        $community_to_topic_array = CommunityToTopic::find_by_sql($db, $error, $sql);
-
-        if (!$community_to_topic_array) {
+        if (empty($topics_array) || $topics_array === false) {
             return false;
         }
 
-        /**
-         * Build the array I'm looking for (the one for return.)
-         */
-        $topics_for_this_community = [];
-        foreach ($community_to_topic_array as $value) {
-            // Talking about the right side of the assignment statement
-            // First we're getting a Community object
-            $topics_for_this_community[$value->topic_id] = Topic::find_by_id($db, $error, $value->topic_id);
-            if (!$topics_for_this_community[$value->topic_id]) {
-                $error .= " CommunityToTopic get_topics_array_for_a_community() says err_no 70737. ";
-                return false;
-            }
-            // Then we're getting the community_name from that object
-            $topics_for_this_community[$value->topic_id] = $topics_for_this_community[$value->topic_id]->topic_name;
+        $special_topics_array = [];
+
+        foreach ($topics_array as $item) {
+            $special_topics_array[$item->id] = $item->title;
         }
 
-        return $topics_for_this_community;
+        return $special_topics_array;
     }
 
     /**

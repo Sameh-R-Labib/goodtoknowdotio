@@ -46,6 +46,9 @@ class TopicToPost extends GoodObject
     public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, int $topic_id)
     {
         /**
+         * Note: I've modified this method to return
+         * the array of posts ordered by their sequential number
+         *
          * This time the array will be an array of objects
          *
          * What I'm getting is an array of Post objects.
@@ -112,6 +115,8 @@ class TopicToPost extends GoodObject
             $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
             return false;
         }
+
+        self::order_posts_by_sequence_number($array_of_Posts);
 
         return $array_of_Posts;
     }
