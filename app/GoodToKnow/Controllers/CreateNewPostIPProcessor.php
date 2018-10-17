@@ -152,9 +152,8 @@ class CreateNewPostIPProcessor
         }
 
         /**
-         * I need to order the posts by sequence number.
+         * Already ordered the posts by sequence number.
          */
-        TopicToPost::order_posts_by_sequence_number($all_posts_as_objects);
 
         /**
          * At this point we know whether $following_post_sequence_number
@@ -230,9 +229,8 @@ class CreateNewPostIPProcessor
         }
 
         /**
-         * I need to order the posts by sequence number.
+         * Already ordered the posts by sequence number.
          */
-        TopicToPost::order_posts_by_sequence_number($all_posts_as_objects);
 
         /**
          * At this point we know whether $leading_post_sequence_number
