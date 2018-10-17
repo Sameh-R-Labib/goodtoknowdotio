@@ -65,27 +65,12 @@ class CreateNewPostProcessor
         if ($posts == false) $posts = [];
         $count = count($posts);
 
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$posts: </p>\n<pre>";
-        var_dump($posts);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$count: </p>\n<pre>";
-        print_r($count);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
-
         if ($count > 0) {
             // We have some posts in our topic already
             redirect_to("/ax1/CreateNewPostInsertPoint/page");
         } else {
             // There are NO posts in our topic
-            $_SESSION['$saved_int02'] = 500000;
+            $_SESSION['saved_int02'] = 500000;
             redirect_to("/ax1/CreateNewPostTitle/page");
         }
     }
