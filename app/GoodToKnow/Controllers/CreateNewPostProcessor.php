@@ -63,6 +63,22 @@ class CreateNewPostProcessor
         }
         $posts = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $chosen_topic_id);
         $count = count($posts);
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$posts: </p>\n<pre>";
+        var_dump($posts);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$count: </p>\n<pre>";
+        print_r($count);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
         if ($count > 0) {
             redirect_to("/ax1/CreateNewPostInsertPoint/page");
         } else {
