@@ -48,14 +48,14 @@ class NewTopic
         /**
          * Debug Code
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
-        var_dump($special_topic_array);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$community_id: </p>\n<pre>";
-        print_r($community_id);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+//        echo "\n<p>Begin debug</p>\n";
+//        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
+//        var_dump($special_topic_array);
+//        echo "</pre>\n";
+//        echo "<br><p>Print_r \$community_id: </p>\n<pre>";
+//        print_r($community_id);
+//        echo "</pre>\n";
+//        die("<br><p>End debug</p>\n");
 
 
 

@@ -17,6 +17,25 @@ class SetHomePageCommunityTopicPost
 {
     public function page(int $community_id, int $topic_id, int $post_id)
     {
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$community_id: </p>\n<pre>";
+        var_dump($community_id);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$topic_id: </p>\n<pre>";
+        var_dump($topic_id);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$post_id: </p>\n<pre>";
+        var_dump($post_id);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
         /**
          * This script runs when a user (on Home page) clicks a community,
          * a topic, or a post hyperlink. It does its thing then redirects
