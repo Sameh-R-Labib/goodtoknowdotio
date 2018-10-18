@@ -40,23 +40,6 @@ class Home
         global $saved_int01;
         global $saved_int02;
 
-
-        /**
-         * Debug Code
-         */
-//        echo "\n<p>Begin debug</p>\n";
-//        echo "<br><p>Var_dump \$_SESSION: </p>\n<pre>";
-//        var_dump($_SESSION);
-//        echo "</pre>\n";
-//        echo "<br><p>Print_r \$community_id: </p>\n<pre>";
-//        print_r($community_id);
-//        echo "</pre>\n";
-//        die("<br><p>End debug</p>\n");
-
-
-
-
-
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");

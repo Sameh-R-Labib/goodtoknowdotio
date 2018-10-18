@@ -44,22 +44,6 @@ class NewTopic
         }
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
 
-
-        /**
-         * Debug Code
-         */
-//        echo "\n<p>Begin debug</p>\n";
-//        echo "<br><p>Var_dump \$special_topic_array: </p>\n<pre>";
-//        var_dump($special_topic_array);
-//        echo "</pre>\n";
-//        echo "<br><p>Print_r \$community_id: </p>\n<pre>";
-//        print_r($community_id);
-//        echo "</pre>\n";
-//        die("<br><p>End debug</p>\n");
-
-
-
-
         if ($special_topic_array == false) $special_topic_array = [];
         $_SESSION['special_topic_array'] = $special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
