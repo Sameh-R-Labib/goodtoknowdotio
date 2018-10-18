@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: samehlabib
- * Date: 9/28/18
- * Time: 4:56 PM
+ * Date: 10/18/18
+ * Time: 4:16 PM
  */
 
 namespace GoodToKnow\Controllers;
@@ -12,18 +12,23 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\CommunityToTopic;
 
 
-class CreateNewPost
+class EditMyPost
 {
     public function page()
     {
         /**
-         * This is the first of a series of routes
-         * aimed at creating a new post.
-         *
-         * The first task is that of presenting a
-         * form for getting the user to tell us
-         * which topic the post belongs in.
+         * This is the first in a series of routes
+         * aimed at editing a preexisting user's
+         * post.
          */
+
+        /**
+         * This route will present a form which asks
+         * which topic does the post exist in. Remember
+         * first we need to have the user identify
+         * the post. So this first step will help.
+         */
+
         global $is_logged_in;
         global $sessionMessage;
         global $community_id;
@@ -48,13 +53,13 @@ class CreateNewPost
 
         // Abort if the community doesn't have any topics yet
         if (empty($special_topic_array)) {
-            $sessionMessage .= " Aborted because you can't create a new post in a community which has no topics. ";
+            $sessionMessage .= " Aborted because this community has no topics. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'Which topic does the post go in?';
+        $html_title = 'Which topic is your post in?';
 
-        require VIEWS . DIRSEP . 'createnewpost.php';
+        require VIEWS . DIRSEP . 'editmypost.php';
     }
 }
