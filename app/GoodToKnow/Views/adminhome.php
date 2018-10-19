@@ -44,6 +44,7 @@
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
         <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
         <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
+        <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
     </ul>
 </div>
 <!-- footerbar -->
