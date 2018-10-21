@@ -153,7 +153,7 @@ class AdminCreateUser
      * @param string $username
      * @return bool
      */
-    public static function is_username(\mysqli $db, string &$message, string &$username)
+    public static function is_username(\mysqli $db, \string &$message, \string &$username)
     {
         /**
          * Trim it.
@@ -256,7 +256,7 @@ class AdminCreateUser
      * @param string $str02
      * @return bool
      */
-    public static function is_password(&$message, string &$str01, string &$str02)
+    public static function is_password(\string &$message, \string &$str01, \string &$str02)
     {
         /**
          * Can't be empty.
@@ -365,7 +365,7 @@ class AdminCreateUser
      * @param string $title
      * @return bool
      */
-    public static function is_title(&$message, string &$title)
+    public static function is_title(\string &$message, \string &$title)
     {
         /**
          * Trim it.
@@ -393,7 +393,7 @@ class AdminCreateUser
      * @param string $race
      * @return bool
      */
-    public static function is_race(&$message, string &$race)
+    public static function is_race(\string &$message, \string &$race)
     {
         /**
          * Trim it.
@@ -422,7 +422,7 @@ class AdminCreateUser
      * @param string $comment
      * @return bool
      */
-    public static function is_comment(&$message, string &$comment)
+    public static function is_comment(\string &$message, \string &$comment)
     {
         /**
          * Trim it.
@@ -462,7 +462,7 @@ class AdminCreateUser
      * @param string $date
      * @return bool
      */
-    public static function is_date(&$message, string &$date)
+    public static function is_date(\string &$message, \string &$date)
     {
         /**
          * Trim it.

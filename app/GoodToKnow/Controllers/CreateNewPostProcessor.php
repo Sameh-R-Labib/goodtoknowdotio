@@ -34,7 +34,7 @@ class CreateNewPostProcessor
         /**
          * I can't assume this post variables exist so I do the following.
          */
-        $chosen_topic_id = (isset($_POST['choice'])) ? $_POST['choice'] : 0;
+        $chosen_topic_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
 
         /**
          * Make sure $chosen_topic_id is among the ids of $special_topic_array
@@ -48,7 +48,7 @@ class CreateNewPostProcessor
         /**
          * Save it in the session
          */
-        $_SESSION['saved_int01'] = (int)$chosen_topic_id;
+        $_SESSION['saved_int01'] = $chosen_topic_id;
 
         /**
          * Redirect

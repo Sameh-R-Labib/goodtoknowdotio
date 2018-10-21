@@ -30,7 +30,7 @@ class LoginScript
         /*
          * For denial of service attacks
          */
-        sleep(2);
+        sleep(1);
 
         $db = db_connect($sessionMessage);
 

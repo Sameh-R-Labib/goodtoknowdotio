@@ -206,7 +206,7 @@ class CreateNewPostIPProcessor
      * @param int $chosen_post_sequence_number
      * @return int
      */
-    public static function get_sequence_number_in_case_before(array $all_posts_as_objects, int $chosen_post_sequence_number)
+    public static function get_sequence_number_in_case_before(array $all_posts_as_objects, \int $chosen_post_sequence_number)
     {
         if ($chosen_post_sequence_number == 0) {
             $_SESSION['message'] = " Please choose another place to put the post. ";

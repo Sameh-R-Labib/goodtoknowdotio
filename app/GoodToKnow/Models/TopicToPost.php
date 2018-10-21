@@ -43,7 +43,7 @@ class TopicToPost extends GoodObject
      * @param $topic_id
      * @return array|bool
      */
-    public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, int $topic_id)
+    public static function get_posts_array_for_a_topic(\mysqli $db, \string &$error, \int $topic_id)
     {
         /**
          * Note: I've modified this method to return
@@ -127,7 +127,7 @@ class TopicToPost extends GoodObject
      * @param $topic_id
      * @return array|bool
      */
-    public static function special_get_posts_array_for_a_topic(\mysqli $db, string &$error, $topic_id)
+    public static function special_get_posts_array_for_a_topic(\mysqli $db, \string &$error, \int $topic_id)
     {
         /**
          * This function is like (and uses) get_posts_array_for_a_topic
@@ -149,6 +149,11 @@ class TopicToPost extends GoodObject
         }
 
         return $special_posts_array;
+    }
+
+    public static function special_posts_array_for_user_and_topic(\mysqli $db, \string &$error, \int $user_id, \int $topic_id)
+    {
+
     }
 
     /**
