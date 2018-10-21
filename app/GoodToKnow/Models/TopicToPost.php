@@ -153,7 +153,17 @@ class TopicToPost extends GoodObject
 
     public static function special_posts_array_for_user_and_topic(\mysqli $db, \string &$error, \int $user_id, \int $topic_id)
     {
+        $posts_array = TopicToPost::special_get_posts_array_for_a_topic($db, $error, $topic_id);
+        if (empty($posts_array) || $posts_array === false) {
+            return false;
+        }
 
+        $special_posts_array = [];
+        foreach ($posts_array as $item) {
+            if ($item->user_id == $user_id) $special_posts_array[$item->id] = $item->title;
+        }
+
+        return $special_posts_array;
     }
 
     /**
