@@ -151,6 +151,13 @@ class TopicToPost extends GoodObject
         return $special_posts_array;
     }
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param int $user_id
+     * @param int $topic_id
+     * @return array|bool
+     */
     public static function special_posts_array_for_user_and_topic(\mysqli $db, \string &$error, \int $user_id, \int $topic_id)
     {
         $posts_array = TopicToPost::special_get_posts_array_for_a_topic($db, $error, $topic_id);
