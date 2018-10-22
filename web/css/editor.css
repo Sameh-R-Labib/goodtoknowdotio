@@ -36,8 +36,11 @@ input, textarea, select, button {
     font-family: system-ui;
 }
 
-h1 {
-    margin-block-end: -0.03em;
+h2 {
+    margin-top: 3em;
+    margin-bottom: 0;
+    /*margin-block-start: 0.63em;*/
+    /*margin-block-end: -0.13em;*/
 }
 
 p {
