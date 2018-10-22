@@ -44,7 +44,7 @@ button {
     width: 67px;
     font: bold 15px arial, sans-serif;
     text-shadow: none;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 h2 {
@@ -100,6 +100,7 @@ a:link, a:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border-radius: 4px;
 }
 
 a:hover, a:active {
