@@ -23,17 +23,15 @@ input, textarea, select, button {
     display: inline-block;
     text-align: start;
     margin: 0em;
-    font: 400 16px system-ui;
+    font: 400 19px system-ui;
     font-style: normal;
     font-variant-ligatures: normal;
     font-variant-caps: normal;
     font-variant-numeric: normal;
     font-variant-east-asian: normal;
-    font-weight: 400;
     font-stretch: normal;
-    font-size: 16px;
+    font-size: 19px;
     line-height: normal;
-    font-family: system-ui;
 }
 
 h2 {
