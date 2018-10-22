@@ -1,1 +1,17 @@
 /* Markdown Editor */
+body {
+    background-color: whitesmoke;
+    background: url("https://images.unsplash.com/photo-1447433819943-74a20887a81e") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    color: black;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-size: 1.25em;
+    margin-left: 23px;
+}
