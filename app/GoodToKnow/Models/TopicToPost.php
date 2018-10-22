@@ -165,6 +165,25 @@ class TopicToPost extends GoodObject
             return false;
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$posts_array: </p>\n<pre>";
+        var_dump($posts_array);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$topic_id: </p>\n<pre>";
+        print_r($topic_id);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$error: </p>\n<pre>";
+        print_r($error);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         $special_posts_array = [];
         foreach ($posts_array as $item) {
             if ($item->user_id == $user_id) $special_posts_array[$item->id] = $item->title;
