@@ -21,7 +21,7 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" name="markdown" rows="31"
+            <textarea id="textarea" name="markdown" rows="29"
                       cols="78"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $markdown; ?></textarea>
         </p>
