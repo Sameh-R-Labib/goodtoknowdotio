@@ -15,7 +15,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/ChangePasswordProcessor/page" method="post">
+<form action="/ax1/EditMyPostEditProcessor/page" method="post">
     <h1>Edit</h1>
     <?php require SESSIONMESSAGE; ?>
     <section>
