@@ -16,7 +16,7 @@
 </head>
 <body>
 <form action="/ax1/EditMyPostEditProcessor/page" method="post">
-    <h2><a href="https://github.github.com/gfm/">Markdown</a></h2>
+    <h2><a href="https://github.github.com/gfm/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
