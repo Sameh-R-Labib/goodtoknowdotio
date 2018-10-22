@@ -11,5 +11,12 @@ namespace GoodToKnow\Controllers;
 
 class EditMyPostEditProcessor
 {
-
+    public function page()
+    {
+        /**
+         * The purpose is to validate,
+         * generate html, and store the
+         * edited post's file.
+         */
+    }
 }
