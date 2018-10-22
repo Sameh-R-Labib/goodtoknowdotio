@@ -36,6 +36,10 @@ input, textarea, select, button {
     font-family: system-ui;
 }
 
+h1 {
+    margin-block-end: 0.03em;
+}
+
 p {
     font-size: 1.25em;
     margin-left: 23px;
