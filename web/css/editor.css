@@ -36,6 +36,7 @@ input, textarea, select, button {
 
 button {
     margin: 20px 0 0 364px;
+    border-radius: 10px;
 }
 
 h2 {
