@@ -16,7 +16,7 @@
 </head>
 <body>
 <form action="/ax1/EditMyPostEditProcessor/page" method="post">
-    <h1>Edit markdown</h1>
+    <h2>Edit markdown</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>

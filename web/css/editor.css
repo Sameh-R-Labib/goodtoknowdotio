@@ -37,7 +37,7 @@ input, textarea, select, button {
 }
 
 h1 {
-    margin-block-end: 0.03em;
+    margin-block-end: -0.03em;
 }
 
 p {
