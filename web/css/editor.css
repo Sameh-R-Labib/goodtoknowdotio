@@ -36,7 +36,14 @@ input, textarea, select, button {
 
 button {
     margin: 20px 0 0 364px;
-    border-radius: 10px;
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold 15px arial, sans-serif;
+    text-shadow: none;
 }
 
 h2 {
