@@ -34,6 +34,10 @@ input, textarea, select, button {
     line-height: normal;
 }
 
+button {
+    margin: 20px 0 0 124px;
+}
+
 h2 {
     margin-top: -0.03em;
     margin-bottom: -1em;
