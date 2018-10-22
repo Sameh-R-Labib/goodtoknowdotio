@@ -61,6 +61,17 @@ class EditMyPostEditor
         }
 
         /**
+         * We will need the forenames for the
+         * post later so let's save them in the session.
+         * (markdown_file, html_file)
+         */
+        $_SESSION['saved_str01'] = $post_object->markdown_file;
+        $_SESSION['saved_str02'] = $post_object->html_file;
+
+        // We may need the post id too!
+        $_SESSION['saved_int02'] = $chosen_post_id;
+
+        /**
          * Placeholder for actually retrieving the
          * markdown for $post_object from the file system.
          *
