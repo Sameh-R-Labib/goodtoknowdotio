@@ -123,7 +123,7 @@ class NewTopicIPProcessor
      * @param int $chosen_topic_sequence_number
      * @return int
      */
-    public static function get_sequence_number_in_case_after(array $topic_objects_array, \int $chosen_topic_sequence_number)
+    public static function get_sequence_number_in_case_after(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
         if ($chosen_topic_sequence_number == 1000000) {
             $_SESSION['message'] = " Choose another place to put the topic. ";
@@ -170,7 +170,7 @@ class NewTopicIPProcessor
      * @param int $chosen_topic_sequence_number
      * @return int
      */
-    public static function get_sequence_number_in_case_before(array $topic_objects_array, \int $chosen_topic_sequence_number)
+    public static function get_sequence_number_in_case_before(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
         if ($chosen_topic_sequence_number == 0) {
             $_SESSION['message'] = " Please choose another place to put the topic. ";
