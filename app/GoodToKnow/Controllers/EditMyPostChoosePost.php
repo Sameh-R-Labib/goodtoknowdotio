@@ -50,6 +50,23 @@ class EditMyPostChoosePost
 
         // Get all posts (as special array) for the user and topic.
         $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($db, $sessionMessage, $user_id, $saved_int01);
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$special_post_array: </p>\n<pre>";
+        var_dump($special_post_array);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$saved_int01: </p>\n<pre>";
+        print_r($saved_int01);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         if (!$special_post_array) {
             $sessionMessage .= " There aren't any posts (for YOU to edit) in the topic you chose. ";
             $_SESSION['message'] .= $sessionMessage;
