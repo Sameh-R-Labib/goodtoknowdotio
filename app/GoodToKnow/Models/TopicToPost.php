@@ -160,29 +160,10 @@ class TopicToPost extends GoodObject
      */
     public static function special_posts_array_for_user_and_topic(\mysqli $db, string &$error, int $user_id, int $topic_id)
     {
-        $posts_array = TopicToPost::special_get_posts_array_for_a_topic($db, $error, $topic_id);
+        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
         if (empty($posts_array) || $posts_array === false) {
             return false;
         }
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$posts_array: </p>\n<pre>";
-        var_dump($posts_array);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$topic_id: </p>\n<pre>";
-        print_r($topic_id);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$error: </p>\n<pre>";
-        print_r($error);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
-
 
         $special_posts_array = [];
         foreach ($posts_array as $item) {
