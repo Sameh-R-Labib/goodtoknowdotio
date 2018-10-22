@@ -16,13 +16,15 @@
 </head>
 <body>
 <form action="/ax1/EditMyPostEditProcessor/page" method="post">
-    <h1>Edit as Markdown</h1>
+    <h1>Edit markdown</h1>
     <?php require SESSIONMESSAGE; ?>
     <section>
-        <label for="textarea"></label>
-        <textarea id="textarea" name="markdown" rows="28"
-                  cols="80"><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $markdown; ?></textarea>
+        <p>
+            <label for="textarea"></label>
+            <textarea id="textarea" name="markdown" rows="28"
+                      cols="80"><?php /** @noinspection PhpUndefinedVariableInspection */
+                echo $markdown; ?></textarea>
+        </p>
     </section>
     <section>
         <p>
