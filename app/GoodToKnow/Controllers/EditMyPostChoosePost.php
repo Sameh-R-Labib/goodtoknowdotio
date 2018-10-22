@@ -52,7 +52,7 @@ class EditMyPostChoosePost
         $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($db, $sessionMessage, $user_id, $saved_int01);
 
         if (!$special_post_array) {
-            $sessionMessage .= " There aren't any posts (for YOU to edit) in the topic you chose. ";
+            $sessionMessage .= " There are NO posts for YOU to edit here. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
