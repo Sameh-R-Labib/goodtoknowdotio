@@ -69,18 +69,24 @@ class EditMyPostEditProcessor
          * Generate the html equivalent for $markdown.
          */
         $parsedown_object = new \ParsedownExtra();
+        $parsedown_object->setMarkupEscaped(true);
+        $parsedown_object->setSafeMode(true);
+        $html = $parsedown_object->text($markdown);
 
 
-        // Debug Code
+        /**
+         * Debug Code
+         */
         echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$parsedown_object: </p>\n<pre>";
-        var_dump($parsedown_object);
+        echo "<br><p>Var_dump \$html: </p>\n<pre>";
+        var_dump($html);
         echo "</pre>\n";
-        die("die");
+        echo "<br><p>Print_r \$markdown: </p>\n<pre>";
+        print_r($markdown);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
 
 
-
-        $html = "The result of converting the markdown to html.";
 
         /**
          * Save the markdown to disc.
