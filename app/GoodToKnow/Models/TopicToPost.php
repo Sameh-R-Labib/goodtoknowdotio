@@ -93,7 +93,7 @@ class TopicToPost extends GoodObject
             }
         } catch (\Exception $e) {
             $error .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
-                htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
+                htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
         if (!empty($error)) {
             return false;

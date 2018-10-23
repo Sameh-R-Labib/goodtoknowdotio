@@ -49,7 +49,7 @@ function db_connect(string &$error)
         }
         $db->set_charset('utf8');
     } catch (\Exception $e) {
-        $error .= ' ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
+        $error .= ' ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
     }
     return $db;
 }
