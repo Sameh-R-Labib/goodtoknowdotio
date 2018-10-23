@@ -66,7 +66,17 @@ class CreateNewPostSave
          * I need to generate the random part of the file name.
          * I need to make sure the generated filename doesn't already exist.
          */
-        $filenamestub = random_str(6);
+
+        try {
+            $filenamestub = random_bytes(5);
+        } catch (\Exception $e) {
+            $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_QUOTES | ENT_HTML5) . ' ';
+        }
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $filenamestub = bin2hex($filenamestub);
         $markdown_file = tempnam('/goodfiles/markdown', $filenamestub);
         $html_file = tempnam('/goodfiles/static', $filenamestub);
         if (!$markdown_file || !$html_file) {
