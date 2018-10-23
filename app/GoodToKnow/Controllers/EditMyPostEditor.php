@@ -84,6 +84,19 @@ class EditMyPostEditor
             redirect_to("/ax1/Home/page");
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$markdown: </p>\n<pre>";
+        var_dump($markdown);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         /**
          * Display the editor interface.
          */
