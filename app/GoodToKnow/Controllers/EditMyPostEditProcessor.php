@@ -68,7 +68,7 @@ class EditMyPostEditProcessor
         /**
          * Generate the html equivalent for $markdown.
          */
-        $parsedown_object = new ParsedownExtra();
+        $parsedown_object = new \ParsedownExtra();
 
 
         // Debug Code
