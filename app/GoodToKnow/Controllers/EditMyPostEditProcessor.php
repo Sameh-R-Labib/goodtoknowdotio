@@ -72,6 +72,10 @@ class EditMyPostEditProcessor
 
 
         // Debug Code
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$parsedown_object: </p>\n<pre>";
+        var_dump($parsedown_object);
+        echo "</pre>\n";
         die("die");
 
 
