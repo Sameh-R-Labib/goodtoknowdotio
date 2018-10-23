@@ -61,8 +61,19 @@ class CreateNewPostSave
          */
 
         $created = time();
-        $markdown_file = "KjeuJHnedoOpPKidErYuUjHeWdWQrfcS.md";
-        $html_file = "KjeuJHnedoOpPKidErYuUjHeWdWQrfcS.html";
+
+        /**
+         * I need to generate the random part of the file name.
+         * I need to make sure the generated filename doesn't already exist.
+         */
+        $filenamestub = random_str(6);
+        $markdown_file = tempnam('/goodfiles/markdown', $filenamestub);
+        $html_file = tempnam('/goodfiles/static', $filenamestub);
+        if (!$markdown_file || !$html_file) {
+            $sessionMessage .= " Aborted because failed to create files. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         // Assemble the Post object
         $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extensionfortitle' => $saved_str02,

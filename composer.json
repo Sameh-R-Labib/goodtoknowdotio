@@ -2,7 +2,8 @@
   "require": {
     "ext-mysqli": "*",
     "ext-ctype": "*",
-    "ext-mbstring": "*"
+    "ext-mbstring": "*",
+    "ext-libsodium": "*"
   },
   "autoload": {
     "psr-4": {

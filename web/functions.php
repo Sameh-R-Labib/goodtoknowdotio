@@ -1,4 +1,19 @@
 <?php
+/**
+ * @param $length
+ * @param string $keyspace
+ * @return string
+ */
+function random_str($length, $keyspace = 'abcdefghijklmnopqrstuvwxyz234567')
+{
+    // https://paragonie.com/blog/2015/07/how-safely-generate-random-strings-and-integers-in-php
+    $str = '';
+    $keysize = strlen($keyspace);
+    for ($i = 0; $i < $length; ++$i) {
+        $str .= $keyspace[\Sodium\randombytes_uniform($keysize)];
+    }
+    return $str;
+}
 
 /**
  * @param string $location
