@@ -77,7 +77,12 @@ class EditMyPostEditor
          *
          * Don't forget to verify we succeeded in retrieving the file.
          */
-        $markdown = "Placeholder for the existing markdown version of the post.";
+        $markdown = file_get_contents($post_object->markdown_file);
+        if ($markdown === false) {
+            $sessionMessage .= " Unable to read source file. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Display the editor interface.
