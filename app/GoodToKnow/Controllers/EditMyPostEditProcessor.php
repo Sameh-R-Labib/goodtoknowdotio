@@ -56,6 +56,15 @@ class EditMyPostEditProcessor
         }
 
         /**
+         * Run the markdown string through the
+         * htmentities function so that sample
+         * html code can be preserved rather
+         * than be interpreted by the browser
+         * as html tags.
+         */
+        $markdown = htmlspecialchars($markdown, ENT_QUOTES | ENT_HTML5, "UTF-8");
+
+        /**
          * Generate the html equivalent for $markdown.
          */
         $html = "The result of converting the markdown to html.";
