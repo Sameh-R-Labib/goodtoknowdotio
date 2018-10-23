@@ -62,7 +62,8 @@ class EditMyPostEditProcessor
          * than be interpreted by the browser
          * as html tags.
          */
-        $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
+//        $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
+        // I commented out because parsedown will take care of this.
 
         /**
          * Generate the html equivalent for $markdown.
