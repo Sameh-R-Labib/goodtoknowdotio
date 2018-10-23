@@ -55,15 +55,10 @@ class EditMyPostEditProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        /**
-         * Run the markdown string through the
-         * htmentities function so that sample
-         * html code can be preserved rather
-         * than be interpreted by the browser
-         * as html tags.
-         */
-//        $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
+
+        // $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
         // I commented out because parsedown will take care of this.
+
 
         /**
          * Generate the html equivalent for $markdown.
@@ -72,21 +67,6 @@ class EditMyPostEditProcessor
         $parsedown_object->setMarkupEscaped(true);
         $parsedown_object->setSafeMode(true);
         $html = $parsedown_object->text($markdown);
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$html: </p>\n<pre>";
-        var_dump($html);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$markdown: </p>\n<pre>";
-        print_r($markdown);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
 
         /**
          * Save the markdown to disc.
