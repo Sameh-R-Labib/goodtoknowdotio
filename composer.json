@@ -3,7 +3,9 @@
     "ext-mysqli": "*",
     "ext-ctype": "*",
     "ext-mbstring": "*",
-    "ext-libsodium": "*"
+    "ext-libsodium": "*",
+    "erusev/parsedown": "^1.7",
+    "erusev/parsedown-extra": "^0.7.1"
   },
   "autoload": {
     "psr-4": {
