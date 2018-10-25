@@ -61,7 +61,7 @@ class EditMyPostEditor
         }
 
         /**
-         * We will need the forenames for the
+         * We will need the file names for the
          * post later so let's save them in the session.
          * (markdown_file, html_file)
          */

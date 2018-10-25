@@ -43,7 +43,7 @@ class EditMyPostEditProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-        if (strlen($markdown) > 8000) {
+        if (strlen($markdown) > 38000) {
             $sessionMessage .= " The edited file you submitted was not saved because the number of characters
             exceeded the maximum allowed for a post. ";
             $_SESSION['message'] = $sessionMessage;
@@ -67,16 +67,20 @@ class EditMyPostEditProcessor
          * Save the markdown to disc.
          * If fails then add message.
          */
+        $bytes_written = file_put_contents($saved_str01, $markdown);
+        if ($bytes_written === false) {
+            $sessionMessage .= " file_put_contents() unable to write markdown file. Mission aborted!";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Save the html to disc.
          * If fails then add message.
          */
-
-        /**
-         * If there's a message then abort.
-         */
-        if (!empty($sessionMessage)) {
+        $bytes_written = file_put_contents($saved_str02, $html);
+        if ($bytes_written === false) {
+            $sessionMessage .= " file_put_contents() unable to write html file. But the markdown file did get written.";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
