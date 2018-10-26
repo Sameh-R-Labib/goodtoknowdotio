@@ -11,8 +11,6 @@ require(__DIR__ . '/../config.php');
 define('DIRSEP', DIRECTORY_SEPARATOR);
 define('WEB_DIR', PROJ_ROOT . DIRSEP . 'web');
 define('VENDOR_DIR', PROJ_ROOT . DIRSEP . 'vendor');
-define('MARKDOWN', DIRSEP . 'goodfiles' . DIRSEP . 'markdown');
-define('STATIC', DIRSEP . 'goodfiles' . 'static');
 
 /**
  * Here I can define constants for the location

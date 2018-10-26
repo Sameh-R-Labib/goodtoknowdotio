@@ -77,8 +77,8 @@ class CreateNewPostSave
             redirect_to("/ax1/Home/page");
         }
         $filenamestub = bin2hex($filenamestub);
-        $markdown_file = tempnam('/goodfiles/markdown', $filenamestub);
-        $html_file = tempnam('/goodfiles/static', $filenamestub);
+        $markdown_file = tempnam(MARKDOWN, $filenamestub);
+        $html_file = tempnam(STATICHTML, $filenamestub);
         if (!$markdown_file || !$html_file) {
             $sessionMessage .= " Aborted because failed to create files. ";
             $_SESSION['message'] = $sessionMessage;
