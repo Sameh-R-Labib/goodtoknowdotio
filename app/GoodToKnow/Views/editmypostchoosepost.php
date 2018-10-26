@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="form-wrapper">
+    <p>* The size of post has an upper limit.</p>
     <h2>Which post do you want to edit?</h2>
     <?php require SESSIONMESSAGE; ?>
     <form action="/ax1/EditMyPostEditor/page" method="post">

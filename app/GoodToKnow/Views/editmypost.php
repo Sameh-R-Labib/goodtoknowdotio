@@ -19,8 +19,8 @@
 <div class="form-wrapper">
     <h2>Edit Post</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>Keep in mind these are only the topics in your current community.</p>
-    <p>Into which topic was that post created your new post?</p>
+    <p>Topics in current community:</p>
+    <p>In which topic?</p>
     <form action="/ax1/EditMyPostProcessor/page" method="post">
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_topic_array as $key => $value): ?>
