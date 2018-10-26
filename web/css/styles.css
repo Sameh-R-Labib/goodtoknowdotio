@@ -11,9 +11,8 @@ body {
 }
 
 a {
-    font-size: 1em;
     text-decoration-line: none;
-    color: inherit;
+    color: darkblue;
 }
 
 p {
