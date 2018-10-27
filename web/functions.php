@@ -22,19 +22,19 @@ function redirect_to(string $location)
  * @param int $size
  * @return string
  */
-//function size_as_text(int $size)
-//{
-//    // takes a size in bytes and returns a more use friendly equivalent
-//    if ($size < 1024) {
-//        return "{$size} bytes";
-//    } elseif ($size < 1048576) {
-//        $size_kb = round($size / 1024);
-//        return "{$size_kb} KB";
-//    } else {
-//        $size_mb = round($size / 1048576, 1);
-//        return "{$size_mb} MB";
-//    }
-//}
+function size_as_text(int $size)
+{
+    // takes a size in bytes and returns a more use friendly equivalent
+    if ($size < 1024) {
+        return "{$size} bytes";
+    } elseif ($size < 1048576) {
+        $size_kb = round($size / 1024);
+        return "{$size_kb} KB";
+    } else {
+        $size_mb = round($size / 1048576, 1);
+        return "{$size_mb} MB";
+    }
+}
 
 /**
  * @param string $error

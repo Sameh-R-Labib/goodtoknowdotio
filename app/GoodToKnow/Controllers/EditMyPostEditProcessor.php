@@ -88,7 +88,9 @@ class EditMyPostEditProcessor
         /**
          * Declare success.
          */
-        $_SESSION['message'] = " Your post has been updated. ";
+        $bytes_written_text = size_as_text($bytes_written);
+        $_SESSION['message'] = " Written {$bytes_written_text} out of a possible max 37.1 KB. Stay away from the max.
+         Otherwise, you'll loose your edit and need to start over. ";
         redirect_to("/ax1/Home/page");
     }
 }
