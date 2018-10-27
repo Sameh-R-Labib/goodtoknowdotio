@@ -16,6 +16,14 @@ a {
     font-weight: bolder;
 }
 
+a:hover {
+    color: #ba330b;
+}
+
+a:active {
+    color: seagreen;
+}
+
 p {
     font-size: 1.25em;
     margin-left: 23px;
