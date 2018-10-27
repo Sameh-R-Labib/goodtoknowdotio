@@ -12,31 +12,16 @@ body {
 
 a {
     text-decoration-line: none;
-    background-color: #0000e8;
+    color: #0000e8;
     font-weight: bolder;
-    display: inline-block;
-    border-radius: 4px;
-    color: white;
-    /*padding: 14px 25px;*/
-    text-align: center;
 }
 
 a:hover {
-    background-color: #ba330b;
-    display: inline-block;
-    border-radius: 4px;
-    color: white;
-    /*padding: 14px 25px;*/
-    text-align: center;
+    color: #ba330b;
 }
 
 a:active {
-    background-color: seagreen;
-    display: inline-block;
-    border-radius: 4px;
-    color: white;
-    /*padding: 14px 25px;*/
-    text-align: center;
+    color: seagreen;
 }
 
 p {
