@@ -21,7 +21,12 @@ a:hover {
 }
 
 a:active {
-    color: seagreen;
+    background-color: seagreen;
+    display: inline-block;
+    border-radius: 4px;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
 }
 
 p {
