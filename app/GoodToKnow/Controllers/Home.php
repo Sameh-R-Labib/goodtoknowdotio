@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 use GoodToKnow\Models\UserToCommunity;
 use GoodToKnow\Models\Community;
@@ -32,6 +33,7 @@ class Home
         global $last_refresh_communities;
         global $last_refresh_topics;
         global $last_refresh_posts;
+        global $last_refresh_content;
         global $sessionMessage;
         global $is_logged_in;
         global $is_admin;
@@ -121,6 +123,26 @@ class Home
             if ($special_post_array == false) $special_post_array = [];
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
+        }
+
+        /**
+         * If the type_of_resource_requested == 'post'
+         * and the post_content has not been refreshed
+         * for a period longer than 3 minutes then refresh it.
+         */
+        $time_since_refresh = time() - $last_refresh_content;
+        if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
+            $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
+            if (!$post_object) {
+                $sessionMessage .= " Home::page says: Error 977788. ";
+            }
+            $post_content = file_get_contents($post_object->html_file);
+            if ($post_content === false) {
+                $sessionMessage .= " Unable to read the post's file. ";
+                $post_content = '';
+            }
+            $_SESSION['post_content'] = $post_content;
+            $_SESSION['last_refresh_content'] = time();
         }
 
         $html_title = 'GoodToKnow.io';

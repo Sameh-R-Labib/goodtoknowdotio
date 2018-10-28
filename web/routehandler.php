@@ -93,6 +93,8 @@ $last_refresh_topics = (isset($_SESSION['last_refresh_topics'])) ? $_SESSION['la
 
 $last_refresh_posts = (isset($_SESSION['last_refresh_posts'])) ? $_SESSION['last_refresh_posts'] : 0;
 
+$last_refresh_posts = (isset($_SESSION['last_refresh_content'])) ? $_SESSION['last_refresh_content'] : 0;
+
 $post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
 
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
