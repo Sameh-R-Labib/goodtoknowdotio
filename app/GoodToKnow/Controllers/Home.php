@@ -132,6 +132,13 @@ class Home
          */
         $time_since_refresh = time() - $last_refresh_content;
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
+            if ($db == 'not connected') {
+                $db = db_connect($sessionMessage);
+                if (!empty($sessionMessage)) {
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/Home/page");
+                }
+            }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if (!$post_object) {
                 $sessionMessage .= " Home::page says: Error 977788. ";
