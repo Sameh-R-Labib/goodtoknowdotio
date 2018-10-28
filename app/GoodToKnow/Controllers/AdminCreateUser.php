@@ -59,6 +59,13 @@ class AdminCreateUser
         $new_user_role = '';
         $new_user_is_suspended = 0;
 
+        /**
+         * Apply htmlentities to fields which
+         * get rendered by the browser.
+         */
+        $submitted_username = htmlentities($submitted_username);
+        $submitted_comment = htmlentities($submitted_comment);
+
 
         /**
          * If any of the submitted fields are invalid
