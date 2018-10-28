@@ -121,7 +121,8 @@ class Home
             }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if (!$post_object) {
-                $sessionMessage .= " Home::page says: Unable to get post object from the database. ";
+                $sessionMessage .= " Home::page says: Unable to get post object from the database. The post id is {$post_id}.";
+                var_dump($db);
             } else {
                 $post_content = file_get_contents($post_object->html_file);
                 if ($post_content === false) {
