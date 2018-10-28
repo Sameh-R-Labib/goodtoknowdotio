@@ -179,9 +179,6 @@ abstract class GoodObject
             $insert_id = $db->insert_id;
         } catch (\Exception $e) {
             $error .= ' GoodObject create() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
-        }
-
-        if (!empty($error)) {
             return false;
         }
 
@@ -230,9 +227,6 @@ abstract class GoodObject
             }
         } catch (\Exception $e) {
             $error .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
-        }
-
-        if (!empty($error)) {
             return false;
         }
 
@@ -271,10 +265,6 @@ abstract class GoodObject
         $result_array = static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name . "
 			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
 
-        if (!empty($error)) {
-            return false;
-        }
-
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 
@@ -306,9 +296,6 @@ abstract class GoodObject
             }
         } catch (\Exception $e) {
             $error .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
-        }
-
-        if (!empty($error)) {
             return false;
         }
 

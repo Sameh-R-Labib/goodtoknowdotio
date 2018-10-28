@@ -94,10 +94,9 @@ class TopicToPost extends GoodObject
         } catch (\Exception $e) {
             $error .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
                 htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
-        }
-        if (!empty($error)) {
             return false;
         }
+
         if ($count < 1) {
             $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
             return false;

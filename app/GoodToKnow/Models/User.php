@@ -111,10 +111,9 @@ class User extends GoodObject
         } catch (\Exception $e) {
             $error .= ' User::authenticate() caught a thrown exception: ' .
                 htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
-        }
-        if (!empty($error)) {
             return false;
         }
+
         if (!password_verify($password, $user->password)) {
             $error .= " Authentication failed! ";
             return false;
