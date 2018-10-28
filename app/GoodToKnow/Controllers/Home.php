@@ -121,12 +121,13 @@ class Home
             }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if (!$post_object) {
-                $sessionMessage .= " Home::page says: Error 977788. ";
-            }
-            $post_content = file_get_contents($post_object->html_file);
-            if ($post_content === false) {
-                $sessionMessage .= " Unable to read the post's file. ";
-                $post_content = '';
+                $sessionMessage .= " Home::page says: Unable to get post object from the database. ";
+            } else {
+                $post_content = file_get_contents($post_object->html_file);
+                if ($post_content === false) {
+                    $sessionMessage .= " Unable to read the post's file. ";
+                    $post_content = '';
+                }
             }
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
