@@ -57,16 +57,10 @@ class Home
         $time_since_refresh = time() - $last_refresh_communities;  // seconds
         if ($time_since_refresh > 10800) {
             $db = db_connect($sessionMessage);
-            if (!empty($sessionMessage)) {
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/InfiniteLoopPrevent/page");
-            }
             $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
             $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
             if (!$user_to_community_array) {
                 $sessionMessage .= " Home page() says unexpected no user_to_community_array. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/InfiniteLoopPrevent/page");
             }
             $special_community_array = [];
             foreach ($user_to_community_array as $value) {
@@ -75,8 +69,6 @@ class Home
                 $special_community_array[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
                 if (!$special_community_array[$value->community_id]) {
                     $sessionMessage .= " Home page() says err_no 30848. ";
-                    $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
                 // Then we're getting the community_name from that object
                 $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
@@ -94,10 +86,6 @@ class Home
         if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
-                if (!empty($sessionMessage)) {
-                    $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-                }
             }
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
             if ($special_topic_array == false) $special_topic_array = [];
@@ -114,10 +102,6 @@ class Home
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
-                if (!empty($sessionMessage)) {
-                    $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-                }
             }
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
             if ($special_post_array == false) $special_post_array = [];
@@ -134,10 +118,6 @@ class Home
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
-                if (!empty($sessionMessage)) {
-                    $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-                }
             }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if (!$post_object) {
