@@ -59,7 +59,7 @@ class Home
             $db = db_connect($sessionMessage);
             $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
             $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
-            if (!$user_to_community_array) {
+            if ($user_to_community_array === false) {
                 $sessionMessage .= " Home page() says unexpected no user_to_community_array. ";
             }
             $special_community_array = [];
@@ -67,7 +67,7 @@ class Home
                 // Talking about the right side of the assignment statement
                 // First we're getting a Community object
                 $special_community_array[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
-                if (!$special_community_array[$value->community_id]) {
+                if ($special_community_array[$value->community_id] === false) {
                     $sessionMessage .= " Home page() says err_no 30848. ";
                 }
                 // Then we're getting the community_name from that object
@@ -88,7 +88,7 @@ class Home
                 $db = db_connect($sessionMessage);
             }
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
-            if ($special_topic_array == false) $special_topic_array = [];
+            if ($special_topic_array === false) $special_topic_array = [];
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
         }
@@ -104,7 +104,7 @@ class Home
                 $db = db_connect($sessionMessage);
             }
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
-            if ($special_post_array == false) $special_post_array = [];
+            if ($special_post_array === false) $special_post_array = [];
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
         }
@@ -120,9 +120,8 @@ class Home
                 $db = db_connect($sessionMessage);
             }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
-            if (!$post_object) {
-                $sessionMessage .= " Home::page says: Unable to get post object from the database. The post id is {$post_id}.";
-                var_dump($db);
+            if ($post_object === false) {
+                $sessionMessage .= " Home page() says: Unable to get post object from the database. ";
             } else {
                 $post_content = file_get_contents($post_object->html_file);
                 if ($post_content === false) {
