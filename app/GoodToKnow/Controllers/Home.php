@@ -59,14 +59,14 @@ class Home
             $db = db_connect($sessionMessage);
             if (!empty($sessionMessage)) {
                 $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
+                redirect_to("/ax1/InfiniteLoopPrevent/page");
             }
             $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
             $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
             if (!$user_to_community_array) {
                 $sessionMessage .= " Home page() says unexpected no user_to_community_array. ";
                 $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
+                redirect_to("/ax1/InfiniteLoopPrevent/page");
             }
             $special_community_array = [];
             foreach ($user_to_community_array as $value) {
@@ -76,7 +76,7 @@ class Home
                 if (!$special_community_array[$value->community_id]) {
                     $sessionMessage .= " Home page() says err_no 30848. ";
                     $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/Home/page");
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
                 // Then we're getting the community_name from that object
                 $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
@@ -96,7 +96,7 @@ class Home
                 $db = db_connect($sessionMessage);
                 if (!empty($sessionMessage)) {
                     $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/Home/page");
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
@@ -116,7 +116,7 @@ class Home
                 $db = db_connect($sessionMessage);
                 if (!empty($sessionMessage)) {
                     $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/Home/page");
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
@@ -136,7 +136,7 @@ class Home
                 $db = db_connect($sessionMessage);
                 if (!empty($sessionMessage)) {
                     $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/Home/page");
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
