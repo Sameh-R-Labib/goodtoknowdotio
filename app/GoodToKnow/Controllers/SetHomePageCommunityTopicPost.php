@@ -12,6 +12,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\User;
 
 
 class SetHomePageCommunityTopicPost
@@ -154,7 +155,8 @@ class SetHomePageCommunityTopicPost
             /**
              * Get the post object for $post_id
              * and retrieve the post content from
-             * the file system.
+             * the file system. Also, get the
+             * posts author_username.
              */
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if (!$post_object) {
@@ -165,6 +167,12 @@ class SetHomePageCommunityTopicPost
             $post_content = file_get_contents($post_object->html_file);
             if ($post_content === false) {
                 $sessionMessage .= " Unable to read the post's html source file. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $post_author_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
+            if ($post_author_object === false) {
+                $sessionMessage .= " Unable to get the post author object from the database. ";
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
@@ -191,6 +199,7 @@ class SetHomePageCommunityTopicPost
             $_SESSION['last_refresh_posts'] = time();
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
+            $_SESSION['author_username'] = $post_author_object->username;
         }
         $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
         $_SESSION['community_id'] = $community_id;

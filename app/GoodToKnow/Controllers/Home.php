@@ -29,6 +29,7 @@ class Home
         global $special_topic_array;        // array of topics for current community.
         global $special_post_array;         // array of posts for current topic
         global $post_content;               // string containing the html for current post
+        global $author_username;            // author of the current post
         global $type_of_resource_requested; // result of running SetHomePageCommunityTopicPost
         global $last_refresh_communities;
         global $last_refresh_topics;
