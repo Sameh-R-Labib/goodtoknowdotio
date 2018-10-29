@@ -217,7 +217,7 @@ h2 + p {
 
 #scriptmessage {
     background-color: #fbfcf9;
-    width: 739px;
+    width: 715px;
     height: 185px;
     margin: auto;
     float: left;
@@ -227,7 +227,7 @@ h2 + p {
 #leftsodiv {
     opacity: 0.96;
     background-color: white;
-    width: 123px;
+    width: 150px;
     height: 185px;
     margin: auto;
     float: left;
@@ -244,7 +244,7 @@ h2 + p {
 #sendtoauthor {
     float: left;
     background-color: #d9b039;
-    width: 123px;
+    width: 150px;
     height: 62px;
     margin: auto;
 }
