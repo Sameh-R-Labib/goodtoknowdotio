@@ -43,7 +43,7 @@ class Post extends GoodObject
     public $extensionfortitle;
 
     /**
-     * @var string
+     * @var int
      */
     public $user_id;
 
