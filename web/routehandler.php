@@ -105,6 +105,8 @@ $post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] :
 
 $author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_username'] : '';
 
+$author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
+
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 
 $saved_str02 = (isset($_SESSION['saved_str02'])) ? $_SESSION['saved_str02'] : '';

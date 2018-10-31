@@ -222,6 +222,7 @@ class SetHomePageCommunityTopicPost
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
             $_SESSION['author_username'] = $post_author_object->username;
+            $_SESSION['author_id'] = (int)$post_author_object->id;
         }
         $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
         $_SESSION['community_id'] = $community_id;
