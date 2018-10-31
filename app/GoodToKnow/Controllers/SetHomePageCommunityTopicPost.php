@@ -9,6 +9,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
@@ -185,6 +186,10 @@ class SetHomePageCommunityTopicPost
          * Now we need to store some things in the session and redirect.
          */
         if ($type_of_resource_requested === 'community') {
+            // First get and store the community_name
+            $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
+            $_SESSION['community_name'] = $community_object->community_name;
+            // Then do the rest.
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
         } elseif ($type_of_resource_requested === 'topic') {

@@ -64,7 +64,7 @@ class LoginScript
          **/
         $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
 
-        if ($user === false || !empty($sessionMessage)) {
+        if ($user === false) {
             $sessionMessage .= " Authentication failed! ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
@@ -95,6 +95,13 @@ class LoginScript
          *  - community_name (corresponds with community_id)
          *  - special_community_array (array described below)
          */
+
+        /**
+         * Put the community_name which corresponds with
+         * community_id in the session.
+         */
+        $community_object = Community::find_by_id($db, $sessionMessage, $user->id_of_default_community);
+        $_SESSION['community_name'] = $community_object->community_name;
 
         /**
          * I need to use a method of UserToCommunity to
