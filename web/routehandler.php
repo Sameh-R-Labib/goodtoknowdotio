@@ -85,6 +85,8 @@ $topic_name = (isset($_SESSION['topic_name'])) ? $_SESSION['topic_name'] : '';
 
 $post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 
+$post_name = (isset($_SESSION['post_name'])) ? $_SESSION['post_name'] : '';
+
 $type_of_resource_requested = (isset($_SESSION['type_of_resource_requested'])) ? $_SESSION['type_of_resource_requested'] : '';
 
 $special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
