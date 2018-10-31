@@ -12,6 +12,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
+use GoodToKnow\Models\Topic;
 use GoodToKnow\Models\TopicToPost;
 use GoodToKnow\Models\User;
 
@@ -193,11 +194,25 @@ class SetHomePageCommunityTopicPost
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
         } elseif ($type_of_resource_requested === 'topic') {
+            // First get and store the community_name
+            $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
+            $_SESSION['community_name'] = $community_object->community_name;
+            // Second get and store the topic_name
+            $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
+            $_SESSION['topic_name'] = $topic_object->topic_name;
+            // Then do the rest.
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
         } else {
+            // First get and store the community_name
+            $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
+            $_SESSION['community_name'] = $community_object->community_name;
+            // Second get and store the topic_name
+            $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
+            $_SESSION['topic_name'] = $topic_object->topic_name;
+            // Then do the rest.
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
             $_SESSION['special_post_array'] = $special_post_array;

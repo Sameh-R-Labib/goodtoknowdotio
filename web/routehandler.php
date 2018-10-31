@@ -81,6 +81,8 @@ $special_community_array = (isset($_SESSION['special_community_array'])) ? $_SES
 
 $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
+$topic_name = (isset($_SESSION['topic_name'])) ? $_SESSION['topic_name'] : '';
+
 $post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 
 $type_of_resource_requested = (isset($_SESSION['type_of_resource_requested'])) ? $_SESSION['type_of_resource_requested'] : '';
