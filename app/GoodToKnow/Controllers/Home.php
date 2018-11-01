@@ -25,6 +25,9 @@ class Home
         global $community_id;               // int value
         global $topic_id;                   // int value
         global $post_id;                    // int value
+        global $post_name;
+        global $topic_name;
+        global $community_name;
         global $special_community_array;    // array (key: id of community, value: name of community)
         global $special_topic_array;        // array of topics for current community.
         global $special_post_array;         // array of posts for current topic
