@@ -18,7 +18,9 @@
 <form action="/ax1/MessageTheAuthorProcessor/page" method="post">
     <h2><a href="https://github.github.com/gfm/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>You can use markdown and UTF-8 characters.</p>
+    <p>
+        <small>* Markdown and UTF-8 characters are OK!</small>
+    </p>
     <section>
         <p>
             <label for="textarea"></label>

@@ -54,7 +54,7 @@ class MessageTheAuthor
 
         $pre_populate = "Dear {$author_username},
 
-This is a comment regarding your \"{$post_name}\" post in the {$topic_name} topic of the {$community_name} community.
+This message is in regards to your \"{$post_name}\" post in the \"{$topic_name}\" topic of the \"{$community_name}\" community.
 
 Sincerely,
 
