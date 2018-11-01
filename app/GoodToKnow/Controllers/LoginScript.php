@@ -87,6 +87,7 @@ class LoginScript
          * Put user's data in session.
          */
         $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_username'] = $user->username;
         $_SESSION['role'] = $user->role;
         $_SESSION['community_id'] = $user->id_of_default_community;
         $_SESSION['is_suspended'] = $user->is_suspended;
