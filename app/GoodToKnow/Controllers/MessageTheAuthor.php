@@ -52,15 +52,17 @@ class MessageTheAuthor
          */
         $html_title = 'Message the Author';
 
-        $pre_populate = "Dear {$author_username},
+        $pre_populate = <<<ROI
+Dear {$author_username},
 
-This message is in regards to your \"{$post_name}\" post in the \"{$topic_name}\" topic of the \"{$community_name}\" community.
+This message is in regards to your "{$post_name}" post in the "{$topic_name}" topic of the "{$community_name}" community.
 
 Sincerely,
 
 {$user_username}
 
-";
+
+ROI;
 
         require VIEWS . DIRSEP . 'messagetheauthor.php';
     }
