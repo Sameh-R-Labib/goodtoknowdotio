@@ -36,6 +36,11 @@ class MessageTheAuthor
 
         global $is_logged_in;
         global $sessionMessage;
+        global $author_username;
+        global $post_name;
+        global $topic_name;
+        global $community_name;
+        global $user_username;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
@@ -46,6 +51,16 @@ class MessageTheAuthor
          * Display the editor interface.
          */
         $html_title = 'Message the Author';
+
+        $pre_populate = "Dear {$author_username},
+
+This is a comment regarding your \"{$post_name}\" post in the {$topic_name} topic of the {$community_name} community.
+
+Sincerely,
+
+{$user_username}
+
+";
 
         require VIEWS . DIRSEP . 'messagetheauthor.php';
     }
