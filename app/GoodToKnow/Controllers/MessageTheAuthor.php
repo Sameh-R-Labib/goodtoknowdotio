@@ -33,5 +33,20 @@ class MessageTheAuthor
          * statement: "You can use markdown and UTF-8
          * characters."
          */
+
+        global $is_logged_in;
+        global $sessionMessage;
+
+        if (!$is_logged_in) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Display the editor interface.
+         */
+        $html_title = 'Message the Author';
+
+        require VIEWS . DIRSEP . 'messagetheauthor.php';
     }
 }
