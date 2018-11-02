@@ -22,7 +22,7 @@
         <small>* Markdown and UTF-8 characters are OK!</small>
     </p>
     <p>
-        <small>* Warning: Do NOT write more than 1500 bytes. A UTF-8 characters may count as more than a byte.</small>
+        <small>⚠: Do NOT write &gt;1500 bytes. A UTF-8 characters may count as &gt;1 byte.</small>
     </p>
     <section>
         <p>
