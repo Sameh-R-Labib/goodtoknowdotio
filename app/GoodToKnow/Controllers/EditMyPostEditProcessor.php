@@ -36,8 +36,7 @@ class EditMyPostEditProcessor
          * $_POST['markdown']
          */
         $markdown = (isset($_POST['markdown'])) ? $_POST['markdown'] : '';
-        $markdown = trim($markdown);
-        if (!isset($_POST['markdown']) || $markdown === '') {
+        if (!isset($_POST['markdown']) || trim($markdown) === '') {
             $sessionMessage .= " The edited file was not saved because either the submitted form
             had no markdown field or the markdown field was empty. ";
             $_SESSION['message'] = $sessionMessage;
