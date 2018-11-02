@@ -23,6 +23,7 @@ input, textarea, select, button {
     display: inline-block;
     text-align: start;
     margin: 0em;
+    margin-top: 1em;
     font: 400 19px system-ui;
     font-style: normal;
     font-variant-ligatures: normal;
