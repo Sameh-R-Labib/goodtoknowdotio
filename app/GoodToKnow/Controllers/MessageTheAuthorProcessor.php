@@ -27,6 +27,24 @@ class MessageTheAuthorProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Verify that a string representing
+         * the edited post was submitted.
+         * $_POST['markdown']
+         */
+        $markdown = (isset($_POST['markdown'])) ? $_POST['markdown'] : '';
+        if (!isset($_POST['markdown']) || trim($markdown) === '') {
+            $sessionMessage .= " The message you submitted was not saved because nothing was submitted. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        if (strlen($markdown) > 1500) {
+            $sessionMessage .= " The message you submitted was not saved because the number of characters
+            exceeded the maximum allowed for a post. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
 
     }
 }

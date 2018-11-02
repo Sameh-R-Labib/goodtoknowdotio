@@ -37,14 +37,12 @@ class EditMyPostEditProcessor
          */
         $markdown = (isset($_POST['markdown'])) ? $_POST['markdown'] : '';
         if (!isset($_POST['markdown']) || trim($markdown) === '') {
-            $sessionMessage .= " The edited file was not saved because either the submitted form
-            had no markdown field or the markdown field was empty. ";
+            $sessionMessage .= " The edited file was not saved because nothing was submitted. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
         if (strlen($markdown) > 38000) {
-            $sessionMessage .= " The edited file you submitted was not saved because the number of characters
-            exceeded the maximum allowed for a post. ";
+            $sessionMessage .= " The edited file you submitted was not saved because there were too many characters. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
