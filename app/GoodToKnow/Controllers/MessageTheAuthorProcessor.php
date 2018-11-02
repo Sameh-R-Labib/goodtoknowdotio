@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Message;
+use GoodToKnow\Models\MessageToUser;
 
 
 class MessageTheAuthorProcessor
@@ -26,6 +27,7 @@ class MessageTheAuthorProcessor
         global $sessionMessage;
         global $user_id;
         global $author_id;
+        global $author_username;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
@@ -97,6 +99,27 @@ class MessageTheAuthorProcessor
          *  - message_id
          *  - user_id
          */
-        $message_to_user_array = ['message_id', 'user_id'];
+        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
+
+        /**
+         * Call array_to_object($array) to create the object in memory.
+         */
+        $message_to_user_object = MessageToUser::array_to_object($message_to_user_array);
+
+        /**
+         * Save that object to the database using save().
+         */
+        $result = $message_to_user_object->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= " Unexpected save() was unable to save a message_to_user record for the message. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Declare success.
+         */
+        $_SESSION['message'] = " Your message to {$author_username} was sent successfully! ";
+        redirect_to("/ax1/Home/page");
     }
 }
