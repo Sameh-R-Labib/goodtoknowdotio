@@ -15,7 +15,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/MessageTheAuthorProcessor/page" method="post">
+<form action="/ax1/WriteToAdminProcessor/page" method="post">
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
