@@ -36,7 +36,7 @@ class MessageTheAuthorProcessor
 
         /**
          * Verify that a string representing
-         * the edited post was submitted.
+         * the message was submitted.
          * $_POST['markdown']
          */
         $markdown = (isset($_POST['markdown'])) ? $_POST['markdown'] : '';
