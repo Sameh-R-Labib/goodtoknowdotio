@@ -103,6 +103,7 @@ class LoginScript
          */
         $community_object = Community::find_by_id($db, $sessionMessage, $user->id_of_default_community);
         $_SESSION['community_name'] = $community_object->community_name;
+        $_SESSION['community_description'] = $community_object->community_description;
 
         /**
          * I need to use a method of UserToCommunity to

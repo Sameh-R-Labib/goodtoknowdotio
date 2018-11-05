@@ -28,6 +28,7 @@ class Home
         global $post_name;
         global $topic_name;
         global $community_name;
+        global $community_description;
         global $special_community_array;    // array (key: id of community, value: name of community)
         global $special_topic_array;        // array of topics for current community.
         global $special_post_array;         // array of posts for current topic
@@ -138,6 +139,10 @@ class Home
         }
 
         $html_title = 'GoodToKnow.io';
+
+        if ($type_of_resource_requested === 'community') {
+            $sessionMessage .= ' ' . $community_description . ' ';
+        }
 
         require VIEWS . DIRSEP . 'home.php';
     }

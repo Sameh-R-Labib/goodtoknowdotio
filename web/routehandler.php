@@ -72,6 +72,8 @@ $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] :
 
 $community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
 
+$community_description = (isset($_SESSION['community_description'])) ? $_SESSION['community_description'] : '';
+
 /**
  * communities for this user
  *
