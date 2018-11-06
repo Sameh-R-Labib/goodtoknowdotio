@@ -202,6 +202,7 @@ class SetHomePageCommunityTopicPost
             // Second get and store the topic_name
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
             $_SESSION['topic_name'] = $topic_object->topic_name;
+            $_SESSION['topic_description'] = $topic_object->topic_description;
             // Then do the rest.
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
@@ -215,6 +216,7 @@ class SetHomePageCommunityTopicPost
             // Second get and store the topic_name
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
             $_SESSION['topic_name'] = $topic_object->topic_name;
+            $_SESSION['topic_description'] = $topic_object->topic_description;
             // Third store the post_name
             $_SESSION['post_name'] = $post_object->title;
             // Then do the rest.

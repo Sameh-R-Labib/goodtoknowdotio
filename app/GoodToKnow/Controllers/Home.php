@@ -27,6 +27,7 @@ class Home
         global $post_id;                    // int value
         global $post_name;
         global $topic_name;
+        global $topic_description;
         global $community_name;
         global $community_description;
         global $special_community_array;    // array (key: id of community, value: name of community)
@@ -142,6 +143,8 @@ class Home
 
         if ($type_of_resource_requested === 'community') {
             $sessionMessage .= ' ' . $community_description . ' ';
+        } elseif ($type_of_resource_requested === 'topic') {
+            $sessionMessage .= ' ' . $topic_description . ' ';
         }
 
         require VIEWS . DIRSEP . 'home.php';
