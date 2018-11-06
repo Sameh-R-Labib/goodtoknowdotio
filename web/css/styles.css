@@ -27,6 +27,7 @@ a:active {
 p {
     font-size: 1.25em;
     margin-left: 23px;
+    margin-right: 23px;
 }
 
 #maincontent p {
