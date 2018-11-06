@@ -221,8 +221,8 @@ class SetHomePageCommunityTopicPost
             $_SESSION['post_name'] = $post_object->title;
             $epoch_time = (int)$post_object->created;
             $publish_date = date("Y-m-d H:i:s", $epoch_time);
-            $_SESSION['post_full_name'] = $post_object->title . ' ' . $post_object->extensionfortitle . ', published: ' .
-                $publish_date;
+            $_SESSION['post_full_name'] = $post_object->title . ' ' . $post_object->extensionfortitle . ' (published: ' .
+                $publish_date . ' America/New_York)';
             // Then do the rest.
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
