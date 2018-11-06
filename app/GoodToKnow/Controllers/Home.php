@@ -142,9 +142,13 @@ class Home
         $html_title = 'GoodToKnow.io';
 
         if ($type_of_resource_requested === 'community') {
-            $sessionMessage .= ' ' . $community_description . ' ';
+            if (!empty(trim($community_description))) {
+                $sessionMessage .= ' ' . $community_description . ' ';
+            }
         } elseif ($type_of_resource_requested === 'topic') {
-            $sessionMessage .= ' ' . $topic_description . ' ';
+            if (!empty(trim($topic_description))) {
+                $sessionMessage .= ' ' . $topic_description . ' ';
+            }
         }
 
         require VIEWS . DIRSEP . 'home.php';
