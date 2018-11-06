@@ -26,6 +26,7 @@ class Home
         global $topic_id;                   // int value
         global $post_id;                    // int value
         global $post_name;
+        global $post_full_name;
         global $topic_name;
         global $topic_description;
         global $community_name;
@@ -148,6 +149,10 @@ class Home
         } elseif ($type_of_resource_requested === 'topic') {
             if (!empty(trim($topic_description))) {
                 $sessionMessage .= ' ' . $topic_description . ' ';
+            }
+        } else {
+            if (!empty(trim($post_full_name))) {
+                $sessionMessage .= ' ' . $post_full_name . ' ';
             }
         }
 
