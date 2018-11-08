@@ -10,6 +10,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Message;
+use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\User;
 
 
 class ByUsernameMessageSave
@@ -99,6 +101,18 @@ class ByUsernameMessageSave
          * know the username. It is stored in
          * $saved_str01.
          */
+        if (empty($saved_str01)) {
+            $sessionMessage .= " Unexpected no target username found in the session. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $target_user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+        if (!$target_user_object) {
+            $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Create an associative array containing the attribute names and values.
@@ -108,7 +122,7 @@ class ByUsernameMessageSave
          *  - message_id
          *  - user_id
          */
-        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
+        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $target_user_object->id];
 
         /**
          * Call array_to_object($array) to create the object in memory.
@@ -124,5 +138,11 @@ class ByUsernameMessageSave
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Declare success.
+         */
+        $_SESSION['message'] = " Your message to {$saved_str01} was sent successfully! ";
+        redirect_to("/ax1/Home/page");
     }
 }
