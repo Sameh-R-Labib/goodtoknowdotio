@@ -37,7 +37,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h3>User Scripts</h3>
+    <h2>User Scripts</h2>
     <ul>
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>

@@ -37,7 +37,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h3>Admin Scripts</h3>
+    <h2>Admin Scripts</h2>
     <ul>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
