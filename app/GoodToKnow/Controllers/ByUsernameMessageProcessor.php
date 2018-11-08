@@ -20,7 +20,8 @@ class ByUsernameMessageProcessor
          * Basically what needs to get accomplished here is
          * to validate the submitted username and present
          * the next form (which is for entering the text of
-         * the message.)
+         * the message.) We MUST also save the username in
+         * the session.
          */
 
         global $is_logged_in;
@@ -49,6 +50,20 @@ class ByUsernameMessageProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        $is_username = self::is_username_in_our_system($db, $sessionMessage, $submitted_username);
+
+        if (!$is_username) {
+            $sessionMessage .= " I was not able to get a valid username from you. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $_SESSION['saved_str01'] = $submitted_username;
+
+        $html_title = "Enter the Message for {$submitted_username}";
+
+        require VIEWS . DIRSEP . 'byusernamemprocessor.php';
     }
 
     // Helpers for the page() method
