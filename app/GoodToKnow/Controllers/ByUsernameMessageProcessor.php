@@ -53,6 +53,12 @@ class ByUsernameMessageProcessor
 
     // Helpers for the page() method
 
+    /**
+     * @param \mysqli $db
+     * @param string $message
+     * @param string $username
+     * @return bool
+     */
     public static function is_username_in_our_system(\mysqli $db, string &$message, string &$username)
     {
         /**
