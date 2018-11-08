@@ -13,6 +13,9 @@ class ByUsernameMessageSave
 {
     public function page()
     {
-
+        /**
+         * Before I get started:
+         *   Know that $_SESSION['saved_str01'] = $submitted_username.
+         */
     }
 }
