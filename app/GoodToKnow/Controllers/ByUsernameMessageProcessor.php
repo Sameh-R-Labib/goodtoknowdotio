@@ -13,6 +13,42 @@ class ByUsernameMessageProcessor
 {
     public function page()
     {
+        /**
+         * Basically what needs to get accomplished here is
+         * to validate the submitted username and present
+         * the next form (which is for entering the text of
+         * the message.)
+         */
 
+        /**
+         * The submitted form field is $_POST['username']
+         */
+        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+
+        /**
+         * Now we know that $submitted_username is of type string and is set to a particular value.
+         */
+
+        /**
+         * Make sure $submitted_username is valid.
+         */
+        $db = db_connect($sessionMessage);
+
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+    }
+
+    // Helpers for the page() method
+
+    public static function is_username_in_our_system(\mysqli $db, string &$message, string &$username)
+    {
+        /**
+         * Returns true or false.
+         *
+         * First makes sure it fits the pattern of a username.
+         * Then, makes sure the username exists in the database.
+         */
     }
 }
