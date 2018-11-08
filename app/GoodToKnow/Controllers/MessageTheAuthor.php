@@ -42,7 +42,7 @@ class MessageTheAuthor
         global $community_name;
         global $user_username;
 
-        if (!$is_logged_in) {
+        if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

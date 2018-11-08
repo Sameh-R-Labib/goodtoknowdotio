@@ -16,7 +16,7 @@ class EditMyPostProcessor
         global $is_logged_in;
         global $sessionMessage;
 
-        if (!$is_logged_in) {
+        if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

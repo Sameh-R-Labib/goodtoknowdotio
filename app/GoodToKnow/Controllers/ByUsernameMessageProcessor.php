@@ -20,6 +20,14 @@ class ByUsernameMessageProcessor
          * the message.)
          */
 
+        global $is_logged_in;
+        global $sessionMessage;
+
+        if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * The submitted form field is $_POST['username']
          */
@@ -50,5 +58,21 @@ class ByUsernameMessageProcessor
          * First makes sure it fits the pattern of a username.
          * Then, makes sure the username exists in the database.
          */
+
+        $username = trim($username);
+
+        if (empty($username)) {
+            $message .= " The username field was empty. ";
+            return false;
+        }
+
+        $words = explode('_', $username);
+
+        if (count($words) != 2) {
+            $message .= " The username must have two parts separated by an underscore character. ";
+            return false;
+        }
+
+
     }
 }

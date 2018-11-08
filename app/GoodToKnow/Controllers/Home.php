@@ -49,7 +49,7 @@ class Home
         global $saved_int01;
         global $saved_int02;
 
-        if (!$is_logged_in) {
+        if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
         }

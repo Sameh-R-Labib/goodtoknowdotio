@@ -25,7 +25,7 @@ class EditMyPostEditProcessor
         global $saved_str01;                // path for markdown file
         global $saved_str02;                // path for html file
 
-        if (!$is_logged_in) {
+        if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

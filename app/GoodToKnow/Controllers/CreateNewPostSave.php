@@ -25,7 +25,7 @@ class CreateNewPostSave
         global $saved_int01;                // The topic id
         global $saved_int02;                // The sequence number
 
-        if (!$is_logged_in) {
+        if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
