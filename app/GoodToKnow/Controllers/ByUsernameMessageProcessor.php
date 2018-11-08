@@ -26,6 +26,7 @@ class ByUsernameMessageProcessor
 
         global $is_logged_in;
         global $sessionMessage;
+        global $user_username;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
@@ -60,6 +61,18 @@ class ByUsernameMessageProcessor
         }
 
         $_SESSION['saved_str01'] = $submitted_username;
+
+        $pre_populate = <<<ROI
+Dear {$submitted_username},
+
+I have something I want to tell you.
+
+Sincerely,
+
+{$user_username}
+
+
+ROI;
 
         $html_title = "Enter the Message for {$submitted_username}";
 
