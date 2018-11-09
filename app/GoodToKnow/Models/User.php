@@ -154,7 +154,7 @@ class User extends GoodObject
          * You give it a username and it returns the
          * corresponding User object or false.
          */
-        $sql = 'SELECT username FROM `users`
+        $sql = 'SELECT * FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
