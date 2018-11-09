@@ -173,7 +173,7 @@ class LoginScript
         /**
          * Report success
          */
-        $sessionMessage .= " Welcome back! The description for the {$community_object->community_name} community is: ";
+        $sessionMessage .= " Welcome back! ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
