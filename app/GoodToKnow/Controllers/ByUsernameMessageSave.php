@@ -32,6 +32,7 @@ class ByUsernameMessageSave
         global $is_logged_in;
         global $sessionMessage;
         global $user_id;        // logged in user's ID number
+        global $saved_str01;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
