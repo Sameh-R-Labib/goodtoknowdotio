@@ -102,6 +102,19 @@ class ByUsernameMessageSave
          * know the username. It is stored in
          * $saved_str01.
          */
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$saved_str01: </p>\n<pre>";
+        var_dump($saved_str01);
+        die("<br><p>End debug</p>\n");
+
+
+
+
         if (empty($saved_str01)) {
             $sessionMessage .= " Unexpected no target username found in the session. ";
             $_SESSION['message'] = $sessionMessage;
