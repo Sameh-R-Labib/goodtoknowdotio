@@ -145,19 +145,19 @@ class Home
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($community_description))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage = ' Community Description: ' . $community_description . ' ';
+                    $sessionMessage = ' ' . $community_description . ' ';
                 }
             }
         } elseif ($type_of_resource_requested === 'topic') {
             if (!empty(trim($topic_description))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage = ' Topic Description: ' . $topic_description . ' ';
+                    $sessionMessage = ' ' . $topic_description . ' ';
                 }
             }
         } else {
             if (!empty(trim($post_full_name))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage = ' Post Description: ' . $post_full_name . ' ';
+                    $sessionMessage = ' ' . $post_full_name . ' ';
                 }
             }
         }
