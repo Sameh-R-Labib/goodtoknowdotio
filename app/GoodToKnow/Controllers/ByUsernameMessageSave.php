@@ -115,22 +115,6 @@ class ByUsernameMessageSave
             redirect_to("/ax1/Home/page");
         }
 
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$target_user_object: </p>\n<pre>";
-        var_dump($target_user_object);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$sessionMessage: </p>\n<pre>";
-        print_r($sessionMessage);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
-
-
         /**
          * Create an associative array containing the attribute names and values.
          *   WARNING: Do Not include id attribute. Do Include all other attributes and assign them values.
