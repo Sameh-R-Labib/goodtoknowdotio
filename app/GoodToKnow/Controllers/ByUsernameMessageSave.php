@@ -102,19 +102,6 @@ class ByUsernameMessageSave
          * know the username. It is stored in
          * $saved_str01.
          */
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$saved_str01: </p>\n<pre>";
-        var_dump($saved_str01);
-        die("<br><p>End debug</p>\n");
-
-
-
-
         if (empty($saved_str01)) {
             $sessionMessage .= " Unexpected no target username found in the session. ";
             $_SESSION['message'] = $sessionMessage;
@@ -127,6 +114,22 @@ class ByUsernameMessageSave
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$target_user_object: </p>\n<pre>";
+        var_dump($target_user_object);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$sessionMessage: </p>\n<pre>";
+        print_r($sessionMessage);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
 
         /**
          * Create an associative array containing the attribute names and values.
