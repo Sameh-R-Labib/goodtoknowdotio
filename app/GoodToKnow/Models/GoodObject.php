@@ -192,6 +192,12 @@ abstract class GoodObject
         }
     }
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param array $objects_array
+     * @return bool
+     */
     public static function insert_multiple_objects(\mysqli $db, string &$error, array $objects_array)
     {
         /**
@@ -209,9 +215,23 @@ abstract class GoodObject
 
         try {
             /**
-             * Loop over $objects_array in order
-             * for us to generate the rest of the sql
+             * I'm going to use the first object
+             * to get the field names and have
+             * them be in the correct order.
+             *
+             * $attributes is an array whose elements
+             * are the attributes of the first object.
+             * The key is the attribute name and the
+             * value is the attribute value.
              */
+            $attributes = $objects_array[0]->attributes();
+            $array_keys_array = array_keys($attributes);
+            array_shift($array_keys_array);
+            // Now $array_keys_array contains the field names. And they are in correct order.
+
+            $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ";
+            $sql .= static::value_sets_sql_string($objects_array);
+
         } catch (\Exception $e) {
             $error .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
@@ -219,6 +239,26 @@ abstract class GoodObject
 
 
         return true;
+    }
+
+    /**
+     * @param array $objects_array
+     * @return string
+     */
+    public static function value_sets_sql_string(array $objects_array)
+    {
+        /**
+         * Takes an array of objects and forms
+         * the sql values string for a multi object
+         * insert sql statement.
+         */
+        $sql = '';
+        $array_key_last = count($objects_array) - 1;
+        foreach ($objects_array as $key => $object) {
+            $is_last = ($key === $array_key_last) ? true : false;
+            $sql .= static::value_sql_for_object($object, $is_last);
+        }
+        return $sql;
     }
 
     /**
