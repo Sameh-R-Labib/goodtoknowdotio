@@ -192,6 +192,35 @@ abstract class GoodObject
         }
     }
 
+    public static function insert_multiple_objects(\mysqli $db, string &$error, array $objects_array)
+    {
+        /**
+         * Unlike create() this function does NOT add id field values to the objects.
+         * It is assumed that the objects have unassigned id fields and do NOT exist in the database.
+         * The function returns true on success and false if no objects were inserted.
+         */
+        $num_affected_rows = 0;
+        $sql = 'INSERT INTO ' . static::$table_name;
+
+        if (empty($objects_array)) {
+            $error .= ' The function insert_multiple_objects did NOT receive any objects to insert. ';
+            return false;
+        }
+
+        try {
+            /**
+             * Loop over $objects_array in order
+             * for us to generate the rest of the sql
+             */
+        } catch (\Exception $e) {
+            $error .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            return false;
+        }
+
+
+        return true;
+    }
+
     /**
      * This function takes a database object and saves its
      * data to the database.
