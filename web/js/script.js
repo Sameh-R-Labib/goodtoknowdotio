@@ -1,3 +1,1 @@
-/*
-MIT Licensed Open Source Code
-*/
+
