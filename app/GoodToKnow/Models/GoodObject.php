@@ -193,6 +193,10 @@ abstract class GoodObject
     }
 
     /**
+     * WARNING: This method will fail if the objects you are trying
+     * to insert in the table do not have ALL their attributes set
+     * to VALID values.
+     *
      * @param \mysqli $db
      * @param string $error
      * @param array $objects_array
@@ -232,13 +236,26 @@ abstract class GoodObject
             $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ";
             $sql .= static::value_sets_sql_string($db, $objects_array);
 
+            $db->query($sql);
+
+            $query_error = $db->error;
+            if (!empty($query_error)) {
+                $error .= ' The insert failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                return false;
+            }
+
+            $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
             $error .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
         }
 
-
-        return true;
+        if ($num_affected_rows) {
+            return true;
+        } else {
+            $error .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
+            return false;
+        }
     }
 
     /**
