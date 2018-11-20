@@ -230,7 +230,7 @@ abstract class GoodObject
             // Now $array_keys_array contains the field names. And they are in correct order.
 
             $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ";
-            $sql .= static::value_sets_sql_string($objects_array);
+            $sql .= static::value_sets_sql_string($db, $objects_array);
 
         } catch (\Exception $e) {
             $error .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
@@ -242,10 +242,11 @@ abstract class GoodObject
     }
 
     /**
+     * @param \mysqli $db
      * @param array $objects_array
      * @return string
      */
-    public static function value_sets_sql_string(array $objects_array)
+    public static function value_sets_sql_string(\mysqli $db, array $objects_array)
     {
         /**
          * Takes an array of objects and forms
@@ -256,8 +257,34 @@ abstract class GoodObject
         $array_key_last = count($objects_array) - 1;
         foreach ($objects_array as $key => $object) {
             $is_last = ($key === $array_key_last) ? true : false;
-            $sql .= static::value_sql_for_object($object, $is_last);
+            $sql .= static::value_sql_for_object($db, $object, $is_last);
         }
+        return $sql;
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param object $object
+     * @param bool $is_last
+     * @return string
+     */
+    public static function value_sql_for_object(\mysqli $db, object $object, bool $is_last)
+    {
+        /**
+         * This function helps function value_sets_sql_string
+         * in that it produces the value sql for an object.
+         * Remember we're doing all this to put together
+         * a multi insert sql statement.
+         */
+        $attributes = $object->sanitized_attributes($db);
+
+        // Pop off the first element
+        $array_values_array = array_values($attributes);
+        array_shift($array_values_array);
+
+        $sql = "('" . join("', '", $array_values_array) . "')";
+        if (!$is_last) $sql .= ", ";
+
         return $sql;
     }
 
