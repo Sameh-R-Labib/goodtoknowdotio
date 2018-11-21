@@ -326,6 +326,11 @@ abstract class GoodObject
 
     // Read
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @return bool|mixed
+     */
     public static function count_all(\mysqli $db, string &$error)
     {
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;

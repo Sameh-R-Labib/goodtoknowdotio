@@ -10,6 +10,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Message;
+use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\User;
 
 
 class BroadcastMsgProcessor
@@ -79,6 +81,44 @@ class BroadcastMsgProcessor
          */
 
         // Use that function which gets all the User objects.
+        $array_of_user_objects = User::find_all($db, $sessionMessage);
+        if (!$array_of_user_objects) {
+            $sessionMessage .= " Unexpected User::find_all() was unable to find any users. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
+        /**
+         * Iterate over the array of user objects
+         * to build the array of MessageToUser objects.
+         * Each MessageToUser object will hold a user id
+         * and the id of the message we created above.
+         *
+         * The id of the message crated above is found
+         * in $message_object->id.
+         */
+        //$message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
+        $array_of_messagetouser_objects = [];
+        foreach ($array_of_user_objects as $user_object) {
+            $messagetouser_object_as_array = ['message_id' => $message_object->id, 'user_id' => $user_object->id];
+            $array_of_messagetouser_objects[] = MessageToUser::array_to_object($messagetouser_object_as_array);
+        }
+
+        /**
+         * Save all these MessageToUser objects in the database.
+         */
+        $result = MessageToUser::insert_multiple_objects($db, $sessionMessage, $array_of_messagetouser_objects);
+        if (!$result) {
+            $sessionMessage .= " Unexpected MessageToUser::insert_multiple_objects was unable to save message_to_user
+             records for the message and all users. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Declare success.
+         */
+        $_SESSION['message'] = " Your message to all users was sent successfully! ";
+        redirect_to("/ax1/Home/page");
     }
 }
