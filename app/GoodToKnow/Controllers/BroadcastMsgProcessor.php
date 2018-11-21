@@ -73,6 +73,12 @@ class BroadcastMsgProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Create an array of MessageToUser objects
+         * One for each user in the system.
+         */
+
+        // Use that function which gets all the User objects.
 
     }
 }
