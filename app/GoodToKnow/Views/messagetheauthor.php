@@ -19,8 +19,8 @@
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚩: Markdown &amp; UTF-8 characters are OK! 🛑: Do NOT write &gt;1500 bytes. A UTF-8 characters may count
-            as &gt;1 byte.
+        <small>🚩: Markdown &amp; UTF-8 characters are OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes. One UTF-8
+            character may count as &gt;1 byte.
         </small>
     </p>
     <section>
