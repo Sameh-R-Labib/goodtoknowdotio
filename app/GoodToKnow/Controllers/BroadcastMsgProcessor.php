@@ -59,6 +59,24 @@ class BroadcastMsgProcessor
         $parsedown_object->setSafeMode(true);
         $html = $parsedown_object->text($markdown);
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$user_id: </p>\n<pre>";
+        var_dump($user_id);
+        echo "</pre>\n";
+        echo "<br><p>Echo \$html: </p>\n<pre>";
+        echo htmlentities($html);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$html: </p>\n<pre>";
+        print_r($html);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
         $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
 
         $message_object = Message::array_to_object($message_array);
