@@ -61,20 +61,8 @@ class BroadcastMsgProcessor
 
 
         /**
-         * Debug Code
+         * Good Code So Far
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$user_id: </p>\n<pre>";
-        var_dump($user_id);
-        echo "</pre>\n";
-        echo "<br><p>Echo \$html: </p>\n<pre>";
-        echo htmlentities($html);
-        echo "</pre>\n";
-        echo "<br><p>Print_r \$html: </p>\n<pre>";
-        print_r($html);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
 
 
         $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
@@ -92,6 +80,19 @@ class BroadcastMsgProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$message_object: </p>\n<pre>";
+        var_dump($message_object);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
 
         /**
          * Create an array of MessageToUser objects
