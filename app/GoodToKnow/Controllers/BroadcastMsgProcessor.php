@@ -108,6 +108,17 @@ class BroadcastMsgProcessor
             $array_of_messagetouser_objects[] = MessageToUser::array_to_object($messagetouser_object_as_array);
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$array_of_messagetouser_objects: </p>\n<pre>";
+        var_dump($array_of_messagetouser_objects);
+        die("<br><p>End debug</p>\n");
+
+
+
         /**
          * Save all these MessageToUser objects in the database.
          */
