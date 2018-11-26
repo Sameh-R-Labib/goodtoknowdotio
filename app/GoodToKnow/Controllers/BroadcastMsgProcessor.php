@@ -59,12 +59,6 @@ class BroadcastMsgProcessor
         $parsedown_object->setSafeMode(true);
         $html = $parsedown_object->text($markdown);
 
-
-        /**
-         * Good Code So Far
-         */
-
-
         $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
 
         $message_object = Message::array_to_object($message_array);
@@ -83,23 +77,14 @@ class BroadcastMsgProcessor
 
 
         /**
-         * Debug Code
+         * Good Code So Far
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$message_object: </p>\n<pre>";
-        var_dump($message_object);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
-
 
         /**
          * Create an array of MessageToUser objects
          * One for each user in the system.
          */
 
-        // Use that function which gets all the User objects.
         $array_of_user_objects = User::find_all($db, $sessionMessage);
         if (!$array_of_user_objects) {
             $sessionMessage .= " Unexpected User::find_all() was unable to find any users. ";
