@@ -75,11 +75,6 @@ class BroadcastMsgProcessor
             redirect_to("/ax1/Home/page");
         }
 
-
-        /**
-         * Good Code So Far
-         */
-
         /**
          * Create an array of MessageToUser objects
          * One for each user in the system.
@@ -110,13 +105,8 @@ class BroadcastMsgProcessor
 
 
         /**
-         * Debug Code
+         * Good Code So Far
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$array_of_messagetouser_objects: </p>\n<pre>";
-        var_dump($array_of_messagetouser_objects);
-        die("<br><p>End debug</p>\n");
-
 
 
         /**
