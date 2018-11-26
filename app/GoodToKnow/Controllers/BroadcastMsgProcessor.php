@@ -103,19 +103,13 @@ class BroadcastMsgProcessor
             $array_of_messagetouser_objects[] = MessageToUser::array_to_object($messagetouser_object_as_array);
         }
 
-
-        /**
-         * Good Code So Far
-         */
-
-
         /**
          * Save all these MessageToUser objects in the database.
          */
         $result = MessageToUser::insert_multiple_objects($db, $sessionMessage, $array_of_messagetouser_objects);
         if (!$result) {
-            $sessionMessage .= " Unexpected MessageToUser::insert_multiple_objects was unable to save message_to_user
-             records for the message and all users. ";
+            $sessionMessage .= " In BroadcastMsgProcessor encountered unexpected the fact that
+            MessageToUser::insert_multiple_objects was unable to save message_to_user records for the message and all users. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
