@@ -25,7 +25,7 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" name="markdown" rows="27" cols="79"
+            <textarea id="textarea" name="markdown" rows="27" cols="72"
                       wrap="soft"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $pre_populate; ?></textarea>
         </p>
