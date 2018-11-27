@@ -19,14 +19,13 @@
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚩: Markdown &amp; UTF-8 characters are OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes. One UTF-8
-            character may count as &gt;1 byte.
+        <small>🚩: Markdown &amp; UTF-8 characters OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes.
         </small>
     </p>
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" name="markdown" rows="26" cols="72"
+            <textarea id="textarea" name="markdown" rows="26" cols="71"
                       wrap="soft"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $pre_populate; ?></textarea>
         </p>
