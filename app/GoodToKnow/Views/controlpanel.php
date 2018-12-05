@@ -53,7 +53,7 @@
         <img src="/edward_snowden.jpg"><img src="/andreas_antonopoulos.jpg"><img src="/richard_d_wolff.jpg">
         <img src="/stacey_abrams.jpg" height="360" width="641"><img src="/AbbyMartinVenezuela.jpg"><img
                 src="/burnie_sanders.jpg">
-        <img src="/chris_hedges.jpg"></p>
+        <img src="/chris_hedges.jpg"><img src="/usattack.png"></p>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
