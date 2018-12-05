@@ -50,7 +50,7 @@
                     src="//static.fsf.org/fsforg/img/normal-image.png" alt="Support freedom"
                     title="Help protect your freedom, join the Free Software Foundation"/></a><img
                 src="/0_eT5LwH4rOihgpThm.jpeg"><img src="/Aaron-Swartz.jpg"><img src="/Ross-Ulbricht2.jpg">
-        <img src="/edward_snowden.jpg"><img src="/andreas_antonopoulos.jpg"></p>
+        <img src="/edward_snowden.jpg"><img src="/andreas_antonopoulos.jpg"><img src="/richard_d_wolff.jpg"></p>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
