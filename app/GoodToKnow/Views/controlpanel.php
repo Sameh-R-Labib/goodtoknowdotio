@@ -46,11 +46,9 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
-    <script type="text/javascript">
-        this.fsf_widget_size = "normal";
-        this.fsf_associate_id = "2442";
-    </script>
-    <script type="text/javascript" src="http://www.fsf.org/graphics/widget/global/widget.js"></script>
+    <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442"><img
+                src="//static.fsf.org/fsforg/img/normal-image.png" alt="Support freedom"
+                title="Help protect your freedom, join the Free Software Foundation"/></a>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
