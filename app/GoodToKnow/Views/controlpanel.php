@@ -46,9 +46,9 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
-    <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442"><img
-                src="//static.fsf.org/fsforg/img/normal-image.png" alt="Support freedom"
-                title="Help protect your freedom, join the Free Software Foundation"/></a>
+    <p><a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442"><img
+                    src="//static.fsf.org/fsforg/img/normal-image.png" alt="Support freedom"
+                    title="Help protect your freedom, join the Free Software Foundation"/></a></p>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
