@@ -46,6 +46,11 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
+    <script type="text/javascript">
+        this.fsf_widget_size = "normal";
+        this.fsf_associate_id = "2442";
+    </script>
+    <script type="text/javascript" src="http://www.fsf.org/graphics/widget/global/widget.js"></script>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
