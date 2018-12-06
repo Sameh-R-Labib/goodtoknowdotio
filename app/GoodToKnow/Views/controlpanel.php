@@ -46,20 +46,20 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
-    <p class="aligncenter"><a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
+    <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
             <img alt="Support freedom" src="//static.fsf.org/fsforg/img/normal-image.png"
-                 title="Help protect your freedom, join the Free Software Foundation"/></a></p>
-    <p class="aligncenter"><img alt="Richard M. Stallman and Julian Assange" src="/0_eT5LwH4rOihgpThm.jpeg"></p>
-    <p class="aligncenter"><img alt="Aaron Swartz" src="/Aaron-Swartz.jpg"></p>
-    <p class="aligncenter"><img alt="Ross Ulbricht" src="/Ross-Ulbricht2.jpg"></p>
-    <p class="aligncenter"><img alt="Edward Snowden" src="/edward_snowden.jpg"></p>
-    <p class="aligncenter"><img alt="Andreas Antonopoulos" src="/andreas_antonopoulos.jpg"></p>
-    <p class="aligncenter"><img alt="Richard D. Wolf" src="/richard_d_wolff.jpg"></p>
-    <p class="aligncenter"><img alt="Stacey Abrams" src="/stacey_abrams.jpg" height="360" width="641"></p>
-    <p class="aligncenter"><img alt="Abby Martin" src="/AbbyMartinVenezuela.jpg"></p>
-    <p class="aligncenter"><img alt="Bernie Sanders" src="/burnie_sanders.jpg"></p>
-    <p class="aligncenter"><img alt="Chris Hedges" src="/chris_hedges.jpg"></p>
-    <p class="aligncenter"><img alt="Film: The Panama Deception" src="/usattack.png"></p>
+                 title="Help protect your freedom, join the Free Software Foundation"/></a>
+    <img alt="Richard M. Stallman and Julian Assange" src="/0_eT5LwH4rOihgpThm.jpeg">
+    <img alt="Aaron Swartz" src="/Aaron-Swartz.jpg">
+    <img alt="Ross Ulbricht" src="/Ross-Ulbricht2.jpg">
+    <img alt="Edward Snowden" src="/edward_snowden.jpg">
+    <img alt="Andreas Antonopoulos" src="/andreas_antonopoulos.jpg">
+    <img alt="Richard D. Wolf" src="/richard_d_wolff.jpg">
+    <img alt="Stacey Abrams" src="/stacey_abrams.jpg" height="360" width="641">
+    <img alt="Abby Martin" src="/AbbyMartinVenezuela.jpg">
+    <img alt="Bernie Sanders" src="/burnie_sanders.jpg">
+    <img alt="Chris Hedges" src="/chris_hedges.jpg">
+    <img alt="Film: The Panama Deception" src="/usattack.png">
 </div>
 <!-- footerbar -->
 <div id="footerbar">
