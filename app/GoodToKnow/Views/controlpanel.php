@@ -59,7 +59,7 @@
     </figure>
     <figure>
         <img class="photo" alt="Aaron Swartz" src="/Aaron-Swartz.jpg">
-        <figcaption>Aaron Swartz (who was crushed by the system)</figcaption>
+        <figcaption>Aaron Swartz (was crushed by our system of government)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Ross Ulbricht" src="/Ross-Ulbricht2.jpg">
@@ -85,15 +85,15 @@
     </figure>
     <figure>
         <img class="photo" alt="Abby Martin" src="/AbbyMartinVenezuela.jpg">
-        <figcaption>Abby Martin (reporter on South American affairs)</figcaption>
+        <figcaption>Abby Martin (reporter who speaks up about US interventionism in South American)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Bernie Sanders" src="/burnie_sanders.jpg">
-        <figcaption>Bernie Sanders (fighting overspending on military)</figcaption>
+        <figcaption>Bernie Sanders (fights war overspending)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Chris Hedges" src="/chris_hedges.jpg">
-        <figcaption>Chris Hedges (Author who speaks against corruption in government)</figcaption>
+        <figcaption>Chris Hedges (book author who speaks against corruption in government)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Film: The Panama Deception" src="/usattack.png">
