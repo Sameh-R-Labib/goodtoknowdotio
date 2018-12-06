@@ -10,7 +10,7 @@ body {
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
-.photo img {
+img.photo {
     display: block;
     margin-left: auto;
     margin-right: auto;
