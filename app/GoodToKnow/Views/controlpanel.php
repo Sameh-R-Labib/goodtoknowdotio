@@ -81,7 +81,7 @@
     </figure>
     <figure>
         <img class="photo" alt="Stacey Abrams" src="/stacey_abrams.jpg" height="360" width="641">
-        <figcaption>Stacey Abrams (should have won the election)</figcaption>
+        <figcaption>Stacey Abrams (represents to me being a victim of voter suppression)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Abby Martin" src="/AbbyMartinVenezuela.jpg">
