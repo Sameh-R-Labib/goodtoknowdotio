@@ -69,7 +69,7 @@
     </figure>
     <figure>
         <img class="photo" alt="Edward Snowden" src="/edward_snowden.jpg">
-        <figcaption>Edward Snowden (living in exile)</figcaption>
+        <figcaption>Edward Snowden (CIA whistle blower living in exile)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Andreas Antonopoulos" src="/andreas_antonopoulos.jpg">
@@ -85,7 +85,7 @@
     </figure>
     <figure>
         <img class="photo" alt="Abby Martin" src="/AbbyMartinVenezuela.jpg">
-        <figcaption>Abby Martin (reporter on south american affairs)</figcaption>
+        <figcaption>Abby Martin (reporter on South American affairs)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Bernie Sanders" src="/burnie_sanders.jpg">
