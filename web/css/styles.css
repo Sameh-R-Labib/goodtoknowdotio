@@ -25,6 +25,10 @@ figure {
     text-align: center;
 }
 
+figcaption {
+    margin-top: -28px;
+}
+
 a {
     text-decoration-line: none;
     color: #0000e8;
