@@ -97,7 +97,8 @@
     </figure>
     <figure>
         <img class="photo" alt="Film: The Panama Deception" src="/usattack.png">
-        <figcaption>Film: The Panama Deception</figcaption>
+        <figcaption>Documentary war film showing actual footage of the Panama invasion called The Panama Deception
+        </figcaption>
     </figure>
 </div>
 <!-- footerbar -->
