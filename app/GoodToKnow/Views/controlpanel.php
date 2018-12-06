@@ -48,12 +48,15 @@
     </ul>
     <p><a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442"><img
                     src="//static.fsf.org/fsforg/img/normal-image.png" alt="Support freedom"
-                    title="Help protect your freedom, join the Free Software Foundation"/></a><img
-                src="/0_eT5LwH4rOihgpThm.jpeg"><img src="/Aaron-Swartz.jpg"><img src="/Ross-Ulbricht2.jpg">
-        <img src="/edward_snowden.jpg"><img src="/andreas_antonopoulos.jpg"><img src="/richard_d_wolff.jpg">
-        <img src="/stacey_abrams.jpg" height="360" width="641"><img src="/AbbyMartinVenezuela.jpg"><img
-                src="/burnie_sanders.jpg">
-        <img src="/chris_hedges.jpg"><img src="/usattack.png"></p>
+                    title="Help protect your freedom, join the Free Software Foundation"/></a></p>
+    <p><img src="/0_eT5LwH4rOihgpThm.jpeg"><img src="/Aaron-Swartz.jpg"><img src="/Ross-Ulbricht2.jpg"></p>
+    <p><img src="/edward_snowden.jpg"></p>
+    <p><img src="/andreas_antonopoulos.jpg"></p>
+    <p><img src="/richard_d_wolff.jpg"></p>
+    <p><img src="/stacey_abrams.jpg" height="360" width="641"><img src="/AbbyMartinVenezuela.jpg"></p>
+    <p><img src="/burnie_sanders.jpg"></p>
+    <p><img src="/chris_hedges.jpg"></p>
+    <p><img src="/usattack.png"></p>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
