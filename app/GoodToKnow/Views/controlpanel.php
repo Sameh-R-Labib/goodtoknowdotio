@@ -46,17 +46,20 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
-    <p><a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442"><img
-                    src="//static.fsf.org/fsforg/img/normal-image.png" alt="Support freedom"
-                    title="Help protect your freedom, join the Free Software Foundation"/></a></p>
-    <p><img src="/0_eT5LwH4rOihgpThm.jpeg"><img src="/Aaron-Swartz.jpg"><img src="/Ross-Ulbricht2.jpg"></p>
-    <p><img src="/edward_snowden.jpg"></p>
-    <p><img src="/andreas_antonopoulos.jpg"></p>
-    <p><img src="/richard_d_wolff.jpg"></p>
-    <p><img src="/stacey_abrams.jpg" height="360" width="641"><img src="/AbbyMartinVenezuela.jpg"></p>
-    <p><img src="/burnie_sanders.jpg"></p>
-    <p><img src="/chris_hedges.jpg"></p>
-    <p><img src="/usattack.png"></p>
+    <p><a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
+            <img alt="Support freedom" src="//static.fsf.org/fsforg/img/normal-image.png"
+                 title="Help protect your freedom, join the Free Software Foundation"/></a></p>
+    <p><img alt="Richard M. Stallman and Julian Assange" src="/0_eT5LwH4rOihgpThm.jpeg"></p>
+    <p><img alt="Aaron Swartz" src="/Aaron-Swartz.jpg"></p>
+    <p><img alt="Ross Ulbricht" src="/Ross-Ulbricht2.jpg"></p>
+    <p><img alt="Edward Snowden" src="/edward_snowden.jpg"></p>
+    <p><img alt="Andreas Antonopoulos" src="/andreas_antonopoulos.jpg"></p>
+    <p><img alt="Richard D. Wolf" src="/richard_d_wolff.jpg"></p>
+    <p><img alt="Stacey Abrams" src="/stacey_abrams.jpg" height="360" width="641"></p>
+    <p><img alt="Abby Martin" src="/AbbyMartinVenezuela.jpg"></p>
+    <p><img alt="Bernie Sanders" src="/burnie_sanders.jpg"></p>
+    <p><img alt="Chris Hedges" src="/chris_hedges.jpg"></p>
+    <p><img alt="Film: The Panama Deception" src="/usattack.png"></p>
 </div>
 <!-- footerbar -->
 <div id="footerbar">
