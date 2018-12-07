@@ -47,8 +47,8 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
-    <p>Our goal when writing a post is to concisely write information which helps the reader wrap their head around the
-        subject matter of the <em>community</em>.</p>
+    <p>When writing a post, our goal is to concisely write information which helps the reader wrap their head around the
+        <em>community's</em> subject matter.</p>
     <figure>
         <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
             <img class="photo" alt="Support freedom" src="//static.fsf.org/fsforg/img/normal-image.png"
