@@ -162,6 +162,8 @@ class Home
             }
         }
 
+        $show_poof = false;
+
         require VIEWS . DIRSEP . 'home.php';
     }
 }
