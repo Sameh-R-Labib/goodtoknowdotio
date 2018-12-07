@@ -53,8 +53,10 @@
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
-    <p align="center" style="font-size: 1em;">Copyright 2018 - Sameh Ramzy Labib</p>
-    <img src="/2000px-GPLv3_Logo.svg.png" height="38" width="76">
+    <p align="center" style="font-size: 1em;">Copyright 2018 - Sameh Ramzy Labib <img src="/2000px-GPLv3_Logo.svg.png"
+                                                                                      height="38" width="76"
+                                                                                      style="float:right;"></p>
+
 </div>
 <script src="/js/script.js"></script>
 </body>
