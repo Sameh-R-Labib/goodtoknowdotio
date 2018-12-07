@@ -26,14 +26,18 @@ class Inbox
         global $type_of_resource_requested;
         global $author_username;
 
-        if (!$is_logged_in) {
+        if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/Home/page");
         }
 
         $html_title = 'Inbox';
 
         $show_poof = true;
+
+        $sessionMessage .= " Older messages are automatically purged over time by the Administrator. You just
+        focus on dealing with what the messages are saying. And, if you need to say something to the user
+        who sent you the message then use the Username Message A User button above. ";
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
