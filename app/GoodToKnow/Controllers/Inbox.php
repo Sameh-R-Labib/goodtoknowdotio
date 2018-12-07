@@ -24,6 +24,7 @@ class Inbox
         global $post_id;
         global $post_name;
         global $type_of_resource_requested;
+        global $author_username;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
