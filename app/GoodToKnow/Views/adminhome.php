@@ -61,7 +61,7 @@
     </figure>
     <figure>
         <img class="photo" alt="Aaron Swartz" src="/Aaron-Swartz.jpg">
-        <figcaption>Aaron Swartz (was crushed by our system of government)</figcaption>
+        <figcaption>Aaron Swartz (was punished for returning knowledge to <em>The People</em>)</figcaption>
     </figure>
     <figure>
         <img class="photo" alt="Ross Ulbricht" src="/Ross-Ulbricht2.jpg">
