@@ -16,6 +16,7 @@ class Inbox
         global $sessionMessage;
         global $is_logged_in;
         global $is_admin;
+        global $special_community_array;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
