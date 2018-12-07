@@ -54,7 +54,7 @@
 <!-- footerbar -->
 <div id="footerbar">
     <p align="center" style="font-size: 1em;">Copyright 2018 - Sameh Ramzy Labib <img src="/2000px-GPLv3_Logo.svg.png"
-                                                                                      height="38" width="76"
+                                                                                      height="30" width="68"
                                                                                       style="float:right;"></p>
 
 </div>
