@@ -52,7 +52,6 @@
                  title="Help protect your freedom, join the Free Software Foundation"/></a>
         <figcaption>I joined the FSF because I use the GNU Affero version 3 license</figcaption>
     </figure>
-
     <figure>
         <img class="photo" alt="Richard M. Stallman and Julian Assange" src="/0_eT5LwH4rOihgpThm.jpeg">
         <figcaption>Richard M. Stallman and Julian Assange holding up a picture of Edward Snowden</figcaption>
