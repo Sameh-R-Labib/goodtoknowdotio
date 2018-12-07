@@ -54,7 +54,7 @@
 <!-- footerbar -->
 <div id="footerbar">
     <p align="center" style="font-size: 1em;">
-        <img src="/powered-by-gnu.png" style="float:left;">
+        <img src="/powered-by-gnu.png" style="float:left;height: 30px;width: 30px">
         2018 - Sameh Ramzy Labib
         <img src="/2000px-GPLv3_Logo.svg.png"
              height="30" width="68"
