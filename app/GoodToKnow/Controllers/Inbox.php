@@ -23,6 +23,7 @@ class Inbox
         global $topic_name;
         global $post_id;
         global $post_name;
+        global $type_of_resource_requested;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
@@ -30,6 +31,8 @@ class Inbox
         }
 
         $html_title = 'Inbox';
+
+        $show_poof = true;
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
