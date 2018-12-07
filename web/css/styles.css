@@ -221,6 +221,7 @@ h2 + p {
     position: relative;
     top: 35px;
     width: 865px;
+    height: 57px;
     margin: auto;
     border: 3px ridge #3f3fef;
     clear: both;
