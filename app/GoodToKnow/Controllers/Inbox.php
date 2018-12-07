@@ -17,6 +17,12 @@ class Inbox
         global $is_logged_in;
         global $is_admin;
         global $special_community_array;
+        global $community_id;
+        global $community_name;
+        global $topic_id;
+        global $topic_name;
+        global $post_id;
+        global $post_name;
 
         if (!$is_logged_in) {
             $_SESSION['message'] = $sessionMessage;
