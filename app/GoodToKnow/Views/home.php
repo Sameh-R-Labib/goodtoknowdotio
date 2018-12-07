@@ -59,7 +59,6 @@
         <img src="/2000px-GPLv3_Logo.svg.png"
              height="27" width="65"
              style="float:right;"></p>
-
 </div>
 <script src="/js/script.js"></script>
 </body>
