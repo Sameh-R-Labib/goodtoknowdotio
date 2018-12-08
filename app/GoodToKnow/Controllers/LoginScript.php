@@ -173,7 +173,8 @@ class LoginScript
         /**
          * Report success
          */
-        $sessionMessage .= " Welcome back! ";
+        $sessionMessage .= " Welcome back to your \"Home\" page. To <em>go back</em> to it later just click
+        above on the site logo. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
