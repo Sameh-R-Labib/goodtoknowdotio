@@ -52,7 +52,7 @@
 <!-- footerbar -->
 <div id="footerbar">
     <p align="center" style="font-size: 1em;">
-        <img src="/GNU_icon.png" style="float:left;height: 27px;width: 27px">
+        <img src="/Gnu-head-30-years-anniversary.svg" style="float:left;height: 27px;width: 27px">
         2018 - Sameh Ramzy Labib
         <img src="/2000px-GPLv3_Logo.svg.png"
              height="27" width="65"
