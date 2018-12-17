@@ -35,9 +35,8 @@ class Inbox
 
         $show_poof = true;
 
-        $sessionMessage .= " Older messages purged over time.
-        Focus on dealing with messages. And, respond to a user
-        who messaged you using <em>Username Message A User</em> above. ";
+        $sessionMessage .= " Inbox messages self-purge eventually.
+        Use <em>Username Message A User</em> to respond to Inbox messages. ";
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
