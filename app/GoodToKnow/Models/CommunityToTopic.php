@@ -84,7 +84,7 @@ class CommunityToTopic extends GoodObject
             return false;
         }
 
-        // get (in array) all the posts listed in $array_of_CommunityToTopic.
+        // get (in array) all the topics listed in $array_of_CommunityToTopic.
         $array_of_Topics = [];
         foreach ($array_of_CommunityToTopic as $item) {
             $array_of_Topics[] = Topic::find_by_id($db, $error, $item->topic_id);
