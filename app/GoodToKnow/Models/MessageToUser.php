@@ -107,4 +107,30 @@ class MessageToUser extends GoodObject
 
         return $array_of_Messages;
     }
+
+    /**
+     * @param array $message_objects
+     */
+    public static function order_messages_by_time(array &$message_objects)
+    {
+        /**
+         * They will be ordered from most recent to oldest.
+         */
+
+        if (empty($message_objects)) {
+            $_SESSION['message'] = " MessageToUser::order_messages_by_time says: Do not pass Go. Do not collect 100 dollars. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $sorted = [];
+
+        $count = count($message_objects);
+
+        while ($count > 0) {
+            $sorted[] = self::message_which_is_most_recent($message_objects);
+            $count -= 1;
+        }
+
+        $message_objects = $sorted;
+    }
 }
