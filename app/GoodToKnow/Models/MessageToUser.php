@@ -133,4 +133,37 @@ class MessageToUser extends GoodObject
 
         $message_objects = $sorted;
     }
+
+    /**
+     * @param array $message_objects
+     * @return mixed
+     */
+    public static function message_which_is_most_recent(array &$message_objects)
+    {
+        if (empty($message_objects)) {
+            $_SESSION['message'] = " MessageToUser::message_which_is_most_recent says: Do not pass Go. Do not collect 300 dollars. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $key_of_most_recent = -1;
+        $time_of_most_recent = 0;
+
+        foreach ($message_objects as $key => $object) {
+            if ($object->created > $time_of_most_recent) {
+                $key_of_most_recent = $key;
+                $time_of_most_recent = $object->created;
+            }
+        }
+
+        if ($key_of_most_recent == -1) {
+            $_SESSION['message'] = " MessageToUser::message_which_is_most_recent says: Error 524210. ";
+            redirect_to("/ax1/Home/page");
+        }
+
+        $message_which_is_most_recent = $message_objects[$key_of_most_recent];
+
+        unset($message_objects[$key_of_most_recent]);
+
+        return $message_which_is_most_recent;
+    }
 }
