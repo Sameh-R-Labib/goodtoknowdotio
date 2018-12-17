@@ -36,6 +36,12 @@ class MessageToUser extends GoodObject
      */
     public $user_id;
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param int $user_id
+     * @return array|bool|mixed
+     */
     public static function get_array_of_message_objects_for_a_user(\mysqli $db, string &$error, int $user_id)
     {
         /**
