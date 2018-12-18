@@ -46,9 +46,9 @@ class Inbox
 
         $show_poof = true;
 
-        $sessionMessage .= " Messages self-purge. Use \"<em>Username Message A User</em>\" to respond. ";
-
         $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($db, $sessionMessage, $user_id);
+
+        $sessionMessage .= " Messages self-purge. Use \"<em>Username Message A User</em>\" to respond. ";
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
