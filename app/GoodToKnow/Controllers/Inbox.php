@@ -48,7 +48,7 @@ class Inbox
 
         $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($db, $sessionMessage, $user_id);
 
-        $sessionMessage .= " Messages self-purge. Use \"<em>Username Message A User</em>\" to respond. ";
+        $sessionMessage .= " Old messages self-purge. Use \"<em>Username Message A User</em>\" to make responses. ";
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
