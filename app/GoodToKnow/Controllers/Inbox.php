@@ -9,10 +9,14 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\MessageToUser;
+
+
 class Inbox
 {
     public function page()
     {
+        global $user_id;
         global $sessionMessage;
         global $is_logged_in;
         global $is_admin;
@@ -31,11 +35,20 @@ class Inbox
             redirect_to("/ax1/Home/page");
         }
 
+        $db = db_connect($sessionMessage);
+
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         $html_title = 'Inbox';
 
         $show_poof = true;
 
         $sessionMessage .= " Messages self-purge. Use \"<em>Username Message A User</em>\" to respond. ";
+
+        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($db, $sessionMessage, $user_id);
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
