@@ -72,7 +72,7 @@ class MessageToUser extends GoodObject
                     return false;
                 } else {
                     while ($x = $result->fetch_object('\GoodToKnow\Models\MessageToUser')) {
-                        $array_of_CommunityToTopic[] = $x;
+                        $array_of_MessageToUser[] = $x;
                         $count += 1;
                     }
                     $stmt->close();
@@ -96,7 +96,7 @@ class MessageToUser extends GoodObject
          */
         $array_of_Messages = [];
         foreach ($array_of_MessageToUser as $item) {
-            $array_of_Messages = Message::find_by_id($db, $error, $item->message_id);
+            $array_of_Messages[] = Message::find_by_id($db, $error, $item->message_id);
         }
         if (empty($array_of_Messages)) {
             $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
