@@ -47,7 +47,17 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-
+    <?php if (!empty($inbox_messages_array)): ?>
+        <?php foreach ($inbox_messages_array as $message): ?>
+            <hr>
+            <p>Time: <?php echo $message->created; ?></p>
+            <p>Sender: <?php echo $message->user_id; ?></p>
+            <?php echo $message->content; ?>
+            <hr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No messages.</p>
+    <?php endif; ?>
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
