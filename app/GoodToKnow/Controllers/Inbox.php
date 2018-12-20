@@ -50,6 +50,17 @@ class Inbox
 
         $sessionMessage .= " Old messages self-purge. Use \"U/N 📧 👲\" to respond to messages. ";
 
+
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$inbox_messages_array: </p>\n<pre>";
+        var_dump($inbox_messages_array);
+        echo "</pre>\n";
+        echo "<br><p>Print_r \$user_id: </p>\n<pre>";
+        print_r($user_id);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
         require VIEWS . DIRSEP . 'inbox.php';
     }
 }
