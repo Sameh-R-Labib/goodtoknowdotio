@@ -51,7 +51,9 @@
         <?php foreach ($inbox_messages_array as $message): ?>
             <p><b>Time: </b><?php echo $message->created; ?></p>
             <p><b>Sender: </b><?php echo $message->user_id; ?></p>
+            <p>&nbsp;</p>
             <?php echo $message->content; ?>
+            <p>&nbsp;</p>
             <hr>
         <?php endforeach; ?>
     <?php else: ?>
