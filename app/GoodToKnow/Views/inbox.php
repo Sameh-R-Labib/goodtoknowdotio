@@ -48,14 +48,17 @@
 <!-- maincontent -->
 <div id="maincontent">
     <?php if (!empty($inbox_messages_array)): ?>
-        <?php foreach ($inbox_messages_array as $message): ?>
+        <?php $last = count($inbox_messages_array) - 1; ?>
+        <?php foreach ($inbox_messages_array as $key => $message): ?>
             <p>&nbsp;</p>
             <p><b>Time: </b><?php echo $message->created; ?></p>
             <p><b>Sender: </b><?php echo $message->user_id; ?></p>
             <p>&nbsp;</p>
             <?php echo $message->content; ?>
             <p>&nbsp;</p>
-            <hr>
+            <?php if ($key != $last): ?>
+                <hr>
+            <?php endif; ?>
         <?php endforeach; ?>
     <?php else: ?>
         <p>No messages.</p>
