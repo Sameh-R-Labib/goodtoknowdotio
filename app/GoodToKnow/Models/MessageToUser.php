@@ -117,8 +117,31 @@ class MessageToUser extends GoodObject
          */
         foreach ($inbox_messages_array as $message_object) {
             $message_object->user_id = self::get_username($db, $error, $message_object->user_id);
-            $message_object->created = self::get_readable_time($db, $error, $message_object->user_id);
+            if ($message_object->user_id === false) {
+                $error .= " MessageToUser::replace_attributes says: get_username failed. ";
+                return false;
+            }
+            $message_object->created = self::get_readable_time($db, $error, $message_object->created);
         }
+        return true;
+    }
+
+    public static function get_username(\mysqli $db, string &$error, $user_id)
+    {
+        $user_id = (int)$user_id;
+        $user = User::find_by_id($db, $error, $user_id);
+        // Value of $user can be false
+        if ($user === false) {
+            return false;
+        }
+        return $user->username;
+    }
+
+    public static function get_readable_time(\mysqli $db, string &$error, $created)
+    {
+        $created = (int)$created;
+        $date = date('m/d/Y h:i:s a ', $created) . date_default_timezone_get();
+        return $date;
     }
 
     /**

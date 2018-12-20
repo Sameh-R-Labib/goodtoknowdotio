@@ -52,7 +52,13 @@ class Inbox
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
         if (!empty($inbox_messages_array)) {
-            $inbox_messages_array = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
+            $return = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
+            if ($return === false) {
+                $sessionMessage .= " Unexpected error 01551. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+
         }
 
         $sessionMessage .= " Old messages self-purge. Use \"U/N 📧 👲\" to respond to messages. ";
