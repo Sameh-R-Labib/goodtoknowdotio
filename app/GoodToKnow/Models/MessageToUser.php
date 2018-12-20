@@ -108,6 +108,19 @@ class MessageToUser extends GoodObject
         return $array_of_Messages;
     }
 
+    public static function replace_attributes(\mysqli $db, string &$error, array &$inbox_messages_array)
+    {
+        /**
+         * Replace (in each Message) the user_id and created with a username and a datetime.
+         *
+         * Assumes $inbox_messages_array is not empty.
+         */
+        foreach ($inbox_messages_array as $message_object) {
+            $message_object->user_id = self::get_username($db, $error, $message_object->user_id);
+            $message_object->created = self::get_readable_time($db, $error, $message_object->user_id);
+        }
+    }
+
     /**
      * @param array $message_objects
      */

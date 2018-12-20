@@ -51,7 +51,9 @@ class Inbox
         /**
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
-        $inbox_messages_array = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
+        if (!empty($inbox_messages_array)) {
+            $inbox_messages_array = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
+        }
 
         $sessionMessage .= " Old messages self-purge. Use \"U/N 📧 👲\" to respond to messages. ";
 
