@@ -17,8 +17,8 @@
 <body>
 <!-- adminhometop -->
 <div id="adminhometop">
-    <a href="https://goodtoknow.io/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="302"
-                                             style="float: left"></a>
+    <a href="/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="302"
+                        style="float: left"></a>
 </div>
 <!-- communities -->
 <div id="communities">
