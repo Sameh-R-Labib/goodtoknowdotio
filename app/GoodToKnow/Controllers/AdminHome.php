@@ -16,6 +16,7 @@ class AdminHome
         global $is_logged_in;
         global $is_admin;
         global $sessionMessage;
+        global $special_post_array;
 
         if (!$is_logged_in OR !$is_admin) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
