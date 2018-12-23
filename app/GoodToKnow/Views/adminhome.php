@@ -25,7 +25,7 @@
 </div>
 <!-- communities -->
 <div id="communities">
-    &nbsp;
+    <p>👪:&nbsp;&nbsp;<?php require COMMUNITIESFORTHISUSER; ?></p>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
