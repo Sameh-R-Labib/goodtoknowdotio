@@ -140,8 +140,6 @@ class Home
             $_SESSION['last_refresh_content'] = time();
         }
 
-        $html_title = 'GoodToKnow.io';
-
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($community_description))) {
                 if (empty(trim($sessionMessage))) {
@@ -163,6 +161,10 @@ class Home
         }
 
         $show_poof = false;
+
+        $html_title = 'GoodToKnow.io';
+
+        $page = "Home";
 
         require VIEWS . DIRSEP . 'home.php';
     }
