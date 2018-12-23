@@ -29,9 +29,7 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p>⛺:&nbsp;&nbsp;
-        <a href="/ax1/SetHomePageCommunityTopicPost/page/<?php echo $community_id; ?>/0/0"><?php echo $community_name; ?></a>
-        <?php require CURRENTTOPIC; ?><?php require CURRENTPOST; ?></p>
+    <p>⛺:&nbsp;&nbsp;<?php require BREADCRUMBS; ?></p>
 </div>
 <!-- scriptoutput -->
 <div id="scriptoutput">

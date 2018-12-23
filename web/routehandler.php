@@ -31,6 +31,7 @@ define('CURRENTPOST', VIEWSINCLUDES . DIRSEP . 'currentpost.php');
 define('CONTROLPANELLINK', VIEWSINCLUDES . DIRSEP . 'controlpanellink.php');
 define('SENDMESSAGELINK', VIEWSINCLUDES . DIRSEP . 'sendmessagelink.php');
 define('MESSAGETHEAUTHOR', VIEWSINCLUDES . DIRSEP . 'messagetheauthor.php');
+define('BREADCRUMBS', VIEWSINCLUDES . DIRSEP . 'breadcrumbs.php');
 
 /**
  * More require statements
