@@ -29,6 +29,8 @@ class AdminHome
 
         $show_poof = true;
 
+        $sessionMessage .= " Welcome to your Admin Control Panel. ";
+
         require VIEWS . DIRSEP . 'adminhome.php';
     }
 }

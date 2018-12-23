@@ -29,6 +29,8 @@ class ControlPanel
 
         $show_poof = true;
 
+        $sessionMessage .= " Welcome to your Control Panel. ";
+
         require VIEWS . DIRSEP . 'controlpanel.php';
     }
 }
