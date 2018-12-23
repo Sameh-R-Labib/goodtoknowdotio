@@ -44,6 +44,8 @@ class Inbox
 
         $html_title = 'Inbox';
 
+        $page = 'Inbox';
+
         $show_poof = true;
 
         $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($db, $sessionMessage, $user_id);
