@@ -24,6 +24,8 @@ class AdminHome
 
         $html_title = 'Admin';
 
+        $page = 'Admin';
+
         $show_poof = true;
 
         require VIEWS . DIRSEP . 'adminhome.php';

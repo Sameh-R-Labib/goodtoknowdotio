@@ -29,7 +29,7 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    &nbsp;
+    &nbsp;<p>⛺:&nbsp;&nbsp;<?php require BREADCRUMBS; ?></p>
 </div>
 <!-- soplaceholder -->
 <div id="soplaceholder">

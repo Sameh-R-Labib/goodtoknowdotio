@@ -24,6 +24,8 @@ class ControlPanel
 
         $html_title = 'Control Panel';
 
+        $page = 'CP';
+
         $show_poof = true;
 
         require VIEWS . DIRSEP . 'controlpanel.php';
