@@ -53,6 +53,7 @@
         <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
         <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
+        <li><a href="/ax1/PurgeOldMessages/page">Purge Old Messages</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
     <p>When writing a post, our goal is to concisely write information which helps the reader wrap their head around the
