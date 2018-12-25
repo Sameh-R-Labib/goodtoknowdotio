@@ -22,5 +22,19 @@ class PurgeOldMessages
          * which the admin will enter the time at
          * which all older messages be deleted.
          */
+
+        global $is_logged_in;
+        global $is_admin;
+        global $sessionMessage;
+
+        if (!$is_logged_in OR !$is_admin) {
+            $sessionMessage .= ' You need to be the Admin to follow that request route.';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $html_title = 'Purge Old Messages';
+
+        require VIEWS . DIRSEP . 'purgeoldmessages.php';
     }
 }
