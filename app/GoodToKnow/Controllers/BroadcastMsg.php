@@ -29,7 +29,7 @@ class BroadcastMsg
         $html_title = 'Broadcast a Message';
 
         $pre_populate = <<<ROI
-Dear User,
+Dear Users,
 
 [Broadcast to all]
 
