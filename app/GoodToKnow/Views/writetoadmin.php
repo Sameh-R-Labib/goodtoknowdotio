@@ -19,7 +19,9 @@
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚩: Markdown &amp; UTF-8 characters OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes.
+        <small>🚩: Markdown &amp; UTF-8 characters OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes.<br>
+            🔏: GPG encrypt the message w/ the admin's pub key unless the message is just a critique of admin's
+            posts.
         </small>
     </p>
     <section>

@@ -20,13 +20,14 @@
     <?php require SESSIONMESSAGE; ?>
     <p>
         <small>🚩: Markdown &amp; UTF-8 characters are OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes. One UTF-8
-            character may count as &gt;1 byte.
+            character may count as &gt;1 byte. &nbsp;&nbsp;&nbsp;🔏: GPG encrypt the message w/ receiving user's pub
+            key unless the message is just a critique of user's posts.
         </small>
     </p>
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" name="markdown" rows="26" cols="79"
+            <textarea id="textarea" name="markdown" rows="26" cols="71"
                       wrap="soft"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $pre_populate; ?></textarea>
         </p>
