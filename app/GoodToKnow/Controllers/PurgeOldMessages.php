@@ -21,6 +21,11 @@ class PurgeOldMessages
          * This first route will present a form in
          * which the admin will enter the time at
          * which all older messages be deleted.
+         *
+         * The time will be entered as a date.
+         * The assumption is that all messages
+         * sent before the zero hour (12am)
+         * will bee deleted.
          */
 
         global $is_logged_in;
