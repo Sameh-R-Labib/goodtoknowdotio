@@ -38,6 +38,11 @@ class PurgeOldMessages
             redirect_to("/ax1/Home/page");
         }
 
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         $html_title = 'Purge Old Messages';
 
         require VIEWS . DIRSEP . 'purgeoldmessages.php';

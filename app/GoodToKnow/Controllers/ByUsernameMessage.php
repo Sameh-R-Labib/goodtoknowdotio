@@ -20,6 +20,11 @@ class ByUsernameMessage
          * about this user is their username.
          */
 
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * Present a form for entering a username.
          */
