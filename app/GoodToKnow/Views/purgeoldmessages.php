@@ -15,6 +15,6 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/PurgeOldMessagesPrcessor/page" method="post">
+<form action="/ax1/PurgeOldMessagesProcessor/page" method="post">
 </form>
 </body>
