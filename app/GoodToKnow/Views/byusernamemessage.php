@@ -21,7 +21,8 @@
     <section>
         <p>
             <label for="username">U/N: </label>
-            <input id="username" name="username" required minlength="7" maxlength="12" size="12" spellcheck="false">
+            <input id="username" name="username" type="text" required minlength="7" maxlength="12" size="12"
+                   spellcheck="false">
         </p>
     </section>
     <section>

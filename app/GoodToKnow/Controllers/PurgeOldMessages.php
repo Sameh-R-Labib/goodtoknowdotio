@@ -25,7 +25,7 @@ class PurgeOldMessages
          * The time will be entered as a date.
          * The assumption is that all messages
          * sent before the zero hour (12am)
-         * will bee deleted.
+         * will be deleted.
          */
 
         global $is_logged_in;
