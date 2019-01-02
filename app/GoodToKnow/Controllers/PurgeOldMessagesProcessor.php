@@ -56,6 +56,13 @@ class PurgeOldMessagesProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Delete all messages.
+         *
+         * The assumption is that all messages
+         * sent before the zero hour (12am)
+         * will be deleted.
+         */
 
     }
 
