@@ -62,6 +62,10 @@ class AdminCreateUser
         /**
          * Apply htmlentities to fields which
          * get rendered by the browser.
+         *
+         * By convention: We apply htmlentities() to data at
+         * the point in time before that data gets saved in
+         * the database.
          */
         $submitted_username = htmlentities($submitted_username);
         $submitted_comment = htmlentities($submitted_comment);
