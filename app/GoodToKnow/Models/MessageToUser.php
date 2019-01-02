@@ -108,6 +108,12 @@ class MessageToUser extends GoodObject
         return $array_of_Messages;
     }
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param array $inbox_messages_array
+     * @return bool
+     */
     public static function replace_attributes(\mysqli $db, string &$error, array &$inbox_messages_array)
     {
         /**
@@ -126,6 +132,12 @@ class MessageToUser extends GoodObject
         return true;
     }
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $user_id
+     * @return bool
+     */
     public static function get_username(\mysqli $db, string &$error, $user_id)
     {
         $user_id = (int)$user_id;
@@ -137,6 +149,12 @@ class MessageToUser extends GoodObject
         return $user->username;
     }
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $created
+     * @return string
+     */
     public static function get_readable_time(\mysqli $db, string &$error, $created)
     {
         $created = (int)$created;

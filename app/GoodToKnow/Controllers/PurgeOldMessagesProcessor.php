@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Message;
+
+
 class PurgeOldMessagesProcessor
 {
     public function page()
@@ -57,13 +60,18 @@ class PurgeOldMessagesProcessor
         }
 
         /**
+         * We need to convert $date to a unix timestamp
+         */
+
+
+        /**
          * Delete all messages.
          *
          * The assumption is that all messages
          * sent before the zero hour (12am)
          * will be deleted.
          */
-
+        $result = Message::purge_all_messages_older_than_date($db, $sessionMessage, $timestamp);
     }
 
     /**

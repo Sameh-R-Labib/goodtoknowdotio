@@ -40,4 +40,9 @@ class Message extends GoodObject
      * @var string
      */
     public $content;
+
+    public static function purge_all_messages_older_than_date(\mysqli $db, string &$error, int $timestamp)
+    {
+
+    }
 }
