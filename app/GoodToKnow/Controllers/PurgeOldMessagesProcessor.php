@@ -64,7 +64,7 @@ class PurgeOldMessagesProcessor
          */
         $timestamp = self::get_timestamp_from_date($submitted_date);
 
-        if (!$timestamp) {
+        if (!$timestamp || $timestamp < 0) {
             $sessionMessage .= " Method get_timestamp_from_date returned an invalid value. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
