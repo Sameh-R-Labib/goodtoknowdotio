@@ -62,6 +62,7 @@ class PurgeOldMessagesProcessor
         /**
          * We need to convert $date to a unix timestamp
          */
+        $timestamp = self::get_timestamp_from_date($submitted_date);
 
 
         /**
@@ -72,6 +73,25 @@ class PurgeOldMessagesProcessor
          * will be deleted.
          */
         $result = Message::purge_all_messages_older_than_date($db, $sessionMessage, $timestamp);
+    }
+
+    public static function get_timestamp_from_date(string $submitted_date)
+    {
+        /**
+         * It is assumed that $submitted_date is
+         * in the American form of mm/dd/yyyy.
+         * For example 01/02/2019
+         */
+
+        // Separate the parts of #submitted_date
+        $words = explode('/', $submitted_date);
+        $day = $words[1];
+        $month = $words[0];
+        $year = $words[2];
+
+        $timestamp = mktime(0, 0, 0, $month, $day, $year);
+
+        return $timestamp;
     }
 
     /**
