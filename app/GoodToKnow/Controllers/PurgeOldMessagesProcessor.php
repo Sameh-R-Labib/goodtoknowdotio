@@ -64,6 +64,12 @@ class PurgeOldMessagesProcessor
          */
         $timestamp = self::get_timestamp_from_date($submitted_date);
 
+        if (!$timestamp) {
+            $sessionMessage .= " Method get_timestamp_from_date returned an invalid value. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
 
         /**
          * Delete all messages.
@@ -75,6 +81,10 @@ class PurgeOldMessagesProcessor
         $result = Message::purge_all_messages_older_than_date($db, $sessionMessage, $timestamp);
     }
 
+    /**
+     * @param string $submitted_date
+     * @return false|int
+     */
     public static function get_timestamp_from_date(string $submitted_date)
     {
         /**
