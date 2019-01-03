@@ -41,6 +41,12 @@ class Message extends GoodObject
      */
     public $content;
 
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param int $timestamp
+     * @return bool
+     */
     public static function purge_all_messages_older_than_date(\mysqli $db, string &$error, int $timestamp)
     {
         /**
@@ -71,6 +77,15 @@ class Message extends GoodObject
         if (empty($array_of_found_messages)) {
             return true;
         }
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$array_of_found_messages: </p>\n<pre>";
+        var_dump($array_of_found_messages);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
 
         /**
          * 2) Delete all MessageToUser records which correspond to found messages.
