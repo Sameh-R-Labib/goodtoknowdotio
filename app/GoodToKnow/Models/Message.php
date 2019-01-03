@@ -79,15 +79,6 @@ class Message extends GoodObject
         }
 
         /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$array_of_found_messages: </p>\n<pre>";
-        var_dump($array_of_found_messages);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-        /**
          * 2) Delete all MessageToUser records which correspond to found messages.
          */
         foreach ($array_of_found_messages as $found_message) {
