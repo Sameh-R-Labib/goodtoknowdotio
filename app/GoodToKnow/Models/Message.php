@@ -82,5 +82,21 @@ class Message extends GoodObject
                 return false;
             }
         }
+
+        /**
+         * 3) Delete the old messages.
+         */
+        foreach ($array_of_found_messages as $found_message) {
+            $result = $found_message->delete($db, $error);
+            if ($result === false) {
+                $error .= " An error occured while running delete method on a Message object within purge_all_messages_older_than_date ";
+                return false;
+            }
+        }
+
+        /**
+         * 4) Return true or false.
+         */
+        return true;
     }
 }
