@@ -76,7 +76,11 @@ class Message extends GoodObject
          * 2) Delete all MessageToUser records which correspond to found messages.
          */
         foreach ($array_of_found_messages as $found_message) {
-
+            $result = MessageToUser::delete_all_having_particular_message_id($db, $error, $found_message->id);
+            if ($result === false) {
+                $error .= " An error occured while trying to delete_all_having_particular_message_id. ";
+                return false;
+            }
         }
     }
 }
