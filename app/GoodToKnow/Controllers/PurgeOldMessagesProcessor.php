@@ -88,6 +88,11 @@ class PurgeOldMessagesProcessor
          *
          * Redirect to Home page.
          */
+        if ($result === false) {
+            $sessionMessage .= " Something inside of purge_all_messages_older_than_date failed. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Report that we have completed the purge.
@@ -98,6 +103,9 @@ class PurgeOldMessagesProcessor
          *
          * Redirect to Home page
          */
+        $sessionMessage .= " The purge of old messages completed successfully. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 
     /**
