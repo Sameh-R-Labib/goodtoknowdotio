@@ -70,7 +70,6 @@ class PurgeOldMessagesProcessor
             redirect_to("/ax1/Home/page");
         }
 
-
         /**
          * Delete all messages.
          *
@@ -79,6 +78,26 @@ class PurgeOldMessagesProcessor
          * will be deleted.
          */
         $result = Message::purge_all_messages_older_than_date($db, $sessionMessage, $timestamp);
+
+        /**
+         * If $result === false that means the code has a bug.
+         *
+         * Add something reflecting general failure of this route to $sessionMessage.
+         *
+         * Add $sessionMessage to the session.
+         *
+         * Redirect to Home page.
+         */
+
+        /**
+         * Report that we have completed the purge.
+         *
+         * Say something reflecting success $sessionMessage.
+         *
+         * Add $sessionMessage to the session.
+         *
+         * Redirect to Home page
+         */
     }
 
     /**
