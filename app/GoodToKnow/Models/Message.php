@@ -61,9 +61,22 @@ class Message extends GoodObject
 
         $array_of_found_messages = self::find_by_sql($db, $error, $sql);
 
+        // Handling the case where an unexpected error occured
         if ($array_of_found_messages === false) {
             $error .= " An error occured while trying to find messages. ";
             return false;
+        }
+
+        // Handling the case where NO old messages exist
+        if (empty($array_of_found_messages)) {
+            return true;
+        }
+
+        /**
+         * 2) Delete all MessageToUser records which correspond to found messages.
+         */
+        foreach ($array_of_found_messages as $found_message) {
+
         }
     }
 }
