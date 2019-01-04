@@ -19,9 +19,9 @@
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>📌: Limit the scope of your posts so that it is relevant with the other posts and is limited
-            to the one way we do things. For example if the community is about Jabber chat then make posts describing
-            the way we all agree to set up our chat clients. In our cas we route them through Tor and use OTR.
+        <small>📌: Limit the scope of your posts to make it relevant to the other posts and limited
+            to the (one) way we do things. For example if the community is about Jabber chat then create posts which
+            describe the way we all set up our chat clients. In our case we route their connections through Tor/OTR.
         </small>
     </p>
     <section>
