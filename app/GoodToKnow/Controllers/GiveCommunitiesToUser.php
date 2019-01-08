@@ -22,6 +22,11 @@ class GiveCommunitiesToUser
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Present a form which collects
+         * the username.
+         */
+
         $html_title = 'Give Communities to User';
 
         require VIEWS . DIRSEP . 'givecommunitiestouser.php';
