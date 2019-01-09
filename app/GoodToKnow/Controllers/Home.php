@@ -143,19 +143,19 @@ class Home
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($community_description))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage = ' ' . $community_description . ' ';
+                    $sessionMessage .= ' ' . $community_description . ' ';
                 }
             }
         } elseif ($type_of_resource_requested === 'topic') {
             if (!empty(trim($topic_description))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage = ' ' . $topic_description . ' ';
+                    $sessionMessage .= ' ' . $topic_description . ' ';
                 }
             }
         } else {
             if (!empty(trim($post_full_name))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage = ' ' . $post_full_name . ' ';
+                    $sessionMessage .= ' ' . $post_full_name . ' ';
                 }
             }
         }
