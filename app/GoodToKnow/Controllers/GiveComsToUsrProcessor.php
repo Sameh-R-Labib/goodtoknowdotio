@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\User;
+
+
 class GiveComsToUsrProcessor
 {
     public function page()
