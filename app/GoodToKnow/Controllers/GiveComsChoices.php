@@ -15,7 +15,7 @@ class GiveComsChoices
     {
         global $is_logged_in;
         global $sessionMessage;
-        global $saved_str01;
+        global $saved_str01; // Has user's username
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
@@ -23,12 +23,12 @@ class GiveComsChoices
         }
 
         /**
-         * Debug Code
+         * Goals:
+         *  1) Get the id of the user.
+         *  2) Save the id in the session in saved_int01.
+         *  3) Get all the communities the user does Not belong to.
+         *  4) Present them as check boxes
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$saved_str01: </p>\n<pre>";
-        var_dump($saved_str01);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
     }
 }
