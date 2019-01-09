@@ -41,12 +41,14 @@ class GiveComsToUsrProcessor
         $is_username = self::is_username_in_our_system($db, $sessionMessage, $submitted_username);
 
         if (!$is_username) {
-            $sessionMessage .= " I was not able to get a valid username from you. ";
+            $sessionMessage .= " The username is not valid. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
         $_SESSION['saved_str01'] = $submitted_username;
+
+        redirect_to("/ax1/GiveComsChoices/page");
     }
 
     // Helpers for the page() method
