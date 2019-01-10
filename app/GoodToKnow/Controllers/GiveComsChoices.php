@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\User;
+
+
 class GiveComsChoices
 {
     public function page()
@@ -30,5 +33,25 @@ class GiveComsChoices
          *  4) Present them as check boxes
          */
 
+        /**
+         * 1) Get the id of the user.
+         */
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+        if (!$user_object) {
+            $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 2) Save the id in the session in saved_int01.
+         */
+        $_SESSION['saved_int01'] = $user_object->id;
     }
 }
