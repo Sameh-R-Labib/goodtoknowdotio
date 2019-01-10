@@ -35,4 +35,9 @@ class UserToCommunity extends GoodObject
      * @var int
      */
     public $community_id;
+
+    public static function coms_user_belongs_to(\mysqli $db, string &$error, int $user_id)
+    {
+
+    }
 }

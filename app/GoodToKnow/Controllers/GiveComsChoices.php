@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\User;
+use GoodToKnow\Models\UserToCommunity;
 
 
 class GiveComsChoices
@@ -49,9 +50,18 @@ class GiveComsChoices
             redirect_to("/ax1/Home/page");
         }
 
+        $user_id = (int)$user_object->id;
+
         /**
          * 2) Save the id in the session in saved_int01.
          */
-        $_SESSION['saved_int01'] = $user_object->id;
+        $_SESSION['saved_int01'] = $user_id;
+
+        /**
+         * 3) Get all the communities the user DOES NOT belong to.
+         */
+
+        // First get all the communities the user DOES belong to.
+        $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $sessionMessage, $user_id);
     }
 }
