@@ -43,14 +43,12 @@ class GiveComsChoices
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
         $user_id = (int)$user_object->id;
 
         /**
