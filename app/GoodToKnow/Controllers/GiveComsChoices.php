@@ -76,8 +76,15 @@ class GiveComsChoices
         }
         // Get communities user DOES NOT belong to.
         $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system, $coms_user_belongs_to);
-        // Will return false if error and an array if not an error.
-        // Check for error.
+        // Redirect if no communities user doesn't belong to.
+        if (empty($coms_user_does_not_belong_to)) {
+            $sessionMessage .= " Apparently this user belongs to all communities. So, there's no need to do anything. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
+        /**
+         * 4) Present communities as check boxes
+         */
     }
 }
