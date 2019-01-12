@@ -104,4 +104,19 @@ class UserToCommunity extends GoodObject
         }
         return $coms_user_belongs_to;
     }
+
+    /**
+     * @param object $community
+     * @param array $coms_user_belongs_to
+     * @return bool
+     */
+    public static function community_is_one_which_user_already_belongs_to(object $community, array $coms_user_belongs_to)
+    {
+        foreach ($coms_user_belongs_to as $object) {
+            if ($community->id == $object->id) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
