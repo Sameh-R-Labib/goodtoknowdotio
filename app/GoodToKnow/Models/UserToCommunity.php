@@ -45,24 +45,28 @@ class UserToCommunity extends GoodObject
     public static function coms_user_belongs_to(\mysqli $db, string &$error, int $user_id)
     {
         /**
-         * Returns array of community objects or returns false.
+         * Returns array of communities if no unexpected error occurs.
+         * Returns false if an error occurs.
+         * Note: this "array of communities" may be empty.
          */
+
+        // This is what we hope to return
+        $array_of_coms_for_this_user = [];
 
         /**
          * First get the UserToCommunity objects which belong to the user.
          */
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
-        $user_to_community_array = self::find_by_sql($db, $sessionMessage, $sql);
+        $user_to_community_array = self::find_by_sql($db, $error, $sql);
 
         if (!$user_to_community_array) {
             $error .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
-            return false;
+            return $array_of_coms_for_this_user;
         }
 
         /**
          * Second get the Community objects which belong to the user.
          */
-        $array_of_coms_for_this_user = [];
         foreach ($user_to_community_array as $user_to_community_object) {
             // Add a community object to $array_of_coms_for_this_user.
             // Obviously this community which we will add will be the one specified by the UserToCommunity object.
