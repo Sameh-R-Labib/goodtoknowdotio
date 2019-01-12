@@ -61,7 +61,6 @@ class GiveComsChoices
         /**
          * 3) Get all the communities the user DOES NOT belong to.
          */
-
         // First get all the communities the user DOES belong to.
         $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $sessionMessage, $user_id);
         if ($coms_user_belongs_to === false) {
@@ -69,7 +68,6 @@ class GiveComsChoices
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
         // Second get all the communities that exist in this system.
         // By "this system" I mean this instance of the app.
         $coms_in_this_system = Community::find_all($db, $sessionMessage);
@@ -78,7 +76,7 @@ class GiveComsChoices
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
         // Third based on what we've gathered so far get the communities the user DOES NOT belong to.
+
     }
 }
