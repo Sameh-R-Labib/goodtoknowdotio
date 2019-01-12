@@ -75,7 +75,7 @@ class GiveComsChoices
             redirect_to("/ax1/Home/page");
         }
         // Get communities user DOES NOT belong to.
-        $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($db, $sessionMessage, $coms_in_this_system, $coms_user_belongs_to);
+        $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system, $coms_user_belongs_to);
         // Will return false if error and an array if not an error.
         // Check for error.
 

@@ -85,11 +85,23 @@ class UserToCommunity extends GoodObject
         }
     }
 
-    public static function coms_user_does_not_belong_to(\mysqli $db, string &$error, array $coms_in_this_system, array $coms_user_belongs_to)
+    /**
+     * @param array $coms_in_this_system
+     * @param array $coms_user_belongs_to
+     * @return array
+     */
+    public static function coms_user_does_not_belong_to(array $coms_in_this_system, array $coms_user_belongs_to)
     {
         /**
-         * Returns false if error and an array if no error.
          * Returns an array of Community objects which the user doesn't belong to.
          */
+        $coms_user_does_not_belong_to = [];
+        foreach ($coms_in_this_system as $community) {
+            if (self::community_is_one_which_user_already_belongs_to($community, $coms_user_belongs_to)) {
+                continue;
+            }
+            $coms_user_does_not_belong_to[] = $community;
+        }
+        return $coms_user_belongs_to;
     }
 }
