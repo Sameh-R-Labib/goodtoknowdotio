@@ -72,5 +72,7 @@ class GiveComsChoices
         // Second get all the communities that exist in this system.
         // By "this system" I mean this instance of the app.
         $coms_in_this_system = UserToCommunity::coms_in_this_system($db, $sessionMessage);
+        // As above redirect if unexpected error
+
     }
 }
