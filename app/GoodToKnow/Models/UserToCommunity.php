@@ -84,4 +84,12 @@ class UserToCommunity extends GoodObject
             return $array_of_coms_for_this_user;
         }
     }
+
+    public static function coms_user_does_not_belong_to(\mysqli $db, string &$error, array $coms_in_this_system, array $coms_user_belongs_to)
+    {
+        /**
+         * Returns false if error and an array if no error.
+         * Returns an array of Community objects which the user doesn't belong to.
+         */
+    }
 }
