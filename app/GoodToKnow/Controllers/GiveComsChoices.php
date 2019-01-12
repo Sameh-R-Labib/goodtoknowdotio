@@ -79,6 +79,6 @@ class GiveComsChoices
             redirect_to("/ax1/Home/page");
         }
 
-        // Third best on what we've gathered so far get the communities the user DOES NOT belong to.
+        // Third based on what we've gathered so far get the communities the user DOES NOT belong to.
     }
 }
