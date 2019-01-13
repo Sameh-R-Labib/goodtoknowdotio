@@ -102,7 +102,7 @@ class UserToCommunity extends GoodObject
             }
             $coms_user_does_not_belong_to[] = $community;
         }
-        return $coms_user_belongs_to;
+        return $coms_user_does_not_belong_to;
     }
 
     /**
