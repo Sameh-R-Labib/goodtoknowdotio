@@ -86,13 +86,12 @@ class GiveComsChoices
         /**
          * 4) Present communities as check boxes
          */
+
         /**
-         * Debug Code
+         * So, we have $coms_user_does_not_belong_to
+         *
+         * We need to present the ids of those communities (along with their community names)
+         * as check boxes in a form.
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$coms_user_does_not_belong_to: </p>\n<pre>";
-        var_dump($coms_user_does_not_belong_to);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
     }
 }
