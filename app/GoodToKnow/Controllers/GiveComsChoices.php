@@ -86,5 +86,13 @@ class GiveComsChoices
         /**
          * 4) Present communities as check boxes
          */
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$coms_user_does_not_belong_to: </p>\n<pre>";
+        var_dump($coms_user_does_not_belong_to);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
     }
 }
