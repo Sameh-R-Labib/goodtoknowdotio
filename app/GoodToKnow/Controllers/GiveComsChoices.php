@@ -93,5 +93,8 @@ class GiveComsChoices
          * We need to present the ids of those communities (along with their community names)
          * as check boxes in a form.
          */
+        $html_title = 'Give Community Choices';
+
+        require VIEWS . DIRSEP . 'givecomschoices.php';
     }
 }
