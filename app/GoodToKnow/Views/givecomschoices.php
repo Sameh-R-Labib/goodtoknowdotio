@@ -20,17 +20,18 @@
     <?php require SESSIONMESSAGE; ?>
     <p>The presented choices are communities which the user does Not yet have membership in.</p>
     <section>
-        <p>
-            <label for="choices">Choices: </label>
-            <input id="choices" name="choices" type="text">
-        </p>
         <label>
-            <input type="checkbox" name="vehicle1" value="3">
+            <input type="checkbox" name="vehicle" value="3">
             I have a bike
-        </label> I have a bike<br>
-        <input type="checkbox" name="vehicle2" value="5"> I have a car<br>
-        <input type="checkbox" name="vehicle3" value="7"> I have a boat<br>
-        <br>
+        </label>
+        <label>
+            <input type="checkbox" name="vehicle" value="5">
+            I have a car
+        </label>
+        <label>
+            <input type="checkbox" name="vehicle" value="7">
+            I have a boat
+        </label>
     </section>
     <section>
         <p>
