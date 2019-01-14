@@ -24,6 +24,13 @@
             <label for="choices">Choices: </label>
             <input id="choices" name="choices" type="text">
         </p>
+        <label>
+            <input type="checkbox" name="vehicle1" value="3">
+            I have a bike
+        </label> I have a bike<br>
+        <input type="checkbox" name="vehicle2" value="5"> I have a car<br>
+        <input type="checkbox" name="vehicle3" value="7"> I have a boat<br>
+        <br>
     </section>
     <section>
         <p>
