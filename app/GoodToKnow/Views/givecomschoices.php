@@ -21,16 +21,16 @@
     <p>The presented choices are communities which the user does Not yet have membership in.</p>
     <section>
         <label>
-            <input type="checkbox" name="vehicle" value="3">
-            I have a bike
+            <input type="checkbox" name="0" value="3">
+            Community for Bash<br>
         </label>
         <label>
-            <input type="checkbox" name="vehicle" value="5">
-            I have a car
+            <input type="checkbox" name="1" value="5">
+            Community for Mexican Food<br>
         </label>
         <label>
-            <input type="checkbox" name="vehicle" value="7">
-            I have a boat
+            <input type="checkbox" name="2" value="7">
+            Community for LINUX<br>
         </label>
     </section>
     <section>
