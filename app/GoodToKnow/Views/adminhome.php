@@ -61,6 +61,12 @@
         <em>community's</em> subject matter.</p>
     <figure>
         <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
+            <img class="photo" alt="Badge" src="1944235.png" title="Membership Badge"/>
+        </a>
+        <figcaption>My Membership Badge</figcaption>
+    </figure>
+    <figure>
+        <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
             <img class="photo" alt="Support freedom" src="//static.fsf.org/fsforg/img/normal-image.png"
                  title="Help protect your freedom, join the Free Software Foundation"/></a>
         <figcaption>I joined the FSF because I use the GNU Affero version 3 license</figcaption>
