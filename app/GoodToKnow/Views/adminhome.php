@@ -61,7 +61,7 @@
         <em>community's</em> subject matter.</p>
     <figure>
         <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
-            <img class="photo" alt="Badge" src="1944235.png" title="Membership Badge"/>
+            <img class="photo" alt="Badge" src="/1944235.png" title="Membership Badge"/>
         </a>
         <figcaption>My Membership Badge</figcaption>
     </figure>
