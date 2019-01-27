@@ -19,10 +19,11 @@ class GiveComsChoices
     public function page()
     {
         global $is_logged_in;
+        global $is_admin;
         global $sessionMessage;
         global $saved_str01; // Has user's username
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
+        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
