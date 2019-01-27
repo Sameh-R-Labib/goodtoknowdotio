@@ -14,12 +14,26 @@ class GiveComsChoicesProcessor
     public function page()
     {
         /**
-         * Debug Code
+         * $_POST array looks something like this:
+         *
+         * array(5) {
+         *   ["choice-1"]=> string(1) "3"
+         *   ["choice-2"]=> string(1) "8"
+         *   ["choice-3"]=> string(2) "12"
+         *   ["choice-4"]=> string(2) "15"
+         *   ["submit"]=> string(6) "Submit"
+         * }
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$: </p>\n<pre>";
-        var_dump($_POST);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
+        /**
+         * Instead what we need is an array like this:
+         *
+         * array(4) {
+         *   [0]=> string(1) "3"
+         *   [1]=> string(1) "8"
+         *   [2]=> string(2) "12"
+         *   [3]=> string(2) "15"
+         * }
+         */
     }
 }
