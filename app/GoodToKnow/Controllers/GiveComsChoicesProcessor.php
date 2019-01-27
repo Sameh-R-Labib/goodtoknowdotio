@@ -17,6 +17,7 @@ class GiveComsChoicesProcessor
         global $is_admin;
         global $sessionMessage;
         global $saved_str01; // Has user's username
+        global $saved_int01; // Has user's id
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
