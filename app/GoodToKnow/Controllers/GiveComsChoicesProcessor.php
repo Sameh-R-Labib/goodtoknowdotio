@@ -24,6 +24,12 @@ class GiveComsChoicesProcessor
             redirect_to("/ax1/Home/page");
         }
         /**
+         * Now we know the ids of the communities the administrator
+         * wants the user to belong to. The goal is to assign these
+         * communities to the user.
+         */
+
+        /**
          * $_POST array looks something like this:
          *
          * array(5) {
