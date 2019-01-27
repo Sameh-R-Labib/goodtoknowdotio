@@ -20,18 +20,13 @@
     <?php require SESSIONMESSAGE; ?>
     <p>The presented choices are communities which the user does Not yet have membership in.</p>
     <section>
+        <?php /** @noinspection PhpUndefinedVariableInspection */
+        foreach ($coms_user_does_not_belong_to as $key => $value): ?>
         <label class="checkbox">
-            <input type="checkbox" name="0" value="3">
-            Community for Bash<br>
+            <input type="checkbox" name="choice-<?php echo $key + 1; ?>" value="<?php echo $value->id; ?>">
+            <?php echo $value->community_name; ?><br>
         </label>
-        <label class="checkbox">
-            <input type="checkbox" name="1" value="5">
-            Community for Mexican Food<br>
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" name="2" value="7">
-            Community for LINUX<br>
-        </label>
+        <?php endforeach; ?>
     </section>
     <section>
         <p>
