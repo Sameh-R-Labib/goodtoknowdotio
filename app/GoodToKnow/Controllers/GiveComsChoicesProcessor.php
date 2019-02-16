@@ -84,5 +84,13 @@ class GiveComsChoicesProcessor
          *   saved_int01 -- contains the id of the user
          */
 
+        foreach ($submitted_community_ids_array as $value) {
+            /**
+             * Each $value is a community id.
+             * In this iteration we have a community id.
+             * Make an entry in the user_to_community table
+             * for that community id and user's id.
+             */
+        }
     }
 }
