@@ -51,5 +51,32 @@ class GiveComsChoicesProcessor
          *   [3]=> string(2) "15"
          * }
          */
+
+        if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
+            $sessionMessage .= " Unexpected deficiencies in the _POST array. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $submitted_community_ids_array = [];
+        foreach ($_POST as $item) {
+            if (is_numeric($item)) {
+                $submitted_community_ids_array[] = $item;
+            }
+        }
+
+        if (empty($submitted_community_ids_array)) {
+            $sessionMessage .= " You did not submit any community ids. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$submitted_community_ids_array: </p>\n<pre>";
+        var_dump($submitted_community_ids_array);
+        die("<br><p>End debug</p>\n");
     }
 }
