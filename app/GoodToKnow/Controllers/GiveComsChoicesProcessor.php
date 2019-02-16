@@ -72,11 +72,20 @@ class GiveComsChoicesProcessor
         }
 
         /**
+         * For each  comm id that was submitted
+         * assign its community to the user.
+         */
+
+        /**
          * Debug Code
          */
         echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$submitted_community_ids_array: </p>\n<pre>";
-        var_dump($submitted_community_ids_array);
+        echo "<br><p>Var_dump \$saved_str01: </p>\n<pre>";
+        var_dump($saved_str01);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$saved_int01: </p>\n<pre>";
+        var_dump($saved_int01);
+        echo "</pre>\n";
         die("<br><p>End debug</p>\n");
     }
 }
