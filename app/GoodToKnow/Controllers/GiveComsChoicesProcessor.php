@@ -9,6 +9,8 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\UserToCommunity;
+
 class GiveComsChoicesProcessor
 {
     public function page()
@@ -23,6 +25,13 @@ class GiveComsChoicesProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * Now we know the ids of the communities the administrator
          * wants the user to belong to. The goal is to assign these
@@ -91,6 +100,7 @@ class GiveComsChoicesProcessor
              * Make an entry in the user_to_community table
              * for that community id and user's id.
              */
+            $result_of_insertion = UserToCommunity::add_community_to_user($db, $sessionMessage, $saved_int01, $value);
         }
     }
 }
