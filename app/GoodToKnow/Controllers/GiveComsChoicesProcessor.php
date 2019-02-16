@@ -77,15 +77,12 @@ class GiveComsChoicesProcessor
          */
 
         /**
-         * Debug Code
+         * "The user" -- means The User we are attempting to assign new groups to.
+         *
+         * We know:
+         *   saved_str01 -- contains the username
+         *   saved_int01 -- contains the id of the user
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$saved_str01: </p>\n<pre>";
-        var_dump($saved_str01);
-        echo "</pre>\n";
-        echo "<br><p>Var_dump \$saved_int01: </p>\n<pre>";
-        var_dump($saved_int01);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
     }
 }
