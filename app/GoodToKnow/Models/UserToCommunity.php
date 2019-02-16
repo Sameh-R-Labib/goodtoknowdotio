@@ -36,6 +36,11 @@ class UserToCommunity extends GoodObject
      */
     public $community_id;
 
+    public static function add_community_to_user(\mysqli $db, string &$error, int $user_id, int $community_id)
+    {
+
+    }
+
     /**
      * @param \mysqli $db
      * @param string $error

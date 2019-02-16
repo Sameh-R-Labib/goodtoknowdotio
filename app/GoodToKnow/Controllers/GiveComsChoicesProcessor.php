@@ -100,7 +100,12 @@ class GiveComsChoicesProcessor
              * Make an entry in the user_to_community table
              * for that community id and user's id.
              */
+
+            $value = (int)$value;
+
             $result_of_insertion = UserToCommunity::add_community_to_user($db, $sessionMessage, $saved_int01, $value);
+
+            // Make sure everything we asked for we got.
         }
     }
 }
