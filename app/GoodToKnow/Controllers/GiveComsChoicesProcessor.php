@@ -107,12 +107,10 @@ class GiveComsChoicesProcessor
         }
 
         /**
-         * Debug Code
+         * $array_of_usertocommunity_objects
+         * Tested Good
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$array_of_usertocommunity_objects: </p>\n<pre>";
-        var_dump($array_of_usertocommunity_objects);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
+
     }
 }
