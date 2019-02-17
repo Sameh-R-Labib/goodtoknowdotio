@@ -99,8 +99,20 @@ class GiveComsChoicesProcessor
          * so that we can insert all the UserToCommunity objects at once
          * instead of individually.
          */
-        foreach ($submitted_community_ids_array as $value) {
-            $value = (int)$value;
+        $array_of_usertocommunity_objects = [];
+        foreach ($submitted_community_ids_array as $a_community_id) {
+            $a_community_id = (int)$a_community_id;
+            $usertocommunity_object_as_array = ['user_id' => $saved_int01, 'community_id' => $a_community_id];
+            $array_of_usertocommunity_objects[] = UserToCommunity::array_to_object($usertocommunity_object_as_array);
         }
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$array_of_usertocommunity_objects: </p>\n<pre>";
+        var_dump($array_of_usertocommunity_objects);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
     }
 }
