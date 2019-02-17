@@ -111,6 +111,21 @@ class GiveComsChoicesProcessor
          * Tested Good
          */
 
+        /**
+         * The goal now is to insert all these objects into the database.
+         */
+        $result = UserToCommunity::insert_multiple_objects($db, $sessionMessage, $array_of_usertocommunity_objects);
+        if (!$result) {
+            $sessionMessage .= " In GiveComsChoicesProcessor encountered error due to
+            UserToCommunity::array_to_object being unable to save the user_to_community records. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
+        /**
+         * Declare success.
+         */
+        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s new communities were assigned to {$saved_str01} successfully! ";
+        redirect_to("/ax1/Home/page");
     }
 }
