@@ -93,19 +93,14 @@ class GiveComsChoicesProcessor
          *   saved_int01 -- contains the id of the user
          */
 
+        /**
+         * This loop will generate an array of UserToCommunity objects
+         * to be used by the GoodObject::insert_multiple_objects method
+         * so that we can insert all the UserToCommunity objects at once
+         * instead of individually.
+         */
         foreach ($submitted_community_ids_array as $value) {
-            /**
-             * Each $value is a community id.
-             * In this iteration we have a community id.
-             * Make an entry in the user_to_community table
-             * for that community id and user's id.
-             */
-
             $value = (int)$value;
-
-            $result_of_insertion = UserToCommunity::add_community_to_user($db, $sessionMessage, $saved_int01, $value);
-
-            // Make sure everything we asked for we got.
         }
     }
 }

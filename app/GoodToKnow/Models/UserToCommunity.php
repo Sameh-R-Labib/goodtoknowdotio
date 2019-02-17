@@ -36,19 +36,6 @@ class UserToCommunity extends GoodObject
      */
     public $community_id;
 
-    public static function add_community_to_user(\mysqli $db, string &$error, int $user_id, int $community_id)
-    {
-        /**
-         * We have a user.
-         * We have a community
-         *
-         * We want to create a UserToCommunity object and save it in the database.
-         * We want to report success or failure.
-         * If failure then we need to append an error message to $error.
-         */
-
-    }
-
     /**
      * @param \mysqli $db
      * @param string $error
