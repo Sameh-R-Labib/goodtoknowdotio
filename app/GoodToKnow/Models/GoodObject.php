@@ -205,7 +205,7 @@ abstract class GoodObject
     public static function insert_multiple_objects(\mysqli $db, string &$error, array $objects_array)
     {
         /**
-         * Unlike create() this function does NOT add id field values to the objects.
+         * Unlike create() (AFTER it executes) this function will NOT set id field values to the objects.
          * It is assumed that the objects have unassigned id fields and do NOT exist in the database.
          * The function returns true on success and false if no objects were inserted.
          */
