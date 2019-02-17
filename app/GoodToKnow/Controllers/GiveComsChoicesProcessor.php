@@ -95,7 +95,7 @@ class GiveComsChoicesProcessor
 
         /**
          * This loop will generate an array of UserToCommunity objects
-         * to be used by the GoodObject::insert_multiple_objects method
+         * to be used by the UserToCommunity::insert_multiple_objects method
          * so that we can insert all the UserToCommunity objects at once
          * instead of individually.
          */
