@@ -15,7 +15,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/RemoveComsFromUsrProcessor/page" method="post">
+<form action="/ax1/RemoveComsFromUserProcessor/page" method="post">
     <h2>Enter the Username</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
