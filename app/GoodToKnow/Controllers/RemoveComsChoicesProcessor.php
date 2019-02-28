@@ -9,6 +9,8 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\UserToCommunity;
+
 class RemoveComsChoicesProcessor
 {
     public function page()
@@ -104,11 +106,37 @@ class RemoveComsChoicesProcessor
          */
         $usertocommunity_objects_array = [];
         foreach ($submitted_community_ids_array as $a_community_id) {
-            $a_community_id = (int)$a_community_id;
             /**
              * Retrieve and add the UserToCommunity object
              * whose user_id == $saved_int01 and community_id == $a_community_id
              */
+            $sql = 'SELECT *
+                    FROM `user_to_community`
+                    WHERE `user_id` = "' . $db->real_escape_string($saved_int01) .
+                '" AND `community_id` = "' . $db->real_escape_string($a_community_id) .
+                '" LIMIT 1';
+            $array_with_one_element = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
+            if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
+                $sessionMessage .= " Error 0819. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $usertocommunity_objects_array[] = $array_with_one_element[0];
         }
+
+        /**
+         * So at this point we should have a $usertocommunity_objects_array
+         * whereupon we can iterate and delete each UserToCommunity object
+         * from the db table user_to_community.
+         */
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$usertocommunity_objects_array: </p>\n<pre>";
+        var_dump($usertocommunity_objects_array);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
     }
 }
