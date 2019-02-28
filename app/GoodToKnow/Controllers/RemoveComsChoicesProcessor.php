@@ -129,14 +129,19 @@ class RemoveComsChoicesProcessor
          * whereupon we can iterate and delete each UserToCommunity object
          * from the db table user_to_community.
          */
+        foreach ($usertocommunity_objects_array as $object) {
+            $result_of_delete = $object->delete($db, $sessionMessage);
+            if (!$result_of_delete) {
+                $sessionMessage .= " Aborted because failed to delete UserToCommunity object. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+        }
 
         /**
-         * Debug Code
+         * Declare success.
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$usertocommunity_objects_array: </p>\n<pre>";
-        var_dump($usertocommunity_objects_array);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s to-be-removed communities were removed successfully! ";
+        redirect_to("/ax1/Home/page");
     }
 }
