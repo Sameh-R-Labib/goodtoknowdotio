@@ -37,12 +37,23 @@ class RemoveComsChoicesProcessor
          */
 
         /**
-         * Debug Code
+         * $_POST array looks something like this:
+         *
+         * array(4) {
+         *   ["choice-16"]=> string(2) "23"
+         *   ["choice-18"]=> string(2) "25"
+         *   ["choice-24"]=> string(1) "8"
+         *   ["submit"]=> string(6) "Submit"
+         * }
+         *
+         * Instead what we need is an array like this:
+         *
+         * array(4) {
+         *   [0]=> string(1) "23"
+         *   [1]=> string(1) "25"
+         *   [2]=> string(2) "8"
+         * }
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$_POST: </p>\n<pre>";
-        var_dump($_POST);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
     }
 }
