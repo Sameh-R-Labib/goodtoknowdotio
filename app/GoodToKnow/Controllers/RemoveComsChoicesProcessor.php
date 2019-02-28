@@ -55,5 +55,43 @@ class RemoveComsChoicesProcessor
          * }
          */
 
+        if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
+            $sessionMessage .= " Unexpected deficiencies in the _POST array. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $submitted_community_ids_array = [];
+        foreach ($_POST as $item) {
+            if (is_numeric($item)) {
+                $submitted_community_ids_array[] = $item;
+            }
+        }
+
+        if (empty($submitted_community_ids_array)) {
+            $sessionMessage .= " You did not submit any community ids. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Generally speaking for each comm id that was submitted
+         * remove its community from the user.
+         */
+
+        /**
+         * "The user" -- means The User we are attempting to remove new groups from.
+         *
+         * We know:
+         *   saved_str01 -- contains the username
+         *   saved_int01 -- contains the id of the user
+         */
+
+        /**
+         * More specifically what we need to do is
+         * delete the rows of the user_to_community db table
+         * which have a user_id == $saved_int01
+         * and any of the comm ids found in the $submitted_community_ids_array.
+         */
     }
 }
