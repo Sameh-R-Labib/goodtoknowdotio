@@ -92,6 +92,23 @@ class RemoveComsChoicesProcessor
          * delete the rows of the user_to_community db table
          * which have a user_id == $saved_int01
          * and any of the comm ids found in the $submitted_community_ids_array.
+         *
+         * To accomplish this:
+         *   1) I will retrieve the pertinent UserToCommunity objects.
+         *   2) One-by-one I'll delete them.
          */
+
+        /**
+         * $usertocommunity_objects_array
+         *   will hold the UserToCommunity objects I retrieve from the database.
+         */
+        $usertocommunity_objects_array = [];
+        foreach ($submitted_community_ids_array as $a_community_id) {
+            $a_community_id = (int)$a_community_id;
+            /**
+             * Retrieve and add the UserToCommunity object
+             * whose user_id == $saved_int01 and community_id == $a_community_id
+             */
+        }
     }
 }
