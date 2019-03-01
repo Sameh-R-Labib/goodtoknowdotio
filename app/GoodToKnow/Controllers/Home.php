@@ -44,6 +44,7 @@ class Home
         global $sessionMessage;
         global $is_logged_in;
         global $is_admin;
+        global $when_last_checked_suspend;  // timestamp
         global $saved_str01;                // string value (temporary storage)
         global $saved_str02;
         global $saved_int01;
@@ -60,7 +61,7 @@ class Home
          * Logout the user if he is suspended.
          * We are not going to check to see if he is suspended
          * every time this page loads. There will be a session
-         * variable called last_check_of_suspension_status which
+         * variable called $when_last_checked_suspend which
          * will record the timestamp of the last check to make
          * sure he wasn't suspended.
          *
@@ -68,7 +69,7 @@ class Home
          * enforce_suspension
          *
          * This function will take arguments:
-         *   A) last_check_of_suspension_status (which is a timestamp)
+         *   A) $when_last_checked_suspend (which is a timestamp)
          *   B) The ID of the logged in user
          *
          * Within the function it will:
