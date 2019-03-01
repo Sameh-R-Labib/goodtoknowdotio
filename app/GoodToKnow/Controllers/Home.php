@@ -57,6 +57,34 @@ class Home
         $db = 'not connected';
 
         /**
+         * Logout the user if he is suspended.
+         * We are not going to check to see if he is suspended
+         * every time this page loads. There will be a session
+         * variable called last_check_of_suspension_status which
+         * will record the timestamp of the last check to make
+         * sure he wasn't suspended.
+         *
+         * All this will be encapsulated in a function called:
+         * enforce_suspension
+         *
+         * This function will take arguments:
+         *   A) last_check_of_suspension_status (which is a timestamp)
+         *   B) The ID of the logged in user
+         *
+         * Within the function it will:
+         *   1) Update last_check_of_suspension_status
+         *   2) Determine whether or not the user is suspended per database
+         *   3) If the user is suspended log him out and redirect to the page for logging in.
+         *   4) Otherwise, return control over to where the function was called.
+         */
+
+
+
+
+
+
+
+        /**
          * If the special_community_array has not been
          * refreshed for a period of time longer than
          * 3 hours then refresh it.
