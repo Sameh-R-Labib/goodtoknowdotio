@@ -84,6 +84,11 @@ class LoginScript
         }
 
         /**
+         * This counts as a suspension check therefore:
+         */
+        $_SESSION['when_last_checked_suspend'] = time();
+
+        /**
          * Put user's data in session.
          */
         $_SESSION['user_id'] = $user->id;
