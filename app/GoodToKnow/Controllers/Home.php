@@ -74,9 +74,10 @@ class Home
          *   C) $when_last_checked_suspend (which is a timestamp)
          *
          * Within the function it will:
-         *   1) Determine whether or not the user is suspended per database
-         *   2) If the user is suspended log him out and redirect to the page for logging in.
-         *   3) Otherwise, return control over to where the function was called.
+         *   1) Skip everything if it's too soon.
+         *   2) Determine whether or not the user is suspended per database
+         *   3) If the user is suspended log him out and redirect to the page for logging in.
+         *   4) Otherwise, return control over to where the function was called.
          */
         if ($db == 'not connected') {
             $db = db_connect($sessionMessage);
