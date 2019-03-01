@@ -78,6 +78,14 @@ class Home
          *   3) If the user is suspended log him out and redirect to the page for logging in.
          *   4) Otherwise, return control over to where the function was called.
          */
+        if ($db == 'not connected') {
+            $db = db_connect($sessionMessage);
+            if ($db === false) {
+                $sessionMessage .= " Failed to connect to the database. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/InfiniteLoopPrevent/page");
+            }
+        }
 
 
 
@@ -92,7 +100,14 @@ class Home
          */
         $time_since_refresh = time() - $last_refresh_communities;  // seconds
         if ($time_since_refresh > 10800) {
-            $db = db_connect($sessionMessage);
+            if ($db == 'not connected') {
+                $db = db_connect($sessionMessage);
+                if ($db === false) {
+                    $sessionMessage .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
+                }
+            }
             $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
             $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
             if ($user_to_community_array === false) {
@@ -122,6 +137,11 @@ class Home
         if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
+                if ($db === false) {
+                    $sessionMessage .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
+                }
             }
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
             if ($special_topic_array === false) $special_topic_array = [];
@@ -138,6 +158,11 @@ class Home
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
+                if ($db === false) {
+                    $sessionMessage .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
+                }
             }
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
             if ($special_post_array === false) $special_post_array = [];
@@ -154,6 +179,11 @@ class Home
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
+                if ($db === false) {
+                    $sessionMessage .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
+                }
             }
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if ($post_object === false) {

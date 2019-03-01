@@ -38,7 +38,7 @@ function size_as_text(int $size)
 
 /**
  * @param string $error
- * @return mysqli
+ * @return bool|mysqli
  */
 function db_connect(string &$error)
 {
@@ -46,10 +46,12 @@ function db_connect(string &$error)
         $db = new \mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
         if ($db->connect_error) {
             $error .= ' ' . $db->connect_error . ' ';
+            return false;
         }
         $db->set_charset('utf8');
     } catch (\Exception $e) {
         $error .= ' ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        return false;
     }
     return $db;
 }
