@@ -69,8 +69,9 @@ class Home
          * enforce_suspension
          *
          * This function will take arguments:
-         *   A) $when_last_checked_suspend (which is a timestamp)
+         *   A) $db
          *   B) The ID of the logged in user
+         *   C) $when_last_checked_suspend (which is a timestamp)
          *
          * Within the function it will:
          *   1) Update last_check_of_suspension_status
@@ -87,11 +88,9 @@ class Home
             }
         }
 
-
-
-
-
-
+        EnforceSuspension::enforce_suspension($db, $user_id, $when_last_checked_suspend);
+        $when_last_checked_suspend = time();
+        $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
 
         /**
          * If the special_community_array has not been
