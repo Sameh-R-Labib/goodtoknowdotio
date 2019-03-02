@@ -94,7 +94,7 @@ class Home
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
-        $when_last_checked_suspend = time();
+        // $when_last_checked_suspend may have been changed by EnforceSuspension::enforce_suspension
         $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
 
         /**

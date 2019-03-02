@@ -20,7 +20,7 @@ class EnforceSuspension
      * @param int $when_last_checked_suspend
      * @return bool
      */
-    public static function enforce_suspension(\mysqli $db, string &$error, int $user_id, int $when_last_checked_suspend)
+    public static function enforce_suspension(\mysqli $db, string &$error, int $user_id, int &$when_last_checked_suspend)
     {
         /**
          *   1) Skip everything if it's too soon.
@@ -32,6 +32,13 @@ class EnforceSuspension
         // Skip everything if it's too soon.
         $elapsed_time = time() - $when_last_checked_suspend;
         if ($elapsed_time < 600) return true;
+
+        /**
+         * Here I will reset $when_last_checked_suspend
+         * because I don't want to be resetting it each time the Home page loads.
+         * This way I'll be resetting it if $elapsed_time >= 600 seconds when Home page loads
+         */
+        $when_last_checked_suspend = time();
 
         // Determine whether or not the user is suspended per database
         $user_object = User::find_by_id($db, $error, $user_id);
