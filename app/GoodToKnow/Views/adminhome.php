@@ -57,6 +57,7 @@
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
         <li><a href="/ax1/GiveCommunitiesToUser/page">Give Communities to User</a></li>
         <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove Communities from A User</a></li>
+        <li><a href="/ax1/UserRoster/page">User Roster</a></li>
     </ul>
     <p>When writing a post, our goal is to concisely write information which helps the reader wrap their head around the
         <em>community's</em> subject matter.</p>
