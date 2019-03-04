@@ -60,7 +60,8 @@
         <li><a href="/ax1/UserRoster/page">User Roster</a></li>
     </ul>
     <p>When writing a post, our goal is to concisely write in a manner which helps the reader wrap their head around the
-        <em>community's</em> subject matter. When I say "community" I mean as in our hierarchy: community &Rarr; topic
+        <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy: community
+        &Rarr; topic
         &Rarr; post.</p>
     <figure>
         <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
