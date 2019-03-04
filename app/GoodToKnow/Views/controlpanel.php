@@ -54,8 +54,9 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
-    <p>When writing a post, our goal is to concisely write information which helps the reader wrap their head around the
-        <em>community's</em> subject matter.</p>
+    <p>When writing a post, our goal is to concisely write in a manner which helps the reader wrap their head around the
+        <em>community's</em> subject matter. When I say "community" I mean as in our hierarchy: community &Rarr; topic
+        &Rarr; post.</p>
     <figure>
         <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
             <img class="photo" alt="Badge" src="/1944235.png" title="Membership Badge"/>
