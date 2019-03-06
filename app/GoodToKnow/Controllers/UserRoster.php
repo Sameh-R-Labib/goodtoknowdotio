@@ -9,6 +9,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
 use GoodToKnow\Models\ReadableUser;
 use GoodToKnow\Models\User;
 
@@ -62,9 +63,21 @@ class UserRoster
         // We need to have an array of a different object type called ReadableUser.
         $readable_user_array = [];
 
+        // Assign $community_values_array. $community_values_array is described in class ReadableUser.
+        $community_values_array = [];
+        $array_of_all_community_objects = Community::find_all($db, $sessionMessage);
+        if ($array_of_all_community_objects === false || empty($array_of_all_community_objects)) {
+            $sessionMessage .= " Unable to retrieve any community objects. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        foreach ($array_of_all_community_objects as $community) {
+            $community_values_array[$community->id] = $community->community_name;
+        }
+
         // For each user object replace the id_of_default_community with the community's name.
         foreach ($user_objects_array as $user) {
-            $readable_user_array[] = new ReadableUser($user);
+            $readable_user_array[] = new ReadableUser($user, $community_values_array);
         }
 
         // For each user object replace the hyphens and underscores in the role with a space and capitalize the first letter of each word.

@@ -81,8 +81,13 @@ class ReadableUser
      */
     public $comment;
 
-    function __construct(object $user)
+    function __construct(object $user, array $community_values_array)
     {
+        /**
+         * The purpose of having $community_values_array is so we don't have to keep extracting its data from the database.
+         * $community_values_array has elements described as follows:
+         * The key is a community id and the value is the community name which corresponds to that community id.
+         */
         $this->id = $user->id;
         $this->username = $user->username;
         $this->password = '';
@@ -93,5 +98,14 @@ class ReadableUser
         $this->is_suspended = $user->is_suspended;
         $this->date = $user->date;
         $this->comment = $user->comment;
+
+        $this->assign_readable_community_name($community_values_array);
+    }
+
+    private function assign_readable_community_name(array $community_values_array)
+    {
+        /**
+         * This function will assign a community name to $readable_community_name
+         */
     }
 }
