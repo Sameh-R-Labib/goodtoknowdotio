@@ -90,7 +90,7 @@ class ReadableUser
          */
         $this->id = $user->id;
         $this->username = $user->username;
-        $this->password = '';
+        $this->password = $user->password;
         $this->id_of_default_community = $user->id_of_default_community;
         $this->title = $user->title;
         $this->role = $user->role;
