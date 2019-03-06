@@ -111,7 +111,7 @@ class ReadableUser
          * Assign a value to $this->readable_is_suspended:
          * Replace a 0 with No and a positive or negative integer with a Yes in the is_suspended.
          */
-        if ($this->is_suspended === 0) {
+        if ((int)$this->is_suspended === 0) {
             $this->readable_is_suspended = "No";
         } else {
             $this->readable_is_suspended = "Yes";
@@ -126,7 +126,7 @@ class ReadableUser
          */
         $characters_to_replace_array = ['-', '_'];
         $this->readable_race = str_replace($characters_to_replace_array, " ", $this->race);
-        $this->readable_race = ucfirst($this->readable_race);
+        $this->readable_race = ucwords($this->readable_race);
     }
 
     private function assign_readable_community_name(array $community_values_array)
@@ -145,6 +145,6 @@ class ReadableUser
          */
         $characters_to_replace_array = ['-', '_'];
         $this->readable_role = str_replace($characters_to_replace_array, " ", $this->role);
-        $this->readable_role = ucfirst($this->readable_role);
+        $this->readable_role = ucwords($this->readable_role);
     }
 }
