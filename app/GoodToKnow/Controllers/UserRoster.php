@@ -50,17 +50,26 @@ class UserRoster
         }
 
         /**
-         * Debug Code
+         * $user_objects_array is square business
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$user_objects_array: </p>\n<pre>";
-        var_dump($user_objects_array);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
 
         /**
          * Replace the field values that can benefit the viewer upon being replaced
          * (so that they present better.)
          */
+
+        // We need to have an array of a different object type called ReadableUser.
+        $readable_user_array = [];
+
+        // For each user object replace the id_of_default_community with the community's name.
+        foreach ($user_objects_array as $user) {
+
+        }
+
+        // For each user object replace the hyphens and underscores in the role with a space and capitalize the first letter of each word.
+
+        // For each  user object replace the hyphens in the race with a space and capitalize the first letter of each word.
+
+        // For each  user object replace a 0 with No and a positive integer with a Yes.
     }
 }
