@@ -100,6 +100,7 @@ class ReadableUser
         $this->comment = $user->comment;
 
         $this->assign_readable_community_name($community_values_array);
+        $this->assign_readable_role();
     }
 
     private function assign_readable_community_name(array $community_values_array)
@@ -107,5 +108,17 @@ class ReadableUser
         /**
          * This function will assign a community name to $readable_community_name
          */
+        $this->readable_community_name = $community_values_array[$this->id_of_default_community];
+    }
+
+    private function assign_readable_role()
+    {
+        /**
+         * Assign a value to $this->readable_role:
+         * Replace the hyphens and underscores in the role with a space and capitalize the first letter of each word.
+         */
+        $characters_to_replace_array = ['-', '_'];
+        $this->readable_role = str_replace($characters_to_replace_array, " ", $this->role);
+        $this->readable_role = ucfirst($this->readable_role);
     }
 }
