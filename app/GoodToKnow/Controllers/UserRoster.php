@@ -75,6 +75,13 @@ class UserRoster
             $readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
         }
 
-
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$readable_user_objects_array: </p>\n<pre>";
+        var_dump($readable_user_objects_array);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
     }
 }
