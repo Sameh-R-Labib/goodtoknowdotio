@@ -58,14 +58,14 @@
             <ul>
                 <li>
                     <label for="title_1">
-                        <input type="radio" id="title_1" name="title" value="Mr">
-                        Mister
+                        <input type="radio" id="title_1" name="title" value="Mr.">
+                        Mr.
                     </label>
                 </li>
                 <li>
                     <label for="title_2">
-                        <input type="radio" id="title_2" name="title" value="Ms">
-                        Miss
+                        <input type="radio" id="title_2" name="title" value="Mrs.">
+                        Mrs.
                     </label>
                 </li>
             </ul>

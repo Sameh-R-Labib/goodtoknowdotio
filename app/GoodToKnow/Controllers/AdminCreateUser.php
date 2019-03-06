@@ -381,7 +381,7 @@ class AdminCreateUser
         /**
          * Trim it.
          * Can't be empty.
-         * Mr and Ms are the only valid values for title.
+         * Mr. and Mrs. are the only valid values for title.
          */
         $title = trim($title);
 
@@ -390,7 +390,7 @@ class AdminCreateUser
             return false;
         }
 
-        $possible = ['Mr', 'Ms'];
+        $possible = ['Mr.', 'Mrs.'];
         if (!in_array($title, $possible)) {
             $message .= " Your title field does not contain a valid value. ";
             return false;
