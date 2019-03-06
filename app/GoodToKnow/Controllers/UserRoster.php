@@ -50,6 +50,15 @@ class UserRoster
         }
 
         /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$user_objects_array: </p>\n<pre>";
+        var_dump($user_objects_array);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+        /**
          * Replace the field values that can benefit the viewer upon being replaced
          * (so that they present better.)
          */
