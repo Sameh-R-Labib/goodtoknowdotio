@@ -9,6 +9,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\ReadableUser;
 use GoodToKnow\Models\User;
 
 class UserRoster
@@ -63,13 +64,13 @@ class UserRoster
 
         // For each user object replace the id_of_default_community with the community's name.
         foreach ($user_objects_array as $user) {
-
+            $readable_user_array[] = new ReadableUser($user);
         }
 
         // For each user object replace the hyphens and underscores in the role with a space and capitalize the first letter of each word.
 
         // For each  user object replace the hyphens in the race with a space and capitalize the first letter of each word.
 
-        // For each  user object replace a 0 with No and a positive integer with a Yes.
+        // For each  user object replace a 0 with No and a positive integer with a Yes in the is_suspended.
     }
 }
