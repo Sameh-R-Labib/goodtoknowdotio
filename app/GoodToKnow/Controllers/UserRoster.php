@@ -59,6 +59,8 @@ class UserRoster
         // We need to have an array of a different object type called ReadableUser.
         $readable_user_objects_array = [];
 
+        // $community_values_array is a helper for finding $readable_user_objects_array
+
         // Assign $community_values_array. $community_values_array is described in class ReadableUser.
         $community_values_array = [];
         $array_of_all_community_objects = Community::find_all($db, $sessionMessage);
@@ -71,17 +73,11 @@ class UserRoster
             $community_values_array[$community->id] = $community->community_name;
         }
 
+        // $readable_user_objects_array is what we will use in the view.
         foreach ($user_objects_array as $user) {
             $readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
         }
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$readable_user_objects_array: </p>\n<pre>";
-        var_dump($readable_user_objects_array);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+
     }
 }
