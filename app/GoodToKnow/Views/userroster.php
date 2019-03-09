@@ -27,3 +27,7 @@
 <div id="communities">
     <p>👪:&nbsp;&nbsp;<?php require COMMUNITIESFORTHISUSER; ?></p>
 </div>
+<!-- breadcrumbs -->
+<div id="breadcrumbs">
+    <p>⛺:&nbsp;&nbsp;<?php require BREADCRUMBS; ?></p>
+</div>
