@@ -49,15 +49,15 @@
         <?php $last = count($readable_user_objects_array) - 1; ?>
         <?php foreach ($readable_user_objects_array as $key => $user): ?>
             <p>&nbsp;</p>
-            <p><b>U/N: </b><?php echo $user->username; ?></p>
-            <p><b>Default Community: </b><?php echo $user->readable_community_name; ?></p>
-            <p><b>Title: </b><?php echo $user->title; ?></p>
-            <p><b>Role: </b><?php echo $user->readable_role; ?></p>
-            <p><b>Race: </b><?php echo $user->readable_race; ?></p>
-            <p><b>Is-Suspended: </b><?php echo $user->readable_is_suspended; ?></p>
-            <p><b>Date: </b><?php echo $user->date; ?></p>
+            <p><b>U/N:&nbsp;&nbsp;</b><?php echo $user->username; ?></p>
+            <p><b>Default Community:&nbsp;&nbsp;</b><?php echo $user->readable_community_name; ?></p>
+            <p><b>Title:&nbsp;&nbsp;</b><?php echo $user->title; ?></p>
+            <p><b>Role:&nbsp;&nbsp;</b><?php echo $user->readable_role; ?></p>
+            <p><b>Race:&nbsp;&nbsp;</b><?php echo $user->readable_race; ?></p>
+            <p><b>Is-Suspended:&nbsp;&nbsp;</b><?php echo $user->readable_is_suspended; ?></p>
+            <p><b>Date:&nbsp;&nbsp;</b><?php echo $user->date; ?></p>
             <p>&nbsp;</p>
-            <p><b>Comment: </b><?php echo $user->comment; ?></p>
+            <p><b>Comment:&nbsp;&nbsp;</b><?php echo $user->comment; ?></p>
             <p>&nbsp;</p>
             <?php if ($key != $last): ?>
                 <hr>
