@@ -56,6 +56,9 @@ class MemberMemoEditorForm
         /**
          *  3) Present a (pre-filled with current memo)
          *     form for editing the memo.
+         *
+         *  $user_object->comment
+         *     is to be used to pro-populate the form.
          */
         $html_title = 'Member Memo Editor Form';
 
