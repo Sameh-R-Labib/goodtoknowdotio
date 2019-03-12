@@ -13,6 +13,13 @@ class MemberMemEdFormProc
 {
     public function page()
     {
-
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$_POST: </p>\n<pre>";
+        var_dump($_POST);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
     }
 }
