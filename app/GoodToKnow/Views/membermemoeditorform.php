@@ -20,7 +20,7 @@
         echo $saved_str01; ?> Memo</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>📌: Plain text only. Limit it to one paragraph.</small>
+        <small>📌: Plain text. Limit one paragraph. Maximum 800 characters.</small>
     </p>
     <section>
         <p>
