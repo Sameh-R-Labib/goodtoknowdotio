@@ -52,7 +52,14 @@ class MemberMemEdFormProc
 
         /**
          * 2) Remove any HTML tags found in $_POST['plaintext'].
+         * 3) Validate the suitability of $_POST['plaintext']
+         *    as a User comment.
          */
-        $edited_comment = strip_tags($edited_comment);
+        $result = AdminCreateUser::is_comment($sessionMessage, $edited_comment);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because the text submitted did not comply. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
     }
 }
