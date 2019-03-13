@@ -9,6 +9,8 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\User;
+
 class MemberMemEdFormProc
 {
     public function page()
@@ -61,5 +63,22 @@ class MemberMemEdFormProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * 4) Get a copy of the User object for the member.
+         */
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
+
+        /**
+         * 5) Makes sure the comment is escaped for suitability
+         *    to being included in an sql statement. This may be
+         *    taken care of automatically by the GoodObject class
+         *    function I'll be using but make sure.
+         */
     }
 }
