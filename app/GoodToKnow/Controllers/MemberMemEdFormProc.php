@@ -79,6 +79,30 @@ class MemberMemEdFormProc
          *    to being included in an sql statement. This may be
          *    taken care of automatically by the GoodObject class
          *    function I'll be using but make sure.
+         *
+         * Yes this is t.c.o. automatically. So, don't worry about it!
          */
+
+        /**
+         * 6) Replace the User's current comment with the new one.
+         */
+        $user_object->comment = $edited_comment;
+
+        /**
+         * 7) Update the database with this User object.
+         */
+        $result = $user_object->save($db, $sessionMessage);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated user object. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Report success.
+         */
+        $sessionMessage .= " I have successfully updated {$saved_str01}'s record. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }
