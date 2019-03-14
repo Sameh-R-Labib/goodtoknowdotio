@@ -45,7 +45,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h1>User Scripts</h1>
+    <h1>Member's Tool Box</h1>
     <ul>
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>

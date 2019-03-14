@@ -45,7 +45,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h1>Admin Scripts</h1>
+    <h1>Admin's Tool Box</h1>
     <ul>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
         <li><a href="/ax1/PurgeOldMessages/page">Purge Old Messages</a></li>
@@ -56,7 +56,7 @@
         <li><a href="/ax1/MemberMemoEditor/page">Member's Memo Editor</a></li>
         <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>
     </ul>
-    <h2>Regular Member Scripts</h2>
+    <h2>Member's Tool Box</h2>
     <ul>
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
