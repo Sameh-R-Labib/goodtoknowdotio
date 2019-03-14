@@ -59,6 +59,7 @@
         <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove Communities from A User</a></li>
         <li><a href="/ax1/UserRoster/page">User Roster</a></li>
         <li><a href="/ax1/MemberMemoEditor/page">Member's Memo Editor</a></li>
+        <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>
     </ul>
     <p>When writing a post, our goal is to concisely write in a manner which helps the reader wrap their head around the
         <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy: community
