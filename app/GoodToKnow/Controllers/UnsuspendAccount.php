@@ -13,6 +13,22 @@ class UnsuspendAccount
 {
     public function page()
     {
+        global $is_logged_in;
+        global $is_admin;
+        global $sessionMessage;
 
+        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Present a form which collects
+         * the username.
+         */
+
+        $html_title = "Unsuspend Account";
+
+        require VIEWS . DIRSEP . 'unsuspendaccount.php';
     }
 }
