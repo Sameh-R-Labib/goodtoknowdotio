@@ -57,7 +57,8 @@ class CreateNewPostProcessor
          * there is more than one post in the chosen topic.
          */
         $db = db_connect($sessionMessage);
-        if (!empty($sessionMessage)) {
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

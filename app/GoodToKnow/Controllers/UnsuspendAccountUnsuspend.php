@@ -36,7 +36,8 @@ class UnsuspendAccountUnsuspend
          */
 
         $db = db_connect($sessionMessage);
-        if (!empty($sessionMessage)) {
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

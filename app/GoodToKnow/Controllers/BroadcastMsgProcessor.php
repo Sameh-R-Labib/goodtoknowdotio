@@ -64,7 +64,8 @@ class BroadcastMsgProcessor
         $message_object = Message::array_to_object($message_array);
 
         $db = db_connect($sessionMessage);
-        if (!empty($sessionMessage)) {
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
