@@ -21,25 +21,9 @@ class LoginScript
         global $is_logged_in;
         global $sessionMessage;
 
-        if ($is_logged_in) {
-            $sessionMessage .= " I don't know exactly why you ended up on this page but what I do know is that
-             you submitted your username and password to log in although the session already considers you logged in. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/InfiniteLoopPrevent/page");
-        }
+        $db = 0;
 
-        /*
-         * For denial of service attacks
-         */
-        sleep(1);
-
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
+        self::init($db, $is_logged_in, $sessionMessage);
 
         /**
          * Variables to work with:
@@ -160,6 +144,29 @@ class LoginScript
         $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> here any time just click on the site logo. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    private static function init(&$db, $is_logged_in, &$error)
+    {
+        if ($is_logged_in) {
+            $error .= " I don't know exactly why you ended up on this page but what I do know is that
+             you submitted your username and password to log in although the session already considers you logged in. ";
+            $_SESSION['message'] = $error;
+            redirect_to("/ax1/InfiniteLoopPrevent/page");
+        }
+
+        /*
+         * For denial of service attacks
+         */
+        sleep(1);
+
+        $db = db_connect($error);
+
+        if (!empty($error) || $db === false) {
+            $error .= ' Database connection failed. ';
+            $_SESSION['message'] = $error;
+            redirect_to("/ax1/LoginForm/page");
+        }
     }
 
     /**
