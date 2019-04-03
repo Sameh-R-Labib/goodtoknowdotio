@@ -22,6 +22,8 @@ class LoginScript
         global $sessionMessage;
 
         if ($is_logged_in) {
+            $sessionMessage .= " I don't know exactly why you ended up on this page but what I do know is that
+             you submitted your username and password to log in although the session already considers you logged in. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
