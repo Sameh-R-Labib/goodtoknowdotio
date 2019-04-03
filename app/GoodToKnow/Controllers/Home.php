@@ -12,8 +12,6 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
-use GoodToKnow\Models\UserToCommunity;
-use GoodToKnow\Models\Community;
 
 
 class Home
@@ -112,21 +110,9 @@ class Home
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
-            $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
-            $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
-            if ($user_to_community_array === false) {
-                $sessionMessage .= " Home page() says unexpected no user_to_community_array. ";
-            }
-            $special_community_array = [];
-            foreach ($user_to_community_array as $value) {
-                // Talking about the right side of the assignment statement
-                // First we're getting a Community object
-                $special_community_array[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
-                if ($special_community_array[$value->community_id] === false) {
-                    $sessionMessage .= " Home page() says err_no 30848. ";
-                }
-                // Then we're getting the community_name from that object
-                $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
+            $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $sessionMessage, $user_id);
+            if ($special_community_array === false) {
+                $sessionMessage .= " Failed to find the array of the user's communities. ";
             }
             $_SESSION['special_community_array'] = $special_community_array;
             $_SESSION['last_refresh_communities'] = time();
