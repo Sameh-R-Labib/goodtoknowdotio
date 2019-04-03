@@ -146,6 +146,11 @@ class LoginScript
         redirect_to("/ax1/Home/page");
     }
 
+    /**
+     * @param $db
+     * @param $is_logged_in
+     * @param $error
+     */
     private static function init(&$db, $is_logged_in, &$error)
     {
         if ($is_logged_in) {
