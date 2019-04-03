@@ -12,7 +12,6 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
-use GoodToKnow\Models\UserToCommunity;
 
 
 class LoginScript
@@ -125,34 +124,11 @@ class LoginScript
          *  - Value is a community name
          */
 
-        /**
-         * So, the first get all the communities
-         * for the user.
-         */
-        $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user->id;
-        $user_to_community_array = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
-
-        if (!$user_to_community_array) {
-            $sessionMessage .= " LoginScript page() says unexpected no user_to_community_array. ";
+        $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $sessionMessage, $user->id);
+        if ($special_community_array === false) {
+            $sessionMessage .= " Failed to find the array of the user's communities. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/LoginForm/page");
-        }
-
-        /**
-         * Build the array I'm looking for.
-         */
-        $special_community_array = [];
-        foreach ($user_to_community_array as $value) {
-            // Talking about the right side of the assignment statement
-            // First we're getting a Community object
-            $special_community_array[$value->community_id] = Community::find_by_id($db, $sessionMessage, $value->community_id);
-            if (!$special_community_array[$value->community_id]) {
-                $sessionMessage .= " LoginScript page() says err_no 80848. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/LoginForm/page");
-            }
-            // Then we're getting the community_name from that object
-            $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
         }
 
         /**
