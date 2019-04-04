@@ -21,7 +21,7 @@ class LoginScript
         global $is_logged_in;
         global $sessionMessage;
 
-        $db = db_connect($error);
+        $db = db_connect($sessionMessage);
 
         self::init($db, $is_logged_in, $sessionMessage);
 
