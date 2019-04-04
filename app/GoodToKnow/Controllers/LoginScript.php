@@ -21,7 +21,7 @@ class LoginScript
         global $is_logged_in;
         global $sessionMessage;
 
-        $db = 0;
+        $db = db_connect($error);
 
         self::init($db, $is_logged_in, $sessionMessage);
 
@@ -151,7 +151,7 @@ class LoginScript
      * @param $is_logged_in
      * @param $error
      */
-    private static function init(&$db, $is_logged_in, &$error)
+    private static function init($db, $is_logged_in, $error)
     {
         if ($is_logged_in) {
             $error .= " I don't know exactly why you ended up on this page but what I do know is that
@@ -160,12 +160,8 @@ class LoginScript
             redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
 
-        /*
-         * For denial of service attacks
-         */
+        // For denial of service attacks
         sleep(1);
-
-        $db = db_connect($error);
 
         if (!empty($error) || $db === false) {
             $error .= ' Database connection failed. ';
