@@ -130,6 +130,11 @@ class LoginScript
         redirect_to("/ax1/Home/page");
     }
 
+    /**
+     * @param string $error
+     * @param string $submitted_username
+     * @param string $submitted_password
+     */
     private static function assimilate_input(string $error, string &$submitted_username, string &$submitted_password)
     {
         $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
@@ -144,8 +149,8 @@ class LoginScript
 
     /**
      * @param $db
-     * @param $is_logged_in
      * @param $error
+     * @param $is_logged_in
      */
     private static function init($db, $error, $is_logged_in)
     {
