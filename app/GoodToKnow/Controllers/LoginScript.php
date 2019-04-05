@@ -33,6 +33,23 @@ class LoginScript
 
         self::login_the_user($sessionMessage, $user);
 
+        self::store_application_state($db, $sessionMessage, $user);
+
+        /**
+         * Report success
+         */
+        $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> any time click on site logo. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param object $user
+     */
+    private static function store_application_state(\mysqli $db, string &$error, object $user)
+    {
         /**
          * Put user's data in session.
          */
@@ -51,7 +68,7 @@ class LoginScript
          * Put the community_name which corresponds with
          * community_id in the session.
          */
-        $community_object = Community::find_by_id($db, $sessionMessage, $user->id_of_default_community);
+        $community_object = Community::find_by_id($db, $error, $user->id_of_default_community);
         $_SESSION['community_name'] = $community_object->community_name;
         $_SESSION['community_description'] = $community_object->community_description;
 
@@ -69,10 +86,10 @@ class LoginScript
          *  - Value is a community name
          */
 
-        $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $sessionMessage, $user->id);
+        $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $error, $user->id);
         if ($special_community_array === false) {
-            $sessionMessage .= " Failed to find the array of the user's communities. ";
-            $_SESSION['message'] = $sessionMessage;
+            $error .= " Failed to find the array of the user's communities. ";
+            $_SESSION['message'] = $error;
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -88,21 +105,14 @@ class LoginScript
         /**
          * Find and save in session a value for special_topic_array.
          */
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $user->id_of_default_community);
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $user->id_of_default_community);
         if (!$special_topic_array) {
-            $sessionMessage .= " I did'nt find any topics for your default community. ";
-            $_SESSION['message'] .= $sessionMessage;
+            $error .= " I did'nt find any topics for your default community. ";
+            $_SESSION['message'] .= $error;
             redirect_to("/ax1/Home/page");
         }
         $_SESSION['special_topic_array'] = $special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
-
-        /**
-         * Report success
-         */
-        $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> any time click on site logo. ";
-        $_SESSION['message'] = $sessionMessage;
-        redirect_to("/ax1/Home/page");
     }
 
     /**
