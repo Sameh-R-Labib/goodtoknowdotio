@@ -35,11 +35,16 @@ class LoginScript
 
         self::store_application_state($db, $sessionMessage, $user);
 
-        /**
-         * Report success
-         */
-        $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> any time click on site logo. ";
-        $_SESSION['message'] = $sessionMessage;
+        self::report_on_findings($sessionMessage);
+    }
+
+    /**
+     * @param string $error
+     */
+    private static function report_on_findings(string $error)
+    {
+        $error .= " Welcome to your \"Home\" page. To come <b>back</b> any time click on site logo. ";
+        $_SESSION['message'] = $error;
         redirect_to("/ax1/Home/page");
     }
 
