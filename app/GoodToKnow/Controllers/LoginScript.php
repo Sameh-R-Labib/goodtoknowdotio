@@ -106,7 +106,6 @@ class LoginScript
     }
 
     /**
-     * @param \mysqli $db
      * @param string $error
      * @param $user
      */
