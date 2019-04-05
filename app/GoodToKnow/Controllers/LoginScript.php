@@ -25,9 +25,9 @@ class LoginScript
         $submitted_username = '';
         $submitted_password = '';
 
-        self::init($db, $is_logged_in, $sessionMessage);
+        self::init($db, $sessionMessage, $is_logged_in);
 
-        self::assimilate_input($submitted_username, $submitted_password);
+        self::assimilate_input($sessionMessage, $submitted_username, $submitted_password);
 
         /**
          * authenticate never returns true it returns an object instead.
@@ -130,14 +130,14 @@ class LoginScript
         redirect_to("/ax1/Home/page");
     }
 
-    private static function assimilate_input(&$submitted_username, &$submitted_password)
+    private static function assimilate_input(string $error, string &$submitted_username, string &$submitted_password)
     {
         $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
         $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
 
-        if (!self::is_username($sessionMessage, $submitted_username) ||
-            !self::is_password($sessionMessage, $submitted_password)) {
-            $_SESSION['message'] = $sessionMessage;
+        if (!self::is_username($error, $submitted_username) ||
+            !self::is_password($error, $submitted_password)) {
+            $_SESSION['message'] = $error;
             redirect_to("/ax1/LoginForm/page");
         }
     }
@@ -147,7 +147,7 @@ class LoginScript
      * @param $is_logged_in
      * @param $error
      */
-    private static function init($db, $is_logged_in, $error)
+    private static function init($db, $error, $is_logged_in)
     {
         if ($is_logged_in) {
             $error .= " I don't know exactly why you ended up on this page but what I do know is that
