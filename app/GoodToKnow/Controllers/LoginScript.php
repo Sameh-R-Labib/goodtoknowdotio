@@ -22,28 +22,12 @@ class LoginScript
         global $sessionMessage;
 
         $db = db_connect($sessionMessage);
+        $submitted_username = '';
+        $submitted_password = '';
 
         self::init($db, $is_logged_in, $sessionMessage);
 
-        /**
-         * Variables to work with:
-         *   $_POST['username'], $_POST['password']
-         *
-         * I can't assume these post variables exist so I do the following.
-         */
-
-        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
-        $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
-
-        /**
-         * If any of the submitted fields are invalid
-         * store a session message and redirect to /ax1/LoginForm/page
-         */
-        if (!self::is_username($sessionMessage, $submitted_username) ||
-            !self::is_password($sessionMessage, $submitted_password)) {
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
+        self::assimilate_input($submitted_username, $submitted_password);
 
         /**
          * authenticate never returns true it returns an object instead.
@@ -144,6 +128,18 @@ class LoginScript
         $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> here any time just click on the site logo. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    private static function assimilate_input(&$submitted_username, &$submitted_password)
+    {
+        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+        $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
+
+        if (!self::is_username($sessionMessage, $submitted_username) ||
+            !self::is_password($sessionMessage, $submitted_password)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
     }
 
     /**
