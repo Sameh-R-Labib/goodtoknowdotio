@@ -125,7 +125,7 @@ class LoginScript
         /**
          * Report success
          */
-        $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> here any time just click on the site logo. ";
+        $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> any time click on site logo. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
