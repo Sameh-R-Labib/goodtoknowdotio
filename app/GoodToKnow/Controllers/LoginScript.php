@@ -29,34 +29,9 @@ class LoginScript
 
         self::assimilate_input($sessionMessage, $submitted_username, $submitted_password);
 
-        /**
-         * authenticate never returns true it returns an object instead.
-         **/
         $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
 
-        if ($user === false) {
-            $sessionMessage .= " Authentication failed! ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        /**
-         * So we have a User object.
-         */
-
-        /**
-         * If this user is suspended don't let them in.
-         */
-        if ($user->is_suspended) {
-            $sessionMessage .= " No active account exists for this username. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
-
-        /**
-         * This counts as a suspension check therefore:
-         */
-        $_SESSION['when_last_checked_suspend'] = time();
+        self::login_the_user($sessionMessage, $user);
 
         /**
          * Put user's data in session.
@@ -128,6 +103,38 @@ class LoginScript
         $sessionMessage .= " Welcome to your \"Home\" page. To come <b>back</b> any time click on site logo. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $user
+     */
+    private static function login_the_user(string $error, $user)
+    {
+        if ($user === false) {
+            $error .= " Authentication failed! ";
+            $_SESSION['message'] = $error;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        /**
+         * So we have a User object.
+         */
+
+        /**
+         * If this user is suspended don't let them in.
+         */
+        if ($user->is_suspended) {
+            $error .= " No active account exists for this username. ";
+            $_SESSION['message'] = $error;
+            redirect_to("/ax1/LoginForm/page");
+        }
+
+        /**
+         * This counts as a suspension check therefore:
+         */
+        $_SESSION['when_last_checked_suspend'] = time();
     }
 
     /**
