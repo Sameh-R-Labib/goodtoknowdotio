@@ -48,10 +48,7 @@ class Home
         global $saved_int01;
         global $saved_int02;
 
-        if (!$is_logged_in) {
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
+        self::redirect_if_not_logged_in($sessionMessage, $is_logged_in);
 
         $db = 'not connected';
 
@@ -216,5 +213,17 @@ class Home
         $page = "Home";
 
         require VIEWS . DIRSEP . 'home.php';
+    }
+
+    /**
+     * @param $error
+     * @param bool $is_logged_in
+     */
+    private static function redirect_if_not_logged_in($error, bool $is_logged_in)
+    {
+        if (!$is_logged_in) {
+            $_SESSION['message'] = $error;
+            redirect_to("/ax1/LoginForm/page");
+        }
     }
 }
