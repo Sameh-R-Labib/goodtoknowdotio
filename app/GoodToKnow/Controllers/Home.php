@@ -74,23 +74,27 @@ class Home
          *   3) If the user is suspended log him out and redirect to the page for logging in.
          *   4) Otherwise, return control over to where the function was called.
          */
-        if ($db == 'not connected') {
-            $db = db_connect($sessionMessage);
-            if ($db === false) {
-                $sessionMessage .= " Failed to connect to the database. ";
+
+        $elapsed_time = time() - $when_last_checked_suspend;
+        if ($elapsed_time < 400) {
+            if ($db == 'not connected') {
+                $db = db_connect($sessionMessage);
+                if ($db === false) {
+                    $sessionMessage .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $sessionMessage;
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
+                }
+            }
+
+            $result = EnforceSuspension::enforce_suspension($db, $sessionMessage, $user_id, $when_last_checked_suspend);
+            if ($result === false) {
+                $sessionMessage .= " Failed to find the user by id. ";
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
             }
+            // $when_last_checked_suspend may have been changed by EnforceSuspension::enforce_suspension
+            $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
         }
-
-        $result = EnforceSuspension::enforce_suspension($db, $sessionMessage, $user_id, $when_last_checked_suspend);
-        if ($result === false) {
-            $sessionMessage .= " Failed to find the user by id. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/InfiniteLoopPrevent/page");
-        }
-        // $when_last_checked_suspend may have been changed by EnforceSuspension::enforce_suspension
-        $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
 
         /**
          * If the special_community_array has not been

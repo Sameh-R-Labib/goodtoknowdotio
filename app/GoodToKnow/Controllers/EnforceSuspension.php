@@ -29,10 +29,6 @@ class EnforceSuspension
          *   4) Otherwise, return control over to where the function was called.
          */
 
-        // Skip everything if it's too soon.
-        $elapsed_time = time() - $when_last_checked_suspend;
-        if ($elapsed_time < 600) return true;
-
         /**
          * Here I will reset $when_last_checked_suspend
          * because I don't want to be resetting it each time the Home page loads.
