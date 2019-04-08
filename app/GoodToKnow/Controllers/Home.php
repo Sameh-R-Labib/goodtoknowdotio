@@ -76,6 +76,7 @@ class Home
          */
 
         $elapsed_time = time() - $when_last_checked_suspend;
+        $when_last_checked_suspend = time();
         if ($elapsed_time < 400) {
             if ($db == 'not connected') {
                 $db = db_connect($sessionMessage);
