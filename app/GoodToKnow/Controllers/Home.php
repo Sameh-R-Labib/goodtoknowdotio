@@ -18,7 +18,6 @@ class Home
 {
     public function page()
     {
-        global $role;                       // string value
         global $user_id;                    // int value
         global $community_id;               // int value
         global $topic_id;                   // int value
@@ -43,10 +42,6 @@ class Home
         global $is_logged_in;
         global $is_admin;
         global $when_last_checked_suspend;  // timestamp
-        global $saved_str01;                // string value (temporary storage)
-        global $saved_str02;
-        global $saved_int01;
-        global $saved_int02;
 
         self::redirect_if_not_logged_in($sessionMessage, $is_logged_in);
 
@@ -55,19 +50,26 @@ class Home
         self::logout_the_user_if_he_is_suspended($db, $sessionMessage, $user_id, $when_last_checked_suspend);
 
         self::refresh_vars_which_may_be_stale($db, $sessionMessage, $special_community_array, $special_topic_array,
-            $post_content, $user_id, $community_id, $topic_id, $post_id, $type_of_resource_requested,
+            $special_post_array, $post_content, $user_id, $community_id, $topic_id, $post_id, $type_of_resource_requested,
             $last_refresh_communities, $last_refresh_topics, $last_refresh_posts, $last_refresh_content);
 
         self::put_together_a_good_sessionmessage($sessionMessage, $type_of_resource_requested, $community_description,
             $topic_description, $post_full_name);
 
-        self::show_the_home_page();
+        self::show_the_home_page($user_id, $community_id, $topic_id, $post_id, $post_name, $post_full_name, $topic_name,
+            $topic_description, $community_name, $community_description, $special_community_array, $special_topic_array,
+            $special_post_array, $post_content, $author_username, $type_of_resource_requested, $sessionMessage,
+            $is_admin);
     }
 
     /**
      *
      */
-    private static function show_the_home_page()
+    private static function show_the_home_page($user_id, $community_id, $topic_id, $post_id, $post_name, $post_full_name,
+                                               $topic_name, $topic_description, $community_name, $community_description,
+                                               $special_community_array, $special_topic_array, $special_post_array,
+                                               $post_content, $author_username, $type_of_resource_requested, $sessionMessage,
+                                               $is_admin)
     {
         $show_poof = false;
 
@@ -126,9 +128,10 @@ class Home
      * @param $last_refresh_content
      */
     private static function refresh_vars_which_may_be_stale(&$db, &$error, &$special_community_array, &$special_topic_array,
-                                                            &$post_content, $user_id, $community_id, $topic_id, $post_id,
-                                                            $type_of_resource_requested, $last_refresh_communities,
-                                                            $last_refresh_topics, $last_refresh_posts, $last_refresh_content)
+                                                            &$special_post_array, &$post_content, $user_id, $community_id,
+                                                            $topic_id, $post_id, $type_of_resource_requested,
+                                                            $last_refresh_communities, $last_refresh_topics,
+                                                            $last_refresh_posts, $last_refresh_content)
     {
         /**
          * If the special_community_array has not been
