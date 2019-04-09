@@ -219,7 +219,7 @@ class Home
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
-            $result = EnforceSuspension::enforce_suspension($db, $error, $user_id, $when_last_checked_suspend);
+            $result = EnforceSuspension::enforce_suspension($db, $error, $user_id);
             if ($result === false) {
                 $error .= " Failed to find the user by id. ";
                 $_SESSION['message'] = $error;
