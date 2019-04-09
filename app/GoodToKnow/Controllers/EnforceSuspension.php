@@ -17,7 +17,6 @@ class EnforceSuspension
      * @param \mysqli $db
      * @param string $error
      * @param int $user_id
-     * @param int $when_last_checked_suspend
      * @return bool
      */
     public static function enforce_suspension(\mysqli $db, string &$error, int $user_id)
