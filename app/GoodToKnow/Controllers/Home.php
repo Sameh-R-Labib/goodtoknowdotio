@@ -208,7 +208,7 @@ class Home
          *   4) Otherwise, return control over to where the function was called.
          */
         $elapsed_time = time() - $when_last_checked_suspend;
-        if ($when_last_checked_suspend == 0 || $elapsed_time < 400) {
+        if ($elapsed_time > 400) {
             $when_last_checked_suspend = time();
             $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
             if ($db == 'not connected') {
