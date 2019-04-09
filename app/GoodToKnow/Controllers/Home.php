@@ -61,6 +61,14 @@ class Home
         self::put_together_a_good_sessionmessage($sessionMessage, $type_of_resource_requested, $community_description,
             $topic_description, $post_full_name);
 
+        self::show_the_home_page();
+    }
+
+    /**
+     *
+     */
+    private static function show_the_home_page()
+    {
         $show_poof = false;
 
         $html_title = 'GoodToKnow.io';
