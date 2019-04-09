@@ -103,13 +103,13 @@ $special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['sp
 
 $special_post_array = (isset($_SESSION['special_post_array'])) ? $_SESSION['special_post_array'] : [];
 
-$last_refresh_communities = (isset($_SESSION['last_refresh_communities'])) ? $_SESSION['last_refresh_communities'] : 0;
+$last_refresh_communities = (isset($_SESSION['last_refresh_communities'])) ? $_SESSION['last_refresh_communities'] : 1554825315;
 
-$last_refresh_topics = (isset($_SESSION['last_refresh_topics'])) ? $_SESSION['last_refresh_topics'] : 0;
+$last_refresh_topics = (isset($_SESSION['last_refresh_topics'])) ? $_SESSION['last_refresh_topics'] : 1554825315;
 
-$last_refresh_posts = (isset($_SESSION['last_refresh_posts'])) ? $_SESSION['last_refresh_posts'] : 0;
+$last_refresh_posts = (isset($_SESSION['last_refresh_posts'])) ? $_SESSION['last_refresh_posts'] : 1554825315;
 
-$last_refresh_posts = (isset($_SESSION['last_refresh_content'])) ? $_SESSION['last_refresh_content'] : 0;
+$last_refresh_posts = (isset($_SESSION['last_refresh_content'])) ? $_SESSION['last_refresh_content'] : 1554825315;
 
 $post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
 
@@ -117,7 +117,7 @@ $author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_use
 
 $author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
 
-$when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 0;
+$when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 1554825315;
 
 $saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 
