@@ -20,7 +20,7 @@ class EnforceSuspension
      * @param int $when_last_checked_suspend
      * @return bool
      */
-    public static function enforce_suspension(\mysqli $db, string &$error, int $user_id, int &$when_last_checked_suspend)
+    public static function enforce_suspension(\mysqli $db, string &$error, int $user_id)
     {
         /**
          *   1) Determine whether or not the user is suspended per database

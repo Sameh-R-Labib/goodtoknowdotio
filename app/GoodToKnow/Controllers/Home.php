@@ -207,12 +207,10 @@ class Home
          *   3) If the user is suspended log him out and redirect to the page for logging in.
          *   4) Otherwise, return control over to where the function was called.
          */
-
         $elapsed_time = time() - $when_last_checked_suspend;
-        $when_last_checked_suspend = time();
-        $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
-
-        if ($elapsed_time < 400) {
+        if ($when_last_checked_suspend == 0 || $elapsed_time < 400) {
+            $when_last_checked_suspend = time();
+            $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
             if ($db == 'not connected') {
                 $db = db_connect($error);
                 if ($db === false) {
