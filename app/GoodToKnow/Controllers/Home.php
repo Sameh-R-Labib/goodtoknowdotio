@@ -58,6 +58,28 @@ class Home
             $post_content, $user_id, $community_id, $topic_id, $post_id, $type_of_resource_requested,
             $last_refresh_communities, $last_refresh_topics, $last_refresh_posts, $last_refresh_content);
 
+        self::put_together_a_good_sessionmessage($sessionMessage, $type_of_resource_requested, $community_description,
+            $topic_description, $post_full_name);
+
+        $show_poof = false;
+
+        $html_title = 'GoodToKnow.io';
+
+        $page = "Home";
+
+        require VIEWS . DIRSEP . 'home.php';
+    }
+
+    /**
+     * @param $sessionMessage
+     * @param $type_of_resource_requested
+     * @param $community_description
+     * @param $topic_description
+     * @param $post_full_name
+     */
+    private static function put_together_a_good_sessionmessage(&$sessionMessage, $type_of_resource_requested,
+                                                               $community_description, $topic_description, $post_full_name)
+    {
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($community_description))) {
                 if (empty(trim($sessionMessage))) {
@@ -77,14 +99,6 @@ class Home
                 }
             }
         }
-
-        $show_poof = false;
-
-        $html_title = 'GoodToKnow.io';
-
-        $page = "Home";
-
-        require VIEWS . DIRSEP . 'home.php';
     }
 
     /**
