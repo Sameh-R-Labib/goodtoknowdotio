@@ -52,50 +52,7 @@ class Home
 
         $db = 'not connected';
 
-        /**
-         * Logout the user if he is suspended.
-         * We are not going to check to see if he is suspended
-         * every time this page loads. There will be a session
-         * variable called $when_last_checked_suspend which
-         * will record the timestamp of the last check to make
-         * sure he wasn't suspended.
-         *
-         * All this will be encapsulated in a function called:
-         * enforce_suspension
-         *
-         * This function will take arguments:
-         *   A) $db
-         *   B) The ID of the logged in user
-         *   C) $when_last_checked_suspend (which is a timestamp)
-         *
-         * Within the function it will:
-         *   1) Skip everything if it's too soon.
-         *   2) Determine whether or not the user is suspended per database
-         *   3) If the user is suspended log him out and redirect to the page for logging in.
-         *   4) Otherwise, return control over to where the function was called.
-         */
-
-        $elapsed_time = time() - $when_last_checked_suspend;
-        $when_last_checked_suspend = time();
-        if ($elapsed_time < 400) {
-            if ($db == 'not connected') {
-                $db = db_connect($sessionMessage);
-                if ($db === false) {
-                    $sessionMessage .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $sessionMessage;
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-                }
-            }
-
-            $result = EnforceSuspension::enforce_suspension($db, $sessionMessage, $user_id, $when_last_checked_suspend);
-            if ($result === false) {
-                $sessionMessage .= " Failed to find the user by id. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/InfiniteLoopPrevent/page");
-            }
-            // $when_last_checked_suspend may have been changed by EnforceSuspension::enforce_suspension
-            $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
-        }
+        self::logout_the_user_if_he_is_suspended($db, $sessionMessage, $user_id, $when_last_checked_suspend);
 
         /**
          * If the special_community_array has not been
@@ -218,6 +175,59 @@ class Home
         $page = "Home";
 
         require VIEWS . DIRSEP . 'home.php';
+    }
+
+    /**
+     * @param $db
+     * @param $error
+     * @param $user_id
+     * @param $when_last_checked_suspend
+     */
+    private static function logout_the_user_if_he_is_suspended(&$db, &$error, $user_id, &$when_last_checked_suspend)
+    {
+        /**
+         * Logout the user if he is suspended.
+         * We are not going to check to see if he is suspended
+         * every time this page loads. There will be a session
+         * variable called $when_last_checked_suspend which
+         * will record the timestamp of the last check to make
+         * sure he wasn't suspended.
+         *
+         * All this will be encapsulated in a function called:
+         * enforce_suspension
+         *
+         * This function will take arguments:
+         *   A) $db
+         *   B) The ID of the logged in user
+         *   C) $when_last_checked_suspend (which is a timestamp)
+         *
+         * Within the function it will:
+         *   1) Skip everything if it's too soon.
+         *   2) Determine whether or not the user is suspended per database
+         *   3) If the user is suspended log him out and redirect to the page for logging in.
+         *   4) Otherwise, return control over to where the function was called.
+         */
+
+        $elapsed_time = time() - $when_last_checked_suspend;
+        $when_last_checked_suspend = time();
+        $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
+
+        if ($elapsed_time < 400) {
+            if ($db == 'not connected') {
+                $db = db_connect($error);
+                if ($db === false) {
+                    $error .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $error;
+                    redirect_to("/ax1/InfiniteLoopPrevent/page");
+                }
+            }
+            $result = EnforceSuspension::enforce_suspension($db, $error, $user_id, $when_last_checked_suspend);
+            if ($result === false) {
+                $error .= " Failed to find the user by id. ";
+                $_SESSION['message'] = $error;
+                redirect_to("/ax1/InfiniteLoopPrevent/page");
+            }
+        }
     }
 
     /**
