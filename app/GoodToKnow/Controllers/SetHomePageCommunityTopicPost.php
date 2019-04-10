@@ -101,6 +101,12 @@ class SetHomePageCommunityTopicPost
             redirect_to("/ax1/Home/page");
         }
 
+        if (!$special_topic_array && $topic_id != 0) {
+            $sessionMessage .= " Your resource request is defective. (errno 8) ";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         if (!$special_topic_array) {
             $special_topic_array = [];
         }
