@@ -41,10 +41,7 @@ class SetHomePageCommunityTopicPost
         global $special_post_array;
         global $post_content;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/LoginForm/page");
-        }
+        self::abort_if_an_anomalous_condition_exists($sessionMessage, $is_logged_in);
 
         $db = db_connect($sessionMessage);
 
@@ -246,5 +243,17 @@ class SetHomePageCommunityTopicPost
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param $sessionMessage
+     * @param $is_logged_in
+     */
+    private static function abort_if_an_anomalous_condition_exists(&$sessionMessage, &$is_logged_in)
+    {
+        if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/LoginForm/page");
+        }
     }
 }
