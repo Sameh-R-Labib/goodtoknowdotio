@@ -45,28 +45,8 @@ class SetHomePageCommunityTopicPost
 
         $db = db_connect($sessionMessage);
 
-        if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-
-        /**
-         * Make sure the three parameters were specified in the request.
-         *
-         * Actually it would cause Fatal Error if any of the parameters was not set
-         *
-         * Also, there's no need to check to see if the params are numeric.
-         */
-
-        /**
-         * Make sure the community_id belongs to one of the user's communities.
-         */
-        if (!array_key_exists($community_id, $special_community_array)) {
-            $sessionMessage .= " Invalid community_id. ";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
+        self::mostly_making_sure_chosen_community_is_ok_to_choose($db, $sessionMessage, $community_id,
+            $special_community_array);
 
         // Make sure the resource request is well formed and reasonable
 
@@ -243,6 +223,39 @@ class SetHomePageCommunityTopicPost
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param $db
+     * @param $sessionMessage
+     * @param $community_id
+     * @param $special_community_array
+     */
+    private static function mostly_making_sure_chosen_community_is_ok_to_choose(&$db, &$sessionMessage, &$community_id,
+                                                                                &$special_community_array)
+    {
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Make sure the three parameters were specified in the request.
+         *
+         * Actually it would cause Fatal Error if any of the parameters was not set
+         *
+         * Also, there's no need to check to see if the params are numeric.
+         */
+
+        /**
+         * Make sure the community_id belongs to one of the user's communities.
+         */
+        if (!array_key_exists($community_id, $special_community_array)) {
+            $sessionMessage .= " Invalid community_id. ";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
     }
 
     /**
