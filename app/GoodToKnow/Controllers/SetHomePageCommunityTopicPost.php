@@ -40,6 +40,7 @@ class SetHomePageCommunityTopicPost
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
+        global $type_of_resource_requested;
 
         self::abort_if_an_anomalous_condition_exists($sessionMessage, $is_logged_in);
 
@@ -48,57 +49,8 @@ class SetHomePageCommunityTopicPost
         self::mostly_making_sure_chosen_community_is_ok_to_choose($db, $sessionMessage, $community_id,
             $special_community_array);
 
-        // Make sure the resource request is well formed and reasonable
-
-        /**
-         * Obviously the requested community exists since it's a
-         * community the user belongs to.
-         *
-         * At this point we don't know if the user is requesting
-         * a community, a topic, or a post. If the user requested
-         * a community then $topic_id and $post_id must each be zero (0)
-         */
-        /**
-         * At this point we know the user specified a valid $community_id.
-         * We know that $topic_id is set. It SHOULD BE set to 0 or some
-         * topic id form amongst the topics belonging to the $community_id.
-         *
-         * Let us make sure.
-         */
-
-        /**
-         * But before we get started let's establish whether or not
-         * $topic_id is not some topic id from amongst the topics belonging to the $community_id
-         */
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
-
-        if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
-            $sessionMessage .= " Your resource request is defective.  (errno 6)";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-
-        if (!$special_topic_array && $topic_id != 0) {
-            $sessionMessage .= " Your resource request is defective. (errno 8) ";
-            $_SESSION['message'] .= $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-
-        if (!$special_topic_array) {
-            $special_topic_array = [];
-        }
-
-        if ($topic_id == 0) {
-            $type_of_resource_requested = 'community';
-            if ($post_id != 0) {
-                $sessionMessage .= " Your resource request is defective. (errno 1)";
-                $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
-        } else {
-            $type_of_resource_requested = 'topic_or_post';
-        }
-
+        self::get_the_topics_and_derive_the_data_surrounding_it($db, $sessionMessage, $community_id, $special_topic_array,
+            $post_id, $topic_id, $type_of_resource_requested);
 
         /**
          * At this point we know we have a $community_id which is valid.
@@ -111,7 +63,6 @@ class SetHomePageCommunityTopicPost
          * If the request is for a post then let us
          * make sure that post id is valid.
          */
-
 
         if ($type_of_resource_requested === 'topic_or_post') {
             // Either way we need this
@@ -223,6 +174,71 @@ class SetHomePageCommunityTopicPost
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param $db
+     * @param $sessionMessage
+     * @param $community_id
+     * @param $special_topic_array
+     * @param $post_id
+     * @param $topic_id
+     * @param $type_of_resource_requested
+     */
+    private static function get_the_topics_and_derive_the_data_surrounding_it(&$db, &$sessionMessage, &$community_id,
+                                                                              &$special_topic_array, &$post_id,
+                                                                              &$topic_id, &$type_of_resource_requested)
+    {
+        // Make sure the resource request is well formed and reasonable
+
+        /**
+         * Obviously the requested community exists since it's a
+         * community the user belongs to.
+         *
+         * At this point we don't know if the user is requesting
+         * a community, a topic, or a post. If the user requested
+         * a community then $topic_id and $post_id must each be zero (0)
+         */
+        /**
+         * At this point we know the user specified a valid $community_id.
+         * We know that $topic_id is set. It SHOULD BE set to 0 or some
+         * topic id form amongst the topics belonging to the $community_id.
+         *
+         * Let us make sure.
+         */
+
+        /**
+         * But before we get started let's establish whether or not
+         * $topic_id is not some topic id from amongst the topics belonging to the $community_id
+         */
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+
+        if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
+            $sessionMessage .= " Your resource request is defective.  (errno 6)";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if (!$special_topic_array && $topic_id != 0) {
+            $sessionMessage .= " Your resource request is defective. (errno 8) ";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if (!$special_topic_array) {
+            $special_topic_array = [];
+        }
+
+        if ($topic_id == 0) {
+            $type_of_resource_requested = 'community';
+            if ($post_id != 0) {
+                $sessionMessage .= " Your resource request is defective. (errno 1)";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+        } else {
+            $type_of_resource_requested = 'topic_or_post';
+        }
     }
 
     /**
