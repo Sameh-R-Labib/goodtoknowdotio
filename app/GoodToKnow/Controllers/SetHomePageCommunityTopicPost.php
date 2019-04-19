@@ -52,35 +52,8 @@ class SetHomePageCommunityTopicPost
         self::get_the_topics_and_derive_the_data_surrounding_it($db, $sessionMessage, $community_id, $special_topic_array,
             $post_id, $topic_id, $type_of_resource_requested);
 
-        /**
-         * At this point we know we have a $community_id which is valid.
-         * We know whether or not the request is for a community.
-         * We know whether or not the request is for topic_or_post
-         * we know that $topic_id is valid
-         * We know that $post_id is set. It SHOULD BE set to 0 or some
-         * post id from amongst the posts belonging to $topic_id.
-         *
-         * If the request is for a post then let us
-         * make sure that post id is valid.
-         */
-
-        if ($type_of_resource_requested === 'topic_or_post') {
-            // Either way we need this
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
-            if (!$special_post_array) {
-                $special_post_array = [];
-            }
-            // Which is it?
-            if ($post_id === 0 && $topic_id !== 0) {
-                $type_of_resource_requested = 'topic';
-            } elseif ($post_id !== 0 && $topic_id !== 0) {
-                $type_of_resource_requested = 'post';
-            } else {
-                $sessionMessage .= " Anomalous situation #2954. ";
-                $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
-        }
+        self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($db, $sessionMessage,
+            $type_of_resource_requested, $topic_id, $post_id, $special_post_array);
 
         if ($type_of_resource_requested === 'post') {
             if (!array_key_exists($post_id, $special_post_array)) {
@@ -174,6 +147,50 @@ class SetHomePageCommunityTopicPost
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param $db
+     * @param $sessionMessage
+     * @param $type_of_resource_requested
+     * @param $topic_id
+     * @param $post_id
+     * @param $special_post_array
+     */
+    private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it(&$db, &$sessionMessage,
+                                                                                                 &$type_of_resource_requested,
+                                                                                                 &$topic_id, &$post_id,
+                                                                                                 &$special_post_array)
+    {
+        /**
+         * At this point we know we have a $community_id which is valid.
+         * We know whether or not the request is for a community.
+         * We know whether or not the request is for topic_or_post
+         * we know that $topic_id is valid
+         * We know that $post_id is set. It SHOULD BE set to 0 or some
+         * post id from amongst the posts belonging to $topic_id.
+         *
+         * If the request is for a post then let us
+         * make sure that post id is valid.
+         */
+
+        if ($type_of_resource_requested === 'topic_or_post') {
+            // Either way we need this
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            if (!$special_post_array) {
+                $special_post_array = [];
+            }
+            // Which is it?
+            if ($post_id === 0 && $topic_id !== 0) {
+                $type_of_resource_requested = 'topic';
+            } elseif ($post_id !== 0 && $topic_id !== 0) {
+                $type_of_resource_requested = 'post';
+            } else {
+                $sessionMessage .= " Anomalous situation #2954. ";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+        }
     }
 
     /**
