@@ -55,38 +55,12 @@ class SetHomePageCommunityTopicPost
         self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($db, $sessionMessage,
             $type_of_resource_requested, $topic_id, $post_id, $special_post_array);
 
-        if ($type_of_resource_requested === 'post') {
-            if (!array_key_exists($post_id, $special_post_array)) {
-                $sessionMessage .= " Your resource request is defective.  (errno 4)";
-                $_SESSION['message'] .= $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
+        $post_object = null;
+        $post_author_object = null;
 
-            /**
-             * Get the post object for $post_id
-             * and retrieve the post content from
-             * the file system. Also, get the
-             * posts author_username.
-             */
-            $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
-            if (!$post_object) {
-                $sessionMessage .= " SetHomePageCommunityTopicPost::page says: Error 58498. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
-            $post_content = file_get_contents($post_object->html_file);
-            if ($post_content === false) {
-                $sessionMessage .= " Unable to read the post's html source file. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
-            $post_author_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
-            if ($post_author_object === false) {
-                $sessionMessage .= " Unable to get the post author object from the database. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
-            }
-        }
+        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($db, $sessionMessage,
+            $type_of_resource_requested, $special_post_array, $post_id, $post_object, $post_content,
+            $post_author_object);
 
         /**
          * At this point we know that the request is valid and
@@ -147,6 +121,57 @@ class SetHomePageCommunityTopicPost
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
         redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param $db
+     * @param $sessionMessage
+     * @param $type_of_resource_requested
+     * @param $special_post_array
+     * @param $post_id
+     * @param $post_object
+     * @param $post_content
+     * @param $post_author_object
+     */
+    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it(&$db, &$sessionMessage,
+                                                                                                  &$type_of_resource_requested,
+                                                                                                  &$special_post_array,
+                                                                                                  &$post_id, &$post_object,
+                                                                                                  &$post_content,
+                                                                                                  &$post_author_object)
+    {
+        if ($type_of_resource_requested === 'post') {
+            if (!array_key_exists($post_id, $special_post_array)) {
+                $sessionMessage .= " Your resource request is defective.  (errno 4)";
+                $_SESSION['message'] .= $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+
+            /**
+             * Get the post object for $post_id
+             * and retrieve the post content from
+             * the file system. Also, get the
+             * posts author_username.
+             */
+            $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
+            if (!$post_object) {
+                $sessionMessage .= " SetHomePageCommunityTopicPost::page says: Error 58498. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $post_content = file_get_contents($post_object->html_file);
+            if ($post_content === false) {
+                $sessionMessage .= " Unable to read the post's html source file. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $post_author_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
+            if ($post_author_object === false) {
+                $sessionMessage .= " Unable to get the post author object from the database. ";
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+        }
     }
 
     /**
