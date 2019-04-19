@@ -91,12 +91,6 @@ class SetHomePageCommunityTopicPost
                                                               &$special_post_array, &$post_object, &$post_content,
                                                               &$post_author_object, &$post_id, &$type_of_resource_requested)
     {
-        /**
-         * At this point we know that the request is valid and
-         * we know which type of request it is.
-         *
-         * Now we need to store some things in the session and redirect.
-         */
         // First get and store the community_name
         $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
         $_SESSION['community_name'] = $community_object->community_name;
@@ -163,24 +157,20 @@ class SetHomePageCommunityTopicPost
                 redirect_to("/ax1/Home/page");
             }
 
-            /**
-             * Get the post object for $post_id
-             * and retrieve the post content from
-             * the file system. Also, get the
-             * posts author_username.
-             */
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
             if (!$post_object) {
                 $sessionMessage .= " SetHomePageCommunityTopicPost::page says: Error 58498. ";
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
+
             $post_content = file_get_contents($post_object->html_file);
             if ($post_content === false) {
                 $sessionMessage .= " Unable to read the post's html source file. ";
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
+
             $post_author_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
             if ($post_author_object === false) {
                 $sessionMessage .= " Unable to get the post author object from the database. ";
@@ -204,13 +194,6 @@ class SetHomePageCommunityTopicPost
                                                                                                  &$special_post_array)
     {
         /**
-         * At this point we know we have a $community_id which is valid.
-         * We know whether or not the request is for a community.
-         * We know whether or not the request is for topic_or_post
-         * we know that $topic_id is valid
-         * We know that $post_id is set. It SHOULD BE set to 0 or some
-         * post id from amongst the posts belonging to $topic_id.
-         *
          * If the request is for a post then let us
          * make sure that post id is valid.
          */
@@ -247,24 +230,6 @@ class SetHomePageCommunityTopicPost
                                                                               &$special_topic_array, &$post_id,
                                                                               &$topic_id, &$type_of_resource_requested)
     {
-        // Make sure the resource request is well formed and reasonable
-
-        /**
-         * Obviously the requested community exists since it's a
-         * community the user belongs to.
-         *
-         * At this point we don't know if the user is requesting
-         * a community, a topic, or a post. If the user requested
-         * a community then $topic_id and $post_id must each be zero (0)
-         */
-        /**
-         * At this point we know the user specified a valid $community_id.
-         * We know that $topic_id is set. It SHOULD BE set to 0 or some
-         * topic id form amongst the topics belonging to the $community_id.
-         *
-         * Let us make sure.
-         */
-
         /**
          * But before we get started let's establish whether or not
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
@@ -313,14 +278,6 @@ class SetHomePageCommunityTopicPost
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
-        /**
-         * Make sure the three parameters were specified in the request.
-         *
-         * Actually it would cause Fatal Error if any of the parameters was not set
-         *
-         * Also, there's no need to check to see if the params are numeric.
-         */
 
         /**
          * Make sure the community_id belongs to one of the user's communities.
