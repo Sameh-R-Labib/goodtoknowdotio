@@ -121,7 +121,7 @@ class SetHomePageCommunityTopicPost
             // Third store the post_name
             $_SESSION['post_name'] = $post_object->title;
             $epoch_time = (int)$post_object->created;
-            $publish_date = date("Y-m-d", $epoch_time);
+            $publish_date = date("m/d/Y", $epoch_time);
             $_SESSION['post_full_name'] = '"' . $post_object->title . ' ' . $post_object->extensionfortitle . '" [pub. ' .
                 $publish_date . ' New York time]';
             // Then do the rest.
