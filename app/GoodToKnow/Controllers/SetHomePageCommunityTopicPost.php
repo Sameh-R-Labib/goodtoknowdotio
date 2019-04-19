@@ -27,11 +27,9 @@ class SetHomePageCommunityTopicPost
          * back to the Home page.
          *
          * "Its thing:"
-         *  - Make sure the three parameters were specified in the request.
-         *  - Make sure the community_id belongs to one of the user's communities.
-         *  - Make sure the resource being requested exists (is NOT fictitious.)
-         *  - Set session variables which let the home page know which
-         *    community, topic, or post the user desires to see.
+         *  - Make sure the resource being requested is legitimate.
+         *  - Extract related information from the database.
+         *  - Save the extracted information to the SESSION.
          */
 
         global $is_logged_in;
