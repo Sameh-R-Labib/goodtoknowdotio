@@ -57,44 +57,63 @@ class SetHomePageCommunityTopicPost
 
         $post_object = null;
         $post_author_object = null;
+        $community_object = null;
+        $topic_object = null;
 
         self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($db, $sessionMessage,
             $type_of_resource_requested, $special_post_array, $post_id, $post_object, $post_content,
             $post_author_object);
 
+        self::store_derived_info_in_the_session($db, $sessionMessage, $community_object, $community_id,
+            $special_topic_array, $topic_id, $topic_object, $special_post_array, $post_object, $post_content,
+            $post_author_object, $post_id, $type_of_resource_requested);
+
+        redirect_to("/ax1/Home/page");
+    }
+
+    /**
+     * @param $db
+     * @param $sessionMessage
+     * @param $community_object
+     * @param $community_id
+     * @param $special_topic_array
+     * @param $topic_id
+     * @param $topic_object
+     * @param $special_post_array
+     * @param $post_object
+     * @param $post_content
+     * @param $post_author_object
+     * @param $post_id
+     * @param $type_of_resource_requested
+     */
+    private static function store_derived_info_in_the_session(&$db, &$sessionMessage, &$community_object, &$community_id,
+                                                              &$special_topic_array, &$topic_id, &$topic_object,
+                                                              &$special_post_array, &$post_object, &$post_content,
+                                                              &$post_author_object, &$post_id, &$type_of_resource_requested)
+    {
         /**
          * At this point we know that the request is valid and
          * we know which type of request it is.
          *
          * Now we need to store some things in the session and redirect.
          */
-        if ($type_of_resource_requested === 'community') {
-            // First get and store the community_name
-            $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
-            $_SESSION['community_name'] = $community_object->community_name;
-            $_SESSION['community_description'] = $community_object->community_description;
-            // Then do the rest.
-            $_SESSION['special_topic_array'] = $special_topic_array;
-            $_SESSION['last_refresh_topics'] = time();
-        } elseif ($type_of_resource_requested === 'topic') {
-            // First get and store the community_name
-            $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
-            $_SESSION['community_name'] = $community_object->community_name;
-            $_SESSION['community_description'] = $community_object->community_description;
+        // First get and store the community_name
+        $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
+        $_SESSION['community_name'] = $community_object->community_name;
+        $_SESSION['community_description'] = $community_object->community_description;
+        // Then do the rest.
+        $_SESSION['special_topic_array'] = $special_topic_array;
+        $_SESSION['last_refresh_topics'] = time();
+
+        if ($type_of_resource_requested === 'topic') {
             // Second get and store the topic_name
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
             // Then do the rest.
-            $_SESSION['special_topic_array'] = $special_topic_array;
-            $_SESSION['last_refresh_topics'] = time();
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
         } else {
-            // First get and store the community_name
-            $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
-            $_SESSION['community_name'] = $community_object->community_name;
-            $_SESSION['community_description'] = $community_object->community_description;
             // Second get and store the topic_name
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
             $_SESSION['topic_name'] = $topic_object->topic_name;
@@ -106,8 +125,6 @@ class SetHomePageCommunityTopicPost
             $_SESSION['post_full_name'] = '"' . $post_object->title . ' ' . $post_object->extensionfortitle . '" [pub. ' .
                 $publish_date . ' New York time]';
             // Then do the rest.
-            $_SESSION['special_topic_array'] = $special_topic_array;
-            $_SESSION['last_refresh_topics'] = time();
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
             $_SESSION['post_content'] = $post_content;
@@ -120,7 +137,6 @@ class SetHomePageCommunityTopicPost
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] .= $sessionMessage;
-        redirect_to("/ax1/Home/page");
     }
 
     /**
