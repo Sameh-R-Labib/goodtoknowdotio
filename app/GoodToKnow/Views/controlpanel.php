@@ -50,7 +50,7 @@
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
         <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
-        <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
+        <li>To have a new topic request it from admin.</li>
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
     </ul>
