@@ -47,6 +47,7 @@
 <div id="maincontent">
     <h1>Admin's Tool Box</h1>
     <ul>
+        <li><a href="/ax1/NewCommunity/page">Create Community</a></li>
         <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
         <li><a href="/ax1/PurgeOldMessages/page">Purge Old Messages</a></li>
