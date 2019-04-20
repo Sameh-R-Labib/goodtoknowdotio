@@ -47,6 +47,7 @@
 <div id="maincontent">
     <h1>Admin's Tool Box</h1>
     <ul>
+        <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
         <li><a href="/ax1/PurgeOldMessages/page">Purge Old Messages</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
@@ -62,7 +63,6 @@
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
         <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
-        <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
     </ul>
     <p>When writing a post, our goal is to concisely write in a manner which helps the reader wrap their head around the
