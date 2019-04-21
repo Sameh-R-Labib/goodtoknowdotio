@@ -21,16 +21,14 @@
     <p>All fields required.</p>
     <section>
         <p>
-            <label for="community_name">U/N: </label>
-            <input id="community_name" name="community_name" type="text" required minlength="1" maxlength="200"
-                   size="71"
-                   spellcheck="false">
+            <label for="name">Name: </label>
+            <input id="name" name="community_name" type="text" required minlength="1" maxlength="200"
+                   size="71" spellcheck="false">
         </p>
         <p>
-            <label for="community_description">U/N: </label>
-            <input id="community_description" name="community_description" type="text" required minlength="1"
-                   maxlength="230" size="71"
-                   spellcheck="false">
+            <label for="description">Description: </label>
+            <input id="description" name="community_description" type="text" required minlength="1"
+                   maxlength="230" size="71" spellcheck="false">
         </p>
     </section>
     <section>
