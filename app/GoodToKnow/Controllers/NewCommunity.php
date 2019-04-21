@@ -28,5 +28,9 @@ class NewCommunity
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        $html_title = 'Create a New Community';
+
+        require VIEWS . DIRSEP . 'newcommunity.php';
     }
 }
