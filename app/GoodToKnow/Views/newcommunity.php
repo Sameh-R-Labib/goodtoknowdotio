@@ -23,13 +23,13 @@
         <p>
             <label for="community_name">U/N: </label>
             <input id="community_name" name="community_name" type="text" required minlength="1" maxlength="200"
-                   size="200"
+                   size="80"
                    spellcheck="false">
         </p>
         <p>
             <label for="community_description">U/N: </label>
             <input id="community_description" name="community_description" type="text" required minlength="1"
-                   maxlength="230" size="230"
+                   maxlength="230" size="80"
                    spellcheck="false">
         </p>
     </section>
