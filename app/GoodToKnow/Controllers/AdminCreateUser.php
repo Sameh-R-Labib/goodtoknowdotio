@@ -61,15 +61,15 @@ class AdminCreateUser
         $new_user_is_suspended = 0;
 
         /**
-         * Apply htmlentities to fields which
+         * Apply htmlspecialchars to fields which
          * get rendered by the browser.
          *
-         * By convention: We apply htmlentities() to data at
+         * By convention: We apply htmlspecialchars() to data at
          * the point in time before that data gets saved in
          * the database.
          */
-        $submitted_username = htmlentities($submitted_username);
-        $submitted_comment = htmlentities($submitted_comment);
+        $submitted_username = htmlspecialchars($submitted_username);
+        $submitted_comment = htmlspecialchars($submitted_comment);
 
 
         /**

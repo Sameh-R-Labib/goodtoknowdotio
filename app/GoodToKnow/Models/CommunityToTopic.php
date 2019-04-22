@@ -75,7 +75,7 @@ class CommunityToTopic extends GoodObject
             }
         } catch (\Exception $e) {
             $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
-                htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+                htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
         }
 

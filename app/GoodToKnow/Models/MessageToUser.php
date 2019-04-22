@@ -60,11 +60,11 @@ class MessageToUser extends GoodObject
             $db->query($sql);
             $query_error = $db->error;
             if (!empty($query_error)) {
-                $error .= ' The delete failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 return false;
             }
         } catch (\Exception $e) {
-            $error .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $error .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
         }
 
@@ -116,7 +116,7 @@ class MessageToUser extends GoodObject
             }
         } catch (\Exception $e) {
             $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
-                htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+                htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
         }
 

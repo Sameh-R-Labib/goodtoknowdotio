@@ -52,8 +52,8 @@ class CreateNewPostTitleProcessor
         }
 
         // Make them safe for HTML
-        $main_title = htmlentities($main_title, ENT_NOQUOTES | ENT_HTML5);
-        $title_extension = htmlentities($title_extension, ENT_NOQUOTES | ENT_HTML5);
+        $main_title = htmlspecialchars($main_title, ENT_NOQUOTES | ENT_HTML5);
+        $title_extension = htmlspecialchars($title_extension, ENT_NOQUOTES | ENT_HTML5);
 
         // Add to session
         $_SESSION['saved_str01'] = $main_title;

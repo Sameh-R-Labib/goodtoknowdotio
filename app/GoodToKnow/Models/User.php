@@ -110,7 +110,7 @@ class User extends GoodObject
             }
         } catch (\Exception $e) {
             $error .= ' User::authenticate() caught a thrown exception: ' .
-                htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+                htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
         }
 

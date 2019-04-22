@@ -45,8 +45,8 @@ class NewTopicNameProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        $topic_name = htmlentities($topic_name, ENT_NOQUOTES | ENT_HTML5);
-        $topic_description = htmlentities($topic_description, ENT_NOQUOTES | ENT_HTML5);
+        $topic_name = htmlspecialchars($topic_name, ENT_NOQUOTES | ENT_HTML5);
+        $topic_description = htmlspecialchars($topic_description, ENT_NOQUOTES | ENT_HTML5);
 
         if (strlen($topic_name) > 200 || strlen($topic_description) > 230) {
             $sessionMessage .= " Either your topic name or description was too long. Start over. ";

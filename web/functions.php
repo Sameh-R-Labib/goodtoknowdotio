@@ -50,7 +50,7 @@ function db_connect(string &$error)
         }
         $db->set_charset('utf8');
     } catch (\Exception $e) {
-        $error .= ' ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        $error .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         return false;
     }
     return $db;

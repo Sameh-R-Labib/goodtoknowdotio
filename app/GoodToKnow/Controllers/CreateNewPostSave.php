@@ -71,7 +71,7 @@ class CreateNewPostSave
         try {
             $filenamestub = random_bytes(5);
         } catch (\Exception $e) {
-            $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;

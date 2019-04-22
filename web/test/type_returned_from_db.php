@@ -53,7 +53,7 @@ try {
     }
 } catch (\Exception $e) {
     $error .= 'Around line 40 the following exception was thrown: ' .
-        htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 }
 
 if (!empty($error)) {
@@ -77,11 +77,11 @@ try {
     $result = $db->query($sql);
     $query_error = $db->error;
     if (!empty($query_error)) {
-        $error .= 'The find_by_sql like way failed. The reason given by mysqli is: ' . htmlentities($query_error, ENT_NOQUOTES | ENT_HTML5);
+        $error .= 'The find_by_sql like way failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5);
         die("<p>Died at line 81 with error: {$error}</p>");
     }
 } catch (\Exception $e) {
-    $error .= ' Caught a thrown exception around line 78: ' . htmlentities($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+    $error .= ' Caught a thrown exception around line 78: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 }
 
 if (!empty($error)) {
