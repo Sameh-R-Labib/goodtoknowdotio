@@ -18,12 +18,13 @@ class NewTopicSave
     {
         global $sessionMessage;
         global $is_logged_in;
+        global $is_admin;
         global $community_id;
         global $saved_str01;                // The topic name
         global $saved_str02;                // The topic description
         global $saved_int01;                // The sequence number
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
+        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
