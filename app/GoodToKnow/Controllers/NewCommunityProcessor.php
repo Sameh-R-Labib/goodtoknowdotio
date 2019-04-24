@@ -31,6 +31,15 @@ class NewCommunityProcessor
         $community_name = htmlspecialchars($community_name, ENT_NOQUOTES | ENT_HTML5);
         $community_description = htmlspecialchars($community_description, ENT_NOQUOTES | ENT_HTML5);
 
+        if (strlen($community_name) > 200 || strlen($community_description) > 230) {
+            $sessionMessage .= " Either your community name or description was too long. Start over. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
+        $_SESSION['saved_str01'] = $community_name;
+        $_SESSION['saved_str02'] = $community_description;
+
+        redirect_to("/ax1/NewCommunitySave/page");
     }
 }
