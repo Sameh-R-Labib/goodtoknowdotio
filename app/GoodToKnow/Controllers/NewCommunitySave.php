@@ -4,6 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
+
+
 class NewCommunitySave
 {
     public function page()
@@ -25,5 +28,20 @@ class NewCommunitySave
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        $community_as_array = ['community_name' => $saved_str01, 'community_description' => $saved_str02];
+        $community = Community::array_to_object($community_as_array);
+
+        $result = $community->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= " NewCommunitySave::page says: Unexpected save was unable to save the new community. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Redirect
+        $sessionMessage .= " 😃 The new community has been created. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }

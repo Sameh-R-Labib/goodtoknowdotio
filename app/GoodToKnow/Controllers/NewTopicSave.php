@@ -97,7 +97,7 @@ class NewTopicSave
         $_SESSION['last_refresh_topics'] = time();
 
         // Redirect
-        $sessionMessage .= " Congratulations! Your new topic has been created. ";
+        $sessionMessage .= " 😃 Your new topic has been created. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
