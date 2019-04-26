@@ -49,7 +49,7 @@ class AuthorDeletesOwnPostChoosePost
         $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($db, $sessionMessage, $user_id, $saved_int01);
 
         if (!$special_post_array) {
-            $sessionMessage .= " There are NO posts for YOU to edit here. ";
+            $sessionMessage .= " There are NO posts for YOU to delete here. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
@@ -59,7 +59,7 @@ class AuthorDeletesOwnPostChoosePost
          * the posts which remain.
          */
 
-        $html_title = 'Which post to edit?';
+        $html_title = 'Which post to delete?';
 
         require VIEWS . DIRSEP . 'authordeletesownpostchoosepost.php';
     }
