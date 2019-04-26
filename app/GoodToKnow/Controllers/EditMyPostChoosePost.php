@@ -1,15 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/19/18
- * Time: 9:53 PM
- */
+
 
 namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\TopicToPost;
+
 
 class EditMyPostChoosePost
 {
