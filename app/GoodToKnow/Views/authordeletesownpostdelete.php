@@ -22,11 +22,11 @@
         echo $long_title_of_post; ?>".</p>
     <section>
         <label class="checkbox">
-            <input type="checkbox" name="choice; ?>" value="yes">
+            <input type="checkbox" name="choice" value="yes">
             Yes<br>
         </label>
         <label class="checkbox">
-            <input type="checkbox" name="choice; ?>" value="no">
+            <input type="checkbox" name="choice" value="no">
             No
         </label>
     </section>
