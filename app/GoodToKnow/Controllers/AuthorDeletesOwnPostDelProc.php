@@ -41,6 +41,27 @@ class AuthorDeletesOwnPostDelProc
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$saved_int02 (id of the post): </p>\n<pre>";
+        var_dump($saved_int02);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$saved_int01 (id of the topic): </p>\n<pre>";
+        var_dump($saved_int01);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$saved_str01 (markdown file's path): </p>\n<pre>";
+        var_dump($saved_str01);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$saved_str02 (html file's path): </p>\n<pre>";
+        var_dump($saved_str02);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$choice: </p>\n<pre>";
+        var_dump($choice);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
         if ($choice == "no") {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
