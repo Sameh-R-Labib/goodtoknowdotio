@@ -62,16 +62,6 @@ class AuthorDeletesOwnPostDelProc
         // Delete the db record for the post.
         $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$post: </p>\n<pre>";
-        var_dump($post);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
         if (!$post) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -82,6 +72,16 @@ class AuthorDeletesOwnPostDelProc
             redirect_to("/ax1/Home/page");
         }
         $result = $post->delete;
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$result: </p>\n<pre>";
+        var_dump($result);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
         if (!$result) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
