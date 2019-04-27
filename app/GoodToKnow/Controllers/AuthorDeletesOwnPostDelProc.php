@@ -107,7 +107,16 @@ class AuthorDeletesOwnPostDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-        $topictopost_object->delete($db, $sessionMessage);
+        $result = $topictopost_object->delete($db, $sessionMessage);
+        if (!$result) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $sessionMessage .= " AuthorDeletesOwnPostDelProc::page says: Unexpectedly could not delete the TopicToPost object. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         // Delete both its files;
         $result = unlink($saved_str01);
