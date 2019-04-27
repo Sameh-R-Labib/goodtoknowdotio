@@ -61,9 +61,30 @@ class AuthorDeletesOwnPostDelete
         }
 
         if ($post_object->user_id != $user_id) {
-            $sessionMessage .= " You can't edit this post. ";
+            $sessionMessage .= " You can't delete this post. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * We will need the file names for the
+         * post later so let's save them in the session.
+         * (markdown_file, html_file)
+         */
+        $_SESSION['saved_str01'] = $post_object->markdown_file;
+        $_SESSION['saved_str02'] = $post_object->html_file;
+
+        // Other info about the post.
+        $_SESSION['saved_int02'] = $chosen_post_id;
+
+        // We need this in the view.
+        $long_title_of_post = $post_object->title . " " . $post_object->extensionfortitle;
+
+        /**
+         * Display a form which asks for confirmation.
+         */
+        $html_title = 'Are you sure?';
+
+        require VIEWS . DIRSEP . 'authordeletesownpostdelete.php';
     }
 }
