@@ -71,16 +71,7 @@ class AuthorDeletesOwnPostDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-        $result = $post->delete;
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$result: </p>\n<pre>";
-        var_dump($result);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
+        $result = $post->delete();
 
         if (!$result) {
             $_SESSION['saved_str01'] = "";
@@ -116,7 +107,7 @@ class AuthorDeletesOwnPostDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-        $topictopost_object->delete;
+        $topictopost_object->delete();
 
         // Delete both its files;
         $result = unlink($saved_str01);
