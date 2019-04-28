@@ -87,6 +87,12 @@ class AuthorDeletesOwnPostDelProc
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `topic_id` = "' . $db->real_escape_string($saved_int01) . '" AND `post_id` = "' .
             $db->real_escape_string($saved_int02) . '" LIMIT 1';
+
+
+        // Debug
+        $sessionMessage .= " This is the sql: <br>" . $sql . "<br> End This is the sql. ";
+
+
         $array_of_objects = TopicToPost::find_by_sql($db, $sessionMessage, $sql);
         if (!$array_of_objects || !empty($sessionMessage)) {
             $_SESSION['saved_str01'] = "";
