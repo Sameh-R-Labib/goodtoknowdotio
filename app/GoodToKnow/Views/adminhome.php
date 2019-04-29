@@ -57,6 +57,7 @@
         <li><a href="/ax1/MemberMemoEditor/page">Member's Memo Editor</a></li>
         <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>
         <li><a href="/ax1/UnsuspendAccount/page">Unsuspend Account</a></li>
+        <li><a href="/ax1/QuickPostDelete/page">Delete Any Post</a></li>
     </ul>
     <h2>Member's Tool Box</h2>
     <ul>
