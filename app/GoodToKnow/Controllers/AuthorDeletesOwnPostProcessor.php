@@ -19,13 +19,10 @@ class AuthorDeletesOwnPostProcessor
 
         /**
          * We should have a post variable called
-         * choice whose value is the topic id
-         * the user intends to create a post in
+         * choice whose value is the topic id for the topic
+         * the user intends to delete a post from.
          */
 
-        /**
-         * I can't assume this post variables exist so I do the following.
-         */
         $chosen_topic_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
 
         /**
