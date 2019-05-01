@@ -45,13 +45,21 @@ class QuickPostDeleteChoosePost
             redirect_to("/ax1/Home/page");
         }
 
-        $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($db, $sessionMessage, $user_id, $saved_int01);
-
-        if (!$special_post_array) {
+        $array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+        if (!$array_of_post_objects) {
             $sessionMessage .= " There are NO posts for YOU to delete here. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Generate an array of author usernames.
+         * Each element's value is a username which
+         * is the username corresponding to the user_id
+         * of the corresponding element in the
+         * $array_of_post_objects.
+         */
+        $array_of_author_usernames = TopicToPost::get_author_usernames($db, $sessionMessage, $array_of_post_objects);
 
         $html_title = 'Which post to delete?';
 
