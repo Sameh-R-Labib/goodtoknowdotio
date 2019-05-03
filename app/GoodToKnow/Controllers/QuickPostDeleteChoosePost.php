@@ -54,12 +54,17 @@ class QuickPostDeleteChoosePost
 
         /**
          * Generate an array of author usernames.
-         * Each element's value is a username which
+         * Each array element's value is a username which
          * is the username corresponding to the user_id
          * of the corresponding element in the
          * $array_of_post_objects.
          */
         $array_of_author_usernames = TopicToPost::get_author_usernames($db, $sessionMessage, $array_of_post_objects);
+        if (!$array_of_author_usernames) {
+            $sessionMessage .= " Anomalous condition: Supposedly we have posts but do not have any authors. ";
+            $_SESSION['message'] .= $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         $html_title = 'Which post to delete?';
 
