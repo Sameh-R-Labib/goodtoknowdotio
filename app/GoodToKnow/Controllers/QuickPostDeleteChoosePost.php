@@ -47,7 +47,7 @@ class QuickPostDeleteChoosePost
 
         $array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
         if (!$array_of_post_objects) {
-            $sessionMessage .= " There are NO posts for YOU to delete here. ";
+            $sessionMessage .= " This topic doesn't contain any posts. ";
             $_SESSION['message'] .= $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
