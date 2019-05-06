@@ -78,7 +78,7 @@ class AuthorDeletesOwnPostDelete
         $_SESSION['saved_int02'] = $chosen_post_id;
 
         // We need this in the view.
-        $long_title_of_post = $post_object->title . " " . $post_object->extensionfortitle;
+        $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
         /**
          * Display a form which asks for confirmation.
