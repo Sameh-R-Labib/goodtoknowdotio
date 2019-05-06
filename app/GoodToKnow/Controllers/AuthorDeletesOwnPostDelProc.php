@@ -53,8 +53,11 @@ class AuthorDeletesOwnPostDelProc
         }
 
         $db = db_connect($sessionMessage);
-
         if (!empty($sessionMessage) || $db === false) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
@@ -62,7 +65,6 @@ class AuthorDeletesOwnPostDelProc
 
         // Delete the db record for the post.
         $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
-
         if (!$post) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -73,7 +75,6 @@ class AuthorDeletesOwnPostDelProc
             redirect_to("/ax1/Home/page");
         }
         $result = $post->delete($db, $sessionMessage);
-
         if (!$result) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
