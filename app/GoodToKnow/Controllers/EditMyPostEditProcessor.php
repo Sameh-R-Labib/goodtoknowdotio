@@ -86,7 +86,7 @@ class EditMyPostEditProcessor
          * Declare success.
          */
         $bytes_written_text = size_as_text($bytes_written);
-        $_SESSION['message'] = " Written <b>{$bytes_written_text}</b> (max 37.1 KB.) Stay well within limit. ";
+        $_SESSION['message'] = " Written <b>{$bytes_written_text}</b> (max 37.1 KB.) ";
         redirect_to("/ax1/Home/page");
     }
 }
