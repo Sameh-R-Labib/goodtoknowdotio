@@ -7,6 +7,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
+
 class AuthorDeletesOwnPostDelProc
 {
     public function page()
