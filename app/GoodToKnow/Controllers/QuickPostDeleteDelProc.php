@@ -86,5 +86,72 @@ class QuickPostDeleteDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        // Delete the TopicToPost record
+        $sql = 'SELECT * FROM `topic_to_post`
+        WHERE `topic_id` = "' . $db->real_escape_string($saved_int01) . '" AND `post_id` = "' .
+            $db->real_escape_string($saved_int02) . '" LIMIT 1';
+        $array_of_objects = TopicToPost::find_by_sql($db, $sessionMessage, $sql);
+        if (!$array_of_objects || !empty($sessionMessage)) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $sessionMessage .= ' AuthorDeletesOwnPostDelProc::page says: Unexpectedly failed to get a TopicToPost object to delete. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $topictopost_object = array_shift($array_of_objects);
+        if (!is_object($topictopost_object)) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $sessionMessage .= ' AuthorDeletesOwnPostDelProc::page says: Unexpectedly return value is not an object. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $result = $topictopost_object->delete($db, $sessionMessage);
+        if (!$result) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $sessionMessage .= " AuthorDeletesOwnPostDelProc::page says: Unexpectedly could not delete the TopicToPost object. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Delete both its files;
+        $result = unlink($saved_str01);
+        if (!$result) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $sessionMessage .= " AuthorDeletesOwnPostDelProc::page says: Unexpectedly failed to delete markdown file for the post. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $result = unlink($saved_str02);
+        if (!$result) {
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $sessionMessage .= " AuthorDeletesOwnPostDelProc::page says: Unexpectedly failed to delete html file for the post. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        // Report successful deletion of post.
+        $_SESSION['saved_str01'] = "";
+        $_SESSION['saved_str02'] = "";
+        $_SESSION['saved_int01'] = 0;
+        $_SESSION['saved_int02'] = 0;
+        $sessionMessage .= " I have successfully deleted the post. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }
