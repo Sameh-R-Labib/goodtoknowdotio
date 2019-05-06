@@ -24,7 +24,7 @@
         foreach ($array_of_post_objects as $key => $post_object): ?>
             <label for="choice-<?php echo $key; ?>">
                 <input type="radio" id="choice-<?php echo $key; ?>" name="choice"
-                       value="<?php echo $key; ?>"/>
+                       value="<?php echo $post_object->id; ?>"/>
                 <?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $post_object->title . " | " . $post_object->extensionfortitle . " [" .
                     $array_of_author_usernames[$key] . " ]"; ?>
