@@ -215,7 +215,7 @@ class Home
             }
             $post_object = Post::find_by_id($db, $error, $post_id);
             if ($post_object === false) {
-                $error .= " Home page() says: Unable to get post object from the database. ";
+                $error .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
             } else {
                 $post_content = file_get_contents($post_object->html_file);
                 if ($post_content === false) {
