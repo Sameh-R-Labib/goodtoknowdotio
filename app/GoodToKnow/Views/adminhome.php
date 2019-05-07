@@ -58,6 +58,7 @@
         <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>
         <li><a href="/ax1/UnsuspendAccount/page">Unsuspend Account</a></li>
         <li><a href="/ax1/QuickPostDelete/page">Delete Any Post</a></li>
+        <li><a href="/ax1/TransferPostOwnership/page">Transfer Post Ownership</a></li>
     </ul>
     <h2>Member's Tool Box</h2>
     <ul>
