@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="form-wrapper">
-    <h2>Edit Post</h2>
+    <h2>Author Deletes Own Post</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>Topics in current community:</p>
     <p>In which topic?</p>
