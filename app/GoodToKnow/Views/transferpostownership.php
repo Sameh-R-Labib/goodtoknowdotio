@@ -19,9 +19,9 @@
 <div class="form-wrapper">
     <h2>Transfer Post Ownership</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>Topics in current community:</p>
-    <p>In which topic?</p>
-    <form action="/ax1/QuickPostDeleteProcessor/page" method="post">
+    <p>You are trying to specify which post to transfer ownership of.
+        Choose the topic where the post resides.</p>
+    <form action="/ax1/TransferPostOwnershipProcessor/page" method="post">
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_topic_array as $key => $value): ?>
             <label for="choice-<?php echo $key; ?>">
