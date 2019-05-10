@@ -15,7 +15,7 @@ class QuickPostDeleteDelete
          * This route will simply determine
          * which post the admin chose to delete,
          * stores the post's info in the session, and
-         * present a form asking the user if he
+         * presents a form asking the user if he
          * is sure he wants to delete the post.
          */
 
