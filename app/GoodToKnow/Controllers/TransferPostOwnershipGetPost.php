@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Post;
+use GoodToKnow\Models\TopicToPost;
 
 
 class TransferPostOwnershipGetPost
@@ -74,6 +75,7 @@ class TransferPostOwnershipGetPost
         // Find the community name based on the post id.
         // First derive the topic id from the post id.
         // Post id is $chosen_post_id
+        $derived_topic_id = TopicToPost::derive_topic_id($db, $sessionMessage, $chosen_post_id);
 
 
         // Call the view
