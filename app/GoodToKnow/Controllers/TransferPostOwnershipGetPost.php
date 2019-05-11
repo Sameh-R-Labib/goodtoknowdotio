@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
@@ -42,6 +43,7 @@ class TransferPostOwnershipGetPost
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -52,6 +54,7 @@ class TransferPostOwnershipGetPost
         if ($chosen_post_id == 0) {
             $sessionMessage .= " You didn't enter a choice for the post you want to edit. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -60,6 +63,7 @@ class TransferPostOwnershipGetPost
         if (!$post_object) {
             $sessionMessage .= " EditMyPostEditor::page says: Error 011299. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -76,6 +80,22 @@ class TransferPostOwnershipGetPost
         // First derive the topic id from the post id.
         // Post id is $chosen_post_id
         $derived_topic_id = TopicToPost::derive_topic_id($db, $sessionMessage, $chosen_post_id);
+        if ($derived_topic_id === false) {
+            $sessionMessage .= " TransferPostOwnershipGetPost::page() says: Failed to get the topic id. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+        // Second derive the community id from $derived_topic_id.
+        $derived_community_id = CommunityToTopic::derive_community_id($db, $sessionMessage, $derived_topic_id);
+        if ($derived_community_id === false) {
+            $sessionMessage .= " TransferPostOwnershipGetPost::page() says: Failed to get the community id. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
 
 
         // Call the view

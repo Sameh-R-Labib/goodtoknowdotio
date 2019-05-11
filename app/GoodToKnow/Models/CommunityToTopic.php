@@ -39,6 +39,32 @@ class CommunityToTopic extends GoodObject
     /**
      * @param \mysqli $db
      * @param string $error
+     * @param int $topic_id
+     * @return bool
+     */
+    public static function derive_community_id(\mysqli $db, string &$error, int $topic_id)
+    {
+        $sql = 'SELECT * FROM `community_to_topic`
+        WHERE `topic_id` = "' . $db->real_escape_string($topic_id) . '" LIMIT 1';
+
+        $array_of_objects = CommunityToTopic::find_by_sql($db, $error, $sql);
+        if (!$array_of_objects || !empty($error)) {
+            $error .= ' derive_community_id says: Failed to get a CommunityToTopic object. ';
+            return false;
+        }
+
+        $communitytotopic_object = array_shift($array_of_objects);
+        if (!is_object($communitytotopic_object)) {
+            $error .= ' derive_community_id says: Unexpectedly return value is not an object. ';
+            return false;
+        }
+
+        return $communitytotopic_object->community_id;
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
      * @param int $community_id
      * @return array|bool
      */
