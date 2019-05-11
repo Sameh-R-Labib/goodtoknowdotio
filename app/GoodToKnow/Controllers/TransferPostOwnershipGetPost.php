@@ -4,9 +4,12 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
+use GoodToKnow\Models\Topic;
 use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\User;
 
 
 class TransferPostOwnershipGetPost
@@ -96,7 +99,38 @@ class TransferPostOwnershipGetPost
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
+        // Third find the community name based on the community id.
+        $community_object = Community::find_by_id($db, $sessionMessage, $derived_community_id);
+        if ($community_object === false) {
+            $sessionMessage .= " TransferPostOwnershipGetPost::page() says: Failed to get the community object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+        $community_name = $community_object->community_name;
 
+        // Find the topic name based on $derived_topic_id
+        $topic_object = Topic::find_by_id($db, $sessionMessage, $derived_topic_id);
+        if ($topic_object === false) {
+            $sessionMessage .= " TransferPostOwnershipGetPost::page() says: Failed to get the topic object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+        $topic_name = $topic_object->topic_name;
+
+        // Find the author's username.
+        $user_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
+        if ($user_object === false) {
+            $sessionMessage .= " TransferPostOwnershipGetPost::page() says: Failed to get the user object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+        $author_username = $user_object->username;
 
         // Call the view
 
