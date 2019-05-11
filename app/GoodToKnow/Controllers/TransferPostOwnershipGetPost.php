@@ -71,6 +71,10 @@ class TransferPostOwnershipGetPost
 
         $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
+        // Find the community name based on the post id.
+        // First derive the topic id from the post id.
+        // Post id is $chosen_post_id
+
 
         // Call the view
 
