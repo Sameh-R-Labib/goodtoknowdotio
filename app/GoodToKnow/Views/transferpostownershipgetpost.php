@@ -25,12 +25,12 @@
         echo $topic_name; ?> topic. And is currently owned by <?php /** @noinspection PhpUndefinedVariableInspection */
         echo $author_username; ?>.</p>
     <section>
-        <label class="checkbox">
-            <input type="checkbox" name="choice" value="yes">
+        <label for="yes">
+            <input type="radio" id="yes" name="choice" value="yes">
             Yes<br>
         </label>
-        <label class="checkbox">
-            <input type="checkbox" name="choice" value="no">
+        <label for="no">
+            <input type="radio" id="no" name="choice" value="no">
             No
         </label>
     </section>

@@ -21,12 +21,12 @@
     <p>Are you sure you want me to delete "<?php /** @noinspection PhpUndefinedVariableInspection */
         echo $long_title_of_post; ?>".</p>
     <section>
-        <label class="checkbox">
-            <input type="checkbox" name="choice" value="yes">
+        <label for="yes">
+            <input type="radio" id="yes" name="choice" value="yes">
             Yes<br>
         </label>
-        <label class="checkbox">
-            <input type="checkbox" name="choice" value="no">
+        <label for="no">
+            <input type="radio" id="no" name="choice" value="no">
             No
         </label>
     </section>
