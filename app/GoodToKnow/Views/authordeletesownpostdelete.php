@@ -16,7 +16,7 @@
 </head>
 <body>
 <form action="/ax1/AuthorDeletesOwnPostDelProc/page" method="post">
-    <h2>Possible Communities To Add For User</h2>
+    <h2>Confirm</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>Are you sure you want me to delete "<?php /** @noinspection PhpUndefinedVariableInspection */
         echo $long_title_of_post; ?>".</p>
