@@ -63,6 +63,10 @@ label.checkbox {
     margin-left: 23px;
 }
 
+label.radio {
+    margin-left: 23px;
+}
+
 form {
     background-color: white;
     margin: 0 auto;
