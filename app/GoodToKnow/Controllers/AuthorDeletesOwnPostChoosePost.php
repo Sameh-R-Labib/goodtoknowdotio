@@ -34,6 +34,7 @@ class AuthorDeletesOwnPostChoosePost
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,6 +43,7 @@ class AuthorDeletesOwnPostChoosePost
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,6 +53,7 @@ class AuthorDeletesOwnPostChoosePost
         if (!$special_post_array) {
             $sessionMessage .= " There are NO posts for YOU to delete here. ";
             $_SESSION['message'] .= $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
