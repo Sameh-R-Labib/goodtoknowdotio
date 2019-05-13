@@ -69,7 +69,7 @@ class AdminPassCodeGenFormProcessor
         /**
          * Save choice in the session
          */
-        $_SESSION['saved_str01'] = (int)$_POST['choice'];
+        $_SESSION['saved_int01'] = (int)$_POST['choice'];
 
 
         /**
