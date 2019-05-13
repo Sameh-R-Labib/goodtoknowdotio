@@ -27,6 +27,11 @@ class CreateNewPostSave
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -34,6 +39,11 @@ class CreateNewPostSave
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -75,6 +85,12 @@ class CreateNewPostSave
         }
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
         $filenamestub = bin2hex($filenamestub);
@@ -83,6 +99,12 @@ class CreateNewPostSave
         if (!$markdown_file || !$html_file) {
             $sessionMessage .= " Aborted because failed to create files. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -110,6 +132,12 @@ class CreateNewPostSave
             $sessionMessage .= " Unfortunately someone was putting a post in the same spot while you were
             trying to do the same and they beat you to the punch. Please start over. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -118,6 +146,12 @@ class CreateNewPostSave
         if (!$result) {
             $sessionMessage .= " CreateNewPostSave::page says: Unexpected save was unable to save the new post. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -130,6 +164,12 @@ class CreateNewPostSave
         if (!$result) {
             $sessionMessage .= " CreateNewPostSave::page says: Unexpected save was unable to save the TopicToPost. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -137,13 +177,29 @@ class CreateNewPostSave
          * Refresh special_post_array
          */
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
-        if ($special_post_array == false) $special_post_array = [];
+        if ($special_post_array == false) {
+            $sessionMessage .= " CreateNewPostSave::page says: Unexpected unable to get special post array. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            redirect_to("/ax1/Home/page");
+        }
         $_SESSION['special_post_array'] = $special_post_array;
         $_SESSION['last_refresh_posts'] = time();
 
         // Redirect
         $sessionMessage .= " Congratulations! Your new post has been created. ";
         $_SESSION['message'] = $sessionMessage;
+        $_SESSION['special_topic_array'] = [];
+        $_SESSION['last_refresh_topics'] = 1557778345;
+        $_SESSION['saved_int01'] = 0;
+        $_SESSION['saved_int02'] = 0;
+        $_SESSION['saved_str01'] = "";
+        $_SESSION['saved_str02'] = "";
         redirect_to("/ax1/Home/page");
     }
 }

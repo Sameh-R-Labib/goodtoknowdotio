@@ -51,6 +51,8 @@ class CreateNewPost
         if (empty($special_topic_array)) {
             $sessionMessage .= " Aborted because you can't create a new post in a community which has no topics. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['special_topic_array'] = [];
+            $_SESSION['last_refresh_topics'] = 1557778345;
             redirect_to("/ax1/Home/page");
         }
 
