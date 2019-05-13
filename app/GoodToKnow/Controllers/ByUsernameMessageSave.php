@@ -36,6 +36,7 @@ class ByUsernameMessageSave
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -48,12 +49,14 @@ class ByUsernameMessageSave
         if (!isset($_POST['markdown']) || trim($markdown) === '') {
             $sessionMessage .= " The message you submitted was not saved because nothing was submitted. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
         if (strlen($markdown) > 1500) {
             $sessionMessage .= " The message you submitted was not saved because the number of characters
             exceeded the maximum allowed for a message. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -88,12 +91,14 @@ class ByUsernameMessageSave
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
         $result = $message_object->save($db, $sessionMessage);
         if (!$result) {
             $sessionMessage .= " Unexpected save() was unable to save the new message. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -106,6 +111,7 @@ class ByUsernameMessageSave
         if (empty($saved_str01)) {
             $sessionMessage .= " Unexpected no target username found in the session. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -113,6 +119,7 @@ class ByUsernameMessageSave
         if (!$target_user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -138,6 +145,7 @@ class ByUsernameMessageSave
         if (!$result) {
             $sessionMessage .= " Unexpected save() was unable to save a message_to_user record for the message. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -145,6 +153,7 @@ class ByUsernameMessageSave
          * Declare success.
          */
         $_SESSION['message'] = " Your message to {$saved_str01} was sent successfully! ";
+        $_SESSION['saved_str01'] = "";
         redirect_to("/ax1/Home/page");
     }
 }
