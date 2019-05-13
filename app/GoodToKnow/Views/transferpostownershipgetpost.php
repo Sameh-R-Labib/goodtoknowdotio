@@ -21,9 +21,10 @@
     <p>Are you sure you want me to transfer ownership of "<?php /** @noinspection PhpUndefinedVariableInspection */
         echo $long_title_of_post; ?>". Which resides in the <?php /** @noinspection PhpUndefinedVariableInspection */
         echo $community_name; ?> community. Which resides in
-        the <?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $topic_name; ?> topic. And is currently owned by <?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $author_username; ?>.</p>
+        the <i><?php /** @noinspection PhpUndefinedVariableInspection */
+            echo $topic_name; ?></i> topic. And is currently owned by
+        <b><?php /** @noinspection PhpUndefinedVariableInspection */
+            echo $author_username; ?></b>.</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

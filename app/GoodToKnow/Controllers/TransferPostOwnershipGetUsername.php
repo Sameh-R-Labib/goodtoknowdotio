@@ -39,7 +39,7 @@ class TransferPostOwnershipGetUsername
         if ($choice == "no") {
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
-            $sessionMessage .= " I'm acknowledging that you changed your mind about transferring ownership of the post. ";
+            $sessionMessage .= " You changed your mind about transferring ownership of the post. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
