@@ -40,8 +40,6 @@ class CreateNewPostIPProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -51,8 +49,6 @@ class CreateNewPostIPProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -66,8 +62,6 @@ class CreateNewPostIPProcessor
         if (!$special_post_array) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 074346. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -83,8 +77,6 @@ class CreateNewPostIPProcessor
         if (empty($relate) || empty($chosen_post_id)) {
             $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -93,8 +85,6 @@ class CreateNewPostIPProcessor
         if ($relate !== 'before' && $relate !== 'after') {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 034455. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -103,8 +93,6 @@ class CreateNewPostIPProcessor
         if (!array_key_exists($chosen_post_id, $special_post_array)) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 421218. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -119,8 +107,6 @@ class CreateNewPostIPProcessor
         if (!$all_posts_as_objects) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 971249. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
@@ -132,8 +118,6 @@ class CreateNewPostIPProcessor
         if ($chosen_post_sequence_number == -1) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 537384. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");

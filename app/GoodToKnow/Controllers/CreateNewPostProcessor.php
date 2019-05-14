@@ -22,8 +22,6 @@ class CreateNewPostProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             redirect_to("/ax1/Home/page");
         }
 
@@ -44,8 +42,6 @@ class CreateNewPostProcessor
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
             $sessionMessage .= " Unexpected error: topic id not found in topic array. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             redirect_to("/ax1/Home/page");
         }
 
@@ -64,8 +60,6 @@ class CreateNewPostProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['special_topic_array'] = [];
-            $_SESSION['last_refresh_topics'] = 1557778345;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
