@@ -27,6 +27,10 @@ class EditMyPostEditProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -39,11 +43,19 @@ class EditMyPostEditProcessor
         if (!isset($_POST['markdown']) || trim($markdown) === '') {
             $sessionMessage .= " The edited file was not saved because nothing was submitted. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
         if (strlen($markdown) > 38000) {
             $sessionMessage .= " The edited file you submitted was not saved because there were too many characters. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -68,6 +80,10 @@ class EditMyPostEditProcessor
         if ($bytes_written === false) {
             $sessionMessage .= " file_put_contents() unable to write markdown file. Mission aborted!";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -79,6 +95,10 @@ class EditMyPostEditProcessor
         if ($bytes_written === false) {
             $sessionMessage .= " file_put_contents() unable to write html file. But the markdown file did get written.";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -86,7 +106,12 @@ class EditMyPostEditProcessor
          * Declare success.
          */
         $bytes_written_text = size_as_text($bytes_written);
-        $_SESSION['message'] = " Written <b>{$bytes_written_text}</b> (max 37.1 KB.) ";
+        $sessionMessage .= " Written <b>{$bytes_written_text}</b> (max 37.1 KB.) ";
+        $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_int01'] = 0;
+        $_SESSION['saved_int02'] = 0;
+        $_SESSION['saved_str01'] = "";
+        $_SESSION['saved_str02'] = "";
         redirect_to("/ax1/Home/page");
     }
 }

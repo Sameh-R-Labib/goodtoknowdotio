@@ -21,6 +21,7 @@ class EditMyPostEditor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -29,6 +30,7 @@ class EditMyPostEditor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -37,6 +39,7 @@ class EditMyPostEditor
         if ($chosen_post_id == 0) {
             $sessionMessage .= " You didn't enter a choice for the post you want to edit. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -52,12 +55,14 @@ class EditMyPostEditor
         if (!$post_object) {
             $sessionMessage .= " EditMyPostEditor::page says: Error 011299. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
         if ($post_object->user_id != $user_id) {
             $sessionMessage .= " You can't edit this post. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -82,6 +87,10 @@ class EditMyPostEditor
         if ($markdown === false) {
             $sessionMessage .= " Unable to read source file. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
