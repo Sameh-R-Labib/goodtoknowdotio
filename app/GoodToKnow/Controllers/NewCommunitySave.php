@@ -19,6 +19,8 @@ class NewCommunitySave
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -26,6 +28,8 @@ class NewCommunitySave
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -36,12 +40,16 @@ class NewCommunitySave
         if (!$result) {
             $sessionMessage .= " NewCommunitySave::page says: Unexpected save was unable to save the new community. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
 
         // Redirect
         $sessionMessage .= " 😃 The new community has been created. ";
         $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_str01'] = "";
+        $_SESSION['saved_str02'] = "";
         redirect_to("/ax1/Home/page");
     }
 }
