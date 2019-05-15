@@ -24,9 +24,11 @@ class NewTopicNameProcessor
 
         global $is_logged_in;
         global $sessionMessage;
+        global $is_admin;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
+        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,6 +44,7 @@ class NewTopicNameProcessor
         if (empty($topic_name) || empty($topic_description)) {
             $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,6 +54,7 @@ class NewTopicNameProcessor
         if (strlen($topic_name) > 200 || strlen($topic_description) > 230) {
             $sessionMessage .= " Either your topic name or description was too long. Start over. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 

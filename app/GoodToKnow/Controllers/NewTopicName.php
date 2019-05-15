@@ -20,9 +20,11 @@ class NewTopicName
          */
         global $is_logged_in;
         global $sessionMessage;
+        global $is_admin;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
+        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
