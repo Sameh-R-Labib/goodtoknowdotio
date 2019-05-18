@@ -24,6 +24,7 @@ class RemoveComsChoices
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,6 +43,7 @@ class RemoveComsChoices
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -49,6 +51,7 @@ class RemoveComsChoices
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
         $user_id = (int)$user_object->id;
@@ -65,6 +68,8 @@ class RemoveComsChoices
         if ($coms_user_belongs_to === false) {
             $sessionMessage .= " Error encountered trying to retrieve communities for this user. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
