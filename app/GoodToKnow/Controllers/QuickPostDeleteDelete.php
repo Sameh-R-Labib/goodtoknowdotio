@@ -25,6 +25,7 @@ class QuickPostDeleteDelete
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -33,6 +34,7 @@ class QuickPostDeleteDelete
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,6 +43,7 @@ class QuickPostDeleteDelete
         if ($chosen_post_id == 0) {
             $sessionMessage .= " You didn't enter a choice for the post you want to edit. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -49,6 +52,7 @@ class QuickPostDeleteDelete
         if (!$post_object) {
             $sessionMessage .= " EditMyPostEditor::page says: Error 011299. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
