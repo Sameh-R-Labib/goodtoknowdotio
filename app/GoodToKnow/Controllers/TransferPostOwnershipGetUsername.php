@@ -25,6 +25,8 @@ class TransferPostOwnershipGetUsername
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -33,6 +35,8 @@ class TransferPostOwnershipGetUsername
         if ($choice != "yes" && $choice != "no") {
             $sessionMessage .= " You didn't enter a choice. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
 

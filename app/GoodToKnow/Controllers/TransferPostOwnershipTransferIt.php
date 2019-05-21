@@ -89,6 +89,8 @@ class TransferPostOwnershipTransferIt
         $sessionMessage .= " I have successfully updated the \"{$post_object->title}\" post's record so that now it
          belongs to <b>{$username}</b>. ";
         $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_int01'] = 0;
+        $_SESSION['saved_int02'] = 0;
         redirect_to("/ax1/Home/page");
     }
 }
