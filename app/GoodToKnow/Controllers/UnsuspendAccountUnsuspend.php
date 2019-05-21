@@ -23,6 +23,7 @@ class UnsuspendAccountUnsuspend
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -39,6 +40,7 @@ class UnsuspendAccountUnsuspend
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -50,6 +52,7 @@ class UnsuspendAccountUnsuspend
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,6 +69,7 @@ class UnsuspendAccountUnsuspend
         if (!$consequence_of_save) {
             $sessionMessage .= ' The save method for User returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -73,6 +77,7 @@ class UnsuspendAccountUnsuspend
             $sessionMessage .= " The save method for User did not return false but it did send back a message.
              Therefore, it probably did not update {$saved_str01}'s account. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
 
@@ -81,6 +86,7 @@ class UnsuspendAccountUnsuspend
          */
         $sessionMessage .= " User {$saved_str01}'s account has been <b>un</b>suspended successfully! Yay 😅 🤟 ";
         $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_str01'] = "";
         redirect_to("/ax1/Home/page");
     }
 }
