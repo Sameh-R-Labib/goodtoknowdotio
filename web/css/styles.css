@@ -282,8 +282,8 @@ h2 + p {
 #admindiv {
     float: left;
     background-color: dimgray;
-    width: 147px;
-    height: 133px;
+    width: 98px;
+    height: 80px;
     margin: auto;
     padding: 25px;
     border-top: 3px ridge #3f3fef;
@@ -311,7 +311,6 @@ h2 + p {
 .tooltip {
     position: relative;
     display: inline-block;
-    box-sizing: border-box;
     border-bottom: 1px dotted black;
 }
 
