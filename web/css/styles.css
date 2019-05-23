@@ -195,7 +195,7 @@ h2 + p {
     position: relative;
     top: 21px;
     width: 865px;
-    height: 201px;
+    height: 195px;
     margin: auto;
     border: 3px ridge #3f3fef;
     clear: both;
@@ -282,7 +282,7 @@ h2 + p {
 #admindiv {
     float: left;
     background-color: dimgray;
-    width: 98px;
+    width: 97px;
     height: 80px;
     margin: auto;
     padding: 25px;
