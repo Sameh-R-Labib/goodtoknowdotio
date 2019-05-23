@@ -311,6 +311,7 @@ h2 + p {
 .tooltip {
     position: relative;
     display: inline-block;
+    box-sizing: border-box;
     border-bottom: 1px dotted black;
 }
 
