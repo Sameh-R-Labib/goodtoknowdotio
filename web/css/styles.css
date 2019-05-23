@@ -234,8 +234,8 @@ h2 + p {
 #sendmessage {
     opacity: 0.97;
     background-color: #008A70;
-    width: 202px;
-    height: 70px;
+    width: 215px;
+    height: 64px;
     margin: auto;
     float: left;
     border-left: 3px ridge #3f3fef;
@@ -289,7 +289,7 @@ h2 + p {
     opacity: 0.96;
     background-color: lightslategray;
     width: 168px;
-    height: 70px;
+    height: 64px;
     margin: auto;
     float: left;
     border-left: 3px ridge #3f3fef;
@@ -298,7 +298,7 @@ h2 + p {
 #logindiv {
     background-color: #ff9a10;
     width: 184px;
-    height: 70px;
+    height: 64px;
     margin: auto;
     float: left;
     border-left: 3px ridge #3f3fef;
