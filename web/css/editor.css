@@ -1,4 +1,8 @@
 /* Markdown Editor */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: whitesmoke;
     background: url("/photo-1447433819943-74a20887a81e.jpeg") no-repeat center center fixed;
