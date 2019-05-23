@@ -253,7 +253,7 @@ h2 + p {
 #leftsodiv {
     opacity: 0.96;
     background-color: white;
-    width: 150px;
+    width: 147px;
     height: 185px;
     margin: auto;
     float: left;
@@ -270,7 +270,7 @@ h2 + p {
 #sendtoauthor {
     float: left;
     background-color: #d9b039;
-    width: 150px;
+    width: 147px;
     height: 62px;
     margin: auto;
 }
@@ -278,8 +278,8 @@ h2 + p {
 #admindiv {
     float: left;
     background-color: dimgray;
-    width: 100px;
-    height: 86px;
+    width: 147px;
+    height: 133px;
     margin: auto;
     padding: 25px;
     border-top: 3px ridge #3f3fef;
