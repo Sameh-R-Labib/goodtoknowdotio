@@ -30,7 +30,9 @@
         <?php endforeach; ?>
     </section>
     <section>
-        <button type="submit" name="submit" value="Submit">Submit</button>
+        <p>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+        </p>
     </section>
 </form>
 </body>
