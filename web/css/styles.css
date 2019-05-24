@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
 body {
     background-color: whitesmoke;
     background: url("/photo-1447433819943-74a20887a81e.jpeg") no-repeat center center fixed;
@@ -142,10 +146,6 @@ h2 {
 
 h2 + p {
     margin: 0 0 0 40px;
-}
-
-*, *::after, *::before {
-    box-sizing: inherit;
 }
 
 #topbar {
