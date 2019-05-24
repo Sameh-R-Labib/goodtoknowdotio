@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="/hiddenradiomessagestooltips/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/editor.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -16,25 +16,24 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<div class="form-wrapper">
+<form action="/ax1/DefaultCommunityProcessor/page" method="post">
     <h2>Switch Default Community</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>Which of my communities do I want to be the default?</p>
-    <form action="/ax1/DefaultCommunityProcessor/page" method="post">
+    <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_community_array as $key => $value): ?>
-            <label for="choice-<?php echo $key; ?>">
-                <input type="radio" id="choice-<?php echo $key; ?>" name="choice"
-                       value="<?php echo $key; ?>"/>
-                <div>
-                    <?php echo $value; ?>
-                    <span><?php echo "Do I want this one?"; ?></span>
-                </div>
+            <label for="choice-<?php echo $key; ?>" class="radio">
+                <input type="radio" id="choice-<?php echo $key; ?>" name="choice" value="<?php echo $key; ?>">
+                "<?php echo $value; ?>" [<?php echo "Do I want this one?"; ?>]<br>
             </label>
         <?php endforeach; ?>
-        <button type="submit" name="submit" value="Submit">Submit</button>
-    </form>
-</div> <!-- .form-wrapper -->
-<script src="/hiddenradiomessagestooltips/js/index.js"></script>
+    </section>
+    <section>
+        <p>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+        </p>
+    </section>
+</form>
 </body>
 </html>
