@@ -1,11 +1,4 @@
 /* Markdown Editor */
-* {
-    box-sizing: border-box;
-}
-
-*, *::after, *::before {
-    box-sizing: inherit;
-}
 
 body {
     background-color: whitesmoke;
