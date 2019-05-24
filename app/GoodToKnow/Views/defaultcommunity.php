@@ -25,7 +25,7 @@
         foreach ($special_community_array as $key => $value): ?>
             <label for="choice-<?php echo $key; ?>" class="radio">
                 <input type="radio" id="choice-<?php echo $key; ?>" name="choice" value="<?php echo $key; ?>">
-                "<?php echo $value; ?>" [<?php echo "Do I want this one?"; ?>]<br>
+                <?php echo $value; ?><br>
             </label>
         <?php endforeach; ?>
     </section>
