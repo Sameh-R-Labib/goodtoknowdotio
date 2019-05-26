@@ -33,7 +33,7 @@
         <p>
             <label for="extension">Title extension: </label>
             <input id="extension" name="title_extension" type="text" value="" required minlength="1" maxlength="200"
-                   size="67" spellcheck="false">
+                   size="64" spellcheck="false">
         </p>
     </section>
     <section>
