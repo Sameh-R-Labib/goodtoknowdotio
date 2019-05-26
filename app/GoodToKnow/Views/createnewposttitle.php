@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="/hiddenradiomessagestooltips/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/editor.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,7 +15,7 @@
     <title><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $html_title; ?></title>
 <body>
-<div class="form-wrapper">
+<form action="/ax1/CreateNewPostTitleProcessor/page" method="post">
     <h2>Create a title</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>The main title is the title which will appear in a listing of posts for a topic.
@@ -24,16 +24,23 @@
         'Pronouns'. And its extension is "in the Greek Language".</p>
     <p>UTF-8 characters allowed &mdash; including emoji</p>
     <p>* both required</p>
-    <form action="/ax1/CreateNewPostTitleProcessor/page" method="post">
-        <br>Main title:<br>
-        <input type="text" name="main_title" value="">
-        <br><br>
-        Title extension:<br>
-        <input type="text" name="title_extension" value="">
-        <br><br>
-        <button type="submit" name="submit" value="Submit">Submit</button>
-    </form>
-</div> <!-- .form-wrapper -->
-<script src="/hiddenradiomessagestooltips/js/index.js"></script>
+    <section>
+        <p>
+            <label for="title">Main title: </label>
+            <input id="title" name="main_title" type="text" value="" required minlength="1" maxlength="200"
+                   size="67" spellcheck="false">
+        </p>
+        <p>
+            <label for="extension">Title extension: </label>
+            <input id="extension" name="title_extension" type="text" value="" required minlength="1" maxlength="200"
+                   size="67" spellcheck="false">
+        </p>
+    </section>
+    <section>
+        <p>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+        </p>
+    </section>
+</form>
 </body>
 </html>
