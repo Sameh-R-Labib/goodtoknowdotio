@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="/hiddenradiomessagestooltips/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/editor.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -16,27 +16,31 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<div class="form-wrapper">
+<form action="/ax1/CreateNewPostIPProcessor/page" method="post">
     <h2>Where to put the new post?</h2>
     <?php require SESSIONMESSAGE; ?>
-    <form action="/ax1/CreateNewPostIPProcessor/page" method="post">
-        <div>Put it
+    <section>
+        <label for="relate">Put it
             <select id="relate" name="relate">
                 <option value="after">after</option>
                 <option value="before">before</option>
             </select>
-        </div>
+        </label>
+    </section>
+    <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_post_array as $key => $value): ?>
-            <label for="choice-<?php echo $key; ?>">
-                <input type="radio" id="choice-<?php echo $key; ?>" name="choice"
-                       value="<?php echo $key; ?>"/>
-                <?php echo $value; ?>
+            <label for="choice-<?php echo $key; ?>" class="radio">
+                <input type="radio" id="choice-<?php echo $key; ?>" name="choice" value="<?php echo $key; ?>">
+                <?php echo $value; ?><br>
             </label>
         <?php endforeach; ?>
-        <button type="submit" name="submit" value="Submit">Submit</button>
-    </form>
-</div> <!-- .form-wrapper -->
-<script src="/hiddenradiomessagestooltips/js/index.js"></script>
+    </section>
+    <section>
+        <p>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+        </p>
+    </section>
+</form>
 </body>
 </html>
