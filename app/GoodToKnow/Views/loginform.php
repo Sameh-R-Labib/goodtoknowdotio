@@ -19,10 +19,10 @@
 <form class="login" action="/ax1/LoginScript/page" method="post">
     <h2>Log In</h2>
     <fieldset>
-        <input type="text" name="username" placeholder="Username"/>
-        <input type="password" name="password" placeholder="Password"/>
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
     </fieldset>
-    <input type="submit" value="Log In"/>
+    <input type="submit" value="Log In">
     <div class="utilities">
         <a href="#">Forgot password?</a>
         <a href="#">Invited to join? &rarr;</a>
