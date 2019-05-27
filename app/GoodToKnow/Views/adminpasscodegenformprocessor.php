@@ -42,13 +42,13 @@
     </section>
     <p>The rules for the password: 10 to 18 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
     <h2>Person's Characteristics</h2>
-    <h3>Title</h3>
+    <p>Title: </p>
     <section>
-        <label for="title_1">
+        <label for="title_1" class="radio">
             <input type="radio" id="title_1" name="title" value="Mr.">
             Mr.<br>
         </label>
-        <label for="title_2">
+        <label for="title_2" class="radio">
             <input type="radio" id="title_2" name="title" value="Mrs.">
             Mrs.
         </label>
