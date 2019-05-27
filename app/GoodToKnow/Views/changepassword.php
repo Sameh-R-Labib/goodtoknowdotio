@@ -17,32 +17,28 @@
 </head>
 <body>
 <form action="/ax1/ChangePasswordProcessor/page" method="post">
-    <h1>Change Password</h1>
+    <h2>Change Password</h2>
     <?php require SESSIONMESSAGE; ?>
+    <p>All fields required</p>
     <section>
-        <h2>All fields required</h2>
         <p>
-            <label for="current_password">
-                <span>Current P/W: </span>
-            </label>
-            <input type="password" id="current_password" name="current_password">
+            <label for="current_password">Current P/W: </label>
+            <input id="current_password" name="current_password" type="password" value="" required minlength="1"
+                   spellcheck="false">
         </p>
         <p>
-            <label for="first_try">
-                <span>New P/W: </span>
-            </label>
-            <input type="password" id="first_try" name="first_try">
+            <label for="first_try">New P/W: </label>
+            <input id="first_try" name="first_try" type="password" value="" required minlength="1" spellcheck="false">
         </p>
         <p>
-            <label for="new_password">
-                <span>Reenter it: </span>
-            </label>
-            <input type="password" id="new_password" name="new_password">
+            <label for="new_password">Reenter it: </label>
+            <input id="new_password" name="new_password" type="password" value="" required minlength="1"
+                   spellcheck="false">
         </p>
     </section>
     <section>
         <p>
-            <button type="submit" name="submit" value="Submit">Change Password</button>
+            <button type="submit" name="submit" value="Submit">Submit</button>
         </p>
     </section>
 </form>
