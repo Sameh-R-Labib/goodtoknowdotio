@@ -19,7 +19,7 @@
 <form action="/ax1/ChangePasswordProcessor/page" method="post">
     <h2>Change Password</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>* All fields required</p>
+    <p>* All fields required.</p>
     <section>
         <p>
             <label for="current_password">Current P/W: </label>
