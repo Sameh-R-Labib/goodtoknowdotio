@@ -19,13 +19,10 @@
 <form action="/ax1/AdminCreateUser/page" method="post">
     <h1>User</h1>
     <?php require SESSIONMESSAGE; ?>
-    <p>* All fields required.</p>
     <h2>Log-in Credentials</h2>
     <p>The rules for the username: Must consist of two words separated by an underscore.
-        The first word must start with an upper case letter.
-        That first letter is the only uppercase letter.
-        The first word must be 4 to 9 characters in length.
-        The second word is numeric two digits long.</p>
+        The first word (capitalized w/ 4-9 char.) must start with an upper case letter.
+        The second word must consist of two digits.</p>
     <section>
         <p>
             <label for="name">Username (<em>like Buddy_52</em>:) </label>
@@ -40,7 +37,7 @@
             <input id="pwd" name="password" type="password" value="" required minlength="6" spellcheck="false">
         </p>
     </section>
-    <p>The rules for the password: 10 to 18 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
+    <p>Password: 10 to 18 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
     <h2>Person's Characteristics</h2>
     <p>Title: </p>
     <section>
