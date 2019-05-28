@@ -72,6 +72,11 @@ label.radio {
     margin-right: 41px;
 }
 
+label.dropdown {
+    margin-left: 29px;
+    margin-right: 23px;
+}
+
 form {
     background-color: white;
     margin: 0 auto;

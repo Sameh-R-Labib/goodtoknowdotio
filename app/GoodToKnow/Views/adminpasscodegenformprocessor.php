@@ -54,7 +54,7 @@
         </label>
     </section>
     <section>
-        <label for="race">Race: <strong><abbr title="required">*</abbr></strong>
+        <label for="race" class="dropdown">Race: <strong><abbr title="required">*</abbr></strong>
             <select id="race" name="race">
                 <option value="caucasian-american">Caucasian American</option>
                 <option value="caucasian-european">Caucasian European</option>
