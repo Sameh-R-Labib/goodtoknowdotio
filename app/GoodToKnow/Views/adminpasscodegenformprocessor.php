@@ -73,7 +73,7 @@
     </section>
     <p>
         <label for="box1">Description <strong><abbr title="required">*</abbr></strong>: </label>
-        <textarea id="box1" name="comment" rows="10" cols="68" wrap="soft" maxlength="800"
+        <textarea id="box1" name="comment" rows="5" cols="68" wrap="soft" maxlength="800"
                   placeholder="How'd we meet?"></textarea>
     </p>
     <p>
