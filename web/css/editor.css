@@ -80,6 +80,7 @@ label.dropdown {
 }
 
 form {
+    box-sizing: border-box;
     background-color: white;
     margin: 0 auto;
     width: 865px;
