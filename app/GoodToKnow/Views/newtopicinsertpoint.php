@@ -22,7 +22,7 @@
     <p>This assumes you're adding a new topic to the current community. To add a topic to a different community
         you need to switch to it then come back here.</p>
     <section>
-        <label for="relate">Put it
+        <label for="relate" class="dropdown">Put it
             <select id="relate" name="relate">
                 <option value="after">after</option>
                 <option value="before">before</option>

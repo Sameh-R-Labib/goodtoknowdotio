@@ -20,7 +20,7 @@
     <h2>Where to put the new post?</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
-        <label for="relate">Put it
+        <label for="relate" class="dropdown">Put it
             <select id="relate" name="relate">
                 <option value="after">after</option>
                 <option value="before">before</option>
