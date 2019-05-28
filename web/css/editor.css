@@ -68,7 +68,9 @@ label.checkbox {
 }
 
 label.radio {
-    margin-left: 23px;
+    margin-left: 41px;
+    margin-right: 41px;
+    margin-top: 10px;
 }
 
 form {
