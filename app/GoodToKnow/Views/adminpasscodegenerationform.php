@@ -23,10 +23,12 @@
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($community_array as $key => $value): ?>
-            <label for="choice-<?php echo $key + 1; ?>" class="radio">
-                <input type="radio" id="choice-<?php echo $key + 1; ?>" name="choice" value="<?php echo $value->id; ?>">
-                "<?php echo $value->community_name; ?>" [<?php echo $value->community_description; ?>]<br>
-            </label>
+            <p>
+                <label for="choice-<?php echo $key + 1; ?>" class="radio">
+                    <input type="radio" id="choice-<?php echo $key + 1; ?>" name="choice" value="<?php echo $value->id; ?>">
+                    "<?php echo $value->community_name; ?>" [<?php echo $value->community_description; ?>]<br>
+                </label>
+            </p>
         <?php endforeach; ?>
     </section>
     <section>
