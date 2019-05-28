@@ -84,7 +84,10 @@ form {
     background-color: white;
     margin: 0 auto;
     width: 865px;
-    padding: 1em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    padding-bottom: 1.2em;
+    padding-top: 0.2em;
     border: 1px solid #CCC;
     border-radius: 1em;
     position: absolute;
