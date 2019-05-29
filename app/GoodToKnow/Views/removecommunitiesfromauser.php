@@ -28,6 +28,7 @@
     </section>
     <section>
         <p>
+            <button type="submit" name="abort" value="Abort" class="abort">Abort</button>
             <button type="submit" name="submit" value="Submit">Submit</button>
         </p>
     </section>
