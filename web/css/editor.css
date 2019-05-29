@@ -48,6 +48,10 @@ button {
     border-radius: 4px;
 }
 
+button.abort {
+    color: white;
+}
+
 h2 {
     font-size: 1.32em;
     margin-top: 2.66em;
