@@ -49,7 +49,8 @@ button {
 }
 
 button.abort {
-    color: white;
+    background: #ff751a;
+    width: 60px;
 }
 
 h2 {
