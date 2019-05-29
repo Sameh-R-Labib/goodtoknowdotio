@@ -11,16 +11,13 @@ class NewCommunityProcessor
         global $is_logged_in;
         global $sessionMessage;
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$_POST: </p>\n<pre>";
-        var_dump($_POST);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
         if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
+            $sessionMessage .= " You have aborted the task you were working on! The session variables were reset. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
