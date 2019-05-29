@@ -36,8 +36,7 @@ input, textarea, select, button {
 }
 
 button {
-    display: inline;
-    margin: 20px 0 0 364px;
+    margin: 20px 0 0 194px;
     background: #0079BB;
     color: white;
     border-style: outset;
