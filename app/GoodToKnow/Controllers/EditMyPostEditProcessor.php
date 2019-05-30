@@ -34,6 +34,16 @@ class EditMyPostEditProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
+            $sessionMessage .= " You have aborted the task you were working on! The session variables were reset. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            $_SESSION['saved_str01'] = "";
+            $_SESSION['saved_str02'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * Verify that a string representing
          * the edited post was submitted.
