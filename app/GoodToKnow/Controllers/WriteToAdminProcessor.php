@@ -34,6 +34,12 @@ class WriteToAdminProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
+            $sessionMessage .= " You have aborted the task you were working on! The session variables were reset. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * Verify that a string representing
          * the message was submitted.
