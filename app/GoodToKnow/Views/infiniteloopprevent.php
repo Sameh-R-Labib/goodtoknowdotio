@@ -25,7 +25,7 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    &nbsp;
+    <p><a href="/ax1/Home/page">⛺</a>:&nbsp;&nbsp;Infinite Loop Protection</p>
 </div>
 <!-- scriptoutput -->
 <div id="scriptoutput">

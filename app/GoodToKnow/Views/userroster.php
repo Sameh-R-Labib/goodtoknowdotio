@@ -28,7 +28,7 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p>⛺:&nbsp;&nbsp;<?php require BREADCRUMBS; ?></p>
+    <p><a href="/ax1/Home/page">⛺</a>:&nbsp;&nbsp;<?php require BREADCRUMBS; ?></p>
 </div>
 <!-- scriptoutput -->
 <div id="scriptoutput">
