@@ -193,7 +193,7 @@ class MessageToUser extends GoodObject
     public static function get_readable_time($created)
     {
         $created = (int)$created;
-        $date = date('m/d/Y h:i a ', $created) . "[" . date_default_timezone_get() . "]";
+        $date = date('m/d/Y h:ia ', $created) . "[" . date_default_timezone_get() . "]";
         return $date;
     }
 
