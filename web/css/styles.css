@@ -62,8 +62,12 @@ p {
     margin-top: 62px;
 }
 
+b, strong {
+    color: #2D2D2D;
+}
+
 #maincontent h1 {
-    color: #282828;
+    color: #2D2D2D;
     font-size: 2.25em;
     margin-top: 0;
     margin-left: 24px;
