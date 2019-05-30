@@ -162,7 +162,7 @@ class MessageToUser extends GoodObject
                 $error .= " MessageToUser::replace_attributes says: get_username failed. ";
                 return false;
             }
-            $message_object->created = self::get_readable_time($db, $error, $message_object->created);
+            $message_object->created = self::get_readable_time($message_object->created);
         }
         return true;
     }
@@ -190,10 +190,10 @@ class MessageToUser extends GoodObject
      * @param $created
      * @return string
      */
-    public static function get_readable_time(\mysqli $db, string &$error, $created)
+    public static function get_readable_time($created)
     {
         $created = (int)$created;
-        $date = date('m/d/Y h:i:s a ', $created) . date_default_timezone_get();
+        $date = date('m/d/Y h:i a ', $created) . "[" . date_default_timezone_get() . "]";
         return $date;
     }
 
