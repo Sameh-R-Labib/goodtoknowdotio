@@ -35,4 +35,28 @@ class Community extends GoodObject
      * @var string
      */
     public $community_description;
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param string $community_name
+     * @return bool|mixed
+     */
+    public static function find_by_community_name(\mysqli $db, string &$error, string $community_name)
+    {
+        /**
+         * You give it a username and it returns the
+         * corresponding User object or false.
+         */
+        $sql = 'SELECT * FROM `communities`
+                WHERE `community_name` = "' . $db->real_escape_string($community_name) . '" LIMIT 1';
+
+        $array_of_Community_objects = parent::find_by_sql($db, $error, $sql);
+
+        if (!$array_of_Community_objects || !empty($error)) {
+            return false;
+        }
+
+        return array_shift($array_of_Community_objects);
+    }
 }
