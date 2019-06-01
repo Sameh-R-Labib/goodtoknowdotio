@@ -92,6 +92,13 @@ class MemberMemEdFormProc
             redirect_to("/ax1/Home/page");
         }
         $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
+        if (!$user_object) {
+            $sessionMessage .= " Unexpected failed to retrieve the user object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * 5) Makes sure the comment is escaped for suitability
