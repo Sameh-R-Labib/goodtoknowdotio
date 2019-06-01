@@ -94,5 +94,35 @@ class KommunityDescriptionEditorFormProcessor
             $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         *  5) Makes sure the description is escaped for suitability
+         *     to being included in an sql statement. This may be
+         *     taken care of automatically by the GoodObject class
+         *     function I'll be using but make sure.
+         *
+         *  Yes this is t.c.o. automatically. So, don't worry about it!
+         */
+
+        /**
+         *  7) Update the database with this Community object.
+         */
+        $result = $community_object->save($db, $sessionMessage);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated community object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Report success.
+         */
+        $sessionMessage .= " I have successfully updated {$saved_str01}'s record. ";
+        $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_int01'] = 0;
+        $_SESSION['saved_str01'] = "";
+        redirect_to("/ax1/Home/page");
     }
 }
