@@ -11,16 +11,17 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 
+
 class MemberMemEdFormProc
 {
     public function page()
     {
         /**
          * The purpose is to:
-         *  1) Read $_POST['plaintext']
+         *  1) Read $_POST['text']
          *     (which is the edited member's comment.)
-         *  2) Remove any HTML tags found in $_POST['plaintext'].
-         *  3) Validate the suitability of $_POST['plaintext']
+         *  2) Remove any HTML tags found in $_POST['text'].
+         *  3) Validate the suitability of $_POST['text']
          *     as a User comment.
          *  4) Get a copy of the User object for the member.
          *  5) Makes sure the comment is escaped for suitability
@@ -53,11 +54,11 @@ class MemberMemEdFormProc
         }
 
         /**
-         * 1) Read $_POST['plaintext']
+         * 1) Read $_POST['text']
          *    (which is the edited member's comment.)
          */
-        $edited_comment = (isset($_POST['plaintext'])) ? $_POST['plaintext'] : '';
-        if (!isset($_POST['plaintext']) || trim($edited_comment) === '') {
+        $edited_comment = (isset($_POST['text'])) ? $_POST['text'] : '';
+        if (!isset($_POST['text']) || trim($edited_comment) === '') {
             $sessionMessage .= " The edited comment was not saved because nothing (or blank space) was submitted. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
@@ -66,8 +67,8 @@ class MemberMemEdFormProc
         }
 
         /**
-         * 2) Remove any HTML tags found in $_POST['plaintext'].
-         * 3) Validate the suitability of $_POST['plaintext']
+         * 2) Remove any HTML tags found in $_POST['text'].
+         * 3) Validate the suitability of $_POST['text']
          *    as a User comment.
          */
         $result = AdminCreateUser::is_comment($sessionMessage, $edited_comment);
