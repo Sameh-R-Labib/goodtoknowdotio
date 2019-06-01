@@ -16,7 +16,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/KommunityDescriptionEditorFormProcessor/page" method="post">
+<form action="/ax1/TopicDescriptionEditorFormProcessor/page" method="post">
     <h2><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $saved_str01; ?> Description</h2>
     <?php require SESSIONMESSAGE; ?>
@@ -28,7 +28,7 @@
             <label for="textarea"></label>
             <textarea id="textarea" name="text" rows="12"
                       cols="68" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
-                echo $community_object->community_description; ?></textarea>
+                echo $topic_object->topic_description; ?></textarea>
         </p>
     </section>
     <section>
