@@ -16,11 +16,11 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/CreateNewPostProcessor/page" method="post">
-    <h2>Create New Post</h2>
+<form action="/ax1/TopicDescriptionEditorProcessor/page" method="post">
+    <h2>Topic Description Editor</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>These are topics in the current community.</p>
-    <p>Which topic is for the new post?</p>
+    <p>Which topic is the one whose description it is that you want to edit?</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($special_topic_array as $key => $value): ?>
