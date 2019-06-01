@@ -105,6 +105,11 @@ class KommunityDescriptionEditorFormProcessor
          */
 
         /**
+         *  6) Replace the Community's current description with the new one.
+         */
+        $community_object->community_description = $edited_description;
+
+        /**
          *  7) Update the database with this Community object.
          */
         $result = $community_object->save($db, $sessionMessage);
