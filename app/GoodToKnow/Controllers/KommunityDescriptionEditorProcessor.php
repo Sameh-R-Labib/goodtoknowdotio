@@ -33,7 +33,7 @@ class KommunityDescriptionEditorProcessor
          *  3) Redirect to a route.
          */
 
-        $submitted_community_name = (isset($_POST['username'])) ? $_POST['username'] : '';
+        $submitted_community_name = (isset($_POST['community'])) ? $_POST['community'] : '';
 
         if (trim($submitted_community_name) === "") {
             $sessionMessage .= " Aborted because you have not submitted a community name. ";
