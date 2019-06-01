@@ -4,6 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
+
+
 class KommunityDescriptionEditorFormProcessor
 {
     public function page()
@@ -63,5 +66,6 @@ class KommunityDescriptionEditorFormProcessor
          *  3) Validate the suitability of $_POST['text']
          *     as a community description.
          */
+        $result = Community::is_community_description($sessionMessage, $edited_description);
     }
 }
