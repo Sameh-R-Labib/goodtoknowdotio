@@ -56,7 +56,7 @@ class KommunityDescriptionEditorProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        $_SESSION['saved_int01'] = $community->id;
+        $_SESSION['saved_int01'] = (int)$community->id;
         $_SESSION['saved_str01'] = $submitted_community_name;
 
         redirect_to("/ax1/KommunityDescriptionEditorForm/page");

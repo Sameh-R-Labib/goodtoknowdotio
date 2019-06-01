@@ -4,6 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Community;
+
+
 class KommunityDescriptionEditorForm
 {
     public function page()
@@ -36,5 +39,20 @@ class KommunityDescriptionEditorForm
             $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
+
+        // 1) Retrieve the Community object for the community whose description the admin wants to edit.
+        $community_object = Community::find_by_id($db, $sessionMessage, $saved_int01);
+        if (!$community_object) {
+            $sessionMessage .= " Unexpected unable to retrieve target community's object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+
+        // 2) Present a (pre-filled with current description) form for editing.
+        $html_title = "Community's Description Editor";
+
+        require VIEWS . DIRSEP . 'kommunitydescriptioneditorform.php';
     }
 }
