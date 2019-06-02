@@ -172,22 +172,8 @@ class CreateNewPostIPProcessor
             }
         }
         if (!$found_a_post_with_higher_sequence_number) {
-            return 1000000;
-        }
-
-        /**
-         * Already ordered the posts by sequence number.
-         */
-
-        /**
-         * At this point we know whether $following_post_sequence_number
-         * is going to be 1000000 or not be 1000000.
-         *
-         * If it's not going to be 1000000 then we need to know what it is.
-         *
-         * Also we do have the posts in order by increasing sequence number.
-         */
-        if ($found_a_post_with_higher_sequence_number) {
+            $following_post_sequence_number = 1000000;
+        } else {
             foreach ($all_posts_as_objects as $key => $object) {
                 if ($object->sequence_number > $chosen_post_sequence_number) {
                     $following_post_sequence_number = $object->sequence_number;
@@ -201,20 +187,8 @@ class CreateNewPostIPProcessor
             redirect_to("/ax1/Home/page");
         }
 
-
-        /**
-         * At this point we we have values for both $chosen_post_sequence_number and
-         * $following_post_sequence_number.
-         *
-         * This brings us closer to getting $sequence_number and returning it.
-         */
-
         $difference = $following_post_sequence_number - $chosen_post_sequence_number;
 
-        /**
-         * If the difference between $chosen_post_sequence_number and $following_post_sequence_number
-         * is less than 2 then error out.
-         */
         if (($difference) < 2) {
             $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
@@ -236,11 +210,7 @@ class CreateNewPostIPProcessor
             $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
         }
-        /**
-         * If there are no posts which have a sequence number lower
-         * than the sequence number of the chosen post then we will
-         * return 0 as the sequence number.
-         */
+
         $found_a_post_with_lower_sequence_number = false;
         foreach ($all_posts_as_objects as $key => $object) {
             if ($object->sequence_number < $chosen_post_sequence_number) {
@@ -249,23 +219,10 @@ class CreateNewPostIPProcessor
             }
         }
         if (!$found_a_post_with_lower_sequence_number) {
-            return 0;
-        }
+            $leading_post_sequence_number = 0;
+        } else {
+            $reversed = array_reverse($all_posts_as_objects);
 
-        /**
-         * Already ordered the posts by sequence number.
-         */
-
-        /**
-         * At this point we know whether $leading_post_sequence_number
-         * is going to be 0 or not be 0.
-         *
-         * If it's not going to be 0 then we need to know what it is.
-         *
-         * Also we do have the posts in order by increasing sequence number.
-         */
-        $reversed = array_reverse($all_posts_as_objects);
-        if ($found_a_post_with_lower_sequence_number) {
             foreach ($reversed as $key => $object) {
                 if ($object->sequence_number < $chosen_post_sequence_number) {
                     $leading_post_sequence_number = $object->sequence_number;
