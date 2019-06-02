@@ -6,6 +6,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Topic;
 
+
 class TopicDescriptionEditorFormProcessor
 {
     public function page()
@@ -66,5 +67,67 @@ class TopicDescriptionEditorFormProcessor
          *     as a topic description.
          */
         $result = Topic::is_topic_description($sessionMessage, $edited_description);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because the text submitted did not comply. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         *  4) Get a copy of the Topic object.
+         */
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+        $topic_object = Topic::find_by_id($db, $sessionMessage, $saved_int01);
+        if (!$topic_object) {
+            $sessionMessage .= " Unexpected failed to retrieve the topic object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         *  5) Makes sure the description is escaped for suitability
+         *     to being included in an sql statement. This may be
+         *     taken care of automatically by the GoodObject class
+         *     function I'll be using but make sure.
+         *
+         *  Yes this is t.c.o. automatically. So, don't worry about it!
+         */
+
+        /**
+         *  6) Replace the Topic's current description with the new one.
+         */
+        $topic_object->topic_description = $edited_description;
+
+        /**
+         *  7) Update the database with this Topic object.
+         */
+        $result = $topic_object->save($db, $sessionMessage);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated topic object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = "";
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Report success.
+         */
+        $sessionMessage .= " I have successfully updated {$saved_str01}'s record. ";
+        $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_int01'] = 0;
+        $_SESSION['saved_str01'] = "";
+        redirect_to("/ax1/Home/page");
     }
 }
