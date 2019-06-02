@@ -146,13 +146,13 @@ class NewTopicIPProcessor
             }
         }
         if (!$found_a_topic_with_higher_sequence_number) {
-            return 1000000;
-        }
-
-        foreach ($topic_objects_array as $key => $object) {
-            if ($object->sequence_number > $chosen_topic_sequence_number) {
-                $following_topic_sequence_number = $object->sequence_number;
-                break;
+            $following_topic_sequence_number = 1000000;
+        } else {
+            foreach ($topic_objects_array as $key => $object) {
+                if ($object->sequence_number > $chosen_topic_sequence_number) {
+                    $following_topic_sequence_number = $object->sequence_number;
+                    break;
+                }
             }
         }
 
@@ -193,15 +193,15 @@ class NewTopicIPProcessor
             }
         }
         if (!$found_a_topic_with_lower_sequence_number) {
-            return 0;
-        }
+            $leading_topic_sequence_number = 0;
+        } else {
+            $reversed = array_reverse($topic_objects_array);
 
-        $reversed = array_reverse($topic_objects_array);
-
-        foreach ($reversed as $key => $object) {
-            if ($object->sequence_number < $chosen_topic_sequence_number) {
-                $leading_topic_sequence_number = $object->sequence_number;
-                break;
+            foreach ($reversed as $key => $object) {
+                if ($object->sequence_number < $chosen_topic_sequence_number) {
+                    $leading_topic_sequence_number = $object->sequence_number;
+                    break;
+                }
             }
         }
 
