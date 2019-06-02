@@ -86,7 +86,6 @@
                  title="Help protect your freedom, join the Free Software Foundation"/></a>
         <figcaption>I joined the FSF because I use the GNU Affero version 3 license</figcaption>
     </figure>
-
     <figure>
         <img class="photo" alt="Albert Einstein" src="/thosewhosaidno.jpeg">
         <figcaption>Eccentric Scientist Albert Einstein</figcaption>
