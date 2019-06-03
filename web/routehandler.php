@@ -64,6 +64,8 @@ session_start();
 $sessionMessage = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
 $_SESSION['message'] = '';
 
+$url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
+
 $user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
 $user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
