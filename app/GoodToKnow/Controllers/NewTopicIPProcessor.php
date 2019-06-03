@@ -133,7 +133,7 @@ class NewTopicIPProcessor
      */
     public static function get_sequence_number_in_case_after(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
-        if ($chosen_topic_sequence_number == 1000000) {
+        if ($chosen_topic_sequence_number == 21000000) {
             $_SESSION['message'] = " Choose another place to put the topic. ";
             redirect_to("/ax1/Home/page");
         }
@@ -146,7 +146,7 @@ class NewTopicIPProcessor
             }
         }
         if (!$found_a_topic_with_higher_sequence_number) {
-            $following_topic_sequence_number = 1000000;
+            $following_topic_sequence_number = 21000000;
         } else {
             foreach ($topic_objects_array as $key => $object) {
                 if ($object->sequence_number > $chosen_topic_sequence_number) {

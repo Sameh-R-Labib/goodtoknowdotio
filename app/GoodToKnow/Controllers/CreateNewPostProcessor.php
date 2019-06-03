@@ -78,7 +78,7 @@ class CreateNewPostProcessor
             redirect_to("/ax1/CreateNewPostInsertPoint/page");
         } else {
             // There are NO posts in our topic
-            $_SESSION['saved_int02'] = 500000;
+            $_SESSION['saved_int02'] = 10500000;
             redirect_to("/ax1/CreateNewPostTitle/page");
         }
     }

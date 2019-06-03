@@ -148,7 +148,7 @@ class CreateNewPostIPProcessor
      */
     public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
-        if ($chosen_post_sequence_number == 1000000) {
+        if ($chosen_post_sequence_number == 21000000) {
             $_SESSION['message'] = " Please choose another place to put the post. ";
             redirect_to("/ax1/Home/page");
         }
@@ -162,7 +162,7 @@ class CreateNewPostIPProcessor
         /**
          * If there are no posts which have a sequence number higher
          * than the sequence number of the chosen post then we will
-         * return 1000000 as the sequence number.
+         * return 21000000 as the sequence number.
          */
         $found_a_post_with_higher_sequence_number = false;
         foreach ($all_posts_as_objects as $key => $object) {
@@ -172,7 +172,7 @@ class CreateNewPostIPProcessor
             }
         }
         if (!$found_a_post_with_higher_sequence_number) {
-            $following_post_sequence_number = 1000000;
+            $following_post_sequence_number = 21000000;
         } else {
             foreach ($all_posts_as_objects as $key => $object) {
                 if ($object->sequence_number > $chosen_post_sequence_number) {

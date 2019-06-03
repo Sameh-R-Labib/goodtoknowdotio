@@ -21,7 +21,7 @@ class NewTopic
          * the community has any topics.
          * If it has no topics then we assign
          * the sequence number for the new topic
-         * a value of 500000 and redirect to
+         * a value of 10500000 and redirect to
          * where we ask for the name of the topic.
          * If the community has one or more topics
          * then we redirect to where we as for the
@@ -57,7 +57,7 @@ class NewTopic
         }
 
         if ($is_empty) {
-            $_SESSION['saved_int01'] = 500000;
+            $_SESSION['saved_int01'] = 10500000;
             redirect_to("/ax1/NewTopicName/page");
         } else {
             redirect_to("/ax1/NewTopicInsertPoint/page");
