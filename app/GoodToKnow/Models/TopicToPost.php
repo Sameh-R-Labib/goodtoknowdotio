@@ -279,7 +279,7 @@ class TopicToPost extends GoodObject
         }
 
         $key_of_lowest = -1;
-        $lowest_sequence_number = 1000001;
+        $lowest_sequence_number = 21000001;
 
         foreach ($temp as $key => $object) {
             if ($object->sequence_number <= $lowest_sequence_number) {
