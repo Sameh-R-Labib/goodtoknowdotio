@@ -2,9 +2,7 @@
   "require": {
     "ext-mysqli": "*",
     "ext-ctype": "*",
-    "ext-mbstring": "*",
-    "erusev/parsedown": "^1.7.1",
-    "erusev/parsedown-extra": "^0.7.1"
+    "ext-mbstring": "*"
   },
   "autoload": {
     "psr-4": {
