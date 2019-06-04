@@ -52,13 +52,19 @@ class UploadProcessor
         $target_dir = IMAGE . "/";
 
         /**
+         * This value is going to show up a lot.
+         * It is the file name in the most classical sense (filename.extension)
+         */
+        define('CLASSICFILENAME', basename($_FILES["fileToUpload"]["name"]));
+
+        /**
          * Store in a var the file name (w/ its path)
          * where the uploaded content will permanently
          * live.
          *
          * NOTE: The entire old file name (w/ extension) is used for the new file name.
          */
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $target_file = $target_dir . CLASSICFILENAME;
 
         /**
          * Get a string value for the file type based
@@ -123,10 +129,10 @@ class UploadProcessor
          * Save the file if we are able to move it to its permanent location.
          */
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $sessionMessage .= " The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded
+            $sessionMessage .= " The file " . CLASSICFILENAME . " has been uploaded
              and it is an {$image_file_mime_type} file. Here is the link: <a href=\"" .
-                SERVER_URL . "/image/" . basename($_FILES["fileToUpload"]["name"]) . "\">" .
-                SERVER_URL . "/image/" . basename($_FILES["fileToUpload"]["name"]) . "</a>. ";
+                SERVER_URL . "/image/" . CLASSICFILENAME . "\">" .
+                SERVER_URL . "/image/" . CLASSICFILENAME . "</a>. ";
         } else {
             $sessionMessage .= " Sorry, there was an error uploading your file. ";
         }
@@ -134,7 +140,7 @@ class UploadProcessor
         /**
          * Report outcome of this process.
          */
-        $_SESSION['url_of_most_recent_upload'] = SERVER_URL . "/image/" . basename($_FILES["fileToUpload"]["name"]);
+        $_SESSION['url_of_most_recent_upload'] = SERVER_URL . "/image/" . CLASSICFILENAME;
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
