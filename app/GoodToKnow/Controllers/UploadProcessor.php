@@ -91,6 +91,15 @@ class UploadProcessor
         }
 
         /**
+         * Check if file already exists.
+         */
+        if (file_exists($target_file)) {
+            $sessionMessage .= " Sorry, file already exists. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
          * Check file size.
          */
         if ($_FILES["fileToUpload"]["size"] > 5767168) {
