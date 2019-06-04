@@ -40,6 +40,12 @@ class UploadProcessor
             redirect_to("/ax1/Home/page");
         }
 
+        if (!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
+            $sessionMessage .= " I aborted what you were trying to do because you didn't select a file. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          * Start
          */
@@ -108,7 +114,8 @@ class UploadProcessor
          * Save the file if we are able to move it to its permanent location.
          */
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $sessionMessage .= " The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded. ";
+            $sessionMessage .= " The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded
+             and it is an {$image_file_mime_type} file.";
         } else {
             $sessionMessage .= " Sorry, there was an error uploading your file. ";
         }
@@ -116,6 +123,7 @@ class UploadProcessor
         /**
          * Report outcome of this process.
          */
+        $_SESSION['url_of_most_recent_upload'] = SERVER_URL . "/image/" . basename($_FILES["fileToUpload"]["name"]);
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
