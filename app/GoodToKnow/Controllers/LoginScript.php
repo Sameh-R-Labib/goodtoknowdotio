@@ -43,7 +43,7 @@ class LoginScript
      */
     private static function report_on_findings(string $error)
     {
-        $error .= " GoodToKnow.io works best with these web browsers 🗺️ : Opera, Chrome, Brave. ";
+        $error .= " GoodToKnow.io works best with 🗺️: Opera, Chrome, Brave. ";
         $_SESSION['message'] = $error;
         redirect_to("/ax1/Home/page");
     }
