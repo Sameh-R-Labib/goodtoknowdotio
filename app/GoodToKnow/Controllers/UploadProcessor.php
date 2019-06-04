@@ -137,8 +137,8 @@ class UploadProcessor
          * Save the file if we are able to move it to its permanent location.
          */
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $sessionMessage .= " The file " . CLASSICFILENAME . " has been uploaded
-             and it is an {$image_file_mime_type} file. Here is the link: " . $a_link_entire_embed . ". ";
+            $sessionMessage .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
+            file. Here is the link: " . $a_link_entire_embed . ". ";
         } else {
             $sessionMessage .= " Sorry, there was an error uploading your file. ";
         }
