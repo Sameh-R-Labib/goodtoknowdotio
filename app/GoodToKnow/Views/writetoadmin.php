@@ -24,6 +24,7 @@
             🔏: GPG encrypt message w/ admin's pub key unless message is just critique of post.
         </small>
     </p>
+    <?php require URLOFMOSTRECENTUPLOAD; ?>
     <section>
         <p>
             <label for="textarea"></label>

@@ -41,6 +41,7 @@ class MessageTheAuthor
         global $topic_name;
         global $community_name;
         global $user_username;
+        global $url_of_most_recent_upload;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;

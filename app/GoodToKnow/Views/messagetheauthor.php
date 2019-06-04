@@ -23,6 +23,7 @@
         <small>🚩: Markdown &amp; UTF-8 characters OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes.
         </small>
     </p>
+    <?php require URLOFMOSTRECENTUPLOAD; ?>
     <section>
         <p>
             <label for="textarea"></label>

@@ -16,6 +16,7 @@ class WriteToAdmin
         global $is_logged_in;
         global $sessionMessage;
         global $user_username;
+        global $url_of_most_recent_upload;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;

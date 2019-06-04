@@ -17,6 +17,7 @@ class BroadcastMsg
         global $sessionMessage;
         global $is_admin;
         global $user_username;
+        global $url_of_most_recent_upload;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
