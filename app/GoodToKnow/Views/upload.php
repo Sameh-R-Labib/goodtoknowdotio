@@ -16,13 +16,13 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/UploadProcessor/page" method="post">
+<form action="/ax1/UploadProcessor/page" method="post" enctype="multipart/form-data">
     <h2>Upload an image file</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>Only .jpg, .jpeg, .png, .gif files can be uploaded.</p>
+    <p>* Only .jpg, .jpeg, .png, .gif files can be uploaded.</p>
     <section>
         <p>
-
+            <input id="fileToUpload" name="fileToUpload" type="file">
         </p>
     </section>
     <section>
