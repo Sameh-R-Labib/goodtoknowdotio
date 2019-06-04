@@ -115,7 +115,9 @@ class UploadProcessor
          */
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $sessionMessage .= " The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded
-             and it is an {$image_file_mime_type} file.";
+             and it is an {$image_file_mime_type} file. Here is the link: <a href=\"" .
+                SERVER_URL . "/image/" . basename($_FILES["fileToUpload"]["name"]) . "\">" .
+                SERVER_URL . "/image/" . basename($_FILES["fileToUpload"]["name"]) . "</a>. ";
         } else {
             $sessionMessage .= " Sorry, there was an error uploading your file. ";
         }
