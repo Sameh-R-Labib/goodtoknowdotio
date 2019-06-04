@@ -25,6 +25,13 @@
             describe the way we all set up our chat clients.
         </small>
     </p>
+    <p>
+        <small>
+            ▶️ Your Most Recent Uploaded Image URL: <?php /** @noinspection PhpUndefinedVariableInspection */
+            echo $url_of_most_recent_upload; ?> ◀️ ️✂️ Copy and 📋 Paste
+        </small>
+
+    </p>
     <section>
         <p>
             <label for="textarea"></label>
