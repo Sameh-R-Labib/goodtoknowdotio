@@ -126,13 +126,19 @@ class UploadProcessor
         }
 
         /**
+         * Sanity helpers.
+         */
+        $a_link_href_content = SERVER_URL . '/image/' . CLASSICFILENAME;
+        $a_link_display_text = SERVER_URL . '/image/' . CLASSICFILENAME;
+
+        $a_link_entire_embed = '<a href="' . $a_link_href_content . '" target="_blank">' . $a_link_display_text . '</a>';
+
+        /**
          * Save the file if we are able to move it to its permanent location.
          */
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $sessionMessage .= " The file " . CLASSICFILENAME . " has been uploaded
-             and it is an {$image_file_mime_type} file. Here is the link: <a href=\"" .
-                SERVER_URL . "/image/" . CLASSICFILENAME . "\">" .
-                SERVER_URL . "/image/" . CLASSICFILENAME . "</a>. ";
+             and it is an {$image_file_mime_type} file. Here is the link: " . $a_link_entire_embed . ". ";
         } else {
             $sessionMessage .= " Sorry, there was an error uploading your file. ";
         }
@@ -140,7 +146,7 @@ class UploadProcessor
         /**
          * Report outcome of this process.
          */
-        $_SESSION['url_of_most_recent_upload'] = SERVER_URL . "/image/" . CLASSICFILENAME;
+        $_SESSION['url_of_most_recent_upload'] = SERVER_URL . '/image/' . CLASSICFILENAME;
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
