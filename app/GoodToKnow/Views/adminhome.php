@@ -63,6 +63,7 @@
     </ul>
     <h2>Member's Tool Box</h2>
     <ul>
+        <li><a href="/ax1/Upload/page">Upload an Image</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
         <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
         <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
