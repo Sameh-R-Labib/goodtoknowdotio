@@ -27,7 +27,7 @@
         <p>
             <label for="textarea"></label>
             <textarea id="textarea" name="text" rows="29"
-                      cols="68" wrap="soft" maxlength="800"><?php /** @noinspection PhpUndefinedVariableInspection */
+                      cols="70" wrap="soft" maxlength="800"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $user_object->comment; ?></textarea>
         </p>
     </section>

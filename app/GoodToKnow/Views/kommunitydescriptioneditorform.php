@@ -27,7 +27,7 @@
         <p>
             <label for="textarea"></label>
             <textarea id="textarea" name="text" rows="12"
-                      cols="68" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
+                      cols="70" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $community_object->community_description; ?></textarea>
         </p>
     </section>
