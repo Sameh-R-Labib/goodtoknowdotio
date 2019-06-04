@@ -18,5 +18,20 @@ class Upload
          * It shall do all this while making sure
          * the upload contains no malicious code.
          */
+
+        global $is_logged_in;
+        global $sessionMessage;
+
+        if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Display the editor interface.
+         */
+        $html_title = 'Upload an image';
+
+        require VIEWS . DIRSEP . 'upload.php';
     }
 }
