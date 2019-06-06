@@ -14,14 +14,14 @@ class InitializeABitcoinRecord
          * bitcoin table. The process will
          * ask the user to ONLY supply a bitcoin
          * address and the remaining field values
-         * will be supplied by an editor for
-         * the record.
+         * will be supplied by an (not included)
+         * editor for the record.
          */
 
         /**
-         * This script simply presents a form
-         * for the user to supply the bitcoin
-         * address for the to be created bitcoin
+         * This here script simply presents a
+         * form for the user to supply the bitcoin
+         * address for the "to be created" bitcoin
          * record.
          */
     }
