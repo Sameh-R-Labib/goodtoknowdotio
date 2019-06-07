@@ -24,5 +24,17 @@ class InitializeABitcoinRecord
          * address for the "to be created" bitcoin
          * record.
          */
+
+        global $is_logged_in;
+        global $sessionMessage;
+
+        if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $html_title = 'Create a New Bitcoin Record';
+
+        require VIEWS . DIRSEP . 'initializeabitcoinrecord.php';
     }
 }
