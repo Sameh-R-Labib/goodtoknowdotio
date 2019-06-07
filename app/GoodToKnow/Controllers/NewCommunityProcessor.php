@@ -17,7 +17,7 @@ class NewCommunityProcessor
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " You have aborted the task you were working on! The session variables were reset. ";
+            $sessionMessage .= " You've aborted the task! Session variables reset. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
