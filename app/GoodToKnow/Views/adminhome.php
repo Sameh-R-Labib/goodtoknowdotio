@@ -71,6 +71,7 @@
         <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
         <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own Post</a></li>
         <li><a href="/ax1/InitializeABitcoinRecord/page">Create a Bitcoin Record</a></li>
+        <li><a href="/ax1/EditABitcoinRecord/page">Edit a Bitcoin Record</a></li>
     </ul>
     <p>When writing a post, our goal is to concisely write in a manner which helps the reader wrap their head around the
         <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy: community
