@@ -47,6 +47,23 @@ class EditABitcoinRecordSubmit
         }
         $edited_initial_balance = (isset($_POST['initial_balance'])) ? (int)$_POST['initial_balance'] : 0;
         $edited_current_balance = (isset($_POST['current_balance'])) ? (int)$_POST['current_balance'] : 0;
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$edited_initial_balance: </p>\n<pre>";
+        var_dump($edited_initial_balance);
+        echo "</pre>\n";
+        echo "<br><p>Var_dump \$_POST['initial_balance']: </p>\n<pre>";
+        var_dump($_POST['initial_balance']);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         $edited_price_point = (isset($_POST['price_point'])) ? (int)$_POST['price_point'] : 0;
         $edited_unix_time_at_purchase = (isset($_POST['unix_time_at_purchase'])) ? (int)$_POST['unix_time_at_purchase'] : 1560190617;
         $edited_comment = (isset($_POST['comment'])) ? $_POST['comment'] : "";
