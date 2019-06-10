@@ -10,7 +10,7 @@ class EditABitcoinRecordSubmit
     {
         /**
          * This function will:
-         * 1) Validate the submitted editabitcoinrecordprocessor.php form date.
+         * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
@@ -31,7 +31,64 @@ class EditABitcoinRecordSubmit
         }
 
         /**
-         *
+         * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
          */
+        if (!isset($_POST['submit'])) {
+            $sessionMessage .= " Error 07730. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+        $edited_initial_balance = (isset($_POST['initial_balance'])) ? (int)$_POST['initial_balance'] : 0;
+        $edited_current_balance = (isset($_POST['current_balance'])) ? (int)$_POST['current_balance'] : 0;
+        $edited_price_point = (isset($_POST['price_point'])) ? (int)$_POST['price_point'] : 0;
+        $edited_unix_time_at_purchase = (isset($_POST['unix_time_at_purchase'])) ? (int)$_POST['unix_time_at_purchase'] : 1560190617;
+        $edited_comment = (isset($_POST['comment'])) ? $_POST['comment'] : "";
+        // make sure the comment is okay.
+        $result = self::is_comment($sessionMessage, $edited_comment);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because the comment text submitted did not comply. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+    }
+
+    /**
+     * @param $message
+     * @param string $comment
+     * @return bool
+     */
+    public static function is_comment(string &$message, string &$comment)
+    {
+        /**
+         * Trim it.
+         * Can't be empty.
+         * Must be less than 800 characters long.
+         * Can't contain any html tags
+         * Can't have any non ascii characters.
+         */
+        $comment = trim($comment);
+
+        if (empty($comment)) {
+            $message .= " Your comment is missing. ";
+            return false;
+        }
+
+        $length = strlen($comment);
+        if ($length > 800) {
+            $message .= " Your comment is too long. ";
+            return false;
+        }
+
+        if ($comment != strip_tags($comment)) {
+            $message .= " Your comment includes html. We don't allow that in this field. ";
+            return false;
+        }
+
+        if (!mb_detect_encoding($comment, 'ASCII', true)) {
+            $message .= " Your comment includes one or more non ascii characters. We don't allow that in this field. ";
+            return false;
+        }
+
+        return true;
     }
 }
