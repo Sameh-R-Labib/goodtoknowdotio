@@ -4,6 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Bitcoin;
+
+
 class EditABitcoinRecordSubmit
 {
     public function page()
@@ -18,15 +21,18 @@ class EditABitcoinRecordSubmit
 
         global $is_logged_in;
         global $sessionMessage;
+        global $saved_int01;    // bitcoin record id
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " You've aborted the task! Session variables reset. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -36,6 +42,7 @@ class EditABitcoinRecordSubmit
         if (!isset($_POST['submit'])) {
             $sessionMessage .= " Error 07730. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
         $edited_initial_balance = (isset($_POST['initial_balance'])) ? (int)$_POST['initial_balance'] : 0;
@@ -48,8 +55,55 @@ class EditABitcoinRecordSubmit
         if ($result === false) {
             $sessionMessage .= " I aborted the process you were working on because the comment text submitted did not comply. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * 2) Retrieve the existing record from the database.
+         */
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+        $bitcoin_object = Bitcoin::find_by_id($db, $sessionMessage, $saved_int01);
+        if (!$bitcoin_object) {
+            $sessionMessage .= " Unexpectedly I could not find that bitcoin record. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 3) Modify the retrieved record by updating it with the submitted data.
+         */
+        $bitcoin_object->initial_balance = $edited_initial_balance;
+        $bitcoin_object->current_balance = $edited_current_balance;
+        $bitcoin_object->price_point = $edited_price_point;
+        $bitcoin_object->unix_time_at_purchase = $edited_unix_time_at_purchase;
+        $bitcoin_object->comment = $edited_comment;
+
+        /**
+         * 4) Update/save the updated record in the database.
+         */
+        $result = $bitcoin_object->save($db, $sessionMessage);
+        if ($result === false) {
+            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated Bitcoin object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Report success.
+         */
+        $sessionMessage .= " I have successfully updated address {$bitcoin_object->address}'s record. ";
+        $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_int01'] = 0;
+        redirect_to("/ax1/Home/page");
     }
 
     /**
