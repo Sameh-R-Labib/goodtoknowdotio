@@ -16,7 +16,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/AdminCreateUser/page" method="post">
+<form action="/ax1/EditABitcoinRecordSubmit/page" method="post">
     <h1><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $bitcoin_object->address; ?></h1>
     <?php require SESSIONMESSAGE; ?>
