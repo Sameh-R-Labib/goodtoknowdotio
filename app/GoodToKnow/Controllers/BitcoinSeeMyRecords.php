@@ -15,6 +15,8 @@ class BitcoinSeeMyRecords
         global $sessionMessage;
         global $is_logged_in;
         global $special_community_array;
+        global $type_of_resource_requested;
+        global $is_admin;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
