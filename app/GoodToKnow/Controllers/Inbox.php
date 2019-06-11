@@ -63,7 +63,7 @@ class Inbox
             }
         }
 
-        $sessionMessage .= " Old messages self-purge. Use \"U/N 📧 👲\" to respond to messages. ";
+        $sessionMessage .= ' Old messages self-purge. Use "U/N 📧 👲" to respond to messages. ';
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
