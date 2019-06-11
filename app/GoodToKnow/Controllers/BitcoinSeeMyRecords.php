@@ -44,5 +44,25 @@ class BitcoinSeeMyRecords
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Loop through the array and replace some attributes with more readable versions of themselves.
+         */
+        foreach ($array_of_bitcoin_objects as $bitcoin_object) {
+            $bitcoin_object->unix_time_at_purchase = self::get_readable_time($bitcoin_object->unix_time_at_purchase);
+        }
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $created
+     * @return string
+     */
+    public static function get_readable_time($created)
+    {
+        $created = (int)$created;
+        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
+        return $date;
     }
 }
