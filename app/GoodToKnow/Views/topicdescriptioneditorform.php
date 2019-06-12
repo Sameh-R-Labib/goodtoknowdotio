@@ -26,7 +26,7 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" name="text" rows="12"
+            <textarea id="textarea" spellcheck="false" name="text" rows="12"
                       cols="71" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $topic_object->topic_description; ?></textarea>
         </p>
