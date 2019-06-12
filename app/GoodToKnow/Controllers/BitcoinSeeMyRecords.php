@@ -52,6 +52,7 @@ class BitcoinSeeMyRecords
          */
         foreach ($array_of_bitcoin_objects as $bitcoin_object) {
             $bitcoin_object->unix_time_at_purchase = self::get_readable_time($bitcoin_object->unix_time_at_purchase);
+            $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
         }
 
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿💰. ';

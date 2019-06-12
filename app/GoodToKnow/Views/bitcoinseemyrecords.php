@@ -54,7 +54,7 @@
             <p><b>Initial Balance: </b><?php echo $bitcoin->initial_balance; ?></p>
             <p><b>Current Balance: </b><?php echo $bitcoin->current_balance; ?></p>
             <p>&nbsp;</p>
-            <?php echo $bitcoin->comment; ?>
+            <p><?php echo $bitcoin->comment; ?></p>
             <p>&nbsp;</p>
             <?php if ($key != $last): ?>
                 <hr>
