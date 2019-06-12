@@ -25,7 +25,7 @@
     <p><b>Address: </b><?php echo $bitcoin_object->address; ?></p>
     <p><b>Price of 1₿ at 🕒 of purchase: </b>$<?php echo $bitcoin_object->price_point; ?></p>
     <p><b>Initial Balance: </b>₿<?php echo $bitcoin_object->initial_balance; ?></p>
-    <p><b>Current Balance: </b>₿.<?php echo $bitcoin_object->current_balance; ?></p>
+    <p><b>Current Balance: </b>₿<?php echo $bitcoin_object->current_balance; ?></p>
     <p>&nbsp;</p>
     <p><?php echo $bitcoin_object->comment; ?></p>
     <p>&nbsp;</p>
