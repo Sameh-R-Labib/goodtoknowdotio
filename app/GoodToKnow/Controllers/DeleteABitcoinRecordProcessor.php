@@ -6,15 +6,15 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
 
-class EditABitcoinRecordProcessor
+
+class DeleteABitcoinRecordProcessor
 {
     public function page()
     {
         /**
-         * 1) Store the submitted bitcoin record id in the session.
-         * 2) Retrieve the object with that id from the database.
-         * 3) Present a form which is populated with data from the object.
-         *    (except the bitcoin address should not be changeable.)
+         * 1) Determines the id of the bitcoin record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
+         * 2) Retrieve the Bitcoin object with that id from the database.
+         * 3) Presents a form containing data from the record and asking for confirmation to delete.
          */
 
         global $is_logged_in;
@@ -32,7 +32,7 @@ class EditABitcoinRecordProcessor
         }
 
         /**
-         * 1) Store the submitted bitcoin record id in the session.
+         * 1) Determines the id of the bitcoin record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
          */
         $chosen_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
         if ($chosen_id == 0) {
@@ -43,7 +43,7 @@ class EditABitcoinRecordProcessor
         $_SESSION['saved_int01'] = $chosen_id;
 
         /**
-         * 2) Retrieve the object with that id from the database.
+         * 2) Retrieve the Bitcoin object with that id from the database.
          */
         $db = db_connect($sessionMessage);
         if (!empty($sessionMessage) || $db === false) {
@@ -61,11 +61,10 @@ class EditABitcoinRecordProcessor
         }
 
         /**
-         * 3) Present a form which is populated with data from the object.
-         *    (except do the bitcoin address should not be changeable.)
+         * 3) Presents a form containing data from the record and asking for confirmation to delete.
          */
-        $html_title = 'Edit the bitcoin record';
+        $html_title = 'Are you sure?';
 
-        require VIEWS . DIRSEP . 'editabitcoinrecordprocessor.php';
+        require VIEWS . DIRSEP . 'deleteabitcoinrecordprocessor.php';
     }
 }
