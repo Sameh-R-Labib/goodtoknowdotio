@@ -66,7 +66,7 @@ class QuickPostDeleteDelProc
             $_SESSION['saved_str02'] = "";
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
-            $sessionMessage .= " You changed your mind about deleting the post. So, none was deleted. ";
+            $sessionMessage .= " You've changed your mind about deleting the post. So, none was deleted. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
