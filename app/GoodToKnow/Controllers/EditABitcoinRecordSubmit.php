@@ -100,7 +100,7 @@ class EditABitcoinRecordSubmit
         /**
          * Report success.
          */
-        $sessionMessage .= " I have successfully updated address {$bitcoin_object->address}'s record. ";
+        $sessionMessage .= " I've successfully updated address {$bitcoin_object->address}'s record. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");
