@@ -49,7 +49,7 @@
                minlength="10" spellcheck="false" size="22" maxlength="22">
     </p>
     <p>
-        <label for="comment">Comment: </label>
+        <label for="comment">Comment (no html. line breaks automatically replaced with &lt;br&gt;:) </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
                   placeholder="This record is for BTC related to _ _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $bitcoin_object->comment; ?></textarea>

@@ -50,7 +50,7 @@
             <p>&nbsp;</p>
             <p><b>Time of purchase: </b><?php echo $bitcoin->unix_time_at_purchase; ?></p>
             <p><b>Address: </b><?php echo $bitcoin->address; ?></p>
-            <p><b>Price of 1₿ at 🕒 of purchase: </b><?php echo $bitcoin->price_point; ?></p>
+            <p><b>Price of 1₿ at 🕒 of purchase: </b>$<?php echo $bitcoin->price_point; ?></p>
             <p><b>Initial Balance: </b><?php echo $bitcoin->initial_balance; ?></p>
             <p><b>Current Balance: </b><?php echo $bitcoin->current_balance; ?></p>
             <p>&nbsp;</p>
