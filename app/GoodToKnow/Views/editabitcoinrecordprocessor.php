@@ -17,8 +17,8 @@
 </head>
 <body>
 <form action="/ax1/EditABitcoinRecordSubmit/page" method="post">
-    <h1><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $bitcoin_object->address; ?></h1>
+    <h2><?php /** @noinspection PhpUndefinedVariableInspection */
+        echo $bitcoin_object->address; ?></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
         <label for="initial_balance">Initial BTC Balance: </label>
