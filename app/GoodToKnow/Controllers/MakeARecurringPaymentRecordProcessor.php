@@ -56,6 +56,16 @@ class MakeARecurringPaymentRecordProcessor
         }
 
         /**
+         * Apply htmlspecialchars to fields which
+         * get rendered by the browser.
+         *
+         * By convention: We apply htmlspecialchars() to data at
+         * the point in time before that data gets saved in
+         * the database.
+         */
+        $label = htmlspecialchars($label);
+
+        /**
          * Create a RecurringPayment array for the record.
          */
         $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => '',
