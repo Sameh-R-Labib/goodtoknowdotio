@@ -50,7 +50,7 @@
     </p>
     <p>
         <label for="comment">Comment (No html. Line breaks will be automatically replaced with &lt;br&gt;): </label>
-        <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
+        <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
                   placeholder="This record is for BTC related to _ _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $bitcoin_object->comment; ?></textarea>
     </p>
