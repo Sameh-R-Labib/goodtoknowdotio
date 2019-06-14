@@ -60,7 +60,8 @@
         <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
         <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 Payment (💳) 📽</a></li>
     </ul>
-    <p>When writing a post, our goal is to concisely write in a manner which helps the reader wrap their head around the
+    <p>When writing a post, let it be your goal to concisely write in a manner which helps the reader wrap their head
+        around the
         <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy: community
         &Rarr; topic
         &Rarr; post.</p>
