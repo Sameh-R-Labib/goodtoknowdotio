@@ -72,7 +72,7 @@
         <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own Post</a></li>
         <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
         <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
-        <li><a href="/ax1/BitcoinSeeMyRecords/page">See My ₿ 📽</a></li>
+        <li><a href="/ax1/BitcoinSeeMyRecords/page">See ₿ 📽s</a></li>
         <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
         <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 💳 📽</a></li>
         <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
