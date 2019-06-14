@@ -75,6 +75,7 @@
         <li><a href="/ax1/BitcoinSeeMyRecords/page">See My ₿ 📽</a></li>
         <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
         <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 Payment (💳) 📽</a></li>
+        <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
     </ul>
     <p>When writing a post, let it be your goal to concisely write in a manner which helps the reader wrap their head
         around the
