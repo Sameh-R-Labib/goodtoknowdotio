@@ -21,7 +21,7 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="address">Name: </label>
+            <label for="address">₿ address: </label>
             <input id="address" name="address" type="text" value="" required minlength="8" maxlength="264"
                    size="67" spellcheck="false">
         </p>
