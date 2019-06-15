@@ -45,8 +45,7 @@
                size="22" placeholder="1560190617">
     </p>
     <p>
-        <label for="comment">Comment (No html. No Emoji. UTF-8 is okay. Line breaks will be replaced with
-            &lt;br&gt;): </label>
+        <label for="comment">Comment (🚫 html. 🚫 emoji ✅ UTF-8 ✅ line breaks): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
                   placeholder="The frequency of this payment is _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $recurring_payment_object->comment; ?></textarea>
