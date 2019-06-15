@@ -44,7 +44,23 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h1>Admin's Tool Box</h1>
+    <h2>Regular Member Tools</h2>
+    <ul>
+        <li><a href="/ax1/Upload/page">Upload an Image</a></li>
+        <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
+        <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
+        <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
+        <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
+        <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
+        <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own Post</a></li>
+        <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
+        <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
+        <li><a href="/ax1/BitcoinSeeMyRecords/page">See ₿ 📽s</a></li>
+        <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
+        <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 💳 📽</a></li>
+        <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
+    </ul>
+    <h2>Admin Tool</h2>
     <ul>
         <li><a href="/ax1/NewCommunity/page">Create Community</a></li>
         <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
@@ -60,22 +76,6 @@
         <li><a href="/ax1/TransferPostOwnership/page">Transfer Post Ownership</a></li>
         <li><a href="/ax1/KommunityDescriptionEditor/page">Community Description Editor</a></li>
         <li><a href="/ax1/TopicDescriptionEditor/page">Topic Description Editor</a></li>
-    </ul>
-    <h2>Member's Tool Box</h2>
-    <ul>
-        <li><a href="/ax1/Upload/page">Upload an Image</a></li>
-        <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
-        <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
-        <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
-        <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
-        <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
-        <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own Post</a></li>
-        <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
-        <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
-        <li><a href="/ax1/BitcoinSeeMyRecords/page">See ₿ 📽s</a></li>
-        <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
-        <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 💳 📽</a></li>
-        <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
     </ul>
     <p>When writing a post, let it be your goal to concisely write in a manner which helps the reader wrap their head
         around the
