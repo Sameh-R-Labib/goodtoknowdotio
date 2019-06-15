@@ -44,7 +44,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h2>Regular Member Tools</h2>
+    <h2 class="topofpage">Regular Member Tools</h2>
     <ul>
         <li><a href="/ax1/Upload/page">Upload an Image</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>

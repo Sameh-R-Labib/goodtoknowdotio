@@ -65,6 +65,10 @@ p {
     margin-top: 62px;
 }
 
+#maincontent h2.topofpage {
+    margin-top: 16px;
+}
+
 b, strong {
     color: black;
 }
