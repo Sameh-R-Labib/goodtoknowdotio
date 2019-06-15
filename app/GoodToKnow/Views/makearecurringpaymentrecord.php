@@ -21,7 +21,7 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">🌀 💳 📽's label (Use of Emoji is ok!): </label>
+            <label for="label">🌀 💳 📽's label (No Emoji!): </label>
             <input id="label" name="label" type="text" value="" required minlength="4" maxlength="264"
                    size="67" spellcheck="false">
         </p>

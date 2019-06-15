@@ -21,7 +21,7 @@
         echo $recurring_payment_object->label; ?></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <label for="label">Label (Use of Emoji is ok!): </label>
+        <label for="label">Label (No Emoji!): </label>
         <input id="label" name="label" type="text" value="<?php /** @noinspection PhpUndefinedVariableInspection */
         echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264" size="67">
     </p>
@@ -45,7 +45,7 @@
                size="22" placeholder="1560190617">
     </p>
     <p>
-        <label for="comment">Comment (No html. 🌻 Emoji and UTF-8 okay. Line breaks will be automatically replaced with
+        <label for="comment">Comment (No html. No Emoji. UTF-8 is okay. Line breaks will be automatically replaced with
             &lt;br&gt;): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
                   placeholder="The frequency of this payment is _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
