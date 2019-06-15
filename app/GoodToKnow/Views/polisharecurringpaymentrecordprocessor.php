@@ -26,7 +26,7 @@
         echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264" size="67">
     </p>
     <p>
-        <label for="currency">Currency (Any UTF-8 character or Emoji is ok!): </label>
+        <label for="currency">Currency (Any UTF-8 character - No Emoji!): </label>
         <input id="currency" name="currency" type="text"
                value="<?php /** @noinspection PhpUndefinedVariableInspection */
                echo $recurring_payment_object->currency; ?>" required minlength="1" maxlength="15" size="15">
