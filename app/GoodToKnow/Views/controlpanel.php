@@ -61,11 +61,11 @@
         <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 💳 📽</a></li>
         <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
     </ul>
+    <hr>
     <p>When writing a post, let it be your goal to concisely write in a manner which helps the reader wrap their head
-        around the
-        <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy: community
-        &Rarr; topic
-        &Rarr; post.</p>
+        around the <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy:
+        community
+        &Rarr; topic &Rarr; post.</p>
     <figure>
         <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
             <img class="photo" alt="Badge" src="/1944235.png" title="Membership Badge"/>

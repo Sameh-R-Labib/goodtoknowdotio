@@ -77,6 +77,7 @@
         <li><a href="/ax1/KommunityDescriptionEditor/page">Community Description Editor</a></li>
         <li><a href="/ax1/TopicDescriptionEditor/page">Topic Description Editor</a></li>
     </ul>
+    <hr>
     <p>When writing a post, let it be your goal to concisely write in a manner which helps the reader wrap their head
         around the
         <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy: community
