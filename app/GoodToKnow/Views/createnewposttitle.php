@@ -22,7 +22,7 @@
         The title extension is like meta data (It will be added to the main title when the post title is displayed
         outside the context of a specific topic). An example of a main title is
         'Pronouns'. And its extension is "in the Greek Language".</p>
-    <p>UTF-8 characters allowed &mdash; No emoji</p>
+    <p>UTF-8 characters allowed &mdash; 🚫 emoji</p>
     <p>* both required</p>
     <section>
         <p>
