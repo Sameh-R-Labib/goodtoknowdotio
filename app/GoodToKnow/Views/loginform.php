@@ -25,7 +25,7 @@
     <input type="submit" value="Log In">
     <div class="utilities">
         <a href="/ax1/WhatIsThisSite/page">What is this site?</a>
-        <a>BTC_Maximalist &rarr; protonmail.com</a>
+        <a><?php echo ADMINONLOGINFORM; ?></a>
         <?php require SESSIONMESSAGE; ?>
     </div>
 </form>
