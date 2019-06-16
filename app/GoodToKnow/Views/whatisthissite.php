@@ -52,9 +52,9 @@
     <p>If you'ld like to become a member of this instance then contact its admin. Otherwise, if you'ld
         like to have your own instance you can either use the source code yourself found at <a
                 href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
-        or you could contact another admin and persuade them to help you set one up a site of your own.
+        or you could contact another admin and persuade them to help you set it up.
     </p>
-    <p>Thanks for your attention. Be good. &mdash; <i>Sameh R. Labib</i></p>
+    <p>Thanks and be good to one another. &mdash; <i>Sameh R. Labib</i></p>
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
