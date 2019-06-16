@@ -20,7 +20,7 @@
     <a href="/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="302" style="float: left"></a>
     <div id="sendmessage"><?php require SENDMESSAGELINK; ?></div>
     <div id="inboxlink"><p>😘₿🤔🦇</p></div>
-    <div id="logindiv"><p>🧠📲🌎🌳📢🎤</p></div>
+    <div id="logindiv"><p>🧠📲🌳🎤🌎📢</p></div>
 </div>
 <!-- communities -->
 <div id="communities">
@@ -54,7 +54,7 @@
                 href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
         or you could contact another admin and try to persuade them to help you set one up.
     </p>
-    <p>Thanks for your attention and be good to your fellow man. &mdash; Sameh R. Labib</p>
+    <p>Thanks for your attention and be good to your fellow man. &mdash; <i>Sameh R. Labib</i></p>
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
