@@ -19,7 +19,7 @@
 <div id="topbar">
     <a href="/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="302" style="float: left"></a>
     <div id="sendmessage"><?php require SENDMESSAGELINK; ?></div>
-    <div id="inboxlink"><p>😘₿🤔🦇</p></div>
+    <div id="inboxlink"><p>😘<big>₿</big>🤔🦇</p></div>
     <div id="logindiv"><p>🧠📲🌳🎤🌎📢</p></div>
 </div>
 <!-- communities -->
