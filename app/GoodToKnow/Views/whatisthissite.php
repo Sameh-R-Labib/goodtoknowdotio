@@ -46,15 +46,15 @@
 <div id="maincontent">
     <h1>Welcome</h1>
     <p>This site is an instance of the GoodToKnow.io application. The code is GPLv3 Affero licensed FLOSS software.
-        The software is meant to facilitate the sharing, parsing and dissemination of immediately useful information.
+        The software is meant to facilitate the parsing and sharing of practical useful information.
         This is for sharing amongst family and trusted acquaintances. Each GoodToKnow.io instance is run by at least one
-        admin who is in charge of maintenance and approval of content and acceptance of new members.</p>
-    <p>If you would like to become a member of this instance then contact its admin. On the other hand if you would
+        admin who is in charge of site maintenance and approval of content.</p>
+    <p>If you'ld like to become a member of this instance then contact its admin. Otherwise, if you'ld
         like to have your own instance you can either use the source code yourself found at <a
                 href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
-        or you could contact another admin and try to persuade them to help you set one up.
+        or you could contact another admin and persuade them to help you set one up a site of your own.
     </p>
-    <p>Thanks for your attention and be good to your fellow man. &mdash; <i>Sameh R. Labib</i></p>
+    <p>Thanks for your attention. Be good. &mdash; <i>Sameh R. Labib</i></p>
 </div><!-- End maincontent -->
 <!-- footerbar -->
 <div id="footerbar">
