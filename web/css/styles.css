@@ -59,6 +59,7 @@ p {
 }
 
 #maincontent h2 {
+    font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.75em;
     margin-left: 44px;
     margin-right: 58px;
@@ -79,6 +80,8 @@ b, strong {
 }
 
 #maincontent h1 {
+    align-content: center;
+    font-family: "Bookman Old Style", "Times New Roman", serif;
     color: black;
     font-size: 2.25em;
     margin-top: 0;
@@ -87,6 +90,7 @@ b, strong {
 }
 
 #maincontent h3 {
+    font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.33em;
     margin-left: 67px;
     margin-right: 58px;
