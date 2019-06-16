@@ -14,6 +14,7 @@ class WhatIsThisSite
          * land on the login page by chance and don't
          * have an idea what this site is for.
          */
+        global $is_admin;
 
         $is_guest = true;
 
