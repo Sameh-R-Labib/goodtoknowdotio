@@ -51,7 +51,7 @@
         admin who is in charge of site maintenance and approval of content.</p>
     <p>If you'ld like to become a member of this instance then contact its admin.
         If you stumble across a different instance you can ask its admin to join.
-        Otherwise, if you'ld like to have your own instance you can either use the source code yourself found at <a
+        Otherwise, if you'ld like to create your own instance you can either use the source code yourself found at <a
                 href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
         or you could contact another admin and persuade them to help you set it up. You'll find the email address
         of each instance's admin on the login page/form.
