@@ -108,6 +108,10 @@ b, strong {
     margin-right: 93px;
 }
 
+#maincontent li {
+    line-height: 1.19em;
+}
+
 select, input {
     font-size: 0.875em;
 }
