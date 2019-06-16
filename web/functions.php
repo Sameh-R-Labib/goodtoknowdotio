@@ -48,7 +48,7 @@ function db_connect(string &$error)
             $error .= ' ' . $db->connect_error . ' ';
             return false;
         }
-        $db->set_charset('utf8');
+        $db->set_charset('utf8mb4');
     } catch (\Exception $e) {
         $error .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         return false;
