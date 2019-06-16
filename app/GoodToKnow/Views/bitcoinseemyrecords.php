@@ -47,7 +47,6 @@
     <?php if (!empty($array_of_bitcoin_objects)): ?>
         <?php $last = count($array_of_bitcoin_objects) - 1; ?>
         <?php foreach ($array_of_bitcoin_objects as $key => $bitcoin): ?>
-            <p>&nbsp;</p>
             <p><b>Time of purchase: </b><?php echo $bitcoin->unix_time_at_purchase; ?></p>
             <p><b>Address: </b><?php echo $bitcoin->address; ?></p>
             <p><b>Price of 1₿ at 🕒 of purchase: </b>$<?php echo $bitcoin->price_point; ?></p>
@@ -55,7 +54,6 @@
             <p><b>Current Balance: </b>₿<?php echo $bitcoin->current_balance; ?></p>
             <p>&nbsp;</p>
             <p><?php echo $bitcoin->comment; ?></p>
-            <p>&nbsp;</p>
             <?php if ($key != $last): ?>
                 <hr>
             <?php endif; ?>
