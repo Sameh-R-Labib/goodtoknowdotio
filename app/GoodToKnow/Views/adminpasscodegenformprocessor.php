@@ -69,12 +69,13 @@
         </label>
     </section>
     <p>
-        <label for="box1">Description <strong><abbr title="required">*</abbr></strong>: </label>
+        <label for="box1">Description <strong><abbr title="required">*</abbr></strong> (🚫 html ✅ emoji ✅ line breaks):
+        </label>
         <textarea id="box1" name="comment" rows="5" cols="71" wrap="soft" maxlength="800"
                   placeholder="How'd we meet?"></textarea>
     </p>
     <p>
-        <label for="date">Today's date (<em>USA mm/dd/yyyy</em>:) </label>
+        <label for="date">Today's date (<em>USA mm/dd/yyyy</em>): </label>
         <input id="date" name="date" type="text" value="" required minlength="10" spellcheck="false">
     </p>
     <section>

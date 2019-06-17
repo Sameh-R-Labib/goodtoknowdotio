@@ -21,7 +21,7 @@
         echo $saved_str01; ?> Memo</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚫 markdown 🚫 html ✅ emoji ⚖️ max. 800 bytes.</small>
+        <small>🚫 markdown 🚫 html ✅ emoji ✅ line breaks ⚖️ max. 800 bytes.</small>
     </p>
     <section>
         <p>

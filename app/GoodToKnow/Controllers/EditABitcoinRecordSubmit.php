@@ -118,7 +118,6 @@ class EditABitcoinRecordSubmit
          * Can't be empty.
          * Must be less than 800 characters long.
          * Can't contain any html tags
-         * Can't have any non ascii characters.
          */
         $comment = trim($comment);
 
