@@ -20,8 +20,8 @@
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚩: Markdown &amp; UTF-8 characters OK! &nbsp;&nbsp;&nbsp;🛑: Do NOT write &gt;1500 bytes.<br>
-            🔏: GPG encrypt message w/ admin's pub key unless message is just critique of post.
+        <small>🚩: ✅ markdown ✅ emoji &nbsp;&nbsp;max.&nbsp;1500 bytes.<br>
+            🔏: ✅ GPG encrypt message w/ receiving user's pub key.
         </small>
     </p>
     <?php require URLOFMOSTRECENTUPLOAD; ?>
