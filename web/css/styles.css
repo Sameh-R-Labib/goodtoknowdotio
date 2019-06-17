@@ -189,16 +189,6 @@ h2 + p {
     clear: both;
 }
 
-#adminhometop {
-    background-color: #ba330b;
-    position: relative;
-    width: 865px;
-    height: 70px;
-    margin: auto;
-    border: 3px ridge #3f3fef;
-    clear: both;
-}
-
 #communities {
     opacity: 0.35;
     background-color: #d0883d;
