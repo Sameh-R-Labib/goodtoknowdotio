@@ -138,11 +138,6 @@ class EditABitcoinRecordSubmit
             return false;
         }
 
-        if (!mb_detect_encoding($comment, 'ASCII', true)) {
-            $message .= " Your comment includes one or more non ascii characters. We don't allow that in this field. ";
-            return false;
-        }
-
         return true;
     }
 }
