@@ -103,6 +103,11 @@ b, strong {
     margin-bottom: -5px;
 }
 
+#maincontent blockquote {
+    margin-left: 132px;
+    margin-right: 153px;
+}
+
 #maincontent ul {
     font-size: 1.03em;
     margin-left: 72px;
