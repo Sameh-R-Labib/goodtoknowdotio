@@ -69,7 +69,8 @@
         </label>
     </section>
     <p>
-        <label for="box1">Description <strong><abbr title="required">*</abbr></strong> (🚫 html ✅ emoji ✅ line breaks):
+        <label for="box1">Description <strong><abbr title="required">*</abbr></strong> (🚫 html 🚫 markdown ✅ emoji ✅
+            line breaks):
         </label>
         <textarea id="box1" name="comment" rows="5" cols="71" wrap="soft" maxlength="800"
                   placeholder="How'd we meet?"></textarea>

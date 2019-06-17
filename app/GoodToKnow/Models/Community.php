@@ -87,7 +87,9 @@ class Community extends GoodObject
 
         $array_of_Community_objects = parent::find_by_sql($db, $error, $sql);
 
-        if (!$array_of_Community_objects || !empty($error)) {
+        $temp_error = trim($error);
+
+        if (!$array_of_Community_objects || !empty($temp_error)) {
             return false;
         }
 

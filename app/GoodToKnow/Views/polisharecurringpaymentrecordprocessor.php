@@ -21,12 +21,12 @@
         echo $recurring_payment_object->label; ?></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <label for="label">Label (🚫 emoji!): </label>
+        <label for="label">Label (✅ emoji): </label>
         <input id="label" name="label" type="text" value="<?php /** @noinspection PhpUndefinedVariableInspection */
         echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264" size="67">
     </p>
     <p>
-        <label for="currency">Currency (Any UTF-8 character - 🚫 emoji!): </label>
+        <label for="currency">Currency (✅ emoji): </label>
         <input id="currency" name="currency" type="text"
                value="<?php /** @noinspection PhpUndefinedVariableInspection */
                echo $recurring_payment_object->currency; ?>" required minlength="1" maxlength="15" size="15">
@@ -45,7 +45,7 @@
                size="22" placeholder="1560190617">
     </p>
     <p>
-        <label for="comment">Comment (🚫 html 🚫 emoji ✅ line breaks): </label>
+        <label for="comment">Comment (🚫 html 🚫 markdown ✅ emoji ✅ line breaks): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
                   placeholder="The frequency of this payment is _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $recurring_payment_object->comment; ?></textarea>

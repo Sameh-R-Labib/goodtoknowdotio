@@ -35,7 +35,7 @@ class MakeARecurringPaymentRecordProcessor
         }
 
         $label = (isset($_POST['label'])) ? $_POST['label'] : '';
-        if (empty($label)) {
+        if (empty(trim($label))) {
             $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");

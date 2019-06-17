@@ -339,7 +339,7 @@ abstract class GoodObject
             $result = $db->query($sql);
 
             $query_error = $db->error;
-            if (!empty($query_error)) {
+            if (!empty(trim($query_error))) {
                 $error .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
                 return false;
             }
@@ -408,7 +408,7 @@ abstract class GoodObject
             $result = $db->query($sql);
 
             $query_error = $db->error;
-            if (!empty($query_error)) {
+            if (!empty(trim($query_error))) {
                 $error .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 return false;
             }
@@ -481,7 +481,7 @@ abstract class GoodObject
             $db->query($sql);
 
             $query_error = $db->error;
-            if (!empty($query_error)) {
+            if (!empty(trim($query_error))) {
                 $error .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 return false;
             }
@@ -517,7 +517,7 @@ abstract class GoodObject
             $db->query($sql);
 
             $query_error = $db->error;
-            if (!empty($query_error)) {
+            if (!empty(trim($query_error))) {
                 $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 return false;
             }

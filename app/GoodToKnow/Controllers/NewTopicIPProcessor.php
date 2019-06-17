@@ -156,7 +156,8 @@ class NewTopicIPProcessor
             }
         }
 
-        if (empty($following_topic_sequence_number)) {
+        $trimmed = trim($following_topic_sequence_number);
+        if (empty($trimmed)) {
             $_SESSION['message'] = " NewTopicIPProcessor::get_sequence_number_in_case_after says Error 563506. ";
             redirect_to("/ax1/Home/page");
         }
