@@ -24,7 +24,7 @@ class WhatIsThisSite
 
         $show_poof = true;
 
-        $sessionMessage = " Welcome! Read and enjoy. ";
+        $sessionMessage = " Read and decide if you'd like to use this. ";
 
         require VIEWS . DIRSEP . 'whatisthissite.php';
     }
