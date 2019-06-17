@@ -104,6 +104,7 @@ b, strong {
 }
 
 #maincontent blockquote {
+    font-family: 'Sanchez', serif;
     margin-left: 132px;
     margin-right: 153px;
 }
