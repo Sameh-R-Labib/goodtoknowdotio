@@ -93,13 +93,13 @@ class Home
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($community_description))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage .= ' ' . $community_description . ' ';
+                    $sessionMessage .= ' ' . nl2br($community_description, false) . ' ';
                 }
             }
         } elseif ($type_of_resource_requested === 'topic') {
             if (!empty(trim($topic_description))) {
                 if (empty(trim($sessionMessage))) {
-                    $sessionMessage .= ' ' . $topic_description . ' ';
+                    $sessionMessage .= ' ' . nl2br($topic_description, false) . ' ';
                 }
             }
         } else {

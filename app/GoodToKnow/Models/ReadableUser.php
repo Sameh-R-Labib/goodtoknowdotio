@@ -103,6 +103,7 @@ class ReadableUser
         $this->assign_readable_role();
         $this->assign_readable_race();
         $this->assign_readable_is_suspended();
+        $this->assign_readable_comment();
     }
 
     private function assign_readable_is_suspended()
@@ -135,6 +136,11 @@ class ReadableUser
          * This function will assign a community name to $readable_community_name
          */
         $this->readable_community_name = $community_values_array[$this->id_of_default_community];
+    }
+
+    private function assign_readable_comment()
+    {
+        $this->comment = nl2br($this->comment, false);
     }
 
     private function assign_readable_role()
