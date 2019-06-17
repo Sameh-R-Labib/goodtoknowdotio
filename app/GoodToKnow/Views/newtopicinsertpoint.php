@@ -20,7 +20,7 @@
     <h2>Where to put the new topic?</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>This assumes you're adding a new topic to the current community. To add a topic to a different community
-        you need to switch to it then come back here.</p>
+        you need to switch to it first.</p>
     <section>
         <label for="relate" class="dropdown">Put it
             <select id="relate" name="relate">

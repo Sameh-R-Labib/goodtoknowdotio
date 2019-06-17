@@ -53,8 +53,8 @@ class Topic extends GoodObject
          * Can't be empty.
          * Must be less than 230 bytes long.
          * Can't contain any html tags
-         * Can't have any non ascii characters.
          */
+
         $description = trim($description);
 
         if (empty($description)) {
@@ -70,11 +70,6 @@ class Topic extends GoodObject
 
         if ($description != strip_tags($description)) {
             $message .= " Your description includes html. We don't allow that in this field. ";
-            return false;
-        }
-
-        if (!mb_detect_encoding($description, 'ASCII', true)) {
-            $message .= " Your description includes one or more non ascii characters. We don't allow that in this field. ";
             return false;
         }
 

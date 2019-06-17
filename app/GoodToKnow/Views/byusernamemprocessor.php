@@ -20,7 +20,7 @@
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚩: ✅ markdown ✅ emoji &nbsp;&nbsp;max.&nbsp;1500 bytes.<br>
+        <small>🚩: ✅ markdown ✅ emoji ⚖️ max. 1500 bytes.<br>
             🔏: ✅ GPG encrypt message w/ receiving user's pub key.
         </small>
     </p>

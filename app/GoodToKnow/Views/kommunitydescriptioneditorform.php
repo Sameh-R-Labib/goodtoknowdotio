@@ -21,7 +21,7 @@
         echo $saved_str01; ?> Description</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>📌: 🚫 markdown 🚫 html ✅ emoji Max. 230 bytes.</small>
+        <small>🚫 markdown 🚫 html ✅ emoji ⚖️ max. 230 bytes.</small>
     </p>
     <section>
         <p>

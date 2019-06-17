@@ -19,7 +19,7 @@
 <form action="/ax1/NewCommunityProcessor/page" method="post">
     <h2>Details of Community To Be Created</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>All fields required. ✅ emoji.</p>
+    <p>⚠️ all fields required ✅ emoji.</p>
     <section>
         <p>
             <label for="name">Name: </label>

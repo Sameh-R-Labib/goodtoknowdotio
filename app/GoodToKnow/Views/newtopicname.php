@@ -18,8 +18,7 @@
 <form action="/ax1/NewTopicNameProcessor/page" method="post">
     <h2>Name and describe the topic</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>UTF-8 characters allowed &mdash; 🚫 emoji</p>
-    <p>* both required</p>
+    <p>⚠️ both fields required ✅ emoji.</p>
     <section>
         <p>
             <label for="name">Name: </label>
