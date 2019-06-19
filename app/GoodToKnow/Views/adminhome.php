@@ -60,6 +60,7 @@
         <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 💳 📽</a></li>
         <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
         <li><a href="/ax1/RecurringPaymentSeeMyRecords/page">See 🌀 💳 📽s</a></li>
+        <li><a href="/ax1/ExpungeARecurringPaymentRecord/page">Delete a 🌀 💳 📽</a></li>
     </ul>
     <h2>Admin Tool</h2>
     <ul>
