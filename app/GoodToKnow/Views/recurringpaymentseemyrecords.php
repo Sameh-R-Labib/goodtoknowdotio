@@ -49,8 +49,8 @@
         <?php foreach ($array_of_recurring_payment_objects as $key => $object): ?>
             <p><b>Label: </b><?php echo $object->label; ?></p>
             <p><b>Last payment's time: </b><?php echo $object->unix_time_at_last_payment; ?></p>
-            <p><b>Currency used: </b>$<?php echo $object->currency; ?></p>
-            <p><b>Amount paid: </b>₿<?php echo $object->amount_paid; ?></p>
+            <p><b>Currency used: </b><?php echo $object->currency; ?></p>
+            <p><b>Amount paid: </b><?php echo $object->amount_paid; ?></p>
             <p>&nbsp;</p>
             <p><?php echo $object->comment; ?></p>
             <?php if ($key != $last): ?>
