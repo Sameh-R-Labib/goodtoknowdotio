@@ -48,7 +48,7 @@
         <?php $last = count($array_of_recurring_payment_objects) - 1; ?>
         <?php foreach ($array_of_recurring_payment_objects as $key => $object): ?>
             <h2 class="topofpage"><?php echo $object->label; ?></h2>
-            <p><b>Last 💳's 🕒: </b><?php echo $object->unix_time_at_last_payment; ?></p>
+            <p><b>Last's 🕒: </b><?php echo $object->unix_time_at_last_payment; ?></p>
             <p><b>💱: </b><?php echo $object->currency; ?></p>
             <p><b>Amount: </b><?php echo $object->amount_paid; ?></p>
             <p>&nbsp;</p>
