@@ -46,13 +46,13 @@
 <div id="maincontent">
     <h2 class="topofpage">Regular Member Tools</h2>
     <ul>
-        <li><a href="/ax1/Upload/page">Upload an Image</a></li>
-        <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
-        <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
-        <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
-        <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
-        <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
-        <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own Post</a></li>
+        <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
+        <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
+        <li><a href="/ax1/DefaultCommunity/page">Change Default 🧑🏿‍🤝‍🧑🏽</a></li>
+        <li><a href="/ax1/ChangePassword/page">Change 🔑</a></li>
+        <li><a href="/ax1/CreateNewPost/page">Create 📄</a></li>
+        <li><a href="/ax1/EditMyPost/page">Edit 📄</a></li>
+        <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own 📄</a></li>
         <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
         <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
         <li><a href="/ax1/BitcoinSeeMyRecords/page">See ₿ 📽s</a></li>
@@ -62,21 +62,21 @@
         <li><a href="/ax1/RecurringPaymentSeeMyRecords/page">See 🌀 💳 📽s</a></li>
         <li><a href="/ax1/ExpungeARecurringPaymentRecord/page">Delete a 🌀 💳 📽</a></li>
     </ul>
-    <h2>Admin Tool</h2>
+    <h2>♠👔♠ Tools</h2>
     <ul>
-        <li><a href="/ax1/NewCommunity/page">Create Community</a></li>
+        <li><a href="/ax1/NewCommunity/page">Create 🧑🏿‍🤝‍🧑🏽</a></li>
         <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
         <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
-        <li><a href="/ax1/PurgeOldMessages/page">Purge Old Messages</a></li>
-        <li><a href="/ax1/GiveCommunitiesToUser/page">Give Communities to User</a></li>
-        <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove Communities from A User</a></li>
+        <li><a href="/ax1/PurgeOldMessages/page">Purge Old 💬s</a></li>
+        <li><a href="/ax1/GiveCommunitiesToUser/page">Give 🧑🏿‍🤝‍🧑🏽 to User</a></li>
+        <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove 🧑🏿‍🤝‍🧑🏽 from A User</a></li>
         <li><a href="/ax1/UserRoster/page">User Roster</a></li>
-        <li><a href="/ax1/MemberMemoEditor/page">Member's Memo Editor</a></li>
+        <li><a href="/ax1/MemberMemoEditor/page">Member's 📝 Editor</a></li>
         <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>
         <li><a href="/ax1/UnsuspendAccount/page">Unsuspend Account</a></li>
-        <li><a href="/ax1/QuickPostDelete/page">Delete Any Post</a></li>
-        <li><a href="/ax1/TransferPostOwnership/page">Transfer Post Ownership</a></li>
-        <li><a href="/ax1/KommunityDescriptionEditor/page">Community Description Editor</a></li>
+        <li><a href="/ax1/QuickPostDelete/page">Delete Any 📄</a></li>
+        <li><a href="/ax1/TransferPostOwnership/page">Transfer 📄 Ownership</a></li>
+        <li><a href="/ax1/KommunityDescriptionEditor/page">🧑🏿‍🤝‍🧑🏽 Description Editor</a></li>
         <li><a href="/ax1/TopicDescriptionEditor/page">Topic Description Editor</a></li>
     </ul>
     <hr>

@@ -46,14 +46,14 @@
 <div id="maincontent">
     <h1>Member's Tool Box</h1>
     <ul>
-        <li><a href="/ax1/Upload/page">Upload an Image</a></li>
-        <li><a href="/ax1/DefaultCommunity/page">Change Default Community</a></li>
-        <li><a href="/ax1/ChangePassword/page">Change Password</a></li>
-        <li><a href="/ax1/CreateNewPost/page">Create Post</a></li>
-        <li>To have a new topic or community created request it from the admin.</li>
-        <li><a href="/ax1/EditMyPost/page">Edit Post</a></li>
-        <li><a href="/ax1/ByUsernameMessage/page">Username Message a User</a></li>
-        <li><a href="/ax1/AuthorDeletesOwnPost/page">Delete One of My Posts</a></li>
+        <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
+        <li><a href="/ax1/DefaultCommunity/page">Change Default 🧑🏿‍🤝‍🧑🏽</a></li>
+        <li><a href="/ax1/ChangePassword/page">Change 🔑</a></li>
+        <li><a href="/ax1/CreateNewPost/page">Create 📄</a></li>
+        <li>To have a new topic or 🧑🏿‍🤝‍🧑🏽 created request it from the ♠👔♠.</li>
+        <li><a href="/ax1/EditMyPost/page">Edit 📄</a></li>
+        <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
+        <li><a href="/ax1/AuthorDeletesOwnPost/page">Delete One of My 📄s</a></li>
         <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
         <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
         <li><a href="/ax1/BitcoinSeeMyRecords/page">See ₿ 📽s</a></li>
