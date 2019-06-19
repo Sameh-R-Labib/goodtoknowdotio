@@ -44,7 +44,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h2 class="topofpage">Member's Tool Box</h2>
+    <h2 class="topofpage">Your 🧰</h2>
     <ul>
         <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
         <li><a href="/ax1/DefaultCommunity/page">Change Default 🧑🏿‍🤝‍🧑🏽</a></li>

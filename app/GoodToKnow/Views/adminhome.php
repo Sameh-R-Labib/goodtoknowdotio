@@ -44,7 +44,7 @@
 </div>
 <!-- maincontent -->
 <div id="maincontent">
-    <h2 class="topofpage">Regular Member Tools</h2>
+    <h2 class="topofpage">Regular Member 🧰s</h2>
     <ul>
         <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
         <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
@@ -62,7 +62,7 @@
         <li><a href="/ax1/RecurringPaymentSeeMyRecords/page">See 🌀 💳 📽s</a></li>
         <li><a href="/ax1/ExpungeARecurringPaymentRecord/page">Delete a 🌀 💳 📽</a></li>
     </ul>
-    <h2>♠👔♠ Tools</h2>
+    <h2>♠👔♠ 🧰s</h2>
     <ul>
         <li><a href="/ax1/NewCommunity/page">Create 🧑🏿‍🤝‍🧑🏽</a></li>
         <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
