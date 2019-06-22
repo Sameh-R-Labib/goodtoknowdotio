@@ -61,6 +61,7 @@ class DeleteABitcoinRecordProcessor
         }
         // Format the attributes for easy viewing
         $bitcoin_object->unix_time_at_purchase = self::get_readable_time($bitcoin_object->unix_time_at_purchase);
+        // nl2br
         $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
         $bitcoin_object->price_point = number_format($bitcoin_object->price_point, 2);
         $bitcoin_object->initial_balance = number_format($bitcoin_object->initial_balance, 8);

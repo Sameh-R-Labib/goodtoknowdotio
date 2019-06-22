@@ -18,6 +18,7 @@ class TopicDescriptionEditorFormProcessor
          *  2) Remove any HTML tags found in $_POST['text'].
          *  3) Validate the suitability of $_POST['text']
          *     as a topic description.
+         *  3a) nl2br.
          *  4) Get a copy of the Topic object.
          *  5) Makes sure the description is escaped for suitability
          *     to being included in an sql statement. This may be
@@ -74,6 +75,11 @@ class TopicDescriptionEditorFormProcessor
             $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * 3a) nl2br.
+         */
+        $edited_description = nl2br($edited_description, false);
 
         /**
          *  4) Get a copy of the Topic object.
