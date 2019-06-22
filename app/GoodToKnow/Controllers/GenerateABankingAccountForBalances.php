@@ -33,7 +33,7 @@ class GenerateABankingAccountForBalances
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'Create a New BankingAcctForBalances Record';
+        $html_title = 'Create a New BankingAcctForBalances';
 
         require VIEWS . DIRSEP . 'generateabankingaccountforbalances.php';
     }
