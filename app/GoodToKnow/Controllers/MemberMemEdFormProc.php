@@ -111,9 +111,8 @@ class MemberMemEdFormProc
 
         /**
          * 6) Replace the User's current comment with the new one.
-         *  * n2lbr also
          */
-        $user_object->comment = nl2br($edited_comment, false);
+        $user_object->comment = $edited_comment;
 
         /**
          * 7) Update the database with this User object.

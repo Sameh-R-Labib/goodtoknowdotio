@@ -84,8 +84,7 @@ class EditABitcoinRecordSubmit
         $bitcoin_object->current_balance = $edited_current_balance;
         $bitcoin_object->price_point = $edited_price_point;
         $bitcoin_object->unix_time_at_purchase = $edited_unix_time_at_purchase;
-        // nl2br
-        $bitcoin_object->comment = nl2br($edited_comment, false);
+        $bitcoin_object->comment = $edited_comment;
 
         /**
          * 4) Update/save the updated record in the database.

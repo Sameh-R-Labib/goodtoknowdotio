@@ -82,12 +82,6 @@ class AdminCreateUser
 
 
         /**
-         * nl2br
-         */
-        $submitted_comment = nl2br($submitted_comment, false);
-
-
-        /**
          * If any of the submitted fields are invalid
          * store a session message and redirect to /ax1/LoginForm/page
          */

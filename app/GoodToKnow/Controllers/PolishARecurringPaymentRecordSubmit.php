@@ -88,8 +88,7 @@ class PolishARecurringPaymentRecordSubmit
         $recurring_payment_object->currency = $edited_currency;
         $recurring_payment_object->amount_paid = $edited_amount_paid;
         $recurring_payment_object->unix_time_at_last_payment = $edited_unix_time_at_last_payment;
-        // nl2br
-        $recurring_payment_object->comment = nl2br($edited_comment, false);
+        $recurring_payment_object->comment = $edited_comment;
 
         /**
          * 4) Update/save the updated record in the database.
