@@ -12,7 +12,7 @@ class InitializeABitcoinRecordProcessor
     {
         /**
          * Create a database record in the
-         * bitcoin table using the bitcoin
+         * bitcoin table using the submitted bitcoin
          * address. The remaining field values
          * will be set to default values.
          *
