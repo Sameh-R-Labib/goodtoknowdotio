@@ -62,7 +62,8 @@
         <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
         <li><a href="/ax1/RecurringPaymentSeeMyRecords/page">See 🌀 💳 📽s</a></li>
         <li><a href="/ax1/ExpungeARecurringPaymentRecord/page">Delete a 🌀 💳 📽</a></li>
-        <li><a href="/ax1/GenerateABankingAccountForBalances/page">Create a 🏦 📒 for ⚖️</a></li>
+        <li><a href="/ax1/GenerateABankingAccountForBalances/page">Create a 🏦 📒 for ⚖️s️</a></li>
+        <li><a href="/ax1/PopulateABankingAccountForBalances/page">Edit a 🏦 📒 for ⚖️s</a></li>
     </ul>
     <hr>
     <h2 class="topofpage">Instruction to users</h2>
