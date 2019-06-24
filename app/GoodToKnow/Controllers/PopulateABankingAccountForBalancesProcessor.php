@@ -59,6 +59,18 @@ class PopulateABankingAccountForBalancesProcessor
             redirect_to("/ax1/Home/page");
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$object: </p>\n<pre>";
+        var_dump($object);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
         /**
          * 3) Present a form which is populated with data from the banking_acct_for_balances object.
          */
