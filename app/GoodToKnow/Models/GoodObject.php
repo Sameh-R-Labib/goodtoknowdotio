@@ -101,6 +101,9 @@ abstract class GoodObject
         foreach ($array as $key => $value) {
             if ($object_in_memory->has_attribute($key)) {
                 $object_in_memory->$key = $value;
+            } else {
+                // Debug
+                die("I died because the object_in_memory does not have the attribute {$key}.");
             }
         }
         return $object_in_memory;
