@@ -33,13 +33,21 @@ class PopulateABankingAccountForBalancesProcessor
         /**
          * 1) Store the submitted banking_acct_for_balances record id in the session.
          */
-        $chosen_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
-        if ($chosen_id == 0) {
-            $sessionMessage .= " You didn't choose so I've aborted the process for you. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-        $_SESSION['saved_int01'] = $chosen_id;
+//        $chosen_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
+//        if ($chosen_id == 0) {
+//            $sessionMessage .= " You didn't choose so I've aborted the process for you. ";
+//            $_SESSION['message'] = $sessionMessage;
+//            redirect_to("/ax1/Home/page");
+//        }
+//        $_SESSION['saved_int01'] = $chosen_id;
+
+
+        /**
+         * Debug
+         */
+        $chosen_id = 1;
+
+
 
         /**
          * 2) Retrieve the banking_acct_for_balances object with that id from the database.
