@@ -101,9 +101,6 @@ abstract class GoodObject
         foreach ($array as $key => $value) {
             if ($object_in_memory->has_attribute($key)) {
                 $object_in_memory->$key = $value;
-            } else {
-                // Debug
-                die("I died because the object_in_memory does not have the attribute {$key}.");
             }
         }
         return $object_in_memory;
@@ -423,18 +420,6 @@ abstract class GoodObject
         while ($row = $result->fetch_assoc()) {
             $object_array[] = static::array_to_object($row);
         }
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<br><p>Var_dump \$object_array[0]: </p>\n<pre>";
-        var_dump($object_array[0]);
-        echo "</pre>\n";
-        die("<br><p>End debug</p>\n");
-
-
 
         if (empty($object_array)) {
             return false;
