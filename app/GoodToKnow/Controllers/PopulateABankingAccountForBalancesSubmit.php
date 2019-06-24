@@ -46,6 +46,20 @@ class PopulateABankingAccountForBalancesSubmit
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$_POST['start_balance']: </p>\n<pre>";
+        var_dump($_POST['start_balance']);
+        echo "</pre>\n";
+        die("<br><p>End debug</p>\n");
+
+
+
+
         $edited_acct_name = (isset($_POST['acct_name'])) ? $_POST['acct_name'] : "";
         $edited_start_time = (isset($_POST['start_time'])) ? (int)$_POST['start_time'] : 1560190617;
         $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0;
