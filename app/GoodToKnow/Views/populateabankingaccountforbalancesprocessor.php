@@ -45,6 +45,12 @@
                   placeholder="The purpose of this banking account is _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $object->comment; ?></textarea>
     </p>
+    <section>
+        <p>
+            <button type="submit" name="abort" value="Abort" class="abort">Abort</button>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+        </p>
+    </section>
 </form>
 </body>
 </html>
