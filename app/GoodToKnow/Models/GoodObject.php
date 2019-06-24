@@ -418,6 +418,18 @@ abstract class GoodObject
         }
 
         while ($row = $result->fetch_assoc()) {
+
+
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Begin debug</p>\n";
+            echo "<br><p>Var_dump \$row: </p>\n<pre>";
+            var_dump($row);
+            echo "</pre>\n";
+            die("<br><p>End debug</p>\n");
+
+
             $object_array[] = static::array_to_object($row);
         }
 
