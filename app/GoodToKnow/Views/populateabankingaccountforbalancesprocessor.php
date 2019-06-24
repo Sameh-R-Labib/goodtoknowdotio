@@ -42,7 +42,7 @@
     <p>
         <label for="comment">Comment (🚫 html 🚫 markdown ✅ emoji ✅ line-break): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
-                  placeholder="The purpose of this banking account is _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
+                  placeholder="This banking account is my _ _ _ _ bank's _ _ _ _ account."><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $object->comment; ?></textarea>
     </p>
     <section>
