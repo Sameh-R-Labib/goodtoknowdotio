@@ -53,8 +53,10 @@ class ViewAllBankingAccountsForBalances
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
+         * And apply htmlspecialchars if necessary.
          */
         foreach ($array_of_objects as $object) {
+            $object->acct_name = htmlspecialchars($object->acct_name);
             // Transform the start_time to a human readable format.
             $object->start_time = self::get_readable_time($object->start_time);
             $object->comment = nl2br($object->comment, false);

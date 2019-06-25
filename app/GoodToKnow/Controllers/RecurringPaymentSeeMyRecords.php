@@ -52,8 +52,11 @@ class RecurringPaymentSeeMyRecords
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
+         * And apply htmlspecialchars if necessary.
          */
         foreach ($array_of_recurring_payment_objects as $object) {
+            $object->label = htmlspecialchars($object->label);
+            $object->currency = htmlspecialchars($object->currency);
             $object->unix_time_at_last_payment = self::get_readable_time($object->unix_time_at_last_payment);
             $object->comment = nl2br($object->comment, false);
             // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.

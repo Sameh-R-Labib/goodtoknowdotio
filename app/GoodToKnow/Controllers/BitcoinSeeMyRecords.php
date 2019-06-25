@@ -49,6 +49,7 @@ class BitcoinSeeMyRecords
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
+         * And apply htmlspecialchars if necessary.
          */
         foreach ($array_of_bitcoin_objects as $bitcoin_object) {
             $bitcoin_object->unix_time_at_purchase = self::get_readable_time($bitcoin_object->unix_time_at_purchase);
