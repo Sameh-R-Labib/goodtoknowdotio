@@ -7,6 +7,8 @@ elseif ($page === 'UserRoster') echo "<a href=\"/ax1/UserRoster/page\">User Rost
 elseif ($page === 'BitcoinSeeMyRecords') echo "<a href=\"/ax1/BitcoinSeeMyRecords/page\">My Bitcoin Records</a>";
 elseif ($page === 'About') echo "What is this site?";
 elseif ($page === 'RecurringPaymentSeeMyRecords') echo "<a href=\"/ax1/RecurringPaymentSeeMyRecords/page\">My Recurring Payments</a>";
+elseif ($page === 'ViewAllBankingAccountsForBalances')
+    echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">View All Banking Accounts For Balances</a>";
 else {
     require CURRENTCOMMUNITY;
     require CURRENTTOPIC;

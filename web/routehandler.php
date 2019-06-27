@@ -136,8 +136,11 @@ $is_admin = ($role === 'admin') ? true : false;
 
 
 /**
- * Temporary development values
+ * PHP is strange in that code which is run via includes
+ * has the same scope as the main program (even if the include
+ * is inside a function.)
  */
+$page = 'Home';
 
 
 /**
