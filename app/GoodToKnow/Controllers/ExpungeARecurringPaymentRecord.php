@@ -12,7 +12,7 @@ class ExpungeARecurringPaymentRecord
     public function page()
     {
         /**
-         * presenting a form for getting the user to tell us
+         * Presenting a form for getting the user to tell us
          * which RecurringPayment record he wants to delete.
          * It will present a series of radio buttons to choose from.
          */
