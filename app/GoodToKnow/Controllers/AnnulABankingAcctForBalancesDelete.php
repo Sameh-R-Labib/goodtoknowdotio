@@ -4,15 +4,16 @@
 namespace GoodToKnow\Controllers;
 
 
-use GoodToKnow\Models\RecurringPayment;
+use GoodToKnow\Models\BankingAcctForBalances;
 
-class ExpungeARecurringPaymentRecordDelete
+
+class AnnulABankingAcctForBalancesDelete
 {
     public function page()
     {
         /**
          * Here we will read the choice of whether
-         * or not to delete the recurring_payment record. If yes then
+         * or not to delete the banking_acct_for_balances record. If yes then
          * delete it. On the other hand if no then reset
          * some session variables and redirect to the home page.
          */
@@ -59,9 +60,9 @@ class ExpungeARecurringPaymentRecordDelete
             redirect_to("/ax1/Home/page");
         }
 
-        $object = RecurringPayment::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $saved_int01);
         if (!$object) {
-            $sessionMessage .= " I wasn't able to find the recurring_payment record and I've aborted the procedure you've started. ";
+            $sessionMessage .= " I wasn't able to find the record and I've aborted the procedure you've started. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
@@ -70,14 +71,14 @@ class ExpungeARecurringPaymentRecordDelete
         $result = $object->delete($db, $sessionMessage);
         if (!$result) {
             $_SESSION['saved_int01'] = 0;
-            $sessionMessage .= " Unexpectedly I could not delete the recurring_payment record. ";
+            $sessionMessage .= " Unexpectedly I could not delete the record. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
         // Report successful deletion of post.
         $_SESSION['saved_int01'] = 0;
-        $sessionMessage .= " I have successfully deleted the 🌀 💳 📽. ";
+        $sessionMessage .= " I have successfully deleted the 🏦ing 📒 for ⚖️s. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
