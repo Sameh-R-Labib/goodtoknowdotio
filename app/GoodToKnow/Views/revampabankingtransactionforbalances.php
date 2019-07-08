@@ -16,7 +16,7 @@
         echo $html_title; ?></title>
 </head>
 <body>
-<form action="/ax1/RevampABankingAccountForBalancesTimeRange/page" method="post">
+<form action="/ax1/RevampABankingTransactionForBalancesTimeRange/page" method="post">
     <h1>Edit a 🏦ing 🔃 for ⚖️s</h1>
     <h2>Narrow down the selection for choosing 🔃</h2>
     <p>Which time range does the transaction fall under?</p>

@@ -4,7 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
-class RevampABankingAccountForBalancesTimeRange
+class RevampABankingTransactionForBalancesTimeRange
 {
     public function page()
     {
@@ -89,6 +89,6 @@ class RevampABankingAccountForBalancesTimeRange
         /**
          * Redirect
          */
-        redirect_to("/ax1/RevampABankingAccountForBalancesChooseRecord/page");
+        redirect_to("/ax1/RevampABankingTransactionForBalancesChooseRecord/page");
     }
 }

@@ -6,7 +6,8 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingTransactionForBalances;
 
-class RevampABankingAccountForBalancesChooseRecord
+
+class RevampABankingTransactionForBalancesChooseRecord
 {
     public function page()
     {
@@ -64,6 +65,6 @@ class RevampABankingAccountForBalancesChooseRecord
 
         $html_title = 'Which banking_transaction_for_balances record?';
 
-        require VIEWS . DIRSEP . 'revampabankingaccountforbalanceschooserecord.php';
+        require VIEWS . DIRSEP . 'revampabankingtransactionforbalanceschooserecord.php';
     }
 }
