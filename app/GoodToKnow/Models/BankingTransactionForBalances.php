@@ -14,7 +14,7 @@ class BankingTransactionForBalances extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'bank_id ', 'label', 'amount', 'time'];
+    protected static $fields = ['id', 'user_id', 'bank_id', 'label', 'amount', 'time'];
 
     /**
      * @var int
