@@ -52,23 +52,23 @@ class RevampABankingTransactionForBalancesChooseRecord
          * and falling within the prescribed time range.
          */
         $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
-        $sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($saved_int02) . '" AND "' . $db->real_escape_string($saved_int01) . '"';
+        $sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($saved_int01) . '" AND "' . $db->real_escape_string($saved_int02) . '"';
         $sql .= ' ORDER BY `time`';
         $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
         if (!$array || !empty($sessionMessage)) {
 
 
-            /**
-             * Debug Code
-             */
-            echo "\n<p>Begin debug</p>\n";
-            echo "<br><p>Var_dump \$array: </p>\n<pre>";
-            var_dump($array);
-            echo "</pre>\n";
-            echo "<br><p>Print_r \$sql: </p>\n<pre>";
-            print_r($sql);
-            echo "</pre>\n";
-            die("<br><p>End debug</p>\n");
+//            /**
+//             * Debug Code
+//             */
+//            echo "\n<p>Begin debug</p>\n";
+//            echo "<br><p>Var_dump \$array: </p>\n<pre>";
+//            var_dump($array);
+//            echo "</pre>\n";
+//            echo "<br><p>Print_r \$sql: </p>\n<pre>";
+//            print_r($sql);
+//            echo "</pre>\n";
+//            die("<br><p>End debug</p>\n");
 
 
 
