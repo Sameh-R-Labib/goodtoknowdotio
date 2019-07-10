@@ -21,7 +21,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         global $is_logged_in;
         global $sessionMessage;
-        global $saved_int01;    // recurring_payment record id
+        global $saved_int01;    // record id
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
@@ -59,6 +59,7 @@ class PopulateABankingAccountForBalancesSubmit
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+        // htmlspecialchars
         $edited_acct_name = htmlspecialchars($edited_acct_name);
 
         /**
@@ -101,7 +102,7 @@ class PopulateABankingAccountForBalancesSubmit
         /**
          * Report success.
          */
-        $sessionMessage .= " I've successfully updated BankingAcctForBalances <b>{$object->acct_name}</b>'s record. ";
+        $sessionMessage .= " I've successfully updated the BankingAcctForBalances <b>{$object->acct_name}</b> record. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");
