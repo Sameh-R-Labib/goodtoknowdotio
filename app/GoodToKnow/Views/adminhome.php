@@ -67,6 +67,7 @@
         <li><a href="/ax1/AnnulABankingAcctForBalances/page">Delete a 🏦ing 📒 for ⚖️s</a></li>
         <li><a href="/ax1/BuildABankingTransactionForBalances/page">Create a 🏦ing 🔃 for ⚖️s</a></li>
         <li><a href="/ax1/RevampABankingTransactionForBalances/page">Edit a 🏦ing 🔃 for ⚖️s</a></li>
+        <li><a href="/ax1/OmitABankingTransactionForBalances/page">Delete a 🏦ing 🔃 for ⚖️s</a></li>
     </ul>
     <h2>♠👔♠ 🧰s</h2>
     <ul>
