@@ -21,6 +21,9 @@
         echo $object->label; ?></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
+        <small>Positive amount means money I'm getting.</small>
+    </p>
+    <p>
         <label for="label">Label (✅ emoji): </label>
         <input id="label" name="label" type="text"
                value="<?php echo $object->label; ?>" required minlength="3" maxlength="30" size="30" spellcheck="false"
