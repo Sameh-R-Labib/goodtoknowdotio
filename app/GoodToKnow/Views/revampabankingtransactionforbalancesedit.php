@@ -21,7 +21,7 @@
         echo $object->label; ?></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>Negative amounts mean money you are spending.</small>
+        <small>Negative amounts mean money you are spending from <b>this</b> account.</small>
     </p>
     <p>
         <label for="label">Label (✅ emoji): </label>
