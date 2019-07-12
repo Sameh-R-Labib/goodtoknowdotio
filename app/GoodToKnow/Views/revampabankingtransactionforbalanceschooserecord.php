@@ -24,7 +24,7 @@
         foreach ($array as $key => $object): ?>
             <label for="c<?php echo $key; ?>" class="radio">
                 <input type="radio" id="c<?php echo $key; ?>" name="choice" value="<?php echo $object->id; ?>">
-                <?php echo $object->label; ?> [<?php echo $object->time; ?>]<br>
+                <b><?php echo $object->label; ?></b> <?php echo $object->time; ?><br>
             </label>
         <?php endforeach; ?>
     </section>
