@@ -19,7 +19,7 @@
 <form action="/ax1/PopulateABankingAccountForBalancesProcessor/page" method="post">
     <h2>Which BankingAccountForBalances?</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>These are listed by BankingAccountForBalances acct_name.</p>
+    <p>Choose:</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_objects as $key => $object): ?>
