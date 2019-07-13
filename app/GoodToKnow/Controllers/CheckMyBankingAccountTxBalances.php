@@ -7,24 +7,24 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\BankingAcctForBalances;
 
 
-class PopulateABankingAccountForBalances
+class CheckMyBankingAccountTxBalances
 {
     public function page()
     {
         /**
-         * This feature is for editing/updating
-         * a BankingAcctForBalances record.
+         * About this feature:
+         *  CheckMyBankingAccountTxBalances is a feature for
+         *  showing you a ledger with balances for one of
+         *  your banking accounts and its transactions.
          *
-         * This route is for presenting a
-         * form for getting the user to tell us
-         * which BankingAcctForBalances record he wants to edit.
-         * It will present a series of radio
-         * buttons to choose from.
+         * About this function:
+         *  It will present to you a selection of your banking
+         *  accounts so you can choose one.
          */
 
         global $is_logged_in;
         global $sessionMessage;
-        global $user_id;
+        global $user_id;            // We need this.
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
@@ -51,6 +51,6 @@ class PopulateABankingAccountForBalances
 
         $html_title = 'Which banking_acct_for_balances record?';
 
-        require VIEWS . DIRSEP . 'populateabankingaccountforbalances.php';
+        require VIEWS . DIRSEP . 'checkmybankingaccounttxbalances.php';
     }
 }
