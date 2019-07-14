@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\BankingTransactionForBalances;
 
 
 class CheckMyBankingAccountTxBalancesShowBalances
@@ -26,6 +27,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * will be wrong if admin has deleted transactions older than 90 days and the start
          * time for the BankingAcctForBalances is set to a time older than 90 days.
          * Also, show the account name for BankingAcctForBalances at the top of the ledger.
+         * Also, transform field data to a more human friendly format.
          */
 
         global $is_logged_in;
@@ -78,6 +80,40 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * for the user who is requesting this stuff. Also, these transactions must
          * be for the currently chosen BankingAcctForBalances.
          */
-        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+        $sql .= ' AND `bank_id` = ' . $db->real_escape_string($account->id);
+        $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
+        $sql .= ' ORDER BY `time` ASC';
+        $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
+        if (!$array || !empty($sessionMessage)) {
+            $sessionMessage .= ' 🤔 I could NOT find any banking_transaction_for_balances records for you ¯\_(ツ)_/¯. ';
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_str01'] = '';
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 3) Augment our data set with a running total in each BankingTransactionForBalances
+         * object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         */
+        $running_total = $account->start_balance;
+        foreach ($array as $transaction) {
+            $running_total += $transaction->amount;
+            $transaction->balance = $running_total;
+        }
+
+        /**
+         * 4) Display our data set as a ledger. Note: Inform the user that the balances
+         * will be wrong if admin has deleted transactions older than 90 days and the start
+         * time for the BankingAcctForBalances is set to a time older than 90 days.
+         * Also, show the account name for BankingAcctForBalances at the top of the ledger.
+         * Also, transform field data to a more human friendly format.
+         *
+         * BankingTransactionForBalances fields in need of transforming:
+         * - amount [comma separator for thousands]
+         * - time [human readable time]
+         * - balance [comma separator for thousands]
+         */
     }
 }
