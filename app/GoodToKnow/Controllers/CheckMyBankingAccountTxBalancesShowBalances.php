@@ -33,6 +33,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $is_logged_in;
         global $sessionMessage;
         global $user_id;
+        global $special_community_array;
+        global $type_of_resource_requested;
+        global $is_admin;
         global $saved_int01;    // id of BankingAcctForBalances record
         global $saved_str01;    // acct_name of BankingAcctForBalances record
 
@@ -120,6 +123,12 @@ class CheckMyBankingAccountTxBalancesShowBalances
             $transaction->balance = number_format($transaction->balance, 8);
             $transaction->time = self::get_readable_time($transaction->time);
         }
+
+        $html_title = 'Transactions';
+
+        $page = 'CheckMyBankingAccountTxBalances';
+
+        $show_poof = true;
 
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🏦ing 📋 ⚖️s. ';
 
