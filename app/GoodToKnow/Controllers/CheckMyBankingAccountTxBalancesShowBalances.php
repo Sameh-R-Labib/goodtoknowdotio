@@ -115,5 +115,27 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * - time [human readable time]
          * - balance [comma separator for thousands]
          */
+        foreach ($array as $transaction) {
+            $transaction->amount = number_format($transaction->amount, 8);
+            $transaction->balance = number_format($transaction->balance, 8);
+            $transaction->time = self::get_readable_time($transaction->time);
+        }
+
+        $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🏦ing 📋 ⚖️s. ';
+
+        require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $created
+     * @return string
+     */
+    public static function get_readable_time($created)
+    {
+        $created = (int)$created;
+        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
+        return $date;
     }
 }
