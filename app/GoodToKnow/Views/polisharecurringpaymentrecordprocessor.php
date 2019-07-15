@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/PolishARecurringPaymentRecordSubmit/page" method="post">
@@ -28,27 +27,23 @@
     <p>
         <label for="currency">Currency (✅ emoji): </label>
         <input id="currency" name="currency" type="text"
-               value="<?php /** @noinspection PhpUndefinedVariableInspection */
-               echo $recurring_payment_object->currency; ?>" required minlength="1" maxlength="15" size="15">
+               value="<?= $recurring_payment_object->currency ?>" required minlength="1" maxlength="15" size="15">
     </p>
     <p>
         <label for="amount_paid">Amount of currency paid: </label>
         <input id="amount_paid" name="amount_paid" type="text"
-               value="<?php /** @noinspection PhpUndefinedVariableInspection */
-               echo $recurring_payment_object->amount_paid; ?>" required minlength="1" maxlength="16" size="16">
+               value="<?= $recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="16" size="16">
     </p>
     <p>
         <label for="unix_time_at_last_payment">Unix time at last payment: </label>
         <input id="unix_time_at_last_payment" name="unix_time_at_last_payment" type="text"
-               value="<?php /** @noinspection PhpUndefinedVariableInspection */
-               echo $recurring_payment_object->unix_time_at_last_payment; ?>" minlength="10" maxlength="22"
+               value="<?= $recurring_payment_object->unix_time_at_last_payment ?>" minlength="10" maxlength="22"
                size="22" placeholder="1560190617">
     </p>
     <p>
         <label for="comment">Comment (🚫 html 🚫 markdown ✅ emoji ✅ line-break): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
-                  placeholder="The frequency of this payment is _ _ _ _."><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $recurring_payment_object->comment; ?></textarea>
+                  placeholder="The frequency of this payment is _ _ _ _."><?= $recurring_payment_object->comment ?></textarea>
     </p>
     <section>
         <p>

@@ -1,3 +1,3 @@
 <?php if (!empty($sessionMessage)): ?>
-    <p>😏:&nbsp;&nbsp;<?php echo $sessionMessage; ?></p>
+    <p>😏:&nbsp;&nbsp;<?= $sessionMessage ?></p>
 <?php endif; ?>

@@ -11,8 +11,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <!-- topbar -->
@@ -48,12 +47,12 @@
         <?php $last = count($array_of_bitcoin_objects) - 1; ?>
         <?php foreach ($array_of_bitcoin_objects as $key => $bitcoin): ?>
             <p><b>Time of purchase: </b><?php echo $bitcoin->unix_time_at_purchase; ?></p>
-            <p><b>Address: </b><?php echo $bitcoin->address; ?></p>
-            <p><b>Price of 1₿ at 🕒 of purchase: </b>$&nbsp;<?php echo $bitcoin->price_point; ?></p>
-            <p><b>Initial Balance: </b>₿&nbsp;<?php echo $bitcoin->initial_balance; ?></p>
-            <p><b>Current Balance: </b>₿&nbsp;<?php echo $bitcoin->current_balance; ?></p>
+            <p><b>Address: </b><?= $bitcoin->address ?></p>
+            <p><b>Price of 1₿ at 🕒 of purchase: </b>$&nbsp;<?= $bitcoin->price_point ?></p>
+            <p><b>Initial Balance: </b>₿&nbsp;<?= $bitcoin->initial_balance ?></p>
+            <p><b>Current Balance: </b>₿&nbsp;<?= $bitcoin->current_balance ?></p>
             <p>&nbsp;</p>
-            <p><?php echo $bitcoin->comment; ?></p>
+            <p><?= $bitcoin->comment ?></p>
             <?php if ($key != $last): ?>
                 <hr>
             <?php endif; ?>

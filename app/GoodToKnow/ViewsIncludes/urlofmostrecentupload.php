@@ -1,8 +1,7 @@
 <?php if ($url_of_most_recent_upload): ?>
     <p>
         <small>
-            ▶️ Recent Upload: [ <?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $url_of_most_recent_upload; ?> ] ◀️ ️✂️ + 📋
+            ▶️ Recent Upload: [ <?= $url_of_most_recent_upload ?> ] ◀️ ️✂️ + 📋
         </small>
     </p>
 <?php else: ?>

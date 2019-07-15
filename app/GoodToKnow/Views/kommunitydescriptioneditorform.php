@@ -12,13 +12,11 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/KommunityDescriptionEditorFormProcessor/page" method="post">
-    <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $saved_str01; ?> Description</h2>
+    <h2><?= $saved_str01 ?> Description</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
         <small>🚫 markdown 🚫 html ✅ emoji ✅ line-break ⚖️ max. 230 bytes.</small>

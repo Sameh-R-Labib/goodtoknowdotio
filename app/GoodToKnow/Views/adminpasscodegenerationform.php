@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/AdminPassCodeGenFormProcessor/page" method="post">
@@ -23,9 +22,9 @@
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($community_array as $key => $value): ?>
-            <label for="choice-<?php echo $key + 1; ?>" class="radio">
-                <input type="radio" id="choice-<?php echo $key + 1; ?>" name="choice" value="<?php echo $value->id; ?>">
-                <?php echo $value->community_name; ?><br>
+            <label for="choice-<?= $key + 1 ?>" class="radio">
+                <input type="radio" id="choice-<?= $key + 1 ?>" name="choice" value="<?= $value->id ?>">
+                <?= $value->community_name ?><br>
             </label>
         <?php endforeach; ?>
     </section>

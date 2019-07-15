@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/RemoveComsChoicesProcessor/page" method="post">
@@ -21,11 +20,10 @@
     <?php require SESSIONMESSAGE; ?>
     <p>The presented choices are communities which the user currently has membership in.</p>
     <section>
-        <?php /** @noinspection PhpUndefinedVariableInspection */
-        foreach ($coms_user_belongs_to as $key => $value): ?>
+        <?php foreach ($coms_user_belongs_to as $key => $value): ?>
             <label class="checkbox">
-                <input type="checkbox" name="choice-<?php echo $key + 1; ?>" value="<?php echo $value->id; ?>">
-                <?php echo $value->community_name; ?><br>
+                <input type="checkbox" name="choice-<?= $key + 1 ?>" value="<?= $value->id ?>">
+                <?= $value->community_name ?><br>
             </label>
         <?php endforeach; ?>
     </section>

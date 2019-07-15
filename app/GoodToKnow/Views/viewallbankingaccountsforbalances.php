@@ -10,8 +10,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <!-- topbar -->
@@ -46,10 +45,10 @@
     <?php if (!empty($array_of_objects)): ?>
         <?php $last = count($array_of_objects) - 1; ?>
         <?php foreach ($array_of_objects as $key => $object): ?>
-            <h2 class="topofpage"><?php echo $object->acct_name; ?></h2>
-            <p><b>Start 🕒: </b><?php echo $object->start_time; ?></p>
-            <p><b>Start ⚖️: </b><?php echo $object->start_balance; ?></p>
-            <p><?php echo $object->comment; ?></p>
+            <h2 class="topofpage"><?= $object->acct_name ?></h2>
+            <p><b>Start 🕒: </b><?= $object->start_time ?></p>
+            <p><b>Start ⚖️: </b><?= $object->start_balance ?></p>
+            <p><?= $object->comment ?></p>
             <?php if ($key != $last): ?>
                 <hr>
             <?php endif; ?>

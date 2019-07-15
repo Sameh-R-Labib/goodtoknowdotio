@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/EditMyPostEditor/page" method="post">
@@ -21,11 +20,10 @@
     <p>* The size of post has an upper limit.</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
-        <?php /** @noinspection PhpUndefinedVariableInspection */
-        foreach ($special_post_array as $key => $value): ?>
-            <label for="choice-<?php echo $key; ?>" class="radio">
-                <input type="radio" id="choice-<?php echo $key; ?>" name="choice" value="<?php echo $key; ?>">
-                <?php echo $value; ?><br>
+        <?php foreach ($special_post_array as $key => $value): ?>
+            <label for="choice-<?= $key ?>" class="radio">
+                <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
+                <?= $value ?><br>
             </label>
         <?php endforeach; ?>
     </section>

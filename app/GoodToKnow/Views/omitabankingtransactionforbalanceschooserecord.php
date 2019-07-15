@@ -12,19 +12,17 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/OmitABankingTransactionForBalancesDelete/page" method="post">
     <h2>Which BankingTransactionForBalances?</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
-        <?php /** @noinspection PhpUndefinedVariableInspection */
-        foreach ($array as $key => $object): ?>
-            <label for="c<?php echo $key; ?>" class="radio">
-                <input type="radio" id="c<?php echo $key; ?>" name="choice" value="<?php echo $object->id; ?>">
-                <b><?php echo $object->label; ?></b> <?php echo $object->time; ?><br>
+        <?php foreach ($array as $key => $object): ?>
+            <label for="c<?= $key ?>" class="radio">
+                <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
+                <b><?= $object->label ?></b> <?= $object->time ?><br>
             </label>
         <?php endforeach; ?>
     </section>

@@ -22,11 +22,11 @@
     <p>&nbsp;</p>
     <p><b>Address: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $recurring_payment_object->label; ?></p>
-    <p><b>Last's 🕒: </b><?php echo $recurring_payment_object->unix_time_at_last_payment; ?></p>
-    <p><b>💱: </b><?php echo $recurring_payment_object->currency; ?></p>
-    <p><b>🔢: </b><?php echo $recurring_payment_object->amount_paid; ?></p>
+    <p><b>Last's 🕒: </b><?= $recurring_payment_object->unix_time_at_last_payment ?></p>
+    <p><b>💱: </b><?= $recurring_payment_object->currency ?></p>
+    <p><b>🔢: </b><?= $recurring_payment_object->amount_paid ?></p>
     <p>&nbsp;</p>
-    <p><?php echo $recurring_payment_object->comment; ?></p>
+    <p><?= $recurring_payment_object->comment ?></p>
     <p>&nbsp;</p>
     <p>Are you sure you want me to delete "<?php /** @noinspection PhpUndefinedVariableInspection */
         echo $recurring_payment_object->label; ?>".</p>

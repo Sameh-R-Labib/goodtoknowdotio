@@ -11,8 +11,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <!-- topbar -->
@@ -48,15 +47,15 @@
         <?php $last = count($readable_user_objects_array) - 1; ?>
         <?php foreach ($readable_user_objects_array as $key => $user): ?>
             <p>&nbsp;</p>
-            <p><b>U/N:&nbsp;&nbsp;</b><?php echo $user->username; ?></p>
-            <p><b>Default Community:&nbsp;&nbsp;</b><?php echo $user->readable_community_name; ?></p>
-            <p><b>Title:&nbsp;&nbsp;</b><?php echo $user->title; ?></p>
-            <p><b>Role:&nbsp;&nbsp;</b><?php echo $user->readable_role; ?></p>
-            <p><b>Race:&nbsp;&nbsp;</b><?php echo $user->readable_race; ?></p>
-            <p><b>Is-Suspended:&nbsp;&nbsp;</b><?php echo $user->readable_is_suspended; ?></p>
-            <p><b>Date:&nbsp;&nbsp;</b><?php echo $user->date; ?></p>
+            <p><b>U/N:&nbsp;&nbsp;</b><?= $user->username ?></p>
+            <p><b>Default Community:&nbsp;&nbsp;</b><?= $user->readable_community_name ?></p>
+            <p><b>Title:&nbsp;&nbsp;</b><?= $user->title ?></p>
+            <p><b>Role:&nbsp;&nbsp;</b><?= $user->readable_role ?></p>
+            <p><b>Race:&nbsp;&nbsp;</b><?= $user->readable_race ?></p>
+            <p><b>Is-Suspended:&nbsp;&nbsp;</b><?= $user->readable_is_suspended ?></p>
+            <p><b>Date:&nbsp;&nbsp;</b><?= $user->date ?></p>
             <p>&nbsp;</p>
-            <p><b>Comment:&nbsp;&nbsp;</b><?php echo $user->comment; ?></p>
+            <p><b>Comment:&nbsp;&nbsp;</b><?= $user->comment ?></p>
             <p>&nbsp;</p>
             <?php if ($key != $last): ?>
                 <hr>

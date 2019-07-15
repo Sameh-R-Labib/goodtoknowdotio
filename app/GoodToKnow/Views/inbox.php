@@ -11,8 +11,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <!-- topbar -->
@@ -50,7 +49,7 @@
             <p><b>Time: </b><?php echo $message->created; ?></p>
             <p><b>Sender: </b><?php echo $message->user_id; ?></p>
             <p>&nbsp;</p>
-            <?php echo $message->content; ?>
+            <?= $message->content ?>
             <?php if ($key != $last): ?>
                 <hr>
             <?php endif; ?>

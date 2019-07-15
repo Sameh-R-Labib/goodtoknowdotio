@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/AnnulABankingAcctForBalancesDelete/page" method="post">
@@ -22,10 +21,10 @@
     <p>&nbsp;</p>
     <p><b>Account: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $object->acct_name; ?></p>
-    <p><b>Start 🕒: </b><?php echo $object->start_time; ?></p>
-    <p><b>Start ⚖️: </b><?php echo $object->start_balance; ?></p>
+    <p><b>Start 🕒: </b><?= $object->start_time ?></p>
+    <p><b>Start ⚖️: </b><?= $object->start_balance ?></p>
     <p>&nbsp;</p>
-    <p><?php echo $object->comment; ?></p>
+    <p><?= $object->comment ?></p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/WriteToAdminProcessor/page" method="post">
@@ -29,8 +28,7 @@
         <p>
             <label for="textarea"></label>
             <textarea id="textarea" spellcheck="false" name="markdown" rows="26" cols="71"
-                      wrap="soft"><?php /** @noinspection PhpUndefinedVariableInspection */
-                echo $pre_populate; ?></textarea>
+                      wrap="soft"><?= $pre_populate ?></textarea>
         </p>
     </section>
     <section>

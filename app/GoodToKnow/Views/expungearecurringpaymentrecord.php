@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/ExpungeARecurringPaymentRecordProcessor/page" method="post">
@@ -24,8 +23,8 @@
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_recurring_payment_objects as $key => $rp_object): ?>
             <label for="c<?php echo $key; ?>" class="radio">
-                <input type="radio" id="c<?php echo $key; ?>" name="choice" value="<?php echo $rp_object->id; ?>">
-                <?php echo $rp_object->label; ?><br>
+                <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $rp_object->id ?>">
+                <?= $rp_object->label ?><br>
             </label>
         <?php endforeach; ?>
     </section>

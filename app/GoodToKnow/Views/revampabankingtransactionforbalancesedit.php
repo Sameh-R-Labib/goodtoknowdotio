@@ -12,8 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $html_title; ?></title>
+    <title><?= $html_title ?></title>
 </head>
 <body>
 <form action="/ax1/RevampABankingTransactionForBalancesUpdate/page" method="post">
@@ -26,21 +25,21 @@
     <p>
         <label for="label">Label (✅ emoji): </label>
         <input id="label" name="label" type="text"
-               value="<?php echo $object->label; ?>" required minlength="3" maxlength="30" size="30" spellcheck="false"
+               value="<?= $object->label ?>" required minlength="3" maxlength="30" size="30" spellcheck="false"
                placeholder="Internet Service Fee">
     </p>
     <p>
         <label for="time">Time (unix time stamp): </label>
         <input id="time" name="time" type="text"
-               value="<?php echo $object->time; ?>" minlength="10" maxlength="22" size="22" placeholder="1560190617">
+               value="<?= $object->time ?>" minlength="10" maxlength="22" size="22" placeholder="1560190617">
     </p>
     <p>
         <label for="amount">Amount: </label>
         <input id="amount" name="amount" type="text"
-               value="<?php echo $object->amount; ?>" required minlength="1" maxlength="16" size="16">
+               value="<?= $object->amount ?>" required minlength="1" maxlength="16" size="16">
     </p>
     <section>
-        <?php echo $object->bank_id; ?>
+        <?= $object->bank_id ?>
     </section>
     <section>
         <p>
