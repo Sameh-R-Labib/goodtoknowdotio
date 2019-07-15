@@ -119,11 +119,34 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<br><p>Var_dump \$array: </p>\n<pre>";
+        var_dump($array);
+        echo "</pre>\n";
+
+
+
         foreach ($array as $transaction) {
             $transaction->amount = readable_amount_of_money($transaction->amount);
             $transaction->balance = readable_amount_of_money($transaction->balance);
             $transaction->time = self::get_readable_time($transaction->time);
         }
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<hr>\n";
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$array: </p>\n<pre>";
+        var_dump($array);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
 
         $account->start_time = self::get_readable_time($account->start_time);
         $account->start_balance = readable_amount_of_money($account->start_balance);
