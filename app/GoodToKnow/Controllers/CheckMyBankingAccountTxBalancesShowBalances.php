@@ -117,12 +117,19 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * - amount [comma separator for thousands]
          * - time [human readable time]
          * - balance [comma separator for thousands]
+         *
+         * BankingAcctForBalances fields in need of transformation.
+         * - start_time [human readable time]
+         * - start_balance [comma separator for thousands]
          */
         foreach ($array as $transaction) {
             $transaction->amount = number_format($transaction->amount, 8);
             $transaction->balance = number_format($transaction->balance, 8);
             $transaction->time = self::get_readable_time($transaction->time);
         }
+
+        $account->start_time = self::get_readable_time($account->start_time);
+        $account->start_balance = number_format($account->start_balance, 8);
 
         $html_title = 'Transactions';
 
