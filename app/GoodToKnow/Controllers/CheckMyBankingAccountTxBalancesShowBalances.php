@@ -98,7 +98,11 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $running_total = $account->start_balance;
         foreach ($array as $transaction) {
             $running_total += $transaction->amount;
-            $transaction->balance = $running_total;
+            if (abs($running_total) > abs(0.00000001)) {
+                $transaction->balance = $running_total;
+            } else {
+                $transaction->balance = 0;
+            }
         }
 
         /**
