@@ -14,8 +14,7 @@ class CheckMyBankingAccountTxBalancesProcessor
         /**
          * 1) Store the submitted banking_acct_for_balances record id in the session.
          * 2) Retrieve the banking_acct_for_balances object with that id from the database.
-         * 3) Store the acct_name also in the session.
-         * 4) Redirect to next piece of code.
+         * 3) Redirect to next piece of code.
          */
 
         global $is_logged_in;
@@ -62,12 +61,7 @@ class CheckMyBankingAccountTxBalancesProcessor
         }
 
         /**
-         * 3) Store the acct_name also in the session.
-         */
-        $_SESSION['saved_str01'] = $object->acct_name;
-
-        /**
-         * 4) Redirect to next piece of code.
+         * 3) Redirect to next piece of code.
          */
         redirect_to("/ax1/CheckMyBankingAccountTxBalancesShowBalances/page");
     }

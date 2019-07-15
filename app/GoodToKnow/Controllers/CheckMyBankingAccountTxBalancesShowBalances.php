@@ -37,12 +37,10 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $type_of_resource_requested;
         global $is_admin;
         global $saved_int01;    // id of BankingAcctForBalances record
-        global $saved_str01;    // acct_name of BankingAcctForBalances record
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = '';
             redirect_to("/ax1/Home/page");
         }
 
@@ -50,7 +48,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
             $sessionMessage .= " You've aborted the task! Session variables reset. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = '';
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,7 +56,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = '';
             redirect_to("/ax1/Home/page");
         }
 
@@ -71,7 +67,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
             $sessionMessage .= " Unexpectedly I could not find that banking_acct_for_balances record. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = '';
             redirect_to("/ax1/Home/page");
         }
 
@@ -92,7 +87,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
             $sessionMessage .= ' 🤔 I could NOT find any banking_transaction_for_balances records for you ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = '';
             redirect_to("/ax1/Home/page");
         }
 
