@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 
 class AnnulABankingAcctForBalancesProcessor
@@ -65,7 +66,8 @@ class AnnulABankingAcctForBalancesProcessor
 
         // Format its attributes for easy viewing.
         $object->start_time = self::get_readable_time($object->start_time);
-        $object->start_balance = number_format($object->start_balance, 8);
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+        $object->start_balance = readable_amount_of_money($object->start_balance);
         $object->comment = nl2br($object->comment, false);
 
         /**

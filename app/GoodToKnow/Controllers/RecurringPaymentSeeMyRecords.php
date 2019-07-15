@@ -4,7 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\RecurringPayment;
+
 
 class RecurringPaymentSeeMyRecords
 {
@@ -59,8 +61,8 @@ class RecurringPaymentSeeMyRecords
             $object->currency = htmlspecialchars($object->currency);
             $object->unix_time_at_last_payment = self::get_readable_time($object->unix_time_at_last_payment);
             $object->comment = nl2br($object->comment, false);
-            // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
-            $object->amount_paid = number_format($object->amount_paid, 8);
+            require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+            $object->amount_paid = readable_amount_of_money($object->amount_paid);
         }
 
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🌀 💳 📽s. ';

@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\RecurringPayment;
 
 
@@ -64,8 +65,8 @@ class ExpungeARecurringPaymentRecordProcessor
         // Format its attributes for easy viewing.
         $recurring_payment_object->unix_time_at_last_payment = self::get_readable_time($recurring_payment_object->unix_time_at_last_payment);
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
-        // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
-        $recurring_payment_object->amount_paid = number_format($recurring_payment_object->amount_paid, 8);
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+        $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->amount_paid);
 
         /**
          * 3) Presents a form containing data from the record and asking for confirmation to delete.

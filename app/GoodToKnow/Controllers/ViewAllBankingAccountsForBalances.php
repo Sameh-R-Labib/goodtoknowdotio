@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 
 
@@ -61,7 +62,8 @@ class ViewAllBankingAccountsForBalances
             $object->start_time = self::get_readable_time($object->start_time);
             $object->comment = nl2br($object->comment, false);
             // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
-            $object->start_balance = number_format($object->start_balance, 8);
+            require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+            $object->start_balance = readable_amount_of_money($object->start_balance);
         }
 
         $sessionMessage .= ' Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s. ';

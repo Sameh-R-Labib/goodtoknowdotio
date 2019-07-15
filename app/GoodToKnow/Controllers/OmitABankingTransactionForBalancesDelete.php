@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingTransactionForBalances;
 
 
@@ -81,7 +82,8 @@ class OmitABankingTransactionForBalancesDelete
          *         - time
          */
         $object->time = self::get_readable_time($object->time);
-        $object->amount = number_format($object->amount, 8);
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+        $object->amount = readable_amount_of_money($object->amount);
 
         $html_title = 'Are you sure?';
 
