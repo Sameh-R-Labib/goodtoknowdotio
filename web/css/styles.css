@@ -127,10 +127,10 @@ select, input {
 }
 
 table {
-    max-width: 900px;
+    max-width: 720px;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
-    margin: 0 auto 20px 50px;
+    margin: 30px auto 20px 70px;
 }
 
 th {
