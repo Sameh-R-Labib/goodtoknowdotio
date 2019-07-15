@@ -61,8 +61,8 @@
         foreach ($array as $transaction): ?>
             <tr>
                 <td><?= $transaction->time ?></td>
-                <td><?= $transaction->label ?></td>
-                <td><?= $transaction->amount ?></td>
+                <td align="right"><?= $transaction->label ?></td>
+                <td align="right"><?= $transaction->amount ?></td>
                 <td><?= $transaction->balance ?></td>
             </tr>
         <?php endforeach; ?>
