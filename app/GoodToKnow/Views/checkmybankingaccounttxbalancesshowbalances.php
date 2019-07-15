@@ -63,7 +63,7 @@
                 <td><?= $transaction->time ?></td>
                 <td align="right"><?= $transaction->label ?></td>
                 <td align="right"><?= $transaction->amount ?></td>
-                <td><?= $transaction->balance ?></td>
+                <td align="right"><?= $transaction->balance ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
