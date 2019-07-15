@@ -117,6 +117,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * - start_time [human readable time]
          * - start_balance [comma separator for thousands]
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         foreach ($array as $transaction) {
             $transaction->amount = readable_amount_of_money($transaction->amount);
             $transaction->balance = readable_amount_of_money($transaction->balance);

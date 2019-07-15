@@ -19,6 +19,7 @@ define('VENDOR_DIR', PROJ_ROOT . DIRSEP . 'vendor');
  */
 define('VIEWS', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Views');
 define('VIEWSINCLUDES', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsIncludes');
+define('CONTROLLERHELPERS', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerHelpers');
 
 define('TOP', VIEWSINCLUDES . DIRSEP . 'top.php');
 define('BOTTOM', VIEWSINCLUDES . DIRSEP . 'bottom.php');
