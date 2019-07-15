@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 use GoodToKnow\Models\BankingTransactionForBalances;
 
@@ -117,13 +118,13 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * - start_balance [comma separator for thousands]
          */
         foreach ($array as $transaction) {
-            $transaction->amount = number_format($transaction->amount, 8);
-            $transaction->balance = number_format($transaction->balance, 8);
+            $transaction->amount = readable_amount_of_money($transaction->amount);
+            $transaction->balance = readable_amount_of_money($transaction->balance);
             $transaction->time = self::get_readable_time($transaction->time);
         }
 
         $account->start_time = self::get_readable_time($account->start_time);
-        $account->start_balance = number_format($account->start_balance, 8);
+        $account->start_balance = readable_amount_of_money($account->start_balance);
 
         $html_title = 'Transactions';
 
