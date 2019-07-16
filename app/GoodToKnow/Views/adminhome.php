@@ -68,6 +68,7 @@
         <li><a href="/ax1/RevampABankingTransactionForBalances/page">Edit a 🏦ing 🔃 for ⚖️s</a></li>
         <li><a href="/ax1/CheckMyBankingAccountTxBalances/page">Check my 🏦ing 📋 ⚖️s</a></li>
         <li><a href="/ax1/OmitABankingTransactionForBalances/page">Delete a 🏦ing 🔃 for ⚖️s</a></li>
+        <li><a href="/ax1/ConceiveAPossibleTaxDeduction/page">Create a 🤔 Tax ✍🏽</a></li>
     </ul>
     <h2>♠👔♠ 🧰s</h2>
     <ul>
