@@ -22,7 +22,7 @@ class AdminCreateUser
         global $is_admin;
         global $saved_int01; // choice
 
-        if (!$is_logged_in OR !$is_admin) {
+        if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
