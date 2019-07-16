@@ -16,7 +16,7 @@
 </head>
 <body>
 <form action="/ax1/BuildABankingTransactionForBalancesProcessor/page" method="post">
-    <h2>Initialize the record with its banking_transaction_for_balances label and time</h2>
+    <h2>Initialize the banking_transaction_for_balances record with its label and time</h2>
     <p>
         <small>✅ emoji for the label.</small>
     </p>
