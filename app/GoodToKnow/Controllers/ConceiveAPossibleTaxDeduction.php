@@ -26,5 +26,16 @@ class ConceiveAPossibleTaxDeduction
          * record.
          */
 
+        global $is_logged_in;
+        global $sessionMessage;
+
+        if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $html_title = 'Create a New Possible Tax Deduction';
+
+        require VIEWS . DIRSEP . 'conceiveapossibletaxdeduction.php';
     }
 }
