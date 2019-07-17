@@ -28,7 +28,7 @@
         <p>
             <label for="label">🏦ing 🔃 for ⚖️ Label: </label>
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
-                   size="96" spellcheck="false"
+                   size="61" spellcheck="false"
                    placeholder="Monthly Linode hosting Fees for Web server of goodtoknow.io">
         </p>
         <p>
