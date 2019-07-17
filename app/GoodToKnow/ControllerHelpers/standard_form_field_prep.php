@@ -27,6 +27,7 @@ function standard_form_field_prep(string $field_name, int $min_length, int $max_
      * then an empty string is returned by the function.
      *
      * How does it prep the data?
+     * - It makes sure the string exists.
      * - It makes sure the string is trimmed.
      * - It makes sure the string is not too short.
      * - It makes sure the string is not too long.
