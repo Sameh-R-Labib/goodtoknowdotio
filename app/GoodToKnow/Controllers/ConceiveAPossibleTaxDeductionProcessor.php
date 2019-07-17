@@ -6,6 +6,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use GoodToKnow\Models\PossibleTaxDeduction;
 
 
 class ConceiveAPossibleTaxDeductionProcessor
@@ -60,5 +61,43 @@ class ConceiveAPossibleTaxDeductionProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        /**
+         * Use the submitted data to add a record to the database.
+         */
+
+        $db = db_connect($sessionMessage);
+
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $array_record = ['user_id' => $user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => ''];
+
+        // In memory object.
+        $object = PossibleTaxDeduction::array_to_object($array_record);
+
+        $result = $object->save($db, $sessionMessage);
+        if (!$result) {
+            $sessionMessage .= ' The object\'s save method returned false. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        if (!empty($sessionMessage)) {
+            $sessionMessage .= ' The object\'s save method did not return false but it did send
+            back a message. Therefore, it probably did not create a new record. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * Wrap it up.
+         */
+        $sessionMessage .= " A new Possible Tax Deduction record was created! ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }

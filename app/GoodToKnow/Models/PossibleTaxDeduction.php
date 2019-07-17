@@ -14,12 +14,17 @@ class PossibleTaxDeduction extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'label', 'year_paid', 'comment'];
+    protected static $fields = ['id', 'user_id', 'label', 'year_paid', 'comment'];
 
     /**
      * @var int
      */
     public $id;
+
+    /**
+     * @var int
+     */
+    public $user_id;
 
     /**
      * @var string
