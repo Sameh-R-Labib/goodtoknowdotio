@@ -36,7 +36,7 @@ class AlterAPossibleTaxDeductionEdit
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $id = integer_form_field_prep('choice', 1, PHP_INT_SIZE);
+        $id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
         if (is_null($id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
