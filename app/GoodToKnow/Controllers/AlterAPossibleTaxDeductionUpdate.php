@@ -6,6 +6,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use GoodToKnow\Models\PossibleTaxDeduction;
 
 
 class AlterAPossibleTaxDeductionUpdate
@@ -19,6 +20,7 @@ class AlterAPossibleTaxDeductionUpdate
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
+         * 5) Report success.
          */
 
         global $is_logged_in;
@@ -28,7 +30,6 @@ class AlterAPossibleTaxDeductionUpdate
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,17 +52,76 @@ class AlterAPossibleTaxDeductionUpdate
         if (is_null($edited_label)) {
             $sessionMessage .= " Your label did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
+        $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
-        if (is_null($year_paid)) {
+        if (is_null($edited_year_paid)) {
             $sessionMessage .= " Your year_paid did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
+        $edited_comment = standard_form_field_prep('comment', 0, 800);
+
+        if (is_null($edited_comment)) {
+            $sessionMessage .= " Your comment did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 2) Retrieve the existing record from the database.
+         */
+        $db = db_connect($sessionMessage);
+
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $saved_int01);
+
+        if (!$object) {
+            $sessionMessage .= " Unexpectedly I could not find that record. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 3) Modify the retrieved record by updating it with the submitted data.
+         */
+        $object->label = $edited_label;
+        $object->year_paid = $edited_year_paid;
+        $object->comment = $edited_comment;
+
+        /**
+         * 4) Update/save the updated record in the database.
+         */
+        $result = $object->save($db, $sessionMessage);
+        if ($result === false) {
+            $sessionMessage .= " I aborted because I failed at saving the updated object. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 5) Report success.
+         */
+        $sessionMessage .= " I've successfully updated the <b>{$object->label}</b> record. ";
+        $_SESSION['message'] = $sessionMessage;
+        $_SESSION['saved_int01'] = 0;
+        redirect_to("/ax1/Home/page");
     }
 }

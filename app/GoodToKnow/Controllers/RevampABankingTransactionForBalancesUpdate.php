@@ -17,6 +17,7 @@ class RevampABankingTransactionForBalancesUpdate
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
+         * 5) Report success.
          */
 
         global $is_logged_in;
@@ -98,9 +99,9 @@ class RevampABankingTransactionForBalancesUpdate
         }
 
         /**
-         * Report success.
+         * 5) Report success.
          */
-        $sessionMessage .= " I've successfully updated the BankingTransactionForBalances <b>{$object->label}</b> record. ";
+        $sessionMessage .= " I've successfully updated the <b>{$object->label}</b> record. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         $_SESSION['saved_int02'] = 0;
