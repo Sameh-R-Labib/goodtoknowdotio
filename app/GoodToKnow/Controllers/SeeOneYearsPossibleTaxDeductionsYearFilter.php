@@ -65,9 +65,9 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
             redirect_to("/ax1/Home/page");
         }
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at all your 🤔 Tax ✍🏽🔽s. ';
+        $sessionMessage .= ' Enjoy ʘ‿ʘ at One Year of your 🤔 Tax ✍🏽🔽s. ';
 
-        $html_title = 'Enjoy ʘ‿ʘ at all your 🤔 Tax ✍🏽🔽s.';
+        $html_title = 'Enjoy ʘ‿ʘ at One Year of your your 🤔 Tax ✍🏽🔽s.';
 
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }
