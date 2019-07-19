@@ -65,6 +65,8 @@ class RecurringPaymentSeeMyRecords
             $object->amount_paid = readable_amount_of_money($object->amount_paid);
         }
 
+        $html_title = 'Enjoy ʘ‿ʘ at your 🌀 💳 📽s.';
+
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🌀 💳 📽s. ';
 
         require VIEWS . DIRSEP . 'recurringpaymentseemyrecords.php';

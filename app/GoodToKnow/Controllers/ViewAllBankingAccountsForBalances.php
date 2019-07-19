@@ -66,6 +66,8 @@ class ViewAllBankingAccountsForBalances
             $object->start_balance = readable_amount_of_money($object->start_balance);
         }
 
+        $html_title = 'Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s.';
+
         $sessionMessage .= ' Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s. ';
 
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';

@@ -59,6 +59,8 @@ class BitcoinSeeMyRecords
             $bitcoin_object->current_balance = number_format($bitcoin_object->current_balance, 8);
         }
 
+        $html_title = 'Enjoy ʘ‿ʘ at your ₿💰.';
+
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿💰. ';
 
         require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';

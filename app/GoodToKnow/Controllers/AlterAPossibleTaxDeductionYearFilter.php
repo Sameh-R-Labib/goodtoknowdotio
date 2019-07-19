@@ -14,7 +14,7 @@ class AlterAPossibleTaxDeductionYearFilter
     {
         /**
          * 1) Validate the submitted year_paid.
-         * 2) Present the PossibleTaxDeduction which fall in that year as radio buttons.
+         * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
          */
 
         global $is_logged_in;
@@ -46,7 +46,7 @@ class AlterAPossibleTaxDeductionYearFilter
         }
 
         /**
-         * 2) Present the PossibleTaxDeduction which fall in that year as radio buttons.
+         * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
          */
         $db = db_connect($sessionMessage);
 
