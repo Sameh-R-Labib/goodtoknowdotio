@@ -70,6 +70,7 @@
         <li><a href="/ax1/OmitABankingTransactionForBalances/page">Delete a 🏦ing 🔃 for ⚖️s</a></li>
         <li><a href="/ax1/ConceiveAPossibleTaxDeduction/page">Create a 🤔 Tax ✍🏽🔽</a></li>
         <li><a href="/ax1/AlterAPossibleTaxDeduction/page">Edit a 🤔 Tax ✍🏽🔽</a></li>
+        <li><a href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's 🤔 Tax ✍🏽🔽s</a></li>
     </ul>
     <h2>♠👔♠ 🧰s</h2>
     <ul>
