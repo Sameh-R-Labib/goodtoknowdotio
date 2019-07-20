@@ -20,6 +20,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
         global $is_logged_in;
         global $sessionMessage;
         global $user_id;
+        global $is_admin;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
