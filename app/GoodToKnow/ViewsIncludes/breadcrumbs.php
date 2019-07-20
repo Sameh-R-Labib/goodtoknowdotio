@@ -11,6 +11,8 @@ elseif ($page === 'ViewAllBankingAccountsForBalances')
     echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">View All Banking Accounts For Balances</a>";
 elseif ($page === 'CheckMyBankingAccountTxBalances')
     echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">Check My Banking Account Transactions For Balances</a>";
+elseif ($page === 'SeeOneYearsPossibleTaxDeductions')
+    echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">See One Years Possible Deductions</a>";
 else {
     require CURRENTCOMMUNITY;
     require CURRENTTOPIC;

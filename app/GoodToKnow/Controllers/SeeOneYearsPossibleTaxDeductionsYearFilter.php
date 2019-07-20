@@ -69,6 +69,10 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         $html_title = 'Enjoy ʘ‿ʘ at One Year of your your 🤔 Tax ✍🏽🔽s.';
 
+        $page = 'SeeOneYearsPossibleTaxDeductions';
+
+        $show_poof = true;
+
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }
 }
