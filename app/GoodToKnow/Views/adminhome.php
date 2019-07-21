@@ -89,6 +89,7 @@
         <li><a href="/ax1/KommunityDescriptionEditor/page">🧑🏿‍🤝‍🧑🏽 Description Editor</a></li>
         <li><a href="/ax1/TopicDescriptionEditor/page">Topic Description Editor</a></li>
         <li><a href="/ax1/PurgeNinetyDayOldBTFBs/page">Purge 90 Day Old 🏦ing 🔃 for ⚖️s</a></li>
+        <li><a href="/ax1/LiquidateYearsPossibleTaxDeductions/page">Purge a Specific Year's 🤔 Tax ✍🏽🔽s</a></li>
     </ul>
     <hr>
     <h2 class="topofpage">Instruction to users</h2>
