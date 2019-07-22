@@ -16,5 +16,17 @@ class WipeOutAPossibleTaxDeduction
          * to narrow down the choices for which
          * possible_tax_deduction to delete.
          */
+
+        global $is_logged_in;
+        global $sessionMessage;
+
+        if (!$is_logged_in || !empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $html_title = 'Which year_paid for filtering your tax deduction choices?';
+
+        require VIEWS . DIRSEP . 'wipeoutapossibletaxdeduction.php';
     }
 }
