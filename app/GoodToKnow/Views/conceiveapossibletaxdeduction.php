@@ -16,7 +16,8 @@
 </head>
 <body>
 <form action="/ax1/ConceiveAPossibleTaxDeductionProcessor/page" method="post">
-    <h2>Initialize the possible_tax_deduction record with its label and year_paid</h2>
+    <h2>Initialize the possible_tax_deduction record</h2>
+    <p>* Records will be deleted automatically after the fourth year. *</p>
     <p>
         <small>✅ emoji for the label.</small>
     </p>
