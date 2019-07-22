@@ -32,6 +32,13 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
             redirect_to("/ax1/Home/page");
         }
 
+        $db = db_connect($sessionMessage);
+        if (!empty($sessionMessage) || $db === false) {
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
         /**
          *  1) Validate the submitted year_paid.
          */
@@ -48,5 +55,35 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
         /**
          * 2) Delete the possible_tax_deduction which have the specified year_paid.
          */
+        $num_affected_rows = 0;
+        $sql = 'DELETE FROM `possible_tax_deduction` WHERE `year_paid` = ';
+        $sql .= $db->real_escape_string($year_paid);
+
+        try {
+            $db->query($sql);
+            $query_error = $db->error;
+            if (!empty(trim($query_error))) {
+                $sessionMessage .= ' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $_SESSION['message'] = $sessionMessage;
+                redirect_to("/ax1/Home/page");
+            }
+            $num_affected_rows = $db->affected_rows;
+        } catch (\Exception $e) {
+            $sessionMessage .= ' LiquidateYearsPossibleTaxDeductionsGetYear page() exception: ' .
+                htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        }
+
+        if (!empty($sessionMessage)) {
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 3) Give confirmation of deletion.
+         */
+        $sessionMessage .= " The purge of PossibleTaxDeductions for the year <b>{$year_paid}</b> has deleted <b>";
+        $sessionMessage .= $num_affected_rows . "</b> records. ";
+        $_SESSION['message'] = $sessionMessage;
+        redirect_to("/ax1/Home/page");
     }
 }

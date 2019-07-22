@@ -69,7 +69,7 @@ class PurgeNinetyDayOldBTFBs
          * 3) Set a confirmation message in the session.
          * 4) Redirect to Home page.
          */
-        $sessionMessage .= " The purge of BankingTransactionForBalances older than 90 days has successfully deleted <b>";
+        $sessionMessage .= " The purge of BankingTransactionForBalances older than 90 days has deleted <b>";
         $sessionMessage .= $num_affected_rows . "</b> records. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
