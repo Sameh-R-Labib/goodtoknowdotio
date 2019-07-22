@@ -27,13 +27,13 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">🏦ing 🔃 for ⚖️ Label: </label>
+            <label for="label">🤔 Tax ✍🏽🔽 Label: </label>
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
                    size="61" spellcheck="false"
                    placeholder="Monthly Linode hosting Fees for Web server of goodtoknow.io">
         </p>
         <p>
-            <label for="year_paid">Year You Made The Expenditure: </label>
+            <label for="year_paid">Year You Made the Expenditure: </label>
             <input id="year_paid" name="year_paid" type="text" value="" required minlength="4" maxlength="6"
                    size="6" placeholder="2018">
         </p>
