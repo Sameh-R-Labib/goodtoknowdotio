@@ -4,6 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+
+
 class LiquidateYearsPossibleTaxDeductionsGetYear
 {
     public function page()
@@ -22,5 +25,28 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
+        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
+            $sessionMessage .= " You've aborted the task! Session variables reset. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         *  1) Validate the submitted year_paid.
+         */
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
+
+        if (is_null($year_paid)) {
+            $sessionMessage .= " Your year_paid did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
+         * 2) Delete the possible_tax_deduction which have the specified year_paid.
+         */
     }
 }
