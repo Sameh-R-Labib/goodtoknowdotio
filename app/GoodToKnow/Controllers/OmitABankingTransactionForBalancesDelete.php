@@ -21,7 +21,6 @@ class OmitABankingTransactionForBalancesDelete
 
         global $is_logged_in;
         global $sessionMessage;
-        global $user_id;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
