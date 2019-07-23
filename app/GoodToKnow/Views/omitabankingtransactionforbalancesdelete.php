@@ -21,8 +21,8 @@
     <p>&nbsp;</p>
     <p><b>Label: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $object->label; ?></p>
-    <p>🕒<b>: </b><?php echo $object->time; ?></p>
-    <p><b>Amount: </b><?php echo $object->amount; ?></p>
+    <p>🕒<b>: </b><?= $object->time ?></p>
+    <p><b>Amount: </b><?= $object->amount ?></p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">
