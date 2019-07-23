@@ -21,7 +21,7 @@
     <p>&nbsp;</p>
     <p><b>Label: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $object->label; ?></p>
-    <p>Year Paid<b>: </b><?= $object->year_paid ?></p>
+    <p><b>Year Paid: </b><?= $object->year_paid ?></p>
     <p>&nbsp;</p>
     <p><?= $object->comment ?></p>
     <section>
