@@ -25,6 +25,8 @@
     <p><b>Start ⚖️: </b><?= $object->start_balance ?></p>
     <p>&nbsp;</p>
     <p><?= $object->comment ?></p>
+    <p>&nbsp;</p>
+    <p>Are you sure you want to delete this?</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

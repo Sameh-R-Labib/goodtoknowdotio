@@ -23,6 +23,8 @@
         echo $object->label; ?></p>
     <p>🕒<b>: </b><?= $object->time ?></p>
     <p><b>Amount: </b><?= $object->amount ?></p>
+    <p>&nbsp;</p>
+    <p>Are you sure you want to delete this?</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

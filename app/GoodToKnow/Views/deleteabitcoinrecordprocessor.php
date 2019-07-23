@@ -28,8 +28,7 @@
     <p>&nbsp;</p>
     <p><?= $bitcoin_object->comment ?></p>
     <p>&nbsp;</p>
-    <p>Are you sure you want me to delete "<?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $bitcoin_object->address; ?>".</p>
+    <p>Are you sure you want me to delete "<?= $bitcoin_object->address ?>".</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">
