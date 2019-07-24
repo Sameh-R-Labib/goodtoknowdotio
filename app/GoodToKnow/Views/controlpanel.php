@@ -73,7 +73,7 @@
         <li><a href="/ax1/AlterAPossibleTaxDeduction/page">Edit a 🤔 Tax ✍🏽🔽</a></li>
         <li><a href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's 🤔 Tax ✍🏽🔽s</a></li>
         <li><a href="/ax1/WipeOutAPossibleTaxDeduction/page">Delete a 🤔 Tax ✍🏽🔽s</a></li>
-        <li><a href="/ax1/InduceATask/page">Create a 💪 Task</a></li>
+        <li><a href="/ax1/InduceATask/page">Create a To Do Task/💪</a></li>
     </ul>
     <hr>
     <h2 class="topofpage">Instruction to users</h2>
