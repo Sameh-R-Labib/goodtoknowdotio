@@ -42,7 +42,7 @@
     </p>
     <p>
         <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
-        <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
+        <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
                   placeholder="The frequency of this payment is _ _ _ _."><?= $recurring_payment_object->comment ?></textarea>
     </p>
     <section>
