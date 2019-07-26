@@ -59,7 +59,7 @@ class AlterAPossibleTaxDeductionEdit
 
         $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $id);
         if (!$object) {
-            $sessionMessage .= " Unexpectedly I could not find that possible_tax_deduction record. ";
+            $sessionMessage .= " Unexpectedly, I could not find that possible_tax_deduction record. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
