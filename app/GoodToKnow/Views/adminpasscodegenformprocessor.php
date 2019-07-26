@@ -71,7 +71,7 @@
         <label for="box1">Description <strong><abbr title="required">*</abbr></strong> (🚫 html 🚫 markdown ✅ emoji ✅
             line-break):
         </label>
-        <textarea id="box1" name="comment" rows="5" cols="71" wrap="soft" maxlength="800"
+        <textarea id="box1" name="comment" rows="5" cols="71" wrap="soft" maxlength="800" spellcheck="false"
                   placeholder="How'd we meet?"></textarea>
     </p>
     <p>
