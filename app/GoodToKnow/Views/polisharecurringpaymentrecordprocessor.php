@@ -41,7 +41,7 @@
                size="22" placeholder="1560190617">
     </p>
     <p>
-        <label for="comment">Comment (🚫 html 🚫 markdown ✅ emoji ✅ line-break): </label>
+        <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" required
                   placeholder="The frequency of this payment is _ _ _ _."><?= $recurring_payment_object->comment ?></textarea>
     </p>
