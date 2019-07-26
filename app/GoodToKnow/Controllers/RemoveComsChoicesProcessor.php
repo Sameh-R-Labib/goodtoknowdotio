@@ -162,7 +162,7 @@ class RemoveComsChoicesProcessor
         /**
          * Declare success.
          */
-        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s to-be-removed communities were removed successfully! ";
+        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s to-be-removed communities were removed! ";
         $_SESSION['saved_int01'] = 0;
         $_SESSION['saved_str01'] = "";
         redirect_to("/ax1/Home/page");

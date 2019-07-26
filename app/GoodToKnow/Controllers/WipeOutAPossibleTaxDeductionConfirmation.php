@@ -77,7 +77,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
         }
 
         // Report successful deletion of post.
-        $sessionMessage .= " I have successfully deleted the 🤔 Tax ✍🏽🔽. ";
+        $sessionMessage .= " I have deleted the 🤔 Tax ✍🏽🔽. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");

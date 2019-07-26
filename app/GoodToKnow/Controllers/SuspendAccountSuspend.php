@@ -84,7 +84,7 @@ class SuspendAccountSuspend
         /**
          * 4) Show a message indicating we've successfully suspended the user's account.
          */
-        $sessionMessage .= " User {$saved_str01}'s account has been suspended successfully! Yay 😎 👍 ";
+        $sessionMessage .= " User {$saved_str01}'s account has been suspended! Yay 😎 👍 ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_str01'] = "";
         redirect_to("/ax1/Home/page");

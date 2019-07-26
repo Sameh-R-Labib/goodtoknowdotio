@@ -144,7 +144,7 @@ class GiveComsChoicesProcessor
         /**
          * Declare success.
          */
-        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s new communities were assigned to {$saved_str01} successfully! ";
+        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s new communities were assigned to {$saved_str01}! ";
         $_SESSION['saved_int01'] = 0;
         $_SESSION['saved_str01'] = "";
         redirect_to("/ax1/Home/page");

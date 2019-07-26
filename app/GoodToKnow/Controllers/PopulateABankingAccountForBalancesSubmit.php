@@ -102,7 +102,7 @@ class PopulateABankingAccountForBalancesSubmit
         /**
          * Report success.
          */
-        $sessionMessage .= " I've successfully updated the BankingAcctForBalances <b>{$object->acct_name}</b> record. ";
+        $sessionMessage .= " I've updated the BankingAcctForBalances <b>{$object->acct_name}</b> record. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");

@@ -124,7 +124,7 @@ class BroadcastMsgProcessor
         /**
          * Declare success.
          */
-        $_SESSION['message'] = " Your message to all users was sent successfully! ";
+        $_SESSION['message'] = " Your message to all users was sent! ";
         redirect_to("/ax1/Home/page");
     }
 }

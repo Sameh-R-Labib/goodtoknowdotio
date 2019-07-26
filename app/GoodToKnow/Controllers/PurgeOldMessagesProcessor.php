@@ -110,7 +110,7 @@ class PurgeOldMessagesProcessor
          *
          * Redirect to Home page
          */
-        $sessionMessage .= " The purge of old messages completed successfully. ";
+        $sessionMessage .= " The purge of old messages completed. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

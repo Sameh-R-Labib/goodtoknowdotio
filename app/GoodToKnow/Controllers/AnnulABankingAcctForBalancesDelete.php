@@ -78,7 +78,7 @@ class AnnulABankingAcctForBalancesDelete
 
         // Report successful deletion of post.
         $_SESSION['saved_int01'] = 0;
-        $sessionMessage .= " I have successfully deleted the 🏦ing 📒 for ⚖️s. ";
+        $sessionMessage .= " I have deleted the 🏦ing 📒 for ⚖️s. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

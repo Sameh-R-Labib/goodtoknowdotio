@@ -105,7 +105,7 @@ class PolishARecurringPaymentRecordSubmit
         /**
          * 5) Report success.
          */
-        $sessionMessage .= " I've successfully updated <b>{$recurring_payment_object->label}</b>. ";
+        $sessionMessage .= " I've updated <b>{$recurring_payment_object->label}</b>. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");

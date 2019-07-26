@@ -83,7 +83,7 @@ class OmitABankingTranForBalancesProcessConfirmation
         }
 
         // Report successful deletion of post.
-        $sessionMessage .= " I have successfully deleted the 🏦ing 🔃 for ⚖️s. ";
+        $sessionMessage .= " I have deleted the 🏦ing 🔃 for ⚖️s. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         $_SESSION['saved_int02'] = 0;

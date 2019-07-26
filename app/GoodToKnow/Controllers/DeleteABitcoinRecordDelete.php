@@ -77,7 +77,7 @@ class DeleteABitcoinRecordDelete
 
         // Report successful deletion of post.
         $_SESSION['saved_int01'] = 0;
-        $sessionMessage .= " I have successfully deleted the ₿ record. ";
+        $sessionMessage .= " I have deleted the ₿ record. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

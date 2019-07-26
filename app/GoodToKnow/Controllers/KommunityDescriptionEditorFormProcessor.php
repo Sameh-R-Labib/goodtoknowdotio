@@ -124,7 +124,7 @@ class KommunityDescriptionEditorFormProcessor
         /**
          * Report success.
          */
-        $sessionMessage .= " I have successfully updated {$saved_str01}'s record. ";
+        $sessionMessage .= " I have updated {$saved_str01}'s record. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         $_SESSION['saved_str01'] = "";

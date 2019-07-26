@@ -159,7 +159,7 @@ class ByUsernameMessageSave
         /**
          * Declare success.
          */
-        $_SESSION['message'] = " Your message to {$saved_str01} was sent successfully! ";
+        $_SESSION['message'] = " Your message to {$saved_str01} was sent! ";
         $_SESSION['saved_str01'] = "";
         redirect_to("/ax1/Home/page");
     }

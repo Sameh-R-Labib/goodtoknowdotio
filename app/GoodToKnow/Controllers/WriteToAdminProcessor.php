@@ -127,7 +127,7 @@ class WriteToAdminProcessor
          * Declare success.
          */
         $admin_username = ADMINUSERNAME;
-        $_SESSION['message'] = " Your message to {$admin_username} was sent successfully! ";
+        $_SESSION['message'] = " Your message to {$admin_username} was sent! ";
         redirect_to("/ax1/Home/page");
     }
 }

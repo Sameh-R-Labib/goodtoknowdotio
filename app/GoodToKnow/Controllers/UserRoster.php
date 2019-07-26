@@ -80,7 +80,7 @@ class UserRoster
             $readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
         }
 
-        $sessionMessage .= " I have successfully generated the User Roster (<em>shown below.</em>) ";
+        $sessionMessage .= " I have generated the User Roster (<em>shown below.</em>) ";
 
         require VIEWS . DIRSEP . 'userroster.php';
     }

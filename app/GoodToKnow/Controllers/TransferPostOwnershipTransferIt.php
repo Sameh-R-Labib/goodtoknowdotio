@@ -94,7 +94,7 @@ class TransferPostOwnershipTransferIt
         }
 
         // Report success.
-        $sessionMessage .= " I have successfully updated the \"{$post_object->title}\" post's record so that now it
+        $sessionMessage .= " I have updated the \"{$post_object->title}\" post's record so that now it
          belongs to <b>{$username}</b>. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;

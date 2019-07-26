@@ -118,7 +118,7 @@ class AlterAPossibleTaxDeductionUpdate
         /**
          * 5) Report success.
          */
-        $sessionMessage .= " I've successfully updated <b>{$object->label}</b>. ";
+        $sessionMessage .= " I've updated <b>{$object->label}</b>. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");

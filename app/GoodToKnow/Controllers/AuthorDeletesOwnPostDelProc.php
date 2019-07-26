@@ -166,7 +166,7 @@ class AuthorDeletesOwnPostDelProc
         $_SESSION['saved_str02'] = "";
         $_SESSION['saved_int01'] = 0;
         $_SESSION['saved_int02'] = 0;
-        $sessionMessage .= " I have successfully deleted the post. ";
+        $sessionMessage .= " I have deleted the post. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

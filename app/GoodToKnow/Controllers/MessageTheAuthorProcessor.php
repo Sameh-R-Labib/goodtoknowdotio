@@ -126,7 +126,7 @@ class MessageTheAuthorProcessor
         /**
          * Declare success.
          */
-        $_SESSION['message'] = " Your message to {$author_username} was sent successfully! ";
+        $_SESSION['message'] = " Your message to {$author_username} was sent! ";
         redirect_to("/ax1/Home/page");
     }
 }
