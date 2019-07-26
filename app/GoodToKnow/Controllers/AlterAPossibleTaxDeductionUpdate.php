@@ -50,7 +50,7 @@ class AlterAPossibleTaxDeductionUpdate
         $edited_label = standard_form_field_prep('label', 3, 264);
 
         if (is_null($edited_label)) {
-            $sessionMessage .= " Your label did not pass validation. ";
+            $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
@@ -61,7 +61,7 @@ class AlterAPossibleTaxDeductionUpdate
         $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
         if (is_null($edited_year_paid)) {
-            $sessionMessage .= " Your year_paid did not pass validation. ";
+            $sessionMessage .= " The year_paid you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
@@ -70,7 +70,7 @@ class AlterAPossibleTaxDeductionUpdate
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
         if (is_null($edited_comment)) {
-            $sessionMessage .= " Your comment did not pass validation. ";
+            $sessionMessage .= " The comment you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
@@ -85,7 +85,6 @@ class AlterAPossibleTaxDeductionUpdate
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
@@ -119,7 +118,7 @@ class AlterAPossibleTaxDeductionUpdate
         /**
          * 5) Report success.
          */
-        $sessionMessage .= " I've successfully updated the <b>{$object->label}</b> record. ";
+        $sessionMessage .= " I've successfully updated <b>{$object->label}</b>. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");

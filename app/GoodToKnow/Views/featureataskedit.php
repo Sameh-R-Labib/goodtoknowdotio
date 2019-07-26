@@ -41,9 +41,7 @@
         <p>
             <label for="cycle_type">Cycle Type: </label>
             <input id="cycle_type" name="cycle_type" type="text" value="<?= $object->cycle_type ?>" required
-                   minlength="3"
-                   maxlength="60" size="60" spellcheck="false"
-                   placeholder="Example: monthly">
+                   minlength="3" maxlength="60" size="60" spellcheck="false" placeholder="Example: monthly">
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
