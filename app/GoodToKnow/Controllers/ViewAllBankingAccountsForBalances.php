@@ -35,8 +35,6 @@ class ViewAllBankingAccountsForBalances
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'All my BankingAccountsForBalances';
-
         $page = 'ViewAllBankingAccountsForBalances';
 
         $show_poof = true;
@@ -54,10 +52,8 @@ class ViewAllBankingAccountsForBalances
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
-         * And apply htmlspecialchars if necessary.
          */
         foreach ($array_of_objects as $object) {
-            $object->acct_name = htmlspecialchars($object->acct_name);
             // Transform the start_time to a human readable format.
             $object->start_time = self::get_readable_time($object->start_time);
             $object->comment = nl2br($object->comment, false);
@@ -65,6 +61,10 @@ class ViewAllBankingAccountsForBalances
             require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
             $object->start_balance = readable_amount_of_money($object->start_balance);
         }
+
+        $page = 'ViewAllBankingAccountsForBalances';
+
+        $show_poof = true;
 
         $html_title = 'Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s.';
 
