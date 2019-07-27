@@ -149,7 +149,7 @@ $pre_populate = '';
 $array = [];
 $markdown = '';
 $coms_user_belongs_to = [];
-$show_poof = true;
+$show_poof = false;
 
 
 /**

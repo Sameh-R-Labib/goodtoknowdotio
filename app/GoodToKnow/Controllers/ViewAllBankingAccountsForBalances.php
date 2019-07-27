@@ -35,10 +35,6 @@ class ViewAllBankingAccountsForBalances
             redirect_to("/ax1/Home/page");
         }
 
-        $page = 'ViewAllBankingAccountsForBalances';
-
-        $show_poof = true;
-
         /**
          * Get an array of BankingAcctForBalances objects for the user who has id == $user_id.
          */
