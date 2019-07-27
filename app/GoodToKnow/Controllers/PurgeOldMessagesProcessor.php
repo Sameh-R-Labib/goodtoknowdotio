@@ -14,7 +14,7 @@ use GoodToKnow\Models\Message;
 
 class PurgeOldMessagesProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * This code will:

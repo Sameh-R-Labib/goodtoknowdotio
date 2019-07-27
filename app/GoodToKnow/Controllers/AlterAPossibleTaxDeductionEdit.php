@@ -9,7 +9,7 @@ use GoodToKnow\Models\PossibleTaxDeduction;
 
 class AlterAPossibleTaxDeductionEdit
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted possible_tax_deduction id in the session.

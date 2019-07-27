@@ -10,7 +10,7 @@ namespace GoodToKnow\Controllers;
 
 class EditMyPostProcessor
 {
-    public function page()
+    function page()
     {
         global $special_topic_array;
         global $is_logged_in;

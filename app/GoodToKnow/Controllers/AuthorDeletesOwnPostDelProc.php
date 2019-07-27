@@ -10,7 +10,7 @@ use GoodToKnow\Models\TopicToPost;
 
 class AuthorDeletesOwnPostDelProc
 {
-    public function page()
+    function page()
     {
         /**
          * Here we will read the choice of whether

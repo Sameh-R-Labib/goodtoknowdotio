@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class EditMyPostEditProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * The purpose is to validate,

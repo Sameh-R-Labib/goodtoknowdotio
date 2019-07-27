@@ -8,7 +8,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class PolishARecurringPaymentRecordProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted recurring_payment record id in the session.

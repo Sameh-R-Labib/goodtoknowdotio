@@ -14,7 +14,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class CreateNewPost
 {
-    public function page()
+    function page()
     {
         /**
          * This is the first of a series of routes

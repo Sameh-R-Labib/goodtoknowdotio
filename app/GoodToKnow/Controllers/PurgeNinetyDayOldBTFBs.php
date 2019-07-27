@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class PurgeNinetyDayOldBTFBs
 {
-    public function page()
+    function page()
     {
         /**
          * This is for deleting the BankingTransactionForBalances which are older

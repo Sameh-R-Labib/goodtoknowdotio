@@ -14,7 +14,7 @@ use GoodToKnow\Models\User;
 
 class TransferPostOwnershipGetPost
 {
-    public function page()
+    function page()
     {
         /**
          * This route will (1) determine

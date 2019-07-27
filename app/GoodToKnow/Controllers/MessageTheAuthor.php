@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class MessageTheAuthor
 {
-    public function page()
+    function page()
     {
         /**
          * This function presents a form where

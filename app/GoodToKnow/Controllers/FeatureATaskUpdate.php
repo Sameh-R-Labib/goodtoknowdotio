@@ -11,7 +11,7 @@ use GoodToKnow\Models\Task;
 
 class FeatureATaskUpdate
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

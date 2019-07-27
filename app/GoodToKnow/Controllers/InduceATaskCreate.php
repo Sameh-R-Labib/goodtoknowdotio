@@ -10,7 +10,7 @@ use GoodToKnow\Models\Task;
 
 class InduceATaskCreate
 {
-    public function page()
+    function page()
     {
         /**
          * Create a database record in the task

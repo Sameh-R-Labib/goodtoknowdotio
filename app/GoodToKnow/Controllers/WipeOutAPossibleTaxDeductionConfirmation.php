@@ -9,7 +9,7 @@ use GoodToKnow\Models\PossibleTaxDeduction;
 
 class WipeOutAPossibleTaxDeductionConfirmation
 {
-    public function page()
+    function page()
     {
         /**
          * Here we will read the choice of whether

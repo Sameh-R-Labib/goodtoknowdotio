@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class WipeOutAPossibleTaxDeduction
 {
-    public function page()
+    function page()
     {
         /**
          * Ultimately, this is about deleting a PossibleTaxDeduction.

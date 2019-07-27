@@ -16,7 +16,7 @@ use GoodToKnow\Models\User;
 
 class BroadcastMsgProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * This function takes the submitted broadcastmsg.php

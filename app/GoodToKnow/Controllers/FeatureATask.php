@@ -8,7 +8,7 @@ use GoodToKnow\Models\Task;
 
 class FeatureATask
 {
-    public function page()
+    function page()
     {
         /**
          * Present the Task(s/plural) as radio buttons.

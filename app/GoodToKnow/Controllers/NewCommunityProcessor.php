@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class NewCommunityProcessor
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $sessionMessage;

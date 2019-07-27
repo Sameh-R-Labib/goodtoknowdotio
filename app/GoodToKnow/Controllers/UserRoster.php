@@ -15,7 +15,7 @@ use GoodToKnow\Models\User;
 
 class UserRoster
 {
-    public function page()
+    function page()
     {
         global $sessionMessage;
         global $is_logged_in;

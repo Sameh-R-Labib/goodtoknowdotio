@@ -9,7 +9,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class LiquidateYearsPossibleTaxDeductionsGetYear
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Validate the submitted year_paid.

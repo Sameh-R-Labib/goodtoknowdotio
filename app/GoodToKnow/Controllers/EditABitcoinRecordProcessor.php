@@ -8,7 +8,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class EditABitcoinRecordProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted bitcoin record id in the session.

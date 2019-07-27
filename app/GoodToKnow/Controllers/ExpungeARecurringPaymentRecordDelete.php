@@ -8,7 +8,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class ExpungeARecurringPaymentRecordDelete
 {
-    public function page()
+    function page()
     {
         /**
          * Here we will read the choice of whether

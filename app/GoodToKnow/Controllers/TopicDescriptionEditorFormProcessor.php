@@ -9,7 +9,7 @@ use GoodToKnow\Models\Topic;
 
 class TopicDescriptionEditorFormProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * The purpose is to:

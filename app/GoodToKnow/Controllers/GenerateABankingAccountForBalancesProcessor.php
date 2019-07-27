@@ -8,7 +8,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class GenerateABankingAccountForBalancesProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Create a database record in the banking_acct_for_balances

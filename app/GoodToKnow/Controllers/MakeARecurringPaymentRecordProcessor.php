@@ -8,7 +8,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class MakeARecurringPaymentRecordProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Create a database record in the

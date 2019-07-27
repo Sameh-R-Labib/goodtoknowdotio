@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class DefaultCommunity
 {
-    public function page()
+    function page()
     {
         global $sessionMessage;
         global $is_logged_in;

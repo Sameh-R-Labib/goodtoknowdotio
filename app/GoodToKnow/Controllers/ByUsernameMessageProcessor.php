@@ -14,7 +14,7 @@ use GoodToKnow\Models\User;
 
 class ByUsernameMessageProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Basically what needs to get accomplished here is

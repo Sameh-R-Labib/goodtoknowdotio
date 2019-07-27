@@ -13,7 +13,7 @@ use GoodToKnow\Models\Post;
 
 class EditMyPostEditor
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $sessionMessage;

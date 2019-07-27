@@ -9,7 +9,7 @@ use GoodToKnow\Models\Community;
 
 class KommunityDescriptionEditorFormProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * The purpose is to:

@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class RevampABankingTransactionForBalances
 {
-    public function page()
+    function page()
     {
         /**
          * This page is going to present some radio

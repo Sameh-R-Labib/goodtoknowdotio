@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class OmitABankingTransactionForBalances
 {
-    public function page()
+    function page()
     {
         /**
          * Ultimately, this is about deleting a BankingTransactionForBalances.

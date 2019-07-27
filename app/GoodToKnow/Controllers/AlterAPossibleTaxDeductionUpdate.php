@@ -11,7 +11,7 @@ use GoodToKnow\Models\PossibleTaxDeduction;
 
 class AlterAPossibleTaxDeductionUpdate
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

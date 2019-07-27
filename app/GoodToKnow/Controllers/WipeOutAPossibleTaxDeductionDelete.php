@@ -10,7 +10,7 @@ use GoodToKnow\Models\PossibleTaxDeduction;
 
 class WipeOutAPossibleTaxDeductionDelete
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted possible_tax_deduction record id in the session.

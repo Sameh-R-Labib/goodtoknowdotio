@@ -14,7 +14,7 @@ use GoodToKnow\Models\TopicToPost;
 
 class CreateNewPostInsertPoint
 {
-    public function page()
+    function page()
     {
         /**
          * The goal is to present a form

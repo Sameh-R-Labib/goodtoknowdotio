@@ -11,7 +11,7 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 class CheckMyBankingAccountTxBalancesShowBalances
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

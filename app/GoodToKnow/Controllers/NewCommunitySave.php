@@ -9,7 +9,7 @@ use GoodToKnow\Models\Community;
 
 class NewCommunitySave
 {
-    public function page()
+    function page()
     {
         global $sessionMessage;
         global $is_logged_in;

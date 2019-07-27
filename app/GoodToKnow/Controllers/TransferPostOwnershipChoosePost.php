@@ -9,7 +9,7 @@ use GoodToKnow\Models\TopicToPost;
 
 class TransferPostOwnershipChoosePost
 {
-    public function page()
+    function page()
     {
         /**
          * The goal is to present a form

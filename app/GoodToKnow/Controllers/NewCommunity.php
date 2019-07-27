@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class NewCommunity
 {
-    public function page()
+    function page()
     {
         /**
          * This route will generate a form

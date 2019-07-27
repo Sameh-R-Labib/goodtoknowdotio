@@ -16,7 +16,7 @@ use GoodToKnow\Models\UserToCommunity;
 
 class GiveComsChoices
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

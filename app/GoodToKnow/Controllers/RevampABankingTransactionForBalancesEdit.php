@@ -10,7 +10,7 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 class RevampABankingTransactionForBalancesEdit
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted banking_transaction_for_balances record id in the session.

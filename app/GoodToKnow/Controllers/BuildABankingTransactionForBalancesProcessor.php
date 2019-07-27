@@ -9,7 +9,7 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 class BuildABankingTransactionForBalancesProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Create a database record in the banking_transaction_for_balances

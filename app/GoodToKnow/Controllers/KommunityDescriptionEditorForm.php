@@ -9,7 +9,7 @@ use GoodToKnow\Models\Community;
 
 class KommunityDescriptionEditorForm
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

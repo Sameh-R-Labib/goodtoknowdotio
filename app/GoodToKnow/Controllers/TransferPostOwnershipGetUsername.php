@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class TransferPostOwnershipGetUsername
 {
-    public function page()
+    function page()
     {
         /**
          * This will process the confirmation form

@@ -9,7 +9,7 @@ use GoodToKnow\Models\Post;
 
 class AuthorDeletesOwnPostDelete
 {
-    public function page()
+    function page()
     {
         /**
          * This route will simply determine

@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class NewTopicName
 {
-    public function page()
+    function page()
     {
         /**
          * The goal is to present a form

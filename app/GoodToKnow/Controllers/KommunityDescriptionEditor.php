@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class KommunityDescriptionEditor
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

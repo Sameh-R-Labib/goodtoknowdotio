@@ -15,7 +15,7 @@ use GoodToKnow\Models\MessageToUser;
 
 class WriteToAdminProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * This function takes the submitted WriteToAdmin

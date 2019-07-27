@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class Logout
 {
-    public function page()
+    function page()
     {
         /**
          * The purpose is to destroy the session file

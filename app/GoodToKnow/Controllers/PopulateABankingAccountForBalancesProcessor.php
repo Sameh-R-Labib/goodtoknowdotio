@@ -8,7 +8,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class PopulateABankingAccountForBalancesProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted banking_acct_for_balances record id in the session.

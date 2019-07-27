@@ -9,7 +9,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class CheckMyBankingAccountTxBalances
 {
-    public function page()
+    function page()
     {
         /**
          * About this feature:

@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class ChangePassword
 {
-    public function page()
+    function page()
     {
         /**
          * We will display a form where the user

@@ -8,7 +8,7 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 class RevampABankingTransactionForBalancesUpdate
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

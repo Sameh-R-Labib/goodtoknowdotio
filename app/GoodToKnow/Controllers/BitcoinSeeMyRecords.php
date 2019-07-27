@@ -9,7 +9,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class BitcoinSeeMyRecords
 {
-    public function page()
+    function page()
     {
         global $user_id;
         global $sessionMessage;

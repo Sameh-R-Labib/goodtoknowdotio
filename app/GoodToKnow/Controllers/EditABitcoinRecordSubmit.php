@@ -9,7 +9,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class EditABitcoinRecordSubmit
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

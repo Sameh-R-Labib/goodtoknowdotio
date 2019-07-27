@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class NewTopicNameProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Mission:

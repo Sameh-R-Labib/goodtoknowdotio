@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class AdminHome
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

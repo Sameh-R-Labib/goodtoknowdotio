@@ -8,7 +8,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class PolishARecurringPaymentRecord
 {
-    public function page()
+    function page()
     {
         /**
          * This feature is for editing/updating

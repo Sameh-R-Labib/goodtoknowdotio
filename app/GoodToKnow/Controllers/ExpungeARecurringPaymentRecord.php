@@ -9,7 +9,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class ExpungeARecurringPaymentRecord
 {
-    public function page()
+    function page()
     {
         /**
          * Presenting a form for getting the user to tell us

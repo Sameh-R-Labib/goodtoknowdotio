@@ -16,7 +16,7 @@ use GoodToKnow\Models\User;
 
 class ByUsernameMessageSave
 {
-    public function page()
+    function page()
     {
         /**
          * Before I get started:

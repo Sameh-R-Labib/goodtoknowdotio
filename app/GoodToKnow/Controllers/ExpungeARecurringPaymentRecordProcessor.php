@@ -10,7 +10,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class ExpungeARecurringPaymentRecordProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Determines the id of the recurring_payment record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].

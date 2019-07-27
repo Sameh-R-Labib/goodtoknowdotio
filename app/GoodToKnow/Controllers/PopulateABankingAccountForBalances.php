@@ -9,7 +9,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class PopulateABankingAccountForBalances
 {
-    public function page()
+    function page()
     {
         /**
          * This feature is for editing/updating

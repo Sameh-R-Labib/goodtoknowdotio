@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class WhatIsThisSite
 {
-    public function page()
+    function page()
     {
         /**
          * This function will present a page

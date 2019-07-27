@@ -9,7 +9,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class PolishARecurringPaymentRecordSubmit
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

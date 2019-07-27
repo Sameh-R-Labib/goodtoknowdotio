@@ -9,7 +9,7 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 class OmitABankingTransactionForBalancesChooseRecord
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

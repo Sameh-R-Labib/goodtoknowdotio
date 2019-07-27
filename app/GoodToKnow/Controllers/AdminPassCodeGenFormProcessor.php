@@ -14,7 +14,7 @@ use GoodToKnow\Models\Community;
 
 class AdminPassCodeGenFormProcessor
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $sessionMessage;

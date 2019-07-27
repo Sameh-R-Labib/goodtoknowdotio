@@ -10,7 +10,7 @@ use GoodToKnow\Models\User;
 
 class TransferPostOwnershipTransferIt
 {
-    public function page()
+    function page()
     {
         /**
          * Last function for TransferPostOwnershipTransferIt.

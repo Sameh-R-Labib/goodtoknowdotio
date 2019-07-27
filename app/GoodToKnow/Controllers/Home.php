@@ -16,7 +16,7 @@ use GoodToKnow\Models\TopicToPost;
 
 class Home
 {
-    public function page()
+    function page()
     {
         global $user_id;                    // int value
         global $community_id;               // int value

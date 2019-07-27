@@ -14,7 +14,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class EditMyPost
 {
-    public function page()
+    function page()
     {
         /**
          * This is the first in a series of routes

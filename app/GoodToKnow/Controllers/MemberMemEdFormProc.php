@@ -14,7 +14,7 @@ use GoodToKnow\Models\User;
 
 class MemberMemEdFormProc
 {
-    public function page()
+    function page()
     {
         /**
          * The purpose is to:

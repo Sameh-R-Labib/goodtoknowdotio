@@ -9,7 +9,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class DeleteABitcoinRecord
 {
-    public function page()
+    function page()
     {
         /**
          * presenting a

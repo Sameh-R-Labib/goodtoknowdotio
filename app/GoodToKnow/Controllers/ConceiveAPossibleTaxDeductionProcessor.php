@@ -11,7 +11,7 @@ use GoodToKnow\Models\PossibleTaxDeduction;
 
 class ConceiveAPossibleTaxDeductionProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Create a database record in the possible_tax_deduction

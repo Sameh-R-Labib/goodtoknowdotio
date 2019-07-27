@@ -10,7 +10,7 @@ use GoodToKnow\Models\RecurringPayment;
 
 class RecurringPaymentSeeMyRecords
 {
-    public function page()
+    function page()
     {
         /**
          * Similar to BitcoinSeeMyRecords.

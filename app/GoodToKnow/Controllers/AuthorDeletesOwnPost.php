@@ -9,7 +9,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class AuthorDeletesOwnPost
 {
-    public function page()
+    function page()
     {
         /**
          * This is the first in a series of routes

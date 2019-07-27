@@ -8,7 +8,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class AnnulABankingAcctForBalances
 {
-    public function page()
+    function page()
     {
         /**
          * Presenting a form for getting the user to tell us

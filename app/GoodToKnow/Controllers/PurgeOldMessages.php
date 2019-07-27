@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class PurgeOldMessages
 {
-    public function page()
+    function page()
     {
         /**
          * This is the first in a sequence of routes

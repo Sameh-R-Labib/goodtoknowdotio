@@ -14,7 +14,7 @@ use GoodToKnow\Models\User;
 
 class SuspendAccountSuspend
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

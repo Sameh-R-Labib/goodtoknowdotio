@@ -9,7 +9,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class EditABitcoinRecord
 {
-    public function page()
+    function page()
     {
         /**
          * This feature is for editing/updating

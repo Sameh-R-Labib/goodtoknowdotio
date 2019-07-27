@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class CreateNewPostTitleProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Mission:

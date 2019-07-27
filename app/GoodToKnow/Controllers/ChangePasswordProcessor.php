@@ -14,7 +14,7 @@ use GoodToKnow\Models\User;
 
 class ChangePasswordProcessor
 {
-    public function page()
+    function page()
     {
         global $user_id;
         global $is_logged_in;

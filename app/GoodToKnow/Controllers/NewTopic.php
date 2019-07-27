@@ -14,7 +14,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class NewTopic
 {
-    public function page()
+    function page()
     {
         /**
          * We need to determine whether or not

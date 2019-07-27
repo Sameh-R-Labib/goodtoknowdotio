@@ -9,7 +9,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class AnnulABankingAcctForBalancesProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Determines the id of the banking_acct_for_balances record from $_POST['choice'] and

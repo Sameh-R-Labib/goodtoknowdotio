@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class OmitABankingTransactionForBalancesTimeRange
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Validate the submitted choice of time range (A,B,C,D,E.)

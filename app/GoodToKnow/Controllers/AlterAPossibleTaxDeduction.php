@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class AlterAPossibleTaxDeduction
 {
-    public function page()
+    function page()
     {
         /**
          * This page is going to present a text box

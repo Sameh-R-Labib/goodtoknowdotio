@@ -13,7 +13,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class NewTopicIPProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * At this point we know which community we're in,

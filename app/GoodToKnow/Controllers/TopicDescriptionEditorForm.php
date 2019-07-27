@@ -8,7 +8,7 @@ use GoodToKnow\Models\Topic;
 
 class TopicDescriptionEditorForm
 {
-    public function page()
+    function page()
     {
         /**
          * Goals for this function:

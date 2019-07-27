@@ -14,7 +14,7 @@ use GoodToKnow\Models\TopicToPost;
 
 class CreateNewPostIPProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * So far we know which topic the new post belongs in

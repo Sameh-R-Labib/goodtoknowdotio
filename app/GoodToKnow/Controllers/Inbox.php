@@ -14,7 +14,7 @@ use GoodToKnow\Models\MessageToUser;
 
 class Inbox
 {
-    public function page()
+    function page()
     {
         global $user_id;
         global $sessionMessage;

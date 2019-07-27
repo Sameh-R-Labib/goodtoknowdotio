@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class InduceATask
 {
-    public function page()
+    function page()
     {
         /**
          * Create a task record based on a label for it.

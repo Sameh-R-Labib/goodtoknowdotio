@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class TopicDescriptionEditorProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Essentially what this function will do is

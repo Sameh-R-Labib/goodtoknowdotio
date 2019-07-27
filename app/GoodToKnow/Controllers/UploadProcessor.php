@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class UploadProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * REPEATING:

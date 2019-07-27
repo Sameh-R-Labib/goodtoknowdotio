@@ -11,7 +11,7 @@ namespace GoodToKnow\Controllers;
 
 class InfiniteLoopPrevent
 {
-    public function page()
+    function page()
     {
 
         global $sessionMessage;

@@ -9,7 +9,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class TransferPostOwnership
 {
-    public function page()
+    function page()
     {
         /**
          * This is the first route for transferring ownership of a post.

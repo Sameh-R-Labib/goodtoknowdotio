@@ -9,7 +9,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 class TopicDescriptionEditor
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

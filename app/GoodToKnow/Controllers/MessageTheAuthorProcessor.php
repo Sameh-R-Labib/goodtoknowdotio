@@ -15,7 +15,7 @@ use GoodToKnow\Models\MessageToUser;
 
 class MessageTheAuthorProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * This function takes the submitted MessageTheAuthor

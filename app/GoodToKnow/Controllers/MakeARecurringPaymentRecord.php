@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class MakeARecurringPaymentRecord
 {
-    public function page()
+    function page()
     {
         /**
          * This feature enables any user to

@@ -8,7 +8,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class PopulateABankingAccountForBalancesSubmit
 {
-    public function page()
+    function page()
     {
         /**
          * This function will:

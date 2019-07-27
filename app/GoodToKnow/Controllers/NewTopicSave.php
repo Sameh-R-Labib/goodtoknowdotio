@@ -14,7 +14,7 @@ use GoodToKnow\Models\Topic;
 
 class NewTopicSave
 {
-    public function page()
+    function page()
     {
         global $sessionMessage;
         global $is_logged_in;

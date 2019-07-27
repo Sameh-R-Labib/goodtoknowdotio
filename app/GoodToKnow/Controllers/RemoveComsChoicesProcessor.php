@@ -13,7 +13,7 @@ use GoodToKnow\Models\UserToCommunity;
 
 class RemoveComsChoicesProcessor
 {
-    public function page()
+    function page()
     {
         global $is_logged_in;
         global $is_admin;

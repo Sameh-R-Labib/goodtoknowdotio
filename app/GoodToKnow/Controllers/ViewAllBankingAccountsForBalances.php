@@ -10,7 +10,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 class ViewAllBankingAccountsForBalances
 {
-    public function page()
+    function page()
     {
         /**
          * Similar to RecurringPaymentSeeMyRecords.

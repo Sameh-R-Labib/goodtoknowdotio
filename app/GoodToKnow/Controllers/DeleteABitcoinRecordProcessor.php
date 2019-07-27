@@ -9,7 +9,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class DeleteABitcoinRecordProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Determines the id of the bitcoin record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].

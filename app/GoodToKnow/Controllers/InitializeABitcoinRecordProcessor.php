@@ -8,7 +8,7 @@ use GoodToKnow\Models\Bitcoin;
 
 class InitializeABitcoinRecordProcessor
 {
-    public function page()
+    function page()
     {
         /**
          * Create a database record in the

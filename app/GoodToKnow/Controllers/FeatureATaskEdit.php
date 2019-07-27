@@ -10,7 +10,7 @@ use GoodToKnow\Models\Task;
 
 class FeatureATaskEdit
 {
-    public function page()
+    function page()
     {
         /**
          * 1) Store the submitted task id in the session.

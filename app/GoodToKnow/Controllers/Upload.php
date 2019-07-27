@@ -6,7 +6,7 @@ namespace GoodToKnow\Controllers;
 
 class Upload
 {
-    public function page()
+    function page()
     {
         /**
          * The goal of this series of routes
