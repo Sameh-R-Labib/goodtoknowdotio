@@ -17,6 +17,7 @@ class GlanceAtMyTasks
         global $user_id;
         global $sessionMessage;
         global $is_logged_in;
+        global $is_admin;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
