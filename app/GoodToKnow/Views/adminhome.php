@@ -75,6 +75,7 @@
         <li><a href="/ax1/InduceATask/page">Create a To-do Task/💪</a></li>
         <li><a href="/ax1/FeatureATask/page">Edit a To-do Task/💪</a></li>
         <li><a href="/ax1/GlanceAtMyTasks/page">See all To-do Tasks/💪s</a></li>
+        <li><a href="/ax1/ForgetATask/page">Delete a To-do Task/💪</a></li>
     </ul>
     <h2>♠👔♠ 🧰s</h2>
     <ul>
