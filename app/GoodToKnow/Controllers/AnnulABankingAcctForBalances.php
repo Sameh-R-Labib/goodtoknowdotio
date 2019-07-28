@@ -43,7 +43,7 @@ class AnnulABankingAcctForBalances
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'Which banking_acct_for_balances record?';
+        $html_title = 'Which banking_acct_for_balances?';
 
         require VIEWS . DIRSEP . 'annulabankingacctforbalances.php';
     }
