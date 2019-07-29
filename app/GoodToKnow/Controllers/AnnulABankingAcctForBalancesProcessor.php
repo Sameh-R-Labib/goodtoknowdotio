@@ -16,7 +16,7 @@ class AnnulABankingAcctForBalancesProcessor
          *    stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the BankingAcctForBalances object with that id from the database.
          *    And, format its attributes for easy viewing.
-         * 3) Presents a form containing data from the record and asking for confirmation to delete.
+         * 3) Presents a form containing data from the record and asking for permission to delete.
          */
 
         global $is_logged_in;
@@ -71,7 +71,7 @@ class AnnulABankingAcctForBalancesProcessor
         $object->comment = nl2br($object->comment, false);
 
         /**
-         * 3) Presents a form containing data from the record and asking for confirmation to delete.
+         * 3) Presents a form containing data from the record and asking for permission to delete.
          */
         $html_title = 'Are you sure?';
 
