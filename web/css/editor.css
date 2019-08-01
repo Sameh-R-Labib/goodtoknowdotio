@@ -50,6 +50,7 @@ button {
 
 button.abort {
     background: #f3a033;
+    margin-left: 15px;
     width: 57px;
 }
 
