@@ -47,7 +47,7 @@ class OmitABankingTranForBalancesProcessConfirmation
         }
 
         if ($choice == "no") {
-            $sessionMessage .= " You've changed your mind about deleting the record. So, none was deleted. ";
+            $sessionMessage .= " Nothing was deleted. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
