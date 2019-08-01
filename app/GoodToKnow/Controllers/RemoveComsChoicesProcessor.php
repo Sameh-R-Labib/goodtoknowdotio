@@ -29,7 +29,7 @@ class RemoveComsChoicesProcessor
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " You've aborted the task! Session variables reset. ";
+            $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_str01'] = "";

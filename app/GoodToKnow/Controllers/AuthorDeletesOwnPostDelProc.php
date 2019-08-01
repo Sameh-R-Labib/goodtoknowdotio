@@ -39,7 +39,7 @@ class AuthorDeletesOwnPostDelProc
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " You've aborted the task! Session variables reset. ";
+            $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";

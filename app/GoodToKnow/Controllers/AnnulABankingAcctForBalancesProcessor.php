@@ -28,7 +28,7 @@ class AnnulABankingAcctForBalancesProcessor
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " You've aborted the task! Session variables reset. ";
+            $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
