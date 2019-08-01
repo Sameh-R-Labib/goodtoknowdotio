@@ -65,7 +65,7 @@ class ForgetATaskProcessor
         $object = Task::find_by_id($db, $sessionMessage, $chosen_id);
 
         // Format its attributes for easy viewing.
-        $object->last = self::get_readable_time($object->time);
+        $object->last = self::get_readable_time($object->last);
         $object->next = self::get_readable_time($object->next);
 
         /**
