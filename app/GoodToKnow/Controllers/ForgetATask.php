@@ -4,7 +4,8 @@
 namespace GoodToKnow\Controllers;
 
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\Task;
+
 
 class ForgetATask
 {
@@ -33,7 +34,7 @@ class ForgetATask
         }
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
-        $array = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
+        $array = Task::find_by_sql($db, $sessionMessage, $sql);
         if (!$array || !empty($sessionMessage)) {
             $sessionMessage .= ' 🤔 I could NOT find any task records for you ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
