@@ -32,7 +32,7 @@ class BuildABankingTransactionForBalances
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'Create a New Banking Transaction For Balances';
+        $html_title = 'Create a Banking Transaction For Balances';
 
         require VIEWS . DIRSEP . 'buildabankingtransactionforbalances.php';
     }
