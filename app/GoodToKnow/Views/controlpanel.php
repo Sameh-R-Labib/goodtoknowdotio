@@ -78,6 +78,7 @@
         <li><a href="/ax1/GlanceAtMyTasks/page">See all To-do Tasks/💪s</a></li>
         <li><a href="/ax1/ForgetATask/page">Delete a To-do Task/💪</a></li>
         <li><a href="/ax1/StartATaxableIncomeEvent/page">Create a Taxable 💸 Event 📽</a></li>
+        <li><a href="/ax1/WriteOverATaxableIncomeEvent/page">Edit a Taxable 💸 Event 📽</a></li>
     </ul>
     <hr>
     <h2 class="topofpage">Instruction to users</h2>
