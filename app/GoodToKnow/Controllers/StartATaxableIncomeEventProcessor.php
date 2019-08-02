@@ -54,7 +54,7 @@ class StartATaxableIncomeEventProcessor
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_received = integer_form_field_prep('year_paid', 1992, 65535);
+        $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
         if (is_null($year_received)) {
             $sessionMessage .= " Your year_received did not pass validation. ";
