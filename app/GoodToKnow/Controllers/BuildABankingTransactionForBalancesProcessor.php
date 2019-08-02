@@ -111,7 +111,7 @@ class BuildABankingTransactionForBalancesProcessor
         /**
          * Wrap it up.
          */
-        $sessionMessage .= " A new Banking Transaction For Balances was created! ";
+        $sessionMessage .= " A Banking Transaction For Balances was created! ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

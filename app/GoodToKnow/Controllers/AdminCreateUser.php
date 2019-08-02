@@ -167,7 +167,7 @@ class AdminCreateUser
          * Assumed success.
          * Set $sessionMessage and redirect.
          */
-        $sessionMessage .= " The new user account was created! ";
+        $sessionMessage .= " The user account was created! ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");

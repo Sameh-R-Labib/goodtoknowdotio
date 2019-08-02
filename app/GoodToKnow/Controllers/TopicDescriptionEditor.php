@@ -45,7 +45,7 @@ class TopicDescriptionEditor
 
         // Abort if the community doesn't have any topics yet
         if (empty($special_topic_array)) {
-            $sessionMessage .= " Aborted because you can't create a new post in a community which has no topics. ";
+            $sessionMessage .= " Aborted because you can't create a post in a community which has no topics. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

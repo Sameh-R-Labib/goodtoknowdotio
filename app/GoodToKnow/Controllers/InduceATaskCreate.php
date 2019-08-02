@@ -82,7 +82,7 @@ class InduceATaskCreate
         /**
          * Wrap it up.
          */
-        $sessionMessage .= " 👍 a new <b>task</b> record has been created. ";
+        $sessionMessage .= " 👍 a <b>task</b> record has been created. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

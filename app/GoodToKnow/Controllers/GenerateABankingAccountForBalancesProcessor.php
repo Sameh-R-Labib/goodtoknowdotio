@@ -95,7 +95,7 @@ class GenerateABankingAccountForBalancesProcessor
         /**
          * Wrap it up.
          */
-        $sessionMessage .= " A new Banking Account For Balances was created! ";
+        $sessionMessage .= " A Banking Account For Balances was created! ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }

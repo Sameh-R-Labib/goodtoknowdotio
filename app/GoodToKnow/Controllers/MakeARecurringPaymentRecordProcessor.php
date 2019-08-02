@@ -96,7 +96,7 @@ class MakeARecurringPaymentRecordProcessor
         /**
          * Wrap it up.
          */
-        $sessionMessage .= " A new recurring_payment record was created! ";
+        $sessionMessage .= " A recurring_payment record was created! ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
     }
