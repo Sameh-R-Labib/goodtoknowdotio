@@ -108,6 +108,7 @@ class AlterAPossibleTaxDeductionUpdate
          * 4) Update/save the updated record in the database.
          */
         $result = $object->save($db, $sessionMessage);
+
         if ($result === false) {
             $sessionMessage .= " I aborted because I failed at saving the updated object. ";
             $_SESSION['message'] = $sessionMessage;

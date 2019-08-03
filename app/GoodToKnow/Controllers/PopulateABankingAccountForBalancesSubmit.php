@@ -49,7 +49,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $edited_acct_name = (isset($_POST['acct_name'])) ? $_POST['acct_name'] : "";
         $edited_start_time = (isset($_POST['start_time'])) ? (int)$_POST['start_time'] : 1560190617;
-        $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0;
+        $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0.0;
         $edited_comment = (isset($_POST['comment'])) ? $_POST['comment'] : "";
         // make sure the comment is okay.
         $result = self::is_comment($sessionMessage, $edited_comment);
