@@ -66,8 +66,28 @@ class WriteOverATaxableIncomeEventYearFilter
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Loop through the array and replace time attributes with a more readable time format.
+         */
+        foreach ($array as $item) {
+            $item->time = self::get_readable_time($item->time);
+        }
+
         $html_title = 'Which taxable_income_event?';
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeeventyearfilter.php';
+    }
+
+    /**
+     * @param \mysqli $db
+     * @param string $error
+     * @param $created
+     * @return string
+     */
+    public static function get_readable_time($created)
+    {
+        $created = (int)$created;
+        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
+        return $date;
     }
 }
