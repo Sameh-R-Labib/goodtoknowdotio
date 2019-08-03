@@ -22,7 +22,7 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="year_paid">year_paid: </label>
+            <label for="year_paid">Year paid: </label>
             <input id="year_paid" name="year_paid" type="text" value="" required minlength="4" maxlength="6"
                    size="6" placeholder="2018">
         </p>
