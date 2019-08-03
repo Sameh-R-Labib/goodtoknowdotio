@@ -4,17 +4,16 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
-use GoodToKnow\Models\PossibleTaxDeduction;
 
-
-class AlterAPossibleTaxDeductionYearFilter
+class WriteOverATaxableIncomeEventYearFilter
 {
     function page()
     {
         /**
-         * 1) Validate the submitted year_paid.
-         * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
+         * 1) Validate the submitted year_received.
+         * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
 
         global $is_logged_in;
@@ -33,20 +32,20 @@ class AlterAPossibleTaxDeductionYearFilter
         }
 
         /**
-         *  1) Validate the submitted year_paid.
+         * 1) Validate the submitted year_received.
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
+        $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($year_paid)) {
-            $sessionMessage .= " Your year_paid did not pass validation. ";
+        if (is_null($year_received)) {
+            $sessionMessage .= " Your year_received did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
         /**
-         * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
+         * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
         $db = db_connect($sessionMessage);
 
@@ -56,19 +55,19 @@ class AlterAPossibleTaxDeductionYearFilter
             redirect_to("/ax1/Home/page");
         }
 
-        $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
+        $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
         $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
 
-        $array = PossibleTaxDeduction::find_by_sql($db, $sessionMessage, $sql);
+        $array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For <b>{$year_paid}</b> I could NOT find any Possible Tax Deduction for you. ";
+            $sessionMessage .= " 🤔 For <b>{$year_received}</b> I could NOT find any Taxable Income Events for you. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'Which possible_tax_deduction?';
+        $html_title = 'Which taxable_income_event?';
 
-        require VIEWS . DIRSEP . 'alterapossibletaxdeductionyearfilter.php';
+        require VIEWS . DIRSEP . 'writeoverataxableincomeeventyearfilter.php';
     }
 }
