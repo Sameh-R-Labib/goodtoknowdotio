@@ -59,16 +59,25 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
         $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
+
         $array = PossibleTaxDeduction::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array || !empty($sessionMessage)) {
             $sessionMessage .= " 🤔 For <b>{$year_paid}</b> I could NOT find any Possible Tax Deduction for you. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * Loop through the array and replace attributes with more readable ones.
+         */
+        foreach ($array as $item) {
+            $item->comment = nl2br($item->comment, false);
+        }
+
         $sessionMessage .= ' Enjoy ʘ‿ʘ at One Year of your 🤔 Tax ✍🏽🔽s. ';
 
-        $html_title = 'Enjoy ʘ‿ʘ at One Year of your your 🤔 Tax ✍🏽🔽s.';
+        $html_title = 'Enjoy ʘ‿ʘ at One Year of your 🤔 Tax ✍🏽🔽s.';
 
         $page = 'SeeOneYearsPossibleTaxDeductions';
 
