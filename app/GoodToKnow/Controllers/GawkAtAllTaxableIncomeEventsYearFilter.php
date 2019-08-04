@@ -22,6 +22,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         global $sessionMessage;
         global $user_id;
         global $is_admin;
+        global $special_community_array;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
