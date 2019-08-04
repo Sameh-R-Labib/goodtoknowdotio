@@ -15,6 +15,8 @@ elseif ($page === 'SeeOneYearsPossibleTaxDeductions')
     echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">See One Years Possible Deductions</a>";
 elseif ($page === 'GlanceAtMyTasks')
     echo "<a href=\"/ax1/GlanceAtMyTasks/page\">See My To-do Tasks</a>";
+elseif ($page === 'GawkAtAllTaxableIncomeEvents')
+    echo "<a href=\"/ax1/GawkAtAllTaxableIncomeEvents/page\">See One Years Taxable Income Events</a>";
 else {
     require CURRENTCOMMUNITY;
     require CURRENTTOPIC;

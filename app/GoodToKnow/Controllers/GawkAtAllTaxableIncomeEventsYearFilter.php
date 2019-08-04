@@ -70,10 +70,11 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         }
 
         /**
-         * Loop through the array and replace time attributes with a more readable time format.
+         * Loop through the array and replace attributes with more readable ones.
          */
         foreach ($array as $item) {
             $item->time = self::get_readable_time($item->time);
+            $item->comment = nl2br($item->comment, false);
             // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
             require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
             $item->amount = readable_amount_of_money($item->amount);
@@ -83,7 +84,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
         $html_title = 'Enjoy ʘ‿ʘ at One Year of your Taxable 💸 Event 📽s.';
 
-        $page = 'GawkAtAllTaxableIncomeEventsYearFilter';
+        $page = 'GawkAtAllTaxableIncomeEvents';
 
         $show_poof = true;
 
