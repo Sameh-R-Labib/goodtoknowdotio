@@ -137,10 +137,7 @@ $is_admin = ($role === 'admin') ? true : false;
 
 
 /**
- * PHP is strange in that code which is run via includes
- * has the same scope as the main program (even if the include
- * is inside a function.) So, mostly I have these here to
- * set defaults and to prevent PhpStorm from telling me they are out of scope.
+ * I have these here to prevent PhpStorm from telling me they are out of scope.
  */
 $page = 'Home';
 $html_title = '';
