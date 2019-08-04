@@ -17,7 +17,7 @@
 <body>
 <form action="/ax1/SeeOneYearsPossibleTaxDeductionsYearFilter/page" method="post">
     <h1>See a year's 🤔 Tax ✍🏽🔽s</h1>
-    <h2>Narrow down the data set for 🤔 Tax ✍🏽🔽</h2>
+    <h2>Narrow down the data set for 🤔 Tax ✍🏽🔽s</h2>
     <p>Which year_paid are you inquiring about?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
