@@ -79,6 +79,7 @@
         <li><a href="/ax1/StartATaxableIncomeEvent/page">Create a Taxable 💸 Event 📽</a></li>
         <li><a href="/ax1/WriteOverATaxableIncomeEvent/page">Edit a Taxable 💸 Event 📽</a></li>
         <li><a href="/ax1/GawkAtAllTaxableIncomeEvents/page">See One Year's Taxable 💸 Event 📽s</a></li>
+        <li><a href="/ax1/NukeATaxableIncomeEvent/page">Delete a Taxable 💸 Event 📽</a></li>
     </ul>
     <h2>♠👔♠ 🧰s</h2>
     <ul>
