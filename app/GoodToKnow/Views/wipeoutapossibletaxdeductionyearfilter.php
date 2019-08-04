@@ -16,7 +16,7 @@
 </head>
 <body>
 <form action="/ax1/WipeOutAPossibleTaxDeductionDelete/page" method="post">
-    <h2>Which PossibleTaxDeduction?</h2>
+    <h2>Which Possible Tax Deduction?</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php foreach ($array as $key => $object): ?>
