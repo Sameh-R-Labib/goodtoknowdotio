@@ -4,10 +4,11 @@
 namespace GoodToKnow\Controllers;
 
 
-use GoodToKnow\Models\PossibleTaxDeduction;
+use GoodToKnow\Models\TaxableIncomeEvent;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
-class WipeOutAPossibleTaxDeductionConfirmation
+class NukeATaxableIncomeEventConfirmation
 {
     function page()
     {
@@ -35,7 +36,16 @@ class WipeOutAPossibleTaxDeductionConfirmation
             redirect_to("/ax1/Home/page");
         }
 
-        $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $choice = standard_form_field_prep('choice', 2, 3);
+
+        if (is_null($choice)) {
+            $sessionMessage .= " The choice you entered did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
 
         if ($choice != "yes" && $choice != "no") {
             $sessionMessage .= " You didn't enter a choice. ";
@@ -60,7 +70,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
             redirect_to("/ax1/Home/page");
         }
 
-        $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
             $sessionMessage .= " I wasn't able to find the record and I've aborted the procedure you've started. ";
@@ -79,7 +89,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
         }
 
         // Report successful deletion of post.
-        $sessionMessage .= " I have deleted the 🤔 Tax ✍🏽🔽. ";
+        $sessionMessage .= " I deleted the Taxable 💸 Event 📽. ";
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");
