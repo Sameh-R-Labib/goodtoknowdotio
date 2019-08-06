@@ -77,7 +77,6 @@ label.checkbox {
 label.radio {
     margin-left: 41px;
     margin-right: 41px;
-    display: inline-block;
 }
 
 label.dropdown {
