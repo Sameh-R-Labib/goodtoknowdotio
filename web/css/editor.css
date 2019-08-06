@@ -75,6 +75,7 @@ label.checkbox {
 }
 
 label.radio {
+    display: block;
     margin-left: 41px;
     margin-right: 41px;
 }
