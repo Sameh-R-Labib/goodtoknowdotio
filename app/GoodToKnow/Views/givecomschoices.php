@@ -24,7 +24,7 @@
         foreach ($coms_user_does_not_belong_to as $key => $value): ?>
         <label class="checkbox">
             <input type="checkbox" name="choice-<?php echo $key + 1; ?>" value="<?= $value->id ?>">
-            <?= $value->community_name ?><br>
+            <?= $value->community_name ?>
         </label>
         <?php endforeach; ?>
     </section>

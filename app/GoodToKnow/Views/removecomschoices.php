@@ -23,7 +23,7 @@
         <?php foreach ($coms_user_belongs_to as $key => $value): ?>
             <label class="checkbox">
                 <input type="checkbox" name="choice-<?= $key + 1 ?>" value="<?= $value->id ?>">
-                <?= $value->community_name ?><br>
+                <?= $value->community_name ?>
             </label>
         <?php endforeach; ?>
     </section>

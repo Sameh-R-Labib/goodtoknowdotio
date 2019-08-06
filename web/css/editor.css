@@ -71,7 +71,9 @@ p {
 }
 
 label.checkbox {
-    margin-left: 23px;
+    display: block;
+    margin-left: 41px;
+    margin-right: 41px;
 }
 
 label.radio {
