@@ -24,7 +24,7 @@
         foreach ($array_of_bitcoin_objects as $key => $bitcoin_object): ?>
             <label for="c<?= $key ?>" class="radio">
                 <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $bitcoin_object->id ?>">
-                <?= $bitcoin_object->address ?><br>
+                <?= $bitcoin_object->address ?>
             </label>
         <?php endforeach; ?>
     </section>

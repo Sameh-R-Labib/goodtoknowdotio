@@ -25,7 +25,7 @@
                 <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $post_object->id ?>">
                 <?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $post_object->title . " | " . $post_object->extensionfortitle . " [" .
-                    $array_of_author_usernames[$key] . " ]"; ?><br>
+                    $array_of_author_usernames[$key] . " ]"; ?>
             </label>
         <?php endforeach; ?>
     </section>

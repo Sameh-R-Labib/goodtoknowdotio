@@ -32,7 +32,7 @@
         <?php foreach ($special_topic_array as $key => $value): ?>
             <label for="choice-<?= $key ?>" class="radio">
                 <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
-                <?= $value ?><br>
+                <?= $value ?>
             </label>
         <?php endforeach; ?>
     </section>

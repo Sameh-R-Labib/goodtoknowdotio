@@ -23,7 +23,7 @@
         foreach ($array as $key => $object): ?>
             <label for="c<?php echo $key; ?>" class="radio">
                 <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
-                <?= $object->label ?><br>
+                <?= $object->label ?>
             </label>
         <?php endforeach; ?>
     </section>
