@@ -7,13 +7,13 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-class LiquidateYearsPossibleTaxDeductionsGetYear
+class CleanupYearsTaxableIncomeEventsGetYear
 {
     function page()
     {
         /**
-         * 1) Validate the submitted year_paid.
-         * 2) Delete the possible_tax_deduction(s/plural) which have the specified year_paid.
+         * 1) Validate the submitted year_received.
+         * 2) Delete the taxable_income_event(s/plural) which have the specified year_received.
          * 3) Give confirmation of deletion.
          */
 
@@ -40,25 +40,25 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
         }
 
         /**
-         *  1) Validate the submitted year_paid.
+         * 1) Validate the submitted year_received.
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
+        $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($year_paid)) {
-            $sessionMessage .= " Your year_paid did not pass validation. ";
+        if (is_null($year_received)) {
+            $sessionMessage .= " Your year_received did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
 
         /**
-         * 2) Delete the possible_tax_deduction(s/plural) which have the specified year_paid.
+         * 2) Delete the taxable_income_event(s/plural) which have the specified year_received.
          */
         $num_affected_rows = 0;
 
-        $sql = 'DELETE FROM `possible_tax_deduction` WHERE `year_paid` = ';
-        $sql .= $db->real_escape_string($year_paid);
+        $sql = 'DELETE FROM `taxable_income_event` WHERE `year_received` = ';
+        $sql .= $db->real_escape_string($year_received);
 
         try {
             $db->query($sql);
@@ -70,7 +70,7 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
             }
             $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
-            $sessionMessage .= ' LiquidateYearsPossibleTaxDeductionsGetYear page() exception: ' .
+            $sessionMessage .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
 
@@ -82,7 +82,7 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
         /**
          * 3) Give confirmation of deletion.
          */
-        $sessionMessage .= " The purge of Possible Tax Deductions for the year <b>{$year_paid}</b> has deleted <b>";
+        $sessionMessage .= " The purge of Taxable Income Events for the year <b>{$year_received}</b> has deleted <b>";
         $sessionMessage .= $num_affected_rows . "</b> records. ";
         $_SESSION['message'] = $sessionMessage;
         redirect_to("/ax1/Home/page");
