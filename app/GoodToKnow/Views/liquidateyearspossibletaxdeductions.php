@@ -23,7 +23,7 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="year_paid">Year: </label>
+            <label for="year_paid">Year these expenditure were paid: </label>
             <input id="year_paid" name="year_paid" type="text" value="" required minlength="4" maxlength="6"
                    size="6" placeholder="2018">
         </p>
