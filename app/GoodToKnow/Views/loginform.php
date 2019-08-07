@@ -28,5 +28,4 @@
         <?php require SESSIONMESSAGE; ?>
     </div>
 </form>
-</body>
-</html>
+<?php require BOTTOMOFPAGES; ?>

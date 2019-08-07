@@ -50,6 +50,4 @@
              height="32" width="70"
              style="float:right;;margin-top: -6px"></p>
 </div>
-<script src="/js/script.js"></script>
-</body>
-</html>
+<?php require BOTTOMOFPAGES; ?>

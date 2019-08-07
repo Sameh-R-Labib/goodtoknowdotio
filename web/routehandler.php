@@ -36,6 +36,7 @@ define('MESSAGETHEAUTHOR', VIEWSINCLUDES . DIRSEP . 'messagetheauthor.php');
 define('BREADCRUMBS', VIEWSINCLUDES . DIRSEP . 'breadcrumbs.php');
 define('CURRENTCOMMUNITY', VIEWSINCLUDES . DIRSEP . 'currentcommunity.php');
 define('TOPOFREGULARPAGE', VIEWSINCLUDES . DIRSEP . 'topofregularpage.php');
+define('BOTTOMOFPAGES', VIEWSINCLUDES . DIRSEP . 'bottomofpages.php');
 
 /**
  * More require statements

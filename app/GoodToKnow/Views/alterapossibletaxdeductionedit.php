@@ -47,5 +47,4 @@
         </p>
     </section>
 </form>
-</body>
-</html>
+<?php require BOTTOMOFPAGES; ?>
