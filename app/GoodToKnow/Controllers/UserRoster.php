@@ -21,6 +21,7 @@ class UserRoster
         global $is_logged_in;
         global $is_admin;
         global $special_community_array;
+        global $type_of_resource_requested;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;

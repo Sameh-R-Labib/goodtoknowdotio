@@ -15,6 +15,8 @@ class WhatIsThisSite
          * have an idea what this site is for.
          */
         global $is_admin;
+        global $special_community_array;
+        global $type_of_resource_requested;
 
         $is_guest = true;
 
