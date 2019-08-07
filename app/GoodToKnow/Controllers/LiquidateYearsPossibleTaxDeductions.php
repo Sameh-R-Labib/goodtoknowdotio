@@ -9,8 +9,6 @@ class LiquidateYearsPossibleTaxDeductions
     function page()
     {
         /**
-         *
-         *
          * Note: It's an admin script.
          */
 
