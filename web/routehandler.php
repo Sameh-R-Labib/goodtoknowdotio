@@ -38,6 +38,7 @@ define('CURRENTCOMMUNITY', VIEWSINCLUDES . DIRSEP . 'currentcommunity.php');
 define('TOPOFREGULARPAGE', VIEWSINCLUDES . DIRSEP . 'topofregularpage.php');
 define('BOTTOMOFPAGES', VIEWSINCLUDES . DIRSEP . 'bottomofpages.php');
 define('COLLAGE', VIEWSINCLUDES . DIRSEP . 'collage.php');
+define('TOPFORFORMPAGES', VIEWSINCLUDES . DIRSEP . 'topforformpages.php');
 
 /**
  * More require statements
