@@ -1,8 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/UploadProcessor/page" method="post" enctype="multipart/form-data">
-    <h2>Upload an image file</h2>
-    <?php require SESSIONMESSAGE; ?>
+    <h1>Upload an 🖼️</h1>
+    <h2>Choose the file from your 🖥️</h2>
     <p>* Only .jpg, .jpeg, .png, .gif files can be uploaded.</p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <input id="fileToUpload" name="fileToUpload" type="file">

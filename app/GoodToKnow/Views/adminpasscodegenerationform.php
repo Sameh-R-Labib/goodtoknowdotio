@@ -1,8 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/AdminPassCodeGenFormProcessor/page" method="post">
-    <h2>Create Account</h2>
-    <?php require SESSIONMESSAGE; ?>
+    <h1>Create Account for Someone</h1>
+    <h2>Specify His Community</h2>
     <p>Which community do I want this user to become a member of?</p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($community_array as $key => $value): ?>

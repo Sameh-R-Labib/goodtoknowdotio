@@ -1,8 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/AnnulABankingAcctForBalancesProcessor/page" method="post">
-    <h2>Which Banking Account For Balances?</h2>
-    <?php require SESSIONMESSAGE; ?>
+    <h1>Delete a 🏦ing 📒 for ⚖️s</h1>
+    <h2>Which Banking Account for Balances?</h2>
     <p>These are listed by Banking Account For Balances account name.</p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_objects as $key => $object): ?>

@@ -1,6 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/StartATaxableIncomeEventProcessor/page" method="post">
-    <h2>Initialize the taxable_income_event record with its label and time</h2>
+    <h1>Create a Taxable 💸 Event 📽</h1>
+    <h2>Initialize the Taxable Income Event record with its label and time</h2>
     <p>
         <small>✅ emoji for the label.</small>
     </p>

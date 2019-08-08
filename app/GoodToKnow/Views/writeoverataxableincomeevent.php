@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WriteOverATaxableIncomeEventYearFilter/page" method="post">
     <h1>Edit a Taxable 💸 Event 📽</h1>
-    <h2>Narrow down the data set for Taxable 💸 Event 📽</h2>
+    <h2>Narrow down the data set for Taxable Income Event</h2>
     <p>Which year_received does the event fall under?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>

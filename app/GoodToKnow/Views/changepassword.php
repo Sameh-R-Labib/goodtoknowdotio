@@ -1,8 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/ChangePasswordProcessor/page" method="post">
+    <h1>Change 🔑</h1>
     <h2>Change Password</h2>
-    <?php require SESSIONMESSAGE; ?>
     <p>⚠️ all fields required.</p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <label for="current_password">Current P/W: </label>

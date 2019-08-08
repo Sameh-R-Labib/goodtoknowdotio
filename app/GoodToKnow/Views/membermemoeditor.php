@@ -1,5 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/MemberMemoEditorProcessor/page" method="post">
+    <h1>Member's 📝 Editor</h1>
     <h2>Enter the Username</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>

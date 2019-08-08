@@ -3,6 +3,8 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
+        <h1>See all 🏦ing 📒s for ⚖️s</h1>
+        <hr>
         <?php if (!empty($array_of_objects)): ?>
             <?php $last = count($array_of_objects) - 1; ?>
             <?php foreach ($array_of_objects as $key => $object): ?>

@@ -47,8 +47,8 @@
             <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
             <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
             <li><a href="/ax1/PurgeOldMessages/page">Purge Old 💬s</a></li>
-            <li><a href="/ax1/GiveCommunitiesToUser/page">Give 🧑🏿‍🤝‍🧑🏽 to User</a></li>
-            <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove 🧑🏿‍🤝‍🧑🏽 from A User</a></li>
+            <li><a href="/ax1/GiveCommunitiesToUser/page">Give 🧑🏿‍🤝‍🧑🏽s to User</a></li>
+            <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove 🧑🏿‍🤝‍🧑🏽s from A User</a></li>
             <li><a href="/ax1/UserRoster/page">User Roster</a></li>
             <li><a href="/ax1/MemberMemoEditor/page">Member's 📝 Editor</a></li>
             <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>

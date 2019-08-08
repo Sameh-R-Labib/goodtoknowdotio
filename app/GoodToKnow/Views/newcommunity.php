@@ -1,8 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/NewCommunityProcessor/page" method="post">
+    <h1>Create 🧑🏿‍🤝‍🧑🏽</h1>
     <h2>Details of Community To Be Created</h2>
-    <?php require SESSIONMESSAGE; ?>
     <p>⚠️ all fields required ✅ emoji.</p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <label for="name">Name: </label>

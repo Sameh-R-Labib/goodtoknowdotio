@@ -1,6 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/BuildABankingTransactionForBalancesProcessor/page" method="post">
-    <h2>Initialize the banking_transaction_for_balances record with its label and time</h2>
+    <h1>Create a 🏦ing 🔃 for ⚖️s</h1>
+    <h2>Initialize the banking transaction for balances record with its label and time</h2>
     <p>
         <small>✅ emoji for the label.</small>
     </p>

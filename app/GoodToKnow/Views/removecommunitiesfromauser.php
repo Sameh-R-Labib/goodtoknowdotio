@@ -1,5 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/RemoveComsFromUserProcessor/page" method="post">
+    <h1>Remove 🧑🏿‍🤝‍🧑🏽s from A User</h1>
     <h2>Enter the Username</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>

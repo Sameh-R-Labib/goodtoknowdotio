@@ -1,8 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/DefaultCommunityProcessor/page" method="post">
-    <h2>Switch Default Community</h2>
+    <h1>Change Default 🧑🏿‍🤝‍🧑🏽</h1>
+    <h2>Choose</h2>
+    <p>Which of your communities do you want to be the default?</p>
     <?php require SESSIONMESSAGE; ?>
-    <p>Which of my communities do I want to be the default?</p>
     <section>
         <?php foreach ($special_community_array as $key => $value): ?>
             <label for="choice-<?= $key ?>" class="radio">

@@ -3,6 +3,8 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
+        <h1>User Roster</h1>
+        <hr>
         <?php if (!empty($readable_user_objects_array)): ?>
             <?php $last = count($readable_user_objects_array) - 1; ?>
             <?php foreach ($readable_user_objects_array as $key => $user): ?>
