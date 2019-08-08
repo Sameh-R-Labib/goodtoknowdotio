@@ -41,6 +41,7 @@ define('COLLAGE', VIEWSINCLUDES . DIRSEP . 'collage.php');
 define('TOPFORFORMPAGES', VIEWSINCLUDES . DIRSEP . 'topforformpages.php');
 define('TOPBARDIV', VIEWSINCLUDES . DIRSEP . 'topbardiv.php');
 define('CBSOFREGULARPAGES', VIEWSINCLUDES . DIRSEP . 'cbsofregularpages.php');
+define('FOOTERBAR', VIEWSINCLUDES . DIRSEP . 'footerbar.php');
 
 /**
  * More require statements
