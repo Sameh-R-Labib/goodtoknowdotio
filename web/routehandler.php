@@ -37,6 +37,7 @@ define('BREADCRUMBS', VIEWSINCLUDES . DIRSEP . 'breadcrumbs.php');
 define('CURRENTCOMMUNITY', VIEWSINCLUDES . DIRSEP . 'currentcommunity.php');
 define('TOPOFREGULARPAGE', VIEWSINCLUDES . DIRSEP . 'topofregularpage.php');
 define('BOTTOMOFPAGES', VIEWSINCLUDES . DIRSEP . 'bottomofpages.php');
+define('COLLAGE', VIEWSINCLUDES . DIRSEP . 'collage.php');
 
 /**
  * More require statements
