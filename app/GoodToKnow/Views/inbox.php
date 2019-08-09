@@ -3,6 +3,8 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
+        <h1>Inbox</h1>
+        <hr>
         <?php if (!empty($inbox_messages_array)): ?>
             <?php $last = count($inbox_messages_array) - 1; ?>
             <?php foreach ($inbox_messages_array as $key => $message): ?>

@@ -3,6 +3,8 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
+        <h1>See One Year's Taxable 💸 Event 📽s</h1>
+        <hr>
         <?php if (!empty($array)): ?>
             <?php $last = count($array) - 1; ?>
             <?php foreach ($array as $key => $object): ?>

@@ -3,6 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
+        <h1>Admin Control Panel</h1>
         <h2 class="topofpage">Regular Member 🧰s</h2>
         <ul>
             <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>

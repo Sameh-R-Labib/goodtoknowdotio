@@ -6,7 +6,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h2>Infinite Loop Prevention</h2>
+        <h1>Infinite Loop Prevention</h1>
         <p>You've arrived at this page because something went wrong. Either it is a simple anomaly
             where your session expired while you were using this app. Or, it is a serious mistake in the app's
             logic.</p>
