@@ -2,9 +2,9 @@
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
-    <h1>See One Year of your 🤔 Tax ✍🏽🔽s</h1>
-    <hr>
     <div id="maincontent">
+        <h1>See One Year of your 🤔 Tax ✍🏽🔽s</h1>
+        <hr>
         <?php if (!empty($array)): ?>
             <?php $last = count($array) - 1; ?>
             <?php foreach ($array as $key => $object): ?>
