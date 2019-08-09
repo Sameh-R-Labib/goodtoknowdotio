@@ -62,11 +62,6 @@
         <label for="date">Today's date (<em>USA mm/dd/yyyy</em>): </label>
         <input id="date" name="date" type="text" value="" required minlength="10" spellcheck="false">
     </p>
-    <section>
-        <p>
-            <button type="submit" name="submit" value="Submit">Submit</button>
-            <button type="submit" name="abort" value="Abort" class="abort">Abort</button>
-        </p>
-    </section>
+    <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

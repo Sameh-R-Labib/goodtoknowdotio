@@ -29,11 +29,6 @@
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
                   placeholder="The frequency of this payment is _ _ _ _."><?= $recurring_payment_object->comment ?></textarea>
     </p>
-    <section>
-        <p>
-            <button type="submit" name="submit" value="Submit">Submit</button>
-            <button type="submit" name="abort" value="Abort" class="abort">Abort</button>
-        </p>
-    </section>
+    <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

@@ -25,11 +25,6 @@
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"
                   placeholder="This banking account is my _ _ _ _ bank's _ _ _ _ account."><?= $object->comment ?></textarea>
     </p>
-    <section>
-        <p>
-            <button type="submit" name="submit" value="Submit">Submit</button>
-            <button type="submit" name="abort" value="Abort" class="abort">Abort</button>
-        </p>
-    </section>
+    <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

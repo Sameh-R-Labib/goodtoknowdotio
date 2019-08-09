@@ -32,11 +32,6 @@
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"
                   placeholder="This record is for BTC related to _ _ _ _ _."><?= $bitcoin_object->comment ?></textarea>
     </p>
-    <section>
-        <p>
-            <button type="submit" name="submit" value="Submit">Submit</button>
-            <button type="submit" name="abort" value="Abort" class="abort">Abort</button>
-        </p>
-    </section>
+    <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>
