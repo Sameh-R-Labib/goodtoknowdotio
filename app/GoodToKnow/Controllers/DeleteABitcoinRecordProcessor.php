@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 
 
 class DeleteABitcoinRecordProcessor
@@ -60,7 +61,9 @@ class DeleteABitcoinRecordProcessor
             redirect_to("/ax1/Home/page");
         }
         // Format the attributes for easy viewing
-        $bitcoin_object->unix_time_at_purchase = self::get_readable_time($bitcoin_object->unix_time_at_purchase);
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+
+        $bitcoin_object->unix_time_at_purchase = get_readable_time($bitcoin_object->unix_time_at_purchase);
         // nl2br
         $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
         $bitcoin_object->price_point = number_format($bitcoin_object->price_point, 2);
@@ -73,18 +76,5 @@ class DeleteABitcoinRecordProcessor
         $html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'deleteabitcoinrecordprocessor.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

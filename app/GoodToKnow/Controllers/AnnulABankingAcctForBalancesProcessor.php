@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 
@@ -65,7 +66,8 @@ class AnnulABankingAcctForBalancesProcessor
         }
 
         // Format its attributes for easy viewing.
-        $object->start_time = self::get_readable_time($object->start_time);
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        $object->start_time = get_readable_time($object->start_time);
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
         $object->start_balance = readable_amount_of_money($object->start_balance);
         $object->comment = nl2br($object->comment, false);
@@ -76,18 +78,5 @@ class AnnulABankingAcctForBalancesProcessor
         $html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'annulabankingacctforbalancesprocessor.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

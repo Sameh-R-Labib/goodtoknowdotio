@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\TaxableIncomeEvent;
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
@@ -77,7 +78,8 @@ class NukeATaxableIncomeEventDelete
         /**
          * Replace attributes with more readable ones.
          */
-        $object->time = self::get_readable_time($object->time);
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        $object->time = get_readable_time($object->time);
         $object->comment = nl2br($object->comment, false);
         // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
@@ -86,18 +88,5 @@ class NukeATaxableIncomeEventDelete
         $html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'nukeataxableincomeeventdelete.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

@@ -9,6 +9,11 @@
 namespace GoodToKnow\Models;
 
 
+use Exception;
+use mysqli;
+use function GoodToKnow\ControllerHelpers\get_readable_time;
+
+
 class MessageToUser extends GoodObject
 {
     /**
@@ -37,12 +42,12 @@ class MessageToUser extends GoodObject
     public $user_id;
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param int $message_id
      * @return bool
      */
-    public static function delete_all_having_particular_message_id(\mysqli $db, string &$error, int $message_id)
+    public static function delete_all_having_particular_message_id(mysqli $db, string &$error, int $message_id)
     {
         /**
          * It will return false if an error occurs while
@@ -63,7 +68,7 @@ class MessageToUser extends GoodObject
                 $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 return false;
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $error .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
         }
@@ -72,12 +77,12 @@ class MessageToUser extends GoodObject
     }
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param int $user_id
      * @return array|bool|mixed
      */
-    public static function get_array_of_message_objects_for_a_user(\mysqli $db, string &$error, int $user_id)
+    public static function get_array_of_message_objects_for_a_user(mysqli $db, string &$error, int $user_id)
     {
         /**
          * Sequential ordering (by time created) will take place
@@ -114,7 +119,7 @@ class MessageToUser extends GoodObject
                     $result->close();
                 }
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
@@ -144,13 +149,15 @@ class MessageToUser extends GoodObject
     }
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param array $inbox_messages_array
      * @return bool
      */
-    public static function replace_attributes(\mysqli $db, string &$error, array &$inbox_messages_array)
+    public static function replace_attributes(mysqli $db, string &$error, array &$inbox_messages_array)
     {
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+
         /**
          * Replace (in each Message) the user_id and created with a username and a datetime.
          *
@@ -162,18 +169,18 @@ class MessageToUser extends GoodObject
                 $error .= " MessageToUser::replace_attributes says: get_username failed. ";
                 return false;
             }
-            $message_object->created = self::get_readable_time($message_object->created);
+            $message_object->created = get_readable_time($message_object->created);
         }
         return true;
     }
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param $user_id
      * @return bool
      */
-    public static function get_username(\mysqli $db, string &$error, $user_id)
+    public static function get_username(mysqli $db, string &$error, $user_id)
     {
         $user_id = (int)$user_id;
         $user = User::find_by_id($db, $error, $user_id);
@@ -182,19 +189,6 @@ class MessageToUser extends GoodObject
             return false;
         }
         return $user->username;
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 
     /**

@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 
@@ -49,9 +50,10 @@ class ViewAllBankingAccountsForBalances
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         foreach ($array_of_objects as $object) {
             // Transform the start_time to a human readable format.
-            $object->start_time = self::get_readable_time($object->start_time);
+            $object->start_time = get_readable_time($object->start_time);
             $object->comment = nl2br($object->comment, false);
             // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
             require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
@@ -67,18 +69,5 @@ class ViewAllBankingAccountsForBalances
         $sessionMessage .= ' Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s. ';
 
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

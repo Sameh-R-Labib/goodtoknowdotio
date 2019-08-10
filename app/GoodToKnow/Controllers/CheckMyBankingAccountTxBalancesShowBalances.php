@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 use GoodToKnow\Models\BankingTransactionForBalances;
@@ -123,12 +124,14 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+
         foreach ($array as $transaction) {
             $transaction->amount = readable_amount_of_money($transaction->amount);
-            $transaction->time = self::get_readable_time($transaction->time);
+            $transaction->time = get_readable_time($transaction->time);
         }
 
-        $account->start_time = self::get_readable_time($account->start_time);
+        $account->start_time = get_readable_time($account->start_time);
         $account->start_balance = readable_amount_of_money($account->start_balance);
 
         $html_title = 'Transactions';
@@ -140,18 +143,5 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🏦ing 📋 ⚖️s. ';
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

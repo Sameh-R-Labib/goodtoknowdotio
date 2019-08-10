@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\BankingTransactionForBalances;
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 
 
 class RevampABankingTransactionForBalancesChooseRecord
@@ -66,25 +67,14 @@ class RevampABankingTransactionForBalancesChooseRecord
         /**
          * Replace time with a human readable time.
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+
         foreach ($array as $object) {
-            $object->time = self::get_readable_time($object->time);
+            $object->time = get_readable_time($object->time);
         }
 
         $html_title = 'Which banking_transaction_for_balances record?';
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalanceschooserecord.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

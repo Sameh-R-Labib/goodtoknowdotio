@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\RecurringPayment;
 
@@ -63,7 +64,8 @@ class ExpungeARecurringPaymentRecordProcessor
             redirect_to("/ax1/Home/page");
         }
         // Format its attributes for easy viewing.
-        $recurring_payment_object->unix_time_at_last_payment = self::get_readable_time($recurring_payment_object->unix_time_at_last_payment);
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        $recurring_payment_object->unix_time_at_last_payment = get_readable_time($recurring_payment_object->unix_time_at_last_payment);
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
         $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->amount_paid);
@@ -74,18 +76,5 @@ class ExpungeARecurringPaymentRecordProcessor
         $html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'expungearecurringpaymentrecordprocessor.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

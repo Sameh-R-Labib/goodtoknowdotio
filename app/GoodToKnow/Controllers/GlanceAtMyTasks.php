@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Task;
+use function GoodToKnow\ControllerHelpers\get_readable_time;
+
 
 class GlanceAtMyTasks
 {
@@ -44,9 +46,10 @@ class GlanceAtMyTasks
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         foreach ($array as $object) {
-            $object->last = self::get_readable_time($object->last);
-            $object->next = self::get_readable_time($object->next);
+            $object->last = get_readable_time($object->last);
+            $object->next = get_readable_time($object->next);
             $object->comment = nl2br($object->comment, false);
         }
 
@@ -59,18 +62,5 @@ class GlanceAtMyTasks
         $sessionMessage .= ' Enjoy ʘ‿ʘ at all your To-do Tasks/💪s. ';
 
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }

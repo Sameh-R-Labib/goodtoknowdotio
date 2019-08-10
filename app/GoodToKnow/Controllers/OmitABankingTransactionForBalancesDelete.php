@@ -90,17 +90,4 @@ class OmitABankingTransactionForBalancesDelete
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalancesdelete.php';
     }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
-    }
 }

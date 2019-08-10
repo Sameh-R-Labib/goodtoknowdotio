@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\TaxableIncomeEvent;
+use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
@@ -74,8 +75,9 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         /**
          * Loop through the array and replace attributes with more readable ones.
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         foreach ($array as $item) {
-            $item->time = self::get_readable_time($item->time);
+            $item->time = get_readable_time($item->time);
             $item->comment = nl2br($item->comment, false);
             // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
             require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
@@ -91,18 +93,5 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         $show_poof = true;
 
         require VIEWS . DIRSEP . 'gawkatalltaxableincomeeventsyearfilter.php';
-    }
-
-    /**
-     * @param \mysqli $db
-     * @param string $error
-     * @param $created
-     * @return string
-     */
-    public static function get_readable_time($created)
-    {
-        $created = (int)$created;
-        $date = date('m/d/Y h:ia ', $created) . "<small>[" . date_default_timezone_get() . "]</small>";
-        return $date;
     }
 }
