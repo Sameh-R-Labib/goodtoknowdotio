@@ -10,6 +10,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\CommunityToTopic;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+
 
 class NewTopicIPProcessor
 {
@@ -75,10 +77,19 @@ class NewTopicIPProcessor
          * I can't assume these post variables exist so I do the following.
          */
         $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
-        $chosen_topic_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : null;
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+        if (is_null($chosen_topic_id)) {
+            $sessionMessage .= " Your choice did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         // Handle bad submit.
-        if (empty($relate) || empty($chosen_topic_id)) {
+        if (empty($relate)) {
             $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
