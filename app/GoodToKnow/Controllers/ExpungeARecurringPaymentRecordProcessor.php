@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\RecurringPayment;
 
@@ -37,12 +38,16 @@ class ExpungeARecurringPaymentRecordProcessor
         /**
          * 1) Determines the id of the recurring_payment record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
          */
-        $chosen_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
-        if ($chosen_id == 0) {
-            $sessionMessage .= " You didn't choose so I've aborted the process for you. ";
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+        if (is_null($chosen_id)) {
+            $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
         $_SESSION['saved_int01'] = $chosen_id;
 
         /**

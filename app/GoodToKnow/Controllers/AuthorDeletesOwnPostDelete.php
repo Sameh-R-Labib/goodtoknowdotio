@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Post;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 class AuthorDeletesOwnPostDelete
@@ -46,10 +47,12 @@ class AuthorDeletesOwnPostDelete
             redirect_to("/ax1/Home/page");
         }
 
-        $chosen_post_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        if ($chosen_post_id == 0) {
-            $sessionMessage .= " You didn't enter a choice for the post you want to edit. ";
+        $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+        if (is_null($chosen_post_id)) {
+            $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");

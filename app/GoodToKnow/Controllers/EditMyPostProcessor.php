@@ -8,6 +8,10 @@
 
 namespace GoodToKnow\Controllers;
 
+
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+
+
 class EditMyPostProcessor
 {
     function page()
@@ -36,7 +40,15 @@ class EditMyPostProcessor
         /**
          * I can't assume this post variables exist so I do the following.
          */
-        $chosen_topic_id = (isset($_POST['choice'])) ? (int)$_POST['choice'] : 0;
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+        if (is_null($chosen_topic_id)) {
+            $sessionMessage .= " Your choice did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Make sure $chosen_topic_id is among the ids of $special_topic_array
