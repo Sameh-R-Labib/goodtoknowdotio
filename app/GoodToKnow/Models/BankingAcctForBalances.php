@@ -14,7 +14,7 @@ class BankingAcctForBalances extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'acct_name', 'start_time', 'start_balance', 'comment'];
+    protected static $fields = ['id', 'user_id', 'acct_name', 'start_time', 'start_balance', 'currency', 'comment'];
 
     /**
      * @var int
@@ -40,6 +40,11 @@ class BankingAcctForBalances extends GoodObject
      * @var float
      */
     public $start_balance;
+
+    /**
+     * @var string
+     */
+    public $currency;
 
     /**
      * @var string

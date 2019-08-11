@@ -56,13 +56,16 @@ class AnnulABankingAcctForBalancesProcessor
          *    And, format its attributes for easy viewing.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
         $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $chosen_id);
+
         if (!$object) {
             $sessionMessage .= " Unexpectedly I could not find that banking_acct_for_balances record. ";
             $_SESSION['message'] = $sessionMessage;

@@ -14,8 +14,8 @@ class Bitcoin extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'address', 'initial_balance', 'current_balance', 'price_point',
-        'unix_time_at_purchase', 'comment'];
+    protected static $fields = ['id', 'user_id', 'address', 'initial_balance', 'current_balance', 'currency',
+        'price_point', 'unix_time_at_purchase', 'comment'];
 
     /**
      * @var int
@@ -41,6 +41,11 @@ class Bitcoin extends GoodObject
      * @var float
      */
     public $current_balance;
+
+    /**
+     * @var string
+     */
+    public $currency;
 
     /**
      * @var float
