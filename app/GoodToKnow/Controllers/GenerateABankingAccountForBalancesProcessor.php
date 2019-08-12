@@ -68,7 +68,8 @@ class GenerateABankingAccountForBalancesProcessor
         /**
          * Create a BankingAcctForBalances array for the record.
          */
-        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => 0, 'start_balance' => 0, 'comment' => ''];
+        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => 0, 'start_balance' => 0,
+            'currency' => '', 'comment' => ''];
 
         /**
          * Make the array into an in memory BankingAcctForBalances object for the record.

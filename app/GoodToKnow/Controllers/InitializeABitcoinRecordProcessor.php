@@ -59,7 +59,7 @@ class InitializeABitcoinRecordProcessor
          * Create a Bitcoin array for the record.
          */
         $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => 0,
-            'current_balance' => 0, 'price_point' => 0, 'unix_time_at_purchase' => 0, 'comment' => ''];
+            'current_balance' => 0, 'currency' => '', 'price_point' => 0, 'unix_time_at_purchase' => 0, 'comment' => ''];
 
         /**
          * Make the array into an in memory Bitcoin object for the record.
