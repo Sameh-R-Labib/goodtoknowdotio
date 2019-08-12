@@ -47,6 +47,7 @@ class EditABitcoinRecordSubmit
         }
         $edited_initial_balance = (isset($_POST['initial_balance'])) ? (float)$_POST['initial_balance'] : 0.0;
         $edited_current_balance = (isset($_POST['current_balance'])) ? (float)$_POST['current_balance'] : 0.0;
+        $edited_currency = (isset($_POST['currency'])) ? $_POST['currency'] : "";
         $edited_price_point = (isset($_POST['price_point'])) ? (float)$_POST['price_point'] : 0.0;
         $edited_unix_time_at_purchase = (isset($_POST['unix_time_at_purchase'])) ? (int)$_POST['unix_time_at_purchase'] : 1560190617;
         $edited_comment = (isset($_POST['comment'])) ? $_POST['comment'] : "";
@@ -58,6 +59,7 @@ class EditABitcoinRecordSubmit
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+        $edited_currency = htmlspecialchars($edited_currency);
 
         /**
          * 2) Retrieve the existing record from the database.
@@ -82,6 +84,7 @@ class EditABitcoinRecordSubmit
          */
         $bitcoin_object->initial_balance = $edited_initial_balance;
         $bitcoin_object->current_balance = $edited_current_balance;
+        $bitcoin_object->currency = $edited_currency;
         $bitcoin_object->price_point = $edited_price_point;
         $bitcoin_object->unix_time_at_purchase = $edited_unix_time_at_purchase;
         $bitcoin_object->comment = $edited_comment;
