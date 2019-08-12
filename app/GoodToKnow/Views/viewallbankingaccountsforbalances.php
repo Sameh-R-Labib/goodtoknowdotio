@@ -10,7 +10,7 @@
             <?php foreach ($array_of_objects as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->acct_name ?></h2>
                 <p><b>Start 🕒: </b><?= $object->start_time ?></p>
-                <p><b>Start ⚖️: </b><?= $object->start_balance ?></p>
+                <p><b>Start ⚖️: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?></p>
                 <p><?= $object->comment ?></p>
                 <?php if ($key != $last): ?>
                     <hr>

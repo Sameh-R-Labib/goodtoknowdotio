@@ -6,7 +6,7 @@
     <p><b>Account: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $object->acct_name; ?></p>
     <p><b>Start 🕒: </b><?= $object->start_time ?></p>
-    <p><b>Start ⚖️: </b><?= $object->start_balance ?></p>
+    <p><b>Start ⚖️: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?></p>
     <p>&nbsp;</p>
     <p><?= $object->comment ?></p>
     <p>&nbsp;</p>

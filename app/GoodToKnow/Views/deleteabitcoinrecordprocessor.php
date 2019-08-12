@@ -6,7 +6,8 @@
     <p><b>Time of purchase: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $bitcoin_object->unix_time_at_purchase; ?></p>
     <p><b>Address: </b><?= $bitcoin_object->address ?></p>
-    <p><b>Price of 1₿ at 🕒 of purchase: </b>$<?= $bitcoin_object->price_point ?></p>
+    <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $bitcoin_object->currency ?>&nbsp;<?= $bitcoin_object->price_point ?>
+    </p>
     <p><b>Initial Balance: </b>₿<?= $bitcoin_object->initial_balance ?></p>
     <p><b>Current Balance: </b>₿<?= $bitcoin_object->current_balance ?></p>
     <p>&nbsp;</p>

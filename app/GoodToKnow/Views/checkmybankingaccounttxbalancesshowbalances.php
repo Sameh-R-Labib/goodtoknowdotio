@@ -6,8 +6,8 @@
         <h1>Banking Transaction Ledger</h1>
         <h2><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $account->acct_name; ?></h2>
-        <p><b>Starting time:</b> <?= $account->start_time ?><br>
-            <b>Starting balance:</b> <?= $account->start_balance ?></p>
+        <p><b>Starting time: </b><?= $account->start_time ?><br>
+            <b>Starting balance: </b><?= $account->currency ?>&nbsp;<?= $account->start_balance ?></p>
         <p>The balances will be incorrect if admin has deleted transactions older than 90 days and the start_time for
             the BankingAcctForBalances for these transactions is older than 90 days.</p>
         <table>
