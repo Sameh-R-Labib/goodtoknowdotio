@@ -21,7 +21,12 @@
                value="<?= $object->start_balance ?>" required minlength="1" maxlength="16" size="16">
     </p>
     <p>
-        <label for="comment">Comment (🚫 html 🚫 markdown ✅ emoji ✅ line-break): </label>
+        <label for="currency">Currency (✅ emoji): </label>
+        <input id="currency" name="currency" type="text"
+               value="<?= $object->currency ?>" required minlength="1" maxlength="15" size="15">
+    </p>
+    <p>
+        <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"
                   placeholder="This banking account is my _ _ _ _ bank's _ _ _ _ account."><?= $object->comment ?></textarea>
     </p>

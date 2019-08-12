@@ -16,6 +16,11 @@
                minlength="10" spellcheck="false" size="17" maxlength="17">
     </p>
     <p>
+        <label for="currency">Currency (✅ emoji): </label>
+        <input id="currency" name="currency" type="text"
+               value="<?= $bitcoin_object->currency ?>" required minlength="1" maxlength="15" size="15">
+    </p>
+    <p>
         <label for="price_point">BTC Price at Time of Purchase: </label>
         <input id="price_point" name="price_point" type="text" placeholder="0.00"
                value="<?= $bitcoin_object->price_point ?>"
@@ -28,7 +33,7 @@
                minlength="10" size="22" maxlength="22">
     </p>
     <p>
-        <label for="comment">Comment (🚫 html 🚫 markdown ✅ emoji ✅ line-break): </label>
+        <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
         <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"
                   placeholder="This record is for BTC related to _ _ _ _ _."><?= $bitcoin_object->comment ?></textarea>
     </p>
