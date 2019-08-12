@@ -128,6 +128,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         foreach ($array as $transaction) {
             $transaction->amount = readable_amount_of_money($transaction->amount);
+            $transaction->balance = readable_amount_of_money($transaction->balance);
             $transaction->time = get_readable_time($transaction->time);
         }
 
