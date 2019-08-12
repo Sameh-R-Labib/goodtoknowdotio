@@ -7,6 +7,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 
 class DeleteABitcoinRecordProcessor
@@ -67,11 +68,12 @@ class DeleteABitcoinRecordProcessor
         }
         // Format the attributes for easy viewing
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         $bitcoin_object->unix_time_at_purchase = get_readable_time($bitcoin_object->unix_time_at_purchase);
         // nl2br
         $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
-        $bitcoin_object->price_point = number_format($bitcoin_object->price_point, 2);
+        $bitcoin_object->price_point = readable_amount_of_money($bitcoin_object->price_point);
         $bitcoin_object->initial_balance = number_format($bitcoin_object->initial_balance, 8);
         $bitcoin_object->current_balance = number_format($bitcoin_object->current_balance, 8);
 

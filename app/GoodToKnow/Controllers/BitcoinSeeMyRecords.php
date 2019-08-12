@@ -54,11 +54,11 @@ class BitcoinSeeMyRecords
          * And apply htmlspecialchars if necessary.
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         foreach ($array_of_bitcoin_objects as $bitcoin_object) {
             $bitcoin_object->unix_time_at_purchase = get_readable_time($bitcoin_object->unix_time_at_purchase);
             $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
-            require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
             $bitcoin_object->price_point = readable_amount_of_money($bitcoin_object->price_point);
             $bitcoin_object->initial_balance = number_format($bitcoin_object->initial_balance, 8);
             $bitcoin_object->current_balance = number_format($bitcoin_object->current_balance, 8);
