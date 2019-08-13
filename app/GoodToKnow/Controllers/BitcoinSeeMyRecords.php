@@ -32,12 +32,6 @@ class BitcoinSeeMyRecords
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'Show Me My Bitcoin Records';
-
-        $page = 'BitcoinSeeMyRecords';
-
-        $show_poof = true;
-
         /**
          * Get an array of Bitcoin objects for the user who has id == $user_id.
          */
@@ -65,7 +59,11 @@ class BitcoinSeeMyRecords
             $bitcoin_object->current_balance = number_format($bitcoin_object->current_balance, 8);
         }
 
-        $html_title = 'Enjoy ʘ‿ʘ at your ₿💰.';
+        $html_title = 'Enjoy ʘ‿ʘ at your ₿.';
+
+        $page = 'BitcoinSeeMyRecords';
+
+        $show_poof = true;
 
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿💰. ';
 
