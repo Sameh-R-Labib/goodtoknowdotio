@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
 
 class InitializeABitcoinRecordProcessor
 {
@@ -34,16 +36,44 @@ class InitializeABitcoinRecordProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        $address = (isset($_POST['address'])) ? $_POST['address'] : '';
-        if (empty($address)) {
-            $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
+        /**
+         * I need to make sure the address doesn't have any characters which
+         * would be altered by htmlspecialchars
+         */
+        $found = false;
+
+        $array_of_html_chars = ['&', '"', '\'', '<', '>'];
+
+        $string = (isset($_POST['address'])) ? $_POST['address'] : '';
+
+        $array = str_split($string);
+
+        foreach ($array as $char) {
+            if (in_array($char, $array_of_html_chars)) {
+                $found = true;
+                break;
+            }
+        }
+
+        if ($found) {
+            $sessionMessage .= " I can't use this address because it has an HTML special character. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
-        if (strlen($address) > 264 || strlen($address) < 8) {
-            $sessionMessage .= " Either the address is too long or too short. Start over. ";
+        /**
+         * End: I need to ...
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $address = standard_form_field_prep('address', 8, 264);
+
+        if (is_null($address)) {
+            $sessionMessage .= " The address you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
 
