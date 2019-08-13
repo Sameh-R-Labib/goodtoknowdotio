@@ -8,9 +8,8 @@
     <p><b>Address: </b><?= $bitcoin_object->address ?></p>
     <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $bitcoin_object->currency ?>&nbsp;<?= $bitcoin_object->price_point ?>
     </p>
-    <p><b>Initial Balance: </b>₿<?= $bitcoin_object->initial_balance ?></p>
-    <p><b>Current Balance: </b>₿<?= $bitcoin_object->current_balance ?></p>
-    <p>&nbsp;</p>
+    <p><b>Initial Balance: </b>₿&nbsp;<?= $bitcoin_object->initial_balance ?></p>
+    <p><b>Current Balance: </b>₿&nbsp;<?= $bitcoin_object->current_balance ?></p>
     <p><?= $bitcoin_object->comment ?></p>
     <p>&nbsp;</p>
     <p>Are you sure you want me to delete "<?= $bitcoin_object->address ?>".</p>
