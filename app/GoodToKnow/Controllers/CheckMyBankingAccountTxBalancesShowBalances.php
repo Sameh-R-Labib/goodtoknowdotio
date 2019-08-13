@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
+use function GoodToKnow\ControllerHelpers\is_crypto;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 use GoodToKnow\Models\BankingTransactionForBalances;
@@ -127,8 +128,13 @@ class CheckMyBankingAccountTxBalancesShowBalances
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         foreach ($array as $transaction) {
-            $transaction->amount = readable_amount_of_money($account->currency, $transaction->amount);
-            $transaction->balance = readable_amount_of_money($account->currency, $transaction->balance);
+            if (is_crypto($account->currency)) {
+                $transaction->amount = number_format($transaction->amount, 8);
+                $transaction->balance = number_format($transaction->balance, 8);
+            } else {
+                $transaction->amount = number_format($transaction->amount, 2);
+                $transaction->balance = number_format($transaction->balance, 2);
+            }
             $transaction->time = get_readable_time($transaction->time);
         }
 
