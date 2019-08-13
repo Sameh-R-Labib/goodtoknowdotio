@@ -40,12 +40,20 @@ class EditABitcoinRecordSubmit
         /**
          * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $edited_initial_balance = (isset($_POST['initial_balance'])) ? (float)$_POST['initial_balance'] : 0.0;
 
         $edited_current_balance = (isset($_POST['current_balance'])) ? (float)$_POST['current_balance'] : 0.0;
 
-        $edited_currency = (isset($_POST['currency'])) ? $_POST['currency'] : "";
+        $edited_currency = standard_form_field_prep('currency', 1, 15);
+
+        if (is_null($edited_currency)) {
+            $sessionMessage .= " The currency you entered did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
 
         $edited_price_point = (isset($_POST['price_point'])) ? (float)$_POST['price_point'] : 0.0;
 
@@ -59,8 +67,6 @@ class EditABitcoinRecordSubmit
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
-
-        $edited_currency = htmlspecialchars($edited_currency);
 
         /**
          * 2) Retrieve the existing record from the database.
