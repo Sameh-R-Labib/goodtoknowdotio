@@ -5,9 +5,9 @@
     <p>&nbsp;</p>
     <p><b>Label: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $object->label; ?></p>
-    <p><b>Year when Received: </b><?= $object->year_received ?></p>
-    <p><b>Time when Received: </b><?= $object->time ?></p>
-    <p><?= $object->currency ?>&nbsp;<?= $object->amount ?></p>
+    <p><b>Year: </b><?= $object->year_received ?></p>
+    <p><b>Time: </b><?= $object->time ?></p>
+    <p><b>Amount: </b><?= $object->currency ?>&nbsp;<?= $object->amount ?></p>
     <p><?= $object->comment ?></p>
     <p>&nbsp;</p>
     <p>Are you sure you want to delete this?</p>
