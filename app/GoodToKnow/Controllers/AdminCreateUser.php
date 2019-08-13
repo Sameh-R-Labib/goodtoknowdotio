@@ -11,6 +11,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class AdminCreateUser
@@ -54,11 +55,17 @@ class AdminCreateUser
          * I can't assume these post variables exist so I do the following.
          */
         $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+
         $submitted_first_try = (isset($_POST['first_try'])) ? $_POST['first_try'] : '';
+
         $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
+
         $submitted_title = (isset($_POST['title'])) ? $_POST['title'] : '';
+
         $submitted_race = (isset($_POST['race'])) ? $_POST['race'] : '';
-        $submitted_comment = (isset($_POST['comment'])) ? $_POST['comment'] : '';
+
+        $submitted_comment = standard_form_field_prep('comment', 0, 800);
+
         $submitted_date = (isset($_POST['date'])) ? $_POST['date'] : '';
 //        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
 
@@ -89,7 +96,7 @@ class AdminCreateUser
             !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
             !self::is_title($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
-            !self::is_comment($sessionMessage, $submitted_comment) ||
+            is_null($submitted_comment) ||
             !self::is_date($sessionMessage, $submitted_date)) {
             $sessionMessage .= " One of the submitted field values is invalid. ";
             $_SESSION['message'] = $sessionMessage;
@@ -439,40 +446,6 @@ class AdminCreateUser
             'native-american'];
         if (!in_array($race, $races)) {
             $message .= " Your race field does not contain a valid value. ";
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * @param $message
-     * @param string $comment
-     * @return bool
-     */
-    public static function is_comment(string &$message, string &$comment)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Must be less than 800 characters long.
-         * Can't contain any html tags
-         */
-        $comment = trim($comment);
-
-        if (empty($comment)) {
-            $message .= " Your comment is missing. ";
-            return false;
-        }
-
-        $length = strlen($comment);
-        if ($length > 800) {
-            $message .= " Your comment is too long. ";
-            return false;
-        }
-
-        if ($comment != strip_tags($comment)) {
-            $message .= " Your comment includes html. We don't allow that in this field. ";
             return false;
         }
 

@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class EditABitcoinRecordSubmit
@@ -39,26 +40,26 @@ class EditABitcoinRecordSubmit
         /**
          * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
          */
-        if (!isset($_POST['submit'])) {
-            $sessionMessage .= " Error 07730. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            redirect_to("/ax1/Home/page");
-        }
+
         $edited_initial_balance = (isset($_POST['initial_balance'])) ? (float)$_POST['initial_balance'] : 0.0;
+
         $edited_current_balance = (isset($_POST['current_balance'])) ? (float)$_POST['current_balance'] : 0.0;
+
         $edited_currency = (isset($_POST['currency'])) ? $_POST['currency'] : "";
+
         $edited_price_point = (isset($_POST['price_point'])) ? (float)$_POST['price_point'] : 0.0;
+
         $edited_unix_time_at_purchase = (isset($_POST['unix_time_at_purchase'])) ? (int)$_POST['unix_time_at_purchase'] : 1560190617;
-        $edited_comment = (isset($_POST['comment'])) ? $_POST['comment'] : "";
-        // make sure the comment is okay.
-        $result = self::is_comment($sessionMessage, $edited_comment);
-        if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because the comment text submitted did not comply. ";
+
+        $edited_comment = standard_form_field_prep('comment', 0, 800);
+
+        if (is_null($edited_comment)) {
+            $sessionMessage .= " Your comment you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
         $edited_currency = htmlspecialchars($edited_currency);
 
         /**
@@ -107,39 +108,5 @@ class EditABitcoinRecordSubmit
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");
-    }
-
-    /**
-     * @param $message
-     * @param string $comment
-     * @return bool
-     */
-    public static function is_comment(string &$message, string &$comment)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Must be less than 800 characters long.
-         * Can't contain any html tags
-         */
-        $comment = trim($comment);
-
-        if (empty($comment)) {
-            $message .= " Your comment is missing. ";
-            return false;
-        }
-
-        $length = strlen($comment);
-        if ($length > 800) {
-            $message .= " Your comment is too long. ";
-            return false;
-        }
-
-        if ($comment != strip_tags($comment)) {
-            $message .= " Your comment includes html. We don't allow that in this field. ";
-            return false;
-        }
-
-        return true;
     }
 }

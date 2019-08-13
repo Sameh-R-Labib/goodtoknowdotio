@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
 
 class PopulateABankingAccountForBalancesSubmit
 {
@@ -48,20 +50,26 @@ class PopulateABankingAccountForBalancesSubmit
         }
 
         $edited_acct_name = (isset($_POST['acct_name'])) ? $_POST['acct_name'] : "";
+
         $edited_start_time = (isset($_POST['start_time'])) ? (int)$_POST['start_time'] : 1560190617;
+
         $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0.0;
+
         $edited_currency = (isset($_POST['currency'])) ? $_POST['currency'] : "";
-        $edited_comment = (isset($_POST['comment'])) ? $_POST['comment'] : "";
-        // make sure the comment is okay.
-        $result = self::is_comment($sessionMessage, $edited_comment);
-        if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because the comment text submitted did not comply. ";
+
+        $edited_comment = standard_form_field_prep('comment', 0, 800);
+
+        if (is_null($edited_comment)) {
+            $sessionMessage .= " Your comment you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
         // htmlspecialchars
+
         $edited_acct_name = htmlspecialchars($edited_acct_name);
+
         $edited_currency = htmlspecialchars($edited_currency);
 
         /**
@@ -109,39 +117,5 @@ class PopulateABankingAccountForBalancesSubmit
         $_SESSION['message'] = $sessionMessage;
         $_SESSION['saved_int01'] = 0;
         redirect_to("/ax1/Home/page");
-    }
-
-    /**
-     * @param $message
-     * @param string $comment
-     * @return bool
-     */
-    public static function is_comment(string &$message, string &$comment)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Must be less than 800 characters long.
-         * Can't contain any html tags
-         */
-        $comment = trim($comment);
-
-        if (empty($comment)) {
-            $message .= " Your comment is missing. ";
-            return false;
-        }
-
-        $length = strlen($comment);
-        if ($length > 800) {
-            $message .= " Your comment is too long. ";
-            return false;
-        }
-
-        if ($comment != strip_tags($comment)) {
-            $message .= " Your comment includes html. We don't allow that in this field. ";
-            return false;
-        }
-
-        return true;
     }
 }
