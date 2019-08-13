@@ -43,9 +43,11 @@ class PolishARecurringPaymentRecordSubmit
          * 1) Validate the submitted polisharecurringpaymentrecordprocessor.php form data.
          *      (and apply htmlspecialchars)
          */
-        $edited_label = (isset($_POST['label'])) ? $_POST['label'] : "";
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_currency = (isset($_POST['currency'])) ? $_POST['currency'] : "";
+        $edited_label = standard_form_field_prep('label', 4, 264);
+
+        $edited_currency = standard_form_field_prep('currency', 1, 15);
 
         $edited_amount_paid = (isset($_POST['amount_paid'])) ? (float)$_POST['amount_paid'] : 0;
 
@@ -53,15 +55,12 @@ class PolishARecurringPaymentRecordSubmit
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment)) {
-            $sessionMessage .= " Your comment you entered did not pass validation. ";
+        if (is_null($edited_comment) || is_null($edited_label) || is_null($edited_currency)) {
+            $sessionMessage .= " One or more values you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
-
-        $edited_label = htmlspecialchars($edited_label);
-        $edited_currency = htmlspecialchars($edited_currency);
 
         /**
          * 2) Retrieve the existing record from the database.
