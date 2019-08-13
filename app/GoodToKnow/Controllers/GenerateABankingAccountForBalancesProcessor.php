@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
 
 class GenerateABankingAccountForBalancesProcessor
 {
@@ -34,15 +36,12 @@ class GenerateABankingAccountForBalancesProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        $acct_name = (isset($_POST['acct_name'])) ? $_POST['acct_name'] : '';
-        if (empty(trim($acct_name))) {
-            $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        if (strlen($acct_name) > 264 || strlen($acct_name) < 3) {
-            $sessionMessage .= " Either the acct_name is too long or too short. Start over. ";
+        $acct_name = standard_form_field_prep('acct_name', 3, 30);
+
+        if (is_null($acct_name)) {
+            $sessionMessage .= " The acct_name you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
@@ -54,16 +53,6 @@ class GenerateABankingAccountForBalancesProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
-        /**
-         * Apply htmlspecialchars to fields which
-         * get rendered by the browser.
-         *
-         * By convention: We apply htmlspecialchars() to data at
-         * the point in time before that data gets saved in
-         * the database.
-         */
-        $acct_name = htmlspecialchars($acct_name);
 
         /**
          * Create a BankingAcctForBalances array for the record.
