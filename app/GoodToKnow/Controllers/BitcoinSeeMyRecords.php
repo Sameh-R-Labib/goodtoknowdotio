@@ -65,7 +65,7 @@ class BitcoinSeeMyRecords
 
         $show_poof = true;
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿💰. ';
+        $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿ 📽s. ';
 
         require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';
     }
