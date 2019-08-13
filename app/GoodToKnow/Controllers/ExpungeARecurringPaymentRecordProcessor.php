@@ -70,10 +70,11 @@ class ExpungeARecurringPaymentRecordProcessor
         }
         // Format its attributes for easy viewing.
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         $recurring_payment_object->unix_time_at_last_payment = get_readable_time($recurring_payment_object->unix_time_at_last_payment);
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
-        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-        $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->amount_paid);
+        $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->currency, $recurring_payment_object->amount_paid);
 
         /**
          * 3) Presents a form containing data from the record and asking for confirmation to delete.

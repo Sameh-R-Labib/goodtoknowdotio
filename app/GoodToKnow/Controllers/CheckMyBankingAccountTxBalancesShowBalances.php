@@ -102,7 +102,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
             if (abs($running_total) >= abs(0.00000000001)) {
                 $transaction->balance = $running_total;
             } else {
-                $transaction->balance = 0;
+                $transaction->balance = 0.0;
             }
         }
 
@@ -127,13 +127,13 @@ class CheckMyBankingAccountTxBalancesShowBalances
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         foreach ($array as $transaction) {
-            $transaction->amount = readable_amount_of_money($transaction->amount);
-            $transaction->balance = readable_amount_of_money($transaction->balance);
+            $transaction->amount = readable_amount_of_money($transaction->currency, $transaction->amount);
+            $transaction->balance = readable_amount_of_money($transaction->currency, $transaction->balance);
             $transaction->time = get_readable_time($transaction->time);
         }
 
         $account->start_time = get_readable_time($account->start_time);
-        $account->start_balance = readable_amount_of_money($account->start_balance);
+        $account->start_balance = readable_amount_of_money($account->currency, $account->start_balance);
 
         $html_title = 'Transactions';
 

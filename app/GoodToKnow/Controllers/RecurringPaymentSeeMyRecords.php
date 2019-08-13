@@ -46,7 +46,9 @@ class RecurringPaymentSeeMyRecords
          * Get an array of RecurringPayment objects for the user who has id == $user_id.
          */
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
             $sessionMessage .= ' 🤔 I could NOT find any recurring payments for you ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
@@ -58,13 +60,12 @@ class RecurringPaymentSeeMyRecords
          * And apply htmlspecialchars if necessary.
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         foreach ($array_of_recurring_payment_objects as $object) {
-            $object->label = htmlspecialchars($object->label);
-            $object->currency = htmlspecialchars($object->currency);
+            $object->amount_paid = readable_amount_of_money($object->currency, $object->amount_paid);
             $object->unix_time_at_last_payment = get_readable_time($object->unix_time_at_last_payment);
             $object->comment = nl2br($object->comment, false);
-            require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-            $object->amount_paid = readable_amount_of_money($object->amount_paid);
         }
 
         $html_title = 'Enjoy ʘ‿ʘ at your 🌀 💳 📽s.';

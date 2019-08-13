@@ -87,9 +87,10 @@ class OmitABankingTransactionForBalancesDelete
          *         - time
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-        $object->time = get_readable_time($object->time);
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-        $object->amount = readable_amount_of_money($object->amount);
+
+        $object->time = get_readable_time($object->time);
+        $object->amount = readable_amount_of_money($object->currency, $object->amount);
 
         $html_title = 'Are you sure?';
 

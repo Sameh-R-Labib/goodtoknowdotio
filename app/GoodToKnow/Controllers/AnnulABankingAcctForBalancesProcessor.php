@@ -75,9 +75,10 @@ class AnnulABankingAcctForBalancesProcessor
 
         // Format its attributes for easy viewing.
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-        $object->start_time = get_readable_time($object->start_time);
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-        $object->start_balance = readable_amount_of_money($object->start_balance);
+
+        $object->start_time = get_readable_time($object->start_time);
+        $object->start_balance = readable_amount_of_money($object->currency, $object->start_balance);
         $object->comment = nl2br($object->comment, false);
 
         /**

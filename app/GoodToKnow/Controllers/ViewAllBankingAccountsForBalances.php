@@ -51,13 +51,12 @@ class ViewAllBankingAccountsForBalances
          * Loop through the array and replace some attributes with more readable versions of themselves.
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         foreach ($array_of_objects as $object) {
-            // Transform the start_time to a human readable format.
             $object->start_time = get_readable_time($object->start_time);
             $object->comment = nl2br($object->comment, false);
-            // Add comma for thousands but keep the number of decimal places at 8 just in case the currency is a crypto.
-            require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-            $object->start_balance = readable_amount_of_money($object->start_balance);
+            $object->start_balance = readable_amount_of_money($object->currency, $object->start_balance);
         }
 
         $page = 'ViewAllBankingAccountsForBalances';
