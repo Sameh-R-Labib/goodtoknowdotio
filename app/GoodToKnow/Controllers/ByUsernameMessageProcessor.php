@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class ByUsernameMessageProcessor
@@ -43,7 +44,15 @@ class ByUsernameMessageProcessor
         /**
          * The submitted form field is $_POST['username']
          */
-        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $submitted_username = standard_form_field_prep('username', 7, 12);
+
+        if (is_null($submitted_username)) {
+            $sessionMessage .= " The username you entered did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Now we know that $submitted_username is of type string and is set to a particular value.
