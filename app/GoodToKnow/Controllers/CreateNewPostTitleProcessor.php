@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
+
 class CreateNewPostTitleProcessor
 {
     function page()
@@ -42,32 +45,19 @@ class CreateNewPostTitleProcessor
         /**
          * I can't assume these post variables exist so I do the following.
          */
-        $main_title = (isset($_POST['main_title'])) ? $_POST['main_title'] : '';
-        $title_extension = (isset($_POST['title_extension'])) ? $_POST['title_extension'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $main_title = trim($main_title);
-        $title_extension = trim($title_extension);
+        $main_title = standard_form_field_prep('main_title', 1, 200);
 
-        // Required fields
-        if (empty($main_title) || empty($title_extension)) {
-            $sessionMessage .= " Either you did not fill out both fields or the session expired. Start over. ";
+        $title_extension = standard_form_field_prep('title_extension', 0, 200);
+
+        if (is_null($main_title) || is_null($title_extension)) {
+            $sessionMessage .= " The values you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
-
-        if (strlen($main_title) > 200 || strlen($title_extension) > 200) {
-            $sessionMessage .= " The title or its extension was too long (max 200 bytes.) Start over. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
-            redirect_to("/ax1/Home/page");
-        }
-
-        // Make them safe for HTML
-        $main_title = htmlspecialchars($main_title, ENT_NOQUOTES | ENT_HTML5);
-        $title_extension = htmlspecialchars($title_extension, ENT_NOQUOTES | ENT_HTML5);
 
         // Add to session
         $_SESSION['saved_str01'] = $main_title;
