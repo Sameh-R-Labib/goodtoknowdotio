@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class ChangePasswordProcessor
@@ -50,9 +51,19 @@ class ChangePasswordProcessor
         /**
          * I can't assume these post variables exist so I do the following.
          */
-        $current_password = (isset($_POST['current_password'])) ? $_POST['current_password'] : '';
-        $first_try = (isset($_POST['first_try'])) ? $_POST['first_try'] : '';
-        $new_password = (isset($_POST['new_password'])) ? $_POST['new_password'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $current_password = standard_form_field_prep('current_password', 6, 264);
+
+        $first_try = standard_form_field_prep('first_try', 6, 264);
+
+        $new_password = standard_form_field_prep('new_password', 6, 264);
+
+        if (is_null($current_password) || is_null($first_try) || is_null($new_password)) {
+            $sessionMessage .= " One or more of the values you entered did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Get the user object for the current user
@@ -60,6 +71,7 @@ class ChangePasswordProcessor
          * valid submission.
          */
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
+
         if (!password_verify($current_password, $user_object->password)) {
             $sessionMessage .= " The value you entered as Current Password not correct. ";
             $_SESSION['message'] = $sessionMessage;
