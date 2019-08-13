@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
+
 class EditMyPostEditProcessor
 {
     function page()
@@ -52,18 +55,12 @@ class EditMyPostEditProcessor
          * the edited post was submitted.
          * $_POST['markdown']
          */
-        $markdown = (isset($_POST['markdown'])) ? $_POST['markdown'] : '';
-        if (!isset($_POST['markdown']) || trim($markdown) === '') {
-            $sessionMessage .= " The edited file was not saved because nothing was submitted. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
-            redirect_to("/ax1/Home/page");
-        }
-        if (strlen($markdown) > 38000) {
-            $sessionMessage .= " The edited file you submitted was not saved because there were too many characters. ";
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $markdown = standard_form_field_prep('markdown', 1, 38000);
+
+        if (is_null($markdown)) {
+            $sessionMessage .= " The markdown you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
