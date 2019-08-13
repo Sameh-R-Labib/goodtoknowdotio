@@ -4,6 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
@@ -77,6 +78,19 @@ class OmitABankingTransactionForBalancesDelete
         }
 
         /**
+         * We need to know what the currency is.
+         * To do this we need the BankingAcctForBalances object.
+         */
+        $bank = BankingAcctForBalances::find_by_id($db, $sessionMessage, $object->bank_id);
+        if (!$bank) {
+            $sessionMessage .= " Unexpectedly I could not find that banking_acct_for_balances record. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        /**
          * 3) Present a form (populated with data from the object)
          *    which asks for approval for deletion to proceed.
          *
@@ -90,7 +104,7 @@ class OmitABankingTransactionForBalancesDelete
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         $object->time = get_readable_time($object->time);
-        $object->amount = readable_amount_of_money($object->currency, $object->amount);
+        $object->amount = readable_amount_of_money($bank->currency, $object->amount);
 
         $html_title = 'Are you sure?';
 

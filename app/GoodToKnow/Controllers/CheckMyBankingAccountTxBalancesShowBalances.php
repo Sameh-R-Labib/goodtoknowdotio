@@ -127,8 +127,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         foreach ($array as $transaction) {
-            $transaction->amount = readable_amount_of_money($transaction->currency, $transaction->amount);
-            $transaction->balance = readable_amount_of_money($transaction->currency, $transaction->balance);
+            $transaction->amount = readable_amount_of_money($account->currency, $transaction->amount);
+            $transaction->balance = readable_amount_of_money($account->currency, $transaction->balance);
             $transaction->time = get_readable_time($transaction->time);
         }
 
