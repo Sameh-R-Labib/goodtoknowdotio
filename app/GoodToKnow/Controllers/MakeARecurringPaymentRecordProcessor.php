@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\RecurringPayment;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
 
 class MakeARecurringPaymentRecordProcessor
 {
@@ -34,15 +36,12 @@ class MakeARecurringPaymentRecordProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        $label = (isset($_POST['label'])) ? $_POST['label'] : '';
-        if (empty(trim($label))) {
-            $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        if (strlen($label) > 264 || strlen($label) < 4) {
-            $sessionMessage .= " Either the label is too long or too short. Start over. ";
+        $label = standard_form_field_prep('label', 4, 264);
+
+        if (is_null($label)) {
+            $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
@@ -54,16 +53,6 @@ class MakeARecurringPaymentRecordProcessor
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
-
-        /**
-         * Apply htmlspecialchars to fields which
-         * get rendered by the browser.
-         *
-         * By convention: We apply htmlspecialchars() to data at
-         * the point in time before that data gets saved in
-         * the database.
-         */
-        $label = htmlspecialchars($label);
 
         /**
          * Create a RecurringPayment array for the record.
