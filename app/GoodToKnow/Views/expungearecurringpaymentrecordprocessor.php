@@ -8,7 +8,6 @@
     <p><b>Last's 🕒: </b><?= $recurring_payment_object->unix_time_at_last_payment ?></p>
     <p><b>Last's Amount: </b><?= $recurring_payment_object->currency ?>
         &nbsp;<?= $recurring_payment_object->amount_paid ?></p>
-    <p>&nbsp;</p>
     <p><?= $recurring_payment_object->comment ?></p>
     <p>&nbsp;</p>
     <p>Are you sure you want me to delete "<?= $recurring_payment_object->label ?>".</p>
