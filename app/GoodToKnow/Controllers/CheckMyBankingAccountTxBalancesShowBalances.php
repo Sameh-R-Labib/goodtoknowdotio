@@ -127,6 +127,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
+
         foreach ($array as $transaction) {
             if (is_crypto($account->currency)) {
                 $transaction->amount = number_format($transaction->amount, 8);
