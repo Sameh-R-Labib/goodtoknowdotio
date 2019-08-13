@@ -45,7 +45,7 @@ class DeleteABitcoinRecordDelete
 
         if ($choice == "no") {
             $_SESSION['saved_int01'] = 0;
-            $sessionMessage .= " You've changed your mind about deleting the bitcoin record. So, none was deleted. ";
+            $sessionMessage .= " Nothing was deleted. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
