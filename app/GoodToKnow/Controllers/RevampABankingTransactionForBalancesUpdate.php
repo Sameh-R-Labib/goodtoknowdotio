@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\BankingTransactionForBalances;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
 
 class RevampABankingTransactionForBalancesUpdate
 {
@@ -43,20 +45,23 @@ class RevampABankingTransactionForBalancesUpdate
          * 1) Validate the submitted revampabankingtransactionforbalancesedit.php form data.
          *      (and apply htmlspecialchars)
          */
-        if (!isset($_POST['submit'])) {
-            $sessionMessage .= " Error 12730. ";
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $edited_amount = (isset($_POST['amount'])) ? (float)$_POST['amount'] : 0.0;
+
+        $edited_time = (isset($_POST['time'])) ? (int)$_POST['time'] : 1560190617;
+
+        $edited_bank_id = (isset($_POST['bank_id'])) ? (int)$_POST['bank_id'] : 0;
+
+        $edited_label = standard_form_field_prep('label', 3, 30);
+
+        if (is_null($edited_label)) {
+            $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
-
-        $edited_bank_id = (isset($_POST['bank_id'])) ? (int)$_POST['bank_id'] : 0;
-        $edited_label = (isset($_POST['label'])) ? $_POST['label'] : "";
-        $edited_amount = (isset($_POST['amount'])) ? (float)$_POST['amount'] : 0.0;
-        $edited_time = (isset($_POST['time'])) ? (int)$_POST['time'] : 1560190617;
-        // htmlspecialchars
-        $edited_label = htmlspecialchars($edited_label);
 
         /**
          * 2) Retrieve the existing record from the database.
