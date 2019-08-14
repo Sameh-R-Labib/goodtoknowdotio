@@ -50,15 +50,13 @@ class AdminCreateUser
          *   $saved_int01, $_POST['username'], $_POST['first_try'], $_POST['password'],
          *   $_POST['title'], $_POST['race'], $_POST['comment'], $_POST['date'], $_POST['submit']
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        /**
-         * I can't assume these post variables exist so I do the following.
-         */
-        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+        $submitted_username = standard_form_field_prep('username', 6, 30);
 
-        $submitted_first_try = (isset($_POST['first_try'])) ? $_POST['first_try'] : '';
+        $submitted_first_try = standard_form_field_prep('first_try', 6, 264);
 
-        $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
+        $submitted_password = standard_form_field_prep('password', 6, 264);
 
         $submitted_title = (isset($_POST['title'])) ? $_POST['title'] : '';
 
@@ -66,8 +64,15 @@ class AdminCreateUser
 
         $submitted_comment = standard_form_field_prep('comment', 0, 800);
 
-        $submitted_date = (isset($_POST['date'])) ? $_POST['date'] : '';
-//        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
+        $submitted_date = standard_form_field_prep('date', 10, 14);
+
+        if (is_null($submitted_username) || is_null($submitted_comment) || is_null($submitted_date) ||
+            is_null($submitted_first_try) || is_null($submitted_password)) {
+            $sessionMessage .= " One or more values is invalid. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * $new_user_role needs to have a value
@@ -77,18 +82,6 @@ class AdminCreateUser
         $new_user_is_suspended = 0;
 
         /**
-         * Apply htmlspecialchars to fields which
-         * get rendered by the browser.
-         *
-         * By convention: We apply htmlspecialchars() to data at
-         * the point in time before that data gets saved in
-         * the database.
-         */
-        $submitted_username = htmlspecialchars($submitted_username);
-        $submitted_comment = htmlspecialchars($submitted_comment);
-
-
-        /**
          * If any of the submitted fields are invalid
          * store a session message and redirect to /ax1/LoginForm/page
          */
@@ -96,7 +89,6 @@ class AdminCreateUser
             !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
             !self::is_title($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
-            is_null($submitted_comment) ||
             !self::is_date($sessionMessage, $submitted_date)) {
             $sessionMessage .= " One of the submitted field values is invalid. ";
             $_SESSION['message'] = $sessionMessage;
