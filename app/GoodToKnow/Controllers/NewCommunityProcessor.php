@@ -4,6 +4,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
+
 class NewCommunityProcessor
 {
     function page()
@@ -22,23 +25,14 @@ class NewCommunityProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        $community_name = (isset($_POST['community_name'])) ? $_POST['community_name'] : '';
-        $community_description = (isset($_POST['community_description'])) ? $_POST['community_description'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $community_name = trim($community_name);
-        $community_description = trim($community_description);
+        $community_name = standard_form_field_prep('community_name', 1, 200);
 
-        if (empty($community_name) || empty($community_description)) {
-            $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
+        $community_description = standard_form_field_prep('community_description', 1, 230);
 
-        $community_name = htmlspecialchars($community_name, ENT_NOQUOTES | ENT_HTML5);
-        $community_description = htmlspecialchars($community_description, ENT_NOQUOTES | ENT_HTML5);
-
-        if (strlen($community_name) > 200 || strlen($community_description) > 230) {
-            $sessionMessage .= " Either your community name or description was too long. Start over. ";
+        if (is_null($community_name) || is_null($community_description)) {
+            $sessionMessage .= " One or more values did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
