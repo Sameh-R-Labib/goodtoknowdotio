@@ -42,35 +42,24 @@ class PopulateABankingAccountForBalancesSubmit
          * 1) Validate the submitted populateabankingaccountforbalancesprocessor.php form data.
          *      (and apply htmlspecialchars)
          */
-        if (!isset($_POST['submit'])) {
-            $sessionMessage .= " Error 12730. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            redirect_to("/ax1/Home/page");
-        }
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_acct_name = (isset($_POST['acct_name'])) ? $_POST['acct_name'] : "";
+        $edited_acct_name = standard_form_field_prep('acct_name', 3, 30);
 
         $edited_start_time = (isset($_POST['start_time'])) ? (int)$_POST['start_time'] : 1560190617;
 
         $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0.0;
 
-        $edited_currency = (isset($_POST['currency'])) ? $_POST['currency'] : "";
+        $edited_currency = standard_form_field_prep('currency', 1, 15);
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment)) {
+        if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency)) {
             $sessionMessage .= " Your comment you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
-
-        // htmlspecialchars
-
-        $edited_acct_name = htmlspecialchars($edited_acct_name);
-
-        $edited_currency = htmlspecialchars($edited_currency);
 
         /**
          * 2) Retrieve the existing record from the database.
