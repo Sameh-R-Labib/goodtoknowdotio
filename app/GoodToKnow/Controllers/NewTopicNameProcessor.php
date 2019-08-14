@@ -9,6 +9,9 @@
 namespace GoodToKnow\Controllers;
 
 
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
+
 class NewTopicNameProcessor
 {
     function page()
@@ -39,27 +42,14 @@ class NewTopicNameProcessor
             redirect_to("/ax1/Home/page");
         }
 
-        /**
-         * I can't assume these post variables exist so I do the following.
-         */
-        $topic_name = (isset($_POST['topic_name'])) ? $_POST['topic_name'] : '';
-        $topic_description = (isset($_POST['topic_description'])) ? $_POST['topic_description'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $topic_name = trim($topic_name);
-        $topic_description = trim($topic_description);
+        $topic_name = standard_form_field_prep('topic_name', 1, 200);
 
-        if (empty($topic_name) || empty($topic_description)) {
-            $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            redirect_to("/ax1/Home/page");
-        }
+        $topic_description = standard_form_field_prep('topic_description', 1, 230);
 
-        $topic_name = htmlspecialchars($topic_name, ENT_NOQUOTES | ENT_HTML5);
-        $topic_description = htmlspecialchars($topic_description, ENT_NOQUOTES | ENT_HTML5);
-
-        if (strlen($topic_name) > 200 || strlen($topic_description) > 230) {
-            $sessionMessage .= " Either your topic name or description was too long. Start over. ";
+        if (is_null($topic_name) || is_null($topic_description)) {
+            $sessionMessage .= " One or more values did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
