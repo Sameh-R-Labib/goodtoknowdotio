@@ -55,7 +55,7 @@ class PopulateABankingAccountForBalancesSubmit
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
         if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency)) {
-            $sessionMessage .= " Your comment you entered did not pass validation. ";
+            $sessionMessage .= " One or more values you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
