@@ -6,6 +6,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class TransferPostOwnershipTransferIt
@@ -48,10 +49,12 @@ class TransferPostOwnershipTransferIt
             redirect_to("/ax1/Home/page");
         }
 
-        $username = (isset($_POST['username'])) ? $_POST['username'] : "";
-        $username = trim($username);
-        if (empty($username)) {
-            $sessionMessage .= " You didn't give me a username. ";
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $username = standard_form_field_prep('username', 7, 12);
+
+        if (is_null($username)) {
+            $sessionMessage .= " The username you entered did NOT pass validation. ";
             $_SESSION['message'] .= $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;
