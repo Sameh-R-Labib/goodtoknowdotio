@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Message;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class PurgeOldMessagesProcessor
@@ -48,15 +49,18 @@ class PurgeOldMessagesProcessor
 
         /**
          * Variables to work with:
-         *   $_POST['date'], $_POST['submit']
+         *   $_POST['date']
          */
 
-        /**
-         * I can't assume these post variables exist so I do the following.
-         */
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $submitted_date = (isset($_POST['date'])) ? $_POST['date'] : '';
-//        $submitted_submit = (isset($_POST['submit'])) ? $_POST['submit'] : '';
+        $submitted_date = standard_form_field_prep('date', 10, 14);
+
+        if (is_null($submitted_date)) {
+            $sessionMessage .= ' The date you entered did not pass validation. ';
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         /**
          * Validate the date
