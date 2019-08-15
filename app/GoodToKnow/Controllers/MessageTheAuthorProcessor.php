@@ -11,6 +11,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Message;
 use GoodToKnow\Models\MessageToUser;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class MessageTheAuthorProcessor
@@ -45,15 +46,12 @@ class MessageTheAuthorProcessor
          * the message was submitted.
          * $_POST['markdown']
          */
-        $markdown = (isset($_POST['markdown'])) ? $_POST['markdown'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $markdown = standard_form_field_prep('markdown', 1, 1500);
+
         if (!isset($_POST['markdown']) || trim($markdown) === '') {
-            $sessionMessage .= " The message you submitted was not saved because nothing was submitted. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-        if (strlen($markdown) > 1500) {
-            $sessionMessage .= " The message you submitted was not saved because the number of characters
-            exceeded the maximum allowed for a message. ";
+            $sessionMessage .= " The message you submitted did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
