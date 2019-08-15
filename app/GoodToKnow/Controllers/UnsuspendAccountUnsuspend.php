@@ -48,7 +48,9 @@ class UnsuspendAccountUnsuspend
          * 1) Retrieve the User object for the member
          *     whose is_suspended field the admin wants to edit.
          */
+
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
