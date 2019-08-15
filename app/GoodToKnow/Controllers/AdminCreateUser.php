@@ -52,11 +52,11 @@ class AdminCreateUser
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $submitted_username = standard_form_field_prep('username', 6, 30);
+        $submitted_username = standard_form_field_prep('username', 7, 12);
 
-        $submitted_first_try = standard_form_field_prep('first_try', 6, 264);
+        $submitted_first_try = standard_form_field_prep('first_try', 7, 264);
 
-        $submitted_password = standard_form_field_prep('password', 6, 264);
+        $submitted_password = standard_form_field_prep('password', 7, 264);
 
         $submitted_title = (isset($_POST['title'])) ? $_POST['title'] : '';
 

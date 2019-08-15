@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class GiveComsToUsrProcessor
@@ -37,8 +38,15 @@ class GiveComsToUsrProcessor
          *  2) Save $_POST['username']
          *  3) Redirect to a route which will present a form with checkboxes for choosing communities
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
+        $submitted_username = standard_form_field_prep('username', 7, 12);
+
+        if (is_null($submitted_username)) {
+            $sessionMessage .= " The username you entered did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            redirect_to("/ax1/Home/page");
+        }
 
         $db = db_connect($sessionMessage);
 
