@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class MemberMemEdFormProc
@@ -20,9 +21,7 @@ class MemberMemEdFormProc
          * The purpose is to:
          *  1) Read $_POST['text']
          *     (which is the edited member's comment.)
-         *  2) Remove any HTML tags found in $_POST['text'].
-         *  3) Validate the suitability of $_POST['text']
-         *     as a User comment.
+         *  2 & 3) Removed from source code.
          *  4) Get a copy of the User object for the member.
          *  5) Makes sure the comment is escaped for suitability
          *     to being included in an sql statement. This may be
@@ -57,23 +56,12 @@ class MemberMemEdFormProc
          * 1) Read $_POST['text']
          *    (which is the edited member's comment.)
          */
-        $edited_comment = (isset($_POST['text'])) ? $_POST['text'] : '';
-        if (!isset($_POST['text']) || trim($edited_comment) === '') {
-            $sessionMessage .= " The edited comment was not saved because nothing (or blank space) was submitted. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            redirect_to("/ax1/Home/page");
-        }
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        /**
-         * 2) Remove any HTML tags found in $_POST['text'].
-         * 3) Validate the suitability of $_POST['text']
-         *    as a User comment.
-         */
-        $result = AdminCreateUser::is_comment($sessionMessage, $edited_comment);
-        if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because the text submitted did not comply. ";
+        $edited_comment = standard_form_field_prep('comment', 0, 800);
+
+        if (is_null($edited_comment)) {
+            $sessionMessage .= " The edited comment did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_str01'] = "";
