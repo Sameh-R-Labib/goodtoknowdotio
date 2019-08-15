@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Community;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class KommunityDescriptionEditorProcessor
@@ -32,11 +33,12 @@ class KommunityDescriptionEditorProcessor
          *  2) Save $_POST['community'] in the session.
          *  3) Redirect to a route.
          */
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $submitted_community_name = (isset($_POST['community'])) ? $_POST['community'] : '';
+        $submitted_community_name = standard_form_field_prep('community', 1, 200);
 
-        if (trim($submitted_community_name) === "") {
-            $sessionMessage .= " Aborted because you have not submitted a community name. ";
+        if (is_null($submitted_community_name)) {
+            $sessionMessage .= " The community name you entered did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

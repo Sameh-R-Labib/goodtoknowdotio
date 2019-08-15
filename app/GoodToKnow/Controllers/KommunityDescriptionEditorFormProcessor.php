@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\Community;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 class KommunityDescriptionEditorFormProcessor
@@ -15,9 +16,7 @@ class KommunityDescriptionEditorFormProcessor
          * The purpose is to:
          *  1) Read $_POST['text']
          *     (which is the edited community's description.)
-         *  2) Remove any HTML tags found in $_POST['text'].
-         *  3) Validate the suitability of $_POST['text']
-         *     as a community description.
+         *  2 & 3) Removed source code.
          *  4) Get a copy of the Community object.
          *  5) Makes sure the description is escaped for suitability
          *     to being included in an sql statement. This may be
@@ -52,23 +51,12 @@ class KommunityDescriptionEditorFormProcessor
          *  1) Read $_POST['text']
          *     (which is the edited community's description.)
          */
-        $edited_description = (isset($_POST['text'])) ? $_POST['text'] : '';
-        if (!isset($_POST['text']) || trim($edited_description) === '') {
-            $sessionMessage .= " The edited comment was not saved because nothing (or blank space) was submitted. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            redirect_to("/ax1/Home/page");
-        }
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        /**
-         *  2) Remove any HTML tags found in $_POST['text'].
-         *  3) Validate the suitability of $_POST['text']
-         *     as a community description.
-         */
-        $result = Community::is_community_description($sessionMessage, $edited_description);
-        if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because the text submitted did not comply. ";
+        $edited_description = standard_form_field_prep('text', 0, 800);
+
+        if (is_null($edited_description)) {
+            $sessionMessage .= " The edited comment did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_str01'] = "";
