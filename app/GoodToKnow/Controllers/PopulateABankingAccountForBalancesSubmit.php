@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
@@ -44,9 +45,15 @@ class PopulateABankingAccountForBalancesSubmit
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
         $edited_acct_name = standard_form_field_prep('acct_name', 3, 30);
 
-        $edited_start_time = (isset($_POST['start_time'])) ? (int)$_POST['start_time'] : 1560190617;
+        $edited_start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
+
+        if ($edited_start_time === 0) {
+            $edited_start_time = 1560190617;
+        }
 
         $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0.0;
 
@@ -54,7 +61,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency)) {
+        if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency) || is_null($edited_start_time)) {
             $sessionMessage .= " One or more values you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
