@@ -10,6 +10,7 @@ namespace GoodToKnow\Controllers;
 
 
 use GoodToKnow\Models\TopicToPost;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 class CreateNewPostIPProcessor
@@ -54,6 +55,7 @@ class CreateNewPostIPProcessor
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -67,6 +69,7 @@ class CreateNewPostIPProcessor
          * posts.
          */
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+
         if (!$special_post_array) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 074346. ";
             $_SESSION['message'] .= $sessionMessage;
@@ -76,13 +79,24 @@ class CreateNewPostIPProcessor
         }
 
         /**
-         * I can't assume these post variables exist so I do the following.
+         * Validate submitted values.
          */
-        $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
-        $chosen_post_id = (isset($_POST['choice'])) ? $_POST['choice'] : null;
 
-        // Handle bad submit.
-        if (empty($relate) || empty($chosen_post_id)) {
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+        if (is_null($chosen_post_id)) {
+            $sessionMessage .= " Your choice did not pass validation. ";
+            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['saved_int01'] = 0;
+            $_SESSION['saved_int02'] = 0;
+            redirect_to("/ax1/Home/page");
+        }
+
+        $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
+
+        if (empty($relate)) {
             $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
@@ -112,6 +126,7 @@ class CreateNewPostIPProcessor
          * post. The code below implements that algorithm.
          */
         $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+
         if (!$all_posts_as_objects) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 971249. ";
             $_SESSION['message'] = $sessionMessage;
@@ -119,10 +134,13 @@ class CreateNewPostIPProcessor
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
         $chosen_post_sequence_number = -1;
+
         foreach ($all_posts_as_objects as $key => $object) {
             if ($object->id == $chosen_post_id) $chosen_post_sequence_number = $object->sequence_number;
         }
+
         if ($chosen_post_sequence_number == -1) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 537384. ";
             $_SESSION['message'] = $sessionMessage;
@@ -138,6 +156,7 @@ class CreateNewPostIPProcessor
         }
 
         $_SESSION['saved_int02'] = $sequence_number;
+
         redirect_to("/ax1/CreateNewPostTitle/page");
     }
 

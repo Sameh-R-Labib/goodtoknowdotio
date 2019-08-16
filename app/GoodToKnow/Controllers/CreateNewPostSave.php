@@ -34,6 +34,7 @@ class CreateNewPostSave
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -79,6 +80,7 @@ class CreateNewPostSave
         } catch (\Exception $e) {
             $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
+
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
@@ -87,9 +89,13 @@ class CreateNewPostSave
             $_SESSION['saved_str02'] = "";
             redirect_to("/ax1/Home/page");
         }
+
         $filenamestub = bin2hex($filenamestub);
+
         $markdown_file = tempnam(MARKDOWN, $filenamestub);
+
         $html_file = tempnam(STATICHTML, $filenamestub);
+
         if (!$markdown_file || !$html_file) {
             $sessionMessage .= " Aborted because failed to create files. ";
             $_SESSION['message'] = $sessionMessage;
