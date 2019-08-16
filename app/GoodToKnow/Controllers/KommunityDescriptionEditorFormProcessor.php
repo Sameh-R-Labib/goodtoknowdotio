@@ -56,7 +56,7 @@ class KommunityDescriptionEditorFormProcessor
         $edited_description = standard_form_field_prep('text', 0, 800);
 
         if (is_null($edited_description)) {
-            $sessionMessage .= " The edited comment did NOT pass validation. ";
+            $sessionMessage .= " The edited description did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_str01'] = "";
@@ -67,6 +67,7 @@ class KommunityDescriptionEditorFormProcessor
          *  4) Get a copy of the Community object.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -74,7 +75,9 @@ class KommunityDescriptionEditorFormProcessor
             $_SESSION['saved_str01'] = "";
             redirect_to("/ax1/Home/page");
         }
+
         $community_object = Community::find_by_id($db, $sessionMessage, $saved_int01);
+
         if (!$community_object) {
             $sessionMessage .= " Unexpected failed to retrieve the community object. ";
             $_SESSION['message'] = $sessionMessage;

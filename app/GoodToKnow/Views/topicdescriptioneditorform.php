@@ -3,7 +3,7 @@
     <h2><?= $saved_str01 ?> Description</h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
-        <small>🚫 markdown 🚫 html ✅ emoji ✅ line-break ⚖️ max. 230 bytes.</small>
+        <small>🚫 markdown ✅ emoji ✅ line-break ⚖️ max. 230 bytes.</small>
     </p>
     <section>
         <p>
