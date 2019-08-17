@@ -47,13 +47,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
             redirect_to("/ax1/Home/page");
         }
 
-        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            redirect_to("/ax1/Home/page");
-        }
-
         $db = db_connect($sessionMessage);
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
@@ -98,6 +91,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * object. This gets assigned to each BankingTransactionForBalances object's balance field.
          */
         $running_total = $account->start_balance;
+
         foreach ($array as $transaction) {
             $running_total += $transaction->amount;
             if (abs($running_total) >= abs(0.00000000001)) {
