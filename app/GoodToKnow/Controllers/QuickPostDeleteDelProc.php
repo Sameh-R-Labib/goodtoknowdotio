@@ -85,6 +85,7 @@ class QuickPostDeleteDelProc
 
         // Delete the db record for the post.
         $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
+
         if (!$post) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -94,7 +95,9 @@ class QuickPostDeleteDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
         $result = $post->delete($db, $sessionMessage);
+
         if (!$result) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -109,7 +112,9 @@ class QuickPostDeleteDelProc
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `topic_id` = "' . $db->real_escape_string($saved_int01) . '" AND `post_id` = "' .
             $db->real_escape_string($saved_int02) . '" LIMIT 1';
+
         $array_of_objects = TopicToPost::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array_of_objects || !empty($sessionMessage)) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -119,7 +124,9 @@ class QuickPostDeleteDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
         $topictopost_object = array_shift($array_of_objects);
+
         if (!is_object($topictopost_object)) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -129,7 +136,9 @@ class QuickPostDeleteDelProc
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
         $result = $topictopost_object->delete($db, $sessionMessage);
+
         if (!$result) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -142,6 +151,7 @@ class QuickPostDeleteDelProc
 
         // Delete both its files;
         $result = unlink($saved_str01);
+
         if (!$result) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
@@ -153,6 +163,7 @@ class QuickPostDeleteDelProc
         }
 
         $result = unlink($saved_str02);
+
         if (!$result) {
             $_SESSION['saved_str01'] = "";
             $_SESSION['saved_str02'] = "";
