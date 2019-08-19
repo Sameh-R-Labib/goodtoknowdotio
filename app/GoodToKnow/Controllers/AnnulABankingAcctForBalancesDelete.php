@@ -24,14 +24,14 @@ class AnnulABankingAcctForBalancesDelete
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -40,14 +40,14 @@ class AnnulABankingAcctForBalancesDelete
         if ($choice != "yes" && $choice != "no") {
             $sessionMessage .= " You didn't enter a choice. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if ($choice == "no") {
             $sessionMessage .= " Nothing was deleted. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -56,7 +56,7 @@ class AnnulABankingAcctForBalancesDelete
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -65,7 +65,7 @@ class AnnulABankingAcctForBalancesDelete
         if (!$object) {
             $sessionMessage .= " I wasn't able to find the record and I've aborted the procedure you've started. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -74,14 +74,14 @@ class AnnulABankingAcctForBalancesDelete
         if (!$result) {
             $sessionMessage .= " Unexpectedly I could not delete the record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         // Report successful deletion of post.
         $sessionMessage .= " I deleted the 🏦ing 📒 for ⚖️s. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }
