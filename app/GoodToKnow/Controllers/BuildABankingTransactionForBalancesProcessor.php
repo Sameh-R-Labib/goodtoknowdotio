@@ -26,12 +26,14 @@ class BuildABankingTransactionForBalancesProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,6 +44,7 @@ class BuildABankingTransactionForBalancesProcessor
         if (is_null($label)) {
             $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -50,12 +53,14 @@ class BuildABankingTransactionForBalancesProcessor
         if (empty(trim($time))) {
             $sessionMessage .= " Either you did not fill out the input fields or the session expired. Start over. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (strlen($time) > 22 || strlen($time) < 10) {
             $sessionMessage .= " Either the time's string length is too long or too short. Start over. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -69,6 +74,7 @@ class BuildABankingTransactionForBalancesProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -89,6 +95,7 @@ class BuildABankingTransactionForBalancesProcessor
         if (!$result) {
             $sessionMessage .= ' The save method for BankingTransactionForBalances returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -96,6 +103,7 @@ class BuildABankingTransactionForBalancesProcessor
             $sessionMessage .= ' The save method for BankingTransactionForBalances did not return false but it did send
             back a message. Therefore, it probably did not create the BankingTransactionForBalances record. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -104,6 +112,7 @@ class BuildABankingTransactionForBalancesProcessor
          */
         $sessionMessage .= " A Banking Transaction For Balances was created! ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

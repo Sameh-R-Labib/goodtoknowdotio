@@ -34,12 +34,14 @@ class BroadcastMsgProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -55,6 +57,7 @@ class BroadcastMsgProcessor
         if (is_null($markdown)) {
             $sessionMessage .= " The message did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -68,12 +71,16 @@ class BroadcastMsgProcessor
         $message_object = Message::array_to_object($message_array);
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $result = $message_object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= " Unexpected save() was unable to save the new message. ";
             $_SESSION['message'] = $sessionMessage;
@@ -86,9 +93,11 @@ class BroadcastMsgProcessor
          */
 
         $array_of_user_objects = User::find_all($db, $sessionMessage);
+
         if (!$array_of_user_objects) {
             $sessionMessage .= " Unexpected User::find_all() was unable to find any users. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -103,6 +112,7 @@ class BroadcastMsgProcessor
          */
         //$message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
         $array_of_messagetouser_objects = [];
+
         foreach ($array_of_user_objects as $user_object) {
             $messagetouser_object_as_array = ['message_id' => $message_object->id, 'user_id' => $user_object->id];
             $array_of_messagetouser_objects[] = MessageToUser::array_to_object($messagetouser_object_as_array);
@@ -112,10 +122,12 @@ class BroadcastMsgProcessor
          * Save all these MessageToUser objects in the database.
          */
         $result = MessageToUser::insert_multiple_objects($db, $sessionMessage, $array_of_messagetouser_objects);
+
         if (!$result) {
             $sessionMessage .= " In BroadcastMsgProcessor encountered unexpected the fact that
             MessageToUser::insert_multiple_objects was unable to save message_to_user records for the message and all users. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -123,6 +135,7 @@ class BroadcastMsgProcessor
          * Declare success.
          */
         $_SESSION['message'] = " Your message to all users was sent! ";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }
