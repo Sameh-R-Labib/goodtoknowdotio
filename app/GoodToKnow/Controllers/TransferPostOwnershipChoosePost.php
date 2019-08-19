@@ -48,6 +48,7 @@ class TransferPostOwnershipChoosePost
         }
 
         $array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+
         if (!$array_of_post_objects) {
             $sessionMessage .= " This topic doesn't contain any posts. ";
             $_SESSION['message'] .= $sessionMessage;
@@ -63,6 +64,7 @@ class TransferPostOwnershipChoosePost
          * $array_of_post_objects.
          */
         $array_of_author_usernames = TopicToPost::get_author_usernames($db, $sessionMessage, $array_of_post_objects);
+
         if (!$array_of_author_usernames) {
             $sessionMessage .= " Anomalous condition: Supposedly we have posts but do not have any authors. ";
             $_SESSION['message'] .= $sessionMessage;

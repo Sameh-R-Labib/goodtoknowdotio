@@ -41,6 +41,7 @@ class TransferPostOwnershipTransferIt
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -63,6 +64,7 @@ class TransferPostOwnershipTransferIt
 
         // Get the user id which corresponds with the username.
         $user_object = User::find_by_username($db, $sessionMessage, $username);
+
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
@@ -70,10 +72,12 @@ class TransferPostOwnershipTransferIt
             $_SESSION['saved_int02'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
         $user_id = (int)$user_object->id;
 
         // Get the Post object.
         $post_object = Post::find_by_id($db, $sessionMessage, $saved_int02);
+
         if (!$post_object) {
             $sessionMessage .= " TransferPostOwnershipTransferIt::page says: Unexpected could not get a post object. ";
             $_SESSION['message'] = $sessionMessage;
