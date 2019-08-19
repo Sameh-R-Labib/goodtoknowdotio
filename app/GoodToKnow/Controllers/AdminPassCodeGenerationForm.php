@@ -23,6 +23,7 @@ class AdminPassCodeGenerationForm
         if (!$is_logged_in OR !$is_admin) {
             $sessionMessage .= ' You need to be the Admin to follow that request route.';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,6 +42,7 @@ class AdminPassCodeGenerationForm
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

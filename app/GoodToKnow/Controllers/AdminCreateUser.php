@@ -25,14 +25,14 @@ class AdminCreateUser
 
         if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,7 +41,7 @@ class AdminCreateUser
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -70,7 +70,7 @@ class AdminCreateUser
             is_null($submitted_first_try) || is_null($submitted_password)) {
             $sessionMessage .= " One or more values is invalid. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -92,7 +92,7 @@ class AdminCreateUser
             !self::is_date($sessionMessage, $submitted_date)) {
             $sessionMessage .= " One of the submitted field values is invalid. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -125,7 +125,7 @@ class AdminCreateUser
         if (!$consequence_of_save) {
             $sessionMessage .= ' The save method for User returned false. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -133,7 +133,7 @@ class AdminCreateUser
             $sessionMessage .= ' The save method for User did not return false but it did send back a message.
              Therefore, it probably did not create your account. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -150,7 +150,7 @@ class AdminCreateUser
         if (!$consequence_of_save) {
             $sessionMessage .= ' The save method for UserToCommunity returned false. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -158,7 +158,7 @@ class AdminCreateUser
             $sessionMessage .= ' The save method for UserToCommunity did not return false but it did send back a message.
              Therefore, it probably did not create the association for your account. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -168,7 +168,7 @@ class AdminCreateUser
          */
         $sessionMessage .= " The user account was created! ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 

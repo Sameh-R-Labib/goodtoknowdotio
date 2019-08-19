@@ -23,38 +23,25 @@ class AdminPassCodeGenFormProcessor
 
         if (!$is_logged_in OR !$is_admin) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
-
-        /**
-         * Do something with the submitted post data $_POST['choice']
-         */
-
-        /**
-         * Make sure we got a value for $_POST['choice']
-         * (Is it set? Is it empty?)
-         * Otherwise, give error and redirect
-         */
-        $trimmed_choice = trim($_POST['choice']);
-        if (empty($trimmed_choice)) {
-            $sessionMessage .= " Aborted! Expected submission of choice not found. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage || $db === false)) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
         $community_array = Community::find_all($db, $sessionMessage);
 
         /**
