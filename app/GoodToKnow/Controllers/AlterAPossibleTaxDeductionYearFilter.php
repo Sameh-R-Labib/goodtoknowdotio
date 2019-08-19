@@ -29,6 +29,7 @@ class AlterAPossibleTaxDeductionYearFilter
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,6 +43,7 @@ class AlterAPossibleTaxDeductionYearFilter
         if (is_null($year_paid)) {
             $sessionMessage .= " Your year_paid did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,6 +55,7 @@ class AlterAPossibleTaxDeductionYearFilter
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -64,6 +67,7 @@ class AlterAPossibleTaxDeductionYearFilter
         if (!$array || !empty($sessionMessage)) {
             $sessionMessage .= " 🤔 For <b>{$year_paid}</b> I could NOT find any Possible Tax Deduction for you. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
