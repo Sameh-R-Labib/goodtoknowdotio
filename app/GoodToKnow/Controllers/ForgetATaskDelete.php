@@ -35,6 +35,10 @@ class ForgetATaskDelete
             redirect_to("/ax1/Home/page");
         }
 
+        /**
+         * yes/no
+         */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $choice = standard_form_field_prep('choice', 2, 3);
@@ -59,6 +63,8 @@ class ForgetATaskDelete
             $_SESSION['saved_int01'] = 0;
             redirect_to("/ax1/Home/page");
         }
+
+        /** @var  $db */
 
         $db = db_connect($sessionMessage);
 
