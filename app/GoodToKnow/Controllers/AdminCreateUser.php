@@ -436,6 +436,7 @@ class AdminCreateUser
         $races = ['caucasian-american', 'caucasian-european', 'caucasian-african', 'black-european', 'black-american',
             'black-african', 'asian', 'south-american', 'greek', 'middle-eastern-christian', 'middle-eastern-moslem',
             'native-american'];
+
         if (!in_array($race, $races)) {
             $message .= " Your race field does not contain a valid value. ";
             return false;

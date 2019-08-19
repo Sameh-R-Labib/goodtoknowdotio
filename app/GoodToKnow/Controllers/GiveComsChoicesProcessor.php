@@ -37,6 +37,7 @@ class GiveComsChoicesProcessor
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -83,6 +84,7 @@ class GiveComsChoicesProcessor
         }
 
         $submitted_community_ids_array = [];
+
         foreach ($_POST as $item) {
             if (is_numeric($item)) {
                 $submitted_community_ids_array[] = $item;
@@ -117,6 +119,7 @@ class GiveComsChoicesProcessor
          * instead of individually.
          */
         $array_of_usertocommunity_objects = [];
+
         foreach ($submitted_community_ids_array as $a_community_id) {
             $a_community_id = (int)$a_community_id;
             $usertocommunity_object_as_array = ['user_id' => $saved_int01, 'community_id' => $a_community_id];
@@ -132,6 +135,7 @@ class GiveComsChoicesProcessor
          * The goal now is to insert all these objects into the database.
          */
         $result = UserToCommunity::insert_multiple_objects($db, $sessionMessage, $array_of_usertocommunity_objects);
+
         if (!$result) {
             $sessionMessage .= " In GiveComsChoicesProcessor encountered error due to
             UserToCommunity::array_to_object being unable to save the user_to_community records. ";
