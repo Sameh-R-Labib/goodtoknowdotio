@@ -1,4 +1,16 @@
 <?php
+
+/**
+ *
+ */
+function reset_feature_session_vars()
+{
+    $_SESSION['saved_str01'] = '';
+    $_SESSION['saved_str02'] = '';
+    $_SESSION['saved_int01'] = 0;
+    $_SESSION['saved_int01'] = 0;
+}
+
 /**
  * @param string $location
  */
