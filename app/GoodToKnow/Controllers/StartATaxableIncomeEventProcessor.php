@@ -100,6 +100,7 @@ class StartATaxableIncomeEventProcessor
          * Save the object.
          */
         $result = $object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= ' The save method for TaxableIncomeEvent returned false. ';
             $_SESSION['message'] = $sessionMessage;

@@ -33,6 +33,7 @@ class NewTopicSave
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -53,6 +54,7 @@ class NewTopicSave
          */
         $topic_as_array = ['sequence_number' => $saved_int01, 'topic_name' => $saved_str01,
             'topic_description' => $saved_str02];
+
         $topic = Topic::array_to_object($topic_as_array);
 
         // Verify that our sequence number hasn't been taken.
@@ -60,7 +62,9 @@ class NewTopicSave
          * Get all the topics in out community.
          */
         $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+
         $sequence_number_already_exists_in_db = false;
+
         if ($result != false) {
             foreach ($result as $object) {
                 if ($object->sequence_number == $saved_int01) {
@@ -93,9 +97,11 @@ class NewTopicSave
 
         // Assemble the CommunityToTopic object
         $communitytotopic_as_array = ['community_id' => $community_id, 'topic_id' => $topic->id];
+
         $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
 
         $result = $communitytotopic->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= " NewTopicSave::page says: Unexpected save was unable to save the CommunityToTopic. ";
             $_SESSION['message'] = $sessionMessage;
