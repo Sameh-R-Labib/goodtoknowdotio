@@ -37,6 +37,7 @@ class RemoveComsChoicesProcessor
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
@@ -79,6 +80,7 @@ class RemoveComsChoicesProcessor
         }
 
         $submitted_community_ids_array = [];
+
         foreach ($_POST as $item) {
             if (is_numeric($item)) {
                 $submitted_community_ids_array[] = $item;
@@ -122,6 +124,7 @@ class RemoveComsChoicesProcessor
          *   will hold the UserToCommunity objects I retrieve from the database.
          */
         $usertocommunity_objects_array = [];
+
         foreach ($submitted_community_ids_array as $a_community_id) {
             /**
              * Retrieve and add the UserToCommunity object
@@ -132,7 +135,9 @@ class RemoveComsChoicesProcessor
                     WHERE `user_id` = "' . $db->real_escape_string($saved_int01) .
                 '" AND `community_id` = "' . $db->real_escape_string($a_community_id) .
                 '" LIMIT 1';
+
             $array_with_one_element = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
+
             if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
                 $sessionMessage .= " Error 0819. ";
                 $_SESSION['message'] = $sessionMessage;
@@ -140,6 +145,7 @@ class RemoveComsChoicesProcessor
                 $_SESSION['saved_str01'] = "";
                 redirect_to("/ax1/Home/page");
             }
+
             $usertocommunity_objects_array[] = $array_with_one_element[0];
         }
 
@@ -150,6 +156,7 @@ class RemoveComsChoicesProcessor
          */
         foreach ($usertocommunity_objects_array as $object) {
             $result_of_delete = $object->delete($db, $sessionMessage);
+
             if (!$result_of_delete) {
                 $sessionMessage .= " Aborted because failed to delete UserToCommunity object. ";
                 $_SESSION['message'] = $sessionMessage;

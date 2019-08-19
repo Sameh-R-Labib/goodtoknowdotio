@@ -48,6 +48,7 @@ class RemoveComsChoices
         }
 
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
@@ -65,6 +66,7 @@ class RemoveComsChoices
          * 3) Get all the communities the user belongs to.
          */
         $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $sessionMessage, $user_id);
+
         if ($coms_user_belongs_to === false) {
             $sessionMessage .= " Error encountered trying to retrieve communities for this user. ";
             $_SESSION['message'] = $sessionMessage;
