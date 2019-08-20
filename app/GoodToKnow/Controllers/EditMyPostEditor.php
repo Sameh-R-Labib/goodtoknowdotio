@@ -23,14 +23,14 @@ class EditMyPostEditor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -39,7 +39,7 @@ class EditMyPostEditor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -50,7 +50,7 @@ class EditMyPostEditor
         if (is_null($chosen_post_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,14 +66,14 @@ class EditMyPostEditor
         if (!$post_object) {
             $sessionMessage .= " EditMyPostEditor::page says: Error 011299. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if ($post_object->user_id != $user_id) {
             $sessionMessage .= " You can't edit this post. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -95,13 +95,11 @@ class EditMyPostEditor
          * Don't forget to verify we succeeded in retrieving the file.
          */
         $markdown = file_get_contents($post_object->markdown_file);
+
         if ($markdown === false) {
             $sessionMessage .= " Unable to read source file. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
