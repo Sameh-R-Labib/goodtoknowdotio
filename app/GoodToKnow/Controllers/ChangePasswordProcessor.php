@@ -23,12 +23,14 @@ class ChangePasswordProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -37,6 +39,7 @@ class ChangePasswordProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -62,6 +65,7 @@ class ChangePasswordProcessor
         if (is_null($current_password) || is_null($first_try) || is_null($new_password)) {
             $sessionMessage .= " One or more of the values you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -75,6 +79,7 @@ class ChangePasswordProcessor
         if (!password_verify($current_password, $user_object->password)) {
             $sessionMessage .= " The value you entered as Current Password not correct. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -86,6 +91,7 @@ class ChangePasswordProcessor
         if (!$is_password) {
             $sessionMessage .= " The values you entered for a new password have something wrong with them. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -99,6 +105,7 @@ class ChangePasswordProcessor
         if (!$is_saved || !empty($sessionMessage)) {
             $sessionMessage .= " Failed to update your record. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -107,6 +114,7 @@ class ChangePasswordProcessor
          */
         $sessionMessage .= " Your password change has been saved. ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

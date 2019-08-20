@@ -43,15 +43,16 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,10 +60,11 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
         $account = BankingAcctForBalances::find_by_id($db, $sessionMessage, $saved_int01);
+
         if (!$account) {
             $sessionMessage .= " Unexpectedly I could not find that banking_acct_for_balances record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -78,11 +80,13 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $sql .= ' AND `bank_id` = ' . $db->real_escape_string($account->id);
         $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
         $sql .= ' ORDER BY `time` ASC';
+
         $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any banking_transaction_for_balances records for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' I could NOT find any banking_transaction_for_balances records for you ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -94,6 +98,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         foreach ($array as $transaction) {
             $running_total += $transaction->amount;
+
             if (abs($running_total) >= abs(0.00000000001)) {
                 $transaction->balance = $running_total;
             } else {
@@ -131,6 +136,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
                 $transaction->amount = number_format($transaction->amount, 2);
                 $transaction->balance = number_format($transaction->balance, 2);
             }
+
             $transaction->time = get_readable_time($transaction->time);
         }
 

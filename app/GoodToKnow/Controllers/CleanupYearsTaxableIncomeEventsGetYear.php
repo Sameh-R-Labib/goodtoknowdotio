@@ -23,19 +23,23 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -49,6 +53,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
         if (is_null($year_received)) {
             $sessionMessage .= " Your year_received did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,6 +71,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
             if (!empty(trim($query_error))) {
                 $sessionMessage .= ' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 $_SESSION['message'] = $sessionMessage;
+                reset_feature_session_vars();
                 redirect_to("/ax1/Home/page");
             }
             $num_affected_rows = $db->affected_rows;
@@ -76,6 +82,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -85,6 +92,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
         $sessionMessage .= " The purge of Taxable Income Events for the year <b>{$year_received}</b> has deleted <b>";
         $sessionMessage .= $num_affected_rows . "</b> records. ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }
