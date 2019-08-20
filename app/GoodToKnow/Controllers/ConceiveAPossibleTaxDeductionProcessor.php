@@ -27,12 +27,14 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -46,6 +48,7 @@ class ConceiveAPossibleTaxDeductionProcessor
         if (is_null($label)) {
             $sessionMessage .= " Your label did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,6 +62,7 @@ class ConceiveAPossibleTaxDeductionProcessor
         if (is_null($year_paid)) {
             $sessionMessage .= " Your year_paid did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -71,6 +75,7 @@ class ConceiveAPossibleTaxDeductionProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -80,16 +85,19 @@ class ConceiveAPossibleTaxDeductionProcessor
         $object = PossibleTaxDeduction::array_to_object($array_record);
 
         $result = $object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= ' The object\'s save method returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (!empty($sessionMessage)) {
             $sessionMessage .= ' The object\'s save method did not return false but it did send
-            back a message. Therefore, it probably did not create a new record. ';
+            back a message. Therefore, it most likely did not create a new record. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -98,6 +106,7 @@ class ConceiveAPossibleTaxDeductionProcessor
          */
         $sessionMessage .= " A Possible Tax Deduction record was created! ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

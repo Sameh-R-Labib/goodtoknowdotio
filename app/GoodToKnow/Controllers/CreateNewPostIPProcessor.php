@@ -41,16 +41,14 @@ class CreateNewPostIPProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,8 +57,7 @@ class CreateNewPostIPProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -73,8 +70,7 @@ class CreateNewPostIPProcessor
         if (!$special_post_array) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 074346. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -89,8 +85,7 @@ class CreateNewPostIPProcessor
         if (is_null($chosen_post_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -99,24 +94,21 @@ class CreateNewPostIPProcessor
         if (empty($relate)) {
             $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if ($relate !== 'before' && $relate !== 'after') {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 034455. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (!array_key_exists($chosen_post_id, $special_post_array)) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 421218. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -130,8 +122,7 @@ class CreateNewPostIPProcessor
         if (!$all_posts_as_objects) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 971249. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -144,8 +135,7 @@ class CreateNewPostIPProcessor
         if ($chosen_post_sequence_number == -1) {
             $sessionMessage .= " CreateNewPostIPProcessor: Error 537384. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -169,6 +159,7 @@ class CreateNewPostIPProcessor
     {
         if ($chosen_post_sequence_number == 21000000) {
             $_SESSION['message'] = " Please choose another place to put the post. ";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
         /**
@@ -184,6 +175,7 @@ class CreateNewPostIPProcessor
          * return 21000000 as the sequence number.
          */
         $found_a_post_with_higher_sequence_number = false;
+
         foreach ($all_posts_as_objects as $key => $object) {
             if ($object->sequence_number > $chosen_post_sequence_number) {
                 $found_a_post_with_higher_sequence_number = true;
@@ -203,6 +195,7 @@ class CreateNewPostIPProcessor
 
         if (empty($following_post_sequence_number)) {
             $_SESSION['message'] = " CreateNewPostIPProcessor::get_sequence_number_in_case_after says Error 764516. ";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -210,6 +203,7 @@ class CreateNewPostIPProcessor
 
         if (($difference) < 2) {
             $_SESSION['message'] = " Please choose another place to put the post. ";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -227,16 +221,19 @@ class CreateNewPostIPProcessor
     {
         if ($chosen_post_sequence_number == 0) {
             $_SESSION['message'] = " Please choose another place to put the post. ";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $found_a_post_with_lower_sequence_number = false;
+
         foreach ($all_posts_as_objects as $key => $object) {
             if ($object->sequence_number < $chosen_post_sequence_number) {
                 $found_a_post_with_lower_sequence_number = true;
                 break;
             }
         }
+
         if (!$found_a_post_with_lower_sequence_number) {
             $leading_post_sequence_number = 0;
         } else {
@@ -254,6 +251,7 @@ class CreateNewPostIPProcessor
 
         if (($difference) < 2) {
             $_SESSION['message'] = " Please choose another place to put the post. ";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
