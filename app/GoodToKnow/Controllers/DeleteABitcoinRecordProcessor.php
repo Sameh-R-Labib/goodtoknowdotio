@@ -25,12 +25,14 @@ class DeleteABitcoinRecordProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -44,6 +46,7 @@ class DeleteABitcoinRecordProcessor
         if (is_null($chosen_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,19 +56,23 @@ class DeleteABitcoinRecordProcessor
          * 2) Retrieve the Bitcoin object with that id from the database.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $bitcoin_object = Bitcoin::find_by_id($db, $sessionMessage, $chosen_id);
+
         if (!$bitcoin_object) {
             $sessionMessage .= " Unexpectedly I could not find that bitcoin record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         // Format the attributes for easy viewing
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
@@ -73,6 +80,7 @@ class DeleteABitcoinRecordProcessor
         $bitcoin_object->unix_time_at_purchase = get_readable_time($bitcoin_object->unix_time_at_purchase);
         $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
         $bitcoin_object->price_point = readable_amount_of_money($bitcoin_object->currency, $bitcoin_object->price_point);
+
         // Since we know these two are crypto we don't need to use readable_amount_of_money()
         $bitcoin_object->initial_balance = number_format($bitcoin_object->initial_balance, 8);
         $bitcoin_object->current_balance = number_format($bitcoin_object->current_balance, 8);

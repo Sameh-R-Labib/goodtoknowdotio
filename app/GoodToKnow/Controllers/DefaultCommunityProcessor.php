@@ -24,12 +24,14 @@ class DefaultCommunityProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,6 +43,7 @@ class DefaultCommunityProcessor
         if (is_null($chosen_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -54,6 +57,7 @@ class DefaultCommunityProcessor
         if (!$is_found) {
             $sessionMessage .= " Choice is not valid. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -65,29 +69,38 @@ class DefaultCommunityProcessor
          * Get the user object from the database.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
+
         if (!$user_object) {
             $sessionMessage .= " Expected submission of choice not found. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $user_object->id_of_default_community = $_POST['choice'];
+
         $was_updated = $user_object->save($db, $sessionMessage);
+
         if (!$was_updated) {
             $sessionMessage .= " Failed to update your user record. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         // User will know default community by logging out then in.
         $sessionMessage .= " Your default community has been changed to {$special_community_array[$_POST['choice']]}. ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

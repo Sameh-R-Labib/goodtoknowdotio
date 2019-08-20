@@ -14,10 +14,8 @@ class CreateNewPostTitle
     function page()
     {
         /**
-         * The goal is to present a form
-         * for entering the two parts
-         * which comprise the title of
-         * the new post.
+         * The goal is to present a form for entering the two parts
+         * which comprise the title of the new post.
          */
 
         global $is_logged_in;
@@ -25,8 +23,7 @@ class CreateNewPostTitle
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
