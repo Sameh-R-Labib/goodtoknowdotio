@@ -35,6 +35,7 @@ class EnfoFindCommunitiesOfUser
          * for the user.
          */
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
+
         $user_to_community_array = UserToCommunity::find_by_sql($db, $error, $sql);
 
         if (!$user_to_community_array) {
@@ -46,14 +47,17 @@ class EnfoFindCommunitiesOfUser
          * Build the array I'm looking for.
          */
         $special_community_array = [];
+
         foreach ($user_to_community_array as $value) {
             // Talking about the right side of the assignment statement
             // First we're getting a Community object
             $special_community_array[$value->community_id] = Community::find_by_id($db, $error, $value->community_id);
+
             if (!$special_community_array[$value->community_id]) {
                 $error .= " EnfoFindCommunitiesOfUser::find_communities_of_user says err_no 20848. ";
                 return false;
             }
+
             // Then we're getting the community_name from that object
             $special_community_array[$value->community_id] = $special_community_array[$value->community_id]->community_name;
         }

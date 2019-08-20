@@ -29,14 +29,14 @@ class FeatureATaskUpdate
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,7 +53,7 @@ class FeatureATaskUpdate
         if (is_null($edited_label)) {
             $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -65,7 +65,7 @@ class FeatureATaskUpdate
         if (is_null($edited_last)) {
             $sessionMessage .= " The last you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -75,7 +75,7 @@ class FeatureATaskUpdate
         if (is_null($edited_next)) {
             $sessionMessage .= " The next you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -85,7 +85,7 @@ class FeatureATaskUpdate
         if (is_null($edited_cycle_type)) {
             $sessionMessage .= " The cycle_type you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -95,7 +95,7 @@ class FeatureATaskUpdate
         if (is_null($edited_comment)) {
             $sessionMessage .= " Your comment you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -107,7 +107,7 @@ class FeatureATaskUpdate
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -116,7 +116,7 @@ class FeatureATaskUpdate
         if (!$object) {
             $sessionMessage .= " Unexpectedly I could not find that record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -133,10 +133,11 @@ class FeatureATaskUpdate
          * 4) Update/save the updated record in the database.
          */
         $result = $object->save($db, $sessionMessage);
+
         if ($result === false) {
             $sessionMessage .= " I aborted because I failed at saving the updated object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -145,7 +146,7 @@ class FeatureATaskUpdate
          */
         $sessionMessage .= " I've updated <b>{$object->label}</b>. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

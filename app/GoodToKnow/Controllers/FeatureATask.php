@@ -20,6 +20,7 @@ class FeatureATask
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -28,15 +29,19 @@ class FeatureATask
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         // Get an array of Task objects for this user.
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For you I could NOT find any tasks. ";
+            $sessionMessage .= " I could NOT find any tasks. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

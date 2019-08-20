@@ -30,6 +30,7 @@ class EnforceSuspension
 
         // Determine whether or not the user is suspended per database
         $user_object = User::find_by_id($db, $error, $user_id);
+
         if ($user_object === false) return false;
 
         // If the user is suspended log him out and redirect to the page for logging in.

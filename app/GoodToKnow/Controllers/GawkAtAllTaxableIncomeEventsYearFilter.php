@@ -28,12 +28,14 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -47,6 +49,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         if (is_null($year_received)) {
             $sessionMessage .= " Your year_received did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -58,17 +61,20 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
+
         $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
 
         $array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For <b>{$year_received}</b> I could NOT find any Taxable Income Events for you. ";
+            $sessionMessage .= " For <b>{$year_received}</b> I could NOT find any Taxable Income Events. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
