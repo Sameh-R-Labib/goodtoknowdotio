@@ -32,14 +32,9 @@ class PurgeOldMessages
         global $is_admin;
         global $sessionMessage;
 
-        if (!$is_logged_in OR !$is_admin) {
-            $sessionMessage .= ' You need to be the Admin to follow that request route.';
+        if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
-        }
-
-        if (!empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

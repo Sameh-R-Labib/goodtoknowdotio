@@ -27,16 +27,14 @@ class OmitABankingTransactionForBalancesDelete
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -50,8 +48,7 @@ class OmitABankingTransactionForBalancesDelete
         if (is_null($chosen_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -61,19 +58,20 @@ class OmitABankingTransactionForBalancesDelete
          * 2) Retrieve the banking_transaction_for_balances object with that id from the database.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $chosen_id);
+
         if (!$object) {
             $sessionMessage .= " Unexpectedly I could not find that banking_transaction_for_balances record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -82,11 +80,11 @@ class OmitABankingTransactionForBalancesDelete
          * To do this we need the BankingAcctForBalances object.
          */
         $bank = BankingAcctForBalances::find_by_id($db, $sessionMessage, $object->bank_id);
+
         if (!$bank) {
             $sessionMessage .= " Unexpectedly I could not find that banking_acct_for_balances record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

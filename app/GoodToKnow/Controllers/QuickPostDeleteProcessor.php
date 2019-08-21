@@ -18,12 +18,14 @@ class QuickPostDeleteProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -34,6 +36,7 @@ class QuickPostDeleteProcessor
         if (is_null($chosen_topic_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -43,6 +46,7 @@ class QuickPostDeleteProcessor
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
             $sessionMessage .= " Unexpected error: topic id not found in topic array. ";
             $_SESSION['message'] .= $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

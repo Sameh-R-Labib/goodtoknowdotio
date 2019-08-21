@@ -29,13 +29,15 @@ class PurgeOldMessagesProcessor
         global $is_admin;
 
         if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
+            $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -44,6 +46,7 @@ class PurgeOldMessagesProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,6 +62,7 @@ class PurgeOldMessagesProcessor
         if (is_null($submitted_date)) {
             $sessionMessage .= ' The date you entered did not pass validation. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -67,6 +71,7 @@ class PurgeOldMessagesProcessor
          */
         if (!self::is_date($sessionMessage, $submitted_date)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -78,6 +83,7 @@ class PurgeOldMessagesProcessor
         if (!$timestamp || $timestamp < 0) {
             $sessionMessage .= " Method get_timestamp_from_date returned an invalid value. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -102,6 +108,7 @@ class PurgeOldMessagesProcessor
         if ($result === false) {
             $sessionMessage .= " Something inside of purge_all_messages_older_than_date failed. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -116,6 +123,7 @@ class PurgeOldMessagesProcessor
          */
         $sessionMessage .= " The purge of old messages completed. ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 
@@ -165,6 +173,7 @@ class PurgeOldMessagesProcessor
         }
 
         $number_of_slashes = substr_count($date, '/');
+
         if ($number_of_slashes != 2) {
             $message .= " You don't have two slashes in date. ";
             return false;
@@ -174,8 +183,11 @@ class PurgeOldMessagesProcessor
          * Split date into its parts.
          */
         $words = explode('/', $date);
+
         $mm = $words[0];
+
         $dd = $words[1];
+
         $yyyy = $words[2];
 
         if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy) != 4) {
@@ -186,11 +198,13 @@ class PurgeOldMessagesProcessor
         if (!is_numeric($mm) || !is_numeric($dd) || !is_numeric($yyyy)) {
             $message .= " The date should consist of numeric digits and 2 forward slashes. And, it does not have
             numeric digits! ";
+
             return false;
         }
 
         if (!checkdate($words[0], $words[1], $words[2])) {
             $message .= " That's not a valid date. ";
+
             return false;
         }
 

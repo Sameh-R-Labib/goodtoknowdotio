@@ -34,7 +34,7 @@ class QuickPostDeleteChoosePost
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -43,7 +43,7 @@ class QuickPostDeleteChoosePost
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -52,7 +52,7 @@ class QuickPostDeleteChoosePost
         if (!$array_of_post_objects) {
             $sessionMessage .= " This topic doesn't contain any posts. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -68,7 +68,7 @@ class QuickPostDeleteChoosePost
         if (!$array_of_author_usernames) {
             $sessionMessage .= " Anomalous condition: Supposedly we have posts but do not have any authors. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

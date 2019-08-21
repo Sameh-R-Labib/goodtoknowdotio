@@ -25,13 +25,16 @@ class PurgeNinetyDayOldBTFBs
 
         if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -44,17 +47,21 @@ class PurgeNinetyDayOldBTFBs
          * 2) Delete the BankingTransactionForBalances which are older than 90 days.
          */
         $num_affected_rows = 0;
+
         $sql = 'DELETE FROM `banking_transaction_for_balances` WHERE `time` < ';
         $sql .= $db->real_escape_string($time_90_days_ago);
 
         try {
             $db->query($sql);
+
             $query_error = $db->error;
+
             if (!empty(trim($query_error))) {
                 $sessionMessage .= ' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
                 $_SESSION['message'] = $sessionMessage;
                 redirect_to("/ax1/Home/page");
             }
+
             $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
             $sessionMessage .= ' PurgeNinetyDayOldBTFBs delete() exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
@@ -62,6 +69,7 @@ class PurgeNinetyDayOldBTFBs
 
         if (!empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -72,6 +80,7 @@ class PurgeNinetyDayOldBTFBs
         $sessionMessage .= " The purge of BankingTransactionForBalances older than 90 days has deleted <b>";
         $sessionMessage .= $num_affected_rows . "</b> records. ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }
