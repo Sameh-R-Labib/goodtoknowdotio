@@ -23,12 +23,14 @@ class GiveComsToUsrProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -45,6 +47,7 @@ class GiveComsToUsrProcessor
         if (is_null($submitted_username)) {
             $sessionMessage .= " The username you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,6 +56,7 @@ class GiveComsToUsrProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -61,6 +65,7 @@ class GiveComsToUsrProcessor
         if (!$is_username) {
             $sessionMessage .= " The username is not valid. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -107,6 +112,7 @@ class GiveComsToUsrProcessor
          * The first word must be all alphabetical letters.
          */
         $is_all_alpha = ctype_alpha($first_word);
+
         if (!$is_all_alpha) {
             $message .= " The username's first part must have alphabet characters only. ";
             return false;
@@ -116,8 +122,11 @@ class GiveComsToUsrProcessor
          * The first word must start with an upper case letter.
          */
         $arr_of_chars = str_split($first_word);
+
         $first_char_as_string = $arr_of_chars[0];
+
         $is_cap = ctype_upper($first_char_as_string);
+
         if (!$is_cap) {
             $message .= " The username needs to start with a capital letter. ";
             return false;
@@ -127,7 +136,9 @@ class GiveComsToUsrProcessor
          * That first letter is the only uppercase letter.
          */
         $rest = substr($first_word, 1);
+
         $is_lower = ctype_lower($rest);
+
         if (!$is_lower) {
             $message .= " The username's first part has a letter with improper case. ";
             return false;
@@ -137,6 +148,7 @@ class GiveComsToUsrProcessor
          * The first word must be 4 to 9 characters in length.
          */
         $length = strlen($first_word);
+
         if ($length > 9 || $length < 4) {
             $message .= " The username's first part doesn't have a proper length. ";
             return false;
@@ -159,6 +171,7 @@ class GiveComsToUsrProcessor
          * The username must already exist in the database.
          */
         $is_in_use = User::is_taken_username($db, $message, $username);
+
         if (!$is_in_use) {
             $message .= " The username could not be found. ";
             return false;

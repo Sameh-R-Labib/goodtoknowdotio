@@ -25,7 +25,7 @@ class GiveComsChoices
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,20 +41,23 @@ class GiveComsChoices
          * 1) Get the id of the user.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $user_id = (int)$user_object->id;
 
         /**
@@ -71,10 +74,10 @@ class GiveComsChoices
         if ($coms_user_belongs_to === false) {
             $sessionMessage .= " Error encountered trying to retrieve communities for this user. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         // Second get all the communities that exist in this system.
         // By "this system" I mean this instance of the app.
         $coms_in_this_system = Community::find_all($db, $sessionMessage);
@@ -82,10 +85,10 @@ class GiveComsChoices
         if ($coms_in_this_system === false) {
             $sessionMessage .= " Unable to retrieve any communities. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         // Get communities user DOES NOT belong to.
         $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system, $coms_user_belongs_to);
 
@@ -93,8 +96,7 @@ class GiveComsChoices
         if (empty($coms_user_does_not_belong_to)) {
             $sessionMessage .= " Apparently this user belongs to all communities. So, there's no need to do anything. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

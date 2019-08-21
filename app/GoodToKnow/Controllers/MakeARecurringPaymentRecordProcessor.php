@@ -27,12 +27,14 @@ class MakeARecurringPaymentRecordProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -43,6 +45,7 @@ class MakeARecurringPaymentRecordProcessor
         if (is_null($label)) {
             $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,6 +54,7 @@ class MakeARecurringPaymentRecordProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -69,9 +73,11 @@ class MakeARecurringPaymentRecordProcessor
          * Save the object.
          */
         $result = $recurring_payment_object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= ' The save method for RecurringPayment returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -79,6 +85,7 @@ class MakeARecurringPaymentRecordProcessor
             $sessionMessage .= ' The save method for RecurringPayment did not return false but it did send back a message.
              Therefore, it probably did not create the RecurringPayment record. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -87,6 +94,7 @@ class MakeARecurringPaymentRecordProcessor
          */
         $sessionMessage .= " A recurring_payment record was created! ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

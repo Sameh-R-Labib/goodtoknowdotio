@@ -27,12 +27,14 @@ class GenerateABankingAccountForBalancesProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -43,6 +45,7 @@ class GenerateABankingAccountForBalancesProcessor
         if (is_null($acct_name)) {
             $sessionMessage .= " The acct_name you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,6 +54,7 @@ class GenerateABankingAccountForBalancesProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -72,6 +76,7 @@ class GenerateABankingAccountForBalancesProcessor
         if (!$result) {
             $sessionMessage .= ' The save method for BankingAcctForBalances returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -79,6 +84,7 @@ class GenerateABankingAccountForBalancesProcessor
             $sessionMessage .= ' The save method for BankingAcctForBalances did not return false but it did send back a message.
              Therefore, it probably did not create the BankingAcctForBalances record. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -87,6 +93,7 @@ class GenerateABankingAccountForBalancesProcessor
          */
         $sessionMessage .= " A Banking Account For Balances was created! ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

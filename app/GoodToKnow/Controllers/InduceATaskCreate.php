@@ -16,8 +16,6 @@ class InduceATaskCreate
          * Create a database record in the task
          * table using the submitted task label.
          * The remaining field values will be set to default values.
-         *
-         * $_POST['label']
          */
 
         global $is_logged_in;
@@ -26,12 +24,14 @@ class InduceATaskCreate
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -45,6 +45,7 @@ class InduceATaskCreate
         if (is_null($label)) {
             $sessionMessage .= " Your label did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -57,6 +58,7 @@ class InduceATaskCreate
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,9 +68,11 @@ class InduceATaskCreate
         $object = Task::array_to_object($array_record);
 
         $result = $object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= ' The object\'s save method returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -76,6 +80,7 @@ class InduceATaskCreate
             $sessionMessage .= ' The object\'s save method did not return false but it did send
             back a message. Therefore, it probably did not create a new record. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -84,6 +89,7 @@ class InduceATaskCreate
          */
         $sessionMessage .= " 👍 a <b>task</b> record has been created. ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

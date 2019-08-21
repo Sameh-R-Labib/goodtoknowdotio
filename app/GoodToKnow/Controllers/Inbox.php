@@ -32,6 +32,7 @@ class Inbox
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -40,6 +41,7 @@ class Inbox
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -56,9 +58,11 @@ class Inbox
          */
         if (!empty($inbox_messages_array)) {
             $return = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
+
             if ($return === false) {
                 $sessionMessage .= " Unexpected error 01551. ";
                 $_SESSION['message'] = $sessionMessage;
+                reset_feature_session_vars();
                 redirect_to("/ax1/Home/page");
             }
         }

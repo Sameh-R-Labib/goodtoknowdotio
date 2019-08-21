@@ -139,19 +139,25 @@ class Home
          * 3 hours then refresh it.
          */
         $time_since_refresh = time() - $last_refresh_communities;  // seconds
+
         if ($time_since_refresh > 10800) {
             if ($db == 'not connected') {
                 $db = db_connect($error);
+
                 if ($db === false) {
                     $error .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $error;
+                    reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
+
             $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $error, $user_id);
+
             if ($special_community_array === false) {
                 $error .= " Failed to find the array of the user's communities. ";
             }
+
             $_SESSION['special_community_array'] = $special_community_array;
             $_SESSION['last_refresh_communities'] = time();
         }
@@ -162,17 +168,23 @@ class Home
          * for a period longer than 12 minutes then refresh it.
          */
         $time_since_refresh = time() - $last_refresh_topics;
+
         if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
             if ($db == 'not connected') {
                 $db = db_connect($error);
+
                 if ($db === false) {
                     $error .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $error;
+                    reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
+
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $community_id);
+
             if ($special_topic_array === false) $special_topic_array = [];
+
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
         }
@@ -183,17 +195,23 @@ class Home
          * for a period longer than 3 minutes then refresh it.
          */
         $time_since_refresh = time() - $last_refresh_posts;
+
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
                 $db = db_connect($error);
+
                 if ($db === false) {
                     $error .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $error;
+                    reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
+
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $error, $topic_id);
+
             if ($special_post_array === false) $special_post_array = [];
+
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
         }
@@ -204,25 +222,32 @@ class Home
          * for a period longer than 3 minutes then refresh it.
          */
         $time_since_refresh = time() - $last_refresh_content;
+
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
             if ($db == 'not connected') {
                 $db = db_connect($error);
+
                 if ($db === false) {
                     $error .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $error;
+                    reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
+
             $post_object = Post::find_by_id($db, $error, $post_id);
+
             if ($post_object === false) {
                 $error .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
             } else {
                 $post_content = file_get_contents($post_object->html_file);
+
                 if ($post_content === false) {
                     $error .= " Unable to read the post's file. ";
                     $post_content = '';
                 }
             }
+
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
         }
@@ -259,21 +284,29 @@ class Home
          *   4) Otherwise, return control over to where the function was called.
          */
         $elapsed_time = time() - $when_last_checked_suspend;
+
         if ($elapsed_time > 400) {
             $when_last_checked_suspend = time();
+
             $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
+
             if ($db == 'not connected') {
                 $db = db_connect($error);
+
                 if ($db === false) {
                     $error .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $error;
+                    reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
             }
+
             $result = EnforceSuspension::enforce_suspension($db, $error, $user_id);
+
             if ($result === false) {
                 $error .= " Failed to find the user by id. ";
                 $_SESSION['message'] = $error;
+                reset_feature_session_vars();
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
             }
         }
@@ -287,6 +320,7 @@ class Home
     {
         if (!$is_logged_in) {
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
         }
     }

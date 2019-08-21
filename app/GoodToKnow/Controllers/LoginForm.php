@@ -18,6 +18,7 @@ class LoginForm
 
         if ($is_logged_in) {
             $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
+            reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
 

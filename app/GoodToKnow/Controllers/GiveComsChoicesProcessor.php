@@ -23,16 +23,14 @@ class GiveComsChoicesProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,8 +39,7 @@ class GiveComsChoicesProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -78,8 +75,7 @@ class GiveComsChoicesProcessor
         if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
             $sessionMessage .= " Unexpected deficiencies in the _POST array. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -94,8 +90,7 @@ class GiveComsChoicesProcessor
         if (empty($submitted_community_ids_array)) {
             $sessionMessage .= " You did not submit any community ids. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -122,7 +117,9 @@ class GiveComsChoicesProcessor
 
         foreach ($submitted_community_ids_array as $a_community_id) {
             $a_community_id = (int)$a_community_id;
+
             $usertocommunity_object_as_array = ['user_id' => $saved_int01, 'community_id' => $a_community_id];
+
             $array_of_usertocommunity_objects[] = UserToCommunity::array_to_object($usertocommunity_object_as_array);
         }
 
@@ -140,8 +137,7 @@ class GiveComsChoicesProcessor
             $sessionMessage .= " In GiveComsChoicesProcessor encountered error due to
             UserToCommunity::array_to_object being unable to save the user_to_community records. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -149,8 +145,7 @@ class GiveComsChoicesProcessor
          * Declare success.
          */
         $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s new communities were assigned to {$saved_str01}! ";
-        $_SESSION['saved_int01'] = 0;
-        $_SESSION['saved_str01'] = "";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

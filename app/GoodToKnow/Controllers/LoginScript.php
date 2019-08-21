@@ -45,6 +45,7 @@ class LoginScript
     {
         $error .= " GoodToKnow.io works best with 🗺️: Opera, Chrome, Brave. ";
         $_SESSION['message'] = $error;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 
@@ -74,7 +75,9 @@ class LoginScript
          * community_id in the session.
          */
         $community_object = Community::find_by_id($db, $error, $user->id_of_default_community);
+
         $_SESSION['community_name'] = $community_object->community_name;
+
         $_SESSION['community_description'] = $community_object->community_description;
 
         /**
@@ -90,11 +93,12 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-
         $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $error, $user->id);
+
         if ($special_community_array === false) {
             $error .= " Failed to find the array of the user's communities. ";
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -111,11 +115,14 @@ class LoginScript
          * Find and save in session a value for special_topic_array.
          */
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $user->id_of_default_community);
+
         if (!$special_topic_array) {
             $error .= " I did'nt find any topics for your default community. ";
             $_SESSION['message'] .= $error;
+
             redirect_to("/ax1/Home/page");
         }
+
         $_SESSION['special_topic_array'] = $special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
     }
@@ -129,6 +136,7 @@ class LoginScript
         if ($user === false) {
             $error .= " Authentication failed! ";
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -142,6 +150,7 @@ class LoginScript
         if ($user->is_suspended) {
             $error .= " No active account exists for this username. ";
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
         }
 
@@ -164,6 +173,7 @@ class LoginScript
         if (!self::is_username($error, $submitted_username) ||
             !self::is_password($error, $submitted_password)) {
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
         }
     }
@@ -179,6 +189,7 @@ class LoginScript
             $error .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
         }
 
@@ -188,6 +199,7 @@ class LoginScript
         if (!empty($error) || $db === false) {
             $error .= ' Database connection failed. ';
             $_SESSION['message'] = $error;
+            reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
         }
     }
@@ -226,6 +238,7 @@ class LoginScript
          * The first word must be all alphabetical letters.
          */
         $is_all_alpha = ctype_alpha($first_word);
+
         if (!$is_all_alpha) {
             $message .= " The username's first part must have alphabet characters only. ";
             return false;
@@ -235,8 +248,11 @@ class LoginScript
          * The first word must start with an upper case letter.
          */
         $arr_of_chars = str_split($first_word);
+
         $first_char_as_string = $arr_of_chars[0];
+
         $is_cap = ctype_upper($first_char_as_string);
+
         if (!$is_cap) {
             $message .= " The username needs to start with a capital letter. ";
             return false;
@@ -246,7 +262,9 @@ class LoginScript
          * That first letter is the only uppercase letter.
          */
         $rest = substr($first_word, 1);
+
         $is_lower = ctype_lower($rest);
+
         if (!$is_lower) {
             $message .= " The username's first part has a letter with improper case. ";
             return false;
@@ -256,6 +274,7 @@ class LoginScript
          * The first word must be 4 to 9 characters in length.
          */
         $length = strlen($first_word);
+
         if ($length > 9 || $length < 4) {
             $message .= " The username's first part doesn't have a proper length. ";
             return false;
@@ -265,10 +284,12 @@ class LoginScript
          * The second word is numeric two digits long.
          */
         $length_of_second_word = strlen($last_word);
+
         if ($length_of_second_word != 2) {
             $message .= " The username's second part is not two digits. ";
             return false;
         }
+
         if (!is_numeric($last_word)) {
             $message .= " The username's second part is not numeric. ";
             return false;
@@ -299,6 +320,7 @@ class LoginScript
          * The length must be 10 to 18 characters long.
          */
         $length = strlen($password);
+
         if ($length > 18 || $length < 10) {
             $message .= " The length of your password must be 10 to 18 characters. ";
             return false;

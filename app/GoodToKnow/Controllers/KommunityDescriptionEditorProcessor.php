@@ -18,12 +18,14 @@ class KommunityDescriptionEditorProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -40,6 +42,7 @@ class KommunityDescriptionEditorProcessor
         if (is_null($submitted_community_name)) {
             $sessionMessage .= " The community name you entered did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -48,13 +51,16 @@ class KommunityDescriptionEditorProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $community = Community::find_by_community_name($db, $sessionMessage, $submitted_community_name);
+
         if (!$community) {
             $sessionMessage .= " Unable to retrieve community object (possibly because the name you gave was invalid.) ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

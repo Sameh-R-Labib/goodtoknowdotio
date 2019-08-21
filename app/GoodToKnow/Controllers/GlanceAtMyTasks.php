@@ -25,21 +25,27 @@ class GlanceAtMyTasks
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any tasks for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' I could NOT find any tasks for you ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -47,6 +53,7 @@ class GlanceAtMyTasks
          * Loop through the array and replace some attributes with more readable versions of themselves.
          */
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+
         foreach ($array as $object) {
             $object->last = get_readable_time($object->last);
             $object->next = get_readable_time($object->next);
