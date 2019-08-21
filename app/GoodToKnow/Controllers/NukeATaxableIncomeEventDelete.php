@@ -26,12 +26,14 @@ class NukeATaxableIncomeEventDelete
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -45,6 +47,7 @@ class NukeATaxableIncomeEventDelete
         if (is_null($chosen_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -54,10 +57,11 @@ class NukeATaxableIncomeEventDelete
          * 2) Retrieve the taxable_income_event object with that id from the database.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,7 +70,7 @@ class NukeATaxableIncomeEventDelete
         if (!$object) {
             $sessionMessage .= " Unexpectedly I could not find that taxable_income_event record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

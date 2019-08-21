@@ -49,7 +49,7 @@ class RevampABankingTransactionForBalancesChooseRecord
         $sql .= ' ORDER BY `time`';
         $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any banking_transaction_for_balances records for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' 🤔 I could NOT find any banking_transaction_for_balances records ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
             $_SESSION['saved_int01'] = 0;
             $_SESSION['saved_int02'] = 0;

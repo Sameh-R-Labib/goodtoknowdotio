@@ -17,7 +17,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>There are no recurring payments for you.</p>
+            <p>There are no recurring payments.</p>
         <?php endif; ?>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>

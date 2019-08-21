@@ -18,7 +18,7 @@ class MemberMemoEditorForm
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -31,10 +31,11 @@ class MemberMemoEditorForm
          *     form for editing the memo.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -44,12 +45,14 @@ class MemberMemoEditorForm
          *  2) Save the id of the User in the session.
          */
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $_SESSION['saved_int01'] = (int)$user_object->id;
 
         /**

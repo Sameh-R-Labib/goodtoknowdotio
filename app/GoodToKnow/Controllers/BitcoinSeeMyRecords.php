@@ -43,7 +43,7 @@ class BitcoinSeeMyRecords
         $array_of_bitcoin_objects = Bitcoin::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_bitcoin_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any bitcoin records for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' 🤔 I could NOT find any bitcoin records ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/Home/page");

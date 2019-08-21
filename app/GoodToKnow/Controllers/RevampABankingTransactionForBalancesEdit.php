@@ -126,7 +126,7 @@ class RevampABankingTransactionForBalancesEdit
         $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
         $array_of_objects = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
         if (!$array_of_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any banking_acct_for_balances for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' 🤔 I could NOT find any banking_acct_for_balances ¯\_(ツ)_/¯. ';
             return false;
         }
 

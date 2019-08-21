@@ -36,12 +36,14 @@ class NewTopicIPProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -50,6 +52,7 @@ class NewTopicIPProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -60,9 +63,11 @@ class NewTopicIPProcessor
          * Besides, we want a fresh copy of special_topic_array.
          */
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+
         if (!$special_topic_array) {
             $sessionMessage .= " NewTopicIPProcessor::page says: Unexpected error 39684. ";
             $_SESSION['message'] .= $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -85,6 +90,7 @@ class NewTopicIPProcessor
         if (is_null($chosen_topic_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -92,18 +98,21 @@ class NewTopicIPProcessor
         if (empty($relate)) {
             $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if ($relate !== 'before' && $relate !== 'after') {
             $sessionMessage .= " NewTopicIPProcessor::page says: Error 99885. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
             $sessionMessage .= " NewTopicIPProcessor::page says: Error 124213. ";
             $_SESSION['message'] .= $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -114,16 +123,20 @@ class NewTopicIPProcessor
         if (!$topic_objects_array) {
             $sessionMessage .= " NewTopicIPProcessor::page says: Error 860138. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $chosen_topic_sequence_number = -1;
+
         foreach ($topic_objects_array as $key => $object) {
             if ($object->id == $chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
         }
+
         if ($chosen_topic_sequence_number == -1) {
             $sessionMessage .= " NewTopicIPProcessor::page says: Error 426273. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -134,6 +147,7 @@ class NewTopicIPProcessor
         }
 
         $_SESSION['saved_int01'] = $sequence_number;
+
         redirect_to("/ax1/NewTopicName/page");
     }
 

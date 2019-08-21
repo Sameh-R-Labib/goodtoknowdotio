@@ -17,7 +17,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>There are no banking accounts for balances for you.</p>
+            <p>There are no banking accounts for balances.</p>
         <?php endif; ?>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>

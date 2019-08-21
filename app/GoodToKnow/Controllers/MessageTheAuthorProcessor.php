@@ -32,12 +32,14 @@ class MessageTheAuthorProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,6 +55,7 @@ class MessageTheAuthorProcessor
         if (!isset($_POST['markdown']) || trim($markdown) === '') {
             $sessionMessage .= " The message you submitted did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -84,15 +87,20 @@ class MessageTheAuthorProcessor
          * Save that object to the database using save().
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $result = $message_object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= " Unexpected save() was unable to save the new message. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -115,16 +123,20 @@ class MessageTheAuthorProcessor
          * Save that object to the database using save().
          */
         $result = $message_to_user_object->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= " Unexpected save() was unable to save a message_to_user record for the message. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         /**
          * Declare success.
          */
-        $_SESSION['message'] = " Your message to {$author_username} was sent! ";
+        $sessionMessage .= " Your message to {$author_username} was sent! ";
+        $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

@@ -35,6 +35,7 @@ class NewTopic
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,11 +43,14 @@ class NewTopic
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
 
         if ($special_topic_array == false) $special_topic_array = [];
+
         $_SESSION['special_topic_array'] = $special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
 

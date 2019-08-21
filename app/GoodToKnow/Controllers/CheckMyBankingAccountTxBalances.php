@@ -48,7 +48,7 @@ class CheckMyBankingAccountTxBalances
         $array_of_objects = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' I could NOT find any banking_acct_for_balances records for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' I could NOT find any banking_acct_for_balances records ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/Home/page");

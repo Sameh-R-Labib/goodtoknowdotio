@@ -34,7 +34,7 @@ class OmitABankingTransactionForBalancesTimeRange
          */
         $choice = (isset($_POST['choice'])) ? $_POST['choice'] : '';
         if (empty($choice)) {
-            $sessionMessage .= " You didn't choose so I've aborted the process for you. ";
+            $sessionMessage .= " You didn't choose so I've aborted the process. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

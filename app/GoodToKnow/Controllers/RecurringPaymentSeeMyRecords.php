@@ -50,7 +50,7 @@ class RecurringPaymentSeeMyRecords
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any recurring payments for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' 🤔 I could NOT find any recurring payments ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

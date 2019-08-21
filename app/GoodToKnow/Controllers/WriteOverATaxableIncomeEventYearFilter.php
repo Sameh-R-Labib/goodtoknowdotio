@@ -62,7 +62,7 @@ class WriteOverATaxableIncomeEventYearFilter
         $array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For <b>{$year_received}</b> I could NOT find any Taxable Income Events for you. ";
+            $sessionMessage .= " 🤔 For <b>{$year_received}</b> I could NOT find any Taxable Income Events. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }

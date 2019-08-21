@@ -26,9 +26,7 @@ class NewTopicSave
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -37,9 +35,7 @@ class NewTopicSave
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -78,20 +74,17 @@ class NewTopicSave
             $sessionMessage .= " Unfortunately someone was putting a topic in the same spot while you were
             trying to do the same and they beat you to the punch. Please start over. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         // Save the new Topic
         $result = $topic->save($db, $sessionMessage);
+
         if (!$result) {
             $sessionMessage .= " NewTopicSave::page says: Unexpected save was unable to save the new topic. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -105,9 +98,7 @@ class NewTopicSave
         if (!$result) {
             $sessionMessage .= " NewTopicSave::page says: Unexpected save was unable to save the CommunityToTopic. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
-            $_SESSION['saved_str02'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -115,14 +106,13 @@ class NewTopicSave
          * Save a fresh copy of special_topic_array
          */
         $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+
         $_SESSION['last_refresh_topics'] = time();
 
         // Redirect
         $sessionMessage .= " 😃 Your new topic has been created. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
-        $_SESSION['saved_str01'] = "";
-        $_SESSION['saved_str02'] = "";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

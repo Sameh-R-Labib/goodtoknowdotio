@@ -65,7 +65,7 @@ class AlterAPossibleTaxDeductionYearFilter
         $array = PossibleTaxDeduction::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For <b>{$year_paid}</b> I could NOT find any Possible Tax Deduction for you. ";
+            $sessionMessage .= " 🤔 For <b>{$year_paid}</b> I could NOT find any Possible Tax Deduction. ";
             $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/Home/page");

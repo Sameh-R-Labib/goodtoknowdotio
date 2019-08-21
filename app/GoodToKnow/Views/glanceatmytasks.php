@@ -18,7 +18,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>There are no to-do tasks for you.</p>
+            <p>There are no to-do tasks.</p>
         <?php endif; ?>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>

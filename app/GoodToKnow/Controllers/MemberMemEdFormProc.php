@@ -39,16 +39,14 @@ class MemberMemEdFormProc
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -63,8 +61,7 @@ class MemberMemEdFormProc
         if (is_null($edited_comment)) {
             $sessionMessage .= " The edited comment did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -75,16 +72,16 @@ class MemberMemEdFormProc
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
+
         if (!$user_object) {
             $sessionMessage .= " Unexpected failed to retrieve the user object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -106,11 +103,11 @@ class MemberMemEdFormProc
          * 7) Update the database with this User object.
          */
         $result = $user_object->save($db, $sessionMessage);
+
         if ($result === false) {
             $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated user object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -119,8 +116,7 @@ class MemberMemEdFormProc
          */
         $sessionMessage .= " I have updated {$saved_str01}'s record. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
-        $_SESSION['saved_str01'] = "";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

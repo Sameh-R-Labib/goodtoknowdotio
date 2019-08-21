@@ -28,15 +28,16 @@ class OmitABankingTransactionForBalancesChooseRecord
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -47,12 +48,13 @@ class OmitABankingTransactionForBalancesChooseRecord
         $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
         $sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($saved_int01) . '" AND "' . $db->real_escape_string($saved_int02) . '"';
         $sql .= ' ORDER BY `time`';
+
         $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any banking_transaction_for_balances records for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' I could NOT find any banking transaction for balances records ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

@@ -43,7 +43,7 @@ class GlanceAtMyTasks
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' I could NOT find any tasks for you ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' I could NOT find any tasks ¯\_(ツ)_/¯. ';
             $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/Home/page");

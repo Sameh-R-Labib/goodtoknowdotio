@@ -31,14 +31,14 @@ class NewTopicNameProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,11 +51,12 @@ class NewTopicNameProcessor
         if (is_null($topic_name) || is_null($topic_description)) {
             $sessionMessage .= " One or more values did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $_SESSION['saved_str01'] = $topic_name;
+
         $_SESSION['saved_str02'] = $topic_description;
 
         redirect_to("/ax1/NewTopicSave/page");
