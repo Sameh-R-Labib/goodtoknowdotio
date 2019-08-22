@@ -25,16 +25,14 @@ class TransferPostOwnershipGetUsername
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -43,20 +41,18 @@ class TransferPostOwnershipGetUsername
         if ($choice != "yes" && $choice != "no") {
             $sessionMessage .= " You didn't enter a choice. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if ($choice == "no") {
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
             $sessionMessage .= " You changed your mind about transferring ownership of the post. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
-        $html_title = 'What is the username of the person whom you want to assign the post to?';
+        $html_title = 'What is the username of the person?';
 
         require VIEWS . DIRSEP . 'transferpostownershipgetusername.php';
     }

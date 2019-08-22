@@ -25,24 +25,28 @@ class UploadProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (!isset($_POST['submit'])) {
             $sessionMessage .= " An invalid form submission occured. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
             $sessionMessage .= " I aborted what you were trying to do because you didn't select a file. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -93,6 +97,7 @@ class UploadProcessor
             // File is not an image.
             $sessionMessage .= " Error 546224. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -102,6 +107,7 @@ class UploadProcessor
         if (file_exists($target_file)) {
             $sessionMessage .= " Sorry, file already exists. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -111,6 +117,7 @@ class UploadProcessor
         if ($_FILES["fileToUpload"]["size"] > 5767168) {
             $sessionMessage .= " Sorry, your file is too large. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -120,18 +127,23 @@ class UploadProcessor
          * NOTE: Although at this point we know it's an image we do NOT know it's a web image
          */
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+
             $sessionMessage .= " Sorry, only JPG, JPEG, PNG & GIF files are allowed. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
+
         }
 
         /**
          * Sanity helpers.
          */
         $a_link_href_content = SERVER_URL . '/image/' . rawurlencode(CLASSICFILENAME);
+
         $a_link_href_content = htmlspecialchars($a_link_href_content);
 
         $a_link_display_text = SERVER_URL . '/image/' . rawurlencode(CLASSICFILENAME);
+
         $a_link_display_text = htmlspecialchars($a_link_display_text);
 
         $a_link_entire_embed = '<a href="' . $a_link_href_content . '" target="_blank">' . $a_link_display_text . '</a>';
@@ -150,7 +162,9 @@ class UploadProcessor
          * Report outcome of this process.
          */
         $_SESSION['url_of_most_recent_upload'] = $a_link_href_content;
+
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

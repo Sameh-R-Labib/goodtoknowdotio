@@ -27,16 +27,14 @@ class TransferPostOwnershipTransferIt
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -45,8 +43,7 @@ class TransferPostOwnershipTransferIt
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -57,8 +54,7 @@ class TransferPostOwnershipTransferIt
         if (is_null($username)) {
             $sessionMessage .= " The username you entered did NOT pass validation. ";
             $_SESSION['message'] .= $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -68,8 +64,7 @@ class TransferPostOwnershipTransferIt
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -81,8 +76,7 @@ class TransferPostOwnershipTransferIt
         if (!$post_object) {
             $sessionMessage .= " TransferPostOwnershipTransferIt::page says: Unexpected could not get a post object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -91,21 +85,18 @@ class TransferPostOwnershipTransferIt
 
         // Save the Post to the database.
         $result = $post_object->save($db, $sessionMessage);
+
         if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated post
-            object. ";
+            $sessionMessage .= " I was unable to save the updated post record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         // Report success.
-        $sessionMessage .= " I have updated the \"{$post_object->title}\" post's record so that now it
-         belongs to <b>{$username}</b>. ";
+        $sessionMessage .= " I've updated \"{$post_object->title}\" post's record to belong to <b>{$username}</b>. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
-        $_SESSION['saved_int02'] = 0;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

@@ -25,6 +25,7 @@ class UserRoster
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -33,6 +34,7 @@ class UserRoster
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,6 +53,7 @@ class UserRoster
         if ($user_objects_array === false || empty($user_objects_array)) {
             $sessionMessage .= " Unable to retrieve any user objects. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,12 +69,15 @@ class UserRoster
 
         // Assign $community_values_array. $community_values_array is described in class ReadableUser.
         $community_values_array = [];
+
         $array_of_all_community_objects = Community::find_all($db, $sessionMessage);
+
         if ($array_of_all_community_objects === false || empty($array_of_all_community_objects)) {
             $sessionMessage .= " Unable to retrieve any community objects. ";
             $_SESSION['message'] = $sessionMessage;
             redirect_to("/ax1/Home/page");
         }
+
         foreach ($array_of_all_community_objects as $community) {
             $community_values_array[$community->id] = $community->community_name;
         }
