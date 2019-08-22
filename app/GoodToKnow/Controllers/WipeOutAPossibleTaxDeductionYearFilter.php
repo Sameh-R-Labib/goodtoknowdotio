@@ -23,12 +23,14 @@ class WipeOutAPossibleTaxDeductionYearFilter
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -42,6 +44,7 @@ class WipeOutAPossibleTaxDeductionYearFilter
         if (is_null($year_paid)) {
             $sessionMessage .= " Your year_paid did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,6 +56,7 @@ class WipeOutAPossibleTaxDeductionYearFilter
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -62,8 +66,9 @@ class WipeOutAPossibleTaxDeductionYearFilter
         $array = PossibleTaxDeduction::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For <b>{$year_paid}</b> I could NOT find any Possible Tax Deduction. ";
+            $sessionMessage .= " For <b>{$year_paid}</b> I could NOT find any Possible Tax Deductions. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

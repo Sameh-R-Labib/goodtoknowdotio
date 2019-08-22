@@ -29,14 +29,14 @@ class WriteOverATaxableIncomeEventUpdate
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,7 +53,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (is_null($edited_label)) {
             $sessionMessage .= " The label you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -66,7 +66,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (is_null($edited_year_received)) {
             $sessionMessage .= " The year_received you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -76,7 +76,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (is_null($edited_comment)) {
             $sessionMessage .= " The comment you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -86,6 +86,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (is_null($edited_time)) {
             $sessionMessage .= " The time you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -95,7 +96,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (is_null($edited_currency)) {
             $sessionMessage .= " The currency you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -110,7 +111,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -119,7 +120,7 @@ class WriteOverATaxableIncomeEventUpdate
         if (!$object) {
             $sessionMessage .= " Unexpectedly I could not find that record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -141,7 +142,7 @@ class WriteOverATaxableIncomeEventUpdate
         if ($result === false) {
             $sessionMessage .= " I aborted because I failed at saving the updated object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -150,7 +151,7 @@ class WriteOverATaxableIncomeEventUpdate
          */
         $sessionMessage .= " I've updated <b>{$object->label}</b>. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

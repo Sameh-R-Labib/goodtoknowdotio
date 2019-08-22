@@ -32,12 +32,14 @@ class WriteToAdminProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -53,6 +55,7 @@ class WriteToAdminProcessor
         if (is_null($markdown)) {
             $sessionMessage .= " The message you submitted did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -84,15 +87,20 @@ class WriteToAdminProcessor
          * Save that object to the database using save().
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $result = $message_object->save($db, $sessionMessage);
+
         if (!$result) {
-            $sessionMessage .= " Unexpected save() was unable to save the new message. ";
+            $sessionMessage .= " Unexpectedly was unable to save the new message. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -104,20 +112,25 @@ class WriteToAdminProcessor
          *  - message_id
          *  - user_id
          */
+
         $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => ADMINUSERID];
 
         /**
          * Call array_to_object($array) to create the object in memory.
          */
+
         $message_to_user_object = MessageToUser::array_to_object($message_to_user_array);
 
         /**
          * Save that object to the database using save().
          */
+
         $result = $message_to_user_object->save($db, $sessionMessage);
+
         if (!$result) {
-            $sessionMessage .= " Unexpected save() was unable to save a message_to_user record for the message. ";
+            $sessionMessage .= " Unexpectedly I was unable to save the message to user record for this message. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -125,7 +138,10 @@ class WriteToAdminProcessor
          * Declare success.
          */
         $admin_username = ADMINUSERNAME;
-        $_SESSION['message'] = " Your message to {$admin_username} was sent! ";
+
+        $sessionMessage .= " Your message to {$admin_username} was sent! ";
+        $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }
