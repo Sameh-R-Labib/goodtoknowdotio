@@ -20,12 +20,14 @@ class RevampABankingTransactionForBalancesTimeRange
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -33,15 +35,20 @@ class RevampABankingTransactionForBalancesTimeRange
          * 1) Validate the submitted choice of time range (A,B,C,D,E.)
          */
         $choice = (isset($_POST['choice'])) ? $_POST['choice'] : '';
+
         if (empty($choice)) {
             $sessionMessage .= " You didn't choose so I've aborted the process. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $values = ['A', 'B', 'C', 'D', 'E'];
+
         if (!in_array($choice, $values)) {
             $sessionMessage .= " You choice is invalid. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -84,6 +91,7 @@ class RevampABankingTransactionForBalancesTimeRange
          * 3) Store the min and max in session variables.
          */
         $_SESSION['saved_int01'] = $min;
+
         $_SESSION['saved_int02'] = $max;
 
         /**

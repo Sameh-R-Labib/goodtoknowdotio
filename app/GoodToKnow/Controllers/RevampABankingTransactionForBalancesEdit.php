@@ -25,16 +25,14 @@ class RevampABankingTransactionForBalancesEdit
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -48,8 +46,7 @@ class RevampABankingTransactionForBalancesEdit
         if (is_null($chosen_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,19 +56,20 @@ class RevampABankingTransactionForBalancesEdit
          * 2) Retrieve the banking_transaction_for_balances object with that id from the database.
          */
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $chosen_id);
+
         if (!$object) {
             $sessionMessage .= " Unexpectedly I could not find that banking_transaction_for_balances record. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -87,8 +85,7 @@ class RevampABankingTransactionForBalancesEdit
         if (!$object->bank_id OR !empty($sessionMessage)) {
             $sessionMessage .= " Unexpectedly error number 014332. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_int02'] = 0;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -118,15 +115,18 @@ class RevampABankingTransactionForBalancesEdit
          *        </label>
          */
         $html = "        <label for=\"bank_id\" class=\"dropdown\">Bank Account:\n";
+
         $html .= "             <select id=\"bank_id\" name=\"bank_id\">\n";
 
         /**
          * First I need to get all the BankingAcctForBalances object for this user.
          */
         $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+
         $array_of_objects = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
+
         if (!$array_of_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any banking_acct_for_balances ¯\_(ツ)_/¯. ';
+            $sessionMessage .= ' I could NOT find any banking acct for balances ¯\_(ツ)_/¯. ';
             return false;
         }
 
@@ -135,13 +135,17 @@ class RevampABankingTransactionForBalancesEdit
          */
         foreach ($array_of_objects as $object) {
             $html .= "                 <option value=\"";
+
             $html .= $object->id;
+
             if ($object->id == $bank_id) {
                 $html .= "\" selected>";
             } else {
                 $html .= "\">";
             }
+
             $html .= $object->acct_name;
+
             $html .= "</option>\n";
         }
 
@@ -149,6 +153,7 @@ class RevampABankingTransactionForBalancesEdit
          * Close the HTML.
          */
         $html .= "             </select>\n";
+
         $html .= "        </label>\n";
 
         return $html;

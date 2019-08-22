@@ -23,7 +23,7 @@ class SuspendAccountSuspend
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -37,10 +37,11 @@ class SuspendAccountSuspend
          */
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -49,10 +50,11 @@ class SuspendAccountSuspend
          *     whose is_suspended field the admin wants to edit.
          */
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+
         if (!$user_object) {
             $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -69,7 +71,7 @@ class SuspendAccountSuspend
         if (!$consequence_of_save) {
             $sessionMessage .= ' The save method for User returned false. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -77,7 +79,7 @@ class SuspendAccountSuspend
             $sessionMessage .= " The save method for User did not return false but it did send back a message.
              Therefore, it probably did not update {$saved_str01}'s account. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -86,7 +88,7 @@ class SuspendAccountSuspend
          */
         $sessionMessage .= " User {$saved_str01}'s account has been suspended! Yay 😎 👍 ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_str01'] = "";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

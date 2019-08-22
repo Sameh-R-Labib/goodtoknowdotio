@@ -32,12 +32,14 @@ class TopicDescriptionEditorProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -51,14 +53,15 @@ class TopicDescriptionEditorProcessor
         if (is_null($chosen_topic_id)) {
             $sessionMessage .= " Your choice did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         // Make sure $chosen_topic_id is among the ids of $special_topic_array
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
-            $sessionMessage .= " I've encountered an unexpected error which is that the topic id was not found in topic
-             array. ";
+            $sessionMessage .= " I've encountered an unexpected error namely the topic id was not found in topic array. ";
             $_SESSION['message'] .= $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 

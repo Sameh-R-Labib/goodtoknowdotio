@@ -27,12 +27,14 @@ class StartATaxableIncomeEventProcessor
 
         if (!$is_logged_in || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -46,6 +48,7 @@ class StartATaxableIncomeEventProcessor
         if (is_null($label)) {
             $sessionMessage .= " Your label did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -59,6 +62,7 @@ class StartATaxableIncomeEventProcessor
         if (is_null($year_received)) {
             $sessionMessage .= " Your year_received did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -70,6 +74,7 @@ class StartATaxableIncomeEventProcessor
         if (is_null($time)) {
             $sessionMessage .= " The time you entered did not pass validation. ";
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -82,6 +87,7 @@ class StartATaxableIncomeEventProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -104,6 +110,7 @@ class StartATaxableIncomeEventProcessor
         if (!$result) {
             $sessionMessage .= ' The save method for TaxableIncomeEvent returned false. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -111,6 +118,7 @@ class StartATaxableIncomeEventProcessor
             $sessionMessage .= ' The save method for TaxableIncomeEvent did not return false but it did send
             back a message. Therefore, it probably did not create the TaxableIncomeEvent record. ';
             $_SESSION['message'] = $sessionMessage;
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -119,6 +127,7 @@ class StartATaxableIncomeEventProcessor
          */
         $sessionMessage .= " A Taxable Income Event was created! ";
         $_SESSION['message'] = $sessionMessage;
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

@@ -34,16 +34,14 @@ class TopicDescriptionEditorFormProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -58,8 +56,7 @@ class TopicDescriptionEditorFormProcessor
         if (is_null($edited_description)) {
             $sessionMessage .= " The edited description did NOT pass validation. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -71,17 +68,16 @@ class TopicDescriptionEditorFormProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
+
         $topic_object = Topic::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$topic_object) {
             $sessionMessage .= " Unexpected failed to retrieve the topic object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -105,10 +101,9 @@ class TopicDescriptionEditorFormProcessor
         $result = $topic_object->save($db, $sessionMessage);
 
         if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated topic object. ";
+            $sessionMessage .= " I failed at saving the updated topic object. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -117,8 +112,7 @@ class TopicDescriptionEditorFormProcessor
          */
         $sessionMessage .= " I have updated {$saved_str01}'s record. ";
         $_SESSION['message'] = $sessionMessage;
-        $_SESSION['saved_int01'] = 0;
-        $_SESSION['saved_str01'] = "";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }

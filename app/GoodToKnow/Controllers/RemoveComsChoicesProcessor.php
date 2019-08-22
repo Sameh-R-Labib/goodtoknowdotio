@@ -23,16 +23,14 @@ class RemoveComsChoicesProcessor
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             $sessionMessage .= " I aborted the task. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -41,8 +39,7 @@ class RemoveComsChoicesProcessor
         if (!empty($sessionMessage) || $db === false) {
             $sessionMessage .= ' Database connection failed. ';
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -74,24 +71,20 @@ class RemoveComsChoicesProcessor
         if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
             $sessionMessage .= " Unexpected deficiencies in the _POST array. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
         $submitted_community_ids_array = [];
 
         foreach ($_POST as $item) {
-            if (is_numeric($item)) {
-                $submitted_community_ids_array[] = $item;
-            }
+            if (is_numeric($item)) $submitted_community_ids_array[] = $item;
         }
 
         if (empty($submitted_community_ids_array)) {
             $sessionMessage .= " You did not submit any community ids. ";
             $_SESSION['message'] = $sessionMessage;
-            $_SESSION['saved_int01'] = 0;
-            $_SESSION['saved_str01'] = "";
+            reset_feature_session_vars();
             redirect_to("/ax1/Home/page");
         }
 
@@ -141,8 +134,7 @@ class RemoveComsChoicesProcessor
             if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
                 $sessionMessage .= " Error 0819. ";
                 $_SESSION['message'] = $sessionMessage;
-                $_SESSION['saved_int01'] = 0;
-                $_SESSION['saved_str01'] = "";
+                reset_feature_session_vars();
                 redirect_to("/ax1/Home/page");
             }
 
@@ -160,8 +152,7 @@ class RemoveComsChoicesProcessor
             if (!$result_of_delete) {
                 $sessionMessage .= " Aborted because failed to delete UserToCommunity object. ";
                 $_SESSION['message'] = $sessionMessage;
-                $_SESSION['saved_int01'] = 0;
-                $_SESSION['saved_str01'] = "";
+                reset_feature_session_vars();
                 redirect_to("/ax1/Home/page");
             }
         }
@@ -170,8 +161,7 @@ class RemoveComsChoicesProcessor
          * Declare success.
          */
         $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s to-be-removed communities were removed! ";
-        $_SESSION['saved_int01'] = 0;
-        $_SESSION['saved_str01'] = "";
+        reset_feature_session_vars();
         redirect_to("/ax1/Home/page");
     }
 }
