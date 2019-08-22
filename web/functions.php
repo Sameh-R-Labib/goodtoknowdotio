@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * @param string $newMessage
+ */
+function breakout(string $newMessage)
+{
+    global $sessionMessage;
+
+    $_SESSION['message'] = $sessionMessage . $newMessage;
+    reset_feature_session_vars();
+    redirect_to("/ax1/Home/page");
+}
+
+/**
  *
  */
 function reset_feature_session_vars()
