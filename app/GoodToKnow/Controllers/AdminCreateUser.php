@@ -24,25 +24,17 @@ class AdminCreateUser
         global $saved_int01; // choice
 
         if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I aborted the task. ');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         /**
@@ -68,10 +60,8 @@ class AdminCreateUser
 
         if (is_null($submitted_username) || is_null($submitted_comment) || is_null($submitted_date) ||
             is_null($submitted_first_try) || is_null($submitted_password)) {
-            $sessionMessage .= " One or more values is invalid. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+
+            breakout(' One or more values is invalid. ');
         }
 
         /**
@@ -90,10 +80,8 @@ class AdminCreateUser
             !self::is_title($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
             !self::is_date($sessionMessage, $submitted_date)) {
-            $sessionMessage .= " One of the submitted field values is invalid. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+
+            breakout(' One of the submitted field values is invalid. ');
         }
 
 
@@ -105,6 +93,7 @@ class AdminCreateUser
         $hash_of_submitted_password = password_hash($submitted_password, PASSWORD_DEFAULT);
 
         // See steps in GoodObject for storing a new object.
+
         // First step:
         $array_of_submitted_data = ['username' => $submitted_username,
             'password' => $hash_of_submitted_password,
@@ -123,18 +112,12 @@ class AdminCreateUser
         $consequence_of_save = $new_user_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
-            $sessionMessage .= ' The save method for User returned false. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The save method for User returned false. ');
         }
 
         if (!empty($sessionMessage)) {
-            $sessionMessage .= ' The save method for User did not return false but it did send back a message.
-             Therefore, it probably did not create your account. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The save method for User did not return false but it did send back a message.
+             Therefore, it probably did not create your account. ');
         }
 
         /**
@@ -148,28 +131,18 @@ class AdminCreateUser
         $consequence_of_save = $new_user_to_community_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
-            $sessionMessage .= ' The save method for UserToCommunity returned false. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The save method for UserToCommunity returned false. ');
         }
 
         if (!empty($sessionMessage)) {
-            $sessionMessage .= ' The save method for UserToCommunity did not return false but it did send back a message.
-             Therefore, it probably did not create the association for your account. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The save method for UserToCommunity did not return false but it did send back a message.
+             Therefore, it probably did not create the association for your account. ');
         }
 
         /**
-         * Assumed success.
-         * Set $sessionMessage and redirect.
+         * Announce success.
          */
-        $sessionMessage .= " The user account was created! ";
-        $_SESSION['message'] = $sessionMessage;
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+        breakout(' The user account was created! ');
     }
 
     // Helpers for the page() method

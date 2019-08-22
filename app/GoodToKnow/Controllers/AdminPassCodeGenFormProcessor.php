@@ -22,24 +22,17 @@ class AdminPassCodeGenFormProcessor
         global $is_admin;
 
         if (!$is_logged_in OR !$is_admin) {
-            $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage || $db === false)) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
+            breakout(' Failed to connect to database. ');
         }
 
         $community_array = Community::find_all($db, $sessionMessage);
@@ -49,16 +42,16 @@ class AdminPassCodeGenFormProcessor
          * Otherwise, give error and redirect
          */
         $is_found = false;
+
         foreach ($community_array as $value) {
             if ($value->id == $_POST['choice']) {
                 $is_found = true;
                 break;
             }
         }
+
         if (!$is_found) {
-            $sessionMessage .= " Aborted! choice is not valid. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
+            breakout(' Value is not valid. ');
         }
 
         /**
@@ -69,9 +62,7 @@ class AdminPassCodeGenFormProcessor
         $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
         if (is_null($chosen_id)) {
-            $sessionMessage .= " Your choice did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
+            breakout(' Value is not valid. ');
         }
 
         $_SESSION['saved_int01'] = $chosen_id;

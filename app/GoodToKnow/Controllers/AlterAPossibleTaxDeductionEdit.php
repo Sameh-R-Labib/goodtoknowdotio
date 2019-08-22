@@ -21,16 +21,11 @@ class AlterAPossibleTaxDeductionEdit
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I aborted the task. ');
         }
 
         /**
@@ -41,10 +36,7 @@ class AlterAPossibleTaxDeductionEdit
         $id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
         if (is_null($id)) {
-            $sessionMessage .= " Your choice did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your choice did not pass validation. ');
         }
 
         $_SESSION['saved_int01'] = $id;
@@ -55,19 +47,13 @@ class AlterAPossibleTaxDeductionEdit
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $id);
 
         if (!$object) {
-            $sessionMessage .= " Unexpectedly, I could not find that possible_tax_deduction record. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly, I could not find that possible tax deduction. ');
         }
 
         /**

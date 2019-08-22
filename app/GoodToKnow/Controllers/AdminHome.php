@@ -20,9 +20,7 @@ class AdminHome
         global $type_of_resource_requested;
 
         if (!$is_logged_in OR !$is_admin) {
-            $_SESSION['message'] = $sessionMessage; // to pass message along since script doesn't output anything
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $html_title = 'Admin';
