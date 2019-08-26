@@ -20,9 +20,7 @@ class TopicDescriptionEditorForm
         global $saved_str01; // topic name
         global $saved_int01; // community id
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $db = get_db();
 

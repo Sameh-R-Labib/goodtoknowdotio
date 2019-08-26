@@ -13,19 +13,13 @@ class AdminPassCodeGenFormProcessor
         global $sessionMessage;
         global $is_admin;
 
-        if (!$is_logged_in OR !$is_admin) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage || $db === false)) {
-            breakout(' Failed to connect to database. ');
-        }
+        $db = get_db();
 
         $community_array = Community::find_all($db, $sessionMessage);
 

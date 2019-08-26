@@ -29,9 +29,7 @@ class MemberMemEdFormProc
         global $saved_str01;                // The member's username
         global $saved_int01;                // The member's id
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

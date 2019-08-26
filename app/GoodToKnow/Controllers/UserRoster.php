@@ -16,9 +16,7 @@ class UserRoster
         global $special_community_array;
         global $type_of_resource_requested;
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $db = get_db();
 

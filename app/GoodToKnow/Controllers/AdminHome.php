@@ -12,9 +12,7 @@ class AdminHome
         global $special_community_array;
         global $type_of_resource_requested;
 
-        if (!$is_logged_in OR !$is_admin) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $html_title = 'Admin';
 

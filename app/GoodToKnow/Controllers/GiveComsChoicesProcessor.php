@@ -14,9 +14,7 @@ class GiveComsChoicesProcessor
         global $saved_str01; // Has user's username
         global $saved_int01; // Has user's id
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

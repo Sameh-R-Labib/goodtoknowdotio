@@ -24,9 +24,7 @@ class QuickPostDeleteChoosePost
         global $is_admin;
         global $saved_int01;        // id of topic
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $db = get_db();
 

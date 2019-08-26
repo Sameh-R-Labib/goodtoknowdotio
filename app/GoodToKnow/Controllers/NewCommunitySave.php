@@ -14,9 +14,7 @@ class NewCommunitySave
         global $saved_str01;                // The topic name
         global $saved_str02;                // The topic description
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $db = get_db();
 

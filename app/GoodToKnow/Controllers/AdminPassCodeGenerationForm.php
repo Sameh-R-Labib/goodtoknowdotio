@@ -12,9 +12,7 @@ class AdminPassCodeGenerationForm
         global $is_admin;
         global $sessionMessage;
 
-        if (!$is_logged_in OR !$is_admin) {
-            breakout(' You need to be the Admin to follow that request route. ');
-        }
+        kick_out_nonadmins();
 
 
         /**
@@ -28,6 +26,7 @@ class AdminPassCodeGenerationForm
          */
 
         $db = get_db();
+
 
         // Community::find_all() should return the array we are looking for (see above)
 

@@ -15,9 +15,7 @@ class AdminCreateUser
         global $is_admin;
         global $saved_int01; // choice
 
-        if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

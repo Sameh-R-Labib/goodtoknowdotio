@@ -10,9 +10,7 @@ class UnsuspendAccount
         global $is_admin;
         global $sessionMessage;
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
 
         /**

@@ -14,9 +14,7 @@ class NewTopicName
         global $sessionMessage;
         global $is_admin;
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $html_title = "What's its name?";
 

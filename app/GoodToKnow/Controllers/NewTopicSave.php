@@ -17,9 +17,7 @@ class NewTopicSave
         global $saved_str02;                // The topic description
         global $saved_int01;                // The sequence number
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $db = get_db();
 

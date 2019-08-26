@@ -28,9 +28,7 @@ class TopicDescriptionEditorFormProcessor
         global $saved_str01;                // The topic's name
         global $saved_int01;                // The topic's id
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

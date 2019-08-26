@@ -21,9 +21,7 @@ class PurgeNinetyDayOldBTFBs
         global $sessionMessage;
         global $is_admin;
 
-        if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $db = get_db();
 

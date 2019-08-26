@@ -21,9 +21,7 @@ class PurgeOldMessages
         global $is_admin;
         global $sessionMessage;
 
-        if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         $html_title = 'Purge Old Messages';
 

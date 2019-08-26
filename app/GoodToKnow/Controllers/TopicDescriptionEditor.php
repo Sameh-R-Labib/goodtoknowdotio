@@ -13,9 +13,7 @@ class TopicDescriptionEditor
         global $sessionMessage;
         global $community_id;
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
 
         /**

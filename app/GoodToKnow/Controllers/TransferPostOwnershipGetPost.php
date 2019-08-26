@@ -33,9 +33,7 @@ class TransferPostOwnershipGetPost
         global $sessionMessage;
         global $is_admin;
 
-        if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_nonadmins();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');
