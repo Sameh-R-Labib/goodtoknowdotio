@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use GoodToKnow\Models\PossibleTaxDeduction;
@@ -25,12 +23,14 @@ class AlterAPossibleTaxDeductionEdit
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' I aborted the task. ');
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * 1) Store the submitted possible_tax_deduction id in the session.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
@@ -41,9 +41,11 @@ class AlterAPossibleTaxDeductionEdit
 
         $_SESSION['saved_int01'] = $id;
 
+
         /**
          * 2) Retrieve the possible_tax_deduction object with that id from the database.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
@@ -56,9 +58,11 @@ class AlterAPossibleTaxDeductionEdit
             breakout(' Unexpectedly, I could not find that possible tax deduction. ');
         }
 
+
         /**
          * 3) Present a form which is populated with data from the possible_tax_deduction object.
          */
+
         $html_title = 'Edit the possible_tax_deduction record';
 
         require VIEWS . DIRSEP . 'alterapossibletaxdeductionedit.php';

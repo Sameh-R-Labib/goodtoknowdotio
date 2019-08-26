@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/26/18
- * Time: 11:08 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class DefaultCommunity
 {
@@ -18,9 +11,7 @@ class DefaultCommunity
         global $special_community_array;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $html_title = 'Default Community';

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 class RevampABankingTransactionForBalancesTimeRange
 {
@@ -19,42 +17,38 @@ class RevampABankingTransactionForBalancesTimeRange
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * 1) Validate the submitted choice of time range (A,B,C,D,E.)
          */
+
         $choice = (isset($_POST['choice'])) ? $_POST['choice'] : '';
 
         if (empty($choice)) {
-            $sessionMessage .= " You didn't choose so I've aborted the process. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' You didn\'t choose. ');
         }
 
         $values = ['A', 'B', 'C', 'D', 'E'];
 
         if (!in_array($choice, $values)) {
-            $sessionMessage .= " You choice is invalid. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' You choice is invalid. ');
         }
+
 
         /**
          * 2) Calculate the min and max times of the requested range.
          */
+
+        $min = 0;
+        $max = 0;
+
         switch ($choice) {
             case 'A':
                 // Last 30 days
@@ -82,21 +76,23 @@ class RevampABankingTransactionForBalancesTimeRange
                 $max = time();
                 break;
             default:
-                $sessionMessage .= " Unexpectedly the switch statement failed. ";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
+                breakout(' Unexpectedly the switch statement failed. ');
         }
+
 
         /**
          * 3) Store the min and max in session variables.
          */
+
         $_SESSION['saved_int01'] = $min;
 
         $_SESSION['saved_int02'] = $max;
 
+
         /**
          * Redirect
          */
+
         redirect_to("/ax1/RevampABankingTransactionForBalancesChooseRecord/page");
     }
 }

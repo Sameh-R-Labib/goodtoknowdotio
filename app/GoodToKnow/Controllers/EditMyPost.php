@@ -1,32 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/18/18
- * Time: 4:16 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\CommunityToTopic;
-
 
 class EditMyPost
 {
     function page()
     {
         /**
-         * This is the first in a series of routes
-         * aimed at editing a preexisting user's
-         * post.
+         * This is the first in a series of routes aimed at editing a preexisting user's post.
          */
 
         /**
-         * This route will present a form which asks
-         * which topic does the post exist in. Remember
-         * first we need to have the user identify
-         * the post. So this first step will help.
+         * This route will present a form which asks which topic does the post exist in. Remember
+         * first we need to have the user identify the post. So this first step will help.
          */
 
         global $is_logged_in;
@@ -34,21 +22,18 @@ class EditMyPost
         global $community_id;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
+
 
         /**
          * Refresh special_topic_array
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
@@ -59,11 +44,9 @@ class EditMyPost
         $_SESSION['last_refresh_topics'] = time();
 
         // Abort if the community doesn't have any topics yet
+
         if (empty($special_topic_array)) {
-            $sessionMessage .= " Aborted because this community has no topics. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Aborted because this community has no topics. ');
         }
 
         $html_title = 'Which topic is your post in?';

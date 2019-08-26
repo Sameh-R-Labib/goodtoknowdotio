@@ -1,30 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/7/18
- * Time: 3:31 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\CommunityToTopic;
-
 
 class NewTopic
 {
     function page()
     {
         /**
-         * We need to determine whether or not
-         * the community has any topics.
-         * If it has no topics then we assign
-         * the sequence number for the new topic
-         * a value of 10500000 and redirect to
-         * where we ask for the name of the topic.
-         * If the community has one or more topics
-         * then we redirect to where we as for the
+         * We need to determine whether or not the community has any topics.
+         * If it has no topics then we assign the sequence number for the new topic
+         * a value of 10500000 and redirect to where we ask for the name of the topic.
+         * If the community has one or more topics then we redirect to where we as for the
          * insertion point.
          */
 
@@ -34,17 +22,13 @@ class NewTopic
         global $sessionMessage;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);

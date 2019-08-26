@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/26/18
- * Time: 10:05 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class ControlPanel
 {
@@ -20,9 +13,7 @@ class ControlPanel
         global $type_of_resource_requested;
 
         if (!$is_logged_in OR $is_admin) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $html_title = 'Control Panel';

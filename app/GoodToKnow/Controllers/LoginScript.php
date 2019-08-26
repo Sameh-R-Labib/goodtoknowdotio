@@ -1,18 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/10/18
- * Time: 9:42 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
-
 
 class LoginScript
 {
@@ -22,6 +14,7 @@ class LoginScript
         global $sessionMessage;
 
         $db = db_connect($sessionMessage);
+
         $submitted_username = '';
         $submitted_password = '';
 
@@ -37,6 +30,7 @@ class LoginScript
 
         self::report_on_findings($sessionMessage);
     }
+
 
     /**
      * @param string $error

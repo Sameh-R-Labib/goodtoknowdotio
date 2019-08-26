@@ -1,12 +1,9 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use GoodToKnow\Models\Task;
-
 
 class FeatureATaskEdit
 {
@@ -22,58 +19,50 @@ class FeatureATaskEdit
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * 1) Store the submitted task id in the session.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
         if (is_null($id)) {
-            $sessionMessage .= " Your choice did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your choice did not pass validation. ');
         }
 
         $_SESSION['saved_int01'] = $id;
 
+
         /**
          * 2) Retrieve the task object with that id from the database.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $object = Task::find_by_id($db, $sessionMessage, $id);
 
         if (!$object) {
-            $sessionMessage .= " Unexpectedly, I could not find that task record. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly, I could not find that task. ');
         }
+
 
         /**
          * 3) Present a form which is populated with data from the task object.
          */
+
         $html_title = 'Edit the task record';
 
         require VIEWS . DIRSEP . 'featureataskedit.php';

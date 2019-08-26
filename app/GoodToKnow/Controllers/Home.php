@@ -1,18 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 8/22/18
- * Time: 9:09 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
-
 
 class Home
 {
@@ -62,6 +54,7 @@ class Home
             $is_admin);
     }
 
+
     /**
      *
      */
@@ -79,6 +72,7 @@ class Home
 
         require VIEWS . DIRSEP . 'home.php';
     }
+
 
     /**
      * @param $sessionMessage
@@ -111,6 +105,7 @@ class Home
         }
     }
 
+
     /**
      * @param $db
      * @param $error
@@ -138,6 +133,7 @@ class Home
          * refreshed for a period of time longer than
          * 3 hours then refresh it.
          */
+
         $time_since_refresh = time() - $last_refresh_communities;  // seconds
 
         if ($time_since_refresh > 10800) {
@@ -162,11 +158,13 @@ class Home
             $_SESSION['last_refresh_communities'] = time();
         }
 
+
         /**
          * If the type_of_resource_requested == 'community'
          * and the special_topic_array has not been refreshed
          * for a period longer than 12 minutes then refresh it.
          */
+
         $time_since_refresh = time() - $last_refresh_topics;
 
         if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
@@ -189,11 +187,13 @@ class Home
             $_SESSION['last_refresh_topics'] = time();
         }
 
+
         /**
          * If the type_of_resource_requested == 'topic'
          * and the special_post_array has not been refreshed
          * for a period longer than 3 minutes then refresh it.
          */
+
         $time_since_refresh = time() - $last_refresh_posts;
 
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
@@ -216,11 +216,13 @@ class Home
             $_SESSION['last_refresh_posts'] = time();
         }
 
+
         /**
          * If the type_of_resource_requested == 'post'
          * and the post_content has not been refreshed
          * for a period longer than 3 minutes then refresh it.
          */
+
         $time_since_refresh = time() - $last_refresh_content;
 
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
@@ -253,6 +255,7 @@ class Home
         }
     }
 
+
     /**
      * @param $db
      * @param $error
@@ -283,6 +286,7 @@ class Home
          *   3) If the user is suspended log him out and redirect to the page for logging in.
          *   4) Otherwise, return control over to where the function was called.
          */
+
         $elapsed_time = time() - $when_last_checked_suspend;
 
         if ($elapsed_time > 400) {

@@ -1,13 +1,10 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\BankingTransactionForBalances;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class RevampABankingTransactionForBalancesUpdate
 {
@@ -28,22 +25,19 @@ class RevampABankingTransactionForBalancesUpdate
         global $saved_int01;    // record id
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * 1) Validate the submitted revampabankingtransactionforbalancesedit.php form data.
          *      (and apply htmlspecialchars)
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
@@ -61,59 +55,52 @@ class RevampABankingTransactionForBalancesUpdate
         $edited_label = standard_form_field_prep('label', 3, 30);
 
         if (is_null($edited_label) || is_null($edited_time) || is_null($edited_bank_id)) {
-            $sessionMessage .= " One or more values did NOT pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' One or more values did NOT pass validation. ');
         }
+
 
         /**
          * 2) Retrieve the existing record from the database.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
-            $sessionMessage .= " Unexpectedly I could not find that record. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly I could not find that record. ');
         }
+
 
         /**
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
+
         $object->bank_id = $edited_bank_id;
         $object->label = $edited_label;
         $object->amount = $edited_amount;
         $object->time = $edited_time;
 
+
         /**
          * 4) Update/save the updated record in the database.
          */
+
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
-            $sessionMessage .= " I aborted because I failed at saving the updated object. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I failed at saving the updated object. ');
         }
+
 
         /**
          * 5) Report success.
          */
-        $sessionMessage .= " I've updated the <b>{$object->label}</b> record. ";
-        $_SESSION['message'] = $sessionMessage;
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+
+        breakout(" I've updated the <b>{$object->label}</b> record. ");
     }
 }

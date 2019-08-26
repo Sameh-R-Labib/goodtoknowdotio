@@ -1,11 +1,8 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\CommunityToTopic;
-
 
 class TransferPostOwnership
 {
@@ -16,8 +13,7 @@ class TransferPostOwnership
          *
          * It's goal is to be the first in a bunch of routes to determine which post is to be deleted.
          *
-         * It will present radio buttons for choosing which topic the post is in.
-         * It will also describe what is being done.
+         * It will present radio buttons for choosing which topic the post is in. It will also describe what is being done.
          *
          * As usual the topics presented are the topics in the current community.
          */
@@ -28,20 +24,18 @@ class TransferPostOwnership
         global $is_admin;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
+
 
         /**
          * Refresh special_topic_array
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
@@ -52,12 +46,11 @@ class TransferPostOwnership
 
         $_SESSION['last_refresh_topics'] = time();
 
+
         // Abort if the community doesn't have any topics yet
+
         if (empty($special_topic_array)) {
-            $sessionMessage .= " Aborted because this community has no topics. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Aborted because this community has no topics. ');
         }
 
         $html_title = 'Which topic is the post in?';

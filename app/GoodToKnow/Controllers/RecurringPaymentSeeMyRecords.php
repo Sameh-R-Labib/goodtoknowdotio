@@ -1,13 +1,10 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\RecurringPayment;
-
 
 class RecurringPaymentSeeMyRecords
 {
@@ -25,18 +22,13 @@ class RecurringPaymentSeeMyRecords
         global $is_admin;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $html_title = 'Show Me my Recurring Payments';
@@ -45,34 +37,37 @@ class RecurringPaymentSeeMyRecords
 
         $show_poof = true;
 
+
         /**
          * Get an array of RecurringPayment objects for the user who has id == $user_id.
          */
+
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' 🤔 I could NOT find any recurring payments ¯\_(ツ)_/¯. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯. ');
         }
+
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
          * And apply htmlspecialchars if necessary.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         foreach ($array_of_recurring_payment_objects as $object) {
+
             $object->amount_paid = readable_amount_of_money($object->currency, $object->amount_paid);
 
             $object->unix_time_at_last_payment = get_readable_time($object->unix_time_at_last_payment);
 
             $object->comment = nl2br($object->comment, false);
+
         }
 
         $html_title = 'Enjoy ʘ‿ʘ at your 🌀 💳 📽s.';

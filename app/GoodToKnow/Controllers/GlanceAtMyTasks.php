@@ -1,12 +1,9 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
-
 
 class GlanceAtMyTasks
 {
@@ -24,18 +21,13 @@ class GlanceAtMyTasks
         global $type_of_resource_requested;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
@@ -43,15 +35,14 @@ class GlanceAtMyTasks
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' I could NOT find any tasks ¯\_(ツ)_/¯. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I could NOT find any tasks ¯\_(ツ)_/¯. ');
         }
+
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         foreach ($array as $object) {

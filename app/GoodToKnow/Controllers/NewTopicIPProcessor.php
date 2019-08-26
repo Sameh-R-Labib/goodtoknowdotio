@@ -1,31 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/9/18
- * Time: 2:53 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\CommunityToTopic;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
-
 
 class NewTopicIPProcessor
 {
     function page()
     {
         /**
-         * At this point we know which community we're in,
-         * we know there exists at least one topic, we know
-         * which topic the new topic goes next to, and we know
-         * on which side of that topic the new topic goes.
+         * At this point we know which community we're in, we know there exists at least one topic, we know
+         * which topic the new topic goes next to, and we know on which side of that topic the new topic goes.
          * $_POST[relate] and $_POST[choice]
          *
-         * Now determine what the sequence number of the new topic
-         * will be. Store it in $_SESSION['$saved_int01'].
+         * Now determine what the sequence number of the new topic will be. Store it in $_SESSION['$saved_int01'].
          * Once that's done redirect to the next script.
          */
 
@@ -35,26 +24,19 @@ class NewTopicIPProcessor
         global $is_admin;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
 
         /**
          * Make sure we are NOT dealing with a community which has zero topics.
@@ -62,14 +44,13 @@ class NewTopicIPProcessor
          * this is not the case.)
          * Besides, we want a fresh copy of special_topic_array.
          */
+
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
 
         if (!$special_topic_array) {
-            $sessionMessage .= " NewTopicIPProcessor::page says: Unexpected error 39684. ";
-            $_SESSION['message'] .= $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' NewTopicIPProcessor says: Unexpected error 39684. ');
         }
+
 
         /**
          * At this point:
@@ -78,9 +59,11 @@ class NewTopicIPProcessor
          *   We should have $_POST[relate] and $_POST[choice]
          */
 
+
         /**
          * I can't assume these post variables exist so I do the following.
          */
+
         $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
@@ -88,43 +71,31 @@ class NewTopicIPProcessor
         $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
         if (is_null($chosen_topic_id)) {
-            $sessionMessage .= " Your choice did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your choice did not pass validation. ');
         }
 
+
         // Handle bad submit.
+
         if (empty($relate)) {
-            $sessionMessage .= " Either you did not fill out all the fields or the session expired. Try again. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Either you did not fill out all the fields or the session expired. Try again. ');
         }
 
         if ($relate !== 'before' && $relate !== 'after') {
-            $sessionMessage .= " NewTopicIPProcessor::page says: Error 99885. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' NewTopicIPProcessor says: Error 99885. ');
         }
 
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
-            $sessionMessage .= " NewTopicIPProcessor::page says: Error 124213. ";
-            $_SESSION['message'] .= $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' NewTopicIPProcessor says: Error 124213. ');
         }
+
 
         // Determine the sequence number for the new topic
 
         $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
 
         if (!$topic_objects_array) {
-            $sessionMessage .= " NewTopicIPProcessor::page says: Error 860138. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' NewTopicIPProcessor says: Error 860138. ');
         }
 
         $chosen_topic_sequence_number = -1;
@@ -134,10 +105,7 @@ class NewTopicIPProcessor
         }
 
         if ($chosen_topic_sequence_number == -1) {
-            $sessionMessage .= " NewTopicIPProcessor::page says: Error 426273. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' NewTopicIPProcessor says: Error 426273. ');
         }
 
         if ($relate == 'after') {
@@ -159,45 +127,54 @@ class NewTopicIPProcessor
     public static function get_sequence_number_in_case_after(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
         if ($chosen_topic_sequence_number == 21000000) {
-            $_SESSION['message'] = " Choose another place to put the topic. ";
-            redirect_to("/ax1/Home/page");
+            breakout(' Choose another place to put the topic. ');
         }
 
         $found_a_topic_with_higher_sequence_number = false;
+
         foreach ($topic_objects_array as $key => $object) {
+
             if ($object->sequence_number > $chosen_topic_sequence_number) {
+
                 $found_a_topic_with_higher_sequence_number = true;
                 break;
             }
         }
+
         if (!$found_a_topic_with_higher_sequence_number) {
+
             $following_topic_sequence_number = 21000000;
+
         } else {
+
             foreach ($topic_objects_array as $key => $object) {
+
                 if ($object->sequence_number > $chosen_topic_sequence_number) {
+
                     $following_topic_sequence_number = $object->sequence_number;
                     break;
+
                 }
             }
         }
 
         $trimmed = trim($following_topic_sequence_number);
+
         if (empty($trimmed)) {
-            $_SESSION['message'] = " NewTopicIPProcessor::get_sequence_number_in_case_after says Error 563506. ";
-            redirect_to("/ax1/Home/page");
+            breakout(' NewTopicIPProcessor::get_sequence_number_in_case_after says Error 563506. ');
         }
 
         $difference = $following_topic_sequence_number - $chosen_topic_sequence_number;
 
         if (($difference) < 2) {
-            $_SESSION['message'] = " Please choose another place to put the topic. ";
-            redirect_to("/ax1/Home/page");
+            breakout(' Please choose another place to put the topic. ');
         }
 
         $increase = intdiv($difference, 2);
 
         return $chosen_topic_sequence_number + $increase;
     }
+
 
     /**
      * @param array $topic_objects_array
@@ -207,26 +184,36 @@ class NewTopicIPProcessor
     public static function get_sequence_number_in_case_before(array $topic_objects_array, int $chosen_topic_sequence_number)
     {
         if ($chosen_topic_sequence_number == 0) {
-            $_SESSION['message'] = " Please choose another place to put the topic. ";
-            redirect_to("/ax1/Home/page");
+            breakout(' Please choose another place to put the topic. ');
         }
 
         $found_a_topic_with_lower_sequence_number = false;
+
         foreach ($topic_objects_array as $key => $object) {
+
             if ($object->sequence_number < $chosen_topic_sequence_number) {
+
                 $found_a_topic_with_lower_sequence_number = true;
                 break;
+
             }
         }
+
         if (!$found_a_topic_with_lower_sequence_number) {
+
             $leading_topic_sequence_number = 0;
+
         } else {
+
             $reversed = array_reverse($topic_objects_array);
 
             foreach ($reversed as $key => $object) {
+
                 if ($object->sequence_number < $chosen_topic_sequence_number) {
+
                     $leading_topic_sequence_number = $object->sequence_number;
                     break;
+
                 }
             }
         }
@@ -234,8 +221,7 @@ class NewTopicIPProcessor
         $difference = $chosen_topic_sequence_number - $leading_topic_sequence_number;
 
         if (($difference) < 2) {
-            $_SESSION['message'] = " Please choose another place to put the topic. ";
-            redirect_to("/ax1/Home/page");
+            breakout(' Please choose another place to put the topic. ');
         }
 
         $decrease = intdiv($difference, 2);

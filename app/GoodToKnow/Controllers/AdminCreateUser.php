@@ -1,18 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/5/18
- * Time: 4:21 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class AdminCreateUser
 {
@@ -28,7 +20,7 @@ class AdminCreateUser
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' I aborted the task. ');
+            breakout(' Task aborted. ');
         }
 
         $db = db_connect($sessionMessage);
@@ -37,11 +29,13 @@ class AdminCreateUser
             breakout(' Database connection failed. ');
         }
 
+
         /**
          * Variables to work with:
          *   $saved_int01, $_POST['username'], $_POST['first_try'], $_POST['password'],
          *   $_POST['title'], $_POST['race'], $_POST['comment'], $_POST['date'], $_POST['submit']
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $submitted_username = standard_form_field_prep('username', 7, 12);
@@ -64,17 +58,21 @@ class AdminCreateUser
             breakout(' One or more values is invalid. ');
         }
 
+
         /**
          * $new_user_role needs to have a value
          * since there is a role field in the users table
          */
+
         $new_user_role = '';
         $new_user_is_suspended = 0;
+
 
         /**
          * If any of the submitted fields are invalid
          * store a session message and redirect to /ax1/LoginForm/page
          */
+
         if (!self::is_username($db, $sessionMessage, $submitted_username) ||
             !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
             !self::is_title($sessionMessage, $submitted_title) ||
@@ -90,11 +88,14 @@ class AdminCreateUser
          *
          * The password needs to be processed before save().
          */
+
         $hash_of_submitted_password = password_hash($submitted_password, PASSWORD_DEFAULT);
 
         // See steps in GoodObject for storing a new object.
 
+
         // First step:
+
         $array_of_submitted_data = ['username' => $submitted_username,
             'password' => $hash_of_submitted_password,
             'id_of_default_community' => $saved_int01,
@@ -105,10 +106,14 @@ class AdminCreateUser
             'date' => $submitted_date,
             'comment' => $submitted_comment];
 
+
         // Second step
+
         $new_user_object = User::array_to_object($array_of_submitted_data);
 
+
         // Third step
+
         $consequence_of_save = $new_user_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
@@ -120,10 +125,13 @@ class AdminCreateUser
              Therefore, it probably did not create your account. ');
         }
 
+
         /**
          * Store association between user and community.
          */
+
         // The three steps again
+
         $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $saved_int01];
 
         $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
@@ -139,9 +147,11 @@ class AdminCreateUser
              Therefore, it probably did not create the association for your account. ');
         }
 
+
         /**
          * Announce success.
          */
+
         breakout(' The user account was created! ');
     }
 

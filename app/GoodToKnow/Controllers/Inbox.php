@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 11/30/18
- * Time: 6:28 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\MessageToUser;
-
 
 class Inbox
 {
@@ -31,18 +23,13 @@ class Inbox
         global $author_username;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $html_title = 'Inbox';
@@ -53,17 +40,16 @@ class Inbox
 
         $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($db, $sessionMessage, $user_id);
 
+
         /**
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
+
         if (!empty($inbox_messages_array)) {
             $return = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
 
             if ($return === false) {
-                $sessionMessage .= " Unexpected error 01551. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Unexpected error 01551. ');
             }
         }
 

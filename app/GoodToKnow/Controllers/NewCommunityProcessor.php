@@ -1,11 +1,8 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
-
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class NewCommunityProcessor
 {
@@ -15,16 +12,11 @@ class NewCommunityProcessor
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
@@ -34,10 +26,7 @@ class NewCommunityProcessor
         $community_description = standard_form_field_prep('community_description', 1, 230);
 
         if (is_null($community_name) || is_null($community_description)) {
-            $sessionMessage .= " One or more values did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' One or more values did not pass validation. ');
         }
 
         $_SESSION['saved_str01'] = $community_name;

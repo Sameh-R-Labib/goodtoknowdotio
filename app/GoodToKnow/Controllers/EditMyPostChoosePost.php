@@ -1,11 +1,8 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\TopicToPost;
-
 
 class EditMyPostChoosePost
 {
@@ -26,29 +23,24 @@ class EditMyPostChoosePost
         global $user_id;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
+
         // Get all posts (as special array) for the user and topic.
+
         $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($db, $sessionMessage, $user_id, $saved_int01);
 
         if (!$special_post_array) {
-            $sessionMessage .= " There are NO posts for YOU to edit here. ";
-            $_SESSION['message'] .= $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' There are NO posts for YOU to edit here. ');
         }
+
 
         /**
          * Allow user to choose from amongst

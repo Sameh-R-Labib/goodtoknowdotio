@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-03-13
- * Time: 21:16
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class SuspendAccount
 {
@@ -18,14 +11,12 @@ class SuspendAccount
         global $sessionMessage;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
+
         /**
-         * Present a form which collects
-         * the username.
+         * Collect the username.
          */
 
         $html_title = "Suspend Account";

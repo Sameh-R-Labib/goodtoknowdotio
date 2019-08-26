@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-03-01
- * Time: 17:17
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\User;
 
@@ -29,18 +22,24 @@ class EnforceSuspension
 
 
         // Determine whether or not the user is suspended per database
+
         $user_object = User::find_by_id($db, $error, $user_id);
 
         if ($user_object === false) return false;
 
+
         // If the user is suspended log him out and redirect to the page for logging in.
+
         if ($user_object->is_suspended) {
+
             // The current script stops (we redirect to the Logout route.)
+
             redirect_to("/ax1/Logout/page");
         }
 
         // Otherwise, return control over to where the function was called.
         // At this point we've checked and we know the user is not suspended and the function did not bonk-out.
+
         return true;
     }
 }

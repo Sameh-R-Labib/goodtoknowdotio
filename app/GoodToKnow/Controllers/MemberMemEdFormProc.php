@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-03-12
- * Time: 19:07
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class MemberMemEdFormProc
 {
@@ -38,85 +30,75 @@ class MemberMemEdFormProc
         global $saved_int01;                // The member's id
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * 1) Read $_POST['text']
          *    (which is the edited member's comment.)
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
         if (is_null($edited_comment)) {
-            $sessionMessage .= " The edited comment did NOT pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The edited comment did NOT pass validation. ');
         }
+
 
         /**
          * 4) Get a copy of the User object for the member.
          */
+
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$user_object) {
-            $sessionMessage .= " Unexpected failed to retrieve the user object. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpected failed to retrieve the user object. ');
         }
 
+
         /**
-         * 5) Makes sure the comment is escaped for suitability
-         *    to being included in an sql statement. This may be
-         *    taken care of automatically by the GoodObject class
-         *    function I'll be using but make sure.
+         * 5) Makes sure the comment is escaped for suitability to being included in an sql statement. This may be
+         *    taken care of automatically by the GoodObject class function I'll be using but make sure.
          *
          * Yes this is t.c.o. automatically. So, don't worry about it!
          */
 
+
         /**
          * 6) Replace the User's current comment with the new one.
          */
+
         $user_object->comment = $edited_comment;
+
 
         /**
          * 7) Update the database with this User object.
          */
+
         $result = $user_object->save($db, $sessionMessage);
 
         if ($result === false) {
-            $sessionMessage .= " I aborted the process you were working on because I failed at saving the updated user object. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I failed at updating user record. ');
         }
+
 
         /**
          * Report success.
          */
-        $sessionMessage .= " I have updated {$saved_str01}'s record. ";
-        $_SESSION['message'] = $sessionMessage;
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+
+        breakout(" I have updated {$saved_str01}'s record. ");
     }
 }

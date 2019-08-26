@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/12/18
- * Time: 3:50 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class NewTopicNameProcessor
 {
@@ -30,16 +22,11 @@ class NewTopicNameProcessor
         global $is_admin;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
@@ -49,10 +36,7 @@ class NewTopicNameProcessor
         $topic_description = standard_form_field_prep('topic_description', 1, 230);
 
         if (is_null($topic_name) || is_null($topic_description)) {
-            $sessionMessage .= " One or more values did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' One or more values did not pass validation. ');
         }
 
         $_SESSION['saved_str01'] = $topic_name;

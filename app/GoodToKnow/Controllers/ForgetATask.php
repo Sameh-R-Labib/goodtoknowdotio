@@ -1,19 +1,15 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\Task;
-
 
 class ForgetATask
 {
     function page()
     {
         /**
-         * Presenting a form for getting the user to tell us
-         * which Task record he wants to delete. It will present
+         * Presenting a form for getting the user to tell us which Task record he wants to delete. It will present
          * a series of radio buttons to choose from.
          */
 
@@ -22,18 +18,13 @@ class ForgetATask
         global $user_id;            // We need this.
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
@@ -41,10 +32,7 @@ class ForgetATask
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' I could NOT find any task records ¯\_(ツ)_/¯. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I could NOT find any tasks ¯\_(ツ)_/¯. ');
         }
 
         $html_title = 'Which task?';

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Topic;
 
@@ -23,27 +21,19 @@ class TopicDescriptionEditorForm
         global $saved_int01; // community id
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $topic_object = Topic::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$topic_object) {
-            $sessionMessage .= " I was unexpectedly unable to retrieve target topic's object. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I was unexpectedly unable to retrieve target topic\'s object. ');
         }
 
         $html_title = "Topic's Description Editor";

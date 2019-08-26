@@ -1,14 +1,11 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-
 
 class GawkAtAllTaxableIncomeEventsYearFilter
 {
@@ -27,42 +24,35 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         global $type_of_resource_requested;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * 1) Validate the submitted year_received.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
         if (is_null($year_received)) {
-            $sessionMessage .= " Your year_received did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your year received did not pass validation. ');
         }
+
 
         /**
          * 2) Present the TaxableIncomeEvent(s/plural) in a page whose layout is similar to the Home page.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
@@ -72,16 +62,16 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         $array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " For <b>{$year_received}</b> I could NOT find any Taxable Income Events. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(" For <b>{$year_received}</b> there are <b>no</b> Taxable Income Events. ");
         }
+
 
         /**
          * Loop through the array and replace attributes with more readable ones.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         foreach ($array as $item) {

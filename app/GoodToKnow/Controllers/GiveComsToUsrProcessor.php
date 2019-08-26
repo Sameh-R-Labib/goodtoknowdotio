@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-01-08
- * Time: 20:25
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\User;
+use mysqli;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class GiveComsToUsrProcessor
 {
@@ -22,17 +15,13 @@ class GiveComsToUsrProcessor
         global $sessionMessage;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * Goal:
@@ -40,33 +29,25 @@ class GiveComsToUsrProcessor
          *  2) Save $_POST['username']
          *  3) Redirect to a route which will present a form with checkboxes for choosing communities
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $submitted_username = standard_form_field_prep('username', 7, 12);
 
         if (is_null($submitted_username)) {
-            $sessionMessage .= " The username you entered did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The username did not pass validation. ');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $is_username = self::is_username_in_our_system($db, $sessionMessage, $submitted_username);
 
         if (!$is_username) {
-            $sessionMessage .= " The username is not valid. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The username is not valid. ');
         }
 
         $_SESSION['saved_str01'] = $submitted_username;
@@ -74,15 +55,16 @@ class GiveComsToUsrProcessor
         redirect_to("/ax1/GiveComsChoices/page");
     }
 
+
     // Helpers for the page() method
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $message
      * @param string $username
      * @return bool
      */
-    public static function is_username_in_our_system(\mysqli $db, string &$message, string &$username)
+    public static function is_username_in_our_system(mysqli $db, string &$message, string &$username)
     {
         /**
          * Returns true or false.

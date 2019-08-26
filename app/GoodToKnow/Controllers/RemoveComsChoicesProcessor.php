@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-02-28
- * Time: 13:29
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\UserToCommunity;
 
@@ -22,26 +15,19 @@ class RemoveComsChoicesProcessor
         global $saved_int01; // Has user's id
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
 
         /**
          * Now we know the ids of the communities which the administrator
@@ -69,10 +55,7 @@ class RemoveComsChoicesProcessor
          */
 
         if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
-            $sessionMessage .= " Unexpected deficiencies in the _POST array. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpected deficiencies in the _POST array. ');
         }
 
         $submitted_community_ids_array = [];
@@ -82,11 +65,9 @@ class RemoveComsChoicesProcessor
         }
 
         if (empty($submitted_community_ids_array)) {
-            $sessionMessage .= " You did not submit any community ids. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' You did not submit any community ids. ');
         }
+
 
         /**
          * Generally speaking for each comm id that was submitted
@@ -116,13 +97,16 @@ class RemoveComsChoicesProcessor
          * $usertocommunity_objects_array
          *   will hold the UserToCommunity objects I retrieve from the database.
          */
+
         $usertocommunity_objects_array = [];
 
         foreach ($submitted_community_ids_array as $a_community_id) {
+
             /**
              * Retrieve and add the UserToCommunity object
              * whose user_id == $saved_int01 and community_id == $a_community_id
              */
+
             $sql = 'SELECT *
                     FROM `user_to_community`
                     WHERE `user_id` = "' . $db->real_escape_string($saved_int01) .
@@ -132,36 +116,34 @@ class RemoveComsChoicesProcessor
             $array_with_one_element = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
 
             if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
-                $sessionMessage .= " Error 0819. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Error 0819. ');
             }
 
             $usertocommunity_objects_array[] = $array_with_one_element[0];
         }
+
 
         /**
          * So at this point we should have a $usertocommunity_objects_array
          * whereupon we can iterate and delete each UserToCommunity object
          * from the db table user_to_community.
          */
+
         foreach ($usertocommunity_objects_array as $object) {
+
             $result_of_delete = $object->delete($db, $sessionMessage);
 
             if (!$result_of_delete) {
-                $sessionMessage .= " Aborted because failed to delete UserToCommunity object. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Failed to delete User To Community. ');
             }
+
         }
+
 
         /**
          * Declare success.
          */
-        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s to-be-removed communities were removed! ";
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+
+        breakout(" {$saved_str01}'s to-be-removed communities were removed! ");
     }
 }

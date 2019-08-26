@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/14/18
- * Time: 3:35 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
@@ -22,9 +15,8 @@ class SetHomePageCommunityTopicPost
     public function page(int $community_id, int $topic_id, int $post_id)
     {
         /**
-         * This script runs when a user (on Home page) clicks a community,
-         * a topic, or a post hyperlink. It does its thing then redirects
-         * back to the Home page.
+         * This script runs when a user (on Home page) clicks a community, a topic, or a post hyperlink.
+         * It does its thing then redirects back to the Home page.
          *
          * "Its thing:"
          *  - Make sure the resource being requested is legitimate.
@@ -89,34 +81,46 @@ class SetHomePageCommunityTopicPost
                                                               &$special_post_array, &$post_object, &$post_content,
                                                               &$post_author_object, &$post_id, &$type_of_resource_requested)
     {
+
+
         // First get and store the community_name
+
         $community_object = Community::find_by_id($db, $sessionMessage, $community_id);
 
         $_SESSION['community_name'] = $community_object->community_name;
         $_SESSION['community_description'] = $community_object->community_description;
 
+
         // Then do the rest.
+
         $_SESSION['special_topic_array'] = $special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
 
         if ($type_of_resource_requested === 'topic') {
             // Second get and store the topic_name
+
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
 
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
+
 
             // Then do the rest.
+
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
+
         } else {
             // Second get and store the topic_name
+
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
 
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
 
+
             // Third store the post_name
+
             $_SESSION['post_name'] = $post_object->title;
 
             $epoch_time = (int)$post_object->created;
@@ -126,7 +130,9 @@ class SetHomePageCommunityTopicPost
             $_SESSION['post_full_name'] = '"' . $post_object->title . ' | ' . $post_object->extensionfortitle . '" ⏰ [Pub. ' .
                 $publish_date . ' NY time] 🎬';
 
+
             // Then do the rest.
+
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
             $_SESSION['post_content'] = $post_content;
@@ -141,6 +147,7 @@ class SetHomePageCommunityTopicPost
         $_SESSION['post_id'] = $post_id;
         $_SESSION['message'] = $sessionMessage;
     }
+
 
     /**
      * @param $db
@@ -162,40 +169,29 @@ class SetHomePageCommunityTopicPost
         if ($type_of_resource_requested === 'post') {
 
             if (!array_key_exists($post_id, $special_post_array)) {
-                $sessionMessage = " Your resource request is defective.  (errno 4)";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Your resource request is defective.  (errno 4) ');
             }
 
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
 
             if (!$post_object) {
-                $sessionMessage .= " SetHomePageCommunityTopicPost::page says: Error 58498. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' SetHomePageCommunityTopicPost says: Error 58498. ');
             }
 
             $post_content = file_get_contents($post_object->html_file);
 
             if ($post_content === false) {
-                $sessionMessage .= " Unable to read the post's html source file. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Unable to read the post\'s html source file. ');
             }
 
             $post_author_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
 
             if ($post_author_object === false) {
-                $sessionMessage .= " Unable to get the post author object from the database. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Unable to get the post author object from the database. ');
             }
         }
     }
+
 
     /**
      * @param $db
@@ -218,13 +214,16 @@ class SetHomePageCommunityTopicPost
         if ($type_of_resource_requested === 'topic_or_post') {
 
             // Either way we need this
+
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
 
             if (!$special_post_array) {
                 $special_post_array = [];
             }
 
+
             // Which is it?
+
             if ($post_id === 0 && $topic_id !== 0) {
 
                 $type_of_resource_requested = 'topic';
@@ -234,13 +233,11 @@ class SetHomePageCommunityTopicPost
                 $type_of_resource_requested = 'post';
 
             } else {
-                $sessionMessage .= " Anomalous situation #2954. ";
-                $_SESSION['message'] = $sessionMessage;
-                reset_feature_session_vars();
-                redirect_to("/ax1/Home/page");
+                breakout(' Anomalous situation #2954. ');
             }
         }
     }
+
 
     /**
      * @param $db
@@ -259,20 +256,15 @@ class SetHomePageCommunityTopicPost
          * But before we get started let's establish whether or not
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
          */
+
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
 
         if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
-            $sessionMessage .= " Your resource request is defective.  (errno 6)";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your resource request is defective.  (errno 6) ');
         }
 
         if (!$special_topic_array && $topic_id != 0) {
-            $sessionMessage .= " Your resource request is defective. (errno 8) ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your resource request is defective. (errno 8) ');
         }
 
         if (!$special_topic_array) {
@@ -283,14 +275,14 @@ class SetHomePageCommunityTopicPost
             $type_of_resource_requested = 'community';
 
             if ($post_id != 0) {
-                $sessionMessage .= " Your resource request is defective. (errno 1)";
-                $_SESSION['message'] = $sessionMessage;
-                redirect_to("/ax1/Home/page");
+                breakout(' Your resource request is defective. (errno 1) ');
             }
+
         } else {
             $type_of_resource_requested = 'topic_or_post';
         }
     }
+
 
     /**
      * @param $db
@@ -302,22 +294,19 @@ class SetHomePageCommunityTopicPost
                                                                                 &$special_community_array)
     {
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
 
         /**
          * Make sure the community_id belongs to one of the user's communities.
          */
+
         if (!array_key_exists($community_id, $special_community_array)) {
-            $sessionMessage .= " Invalid community_id. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Invalid community_id. ');
         }
     }
+
 
     /**
      * @param $sessionMessage

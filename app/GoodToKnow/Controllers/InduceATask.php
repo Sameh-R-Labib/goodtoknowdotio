@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 class InduceATask
 {
@@ -16,9 +14,7 @@ class InduceATask
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $html_title = 'Create a New Task';

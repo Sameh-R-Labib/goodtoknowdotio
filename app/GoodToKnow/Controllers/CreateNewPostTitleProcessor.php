@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/4/18
- * Time: 10:04 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class CreateNewPostTitleProcessor
 {
@@ -24,25 +16,23 @@ class CreateNewPostTitleProcessor
          *   - Add to session
          *   - Redirect to route for saving the new post
          */
+
         global $is_logged_in;
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * I can't assume these post variables exist so I do the following.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $main_title = standard_form_field_prep('main_title', 1, 200);
@@ -50,17 +40,19 @@ class CreateNewPostTitleProcessor
         $title_extension = standard_form_field_prep('title_extension', 0, 200);
 
         if (is_null($main_title) || is_null($title_extension)) {
-            $sessionMessage .= " The values you entered did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The values you entered did not pass validation. ');
         }
 
+
         // Add to session
+
         $_SESSION['saved_str01'] = $main_title;
+
         $_SESSION['saved_str02'] = $title_extension;
 
+
         // Redirect
+
         redirect_to("/ax1/CreateNewPostSave/page");
     }
 }

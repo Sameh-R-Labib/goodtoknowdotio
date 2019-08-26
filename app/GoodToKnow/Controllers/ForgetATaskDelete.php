@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -12,10 +10,8 @@ class ForgetATaskDelete
     function page()
     {
         /**
-         * Here we will Read the choice of whether
-         * or not to delete the task record. If 'yes' then
-         * delete it. On the other hand if 'no' then reset
-         * some session variables and redirect to the home page.
+         * Here we will Read the choice of whether or not to delete the task record. If 'yes' then delete it.
+         * On the other hand if 'no' then reset some session variables and redirect to the home page.
          */
 
         global $is_logged_in;
@@ -23,17 +19,13 @@ class ForgetATaskDelete
         global $saved_int01;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          * yes/no
@@ -44,59 +36,41 @@ class ForgetATaskDelete
         $choice = standard_form_field_prep('choice', 2, 3);
 
         if (is_null($choice)) {
-            $sessionMessage .= " The choice you entered did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The choice you entered did not pass validation. ');
         }
 
         if ($choice != "yes" && $choice != "no") {
-            $sessionMessage .= " You didn't enter a choice. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' You didn\'t enter a choice. ');
         }
 
         if ($choice == "no") {
-            $sessionMessage .= " Nothing was deleted. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Nothing was deleted. ');
         }
+
 
         /** @var  $db */
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $object = Task::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
-            $sessionMessage .= " I wasn't able to find the record and I've aborted the procedure you've started. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I was not able to find the record. ');
         }
 
         $result = $object->delete($db, $sessionMessage);
 
         if (!$result) {
-            $sessionMessage .= " Unexpectedly I could not delete the record. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly I could not delete the record. ');
         }
 
+
         // Report successful deletion of post.
-        $sessionMessage .= " I deleted the To-do Task. ";
-        $_SESSION['message'] = $sessionMessage;
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+
+        breakout(' I deleted the To-do Task. ');
     }
 }

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-01-08
- * Time: 17:49
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class GiveCommunitiesToUser
 {
@@ -18,14 +11,12 @@ class GiveCommunitiesToUser
         global $sessionMessage;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
+
         /**
-         * Present a form which collects
-         * the username.
+         * Collect the username.
          */
 
         $html_title = 'Give Communities to User';

@@ -1,12 +1,9 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use GoodToKnow\Models\PossibleTaxDeduction;
-
 
 class WipeOutAPossibleTaxDeductionYearFilter
 {
@@ -22,42 +19,35 @@ class WipeOutAPossibleTaxDeductionYearFilter
         global $user_id;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
+
 
         /**
          *  1) Validate the submitted year_paid.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
         if (is_null($year_paid)) {
-            $sessionMessage .= " Your year_paid did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your year paid did not pass validation. ');
         }
+
 
         /**
          * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
@@ -66,10 +56,7 @@ class WipeOutAPossibleTaxDeductionYearFilter
         $array = PossibleTaxDeduction::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " For <b>{$year_paid}</b> I could NOT find any Possible Tax Deductions. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(" For <b>{$year_paid}</b> I could NOT find any Possible Tax Deductions. ");
         }
 
         $html_title = 'Which possible_tax_deduction record?';

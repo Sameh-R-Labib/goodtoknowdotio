@@ -1,15 +1,12 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\is_crypto;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 use GoodToKnow\Models\BankingTransactionForBalances;
-
 
 class CheckMyBankingAccountTxBalancesShowBalances
 {
@@ -19,18 +16,18 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * This function will:
          * 1) Get (from the database) the BankingAcctForBalances object.
          * 2) Get (from the database) all the BankingTransactionForBalances which
-         * have a time stamp greater than the start time for the account. Note:
-         * it can't be equal to the start time. Also: make sure the transactions
-         * are ordered by time increasing. Obviously, these transactions must be
-         * for the user who is requesting this stuff. Also, these transactions must
-         * be for the currently chosen BankingAcctForBalances.
+         *    have a time stamp greater than the start time for the account. Note:
+         *    it can't be equal to the start time. Also: make sure the transactions
+         *    are ordered by time increasing. Obviously, these transactions must be
+         *    for the user who is requesting this stuff. Also, these transactions must
+         *    be for the currently chosen BankingAcctForBalances.
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
-         * object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         *    object. This gets assigned to each BankingTransactionForBalances object's balance field.
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
-         * will be wrong if admin has deleted transactions older than 90 days and the start
-         * time for the BankingAcctForBalances is set to a time older than 90 days.
-         * Also, show the account name for BankingAcctForBalances at the top of the ledger.
-         * Also, transform field data to a more human friendly format.
+         *    will be wrong if admin has deleted transactions older than 90 days and the start
+         *    time for the BankingAcctForBalances is set to a time older than 90 days.
+         *    Also, show the account name for BankingAcctForBalances at the top of the ledger.
+         *    Also, transform field data to a more human friendly format.
          */
 
         global $is_logged_in;
@@ -42,31 +39,26 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $saved_int01;    // id of BankingAcctForBalances record
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
 
         /**
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
+
         $account = BankingAcctForBalances::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$account) {
-            $sessionMessage .= " Unexpectedly I could not find that banking_acct_for_balances record. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly I could not find that banking account for balances. ');
         }
+
 
         /**
          * 2) Get (from the database) all the BankingTransactionForBalances which
@@ -76,6 +68,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * for the user who is requesting this stuff. Also, these transactions must
          * be for the currently chosen BankingAcctForBalances.
          */
+
         $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($user_id);
         $sql .= ' AND `bank_id` = ' . $db->real_escape_string($account->id);
         $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
@@ -84,16 +77,15 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= ' I could NOT find any banking_transaction_for_balances records ¯\_(ツ)_/¯. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I could NOT find any banking transactions for balances ¯\_(ツ)_/¯. ');
         }
+
 
         /**
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
          * object. This gets assigned to each BankingTransactionForBalances object's balance field.
          */
+
         $running_total = $account->start_balance;
 
         foreach ($array as $transaction) {
@@ -105,6 +97,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
                 $transaction->balance = 0.0;
             }
         }
+
 
         /**
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
@@ -122,6 +115,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * - start_time [human readable time]
          * - start_balance [comma separator for thousands]
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';

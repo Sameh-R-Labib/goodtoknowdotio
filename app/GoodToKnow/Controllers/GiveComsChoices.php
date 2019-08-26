@@ -1,18 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-01-09
- * Time: 16:48
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
-
 
 class GiveComsChoices
 {
@@ -24,10 +16,9 @@ class GiveComsChoices
         global $saved_str01; // Has user's username
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
+
 
         /**
          * Goals:
@@ -37,68 +28,66 @@ class GiveComsChoices
          *  4) Present them as check boxes
          */
 
+
         /**
          * 1) Get the id of the user.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 
         if (!$user_object) {
-            $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpected unable to retrieve user. ');
         }
 
         $user_id = (int)$user_object->id;
 
+
         /**
          * 2) Save the id in the session in saved_int01.
          */
+
         $_SESSION['saved_int01'] = $user_id;
+
 
         /**
          * 3) Get all the communities the user DOES NOT belong to.
          */
+
         // First get all the communities the user DOES belong to.
+
         $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $sessionMessage, $user_id);
 
         if ($coms_user_belongs_to === false) {
-            $sessionMessage .= " Error encountered trying to retrieve communities for this user. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Error encountered trying to retrieve communities for this user. ');
         }
 
         // Second get all the communities that exist in this system.
         // By "this system" I mean this instance of the app.
+
         $coms_in_this_system = Community::find_all($db, $sessionMessage);
 
         if ($coms_in_this_system === false) {
-            $sessionMessage .= " Unable to retrieve any communities. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unable to retrieve communities. ');
         }
+
 
         // Get communities user DOES NOT belong to.
+
         $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system, $coms_user_belongs_to);
 
+
         // Redirect if no communities user doesn't belong to.
+
         if (empty($coms_user_does_not_belong_to)) {
-            $sessionMessage .= " Apparently this user belongs to all communities. So, there's no need to do anything. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' This user belongs to all communities. So, there\'s no need to do anything. ');
         }
+
 
         /**
          * 4) Present communities as check boxes
@@ -110,6 +99,7 @@ class GiveComsChoices
          * We need to present the ids of those communities (along with their community names)
          * as check boxes in a form.
          */
+
         $html_title = 'Give Community Choices';
 
         require VIEWS . DIRSEP . 'givecomschoices.php';

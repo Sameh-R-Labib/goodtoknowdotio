@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-01-13
- * Time: 22:01
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\UserToCommunity;
 
@@ -22,26 +15,19 @@ class GiveComsChoicesProcessor
         global $saved_int01; // Has user's id
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
 
         /**
          * Now we know the ids of the communities the administrator
@@ -73,26 +59,22 @@ class GiveComsChoicesProcessor
          */
 
         if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
-            $sessionMessage .= " Unexpected deficiencies in the _POST array. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpected deficiencies in the _POST array. ');
         }
 
         $submitted_community_ids_array = [];
 
         foreach ($_POST as $item) {
+
             if (is_numeric($item)) {
                 $submitted_community_ids_array[] = $item;
             }
         }
 
         if (empty($submitted_community_ids_array)) {
-            $sessionMessage .= " You did not submit any community ids. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' You did not submit any community ids. ');
         }
+
 
         /**
          * For each  comm id that was submitted
@@ -113,6 +95,7 @@ class GiveComsChoicesProcessor
          * so that we can insert all the UserToCommunity objects at once
          * instead of individually.
          */
+
         $array_of_usertocommunity_objects = [];
 
         foreach ($submitted_community_ids_array as $a_community_id) {
@@ -123,6 +106,7 @@ class GiveComsChoicesProcessor
             $array_of_usertocommunity_objects[] = UserToCommunity::array_to_object($usertocommunity_object_as_array);
         }
 
+
         /**
          * $array_of_usertocommunity_objects
          * Tested Good
@@ -131,21 +115,19 @@ class GiveComsChoicesProcessor
         /**
          * The goal now is to insert all these objects into the database.
          */
+
         $result = UserToCommunity::insert_multiple_objects($db, $sessionMessage, $array_of_usertocommunity_objects);
 
         if (!$result) {
-            $sessionMessage .= " In GiveComsChoicesProcessor encountered error due to
-            UserToCommunity::array_to_object being unable to save the user_to_community records. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' In GiveComsChoicesProcessor encountered error due to
+            UserToCommunity::array_to_object being unable to save the user_to_community records. ');
         }
+
 
         /**
          * Declare success.
          */
-        $_SESSION['message'] = $sessionMessage . " {$saved_str01}'s new communities were assigned to {$saved_str01}! ";
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+
+        breakout(" New communities were assigned to {$saved_str01}! ");
     }
 }

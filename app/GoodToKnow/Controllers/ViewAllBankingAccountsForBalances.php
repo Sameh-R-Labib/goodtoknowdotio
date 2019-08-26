@@ -1,13 +1,10 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
-
 
 class ViewAllBankingAccountsForBalances
 {
@@ -25,37 +22,33 @@ class ViewAllBankingAccountsForBalances
         global $is_admin;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
 
         /**
          * Get an array of BankingAcctForBalances objects for the user who has id == $user_id.
          */
+
         $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
 
         $array_of_objects = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_objects || !empty($sessionMessage)) {
-            $sessionMessage .= ' I could NOT find any banking_acct_for_balances ¯\_(ツ)_/¯. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' I could NOT find any banking accounts for balances ¯\_(ツ)_/¯. ');
         }
+
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';

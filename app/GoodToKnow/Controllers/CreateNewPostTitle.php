@@ -1,30 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/4/18
- * Time: 5:07 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class CreateNewPostTitle
 {
     function page()
     {
         /**
-         * The goal is to present a form for entering the two parts
-         * which comprise the title of the new post.
+         * Present a form for entering the two parts which comprise the title of the new post.
          */
 
         global $is_logged_in;
         global $sessionMessage;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $html_title = 'What is the title?';

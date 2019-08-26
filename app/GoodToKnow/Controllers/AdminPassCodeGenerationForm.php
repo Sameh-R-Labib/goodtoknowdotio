@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 8/27/18
- * Time: 10:01 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\Community;
-
 
 class AdminPassCodeGenerationForm
 {
@@ -34,6 +26,7 @@ class AdminPassCodeGenerationForm
          *   - community_name
          *   - community_description
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
@@ -41,6 +34,7 @@ class AdminPassCodeGenerationForm
         }
 
         // Community::find_all() should return the array we are looking for (see above)
+
         $community_array = Community::find_all($db, $sessionMessage);
 
 

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 8/27/18
- * Time: 6:23 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class AdminHome
 {

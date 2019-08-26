@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 11/14/18
- * Time: 1:33 AM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 class BroadcastMsg
 {
@@ -20,14 +13,14 @@ class BroadcastMsg
         global $url_of_most_recent_upload;
 
         if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
+
 
         /**
          * Display the editor interface.
          */
+
         $html_title = 'Broadcast a Message';
 
         $pre_populate = <<<ROI
@@ -38,8 +31,6 @@ Dear Users,
 Sincerely,
 
 Admin {$user_username}
-
-
 ROI;
 
         require VIEWS . DIRSEP . 'broadcastmsg.php';

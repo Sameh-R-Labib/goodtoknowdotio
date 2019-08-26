@@ -1,19 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 11/8/18
- * Time: 5:30 PM
- */
 
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Message;
 use GoodToKnow\Models\MessageToUser;
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
 
 class ByUsernameMessageSave
 {
@@ -36,41 +28,37 @@ class ByUsernameMessageSave
         global $saved_str01;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
+
         /**
-         * Verify that a string representing
-         * the message was submitted.
+         * Verify that a string representing the message was submitted.
          * $_POST['markdown']
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $markdown = standard_form_field_prep('markdown', 1, 1500);
 
         if (is_null($markdown)) {
-            $sessionMessage .= " The markdown you entered did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' The markdown is NOT validation. ');
         }
+
 
         /**
          * Generate the html equivalent for $markdown.
          */
+
         $parsedown_object = new \ParsedownExtra();
         $parsedown_object->setMarkupEscaped(true);
         $parsedown_object->setSafeMode(true);
         $html = $parsedown_object->text($markdown);
+
 
         /**
          * Create an associative array containing the attribute names and values.
@@ -81,30 +69,33 @@ class ByUsernameMessageSave
          *  - created
          *  - content
          */
+
         $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
+
 
         /**
          * Call array_to_object($array) to create the object in memory.
          */
+
         $message_object = Message::array_to_object($message_array);
+
 
         /**
          * Save that object to the database using save().
          */
+
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
+
         $result = $message_object->save($db, $sessionMessage);
+
         if (!$result) {
-            $sessionMessage .= " Unexpected save() was unable to save the new message. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpected I was unable to save the new message. ');
         }
+
 
         /**
          * Here I need find the user ID number of
@@ -112,20 +103,17 @@ class ByUsernameMessageSave
          * know the username. It is stored in
          * $saved_str01.
          */
+
         if (empty($saved_str01)) {
-            $sessionMessage .= " Unexpected no target username found in the session. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly no target username found in the session. ');
         }
 
         $target_user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+
         if (!$target_user_object) {
-            $sessionMessage .= " Unexpected unable to retrieve target user's object. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly unable to retrieve target user\'s object. ');
         }
+
 
         /**
          * Create an associative array containing the attribute names and values.
@@ -135,29 +123,33 @@ class ByUsernameMessageSave
          *  - message_id
          *  - user_id
          */
+
+
         $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $target_user_object->id];
+
 
         /**
          * Call array_to_object($array) to create the object in memory.
          */
+
         $message_to_user_object = MessageToUser::array_to_object($message_to_user_array);
+
 
         /**
          * Save that object to the database using save().
          */
+
         $result = $message_to_user_object->save($db, $sessionMessage);
+
         if (!$result) {
-            $sessionMessage .= " Unexpected save() was unable to save a message_to_user record for the message. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unexpectedly unable to save the message. ');
         }
+
 
         /**
          * Declare success.
          */
-        $_SESSION['message'] = " Your message to {$saved_str01} was sent! ";
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+
+        breakout(" Your message to {$saved_str01} was sent! ");
     }
 }

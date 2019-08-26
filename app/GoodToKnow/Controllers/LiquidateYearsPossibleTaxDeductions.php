@@ -1,15 +1,13 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 class LiquidateYearsPossibleTaxDeductions
 {
     function page()
     {
         /**
-         * Note: It's an admin script.
+         * Admin script.
          */
 
         global $is_logged_in;
@@ -17,12 +15,10 @@ class LiquidateYearsPossibleTaxDeductions
         global $is_admin;
 
         if (!$is_logged_in OR !$is_admin OR !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
-        $html_title = 'Which year of possible_tax_deduction(s/plural) to delete?';
+        $html_title = 'Which year?';
 
         require VIEWS . DIRSEP . 'liquidateyearspossibletaxdeductions.php';
     }

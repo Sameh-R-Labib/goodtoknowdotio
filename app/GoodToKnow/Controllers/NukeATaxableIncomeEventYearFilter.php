@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
@@ -22,16 +20,11 @@ class NukeATaxableIncomeEventYearFilter
         global $user_id;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            $sessionMessage .= " I aborted the task. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Task aborted. ');
         }
 
         /**
@@ -42,22 +35,18 @@ class NukeATaxableIncomeEventYearFilter
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
         if (is_null($year_received)) {
-            $sessionMessage .= " Your year_received did not pass validation. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Your year received did not pass validation. ');
         }
+
 
         /**
          * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
+
         $db = db_connect($sessionMessage);
 
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
         $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
@@ -66,15 +55,14 @@ class NukeATaxableIncomeEventYearFilter
         $array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            $sessionMessage .= " 🤔 For <b>{$year_received}</b> I could NOT find any Possible Tax Deduction. ";
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' For <b>{$year_received}</b> I could NOT find any Possible Tax Deduction. ');
         }
+
 
         /**
          * Loop through the array and replace time attributes with a more readable time format.
          */
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         foreach ($array as $item) {

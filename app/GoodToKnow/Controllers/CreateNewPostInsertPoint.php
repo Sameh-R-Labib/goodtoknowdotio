@@ -1,67 +1,51 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/30/18
- * Time: 1:56 PM
- */
 
 namespace GoodToKnow\Controllers;
 
-
 use GoodToKnow\Models\TopicToPost;
-
 
 class CreateNewPostInsertPoint
 {
     function page()
     {
         /**
-         * The goal is to present a form
-         * for specifying the location for
+         * The goal is to present a form for specifying the location for
          * inserting the new post.
+         *
          * The user answers two questions:
          *  1) Before or After?
          *  2) Which post?
          *
-         * Note: Here it is assumed there is at
-         * least one post in the chosen topic.
-         * Otherwise, this route will have had been skipped.
+         * Note: Here it is assumed there is at least one post in the chosen topic. Otherwise, this route will have had been skipped.
          */
+
         global $is_logged_in;
         global $sessionMessage;
         global $saved_int01;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout('');
         }
 
         $db = db_connect($sessionMessage);
+
         if (!empty($sessionMessage) || $db === false) {
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Database connection failed. ');
         }
 
+
         /**
-         * $saved_int01 should be the id of a topic
-         * This topic is the one the user is choosing
+         * $saved_int01 should be the id of a topic This topic is the one the user is choosing
          * for her new post.
          *
-         * Before we can present the form we need to
-         * have a special post array so we can list
+         * Before we can present the form we need to have a special post array so we can list
          * all the posts in said topic.
          */
+
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
 
         if (!$special_post_array) {
-            $sessionMessage .= " Unable to get posts for the topic specified. ";
-            $_SESSION['message'] .= $sessionMessage;
-            reset_feature_session_vars();
-            redirect_to("/ax1/Home/page");
+            breakout(' Unable to get posts for the topic specified. ');
         }
 
         $html_title = 'Where will the new post go?';
