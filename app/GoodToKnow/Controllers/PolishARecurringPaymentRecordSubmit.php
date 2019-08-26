@@ -24,9 +24,7 @@ class PolishARecurringPaymentRecordSubmit
         global $sessionMessage;
         global $saved_int01;    // recurring_payment id
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

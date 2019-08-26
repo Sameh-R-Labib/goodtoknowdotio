@@ -23,9 +23,7 @@ class RevampABankingTransactionForBalancesChooseRecord
         global $saved_int01;     // min time
         global $saved_int02;     // max time
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $db = get_db();
 

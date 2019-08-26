@@ -38,9 +38,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $is_admin;
         global $saved_int01;    // id of BankingAcctForBalances record
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $db = get_db();
 

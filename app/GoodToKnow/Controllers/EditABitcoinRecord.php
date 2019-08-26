@@ -20,9 +20,7 @@ class EditABitcoinRecord
         global $sessionMessage;
         global $user_id;            // We need this.
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $db = get_db();
 

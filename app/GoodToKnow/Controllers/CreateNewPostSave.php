@@ -18,9 +18,7 @@ class CreateNewPostSave
         global $saved_int01;                // The topic id
         global $saved_int02;                // The sequence number
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $db = get_db();
 

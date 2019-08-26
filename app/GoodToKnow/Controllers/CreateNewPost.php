@@ -19,9 +19,7 @@ class CreateNewPost
         global $sessionMessage;
         global $community_id;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
 
         /**

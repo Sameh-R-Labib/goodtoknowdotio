@@ -13,7 +13,7 @@ class ControlPanel
         global $type_of_resource_requested;
 
         if (!$is_logged_in OR $is_admin) {
-            breakout('');
+            breakout(' Hey, either your session timed out or you are an admin and do not belong here in this CP. ');
         }
 
         $html_title = 'Control Panel';

@@ -21,9 +21,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
         global $special_community_array;
         global $type_of_resource_requested;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

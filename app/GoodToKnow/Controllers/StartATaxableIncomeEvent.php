@@ -22,9 +22,7 @@ class StartATaxableIncomeEvent
         global $is_logged_in;
         global $sessionMessage;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $html_title = 'Create a Taxable Income Event';
 

@@ -10,9 +10,7 @@ class DefaultCommunity
         global $is_logged_in;
         global $special_community_array;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $html_title = 'Default Community';
 

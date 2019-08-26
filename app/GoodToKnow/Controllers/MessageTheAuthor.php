@@ -26,9 +26,7 @@ class MessageTheAuthor
         global $user_username;
         global $url_of_most_recent_upload;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
 
         /**

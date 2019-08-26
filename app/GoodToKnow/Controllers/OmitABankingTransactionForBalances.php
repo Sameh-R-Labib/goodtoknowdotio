@@ -16,9 +16,7 @@ class OmitABankingTransactionForBalances
         global $is_logged_in;
         global $sessionMessage;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $html_title = 'Which time range for filtering your transaction choices?';
 

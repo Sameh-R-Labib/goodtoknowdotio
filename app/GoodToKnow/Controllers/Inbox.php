@@ -22,9 +22,7 @@ class Inbox
         global $type_of_resource_requested;
         global $author_username;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $db = get_db();
 

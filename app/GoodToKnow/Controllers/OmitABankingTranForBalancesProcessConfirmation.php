@@ -17,9 +17,7 @@ class OmitABankingTranForBalancesProcessConfirmation
         global $sessionMessage;
         global $saved_int01;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

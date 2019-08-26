@@ -23,9 +23,7 @@ class AuthorDeletesOwnPostDelProc
         global $saved_str01;
         global $saved_str02;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

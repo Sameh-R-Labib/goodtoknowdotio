@@ -22,9 +22,7 @@ class AuthorDeletesOwnPostChoosePost
         global $saved_int01;        // id of topic
         global $user_id;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $db = get_db();
 

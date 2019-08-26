@@ -3,6 +3,19 @@
 /**
  *
  */
+function kick_out_loggedoutusers()
+{
+    global $is_logged_in, $sessionMessage;
+
+    if (!$is_logged_in || !empty($sessionMessage)) {
+        breakout(' Log back in because your session has expired. ');
+    }
+}
+
+
+/**
+ *
+ */
 function kick_out_nonadmins()
 {
     global $is_logged_in, $is_admin, $sessionMessage;
@@ -65,9 +78,12 @@ function redirect_to(string $location)
 // will be sent to the browser (including the
 // Location header. Output buffering must be set
 // to be on for this to work.
+
     if ($location != NULL) {
+
         header("Location: {$location}");
         exit;
+
     }
 }
 

@@ -14,9 +14,7 @@ class EditMyPostEditor
         global $user_id;
         global $url_of_most_recent_upload;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

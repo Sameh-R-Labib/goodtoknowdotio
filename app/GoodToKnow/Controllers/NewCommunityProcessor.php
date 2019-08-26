@@ -11,9 +11,7 @@ class NewCommunityProcessor
         global $is_logged_in;
         global $sessionMessage;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

@@ -21,9 +21,7 @@ class EditMyPostEditProcessor
         global $saved_int01;                // id of edited post's Topic
         global $saved_int02;                // id of edited post
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
             breakout(' Task aborted. ');

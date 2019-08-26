@@ -14,9 +14,7 @@ class SeeOneYearsPossibleTaxDeductions
         global $is_logged_in;
         global $sessionMessage;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
-            breakout('');
-        }
+        kick_out_loggedoutusers();
 
         $html_title = 'Which year_paid for showing possible_tax_deduction(s/plural)?';
 
