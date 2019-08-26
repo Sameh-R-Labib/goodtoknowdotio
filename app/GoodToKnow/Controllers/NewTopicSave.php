@@ -21,11 +21,7 @@ class NewTopicSave
             breakout('');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         /**
          * Create some variables and their values which will be needed for the two objects

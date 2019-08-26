@@ -24,11 +24,7 @@ class GlanceAtMyTasks
             breakout('');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
 

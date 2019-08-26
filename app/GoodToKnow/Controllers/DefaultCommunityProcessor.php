@@ -55,11 +55,7 @@ class DefaultCommunityProcessor
          * Get the user object from the database.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
 

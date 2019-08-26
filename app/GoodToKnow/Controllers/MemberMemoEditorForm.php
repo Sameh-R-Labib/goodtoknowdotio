@@ -25,11 +25,7 @@ class MemberMemoEditorForm
          *  3) Present a (pre-filled with current memo) form for editing the memo.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         /**

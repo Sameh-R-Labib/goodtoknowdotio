@@ -32,11 +32,7 @@ class RemoveComsChoices
          * 1) Get the id of the user.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 

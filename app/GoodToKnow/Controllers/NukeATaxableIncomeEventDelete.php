@@ -49,11 +49,7 @@ class NukeATaxableIncomeEventDelete
          * 2) Retrieve the taxable_income_event object with that id from the database.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $object = TaxableIncomeEvent::find_by_id($db, $sessionMessage, $chosen_id);
 

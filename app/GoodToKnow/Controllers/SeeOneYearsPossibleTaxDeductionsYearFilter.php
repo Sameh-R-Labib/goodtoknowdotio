@@ -47,11 +47,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          * 2) Present the PossibleTaxDeduction(s/plural) in a page whose layout is similar to the Home page.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
         $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);

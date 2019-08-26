@@ -45,11 +45,7 @@ class InduceATaskCreate
          * Use the submitted data to add a record to the database.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $array_record = ['user_id' => $user_id, 'label' => $label, 'last' => 0, 'next' => 0, 'cycle_type' => '', 'comment' => ''];
 

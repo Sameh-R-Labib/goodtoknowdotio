@@ -49,11 +49,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
          * 2) Present the TaxableIncomeEvent(s/plural) in a page whose layout is similar to the Home page.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
 

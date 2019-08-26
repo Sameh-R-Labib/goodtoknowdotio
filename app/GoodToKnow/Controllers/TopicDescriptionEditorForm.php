@@ -24,11 +24,7 @@ class TopicDescriptionEditorForm
             breakout('');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $topic_object = Topic::find_by_id($db, $sessionMessage, $saved_int01);
 

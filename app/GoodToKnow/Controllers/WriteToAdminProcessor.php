@@ -79,11 +79,7 @@ class WriteToAdminProcessor
          * Save that object to the database using save().
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $result = $message_object->save($db, $sessionMessage);
 

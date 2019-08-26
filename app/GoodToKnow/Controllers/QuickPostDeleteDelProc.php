@@ -42,11 +42,7 @@ class QuickPostDeleteDelProc
             breakout(' Nothing was changed. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         // Delete the db record for the post.

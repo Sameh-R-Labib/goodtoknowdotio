@@ -47,11 +47,7 @@ class WipeOutAPossibleTaxDeductionDelete
          * 2) Retrieve the possible_tax_deduction object with that id from the database.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $chosen_id);
 

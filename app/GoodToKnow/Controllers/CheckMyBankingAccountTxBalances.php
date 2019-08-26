@@ -25,11 +25,7 @@ class CheckMyBankingAccountTxBalances
             breakout('');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         /**

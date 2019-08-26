@@ -41,11 +41,7 @@ class AuthorDeletesOwnPostDelProc
             breakout(' You changed your mind about deleting the post. So, none was deleted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         // Delete the db record for the post.

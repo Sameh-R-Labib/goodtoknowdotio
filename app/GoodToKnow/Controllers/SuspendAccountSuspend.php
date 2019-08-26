@@ -27,11 +27,7 @@ class SuspendAccountSuspend
          *  4) Show a message indicating we've successfully suspended the user's account.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         /**

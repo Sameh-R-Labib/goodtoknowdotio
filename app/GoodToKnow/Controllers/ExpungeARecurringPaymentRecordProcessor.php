@@ -48,11 +48,7 @@ class ExpungeARecurringPaymentRecordProcessor
          * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $recurring_payment_object = RecurringPayment::find_by_id($db, $sessionMessage, $chosen_id);
 

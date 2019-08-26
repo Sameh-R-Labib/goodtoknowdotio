@@ -28,11 +28,7 @@ class QuickPostDeleteChoosePost
             breakout('');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
 

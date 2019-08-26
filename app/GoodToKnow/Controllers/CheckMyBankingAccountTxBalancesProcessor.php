@@ -46,11 +46,7 @@ class CheckMyBankingAccountTxBalancesProcessor
          * 2) Retrieve the banking_acct_for_balances object with that id from the database.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $chosen_id);
 

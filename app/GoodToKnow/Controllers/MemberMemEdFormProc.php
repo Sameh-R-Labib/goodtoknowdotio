@@ -56,11 +56,7 @@ class MemberMemEdFormProc
          * 4) Get a copy of the User object for the member.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
 

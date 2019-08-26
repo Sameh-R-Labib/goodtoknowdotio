@@ -41,11 +41,7 @@ class TransferPostOwnershipGetPost
             breakout(' Task aborted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         // (1) determine which post the admin chose to do a transfer of ownership to

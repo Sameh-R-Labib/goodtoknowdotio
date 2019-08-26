@@ -54,11 +54,7 @@ class BroadcastMsgProcessor
 
         $message_object = Message::array_to_object($message_array);
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $result = $message_object->save($db, $sessionMessage);
 

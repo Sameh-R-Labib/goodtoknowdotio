@@ -27,11 +27,7 @@ class AdminPassCodeGenerationForm
          *   - community_description
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         // Community::find_all() should return the array we are looking for (see above)
 

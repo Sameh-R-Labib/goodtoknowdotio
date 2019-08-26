@@ -45,11 +45,7 @@ class WriteOverATaxableIncomeEventYearFilter
          * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
         $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);

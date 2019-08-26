@@ -44,11 +44,7 @@ class AlterAPossibleTaxDeductionYearFilter
          * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
         $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);

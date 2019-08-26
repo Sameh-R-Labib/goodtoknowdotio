@@ -18,11 +18,7 @@ class NewCommunitySave
             breakout('');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $community_as_array = ['community_name' => $saved_str01, 'community_description' => $saved_str02];
 

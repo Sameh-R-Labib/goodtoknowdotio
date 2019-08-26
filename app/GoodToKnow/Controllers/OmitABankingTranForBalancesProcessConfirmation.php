@@ -35,11 +35,7 @@ class OmitABankingTranForBalancesProcessConfirmation
             breakout(' Nothing was deleted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $saved_int01);
 

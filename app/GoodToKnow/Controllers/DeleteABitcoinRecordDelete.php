@@ -35,11 +35,7 @@ class DeleteABitcoinRecordDelete
             breakout(' Nothing was deleted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $bitcoin = Bitcoin::find_by_id($db, $sessionMessage, $saved_int01);
 

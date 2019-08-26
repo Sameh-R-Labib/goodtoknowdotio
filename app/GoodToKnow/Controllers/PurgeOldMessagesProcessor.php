@@ -28,11 +28,7 @@ class PurgeOldMessagesProcessor
             breakout(' Task aborted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         /**
          * Variables to work with: $_POST['date']

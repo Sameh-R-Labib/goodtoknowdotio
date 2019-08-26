@@ -26,11 +26,7 @@ class AuthorDeletesOwnPostDelete
             breakout(' Task aborted. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 

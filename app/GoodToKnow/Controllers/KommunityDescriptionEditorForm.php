@@ -25,11 +25,7 @@ class KommunityDescriptionEditorForm
          *  2) Present a (pre-filled with current description) form for editing.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
 
         // 1) Retrieve the Community object for the community whose description the admin wants to edit.

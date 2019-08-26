@@ -56,11 +56,7 @@ class KommunityDescriptionEditorFormProcessor
          *  4) Get a copy of the Community object.
          */
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $community_object = Community::find_by_id($db, $sessionMessage, $saved_int01);
 

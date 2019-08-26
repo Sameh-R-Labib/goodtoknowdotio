@@ -37,11 +37,7 @@ class KommunityDescriptionEditorProcessor
             breakout(' The community name you entered did NOT pass validation. ');
         }
 
-        $db = db_connect($sessionMessage);
-
-        if (!empty($sessionMessage) || $db === false) {
-            breakout(' Database connection failed. ');
-        }
+        $db = get_db();
 
         $community = Community::find_by_community_name($db, $sessionMessage, $submitted_community_name);
 
