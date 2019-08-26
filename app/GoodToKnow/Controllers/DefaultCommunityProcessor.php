@@ -16,9 +16,7 @@ class DefaultCommunityProcessor
 
         kick_out_loggedoutusers();
 
-        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' Task aborted. ');
-        }
+        kick_out_onabort();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 

@@ -21,9 +21,7 @@ class AnnulABankingAcctForBalancesDelete
 
         kick_out_loggedoutusers();
 
-        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' Task aborted. ');
-        }
+        kick_out_onabort();
 
         $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
 

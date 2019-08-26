@@ -26,9 +26,7 @@ class QuickPostDeleteDelProc
 
         kick_out_nonadmins();
 
-        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' Task aborted. ');
-        }
+        kick_out_onabort();
 
         $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
 

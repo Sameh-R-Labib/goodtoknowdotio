@@ -20,9 +20,7 @@ class FeatureATaskEdit
 
         kick_out_loggedoutusers();
 
-        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' Task aborted. ');
-        }
+        kick_out_onabort();
 
 
         /**

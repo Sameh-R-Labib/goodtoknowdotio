@@ -3,6 +3,17 @@
 /**
  *
  */
+function kick_out_onabort()
+{
+    if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
+        breakout(' Task aborted. ');
+    }
+}
+
+
+/**
+ *
+ */
 function kick_out_loggedoutusers()
 {
     global $is_logged_in, $sessionMessage;

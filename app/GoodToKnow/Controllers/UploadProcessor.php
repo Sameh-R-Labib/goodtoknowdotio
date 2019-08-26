@@ -19,9 +19,7 @@ class UploadProcessor
 
         kick_out_loggedoutusers();
 
-        if (isset($_POST['abort']) AND $_POST['abort'] === "Abort") {
-            breakout(' Task aborted. ');
-        }
+        kick_out_onabort();
 
         if (!isset($_POST['submit'])) {
             breakout(' An invalid form submission occured. ');
