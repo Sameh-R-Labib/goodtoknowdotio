@@ -59,7 +59,7 @@ class DeleteABitcoinRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        $bitcoin_object->unix_time_at_purchase = get_readable_time($bitcoin_object->unix_time_at_purchase);
+        $bitcoin_object->time = get_readable_time($bitcoin_object->time);
         $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
         $bitcoin_object->price_point = readable_amount_of_money($bitcoin_object->currency, $bitcoin_object->price_point);
 

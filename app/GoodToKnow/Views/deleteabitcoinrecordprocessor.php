@@ -4,7 +4,7 @@
     <?php require SESSIONMESSAGE; ?>
     <p>&nbsp;</p>
     <p><b>Time of purchase: </b><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $bitcoin_object->unix_time_at_purchase; ?></p>
+        echo $bitcoin_object->time; ?></p>
     <p><b>Address: </b><?= $bitcoin_object->address ?></p>
     <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $bitcoin_object->currency ?>&nbsp;<?= $bitcoin_object->price_point ?>
     </p>

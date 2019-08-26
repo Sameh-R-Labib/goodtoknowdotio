@@ -59,7 +59,7 @@ class ExpungeARecurringPaymentRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        $recurring_payment_object->unix_time_at_last_payment = get_readable_time($recurring_payment_object->unix_time_at_last_payment);
+        $recurring_payment_object->time = get_readable_time($recurring_payment_object->time);
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
         $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->currency, $recurring_payment_object->amount_paid);
 

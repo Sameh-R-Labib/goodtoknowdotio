@@ -19,9 +19,9 @@
                value="<?= $recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="16" size="16">
     </p>
     <p>
-        <label for="unix_time_at_last_payment">Unix time at last payment: </label>
-        <input id="unix_time_at_last_payment" name="unix_time_at_last_payment" type="text"
-               value="<?= $recurring_payment_object->unix_time_at_last_payment ?>" minlength="10" maxlength="22"
+        <label for="time">Unix time at last payment: </label>
+        <input id="time" name="time" type="text"
+               value="<?= $recurring_payment_object->time ?>" minlength="10" maxlength="22"
                size="22" placeholder="1560190617">
     </p>
     <p>

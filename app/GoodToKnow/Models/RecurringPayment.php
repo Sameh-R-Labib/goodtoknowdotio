@@ -14,7 +14,7 @@ class RecurringPayment extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'label', 'currency', 'amount_paid', 'unix_time_at_last_payment', 'comment'];
+    protected static $fields = ['id', 'user_id', 'label', 'currency', 'amount_paid', 'time', 'comment'];
 
     /**
      * @var int
@@ -44,7 +44,7 @@ class RecurringPayment extends GoodObject
     /**
      * @var int
      */
-    public $unix_time_at_last_payment;
+    public $time;
 
     /**
      * @var string

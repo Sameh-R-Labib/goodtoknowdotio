@@ -40,7 +40,7 @@ class MakeARecurringPaymentRecordProcessor
          */
 
         $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => '',
-            'amount_paid' => 0, 'unix_time_at_last_payment' => 0, 'comment' => ''];
+            'amount_paid' => 0, 'time' => 0, 'comment' => ''];
 
 
         /**

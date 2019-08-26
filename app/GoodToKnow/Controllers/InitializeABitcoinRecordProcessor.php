@@ -72,7 +72,7 @@ class InitializeABitcoinRecordProcessor
          */
 
         $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => 0,
-            'current_balance' => 0, 'currency' => '', 'price_point' => 0, 'unix_time_at_purchase' => 0, 'comment' => ''];
+            'current_balance' => 0, 'currency' => '', 'price_point' => 0, 'time' => 0, 'comment' => ''];
 
 
         /**

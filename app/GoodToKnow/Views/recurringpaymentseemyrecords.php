@@ -9,7 +9,7 @@
             <?php $last = count($array_of_recurring_payment_objects) - 1; ?>
             <?php foreach ($array_of_recurring_payment_objects as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
-                <p><b>Last's 🕒: </b><?= $object->unix_time_at_last_payment ?></p>
+                <p><b>Last's 🕒: </b><?= $object->time ?></p>
                 <p><?= $object->currency ?>&nbsp;<?= $object->amount_paid ?></p>
                 <p><?= $object->comment ?></p>
                 <?php if ($key != $last): ?>

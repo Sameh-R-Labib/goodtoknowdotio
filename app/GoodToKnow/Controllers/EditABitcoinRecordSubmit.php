@@ -44,7 +44,7 @@ class EditABitcoinRecordSubmit
 
         $edited_price_point = (isset($_POST['price_point'])) ? (float)$_POST['price_point'] : 0.0;
 
-        $edited_unix_time_at_purchase = (isset($_POST['unix_time_at_purchase'])) ? (int)$_POST['unix_time_at_purchase'] : 1560190617;
+        $edited_time = (isset($_POST['time'])) ? (int)$_POST['time'] : 1560190617;
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
@@ -74,7 +74,7 @@ class EditABitcoinRecordSubmit
         $bitcoin_object->current_balance = $edited_current_balance;
         $bitcoin_object->currency = $edited_currency;
         $bitcoin_object->price_point = $edited_price_point;
-        $bitcoin_object->unix_time_at_purchase = $edited_unix_time_at_purchase;
+        $bitcoin_object->time = $edited_time;
         $bitcoin_object->comment = $edited_comment;
 
 

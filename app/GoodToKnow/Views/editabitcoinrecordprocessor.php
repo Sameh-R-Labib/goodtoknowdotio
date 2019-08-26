@@ -27,9 +27,9 @@
                minlength="2" spellcheck="false" size="13" maxlength="13">
     </p>
     <p>
-        <label for="unix_time_at_purchase">Unix Time at Purchase: </label>
-        <input id="unix_time_at_purchase" name="unix_time_at_purchase" type="text" placeholder="1560190617"
-               value="<?= $bitcoin_object->unix_time_at_purchase ?>"
+        <label for="time">Unix Time at Purchase: </label>
+        <input id="time" name="time" type="text" placeholder="1560190617"
+               value="<?= $bitcoin_object->time ?>"
                minlength="10" size="22" maxlength="22">
     </p>
     <p>

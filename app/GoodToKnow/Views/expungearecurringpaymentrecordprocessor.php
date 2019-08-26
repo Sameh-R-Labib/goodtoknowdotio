@@ -5,7 +5,7 @@
     <p>&nbsp;</p>
     <p><b>Label: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $recurring_payment_object->label; ?></p>
-    <p><b>Last's 🕒: </b><?= $recurring_payment_object->unix_time_at_last_payment ?></p>
+    <p><b>Last's 🕒: </b><?= $recurring_payment_object->time ?></p>
     <p><b>Last's Amount: </b><?= $recurring_payment_object->currency ?>
         &nbsp;<?= $recurring_payment_object->amount_paid ?></p>
     <p><?= $recurring_payment_object->comment ?></p>

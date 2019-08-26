@@ -58,7 +58,7 @@ class RecurringPaymentSeeMyRecords
 
             $object->amount_paid = readable_amount_of_money($object->currency, $object->amount_paid);
 
-            $object->unix_time_at_last_payment = get_readable_time($object->unix_time_at_last_payment);
+            $object->time = get_readable_time($object->time);
 
             $object->comment = nl2br($object->comment, false);
 

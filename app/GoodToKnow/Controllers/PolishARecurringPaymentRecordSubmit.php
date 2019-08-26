@@ -56,7 +56,7 @@ class PolishARecurringPaymentRecordSubmit
 
         /** @var $edited_time */
 
-        $edited_time = integer_form_field_prep('unix_time_at_last_payment', 0, PHP_INT_MAX);
+        $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
         if (is_null($edited_time)) {
             breakout(' Your time value did not pass validation. ');
@@ -96,7 +96,7 @@ class PolishARecurringPaymentRecordSubmit
         $object->label = $edited_label;
         $object->currency = $edited_currency;
         $object->amount_paid = $edited_amount_paid;
-        $object->unix_time_at_last_payment = $edited_time;
+        $object->time = $edited_time;
         $object->comment = $edited_comment;
 
 
