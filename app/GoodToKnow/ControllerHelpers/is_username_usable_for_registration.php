@@ -15,7 +15,7 @@ function is_username_usable_for_registration(mysqli $db, string &$message, strin
 {
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
-    if (!is_username_syntactically($db, $message, $username)) {
+    if (!is_username_syntactically($message, $username)) {
 
         $message .= " The username field was empty. ";
 

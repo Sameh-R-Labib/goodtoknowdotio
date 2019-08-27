@@ -10,7 +10,7 @@ use mysqli;
  * @param string $username
  * @return bool
  */
-function is_username_syntactically(mysqli $db, string &$message, string &$username): bool
+function is_username_syntactically(string &$message, string &$username): bool
 {
     /**
      * Returns true if $username fits the requirements for what a GTK.io username.
@@ -18,6 +18,7 @@ function is_username_syntactically(mysqli $db, string &$message, string &$userna
      *
      * Side Effects: - $username will be trimmed.
      *               - $message may be modified.
+     *               - $username will have removed characters with ASCII value < 32
      */
 
     /**
@@ -28,6 +29,7 @@ function is_username_syntactically(mysqli $db, string &$message, string &$userna
      * That first letter is the only uppercase letter.
      * The first word must be 4 to 9 characters in length.
      * The second word is numeric two digits long.
+     * Remove characters with ASCII value < 32
      */
 
     $username = trim($username);
@@ -139,6 +141,12 @@ function is_username_syntactically(mysqli $db, string &$message, string &$userna
 
         return false;
     }
+
+    /**
+     * Remove characters with ASCII value < 32
+     */
+
+    $username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
     return true;
 }

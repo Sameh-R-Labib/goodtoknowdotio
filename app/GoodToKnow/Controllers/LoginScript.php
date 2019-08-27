@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\is_username_syntactically;
 
 class LoginScript
 {
@@ -96,18 +97,22 @@ class LoginScript
             redirect_to("/ax1/LoginForm/page");
         }
 
+
         /**
          * Finally save them to session
          */
+
         $_SESSION['special_community_array'] = $special_community_array;
         $_SESSION['last_refresh_communities'] = time();
         $_SESSION['type_of_resource_requested'] = 'community';
         $_SESSION['topic_id'] = 0;
         $_SESSION['post_id'] = 0;
 
+
         /**
          * Find and save in session a value for special_topic_array.
          */
+
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $user->id_of_default_community);
 
         if (!$special_topic_array) {
@@ -164,7 +169,9 @@ class LoginScript
         $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
         $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
 
-        if (!self::is_username($error, $submitted_username) ||
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
+
+        if (!is_username_syntactically($error, $submitted_username) ||
             !self::is_password($error, $submitted_password)) {
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
@@ -198,118 +205,6 @@ class LoginScript
         }
     }
 
-    /**
-     * @param string $message
-     * @param string $username
-     * @return bool
-     */
-    public static function is_username(string &$message, string &$username)
-    {
-        /**
-         * We want to prevent sql injection
-         */
-
-        $username = trim($username);
-
-        if (empty($username)) {
-            $message .= " The username field was empty. ";
-            return false;
-        }
-
-        $words = explode('_', $username);
-
-
-        /**
-         * If array $words doesn't have exactly two elements then fail.
-         */
-
-        if (count($words) != 2) {
-            $message .= " The username must have two parts separated by an underscore character. ";
-            return false;
-        }
-
-        $last_word = $words[1];
-        $first_word = $words[0];
-
-
-        /**
-         * The first word must be all alphabetical letters.
-         */
-
-        $is_all_alpha = ctype_alpha($first_word);
-
-        if (!$is_all_alpha) {
-            $message .= " The username's first part must have alphabet characters only. ";
-            return false;
-        }
-
-
-        /**
-         * The first word must start with an upper case letter.
-         */
-
-        $arr_of_chars = str_split($first_word);
-
-        $first_char_as_string = $arr_of_chars[0];
-
-        $is_cap = ctype_upper($first_char_as_string);
-
-        if (!$is_cap) {
-            $message .= " The username needs to start with a capital letter. ";
-            return false;
-        }
-
-
-        /**
-         * That first letter is the only uppercase letter.
-         */
-
-        $rest = substr($first_word, 1);
-
-        $is_lower = ctype_lower($rest);
-
-        if (!$is_lower) {
-            $message .= " The username's first part has a letter with improper case. ";
-            return false;
-        }
-
-
-        /**
-         * The first word must be 4 to 9 characters in length.
-         */
-
-        $length = strlen($first_word);
-
-        if ($length > 9 || $length < 4) {
-            $message .= " The username's first part doesn't have a proper length. ";
-            return false;
-        }
-
-
-        /**
-         * The second word is numeric two digits long.
-         */
-
-        $length_of_second_word = strlen($last_word);
-
-        if ($length_of_second_word != 2) {
-            $message .= " The username's second part is not two digits. ";
-            return false;
-        }
-
-        if (!is_numeric($last_word)) {
-            $message .= " The username's second part is not numeric. ";
-            return false;
-        }
-
-        /**
-         * Remove characters with ASCII value < 32
-         */
-
-        $username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-
-        return true;
-    }
 
     /**
      * @param string $message
