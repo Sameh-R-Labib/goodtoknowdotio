@@ -208,6 +208,7 @@ class LoginScript
         /**
          * We want to prevent sql injection
          */
+
         $username = trim($username);
 
         if (empty($username)) {
@@ -217,9 +218,11 @@ class LoginScript
 
         $words = explode('_', $username);
 
+
         /**
          * If array $words doesn't have exactly two elements then fail.
          */
+
         if (count($words) != 2) {
             $message .= " The username must have two parts separated by an underscore character. ";
             return false;
@@ -228,9 +231,11 @@ class LoginScript
         $last_word = $words[1];
         $first_word = $words[0];
 
+
         /**
          * The first word must be all alphabetical letters.
          */
+
         $is_all_alpha = ctype_alpha($first_word);
 
         if (!$is_all_alpha) {
@@ -238,9 +243,11 @@ class LoginScript
             return false;
         }
 
+
         /**
          * The first word must start with an upper case letter.
          */
+
         $arr_of_chars = str_split($first_word);
 
         $first_char_as_string = $arr_of_chars[0];
@@ -252,9 +259,11 @@ class LoginScript
             return false;
         }
 
+
         /**
          * That first letter is the only uppercase letter.
          */
+
         $rest = substr($first_word, 1);
 
         $is_lower = ctype_lower($rest);
@@ -264,9 +273,11 @@ class LoginScript
             return false;
         }
 
+
         /**
          * The first word must be 4 to 9 characters in length.
          */
+
         $length = strlen($first_word);
 
         if ($length > 9 || $length < 4) {
@@ -274,9 +285,11 @@ class LoginScript
             return false;
         }
 
+
         /**
          * The second word is numeric two digits long.
          */
+
         $length_of_second_word = strlen($last_word);
 
         if ($length_of_second_word != 2) {
@@ -288,6 +301,10 @@ class LoginScript
             $message .= " The username's second part is not numeric. ";
             return false;
         }
+
+        /**
+         * Remove characters with ASCII value < 32
+         */
 
         $username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 

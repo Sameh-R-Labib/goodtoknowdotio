@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\is_date;
+use function GoodToKnow\ControllerHelpers\is_username_usable_for_registration;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class AdminCreateUser
@@ -63,12 +64,13 @@ class AdminCreateUser
 
         /**
          * If any of the submitted fields are invalid
-         * store a session message and redirect to /ax1/LoginForm/page
+         * store a session message and redirect to /ax1/Home/page
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
 
-        if (!self::is_username($db, $sessionMessage, $submitted_username) ||
+        if (!is_username_usable_for_registration($db, $sessionMessage, $submitted_username) ||
             !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
             !self::is_title($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
@@ -151,109 +153,6 @@ class AdminCreateUser
     }
 
     // Helpers for the page() method
-
-    /**
-     * @param \mysqli $db
-     * @param string $message
-     * @param string $username
-     * @return bool
-     */
-    public static function is_username(\mysqli $db, string &$message, string &$username)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Must consist of two words separated by an underscore.
-         * The first word must start with an upper case letter.
-         * That first letter is the only uppercase letter.
-         * The first word must be 4 to 9 characters in length.
-         * The second word is numeric two digits long.
-         * The username can't already exist in the database.
-         */
-
-        $username = trim($username);
-
-        if (empty($username)) {
-            $message .= " The username field was empty. ";
-            return false;
-        }
-
-        $words = explode('_', $username);
-
-        /**
-         * If array $words doesn't have exactly two elements then fail.
-         */
-        if (count($words) != 2) {
-            $message .= " The username must have two parts separated by an underscore character. ";
-            return false;
-        }
-
-        $last_word = $words[1];
-        $first_word = $words[0];
-
-        /**
-         * The first word must be all alphabetical letters.
-         */
-        $is_all_alpha = ctype_alpha($first_word);
-        if (!$is_all_alpha) {
-            $message .= " The username's first part must have alphabet characters only. ";
-            return false;
-        }
-
-        /**
-         * The first word must start with an upper case letter.
-         */
-        $arr_of_chars = str_split($first_word);
-        $first_char_as_string = $arr_of_chars[0];
-        $is_cap = ctype_upper($first_char_as_string);
-        if (!$is_cap) {
-            $message .= " The username needs to start with a capital letter. ";
-            return false;
-        }
-
-        /**
-         * That first letter is the only uppercase letter.
-         */
-        $rest = substr($first_word, 1);
-        $is_lower = ctype_lower($rest);
-        if (!$is_lower) {
-            $message .= " The username's first part has a letter with improper case. ";
-            return false;
-        }
-
-        /**
-         * The first word must be 4 to 9 characters in length.
-         */
-        $length = strlen($first_word);
-        if ($length > 9 || $length < 4) {
-            $message .= " The username's first part doesn't have a proper length. ";
-            return false;
-        }
-
-        /**
-         * The second word is numeric two digits long.
-         */
-        $length_of_second_word = strlen($last_word);
-        if ($length_of_second_word != 2) {
-            $message .= " The username's second part is not two digits. ";
-            return false;
-        }
-        if (!is_numeric($last_word)) {
-            $message .= " The username's second part is not numeric. ";
-            return false;
-        }
-
-        /**
-         * The username can't already exist in the database.
-         */
-        $is_in_use = User::is_taken_username($db, $message, $username);
-        if ($is_in_use) {
-            $message .= " The username is taken. Find a different one and try again. ";
-            return false;
-        }
-
-        return true;
-    }
 
     /**
      * @param $message
