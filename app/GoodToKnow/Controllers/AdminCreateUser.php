@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
+use function GoodToKnow\ControllerHelpers\is_date;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class AdminCreateUser
@@ -65,11 +66,13 @@ class AdminCreateUser
          * store a session message and redirect to /ax1/LoginForm/page
          */
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
+
         if (!self::is_username($db, $sessionMessage, $submitted_username) ||
             !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
             !self::is_title($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
-            !self::is_date($sessionMessage, $submitted_date)) {
+            !is_date($sessionMessage, $submitted_date)) {
 
             breakout(' One of the submitted field values is invalid. ');
         }
@@ -414,61 +417,6 @@ class AdminCreateUser
 
         if (!in_array($race, $races)) {
             $message .= " Your race field does not contain a valid value. ";
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * @param $message
-     * @param string $date
-     * @return bool
-     */
-    public static function is_date(string &$message, string &$date)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Must have two forward slashes.
-         * Must have 2 digits / 2 digits / 4 digits
-         * Must be a valid date.
-         */
-
-        $date = trim($date);
-
-        if (empty($date)) {
-            $message .= " The date is missing. ";
-            return false;
-        }
-
-        $number_of_slashes = substr_count($date, '/');
-        if ($number_of_slashes != 2) {
-            $message .= " You don't have two slashes in date. ";
-            return false;
-        }
-
-        /**
-         * Split date into its parts.
-         */
-        $words = explode('/', $date);
-        $mm = $words[0];
-        $dd = $words[1];
-        $yyyy = $words[2];
-
-        if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy) != 4) {
-            $message .= " You did not use correct mm/dd/yyyy date format. ";
-            return false;
-        }
-
-        if (!is_numeric($mm) || !is_numeric($dd) || !is_numeric($yyyy)) {
-            $message .= " The date should consist of numeric digits and 2 forward slashes. And, it does not have
-            numeric digits! ";
-            return false;
-        }
-
-        if (!checkdate($words[0], $words[1], $words[2])) {
-            $message .= " That's not a valid date. ";
             return false;
         }
 

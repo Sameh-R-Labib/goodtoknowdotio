@@ -1,6 +1,5 @@
 <?php
 
-
 namespace GoodToKnow\ControllerHelpers;
 
 /**
