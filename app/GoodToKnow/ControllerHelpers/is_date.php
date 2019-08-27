@@ -2,6 +2,11 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
+/**
+ * @param string $message
+ * @param string $date
+ * @return bool
+ */
 function is_date(string &$message, string &$date): bool
 {
     /**

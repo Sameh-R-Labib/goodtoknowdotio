@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Message;
+use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
 use function GoodToKnow\ControllerHelpers\is_date;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -48,7 +49,7 @@ class PurgeOldMessagesProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
 
         if (!is_date($sessionMessage, $submitted_date)) {
-            breakout('');
+            breakout(' This date value is invalid. ');
         }
 
 
@@ -56,10 +57,12 @@ class PurgeOldMessagesProcessor
          * We need to convert $date to a unix timestamp
          */
 
-        $timestamp = self::get_timestamp_from_date($submitted_date);
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_timestamp_from_date.php';
 
-        if (!$timestamp || $timestamp < 0) {
-            breakout(' Method get timestamp from date returned an invalid value. ');
+        $timestamp = get_timestamp_from_date($submitted_date);
+
+        if ($timestamp === null) {
+            breakout(' I failed to get a timestamp. ');
         }
 
 
@@ -98,28 +101,5 @@ class PurgeOldMessagesProcessor
          */
 
         breakout(' The purge of old messages completed. ');
-    }
-
-
-    /**
-     * @param string $submitted_date
-     * @return false|int
-     */
-    public static function get_timestamp_from_date(string $submitted_date)
-    {
-        /**
-         * It is assumed that $submitted_date is in the American form of mm/dd/yyyy.
-         * For example 01/02/2019
-         */
-
-        // Separate the parts of #submitted_date
-        $words = explode('/', $submitted_date);
-        $day = $words[1];
-        $month = $words[0];
-        $year = $words[2];
-
-        $timestamp = mktime(0, 0, 0, $month, $day, $year);
-
-        return $timestamp;
     }
 }
