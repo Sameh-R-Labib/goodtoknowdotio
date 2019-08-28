@@ -6,6 +6,7 @@ use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\is_date;
 use function GoodToKnow\ControllerHelpers\is_password_asapair;
+use function GoodToKnow\ControllerHelpers\is_title_ofaperson;
 use function GoodToKnow\ControllerHelpers\is_username_usable_for_registration;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -70,11 +71,12 @@ class AdminCreateUser
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_usable_for_registration.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_title_ofaperson.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
 
         if (!is_username_usable_for_registration($db, $sessionMessage, $submitted_username) ||
             !is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password) ||
-            !self::is_title($sessionMessage, $submitted_title) ||
+            !is_title_ofaperson($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
             !is_date($sessionMessage, $submitted_date)) {
 
@@ -155,34 +157,6 @@ class AdminCreateUser
     }
 
     // Helpers for the page() method
-
-    /**
-     * @param $message
-     * @param string $title
-     * @return bool
-     */
-    public static function is_title(string &$message, string &$title)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Mr. and Mrs. are the only valid values for title.
-         */
-        $title = trim($title);
-
-        if (empty($title)) {
-            $message .= " Your title is missing. ";
-            return false;
-        }
-
-        $possible = ['Mr.', 'Mrs.'];
-        if (!in_array($title, $possible)) {
-            $message .= " Your title field does not contain a valid value. ";
-            return false;
-        }
-
-        return true;
-    }
 
     /**
      * @param $message
