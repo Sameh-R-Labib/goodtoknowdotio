@@ -6,6 +6,7 @@ use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\is_date;
 use function GoodToKnow\ControllerHelpers\is_password_asapair;
+use function GoodToKnow\ControllerHelpers\is_race_inoursystem;
 use function GoodToKnow\ControllerHelpers\is_title_ofaperson;
 use function GoodToKnow\ControllerHelpers\is_username_usable_for_registration;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -72,12 +73,13 @@ class AdminCreateUser
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_usable_for_registration.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_title_ofaperson.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_race_inoursystem.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
 
         if (!is_username_usable_for_registration($db, $sessionMessage, $submitted_username) ||
             !is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password) ||
             !is_title_ofaperson($sessionMessage, $submitted_title) ||
-            !self::is_race($sessionMessage, $submitted_race) ||
+            !is_race_inoursystem($sessionMessage, $submitted_race) ||
             !is_date($sessionMessage, $submitted_date)) {
 
             breakout(' One of the submitted field values is invalid. ');
@@ -154,37 +156,5 @@ class AdminCreateUser
          */
 
         breakout(' The user account was created! ');
-    }
-
-    // Helpers for the page() method
-
-    /**
-     * @param $message
-     * @param string $race
-     * @return bool
-     */
-    public static function is_race(string &$message, string &$race)
-    {
-        /**
-         * Trim it.
-         * Can't be empty.
-         * Must be one of the ones I have in the form.
-         */
-        $race = trim($race);
-        if (empty($race)) {
-            $message .= " The value for race is missing. ";
-            return false;
-        }
-
-        $races = ['caucasian-american', 'caucasian-european', 'caucasian-african', 'black-european', 'black-american',
-            'black-african', 'asian', 'south-american', 'greek', 'middle-eastern-christian', 'middle-eastern-moslem',
-            'native-american'];
-
-        if (!in_array($race, $races)) {
-            $message .= " Your race field does not contain a valid value. ";
-            return false;
-        }
-
-        return true;
     }
 }
