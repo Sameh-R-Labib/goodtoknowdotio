@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class ForgetATaskDelete
 {
@@ -27,37 +28,37 @@ class ForgetATaskDelete
          * yes/no
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
 
-        $choice = standard_form_field_prep('choice', 2, 3);
-
-        if (is_null($choice)) {
-            breakout(' The choice you entered did not pass validation. ');
-        }
-
-        if ($choice != "yes" && $choice != "no") {
-            breakout(' You didn\'t enter a choice. ');
-        }
+        $choice = yes_no_form_field_prep('choice');
 
         if ($choice == "no") {
+
             breakout(' Nothing was deleted. ');
+
         }
 
 
-        /** @var  $db */
+        /**
+         * Delete the record.
+         */
 
         $db = get_db();
 
         $object = Task::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' I was not able to find the record. ');
+
         }
 
         $result = $object->delete($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly I could not delete the record. ');
+
         }
 
 

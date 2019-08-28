@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\RecurringPayment;
+use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class ExpungeARecurringPaymentRecordDelete
 {
@@ -21,28 +22,42 @@ class ExpungeARecurringPaymentRecordDelete
 
         kick_out_onabort();
 
-        $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
 
-        if ($choice != "yes" && $choice != "no") {
-            breakout(' You didn\'t enter a choice. ');
-        }
+        /**
+         * Do nothing if user changed mind.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+
+        $choice = yes_no_form_field_prep('choice');
 
         if ($choice == "no") {
+
             breakout(' Nothing was deleted. ');
+
         }
+
+
+        /**
+         * Delete the record.
+         */
 
         $db = get_db();
 
         $object = RecurringPayment::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' I was NOT able to find the recurring payment. ');
+
         }
 
         $result = $object->delete($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly I could not delete the recurring payment record. ');
+
         }
 
 

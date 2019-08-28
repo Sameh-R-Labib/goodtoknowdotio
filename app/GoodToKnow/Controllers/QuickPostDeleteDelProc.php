@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
+use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class QuickPostDeleteDelProc
 {
@@ -28,31 +29,40 @@ class QuickPostDeleteDelProc
 
         kick_out_onabort();
 
-        $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
 
-        if ($choice != "yes" && $choice != "no") {
-            breakout(' You didn\'t enter a choice. ');
-        }
+        /**
+         * Do nothing if user changed mind.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+
+        $choice = yes_no_form_field_prep('choice');
 
         if ($choice == "no") {
             breakout(' Nothing was changed. ');
         }
 
+
+        /**
+         * Delete the record.
+         */
+
         $db = get_db();
-
-
-        // Delete the db record for the post.
 
         $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
 
         if (!$post) {
+
             breakout(' AuthorDeletesOwnPostDelProc says: Could not find post by id. ');
+
         }
 
         $result = $post->delete($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly could not delete post. ');
+
         }
 
 

@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+
 class TransferPostOwnershipGetUsername
 {
     function page()
@@ -21,15 +23,25 @@ class TransferPostOwnershipGetUsername
 
         kick_out_onabort();
 
-        $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
 
-        if ($choice != "yes" && $choice != "no") {
-            breakout(' You didn\'t enter a choice. ');
-        }
+        /**
+         * Do nothing if user changed mind.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+
+        $choice = yes_no_form_field_prep('choice');
 
         if ($choice == "no") {
+
             breakout(' You changed your mind about transferring ownership of the post. ');
+
         }
+
+
+        /**
+         * Show view.
+         */
 
         $html_title = 'What is the username of the person?';
 

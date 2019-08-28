@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class DeleteABitcoinRecordDelete
 {
@@ -21,28 +22,42 @@ class DeleteABitcoinRecordDelete
 
         kick_out_onabort();
 
-        $choice = (isset($_POST['choice'])) ? $_POST['choice'] : "";
 
-        if ($choice != "yes" && $choice != "no") {
-            breakout(' You didn\'t enter a choice. ');
-        }
+        /**
+         * Do nothing if user changed mind.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+
+        $choice = yes_no_form_field_prep('choice');
 
         if ($choice == "no") {
+
             breakout(' Nothing was deleted. ');
+
         }
+
+
+        /**
+         * Delete the record.
+         */
 
         $db = get_db();
 
         $bitcoin = Bitcoin::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$bitcoin) {
-            breakout(' I was NOT able to find the bitcoin record and I\'ve aborted. ');
+
+            breakout(' I was NOT able to find the bitcoin record. ');
+
         }
 
         $result = $bitcoin->delete($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly I could not delete the bitcoin record. ');
+
         }
 
 
