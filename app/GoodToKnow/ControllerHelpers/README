@@ -1,0 +1,16 @@
+Prep
+====
+
+Prep is a function which extracts a submitted form field value from the $_POST array.
+
+
+Is
+==
+
+Is is a function which determines whether or not a particular value (or group of values) satisfy a set of conditions.
+
+
+Get
+===
+
+Get is a function which returns a value based on a transformation of the value you give it.
