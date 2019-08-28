@@ -2,10 +2,7 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use mysqli;
-
 /**
- * @param mysqli $db
  * @param string $message
  * @param string $username
  * @return bool
