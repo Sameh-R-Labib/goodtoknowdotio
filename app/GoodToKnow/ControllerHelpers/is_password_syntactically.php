@@ -2,6 +2,11 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
+/**
+ * @param string $message
+ * @param string $password
+ * @return bool
+ */
 function is_password_syntactically(string &$message, string &$password): bool
 {
     /**
