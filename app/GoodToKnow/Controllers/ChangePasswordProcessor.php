@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
+use function GoodToKnow\ControllerHelpers\is_password_asapair;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class ChangePasswordProcessor
@@ -57,10 +58,12 @@ class ChangePasswordProcessor
 
 
         /**
-         * By running the AdminCreateUser::is_password method we can make sure the new password is acceptable.
+         * Make sure the new password pair is syntactically and as a pair are acceptable.
          */
 
-        $is_password = AdminCreateUser::is_password($sessionMessage, $first_try, $new_password);
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
+
+        $is_password = is_password_asapair($sessionMessage, $first_try, $new_password);
 
         if (!$is_password) {
             breakout(' The value you entered for a new password has something wrong with it. ');
