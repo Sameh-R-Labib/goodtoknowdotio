@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\is_date;
+use function GoodToKnow\ControllerHelpers\is_password_asapair;
 use function GoodToKnow\ControllerHelpers\is_username_usable_for_registration;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -67,11 +68,12 @@ class AdminCreateUser
          * store a session message and redirect to /ax1/Home/page
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_username_usable_for_registration.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
 
         if (!is_username_usable_for_registration($db, $sessionMessage, $submitted_username) ||
-            !self::is_password($sessionMessage, $submitted_first_try, $submitted_password) ||
+            !is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password) ||
             !self::is_title($sessionMessage, $submitted_title) ||
             !self::is_race($sessionMessage, $submitted_race) ||
             !is_date($sessionMessage, $submitted_date)) {
@@ -153,116 +155,6 @@ class AdminCreateUser
     }
 
     // Helpers for the page() method
-
-    /**
-     * @param $message
-     * @param string $str01
-     * @param string $str02
-     * @return bool
-     */
-    public static function is_password(string &$message, string &$str01, string &$str02)
-    {
-        /**
-         * Can't be empty.
-         * Make sure the two strings match.
-         * The length must be 10 to 18 characters long.
-         * It can't have a space character.
-         * It can't have weird characters.
-         */
-
-        /**
-         * It can't be empty. So I will trim it then check if there is anything left.
-         */
-        $trimmed = trim($str01);
-        if (empty($trimmed)) {
-            $message .= " The password field is required. ";
-            return false;
-        }
-
-        /**
-         * Make sure the two strings match.
-         */
-        $are_equal = ($str01 === $str02);
-        if (!$are_equal) {
-            $message .= " Your two passwords don't match. ";
-            return false;
-        }
-
-        /**
-         * The length must be 10 to 18 characters long.
-         */
-        $length = strlen($str01);
-        if ($length > 18 || $length < 10) {
-            $message .= " The length of your password must be 10 to 18 characters. ";
-            return false;
-        }
-
-        /**
-         * It can't have a space character.
-         */
-        if (strpos($str01, ' ')) {
-            $message .= " Non-conforming password because it contains space. ";
-            return false;
-        }
-
-        /**
-         * It can't have weird characters.
-         */
-        if (preg_match('/[\'$?<>=]/', $str01)) {
-            $message .= " Non-conforming password because it contains one or more disallowed characters. ";
-            return false;
-        }
-
-        // count how many lowercase, uppercase, and digits are in the password
-        $uc = 0;
-        $lc = 0;
-        $num = 0;
-        $other = 0;
-        for ($i = 0, $j = strlen($str01); $i < $j; $i++) {
-            // Get current character
-            $char = substr($str01, $i, 1);
-            // if $char is uppercase
-            if (preg_match('/^[[:upper:]]$/', $char)) {
-                $uc++;
-            } elseif (preg_match('/^[[:lower:]]$/', $char)) {
-                // if $char is lowercase
-                $lc++;
-            } elseif (preg_match('/^[[:digit:]]$/', $char)) {
-                // if $char is a numeric digit
-                $num++;
-            } else {
-                $other++;
-            }
-        }
-
-        $max = $j - 6;
-        if ($uc > $max) {
-            $message .= " The password has too many upper case characters. ";
-            return false;
-        }
-        if ($lc > $max) {
-            $message .= " The password has too many lower case characters. ";
-            return false;
-        }
-        if ($num > $max) {
-            $message .= " The password has too many numeric characters. ";
-            return false;
-        }
-        if ($num < 2) {
-            $message .= " Your password needs at least two digit. ";
-            return false;
-        }
-        if ($other < 2) {
-            $message .= " Your password needs at least two non-alphanumeric characters. ";
-            return false;
-        }
-        if ($other > $max) {
-            $message .= " The password has too many special characters. ";
-            return false;
-        }
-
-        return true;
-    }
 
     /**
      * @param $message

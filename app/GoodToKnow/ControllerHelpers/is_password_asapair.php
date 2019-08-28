@@ -10,6 +10,9 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function is_password_asapair(string &$message, string &$str01, string &$str02): bool
 {
+    /**
+     * First make sure it has proper syntax.
+     */
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_password_syntactically.php';
 
