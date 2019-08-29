@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\CommunityToTopic;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+use function GoodToKnow\ControllerHelpers\before_after_form_field_prep;
 
 class NewTopicIPProcessor
 {
@@ -40,7 +41,9 @@ class NewTopicIPProcessor
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
 
         if (!$special_topic_array) {
+
             breakout(' NewTopicIPProcessor says: Unexpected error 39684. ');
+
         }
 
 
@@ -52,33 +55,29 @@ class NewTopicIPProcessor
          */
 
 
-        /**
-         * I can't assume these post variables exist so I do the following.
-         */
+        // relate
 
-        $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
+        require_once CONTROLLERHELPERS . DIRSEP . 'before_after_form_field_prep.php';
+
+        $relate = before_after_form_field_prep('relate');
+
+
+        // choice
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
         if (is_null($chosen_topic_id)) {
+
             breakout(' Your choice did not pass validation. ');
-        }
 
-
-        // Handle bad submit.
-
-        if (empty($relate)) {
-            breakout(' Either you did not fill out all the fields or the session expired. Try again. ');
-        }
-
-        if ($relate !== 'before' && $relate !== 'after') {
-            breakout(' NewTopicIPProcessor says: Error 99885. ');
         }
 
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
+
             breakout(' NewTopicIPProcessor says: Error 124213. ');
+
         }
 
 
@@ -87,7 +86,9 @@ class NewTopicIPProcessor
         $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
 
         if (!$topic_objects_array) {
+
             breakout(' NewTopicIPProcessor says: Error 860138. ');
+
         }
 
         $chosen_topic_sequence_number = -1;
@@ -97,13 +98,19 @@ class NewTopicIPProcessor
         }
 
         if ($chosen_topic_sequence_number == -1) {
+
             breakout(' NewTopicIPProcessor says: Error 426273. ');
+
         }
 
         if ($relate == 'after') {
+
             $sequence_number = self::get_sequence_number_in_case_after($topic_objects_array, $chosen_topic_sequence_number);
+
         } else {
+
             $sequence_number = self::get_sequence_number_in_case_before($topic_objects_array, $chosen_topic_sequence_number);
+
         }
 
         $_SESSION['saved_int01'] = $sequence_number;

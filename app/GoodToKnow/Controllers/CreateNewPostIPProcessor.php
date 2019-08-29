@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TopicToPost;
+use function GoodToKnow\ControllerHelpers\before_after_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class CreateNewPostIPProcessor
@@ -42,13 +43,17 @@ class CreateNewPostIPProcessor
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
 
         if (!$special_post_array) {
+
             breakout(' CreateNewPostIPProcessor: Error 074346. ');
+
         }
 
 
         /**
          * Validate submitted values.
          */
+
+        // choice
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
@@ -58,19 +63,15 @@ class CreateNewPostIPProcessor
             breakout(' Your choice did not pass validation. ');
         }
 
-        $relate = (isset($_POST['relate'])) ? $_POST['relate'] : null;
-
-        if (empty($relate)) {
-            breakout(' Try again because something went wrong. ');
-        }
-
-        if ($relate !== 'before' && $relate !== 'after') {
-            breakout(' CreateNewPostIPProcessor: Error 034455. ');
-        }
-
         if (!array_key_exists($chosen_post_id, $special_post_array)) {
             breakout(' CreateNewPostIPProcessor: Error 421218. ');
         }
+
+        // relate
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'before_after_form_field_prep.php';
+
+        $relate = before_after_form_field_prep('relate');
 
 
         /**
@@ -81,23 +82,33 @@ class CreateNewPostIPProcessor
         $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
 
         if (!$all_posts_as_objects) {
+
             breakout(' CreateNewPostIPProcessor: Error 971249. ');
+
         }
 
         $chosen_post_sequence_number = -1;
 
         foreach ($all_posts_as_objects as $key => $object) {
+
             if ($object->id == $chosen_post_id) $chosen_post_sequence_number = $object->sequence_number;
+
         }
 
         if ($chosen_post_sequence_number == -1) {
+
             breakout(' CreateNewPostIPProcessor: Error 537384. ');
+
         }
 
         if ($relate == 'after') {
+
             $sequence_number = self::get_sequence_number_in_case_after($all_posts_as_objects, $chosen_post_sequence_number);
+
         } else {
+
             $sequence_number = self::get_sequence_number_in_case_before($all_posts_as_objects, $chosen_post_sequence_number);
+
         }
 
         $_SESSION['saved_int02'] = $sequence_number;

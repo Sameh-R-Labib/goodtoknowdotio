@@ -1,6 +1,6 @@
 <?php
 
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+namespace GoodToKnow\ControllerHelpers;
 
 /**
  * @param string $field_name
@@ -23,7 +23,7 @@ function before_after_form_field_prep(string $field_name): string
 
     }
 
-    if ($choice != "before" && $choice != "after") {
+    if ($choice !== "before" && $choice !== "after") {
 
         breakout(' You didn\'t enter a before/after choice. ');
 
