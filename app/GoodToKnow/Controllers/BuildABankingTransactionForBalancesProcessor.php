@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingTransactionForBalances;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class BuildABankingTransactionForBalancesProcessor
@@ -33,22 +34,13 @@ class BuildABankingTransactionForBalancesProcessor
             breakout(' The label did NOT pass validation. ');
         }
 
-        $time = (isset($_POST['time'])) ? $_POST['time'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        if (empty(trim($time))) {
-            breakout(' Something went wrong. Please try again. ');
+        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+
+        if (is_null($time)) {
+            breakout(' The time you entered did not pass validation. ');
         }
-
-        if (strlen($time) > 22 || strlen($time) < 10) {
-            breakout(' Either the time\'s string length is too long or too short. Start over. ');
-        }
-
-
-        // Remove this once i switch to using integer_form_field_prep()
-
-        $time = (int)$time;
-
-        $db = get_db();
 
 
         /**
@@ -68,6 +60,8 @@ class BuildABankingTransactionForBalancesProcessor
         /**
          * Save the object.
          */
+
+        $db = get_db();
 
         $result = $object->save($db, $sessionMessage);
 

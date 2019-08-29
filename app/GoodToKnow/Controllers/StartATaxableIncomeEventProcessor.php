@@ -64,13 +64,6 @@ class StartATaxableIncomeEventProcessor
 
 
         /**
-         * Get $db.
-         */
-
-        $db = get_db();
-
-
-        /**
          * Create a taxable_income_event array for the record.
          */
 
@@ -88,6 +81,8 @@ class StartATaxableIncomeEventProcessor
         /**
          * Save the object.
          */
+
+        $db = get_db();
 
         $result = $object->save($db, $sessionMessage);
 
