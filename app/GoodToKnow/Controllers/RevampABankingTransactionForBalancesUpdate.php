@@ -41,20 +41,35 @@ class RevampABankingTransactionForBalancesUpdate
 
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
+
+        // amount
+
         $edited_amount = float_form_field_prep('amount', 0.0, 21000000000.0);
+
+
+        // time
 
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if ($edited_time === 0) {
-            $edited_time = 1560190617;
-        }
+        if ($edited_time === 0) $edited_time = 1560190617;
+
+
+        // bank_id
 
         $edited_bank_id = integer_form_field_prep('bank_id', 1, PHP_INT_MAX);
 
+
+        // label
+
         $edited_label = standard_form_field_prep('label', 3, 30);
 
+
+        // Deal with null
+
         if (is_null($edited_label) || is_null($edited_time) || is_null($edited_bank_id) || is_null($edited_amount)) {
+
             breakout(' One or more values did NOT pass validation. ');
+
         }
 
 
@@ -67,7 +82,9 @@ class RevampABankingTransactionForBalancesUpdate
         $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that record. ');
+
         }
 
 
@@ -88,7 +105,9 @@ class RevampABankingTransactionForBalancesUpdate
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at saving the updated object. ');
+
         }
 
 

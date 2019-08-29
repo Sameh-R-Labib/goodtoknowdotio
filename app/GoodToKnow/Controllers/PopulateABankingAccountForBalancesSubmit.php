@@ -44,9 +44,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $edited_start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
 
-        if ($edited_start_time === 0) {
-            $edited_start_time = 1560190617;
-        }
+        if ($edited_start_time === 0) $edited_start_time = 1560190617;
 
         $edited_start_balance = float_form_field_prep('start_balance', 0.0, 21000000000.0);
 
@@ -56,7 +54,9 @@ class PopulateABankingAccountForBalancesSubmit
 
         if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency) ||
             is_null($edited_start_time) || is_null($edited_start_balance)) {
+
             breakout(' One or more values you entered did not pass validation. ');
+
         }
 
 

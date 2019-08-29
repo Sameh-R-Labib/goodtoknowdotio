@@ -43,7 +43,9 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_label = standard_form_field_prep('label', 3, 264);
 
         if (is_null($edited_label)) {
+
             breakout(' The label you entered did not pass validation. ');
+
         }
 
 
@@ -54,7 +56,9 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_year_received = integer_form_field_prep('year_received', 1992, 65535);
 
         if (is_null($edited_year_received)) {
+
             breakout(' The year received you entered did not pass validation. ');
+
         }
 
 
@@ -63,7 +67,9 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
         if (is_null($edited_comment)) {
+
             breakout(' The comment you entered did not pass validation. ');
+
         }
 
 
@@ -72,8 +78,12 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
         if (is_null($edited_time)) {
+
             breakout(' The time you entered did not pass validation. ');
+
         }
+
+        if ($edited_time === 0) $edited_time = 1560190617;
 
 
         // currency
@@ -81,7 +91,9 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_currency = standard_form_field_prep('currency', 1, 15);
 
         if (is_null($edited_currency)) {
+
             breakout(' The currency you entered did not pass validation. ');
+
         }
 
 
@@ -92,7 +104,9 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_amount = float_form_field_prep('amount', 0.0, 21000000000.0);
 
         if (is_null($edited_amount)) {
+
             breakout(' Your amount value did not pass validation. ');
+
         }
 
 
@@ -105,7 +119,9 @@ class WriteOverATaxableIncomeEventUpdate
         $object = TaxableIncomeEvent::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that record. ');
+
         }
 
 
@@ -128,7 +144,9 @@ class WriteOverATaxableIncomeEventUpdate
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at saving the object. ');
+
         }
 
 

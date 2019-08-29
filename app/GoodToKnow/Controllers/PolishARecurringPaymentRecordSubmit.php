@@ -57,7 +57,9 @@ class PolishARecurringPaymentRecordSubmit
         $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
 
         if (is_null($edited_amount_paid)) {
+
             breakout(' Your amount paid value did not pass validation. ');
+
         }
 
 
@@ -66,12 +68,13 @@ class PolishARecurringPaymentRecordSubmit
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
         if (is_null($edited_time)) {
+
             breakout(' Your time value did not pass validation. ');
+
         }
 
-        if ($edited_time === 0) {
-            $edited_time = 1560190617;
-        }
+        if ($edited_time === 0) $edited_time = 1560190617;
+
 
 
         /** @var $edited_comment */
@@ -79,7 +82,9 @@ class PolishARecurringPaymentRecordSubmit
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
         if (is_null($edited_comment) || is_null($edited_label) || is_null($edited_currency)) {
+
             breakout(' One or more values you entered did not pass validation. ');
+
         }
 
 
@@ -92,7 +97,9 @@ class PolishARecurringPaymentRecordSubmit
         $object = RecurringPayment::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that recurring payment record. ');
+
         }
 
 
@@ -114,7 +121,9 @@ class PolishARecurringPaymentRecordSubmit
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at saving the updated Recurring Payment. ');
+
         }
 
 

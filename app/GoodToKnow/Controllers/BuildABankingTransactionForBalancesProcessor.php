@@ -28,19 +28,29 @@ class BuildABankingTransactionForBalancesProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+
+        // label
+
         $label = standard_form_field_prep('label', 3, 30);
 
         if (is_null($label)) {
             breakout(' The label did NOT pass validation. ');
         }
 
+
+        // time
+
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
         if (is_null($time)) {
+
             breakout(' The time you entered did not pass validation. ');
+
         }
+
+        if (time === 0) $time = 1560190617;
 
 
         /**
@@ -66,12 +76,16 @@ class BuildABankingTransactionForBalancesProcessor
         $result = $object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' I was unable to save the transaction. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The save method for BankingTransactionForBalances did not return false but it did send
             back a message. Therefore, it probably did not create the BankingTransactionForBalances record. ');
+
         }
 
         /**
