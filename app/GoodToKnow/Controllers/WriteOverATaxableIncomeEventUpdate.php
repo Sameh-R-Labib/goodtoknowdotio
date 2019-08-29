@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TaxableIncomeEvent;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -86,7 +87,13 @@ class WriteOverATaxableIncomeEventUpdate
 
         // amount
 
-        $edited_amount = (isset($_POST['amount'])) ? (float)$_POST['amount'] : 0.0;
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
+        $edited_amount = float_form_field_prep('amount', 0.0, 21000000000.0);
+
+        if (is_null($edited_amount)) {
+            breakout(' Your amount value did not pass validation. ');
+        }
 
 
         /**

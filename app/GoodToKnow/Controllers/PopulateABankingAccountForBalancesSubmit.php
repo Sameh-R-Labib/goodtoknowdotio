@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -37,6 +38,8 @@ class PopulateABankingAccountForBalancesSubmit
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
         $edited_acct_name = standard_form_field_prep('acct_name', 3, 30);
 
         $edited_start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
@@ -45,13 +48,14 @@ class PopulateABankingAccountForBalancesSubmit
             $edited_start_time = 1560190617;
         }
 
-        $edited_start_balance = (isset($_POST['start_balance'])) ? (float)$_POST['start_balance'] : 0.0;
+        $edited_start_balance = float_form_field_prep('start_balance', 0.0, 21000000000.0);
 
         $edited_currency = standard_form_field_prep('currency', 1, 15);
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency) || is_null($edited_start_time)) {
+        if (is_null($edited_comment) || is_null($edited_acct_name) || is_null($edited_currency) ||
+            is_null($edited_start_time) || is_null($edited_start_balance)) {
             breakout(' One or more values you entered did not pass validation. ');
         }
 

@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingTransactionForBalances;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -38,7 +39,9 @@ class RevampABankingTransactionForBalancesUpdate
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $edited_amount = (isset($_POST['amount'])) ? (float)$_POST['amount'] : 0.0;
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
+        $edited_amount = float_form_field_prep('amount', 0.0, 21000000000.0);
 
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
@@ -50,7 +53,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         $edited_label = standard_form_field_prep('label', 3, 30);
 
-        if (is_null($edited_label) || is_null($edited_time) || is_null($edited_bank_id)) {
+        if (is_null($edited_label) || is_null($edited_time) || is_null($edited_bank_id) || is_null($edited_amount)) {
             breakout(' One or more values did NOT pass validation. ');
         }
 

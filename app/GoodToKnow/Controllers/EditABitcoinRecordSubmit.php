@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class EditABitcoinRecordSubmit
@@ -32,9 +33,15 @@ class EditABitcoinRecordSubmit
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_initial_balance = (isset($_POST['initial_balance'])) ? (float)$_POST['initial_balance'] : 0.0;
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
-        $edited_current_balance = (isset($_POST['current_balance'])) ? (float)$_POST['current_balance'] : 0.0;
+        $edited_initial_balance = float_form_field_prep('initial_balance', 0.0, 21000000000.0);
+
+        $edited_current_balance = float_form_field_prep('current_balance', 0.0, 21000000000.0);
+
+        if (is_null($edited_initial_balance) || is_null($edited_current_balance)) {
+            breakout(' Your balance value did not pass validation. ');
+        }
 
         $edited_currency = standard_form_field_prep('currency', 1, 15);
 
@@ -42,7 +49,11 @@ class EditABitcoinRecordSubmit
             breakout(' The currency you entered did not pass validation. ');
         }
 
-        $edited_price_point = (isset($_POST['price_point'])) ? (float)$_POST['price_point'] : 0.0;
+        $edited_price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
+
+        if (is_null($edited_price_point)) {
+            breakout(' Your price point value did not pass validation. ');
+        }
 
         $edited_time = (isset($_POST['time'])) ? (int)$_POST['time'] : 1560190617;
 

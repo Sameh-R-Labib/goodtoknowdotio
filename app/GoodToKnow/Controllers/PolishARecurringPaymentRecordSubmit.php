@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\RecurringPayment;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -51,7 +52,13 @@ class PolishARecurringPaymentRecordSubmit
 
         /** @var  $edited_amount_paid */
 
-        $edited_amount_paid = (isset($_POST['amount_paid'])) ? (float)$_POST['amount_paid'] : 0.0;
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
+        $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
+
+        if (is_null($edited_amount_paid)) {
+            breakout(' Your amount paid value did not pass validation. ');
+        }
 
 
         /** @var $edited_time */
