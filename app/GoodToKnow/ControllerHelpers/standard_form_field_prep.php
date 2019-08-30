@@ -38,7 +38,7 @@ function standard_form_field_prep(string $field_name, int $min_length, int $max_
 
     if (!isset($_POST[$field_name])) {
 
-        breakout(" A value for {$field_name} is missing. ");
+        breakout(" The value for {$field_name} is missing. ");
 
     }
 

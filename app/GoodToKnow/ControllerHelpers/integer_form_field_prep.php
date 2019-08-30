@@ -2,7 +2,13 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-function integer_form_field_prep(string $field_name, int $min_value, int $max_value): ?int
+/**
+ * @param string $field_name
+ * @param int $min_value
+ * @param int $max_value
+ * @return int
+ */
+function integer_form_field_prep(string $field_name, int $min_value, int $max_value): int
 {
     /**
      * Note: This is for data which will be an integer value in the function's calling scope.
@@ -29,7 +35,7 @@ function integer_form_field_prep(string $field_name, int $min_value, int $max_va
 
     if (!isset($_POST[$field_name])) {
 
-        return null;
+        breakout(" The value for {$field_name} is missing. ");
 
     }
 
@@ -47,7 +53,7 @@ function integer_form_field_prep(string $field_name, int $min_value, int $max_va
     // Make sure we have a number in the string.
 
     if (!is_numeric($int_for_return)) {
-        return null;
+        breakout(" The value for {$field_name} is not numeric. ");
     }
 
 
@@ -60,7 +66,7 @@ function integer_form_field_prep(string $field_name, int $min_value, int $max_va
 
     if ($int_for_return < $min_value || $int_for_return > $max_value) {
 
-        return null;
+        breakout(" The value for {$field_name} is out of range. ");
 
     }
 
