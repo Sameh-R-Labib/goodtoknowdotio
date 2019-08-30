@@ -48,12 +48,6 @@ class EditABitcoinRecordSubmit
 
         $edited_current_balance = float_form_field_prep('current_balance', 0.0, 21000000000.0);
 
-        if (is_null($edited_initial_balance) || is_null($edited_current_balance)) {
-
-            breakout(' Your balance value did not pass validation. ');
-
-        }
-
 
         // currency
 
@@ -63,12 +57,6 @@ class EditABitcoinRecordSubmit
         // price_point
 
         $edited_price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
-
-        if (is_null($edited_price_point)) {
-
-            breakout(' Your price point value did not pass validation. ');
-
-        }
 
 
         // time

@@ -17,12 +17,6 @@ function before_after_form_field_prep(string $field_name): string
 
     $choice = standard_form_field_prep($field_name, 5, 6);
 
-    if (is_null($choice)) {
-
-        breakout(' The before/after choice you entered did not pass validation. ');
-
-    }
-
     if ($choice !== "before" && $choice !== "after") {
 
         breakout(' You didn\'t enter a before/after choice. ');

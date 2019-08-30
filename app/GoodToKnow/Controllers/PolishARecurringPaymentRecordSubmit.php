@@ -56,12 +56,6 @@ class PolishARecurringPaymentRecordSubmit
 
         $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
 
-        if (is_null($edited_amount_paid)) {
-
-            breakout(' Your amount paid value did not pass validation. ');
-
-        }
-
 
         /** @var $edited_time */
 

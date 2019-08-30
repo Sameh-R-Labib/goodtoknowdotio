@@ -73,12 +73,6 @@ class WriteOverATaxableIncomeEventUpdate
 
         $edited_amount = float_form_field_prep('amount', 0.0, 21000000000.0);
 
-        if (is_null($edited_amount)) {
-
-            breakout(' Your amount value did not pass validation. ');
-
-        }
-
 
         /**
          * 2) Retrieve the existing record from the database.

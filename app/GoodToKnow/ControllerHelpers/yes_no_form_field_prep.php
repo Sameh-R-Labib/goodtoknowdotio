@@ -17,12 +17,6 @@ function yes_no_form_field_prep(string $field_name): string
 
     $choice = standard_form_field_prep($field_name, 2, 3);
 
-    if (is_null($choice)) {
-
-        breakout(' The yes/no choice you entered did not pass validation. ');
-
-    }
-
     if ($choice != "yes" && $choice != "no") {
 
         breakout(' You didn\'t enter a yes/no choice. ');

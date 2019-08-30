@@ -64,15 +64,6 @@ class RevampABankingTransactionForBalancesUpdate
         $edited_label = standard_form_field_prep('label', 3, 30);
 
 
-        // Deal with null
-
-        if (is_null($edited_amount)) {
-
-            breakout(' One or more values did NOT pass validation. ');
-
-        }
-
-
         /**
          * 2) Retrieve the existing record from the database.
          */
