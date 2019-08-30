@@ -15,7 +15,9 @@ function date_form_field_prep(string $field_name): string
     require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
 
     if (!is_date($sessionMessage, $submitted_date)) {
+
         breakout(' This date value is invalid. ');
+
     }
 
     return $submitted_date;

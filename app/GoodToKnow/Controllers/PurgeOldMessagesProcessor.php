@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Message;
+use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
 use function GoodToKnow\ControllerHelpers\is_date;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -33,20 +34,9 @@ class PurgeOldMessagesProcessor
          * $_POST['date']
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
 
-        $submitted_date = standard_form_field_prep('date', 10, 14);
-
-
-        /**
-         * Validate the date
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'is_date.php';
-
-        if (!is_date($sessionMessage, $submitted_date)) {
-            breakout(' This date value is invalid. ');
-        }
+        $submitted_date = date_form_field_prep('date');
 
 
         /**
