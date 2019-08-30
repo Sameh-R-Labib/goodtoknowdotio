@@ -34,10 +34,6 @@ class ByUsernameMessageProcessor
 
         $submitted_username = standard_form_field_prep('username', 7, 12);
 
-        if (is_null($submitted_username)) {
-            breakout(' The username did not pass validation. ');
-        }
-
 
         /**
          * Make sure $submitted_username is valid.
@@ -50,7 +46,9 @@ class ByUsernameMessageProcessor
         $is_username = is_username_syntactandexists($db, $sessionMessage, $submitted_username);
 
         if (!$is_username) {
+
             breakout(' The username is not valid. ');
+
         }
 
         $_SESSION['saved_str01'] = $submitted_username;

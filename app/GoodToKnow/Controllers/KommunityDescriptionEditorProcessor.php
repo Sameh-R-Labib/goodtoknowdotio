@@ -29,16 +29,14 @@ class KommunityDescriptionEditorProcessor
 
         $submitted_community_name = standard_form_field_prep('community', 1, 200);
 
-        if (is_null($submitted_community_name)) {
-            breakout(' The community name you entered did NOT pass validation. ');
-        }
-
         $db = get_db();
 
         $community = Community::find_by_community_name($db, $sessionMessage, $submitted_community_name);
 
         if (!$community) {
+
             breakout(' Unable to retrieve community object (possibly because the name you gave was invalid.) ');
+
         }
 
         $_SESSION['saved_int01'] = (int)$community->id;

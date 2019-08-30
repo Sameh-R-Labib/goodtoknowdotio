@@ -31,17 +31,15 @@ class TransferPostOwnershipTransferIt
 
         $username = standard_form_field_prep('username', 7, 12);
 
-        if (is_null($username)) {
-            breakout(' The username you entered did NOT pass validation. ');
-        }
-
 
         // Get the user id which corresponds with the username.
 
         $user_object = User::find_by_username($db, $sessionMessage, $username);
 
         if (!$user_object) {
+
             breakout(' Unexpectedly unable to retrieve target user\'s object. ');
+
         }
 
         $user_id = (int)$user_object->id;
@@ -52,7 +50,9 @@ class TransferPostOwnershipTransferIt
         $post_object = Post::find_by_id($db, $sessionMessage, $saved_int02);
 
         if (!$post_object) {
+
             breakout(' TransferPostOwnershipTransferIt says: Unexpected could not get a post object. ');
+
         }
 
 
@@ -66,7 +66,9 @@ class TransferPostOwnershipTransferIt
         $result = $post_object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I was unable to save the updated post. ');
+
         }
 
 

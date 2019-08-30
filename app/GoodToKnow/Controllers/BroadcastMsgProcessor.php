@@ -37,10 +37,6 @@ class BroadcastMsgProcessor
 
         $markdown = standard_form_field_prep('markdown', 1, 1500);
 
-        if (is_null($markdown)) {
-            breakout(' The message did NOT pass validation. ');
-        }
-
         $parsedown_object = new \ParsedownExtra();
         $parsedown_object->setMarkupEscaped(true);
         $parsedown_object->setSafeMode(true);
@@ -55,7 +51,9 @@ class BroadcastMsgProcessor
         $result = $message_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpected I was unable to save the new message. ');
+
         }
 
 
@@ -67,7 +65,9 @@ class BroadcastMsgProcessor
         $array_of_user_objects = User::find_all($db, $sessionMessage);
 
         if (!$array_of_user_objects) {
+
             breakout(' Unexpected I was unable to find any users. ');
+
         }
 
 
@@ -94,8 +94,10 @@ class BroadcastMsgProcessor
         $result = MessageToUser::insert_multiple_objects($db, $sessionMessage, $array_of_messagetouser_objects);
 
         if (!$result) {
+
             breakout(' In BroadcastMsgProcessor encountered unexpected the fact that MessageToUser::insert_multiple_objects
              was unable to save message_to_user records for the message and all users. ');
+
         }
 
 

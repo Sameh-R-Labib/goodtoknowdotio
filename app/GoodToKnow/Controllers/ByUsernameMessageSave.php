@@ -41,10 +41,6 @@ class ByUsernameMessageSave
 
         $markdown = standard_form_field_prep('markdown', 1, 1500);
 
-        if (is_null($markdown)) {
-            breakout(' The markdown is NOT validation. ');
-        }
-
 
         /**
          * Generate the html equivalent for $markdown.
@@ -85,7 +81,9 @@ class ByUsernameMessageSave
         $result = $message_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpected I was unable to save the new message. ');
+
         }
 
 
@@ -97,13 +95,17 @@ class ByUsernameMessageSave
          */
 
         if (empty($saved_str01)) {
+
             breakout(' Unexpectedly no target username found in the session. ');
+
         }
 
         $target_user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 
         if (!$target_user_object) {
+
             breakout(' Unexpectedly unable to retrieve target user\'s object. ');
+
         }
 
 
@@ -134,7 +136,9 @@ class ByUsernameMessageSave
         $result = $message_to_user_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly unable to save the message. ');
+
         }
 
 

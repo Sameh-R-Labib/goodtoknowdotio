@@ -28,12 +28,6 @@ class MakeARecurringPaymentRecordProcessor
 
         $label = standard_form_field_prep('label', 4, 264);
 
-        if (is_null($label)) {
-            breakout(' The label you entered did not pass validation. ');
-        }
-
-        $db = get_db();
-
 
         /**
          * Create a RecurringPayment array for the record.
@@ -54,15 +48,21 @@ class MakeARecurringPaymentRecordProcessor
          * Save the object.
          */
 
+        $db = get_db();
+
         $result = $recurring_payment_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' The save method for RecurringPayment returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The save method for RecurringPayment did not return false but it did send back a message.
              Therefore, it probably did not create the RecurringPayment record. ');
+
         }
 
 

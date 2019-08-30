@@ -51,18 +51,14 @@ class InitializeABitcoinRecordProcessor
             breakout(' I can\'t use this address because it has an HTML special character. ');
         }
 
-
         /**
          * End: I need to ...
          */
 
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $address = standard_form_field_prep('address', 8, 264);
-
-        if (is_null($address)) {
-            breakout(' The address you entered did not pass validation. ');
-        }
 
         $db = get_db();
 

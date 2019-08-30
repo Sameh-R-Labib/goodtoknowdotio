@@ -39,10 +39,6 @@ class AlterAPossibleTaxDeductionUpdate
 
         $edited_label = standard_form_field_prep('label', 3, 264);
 
-        if (is_null($edited_label)) {
-            breakout(' The label you entered did not pass validation. ');
-        }
-
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
@@ -52,10 +48,6 @@ class AlterAPossibleTaxDeductionUpdate
         }
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
-
-        if (is_null($edited_comment)) {
-            breakout(' The comment you entered did not pass validation. ');
-        }
 
 
         /**
@@ -67,7 +59,9 @@ class AlterAPossibleTaxDeductionUpdate
         $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that record. ');
+
         }
 
 
@@ -87,7 +81,9 @@ class AlterAPossibleTaxDeductionUpdate
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I aborted because I failed at saving the updated object. ');
+
         }
 
 

@@ -43,10 +43,6 @@ class MemberMemEdFormProc
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment)) {
-            breakout(' The edited comment did NOT pass validation. ');
-        }
-
 
         /**
          * 4) Get a copy of the User object for the member.
@@ -57,7 +53,9 @@ class MemberMemEdFormProc
         $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$user_object) {
+
             breakout(' Unexpected failed to retrieve the user object. ');
+
         }
 
 
@@ -83,7 +81,9 @@ class MemberMemEdFormProc
         $result = $user_object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at updating user record. ');
+
         }
 
 

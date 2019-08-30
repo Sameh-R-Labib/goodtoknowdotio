@@ -21,10 +21,6 @@ class NewCommunityProcessor
 
         $community_description = standard_form_field_prep('community_description', 1, 230);
 
-        if (is_null($community_name) || is_null($community_description)) {
-            breakout(' One or more values did not pass validation. ');
-        }
-
         $_SESSION['saved_str01'] = $community_name;
         $_SESSION['saved_str02'] = $community_description;
 

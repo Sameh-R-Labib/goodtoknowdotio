@@ -33,10 +33,6 @@ class BuildABankingTransactionForBalancesProcessor
 
         $label = standard_form_field_prep('label', 3, 30);
 
-        if (is_null($label)) {
-            breakout(' The label did NOT pass validation. ');
-        }
-
 
         // time
 
@@ -50,7 +46,7 @@ class BuildABankingTransactionForBalancesProcessor
 
         }
 
-        if (time === 0) $time = 1560190617;
+        if ($time === 0) $time = 1560190617;
 
 
         /**

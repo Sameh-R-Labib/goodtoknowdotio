@@ -36,10 +36,6 @@ class WriteToAdminProcessor
 
         $markdown = standard_form_field_prep('markdown', 1, 1500);
 
-        if (is_null($markdown)) {
-            breakout(' The message you submitted did NOT pass validation. ');
-        }
-
 
         /**
          * Generate the html equivalent for $markdown.
@@ -80,7 +76,9 @@ class WriteToAdminProcessor
         $result = $message_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly was unable to save the message. ');
+
         }
 
 
@@ -110,7 +108,9 @@ class WriteToAdminProcessor
         $result = $message_to_user_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly I was unable to save the message-to-user record. ');
+
         }
 
 

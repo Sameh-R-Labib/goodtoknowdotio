@@ -31,10 +31,6 @@ class NewTopicNameProcessor
 
         $topic_description = standard_form_field_prep('topic_description', 1, 230);
 
-        if (is_null($topic_name) || is_null($topic_description)) {
-            breakout(' One or more values did not pass validation. ');
-        }
-
         $_SESSION['saved_str01'] = $topic_name;
 
         $_SESSION['saved_str02'] = $topic_description;

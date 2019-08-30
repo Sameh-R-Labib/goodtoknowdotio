@@ -28,16 +28,14 @@ class MemberMemoEditorProcessor
 
         $submitted_username = standard_form_field_prep('username', 7, 12);
 
-        if (is_null($submitted_username)) {
-            breakout(' The username you entered did not pass validation. ');
-        }
-
         $db = get_db();
 
         $is_username = GiveComsToUsrProcessor::is_username_in_our_system($db, $sessionMessage, $submitted_username);
 
         if (!$is_username) {
+
             breakout(' The username is not valid. ');
+
         }
 
         $_SESSION['saved_str01'] = $submitted_username;

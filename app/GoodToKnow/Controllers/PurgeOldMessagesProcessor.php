@@ -37,10 +37,6 @@ class PurgeOldMessagesProcessor
 
         $submitted_date = standard_form_field_prep('date', 10, 14);
 
-        if (is_null($submitted_date)) {
-            breakout(' The date you entered did not pass validation. ');
-        }
-
 
         /**
          * Validate the date

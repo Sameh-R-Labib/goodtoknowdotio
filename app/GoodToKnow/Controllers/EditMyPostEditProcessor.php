@@ -36,10 +36,6 @@ class EditMyPostEditProcessor
 
         $markdown = standard_form_field_prep('markdown', 1, 38000);
 
-        if (is_null($markdown)) {
-            breakout(' The markdown did not pass validation. ');
-        }
-
 
         // $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
         // I commented out because parsedown will take care of this.

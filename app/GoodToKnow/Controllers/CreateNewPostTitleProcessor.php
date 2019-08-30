@@ -35,10 +35,6 @@ class CreateNewPostTitleProcessor
 
         $title_extension = standard_form_field_prep('title_extension', 0, 200);
 
-        if (is_null($main_title) || is_null($title_extension)) {
-            breakout(' The values you entered did not pass validation. ');
-        }
-
 
         // Add to session
 

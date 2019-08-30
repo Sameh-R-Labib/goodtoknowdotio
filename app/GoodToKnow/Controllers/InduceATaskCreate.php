@@ -32,10 +32,6 @@ class InduceATaskCreate
 
         $label = standard_form_field_prep('label', 3, 264);
 
-        if (is_null($label)) {
-            breakout(' Your label did not pass validation. ');
-        }
-
 
         /**
          * Use the submitted data to add a record to the database.
@@ -53,12 +49,16 @@ class InduceATaskCreate
         $result = $object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' The object\'s save method returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The object\'s save method did not return false but it did send
             back a message. Therefore, it probably did not create a new record. ');
+
         }
 
 

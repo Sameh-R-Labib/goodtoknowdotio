@@ -42,12 +42,6 @@ class WriteOverATaxableIncomeEventUpdate
 
         $edited_label = standard_form_field_prep('label', 3, 264);
 
-        if (is_null($edited_label)) {
-
-            breakout(' The label you entered did not pass validation. ');
-
-        }
-
 
         // year_received
 
@@ -66,12 +60,6 @@ class WriteOverATaxableIncomeEventUpdate
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment)) {
-
-            breakout(' The comment you entered did not pass validation. ');
-
-        }
-
 
         // time
 
@@ -89,12 +77,6 @@ class WriteOverATaxableIncomeEventUpdate
         // currency
 
         $edited_currency = standard_form_field_prep('currency', 1, 15);
-
-        if (is_null($edited_currency)) {
-
-            breakout(' The currency you entered did not pass validation. ');
-
-        }
 
 
         // amount

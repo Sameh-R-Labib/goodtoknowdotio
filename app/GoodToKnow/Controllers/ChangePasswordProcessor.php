@@ -41,10 +41,6 @@ class ChangePasswordProcessor
 
         $new_password = standard_form_field_prep('new_password', 6, 264);
 
-        if (is_null($current_password) || is_null($first_try) || is_null($new_password)) {
-            breakout(' One or more values you entered did not pass validation. ');
-        }
-
 
         /**
          * Get the user object for the current user and make sure $current_password is a valid submission.
@@ -53,7 +49,9 @@ class ChangePasswordProcessor
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
 
         if (!password_verify($current_password, $user_object->password)) {
+
             breakout(' Invalid password. ');
+
         }
 
 
@@ -66,7 +64,9 @@ class ChangePasswordProcessor
         $is_password = is_password_asapair($sessionMessage, $first_try, $new_password);
 
         if (!$is_password) {
+
             breakout(' The value you entered for a new password has something wrong with it. ');
+
         }
 
 
@@ -82,7 +82,9 @@ class ChangePasswordProcessor
         $is_saved = $user_object->save($db, $sessionMessage);
 
         if (!$is_saved || !empty($sessionMessage)) {
+
             breakout(' Failed to update your record. ');
+
         }
 
 

@@ -30,10 +30,6 @@ class GiveComsToUsrProcessor
 
         $submitted_username = standard_form_field_prep('username', 7, 12);
 
-        if (is_null($submitted_username)) {
-            breakout(' The username did not pass validation. ');
-        }
-
         $db = get_db();
 
         $is_username = self::is_username_in_our_system($db, $sessionMessage, $submitted_username);

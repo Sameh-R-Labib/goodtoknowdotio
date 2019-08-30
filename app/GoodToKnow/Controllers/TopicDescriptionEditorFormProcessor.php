@@ -42,10 +42,6 @@ class TopicDescriptionEditorFormProcessor
 
         $edited_description = standard_form_field_prep('text', 0, 800);
 
-        if (is_null($edited_description)) {
-            breakout(' The edited description did NOT pass validation. ');
-        }
-
 
         /**
          *  4) Get a copy of the Topic object.
@@ -56,7 +52,9 @@ class TopicDescriptionEditorFormProcessor
         $topic_object = Topic::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$topic_object) {
+
             breakout(' Unexpected failed to retrieve the topic object. ');
+
         }
 
 
@@ -84,7 +82,9 @@ class TopicDescriptionEditorFormProcessor
         $result = $topic_object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at saving the updated topic object. ');
+
         }
 
 

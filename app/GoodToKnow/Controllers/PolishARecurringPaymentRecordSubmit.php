@@ -81,12 +81,6 @@ class PolishARecurringPaymentRecordSubmit
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_comment) || is_null($edited_label) || is_null($edited_currency)) {
-
-            breakout(' One or more values you entered did not pass validation. ');
-
-        }
-
 
         /**
          * 2) Retrieve the existing record from the database.

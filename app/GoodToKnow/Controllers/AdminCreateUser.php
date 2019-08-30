@@ -49,12 +49,6 @@ class AdminCreateUser
 
         $submitted_date = standard_form_field_prep('date', 10, 14);
 
-        if (is_null($submitted_username) || is_null($submitted_comment) || is_null($submitted_date) ||
-            is_null($submitted_first_try) || is_null($submitted_password)) {
-
-            breakout(' One or more values is invalid. ');
-        }
-
 
         /**
          * $new_user_role needs to have a value

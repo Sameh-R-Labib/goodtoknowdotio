@@ -34,10 +34,6 @@ class MessageTheAuthorProcessor
 
         $markdown = standard_form_field_prep('markdown', 1, 1500);
 
-        if (!isset($_POST['markdown']) || trim($markdown) === '') {
-            breakout(' The message you submitted did NOT pass validation. ');
-        }
-
 
         /**
          * Generate the html equivalent for $markdown.
@@ -78,7 +74,9 @@ class MessageTheAuthorProcessor
         $result = $message_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly unable to save the message. ');
+
         }
 
 
@@ -108,7 +106,9 @@ class MessageTheAuthorProcessor
         $result = $message_to_user_object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly unable to save message to user. ');
+
         }
 
 

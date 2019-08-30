@@ -34,10 +34,6 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $label = standard_form_field_prep('label', 3, 264);
 
-        if (is_null($label)) {
-            breakout(' Your label did not pass validation. ');
-        }
-
 
         /**
          * Get year_paid
@@ -48,7 +44,9 @@ class ConceiveAPossibleTaxDeductionProcessor
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
         if (is_null($year_paid)) {
+
             breakout(' Your year_paid did not pass validation. ');
+
         }
 
 
@@ -60,6 +58,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $array_record = ['user_id' => $user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => ''];
 
+
         // In memory object.
 
         $object = PossibleTaxDeduction::array_to_object($array_record);
@@ -67,12 +66,16 @@ class ConceiveAPossibleTaxDeductionProcessor
         $result = $object->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' The object\'s save method returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The object\'s save method did not return false but it did send
             back a message. Therefore, it most likely did not create a new record. ');
+
         }
 
 

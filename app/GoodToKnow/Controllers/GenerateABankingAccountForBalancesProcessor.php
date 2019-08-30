@@ -28,10 +28,6 @@ class GenerateABankingAccountForBalancesProcessor
 
         $acct_name = standard_form_field_prep('acct_name', 3, 30);
 
-        if (is_null($acct_name)) {
-            breakout(' The acct name you entered did not pass validation. ');
-        }
-
         $db = get_db();
 
 
@@ -61,8 +57,10 @@ class GenerateABankingAccountForBalancesProcessor
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The save for Banking Acct For Balances did not fail but it did send back a message.
              Therefore, it probably did not create the Banking Acct For Balances. ');
+
         }
 
 

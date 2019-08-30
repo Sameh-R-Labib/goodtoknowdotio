@@ -59,12 +59,6 @@ class EditABitcoinRecordSubmit
 
         $edited_currency = standard_form_field_prep('currency', 1, 15);
 
-        if (is_null($edited_currency)) {
-
-            breakout(' The currency you entered did not pass validation. ');
-
-        }
-
 
         // price_point
 
@@ -93,12 +87,6 @@ class EditABitcoinRecordSubmit
         // comment
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
-
-        if (is_null($edited_comment)) {
-
-            breakout(' Your comment you entered did not pass validation. ');
-
-        }
 
 
         /**

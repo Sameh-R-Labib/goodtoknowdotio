@@ -40,10 +40,6 @@ class FeatureATaskUpdate
 
         $edited_label = standard_form_field_prep('label', 3, 264);
 
-        if (is_null($edited_label)) {
-            breakout(' The label you entered did not pass validation. ');
-        }
-
 
         // last - a timestamp
 
@@ -69,18 +65,10 @@ class FeatureATaskUpdate
 
         $edited_cycle_type = standard_form_field_prep('cycle_type', 3, 60);
 
-        if (is_null($edited_cycle_type)) {
-            breakout(' The cycle_type you entered did not pass validation. ');
-        }
-
 
         // comment
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
-
-        if (is_null($edited_comment)) {
-            breakout(' Your comment did not pass validation. ');
-        }
 
 
         /**

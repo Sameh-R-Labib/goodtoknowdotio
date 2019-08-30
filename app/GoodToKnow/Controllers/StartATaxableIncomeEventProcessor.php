@@ -34,12 +34,6 @@ class StartATaxableIncomeEventProcessor
 
         $label = standard_form_field_prep('label', 3, 264);
 
-        if (is_null($label)) {
-
-            breakout(' Your label did not pass validation. ');
-
-        }
-
 
         /**
          * Get year_received
