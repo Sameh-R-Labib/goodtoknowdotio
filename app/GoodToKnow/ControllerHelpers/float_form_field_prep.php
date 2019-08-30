@@ -6,15 +6,15 @@ namespace GoodToKnow\ControllerHelpers;
  * @param string $field_name
  * @param float $min_value
  * @param float $max_value
- * @return float|null
+ * @return float
  */
-function float_form_field_prep(string $field_name, float $min_value, float $max_value): ?float
+function float_form_field_prep(string $field_name, float $min_value, float $max_value): float
 {
     // If the $_POST[$field_name] var is not set then return null.
 
     if (!isset($_POST[$field_name])) {
 
-        return null;
+        breakout(" The value for {$field_name} is missing. ");
 
     }
 
@@ -33,7 +33,7 @@ function float_form_field_prep(string $field_name, float $min_value, float $max_
 
     if (!is_numeric($float_for_return)) {
 
-        return null;
+        breakout(" The value for {$field_name} is not a numeric. ");
 
     }
 
@@ -47,7 +47,7 @@ function float_form_field_prep(string $field_name, float $min_value, float $max_
 
     if ($float_for_return < $min_value || $float_for_return > $max_value) {
 
-        return null;
+        breakout(" The value for {$field_name} is out of range. ");
 
     }
 
