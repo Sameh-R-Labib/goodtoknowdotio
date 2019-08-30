@@ -20,7 +20,7 @@ function integer_form_field_prep(string $field_name, int $min_value, int $max_va
      * If
      * A) the post value is not set
      * B) or if it fails validation
-     * then null will be returned.
+     * then it breaks out.
      *
      * How does it prep the data?
      * - It makes sure the variable for the string is set.
@@ -53,7 +53,9 @@ function integer_form_field_prep(string $field_name, int $min_value, int $max_va
     // Make sure we have a number in the string.
 
     if (!is_numeric($int_for_return)) {
+
         breakout(" The value for {$field_name} is not numeric. ");
+
     }
 
 

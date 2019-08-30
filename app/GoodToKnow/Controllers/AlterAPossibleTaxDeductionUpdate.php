@@ -43,10 +43,6 @@ class AlterAPossibleTaxDeductionUpdate
 
         $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
-        if (is_null($edited_year_paid)) {
-            breakout(' The year_paid you entered did not pass validation. ');
-        }
-
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
 

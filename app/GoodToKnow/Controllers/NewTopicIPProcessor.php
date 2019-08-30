@@ -68,12 +68,6 @@ class NewTopicIPProcessor
 
         $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_topic_id)) {
-
-            breakout(' Your choice did not pass validation. ');
-
-        }
-
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
 
             breakout(' NewTopicIPProcessor says: Error 124213. ');

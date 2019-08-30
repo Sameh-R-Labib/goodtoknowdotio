@@ -49,12 +49,6 @@ class WriteOverATaxableIncomeEventUpdate
 
         $edited_year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($edited_year_received)) {
-
-            breakout(' The year received you entered did not pass validation. ');
-
-        }
-
 
         // comment
 
@@ -64,12 +58,6 @@ class WriteOverATaxableIncomeEventUpdate
         // time
 
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
-
-        if (is_null($edited_time)) {
-
-            breakout(' The time you entered did not pass validation. ');
-
-        }
 
         if ($edited_time === 0) $edited_time = 1560190617;
 

@@ -31,10 +31,6 @@ class CheckMyBankingAccountTxBalancesProcessor
 
         $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_id)) {
-            breakout(' Your choice is invalid. ');
-        }
-
         $_SESSION['saved_int01'] = $chosen_id;
 
 
@@ -47,7 +43,9 @@ class CheckMyBankingAccountTxBalancesProcessor
         $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $chosen_id);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that banking account for balances. ');
+
         }
 
 

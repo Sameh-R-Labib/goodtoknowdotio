@@ -59,12 +59,10 @@ class CreateNewPostIPProcessor
 
         $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_post_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
         if (!array_key_exists($chosen_post_id, $special_post_array)) {
+
             breakout(' CreateNewPostIPProcessor: Error 421218. ');
+
         }
 
         // relate

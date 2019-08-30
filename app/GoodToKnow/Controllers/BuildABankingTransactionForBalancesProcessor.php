@@ -40,12 +40,6 @@ class BuildABankingTransactionForBalancesProcessor
 
         $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if (is_null($time)) {
-
-            breakout(' The time you entered did not pass validation. ');
-
-        }
-
         if ($time === 0) $time = 1560190617;
 
 

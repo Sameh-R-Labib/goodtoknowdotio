@@ -20,7 +20,7 @@ function standard_form_field_prep(string $field_name, int $min_length, int $max_
      * If
      * A) the post value is not set
      * B) or if it fails validation
-     * then null will be returned.
+     * then it breaks out.
      *
      * If the post value is an empty string and $min_length above is 0
      * then an empty string is returned by the function.

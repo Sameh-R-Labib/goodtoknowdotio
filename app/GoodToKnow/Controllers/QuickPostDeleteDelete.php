@@ -29,14 +29,12 @@ class QuickPostDeleteDelete
 
         $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_post_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
         $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
 
         if (!$post_object) {
+
             breakout(' EditMyPostEditor says: Error 011299. ');
+
         }
 
         $_SESSION['saved_str01'] = $post_object->markdown_file;

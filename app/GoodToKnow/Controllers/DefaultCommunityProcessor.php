@@ -25,10 +25,6 @@ class DefaultCommunityProcessor
 
         $chosen_id = integer_form_field_prep('choice', 1, 4294967295);
 
-        if (is_null($chosen_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
 
         /**
          * Make sure the submitted choice is valid for this user.
@@ -39,7 +35,9 @@ class DefaultCommunityProcessor
         if (array_key_exists($chosen_id, $special_community_array)) $is_found = true;
 
         if (!$is_found) {
+
             breakout(' Choice is not valid. ');
+
         }
 
 
@@ -64,7 +62,9 @@ class DefaultCommunityProcessor
         $was_updated = $user_object->save($db, $sessionMessage);
 
         if (!$was_updated) {
+
             breakout(' Failed to update your user record. ');
+
         }
 
 

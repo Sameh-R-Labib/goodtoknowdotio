@@ -47,18 +47,10 @@ class FeatureATaskUpdate
 
         $edited_last = integer_form_field_prep('last', 0, PHP_INT_MAX);
 
-        if (is_null($edited_last)) {
-            breakout(' The last you entered did not pass validation. ');
-        }
-
 
         // next - a timestamp
 
         $edited_next = integer_form_field_prep('next', 0, PHP_INT_MAX);
-
-        if (is_null($edited_next)) {
-            breakout(' The next you entered did not pass validation. ');
-        }
 
 
         // cycle_type - a string which is between 3 to 6 characters long

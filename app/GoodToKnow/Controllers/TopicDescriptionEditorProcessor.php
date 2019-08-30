@@ -38,15 +38,13 @@ class TopicDescriptionEditorProcessor
 
         $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_topic_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
 
         // Make sure $chosen_topic_id is among the ids of $special_topic_array
 
         if (!array_key_exists($chosen_topic_id, $special_topic_array)) {
+
             breakout(' I\'ve encountered an unexpected error namely the topic id was not found in topic array. ');
+
         }
 
 

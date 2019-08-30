@@ -33,10 +33,6 @@ class ExpungeARecurringPaymentRecordProcessor
 
         $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
         $_SESSION['saved_int01'] = $chosen_id;
 
 
@@ -49,7 +45,9 @@ class ExpungeARecurringPaymentRecordProcessor
         $recurring_payment_object = RecurringPayment::find_by_id($db, $sessionMessage, $chosen_id);
 
         if (!$recurring_payment_object) {
+
             breakout(' Unexpectedly I could not find that recurring payment. ');
+
         }
 
 

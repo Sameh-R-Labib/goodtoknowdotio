@@ -32,10 +32,6 @@ class WriteOverATaxableIncomeEventYearFilter
 
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($year_received)) {
-            breakout(' Year received did not pass validation. ');
-        }
-
 
         /**
          * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.

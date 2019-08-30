@@ -33,10 +33,6 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
 
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
-        if (is_null($year_paid)) {
-            breakout(' Your year paid did not pass validation. ');
-        }
-
 
         /**
          * 2) Delete the possible_tax_deduction(s/plural) which have the specified year_paid.
@@ -49,6 +45,7 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
         $sql .= $db->real_escape_string($year_paid);
 
         try {
+
             $db->query($sql);
 
             $query_error = $db->error;
@@ -58,13 +55,18 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
             }
 
             $num_affected_rows = $db->affected_rows;
+
         } catch (\Exception $e) {
+
             $sessionMessage .= ' LiquidateYearsPossibleTaxDeductionsGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout('');
+
         }
 
 

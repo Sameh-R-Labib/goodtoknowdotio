@@ -52,7 +52,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
-        if (is_null($edited_start_time) || is_null($edited_start_balance)) {
+        if (is_null($edited_start_balance)) {
 
             breakout(' One or more values you entered did not pass validation. ');
 

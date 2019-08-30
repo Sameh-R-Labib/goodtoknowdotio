@@ -33,10 +33,6 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($year_received)) {
-            breakout(' Year received did NOT pass validation. ');
-        }
-
 
         /**
          * 2) Delete the taxable_income_event(s/plural) which have the specified year_received.

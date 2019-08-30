@@ -31,10 +31,6 @@ class WipeOutAPossibleTaxDeductionYearFilter
 
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
-        if (is_null($year_paid)) {
-            breakout(' Your year paid did not pass validation. ');
-        }
-
 
         /**
          * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.

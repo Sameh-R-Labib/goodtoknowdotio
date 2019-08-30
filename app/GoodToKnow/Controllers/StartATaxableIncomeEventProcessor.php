@@ -43,24 +43,12 @@ class StartATaxableIncomeEventProcessor
 
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($year_received)) {
-
-            breakout(' Your year received did not pass validation. ');
-
-        }
-
 
         /**
          * Get time
          */
 
         $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
-
-        if (is_null($time)) {
-
-            breakout(' The time you entered did not pass validation. ');
-
-        }
 
         if ($time === 0) $time = 1560190617;
 

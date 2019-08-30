@@ -46,10 +46,6 @@ class TransferPostOwnershipGetPost
 
         $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_post_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
         $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
 
         if (!$post_object) {
@@ -73,7 +69,9 @@ class TransferPostOwnershipGetPost
         $derived_topic_id = TopicToPost::derive_topic_id($db, $sessionMessage, $chosen_post_id);
 
         if ($derived_topic_id === false) {
+
             breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the topic id. ');
+
         }
 
 
@@ -82,7 +80,9 @@ class TransferPostOwnershipGetPost
         $derived_community_id = CommunityToTopic::derive_community_id($db, $sessionMessage, $derived_topic_id);
 
         if ($derived_community_id === false) {
+
             breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the community id. ');
+
         }
 
 
@@ -91,7 +91,9 @@ class TransferPostOwnershipGetPost
         $community_object = Community::find_by_id($db, $sessionMessage, $derived_community_id);
 
         if ($community_object === false) {
+
             breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the community object. ');
+
         }
 
         $community_name = $community_object->community_name;
@@ -102,7 +104,9 @@ class TransferPostOwnershipGetPost
         $topic_object = Topic::find_by_id($db, $sessionMessage, $derived_topic_id);
 
         if ($topic_object === false) {
+
             breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the topic object. ');
+
         }
 
         $topic_name = $topic_object->topic_name;
@@ -113,7 +117,9 @@ class TransferPostOwnershipGetPost
         $user_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
 
         if ($user_object === false) {
+
             breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the user object. ');
+
         }
 
         $author_username = $user_object->username;

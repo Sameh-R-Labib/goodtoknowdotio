@@ -66,7 +66,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         // Deal with null
 
-        if (is_null($edited_time) || is_null($edited_bank_id) || is_null($edited_amount)) {
+        if (is_null($edited_amount)) {
 
             breakout(' One or more values did NOT pass validation. ');
 

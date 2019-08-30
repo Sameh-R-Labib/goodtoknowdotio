@@ -36,10 +36,6 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        if (is_null($year_received)) {
-            breakout(' Your year received did not pass validation. ');
-        }
-
 
         /**
          * 2) Present the TaxableIncomeEvent(s/plural) in a page whose layout is similar to the Home page.

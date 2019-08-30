@@ -33,10 +33,6 @@ class RevampABankingTransactionForBalancesEdit
 
         $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
         $_SESSION['saved_int01'] = $chosen_id;
 
 
@@ -66,7 +62,9 @@ class RevampABankingTransactionForBalancesEdit
         // Handle a failed call to the function above
 
         if (!$object->bank_id OR !empty($sessionMessage)) {
+
             breakout(' Unexpectedly error number 014332. ');
+
         }
 
         $html_title = 'Edit the banking_transaction_for_balances record';

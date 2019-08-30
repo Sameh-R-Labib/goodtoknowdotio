@@ -43,12 +43,6 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
-        if (is_null($year_paid)) {
-
-            breakout(' Your year_paid did not pass validation. ');
-
-        }
-
 
         /**
          * Use the submitted data to add a record to the database.

@@ -75,12 +75,6 @@ class EditABitcoinRecordSubmit
 
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if (is_null($edited_time)) {
-
-            breakout(' The time you entered did not pass validation. ');
-
-        }
-
         if ($edited_time === 0) $edited_time = 1560190617;
 
 

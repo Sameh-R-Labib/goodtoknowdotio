@@ -28,10 +28,6 @@ class AuthorDeletesOwnPostDelete
 
         $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (is_null($chosen_post_id)) {
-            breakout(' Your choice did not pass validation. ');
-        }
-
 
         /**
          * Make sure the chosen post is one which this user is allowed to edit.
@@ -42,11 +38,15 @@ class AuthorDeletesOwnPostDelete
         $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
 
         if (!$post_object) {
+
             breakout(' EditMyPostEditor says: Error 011299. ');
+
         }
 
         if ($post_object->user_id != $user_id) {
+
             breakout(' You can\'t delete this post. ');
+
         }
 
 

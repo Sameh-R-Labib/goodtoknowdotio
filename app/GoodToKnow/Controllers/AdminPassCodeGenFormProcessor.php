@@ -35,11 +35,14 @@ class AdminPassCodeGenFormProcessor
 
                 $is_found = true;
                 break;
+
             }
         }
 
         if (!$is_found) {
+
             breakout(' Value is not valid. ');
+
         }
 
 
@@ -50,10 +53,6 @@ class AdminPassCodeGenFormProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        if (is_null($chosen_id)) {
-            breakout(' Value is not valid. ');
-        }
 
         $_SESSION['saved_int01'] = $chosen_id;
 
