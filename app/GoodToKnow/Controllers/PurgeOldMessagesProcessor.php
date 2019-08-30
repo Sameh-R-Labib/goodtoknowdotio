@@ -5,8 +5,6 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Message;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
-use function GoodToKnow\ControllerHelpers\is_date;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class PurgeOldMessagesProcessor
 {

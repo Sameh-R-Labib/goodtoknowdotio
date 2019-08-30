@@ -8,6 +8,8 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function date_form_field_prep(string $field_name): string
 {
+    $sessionMessage = '';
+
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
     $submitted_date = standard_form_field_prep($field_name, 10, 14);

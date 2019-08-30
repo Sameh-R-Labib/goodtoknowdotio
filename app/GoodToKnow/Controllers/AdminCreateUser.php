@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
-use function GoodToKnow\ControllerHelpers\is_date;
+use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\is_password_asapair;
 use function GoodToKnow\ControllerHelpers\is_race_inoursystem;
 use function GoodToKnow\ControllerHelpers\is_title_ofaperson;
@@ -35,6 +35,8 @@ class AdminCreateUser
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
+
         $submitted_username = standard_form_field_prep('username', 7, 12);
 
         $submitted_first_try = standard_form_field_prep('first_try', 7, 264);
@@ -47,7 +49,7 @@ class AdminCreateUser
 
         $submitted_comment = standard_form_field_prep('comment', 0, 800);
 
-        $submitted_date = standard_form_field_prep('date', 10, 14);
+        $submitted_date = date_form_field_prep('date');
 
 
         /**
@@ -73,8 +75,7 @@ class AdminCreateUser
         if (!is_username_usable_for_registration($db, $sessionMessage, $submitted_username) ||
             !is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password) ||
             !is_title_ofaperson($sessionMessage, $submitted_title) ||
-            !is_race_inoursystem($sessionMessage, $submitted_race) ||
-            !is_date($sessionMessage, $submitted_date)) {
+            !is_race_inoursystem($sessionMessage, $submitted_race)) {
 
             breakout(' One of the submitted field values is invalid. ');
         }
