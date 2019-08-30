@@ -19,7 +19,9 @@ function is_crypto(string $currency): bool
         'VND', '₫', 'YER', 'ZWD', 'Z$', '¢', '₣', '₲', 'ლ', 'лв.', '₺', '₥', '₹', '৳', '₮', 'zł', 'franc'];
 
     if (in_array($currency, $fiat_currencies)) {
+
         return false;
+
     }
 
     return true;

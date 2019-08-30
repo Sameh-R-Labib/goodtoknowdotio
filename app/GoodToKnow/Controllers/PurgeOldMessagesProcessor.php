@@ -45,10 +45,6 @@ class PurgeOldMessagesProcessor
 
         $timestamp = get_timestamp_from_date($submitted_date);
 
-        if ($timestamp === null) {
-            breakout(' I failed to get a timestamp. ');
-        }
-
 
         /**
          * Delete all messages.

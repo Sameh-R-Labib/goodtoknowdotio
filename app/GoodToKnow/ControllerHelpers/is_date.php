@@ -20,8 +20,11 @@ function is_date(string &$message, string &$date): bool
     $date = trim($date);
 
     if (empty($date)) {
+
         $message .= " The date is missing. ";
+
         return false;
+
     }
 
     $number_of_slashes = substr_count($date, '/');
