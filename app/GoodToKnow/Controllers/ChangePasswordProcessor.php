@@ -61,9 +61,7 @@ class ChangePasswordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
 
-        $is_password = is_password_asapair($sessionMessage, $first_try, $new_password);
-
-        if (!$is_password) {
+        if (!is_password_asapair($sessionMessage, $first_try, $new_password)) {
 
             breakout(' The value you entered for a new password has something wrong with it. ');
 
