@@ -6,8 +6,8 @@ use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\is_password_asapair;
-use function GoodToKnow\ControllerHelpers\is_race_inoursystem;
 use function GoodToKnow\ControllerHelpers\is_username_usable_for_registration;
+use function GoodToKnow\ControllerHelpers\race_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use function GoodToKnow\ControllerHelpers\title_ofaperson_form_field_prep;
 
@@ -39,6 +39,8 @@ class AdminCreateUser
 
         require_once CONTROLLERHELPERS . DIRSEP . 'title_ofaperson_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'race_form_field_prep.php';
+
         $submitted_username = standard_form_field_prep('username', 7, 12);
 
         $submitted_first_try = standard_form_field_prep('first_try', 7, 264);
@@ -47,7 +49,7 @@ class AdminCreateUser
 
         $submitted_title = title_ofaperson_form_field_prep('title');
 
-        $submitted_race = (isset($_POST['race'])) ? $_POST['race'] : '';
+        $submitted_race = race_form_field_prep('race');
 
         $submitted_comment = standard_form_field_prep('comment', 0, 800);
 
@@ -70,11 +72,9 @@ class AdminCreateUser
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_usable_for_registration.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
-        require_once CONTROLLERHELPERS . DIRSEP . 'is_race_inoursystem.php';
 
         if (!is_username_usable_for_registration($db, $sessionMessage, $submitted_username) ||
-            !is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password) ||
-            !is_race_inoursystem($sessionMessage, $submitted_race)) {
+            !is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password)) {
 
             breakout(' One of the submitted field values is invalid. ');
         }
