@@ -57,17 +57,8 @@ class AdminCreateUser
 
 
         /**
-         * $new_user_role needs to have a value
-         * since there is a role field in the users table
-         */
-
-        $new_user_role = '';
-        $new_user_is_suspended = 0;
-
-
-        /**
-         * If any of the submitted fields are invalid
-         * store a session message and redirect to /ax1/Home/page
+         * There are special restrictions for the submitted password and username since this script
+         * is creating a new user.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_usable_for_registration.php';
@@ -78,6 +69,15 @@ class AdminCreateUser
 
             breakout(' One of the submitted field values is invalid. ');
         }
+
+
+        /**
+         * $new_user_role needs to have a value
+         * since there is a role field in the users table
+         */
+
+        $new_user_role = '';
+        $new_user_is_suspended = 0;
 
 
         /**
