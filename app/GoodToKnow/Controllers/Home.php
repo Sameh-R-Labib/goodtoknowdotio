@@ -305,7 +305,7 @@ class Home
                 }
             }
 
-            $result = EnforceSuspension::enforce_suspension($db, $error, $user_id);
+            $result = enforce_suspension($db, $error, $user_id);
 
             if ($result === false) {
                 $error .= " Failed to find the user by id. ";
