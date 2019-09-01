@@ -56,7 +56,24 @@ class Home
 
 
     /**
-     *
+     * @param $user_id
+     * @param $community_id
+     * @param $topic_id
+     * @param $post_id
+     * @param $post_name
+     * @param $post_full_name
+     * @param $topic_name
+     * @param $topic_description
+     * @param $community_name
+     * @param $community_description
+     * @param $special_community_array
+     * @param $special_topic_array
+     * @param $special_post_array
+     * @param $post_content
+     * @param $author_username
+     * @param $type_of_resource_requested
+     * @param $sessionMessage
+     * @param $is_admin
      */
     private static function show_the_home_page($user_id, $community_id, $topic_id, $post_id, $post_name, $post_full_name,
                                                $topic_name, $topic_description, $community_name, $community_description,
@@ -111,6 +128,7 @@ class Home
      * @param $error
      * @param $special_community_array
      * @param $special_topic_array
+     * @param $special_post_array
      * @param $post_content
      * @param $user_id
      * @param $community_id
@@ -148,7 +166,7 @@ class Home
                 }
             }
 
-            $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $error, $user_id);
+            $special_community_array = find_communities_of_user($db, $error, $user_id);
 
             if ($special_community_array === false) {
                 $error .= " Failed to find the array of the user's communities. ";

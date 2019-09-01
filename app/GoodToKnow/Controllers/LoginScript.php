@@ -89,7 +89,7 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-        $special_community_array = EnfoFindCommunitiesOfUser::find_communities_of_user($db, $error, $user->id);
+        $special_community_array = find_communities_of_user($db, $error, $user->id);
 
         if ($special_community_array === false) {
             $error .= " Failed to find the array of the user's communities. ";

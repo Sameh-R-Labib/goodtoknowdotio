@@ -1,6 +1,75 @@
 <?php
 
+use GoodToKnow\Models\Community;
 use GoodToKnow\Models\User;
+use GoodToKnow\Models\UserToCommunity;
+
+
+/**
+ * @param mysqli $db
+ * @param string $error
+ * @param $user_id
+ * @return array|bool
+ */
+function find_communities_of_user(mysqli $db, string &$error, $user_id)
+{
+    /**
+     * The goal of this function is to return a special_community_array.
+     * For our purposes here a special_community_array is an associative
+     * array which associates each community ID with its community name.
+     * This is restricted to ONLY the communities this user belongs to.
+     */
+
+
+    /**
+     * Get all the communities for the user.
+     */
+
+    $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
+
+    $array_of_user_to_community_objects = UserToCommunity::find_by_sql($db, $error, $sql);
+
+    if (!$array_of_user_to_community_objects) {
+
+        $error .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
+
+        return false;
+
+    }
+
+
+    /**
+     * Build the array I'm looking for.
+     */
+
+    $special_community_array = [];
+
+    foreach ($array_of_user_to_community_objects as $object) {
+
+        /**
+         * Talking about the right side of the assignment statement First we're getting a Community object.
+         */
+
+        $special_community_array[$object->community_id] = Community::find_by_id($db, $error, $object->community_id);
+
+        if (!$special_community_array[$object->community_id]) {
+
+            $error .= " find_communities_of_user() says err_no 20848. ";
+
+            return false;
+
+        }
+
+        /**
+         * Then we're getting the community_name from that object.
+         */
+
+        $special_community_array[$object->community_id] = $special_community_array[$object->community_id]->community_name;
+    }
+
+    return $special_community_array;
+}
+
 
 /**
  * @param mysqli $db
@@ -8,7 +77,7 @@ use GoodToKnow\Models\User;
  * @param int $user_id
  * @return bool
  */
-function enforce_suspension(\mysqli $db, string &$error, int $user_id)
+function enforce_suspension(mysqli $db, string &$error, int $user_id)
 {
     /**
      *   1) Determine whether or not the user is suspended per database
@@ -38,6 +107,7 @@ function enforce_suspension(\mysqli $db, string &$error, int $user_id)
 
     return true;
 }
+
 
 /**
  *
@@ -164,7 +234,7 @@ function db_connect(string &$error)
 {
     try {
 
-        $db = new \mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+        $db = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
         if ($db->connect_error) {
 
