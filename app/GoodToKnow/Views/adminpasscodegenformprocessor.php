@@ -22,7 +22,7 @@
                 <input id="pwd" name="password" type="password" value="" required minlength="7" spellcheck="false">
             </p>
         </section>
-        <p>Password: 10 to 18 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
+        <p>Password: 10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
         <h2>Person's Characteristics</h2>
         <p>Title: </p>
         <section>

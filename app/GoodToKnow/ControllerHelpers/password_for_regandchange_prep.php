@@ -19,9 +19,9 @@ function password_for_regandchange_prep(mysqli $db): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-    $submitted_first_try = standard_form_field_prep('first_try', 7, 264);
+    $submitted_first_try = standard_form_field_prep('first_try', 10, 264);
 
-    $submitted_password = standard_form_field_prep('password', 7, 264);
+    $submitted_password = standard_form_field_prep('password', 10, 264);
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
 

@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
-use function GoodToKnow\ControllerHelpers\is_password_asapair;
+use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class ChangePasswordProcessor
@@ -22,24 +22,19 @@ class ChangePasswordProcessor
 
 
         /**
-         * We should have some post variables. These include:
+         * Process the submitted form values for:
          *  - current_password
          *  - first_try
-         *  - new_password
-         *  - submit
-         */
-
-        /**
-         * I can't assume these post variables exist so I do the following.
+         *  - password
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $current_password = standard_form_field_prep('current_password', 6, 264);
+        $current_password = standard_form_field_prep('current_password', 10, 264);
 
-        $first_try = standard_form_field_prep('first_try', 6, 264);
+        require_once CONTROLLERHELPERS . DIRSEP . 'password_for_regandchange_prep.php';
 
-        $new_password = standard_form_field_prep('new_password', 6, 264);
+        $password = password_for_regandchange_prep($db);
 
 
         /**
@@ -56,23 +51,10 @@ class ChangePasswordProcessor
 
 
         /**
-         * Make sure the new password pair is syntactically and as a pair are acceptable.
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
-
-        if (!is_password_asapair($sessionMessage, $first_try, $new_password)) {
-
-            breakout(' The value you entered for a new password has something wrong with it. ');
-
-        }
-
-
-        /**
          * Put the hash of the new password in the user object.
          */
 
-        $user_object->password = password_hash($new_password, PASSWORD_DEFAULT);
+        $user_object->password = password_hash($password, PASSWORD_DEFAULT);
 
 
         // Save the user object

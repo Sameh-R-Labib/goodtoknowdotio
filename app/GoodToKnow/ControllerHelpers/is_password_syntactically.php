@@ -24,14 +24,14 @@ function is_password_syntactically(string &$message, string &$password): bool
 
 
     /**
-     * The length must be 10 to 18 characters long.
+     * The length must be 10 to 264 characters long.
      */
 
     $length = strlen($password);
 
-    if ($length > 18 || $length < 10) {
+    if ($length > 264 || $length < 10) {
 
-        $message .= " The length of your password must be 10 to 18 characters. ";
+        $message .= " The length of your password must be 10 to 264 characters. ";
 
         return false;
     }

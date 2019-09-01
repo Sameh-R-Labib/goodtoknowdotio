@@ -15,8 +15,8 @@
             <input id="first_try" name="first_try" type="password" value="" required minlength="1" spellcheck="false">
         </p>
         <p>
-            <label for="new_password">Reenter it: </label>
-            <input id="new_password" name="new_password" type="password" value="" required minlength="1"
+            <label for="password">Reenter it: </label>
+            <input id="password" name="password" type="password" value="" required minlength="1"
                    spellcheck="false">
         </p>
     </section>
