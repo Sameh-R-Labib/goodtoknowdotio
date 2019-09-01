@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
-use function GoodToKnow\ControllerHelpers\is_password_asapair;
+use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
 use function GoodToKnow\ControllerHelpers\race_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use function GoodToKnow\ControllerHelpers\title_ofaperson_form_field_prep;
@@ -43,11 +43,11 @@ class AdminCreateUser
 
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_registration_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'password_for_regandchange_prep.php';
+
         $submitted_username = username_for_registration_prep($db);
 
-        $submitted_first_try = standard_form_field_prep('first_try', 7, 264);
-
-        $submitted_password = standard_form_field_prep('password', 7, 264);
+        $submitted_password = password_for_regandchange_prep($db);
 
         $submitted_title = title_ofaperson_form_field_prep('title');
 
@@ -56,19 +56,6 @@ class AdminCreateUser
         $submitted_comment = standard_form_field_prep('comment', 0, 800);
 
         $submitted_date = date_form_field_prep('date');
-
-
-        /**
-         * There are special restrictions for the submitted password and username since this script
-         * is creating a new user.
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'is_password_asapair.php';
-
-        if (!is_password_asapair($sessionMessage, $submitted_first_try, $submitted_password)) {
-
-            breakout(' One of the submitted field values is invalid. ');
-        }
 
 
         /**
@@ -114,12 +101,16 @@ class AdminCreateUser
         $consequence_of_save = $new_user_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
+
             breakout(' The save method for User returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The save method for User did not return false but it did send back a message.
              Therefore, it probably did not create your account. ');
+
         }
 
 
@@ -136,12 +127,16 @@ class AdminCreateUser
         $consequence_of_save = $new_user_to_community_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
+
             breakout(' The save method for UserToCommunity returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The save method for UserToCommunity did not return false but it did send back a message.
              Therefore, it probably did not create the association for your account. ');
+
         }
 
 
