@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 2019-03-06
- * Time: 14:04
- */
 
 namespace GoodToKnow\Models;
-
 
 class ReadableUser
 {
@@ -88,6 +81,7 @@ class ReadableUser
          * $community_values_array has elements described as follows:
          * The key is a community id and the value is the community name which corresponds to that community id.
          */
+
         $this->id = $user->id;
         $this->username = $user->username;
         $this->password = $user->password;
@@ -112,10 +106,15 @@ class ReadableUser
          * Assign a value to $this->readable_is_suspended:
          * Replace a 0 with No and a positive or negative integer with a Yes in the is_suspended.
          */
+
         if ((int)$this->is_suspended === 0) {
+
             $this->readable_is_suspended = "No";
+
         } else {
+
             $this->readable_is_suspended = "Yes";
+
         }
     }
 
@@ -125,8 +124,11 @@ class ReadableUser
          * Assign a value to $this->readable_race:
          * Replace the hyphens and underscores with a space and capitalize the first letter of each word.
          */
+
         $characters_to_replace_array = ['-', '_'];
+
         $this->readable_race = str_replace($characters_to_replace_array, " ", $this->race);
+
         $this->readable_race = ucwords($this->readable_race);
     }
 
@@ -135,6 +137,7 @@ class ReadableUser
         /**
          * This function will assign a community name to $readable_community_name
          */
+
         $this->readable_community_name = $community_values_array[$this->id_of_default_community];
     }
 
@@ -149,8 +152,11 @@ class ReadableUser
          * Assign a value to $this->readable_role:
          * Replace the hyphens and underscores in the role with a space and capitalize the first letter of each word.
          */
+
         $characters_to_replace_array = ['-', '_'];
+
         $this->readable_role = str_replace($characters_to_replace_array, " ", $this->role);
+
         $this->readable_role = ucwords($this->readable_role);
     }
 }
