@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+
 class RevampABankingTransactionForBalancesTimeRange
 {
     function page()
@@ -25,11 +27,9 @@ class RevampABankingTransactionForBalancesTimeRange
          * 1) Validate the submitted choice of time range (A,B,C,D,E.)
          */
 
-        $choice = (isset($_POST['choice'])) ? $_POST['choice'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        if (empty($choice)) {
-            breakout(' You didn\'t choose. ');
-        }
+        $choice = standard_form_field_prep('choice', 1, 1);
 
         $values = ['A', 'B', 'C', 'D', 'E'];
 
