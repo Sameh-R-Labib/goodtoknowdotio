@@ -10,7 +10,7 @@ use mysqli;
  */
 function username_for_registration_prep(mysqli $db): string
 {
-    $sessionMessage = '';
+    global $sessionMessage;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 

@@ -8,7 +8,7 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function race_form_field_prep(string $field_name): string
 {
-    $sessionMessage = '';
+    global $sessionMessage;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
