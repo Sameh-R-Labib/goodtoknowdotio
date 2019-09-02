@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
 class RemoveComsFromUserProcessor

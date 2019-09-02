@@ -2,8 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
-use mysqli;
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
 class GiveComsToUsrProcessor
