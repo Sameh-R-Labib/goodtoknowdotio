@@ -120,7 +120,6 @@ class CreateNewPostIPProcessor
      * @param int $chosen_post_sequence_number
      * @return int
      */
-
     public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
     {
         if ($chosen_post_sequence_number == 21000000) {
