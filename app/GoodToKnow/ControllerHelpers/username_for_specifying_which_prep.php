@@ -25,7 +25,7 @@ function username_for_specifying_which_prep(mysqli $db): string
 
     $submitted_username = standard_form_field_prep('username', 7, 12);
 
-    require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
+    require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 
     if (!is_username_syntactandexists($db, $sessionMessage, $submitted_username)) {
 
