@@ -5,6 +5,8 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\TopicToPost;
 use function GoodToKnow\ControllerHelpers\before_after_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_before;
+use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_after;
 
 class CreateNewPostIPProcessor
 {
@@ -99,134 +101,22 @@ class CreateNewPostIPProcessor
 
         }
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_sequence_number_in_case_after.php';
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_sequence_number_in_case_before.php';
+
         if ($relate == 'after') {
 
-            $sequence_number = self::get_sequence_number_in_case_after($all_posts_as_objects, $chosen_post_sequence_number);
+            $sequence_number = get_sequence_number_in_case_after($all_posts_as_objects, $chosen_post_sequence_number);
 
         } else {
 
-            $sequence_number = self::get_sequence_number_in_case_before($all_posts_as_objects, $chosen_post_sequence_number);
+            $sequence_number = get_sequence_number_in_case_before($all_posts_as_objects, $chosen_post_sequence_number);
 
         }
 
         $_SESSION['saved_int02'] = $sequence_number;
 
         redirect_to("/ax1/CreateNewPostTitle/page");
-    }
-
-
-    /**
-     * @param array $all_posts_as_objects
-     * @param int $chosen_post_sequence_number
-     * @return int
-     */
-    public static function get_sequence_number_in_case_after(array $all_posts_as_objects, int $chosen_post_sequence_number)
-    {
-        if ($chosen_post_sequence_number == 21000000) {
-            breakout(' Please choose another place to put the post. ');
-        }
-
-
-        /**
-         * What it does:
-         *  It takes an array of posts belonging to a single topic.
-         *  It takes the sequence number from the chosen post.
-         *  It assumes the user wants to put the new post after the chosen post.
-         *  It returns the sequence number which the new post should have.
-         */
-
-        /**
-         * If there are no posts which have a sequence number higher than the sequence number of the chosen post then we
-         * will return 21000000 as the sequence number.
-         */
-
-        $found_a_post_with_higher_sequence_number = false;
-
-        foreach ($all_posts_as_objects as $key => $object) {
-            if ($object->sequence_number > $chosen_post_sequence_number) {
-                $found_a_post_with_higher_sequence_number = true;
-                break;
-            }
-        }
-
-        if (!$found_a_post_with_higher_sequence_number) {
-            $following_post_sequence_number = 21000000;
-        } else {
-            foreach ($all_posts_as_objects as $key => $object) {
-
-                if ($object->sequence_number > $chosen_post_sequence_number) {
-
-                    $following_post_sequence_number = $object->sequence_number;
-                    break;
-                }
-            }
-        }
-
-        if (empty($following_post_sequence_number)) {
-            breakout(' CreateNewPostIPProcessor::get_sequence_number_in_case_after says Error 764516. ');
-        }
-
-        $difference = $following_post_sequence_number - $chosen_post_sequence_number;
-
-        if (($difference) < 2) {
-            breakout(' Please choose another place to put the post. ');
-        }
-
-        $increase = intdiv($difference, 2);
-
-        return $chosen_post_sequence_number + $increase;
-    }
-
-
-    /**
-     * @param array $all_posts_as_objects
-     * @param int $chosen_post_sequence_number
-     * @return int
-     */
-    public static function get_sequence_number_in_case_before(array $all_posts_as_objects, int $chosen_post_sequence_number)
-    {
-        if ($chosen_post_sequence_number == 0) {
-            breakout(' Please choose another place to put the post. ');
-        }
-
-        $found_a_post_with_lower_sequence_number = false;
-
-        foreach ($all_posts_as_objects as $key => $object) {
-
-            if ($object->sequence_number < $chosen_post_sequence_number) {
-
-                $found_a_post_with_lower_sequence_number = true;
-                break;
-
-            }
-
-        }
-
-        if (!$found_a_post_with_lower_sequence_number) {
-            $leading_post_sequence_number = 0;
-        } else {
-            $reversed = array_reverse($all_posts_as_objects);
-
-            foreach ($reversed as $key => $object) {
-
-                if ($object->sequence_number < $chosen_post_sequence_number) {
-
-                    $leading_post_sequence_number = $object->sequence_number;
-                    break;
-
-                }
-
-            }
-        }
-
-        $difference = $chosen_post_sequence_number - $leading_post_sequence_number;
-
-        if (($difference) < 2) {
-            breakout(' Please choose another place to put the post. ');
-        }
-
-        $decrease = intdiv($difference, 2);
-
-        return $chosen_post_sequence_number - $decrease;
     }
 }
