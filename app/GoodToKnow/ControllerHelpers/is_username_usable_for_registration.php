@@ -17,7 +17,7 @@ function is_username_usable_for_registration(mysqli $db, string &$message, strin
 
     if (!is_username_syntactically($message, $username)) {
 
-        $message .= " The username field was empty. ";
+        $message .= " The username field failed validation due to its lack of conformity. ";
 
         return false;
     }

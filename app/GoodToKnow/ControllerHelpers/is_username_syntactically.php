@@ -10,7 +10,7 @@ namespace GoodToKnow\ControllerHelpers;
 function is_username_syntactically(string &$message, string &$username): bool
 {
     /**
-     * Returns true if $username fits the requirements for what a GTK.io username.
+     * Returns true if $username fits the requirements for what a GTK.io username should look like.
      * Otherwise returns false.
      *
      * Side Effects: - $username will be trimmed.
