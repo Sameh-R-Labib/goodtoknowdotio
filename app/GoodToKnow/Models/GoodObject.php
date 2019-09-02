@@ -1,10 +1,5 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 8/31/18
- * Time: 9:44 PM
- *
  * Parent class for all other database object.
  *
  * To create a new object do:
@@ -25,12 +20,19 @@
 namespace GoodToKnow\Models;
 
 
+use Exception;
+use mysqli;
+
 abstract class GoodObject
 {
 // ATTRIBUTES (all are dummies/abstract)
+
     public $id;
+
     protected static $fields = ['id'];
+
     protected static $table_name = "goodobjects";
+
 
 // METHODS
 
@@ -49,6 +51,7 @@ abstract class GoodObject
 
     // Class Helpers
 
+
     /**
      * Returns an associative ARRAY which mimics the objects attributes.
      *
@@ -60,33 +63,46 @@ abstract class GoodObject
      * attributes() won't get an ARRAY element that's not for a property for the class
      * of this object.
      */
+
+    /**
+     * @return array
+     */
     public function attributes()
     {
         $attributes = [];
+
         foreach (static::$fields as $field) {
+
             if (property_exists($this, $field)) {
+
                 $attributes[$field] = $this->$field;
+
             }
         }
         return $attributes;
     }
 
+
     /**
      * Gets db-escaped attributes (as array) from this object.
      * These attributes may (or may not) include the id attribute
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @return array
      */
-    protected function sanitized_attributes(\mysqli $db)
+    protected function sanitized_attributes(mysqli $db)
     {
         $clean_attributes = [];
 
         foreach ($this->attributes() as $key => $value) {
+
             $clean_attributes[$key] = $db->real_escape_string($value);
+
         }
+
         return $clean_attributes;
     }
+
 
     /**
      * Returns a newly formulated (in-memory) object based on values gleaned from
@@ -98,13 +114,19 @@ abstract class GoodObject
     public static function array_to_object(array $array)
     {
         $object_in_memory = new static();
+
         foreach ($array as $key => $value) {
+
             if ($object_in_memory->has_attribute($key)) {
+
                 $object_in_memory->$key = $value;
+
             }
         }
+
         return $object_in_memory;
     }
+
 
     /**
      * Returns TRUE if $possible_attribute is one of the attributes of the object.
@@ -137,30 +159,40 @@ abstract class GoodObject
      * This object's id must not be set (!isset())
      * because the id table field is autoincrement.
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @return bool
      */
-    protected function create(\mysqli $db, string &$error)
+    protected function create(mysqli $db, string &$error)
     {
         $num_affected_rows = 0;
+
         $insert_id = 0;
 
         if ($this->id) {
+
             $error .= ' GoodObject create() method says: Whichever code is calling create() is trying
             to insert a new table row using an object which already exists in the table. We know this
             because that object already has an id. ';
+
             return false;
+
         }
 
         try {
             // Gets array of this object's attributes
+
             $attributes = $this->sanitized_attributes($db);
 
+
             // Pop off the first element
+
             $array_keys_array = array_keys($attributes);
+
             array_shift($array_keys_array);
+
             $array_values_array = array_values($attributes);
+
             array_shift($array_values_array);
 
             $sql = 'INSERT INTO ' . static::$table_name;
@@ -170,51 +202,72 @@ abstract class GoodObject
             $db->query($sql);
 
             $query_error = $db->error;
+
             if (!empty($query_error)) {
+
                 $error .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
                 return false;
             }
 
             $num_affected_rows = $db->affected_rows;
+
             $insert_id = $db->insert_id;
-        } catch (\Exception $e) {
+
+        } catch (Exception $e) {
+
             $error .= ' GoodObject create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
+
         }
 
         if ($num_affected_rows) {
+
             // Set the id of this object to the insert_id from mysqli.
+
             $this->id = $insert_id;
+
             return true;
+
         } else {
+
             $error .= ' The GoodObject create() method failed to insert a row. ';
+
             return false;
+
         }
     }
+
 
     /**
      * WARNING: This method will fail if the objects you are trying
      * to insert in the table do not have ALL their attributes set
      * to VALID values.
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param array $objects_array
      * @return bool
      */
-    public static function insert_multiple_objects(\mysqli $db, string &$error, array $objects_array)
+    public static function insert_multiple_objects(mysqli $db, string &$error, array $objects_array)
     {
         /**
          * Unlike create() (AFTER it executes) this function will NOT set id field values to the objects.
          * It is assumed that the objects have unassigned id fields and do NOT exist in the database.
          * The function returns true on success and false if no objects were inserted.
          */
+
         $num_affected_rows = 0;
+
         $sql = 'INSERT INTO ' . static::$table_name;
 
         if (empty($objects_array)) {
+
             $error .= ' The function insert_multiple_objects did NOT receive any objects to insert. ';
+
             return false;
+
         }
 
         try {
@@ -228,9 +281,13 @@ abstract class GoodObject
              * The key is the attribute name and the
              * value is the attribute value.
              */
+
             $attributes = $objects_array[0]->attributes();
+
             $array_keys_array = array_keys($attributes);
+
             array_shift($array_keys_array);
+
             // Now $array_keys_array contains the field names. And they are in correct order.
 
             $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ";
@@ -239,53 +296,74 @@ abstract class GoodObject
             $db->query($sql);
 
             $query_error = $db->error;
+
             if (!empty($query_error)) {
+
                 $error .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
                 return false;
+
             }
 
             $num_affected_rows = $db->affected_rows;
-        } catch (\Exception $e) {
+
+        } catch (Exception $e) {
+
             $error .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
+
         }
 
         if ($num_affected_rows) {
+
             return true;
+
         } else {
+
             $error .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
+
             return false;
+
         }
     }
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param array $objects_array
      * @return string
      */
-    public static function value_sets_sql_string(\mysqli $db, array $objects_array)
+    public static function value_sets_sql_string(mysqli $db, array $objects_array)
     {
         /**
          * Takes an array of objects and forms
          * the sql values string for a multi object
          * insert sql statement.
          */
+
         $sql = '';
+
         $array_key_last = count($objects_array) - 1;
+
         foreach ($objects_array as $key => $object) {
+
             $is_last = ($key === $array_key_last) ? true : false;
+
             $sql .= static::value_sql_for_object($db, $object, $is_last);
+
         }
+
         return $sql;
     }
 
+
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param object $object
      * @param bool $is_last
      * @return string
      */
-    public static function value_sql_for_object(\mysqli $db, object $object, bool $is_last)
+    public static function value_sql_for_object(mysqli $db, object $object, bool $is_last)
     {
         /**
          * This function helps function value_sets_sql_string
@@ -293,17 +371,23 @@ abstract class GoodObject
          * Remember we're doing all this to put together
          * a multi insert sql statement.
          */
+
         $attributes = $object->sanitized_attributes($db);
 
+
         // Pop off the first element
+
         $array_values_array = array_values($attributes);
+
         array_shift($array_values_array);
 
         $sql = "('" . join("', '", $array_values_array) . "')";
+
         if (!$is_last) $sql .= ", ";
 
         return $sql;
     }
+
 
     /**
      * This function takes a database object and saves its
@@ -314,24 +398,26 @@ abstract class GoodObject
      * Basically, it runs update() if isset($this->id).
      * Otherwise, it runs create().
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @return bool
      */
-    public function save(\mysqli $db, string &$error)
+    public function save(mysqli $db, string &$error)
     {
         // A database object without an id is one that has never been saved in the database.
+
         return isset($this->id) ? $this->update($db, $error) : $this->create($db, $error);
     }
+
 
     // Read
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @return bool|mixed
      */
-    public static function count_all(\mysqli $db, string &$error)
+    public static function count_all(mysqli $db, string &$error)
     {
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
 
@@ -339,52 +425,66 @@ abstract class GoodObject
             $result = $db->query($sql);
 
             $query_error = $db->error;
+
             if (!empty(trim($query_error))) {
+
                 $error .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
+
                 return false;
+
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
+
             $error .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+
             return false;
+
         }
 
         if (!$result->num_rows) {
+
             $error .= ' count_all failed. ';
+
             return false;
+
         }
 
         $row = $result->fetch_row();
+
         return array_shift($row);
     }
+
 
     /**
      * Gives me an array of all the objects.
      * Or gives me false when in error state.
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @return array|bool
      */
-    public static function find_all(\mysqli $db, string &$error)
+    public static function find_all(mysqli $db, string &$error)
     {
         return static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name);
     }
 
+
     /**
      * Gives me a GoodObject for the id specified.
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param $id
      * @return bool|mixed
      */
-    public static function find_by_id(\mysqli $db, string &$error, $id)
+    public static function find_by_id(mysqli $db, string &$error, $id)
     {
         $result_array = static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name . "
 			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
 
         return !empty($result_array) ? array_shift($result_array) : false;
     }
+
 
     // Make sure to sanitize values used in $sql.
 
@@ -395,12 +495,12 @@ abstract class GoodObject
     /**
      * Gives me an array of objects for the sql I give it.
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param string $sql
      * @return array|bool
      */
-    public static function find_by_sql(\mysqli $db, string &$error, string $sql)
+    public static function find_by_sql(mysqli $db, string &$error, string $sql)
     {
         $object_array = [];
 
@@ -408,25 +508,37 @@ abstract class GoodObject
             $result = $db->query($sql);
 
             $query_error = $db->error;
+
             if (!empty(trim($query_error))) {
+
                 $error .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
                 return false;
+
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
+
             $error .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
+
         }
 
         while ($row = $result->fetch_assoc()) {
+
             $object_array[] = static::array_to_object($row);
+
         }
 
         if (empty($object_array)) {
+
             return false;
+
         }
 
         return $object_array;
     }
+
 
     // Update
 
@@ -435,22 +547,26 @@ abstract class GoodObject
      * field values by replacing them with the values found
      * in the attributes of this object.
      *
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @return bool
      */
-    protected function update(\mysqli $db, string &$error)
+    protected function update(mysqli $db, string &$error)
     {
         $num_affected_rows = 0;
 
         if ($this->id < 1 || !is_numeric($this->id)) {
+
             $error .= 'GoodObject update() says: Whichever code is calling this method is trying
             to update a table row using an object which has a negative or non-numeric id. ';
+
             return false;
+
         }
 
         try {
             $attributes = $this->sanitized_attributes($db);
+
             array_shift($attributes);
 
             /*
@@ -468,10 +584,15 @@ abstract class GoodObject
              *
              */
 
+
             // Create an array of the "column = expression" pairs
+
             $attribute_pairs = [];
+
             foreach ($attributes as $key => $value) {
+
                 $attribute_pairs[] = "`{$key}`='{$value}'";
+
             }
 
             $sql = "UPDATE " . static::$table_name . " SET ";
@@ -481,33 +602,46 @@ abstract class GoodObject
             $db->query($sql);
 
             $query_error = $db->error;
+
             if (!empty(trim($query_error))) {
+
                 $error .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
                 return false;
             }
 
             $num_affected_rows = $db->affected_rows;
-        } catch (\Exception $e) {
+
+        } catch (Exception $e) {
+
             $error .= ' GoodObject update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
         }
 
         if ($num_affected_rows == 1) {
+
             return true;
+
         } else {
+
             $error .= ' GoodObject update() FAILED to update its row. ';
+
             return false;
+
         }
     }
+
 
     // Delete
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @return bool
      */
-    public function delete(\mysqli $db, string &$error)
+    public function delete(mysqli $db, string &$error)
     {
+        $num_affected_rows = 0;
 
         $sql = "DELETE FROM " . static::$table_name . " ";
         $sql .= "WHERE `id`=" . $db->real_escape_string($this->id);
@@ -517,21 +651,33 @@ abstract class GoodObject
             $db->query($sql);
 
             $query_error = $db->error;
+
             if (!empty(trim($query_error))) {
+
                 $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
                 return false;
+
             }
 
             $num_affected_rows = $db->affected_rows;
-        } catch (\Exception $e) {
+
+        } catch (Exception $e) {
+
             $error .= ' GoodObject delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
         }
 
         if ($num_affected_rows == 1) {
+
             return true;
+
         } else {
+
             $error .= ' GoodObject delete() FAILED to delete a row. ';
+
             return false;
+
         }
     }
 }

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/16/18
- * Time: 4:42 PM
- */
 
 namespace GoodToKnow\Models;
-
 
 class TopicToPost extends GoodObject
 {
@@ -36,6 +29,7 @@ class TopicToPost extends GoodObject
      */
     public $post_id;
 
+
     /**
      * @param \mysqli $db
      * @param string $error
@@ -61,6 +55,7 @@ class TopicToPost extends GoodObject
 
         return $topictopost_object->topic_id;
     }
+
 
     /**
      * @param \mysqli $db
@@ -88,62 +83,99 @@ class TopicToPost extends GoodObject
 
 
         // get (in array) all the TopicToPost objects with a particular $topic_id.
+
         $array_of_TopicToPost = [];
+
         $count = 0;
+
         $x = null;
+
         $sql = 'SELECT *
                 FROM `topic_to_post`
                 WHERE `topic_id` = ?';
+
         try {
             $stmt = $db->stmt_init();
+
             if (!$stmt->prepare($sql)) {
+
                 $error .= ' ' . $stmt->error . ' ';
+
                 return false;
+
             } else {
                 $stmt->bind_param('i', $topic_id);
+
                 $stmt->execute();
+
                 $result = $stmt->get_result();
+
                 $numrows = $result->num_rows;
+
                 if (!$numrows) {
+
                     $stmt->close();
+
                     return false;
+
                 } else {
                     while ($x = $result->fetch_object('\GoodToKnow\Models\TopicToPost')) {
+
                         $array_of_TopicToPost[] = $x;
+
                         $count += 1;
+
                     }
+
                     $stmt->close();
+
                     $result->close();
+
                 }
             }
         } catch (\Exception $e) {
+
             $error .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
+
         }
 
         if ($count < 1) {
+
             $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
+
             return false;
+
         }
+
 
         /**
          * get (in array) all the posts listed in $array_of_TopicToPost.
          */
+
         $array_of_Posts = [];
 
         foreach ($array_of_TopicToPost as $item) {
+
             $array_of_Posts[] = Post::find_by_id($db, $error, $item->post_id);
+
         }
+
         if (empty($array_of_Posts)) {
+
             $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
+
             return false;
+
         }
 
         self::order_posts_by_sequence_number($array_of_Posts);
 
         return $array_of_Posts;
     }
+
 
     /**
      * @param \mysqli $db
@@ -160,19 +192,30 @@ class TopicToPost extends GoodObject
          * of the corresponding element in the
          * $array_of_post_objects.
          */
+
         $author_usernames_array = [];
 
         foreach ($array_of_post_objects as $key => $array_of_post_object) {
+
             $author_user_object = User::find_by_id($db, $error, $array_of_post_object->user_id);
+
             if (!$author_user_object) {
+
                 $error .= " TopicToPost::get_author_usernames() says: find_by_id failed to find the user object. ";
+
                 return false;
+
             }
+
             $author_usernames_array[$key] = $author_user_object->username;
+
         }
+
         if (empty($author_usernames_array)) return false;
+
         return $author_usernames_array;
     }
+
 
     /**
      * @param \mysqli $db
@@ -192,17 +235,24 @@ class TopicToPost extends GoodObject
          */
 
         $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
+
         if (empty($posts_array) || $posts_array === false) {
+
             return false;
+
         }
 
         $special_posts_array = [];
+
         foreach ($posts_array as $item) {
+
             $special_posts_array[$item->id] = $item->title;
+
         }
 
         return $special_posts_array;
     }
+
 
     /**
      * @param \mysqli $db
@@ -214,17 +264,24 @@ class TopicToPost extends GoodObject
     public static function special_posts_array_for_user_and_topic(\mysqli $db, string &$error, int $user_id, int $topic_id)
     {
         $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
+
         if (empty($posts_array) || $posts_array === false) {
+
             return false;
+
         }
 
         $special_posts_array = [];
+
         foreach ($posts_array as $item) {
+
             if ($item->user_id == $user_id) $special_posts_array[$item->id] = $item->title;
+
         }
 
         return $special_posts_array;
     }
+
 
     /**
      * @param array $post_objects
@@ -245,8 +302,11 @@ class TopicToPost extends GoodObject
          */
 
         if (empty($post_objects)) {
+
             $_SESSION['message'] = " TopicToPost::order_posts_by_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
+
             redirect_to("/ax1/Home/page");
+
         }
 
         $sorted = [];
@@ -256,12 +316,16 @@ class TopicToPost extends GoodObject
         $temp = $post_objects;
 
         while ($count > 0) {
+
             $sorted[] = self::post_having_lowest_sequence_number($temp);
+
             $count -= 1;
+
         }
 
         $post_objects = $sorted;
     }
+
 
     /**
      * @param array $temp
@@ -273,30 +337,40 @@ class TopicToPost extends GoodObject
          * This function removes and returns the post which has the
          * lowest sequence number.
          */
+
         if (empty($temp)) {
-            $_SESSION['message'] = " TopicToPost::post_having_lowest_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
-            redirect_to("/ax1/Home/page");
+
+            breakout(' TopicToPost::post_having_lowest_sequence_number says: Do not pass Go. Do not collect 200 dollars. ');
+
         }
 
         $key_of_lowest = -1;
+
         $lowest_sequence_number = 21000001;
 
         foreach ($temp as $key => $object) {
+
             if ($object->sequence_number <= $lowest_sequence_number) {
+
                 $key_of_lowest = $key;
+
                 $lowest_sequence_number = $object->sequence_number;
+
             }
         }
 
         if ($key_of_lowest == -1) {
-            $_SESSION['message'] = " TopicToPost::post_having_lowest_sequence_number says: Error 624312. ";
-            redirect_to("/ax1/Home/page");
+
+            breakout(' TopicToPost::post_having_lowest_sequence_number says: Error 624312. ');
+
         }
+
 
         /**
          * At this point $key_of_lowest has the key of the element
          * we want to remove and return.
          */
+
         $post_with_lowest_sequence_number = $temp[$key_of_lowest];
 
         unset($temp[$key_of_lowest]);

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/16/18
- * Time: 4:24 PM
- */
 
 namespace GoodToKnow\Models;
-
 
 class Post extends GoodObject
 {

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Models;
-
 
 class TaxableIncomeEvent extends GoodObject
 {

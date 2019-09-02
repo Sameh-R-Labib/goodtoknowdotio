@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 8/31/18
- * Time: 9:29 PM
- */
 
 namespace GoodToKnow\Models;
-
 
 class Community extends GoodObject
 {
@@ -36,6 +29,7 @@ class Community extends GoodObject
      */
     public $community_description;
 
+
     /**
      * @param \mysqli $db
      * @param string $error
@@ -48,6 +42,7 @@ class Community extends GoodObject
          * You give it a username and it returns the
          * corresponding User object or false.
          */
+
         $sql = 'SELECT * FROM `communities`
                 WHERE `community_name` = "' . $db->real_escape_string($community_name) . '" LIMIT 1';
 
@@ -56,7 +51,9 @@ class Community extends GoodObject
         $temp_error = trim($error);
 
         if (!$array_of_Community_objects || !empty($temp_error)) {
+
             return false;
+
         }
 
         return array_shift($array_of_Community_objects);

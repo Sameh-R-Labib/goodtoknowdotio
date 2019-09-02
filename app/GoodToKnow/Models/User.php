@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 9/6/18
- * Time: 12:07 AM
- */
 
 namespace GoodToKnow\Models;
-
 
 class User extends GoodObject
 {
@@ -72,6 +65,7 @@ class User extends GoodObject
      */
     public $comment;
 
+
     /**
      * @param \mysqli $db
      * @param string $error
@@ -86,41 +80,63 @@ class User extends GoodObject
          * but I chose to do this explicitly using a prepared statement since
          * that helps rebuff sql injection attacks.
          */
+
         try {
             $sql = 'SELECT *
                     FROM `users`
                     WHERE `username` = ?
                     LIMIT 1';
+
             $stmt = $db->stmt_init();
+
             if (!$stmt->prepare($sql)) {
+
                 $error .= $stmt->error . ' ';
+
                 return false;
+
             } else {
                 $stmt->bind_param('s', $username);
+
                 $stmt->execute();
+
                 $result = $stmt->get_result();
+
                 $numrows = $result->num_rows;
+
                 if (!$numrows) {
+
                     $stmt->close();
+
                     return false;
+
                 } else {
+
                     $user = $result->fetch_object('\GoodToKnow\Models\User');
+
                     $stmt->close();
+
                 }
             }
         } catch (\Exception $e) {
+
             $error .= ' User::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
+
         }
 
         if (!password_verify($password, $user->password)) {
+
             $error .= " Authentication failed! ";
+
             return false;
         }
 
         return $user;
     }
+
 
     /**
      * @param \mysqli $db
@@ -136,11 +152,14 @@ class User extends GoodObject
         $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
 
         if (!$array_of_User_objects) {
+
             return false;
+
         }
 
         return true;
     }
+
 
     /**
      * @param \mysqli $db
@@ -154,13 +173,16 @@ class User extends GoodObject
          * You give it a username and it returns the
          * corresponding User object or false.
          */
+
         $sql = 'SELECT * FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
 
         if (!$array_of_User_objects || !empty($error)) {
+
             return false;
+
         }
 
         return array_shift($array_of_User_objects);

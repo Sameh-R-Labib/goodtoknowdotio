@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samehlabib
- * Date: 10/30/18
- * Time: 9:01 PM
- */
 
 namespace GoodToKnow\Models;
-
 
 use Exception;
 use mysqli;
@@ -41,6 +34,7 @@ class MessageToUser extends GoodObject
      */
     public $user_id;
 
+
     /**
      * @param mysqli $db
      * @param string $error
@@ -58,23 +52,34 @@ class MessageToUser extends GoodObject
          */
 
         // Formulate the sql for the delete
+
         $sql = "DELETE FROM " . self::$table_name . " ";
         $sql .= "WHERE `message_id`={$message_id}";
 
         try {
             $db->query($sql);
+
             $query_error = $db->error;
+
             if (!empty($query_error)) {
+
                 $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
                 return false;
+
             }
         } catch (Exception $e) {
+
             $error .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
+
         }
 
         return true;
+
     }
+
 
     /**
      * @param mysqli $db
@@ -91,62 +96,98 @@ class MessageToUser extends GoodObject
          */
 
         // get (in array) all the MessageToUser objects with a particular $user_id.
+
         $array_of_MessageToUser = [];
+
         $count = 0;
+
         $x = null;
+
         $sql = 'SELECT *
                 FROM `message_to_user`
                 WHERE `user_id` = ?';
+
         try {
             $stmt = $db->stmt_init();
+
             if (!$stmt->prepare($sql)) {
+
                 $error .= ' ' . $stmt->error . ' ';
+
                 return false;
+
             } else {
+
                 $stmt->bind_param('i', $user_id);
+
                 $stmt->execute();
+
                 $result = $stmt->get_result();
+
                 $numrows = $result->num_rows;
+
                 if (!$numrows) {
+
                     $stmt->close();
+
                     return false;
+
                 } else {
                     while ($x = $result->fetch_object('\GoodToKnow\Models\MessageToUser')) {
+
                         $array_of_MessageToUser[] = $x;
+
                         $count += 1;
+
                     }
+
                     $stmt->close();
+
                     $result->close();
                 }
             }
         } catch (Exception $e) {
             $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
             return false;
         }
 
         if ($count < 1) {
+
             $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 87. ';
+
             return false;
+
         }
+
 
         /**
          * Now we have all the MessageToUser objects for the user.
          * But what we want is the Message objects for the user.
          */
+
         $array_of_Messages = [];
+
         foreach ($array_of_MessageToUser as $item) {
+
             $array_of_Messages[] = Message::find_by_id($db, $error, $item->message_id);
+
         }
+
         if (empty($array_of_Messages)) {
+
             $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
+
             return false;
+
         }
 
         self::order_messages_by_time($array_of_Messages);
 
         return $array_of_Messages;
     }
+
 
     /**
      * @param mysqli $db
@@ -158,21 +199,31 @@ class MessageToUser extends GoodObject
     {
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
+
         /**
          * Replace (in each Message) the user_id and created with a username and a datetime.
          *
          * Assumes $inbox_messages_array is not empty.
          */
+
         foreach ($inbox_messages_array as $message_object) {
+
             $message_object->user_id = self::get_username($db, $error, $message_object->user_id);
+
             if ($message_object->user_id === false) {
+
                 $error .= " MessageToUser::replace_attributes says: get_username failed. ";
+
                 return false;
+
             }
+
             $message_object->created = get_readable_time($message_object->created);
         }
+
         return true;
     }
+
 
     /**
      * @param mysqli $db
@@ -183,13 +234,21 @@ class MessageToUser extends GoodObject
     public static function get_username(mysqli $db, string &$error, $user_id)
     {
         $user_id = (int)$user_id;
+
         $user = User::find_by_id($db, $error, $user_id);
+
+
         // Value of $user can be false
+
         if ($user === false) {
+
             return false;
+
         }
+
         return $user->username;
     }
+
 
     /**
      * @param array $message_objects
@@ -201,8 +260,11 @@ class MessageToUser extends GoodObject
          */
 
         if (empty($message_objects)) {
+
             $_SESSION['message'] = " MessageToUser::order_messages_by_time says: Do not pass Go. Do not collect 100 dollars. ";
+
             redirect_to("/ax1/Home/page");
+
         }
 
         $sorted = [];
@@ -210,12 +272,16 @@ class MessageToUser extends GoodObject
         $count = count($message_objects);
 
         while ($count > 0) {
+
             $sorted[] = self::message_which_is_most_recent($message_objects);
+
             $count -= 1;
+
         }
 
         $message_objects = $sorted;
     }
+
 
     /**
      * @param array $message_objects
@@ -224,23 +290,28 @@ class MessageToUser extends GoodObject
     public static function message_which_is_most_recent(array &$message_objects)
     {
         if (empty($message_objects)) {
-            $_SESSION['message'] = " MessageToUser::message_which_is_most_recent says: Do not pass Go. Do not collect 300 dollars. ";
-            redirect_to("/ax1/Home/page");
+
+            breakout(' MessageToUser::message_which_is_most_recent says: Do not pass Go. Do not collect 300 dollars. ');
         }
 
         $key_of_most_recent = -1;
+
         $time_of_most_recent = 0;
 
         foreach ($message_objects as $key => $object) {
+
             if ($object->created > $time_of_most_recent) {
+
                 $key_of_most_recent = $key;
                 $time_of_most_recent = $object->created;
+
             }
         }
 
         if ($key_of_most_recent == -1) {
-            $_SESSION['message'] = " MessageToUser::message_which_is_most_recent says: Error 524210. ";
-            redirect_to("/ax1/Home/page");
+
+            breakout(' MessageToUser::message_which_is_most_recent says: Error 524210. ');
+
         }
 
         $message_which_is_most_recent = $message_objects[$key_of_most_recent];
