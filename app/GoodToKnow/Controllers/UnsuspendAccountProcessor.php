@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
 class UnsuspendAccountProcessor
 {
@@ -24,17 +24,11 @@ class UnsuspendAccountProcessor
          *  3) Redirect to a route
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-        $submitted_username = standard_form_field_prep('username', 7, 12);
-
         $db = get_db();
 
-        $is_username = GiveComsToUsrProcessor::is_username_in_our_system($db, $sessionMessage, $submitted_username);
+        require_once CONTROLLERHELPERS . DIRSEP . 'username_for_specifying_which_prep.php';
 
-        if (!$is_username) {
-            breakout(' The username is not valid. ');
-        }
+        $submitted_username = username_for_specifying_which_prep($db);
 
         $_SESSION['saved_str01'] = $submitted_username;
 

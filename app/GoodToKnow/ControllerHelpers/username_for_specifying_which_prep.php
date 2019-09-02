@@ -16,6 +16,7 @@ function username_for_specifying_which_prep(mysqli $db): string
      * So what are we checking it for?
      * 1) The standard text field with string length limits.
      * 2) If it fits the requirements for what a GTK.io username should look like.
+     * 3) If it represents a user account.
      */
 
     global $sessionMessage;
@@ -26,9 +27,9 @@ function username_for_specifying_which_prep(mysqli $db): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
-    if (!is_username_syntactically($sessionMessage, $submitted_username)) {
+    if (!is_username_syntactandexists($db, $sessionMessage, $submitted_username)) {
 
-        breakout(' The username field failed validation due to its lack of conformity. ');
+        breakout(' The username field failed validation. ');
     }
 
     return $submitted_username;
