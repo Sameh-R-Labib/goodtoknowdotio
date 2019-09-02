@@ -44,7 +44,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         // amount
 
-        $edited_amount = float_form_field_prep('amount', 0.0, 21000000000.0);
+        $edited_amount = float_form_field_prep('amount', -21000000000.0, 21000000000.0);
 
 
         // time
