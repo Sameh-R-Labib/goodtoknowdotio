@@ -42,6 +42,7 @@ define('TOPBARDIV', VIEWSINCLUDES . DIRSEP . 'topbardiv.php');
 define('CBSOFREGULARPAGES', VIEWSINCLUDES . DIRSEP . 'cbsofregularpages.php');
 define('FOOTERBAR', VIEWSINCLUDES . DIRSEP . 'footerbar.php');
 define('SUBMITABORT', VIEWSINCLUDES . DIRSEP . 'submitabort.php');
+define('HEADINGONE', VIEWSINCLUDES . DIRSEP . 'headingone.php');
 
 /**
  * More require statements
