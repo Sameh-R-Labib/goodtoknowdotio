@@ -5,6 +5,7 @@ namespace GoodToKnow\Models;
 use Exception;
 use mysqli;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
+use function GoodToKnow\ControllerHelpers\order_them_from_most_recent_to_oldest;
 
 
 class MessageToUser extends GoodObject
@@ -183,7 +184,9 @@ class MessageToUser extends GoodObject
 
         }
 
-        self::order_messages_by_time($array_of_Messages);
+        require_once CONTROLLERHELPERS . DIRSEP . 'order_them_from_most_recent_to_oldest.php';
+
+        order_them_from_most_recent_to_oldest($array_of_Messages, 'created');
 
         return $array_of_Messages;
     }
@@ -247,77 +250,5 @@ class MessageToUser extends GoodObject
         }
 
         return $user->username;
-    }
-
-
-    /**
-     * @param array $message_objects
-     */
-    public static function order_messages_by_time(array &$message_objects)
-    {
-        /**
-         * They will be ordered from most recent to oldest.
-         */
-
-        if (empty($message_objects)) {
-
-            $_SESSION['message'] = " MessageToUser::order_messages_by_time says: Do not pass Go. Do not collect 100 dollars. ";
-
-            redirect_to("/ax1/Home/page");
-
-        }
-
-        $sorted = [];
-
-        $count = count($message_objects);
-
-        while ($count > 0) {
-
-            $sorted[] = self::message_which_is_most_recent($message_objects);
-
-            $count -= 1;
-
-        }
-
-        $message_objects = $sorted;
-    }
-
-
-    /**
-     * @param array $message_objects
-     * @return mixed
-     */
-    public static function message_which_is_most_recent(array &$message_objects)
-    {
-        if (empty($message_objects)) {
-
-            breakout(' MessageToUser::message_which_is_most_recent says: Do not pass Go. Do not collect 300 dollars. ');
-        }
-
-        $key_of_most_recent = -1;
-
-        $time_of_most_recent = 0;
-
-        foreach ($message_objects as $key => $object) {
-
-            if ($object->created > $time_of_most_recent) {
-
-                $key_of_most_recent = $key;
-                $time_of_most_recent = $object->created;
-
-            }
-        }
-
-        if ($key_of_most_recent == -1) {
-
-            breakout(' MessageToUser::message_which_is_most_recent says: Error 524210. ');
-
-        }
-
-        $message_which_is_most_recent = $message_objects[$key_of_most_recent];
-
-        unset($message_objects[$key_of_most_recent]);
-
-        return $message_which_is_most_recent;
     }
 }
