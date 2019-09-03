@@ -5,9 +5,9 @@ namespace GoodToKnow\ControllerHelpers;
 /**
  * @param array $array_of_objects
  * @param $time_field_name
- * @return mixed
+ * @return object
  */
-function object_which_is_most_recent(array &$array_of_objects, $time_field_name)
+function object_which_is_most_recent(array &$array_of_objects, $time_field_name): object
 {
     /**
      * It returns the object which has the highest time value and it removes that object from the array.
