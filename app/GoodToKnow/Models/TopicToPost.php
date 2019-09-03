@@ -2,6 +2,9 @@
 
 namespace GoodToKnow\Models;
 
+use mysqli;
+use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
+
 class TopicToPost extends GoodObject
 {
     /**
@@ -31,12 +34,12 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param int $post_id
      * @return bool
      */
-    public static function derive_topic_id(\mysqli $db, string &$error, int $post_id)
+    public static function derive_topic_id(mysqli $db, string &$error, int $post_id)
     {
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `post_id` = "' . $db->real_escape_string($post_id) . '" LIMIT 1';
@@ -58,12 +61,12 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param $topic_id
      * @return array|bool
      */
-    public static function get_posts_array_for_a_topic(\mysqli $db, string &$error, int $topic_id)
+    public static function get_posts_array_for_a_topic(mysqli $db, string &$error, int $topic_id)
     {
         /**
          * Note: I've modified this method to return
@@ -171,19 +174,21 @@ class TopicToPost extends GoodObject
 
         }
 
-        self::order_posts_by_sequence_number($array_of_Posts);
+        require_once CONTROLLERHELPERS . DIRSEP . 'order_by_sequence_number.php';
+
+        order_by_sequence_number($array_of_Posts);
 
         return $array_of_Posts;
     }
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param $error
      * @param array $array_of_post_objects
      * @return array|bool
      */
-    public static function get_author_usernames(\mysqli $db, &$error, array $array_of_post_objects)
+    public static function get_author_usernames(mysqli $db, &$error, array $array_of_post_objects)
     {
         /**
          * Generate an array of author usernames.
@@ -218,12 +223,12 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param $topic_id
      * @return array|bool
      */
-    public static function special_get_posts_array_for_a_topic(\mysqli $db, string &$error, int $topic_id)
+    public static function special_get_posts_array_for_a_topic(mysqli $db, string &$error, int $topic_id)
     {
         /**
          * This function is like (and uses) get_posts_array_for_a_topic
@@ -255,13 +260,13 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param int $user_id
      * @param int $topic_id
      * @return array|bool
      */
-    public static function special_posts_array_for_user_and_topic(\mysqli $db, string &$error, int $user_id, int $topic_id)
+    public static function special_posts_array_for_user_and_topic(mysqli $db, string &$error, int $user_id, int $topic_id)
     {
         $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
 
@@ -280,101 +285,5 @@ class TopicToPost extends GoodObject
         }
 
         return $special_posts_array;
-    }
-
-
-    /**
-     * @param array $post_objects
-     */
-    public static function order_posts_by_sequence_number(array &$post_objects)
-    {
-        /**
-         * Here's how we're going to do this.
-         * We're going to build a new array called $sorted
-         * We are going to keep iterating over the $original array until it becomes empty.
-         * During each iteration we are going to take away the element with the lowest sequence
-         * number and put it at the end of $sorted. Finally we assign $post_objects the
-         * value of $sorted.
-         *
-         * Note: It is possible for two posts to have the same sequence number.
-         *
-         * Note: This function will kill your script if $post_objects is an empty array.
-         */
-
-        if (empty($post_objects)) {
-
-            $_SESSION['message'] = " TopicToPost::order_posts_by_sequence_number says: Do not pass Go. Do not collect 200 dollars. ";
-
-            redirect_to("/ax1/Home/page");
-
-        }
-
-        $sorted = [];
-
-        $count = count($post_objects);
-
-        $temp = $post_objects;
-
-        while ($count > 0) {
-
-            $sorted[] = self::post_having_lowest_sequence_number($temp);
-
-            $count -= 1;
-
-        }
-
-        $post_objects = $sorted;
-    }
-
-
-    /**
-     * @param array $temp
-     * @return mixed
-     */
-    public static function post_having_lowest_sequence_number(array &$temp)
-    {
-        /**
-         * This function removes and returns the post which has the
-         * lowest sequence number.
-         */
-
-        if (empty($temp)) {
-
-            breakout(' TopicToPost::post_having_lowest_sequence_number says: Do not pass Go. Do not collect 200 dollars. ');
-
-        }
-
-        $key_of_lowest = -1;
-
-        $lowest_sequence_number = 21000001;
-
-        foreach ($temp as $key => $object) {
-
-            if ($object->sequence_number <= $lowest_sequence_number) {
-
-                $key_of_lowest = $key;
-
-                $lowest_sequence_number = $object->sequence_number;
-
-            }
-        }
-
-        if ($key_of_lowest == -1) {
-
-            breakout(' TopicToPost::post_having_lowest_sequence_number says: Error 624312. ');
-
-        }
-
-
-        /**
-         * At this point $key_of_lowest has the key of the element
-         * we want to remove and return.
-         */
-
-        $post_with_lowest_sequence_number = $temp[$key_of_lowest];
-
-        unset($temp[$key_of_lowest]);
-
-        return $post_with_lowest_sequence_number;
     }
 }

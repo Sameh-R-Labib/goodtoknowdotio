@@ -3,6 +3,7 @@
 namespace GoodToKnow\Models;
 
 use mysqli;
+use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
 
 class CommunityToTopic extends GoodObject
 {
@@ -161,7 +162,9 @@ class CommunityToTopic extends GoodObject
 
         }
 
-        self::order_topics_by_sequence_number($array_of_Topics);
+        require_once CONTROLLERHELPERS . DIRSEP . 'order_by_sequence_number.php';
+
+        order_by_sequence_number($array_of_Topics);
 
         return $array_of_Topics;
     }
@@ -192,75 +195,5 @@ class CommunityToTopic extends GoodObject
         }
 
         return $special_topics_array;
-    }
-
-
-    /**
-     * @param array $topic_objects
-     */
-    public static function order_topics_by_sequence_number(array &$topic_objects)
-    {
-        if (empty($topic_objects)) {
-
-            breakout(' CommunityToTopic::order_topics_by_sequence_number says: Do not pass Go. Do not collect 200 dollars. ');
-
-        }
-
-        $sorted = [];
-
-        $count = count($topic_objects);
-
-        $temp = $topic_objects;
-
-        while ($count > 0) {
-
-            $sorted[] = self::topic_having_lowest_sequence_number($temp);
-
-            $count -= 1;
-
-        }
-
-        $topic_objects = $sorted;
-    }
-
-
-    /**
-     * @param array $temp
-     * @return mixed
-     */
-    public static function topic_having_lowest_sequence_number(array &$temp)
-    {
-        if (empty($temp)) {
-
-            breakout(' CommunityToTopic::topic_having_lowest_sequence_number says: Do not pass Go. Do not collect 200 dollars. ');
-
-        }
-
-        $key_of_lowest = -1;
-
-        $lowest_sequence_number = 21000001;
-
-        foreach ($temp as $key => $object) {
-
-            if ($object->sequence_number <= $lowest_sequence_number) {
-
-                $key_of_lowest = $key;
-
-                $lowest_sequence_number = $object->sequence_number;
-
-            }
-        }
-
-        if ($key_of_lowest == -1) {
-
-            breakout(' CommunityToTopic::topic_having_lowest_sequence_number says: Error 124212. ');
-
-        }
-
-        $topic_with_lowest_sequence_number = $temp[$key_of_lowest];
-
-        unset($temp[$key_of_lowest]);
-
-        return $topic_with_lowest_sequence_number;
     }
 }
