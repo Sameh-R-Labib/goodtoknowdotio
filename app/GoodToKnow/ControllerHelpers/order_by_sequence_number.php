@@ -19,6 +19,8 @@ function order_by_sequence_number(array &$array_of_objects)
 
     $temp_array = $array_of_objects;
 
+    require_once CONTROLLERHELPERS . DIRSEP . 'object_having_lowest_sequence_number.php';
+
     while ($count > 0) {
 
         $array_of_rearranged_objects[] = object_having_lowest_sequence_number($temp_array);
