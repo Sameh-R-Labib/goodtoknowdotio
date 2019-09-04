@@ -8,6 +8,8 @@ class CreateNewPostProcessor
 {
     function page()
     {
+        $chosen_topic_id = 0;  // Temporary assignment to satisfy PhpStorm.
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
