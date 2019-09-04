@@ -16,8 +16,7 @@ class CreateNewPostProcessor
         /**
          * Redirect
          *
-         * Where we redirect depends on whether or not
-         * there is more than one post in the chosen topic.
+         * Where we redirect depends on whether or not there is one or more post in the chosen topic.
          */
 
         $db = get_db();
@@ -31,12 +30,15 @@ class CreateNewPostProcessor
         if ($count > 0) {
 
             // We have some posts in our topic already
+
             redirect_to("/ax1/CreateNewPostInsertPoint/page");
 
         } else {
 
             // There are NO posts in our topic
+
             $_SESSION['saved_int02'] = 10500000;
+
             redirect_to("/ax1/CreateNewPostTitle/page");
 
         }
