@@ -11,7 +11,6 @@ class SeeOneYearsPossibleTaxDeductions
          * so that the subsequent code can display the possible_tax_deduction(s/plural) for that year.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

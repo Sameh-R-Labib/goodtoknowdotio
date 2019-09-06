@@ -15,9 +15,7 @@ class TransferPostOwnershipGetUsername
          * If the confirmation is negative then it will reset the session variables used so far and redirect to home page.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
 
         kick_out_nonadmins();
 

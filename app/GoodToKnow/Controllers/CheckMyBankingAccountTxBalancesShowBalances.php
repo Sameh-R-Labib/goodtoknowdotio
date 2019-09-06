@@ -30,7 +30,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    Also, transform field data to a more human friendly format.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
         global $special_community_array;

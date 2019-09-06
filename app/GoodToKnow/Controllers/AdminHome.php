@@ -6,7 +6,6 @@ class AdminHome
 {
     function page()
     {
-        global $is_logged_in;
         global $is_admin;
         global $sessionMessage;
         global $special_community_array;

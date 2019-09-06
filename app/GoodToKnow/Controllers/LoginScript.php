@@ -5,6 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
+use mysqli;
 use function GoodToKnow\ControllerHelpers\is_password_syntactically;
 use function GoodToKnow\ControllerHelpers\is_username_syntactically;
 
@@ -30,27 +31,15 @@ class LoginScript
 
         self::store_application_state($db, $sessionMessage, $user);
 
-        self::report_on_findings($sessionMessage);
-    }
-
-
-    /**
-     * @param string $error
-     */
-    private static function report_on_findings(string $error)
-    {
-        $error .= " GoodToKnow.io works best with 🗺️: Opera, Chrome, Brave. ";
-        $_SESSION['message'] = $error;
-        reset_feature_session_vars();
-        redirect_to("/ax1/Home/page");
+        breakout(' GoodToKnow.io works best with 🗺️: Opera, Chrome, Brave. ');
     }
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param object $user
      */
-    private static function store_application_state(\mysqli $db, string &$error, object $user)
+    private static function store_application_state(mysqli $db, string &$error, object $user)
     {
         /**
          * Put user's data in session.

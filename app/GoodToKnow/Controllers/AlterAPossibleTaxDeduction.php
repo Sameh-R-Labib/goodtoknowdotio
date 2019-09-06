@@ -13,7 +13,6 @@ class AlterAPossibleTaxDeduction
          * to narrow down the choices for which possible_tax_deduction to edit.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

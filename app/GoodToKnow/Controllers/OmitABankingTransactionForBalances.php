@@ -13,7 +13,6 @@ class OmitABankingTransactionForBalances
          * time range the user wants to see further choices of transactions for.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

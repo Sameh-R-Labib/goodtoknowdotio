@@ -17,7 +17,6 @@ class MessageTheAuthor
          * At the top of the form there shall be the statement: "You can use markdown and UTF-8 characters."
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $author_username;
         global $post_name;

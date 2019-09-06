@@ -23,8 +23,6 @@ class MemberMemEdFormProc
          *  7) Update the database with this User object.
          */
 
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $saved_str01;                // The member's username
         global $saved_int01;                // The member's id

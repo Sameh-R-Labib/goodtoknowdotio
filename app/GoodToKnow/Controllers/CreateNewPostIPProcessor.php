@@ -25,7 +25,6 @@ class CreateNewPostIPProcessor
          * of creating a new record in the posts table.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $special_post_array;
         global $saved_int01;

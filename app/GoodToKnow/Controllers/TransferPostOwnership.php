@@ -18,10 +18,8 @@ class TransferPostOwnership
          * As usual the topics presented are the topics in the current community.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $community_id;
-        global $is_admin;
 
         kick_out_nonadmins();
 

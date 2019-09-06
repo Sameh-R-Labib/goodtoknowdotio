@@ -8,8 +8,6 @@ class KommunityDescriptionEditorForm
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $saved_str01; // community name
         global $saved_int01; // community id

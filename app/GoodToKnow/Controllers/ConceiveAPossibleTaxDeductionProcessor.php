@@ -17,7 +17,6 @@ class ConceiveAPossibleTaxDeductionProcessor
          * $_POST['label'] $_POST['year_paid']
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

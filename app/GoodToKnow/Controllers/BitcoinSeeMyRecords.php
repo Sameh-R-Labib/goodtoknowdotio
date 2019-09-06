@@ -12,7 +12,6 @@ class BitcoinSeeMyRecords
     {
         global $user_id;
         global $sessionMessage;
-        global $is_logged_in;
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;

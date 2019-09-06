@@ -18,10 +18,8 @@ class QuickPostDelete
          * first we need to have the admin identify the post. So this first step will help.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $community_id;
-        global $is_admin;
 
         kick_out_nonadmins();
 

@@ -16,7 +16,6 @@ class WipeOutAPossibleTaxDeductionDelete
          *    and asks for approval for deletion to proceed.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

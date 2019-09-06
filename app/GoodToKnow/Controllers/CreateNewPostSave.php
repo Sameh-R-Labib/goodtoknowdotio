@@ -10,7 +10,6 @@ class CreateNewPostSave
     function page()
     {
         global $sessionMessage;
-        global $is_logged_in;
         global $user_id;
         global $topic_id;
         global $saved_str01;                // The main title

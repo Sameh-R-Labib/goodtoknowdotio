@@ -16,7 +16,6 @@ class InitializeABitcoinRecordProcessor
          * $_POST['address']
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

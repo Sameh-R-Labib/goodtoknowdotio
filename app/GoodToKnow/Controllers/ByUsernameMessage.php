@@ -11,7 +11,6 @@ class ByUsernameMessage
          * a user if the only thing you know about this user is their username.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

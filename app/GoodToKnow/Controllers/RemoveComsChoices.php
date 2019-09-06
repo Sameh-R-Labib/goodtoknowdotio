@@ -9,10 +9,8 @@ class RemoveComsChoices
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
-        global $saved_str01; // Has user's username
+        global $saved_str01;    // user's username
 
         kick_out_nonadmins();
 

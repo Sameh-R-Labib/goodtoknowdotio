@@ -17,7 +17,6 @@ class MakeARecurringPaymentRecord
          * recurring_payment record.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

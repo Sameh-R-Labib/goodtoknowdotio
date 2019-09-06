@@ -15,7 +15,6 @@ class InduceATaskCreate
          * The remaining field values will be set to default values.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

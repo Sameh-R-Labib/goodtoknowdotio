@@ -16,7 +16,6 @@ class MakeARecurringPaymentRecordProcessor
          * $_POST['label']
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

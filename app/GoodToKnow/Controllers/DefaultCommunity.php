@@ -7,7 +7,6 @@ class DefaultCommunity
     function page()
     {
         global $sessionMessage;
-        global $is_logged_in;
         global $special_community_array;
 
         kick_out_loggedoutusers();

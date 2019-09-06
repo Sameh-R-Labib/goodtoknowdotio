@@ -16,7 +16,6 @@ class GenerateABankingAccountForBalancesProcessor
          * $_POST['acct_name']
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

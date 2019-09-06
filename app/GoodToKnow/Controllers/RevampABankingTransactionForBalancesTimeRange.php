@@ -13,7 +13,6 @@ class RevampABankingTransactionForBalancesTimeRange
          * 4) Redirect.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

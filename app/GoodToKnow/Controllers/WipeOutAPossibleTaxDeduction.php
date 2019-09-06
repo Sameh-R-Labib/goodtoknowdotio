@@ -15,7 +15,6 @@ class WipeOutAPossibleTaxDeduction
          * possible_tax_deduction to delete.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

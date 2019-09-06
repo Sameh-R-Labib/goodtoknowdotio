@@ -10,8 +10,6 @@ class NewTopicSave
     function page()
     {
         global $sessionMessage;
-        global $is_logged_in;
-        global $is_admin;
         global $community_id;
         global $saved_str01;                // The topic name
         global $saved_str02;                // The topic description

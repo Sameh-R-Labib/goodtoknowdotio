@@ -17,7 +17,6 @@ class GenerateABankingAccountForBalances
          * acct_name for the "to be created" banking_acct_for_balances record.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

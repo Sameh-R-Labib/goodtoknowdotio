@@ -10,7 +10,6 @@ class InduceATask
          * Create a task record based on a label for it.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

@@ -10,7 +10,6 @@ class DefaultCommunityProcessor
     function page()
     {
         global $user_id;
-        global $is_logged_in;
         global $sessionMessage;
         global $special_community_array;
 

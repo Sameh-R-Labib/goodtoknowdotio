@@ -14,7 +14,6 @@ class UploadProcessor
          * It shall do all this while making sure the upload contains no malicious code.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

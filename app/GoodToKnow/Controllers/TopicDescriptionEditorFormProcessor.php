@@ -22,8 +22,6 @@ class TopicDescriptionEditorFormProcessor
          *  7) Update the database with this Topic object.
          */
 
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $saved_str01;                // The topic's name
         global $saved_int01;                // The topic's id

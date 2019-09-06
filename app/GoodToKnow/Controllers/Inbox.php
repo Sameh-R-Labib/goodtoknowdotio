@@ -10,7 +10,6 @@ class Inbox
     {
         global $user_id;
         global $sessionMessage;
-        global $is_logged_in;
         global $is_admin;
         global $special_community_array;
         global $community_id;

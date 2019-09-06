@@ -9,7 +9,6 @@ class EditMyPostEditor
 {
     function page()
     {
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
         global $url_of_most_recent_upload;

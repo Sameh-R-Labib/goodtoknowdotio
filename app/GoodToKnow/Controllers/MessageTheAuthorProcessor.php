@@ -15,7 +15,6 @@ class MessageTheAuthorProcessor
          * It also saves a record in the message_to_user table.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
         global $author_id;

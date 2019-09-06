@@ -14,7 +14,6 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          * 2) Present the PossibleTaxDeduction(s/plural) in a page whose layout is similar to the Home page.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
         global $is_admin;

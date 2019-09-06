@@ -15,7 +15,6 @@ class AlterAPossibleTaxDeductionEdit
          * 3) Present a form which is populated with data from the possible_tax_deduction object.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

@@ -20,9 +20,7 @@ class NewTopicInsertPoint
          */
 
         global $community_id;
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
 
         kick_out_nonadmins();
 

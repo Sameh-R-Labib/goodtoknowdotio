@@ -8,8 +8,6 @@ class TopicDescriptionEditor
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $community_id;
 

@@ -15,7 +15,6 @@ class EditABitcoinRecordProcessor
          * 3) Present a form which is populated with data from the object. (except the bitcoin address should not be changeable.)
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

@@ -9,9 +9,7 @@ class TransferPostOwnershipProcessor
     function page()
     {
         global $special_topic_array;
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
 
         kick_out_nonadmins();
 

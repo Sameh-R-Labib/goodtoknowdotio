@@ -11,7 +11,6 @@ class ChangePasswordProcessor
     function page()
     {
         global $user_id;
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

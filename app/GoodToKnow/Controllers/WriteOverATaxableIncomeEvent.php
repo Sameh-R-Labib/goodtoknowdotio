@@ -11,7 +11,6 @@ class WriteOverATaxableIncomeEvent
          * choices for which taxable_income_event to edit.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

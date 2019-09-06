@@ -17,8 +17,6 @@ class PurgeOldMessages
          * sent before the zero hour (12am) will be deleted.
          */
 
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
 
         kick_out_nonadmins();

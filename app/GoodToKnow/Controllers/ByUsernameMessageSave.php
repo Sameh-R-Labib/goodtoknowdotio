@@ -22,7 +22,6 @@ class ByUsernameMessageSave
          * It ALSO saves a record in the message_to_user table.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;        // logged in user's ID number
         global $saved_str01;

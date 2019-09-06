@@ -18,7 +18,6 @@ class BuildABankingTransactionForBalancesProcessor
          * $_POST['label'] $_POST['time']
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

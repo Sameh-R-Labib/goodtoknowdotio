@@ -8,8 +8,6 @@ class RemoveComsFromUserProcessor
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
 
         kick_out_nonadmins();

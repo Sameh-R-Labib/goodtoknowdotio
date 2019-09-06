@@ -16,9 +16,7 @@ class TransferPostOwnershipTransferIt
          * Here we take the username submitted and use it to make its id part of the record for for the post.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
         global $saved_int02;  // Post id
 
         kick_out_nonadmins();

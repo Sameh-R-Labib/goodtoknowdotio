@@ -19,7 +19,6 @@ class StartATaxableIncomeEvent
          * label + year_received + time for the "to be created" taxable_income_event record.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

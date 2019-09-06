@@ -8,8 +8,6 @@ class SuspendAccountSuspend
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $saved_str01; // Has user's username
 

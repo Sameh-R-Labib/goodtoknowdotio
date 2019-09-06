@@ -17,13 +17,11 @@ class QuickPostDeleteDelProc
          * redirect to the home page.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $saved_int02;
         global $saved_int01;
         global $saved_str01;
         global $saved_str02;
-        global $is_admin;
 
         kick_out_nonadmins();
 

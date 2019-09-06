@@ -15,7 +15,6 @@ class PopulateABankingAccountForBalancesProcessor
          * 3) Present a form which is populated with data from the banking_acct_for_balances object.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

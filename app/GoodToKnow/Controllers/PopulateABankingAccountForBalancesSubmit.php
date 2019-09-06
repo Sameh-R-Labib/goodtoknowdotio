@@ -20,7 +20,6 @@ class PopulateABankingAccountForBalancesSubmit
          * 4) Update/save the updated record in the database.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $saved_int01;    // record id
 

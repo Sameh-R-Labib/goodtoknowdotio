@@ -17,9 +17,7 @@ class PurgeOldMessagesProcessor
          *   3) Report success or failure.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
 
         kick_out_nonadmins();
 

@@ -15,7 +15,6 @@ class NukeATaxableIncomeEventYearFilter
          * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

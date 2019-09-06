@@ -13,7 +13,6 @@ class EditMyPostEditProcessor
          * edited post's markdown and html files.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $saved_str01;                // path for markdown file
         global $saved_str02;                // path for html file

@@ -17,7 +17,6 @@ class RevampABankingTransactionForBalancesChooseRecord
          * The ultimate goal is to present a BankingTransactionForBalances for editing.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
         global $saved_int01;     // min time

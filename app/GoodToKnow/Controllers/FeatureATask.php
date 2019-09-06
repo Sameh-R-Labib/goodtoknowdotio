@@ -12,7 +12,6 @@ class FeatureATask
          * Present the Task(s/plural) as radio buttons.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

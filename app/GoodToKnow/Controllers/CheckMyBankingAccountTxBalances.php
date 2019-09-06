@@ -17,7 +17,6 @@ class CheckMyBankingAccountTxBalances
          *  It will present to you a selection of your banking  accounts so you can choose one.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;            // We need this.
 

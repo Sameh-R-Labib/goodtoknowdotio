@@ -21,7 +21,6 @@ class WriteOverATaxableIncomeEventUpdate
          * 5) Report success.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $saved_int01;    // record id
 

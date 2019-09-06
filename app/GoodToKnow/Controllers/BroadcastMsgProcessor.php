@@ -17,9 +17,7 @@ class BroadcastMsgProcessor
          * users will receive this message.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
         global $user_id;
 
         kick_out_nonadmins();

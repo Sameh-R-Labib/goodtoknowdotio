@@ -10,9 +10,7 @@ class CleanupYearsTaxableIncomeEvents
          * Note: It's an admin script.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
 
         kick_out_nonadmins();
 

@@ -17,9 +17,7 @@ class PurgeNinetyDayOldBTFBs
          * 4) Redirect to Home page.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
 
         kick_out_nonadmins();
 

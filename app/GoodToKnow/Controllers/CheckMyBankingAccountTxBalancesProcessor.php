@@ -15,7 +15,6 @@ class CheckMyBankingAccountTxBalancesProcessor
          * 3) Redirect to next piece of code.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

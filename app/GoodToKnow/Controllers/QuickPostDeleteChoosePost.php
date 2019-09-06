@@ -19,9 +19,7 @@ class QuickPostDeleteChoosePost
          * with the username of its author.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
         global $saved_int01;        // id of topic
 
         kick_out_nonadmins();

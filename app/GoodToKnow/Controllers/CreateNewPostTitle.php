@@ -10,7 +10,6 @@ class CreateNewPostTitle
          * Present a form for entering the two parts which comprise the title of the new post.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

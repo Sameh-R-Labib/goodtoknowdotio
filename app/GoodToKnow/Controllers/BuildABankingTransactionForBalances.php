@@ -19,7 +19,6 @@ class BuildABankingTransactionForBalances
          * label + time for the "to be created" banking_transaction_for_balances record.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

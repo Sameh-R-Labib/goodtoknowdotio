@@ -15,7 +15,6 @@ class CreateNewPost
          * which topic the post belongs in.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $community_id;
 

@@ -18,7 +18,6 @@ class InitializeABitcoinRecord
          * address for the "to be created" bitcoin record.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

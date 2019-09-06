@@ -20,7 +20,6 @@ class ConceiveAPossibleTaxDeduction
          * label + year_paid for the "to be created" possible_tax_deduction record.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

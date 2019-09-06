@@ -8,8 +8,6 @@ class GiveComsChoicesProcessor
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $saved_str01; // Has user's username
         global $saved_int01; // Has user's id

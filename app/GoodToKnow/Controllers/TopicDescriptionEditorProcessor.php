@@ -20,8 +20,6 @@ class TopicDescriptionEditorProcessor
          *  4) Redirect to a function which will bring up the editor for the description.
          */
 
-        global $is_logged_in;
-        global $is_admin;
         global $sessionMessage;
         global $special_topic_array;
 

@@ -3,7 +3,6 @@
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $special_topic_array;
-global $is_logged_in;
 global $sessionMessage;
 
 kick_out_loggedoutusers();

@@ -11,7 +11,6 @@ class ChangePassword
          * new password. The new password must be entered twice.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

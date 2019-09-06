@@ -11,7 +11,6 @@ class GawkAtAllTaxableIncomeEvents
          * so that the subsequent code can display the taxable_income_event(s/plural) for that year.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

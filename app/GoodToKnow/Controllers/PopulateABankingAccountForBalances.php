@@ -15,7 +15,6 @@ class PopulateABankingAccountForBalances
          * record he wants to edit. It will present a series of radio buttons to choose from.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

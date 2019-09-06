@@ -15,7 +15,6 @@ class WriteOverATaxableIncomeEventEdit
          * 3) Present a form which is populated with data from the taxable_income_event object.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

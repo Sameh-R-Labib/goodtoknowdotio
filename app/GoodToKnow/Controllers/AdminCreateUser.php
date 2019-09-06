@@ -15,10 +15,8 @@ class AdminCreateUser
 {
     function page()
     {
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
-        global $saved_int01; // choice
+        global $saved_int01;    // choice
 
         kick_out_nonadmins();
 

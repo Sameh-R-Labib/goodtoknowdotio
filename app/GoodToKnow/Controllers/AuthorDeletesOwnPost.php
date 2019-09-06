@@ -18,7 +18,6 @@ class AuthorDeletesOwnPost
          * first we need to have the user identify the post. So this first step will help.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $community_id;
 

@@ -19,7 +19,6 @@ class CreateNewPostInsertPoint
          * Note: Here it is assumed there is at least one post in the chosen topic. Otherwise, this route will have had been skipped.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $saved_int01;
 

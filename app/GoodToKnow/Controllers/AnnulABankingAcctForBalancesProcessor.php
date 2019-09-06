@@ -19,7 +19,6 @@ class AnnulABankingAcctForBalancesProcessor
          * 3) Presents a form containing data from the record and asking for permission to delete.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

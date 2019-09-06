@@ -17,7 +17,6 @@ class ExpungeARecurringPaymentRecordProcessor
          * 3) Presents a form containing data from the record and asking for confirmation to delete.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

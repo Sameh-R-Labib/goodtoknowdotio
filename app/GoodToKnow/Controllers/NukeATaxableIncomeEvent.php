@@ -13,7 +13,6 @@ class NukeATaxableIncomeEvent
          * to narrow down the choices for which taxable_income_event to delete.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

@@ -15,7 +15,6 @@ class PolishARecurringPaymentRecordProcessor
          * 3) Present a form which is populated with data from the recurring_payment object.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
 
         kick_out_loggedoutusers();

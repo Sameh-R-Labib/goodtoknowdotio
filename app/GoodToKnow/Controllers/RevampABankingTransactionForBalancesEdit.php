@@ -16,7 +16,6 @@ class RevampABankingTransactionForBalancesEdit
          * 3) Present a form which is populated with data from the banking_transaction_for_balances object.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;
 

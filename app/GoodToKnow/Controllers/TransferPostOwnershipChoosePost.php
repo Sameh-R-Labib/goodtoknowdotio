@@ -16,9 +16,7 @@ class TransferPostOwnershipChoosePost
          * For each post we will show the complete name of the post along with the username of its author.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
-        global $is_admin;
         global $saved_int01;        // id of topic
 
         kick_out_nonadmins();

@@ -16,7 +16,6 @@ class ByUsernameMessageProcessor
          * the session.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_username;
         global $url_of_most_recent_upload;

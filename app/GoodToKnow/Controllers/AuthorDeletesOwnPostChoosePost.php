@@ -17,7 +17,6 @@ class AuthorDeletesOwnPostChoosePost
          * we'll store a session message and redirect back home.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $saved_int01;        // id of topic
         global $user_id;

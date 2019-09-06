@@ -21,10 +21,8 @@ class NewTopicIPProcessor
          * Once that's done redirect to the next script.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $community_id;
-        global $is_admin;
 
         kick_out_nonadmins();
 

@@ -16,7 +16,6 @@ class EditABitcoinRecord
          * buttons to choose from.
          */
 
-        global $is_logged_in;
         global $sessionMessage;
         global $user_id;            // We need this.
 
