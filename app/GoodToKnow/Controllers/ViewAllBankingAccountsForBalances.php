@@ -14,11 +14,11 @@ class ViewAllBankingAccountsForBalances
          * Similar to RecurringPaymentSeeMyRecords.
          */
 
-        global $user_id;
-        global $sessionMessage;
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
+        global $sessionMessage;
+        global $user_id;
 
         kick_out_loggedoutusers();
 
