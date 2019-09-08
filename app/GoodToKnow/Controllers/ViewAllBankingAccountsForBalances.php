@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-use GoodToKnow\Models\BankingAcctForBalances;
 
 class ViewAllBankingAccountsForBalances
 {
@@ -17,26 +16,12 @@ class ViewAllBankingAccountsForBalances
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
-        global $sessionMessage;
-        global $user_id;
 
-        kick_out_loggedoutusers();
+        $array_of_objects = [];   // Just to make PhpStorm happy.
 
-        $db = get_db();
+        global $sessionMessage;   // Just to make PhpStorm happy.
 
-
-        /**
-         * Get an array of BankingAcctForBalances objects for the user who has id == $user_id.
-         */
-
-        $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
-
-        $array_of_objects = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
-
-        if (!$array_of_objects || !empty($sessionMessage)) {
-            breakout(' I could NOT find any banking accounts for balances ¯\_(ツ)_/¯. ');
-        }
-
+        require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
         /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
