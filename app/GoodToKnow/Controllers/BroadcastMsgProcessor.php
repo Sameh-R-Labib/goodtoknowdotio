@@ -2,10 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Message;
 use GoodToKnow\Models\MessageToUser;
 use GoodToKnow\Models\User;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class BroadcastMsgProcessor
 {
@@ -18,7 +16,6 @@ class BroadcastMsgProcessor
          */
 
         global $sessionMessage;
-        global $user_id;
 
         kick_out_nonadmins();
 
@@ -31,29 +28,7 @@ class BroadcastMsgProcessor
          * $_POST['markdown']
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-        $markdown = standard_form_field_prep('markdown', 1, 1500);
-
-        $parsedown_object = new \ParsedownExtra();
-        $parsedown_object->setMarkupEscaped(true);
-        $parsedown_object->setSafeMode(true);
-        $html = $parsedown_object->text($markdown);
-
-        $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
-
-        $message_object = Message::array_to_object($message_array);
-
-        $db = get_db();
-
-        $result = $message_object->save($db, $sessionMessage);
-
-        if (!$result) {
-
-            breakout(' Unexpected I was unable to save the new message. ');
-
-        }
-
+        require CONTROLLERINCLUDES . DIRSEP . "add_a_message_in_the_database.php";
 
         /**
          * Create an array of MessageToUser objects

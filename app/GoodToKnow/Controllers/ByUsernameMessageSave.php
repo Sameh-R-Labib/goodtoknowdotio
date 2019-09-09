@@ -2,10 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Message;
 use GoodToKnow\Models\MessageToUser;
 use GoodToKnow\Models\User;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class ByUsernameMessageSave
 {
@@ -23,7 +21,6 @@ class ByUsernameMessageSave
          */
 
         global $sessionMessage;
-        global $user_id;        // logged in user's ID number
         global $saved_str01;
 
         kick_out_loggedoutusers();
@@ -32,58 +29,18 @@ class ByUsernameMessageSave
 
 
         /**
+         * $message_object and $db are defined when we include add_a_message_in_the_database.php.
+         * I know the PhpStorm linter does not recognize this and marks up the code below as if
+         * something is wrong with it. But I can't do anything about it.
+         */
+
+
+        /**
          * Verify that a string representing the message was submitted.
          * $_POST['markdown']
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-        $markdown = standard_form_field_prep('markdown', 1, 1500);
-
-
-        /**
-         * Generate the html equivalent for $markdown.
-         */
-
-        $parsedown_object = new \ParsedownExtra();
-        $parsedown_object->setMarkupEscaped(true);
-        $parsedown_object->setSafeMode(true);
-        $html = $parsedown_object->text($markdown);
-
-
-        /**
-         * Create an associative array containing the attribute names and values.
-         *   WARNING: Do Not include id attribute. Do Include all other attributes and assign them values.
-         *
-         * Attributes:
-         *  - user_id
-         *  - created
-         *  - content
-         */
-
-        $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
-
-
-        /**
-         * Call array_to_object($array) to create the object in memory.
-         */
-
-        $message_object = Message::array_to_object($message_array);
-
-
-        /**
-         * Save that object to the database using save().
-         */
-
-        $db = get_db();
-
-        $result = $message_object->save($db, $sessionMessage);
-
-        if (!$result) {
-
-            breakout(' Unexpected I was unable to save the new message. ');
-
-        }
+        require CONTROLLERINCLUDES . DIRSEP . "add_a_message_in_the_database.php";
 
 
         /**
