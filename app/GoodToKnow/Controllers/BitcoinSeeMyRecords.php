@@ -2,9 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\get_readable_time;
-use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-
 class BitcoinSeeMyRecords
 {
     function page()
@@ -26,15 +23,9 @@ class BitcoinSeeMyRecords
         /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($array_of_bitcoin_objects as $bitcoin_object) {
-            $bitcoin_object->time = get_readable_time($bitcoin_object->time);
 
-            $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);
+            require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
 
-            $bitcoin_object->price_point = readable_amount_of_money($bitcoin_object->currency, $bitcoin_object->price_point);
-
-            // Since we know these two are crypto we don't need to use readable_amount_of_money()
-            $bitcoin_object->initial_balance = number_format($bitcoin_object->initial_balance, 8);
-            $bitcoin_object->current_balance = number_format($bitcoin_object->current_balance, 8);
         }
 
         $html_title = 'Enjoy ʘ‿ʘ at your ₿.';
@@ -42,6 +33,8 @@ class BitcoinSeeMyRecords
         $page = 'BitcoinSeeMyRecords';
 
         $show_poof = true;
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿ 📽s. ';
 
