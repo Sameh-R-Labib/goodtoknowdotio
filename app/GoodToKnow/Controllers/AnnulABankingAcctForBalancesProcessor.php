@@ -3,9 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-use GoodToKnow\Models\BankingAcctForBalances;
 
 class AnnulABankingAcctForBalancesProcessor
 {
@@ -19,43 +17,16 @@ class AnnulABankingAcctForBalancesProcessor
          * 3) Presents a form containing data from the record and asking for permission to delete.
          */
 
-        global $sessionMessage;
-
-        kick_out_loggedoutusers();
-
-        kick_out_onabort();
-
-
-        /**
-         * 1) Determines the id of the banking_acct_for_balances record from $_POST['choice'] and
-         *    stores it in $_SESSION['saved_int01'].
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        $_SESSION['saved_int01'] = $chosen_id;
-
-
-        /**
-         * 2) Retrieve the BankingAcctForBalances object with that id from the database.
-         *    And, format its attributes for easy viewing.
-         */
-
-        $db = get_db();
-
-        $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $chosen_id);
-
-        if (!$object) {
-            breakout(' Unexpectedly I could not find that banking account for balances. ');
-        }
+        require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
 
 
         // Format its attributes for easy viewing.
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $object->start_time = get_readable_time($object->start_time);
         $object->start_balance = readable_amount_of_money($object->currency, $object->start_balance);
