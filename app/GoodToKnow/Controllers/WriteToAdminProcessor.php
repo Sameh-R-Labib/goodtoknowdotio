@@ -47,6 +47,8 @@ class WriteToAdminProcessor
          *  - user_id
          */
 
+        /** @noinspection PhpUndefinedVariableInspection */
+
         $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => ADMINUSERID];
 
 
@@ -60,6 +62,8 @@ class WriteToAdminProcessor
         /**
          * Save that object to the database using save().
          */
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $result = $message_to_user_object->save($db, $sessionMessage);
 
