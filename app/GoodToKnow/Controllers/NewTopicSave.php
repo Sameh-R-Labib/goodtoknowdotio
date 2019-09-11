@@ -80,7 +80,9 @@ class NewTopicSave
         $result = $communitytotopic->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' NewTopicSave says: Unexpected save was unable to save the CommunityToTopic. ');
+
         }
 
 
