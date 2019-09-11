@@ -33,5 +33,7 @@ $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
 $array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
 
 if (!$array || !empty($sessionMessage)) {
+
     breakout(" For <b>{$year_received}</b> I could NOT find any Possible Tax Deduction. ");
+
 }

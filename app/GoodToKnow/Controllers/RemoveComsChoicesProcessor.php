@@ -8,55 +8,13 @@ class RemoveComsChoicesProcessor
 {
     function page()
     {
-        global $sessionMessage;
+
         global $saved_str01; // Has user's username
         global $saved_int01; // Has user's id
 
-        kick_out_nonadmins();
-
-        kick_out_onabort();
+        require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';
 
         $db = get_db();
-
-
-        /**
-         * Now we know the ids of the communities which the administrator
-         * doesn't want the user to belong to. The goal is to remove these
-         * communities to the user.
-         */
-
-        /**
-         * $_POST array looks something like this:
-         *
-         * array(4) {
-         *   ["choice-16"]=> string(2) "23"
-         *   ["choice-18"]=> string(2) "25"
-         *   ["choice-24"]=> string(1) "8"
-         *   ["submit"]=> string(6) "Submit"
-         * }
-         *
-         * Instead what we need is an array like this:
-         *
-         * array(4) {
-         *   [0]=> string(1) "23"
-         *   [1]=> string(1) "25"
-         *   [2]=> string(2) "8"
-         * }
-         */
-
-        if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
-            breakout(' Unexpected deficiencies in the _POST array. ');
-        }
-
-        $submitted_community_ids_array = [];
-
-        foreach ($_POST as $item) {
-            if (is_numeric($item)) $submitted_community_ids_array[] = $item;
-        }
-
-        if (empty($submitted_community_ids_array)) {
-            breakout(' You did not submit any community ids. ');
-        }
 
 
         /**
@@ -89,6 +47,8 @@ class RemoveComsChoicesProcessor
          */
 
         $usertocommunity_objects_array = [];
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($submitted_community_ids_array as $a_community_id) {
 
