@@ -29,10 +29,6 @@ class MessageTheAuthorProcessor
          */
 
 
-        /**
-         * Verify that a string representing the message was submitted. $_POST['markdown']
-         */
-
         require CONTROLLERINCLUDES . DIRSEP . "add_a_message_in_the_database.php";
 
 

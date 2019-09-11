@@ -13,8 +13,6 @@ class ConceiveAPossibleTaxDeductionProcessor
         /**
          * Create a database record in the possible_tax_deduction table using the submitted possible_tax_deduction
          * label and year_paid. The remaining field values will be set to default values.
-         *
-         * $_POST['label'] $_POST['year_paid']
          */
 
         global $sessionMessage;

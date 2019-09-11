@@ -11,8 +11,7 @@ class KommunityDescriptionEditorFormProcessor
     {
         /**
          * The purpose is to:
-         *  1) Read $_POST['text']
-         *     (which is the edited community's description.)
+         *  1) Read the edited community's description.
          *  2 & 3) Removed source code.
          *  4) Get a copy of the Community object.
          *  5) Makes sure the description is escaped for suitability
@@ -33,8 +32,7 @@ class KommunityDescriptionEditorFormProcessor
 
 
         /**
-         *  1) Read $_POST['text']
-         *     (which is the edited community's description.)
+         *  1) Read the edited community's description.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

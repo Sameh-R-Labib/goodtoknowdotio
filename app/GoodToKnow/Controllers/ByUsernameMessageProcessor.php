@@ -26,7 +26,7 @@ class ByUsernameMessageProcessor
 
 
         /**
-         * The submitted form field is $_POST['username']
+         * Read the username.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
