@@ -3,8 +3,11 @@
 use GoodToKnow\Models\BankingTransactionForBalances;
 
 global $sessionMessage;
+
 global $user_id;
+
 global $saved_int01;     // min time
+
 global $saved_int02;     // max time
 
 kick_out_loggedoutusers();
