@@ -45,6 +45,8 @@ class MessageTheAuthorProcessor
          *  - user_id
          */
 
+        /** @noinspection PhpUndefinedVariableInspection */
+
         $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
 
 

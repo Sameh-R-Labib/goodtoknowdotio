@@ -2,8 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommunityToTopic;
-
 class NewTopic
 {
     function page()
@@ -16,19 +14,9 @@ class NewTopic
          * insertion point.
          */
 
-        global $community_id;
-        global $sessionMessage;
+        require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
-        kick_out_nonadmins();
-
-        $db = get_db();
-
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
-
-        if ($special_topic_array == false) $special_topic_array = [];
-
-        $_SESSION['special_topic_array'] = $special_topic_array;
-        $_SESSION['last_refresh_topics'] = time();
+        /** @noinspection PhpUndefinedVariableInspection */
 
         if (sizeof($special_topic_array) > 0) {
             $is_empty = false;
