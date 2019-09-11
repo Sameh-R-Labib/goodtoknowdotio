@@ -2,9 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
-
 class QuickPostDeleteDelete
 {
     function page()
@@ -15,28 +12,16 @@ class QuickPostDeleteDelete
          * wants to delete the post.
          */
 
-        global $sessionMessage;
+        require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
-        kick_out_nonadmins();
-
-        kick_out_onabort();
-
-        $db = get_db();
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
-
-        if (!$post_object) {
-
-            breakout(' EditMyPostEditor says: Error 011299. ');
-
-        }
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $_SESSION['saved_str01'] = $post_object->markdown_file;
+
         $_SESSION['saved_str02'] = $post_object->html_file;
+
+        /** @noinspection PhpUndefinedVariableInspection */
+
         $_SESSION['saved_int02'] = $chosen_post_id;
 
 

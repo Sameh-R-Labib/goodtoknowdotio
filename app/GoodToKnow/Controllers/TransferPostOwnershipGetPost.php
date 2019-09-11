@@ -1,15 +1,12 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
-use GoodToKnow\Models\Post;
 use GoodToKnow\Models\Topic;
 use GoodToKnow\Models\TopicToPost;
 use GoodToKnow\Models\User;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class TransferPostOwnershipGetPost
 {
@@ -29,40 +26,27 @@ class TransferPostOwnershipGetPost
          *  - Author username
          */
 
-        global $sessionMessage;
-
-        kick_out_nonadmins();
-
-        kick_out_onabort();
-
-        $db = get_db();
-
-
-        // (1) determine which post the admin chose to do a transfer of ownership to
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
-
-        if (!$post_object) {
-            breakout(' EditMyPostEditor says: Error 011299. ');
-        }
+        require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 
         // (2) stores the post's id in the session
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $_SESSION['saved_int02'] = $chosen_post_id;
 
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.
 
+        /** @noinspection PhpUndefinedVariableInspection */
+
         $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
         // Post id is $chosen_post_id
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $derived_topic_id = TopicToPost::derive_topic_id($db, $sessionMessage, $chosen_post_id);
 
