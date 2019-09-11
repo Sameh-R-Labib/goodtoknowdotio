@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class InitializeABitcoinRecordProcessor
@@ -24,35 +25,9 @@ class InitializeABitcoinRecordProcessor
         kick_out_onabort();
 
 
-        /**
-         * I need to make sure the address doesn't have any characters which
-         * would be altered by htmlspecialchars
-         */
+        require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
 
-        $found = false;
-
-        $array_of_html_chars = ['&', '"', '\'', '<', '>'];
-
-        $string = (isset($_POST['address'])) ? $_POST['address'] : '';
-
-        $array = str_split($string);
-
-        foreach ($array as $char) {
-
-            if (in_array($char, $array_of_html_chars)) {
-
-                $found = true;
-                break;
-            }
-        }
-
-        if ($found) {
-            breakout(' I can\'t use this address because it has an HTML special character. ');
-        }
-
-        /**
-         * End: I need to ...
-         */
+        $string = bitcoin_address_form_field_prep('address');
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
