@@ -11,7 +11,7 @@ class TopicDescriptionEditorProcessor
         /**
          * Essentially what this function will do is it will process the form where the admin
          * chose the topic which he wants to edit the description of. The name of the submitted
-         * selection is $_POST['choice']. And its value is the id of the topic selected by the admin.
+         * selection is 'choice'. And its value is the id of the topic selected by the admin.
          *
          * So what this function will do is:
          *  1) Validate the submission.

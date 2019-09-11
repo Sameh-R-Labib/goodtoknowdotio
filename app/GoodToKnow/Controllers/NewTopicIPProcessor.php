@@ -15,7 +15,7 @@ class NewTopicIPProcessor
         /**
          * At this point we know which community we're in, we know there exists at least one topic, we know
          * which topic the new topic goes next to, and we know on which side of that topic the new topic goes.
-         * $_POST[relate] and $_POST[choice]
+         * Submitted 'relate' and 'choice'.
          *
          * Now determine what the sequence number of the new topic will be. Store it in $_SESSION['$saved_int01'].
          * Once that's done redirect to the next script.
@@ -51,7 +51,7 @@ class NewTopicIPProcessor
          * At this point:
          *   We have a fresh copy of $special_topic_array.
          *   We know it's got at least one topic.
-         *   We should have $_POST[relate] and $_POST[choice]
+         *   We should have 'relate' and 'choice'
          */
 
 

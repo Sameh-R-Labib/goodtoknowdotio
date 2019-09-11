@@ -27,8 +27,8 @@ class AdminCreateUser
 
         /**
          * Variables to work with:
-         *   $saved_int01, $_POST['username'], $_POST['first_try'], $_POST['password'],
-         *   $_POST['title'], $_POST['race'], $_POST['comment'], $_POST['date'], $_POST['submit']
+         *   $saved_int01, 'username', 'first_try', 'password',
+         *   'title', 'race', 'comment', 'date', 'submit'
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

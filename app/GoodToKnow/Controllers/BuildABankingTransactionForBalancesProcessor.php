@@ -15,7 +15,7 @@ class BuildABankingTransactionForBalancesProcessor
          * table using the submitted banking_transaction_for_balances
          * label and time. The remaining field values will be set to default values.
          *
-         * $_POST['label'] $_POST['time']
+         * 'label' 'time'
          */
 
         global $sessionMessage;

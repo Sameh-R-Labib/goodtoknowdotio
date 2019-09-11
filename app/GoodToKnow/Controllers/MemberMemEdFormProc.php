@@ -11,7 +11,7 @@ class MemberMemEdFormProc
     {
         /**
          * The purpose is to:
-         *  1) Read $_POST['text']
+         *  1) Read 'text'
          *     (which is the edited member's comment.)
          *  2 & 3) Removed from source code.
          *  4) Get a copy of the User object for the member.
@@ -33,7 +33,7 @@ class MemberMemEdFormProc
 
 
         /**
-         * 1) Read $_POST['text']
+         * 1) Read 'text'
          *    (which is the edited member's comment.)
          */
 

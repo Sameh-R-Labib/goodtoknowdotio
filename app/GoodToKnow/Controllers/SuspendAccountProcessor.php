@@ -17,8 +17,8 @@ class SuspendAccountProcessor
 
         /**
          * Goal:
-         *  1) Validate $_POST['username']
-         *  2) Save $_POST['username']
+         *  1) Validate submitted username
+         *  2) Save submitted username
          *  3) Redirect to a route
          */
 

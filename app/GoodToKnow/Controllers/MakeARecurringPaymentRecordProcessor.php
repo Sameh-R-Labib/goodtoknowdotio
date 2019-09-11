@@ -13,7 +13,7 @@ class MakeARecurringPaymentRecordProcessor
          * Create a database record in the recurring_payment table using the submitted
          * recurring_payment label. The remaining field values will be set to default values.
          *
-         * $_POST['label']
+         * 'label'
          */
 
         global $sessionMessage;

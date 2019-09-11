@@ -12,7 +12,7 @@ class ExpungeARecurringPaymentRecordProcessor
     function page()
     {
         /**
-         * 1) Determines the id of the recurring_payment record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
+         * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
          * 3) Presents a form containing data from the record and asking for confirmation to delete.
          */
@@ -25,7 +25,7 @@ class ExpungeARecurringPaymentRecordProcessor
 
 
         /**
-         * 1) Determines the id of the recurring_payment record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
+         * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
