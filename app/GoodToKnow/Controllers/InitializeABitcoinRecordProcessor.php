@@ -27,12 +27,8 @@ class InitializeABitcoinRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
 
-        $string = bitcoin_address_form_field_prep('address');
+        $address = bitcoin_address_form_field_prep('address');
 
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-        $address = standard_form_field_prep('address', 8, 264);
 
         $db = get_db();
 
