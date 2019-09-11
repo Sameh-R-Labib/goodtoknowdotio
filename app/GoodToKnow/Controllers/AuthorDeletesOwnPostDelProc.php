@@ -2,8 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
-use GoodToKnow\Models\TopicToPost;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class AuthorDeletesOwnPostDelProc
@@ -43,84 +41,6 @@ class AuthorDeletesOwnPostDelProc
         }
 
 
-        /**
-         * Delete the records.
-         */
-
-        $db = get_db();
-
-
-        // Delete the db record for the post.
-
-        $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
-
-        if (!$post) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Could not find post by id. ');
-
-        }
-
-        $result = $post->delete($db, $sessionMessage);
-
-        if (!$result) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly could not delete post. ');
-
-        }
-
-
-        // Delete the TopicToPost record
-
-        $sql = 'SELECT * FROM `topic_to_post`
-        WHERE `topic_id` = "' . $db->real_escape_string($saved_int01) . '" AND `post_id` = "' .
-            $db->real_escape_string($saved_int02) . '" LIMIT 1';
-
-        $array_of_objects = TopicToPost::find_by_sql($db, $sessionMessage, $sql);
-
-        if (!$array_of_objects || !empty($sessionMessage)) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly failed to delete TopicToPost object. ');
-
-        }
-
-        $topictopost_object = array_shift($array_of_objects);
-
-        if (!is_object($topictopost_object)) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly return value is not an object. ');
-
-        }
-
-        $result = $topictopost_object->delete($db, $sessionMessage);
-
-        if (!$result) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly could not delete the TopicToPost object. ');
-
-        }
-
-
-        // Delete both files;
-
-        $result = unlink($saved_str01);
-
-        if (!$result) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly failed to delete markdown file. ');
-
-        }
-
-        $result = unlink($saved_str02);
-
-        if (!$result) {
-
-            breakout(' AuthorDeletesOwnPostDelProc says: Unexpectedly failed to delete html file. ');
-
-        }
-
-
-        // Report successful deletion of post.
-
-        breakout(' I deleted the post. ');
+        require CONTROLLERINCLUDES . DIRSEP . 'delete_a_post.php';
     }
 }
