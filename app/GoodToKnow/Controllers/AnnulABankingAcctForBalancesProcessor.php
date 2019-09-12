@@ -14,8 +14,10 @@ class AnnulABankingAcctForBalancesProcessor
          *    stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the BankingAcctForBalances object with that id from the database.
          *    And, format its attributes for easy viewing.
-         * 3) Presents a form containing data from the record and asking for permission to delete.
+         * 3) Make sure this object belongs to the user.
+         * 4) Presents a form containing data from the record and asking for permission to delete.
          */
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
 
