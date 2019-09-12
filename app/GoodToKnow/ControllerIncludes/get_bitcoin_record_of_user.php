@@ -45,4 +45,5 @@ global $user_id;
 if ($bitcoin_object->user_id != $user_id) {
 
     breakout(' Error 8006667. ');
+
 }
