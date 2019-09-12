@@ -27,7 +27,7 @@ class PurgeOldMessagesProcessor
 
 
         /**
-         * $_POST['date']
+         * 'date'
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';

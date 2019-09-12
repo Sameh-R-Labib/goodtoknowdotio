@@ -14,7 +14,7 @@ class StartATaxableIncomeEventProcessor
          * Create a database record in the taxable_income_event table using the submitted taxable_income_event
          * label, year_received and time. The remaining field values will be set to default values.
          *
-         * $_POST['label'] $_POST['year_received'] $_POST['time']
+         * 'label' 'year_received' 'time'
          */
 
         global $sessionMessage;

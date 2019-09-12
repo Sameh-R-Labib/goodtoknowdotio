@@ -28,7 +28,7 @@ class EditMyPostEditProcessor
         /**
          * Verify that a string representing
          * the edited post was submitted.
-         * $_POST['markdown']
+         * 'markdown'
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

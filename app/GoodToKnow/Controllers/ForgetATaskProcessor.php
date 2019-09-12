@@ -11,7 +11,7 @@ class ForgetATaskProcessor
     function page()
     {
         /**
-         * 1) Determines the id of the task record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
+         * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the task object with that id from the database. And, format its attributes for easy viewing.
          * 3) Presents a form containing data from the record and asking for permission to delete.
          */
@@ -24,7 +24,7 @@ class ForgetATaskProcessor
 
 
         /**
-         * 1) Determines the id of the task record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
+         * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
