@@ -11,7 +11,7 @@ class TopicDescriptionEditorFormProcessor
     {
         /**
          * The purpose is to:
-         *  1) Read $_POST['text']
+         *  1) Read 'text'
          *     (which is the edited community's description.)
          *  2 & 3) Removed source code.
          *  4) Get a copy of the Topic object.
@@ -32,7 +32,7 @@ class TopicDescriptionEditorFormProcessor
 
 
         /**
-         *  1) Read $_POST['text']
+         *  1) Read 'text'
          *     (which is the edited topic's description.)
          */
 

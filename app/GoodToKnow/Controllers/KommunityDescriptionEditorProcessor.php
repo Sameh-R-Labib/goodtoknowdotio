@@ -18,8 +18,8 @@ class KommunityDescriptionEditorProcessor
 
         /**
          * Goal:
-         *  1) Validate $_POST['community']
-         *  2) Save $_POST['community'] in the session.
+         *  1) Validate 'community'
+         *  2) Save 'community' in the session.
          *  3) Redirect to a route.
          */
 

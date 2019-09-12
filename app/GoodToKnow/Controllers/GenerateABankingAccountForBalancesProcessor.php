@@ -13,7 +13,7 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a database record in the banking_acct_for_balances table using the submitted banking_acct_for_balances
          * acct_name. The remaining field values will be set to default values.
          *
-         * $_POST['acct_name']
+         * 'acct_name'
          */
 
         global $sessionMessage;

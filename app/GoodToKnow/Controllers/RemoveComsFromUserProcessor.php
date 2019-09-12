@@ -17,8 +17,8 @@ class RemoveComsFromUserProcessor
 
         /**
          * Goal:
-         *  1) Validate $_POST['username']
-         *  2) Save $_POST['username']
+         *  1) Validate 'username'
+         *  2) Save 'username'
          *  3) Redirect to a route which will present a form with checkboxes for choosing communities
          */
 

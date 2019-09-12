@@ -14,7 +14,7 @@ class CreateNewPostIPProcessor
     {
         /**
          * So far we know which topic the new post belongs in and the user just submitted a form letting us know
-         * $_POST[relate] and $_POST[choice].
+         * 'relate' and 'choice'.
          *
          * These two post variables signify the location where the user wants the new post to go. To understand what
          * I mean you need to know that the posts for a specified topic each have a sequence number. The sequence number
