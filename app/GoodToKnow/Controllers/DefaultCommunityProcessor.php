@@ -3,7 +3,6 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class DefaultCommunityProcessor
 {
@@ -17,27 +16,10 @@ class DefaultCommunityProcessor
 
         kick_out_onabort();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'community_for_regular_user_prep.php';
 
-        // int(10) in mysql has max 4294967295
-
-        $chosen_id = integer_form_field_prep('choice', 1, 4294967295);
-
-
-        /**
-         * Make sure the submitted choice is valid for this user.
-         */
-
-        $is_found = false;
-
-        if (array_key_exists($chosen_id, $special_community_array)) $is_found = true;
-
-        if (!$is_found) {
-
-            breakout(' Choice is not valid. ');
-
-        }
+        $chosen_id = community_for_regular_user_prep('choice', $special_community_array);
 
 
         /**
@@ -56,7 +38,7 @@ class DefaultCommunityProcessor
             breakout(' Expected submission of choice not found. ');
         }
 
-        $user_object->id_of_default_community = $_POST['choice'];
+        $user_object->id_of_default_community = $chosen_id;
 
         $was_updated = $user_object->save($db, $sessionMessage);
 
@@ -69,6 +51,6 @@ class DefaultCommunityProcessor
 
         // User will know default community by logging out then in.
 
-        breakout(" Your default community has been changed to {$special_community_array[$_POST['choice']]}. ");
+        breakout(" Your default community has been changed to {$special_community_array[$chosen_id]}. ");
     }
 }
