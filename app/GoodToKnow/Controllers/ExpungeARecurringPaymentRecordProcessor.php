@@ -3,9 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-use GoodToKnow\Models\RecurringPayment;
 
 class ExpungeARecurringPaymentRecordProcessor
 {
@@ -18,49 +16,8 @@ class ExpungeARecurringPaymentRecordProcessor
          * 4) Presents a form containing data from the record and asking for confirmation to delete.
          */
 
-        global $sessionMessage;
-        global $user_id;
 
-        kick_out_loggedoutusers();
-
-        kick_out_onabort();
-
-
-        /**
-         * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        $_SESSION['saved_int01'] = $chosen_id;
-
-
-        /**
-         * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
-         */
-
-        $db = get_db();
-
-        $recurring_payment_object = RecurringPayment::find_by_id($db, $sessionMessage, $chosen_id);
-
-        if (!$recurring_payment_object) {
-
-            breakout(' Unexpectedly I could not find that recurring payment. ');
-
-        }
-
-
-        /**
-         *  3) Make sure this object belongs to the user.
-         */
-
-        if ($recurring_payment_object->user_id != $user_id) {
-
-            breakout(' Error 7783714. ');
-
-        }
+        require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
 
 
         /**
@@ -72,6 +29,8 @@ class ExpungeARecurringPaymentRecordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $recurring_payment_object->time = get_readable_time($recurring_payment_object->time);
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
