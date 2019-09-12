@@ -2,8 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+use function GoodToKnow\ControllerHelpers\post_object_for_owner_prep;
 
 class EditMyPostEditor
 {
@@ -19,30 +18,15 @@ class EditMyPostEditor
 
         $db = get_db();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 
-        $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+        $post_object = post_object_for_owner_prep('choice', $db, $user_id);
 
 
         /**
-         * Make sure the chosen post is one which this user is allowed to edit.
-         *
-         * To accomplish this we need to get the Post object.
+         * We may need the post id too!
+         * Function post_object_for_owner_prep will have saved that to $_SESSION['saved_int02'].
          */
-
-        $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
-
-        if (!$post_object) {
-
-            breakout(' EditMyPostEditor says: Error 011299. ');
-
-        }
-
-        if ($post_object->user_id != $user_id) {
-
-            breakout(' You can\'t edit this post. ');
-
-        }
 
 
         /**
@@ -52,11 +36,6 @@ class EditMyPostEditor
 
         $_SESSION['saved_str01'] = $post_object->markdown_file;
         $_SESSION['saved_str02'] = $post_object->html_file;
-
-
-        // We may need the post id too!
-
-        $_SESSION['saved_int02'] = $chosen_post_id;
 
 
         /**

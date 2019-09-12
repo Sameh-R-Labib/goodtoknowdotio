@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\ControllerHelpers;
-
 
 /**
  * @param string $currency
