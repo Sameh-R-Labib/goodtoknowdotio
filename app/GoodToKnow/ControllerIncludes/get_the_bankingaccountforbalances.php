@@ -5,6 +5,8 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $sessionMessage;
 
+global $user_id;
+
 kick_out_loggedoutusers();
 
 kick_out_onabort();
@@ -32,5 +34,16 @@ $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $chosen_id);
 if (!$object) {
 
     breakout(' Unexpectedly I could not find that banking account for balances. ');
+
+}
+
+
+/**
+ * 3) Make sure this object belongs to the user.
+ */
+
+if ($object->user_id != $user_id) {
+
+    breakout(' Error 15450232. ');
 
 }
