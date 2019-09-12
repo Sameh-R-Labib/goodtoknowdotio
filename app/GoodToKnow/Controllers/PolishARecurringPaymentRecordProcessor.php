@@ -12,10 +12,12 @@ class PolishARecurringPaymentRecordProcessor
         /**
          * 1) Store the submitted recurring_payment record id in the session.
          * 2) Retrieve the recurring_payment object with that id from the database.
-         * 3) Present a form which is populated with data from the recurring_payment object.
+         * 3) Make sure this object belongs to the user.
+         * 4) Present a form which is populated with data from the recurring_payment object.
          */
 
         global $sessionMessage;
+        global $user_id;
 
         kick_out_loggedoutusers();
 
@@ -47,7 +49,18 @@ class PolishARecurringPaymentRecordProcessor
 
 
         /**
-         * 3) Present a form which is populated with data from the recurring_payment object.
+         *  3) Make sure this object belongs to the user.
+         */
+
+        if ($recurring_payment_object->user_id != $user_id) {
+
+            breakout(' Error 8783814. ');
+
+        }
+
+
+        /**
+         * 4) Present a form which is populated with data from the recurring_payment object.
          */
 
         $html_title = 'Edit the recurring_payment record';
