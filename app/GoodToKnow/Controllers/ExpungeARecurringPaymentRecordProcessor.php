@@ -14,10 +14,12 @@ class ExpungeARecurringPaymentRecordProcessor
         /**
          * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
-         * 3) Presents a form containing data from the record and asking for confirmation to delete.
+         * 3) Make sure this object belongs to the user.
+         * 4) Presents a form containing data from the record and asking for confirmation to delete.
          */
 
         global $sessionMessage;
+        global $user_id;
 
         kick_out_loggedoutusers();
 
@@ -50,6 +52,21 @@ class ExpungeARecurringPaymentRecordProcessor
         }
 
 
+        /**
+         *  3) Make sure this object belongs to the user.
+         */
+
+        if ($recurring_payment_object->user_id != $user_id) {
+
+            breakout(' Error 7783714. ');
+
+        }
+
+
+        /**
+         * 4) Presents a form containing data from the record and asking for confirmation to delete.
+         */
+
         // Format its attributes for easy viewing.
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
@@ -60,10 +77,6 @@ class ExpungeARecurringPaymentRecordProcessor
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
         $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->currency, $recurring_payment_object->amount_paid);
 
-
-        /**
-         * 3) Presents a form containing data from the record and asking for confirmation to delete.
-         */
 
         $html_title = 'Are you sure?';
 
