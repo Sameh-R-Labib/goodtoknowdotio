@@ -8,6 +8,7 @@ use GoodToKnow\Models\User;
 use mysqli;
 use function GoodToKnow\ControllerHelpers\is_password_syntactically;
 use function GoodToKnow\ControllerHelpers\is_username_syntactically;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class LoginScript
 {
@@ -156,8 +157,12 @@ class LoginScript
      */
     private static function assimilate_input(string $error, string &$submitted_username, string &$submitted_password)
     {
-        $submitted_username = (isset($_POST['username'])) ? $_POST['username'] : '';
-        $submitted_password = (isset($_POST['password'])) ? $_POST['password'] : '';
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $submitted_username = standard_form_field_prep('username', 7, 12);
+
+        $submitted_password = standard_form_field_prep('password', 10, 264);
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_syntactically.php';
