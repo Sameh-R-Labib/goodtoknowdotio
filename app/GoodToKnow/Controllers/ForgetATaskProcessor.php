@@ -2,9 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class ForgetATaskProcessor
 {
@@ -13,49 +11,27 @@ class ForgetATaskProcessor
         /**
          * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the task object with that id from the database. And, format its attributes for easy viewing.
-         * 3) Presents a form containing data from the record and asking for permission to delete.
+         * 3) Make sure that object belongs to this user.
+         * 4) Presents a form containing data from the record and asking for permission to delete.
          */
 
-        global $sessionMessage;
 
-        kick_out_loggedoutusers();
-
-        kick_out_onabort();
+        require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
 
 
         /**
-         * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
+         * 4) Presents a form containing data from the record and asking for permission to delete.
          */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        $_SESSION['saved_int01'] = $chosen_id;
-
-
-        /**
-         * 2) Retrieve the task object with that id from the database.
-         *    And, format its attributes for easy viewing.
-         */
-
-        $db = get_db();
-
-        $object = Task::find_by_id($db, $sessionMessage, $chosen_id);
-
 
         // Format its attributes for easy viewing.
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
+        /** @noinspection PhpUndefinedVariableInspection */
+
         $object->last = get_readable_time($object->last);
 
         $object->next = get_readable_time($object->next);
-
-
-        /**
-         * 3) Presents a form containing data from the record and asking for permission to delete.
-         */
 
         $html_title = 'Are you sure?';
 
