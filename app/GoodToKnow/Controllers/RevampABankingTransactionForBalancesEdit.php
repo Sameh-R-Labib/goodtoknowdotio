@@ -3,8 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
-use GoodToKnow\Models\BankingTransactionForBalances;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
+use mysqli;
 
 class RevampABankingTransactionForBalancesEdit
 {
@@ -17,50 +16,8 @@ class RevampABankingTransactionForBalancesEdit
          * 4) Present a form which is populated with data from the banking_transaction_for_balances object.
          */
 
-        global $sessionMessage;
 
-        global $user_id;
-
-        kick_out_loggedoutusers();
-
-        kick_out_onabort();
-
-
-        /**
-         * 1) Store the submitted banking_transaction_for_balances record id in the session.
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        $_SESSION['saved_int01'] = $chosen_id;
-
-
-        /**
-         * 2) Retrieve the banking_transaction_for_balances object with that id from the database.
-         */
-
-        $db = get_db();
-
-        $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $chosen_id);
-
-        if (!$object) {
-
-            breakout(' Unexpectedly I could not find that banking transaction fo balances. ');
-
-        }
-
-
-        /**
-         * 3) Make sure the object belongs to the user.
-         */
-
-        if ($object->user_id != $user_id) {
-
-            breakout(' Error 68804579. ');
-
-        }
+        require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
 
 
         /**
@@ -69,6 +26,8 @@ class RevampABankingTransactionForBalancesEdit
          * Note: Replace bank_id with the HTML for the drop down select box. Then use bank_id in the HTML form
          * to supply the HTML for that input field.
          */
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $object->bank_id = self::get_html_select_box_containing_the_bank_accounts($db, $sessionMessage, $user_id, $object->bank_id);
 
@@ -87,13 +46,13 @@ class RevampABankingTransactionForBalancesEdit
     }
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $sessionMessage
      * @param int $user_id
      * @param int $bank_id
      * @return bool|string
      */
-    public static function get_html_select_box_containing_the_bank_accounts(\mysqli $db, string &$sessionMessage, int $user_id, int $bank_id)
+    public static function get_html_select_box_containing_the_bank_accounts(mysqli $db, string &$sessionMessage, int $user_id, int $bank_id)
     {
         /**
          * The current bank account will be pre selected.
