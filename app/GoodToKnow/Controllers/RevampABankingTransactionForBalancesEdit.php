@@ -13,10 +13,12 @@ class RevampABankingTransactionForBalancesEdit
         /**
          * 1) Store the submitted banking_transaction_for_balances record id in the session.
          * 2) Retrieve the banking_transaction_for_balances object with that id from the database.
-         * 3) Present a form which is populated with data from the banking_transaction_for_balances object.
+         * 3) Make sure the object belongs to the user.
+         * 4) Present a form which is populated with data from the banking_transaction_for_balances object.
          */
 
         global $sessionMessage;
+
         global $user_id;
 
         kick_out_loggedoutusers();
@@ -44,12 +46,25 @@ class RevampABankingTransactionForBalancesEdit
         $object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $chosen_id);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that banking transaction fo balances. ');
+
         }
 
 
         /**
-         * 3) Present a form which is populated with data from the banking_transaction_for_balances object.
+         * 3) Make sure the object belongs to the user.
+         */
+
+        if ($object->user_id != $user_id) {
+
+            breakout(' Error 68804579. ');
+
+        }
+
+
+        /**
+         * 4) Present a form which is populated with data from the banking_transaction_for_balances object.
          *
          * Note: Replace bank_id with the HTML for the drop down select box. Then use bank_id in the HTML form
          * to supply the HTML for that input field.
