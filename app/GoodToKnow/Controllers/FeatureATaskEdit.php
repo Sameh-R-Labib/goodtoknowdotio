@@ -12,10 +12,13 @@ class FeatureATaskEdit
         /**
          * 1) Store the submitted task id in the session.
          * 2) Retrieve the task object with that id from the database.
-         * 3) Present a form which is populated with data from the task object.
+         * 3) Make sure that object belongs to this user.
+         * 4) Present a form which is populated with data from the task object.
          */
 
         global $sessionMessage;
+
+        global $user_id;
 
         kick_out_loggedoutusers();
 
@@ -47,7 +50,18 @@ class FeatureATaskEdit
 
 
         /**
-         * 3) Present a form which is populated with data from the task object.
+         * 3) Make sure that object belongs to this user.
+         */
+
+        if ($object->user_id != $user_id) {
+
+            breakout(' Error 46985422. ');
+
+        }
+
+
+        /**
+         * 4) Present a form which is populated with data from the task object.
          */
 
         $html_title = 'Edit the task record';
