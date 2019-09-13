@@ -12,10 +12,13 @@ class AlterAPossibleTaxDeductionEdit
         /**
          * 1) Store the submitted possible_tax_deduction id in the session.
          * 2) Retrieve the possible_tax_deduction object with that id from the database.
-         * 3) Present a form which is populated with data from the possible_tax_deduction object.
+         * 3) Make sure the object belongs to this user.
+         * 4) Present a form which is populated with data from the possible_tax_deduction object.
          */
 
         global $sessionMessage;
+
+        global $user_id;
 
         kick_out_loggedoutusers();
 
@@ -47,7 +50,18 @@ class AlterAPossibleTaxDeductionEdit
 
 
         /**
-         * 3) Present a form which is populated with data from the possible_tax_deduction object.
+         * 3) Make sure the object belongs to this user.
+         */
+
+        if ($object->user_id != $user_id) {
+
+            breakout(' Error 01544111. ');
+
+        }
+
+
+        /**
+         * 4) Present a form which is populated with data from the possible_tax_deduction object.
          */
 
         $html_title = 'Edit the possible_tax_deduction record';
