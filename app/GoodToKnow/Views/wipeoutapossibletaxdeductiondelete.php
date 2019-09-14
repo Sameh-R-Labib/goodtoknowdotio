@@ -6,7 +6,6 @@
     <p><b>Label: </b><?php /** @noinspection PhpUndefinedVariableInspection */
         echo $object->label; ?></p>
     <p><b>Year Paid: </b><?= $object->year_paid ?></p>
-    <p>&nbsp;</p>
     <p><?= $object->comment ?></p>
     <p>&nbsp;</p>
     <p>Are you sure you want to delete this?</p>

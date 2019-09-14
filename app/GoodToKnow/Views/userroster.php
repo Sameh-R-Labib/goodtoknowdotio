@@ -16,7 +16,6 @@
                 <p><b>Race:&nbsp;&nbsp;</b><?= $user->readable_race ?></p>
                 <p><b>Is-Suspended:&nbsp;&nbsp;</b><?= $user->readable_is_suspended ?></p>
                 <p><b>Date:&nbsp;&nbsp;</b><?= $user->date ?></p>
-                <p>&nbsp;</p>
                 <p><b>Comment:&nbsp;&nbsp;</b><?= $user->comment ?></p>
                 <p>&nbsp;</p>
                 <?php if ($key != $last): ?>

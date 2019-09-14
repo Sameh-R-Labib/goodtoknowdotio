@@ -7,7 +7,6 @@
         echo $object->acct_name; ?></p>
     <p><b>Start 🕒: </b><?= $object->start_time ?></p>
     <p><b>Start ⚖️: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?></p>
-    <p>&nbsp;</p>
     <p><?= $object->comment ?></p>
     <p>&nbsp;</p>
     <p>Are you sure you want to delete this?</p>

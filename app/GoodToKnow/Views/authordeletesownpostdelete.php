@@ -2,7 +2,7 @@
 <form action="/ax1/AuthorDeletesOwnPostDelProc/page" method="post">
     <h2>Confirm</h2>
     <?php require SESSIONMESSAGE; ?>
-    <p>Are you sure you want me to delete "<?= $long_title_of_post ?>".</p>
+    <p>Are you sure you want me to delete "<b><?= $long_title_of_post ?></b>".</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

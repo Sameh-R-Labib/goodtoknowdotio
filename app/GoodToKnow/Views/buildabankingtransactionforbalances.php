@@ -8,12 +8,12 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">🏦ing 🔃 for ⚖️ Label: </label>
+            <label for="label">Label: </label>
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="30"
                    size="30" spellcheck="false" placeholder="Monthly Car Payment">
         </p>
         <p>
-            <label for="time">Unix time at Beginning: </label>
+            <label for="time">Time (unix time stamp): </label>
             <input id="time" name="time" type="text" value="" required minlength="10" maxlength="22"
                    size="22" placeholder="1560190617">
         </p>

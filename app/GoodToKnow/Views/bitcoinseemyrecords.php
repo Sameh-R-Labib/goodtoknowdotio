@@ -13,7 +13,6 @@
                 <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $bitcoin->currency ?>&nbsp;<?= $bitcoin->price_point ?></p>
                 <p><b>Initial Balance: </b>₿&nbsp;<?= $bitcoin->initial_balance ?></p>
                 <p><b>Current Balance: </b>₿&nbsp;<?= $bitcoin->current_balance ?></p>
-                <p>&nbsp;</p>
                 <p><?= $bitcoin->comment ?></p>
                 <?php if ($key != $last): ?>
                     <hr>

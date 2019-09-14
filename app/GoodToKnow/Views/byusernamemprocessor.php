@@ -1,5 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/ByUsernameMessageSave/page" method="post">
+    <h1>Message Editor</h1>
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a></h2>
     <?php require SESSIONMESSAGE; ?>
     <p>
