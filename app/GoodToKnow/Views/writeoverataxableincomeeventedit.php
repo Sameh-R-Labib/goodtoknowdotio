@@ -8,7 +8,7 @@
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">Taxable 💸 Event 📽 Label: </label>
+            <label for="label">Label: </label>
             <input id="label" name="label" type="text" value="<?= $object->label ?>" required minlength="3"
                    maxlength="264" size="61" spellcheck="false" placeholder="Customer six month dues.">
         </p>
