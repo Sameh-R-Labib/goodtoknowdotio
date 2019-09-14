@@ -10,7 +10,7 @@
         <p>
             <label for="label">Label: </label>
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
-                   size="61" spellcheck="false" placeholder="Support from a Gtk.io User">
+                   size="61" spellcheck="false" placeholder="Technical support for a Gtk.io User">
         </p>
         <p>
             <label for="year_received">Year for when event occured: </label>
