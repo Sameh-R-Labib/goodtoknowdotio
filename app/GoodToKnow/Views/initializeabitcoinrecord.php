@@ -1,7 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/InitializeABitcoinRecordProcessor/page" method="post">
     <h1>Create a ₿ 📽</h1>
-    <h2>Initialize the record with its bitcoin address</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
