@@ -21,7 +21,8 @@
             </p>
             <p>
                 <label for="amount">Amount: </label>
-                <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="16" size="16">
+                <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="16" size="16"
+                       placeholder="-105.39">
             </p>
         </section>
         <?php require SUBMITABORT; ?>
