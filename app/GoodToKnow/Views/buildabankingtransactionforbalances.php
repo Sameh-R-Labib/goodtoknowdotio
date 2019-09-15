@@ -25,6 +25,9 @@
                        placeholder="-105.39">
             </p>
         </section>
+        <section>
+            <p>Choose the account type (a drop down selector)</p>
+        </section>
         <?php require SUBMITABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>
