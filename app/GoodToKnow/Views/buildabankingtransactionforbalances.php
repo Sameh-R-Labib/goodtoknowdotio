@@ -26,7 +26,8 @@
             </p>
         </section>
         <section>
-            <?= $account_type ?>
+            <?= /** @noinspection PhpUndefinedVariableInspection */
+            $account_type ?>
         </section>
         <?php require SUBMITABORT; ?>
     </form>
