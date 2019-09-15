@@ -26,7 +26,7 @@
             </p>
         </section>
         <section>
-            <p>Choose the account type (a drop down selector)</p>
+            <?= $account_type ?>
         </section>
         <?php require SUBMITABORT; ?>
     </form>

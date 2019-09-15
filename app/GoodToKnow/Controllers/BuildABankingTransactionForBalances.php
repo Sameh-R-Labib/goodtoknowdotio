@@ -2,26 +2,28 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
+
 class BuildABankingTransactionForBalances
 {
     function page()
     {
         /**
          * This feature enables any user to create a database record in the
-         * banking_transaction_for_balances table. The process will
-         * ask the user to ONLY supply a banking_transaction_for_balances
-         * label + time . And the remaining field values
-         * will be supplied by the editor for this type of record.
-         */
-
-        /**
-         * This here script simply presents a form for the user to supply the banking_transaction_for_balances
-         * label + time for the "to be created" banking_transaction_for_balances record.
+         * banking_transaction_for_balances table.
          */
 
         global $sessionMessage;
 
+        global $user_id;
+
         kick_out_loggedoutusers();
+
+        $db = get_db();
+
+        require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
+
+        $account_type = get_html_select_box_containing_the_bank_accounts($db, $user_id, 0);
 
         $html_title = 'Create a Banking Transaction For Balances';
 
