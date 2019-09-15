@@ -12,7 +12,7 @@
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text"
-                       value="<?= $object->label ?>" required minlength="3" maxlength="30" size="30" spellcheck="false"
+                       value="<?= $object->label ?>" required minlength="3" maxlength="30" size="34" spellcheck="false"
                        placeholder="Internet Service Fee">
             </p>
             <p>

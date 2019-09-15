@@ -9,7 +9,7 @@
             <p>
                 <label for="acct_name">Bank Account Name: </label>
                 <input id="acct_name" name="acct_name" type="text" value="" required minlength="3" maxlength="30"
-                       size="30" spellcheck="false" placeholder="Personal Credit Card">
+                       size="34" spellcheck="false" placeholder="Personal Credit Card">
             </p>
             <p>
                 <label for="start_time">Unix time at Beginning: </label>

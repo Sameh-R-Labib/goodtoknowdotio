@@ -12,7 +12,7 @@
             <p>
                 <label for="label">Label: </label>
                 <input id="label" name="label" type="text" value="" required minlength="3" maxlength="30"
-                       size="30" spellcheck="false" placeholder="Monthly Car Payment">
+                       size="34" spellcheck="false" placeholder="Monthly Car Payment">
             </p>
             <p>
                 <label for="time">Time (unix time stamp): </label>

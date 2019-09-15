@@ -7,7 +7,7 @@
             <p>
                 <label for="acct_name">Bank Account Name (✅ emoji): </label>
                 <input id="acct_name" name="acct_name" type="text"
-                       value="<?= $object->acct_name ?>" required minlength="3" maxlength="30" size="30"
+                       value="<?= $object->acct_name ?>" required minlength="3" maxlength="30" size="34"
                        spellcheck="false" placeholder="Personal Credit Card">
             </p>
             <p>
