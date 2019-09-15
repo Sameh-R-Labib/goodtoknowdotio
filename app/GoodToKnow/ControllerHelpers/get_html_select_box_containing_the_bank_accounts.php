@@ -13,6 +13,9 @@ use mysqli;
  */
 function get_html_select_box_containing_the_bank_accounts(mysqli $db, int $user_id, int $bank_id): string
 {
+    global $sessionMessage;
+
+
     /**
      * The current bank account will be pre selected.
      *
