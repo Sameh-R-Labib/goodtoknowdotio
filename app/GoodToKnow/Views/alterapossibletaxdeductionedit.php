@@ -1,12 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AlterAPossibleTaxDeductionUpdate/page" method="post">
         <h1>Edit a 🤔 Tax ✍🏽🔽</h1>
-        <p>* Records will be deleted automatically after the fourth year. *</p>
+        <p><small>* Records will be deleted automatically after the fourth year. *</small></p>
         <p>
             <small>✅ emoji for the label and comment.</small>
-        </p>
-        <p>
-            <small>year_paid is the year in which you spent the money.</small>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
