@@ -5,7 +5,11 @@ body {
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
-    background: whitesmoke url("/golden.jpg") no-repeat fixed center center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/golden.jpg");
+    background-color: whitesmoke;
+    background-attachment: fixed;
     left: 0px;
     top: 0px;
     color: black;
