@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Welcome</h1>
+        <h1>Project Description</h1>
         <p>This site is an instance of the GoodToKnow.io application. The code is GPLv3 Affero licensed FLOSS software.
             The software is meant to facilitate the parsing and sharing of practical useful information.
             This is for sharing amongst family and trusted acquaintances.
