@@ -7,8 +7,9 @@
         <p>This site is an instance of the GoodToKnow.io application. The code is GPLv3 Affero licensed FLOSS software.
             The software is meant to facilitate the parsing and sharing of practical useful information.
             This is for sharing amongst family and trusted acquaintances.
-            Additionally it has features which facilitate tracking things which one would normally track in one's own
-            life such as recurring payments, banking transactions and recurring to-do list items.</p>
+            Additionally, (on a user-by-user basis) it has features for keeping tracking things which one would normally
+            track in one's personal life such as recurring payments, banking transactions and recurring to-do list
+            items.</p>
         <blockquote>GoodToKnow.io instances are run by (at least) one admin who`s in charge of site maintenance and
             content approval.
         </blockquote>
