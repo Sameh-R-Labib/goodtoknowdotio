@@ -3,10 +3,10 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Project Description</h1>
-        <p>This site is an instance of the GoodToKnow.io application. The code is GPLv3 Affero licensed FLOSS software.
-            The software is meant to facilitate the parsing and sharing of practical useful information.
-            This is for sharing blog posts amongst family and trusted acquaintances.
+        <h1>Software Description</h1>
+        <p>This site is an instance of the GoodToKnow.io web app software. The code is GPLv3 Affero licensed FLOSS
+            software. The software is meant to facilitate the parsing and sharing of practical useful information.
+            This software for sharing blog posts amongst family and trusted acquaintances.
             Additionally, (on a user-by-user basis) it has features for tracking things which one would normally
             track in one's personal life such as recurring payments, banking transactions and recurring to-do list
             items. In other words you get to create and share blog posts and you get to keep track personal records.</p>
