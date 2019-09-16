@@ -1,13 +1,11 @@
 @charset "UTF-8";
 
 body {
-    background-color: whitesmoke;
-    background: url("/photo-1447433819943-74a20887a81e.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-position: center center;
+    background: whitesmoke url("/golden.jpg") no-repeat fixed center center;
     color: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.03em;
