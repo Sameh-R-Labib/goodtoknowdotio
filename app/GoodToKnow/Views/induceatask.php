@@ -14,14 +14,14 @@
                    size="22" placeholder="1560190617">
         </p>
         <p>
-            <label for="next">Next scheduled unix time for execution of the task: </label>
+            <label for="next">Next scheduled time: </label>
             <input id="next" name="next" type="text" value="" minlength="10" maxlength="22"
                    size="22" placeholder="1560190617">
         </p>
         <p>
             <label for="cycle_type">Cycle Type (✅ emoji): </label>
             <input id="cycle_type" name="cycle_type" type="text" value="" required minlength="3" maxlength="60"
-                   size="60" spellcheck="false" placeholder="Example: monthly">
+                   size="50" spellcheck="false" placeholder="Example: monthly">
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
