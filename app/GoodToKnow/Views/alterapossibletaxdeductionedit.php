@@ -2,13 +2,10 @@
     <form action="/ax1/AlterAPossibleTaxDeductionUpdate/page" method="post">
         <h1>Edit a 🤔 Tax ✍🏽🔽</h1>
         <p><small>* Records will be deleted automatically after the fourth year. *</small></p>
-        <p>
-            <small>✅ emoji for the label and comment.</small>
-        </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
-                <label for="label">️Label: </label>
+                <label for="label">️Label (✅ emoji): </label>
                 <input id="label" name="label" type="text" value="<?= $object->label ?>" required minlength="3"
                        maxlength="264" size="61" spellcheck="false"
                        placeholder="Monthly Linode hosting Fees for Web server of goodtoknow.io">
