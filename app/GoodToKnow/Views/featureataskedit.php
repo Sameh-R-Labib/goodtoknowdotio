@@ -1,11 +1,10 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/FeatureATaskUpdate/page" method="post">
-    <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $object->label; ?></h2>
+    <h1>Create a To-do Task/💪</h1>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">To-do Task/💪️ Label (✅ emoji): </label>
+            <label for="label">Label (✅ emoji): </label>
             <input id="label" name="label" type="text" value="<?= $object->label ?>" required minlength="3"
                    maxlength="264" size="61" spellcheck="false"
                    placeholder="Something I need to keep doing.">
@@ -23,7 +22,7 @@
                    size="22" placeholder="1560190617">
         </p>
         <p>
-            <label for="cycle_type">Cycle Type: </label>
+            <label for="cycle_type">Cycle Type (✅ emoji): </label>
             <input id="cycle_type" name="cycle_type" type="text" value="<?= $object->cycle_type ?>" required
                    minlength="3" maxlength="60" size="60" spellcheck="false" placeholder="Example: monthly">
         </p>
