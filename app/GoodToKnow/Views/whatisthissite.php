@@ -12,7 +12,7 @@
         <blockquote>GoodToKnow.io instances are run by (at least) one admin who`s in charge of site maintenance and
             content approval.
         </blockquote>
-        <p>If you'd like to become a member of this instance then contact its admin.
+        <p>If you`d like to become a member of this instance then contact its admin.
             If you stumble across a different instance you can ask its admin to join.
             Otherwise, if you'd like to create your own instance you can either use the source code yourself found at <a
                     href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
