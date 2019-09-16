@@ -10,7 +10,8 @@
             users are divided into communities in order to control who has access to which blog posts.
             Additionally, (on a user-by-user basis) it has features for tracking things which one would normally
             track in one's personal life such as recurring payments, banking transactions and recurring to-do list
-            items. In other words you get to create and share blog posts and you get to keep track personal records.</p>
+            items. In other words you get to create and share blog posts and you get to keep track of personal
+            records.</p>
         <blockquote>GoodToKnow.io instances are run by (at least) one admin who`s in charge of site maintenance and
             content approval.
         </blockquote>
