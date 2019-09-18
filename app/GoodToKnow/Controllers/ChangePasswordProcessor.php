@@ -33,7 +33,7 @@ class ChangePasswordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'password_for_regandchange_prep.php';
 
-        $password = password_for_regandchange_prep($db);
+        $password = password_for_regandchange_prep();
 
 
         /**

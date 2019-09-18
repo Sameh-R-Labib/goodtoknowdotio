@@ -18,6 +18,8 @@ function post_object_for_owner_prep(string $field_name, mysqli $db, $user_id): o
      * Also saves the post id in the session.
      */
 
+    global $sessionMessage;
+
     require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
     $chosen_post_id = integer_form_field_prep($field_name, 1, PHP_INT_MAX);

@@ -45,7 +45,7 @@ class AdminCreateUser
 
         $submitted_username = username_for_registration_prep($db);
 
-        $submitted_password = password_for_regandchange_prep($db);
+        $submitted_password = password_for_regandchange_prep();
 
         $submitted_title = title_ofaperson_form_field_prep('title');
 

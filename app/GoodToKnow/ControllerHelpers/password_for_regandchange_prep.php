@@ -8,7 +8,7 @@ use mysqli;
  * @param mysqli $db
  * @return string
  */
-function password_for_regandchange_prep(mysqli $db): string
+function password_for_regandchange_prep(): string
 {
     /**
      * This function gets the submitted password when the user is either being registered or is
