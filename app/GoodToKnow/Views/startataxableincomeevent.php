@@ -1,16 +1,17 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/StartATaxableIncomeEventProcessor/page" method="post">
     <h1>Create a Taxable 💸 Event 📽</h1>
-    <h2>Initialize the Taxable Income Event record with its label and time</h2>
-    <p>
-        <small>✅ emoji for the label.</small>
-    </p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">Label: </label>
+            <label for="label">Label (✅ emoji): </label>
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
                    size="61" spellcheck="false" placeholder="Technical support for a Gtk.io User">
+        </p>
+        <p>
+            <label for="time">Unix time for when event occured: </label>
+            <input id="time" name="time" type="text" value="" required minlength="10" maxlength="22" size="22"
+                   placeholder="1560190617">
         </p>
         <p>
             <label for="year_received">Year for when event occured: </label>
@@ -18,9 +19,17 @@
                    size="6" placeholder="2018">
         </p>
         <p>
-            <label for="time">Unix time for when event occured: </label>
-            <input id="time" name="time" type="text" value="" required minlength="10" maxlength="22"
-                   size="22" placeholder="1560190617">
+            <label for="currency">Currency (✅ emoji): </label>
+            <input id="currency" name="currency" type="text" value="" required minlength="1" maxlength="15" size="15">
+        </p>
+        <p>
+            <label for="amount">Amount of currency received: </label>
+            <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="16" size="16">
+        </p>
+        <p>
+            <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
+            <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
+                      placeholder="The frequency of this income is _ _ _ _."></textarea>
         </p>
     </section>
     <?php require SUBMITABORT; ?>

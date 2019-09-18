@@ -1,14 +1,10 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WriteOverATaxableIncomeEventUpdate/page" method="post">
-    <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-        echo $object->label; ?></h2>
-    <p>
-        <small>✅ emoji for the label and comment.</small>
-    </p>
+    <h1>Edit a Taxable 💸 Event 📽</h1>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
-            <label for="label">Label: </label>
+            <label for="label">Label (✅ emoji): </label>
             <input id="label" name="label" type="text" value="<?= $object->label ?>" required minlength="3"
                    maxlength="264" size="61" spellcheck="false" placeholder="Customer six month dues.">
         </p>
