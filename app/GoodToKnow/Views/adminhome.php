@@ -8,10 +8,10 @@
         <ul>
             <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
             <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
-            <li><a href="/ax1/DefaultCommunity/page">Change Default 🧑🏿‍🤝‍🧑🏽</a></li>
-            <li><a href="/ax1/ChangePassword/page">Change 🔑</a></li>
-            <li><a href="/ax1/CreateNewPost/page">Create 📄</a></li>
-            <li><a href="/ax1/EditMyPost/page">Edit 📄</a></li>
+            <li><a href="/ax1/DefaultCommunity/page">Change my Default 🧑🏿‍🤝‍🧑🏽</a></li>
+            <li><a href="/ax1/ChangePassword/page">Change my 🔑</a></li>
+            <li><a href="/ax1/CreateNewPost/page">Create a 📄</a></li>
+            <li><a href="/ax1/EditMyPost/page">Edit a 📄</a></li>
             <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own 📄</a></li>
             <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
             <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
