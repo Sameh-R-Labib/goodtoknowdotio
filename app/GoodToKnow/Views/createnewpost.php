@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/CreateNewPostProcessor/page" method="post">
         <h1>Create a 📄</h1>
-        <p>Which topic is for the new post?</p>
+        <p>Which <em>topic</em> do you want the new <em>post</em> to live in?</p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <?php foreach ($special_topic_array as $key => $value): ?>
@@ -11,7 +11,7 @@
                 </label>
             <?php endforeach; ?>
         </section>
-        <p><small>* These are topics in the current community.</small></p>
+        <p><small>* These are the topics in your <b>current community</b>.</small></p>
         <?php require SUBMITABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>
