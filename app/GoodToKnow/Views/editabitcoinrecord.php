@@ -1,8 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/EditABitcoinRecordProcessor/page" method="post">
     <h1>Edit a ₿ 📽</h1>
-    <h2>Which Bitcoin Record?</h2>
-    <p>These are listed by bitcoin address.</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
