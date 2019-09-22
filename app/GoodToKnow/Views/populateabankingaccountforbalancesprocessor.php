@@ -1,7 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/PopulateABankingAccountForBalancesSubmit/page" method="post">
-        <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $object->acct_name; ?></h2>
+        <h1>Edit a 🏦ing 📒 for ⚖️s</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
