@@ -1,13 +1,10 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/GenerateABankingAccountForBalancesProcessor/page" method="post">
         <h1>Create a 🏦ing 📒 for ⚖️s</h1>
-        <p>
-            <small>✅ emoji.</small>
-        </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
-                <label for="acct_name">Bank Account Name: </label>
+                <label for="acct_name">Bank Account Name (✅ emoji): </label>
                 <input id="acct_name" name="acct_name" type="text" value="" required minlength="3" maxlength="30"
                        size="34" spellcheck="false" placeholder="Personal Credit Card">
             </p>

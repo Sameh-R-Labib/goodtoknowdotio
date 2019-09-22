@@ -1,8 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/PolishARecurringPaymentRecordProcessor/page" method="post">
     <h1>Edit a 🌀 💳 📽</h1>
-    <h2>Which RecurringPayment Record?</h2>
-    <p>These are listed by RecurringPayment label.</p>
+    <p>Which RecurringPayment Record?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
