@@ -6,7 +6,7 @@
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text" value="" required minlength="4" maxlength="264"
-                       size="67" spellcheck="false">
+                       size="60" spellcheck="false">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>

@@ -8,7 +8,7 @@
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text"
                        value="<?php /** @noinspection PhpUndefinedVariableInspection */
-                       echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264" size="67">
+                       echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264" size="60">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>

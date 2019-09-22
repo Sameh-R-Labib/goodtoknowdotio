@@ -8,12 +8,12 @@
         <p>
             <label for="name">Name: </label>
             <input id="name" name="community_name" type="text" value="" required minlength="1" maxlength="200"
-                   size="67" spellcheck="false">
+                   size="61" spellcheck="false">
         </p>
         <p>
             <label for="description">Description: </label>
             <input id="description" name="community_description" type="text" value="" required minlength="1"
-                   maxlength="230" size="67" spellcheck="false">
+                   maxlength="230" size="61" spellcheck="false">
         </p>
     </section>
     <?php require SUBMITABORT; ?>

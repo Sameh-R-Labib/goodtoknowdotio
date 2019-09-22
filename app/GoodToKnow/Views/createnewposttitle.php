@@ -27,12 +27,12 @@
         <p>
             <label for="title">Main title: </label>
             <input id="title" name="main_title" type="text" value="" required minlength="1" maxlength="200"
-                   size="67" spellcheck="false">
+                   size="60" spellcheck="false">
         </p>
         <p>
             <label for="extension">Title extension: </label>
             <input id="extension" name="title_extension" type="text" value="" required minlength="1" maxlength="200"
-                   size="64" spellcheck="false">
+                   size="60" spellcheck="false">
         </p>
     </section>
     <?php require SUBMITABORT; ?>

@@ -6,7 +6,7 @@
             <p>
                 <label for="address">₿ address: </label>
                 <input id="address" name="address" type="text" value="" required minlength="8" maxlength="264"
-                       size="67" spellcheck="false">
+                       size="60" spellcheck="false">
             </p>
             <p>
                 <label for="initial_balance">Initial BTC Balance: </label>
@@ -25,8 +25,8 @@
             </p>
             <p>
                 <label for="price_point">BTC Price at Time of Purchase: </label>
-                <input id="price_point" name="price_point" type="text" placeholder="0.00"
-                       value="" minlength="2" spellcheck="false" size="13" maxlength="13">
+                <input id="price_point" name="price_point" type="text" placeholder="0.00" value="" minlength="2"
+                       spellcheck="false" size="13" maxlength="13">
             </p>
             <p>
                 <label for="time">Unix Time at Purchase: </label>
