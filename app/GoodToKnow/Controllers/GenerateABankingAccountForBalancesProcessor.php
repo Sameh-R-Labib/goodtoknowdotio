@@ -3,6 +3,8 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class GenerateABankingAccountForBalancesProcessor
@@ -11,9 +13,7 @@ class GenerateABankingAccountForBalancesProcessor
     {
         /**
          * Create a database record in the banking_acct_for_balances table using the submitted banking_acct_for_balances
-         * acct_name. The remaining field values will be set to default values.
-         *
-         * 'acct_name'
+         * data.
          */
 
         global $sessionMessage;
@@ -25,7 +25,21 @@ class GenerateABankingAccountForBalancesProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
         $acct_name = standard_form_field_prep('acct_name', 3, 30);
+
+        $start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
+
+        if ($start_time === 0) $start_time = 1560190617;
+
+        $start_balance = float_form_field_prep('start_balance', -21000000000.0, 21000000000.0);
+
+        $currency = standard_form_field_prep('currency', 1, 15);
+
+        $comment = standard_form_field_prep('comment', 0, 800);
 
         $db = get_db();
 
@@ -34,8 +48,8 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a BankingAcctForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => 0, 'start_balance' => 0,
-            'currency' => '', 'comment' => ''];
+        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => $start_time,
+            'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
 
 
         /**
