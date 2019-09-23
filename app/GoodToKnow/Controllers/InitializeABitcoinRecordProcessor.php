@@ -4,6 +4,8 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class InitializeABitcoinRecordProcessor
@@ -11,8 +13,8 @@ class InitializeABitcoinRecordProcessor
     function page()
     {
         /**
-         * Create a database record in the bitcoin table using the submitted bitcoin
-         * address. The remaining field values will be set to default values.
+         * Create a database record in the bitcoin table using the submitted data.
+         *
          */
 
         global $sessionMessage;
@@ -25,7 +27,27 @@ class InitializeABitcoinRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
         $address = bitcoin_address_form_field_prep('address');
+
+        $initial_balance = float_form_field_prep('initial_balance', 0.0, 21000000000.0);
+
+        $current_balance = float_form_field_prep('current_balance', 0.0, 21000000000.0);
+
+        $currency = standard_form_field_prep('currency', 1, 15);
+
+        $price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
+
+        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+
+        if (time === 0) $edited_time = 1560190617;
+
+        $comment = standard_form_field_prep('comment', 0, 800);
 
 
         $db = get_db();
@@ -35,8 +57,9 @@ class InitializeABitcoinRecordProcessor
          * Create a Bitcoin array for the record.
          */
 
-        $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => 0,
-            'current_balance' => 0, 'currency' => '', 'price_point' => 0, 'time' => 0, 'comment' => ''];
+        $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => $initial_balance,
+            'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
+            'time' => $time, 'comment' => $comment];
 
 
         /**
