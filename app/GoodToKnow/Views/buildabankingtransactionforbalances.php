@@ -2,15 +2,12 @@
     <form action="/ax1/BuildABankingTransactionForBalancesProcessor/page" method="post">
         <h1>Create a 🏦ing 🔃 for ⚖️s</h1>
         <p>
-            <small>✅ emoji for the label.</small>
-        </p>
-        <p>
-            <small>* Negative (-) amounts mean money you are spending from <b>this</b> account.</small>
+            <small>* A negative (-) amount shall signify money spent.</small>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
-                <label for="label">Label: </label>
+                <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text" value="" required minlength="3" maxlength="30"
                        size="34" spellcheck="false" placeholder="Monthly Car Payment">
             </p>
