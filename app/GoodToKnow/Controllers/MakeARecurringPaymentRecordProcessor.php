@@ -3,6 +3,8 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\RecurringPayment;
+use function GoodToKnow\ControllerHelpers\float_form_field_prep;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class MakeARecurringPaymentRecordProcessor
@@ -11,9 +13,7 @@ class MakeARecurringPaymentRecordProcessor
     {
         /**
          * Create a database record in the recurring_payment table using the submitted
-         * recurring_payment label. The remaining field values will be set to default values.
-         *
-         * 'label'
+         * recurring_payment data.
          */
 
         global $sessionMessage;
@@ -25,15 +25,29 @@ class MakeARecurringPaymentRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
         $label = standard_form_field_prep('label', 4, 264);
+
+        $currency = standard_form_field_prep('currency', 1, 15);
+
+        $amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
+
+        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+
+        if ($time === 0) $time = 1560190617;
+
+        $comment = standard_form_field_prep('comment', 0, 800);
 
 
         /**
          * Create a RecurringPayment array for the record.
          */
 
-        $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => '',
-            'amount_paid' => 0, 'time' => 0, 'comment' => ''];
+        $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => $currency,
+            'amount_paid' => $amount_paid, 'time' => $time, 'comment' => $comment];
 
 
         /**
