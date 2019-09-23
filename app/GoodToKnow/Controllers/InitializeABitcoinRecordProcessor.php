@@ -45,7 +45,7 @@ class InitializeABitcoinRecordProcessor
 
         $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if (time === 0) $edited_time = 1560190617;
+        if ($time === 0) $time = 1560190617;
 
         $comment = standard_form_field_prep('comment', 0, 800);
 
