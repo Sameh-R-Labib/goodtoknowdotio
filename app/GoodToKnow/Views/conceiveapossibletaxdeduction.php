@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/ConceiveAPossibleTaxDeductionProcessor/page" method="post">
         <h1>Create a 🤔 Tax ✍🏽🔽</h1>
-        <p><small>* Records will be deleted automatically after the fourth year. *</small></p>
+        <p><small>* Records will be deleted automatically after the fourth year.</small></p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>

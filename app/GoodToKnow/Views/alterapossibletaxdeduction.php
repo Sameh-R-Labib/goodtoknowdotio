@@ -1,8 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/AlterAPossibleTaxDeductionYearFilter/page" method="post">
     <h1>Edit a 🤔 Tax ✍🏽🔽</h1>
-    <h2>Narrow down the data set for 🤔 Tax ✍🏽🔽</h2>
-    <p>Which year_paid does the transaction fall under?</p>
+    <p>Which <em>year paid</em> does the transaction fall under?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>

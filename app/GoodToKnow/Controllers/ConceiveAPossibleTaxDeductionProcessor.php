@@ -11,8 +11,7 @@ class ConceiveAPossibleTaxDeductionProcessor
     function page()
     {
         /**
-         * Create a database record in the possible_tax_deduction table using the submitted possible_tax_deduction
-         * label and year_paid. The remaining field values will be set to default values.
+         * Create a database record in the possible_tax_deduction table using the submitted possible_tax_deduction data.
          */
 
         global $sessionMessage;
@@ -23,22 +22,15 @@ class ConceiveAPossibleTaxDeductionProcessor
         kick_out_onabort();
 
 
-        /**
-         * Get label
-         */
-
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-        $label = standard_form_field_prep('label', 3, 264);
-
-
-        /**
-         * Get year_paid
-         */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
+        $label = standard_form_field_prep('label', 3, 264);
+
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
+
+        $comment = standard_form_field_prep('comment', 0, 800);
 
 
         /**
@@ -47,7 +39,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $db = get_db();
 
-        $array_record = ['user_id' => $user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => ''];
+        $array_record = ['user_id' => $user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => $comment];
 
 
         // In memory object.
