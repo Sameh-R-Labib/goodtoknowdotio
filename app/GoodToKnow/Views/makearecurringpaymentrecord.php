@@ -6,17 +6,17 @@
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text" value="" required minlength="4" maxlength="264"
-                       size="60" spellcheck="false">
+                       size="60" spellcheck="false" placeholder="Cell Phone Each Month">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>
                 <input id="currency" name="currency" type="text" value="" required minlength="1" maxlength="15"
-                       size="15">
+                       size="15" placeholder="💵">
             </p>
             <p>
                 <label for="amount_paid">Amount of currency paid: </label>
                 <input id="amount_paid" name="amount_paid" type="text" value="" required minlength="1" maxlength="16"
-                       size="16">
+                       size="16" placeholder="108.49">
             </p>
             <p>
                 <label for="time">Unix time at last payment: </label>
@@ -26,7 +26,7 @@
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
-                          placeholder="The frequency of this payment is _ _ _ _."></textarea>
+                          placeholder="Notes to self."></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>
