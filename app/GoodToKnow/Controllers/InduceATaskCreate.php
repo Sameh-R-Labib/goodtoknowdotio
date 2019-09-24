@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use GoodToKnow\Models\Task;
 
@@ -10,9 +11,7 @@ class InduceATaskCreate
     function page()
     {
         /**
-         * Create a database record in the task
-         * table using the submitted task label.
-         * The remaining field values will be set to default values.
+         * Create a database record in the task table using the submitted data.
          */
 
         global $sessionMessage;
@@ -22,14 +21,19 @@ class InduceATaskCreate
 
         kick_out_onabort();
 
-
-        /**
-         * Get label
-         */
-
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
         $label = standard_form_field_prep('label', 3, 264);
+
+        $last = integer_form_field_prep('last', 0, PHP_INT_MAX);
+
+        $next = integer_form_field_prep('next', 0, PHP_INT_MAX);
+
+        $cycle_type = standard_form_field_prep('cycle_type', 3, 60);
+
+        $comment = standard_form_field_prep('comment', 0, 800);
 
 
         /**
@@ -38,7 +42,8 @@ class InduceATaskCreate
 
         $db = get_db();
 
-        $array_record = ['user_id' => $user_id, 'label' => $label, 'last' => 0, 'next' => 0, 'cycle_type' => '', 'comment' => ''];
+        $array_record = ['user_id' => $user_id, 'label' => $label, 'last' => $last, 'next' => $next,
+            'cycle_type' => $cycle_type, 'comment' => $comment];
 
 
         // In memory object.
@@ -65,6 +70,6 @@ class InduceATaskCreate
          * Wrap it up.
          */
 
-        breakout(' A <b>task</b> record has been created 👍. ');
+        breakout(' A <b>task</b> record was created 👍. ');
     }
 }
