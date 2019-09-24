@@ -4,7 +4,7 @@
         <?php require SESSIONMESSAGE; ?>
         <h2>Log-in Credentials</h2>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">The rules for the username: Must consist of two words separated by an underscore.
+            <span class="tooltiptext tooltip-top">Two words separated by an underscore.
             The first word (capitalized w/ 4-9 char.) must start with an upper case letter.
             The second word must consist of two digits.</span>
         </p>
