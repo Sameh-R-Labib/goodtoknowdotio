@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/FeatureATaskEdit/page" method="post">
     <h1>Edit a To-do Task/💪</h1>
-    <p>Which Task?</p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which Task?</p>
     <section>
         <?php foreach ($array as $key => $object): ?>
             <label for="c<?= $key ?>" class="radio">

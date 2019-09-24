@@ -1,13 +1,12 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/EditMyPostEditProcessor/page" method="post">
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a></h2>
-    <?php require SESSIONMESSAGE; ?>
-    <p>
-        <small>📌: Limit the scope to the context and have it be opinionated.
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">Limit the scope to context and have it be opinionated.
             For example if the community is about Jabber chat then create posts which
-            describe the way we all set up our chat clients.
-        </small>
+            describe the way we all set up our chat clients.</span>
     </p>
+    <?php require SESSIONMESSAGE; ?>
     <?php require URLOFMOSTRECENTUPLOAD; ?>
     <section>
         <p>

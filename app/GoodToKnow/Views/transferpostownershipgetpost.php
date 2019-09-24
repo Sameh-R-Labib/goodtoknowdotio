@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipGetUsername/page" method="post">
-    <h2>Confirm</h2>
+    <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>Are you sure you want me to transfer ownership of "<?= $long_title_of_post; ?>". Which resides in
         the <?= $community_name ?> community. Which resides in the <i><?= $topic_name ?></i> topic. And is currently

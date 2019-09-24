@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/AuthorDeletesOwnPostDelProc/page" method="post">
-    <h2>Confirm</h2>
+    <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>Are you sure you want me to delete "<b><?= $long_title_of_post ?></b>".</p>
     <section>

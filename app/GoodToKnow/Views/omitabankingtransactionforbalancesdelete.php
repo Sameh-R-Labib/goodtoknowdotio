@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/OmitABankingTranForBalancesProcessConfirmation/page" method="post">
-        <h2>Confirm</h2>
+        <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
         <p><b>Label: </b><?php /** @noinspection PhpUndefinedVariableInspection */

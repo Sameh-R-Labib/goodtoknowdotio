@@ -1,7 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/DefaultCommunityProcessor/page" method="post">
     <h1>Change Default 🧑🏿‍🤝‍🧑🏽</h1>
-    <h2>Choose</h2>
     <p>Which of your communities do you want to be the default?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>

@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipGetPost/page" method="post">
-    <h2>Select a post to affect.</h2>
+    <h1>Transfer Post Ownership</h1>
     <?php require SESSIONMESSAGE; ?>
+    <p>Select the post to be affected.</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_post_objects as $key => $post_object): ?>

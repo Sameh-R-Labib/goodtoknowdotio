@@ -1,10 +1,11 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TopicDescriptionEditorFormProcessor/page" method="post">
-    <h2><?= $saved_str01 ?> Description</h2>
-    <?php require SESSIONMESSAGE; ?>
-    <p>
-        <small>🚫 markdown ✅ emoji ✅ line-break ⚖️ max. 230 bytes.</small>
+    <h2>Topic Description Editor</h2>
+    <h2><?= $saved_str01 ?></h2>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 230 bytes.</span>
     </p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <label for="textarea"></label>

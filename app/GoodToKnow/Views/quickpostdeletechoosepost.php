@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/QuickPostDeleteDelete/page" method="post">
-    <h2>Which post do you want to delete?</h2>
+    <h1>Delete a Post</h1>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which post do you want to delete?</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_post_objects as $key => $post_object): ?>

@@ -1,8 +1,11 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/RemoveComsChoicesProcessor/page" method="post">
-    <h2>Possible Communities To Remove From the User</h2>
+    <h1>Remove Communities From the User</h1>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">The presented choices are communities which the user currently has
+            membership in.</span>
+    </p>
     <?php require SESSIONMESSAGE; ?>
-    <p>The presented choices are communities which the user currently has membership in.</p>
     <section>
         <?php foreach ($coms_user_belongs_to as $key => $value): ?>
             <label class="checkbox">

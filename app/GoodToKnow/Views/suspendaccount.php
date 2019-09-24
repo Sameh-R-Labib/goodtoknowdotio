@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/SuspendAccountProcessor/page" method="post">
     <h1>Suspend Account</h1>
-    <h2>Enter the Username</h2>
     <?php require SESSIONMESSAGE; ?>
+    <p>Enter the Username</p>
     <section>
         <p>
             <label for="username">U/N: </label>

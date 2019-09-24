@@ -1,6 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/EditMyPostProcessor/page" method="post">
     <h1>Edit My 📄</h1>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">Shown above are the topics within your current community.</span>
+    </p>
     <p>Choose the <em>topic</em> where your post lives.</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
@@ -11,7 +14,6 @@
             </label>
         <?php endforeach; ?>
     </section>
-    <p><small>* Shown above are the topics within your <b>current community</b>.</small></p>
     <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

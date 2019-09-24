@@ -1,9 +1,12 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/NewTopicIPProcessor/page" method="post">
-    <h2>Where to put the new topic?</h2>
+    <h1>Insertion Point</h1>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">This assumes you're adding a new topic to the current community. To add a
+            topic to a different community you need to switch to it first.</span>
+    </p>
     <?php require SESSIONMESSAGE; ?>
-    <p>This assumes you're adding a new topic to the current community. To add a topic to a different community
-        you need to switch to it first.</p>
+    <p>Where to put the new topic?</p>
     <section>
         <label for="relate" class="dropdown">Put it
             <select id="relate" name="relate">

@@ -1,11 +1,9 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/RevampABankingTransactionForBalancesUpdate/page" method="post">
         <h1>Edit a 🏦ing 🔃 for ⚖️s</h1>
-        <p>
-            <small>✅ emoji for the label.</small>
-        </p>
-        <p>
-            <small>* Negative (-) amounts mean money you are spending from <b>this</b> account.</small>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">Negative (-) amounts mean it's money you are spending from this
+                account.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>

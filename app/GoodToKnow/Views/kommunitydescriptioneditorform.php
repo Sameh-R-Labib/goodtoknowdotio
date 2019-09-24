@@ -1,10 +1,10 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/KommunityDescriptionEditorFormProcessor/page" method="post">
-    <h2><?= $saved_str01 ?> Description</h2>
-    <?php require SESSIONMESSAGE; ?>
-    <p>
-        <small>🚫 markdown 🚫 html ✅ emoji ✅ line-break ⚖️ max. 230 bytes.</small>
+    <h1><?= $saved_str01 ?> Description</h1>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 230 bytes</span>
     </p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <label for="textarea"></label>

@@ -1,8 +1,10 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/GiveComsChoicesProcessor/page" method="post">
-    <h2>Possible Communities To Add For User</h2>
+    <h1>Add Community To User's Account</h1>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">The presented choices are communities which the user does Not yet have membership in.</span>
+    </p>
     <?php require SESSIONMESSAGE; ?>
-    <p>The presented choices are communities which the user does Not yet have membership in.</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($coms_user_does_not_belong_to as $key => $value): ?>

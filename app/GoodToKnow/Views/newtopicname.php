@@ -1,9 +1,11 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/NewTopicNameProcessor/page" method="post">
     <h1>Create Topic</h1>
-    <h2>Name and description of topic</h2>
-    <p>⚠️ both fields required ✅ emoji.</p>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">⚠️ both fields required ✅ emoji</span>
+    </p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Name and description of topic</p>
     <section>
         <p>
             <label for="name">Name: </label>

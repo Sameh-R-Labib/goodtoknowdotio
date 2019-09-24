@@ -1,10 +1,10 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/MemberMemEdFormProc/page" method="post">
-    <h2><?= $saved_str01 ?> Memo</h2>
-    <?php require SESSIONMESSAGE; ?>
-    <p>
-        <small>🚫 markdown 🚫 html ✅ emoji ✅ line-break ⚖️ max. 800 bytes.</small>
+    <h1><?= $saved_str01 ?> Memo</h1>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 800 bytes.</span>
     </p>
+    <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <label for="comment"></label>

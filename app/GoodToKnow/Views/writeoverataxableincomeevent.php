@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WriteOverATaxableIncomeEventYearFilter/page" method="post">
     <h1>Edit a Taxable 💸 Event 📽</h1>
-    <p>Which <em>year received</em> does the event fall under?</p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which <em>year received</em> does the event fall under?</p>
     <section>
         <p>
             <label for="year_received">Year received: </label>

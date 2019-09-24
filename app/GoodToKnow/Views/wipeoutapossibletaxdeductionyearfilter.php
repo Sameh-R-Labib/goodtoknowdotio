@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WipeOutAPossibleTaxDeductionDelete/page" method="post">
-    <h2>Which Possible Tax Deduction?</h2>
+    <h1>Delete a Possible Tax Deduction</h1>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which Possible Tax Deduction?</p>
     <section>
         <?php foreach ($array as $key => $object): ?>
             <label for="c<?= $key ?>" class="radio">

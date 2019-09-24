@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/PopulateABankingAccountForBalancesProcessor/page" method="post">
     <h1>Edit a 🏦ing 📒 for ⚖️s</h1>
-    <p>Which Banking Account for Balances?</p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which Banking Account for Balances?</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_objects as $key => $object): ?>

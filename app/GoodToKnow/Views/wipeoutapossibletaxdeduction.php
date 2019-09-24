@@ -1,9 +1,11 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WipeOutAPossibleTaxDeductionYearFilter/page" method="post">
     <h1>Delete a 🤔 Tax ✍🏽🔽</h1>
-    <h2>To narrow down the data set for 🤔 Tax ✍🏽🔽</h2>
-    <p>Which Year Paid does the transaction fall under?</p>
+    <p class="tooltip">ℹ️
+        <span class="tooltiptext tooltip-top">Your goal here is to narrow down the data set for 🤔 Tax ✍🏽🔽</span>
+    </p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which Year Paid does the transaction fall under?</p>
     <section>
         <p>
             <label for="year_paid">Year Paid: </label>

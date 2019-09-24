@@ -1,9 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/OmitABankingTransactionForBalancesTimeRange/page" method="post">
     <h1>Delete a 🏦ing 🔃 for ⚖️s</h1>
-    <h2>Narrow down the selection for choosing 🔃</h2>
-    <p>Which time range does the transaction fall under?</p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which time range does the transaction fall under?</p>
     <section>
         <label for="A" class="radio">
             <input type="radio" id="A" name="choice" value="A">

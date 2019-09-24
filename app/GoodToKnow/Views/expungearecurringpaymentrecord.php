@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/ExpungeARecurringPaymentRecordProcessor/page" method="post">
     <h1>Delete a 🌀 💳 📽</h1>
-    <p>Which RecurringPayment Record?</p>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which RecurringPayment Record?</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_recurring_payment_objects as $key => $rp_object): ?>

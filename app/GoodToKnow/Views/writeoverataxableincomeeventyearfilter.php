@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WriteOverATaxableIncomeEventEdit/page" method="post">
-    <h2>Which Taxable Income Event?</h2>
+    <h1>Edit a Possible Income Event</h1>
     <?php require SESSIONMESSAGE; ?>
+    <p>Which Taxable Income Event?</p>
     <section>
         <?php foreach ($array as $key => $object): ?>
             <label for="c<?= $key ?>" class="radio">

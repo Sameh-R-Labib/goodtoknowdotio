@@ -1,10 +1,11 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/QuickPostDeleteProcessor/page" method="post">
         <h1>Delete Any 📄</h1>
-        <h2>Delete A Post</h2>
-        <p>Topics in current community:</p>
-        <p>In which topic?</p>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">These are only topics from within the current community.</span>
+        </p>
         <?php require SESSIONMESSAGE; ?>
+        <p>In which topic?</p>
         <section>
             <?php foreach ($special_topic_array as $key => $value): ?>
                 <label for="choice-<?= $key ?>" class="radio">

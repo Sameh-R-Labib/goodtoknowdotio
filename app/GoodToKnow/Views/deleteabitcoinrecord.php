@@ -1,8 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/DeleteABitcoinRecordProcessor/page" method="post">
     <h1>Delete a ₿ 📽</h1>
-    <h2>Which Bitcoin Record?</h2>
-    <p>Listed by bitcoin address.</p>
+    <p>Which Bitcoin Record?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */

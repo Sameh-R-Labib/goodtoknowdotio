@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/AnnulABankingAcctForBalancesDelete/page" method="post">
-    <h2>Confirm</h2>
+    <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>&nbsp;</p>
     <p><b>Account: </b><?php /** @noinspection PhpUndefinedVariableInspection */
