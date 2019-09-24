@@ -5,7 +5,6 @@
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Only .jpg, .jpeg, .png, .gif files can be uploaded.</span>
     </p>
-    <p>* Only .jpg, .jpeg, .png, .gif files can be uploaded.</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>

@@ -3,9 +3,11 @@
         <h1>User</h1>
         <?php require SESSIONMESSAGE; ?>
         <h2>Log-in Credentials</h2>
-        <p>The rules for the username: Must consist of two words separated by an underscore.
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">The rules for the username: Must consist of two words separated by an underscore.
             The first word (capitalized w/ 4-9 char.) must start with an upper case letter.
-            The second word must consist of two digits.</p>
+            The second word must consist of two digits.</span>
+        </p>
         <section>
             <p>
                 <label for="name">Username (<em>like Buddy_52</em>:) </label>
@@ -22,7 +24,10 @@
                 <input id="pwd" name="password" type="password" value="" required minlength="7" spellcheck="false">
             </p>
         </section>
-        <p>Password: 10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or more capitals.</p>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">Password: 10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or
+                more capitals.</span>
+        </p>
         <h2>Person's Characteristics</h2>
         <p>Title: </p>
         <section>
