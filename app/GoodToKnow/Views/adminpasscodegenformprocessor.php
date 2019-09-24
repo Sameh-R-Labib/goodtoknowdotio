@@ -14,6 +14,12 @@
                 <input id="name" name="username" type="text" value="" required minlength="7" maxlength=12 size=12
                        spellcheck="false">
             </p>
+        </section>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">Password: 10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or
+                more capitals.</span>
+        </p>
+        <section>
             <p>
                 <label for="first_try">Password 1st try: </label>
                 <input id="first_try" name="first_try" type="password" value="" required minlength="7"
@@ -24,10 +30,6 @@
                 <input id="pwd" name="password" type="password" value="" required minlength="7" spellcheck="false">
             </p>
         </section>
-        <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">Password: 10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or
-                more capitals.</span>
-        </p>
         <h2>Person's Characteristics</h2>
         <p>Title: </p>
         <section>
