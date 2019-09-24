@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/BuildABankingTransactionForBalancesProcessor/page" method="post">
         <h1>Create a 🏦ing 🔃 for ⚖️s</h1>
-        <p>
-            <small>* A negative (-) amount shall signify money spent.</small>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">A negative (-) amount shall signify money spent.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>

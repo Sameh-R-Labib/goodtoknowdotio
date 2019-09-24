@@ -1,8 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/CheckMyBankingAccountTxBalancesProcessor/page" method="post">
     <h1>Check my 🏦ing 📋 ⚖️s</h1>
-    <h2>Which Banking Account for Balances?</h2>
-    <p>Choose:</p>
+    <p>Which Banking Account for Balances?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */

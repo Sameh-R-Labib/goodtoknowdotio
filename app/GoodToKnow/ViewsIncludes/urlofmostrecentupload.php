@@ -7,7 +7,7 @@
 <?php else: ?>
     <p>
         <small>
-            ▶️ Recent Upload: [ none this session ] ◀️
+            ▶️ Recent Upload: [ none this session ]
         </small>
     </p>
 <?php endif; ?>
