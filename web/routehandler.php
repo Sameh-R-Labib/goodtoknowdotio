@@ -31,6 +31,7 @@ define('LISTPOSTS', VIEWSINCLUDES . DIRSEP . 'listposts.php');
 define('CURRENTPOST', VIEWSINCLUDES . DIRSEP . 'currentpost.php');
 define('CONTROLPANELLINK', VIEWSINCLUDES . DIRSEP . 'controlpanellink.php');
 define('SENDMESSAGELINK', VIEWSINCLUDES . DIRSEP . 'sendmessagelink.php');
+define('LOGINDIVLINK', VIEWSINCLUDES . DIRSEP . 'logindivlink.php');
 define('MESSAGETHEAUTHOR', VIEWSINCLUDES . DIRSEP . 'messagetheauthor.php');
 define('BREADCRUMBS', VIEWSINCLUDES . DIRSEP . 'breadcrumbs.php');
 define('CURRENTCOMMUNITY', VIEWSINCLUDES . DIRSEP . 'currentcommunity.php');
