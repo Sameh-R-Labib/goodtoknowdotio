@@ -1,8 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/AnnulABankingAcctForBalancesProcessor/page" method="post">
     <h1>Delete a 🏦ing 📒 for ⚖️s</h1>
-    <h2>Which Banking Account for Balances?</h2>
-    <p>These are listed by Banking Account For Balances account name.</p>
+    <p>Which Banking Account for Balances?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */

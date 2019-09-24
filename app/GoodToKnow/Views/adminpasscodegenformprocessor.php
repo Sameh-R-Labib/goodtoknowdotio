@@ -16,7 +16,7 @@
             </p>
         </section>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">Password: 10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or
+            <span class="tooltiptext tooltip-top">10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or
                 more capitals.</span>
         </p>
         <section>
