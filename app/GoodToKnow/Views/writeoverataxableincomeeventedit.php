@@ -6,7 +6,7 @@
         <p>
             <label for="label">Label (✅ emoji): </label>
             <input id="label" name="label" type="text" value="<?= $object->label ?>" required minlength="3"
-                   maxlength="264" size="61" spellcheck="false" placeholder="Customer six month dues.">
+                   maxlength="264" size="61" spellcheck="false" placeholder="Customer six month contribution.">
         </p>
         <p>
             <label for="time">Unix time for when event occured: </label>
@@ -21,12 +21,12 @@
         <p>
             <label for="currency">Currency (✅ emoji): </label>
             <input id="currency" name="currency" type="text"
-                   value="<?= $object->currency ?>" required minlength="1" maxlength="15" size="15">
+                   value="<?= $object->currency ?>" required minlength="1" maxlength="15" size="15" placeholder="💵">
         </p>
         <p>
             <label for="amount">Amount of currency received: </label>
             <input id="amount" name="amount" type="text"
-                   value="<?= $object->amount ?>" required minlength="1" maxlength="16" size="16">
+                   value="<?= $object->amount ?>" required minlength="1" maxlength="16" size="16" placeholder="500.29">
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>

@@ -20,11 +20,13 @@
         </p>
         <p>
             <label for="currency">Currency (✅ emoji): </label>
-            <input id="currency" name="currency" type="text" value="" required minlength="1" maxlength="15" size="15">
+            <input id="currency" name="currency" type="text" value="" required minlength="1" maxlength="15" size="15"
+                   placeholder="💵">
         </p>
         <p>
             <label for="amount">Amount of currency received: </label>
-            <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="16" size="16">
+            <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="16" size="16"
+                   placeholder="150.24">
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
