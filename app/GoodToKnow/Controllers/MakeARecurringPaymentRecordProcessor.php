@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\RecurringPayment;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class MakeARecurringPaymentRecordProcessor
@@ -25,8 +24,6 @@ class MakeARecurringPaymentRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $label = standard_form_field_prep('label', 4, 264);
@@ -35,9 +32,13 @@ class MakeARecurringPaymentRecordProcessor
 
         $amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
 
-        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if ($time === 0) $time = 1546300800;
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
+
+        // - - -
+
 
         $comment = standard_form_field_prep('comment', 0, 800);
 
@@ -45,6 +46,8 @@ class MakeARecurringPaymentRecordProcessor
         /**
          * Create a RecurringPayment array for the record.
          */
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => $currency,
             'amount_paid' => $amount_paid, 'time' => $time, 'comment' => $comment];
