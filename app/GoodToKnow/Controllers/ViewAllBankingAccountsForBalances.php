@@ -16,6 +16,7 @@ class ViewAllBankingAccountsForBalances
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
+        global $is_guest;
 
         $array_of_objects = [];   // Just to make PhpStorm happy.
 

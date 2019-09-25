@@ -14,6 +14,7 @@ class WhatIsThisSite
          */
 
         global $is_admin;
+        global $is_guest;
         global $special_community_array;
         global $type_of_resource_requested;
 

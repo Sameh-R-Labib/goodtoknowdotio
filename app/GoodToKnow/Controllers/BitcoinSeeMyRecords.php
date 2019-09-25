@@ -9,6 +9,7 @@ class BitcoinSeeMyRecords
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
+        global $is_guest;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 

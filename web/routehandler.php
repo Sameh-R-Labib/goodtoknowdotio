@@ -144,6 +144,8 @@ $is_logged_in = (!empty($user_id)) ? true : false;
 
 $is_admin = ($role === 'admin') ? true : false;
 
+$is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
+
 
 /**
  * I have these here to prevent PhpStorm from telling me they are out of scope.

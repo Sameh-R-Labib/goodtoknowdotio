@@ -7,6 +7,7 @@ class AdminHome
     function page()
     {
         global $is_admin;
+        global $is_guest;
         global $sessionMessage;
         global $special_community_array;
         global $type_of_resource_requested;
