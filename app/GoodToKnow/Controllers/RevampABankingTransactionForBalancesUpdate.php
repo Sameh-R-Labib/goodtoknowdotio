@@ -22,6 +22,7 @@ class RevampABankingTransactionForBalancesUpdate
          */
 
         global $sessionMessage;
+
         global $saved_int01;    // record id
 
         kick_out_loggedoutusers();
@@ -46,11 +47,11 @@ class RevampABankingTransactionForBalancesUpdate
         $edited_amount = float_form_field_prep('amount', -21000000000.0, 21000000000.0);
 
 
-        // time
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
-        $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
 
-        if ($edited_time === 0) $edited_time = 1546300800;
+        // - - -
 
 
         // bank_id
@@ -85,7 +86,9 @@ class RevampABankingTransactionForBalancesUpdate
         $object->bank_id = $edited_bank_id;
         $object->label = $edited_label;
         $object->amount = $edited_amount;
-        $object->time = $edited_time;
+
+        /** @noinspection PhpUndefinedVariableInspection */
+        $object->time = $time;
 
 
         /**
