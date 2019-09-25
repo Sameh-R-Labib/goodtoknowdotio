@@ -32,7 +32,7 @@ class LoginScript
 
         self::store_application_state($db, $sessionMessage, $user);
 
-        breakout(' GoodToKnow.io works best with 🗺️: Opera, Chrome, Brave. ');
+        breakout(' Welcome back! ');
     }
 
     /**
