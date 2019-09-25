@@ -4,7 +4,9 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
+use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
+use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -43,9 +45,105 @@ class InitializeABitcoinRecordProcessor
 
         $price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
 
+
+        // - - -
+
+
+        /**
+         * Get `timezone`.
+         */
+
+        $timezone = standard_form_field_prep('timezone', 2, 60);
+
+
+        /**
+         * Use $timezone to set the default timezone for the script to use.
+         */
+
+        date_default_timezone_set($timezone);
+
+
+        /**
+         * Get `date`.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
+
+        $date = date_form_field_prep('date');
+
+
+        /**
+         * Get a timestamp from `date`.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_timestamp_from_date.php';
+
+        $timestamp = get_timestamp_from_date($date);
+
+
+        /**
+         * Get `hour`.
+         */
+
+        $hour = integer_form_field_prep('hour', 0, 23);
+
+
+        /**
+         * Update $timestamp with $hour.
+         */
+
+        $timestamp += 3600 * $hour;
+
+
+        /**
+         * Get `minute`.
+         */
+
+        $minute = integer_form_field_prep('minute', 0, 59);
+
+
+        /**
+         * Update $timestamp with $minute.
+         */
+
+        $timestamp += 60 * $minute;
+
+
+        /**
+         * Get `second`.
+         */
+
+        $second = integer_form_field_prep('second', 0, 59);
+
+
+        /**
+         * Update $timestamp with $second.
+         */
+
+        $timestamp += $second;
+
+
+        // - - -
+
+
         $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
         if ($time === 0) $time = 1560190617;
+
+
+        // + + + Debug Code
+
+        echo "<p>Print_r \$timestamp: </p>\n<pre>";
+        print_r($timestamp);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+        echo "<p>Print_r \$time: </p>\n<pre>";
+        print_r($time);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
+        // + + +
 
         $comment = standard_form_field_prep('comment', 0, 800);
 
