@@ -136,7 +136,6 @@ class InitializeABitcoinRecordProcessor
         echo "<p>Print_r \$timestamp: </p>\n<pre>";
         print_r($timestamp);
         echo "</pre>\n";
-        die("<p>End debug</p>\n");
         echo "<p>Print_r \$time: </p>\n<pre>";
         print_r($time);
         echo "</pre>\n";
