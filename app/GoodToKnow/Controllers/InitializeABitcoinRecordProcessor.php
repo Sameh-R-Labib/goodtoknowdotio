@@ -46,92 +46,9 @@ class InitializeABitcoinRecordProcessor
         $price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
 
 
-        // - - -
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
-
-        /**
-         * Get `timezone`.
-         */
-
-        $timezone = standard_form_field_prep('timezone', 2, 60);
-
-
-        /**
-         * Use $timezone to set the default timezone for the script to use.
-         */
-
-        if (!date_default_timezone_set($timezone)) {
-            breakout(' Invalid PHP time zone submitted 👎🏽. ');
-        }
-
-
-        /**
-         * Get `date`.
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
-
-        $date = date_form_field_prep('date');
-
-
-        /**
-         * Get a timestamp from `date`.
-         */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'get_timestamp_from_date.php';
-
-        $time = get_timestamp_from_date($date);
-
-
-        /**
-         * Get `hour`.
-         */
-
-        $hour = integer_form_field_prep('hour', 0, 23);
-
-
-        /**
-         * Update $timestamp with $hour.
-         */
-
-        $time += 3600 * $hour;
-
-
-        /**
-         * Get `minute`.
-         */
-
-        $minute = integer_form_field_prep('minute', 0, 59);
-
-
-        /**
-         * Update $timestamp with $minute.
-         */
-
-        $time += 60 * $minute;
-
-
-        /**
-         * Get `second`.
-         */
-
-        $second = integer_form_field_prep('second', 0, 59);
-
-
-        /**
-         * Update $timestamp with $second.
-         */
-
-        $time += $second;
-
-
-        /**
-         * Never allow $time to be 0.
-         */
-
-
-        if ($time === 0) $time = 1546300800;
-
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
 
         // - - -
 
@@ -145,6 +62,8 @@ class InitializeABitcoinRecordProcessor
         /**
          * Create a Bitcoin array for the record.
          */
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => $initial_balance,
             'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
