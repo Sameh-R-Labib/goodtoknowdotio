@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class PopulateABankingAccountForBalancesSubmit
@@ -35,15 +34,17 @@ class PopulateABankingAccountForBalancesSubmit
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $edited_acct_name = standard_form_field_prep('acct_name', 3, 30);
 
-        $edited_start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
 
-        if ($edited_start_time === 0) $edited_start_time = 1546300800;
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
+
+        // - - -
+
 
         $edited_start_balance = float_form_field_prep('start_balance', -21000000000.0, 21000000000.0);
 
@@ -61,8 +62,9 @@ class PopulateABankingAccountForBalancesSubmit
         $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
-            $sessionMessage .= "";
+
             breakout(' Unexpectedly I could not find that banking account for balances. ');
+
         }
 
 
@@ -71,7 +73,9 @@ class PopulateABankingAccountForBalancesSubmit
          */
 
         $object->acct_name = $edited_acct_name;
-        $object->start_time = $edited_start_time;
+
+        /** @noinspection PhpUndefinedVariableInspection */
+        $object->start_time = $time;
         $object->start_balance = $edited_start_balance;
         $object->currency = $edited_currency;
         $object->comment = $edited_comment;
