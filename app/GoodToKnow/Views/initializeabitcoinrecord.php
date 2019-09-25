@@ -28,12 +28,10 @@
                 <input id="price_point" name="price_point" type="text" placeholder="0.00" value="" minlength="2"
                        spellcheck="false" size="13" maxlength="13">
             </p>
+            <hr>
+            <p>Time at Purchase</p>
             <?php require TIMEFORMFIELD; ?>
-            <p>
-                <label for="time">Unix Time at Purchase: </label>
-                <input id="time" name="time" type="text" placeholder="1546300800" value="" minlength="10" size="22"
-                       maxlength="22">
-            </p>
+            <hr>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"

@@ -60,7 +60,9 @@ class InitializeABitcoinRecordProcessor
          * Use $timezone to set the default timezone for the script to use.
          */
 
-        date_default_timezone_set($timezone);
+        if (!date_default_timezone_set($timezone)) {
+            breakout(' Invalid PHP time zone submitted 👎🏽. ');
+        }
 
 
         /**
