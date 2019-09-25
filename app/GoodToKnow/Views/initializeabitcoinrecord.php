@@ -49,8 +49,9 @@
                        spellcheck="false" placeholder="52">
             </p>
             <p>
-                <label for="timezone">PHP Time Zone (<span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
-                            <a href="https://www.php.net/manual/en/timezones.php">www.php.net/manual/en/timezones.php</a></span></span>️):
+                <label for="timezone">PHP Time Zone <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
+                            <a href="https://www.php.net/manual/en/timezones.php"
+                               target="_blank">www.php.net/manual/en/timezones.php</a></span></span>️:
                 </label>
                 <input id="timezone" name="timezone" type="text" placeholder="America/New_York" value="" required
                        minlength="2" maxlength="60" size="18">
