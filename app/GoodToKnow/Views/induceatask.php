@@ -8,6 +8,7 @@
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
                    size="61" spellcheck="false" placeholder="Read GTK.io messages">
         </p>
+        <?php require TIMENEXTANDLASTFORMFIELDS; ?>
         <p>
             <label for="last">Unix time at last execution of the task: </label>
             <input id="last" name="last" type="text" value="" minlength="10" maxlength="22"

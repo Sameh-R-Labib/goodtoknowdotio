@@ -13,6 +13,7 @@
                        value="<?= $object->label ?>" required minlength="3" maxlength="30" size="34" spellcheck="false"
                        placeholder="Internet Service Fee">
             </p>
+            <?php require TIMEFORMFIELD; ?>
             <p>
                 <label for="time">Time (unix time stamp): </label>
                 <input id="time" name="time" type="text"

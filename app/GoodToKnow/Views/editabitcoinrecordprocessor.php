@@ -27,6 +27,7 @@
                        value="<?= $bitcoin_object->price_point ?>"
                        minlength="2" spellcheck="false" size="13" maxlength="13">
             </p>
+            <?php require TIMEFORMFIELD; ?>
             <p>
                 <label for="time">Unix Time at Purchase: </label>
                 <input id="time" name="time" type="text" placeholder="1560190617"

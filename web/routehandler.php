@@ -45,6 +45,7 @@ define('FOOTERBAR', VIEWSINCLUDES . DIRSEP . 'footerbar.php');
 define('SUBMITABORT', VIEWSINCLUDES . DIRSEP . 'submitabort.php');
 define('HEADINGONE', VIEWSINCLUDES . DIRSEP . 'headingone.php');
 define('TIMEFORMFIELD', VIEWSINCLUDES . DIRSEP . 'timeformfield.php');
+define('TIMENEXTANDLASTFORMFIELDS', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php');
 
 /**
  * More require statements

@@ -11,6 +11,7 @@
                 <input id="label" name="label" type="text" value="" required minlength="3" maxlength="30"
                        size="34" spellcheck="false" placeholder="Monthly Car Payment">
             </p>
+            <?php require TIMEFORMFIELD; ?>
             <p>
                 <label for="time">Time (unix time stamp): </label>
                 <input id="time" name="time" type="text" value="" required minlength="10" maxlength="22"

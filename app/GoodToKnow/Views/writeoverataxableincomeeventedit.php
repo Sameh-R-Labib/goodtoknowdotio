@@ -8,6 +8,7 @@
             <input id="label" name="label" type="text" value="<?= $object->label ?>" required minlength="3"
                    maxlength="264" size="61" spellcheck="false" placeholder="Customer six month contribution.">
         </p>
+        <?php require TIMEFORMFIELD; ?>
         <p>
             <label for="time">Unix time for when event occured: </label>
             <input id="time" name="time" type="text" value="<?= $object->time ?>" required minlength="10" maxlength="22"

@@ -18,6 +18,7 @@
                 <input id="amount_paid" name="amount_paid" type="text" value="" required minlength="1" maxlength="16"
                        size="16" placeholder="108.49">
             </p>
+            <?php require TIMEFORMFIELD; ?>
             <p>
                 <label for="time">Unix time at last payment: </label>
                 <input id="time" name="time" type="text" value="" minlength="10" maxlength="22" size="22"
