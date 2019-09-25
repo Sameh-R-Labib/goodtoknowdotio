@@ -52,7 +52,7 @@ class Home
         self::show_the_home_page($user_id, $community_id, $topic_id, $post_id, $post_name, $post_full_name, $topic_name,
             $topic_description, $community_name, $community_description, $special_community_array, $special_topic_array,
             $special_post_array, $post_content, $author_username, $type_of_resource_requested, $sessionMessage,
-            $is_admin);
+            $is_admin, $is_guest);
     }
 
 
@@ -80,7 +80,7 @@ class Home
                                                $topic_name, $topic_description, $community_name, $community_description,
                                                $special_community_array, $special_topic_array, $special_post_array,
                                                $post_content, $author_username, $type_of_resource_requested, $sessionMessage,
-                                               $is_admin)
+                                               $is_admin, $is_guest)
     {
         $show_poof = false;
 
