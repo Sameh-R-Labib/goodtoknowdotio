@@ -4,10 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
-use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class InitializeABitcoinRecordProcessor
@@ -32,8 +29,6 @@ class InitializeABitcoinRecordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $address = bitcoin_address_form_field_prep('address');
 
