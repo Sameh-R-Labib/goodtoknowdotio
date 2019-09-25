@@ -21,6 +21,7 @@ class PolishARecurringPaymentRecordSubmit
          */
 
         global $sessionMessage;
+
         global $saved_int01;    // recurring_payment id
 
         kick_out_loggedoutusers();

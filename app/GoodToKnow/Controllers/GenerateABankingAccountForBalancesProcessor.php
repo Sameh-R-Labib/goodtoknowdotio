@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class GenerateABankingAccountForBalancesProcessor
@@ -25,15 +24,17 @@ class GenerateABankingAccountForBalancesProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $acct_name = standard_form_field_prep('acct_name', 3, 30);
 
-        $start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
 
-        if ($start_time === 0) $start_time = 1546300800;
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
+
+        // - - -
+
 
         $start_balance = float_form_field_prep('start_balance', -21000000000.0, 21000000000.0);
 
@@ -48,7 +49,9 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a BankingAcctForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => $start_time,
+        /** @noinspection PhpUndefinedVariableInspection */
+
+        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => $time,
             'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
 
 
@@ -81,6 +84,6 @@ class GenerateABankingAccountForBalancesProcessor
          * Wrap it up.
          */
 
-        breakout(' A Banking Account For Balances was created 😊. ');
+        breakout(' A Banking Account For Balances was created 👍🏽. ');
     }
 }

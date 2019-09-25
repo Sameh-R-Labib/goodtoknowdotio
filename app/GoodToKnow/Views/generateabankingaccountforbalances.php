@@ -8,12 +8,10 @@
                 <input id="acct_name" name="acct_name" type="text" value="" required minlength="3" maxlength="30"
                        size="34" spellcheck="false" placeholder="Personal Credit Card">
             </p>
+            <hr>
+            <p>Time at Beginning</p>
             <?php require TIMEFORMFIELD; ?>
-            <p>
-                <label for="start_time">Unix time at Beginning: </label>
-                <input id="start_time" name="start_time" type="text" value="" minlength="10" maxlength="22" size="22"
-                       placeholder="1546300800">
-            </p>
+            <hr>
             <p>
                 <label for="start_balance">Balance at Beginning: </label>
                 <input id="start_balance" name="start_balance" type="text" value="" required minlength="1"
