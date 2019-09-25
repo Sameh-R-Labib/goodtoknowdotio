@@ -30,7 +30,7 @@
             <?php require TIMEFORMFIELD; ?>
             <p>
                 <label for="time">Unix Time at Purchase: </label>
-                <input id="time" name="time" type="text" placeholder="1560190617"
+                <input id="time" name="time" type="text" placeholder="1546300800"
                        value="<?= $bitcoin_object->time ?>"
                        minlength="10" size="22" maxlength="22">
             </p>

@@ -50,7 +50,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if ($edited_time === 0) $edited_time = 1560190617;
+        if ($edited_time === 0) $edited_time = 1546300800;
 
 
         // bank_id

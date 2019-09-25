@@ -33,7 +33,7 @@ class GenerateABankingAccountForBalancesProcessor
 
         $start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
 
-        if ($start_time === 0) $start_time = 1560190617;
+        if ($start_time === 0) $start_time = 1546300800;
 
         $start_balance = float_form_field_prep('start_balance', -21000000000.0, 21000000000.0);
 

@@ -15,7 +15,7 @@
             <p>
                 <label for="time">Time (unix time stamp): </label>
                 <input id="time" name="time" type="text" value="" required minlength="10" maxlength="22"
-                       size="22" placeholder="1560190617">
+                       size="22" placeholder="1546300800">
             </p>
             <p>
                 <label for="amount">Amount: </label>

@@ -78,7 +78,7 @@ class InitializeABitcoinRecordProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_timestamp_from_date.php';
 
-        $timestamp = get_timestamp_from_date($date);
+        $time = get_timestamp_from_date($date);
 
 
         /**
@@ -92,7 +92,7 @@ class InitializeABitcoinRecordProcessor
          * Update $timestamp with $hour.
          */
 
-        $timestamp += 3600 * $hour;
+        $time += 3600 * $hour;
 
 
         /**
@@ -106,7 +106,7 @@ class InitializeABitcoinRecordProcessor
          * Update $timestamp with $minute.
          */
 
-        $timestamp += 60 * $minute;
+        $time += 60 * $minute;
 
 
         /**
@@ -120,29 +120,19 @@ class InitializeABitcoinRecordProcessor
          * Update $timestamp with $second.
          */
 
-        $timestamp += $second;
+        $time += $second;
+
+
+        /**
+         * Never allow $time to be 0.
+         */
+
+
+        if ($time === 0) $time = 1546300800;
 
 
         // - - -
 
-
-        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
-
-        if ($time === 0) $time = 1560190617;
-
-
-        // + + + Debug Code
-
-        echo "<p>Print_r \$timestamp: </p>\n<pre>";
-        print_r($timestamp);
-        echo "</pre>\n";
-        echo "<p>Print_r \$time: </p>\n<pre>";
-        print_r($time);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
-        // + + +
 
         $comment = standard_form_field_prep('comment', 0, 800);
 

@@ -43,7 +43,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $edited_start_time = integer_form_field_prep('start_time', 0, PHP_INT_MAX);
 
-        if ($edited_start_time === 0) $edited_start_time = 1560190617;
+        if ($edited_start_time === 0) $edited_start_time = 1546300800;
 
         $edited_start_balance = float_form_field_prep('start_balance', -21000000000.0, 21000000000.0);
 

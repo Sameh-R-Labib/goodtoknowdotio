@@ -22,7 +22,7 @@
             <p>
                 <label for="time">Unix time at last payment: </label>
                 <input id="time" name="time" type="text" value="" minlength="10" maxlength="22" size="22"
-                       placeholder="1560190617">
+                       placeholder="1546300800">
             </p>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
