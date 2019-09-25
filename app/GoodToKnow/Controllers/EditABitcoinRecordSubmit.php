@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class EditABitcoinRecordSubmit
@@ -35,8 +34,6 @@ class EditABitcoinRecordSubmit
 
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
 
         // initial_balance
 
@@ -58,11 +55,11 @@ class EditABitcoinRecordSubmit
         $edited_price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
 
 
-        // time
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
-        $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
 
-        if ($edited_time === 0) $edited_time = 1546300800;
+        // - - -
 
 
         // comment
@@ -79,7 +76,9 @@ class EditABitcoinRecordSubmit
         $bitcoin_object = Bitcoin::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$bitcoin_object) {
+
             breakout(' Unexpectedly I could not find that bitcoin record. ');
+
         }
 
 
@@ -91,7 +90,9 @@ class EditABitcoinRecordSubmit
         $bitcoin_object->current_balance = $edited_current_balance;
         $bitcoin_object->currency = $edited_currency;
         $bitcoin_object->price_point = $edited_price_point;
-        $bitcoin_object->time = $edited_time;
+
+        /** @noinspection PhpUndefinedVariableInspection */
+        $bitcoin_object->time = $time;
         $bitcoin_object->comment = $edited_comment;
 
 

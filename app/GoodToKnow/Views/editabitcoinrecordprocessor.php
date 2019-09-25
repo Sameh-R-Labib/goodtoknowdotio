@@ -27,13 +27,10 @@
                        value="<?= $bitcoin_object->price_point ?>"
                        minlength="2" spellcheck="false" size="13" maxlength="13">
             </p>
+            <hr>
+            <p>Time at Purchase</p>
             <?php require TIMEFORMFIELD; ?>
-            <p>
-                <label for="time">Unix Time at Purchase: </label>
-                <input id="time" name="time" type="text" placeholder="1546300800"
-                       value="<?= $bitcoin_object->time ?>"
-                       minlength="10" size="22" maxlength="22">
-            </p>
+            <hr>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"
