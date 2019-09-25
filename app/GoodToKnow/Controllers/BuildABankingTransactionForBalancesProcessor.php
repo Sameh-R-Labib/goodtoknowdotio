@@ -32,9 +32,13 @@ class BuildABankingTransactionForBalancesProcessor
 
         $label = standard_form_field_prep('label', 3, 30);
 
-        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if ($time === 0) $time = 1546300800;
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
+
+        // - - -
+
 
         $amount = float_form_field_prep('amount', -21000000000.0, 21000000000.0);
 
@@ -44,6 +48,8 @@ class BuildABankingTransactionForBalancesProcessor
         /**
          * Create a BankingTransactionForBalances array for the record.
          */
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_record = ['user_id' => $user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
 
