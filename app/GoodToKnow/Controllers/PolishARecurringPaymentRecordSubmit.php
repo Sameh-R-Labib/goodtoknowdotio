@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\RecurringPayment;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class PolishARecurringPaymentRecordSubmit
@@ -36,7 +35,7 @@ class PolishARecurringPaymentRecordSubmit
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
 
         /** @var $edited_label */
@@ -51,17 +50,16 @@ class PolishARecurringPaymentRecordSubmit
 
         /** @var  $edited_amount_paid */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
-
         $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
 
 
-        /** @var $edited_time */
+        /** @var $time */
 
-        $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
-        if ($edited_time === 0) $edited_time = 1546300800;
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
 
+        // - - -
 
 
         /** @var $edited_comment */
@@ -91,7 +89,7 @@ class PolishARecurringPaymentRecordSubmit
         $object->label = $edited_label;
         $object->currency = $edited_currency;
         $object->amount_paid = $edited_amount_paid;
-        $object->time = $edited_time;
+        $object->time = $time;
         $object->comment = $edited_comment;
 
 

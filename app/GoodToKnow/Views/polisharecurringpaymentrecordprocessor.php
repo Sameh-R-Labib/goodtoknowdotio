@@ -23,13 +23,10 @@
                        value="<?= $recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="16"
                        size="16" placeholder="108.49">
             </p>
+            <hr>
+            <p>Time at Last Payment</p>
             <?php require TIMEFORMFIELD; ?>
-            <p>
-                <label for="time">Unix time at last payment: </label>
-                <input id="time" name="time" type="text"
-                       value="<?= $recurring_payment_object->time ?>" minlength="10" maxlength="22"
-                       size="22" placeholder="1546300800">
-            </p>
+            <hr>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800"
