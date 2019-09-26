@@ -34,9 +34,13 @@ class StartATaxableIncomeEventProcessor
 
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
-        $time = integer_form_field_prep('time', 0, PHP_INT_MAX);
 
-        if ($time === 0) $time = 1546300800;
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
+
+        // - - -
+
 
         $comment = standard_form_field_prep('comment', 0, 800);
 
@@ -48,6 +52,8 @@ class StartATaxableIncomeEventProcessor
         /**
          * Create a taxable_income_event array for the record.
          */
+
+        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_record = ['user_id' => $user_id, 'time' => $time, 'year_received' => $year_received,
             'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];

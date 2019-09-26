@@ -8,12 +8,10 @@
             <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
                    size="61" spellcheck="false" placeholder="Technical support for a Gtk.io User">
         </p>
+        <hr>
+        <p>Time The Event Occured</p>
         <?php require TIMEFORMFIELD; ?>
-        <p>
-            <label for="time">Unix time for when event occured: </label>
-            <input id="time" name="time" type="text" value="" required minlength="10" maxlength="22" size="22"
-                   placeholder="1546300800">
-        </p>
+        <hr>
         <p>
             <label for="year_received">Year for when event occured: </label>
             <input id="year_received" name="year_received" type="text" value="" required minlength="4" maxlength="6"
