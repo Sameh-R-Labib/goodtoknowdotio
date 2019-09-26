@@ -30,7 +30,7 @@ function get_date_h_m_s_from_a_timestamp(string $timestamp): array
 
     $array['hour'] = date('G', $timestamp);
 
-    $array['minute'] = date('i');
+    $array['minute'] = date('i', $timestamp);
     // Remove leading zeros from the minutes.
     $array['minute'] = ltrim($array['minute'], '0');
 
