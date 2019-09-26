@@ -54,11 +54,11 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
 
-        // time
+        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
-        $edited_time = integer_form_field_prep('time', 0, PHP_INT_MAX);
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
 
-        if ($edited_time === 0) $edited_time = 1546300800;
+        // - - -
 
 
         // currency
@@ -97,7 +97,9 @@ class WriteOverATaxableIncomeEventUpdate
         $object->comment = $edited_comment;
         $object->amount = $edited_amount;
         $object->currency = $edited_currency;
-        $object->time = $edited_time;
+
+        /** @noinspection PhpUndefinedVariableInspection */
+        $object->time = $time;
 
 
         /**
