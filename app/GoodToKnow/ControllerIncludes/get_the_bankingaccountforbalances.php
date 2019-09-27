@@ -58,4 +58,4 @@ if ($object->user_id != $user_id) {
 
 require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-$time = get_date_h_m_s_from_a_timestamp($object->time);
+$time = get_date_h_m_s_from_a_timestamp($object->start_time);
