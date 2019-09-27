@@ -58,4 +58,4 @@ if ($recurring_payment_object->user_id != $user_id) {
 
 require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-$time = get_date_h_m_s_from_a_timestamp($bitcoin_object->time);
+$time = get_date_h_m_s_from_a_timestamp($recurring_payment_object->time);
