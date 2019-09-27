@@ -10,16 +10,6 @@
         </p>
         <?php require TIMENEXTANDLASTFORMFIELDS; ?>
         <p>
-            <label for="last">Unix time at last execution of the task: </label>
-            <input id="last" name="last" type="text" value="" minlength="10" maxlength="22"
-                   size="22" placeholder="1546300800">
-        </p>
-        <p>
-            <label for="next">Next scheduled time: </label>
-            <input id="next" name="next" type="text" value="" minlength="10" maxlength="22"
-                   size="22" placeholder="1546300800">
-        </p>
-        <p>
             <label for="cycle_type">Cycle Type (✅ emoji): </label>
             <input id="cycle_type" name="cycle_type" type="text" value="" required minlength="3" maxlength="60"
                    size="50" spellcheck="false" placeholder="Daily 🛅">
