@@ -1,5 +1,4 @@
 <hr>
-<hr>
 <p>Last</p>
 <p>
     <label for="lastdate">Date Last (mm/dd/yyyy): </label>
@@ -51,5 +50,4 @@
     <input id="timezone" name="timezone" type="text" placeholder="America/New_York" value="" required
            minlength="2" maxlength="60" size="18">
 </p>
-<hr>
 <hr>
