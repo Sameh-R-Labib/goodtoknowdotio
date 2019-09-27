@@ -11,7 +11,7 @@
             </p>
             <hr>
             <p>Time at Beginning</p>
-            <?php require TIMEFORMFIELD; ?>
+            <?php require TIMEFORMFIELDPREFILLED; ?>
             <hr>
             <p>
                 <label for="start_balance">Balance at Beginning: </label>

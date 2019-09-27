@@ -1,6 +1,7 @@
 <?php
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $sessionMessage;
@@ -47,3 +48,14 @@ if ($object->user_id != $user_id) {
     breakout(' Error 15450232. ');
 
 }
+
+
+/**
+ * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
+ * Instead we derive an array called $time from it and use $time to pr-populate the following fields:
+ * date, hour, minute, second.
+ */
+
+require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
+
+$time = get_date_h_m_s_from_a_timestamp($object->time);
