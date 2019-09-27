@@ -1,3 +1,6 @@
+<hr>
+<hr>
+<p>Last</p>
 <p>
     <label for="lastdate">Date Last (mm/dd/yyyy): </label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
@@ -18,6 +21,8 @@
     <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="2"
            spellcheck="false" placeholder="52">
 </p>
+<hr>
+<p>Next</p>
 <p>
     <label for="nextdate">Date Next (mm/dd/yyyy): </label>
     <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
@@ -46,3 +51,5 @@
     <input id="timezone" name="timezone" type="text" placeholder="America/New_York" value="" required
            minlength="2" maxlength="60" size="18">
 </p>
+<hr>
+<hr>
