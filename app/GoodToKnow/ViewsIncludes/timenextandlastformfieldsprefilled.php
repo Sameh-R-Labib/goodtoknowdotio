@@ -47,7 +47,7 @@
                             <a href="https://www.php.net/manual/en/timezones.php"
                                target="_blank">www.php.net/manual/en/timezones.php</a></span></span>️:
     </label>
-    <input id="timezone" name="timezone" type="text" placeholder="America/New_York" value="" required
+    <input id="timezone" name="timezone" type="text" placeholder="America/New_York" required
            minlength="2" maxlength="60" size="18" value="<?php echo date_default_timezone_get(); ?>">
 </p>
 <hr>
