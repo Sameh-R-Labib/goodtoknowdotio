@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use GoodToKnow\Models\Task;
 
@@ -40,16 +39,17 @@ class FeatureATaskUpdate
         $edited_label = standard_form_field_prep('label', 3, 264);
 
 
-        // last - a timestamp
+        // Time related fields
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+        // + + + Get $last and $next (which are timestamps) based on submitted:
+        // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
 
-        $edited_last = integer_form_field_prep('last', 0, PHP_INT_MAX);
+        /** @var $last */
+        /** @var $next */
 
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_times_last_next_from_form_submission.php';
 
-        // next - a timestamp
-
-        $edited_next = integer_form_field_prep('next', 0, PHP_INT_MAX);
+        // + + +
 
 
         // cycle_type - a string which is between 3 to 6 characters long
@@ -80,8 +80,8 @@ class FeatureATaskUpdate
          */
 
         $object->label = $edited_label;
-        $object->last = $edited_last;
-        $object->next = $edited_next;
+        $object->last = $last;
+        $object->next = $next;
         $object->cycle_type = $edited_cycle_type;
         $object->comment = $edited_comment;
 
