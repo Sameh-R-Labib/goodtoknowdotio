@@ -47,6 +47,7 @@ define('HEADINGONE', VIEWSINCLUDES . DIRSEP . 'headingone.php');
 define('TIMEFORMFIELD', VIEWSINCLUDES . DIRSEP . 'timeformfield.php');
 define('TIMEFORMFIELDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeformfieldprefilled.php');
 define('TIMENEXTANDLASTFORMFIELDS', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php');
+define('TIMENEXTANDLASTFORMFIELDSPREFILLED', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php');
 
 /**
  * More require statements
