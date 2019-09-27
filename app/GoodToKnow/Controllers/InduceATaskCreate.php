@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use GoodToKnow\Models\Task;
 
@@ -23,13 +22,21 @@ class InduceATaskCreate
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $label = standard_form_field_prep('label', 3, 264);
 
-        $last = integer_form_field_prep('last', 0, PHP_INT_MAX);
 
-        $next = integer_form_field_prep('next', 0, PHP_INT_MAX);
+        // + + + Get $last and $next (which are timestamps) based on submitted:
+        // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
+
+        /** @var $last */
+        /** @var $next */
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_times_last_next_from_form_submission.php';
+
+        // + + +
+
+
 
         $cycle_type = standard_form_field_prep('cycle_type', 3, 60);
 

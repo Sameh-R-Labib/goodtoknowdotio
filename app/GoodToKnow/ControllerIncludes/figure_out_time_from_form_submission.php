@@ -97,5 +97,4 @@ $time += $second;
  * Never allow $time to be 0.
  */
 
-
 if ($time === 0) $time = 1546300800;
