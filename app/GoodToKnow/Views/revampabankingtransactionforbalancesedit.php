@@ -15,7 +15,7 @@
             </p>
             <hr>
             <p>Time</p>
-            <?php require TIMEFORMFIELD; ?>
+            <?php require TIMEFORMFIELDPREFILLED; ?>
             <hr>
             <p>
                 <label for="amount">Amount: </label>
