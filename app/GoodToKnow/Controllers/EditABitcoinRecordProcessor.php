@@ -29,7 +29,7 @@ class EditABitcoinRecordProcessor
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $time from it and use $time to pr-populate the following fields:
+         * Instead we derive an array called $time from it and use $time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
