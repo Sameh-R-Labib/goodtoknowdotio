@@ -10,7 +10,7 @@
         </p>
         <hr>
         <p>Time The Event Occured</p>
-        <?php require TIMEFORMFIELD; ?>
+        <?php require TIMEFORMFIELDPREFILLED; ?>
         <hr>
         <p>
             <label for="year_received">Year for when event occured: </label>
