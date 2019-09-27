@@ -2,8 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
-use mysqli;
+use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
 
 class RevampABankingTransactionForBalancesEdit
@@ -18,6 +17,10 @@ class RevampABankingTransactionForBalancesEdit
          */
 
 
+        /** @var $object */
+        /** @var $db */
+        /** @var $user_id */
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
 
 
@@ -30,9 +33,18 @@ class RevampABankingTransactionForBalancesEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
-
         $object->bank_id = get_html_select_box_containing_the_bank_accounts($db, $user_id, $object->bank_id);
+
+
+        /**
+         * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
+         * Instead we derive an array called $time from it and use $time to pr-populate the following fields:
+         * date, hour, minute, second.
+         */
+
+        require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
+
+        $time = get_date_h_m_s_from_a_timestamp($object->time);
 
         $html_title = 'Edit the banking_transaction_for_balances record';
 
