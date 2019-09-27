@@ -21,7 +21,7 @@ class MakeARecurringPaymentRecord
 
         kick_out_loggedoutusers();
 
-        $html_title = 'Create a New RecurringPayment Record';
+        $html_title = 'Create a New Recurring Payment Record';
 
         require VIEWS . DIRSEP . 'makearecurringpaymentrecord.php';
     }

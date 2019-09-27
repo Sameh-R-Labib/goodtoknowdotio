@@ -2,7 +2,7 @@
 <form action="/ax1/PolishARecurringPaymentRecordProcessor/page" method="post">
     <h1>Edit a 🌀 💳 📽</h1>
     <?php require SESSIONMESSAGE; ?>
-    <p>Which RecurringPayment Record?</p>
+    <p>Which Recurring Payment Record?</p>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_recurring_payment_objects as $key => $rp_object): ?>

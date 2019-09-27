@@ -25,7 +25,7 @@
             </p>
             <hr>
             <p>Time at Last Payment</p>
-            <?php require TIMEFORMFIELD; ?>
+            <?php require TIMEFORMFIELDPREFILLED; ?>
             <hr>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
