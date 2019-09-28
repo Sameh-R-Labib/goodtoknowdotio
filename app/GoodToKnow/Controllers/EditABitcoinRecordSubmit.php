@@ -57,7 +57,7 @@ class EditABitcoinRecordSubmit
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
-        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_from_form_submission.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
 
         // - - -
 

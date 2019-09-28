@@ -1,7 +1,6 @@
 <?php
 
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
-use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -51,6 +50,7 @@ $nextdate = date_form_field_prep('nextdate');
 
 /**
  * We need these date strings to be split into day, month, year values.
+ * While we're at it remove leading zeros.
  */
 
 // First let's do it to $lastdate.
