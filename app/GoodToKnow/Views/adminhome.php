@@ -9,6 +9,7 @@
             <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
             <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
             <li><a href="/ax1/DefaultCommunity/page">Change my Default 🧑🏿‍🤝‍🧑🏽</a></li>
+            <li><a href="/ax1/DefaultTimeZone/page">Change my Default ⌚🌐</a></li>
             <li><a href="/ax1/ChangePassword/page">Change my 🔑</a></li>
             <li><a href="/ax1/CreateNewPost/page">Create a 📄</a></li>
             <li><a href="/ax1/EditMyPost/page">Edit a 📄</a></li>
