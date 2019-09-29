@@ -12,7 +12,7 @@ class User extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'username', 'password', 'id_of_default_community', 'title', 'role',
+    protected static $fields = ['id', 'username', 'password', 'id_of_default_community', 'timezone', 'title', 'role',
         'race', 'is_suspended', 'date', 'comment'];
 
     /**
@@ -34,6 +34,11 @@ class User extends GoodObject
      * @var int
      */
     public $id_of_default_community;
+
+    /**
+     * @var string
+     */
+    public $timezone;
 
     /**
      * @var string
