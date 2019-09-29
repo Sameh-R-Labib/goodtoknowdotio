@@ -35,7 +35,9 @@ class DefaultCommunityProcessor
         $user_object = User::find_by_id($db, $sessionMessage, $user_id);
 
         if (!$user_object) {
+
             breakout(' Expected submission of choice not found. ');
+
         }
 
         $user_object->id_of_default_community = $chosen_id;

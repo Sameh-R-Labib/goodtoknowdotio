@@ -16,6 +16,7 @@ class MakeARecurringPaymentRecordProcessor
          */
 
         global $sessionMessage;
+
         global $user_id;
 
         kick_out_loggedoutusers();
