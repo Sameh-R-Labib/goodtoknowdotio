@@ -50,6 +50,7 @@ class LoginScript
         $_SESSION['role'] = $user->role;
         $_SESSION['community_id'] = $user->id_of_default_community;
         $_SESSION['is_suspended'] = $user->is_suspended;
+        $_SESSION['timezone'] = $user->timezone;
         /**
          * Other things we want to put in session:
          *  - community_name (corresponds with community_id)
