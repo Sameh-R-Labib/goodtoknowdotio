@@ -28,7 +28,7 @@ class AdminCreateUser
         /**
          * Variables to work with:
          *   $saved_int01, 'username', 'first_try', 'password',
-         *   'title', 'race', 'comment', 'date', 'submit'
+         *   'title', 'race', 'comment', 'timezone', 'date', 'submit'
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
@@ -52,6 +52,14 @@ class AdminCreateUser
         $submitted_race = race_form_field_prep('race');
 
         $submitted_comment = standard_form_field_prep('comment', 0, 800);
+
+        $submitted_timezone = standard_form_field_prep('timezone', 2, 60);
+
+        if (!date_default_timezone_set($submitted_timezone)) {
+
+            breakout(' Invalid PHP time zone submitted 👎🏽. ');
+
+        }
 
         $submitted_date = date_form_field_prep('date');
 
@@ -81,6 +89,7 @@ class AdminCreateUser
         $array_of_submitted_data = ['username' => $submitted_username,
             'password' => $hash_of_submitted_password,
             'id_of_default_community' => $saved_int01,
+            'timezone' => $submitted_timezone,
             'title' => $submitted_title,
             'role' => $new_user_role,
             'race' => $submitted_race,
