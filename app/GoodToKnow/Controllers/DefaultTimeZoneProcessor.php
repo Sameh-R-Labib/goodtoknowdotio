@@ -1,6 +1,6 @@
 <?php
 
-namespace GoodToKnow\ControllerIncludes;
+namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
