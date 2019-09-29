@@ -7,8 +7,7 @@ class ByUsernameMessage
     function page()
     {
         /**
-         * The goal of this series of routes is to make it possible to message
-         * a user if the only thing you know about this user is their username.
+         * Make it possible to message a user if the only thing you know about this user is their username.
          */
 
         global $sessionMessage;
