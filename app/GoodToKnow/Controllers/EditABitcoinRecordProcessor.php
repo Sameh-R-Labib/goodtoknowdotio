@@ -22,21 +22,6 @@ class EditABitcoinRecordProcessor
 
 
         /**
-         * Debug Code
-         */
-        $t = date_default_timezone_get();
-
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$t: </p>\n<pre>";
-        var_dump($t);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$timezone: </p>\n<pre>";
-        var_dump($timezone);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
-        /**
          * 4) Present a form which is populated with data from the object.
          *    (except do the bitcoin address should not be changeable.)
          */
@@ -53,6 +38,21 @@ class EditABitcoinRecordProcessor
         $time = get_date_h_m_s_from_a_timestamp($bitcoin_object->time);
 
         $html_title = 'Edit the bitcoin record';
+
+
+        /**
+         * Debug Code
+         */
+        $t = date_default_timezone_get();
+
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$t: </p>\n<pre>";
+        var_dump($t);
+        echo "</pre>\n";
+        echo "<p>Var_dump \$timezone: </p>\n<pre>";
+        var_dump($timezone);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
 
         require VIEWS . DIRSEP . 'editabitcoinrecordprocessor.php';
     }
