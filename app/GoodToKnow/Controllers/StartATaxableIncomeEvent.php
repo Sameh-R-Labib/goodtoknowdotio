@@ -21,6 +21,8 @@ class StartATaxableIncomeEvent
 
         global $sessionMessage;
 
+        global $timezone;
+
         kick_out_loggedoutusers();
 
         $html_title = 'Create a Taxable Income Event';

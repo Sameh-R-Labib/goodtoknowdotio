@@ -17,6 +17,8 @@ class BuildABankingTransactionForBalances
 
         global $user_id;
 
+        global $timezone;
+
         kick_out_loggedoutusers();
 
         $db = get_db();
