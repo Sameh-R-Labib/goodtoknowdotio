@@ -1,6 +1,7 @@
-<p>️Express hour as military hour (0-23)<br>
+<p>️
     <label for="date"></label>
     <input id="date" name="date" type="text" required minlength="10" maxlength="14" size="14" placeholder="mm/dd/yyyy">
+    <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
     <label for="hour"></label>
     <input id="hour" name="hour" type="text" required minlength="1" maxlength="2" size="2" placeholder="hr">
     <label for="minute">: </label>
