@@ -44,19 +44,11 @@ $date = date_form_field_prep('date');
 
 $words = explode('/', $date);
 
-$mm = ltrim($words[0], '0');
+$mm = (int)$words[0];
 
-$dd = ltrim($words[1], '0');
+$dd = (int)$words[1];
 
-$yyyy = $words[2];
-
-// Convert these to integers.
-
-$mm = (int)$mm;
-
-$dd = (int)$dd;
-
-$yyyy = (int)$yyyy;
+$yyyy = (int)$words[2];
 
 
 /**

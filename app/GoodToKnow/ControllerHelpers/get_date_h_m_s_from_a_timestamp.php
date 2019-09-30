@@ -32,11 +32,15 @@ function get_date_h_m_s_from_a_timestamp(string $timestamp): array
 
     $array['minute'] = date('i', $timestamp);
     // Remove leading zeros from the minutes.
-    $array['minute'] = ltrim($array['minute'], '0');
+    if ($array['minute'] != '0') {
+        $array['minute'] = ltrim($array['minute'], '0');
+    }
 
     $array['second'] = date('s', $timestamp);
     // Remove leading zeros from the seconds.
-    $array['second'] = ltrim($array['second'], '0');
+    if ($array['second'] != '0') {
+        $array['second'] = ltrim($array['second'], '0');
+    }
 
     return $array;
 }

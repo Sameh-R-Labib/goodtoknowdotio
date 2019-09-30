@@ -52,35 +52,21 @@ $nextdate = date_form_field_prep('nextdate');
 
 $words = explode('/', $lastdate);
 
-$mm_last = ltrim($words[0], '0');
+$mm_last = (int)$words[0];
 
-$dd_last = ltrim($words[1], '0');
+$dd_last = (int)$words[1];
 
-$yyyy_last = $words[2];
+$yyyy_last = (int)$words[2];
 
 // Next let's do it to $nextdate.
 
 $words = explode('/', $nextdate);
 
-$mm_next = ltrim($words[0], '0');
+$mm_next = (int)$words[0];
 
-$dd_next = ltrim($words[1], '0');
+$dd_next = (int)$words[1];
 
-$yyyy_next = $words[2];
-
-// Convert these to integers.
-
-$mm_last = (int)$mm_last;
-
-$dd_last = (int)$dd_last;
-
-$yyyy_last = (int)$yyyy_last;
-
-$mm_next = (int)$mm_next;
-
-$dd_next = (int)$dd_next;
-
-$yyyy_next = (int)$yyyy_next;
+$yyyy_next = (int)$words[2];
 
 
 /**
