@@ -87,7 +87,7 @@ $user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'
 
 $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 
-$timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : '';
+$timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
 
 $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 
@@ -169,6 +169,12 @@ $show_poof = false;
  * Various initializations
  */
 $db = null;
+
+
+/**
+ * Timezone set to user's default.
+ */
+date_default_timezone_set($timezone);
 
 
 /**

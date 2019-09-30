@@ -12,6 +12,7 @@ class DefaultTimeZoneProcessor
     {
         /**
          * Modify the database record for this user table using the submitted timestamp.
+         * Also, switch to the default time zone in the session.
          */
 
         global $sessionMessage;
@@ -45,6 +46,8 @@ class DefaultTimeZoneProcessor
             breakout(' Failed to update your user record. ');
 
         }
+
+        $_SESSION['timezone'] = $timezone;
 
 
         // User will know default community by logging out then in.
