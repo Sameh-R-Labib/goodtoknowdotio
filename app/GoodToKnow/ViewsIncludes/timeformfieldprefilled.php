@@ -14,7 +14,7 @@
            value="<?= $time['second'] ?>">
     <label for="timezone"></label>
     <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
-           minlength="2" maxlength="60" size="18" value="<?php echo $timezone; ?>">
+           minlength="2" maxlength="60" size="18" value="<?= $timezone ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
                             <a href="https://www.php.net/manual/en/timezones.php"
                                target="_blank">www.php.net/manual/en/timezones.php</a></span></span>

@@ -1,53 +1,35 @@
 <hr>
 <p>Last</p>
 <p>
-    <label for="lastdate">Date Last (mm/dd/yyyy): </label>
+    <label for="lastdate"></label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
-           spellcheck="false" placeholder="06/21/2009">
-</p>
-<p>
-    <label for="lasthour">Hour Last (range 0-23): </label>
-    <input id="lasthour" name="lasthour" type="text" required minlength="1" maxlength="2" size="2"
-           spellcheck="false" placeholder="14">
-</p>
-<p>
-    <label for="lastminute">Minute Last (range 0-59): </label>
-    <input id="lastminute" name="lastminute" type="text" required minlength="1" maxlength="2" size="2"
-           spellcheck="false" placeholder="27">
-</p>
-<p>
-    <label for="lastsecond">Second Last (range 0-59): </label>
-    <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="2"
-           spellcheck="false" placeholder="52">
+           placeholder="mm/dd/yyyy">
+    <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
+    <label for="lasthour"></label>
+    <input id="lasthour" name="lasthour" type="text" required minlength="1" maxlength="2" size="2" placeholder="hr">
+    <label for="lastminute">: </label>
+    <input id="lastminute" name="lastminute" type="text" required minlength="1" maxlength="2" size="2" placeholder="mn">
+    <label for="lastsecond">: </label>
+    <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="2" placeholder="sd">
 </p>
 <hr>
 <p>Next</p>
 <p>
-    <label for="nextdate">Date Next (mm/dd/yyyy): </label>
+    <label for="nextdate"></label>
     <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
-           spellcheck="false" placeholder="06/21/2009">
-</p>
-<p>
-    <label for="nexthour">Hour Next (range 0-23): </label>
-    <input id="nexthour" name="nexthour" type="text" required minlength="1" maxlength="2" size="2"
-           spellcheck="false" placeholder="14">
-</p>
-<p>
-    <label for="nextminute">Minute Next (range 0-59): </label>
-    <input id="nextminute" name="nextminute" type="text" required minlength="1" maxlength="2" size="2"
-           spellcheck="false" placeholder="27">
-</p>
-<p>
-    <label for="nextsecond">Second Next (range 0-59): </label>
-    <input id="nextsecond" name="nextsecond" type="text" required minlength="1" maxlength="2" size="2"
-           spellcheck="false" placeholder="52">
-</p>
-<p>
-    <label for="timezone">PHP Time Zone <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
+           placeholder="mm/dd/yyyy">
+    <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
+    <label for="nexthour"></label>
+    <input id="nexthour" name="nexthour" type="text" required minlength="1" maxlength="2" size="2" placeholder="hr">
+    <label for="nextminute">: </label>
+    <input id="nextminute" name="nextminute" type="text" required minlength="1" maxlength="2" size="2" placeholder="mn">
+    <label for="nextsecond">: </label>
+    <input id="nextsecond" name="nextsecond" type="text" required minlength="1" maxlength="2" size="2" placeholder="sd">
+    <label for="timezone"></label>
+    <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
+           minlength="2" maxlength="60" size="18" value="<?= $timezone ?>">
+    <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
                             <a href="https://www.php.net/manual/en/timezones.php"
-                               target="_blank">www.php.net/manual/en/timezones.php</a></span></span>️:
-    </label>
-    <input id="timezone" name="timezone" type="text" placeholder="America/New_York" value="" required
-           minlength="2" maxlength="60" size="18">
+                               target="_blank">www.php.net/manual/en/timezones.php</a></span></span>
 </p>
 <hr>
