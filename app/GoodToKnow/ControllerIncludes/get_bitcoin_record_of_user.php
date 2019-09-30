@@ -5,6 +5,8 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $sessionMessage;
 
+global $timezone;
+
 kick_out_loggedoutusers();
 
 kick_out_onabort();

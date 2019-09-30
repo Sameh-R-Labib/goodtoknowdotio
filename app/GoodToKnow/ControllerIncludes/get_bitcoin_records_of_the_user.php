@@ -4,7 +4,6 @@ use GoodToKnow\Models\Bitcoin;
 
 global $sessionMessage;
 global $user_id;            // We need this.
-global $timezone;
 
 kick_out_loggedoutusers();
 

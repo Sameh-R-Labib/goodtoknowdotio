@@ -15,19 +15,6 @@ class EditABitcoinRecord
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 
-        /**
-         * Debug Code
-         */
-        $return_of_function_call = date_default_timezone_get();
-
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$timezone: </p>\n<pre>";
-        var_dump($timezone);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$return_of_function_call: </p>\n<pre>";
-        var_dump($return_of_function_call);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
 
         require VIEWS . DIRSEP . 'editabitcoinrecord.php';
     }
