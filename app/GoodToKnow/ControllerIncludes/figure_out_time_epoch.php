@@ -2,36 +2,32 @@
 
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
 /**
  * These includes may be redundant. But that's okay!
  */
 
-require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
 require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
+
+require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
 
 /**
  * Get `timezone`.
  */
 
-$timezone = standard_form_field_prep('timezone', 2, 60);
+$timezone = timezone_form_field_prep('timezone');
 
 
 /**
+ * ALREADY taken care of above.
  * Use $timezone to set the default timezone for the script to use.
  */
 
-if (!date_default_timezone_set($timezone)) {
-
-    breakout(' Invalid PHP time zone submitted 👎🏽. ');
-
-}
 
 
 /**

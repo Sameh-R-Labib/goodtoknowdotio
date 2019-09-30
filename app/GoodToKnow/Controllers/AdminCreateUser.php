@@ -8,6 +8,7 @@ use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
 use function GoodToKnow\ControllerHelpers\race_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 use function GoodToKnow\ControllerHelpers\title_ofaperson_form_field_prep;
 use function GoodToKnow\ControllerHelpers\username_for_registration_prep;
 
@@ -43,6 +44,8 @@ class AdminCreateUser
 
         require_once CONTROLLERHELPERS . DIRSEP . 'password_for_regandchange_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
+
         $submitted_username = username_for_registration_prep($db);
 
         $submitted_password = password_for_regandchange_prep();
@@ -53,13 +56,7 @@ class AdminCreateUser
 
         $submitted_comment = standard_form_field_prep('comment', 0, 800);
 
-        $submitted_timezone = standard_form_field_prep('timezone', 2, 60);
-
-        if (!date_default_timezone_set($submitted_timezone)) {
-
-            breakout(' Invalid PHP time zone submitted 👎🏽. ');
-
-        }
+        $submitted_timezone = timezone_form_field_prep('timezone');
 
         $submitted_date = date_form_field_prep('date');
 

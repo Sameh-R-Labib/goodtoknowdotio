@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 class DefaultTimeZoneProcessor
 {
@@ -21,15 +22,9 @@ class DefaultTimeZoneProcessor
 
         kick_out_onabort();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
-        $timezone = standard_form_field_prep('timezone', 2, 60);
-
-        if (!date_default_timezone_set($timezone)) {
-
-            breakout(' Invalid PHP time zone submitted 👎🏽. ');
-
-        }
+        $timezone = timezone_form_field_prep('timezone');
 
         $db = get_db();
 
