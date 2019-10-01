@@ -270,11 +270,10 @@ h2 + p {
 
 #scriptmessage {
     background-color: #fbfcf9;
-    width: 712px;
+    width: 716px;
     height: 195px;
     margin: auto;
     float: left;
-    border-left: 3px ridge #3f3fef;
 }
 
 #leftsodiv {
@@ -306,7 +305,7 @@ h2 + p {
     float: left;
     background-color: dimgray;
     width: 97px;
-    height: 83px;
+    height: 84px;
     margin: auto;
     padding: 25px;
 }
