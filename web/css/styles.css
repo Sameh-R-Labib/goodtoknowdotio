@@ -306,10 +306,9 @@ h2 + p {
     float: left;
     background-color: dimgray;
     width: 97px;
-    height: 80px;
+    height: 83px;
     margin: auto;
     padding: 25px;
-    border-top: 3px ridge #3f3fef;
 }
 
 #inboxlink {
