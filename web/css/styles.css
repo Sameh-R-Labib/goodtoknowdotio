@@ -209,7 +209,6 @@ h2 + p {
     top: 14px;
     width: 865px;
     margin: auto;
-    border: 3px ridge #3f3fef;
     clear: both;
 }
 
@@ -223,17 +222,6 @@ h2 + p {
     clear: both;
 }
 
-#soplaceholder {
-    opacity: 0.35;
-    background-color: #fbfcf9;
-    position: relative;
-    top: 21px;
-    width: 865px;
-    margin: auto;
-    border: 3px ridge #3f3fef;
-    clear: both;
-}
-
 #maincontent {
     background-color: white;
     position: relative;
@@ -241,7 +229,6 @@ h2 + p {
     width: 865px;
     padding: 60px 0 54px 0;
     margin: auto;
-    border: 3px ridge #3f3fef;
     clear: both;
 }
 
@@ -249,7 +236,7 @@ h2 + p {
     opacity: 0.42;
     background-color: seagreen;
     position: relative;
-    top: 26px;
+    top: 23px;
     width: 865px;
     height: 34px;
     margin: auto;
