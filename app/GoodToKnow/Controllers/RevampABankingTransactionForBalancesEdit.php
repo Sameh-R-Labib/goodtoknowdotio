@@ -34,13 +34,10 @@ class RevampABankingTransactionForBalancesEdit
          * to supply the HTML for that input field.
          */
 
-        require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
-
-        $object->bank_id = get_html_select_box_containing_the_bank_accounts($db, $user_id, $object->bank_id);
-
 
         /**
          * Make it so that if price_point is fiat then price_point has only two decimal places.
+         *
          * But first we need to discern the currency from the BankingAcctForBalances.
          */
 
@@ -55,6 +52,13 @@ class RevampABankingTransactionForBalancesEdit
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
         $object->amount = readable_amount_no_commas($bank->currency, $object->amount);
+
+
+        // I had to move this down here to use bank_id before it got changed.
+
+        require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
+
+        $object->bank_id = get_html_select_box_containing_the_bank_accounts($db, $user_id, $object->bank_id);
 
 
         /**
