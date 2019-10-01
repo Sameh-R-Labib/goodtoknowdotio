@@ -2,8 +2,10 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
+use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class RevampABankingTransactionForBalancesEdit
 {
@@ -20,6 +22,7 @@ class RevampABankingTransactionForBalancesEdit
         /** @var $object */
         /** @var $db */
         /** @var $user_id */
+        /** @var $sessionMessage */
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
 
@@ -34,6 +37,24 @@ class RevampABankingTransactionForBalancesEdit
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
         $object->bank_id = get_html_select_box_containing_the_bank_accounts($db, $user_id, $object->bank_id);
+
+
+        /**
+         * Make it so that if price_point is fiat then price_point has only two decimal places.
+         * But first we need to discern the currency from the BankingAcctForBalances.
+         */
+
+        $bank = BankingAcctForBalances::find_by_id($db, $sessionMessage, $object->bank_id);
+
+        if (!$bank) {
+
+            breakout(' Unexpectedly I could not find that banking account for balances. ');
+
+        }
+
+        require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
+
+        $object->amount = readable_amount_no_commas($bank->currency, $object->amount);
 
 
         /**
