@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
+use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class WriteOverATaxableIncomeEventEdit
 {
@@ -24,6 +25,15 @@ class WriteOverATaxableIncomeEventEdit
         /**
          * 4) Present a form which is populated with data from the taxable_income_event object.
          */
+
+
+        /**
+         * Make it so that if price_point is fiat then price_point has only two decimal places.
+         */
+
+        require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
+
+        $object->amount = readable_amount_no_commas($object->currency, $object->amount);
 
 
         /**
