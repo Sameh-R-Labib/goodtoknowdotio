@@ -246,12 +246,12 @@ h2 + p {
 }
 
 #footerbar {
-    opacity: 0.68;
+    opacity: 0.42;
     background-color: seagreen;
     position: relative;
-    top: 35px;
+    top: 26px;
     width: 865px;
-    height: 51px;
+    height: 34px;
     margin: auto;
     clear: both;
 }
