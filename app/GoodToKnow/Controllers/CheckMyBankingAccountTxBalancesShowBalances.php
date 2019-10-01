@@ -28,6 +28,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    time for the BankingAcctForBalances is set to a time older than 90 days.
          *    Also, show the account name for BankingAcctForBalances at the top of the ledger.
          *    Also, transform field data to a more human friendly format.
+         *
+         *    Reverse the order of the transactions before displaying them.
          */
 
         global $sessionMessage;
@@ -108,6 +110,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * BankingAcctForBalances fields in need of transformation.
          * - start_time [human readable time]
          * - start_balance [comma separator for thousands]
+         *
+         * Reverse the order of the transactions before displaying them.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
@@ -130,6 +134,12 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         $account->start_time = get_readable_time($account->start_time);
         $account->start_balance = readable_amount_of_money($account->currency, $account->start_balance);
+
+
+        // Reverse the order
+
+        $array = array_reverse($array);
+
 
         $html_title = 'Transactions';
 
