@@ -189,7 +189,6 @@ h2 + p {
     width: 865px;
     height: 70px;
     margin: auto;
-    border: 3px ridge #3f3fef;
     clear: both;
 }
 
@@ -267,7 +266,6 @@ h2 + p {
     height: 70px;
     margin: auto;
     float: left;
-    border-left: 3px ridge #3f3fef;
 }
 
 #scriptmessage {
@@ -321,7 +319,6 @@ h2 + p {
     height: 70px;
     margin: auto;
     float: left;
-    border-left: 3px ridge #3f3fef;
 }
 
 #logindiv {
@@ -330,7 +327,6 @@ h2 + p {
     height: 70px;
     margin: auto;
     float: left;
-    border-left: 3px ridge #3f3fef;
 }
 
 .tooltip {
