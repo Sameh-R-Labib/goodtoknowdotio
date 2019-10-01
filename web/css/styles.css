@@ -199,7 +199,6 @@ h2 + p {
     top: 7px;
     width: 865px;
     margin: auto;
-    border: 3px ridge #3f3fef;
     clear: both;
 }
 
@@ -221,7 +220,6 @@ h2 + p {
     width: 865px;
     height: 195px;
     margin: auto;
-    border: 3px ridge #3f3fef;
     clear: both;
 }
 
@@ -255,7 +253,6 @@ h2 + p {
     width: 865px;
     height: 51px;
     margin: auto;
-    border: 3px ridge #3f3fef;
     clear: both;
 }
 
