@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
+use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class EditABitcoinRecordProcessor
 {
@@ -25,6 +26,15 @@ class EditABitcoinRecordProcessor
          * 4) Present a form which is populated with data from the object.
          *    (except do the bitcoin address should not be changeable.)
          */
+
+
+        /**
+         * Make it so that if price_point is fiat then price_point has only two decimal places.
+         */
+
+        require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
+
+        $bitcoin_object->price_point = readable_amount_no_commas($bitcoin_object->currency, $bitcoin_object->price_point);
 
 
         /**
