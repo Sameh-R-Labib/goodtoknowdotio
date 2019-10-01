@@ -52,7 +52,7 @@ class EditABitcoinRecordSubmit
 
         // price_point
 
-        $edited_price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
+        $edited_price_point = float_form_field_prep('price_point', 0.0, 999999999999999.99);
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`

@@ -24,7 +24,7 @@
         </p>
         <p>
             <label for="amount">Amount of currency received: </label>
-            <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="16" size="16"
+            <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="24" size="24"
                    placeholder="150.24">
         </p>
         <p>

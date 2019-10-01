@@ -51,7 +51,7 @@ class PolishARecurringPaymentRecordSubmit
 
         /** @var  $edited_amount_paid */
 
-        $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 21000000000.0);
+        $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 999999999999999.99);
 
 
         /** @var $time */

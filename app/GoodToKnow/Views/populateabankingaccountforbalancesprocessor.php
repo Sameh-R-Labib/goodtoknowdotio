@@ -16,7 +16,7 @@
             <p>
                 <label for="start_balance">Balance at Beginning: </label>
                 <input id="start_balance" name="start_balance" type="text"
-                       value="<?= $object->start_balance ?>" required minlength="1" maxlength="15" size="15">
+                       value="<?= $object->start_balance ?>" required minlength="1" maxlength="24" size="24">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>

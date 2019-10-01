@@ -10,13 +10,13 @@
             </p>
             <p>
                 <label for="initial_balance">Initial BTC Balance: </label>
-                <input id="initial_balance" name="initial_balance" type="text" placeholder="0.00000000"
-                       value="" minlength="10" spellcheck="false" size="17" maxlength="17">
+                <input id="initial_balance" name="initial_balance" type="text" placeholder="0.01500002"
+                       value="" required minlength="10" spellcheck="false" size="24" maxlength="24">
             </p>
             <p>
                 <label for="current_balance">Current BTC Balance: </label>
-                <input id="current_balance" name="current_balance" type="text" placeholder="0.00000000"
-                       value="" required minlength="10" spellcheck="false" size="17" maxlength="17">
+                <input id="current_balance" name="current_balance" type="text" placeholder="0.01500002"
+                       value="" required minlength="10" spellcheck="false" size="24" maxlength="24">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>
@@ -25,8 +25,8 @@
             </p>
             <p>
                 <label for="price_point">BTC Price at Time of Purchase: </label>
-                <input id="price_point" name="price_point" type="text" placeholder="0.00" value="" minlength="2"
-                       spellcheck="false" size="13" maxlength="13">
+                <input id="price_point" name="price_point" type="text" placeholder="0.00" value="" minlength="1"
+                       spellcheck="false" size="24" maxlength="24">
             </p>
             <hr>
             <p>Time at Purchase</p>

@@ -40,7 +40,7 @@ class BuildABankingTransactionForBalancesProcessor
         // - - -
 
 
-        $amount = float_form_field_prep('amount', -21000000000.0, 21000000000.0);
+        $amount = float_form_field_prep('amount', -999999999999999.99, 999999999999999.99);
 
         $bank_id = integer_form_field_prep('bank_id', 1, PHP_INT_MAX);
 

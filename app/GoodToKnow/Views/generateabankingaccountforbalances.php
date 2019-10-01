@@ -15,7 +15,7 @@
             <p>
                 <label for="start_balance">Balance at Beginning: </label>
                 <input id="start_balance" name="start_balance" type="text" value="" required minlength="1"
-                       maxlength="15" size="15" placeholder="-85.14">
+                       maxlength="24" size="24" placeholder="-85.14">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>

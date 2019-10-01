@@ -25,7 +25,7 @@
         <p>
             <label for="amount">Amount of currency received: </label>
             <input id="amount" name="amount" type="text"
-                   value="<?= $object->amount ?>" required minlength="1" maxlength="16" size="16" placeholder="500.29">
+                   value="<?= $object->amount ?>" required minlength="1" maxlength="24" size="24" placeholder="500.29">
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>

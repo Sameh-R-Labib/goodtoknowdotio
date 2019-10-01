@@ -20,8 +20,8 @@
             <p>
                 <label for="amount_paid">Amount of currency paid: </label>
                 <input id="amount_paid" name="amount_paid" type="text"
-                       value="<?= $recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="16"
-                       size="16" placeholder="108.49">
+                       value="<?= $recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="24"
+                       size="24" placeholder="108.49">
             </p>
             <hr>
             <p>Time at Last Payment</p>

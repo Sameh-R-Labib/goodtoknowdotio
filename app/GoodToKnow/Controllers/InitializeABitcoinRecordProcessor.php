@@ -38,7 +38,7 @@ class InitializeABitcoinRecordProcessor
 
         $currency = standard_form_field_prep('currency', 1, 15);
 
-        $price_point = float_form_field_prep('price_point', 0.0, 21000000000.0);
+        $price_point = float_form_field_prep('price_point', 0.0, 999999999999999.99);
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`

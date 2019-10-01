@@ -44,7 +44,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         // amount
 
-        $edited_amount = float_form_field_prep('amount', -21000000000.0, 21000000000.0);
+        $edited_amount = float_form_field_prep('amount', -999999999999999.99, 999999999999999.99);
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
