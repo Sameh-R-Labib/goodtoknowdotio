@@ -107,13 +107,13 @@ form {
 /* unvisited link */
 a:link {
     color: red;
-    padding: 8px 10px;
+    padding: 6px 8px;
 }
 
 /* visited link */
 a:visited {
     color: green;
-    padding: 8px 10px;
+    padding: 6px 8px;
 }
 
 /* mouse over link */
