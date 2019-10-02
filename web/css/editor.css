@@ -107,7 +107,7 @@ form {
 /* unvisited link */
 a:link {
     color: red;
-    padding: 10px 12px;
+    padding: 8px 10px;
 }
 
 /* visited link */
