@@ -107,11 +107,13 @@ form {
 /* unvisited link */
 a:link {
     color: red;
+    padding: 5px 12px;
 }
 
 /* visited link */
 a:visited {
     color: green;
+    padding: 5px 12px;
 }
 
 /* mouse over link */
@@ -127,7 +129,6 @@ a:active {
 a:link, a:visited {
     background-color: #f436c9ab;
     color: white;
-    padding: 5px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
