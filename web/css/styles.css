@@ -196,7 +196,7 @@ h2 + p {
     opacity: 0.35;
     background-color: #d0883d;
     position: relative;
-    top: 7px;
+    top: -9px;
     width: 865px;
     margin: auto;
     clear: both;
@@ -206,9 +206,9 @@ h2 + p {
     opacity: 0.38;
     background-color: gainsboro;
     position: relative;
-    top: 14px;
+    top: -19px;
     width: 865px;
-    height: 28px;
+    height: 29px;
     margin: 0 auto;
     clear: both;
 }
@@ -216,7 +216,7 @@ h2 + p {
 #scriptoutput {
     background-color: white;
     position: relative;
-    top: 21px;
+    top: -12px;
     width: 865px;
     height: 195px;
     margin: auto;
@@ -226,7 +226,7 @@ h2 + p {
 #maincontent {
     background-color: white;
     position: relative;
-    top: 28px;
+    top: -7px;
     width: 865px;
     padding: 60px 0 54px 0;
     margin: auto;
@@ -237,9 +237,9 @@ h2 + p {
     opacity: 0.42;
     background-color: seagreen;
     position: relative;
-    top: 22px;
+    top: -18px;
     width: 865px;
-    height: 30px;
+    height: 29px;
     margin: auto;
     clear: both;
 }
