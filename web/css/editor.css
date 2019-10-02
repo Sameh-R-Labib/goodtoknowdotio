@@ -107,13 +107,13 @@ form {
 /* unvisited link */
 a:link {
     color: red;
-    padding: 5px 12px;
+    padding: 10px 12px;
 }
 
 /* visited link */
 a:visited {
     color: green;
-    padding: 8px 12px;
+    padding: 10px 12px;
 }
 
 /* mouse over link */
@@ -141,7 +141,7 @@ a:hover, a:active {
 
 a.abort {
     margin-left: 15px;
-    opacity: 0.5;
+    opacity: 0.35;
     cursor: pointer;
 }
 
