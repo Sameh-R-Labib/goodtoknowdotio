@@ -15,8 +15,6 @@ class ChangePasswordProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
         $db = get_db();
 
 

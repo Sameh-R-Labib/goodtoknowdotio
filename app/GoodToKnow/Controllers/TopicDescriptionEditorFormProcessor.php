@@ -28,8 +28,6 @@ class TopicDescriptionEditorFormProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          *  1) Read 'text'

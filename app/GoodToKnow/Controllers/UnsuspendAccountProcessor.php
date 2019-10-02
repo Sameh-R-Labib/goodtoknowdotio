@@ -12,8 +12,6 @@ class UnsuspendAccountProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          * Goal:

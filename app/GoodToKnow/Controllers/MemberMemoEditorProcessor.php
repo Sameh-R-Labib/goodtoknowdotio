@@ -12,8 +12,6 @@ class MemberMemoEditorProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          * Goal:

@@ -21,8 +21,6 @@ class InitializeABitcoinRecordProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
 

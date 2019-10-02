@@ -14,8 +14,6 @@ class EditMyPostEditor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
         $db = get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';

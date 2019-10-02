@@ -21,8 +21,6 @@ class PurgeOldMessagesProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
         $db = get_db();
 
 

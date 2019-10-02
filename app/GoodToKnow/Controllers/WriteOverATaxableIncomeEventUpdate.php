@@ -26,8 +26,6 @@ class WriteOverATaxableIncomeEventUpdate
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * 1) Validate the submitted writeoverataxableincomeeventedit.php form data.

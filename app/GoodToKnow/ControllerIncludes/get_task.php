@@ -11,8 +11,6 @@ global $timezone;
 
 kick_out_loggedoutusers();
 
-kick_out_onabort();
-
 
 /**
  * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].

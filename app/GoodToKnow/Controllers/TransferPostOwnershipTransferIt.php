@@ -21,8 +21,6 @@ class TransferPostOwnershipTransferIt
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
         $db = get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

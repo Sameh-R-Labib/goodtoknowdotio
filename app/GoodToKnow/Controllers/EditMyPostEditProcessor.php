@@ -22,8 +22,6 @@ class EditMyPostEditProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * Verify that a string representing

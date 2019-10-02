@@ -27,8 +27,6 @@ class RevampABankingTransactionForBalancesUpdate
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * 1) Validate the submitted revampabankingtransactionforbalancesedit.php form data.

@@ -18,8 +18,6 @@ class UploadProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         if (!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
             breakout(' You didn\'t select a file. ');

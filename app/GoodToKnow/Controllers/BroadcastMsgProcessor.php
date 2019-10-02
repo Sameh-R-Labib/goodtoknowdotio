@@ -19,8 +19,6 @@ class BroadcastMsgProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          * Verify that a string representing

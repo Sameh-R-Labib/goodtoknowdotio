@@ -21,8 +21,6 @@ class CreateNewPostTitleProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * I can't assume these post variables exist so I do the following.

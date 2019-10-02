@@ -7,8 +7,6 @@ global $sessionMessage;
 
 kick_out_nonadmins();
 
-kick_out_onabort();
-
 $db = get_db();
 
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';

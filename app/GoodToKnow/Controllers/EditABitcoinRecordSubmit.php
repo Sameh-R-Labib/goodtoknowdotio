@@ -23,8 +23,6 @@ class EditABitcoinRecordSubmit
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * 1) Validate the submitted editabitcoinrecordprocessor.php form data.

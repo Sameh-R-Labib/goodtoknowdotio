@@ -14,8 +14,6 @@ class DefaultCommunityProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         require_once CONTROLLERHELPERS . DIRSEP . 'community_for_regular_user_prep.php';
 

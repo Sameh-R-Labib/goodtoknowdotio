@@ -22,8 +22,6 @@ class ByUsernameMessageProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * Read the username.

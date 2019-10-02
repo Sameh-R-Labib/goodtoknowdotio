@@ -9,8 +9,6 @@ global $user_id;
 
 kick_out_loggedoutusers();
 
-kick_out_onabort();
-
 
 /**
  * 1) Store the submitted possible_tax_deduction id in the session.

@@ -28,8 +28,6 @@ class KommunityDescriptionEditorFormProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          *  1) Read the edited community's description.

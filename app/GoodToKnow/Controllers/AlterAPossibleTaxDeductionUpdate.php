@@ -25,8 +25,6 @@ class AlterAPossibleTaxDeductionUpdate
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * This function will:

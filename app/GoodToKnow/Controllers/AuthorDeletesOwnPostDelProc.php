@@ -23,8 +23,6 @@ class AuthorDeletesOwnPostDelProc
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * Do nothing if user changed mind.

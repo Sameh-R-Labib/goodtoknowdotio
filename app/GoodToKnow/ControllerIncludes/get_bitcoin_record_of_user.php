@@ -9,8 +9,6 @@ global $timezone;
 
 kick_out_loggedoutusers();
 
-kick_out_onabort();
-
 
 /**
  * Determines the id of the bitcoin record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].

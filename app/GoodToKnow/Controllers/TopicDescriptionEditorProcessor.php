@@ -25,8 +25,6 @@ class TopicDescriptionEditorProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          * 1) Validate the submission.

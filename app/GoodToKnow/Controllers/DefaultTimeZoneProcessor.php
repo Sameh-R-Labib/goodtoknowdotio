@@ -21,8 +21,6 @@ class DefaultTimeZoneProcessor
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
         require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
         $timezone = timezone_form_field_prep('timezone');

@@ -23,8 +23,6 @@ class QuickPostDeleteDelProc
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
 
         /**
          * Do nothing if user changed mind.

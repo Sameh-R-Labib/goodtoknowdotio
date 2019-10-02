@@ -17,8 +17,6 @@ class RevampABankingTransactionForBalancesTimeRange
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
         require CONTROLLERINCLUDES . DIRSEP . 'find_min_max_time_range_based_on_choice.php';
 
         redirect_to("/ax1/RevampABankingTransactionForBalancesChooseRecord/page");

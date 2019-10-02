@@ -25,8 +25,6 @@ class ByUsernameMessageSave
 
         kick_out_loggedoutusers();
 
-        kick_out_onabort();
-
 
         /**
          * $message_object and $db are defined when we include add_a_message_in_the_database.php.

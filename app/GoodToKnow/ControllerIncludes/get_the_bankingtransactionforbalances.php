@@ -11,8 +11,6 @@ global $timezone;
 
 kick_out_loggedoutusers();
 
-kick_out_onabort();
-
 
 /**
  * 1) Store the submitted banking_transaction_for_balances record id in the session.

@@ -11,8 +11,6 @@ global $timezone;
 
 kick_out_loggedoutusers();
 
-kick_out_onabort();
-
 
 /**
  * 1) Store the submitted taxable_income_event id in the session.

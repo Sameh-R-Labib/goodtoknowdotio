@@ -4,8 +4,6 @@ global $sessionMessage;
 
 kick_out_nonadmins();
 
-kick_out_onabort();
-
 /**
  * Now we know the ids of the communities the administrator
  * wants the user to belong to. The goal is to assign these

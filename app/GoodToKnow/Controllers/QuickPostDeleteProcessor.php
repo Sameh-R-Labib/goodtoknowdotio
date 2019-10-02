@@ -13,8 +13,6 @@ class QuickPostDeleteProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);

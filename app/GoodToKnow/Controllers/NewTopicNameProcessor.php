@@ -21,8 +21,6 @@ class NewTopicNameProcessor
 
         kick_out_nonadmins();
 
-        kick_out_onabort();
-
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $topic_name = standard_form_field_prep('topic_name', 1, 200);
