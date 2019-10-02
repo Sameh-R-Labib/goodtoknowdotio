@@ -8,6 +8,6 @@ class ClearSessionVars
 {
     function page()
     {
-        echo "You made it!";
+        breakout(' Task aborted. ');
     }
 }
