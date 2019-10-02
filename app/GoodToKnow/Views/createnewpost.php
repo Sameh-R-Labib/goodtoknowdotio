@@ -4,8 +4,8 @@
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">These are the topics in your current community.</span>
         </p>
-        <p>Which <em>topic</em> do you want the new <em>post</em> to live in?</p>
         <?php require SESSIONMESSAGE; ?>
+        <p>Which <em>topic</em> do you want the new <em>post</em> to live in?</p>
         <section>
             <?php foreach ($special_topic_array as $key => $value): ?>
                 <label for="choice-<?php echo $key; ?>" class="radio">

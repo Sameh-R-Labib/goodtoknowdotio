@@ -5,7 +5,7 @@
     <section>
         <p>
             <label for="label">Label (✅ emoji): </label>
-            <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
+            <input id="label" name="label" type="text" required minlength="3" maxlength="264"
                    size="61" spellcheck="false" placeholder="Technical support for a Gtk.io User">
         </p>
         <hr>
@@ -14,17 +14,17 @@
         <hr>
         <p>
             <label for="year_received">Year for when event occured: </label>
-            <input id="year_received" name="year_received" type="text" value="" required minlength="4" maxlength="6"
+            <input id="year_received" name="year_received" type="text" required minlength="4" maxlength="6"
                    size="6" placeholder="2018">
         </p>
         <p>
             <label for="currency">Currency (✅ emoji): </label>
-            <input id="currency" name="currency" type="text" value="" required minlength="1" maxlength="15" size="15"
+            <input id="currency" name="currency" type="text" required minlength="1" maxlength="15" size="15"
                    placeholder="💵">
         </p>
         <p>
             <label for="amount">Amount of currency received: </label>
-            <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="24" size="24"
+            <input id="amount" name="amount" type="text" required minlength="1" maxlength="24" size="24"
                    placeholder="150.24">
         </p>
         <p>
