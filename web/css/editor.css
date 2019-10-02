@@ -52,15 +52,6 @@ button {
     border-radius: 4px;
 }
 
-.abort {
-    background: #f3a033;
-    margin-left: 15px;
-    width: 57px;
-    opacity: 0.5;
-    cursor: pointer;
-    display: inline-block;
-}
-
 h2 {
     font-size: 1.32em;
     margin-top: 2.66em;
@@ -136,7 +127,7 @@ a:active {
 a:link, a:visited {
     background-color: #f436c9ab;
     color: white;
-    padding: 14px 25px;
+    padding: 5px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -145,6 +136,12 @@ a:link, a:visited {
 
 a:hover, a:active {
     background-color: red;
+}
+
+a.abort {
+    margin-left: 15px;
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .tooltip {
