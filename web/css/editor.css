@@ -52,7 +52,7 @@ button {
     border-radius: 4px;
 }
 
-button.abort {
+.abort {
     background: #f3a033;
     margin-left: 15px;
     width: 57px;
