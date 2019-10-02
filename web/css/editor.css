@@ -113,7 +113,7 @@ a:link {
 /* visited link */
 a:visited {
     color: green;
-    padding: 10px 12px;
+    padding: 8px 10px;
 }
 
 /* mouse over link */
