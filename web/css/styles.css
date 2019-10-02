@@ -208,7 +208,8 @@ h2 + p {
     position: relative;
     top: 14px;
     width: 865px;
-    margin: 12px auto;
+    height: 100px;
+    margin: 0 auto;
     clear: both;
 }
 
