@@ -57,6 +57,8 @@ button {
     margin-left: 15px;
     width: 57px;
     opacity: 0.5;
+    cursor: pointer;
+    display: inline-block;
 }
 
 h2 {
