@@ -43,6 +43,7 @@
             <li><a href="/ax1/GawkAtAllTaxableIncomeEvents/page">See One Year's Taxable 💸 Event 📽s</a></li>
             <li><a href="/ax1/NukeATaxableIncomeEvent/page">Delete a Taxable 💸 Event 📽</a></li>
             <li><a href="/ax1/FatherACommoditySold/page">Create a Commodity Sold 📽</a></li>
+            <li><a href="/ax1/FineTuneACommoditySold/page">Edit a Commodity Sold 📽</a></li>
         </ul>
         <h2>♠👔♠ 🧰s</h2>
         <ul>
