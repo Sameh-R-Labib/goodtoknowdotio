@@ -3,10 +3,6 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\CommoditySold;
-use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
-use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class FineTuneACommoditySoldUpdate
 {
