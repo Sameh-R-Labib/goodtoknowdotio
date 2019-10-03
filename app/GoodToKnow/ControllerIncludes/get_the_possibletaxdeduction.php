@@ -7,6 +7,8 @@ global $sessionMessage;
 
 global $user_id;
 
+global $timezone;
+
 kick_out_loggedoutusers();
 
 

@@ -7,6 +7,8 @@ global $sessionMessage;
 
 global $timezone;
 
+global $user_id;
+
 kick_out_loggedoutusers();
 
 
@@ -39,8 +41,6 @@ if (!$bitcoin_object) {
 /**
  * Verify that this object belongs to the user.
  */
-
-global $user_id;
 
 if ($bitcoin_object->user_id != $user_id) {
 
