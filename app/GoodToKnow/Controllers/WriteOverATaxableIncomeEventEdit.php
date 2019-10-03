@@ -28,7 +28,7 @@ class WriteOverATaxableIncomeEventEdit
 
 
         /**
-         * Make it so that if price_point is fiat then price_point has only two decimal places.
+         * Make it so that if amount is fiat then amount has only two decimal places.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
