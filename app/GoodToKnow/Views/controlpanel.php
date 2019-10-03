@@ -45,6 +45,7 @@
             <li><a href="/ax1/NukeATaxableIncomeEvent/page">Delete a Taxable 💸 Event 📽</a></li>
             <li><a href="/ax1/FatherACommoditySold/page">Create a Commodity Sold 📽</a></li>
             <li><a href="/ax1/FineTuneACommoditySold/page">Edit a Commodity Sold 📽</a></li>
+            <li><a href="/ax1/SpyCommoditiesSold/page">See One Year's Commodities Sold 📽s</a></li>
         </ul>
         <?php require COLLAGE; ?>
     </div>
