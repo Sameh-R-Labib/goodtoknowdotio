@@ -24,7 +24,7 @@ $timezone = timezone_form_field_prep('timezone');
 
 
 /**
- * ALREADY taken care of above.
+ * ALREADY taken care of above within call to timezone_form_field_prep().
  * Use $timezone to set the default timezone for the script to use.
  */
 
@@ -126,7 +126,7 @@ $next = mktime($nexthour, $nextminute, $nextsecond, $mm_next, $dd_next, $yyyy_ne
 
 
 /**
- * Never allow $time to be 0.
+ * Never allow time to be 0.
  */
 
 if ($last === 0) $last = 1546300800;

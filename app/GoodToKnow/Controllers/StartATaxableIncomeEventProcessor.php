@@ -16,6 +16,7 @@ class StartATaxableIncomeEventProcessor
          */
 
         global $sessionMessage;
+
         global $user_id;
 
         kick_out_loggedoutusers();
