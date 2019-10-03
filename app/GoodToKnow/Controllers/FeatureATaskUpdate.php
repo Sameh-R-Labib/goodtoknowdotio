@@ -19,6 +19,7 @@ class FeatureATaskUpdate
          */
 
         global $sessionMessage;
+
         global $saved_int01;    // task id
 
         kick_out_loggedoutusers();
@@ -69,7 +70,9 @@ class FeatureATaskUpdate
         $object = Task::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' Unexpectedly I could not find that record. ');
+
         }
 
 
@@ -91,7 +94,9 @@ class FeatureATaskUpdate
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at saving the updated object. ');
+
         }
 
 

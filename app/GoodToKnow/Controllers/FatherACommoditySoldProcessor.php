@@ -16,90 +16,19 @@ class FatherACommoditySoldProcessor
          * Create a database record in the commodities_sold table using the submitted commodities_sold data.
          */
 
-        global $sessionMessage;
-
-        global $user_id;
-
-        kick_out_loggedoutusers();
-
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-
-        /**
-         * Get the $time_bought and $time_sold (which are timestamps) based on submitted:
-         * `timezone` `time_bought_date` `time_bought_hour` `time_bought_minute` `time_bought_second`
-         * `time_sold_date` `time_sold_hour` `time_sold_minute` `time_sold_second`
-         */
-
+        /** @var $user_id */
         /** @var $time_bought */
         /** @var $time_sold */
+        /** @var $price_bought */
+        /** @var $price_sold */
+        /** @var $currency_transacted */
+        /** @var $commodity_amount */
+        /** @var $commodity_type */
+        /** @var $commodity_label */
+        /** @var $tax_year */
+        /** @var $profit */
 
-        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_bought_and_time_sold_epochs.php';
-
-
-        /**
-         * Get $price_bought
-         */
-
-        $price_bought = float_form_field_prep('price_bought', 0.0, 999999999999999.99);
-
-
-        /**
-         * Get $price_sold
-         */
-
-        $price_sold = float_form_field_prep('price_sold', 0.0, 999999999999999.99);
-
-
-        /**
-         * Get $currency_transacted
-         */
-
-        $currency_transacted = standard_form_field_prep('currency_transacted', 1, 15);
-
-
-        /**
-         * Get $commodity_amount
-         */
-
-        $commodity_amount = float_form_field_prep('commodity_amount', 0.0, 999999999999999.99);
-
-
-        /**
-         * Get $commodity_type
-         */
-
-        $commodity_type = standard_form_field_prep('commodity_type', 1, 15);
-
-
-        /**
-         * Get $commodity_label
-         *
-         * Most typically this is a bitcoin address or something which can be perceived like it.
-         */
-
-        $commodity_label = bitcoin_address_form_field_prep('commodity_label');
-
-
-        /**
-         * Get $tax_year
-         */
-
-        $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
-
-
-        /**
-         * Get $profit
-         */
-
-        $profit = float_form_field_prep('profit', 0.0, 999999999999999.99);
+        require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
 
 
         /**
