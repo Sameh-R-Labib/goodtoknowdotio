@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/GawkAtAllTaxableIncomeEventsYearFilter/page" method="post">
     <h1>See a year's Taxable 💸 Event 📽s</h1>
-    <p>Which year_received are you inquiring about?</p>
+    <p>Which year received?</p>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
