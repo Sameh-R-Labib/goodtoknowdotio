@@ -2,7 +2,8 @@
     <form action="/ax1/FatherACommoditySoldProcessor/page" method="post">
         <h1>Create a Commodity Sold 📽</h1>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">Use this form `only` if you sold a capital gains taxable commodity.</span>
+            <span class="tooltiptext tooltip-top">Use this form `only` if you sold a capital gains taxable commodity.
+            Warning: Commodity Sold records older than six (6) years are purged from the system.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
