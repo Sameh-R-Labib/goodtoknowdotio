@@ -49,6 +49,7 @@ define('TIMEFORMFIELDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeformfieldprefille
 define('TIMENEXTANDLASTFORMFIELDS', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php');
 define('TIMENEXTANDLASTFORMFIELDSPREFILLED', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php');
 define('TIMEBOUGHTSOLD', VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php');
+define('TIMEBOUGHTSOLDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php');
 
 /**
  * More require statements
