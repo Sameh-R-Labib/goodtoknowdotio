@@ -40,7 +40,7 @@ class FineTuneACommoditySoldEdit
 
 
         /**
-         * Make it so that if price_bought is fiat then price_bought has only two decimal places.
+         * Make it so that if currency_transacted is fiat then price_bought has only two decimal places.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
@@ -49,7 +49,7 @@ class FineTuneACommoditySoldEdit
 
 
         /**
-         * Make it so that if price_sold is fiat then price_sold has only two decimal places.
+         * Make it so that if currency_transacted is fiat then price_sold has only two decimal places.
          */
 
         $object->price_sold = readable_amount_no_commas($object->currency_transacted, $object->price_sold);
@@ -60,6 +60,13 @@ class FineTuneACommoditySoldEdit
          */
 
         $object->commodity_amount = readable_amount_no_commas($object->commodity_type, $object->commodity_amount);
+
+
+        /**
+         * Make it so that if currency_transacted is fiat then profit has only two decimal places.
+         */
+
+        $object->profit = readable_amount_no_commas($object->currency_transacted, $object->profit);
 
 
         $html_title = 'Edit the commodity sold';
