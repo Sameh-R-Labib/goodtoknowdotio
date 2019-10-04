@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/FineTuneACommoditySoldEdit/page" method="post">
-        <h2>Which Commodity Sold?</h2>
+        <h1>Edit a Commodity Sold 📽</h1>
         <?php require SESSIONMESSAGE; ?>
+        <p>Which Commodity Sold?</p>
         <section>
             <?php foreach ($array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">
