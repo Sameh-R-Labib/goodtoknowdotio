@@ -4,13 +4,13 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class CleanupYearsTaxableIncomeEventsGetYear
+class AbolishYearsCommoditiesSoldGetYear
 {
     function page()
     {
         /**
-         * 1) Validate the submitted year_received.
-         * 2) Delete the taxable_income_event(s/plural) which have the specified year_received.
+         * 1) Validate the submitted tax_year.
+         * 2) Delete the CommoditySold(s/plural) which have the specified tax_year.
          * 3) Give confirmation of deletion.
          */
 
@@ -22,22 +22,22 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
 
         /**
-         * 1) Validate the submitted year_received.
+         * 1) Validate the submitted tax_year.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_received = integer_form_field_prep('year_received', 1992, 65535);
+        $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
 
         /**
-         * 2) Delete the taxable_income_event(s/plural) which have the specified year_received.
+         * 2) Delete the CommoditySold(s/plural) which have the specified tax_year.
          */
 
         $num_affected_rows = 0;
 
-        $sql = 'DELETE FROM `taxable_income_event` WHERE `year_received` = ';
-        $sql .= $db->real_escape_string($year_received);
+        $sql = 'DELETE FROM `commodities_sold` WHERE `tax_year` = ';
+        $sql .= $db->real_escape_string($tax_year);
 
         try {
             $db->query($sql);
@@ -52,7 +52,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
             $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
-            $sessionMessage .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
+            $sessionMessage .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
 
@@ -65,7 +65,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
          * 3) Give confirmation of deletion.
          */
 
-        $message = " The purge of Taxable Income Events for the year <b>{$year_received}</b> has resulted in deletion of <b>";
+        $message = " The purge of Commodities Sold Records for the year <b>{$tax_year}</b> has resulted in deletion of <b>";
         $message .= $num_affected_rows . "</b> records. ";
 
         breakout($message);
