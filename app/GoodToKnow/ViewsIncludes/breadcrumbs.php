@@ -37,6 +37,9 @@ switch ($page) {
     case 'GawkAtAllTaxableIncomeEvents':
         echo "<a href=\"/ax1/GawkAtAllTaxableIncomeEvents/page\">One Year's Taxable Events</a>";
         break;
+    case 'SpyCommoditiesSoldYear':
+        echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodities Sold</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;
