@@ -45,6 +45,7 @@
             <li><a href="/ax1/FatherACommoditySold/page">Create a Commodity Sold 📽</a></li>
             <li><a href="/ax1/FineTuneACommoditySold/page">Edit a Commodity Sold 📽</a></li>
             <li><a href="/ax1/SpyCommoditiesSold/page">See One Year's Commodities Sold 📽s</a></li>
+            <li><a href="/ax1/DropACommoditySold/page">Delete a Commodity Sold 📽</a></li>
         </ul>
         <h2>♠👔♠ 🧰s</h2>
         <ul>
