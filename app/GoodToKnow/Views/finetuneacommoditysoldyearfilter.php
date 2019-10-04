@@ -6,7 +6,8 @@
             <?php foreach ($array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
-                    <b><?= $object->commodity_label ?></b> [<?= $object->tax_year ?>]<br>
+                    <b><?= $object->commodity_label ?></b>
+                    [<?= $object->commodity_type ?> <?= $object->commodity_amount ?>]<br>
                 </label>
             <?php endforeach; ?>
         </section>
