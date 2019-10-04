@@ -17,7 +17,7 @@ class NukeATaxableIncomeEvent
 
         kick_out_loggedoutusers();
 
-        $html_title = 'Which year_received for filtering your taxable income event choices?';
+        $html_title = 'Which year received?';
 
         require VIEWS . DIRSEP . 'nukeataxableincomeevent.php';
     }
