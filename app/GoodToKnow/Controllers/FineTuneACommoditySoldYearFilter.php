@@ -16,6 +16,8 @@ class FineTuneACommoditySoldYearFilter
          * Format for readability.
          */
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         foreach ($array as $item) {
             $item->commodity_amount = readable_amount_of_money($item->commodity_type, $item->commodity_amount);
         }
