@@ -75,6 +75,7 @@ class Home
      * @param $type_of_resource_requested
      * @param $sessionMessage
      * @param $is_admin
+     * @param $is_guest
      */
     private static function show_the_home_page($user_id, $community_id, $topic_id, $post_id, $post_name, $post_full_name,
                                                $topic_name, $topic_description, $community_name, $community_description,
