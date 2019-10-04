@@ -2,10 +2,10 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TaxableIncomeEvent;
+use GoodToKnow\Models\CommoditySold;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class NukeATaxableIncomeEventConfirmation
+class DropACommoditySoldConfirmation
 {
     function page()
     {
@@ -42,7 +42,7 @@ class NukeATaxableIncomeEventConfirmation
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = CommoditySold::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
 
@@ -61,6 +61,6 @@ class NukeATaxableIncomeEventConfirmation
 
         // Report successful deletion of post.
 
-        breakout(' I deleted the Taxable 💸 Event 📽. ');
+        breakout(' I deleted the Commodity Sold 📽. ');
     }
 }
