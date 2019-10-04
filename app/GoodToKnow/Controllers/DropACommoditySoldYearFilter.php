@@ -4,10 +4,11 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class FineTuneACommoditySoldYearFilter
+class DropACommoditySoldYearFilter
 {
     function page()
     {
+
         /** @var $array */
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
@@ -28,6 +29,6 @@ class FineTuneACommoditySoldYearFilter
 
         $html_title = 'Which Commodity Sold?';
 
-        require VIEWS . DIRSEP . 'finetuneacommoditysoldyearfilter.php';
+        require VIEWS . DIRSEP . 'dropacommoditysoldyearfilter.php';
     }
 }

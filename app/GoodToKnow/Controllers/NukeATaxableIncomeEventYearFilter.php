@@ -26,7 +26,9 @@ class NukeATaxableIncomeEventYearFilter
         /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($array as $item) {
+
             $item->time = get_readable_time($item->time);
+
         }
 
         $html_title = 'Which taxable_income_event record?';
