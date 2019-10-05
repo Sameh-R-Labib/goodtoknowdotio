@@ -214,7 +214,7 @@ h2 + p {
 }
 
 #scriptoutput {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.01);
     position: relative;
     top: -12px;
     width: 865px;
@@ -262,9 +262,9 @@ h2 + p {
 }
 
 #leftsodiv {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.01);
     width: 147px;
-    height: 185px;
+    height: 195px;
     margin: auto;
     float: left;
 }
