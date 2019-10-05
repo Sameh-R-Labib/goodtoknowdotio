@@ -287,6 +287,7 @@ h2 + p {
 }
 
 #admindiv {
+    opacity: 0.38;
     float: left;
     background-color: dimgray;
     width: 97px;
