@@ -286,9 +286,9 @@ h2 + p {
 }
 
 #admindiv {
+    background-color: rgba(255, 255, 255, 0.01);
     opacity: 0.38;
     float: left;
-    background-color: dimgray;
     width: 97px;
     height: 84px;
     margin: auto;
