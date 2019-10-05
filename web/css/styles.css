@@ -235,6 +235,7 @@ h2 + p {
 
 #footerbar {
     background-color: rgba(32, 178, 170, 0.42);
+    opacity: 0.88;
     position: relative;
     top: -18px;
     width: 865px;
