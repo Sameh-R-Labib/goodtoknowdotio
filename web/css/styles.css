@@ -255,7 +255,7 @@ h2 + p {
 }
 
 #scriptmessage {
-    opacity: 0.98;
+    z-index: -1;
     background-color: #fbfcf9;
     width: 716px;
     height: 195px;
