@@ -23,7 +23,9 @@
                    value="<?= $object->currency ?>" required minlength="1" maxlength="15" size="15" placeholder="💵">
         </p>
         <p>
-            <label for="amount">Amount of currency received: </label>
+            <label for="amount">Amount of currency received <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">If the amounts are being displayed having 8 instead of 2 decimal places then let the admin
+                        know to add your type of currency to the list of known fiat currencies.</span></span>: </label>
             <input id="amount" name="amount" type="text"
                    value="<?= $object->amount ?>" required minlength="1" maxlength="24" size="24" placeholder="500.29">
         </p>

@@ -22,7 +22,9 @@
                        value="<?= $bitcoin_object->currency ?>" required minlength="1" maxlength="15" size="15">
             </p>
             <p>
-                <label for="price_point">BTC Price at Time of Purchase: </label>
+                <label for="price_point">BTC Price at Time of Purchase <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">If the amounts are being displayed having 8 instead of 2 decimal places then let the admin
+                        know to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="price_point" name="price_point" type="text" placeholder="0.00"
                        value="<?= $bitcoin_object->price_point ?>"
                        minlength="1" spellcheck="false" size="24" maxlength="24">

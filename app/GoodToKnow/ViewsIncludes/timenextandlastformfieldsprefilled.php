@@ -1,7 +1,6 @@
 <hr>
-<p>Last</p>
 <p>
-    <label for="lastdate"></label>
+    <label for="lastdate">Last: </label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy"
            value="<?= $last['date'] ?>">
@@ -17,9 +16,8 @@
            value="<?= $last['second'] ?>">
 </p>
 <hr>
-<p>Next</p>
 <p>
-    <label for="nextdate"></label>
+    <label for="nextdate">Next: </label>
     <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy"
            value="<?= $next['date'] ?>">

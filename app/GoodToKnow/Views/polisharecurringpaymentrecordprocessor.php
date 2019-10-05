@@ -18,7 +18,9 @@
                        size="15" placeholder="💵">
             </p>
             <p>
-                <label for="amount_paid">Amount of currency paid: </label>
+                <label for="amount_paid">Amount of currency paid <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">If the amounts are being displayed having 8 instead of 2 decimal places then let the admin
+                        know to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="amount_paid" name="amount_paid" type="text"
                        value="<?= $recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="24"
                        size="24" placeholder="108.49">
