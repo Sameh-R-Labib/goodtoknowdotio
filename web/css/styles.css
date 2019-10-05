@@ -254,7 +254,7 @@ h2 + p {
 }
 
 #scriptmessage {
-    background-color: #fbfcf9;
+    background-color: rgba(255, 255, 255, 0.41);
     width: 716px;
     height: 195px;
     margin: auto;
