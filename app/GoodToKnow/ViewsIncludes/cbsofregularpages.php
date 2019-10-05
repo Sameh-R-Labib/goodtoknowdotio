@@ -9,7 +9,7 @@
 <!-- scriptoutput -->
 <div id="scriptoutput">
     <div id="leftsodiv">
-        <div id="sendtoauthor"><?php require MESSAGETHEAUTHOR; ?></p></div>
+        <?php require MESSAGETHEAUTHOR; ?>
         <div id="admindiv">
             <?php require CONTROLPANELLINK; ?>
         </div>

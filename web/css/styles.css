@@ -278,8 +278,17 @@ h2 + p {
 }
 
 #sendtoauthor {
-    float: left;
     background-color: #d9b039;
+    float: left;
+    width: 147px;
+    height: 62px;
+    margin: auto;
+}
+
+#show_poof {
+    background-color: #d9b039;
+    opacity: 0.39;
+    float: left;
     width: 147px;
     height: 62px;
     margin: auto;
