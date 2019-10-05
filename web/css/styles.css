@@ -203,7 +203,7 @@ h2 + p {
 }
 
 #breadcrumbs {
-    opacity: 0.38;
+    opacity: 0.39;
     background-color: gainsboro;
     position: relative;
     top: -19px;
@@ -245,7 +245,7 @@ h2 + p {
 }
 
 #sendmessage {
-    opacity: 0.97;
+    opacity: 0.39;
     background-color: #008A70;
     width: 202px;
     height: 70px;
@@ -296,7 +296,7 @@ h2 + p {
 }
 
 #inboxlink {
-    opacity: 0.96;
+    opacity: 0.39;
     background-color: lightslategray;
     width: 168px;
     height: 70px;
@@ -305,6 +305,7 @@ h2 + p {
 }
 
 #logindiv {
+    opacity: 0.39;
     background-color: #ff9a10;
     width: 184px;
     height: 70px;
