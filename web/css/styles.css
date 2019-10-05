@@ -214,6 +214,7 @@ h2 + p {
 }
 
 #scriptoutput {
+    opacity: 0.04;
     background-color: white;
     position: relative;
     top: -12px;
