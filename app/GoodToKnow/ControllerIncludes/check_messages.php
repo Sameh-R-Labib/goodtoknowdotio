@@ -8,7 +8,7 @@ global $messages_last_time;
 
 if ($messages_last_time === null) {
     if ($db == 'not connected') {
-        $db = db_connect($error);
+        $db = db_connect($sessionMessage);
 
         if ($db === false) {
             $sessionMessage .= " Failed to connect to the database. ";
