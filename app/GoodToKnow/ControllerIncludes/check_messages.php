@@ -27,27 +27,14 @@ if ($messages_last_time === null) {
         redirect_to("/ax1/InfiniteLoopPrevent/page");
     }
 
-    $sessionMessage .= " <br><br>You have {$quantity} messages.
-    <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"35px\"> ";
+    $sessionMessage .= "<br><br>You have {$quantity} messages.
+    <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"29px\"> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
     $_SESSION['messages_last_time'] = time();
 } else {
     $time_since_last = time() - $messages_last_time;
     $time_since_last = $time_since_last / 60;
-
-
-//    /**
-//     * Debug Code
-//     */
-//    echo "\n<p>Begin debug</p>\n";
-//    echo "<p>Var_dump \$time_since_last: </p>\n<pre>";
-//    var_dump($time_since_last);
-//    echo "</pre>\n";
-//    die("<p>End debug</p>\n");
-
-
-
 
     if ($time_since_last > 17) {
         $quantity = MessageToUser::user_message_quantity($db, $sessionMessage, $user_id);
@@ -62,8 +49,8 @@ if ($messages_last_time === null) {
         $quantity_new = $quantity - $messages_last_quantity;
 
         if ($quantity > $messages_last_quantity) {
-            $sessionMessage .= " You have {$quantity} messages. {$quantity_new} messages are new.
-            <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"35px\"> ";
+            $sessionMessage .= "<br><br>You have {$quantity} messages. {$quantity_new} messages are new.
+            <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"29px\"> ";
 
             $_SESSION['messages_last_quantity'] = $quantity;
             $_SESSION['messages_last_time'] = time();
