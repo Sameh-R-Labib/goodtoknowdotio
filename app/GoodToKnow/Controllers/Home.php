@@ -49,6 +49,9 @@ class Home
         self::put_together_a_good_sessionmessage($sessionMessage, $type_of_resource_requested, $community_description,
             $topic_description, $post_full_name);
 
+        // Announce something about the quantity of inbox messages.
+        require CONTROLLERINCLUDES . DIRSEP . 'check_messages.php';
+
         self::show_the_home_page($user_id, $community_id, $topic_id, $post_id, $post_name, $post_full_name, $topic_name,
             $topic_description, $community_name, $community_description, $special_community_array, $special_topic_array,
             $special_post_array, $post_content, $author_username, $type_of_resource_requested, $sessionMessage,

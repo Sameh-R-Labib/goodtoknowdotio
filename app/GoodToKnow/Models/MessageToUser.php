@@ -38,6 +38,50 @@ class MessageToUser extends GoodObject
 
     /**
      * @param mysqli $db
+     * @param string $sessionMessage
+     * @param $user_id
+     * @return bool|mixed
+     */
+    public static function user_message_quantity(mysqli $db, string &$sessionMessage, $user_id)
+    {
+        $sql = "SELECT COUNT(*) FROM " . self::$table_name . " HAVING user_id=" . $user_id;
+
+        try {
+            $result = $db->query($sql);
+
+            $query_error = $db->error;
+
+            if (!empty(trim($query_error))) {
+
+                $sessionMessage .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
+
+                return false;
+
+            }
+        } catch (Exception $e) {
+
+            $sessionMessage .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+
+            return false;
+
+        }
+
+        if (!$result->num_rows) {
+
+            $sessionMessage .= ' count_all failed. ';
+
+            return false;
+
+        }
+
+        $row = $result->fetch_row();
+
+        return array_shift($row);
+    }
+
+
+    /**
+     * @param mysqli $db
      * @param string $error
      * @param int $message_id
      * @return bool

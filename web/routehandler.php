@@ -154,6 +154,10 @@ $is_admin = ($role === 'admin') ? true : false;
 
 $is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
 
+$messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
+
+$messages_last_time = (isset($_SESSION['messages_last_time'])) ? $_SESSION['messages_last_time'] : null;
+
 
 /**
  * I have these here to prevent PhpStorm from telling me they are out of scope.
