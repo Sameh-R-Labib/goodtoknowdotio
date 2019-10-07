@@ -85,6 +85,48 @@ class MessageToUser extends GoodObject
     /**
      * @param mysqli $db
      * @param string $error
+     * @param int $message_id
+     * @param int $user_id
+     * @return bool
+     */
+    public static function delete_all_particular(mysqli $db, string &$error, int $message_id, int $user_id)
+    {
+        /**
+         * It will return false if an error occurs while trying to delete.
+         * Otherwise, it will return true (even if nothing was deleted.)
+         */
+
+        $sql = "DELETE FROM " . self::$table_name . " ";
+        $sql .= "WHERE `message_id`={$message_id} AND `user_id`={$user_id}";
+
+
+        try {
+            $db->query($sql);
+
+            $query_error = $db->error;
+
+            if (!empty($query_error)) {
+
+                $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+
+                return false;
+
+            }
+        } catch (Exception $e) {
+
+            $error .= ' MessageToUser delete_all_particular() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
+            return false;
+
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @param mysqli $db
+     * @param string $error
      * @param int $user_id
      * @return array|bool|mixed
      */
