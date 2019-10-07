@@ -29,6 +29,9 @@ if ($messages_last_time === null) {
 
     $sessionMessage .= " <br><br>You have {$quantity} messages.
     <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"35px\"> ";
+
+    $_SESSION['messages_last_quantity'] = $quantity;
+    $_SESSION['messages_last_time'] = time();
 } else {
     $time_since_last = time() - $messages_last_time;
     $time_since_last = $time_since_last / 60;
