@@ -47,7 +47,7 @@ if ($messages_last_time === null) {
 
         if ($quantity > $messages_last_quantity) {
             $sessionMessage .= " You have {$quantity} messages. {$quantity_new} messages are new.
-            <img src=\"\mdollnaery.gif\" alt=\"Smiley face\"> ";
+            <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"35px\"> ";
 
             $_SESSION['messages_last_quantity'] = $quantity;
             $_SESSION['messages_last_time'] = time();
