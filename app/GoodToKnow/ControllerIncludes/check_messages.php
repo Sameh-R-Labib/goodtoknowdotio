@@ -27,7 +27,7 @@ if ($messages_last_time === null) {
         redirect_to("/ax1/InfiniteLoopPrevent/page");
     }
 
-    $sessionMessage .= "<br><br>You have {$quantity} messages.
+    $sessionMessage .= "<br><br>You have {$quantity} message(s).
     <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
@@ -49,7 +49,7 @@ if ($messages_last_time === null) {
         $quantity_new = $quantity - $messages_last_quantity;
 
         if ($quantity > $messages_last_quantity) {
-            $sessionMessage .= "<br><br>You have {$quantity} messages. {$quantity_new} messages are new.
+            $sessionMessage .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
             <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
             $_SESSION['messages_last_quantity'] = $quantity;
