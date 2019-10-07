@@ -37,14 +37,14 @@ if ($messages_last_time === null) {
     $time_since_last = $time_since_last / 60;
 
 
-    /**
-     * Debug Code
-     */
-    echo "\n<p>Begin debug</p>\n";
-    echo "<p>Var_dump \$time_since_last: </p>\n<pre>";
-    var_dump($time_since_last);
-    echo "</pre>\n";
-    die("<p>End debug</p>\n");
+//    /**
+//     * Debug Code
+//     */
+//    echo "\n<p>Begin debug</p>\n";
+//    echo "<p>Var_dump \$time_since_last: </p>\n<pre>";
+//    var_dump($time_since_last);
+//    echo "</pre>\n";
+//    die("<p>End debug</p>\n");
 
 
 
