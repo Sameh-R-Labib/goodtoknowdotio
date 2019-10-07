@@ -47,7 +47,7 @@ class Inbox
             }
         }
 
-        $sessionMessage .= ' Old messages self-purge. Use "U/N 📧 👲" to respond to messages. ';
+        $sessionMessage .= ' 90 day old messages will be deleted by admin. ';
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
