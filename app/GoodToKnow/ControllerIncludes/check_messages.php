@@ -27,7 +27,8 @@ if ($messages_last_time === null) {
         redirect_to("/ax1/InfiniteLoopPrevent/page");
     }
 
-    $sessionMessage .= " You have {$quantity} messages. <img src=\"\mdollnaery.gif\" alt=\"Smiley face\"> ";
+    $sessionMessage .= " <br><br>You have {$quantity} messages.
+    <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"35px\"> ";
 } else {
     $time_since_last = time() - $messages_last_time;
     $time_since_last = $time_since_last / 60;
