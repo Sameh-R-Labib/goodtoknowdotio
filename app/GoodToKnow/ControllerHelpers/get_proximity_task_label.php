@@ -27,6 +27,15 @@ function get_proximity_task_label(string $label, $showtime): string
         echo "<p>Var_dump \$diff_time: </p>\n<pre>";
         var_dump($diff_time);
         echo "</pre>\n";
+        echo "<p>Var_dump \$showtime: </p>\n<pre>";
+        var_dump($showtime);
+        echo "</pre>\n";
+        echo "<p>Var_dump time(): </p>\n<pre>";
+        var_dump(time());
+        echo "</pre>\n";
+        echo "<p>Var_dump abs($diff_time): </p>\n<pre>";
+        var_dump(abs($diff_time));
+        echo "</pre>\n";
         die("<p>At least we got this far.</p>\n");
 
         return $label;
