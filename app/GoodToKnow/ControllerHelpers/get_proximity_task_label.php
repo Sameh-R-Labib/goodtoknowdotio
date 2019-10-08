@@ -31,11 +31,11 @@ function get_proximity_task_label(string $label, $showtime): string
 
     if ($diff_time < 0) {
 
-        $label .= ' <img src="\brown_drag.gif" alt="brown dragon gif" height="66px">';
+        $label .= '&nbsp;&nbsp;&nbsp;<img src="\brown_drag.gif" alt="brown dragon gif" height="63px">';
 
     } else {
 
-        $label .= ' <img src="\green_drag.gif" alt="green dragon gif" height="66px">';
+        $label .= '&nbsp;&nbsp;&nbsp;<img src="\green_drag.gif" alt="green dragon gif" height="67px">';
 
     }
 
