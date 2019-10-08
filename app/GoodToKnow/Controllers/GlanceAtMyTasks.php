@@ -47,10 +47,10 @@ class GlanceAtMyTasks
         require_once CONTROLLERHELPERS . DIRSEP . 'get_proximity_task_label.php';
 
         foreach ($array as $object) {
+            $object->label = get_proximity_task_label($object->label, $object->next);
             $object->last = get_readable_time($object->last);
             $object->next = get_readable_time($object->next);
             $object->comment = nl2br($object->comment, false);
-            $object->label = get_proximity_task_label($object->label, $object->next);
         }
 
         $html_title = 'All my Tasks';
