@@ -4,11 +4,13 @@ namespace GoodToKnow\ControllerHelpers;
 
 /**
  * @param string $label
- * @param int $showtime
+ * @param $showtime
  * @return string
  */
-function get_proximity_task_label(string $label, int $showtime): string
+function get_proximity_task_label(string $label, $showtime): string
 {
+    $showtime = (int)$showtime;
+
     $diff_time = $showtime - time();
 
 
