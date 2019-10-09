@@ -4,12 +4,11 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>🤔 Tax ✍🏽🔽</h1>
-        <ul>
-            <li><a href="/ax1/ConceiveAPossibleTaxDeduction/page">Create</a></li>
-            <li><a href="/ax1/AlterAPossibleTaxDeduction/page">Edit</a></li>
-            <li><a href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's</a></li>
-            <li><a href="/ax1/WipeOutAPossibleTaxDeduction/page">Delete</a></li>
-        </ul>
+        <p>
+            <a class="orangebtn" href="/ax1/ConceiveAPossibleTaxDeduction/page">Create</a>
+            <a class="clearbtn" href="/ax1/AlterAPossibleTaxDeduction/page">Edit</a>
+            <a class="orangebtn" href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's</a>
+            <a class="purplebtn" href="/ax1/WipeOutAPossibleTaxDeduction/page">Delete</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
