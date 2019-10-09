@@ -6,10 +6,10 @@
         <h1>Admin Control Panel</h1>
         <h2 class="topofpage">Regular Member 🧰s</h2>
         <p><a class="clearbtn" href="#">Basics</a>
-            <a class="orangebtn" href="#">Crypto</a>
+            <a class="greenbtn" href="#">🏦ing Transactions</a>
             <a class="purplebtn" href="#">🌀 Payments</a>
             <a class="blackbtn" href="#">🏦ing Accounts</a>
-            <a class="greenbtn" href="#">🏦ing Transactions</a>
+            <a class="orangebtn" href="#">Crypto</a>
             <a class="clearbtn" href="#">Tax Deductions</a>
             <a class="orangebtn" href="#">To-do List</a>
             <a class="purplebtn" href="#">Taxable Income</a>
