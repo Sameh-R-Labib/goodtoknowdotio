@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPBasics
+class CPTransactions
 {
     function page()
     {
@@ -14,14 +14,14 @@ class CPBasics
 
         kick_out_loggedoutusers();
 
-        $page = 'CPBasics';
+        $page = 'CPTransactions';
 
         $show_poof = true;
 
-        $html_title = 'Basics';
+        $html_title = 'Transactions';
 
-        $sessionMessage .= ' Managing your account and posts. ';
+        $sessionMessage .= ' Managing the transactions of your bank account. ';
 
-        require VIEWS . DIRSEP . 'cpbasics.php';
+        require VIEWS . DIRSEP . 'cptransactions.php';
     }
 }

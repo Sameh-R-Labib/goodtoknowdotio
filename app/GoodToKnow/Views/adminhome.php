@@ -6,7 +6,7 @@
         <h1>Admin Control Panel</h1>
         <h2 class="topofpage">Regular Member 🧰s</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Basics</a>
-            <a class="greenbtn" href="#">🏦ing Transactions</a>
+            <a class="greenbtn" href="/ax1/CPTransactions/page">🏦ing Transactions</a>
             <a class="purplebtn" href="#">🌀 Payments</a>
             <a class="blackbtn" href="#">🏦ing Accounts</a>
             <a class="orangebtn" href="#">Crypto</a>
@@ -27,10 +27,6 @@
             <li><a href="/ax1/PopulateABankingAccountForBalances/page">Edit a 🏦ing 📒 for ⚖️s</a></li>
             <li><a href="/ax1/ViewAllBankingAccountsForBalances/page">See all 🏦ing 📒s for ⚖️s</a></li>
             <li><a href="/ax1/AnnulABankingAcctForBalances/page">Delete a 🏦ing 📒 for ⚖️s</a></li>
-            <li><a href="/ax1/BuildABankingTransactionForBalances/page">Create a 🏦ing 🔃 for ⚖️s</a></li>
-            <li><a href="/ax1/RevampABankingTransactionForBalances/page">Edit a 🏦ing 🔃 for ⚖️s</a></li>
-            <li><a href="/ax1/CheckMyBankingAccountTxBalances/page">Check my 🏦ing 📋 ⚖️s</a></li>
-            <li><a href="/ax1/OmitABankingTransactionForBalances/page">Delete a 🏦ing 🔃 for ⚖️s</a></li>
             <li><a href="/ax1/ConceiveAPossibleTaxDeduction/page">Create a 🤔 Tax ✍🏽🔽</a></li>
             <li><a href="/ax1/AlterAPossibleTaxDeduction/page">Edit a 🤔 Tax ✍🏽🔽</a></li>
             <li><a href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's 🤔 Tax ✍🏽🔽s</a></li>
