@@ -50,7 +50,7 @@ a:active {
     color: seagreen;
 }
 
-a.clearbtn:link {
+a.clearbtn:link, a.clearbtn:visited {
     background-color: #f44336;
     color: white;
     padding: 14px 25px;
@@ -60,7 +60,7 @@ a.clearbtn:link {
     cursor: pointer;
 }
 
-.clearbtn a:hover, a:active {
+a.clearbtn:hover, a.clearbtn:active {
     background-color: red;
 }
 
