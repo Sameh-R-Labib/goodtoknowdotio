@@ -17,17 +17,8 @@
         <h2>♠👔♠ 🧰s</h2>
         <p><a class="greenbtn" href="/ax1/CPPurges/page">Purges</a>
             <a class="clearbtn" href="/ax1/CPAccounts/page">Accounts</a>
-            <a class="orangebtn" href="#">Postings</a>
+            <a class="orangebtn" href="/ax1/CPPostings/page">Postings</a>
         </p>
-        <ul>
-            <li><a href="/ax1/NewCommunity/page">Create 🧑🏿‍🤝‍🧑🏽</a></li>
-            <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
-            <li><a href="/ax1/QuickPostDelete/page">Delete Any 📄</a></li>
-            <li><a href="/ax1/TransferPostOwnership/page">Transfer 📄 Ownership</a></li>
-            <li><a href="/ax1/KommunityDescriptionEditor/page">🧑🏿‍🤝‍🧑🏽 Description Editor</a></li>
-            <li><a href="/ax1/TopicDescriptionEditor/page">Topic Description Editor</a></li>
-            </li>
-        </ul>
         <?php require COLLAGE; ?>
     </div>
 <?php require FOOTERBAR; ?>
