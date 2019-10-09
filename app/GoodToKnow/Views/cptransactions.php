@@ -4,12 +4,10 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>🏦ing 🔃 for ⚖️s</h1>
-        <ul>
-            <li><a href="/ax1/BuildABankingTransactionForBalances/page">Create</a></li>
-            <li><a href="/ax1/RevampABankingTransactionForBalances/page">Edit</a></li>
-            <li><a href="/ax1/CheckMyBankingAccountTxBalances/page">Check Up On</a></li>
-            <li><a href="/ax1/OmitABankingTransactionForBalances/page">Delete</a></li>
-        </ul>
+        <p><a class="clearbtn" href="/ax1/BuildABankingTransactionForBalances/page">Create</a>
+            <a class="greenbtn" href="/ax1/RevampABankingTransactionForBalances/page">Edit</a>
+            <a class="purplebtn" href="/ax1/CheckMyBankingAccountTxBalances/page">Check Up On</a>
+            <a class="blackbtn" href="/ax1/OmitABankingTransactionForBalances/page">Delete</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
