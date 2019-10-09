@@ -59,6 +59,8 @@ a.clearbtn:link, a.clearbtn:visited {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 a.clearbtn:hover {
