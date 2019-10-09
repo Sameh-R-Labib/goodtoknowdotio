@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPTaxableIncome
+class CPCapitalGains
 {
     function page()
     {
@@ -14,14 +14,14 @@ class CPTaxableIncome
 
         kick_out_loggedoutusers();
 
-        $page = 'CPTaxableIncome';
+        $page = 'CPCapitalGains';
 
         $show_poof = true;
 
-        $html_title = 'Taxable Income';
+        $html_title = 'Capital Gains';
 
-        $sessionMessage .= ' Managing taxable income. ';
+        $sessionMessage .= ' Managing capital gains. ';
 
-        require VIEWS . DIRSEP . 'cptaxableincome.php';
+        require VIEWS . DIRSEP . 'cpcapitalgains.php';
     }
 }

@@ -64,6 +64,9 @@ switch ($page) {
     case 'CPTaxableIncome':
         echo "<a href=\"/ax1/CPTaxableIncome/page\">Taxable Income</a>";
         break;
+    case 'CPCapitalGains':
+        echo "<a href=\"/ax1/CPCapitalGains/page\">Capital Gains</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;
