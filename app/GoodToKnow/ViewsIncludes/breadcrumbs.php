@@ -52,6 +52,9 @@ switch ($page) {
     case 'CPBankingAccounts':
         echo "<a href=\"/ax1/CPBankingAccounts/page\">Banking Accounts</a>";
         break;
+    case 'CPCrypto':
+        echo "<a href=\"/ax1/CPCrypto/page\">Crypto</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;

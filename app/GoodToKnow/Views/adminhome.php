@@ -9,16 +9,12 @@
             <a class="greenbtn" href="/ax1/CPTransactions/page">🏦ing Transactions</a>
             <a class="purplebtn" href="/ax1/CPRecurringPayments/page">🌀 Payments</a>
             <a class="blackbtn" href="/ax1/CPBankingAccounts/page">🏦ing Accounts</a>
-            <a class="orangebtn" href="#">Crypto</a>
+            <a class="orangebtn" href="/ax1/CPCrypto/page"">Crypto</a>
             <a class="clearbtn" href="#">Tax Deductions</a>
             <a class="orangebtn" href="#">To-do List</a>
             <a class="purplebtn" href="#">Taxable Income</a>
             <a class="blackbtn" href="#">Capital Gains</a></p>
         <ul>
-            <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
-            <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
-            <li><a href="/ax1/BitcoinSeeMyRecords/page">See all ₿ 📽s</a></li>
-            <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
             <li><a href="/ax1/ConceiveAPossibleTaxDeduction/page">Create a 🤔 Tax ✍🏽🔽</a></li>
             <li><a href="/ax1/AlterAPossibleTaxDeduction/page">Edit a 🤔 Tax ✍🏽🔽</a></li>
             <li><a href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's 🤔 Tax ✍🏽🔽s</a></li>
