@@ -5,7 +5,7 @@
     <div id="maincontent">
         <h1>Admin Control Panel</h1>
         <h2 class="topofpage">Regular Member 🧰s</h2>
-        <p><a class="clearbtn" href="#">Basics</a>
+        <p><a class="clearbtn" href="/ax1/CPBasics/page">Basics</a>
             <a class="greenbtn" href="#">🏦ing Transactions</a>
             <a class="purplebtn" href="#">🌀 Payments</a>
             <a class="blackbtn" href="#">🏦ing Accounts</a>
@@ -15,15 +15,6 @@
             <a class="purplebtn" href="#">Taxable Income</a>
             <a class="blackbtn" href="#">Capital Gains</a></p>
         <ul>
-            <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
-            <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
-            <li><a href="/ax1/BlotOutSomeInboxMessages/page">Delete Some 📥 💬s</a></li>
-            <li><a href="/ax1/DefaultCommunity/page">Change my Default 🧑🏿‍🤝‍🧑🏽</a></li>
-            <li><a href="/ax1/DefaultTimeZone/page">Change my Default ⌚🌐</a></li>
-            <li><a href="/ax1/ChangePassword/page">Change my 🔑</a></li>
-            <li><a href="/ax1/CreateNewPost/page">Create a 📄</a></li>
-            <li><a href="/ax1/EditMyPost/page">Edit a 📄</a></li>
-            <li><a href="/ax1/AuthorDeletesOwnPost/page">Author Deletes Own 📄</a></li>
             <li><a href="/ax1/InitializeABitcoinRecord/page">Create a ₿ 📽</a></li>
             <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
             <li><a href="/ax1/BitcoinSeeMyRecords/page">See all ₿ 📽s</a></li>

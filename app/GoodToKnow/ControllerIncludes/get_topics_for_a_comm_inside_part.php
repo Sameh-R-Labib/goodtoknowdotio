@@ -3,7 +3,10 @@
 use GoodToKnow\Models\CommunityToTopic;
 
 global $sessionMessage;
+
 global $community_id;
+
+kick_out_loggedoutusers();
 
 /**
  * Refresh special_topic_array

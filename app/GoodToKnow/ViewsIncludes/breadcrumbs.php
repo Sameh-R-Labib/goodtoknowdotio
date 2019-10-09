@@ -40,6 +40,9 @@ switch ($page) {
     case 'SpyCommoditiesSoldYear':
         echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodities Sold</a>";
         break;
+    case 'CPBasics':
+        echo "<a href=\"/ax1/CPBasics/page\">Basics</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;
