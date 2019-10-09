@@ -14,10 +14,8 @@
             <a class="orangebtn" href="/ax1/CPToDoList/page">To-do List</a>
             <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Capital Gains</a></p>
-        <ul>
-        </ul>
         <h2>♠👔♠ 🧰s</h2>
-        <p><a class="greenbtn" href="#">Purges</a>
+        <p><a class="greenbtn" href="/ax1/CPPurges/page">Purges</a>
             <a class="clearbtn" href="#">Accounts</a>
             <a class="orangebtn" href="#">Posing</a>
         </p>
@@ -25,7 +23,6 @@
             <li><a href="/ax1/NewCommunity/page">Create 🧑🏿‍🤝‍🧑🏽</a></li>
             <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
             <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
-            <li><a href="/ax1/PurgeOldMessages/page">Purge Old 💬s</a></li>
             <li><a href="/ax1/GiveCommunitiesToUser/page">Give 🧑🏿‍🤝‍🧑🏽s to User</a></li>
             <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove 🧑🏿‍🤝‍🧑🏽s from A User</a></li>
             <li><a href="/ax1/UserRoster/page">User Roster</a></li>
@@ -36,10 +33,6 @@
             <li><a href="/ax1/TransferPostOwnership/page">Transfer 📄 Ownership</a></li>
             <li><a href="/ax1/KommunityDescriptionEditor/page">🧑🏿‍🤝‍🧑🏽 Description Editor</a></li>
             <li><a href="/ax1/TopicDescriptionEditor/page">Topic Description Editor</a></li>
-            <li><a href="/ax1/PurgeNinetyDayOldBTFBs/page">Purge 90 Day Old 🏦ing 🔃 for ⚖️s</a></li>
-            <li><a href="/ax1/LiquidateYearsPossibleTaxDeductions/page">Purge a Specific Year's 🤔 Tax ✍🏽🔽s</a></li>
-            <li><a href="/ax1/CleanupYearsTaxableIncomeEvents/page">Purge a Specific Year's Taxable 💸 Event 📽s</a>
-            <li><a href="/ax1/AbolishYearsCommoditiesSold/page">Purge a Specific Year's Commodities Sold 📽s</a>
             </li>
         </ul>
         <?php require COLLAGE; ?>
