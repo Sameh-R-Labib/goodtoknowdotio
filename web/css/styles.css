@@ -59,8 +59,7 @@ a.clearbtn:link, a.clearbtn:visited {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 5px;
 }
 
 a.clearbtn:hover {
@@ -82,8 +81,7 @@ a.orangebtn:link, a.orangebtn:visited {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 5px;
 }
 
 a.orangebtn:hover {
@@ -105,8 +103,7 @@ a.purplebtn:link, a.purplebtn:visited {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 5px;
 }
 
 a.purplebtn:hover {
@@ -128,8 +125,7 @@ a.blackbtn:link, a.blackbtn:visited {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 5px;
 }
 
 a.blackbtn:hover {
@@ -151,8 +147,7 @@ a.greenbtn:link, a.greenbtn:visited {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 5px;
 }
 
 a.greenbtn:hover {
