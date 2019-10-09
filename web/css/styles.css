@@ -51,7 +51,7 @@ a:active {
 }
 
 a.clearbtn:link, a.clearbtn:visited {
-    background-color: #f44336;
+    background: rgba(255, 105, 105, 0.65) url('/clear/blueclear.png') no-repeat 0 0;
     color: white;
     padding: 14px 25px;
     text-align: center;
