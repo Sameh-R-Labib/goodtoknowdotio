@@ -49,6 +49,9 @@ switch ($page) {
     case 'CPRecurringPayments':
         echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payments</a>";
         break;
+    case 'CPBankingAccounts':
+        echo "<a href=\"/ax1/CPBankingAccounts/page\">Banking Accounts</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;
