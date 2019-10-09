@@ -9,16 +9,12 @@
             <a class="greenbtn" href="/ax1/CPTransactions/page">🏦ing Transactions</a>
             <a class="purplebtn" href="/ax1/CPRecurringPayments/page">🌀 Payments</a>
             <a class="blackbtn" href="/ax1/CPBankingAccounts/page">🏦ing Accounts</a>
-            <a class="orangebtn" href="/ax1/CPCrypto/page"">Crypto</a>
-            <a class="clearbtn" href="#">Tax Deductions</a>
+            <a class="orangebtn" href="/ax1/CPCrypto/page">Crypto</a>
+            <a class="clearbtn" href="/ax1/CPTaxDeductions/page">Tax Deductions</a>
             <a class="orangebtn" href="#">To-do List</a>
             <a class="purplebtn" href="#">Taxable Income</a>
             <a class="blackbtn" href="#">Capital Gains</a></p>
         <ul>
-            <li><a href="/ax1/ConceiveAPossibleTaxDeduction/page">Create a 🤔 Tax ✍🏽🔽</a></li>
-            <li><a href="/ax1/AlterAPossibleTaxDeduction/page">Edit a 🤔 Tax ✍🏽🔽</a></li>
-            <li><a href="/ax1/SeeOneYearsPossibleTaxDeductions/page">See One Year's 🤔 Tax ✍🏽🔽s</a></li>
-            <li><a href="/ax1/WipeOutAPossibleTaxDeduction/page">Delete a 🤔 Tax ✍🏽🔽s</a></li>
             <li><a href="/ax1/InduceATask/page">Create a To-do Task/💪</a></li>
             <li><a href="/ax1/FeatureATask/page">Edit a To-do Task/💪</a></li>
             <li><a href="/ax1/GlanceAtMyTasks/page">See all To-do Tasks/💪s</a></li>
