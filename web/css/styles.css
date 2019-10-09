@@ -146,7 +146,7 @@ a.greenbtn:link, a.greenbtn:visited {
 }
 
 a.greenbtn:hover {
-    background: rgba(255, 105, 105, 0) url('/clear/greenclear.png') no-repeat 0 0;
+    background: rgba(255, 105, 105, 0) url('/clear/redclear.png') no-repeat 0 0;
     background-size: 100% 100%;
 }
 
