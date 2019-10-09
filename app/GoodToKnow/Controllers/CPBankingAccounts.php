@@ -20,7 +20,7 @@ class CPBankingAccounts
 
         $html_title = 'Banking Accounts';
 
-        $sessionMessage .= ' Managing your banking accounts. ';
+        $sessionMessage .= ' Manage banking accounts. ';
 
         require VIEWS . DIRSEP . 'cpbankingaccounts.php';
     }

@@ -20,7 +20,7 @@ class CPRecurringPayments
 
         $html_title = 'Recurring Payments';
 
-        $sessionMessage .= ' Managing your recurring payments. ';
+        $sessionMessage .= ' Manage recurring payments. ';
 
         require VIEWS . DIRSEP . 'cprecurringpayments.php';
     }

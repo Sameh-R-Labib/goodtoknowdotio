@@ -16,19 +16,12 @@
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Capital Gains</a></p>
         <h2>♠👔♠ 🧰s</h2>
         <p><a class="greenbtn" href="/ax1/CPPurges/page">Purges</a>
-            <a class="clearbtn" href="#">Accounts</a>
-            <a class="orangebtn" href="#">Posing</a>
+            <a class="clearbtn" href="/ax1/CPAccounts/page">Accounts</a>
+            <a class="orangebtn" href="#">Postings</a>
         </p>
         <ul>
             <li><a href="/ax1/NewCommunity/page">Create 🧑🏿‍🤝‍🧑🏽</a></li>
             <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
-            <li><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></li>
-            <li><a href="/ax1/GiveCommunitiesToUser/page">Give 🧑🏿‍🤝‍🧑🏽s to User</a></li>
-            <li><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove 🧑🏿‍🤝‍🧑🏽s from A User</a></li>
-            <li><a href="/ax1/UserRoster/page">User Roster</a></li>
-            <li><a href="/ax1/MemberMemoEditor/page">Member's 📝 Editor</a></li>
-            <li><a href="/ax1/SuspendAccount/page">Suspend Account</a></li>
-            <li><a href="/ax1/UnsuspendAccount/page">Unsuspend Account</a></li>
             <li><a href="/ax1/QuickPostDelete/page">Delete Any 📄</a></li>
             <li><a href="/ax1/TransferPostOwnership/page">Transfer 📄 Ownership</a></li>
             <li><a href="/ax1/KommunityDescriptionEditor/page">🧑🏿‍🤝‍🧑🏽 Description Editor</a></li>

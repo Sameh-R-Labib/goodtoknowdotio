@@ -20,7 +20,7 @@ class CPBasics
 
         $html_title = 'Basics';
 
-        $sessionMessage .= ' Managing your account and posts. ';
+        $sessionMessage .= ' Manage account and posts. ';
 
         require VIEWS . DIRSEP . 'cpbasics.php';
     }

@@ -20,7 +20,7 @@ class CPTaxableIncome
 
         $html_title = 'Taxable Income';
 
-        $sessionMessage .= ' Managing taxable income. ';
+        $sessionMessage .= ' Manage taxable income. ';
 
         require VIEWS . DIRSEP . 'cptaxableincome.php';
     }

@@ -20,7 +20,7 @@ class CPCrypto
 
         $html_title = 'Crypto';
 
-        $sessionMessage .= ' Managing your crypto. ';
+        $sessionMessage .= ' Manage crypto. ';
 
         require VIEWS . DIRSEP . 'cpcrypto.php';
     }

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPPurges
+class CPAccounts
 {
     function page()
     {
@@ -14,14 +14,14 @@ class CPPurges
 
         kick_out_loggedoutusers();
 
-        $page = 'CPPurges';
+        $page = 'CPAccounts';
 
         $show_poof = true;
 
-        $html_title = 'Purges';
+        $html_title = 'Accounts';
 
-        $sessionMessage .= ' Manage purges. ';
+        $sessionMessage .= ' Manage accounts. ';
 
-        require VIEWS . DIRSEP . 'cppurges.php';
+        require VIEWS . DIRSEP . 'cpaccounts.php';
     }
 }

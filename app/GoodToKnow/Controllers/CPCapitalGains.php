@@ -20,7 +20,7 @@ class CPCapitalGains
 
         $html_title = 'Capital Gains';
 
-        $sessionMessage .= ' Managing capital gains. ';
+        $sessionMessage .= ' Manage capital gains. ';
 
         require VIEWS . DIRSEP . 'cpcapitalgains.php';
     }
