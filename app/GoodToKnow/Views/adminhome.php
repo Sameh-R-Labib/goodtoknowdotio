@@ -5,6 +5,7 @@
     <div id="maincontent">
         <h1>Admin Control Panel</h1>
         <h2 class="topofpage">Regular Member 🧰s</h2>
+        <p><a class="clearbtn" href="#">Name</a></p>
         <ul>
             <li><a href="/ax1/Upload/page">Upload an 🖼️</a></li>
             <li><a href="/ax1/ByUsernameMessage/page">Username 💬 a User</a></li>
