@@ -3,8 +3,8 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Admin Control Panel</h1>
-        <h2 class="topofpage">Regular Member 🧰s</h2>
+        <h1>Control Panel</h1>
+        <h2 class="topofpage">👤 🧰</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Basics</a>
             <a class="greenbtn" href="/ax1/CPTransactions/page">🏦ing Transactions</a>
             <a class="purplebtn" href="/ax1/CPRecurringPayments/page">🌀 Payments</a>

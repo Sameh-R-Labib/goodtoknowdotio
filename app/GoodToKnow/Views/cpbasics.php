@@ -4,6 +4,9 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Basics</h1>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">To get new topic or 🧑🏿‍🤝‍🧑🏽 request it from ♠👔♠.</span>
+        </p>
         <ul>
             <li><a href="/ax1/Upload/page">Upload 🖼️</a></li>
             <li><a href="/ax1/CreateNewPost/page">Create 📄</a></li>
