@@ -14,7 +14,7 @@
             <a class="orangebtn" href="/ax1/CPToDoList/page">To-do List</a>
             <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Capital Gains</a></p>
-        <h2>♠👔♠ 🧰s</h2>
+        <h2>♠👔♠ 🧰</h2>
         <p><a class="greenbtn" href="/ax1/CPPurges/page">Purges</a>
             <a class="clearbtn" href="/ax1/CPAccounts/page">Accounts</a>
             <a class="orangebtn" href="/ax1/CPPostings/page">Postings</a>
