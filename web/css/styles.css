@@ -61,8 +61,14 @@ a.clearbtn:link, a.clearbtn:visited {
     cursor: pointer;
 }
 
-a.clearbtn:hover, a.clearbtn:active {
-    background-color: red;
+a.clearbtn:hover {
+    background: rgba(255, 105, 105, 0) url('/clear/magentaclear.png') no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+a.clearbtn:active {
+    background: rgba(255, 105, 105, 0) url('/clear/blackclear.png') no-repeat 0 0;
+    background-size: 100% 100%;
 }
 
 p {
