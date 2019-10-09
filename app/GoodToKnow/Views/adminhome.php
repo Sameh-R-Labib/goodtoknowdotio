@@ -12,13 +12,9 @@
             <a class="orangebtn" href="/ax1/CPCrypto/page">Crypto</a>
             <a class="clearbtn" href="/ax1/CPTaxDeductions/page">Tax Deductions</a>
             <a class="orangebtn" href="/ax1/CPToDoList/page">To-do List</a>
-            <a class="purplebtn" href="#">Taxable Income</a>
+            <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
             <a class="blackbtn" href="#">Capital Gains</a></p>
         <ul>
-            <li><a href="/ax1/StartATaxableIncomeEvent/page">Create a Taxable 💸 Event 📽</a></li>
-            <li><a href="/ax1/WriteOverATaxableIncomeEvent/page">Edit a Taxable 💸 Event 📽</a></li>
-            <li><a href="/ax1/GawkAtAllTaxableIncomeEvents/page">See One Year's Taxable 💸 Event 📽s</a></li>
-            <li><a href="/ax1/NukeATaxableIncomeEvent/page">Delete a Taxable 💸 Event 📽</a></li>
             <li><a href="/ax1/FatherACommoditySold/page">Create a Commodity Sold 📽</a></li>
             <li><a href="/ax1/FineTuneACommoditySold/page">Edit a Commodity Sold 📽</a></li>
             <li><a href="/ax1/SpyCommoditiesSold/page">See One Year's Commodities Sold 📽s</a></li>
