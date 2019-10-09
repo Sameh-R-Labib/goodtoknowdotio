@@ -7,7 +7,7 @@
         <h2 class="topofpage">Regular Member 🧰s</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Basics</a>
             <a class="greenbtn" href="/ax1/CPTransactions/page">🏦ing Transactions</a>
-            <a class="purplebtn" href="#">🌀 Payments</a>
+            <a class="purplebtn" href="/ax1/CPRecurringPayments/page">🌀 Payments</a>
             <a class="blackbtn" href="#">🏦ing Accounts</a>
             <a class="orangebtn" href="#">Crypto</a>
             <a class="clearbtn" href="#">Tax Deductions</a>
@@ -19,10 +19,6 @@
             <li><a href="/ax1/EditABitcoinRecord/page">Edit a ₿ 📽</a></li>
             <li><a href="/ax1/BitcoinSeeMyRecords/page">See all ₿ 📽s</a></li>
             <li><a href="/ax1/DeleteABitcoinRecord/page">Delete a ₿ 📽</a></li>
-            <li><a href="/ax1/MakeARecurringPaymentRecord/page">Create a 🌀 💳 📽</a></li>
-            <li><a href="/ax1/PolishARecurringPaymentRecord/page">Edit a 🌀 💳 📽</a></li>
-            <li><a href="/ax1/RecurringPaymentSeeMyRecords/page">See all 🌀 💳s 📽s</a></li>
-            <li><a href="/ax1/ExpungeARecurringPaymentRecord/page">Delete a 🌀 💳 📽</a></li>
             <li><a href="/ax1/GenerateABankingAccountForBalances/page">Create a 🏦ing 📒 for ⚖️s</a></li>
             <li><a href="/ax1/PopulateABankingAccountForBalances/page">Edit a 🏦ing 📒 for ⚖️s</a></li>
             <li><a href="/ax1/ViewAllBankingAccountsForBalances/page">See all 🏦ing 📒s for ⚖️s</a></li>
