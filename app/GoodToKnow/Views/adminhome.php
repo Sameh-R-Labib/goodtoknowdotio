@@ -58,6 +58,10 @@
             <li><a href="/ax1/DropACommoditySold/page">Delete a Commodity Sold 📽</a></li>
         </ul>
         <h2>♠👔♠ 🧰s</h2>
+        <p><a class="greenbtn" href="#">Purges</a>
+            <a class="clearbtn" href="#">Accounts</a>
+            <a class="orangebtn" href="#">Posing</a>
+        </p>
         <ul>
             <li><a href="/ax1/NewCommunity/page">Create 🧑🏿‍🤝‍🧑🏽</a></li>
             <li><a href="/ax1/NewTopic/page">Create Topic</a></li>
