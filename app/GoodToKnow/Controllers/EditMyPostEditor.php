@@ -37,9 +37,7 @@ class EditMyPostEditor
 
 
         /**
-         * Placeholder for actually retrieving the markdown for $post_object from the file system.
-         *
-         * Don't forget to verify we succeeded in retrieving the file.
+         * Retrieve the markdown for $post_object from the file system.
          */
 
         $markdown = file_get_contents($post_object->markdown_file);
