@@ -10,6 +10,7 @@ class CreateNewPostSave
     function page()
     {
         global $sessionMessage;
+        global $type_of_resource_requested;
         global $user_id;
         global $topic_id;
         global $saved_str01;                // The main title
@@ -136,29 +137,21 @@ class CreateNewPostSave
 
 
         /**
-         * Refresh special_post_array
+         * Refresh special_post_array if ($type_of_resource_requested === 'topic')
          */
 
+        if ($type_of_resource_requested === 'topic') {
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$topic_id: </p>\n<pre>";
-        var_dump($topic_id);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
 
+            if ($special_post_array === false) {
+                breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
+            }
 
+            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['last_refresh_posts'] = time();
 
-        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
-
-        if ($special_post_array === false) {
-            breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
         }
-
-        $_SESSION['special_post_array'] = $special_post_array;
-        $_SESSION['last_refresh_posts'] = time();
 
 
         /**
