@@ -139,6 +139,18 @@ class CreateNewPostSave
          * Refresh special_post_array
          */
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$topic_id: </p>\n<pre>";
+        var_dump($topic_id);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
+
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
 
         if ($special_post_array === false) {
