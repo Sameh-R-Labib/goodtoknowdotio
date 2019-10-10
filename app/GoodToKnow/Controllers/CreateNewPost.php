@@ -13,6 +13,19 @@ class CreateNewPost
          * which topic the post belongs in.
          */
 
+
+        /**
+         * Debug Code
+         */
+        global $topic_id;
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$topic_id: </p>\n<pre>";
+        var_dump($topic_id);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_community.php';
 
         require VIEWS . DIRSEP . 'createnewpost.php';
