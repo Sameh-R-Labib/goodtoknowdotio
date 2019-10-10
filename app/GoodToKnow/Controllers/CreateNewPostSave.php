@@ -141,7 +141,7 @@ class CreateNewPostSave
 
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
 
-        if ($special_post_array == false) {
+        if ($special_post_array === false) {
             breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
         }
 
