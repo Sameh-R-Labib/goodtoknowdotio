@@ -6,16 +6,16 @@
            value="<?= $time_bought['date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
     <label for="time_bought_hour"></label>
-    <input id="time_bought_hour" name="time_bought_hour" type="text" required minlength="1" maxlength="2" size="2"
-           placeholder="hr"
+    <input id="time_bought_hour" name="time_bought_hour" type="text" required minlength="1" maxlength="2" size="3"
+           placeholder="h"
            value="<?= $time_bought['hour'] ?>">
     <label for="time_bought_minute">: </label>
-    <input id="time_bought_minute" name="time_bought_minute" type="text" required minlength="1" maxlength="2" size="2"
-           placeholder="mn"
+    <input id="time_bought_minute" name="time_bought_minute" type="text" required minlength="1" maxlength="2" size="3"
+           placeholder="m"
            value="<?= $time_bought['minute'] ?>">
     <label for="time_bought_second">: </label>
-    <input id="time_bought_second" name="time_bought_second" type="text" required minlength="1" maxlength="2" size="2"
-           placeholder="sd"
+    <input id="time_bought_second" name="time_bought_second" type="text" required minlength="1" maxlength="2" size="3"
+           placeholder="s"
            value="<?= $time_bought['second'] ?>">
 </p>
 <hr>
@@ -26,16 +26,16 @@
            value="<?= $time_sold['date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
     <label for="time_sold_hour"></label>
-    <input id="time_sold_hour" name="time_sold_hour" type="text" required minlength="1" maxlength="2" size="2"
-           placeholder="hr"
+    <input id="time_sold_hour" name="time_sold_hour" type="text" required minlength="1" maxlength="2" size="3"
+           placeholder="h"
            value="<?= $time_sold['hour'] ?>">
     <label for="time_sold_minute">: </label>
-    <input id="time_sold_minute" name="time_sold_minute" type="text" required minlength="1" maxlength="2" size="2"
-           placeholder="mn"
+    <input id="time_sold_minute" name="time_sold_minute" type="text" required minlength="1" maxlength="2" size="3"
+           placeholder="m"
            value="<?= $time_sold['minute'] ?>">
     <label for="time_sold_second">: </label>
-    <input id="time_sold_second" name="time_sold_second" type="text" required minlength="1" maxlength="2" size="2"
-           placeholder="sd"
+    <input id="time_sold_second" name="time_sold_second" type="text" required minlength="1" maxlength="2" size="3"
+           placeholder="s"
            value="<?= $time_sold['second'] ?>">
     <label for="timezone"></label>
     <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
