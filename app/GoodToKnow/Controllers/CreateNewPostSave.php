@@ -11,6 +11,7 @@ class CreateNewPostSave
     {
         global $sessionMessage;
         global $type_of_resource_requested;
+        global $url_of_most_recent_upload;
         global $user_id;
         global $topic_id;
         global $saved_str01;                // The main title
