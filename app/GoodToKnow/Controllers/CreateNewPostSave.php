@@ -149,8 +149,17 @@ class CreateNewPostSave
         $_SESSION['last_refresh_posts'] = time();
 
 
-        // Redirect
+        /**
+         * No we are not going to break out here.
+         *
+         * We are going to store the id of the newly created post and present an editor form
+         * so the user can add content to the post.
+         */
 
-        breakout(' Your new post has been created 👏. ');
+        $_SESSION['saved_int02'] = $post->id;
+
+        $html_title = 'Editor';
+
+        require VIEWS . DIRSEP . 'createnewposteditor.php';
     }
 }
