@@ -1,5 +1,5 @@
 <?php if (empty($special_post_array)): ?>
-    <em>[No posts in this topic]</em>
+    <p><em>[No posts in this topic]</em></p>
 <?php endif; ?>
 <?php foreach ($special_post_array as $key => $value): ?>
     <p>
