@@ -118,6 +118,9 @@ class Home
                     $sessionMessage .= ' ' . nl2br($topic_description, false) . ' ';
                 }
             }
+            $sessionMessage .= ' <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a>
+            <a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
+            <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a> ';
         } else {
             if (!empty(trim($post_full_name))) {
                 if (empty(trim($sessionMessage))) {
