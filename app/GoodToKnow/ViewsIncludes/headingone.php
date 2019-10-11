@@ -2,13 +2,12 @@
 
 switch ($type_of_resource_requested) {
     case 'community':
-        echo 'Topics';
+        echo '<h1>Topics</h1>';
         break;
     case 'topic':
-        echo 'Posts';
+        echo '<h1>Posts</h1>';
         break;
     case 'post':
-        echo 'Post Content';
         break;
     default:
         echo 'Information';
