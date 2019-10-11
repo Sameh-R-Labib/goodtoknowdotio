@@ -276,6 +276,10 @@ class Home
                 }
             }
 
+            if (empty(trim($post_content))) {
+                $post_content = '<p><em>[No post content]</em></p>';
+            }
+
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
         }
