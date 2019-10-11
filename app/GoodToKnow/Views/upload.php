@@ -6,7 +6,7 @@
             <span class="tooltiptext tooltip-top">Only .jpg, .jpeg, .png, .gif files can be uploaded.<br><br>
         Please do Not upload an image if you are not able/willing to insert that image in your post immediately.
         Basically, the upload process will yield a URL which you can use within image placement markdown
-            or as a hyperlink markdown to the image. Review markdown syntax first. A link to the markdown
+            or hyperlink markdown to the image. Review markdown syntax first. A link to the markdown
         documentation is in the editor.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
