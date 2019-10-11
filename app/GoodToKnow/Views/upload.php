@@ -5,8 +5,8 @@
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Only .jpg, .jpeg, .png, .gif files can be uploaded.<br><br>
         Please do Not upload an image if you are not able and willing to insert that image in a post immediately.
-        Basically, the upload process will yield a link which you can use within image placement markdown within your
-            post or as a hyperlink to the image within your post.</span>
+        Basically, the upload process will yield a link which you can use within image placement markdown
+            or as a hyperlink to the image.</span>
     </p>
     <?php require SESSIONMESSAGE; ?>
     <section>
