@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Models;
 
+use stdClass;
+
 class User extends GoodObject
 {
     /**
@@ -76,7 +78,7 @@ class User extends GoodObject
      * @param string $error
      * @param string $username
      * @param string $password
-     * @return bool|object|\stdClass
+     * @return bool|object|stdClass
      */
     public static function authenticate(\mysqli $db, string &$error, string $username, string $password)
     {
