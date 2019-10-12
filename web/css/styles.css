@@ -164,6 +164,12 @@ code {
     font-size: 1.23em;
 }
 
+#maincontent pre {
+    line-height: 1.44em;
+    margin-left: 69px;
+    margin-right: 75px;
+}
+
 p {
     font-size: 1.03em;
     margin-left: 23px;
