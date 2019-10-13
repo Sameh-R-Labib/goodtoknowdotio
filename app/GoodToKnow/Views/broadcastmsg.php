@@ -1,6 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/BroadcastMsgProcessor/page" method="post">
-        <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a></h2>
+        <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
+            <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Cheat Sheet</a>
+        </h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">✅ markdown ✅ emoji 📲 maximum 1500 bytes.
             ✅ GPG encrypt message with receiving user's pub key.</span>
@@ -10,7 +12,7 @@
         <section>
             <p>
                 <label for="textarea"></label>
-                <textarea id="textarea" spellcheck="false" name="markdown" rows="27" cols="71"
+                <textarea id="textarea" spellcheck="false" name="markdown" rows="12" cols="71"
                           wrap="soft"><?= $pre_populate ?></textarea>
             </p>
         </section>

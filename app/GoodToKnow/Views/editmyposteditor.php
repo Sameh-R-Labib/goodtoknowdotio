@@ -1,6 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/EditMyPostEditProcessor/page" method="post">
-    <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a></h2>
+    <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
+        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Cheat Sheet</a></h2>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Limit the scope to context and have it be opinionated.
             For example if the community is about Jabber chat then create posts which
@@ -11,7 +12,7 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="markdown" rows="29"
+            <textarea id="textarea" spellcheck="false" name="markdown" rows="12"
                       cols="71" wrap="soft"><?= $markdown ?></textarea>
         </p>
     </section>
