@@ -187,6 +187,13 @@ p {
     margin-right: 75px;
 }
 
+#maincontent ol, ul {
+    font-size: 1.03em;
+    margin-left: 72px;
+    margin-right: 93px;
+    line-height: 1.44em;
+}
+
 #maincontent h2 {
     font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.75em;
@@ -234,12 +241,6 @@ b, strong {
     margin-bottom: 34px;
     margin-left: 132px;
     margin-right: 153px;
-}
-
-#maincontent ul {
-    font-size: 1.03em;
-    margin-left: 72px;
-    margin-right: 93px;
 }
 
 #maincontent li {
