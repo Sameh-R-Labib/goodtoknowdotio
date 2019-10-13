@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/WriteToAdminProcessor/page" method="post">
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
-        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Cheat Sheet</a></h2>
+        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">📄 Cheatsheet</a>
+    </h2>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">✅ markdown ✅ emoji 📲️ maximum 1500 bytes.
             ✅ GPG encrypt message w/ receiving user's pub key.</span>

@@ -1,7 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/CreateNewPostEditProcessor/page" method="post">
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
-        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Cheat Sheet</a></h2>
+        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">📄 Cheatsheet</a>
+    </h2>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Limit the scope to context and have it be opinionated.
             For example if the community is about Jabber chat then create posts which
