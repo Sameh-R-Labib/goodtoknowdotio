@@ -161,10 +161,11 @@ a.greenbtn:active {
 }
 
 code {
-    font-size: 1.23em;
+    font-size: 1.28em;
 }
 
 #maincontent pre {
+    font-size: 1.28em;
     line-height: 1.44em;
     margin-left: 111px;
     margin-right: 75px;
