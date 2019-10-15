@@ -452,7 +452,7 @@ h2 + p {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 220px;
+    width: 320px;
     background-color: #555;
     color: #fff;
     text-align: center;
