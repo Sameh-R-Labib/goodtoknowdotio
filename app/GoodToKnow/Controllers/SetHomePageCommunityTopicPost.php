@@ -127,8 +127,8 @@ class SetHomePageCommunityTopicPost
 
             $publish_date = date("m/d/Y e", $epoch_time);
 
-            $_SESSION['post_full_name'] = '"' . $post_object->title . ' | ' . $post_object->extensionfortitle . '" ⏰ [Pub. ' .
-                $publish_date . '] 🎬';
+            $_SESSION['post_full_name'] = $post_object->title . ' | ' . $post_object->extensionfortitle . ' [ ' .
+                $publish_date . ']';
 
 
             // Then do the rest.
