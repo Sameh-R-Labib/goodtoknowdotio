@@ -35,7 +35,7 @@
             <hr>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
-                <textarea id="comment" name="comment" rows="4" cols="71" wrap="soft" maxlength="800" spellcheck="false"
+                <textarea id="comment" name="comment" rows="4" cols="79" wrap="soft" maxlength="800" spellcheck="false"
                           placeholder="This record is for BTC related to _ _ _ _ _."><?= $bitcoin_object->comment ?></textarea>
             </p>
         </section>

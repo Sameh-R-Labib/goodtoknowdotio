@@ -9,8 +9,8 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="text" rows="12"
-                      cols="71" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
+            <textarea id="textarea" spellcheck="false" name="text" rows="15"
+                      cols="79" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $topic_object->topic_description; ?></textarea>
         </p>
     </section>
