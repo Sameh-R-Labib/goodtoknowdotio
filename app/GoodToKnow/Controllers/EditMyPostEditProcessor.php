@@ -43,7 +43,11 @@ class EditMyPostEditProcessor
          * Generate the html equivalent for $markdown.
          */
 
-        $html = MarkdownExtra::defaultTransform($markdown);
+        $parser = new MarkdownExtra;
+        $parser->no_entities = false;
+        $html = $parser->transform($markdown);
+
+//        $html = MarkdownExtra::defaultTransform($markdown);
 
 //        $parsedown_object = new \ParsedownExtra();
 //        $parsedown_object->setMarkupEscaped(true);

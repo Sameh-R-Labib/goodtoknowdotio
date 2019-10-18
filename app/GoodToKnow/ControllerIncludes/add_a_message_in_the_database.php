@@ -10,7 +10,11 @@ require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
 $markdown = standard_form_field_prep('markdown', 1, 1500);
 
-$html = MarkdownExtra::defaultTransform($markdown);
+$parser = new MarkdownExtra;
+$parser->no_entities = false;
+$html = $parser->transform($markdown);
+
+//$html = MarkdownExtra::defaultTransform($markdown);
 
 //$parsedown_object = new \ParsedownExtra();
 //$parsedown_object->setMarkupEscaped(true);
