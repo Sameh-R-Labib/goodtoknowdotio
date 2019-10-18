@@ -36,7 +36,7 @@ class CreateNewPostEditProcessor
          */
 
         $parser = new MarkdownExtra;
-        $parser->no_entities = true;
+        $parser->no_entities = false;
         $html = $parser->transform($markdown);
 
 //        $html = MarkdownExtra::defaultTransform($markdown);
