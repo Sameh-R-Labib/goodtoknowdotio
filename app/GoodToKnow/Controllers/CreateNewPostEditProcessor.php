@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Post;
+use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class CreateNewPostEditProcessor
@@ -34,10 +35,12 @@ class CreateNewPostEditProcessor
          * Generate the html equivalent for $markdown.
          */
 
-        $parsedown_object = new \ParsedownExtra();
-        $parsedown_object->setMarkupEscaped(true);
-        $parsedown_object->setSafeMode(true);
-        $html = $parsedown_object->text($markdown);
+        $html = MarkdownExtra::defaultTransform($markdown);
+
+//        $parsedown_object = new \ParsedownExtra();
+//        $parsedown_object->setMarkupEscaped(true);
+//        $parsedown_object->setSafeMode(true);
+//        $html = $parsedown_object->text($markdown);
 
 
         /**

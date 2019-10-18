@@ -1,6 +1,7 @@
 <?php
 
 use GoodToKnow\Models\Message;
+use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $user_id;
@@ -9,10 +10,12 @@ require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
 $markdown = standard_form_field_prep('markdown', 1, 1500);
 
-$parsedown_object = new \ParsedownExtra();
-$parsedown_object->setMarkupEscaped(true);
-$parsedown_object->setSafeMode(true);
-$html = $parsedown_object->text($markdown);
+$html = MarkdownExtra::defaultTransform($markdown);
+
+//$parsedown_object = new \ParsedownExtra();
+//$parsedown_object->setMarkupEscaped(true);
+//$parsedown_object->setSafeMode(true);
+//$html = $parsedown_object->text($markdown);
 
 $message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
 
