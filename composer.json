@@ -3,7 +3,8 @@
     "ext-mysqli": "*",
     "ext-ctype": "*",
     "ext-mbstring": "*",
-    "erusev/parsedown-extra": "^0.7.1"
+    "erusev/parsedown-extra": "^0.7.1",
+    "michelf/php-markdown": "^1.8"
   },
   "autoload": {
     "psr-4": {
