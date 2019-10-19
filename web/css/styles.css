@@ -382,7 +382,7 @@ h2 + p {
 #sendmessage {
     opacity: 0.39;
     background-color: #008A70;
-    width: 202px;
+    width: 216px;
     height: 70px;
     margin: auto;
     float: left;
@@ -443,7 +443,7 @@ h2 + p {
 #inboxlink {
     opacity: 0.39;
     background-color: lightslategray;
-    width: 168px;
+    width: 194px;
     height: 70px;
     margin: auto;
     float: left;
@@ -452,7 +452,7 @@ h2 + p {
 #logindiv {
     opacity: 0.39;
     background-color: #ff9a10;
-    width: 184px;
+    width: 209px;
     height: 70px;
     margin: auto;
     float: left;
