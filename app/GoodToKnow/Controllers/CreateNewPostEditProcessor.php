@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Post;
 use Michelf\MarkdownExtra;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
 class CreateNewPostEditProcessor
 {
@@ -26,9 +26,9 @@ class CreateNewPostEditProcessor
 
         kick_out_loggedoutusers();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $markdown = standard_form_field_prep('markdown', 1, 38000);
+        $markdown = markdown_form_field_prep('markdown', 1, 38000);
 
 
         /**

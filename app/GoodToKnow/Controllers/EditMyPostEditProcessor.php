@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use Michelf\MarkdownExtra;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
+use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
 class EditMyPostEditProcessor
 {
@@ -30,20 +30,9 @@ class EditMyPostEditProcessor
          * 'markdown'
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $markdown = standard_form_field_prep('markdown', 1, 38000);
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$markdown: </p>\n";
-        var_dump($markdown);
-        echo "\n";
-        die("<p>End debug</p>\n");
-
+        $markdown = markdown_form_field_prep('markdown', 1, 38000);
 
 
         // $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");

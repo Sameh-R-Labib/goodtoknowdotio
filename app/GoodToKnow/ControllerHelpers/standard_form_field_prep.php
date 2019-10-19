@@ -11,6 +11,12 @@ namespace GoodToKnow\ControllerHelpers;
 function standard_form_field_prep(string $field_name, int $min_length, int $max_length): string
 {
     /**
+     * Warning: Since this will apply htmlspecialchars() then it is not appropriate to
+     * use this for submitted markdown. The markdown parser will (if desired) convert html
+     * special characters while it produces the html.
+     */
+
+    /**
      * Note: This is for data which will remain as a string value in the function's calling scope.
      *
      * This function will take the post value for the $field_name
