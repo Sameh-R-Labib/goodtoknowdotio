@@ -19,7 +19,7 @@ body {
 }
 
 img.photo {
-    max-width: 672px;
+    max-width: 733px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -266,7 +266,7 @@ select, input {
 }
 
 table {
-    max-width: 720px;
+    max-width: 733px;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
     margin: 30px auto 20px 70px;
