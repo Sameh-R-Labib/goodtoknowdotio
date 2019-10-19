@@ -35,6 +35,17 @@ class EditMyPostEditProcessor
         $markdown = standard_form_field_prep('markdown', 1, 38000);
 
 
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$markdown: </p>\n";
+        var_dump($markdown);
+        echo "\n";
+        die("<p>End debug</p>\n");
+
+
+
         // $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
         // I commented out because parsedown will take care of this.
 
