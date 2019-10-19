@@ -14,6 +14,8 @@ body {
     top: 0px;
     color: black;
     font-family: Palatino, "Palatino Linotype", "URW Palladio L", "Book Antiqua", Georgia, "Times New Roman", serif;
+    font-variant-numeric: lining-nums proportional-nums;
+    line-height: 1.45;
 }
 
 img.photo {
@@ -182,7 +184,7 @@ code {
 }
 
 p {
-    font-size: 1.03em;
+    font-size: 1.45em;
     margin-left: 23px;
     margin-right: 23px;
 }
@@ -192,9 +194,11 @@ p {
 }
 
 #maincontent p {
-    line-height: 1.44em;
+    line-height: 1.45em;
     margin-left: 69px;
     margin-right: 75px;
+    hyphens: auto;
+    font-variant-numeric: lining-nums;
 }
 
 #maincontent ol, ul {
