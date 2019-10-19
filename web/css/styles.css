@@ -13,7 +13,7 @@ body {
     left: 0px;
     top: 0px;
     color: black;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Palatino, "Palatino Linotype", "URW Palladio L", "Book Antiqua", Georgia, "Times New Roman", serif;
 }
 
 img.photo {
@@ -161,13 +161,24 @@ a.greenbtn:active {
 }
 
 code {
-    font-size: 1.34em;
+    color: #764;
+    font-size: 100%;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: normal;
+    word-spacing: -0.2ex;
+    padding: 0px 0.3ex;
+    font-family: Consolas, "Droid Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+    hyphens: manual;
 }
 
-#maincontent pre {
+#maincontent pre code {
     line-height: 1.44em;
     margin-left: 77px;
     margin-right: 75px;
+    padding: 0;
+    word-spacing: normal;
+    color: inherit;
 }
 
 p {
