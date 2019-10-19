@@ -390,7 +390,7 @@ h2 + p {
 
 #scriptmessage {
     background-color: rgba(233, 243, 255, 0.78);
-    width: 716px;
+    width: 772px;
     height: 195px;
     margin: auto;
     float: left;
@@ -398,7 +398,7 @@ h2 + p {
 
 #leftsodiv {
     background: rgba(255, 255, 255, 0.01);
-    width: 147px;
+    width: 158px;
     height: 195px;
     margin: auto;
     float: left;
@@ -416,7 +416,7 @@ h2 + p {
     background-color: #d9b039;
     opacity: 0.94;
     float: left;
-    width: 147px;
+    width: 158px;
     height: 62px;
     margin: auto;
 }
@@ -425,7 +425,7 @@ h2 + p {
     background-color: #d9b039;
     opacity: 0.39;
     float: left;
-    width: 147px;
+    width: 158px;
     height: 62px;
     margin: auto;
 }
@@ -434,7 +434,7 @@ h2 + p {
     background-color: rgba(75, 145, 215, 0.34);
     opacity: 0.69;
     float: left;
-    width: 97px;
+    width: 110px;
     height: 84px;
     margin: auto;
     padding: 25px;
