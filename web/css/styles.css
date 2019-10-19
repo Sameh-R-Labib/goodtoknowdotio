@@ -321,7 +321,7 @@ h2 + p {
 #topbar {
     background-color: rgba(255, 255, 255, 0.01);
     position: relative;
-    width: 865px;
+    width: 931px;
     height: 70px;
     margin: auto;
     clear: both;
@@ -332,7 +332,7 @@ h2 + p {
     background-color: #d0883d;
     position: relative;
     top: -9px;
-    width: 865px;
+    width: 931px;
     margin: auto;
     clear: both;
 }
@@ -342,7 +342,7 @@ h2 + p {
     background-color: gainsboro;
     position: relative;
     top: -19px;
-    width: 865px;
+    width: 931px;
     height: 29px;
     margin: 0 auto;
     clear: both;
@@ -352,7 +352,7 @@ h2 + p {
     background: rgba(255, 255, 255, 0.01);
     position: relative;
     top: -12px;
-    width: 865px;
+    width: 931px;
     height: 195px;
     margin: auto;
     clear: both;
@@ -373,7 +373,7 @@ h2 + p {
     opacity: 0.84;
     position: relative;
     top: -14px;
-    width: 865px;
+    width: 931px;
     height: 29px;
     margin: auto;
     clear: both;
@@ -406,7 +406,7 @@ h2 + p {
 
 #adminsysmsgblock {
     background-color: #fbfcf9;
-    width: 865px;
+    width: 931px;
     height: 185px;
     margin: auto;
     float: left;
