@@ -5,10 +5,9 @@
         </h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">✅ markdown ✅ emoji 📲 maximum 1500 bytes.
-            ✅ GPG encrypt message with receiving user's pub key.</span>
+            ✅ GPG encrypt message with receiving user's pub key.</span> <?php require URLOFMOSTRECENTUPLOAD; ?>
         </p>
         <?php require SESSIONMESSAGE; ?>
-        <?php require URLOFMOSTRECENTUPLOAD; ?>
         <section>
             <p>
                 <label for="textarea"></label>

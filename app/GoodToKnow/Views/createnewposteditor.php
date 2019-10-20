@@ -6,10 +6,9 @@
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Limit the scope to context and have it be opinionated.
             For example if the community is about Jabber chat then create posts which
-            describe the way we all set up our chat clients.</span>
+            describe the way we all set up our chat clients.</span> <?php require URLOFMOSTRECENTUPLOAD; ?>
     </p>
     <?php require SESSIONMESSAGE; ?>
-    <?php require URLOFMOSTRECENTUPLOAD; ?>
     <section>
         <p>
             <label for="textarea"></label>
