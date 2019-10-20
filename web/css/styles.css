@@ -175,6 +175,7 @@ code {
 }
 
 #maincontent pre code {
+    white-space: pre;
     line-height: 1.44em;
     margin-left: 77px;
     margin-right: 75px;
