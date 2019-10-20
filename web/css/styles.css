@@ -174,7 +174,7 @@ code {
     hyphens: manual;
 }
 
-#maincontent pre code {
+pre code {
     white-space: pre;
     line-height: 1.44em;
     margin-left: 77px;
