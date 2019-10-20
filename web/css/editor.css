@@ -54,10 +54,7 @@ button {
 
 h2 {
     font-size: 1.32em;
-    margin-top: 2.66em;
-    margin-left: 0.56em;
-    margin-right: 0.56em;
-    margin-bottom: 1.49em;
+    margin: 1.86em 0.56em 0.79em;
     /*margin-block-start: 0.63em;*/
     /*margin-block-end: -0.13em;*/
 }
