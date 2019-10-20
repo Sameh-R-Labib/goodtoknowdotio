@@ -64,8 +64,7 @@ h2 {
 
 p {
     font-size: 1.03em;
-    margin-left: 29px;
-    margin-right: 23px;
+    margin: 0.04em 23px 0.04em 29px;
 }
 
 label.checkbox {
