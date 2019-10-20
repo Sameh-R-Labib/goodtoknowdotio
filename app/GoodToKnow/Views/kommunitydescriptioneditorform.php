@@ -8,8 +8,8 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="text" rows="15"
-                      cols="79" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
+            <textarea id="textarea" spellcheck="false" name="text" rows="21"
+                      cols="87" wrap="soft" maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $community_object->community_description; ?></textarea>
         </p>
     </section>

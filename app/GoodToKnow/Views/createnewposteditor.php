@@ -13,8 +13,8 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="markdown" rows="15"
-                      cols="79" wrap="soft">Edit these words and submit.</textarea>
+            <textarea id="textarea" spellcheck="false" name="markdown" rows="21"
+                      cols="87" wrap="soft">Edit these words and submit.</textarea>
         </p>
     </section>
     <?php require SUBMITABORT; ?>

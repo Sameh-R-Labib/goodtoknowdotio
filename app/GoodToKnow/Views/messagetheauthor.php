@@ -11,7 +11,7 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="markdown" rows="15" cols="79"
+            <textarea id="textarea" spellcheck="false" name="markdown" rows="21" cols="87"
                       wrap="soft"><?= $pre_populate ?></textarea>
         </p>
     </section>
