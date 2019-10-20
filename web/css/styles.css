@@ -175,6 +175,9 @@ code {
 }
 
 pre code {
+    display: block;
+    margin-left: 77px;
+    margin-right: 75px;
     white-space: pre;
     line-height: 1.44em;
     padding: 0;
