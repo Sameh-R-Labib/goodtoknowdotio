@@ -175,6 +175,7 @@ code {
 }
 
 pre code {
+    font-size: 1.17em;
     display: block;
     margin-left: 82px;
     white-space: pre;
