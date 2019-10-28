@@ -2,4 +2,4 @@
 
 include 'functions.php';
 
-redirect_to('ax1');
+redirect_to('/ax1');
