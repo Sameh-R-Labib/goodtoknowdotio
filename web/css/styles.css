@@ -211,7 +211,7 @@ p {
     font-size: 1.75em;
     margin-left: 44px;
     margin-right: 58px;
-    margin-top: 39px;
+    margin-top: 30px;
 }
 
 #maincontent h2.topofpage {
@@ -232,18 +232,13 @@ b, strong {
     font-family: "Bookman Old Style", "Times New Roman", serif;
     color: black;
     font-size: 2.25em;
-    margin-top: 6px;
-    margin-left: 24px;
-    margin-right: 58px;
+    margin: 6px 58px 2px 24px;
 }
 
 #maincontent h3 {
     font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.33em;
-    margin-left: 67px;
-    margin-right: 58px;
-    margin-top: 46px;
-    margin-bottom: -5px;
+    margin: 46px 58px -5px 67px;
 }
 
 #maincontent blockquote {
@@ -301,10 +296,7 @@ legend {
 }
 
 h2 {
-    margin-top: 0.5em;
-    margin-bottom: 0.65em;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0.5em 0 0.65em;
 }
 
 h2 + p {
