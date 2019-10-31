@@ -257,7 +257,10 @@ table {
     max-width: 78em;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
-    margin: 30px auto 20px 70px;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 70px;
+    margin-bottom: 20px;
 }
 
 th {
