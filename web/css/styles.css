@@ -183,6 +183,8 @@ pre code {
 
 p {
     font-size: 1.17em;
+    margin-top: 3px;
+    margin-bottom: 3px;
     margin-left: 23px;
     margin-right: 23px;
 }
@@ -318,7 +320,7 @@ h2 + p {
     position: relative;
     top: -9px;
     width: 931px;
-    margin-top: 3px;
+    margin: auto;
     clear: both;
 }
 
