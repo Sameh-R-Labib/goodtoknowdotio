@@ -254,7 +254,7 @@ select, input {
 }
 
 table {
-    max-width: 733px;
+    max-width: 78em;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
     margin: 30px auto 20px 70px;
