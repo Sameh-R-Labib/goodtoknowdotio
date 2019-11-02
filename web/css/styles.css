@@ -243,7 +243,32 @@ b, strong {
 }
 
 #maincontent blockquote {
-    margin: 2px 12px 2px 27px;
+    background: #f9f9f9;
+/ / margin: 2 px 12 px 2 px 27 px;
+    margin: .5em 10px;
+    border-left: 10px solid #ccc;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    padding: 10px 20px;
+    line-height: 1.4;
+}
+
+#maincontent blockquote:before {
+    content: open-quote;
+    display: inline;
+    height: 0;
+    line-height: 0;
+    left: -10px;
+    position: relative;
+    top: 30px;
+    color: #ccc;
+    font-size: 3em;
+}
+
+#maincontent footer {
+    margin: 0;
+    text-align: right;
+    font-size: 1em;
+    font-style: italic;
 }
 
 #maincontent li {
