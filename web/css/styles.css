@@ -244,8 +244,7 @@ b, strong {
 
 #maincontent blockquote {
     background: #f9f9f9;
-/ / margin: 2 px 12 px 2 px 27 px;
-    margin: .5em 10px;
+    margin: .5em 65px;
     border-left: 10px solid #ccc;
     quotes: "\201C" "\201D" "\2018" "\2019";
     padding: 10px 20px;
