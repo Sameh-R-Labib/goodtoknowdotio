@@ -271,7 +271,8 @@ b, strong {
 }
 
 #maincontent li {
-    line-height: 1.56em;
+    line-height: 1.45em;
+    font-size: 1.17em;
 }
 
 select, input {
