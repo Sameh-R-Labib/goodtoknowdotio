@@ -20,6 +20,7 @@ body {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
+    opacity: 0.55;
     position: static;
     display: block;
     margin: auto;
