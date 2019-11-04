@@ -51,10 +51,10 @@ body {
 /* Style the collapsible content. Note: hidden by default */
 .content {
     padding: 0 18px;
+    background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    display: none;
 }
 
 img.photo {
