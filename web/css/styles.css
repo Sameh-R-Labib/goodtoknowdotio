@@ -32,6 +32,10 @@ body {
     border: none;
     text-align: left;
     outline: none;
+    font-family: Palatino, "Palatino Linotype", "URW Palladio L", "Book Antiqua", Georgia, "Times New Roman", serif;
+    font-size: 1.17em;
+    line-height: 1.45em;
+    font-weight: bolder;
 }
 
 .collapsible:after {
