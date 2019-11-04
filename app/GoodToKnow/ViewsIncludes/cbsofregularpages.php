@@ -1,6 +1,9 @@
 <!-- communities -->
 <div id="communities">
-    <p>🧑🏿‍🤝‍🧑🏽:&nbsp;&nbsp;<?php require COMMUNITIESFORTHISUSER; ?></p>
+    <button type="button" class="collapsible">My Communities</button>
+    <div class="content">
+        <p>🧑🏿‍🤝‍🧑🏽:&nbsp;&nbsp;<?php require COMMUNITIESFORTHISUSER; ?></p>
+    </div>
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
