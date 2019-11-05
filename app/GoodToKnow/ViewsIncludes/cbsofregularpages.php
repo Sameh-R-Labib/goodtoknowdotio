@@ -5,7 +5,7 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p><a href="/ax1/Home/page"><span style="font-size:24px;">🏠</span></a>:&nbsp;&nbsp;<?php require BREADCRUMBS; ?>
+    <p><span style="font-size:26px;">↘️</span> <?php require BREADCRUMBS; ?>
     </p>
 </div>
 <!-- scriptoutput -->
