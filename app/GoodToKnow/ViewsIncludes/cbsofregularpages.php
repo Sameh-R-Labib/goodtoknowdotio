@@ -5,7 +5,7 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p><span style="font-size:26px;">↘️</span> <?php require BREADCRUMBS; ?>
+    <p><span style="font-size:19px;">↘️</span>&nbsp;&nbsp;<?php require BREADCRUMBS; ?>
     </p>
 </div>
 <!-- scriptoutput -->
