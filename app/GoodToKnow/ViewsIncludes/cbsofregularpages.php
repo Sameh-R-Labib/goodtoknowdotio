@@ -9,7 +9,7 @@
     </p>
 </div>
 <!-- scriptoutput -->
-<button type="button" class="collapsible">More…</button>
+<button type="button" class="collapsible">👁️</button>
 <div id="scriptoutput" class="content">
     <div id="leftsodiv">
         <?php require MESSAGETHEAUTHOR; ?>
