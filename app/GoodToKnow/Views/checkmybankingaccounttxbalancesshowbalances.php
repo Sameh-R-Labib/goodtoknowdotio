@@ -3,9 +3,8 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Banking Transaction Ledger</h1>
-        <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $account->acct_name; ?></h2>
+        <h1><?php /** @noinspection PhpUndefinedVariableInspection */
+            echo $account->acct_name; ?></h1>
         <table>
             <tr>
                 <td><b>Starting time: </b><?= $account->start_time ?></td>
