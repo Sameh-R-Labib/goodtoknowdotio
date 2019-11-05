@@ -9,14 +9,14 @@
         <table>
             <tr>
                 <td><b>Starting time: </b><?= $account->start_time ?></td>
-                <td></td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td><b>Starting balance: </b><?= $account->currency ?>&nbsp;<?= $account->start_balance ?></td>
-                <td><p class="tooltip">ℹ️
-                        <span class="tooltiptext tooltip-top">Balance will be incorrect if admin has purged transactions older than
-                90 days and the start_time for this account is older than 90 days.</span>
-                    </p></td>
+                <td><span class="tooltip">ℹ️
+                        <span class="tooltiptext tooltip-top">Balance will be incorrect if admin has purged transactions
+                            older than 90 days and the start_time for this account is older than 90 days.</span>
+                    </span></td>
             </tr>
         </table>
         <table>
