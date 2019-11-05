@@ -390,6 +390,7 @@ h2 + p {
     background-color: #d0883d;
     position: static;
     width: 931px;
+    padding: 0;
     margin: auto;
     clear: both;
 }
