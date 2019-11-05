@@ -9,7 +9,8 @@
     </p>
 </div>
 <!-- scriptoutput -->
-<div id="scriptoutput">
+<button type="button" class="collapsible">More…</button>
+<div id="scriptoutput" class="content">
     <div id="leftsodiv">
         <?php require MESSAGETHEAUTHOR; ?>
         <div id="admindiv">
