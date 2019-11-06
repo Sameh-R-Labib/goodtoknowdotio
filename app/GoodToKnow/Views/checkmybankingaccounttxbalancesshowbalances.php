@@ -6,6 +6,8 @@
         <h1><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $account->acct_name; ?></h1>
         <table class="not_there">
+            <col width="80%">
+            <col width="15">
             <tr>
                 <td><b>Starting time: </b><?= $account->start_time ?></td>
                 <td>&nbsp;</td>
