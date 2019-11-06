@@ -329,6 +329,7 @@ table.not_there {
     border-spacing: 2px;
     border: 0 gray;
     padding: 0;
+    margin: 12px 10px 14px 70px;
 }
 
 table {
