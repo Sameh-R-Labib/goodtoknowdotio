@@ -323,6 +323,13 @@ select, input {
     font-size: 0.875em;
 }
 
+table.not_there {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
 table {
     max-width: 78em;
     border-collapse: collapse;
@@ -344,10 +351,6 @@ td {
 
 tr {
     border-bottom: 1px solid #c9c9c9;
-}
-
-tr:nth-child(even) {
-    background-color: #e7edf6;
 }
 
 fieldset {

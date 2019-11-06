@@ -5,7 +5,7 @@
     <div id="maincontent">
         <h1><?php /** @noinspection PhpUndefinedVariableInspection */
             echo $account->acct_name; ?></h1>
-        <table>
+        <table class="not_there">
             <tr>
                 <td><b>Starting time: </b><?= $account->start_time ?></td>
                 <td>&nbsp;</td>
