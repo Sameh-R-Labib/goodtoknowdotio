@@ -29,7 +29,7 @@ body {
     color: #333;
     cursor: pointer;
     padding: 5px 21px;
-    width: 931px;
+    width: 1024px;
     border: none;
     text-align: left;
     outline: none;
@@ -381,7 +381,7 @@ h2 + p {
 #topbar {
     background-color: rgba(255, 255, 255, 0.01);
     position: static;
-    width: 931px;
+    width: 1024px;
     height: 70px;
     margin: auto;
     clear: both;
@@ -391,7 +391,7 @@ h2 + p {
     opacity: 0.48;
     background-color: #ff9a10;
     position: static;
-    width: 931px;
+    width: 1024px;
     padding: 0;
     margin: auto;
     clear: both;
@@ -401,7 +401,7 @@ h2 + p {
     opacity: 0.67;
     background-color: gainsboro;
     position: static;
-    width: 931px;
+    width: 1024px;
     padding: 1px 0 1px 0;
     margin: auto;
     clear: both;
@@ -410,7 +410,7 @@ h2 + p {
 #scriptoutput {
     background: rgba(255, 255, 255, 0.01);
     position: static;
-    width: 931px;
+    width: 1024px;
     height: 220px;
     margin: auto;
     clear: both;
@@ -419,7 +419,7 @@ h2 + p {
 #maincontent {
     background-color: white;
     position: static;
-    width: 931px;
+    width: 1024px;
     padding: 13px 0 18px 0;
     margin: auto;
     clear: both;
@@ -429,7 +429,7 @@ h2 + p {
     background-color: rgba(32, 178, 170, 0.42);
     opacity: 0.86;
     position: static;
-    width: 931px;
+    width: 1024px;
     padding: 1px 0 1px 0;
     margin: auto;
     clear: both;
@@ -462,7 +462,7 @@ h2 + p {
 
 #adminsysmsgblock {
     background-color: #fbfcf9;
-    width: 931px;
+    width: 1024px;
     height: 185px;
     margin: auto;
     float: left;
