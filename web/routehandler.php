@@ -201,8 +201,8 @@ $route_segments_array = [];
 
 /**
  * $_SERVER['PATH_INFO']
- * If the URI portion of the URL starts with /# then the value of
- * $_SERVER['PATH_INFO'] will be everything that follows the /# portion of the URI.
+ * If the URI portion of the URL starts with /ax1 then the value of
+ * $_SERVER['PATH_INFO'] will be everything that follows the /ax1 portion of the URI.
  */
 
 if (!empty($_SERVER['PATH_INFO'])) {
