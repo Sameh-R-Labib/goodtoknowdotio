@@ -1,4 +1,4 @@
-<?php TOPOFREGULARPAGE; ?>
+<?php require TOPOFREGULARPAGE; ?>
     <!-- adminhometop -->
     <div id="adminhometop">
         <a href="/ax1"><img src="/good1.jpg" alt="GoodToKnow.io" height="70" width="311" style="float: left"></a>
