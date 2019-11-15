@@ -110,7 +110,7 @@ class SetHomePageCommunityTopicPost
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
-        } else {
+        } elseif ($type_of_resource_requested === 'post') {
             // Second get and store the topic_name
 
             $topic_object = Topic::find_by_id($db, $sessionMessage, $topic_id);
