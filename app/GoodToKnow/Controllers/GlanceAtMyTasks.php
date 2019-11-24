@@ -42,7 +42,7 @@ class GlanceAtMyTasks
          * to the current time.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_proximity_task_label.php';
 
