@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\get_proximity_task_label;
-use function GoodToKnow\ControllerHelpers\get_readable_time;
+use function GoodToKnow\ControllerHelpers\get_readable_date;
 
 class GlanceAtMyTasks
 {
@@ -48,8 +48,8 @@ class GlanceAtMyTasks
 
         foreach ($array as $object) {
             $object->label = get_proximity_task_label($object->label, $object->next);
-            $object->last = get_readable_time($object->last);
-            $object->next = get_readable_time($object->next);
+            $object->last = get_readable_date($object->last);
+            $object->next = get_readable_date($object->next);
             $object->comment = nl2br($object->comment, false);
         }
 
