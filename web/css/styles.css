@@ -242,7 +242,7 @@ p {
 
 #maincontent p {
     line-height: 1.45em;
-    margin-left: 69px;
+    margin-left: 47px;
     margin-right: 75px;
     hyphens: auto;
     font-variant-numeric: lining-nums;
@@ -258,7 +258,7 @@ p {
 #maincontent h2 {
     font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.75em;
-    margin-left: 44px;
+    margin-left: 29px;
     margin-right: 58px;
     margin-top: 30px;
 }
@@ -287,7 +287,7 @@ b, strong {
 #maincontent h3 {
     font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.33em;
-    margin: 46px 58px -5px 67px;
+    margin: 46px 58px -5px 29px;
 }
 
 #maincontent blockquote {
