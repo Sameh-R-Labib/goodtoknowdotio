@@ -211,7 +211,7 @@ a.greenbtn:active {
 }
 
 code {
-    color: #03360a;
+    color: #001a05;
     font-size: 100%;
     line-height: 1.2;
     text-transform: none;
@@ -223,7 +223,7 @@ code {
 }
 
 pre code {
-    font-size: 1.17em;
+    font-size: 1.12em;
     display: block;
     margin-left: 44px;
     white-space: pre;
