@@ -244,7 +244,7 @@ p {
     line-height: 1.45em;
     margin-left: 47px;
     margin-right: 75px;
-    hyphens: auto;
+    hyphens: manual;
     font-variant-numeric: lining-nums;
 }
 
