@@ -219,7 +219,6 @@ code {
     word-spacing: -0.2ex;
     padding: 0px 0.3ex;
     font-family: Consolas, "Droid Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
-    hyphens: manual;
 }
 
 pre code {
@@ -244,7 +243,6 @@ p {
     line-height: 1.45em;
     margin-left: 47px;
     margin-right: 75px;
-    hyphens: manual;
     font-variant-numeric: lining-nums;
 }
 
@@ -402,8 +400,8 @@ h2 + p {
 }
 
 #breadcrumbs {
-    opacity: 0.95;
-    background-color: gainsboro;
+    opacity: 0.93;
+    background-color: white;
     position: static;
     width: 1024px;
     padding: 1px 0 1px 0;
