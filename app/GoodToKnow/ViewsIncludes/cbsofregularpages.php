@@ -1,6 +1,6 @@
 <!-- communities -->
-<button type="button" class="collapsible">🧑🏿‍🤝‍🧑🏽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Communities
-    To Choose From
+<button type="button" class="collapsible">🧑🏿‍🤝‍🧑🏽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change
+    My Community
 </button>
 <div id="communities" class="content">
     <p><?php require COMMUNITIESFORTHISUSER; ?></p>
@@ -11,8 +11,8 @@
     </p>
 </div>
 <!-- scriptoutput -->
-<button type="button" class="collapsible">👁️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View More
-    &mldr;
+<button type="button" class="collapsible">👁️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More Info &
+    Options
 </button>
 <div id="scriptoutput" class="content">
     <div id="leftsodiv">
