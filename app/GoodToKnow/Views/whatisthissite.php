@@ -13,7 +13,7 @@
             items. In other words you get to create and share blog posts and you get to keep track of personal
             records.</p>
         <blockquote>GoodToKnow.io instances are run by (at least) one admin who`s in charge of (among other things)
-            adding communities, adding topics, adding users, and content approval.
+            adding communities, adding topics, adding users, and approving content.
         </blockquote>
         <p>If you`d like to become a member of this instance then contact its admin.
             If you stumble across a different instance you can ask its admin to join.
