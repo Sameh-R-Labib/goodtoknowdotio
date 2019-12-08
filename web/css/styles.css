@@ -258,7 +258,7 @@ p {
     font-size: 1.75em;
     margin-left: 29px;
     margin-right: 58px;
-    margin-top: 30px;
+    margin-top: 65px;
 }
 
 #maincontent h2.topofpage {
@@ -285,7 +285,7 @@ b, strong {
 #maincontent h3 {
     font-family: "Bookman Old Style", "Times New Roman", serif;
     font-size: 1.33em;
-    margin: 46px 58px -5px 29px;
+    margin: 31px 58px -5px 29px;
 }
 
 #maincontent blockquote {
