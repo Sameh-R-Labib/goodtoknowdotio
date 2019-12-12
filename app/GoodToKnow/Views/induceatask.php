@@ -14,7 +14,6 @@
             <input id="cycle_type" name="cycle_type" type="text" value="" required minlength="3" maxlength="60"
                    size="50" spellcheck="false" placeholder="Daily 🛅">
         </p>
-        <hr>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
             <textarea id="comment" name="comment" rows="4" cols="87" wrap="soft" maxlength="800" spellcheck="false"

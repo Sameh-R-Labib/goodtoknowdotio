@@ -1,4 +1,3 @@
-<hr>
 <p>
     <label for="lastdate">Last: </label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
@@ -11,7 +10,6 @@
     <label for="lastsecond">: </label>
     <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="3" placeholder="s">
 </p>
-<hr>
 <p>
     <label for="nextdate">Next: </label>
     <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
@@ -30,4 +28,3 @@
                             <a href="https://www.php.net/manual/en/timezones.php"
                                target="_blank">www.php.net/manual/en/timezones.php</a></span></span>
 </p>
-<hr>
