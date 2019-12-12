@@ -15,6 +15,7 @@
             <input id="cycle_type" name="cycle_type" type="text" value="<?= $object->cycle_type ?>" required
                    minlength="3" maxlength="50" size="60" spellcheck="false" placeholder="Daily 🛅">
         </p>
+        <hr>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
             <textarea id="comment" name="comment" rows="4" cols="87" wrap="soft" maxlength="800" spellcheck="false"
