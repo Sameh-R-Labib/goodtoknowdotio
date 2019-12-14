@@ -59,7 +59,7 @@ class GlanceAtMyTasks
 
         $show_poof = true;
 
-        $sessionMessage .= ' ʘ‿ʘ at your To-do Tasks. ';
+        $sessionMessage .= ' ʘ‿ʘ at your Tasks. ';
 
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
     }

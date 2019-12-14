@@ -11,7 +11,7 @@
             <a class="purplebtn" href="/ax1/CPRecurringPayments/page">Recurring Payments</a>
             <a class="orangebtn" href="/ax1/CPCrypto/page">Crypto</a>
             <a class="clearbtn" href="/ax1/CPTaxDeductions/page">Possible Tax Deductions</a>
-            <a class="orangebtn" href="/ax1/CPToDoList/page">To-do List</a>
+            <a class="orangebtn" href="/ax1/CPToDoList/page">Task List</a>
             <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income Event</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodity Sold Capital Gains</a></p>
         <?php require COLLAGE; ?>

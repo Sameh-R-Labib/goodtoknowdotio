@@ -61,6 +61,6 @@ class ForgetATaskDelete
 
         // Report successful deletion of post.
 
-        breakout(' I deleted the To-do Task. ');
+        breakout(' I deleted the Task. ');
     }
 }

@@ -18,7 +18,7 @@ class CPToDoList
 
         $show_poof = true;
 
-        $html_title = 'To-do List';
+        $html_title = 'Task List';
 
         $sessionMessage .= ' Manage to-do list. ';
 
