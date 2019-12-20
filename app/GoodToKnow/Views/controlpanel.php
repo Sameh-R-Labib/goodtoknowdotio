@@ -4,7 +4,7 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Control Panel</h1>
-        <h2 class="topofpage">👤 User Tools 🧰</h2>
+        <h2 class="topofpage">👤 🧰</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Main Tools</a>
             <a class="greenbtn" href="/ax1/CPTransactions/page">Account Balance</a>
             <a class="blackbtn" href="/ax1/CPBankingAccounts/page">Account</a>
