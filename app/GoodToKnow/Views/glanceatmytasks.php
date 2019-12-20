@@ -7,8 +7,8 @@
         <?php if (!empty($array)): ?>
             <?php foreach ($array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
-                <p><b>Next: </b><?= $object->next ?></p>
-                <p><b>Cycle Type: </b><?= $object->cycle_type ?></p>
+                <p><?= $object->next ?></p>
+                <p><?= $object->cycle_type ?></p>
             <?php endforeach; ?>
         <?php else: ?>
             <p>There are no to-do tasks.</p>
