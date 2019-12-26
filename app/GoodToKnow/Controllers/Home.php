@@ -112,28 +112,23 @@ class Home
                     $sessionMessage .= ' ' . nl2br($community_description, false) . ' ';
                 }
             }
-            $sessionMessage .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
-            <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a>
-            <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
         } elseif ($type_of_resource_requested === 'topic') {
             if (!empty(trim($topic_description))) {
                 if (empty(trim($sessionMessage))) {
                     $sessionMessage .= ' ' . nl2br($topic_description, false) . ' ';
                 }
             }
-            $sessionMessage .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
-            <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a>
-            <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
         } else {
             if (!empty(trim($post_full_name))) {
                 if (empty(trim($sessionMessage))) {
                     $sessionMessage .= ' ' . $post_full_name . ' ';
                 }
             }
-            $sessionMessage .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
+        }
+
+        $sessionMessage .= ' <br><br>Post: <a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
             <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a>
             <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
-        }
     }
 
 
