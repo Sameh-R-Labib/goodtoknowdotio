@@ -6,8 +6,8 @@
         <h1>Control Panel</h1>
         <h2 class="topofpage">👤 🧰</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Main Tools</a>
-            <a class="greenbtn" href="/ax1/CPTransactions/page">Account Balance</a>
-            <a class="blackbtn" href="/ax1/CPBankingAccounts/page">Account</a>
+            <a class="greenbtn" href="/ax1/CPTransactions/page">A. Balance</a>
+            <a class="blackbtn" href="/ax1/CPBankingAccounts/page">B. Account</a>
             <a class="purplebtn" href="/ax1/CPRecurringPayments/page">Recurring Payments</a>
             <a class="orangebtn" href="/ax1/CPCrypto/page">Crypto</a>
             <a class="clearbtn" href="/ax1/CPTaxDeductions/page">Write-off</a>
