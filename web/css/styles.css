@@ -215,6 +215,7 @@ a.greenbtn:active {
 code {
     color: #020048;
     font-size: 96%;
+    font-weight: bolder;
     line-height: 1.2;
     text-transform: none;
     letter-spacing: normal;
