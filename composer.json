@@ -1,4 +1,5 @@
 {
+  "name": "sameh-r-labib/goodtoknowdotio",
   "require": {
     "ext-mysqli": "*",
     "ext-ctype": "*",
