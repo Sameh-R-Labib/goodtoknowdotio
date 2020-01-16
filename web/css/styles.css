@@ -12,7 +12,7 @@ body {
     background-attachment: fixed;
     left: 0px;
     top: 0px;
-    color: black;
+    color: #222;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     font-variant-numeric: lining-nums proportional-nums;
     line-height: 1.45;
@@ -259,8 +259,10 @@ p {
 }
 
 #maincontent h2 {
-    font-family: "Bookman Old Style", "Times New Roman", serif;
-    font-size: 1.75em;
+    font-family: inherit;
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 150%;
     margin-left: 17px;
     margin-right: 58px;
     margin-top: 52px;
@@ -281,15 +283,19 @@ b, strong {
 
 #maincontent h1 {
     text-align: center;
-    font-family: "Bookman Old Style", "Times New Roman", serif;
+    font-family: inherit;
+    font-weight: normal;
     color: black;
     font-size: 2.25em;
+    line-height: 130%;
     margin: 8px 58px 19px 24px;
 }
 
 #maincontent h3 {
-    font-family: "Bookman Old Style", "Times New Roman", serif;
-    font-size: 1.33em;
+    font-family: inherit;
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 150%;
     margin: 31px 58px -5px 29px;
 }
 
