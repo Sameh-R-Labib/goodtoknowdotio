@@ -13,7 +13,7 @@ body {
     left: 0px;
     top: 0px;
     color: black;
-    font-family: Palatino, "Palatino Linotype", "URW Palladio L", "Book Antiqua", Georgia, "Times New Roman", serif;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     font-variant-numeric: lining-nums proportional-nums;
     line-height: 1.45;
 }
@@ -234,6 +234,7 @@ pre code {
 p {
     line-height: 1.45em;
     font-size: 1.22em;
+    letter-spacing: .2em;
     margin-left: 23px;
     margin-right: 23px;
 }
