@@ -356,14 +356,14 @@ p {
 #maincontent p {
     line-height: 1.48em;
     margin-left: 47px;
-    margin-right: 33px;
+    margin-right: 47px;
     font-variant-numeric: lining-nums;
 }
 
 #maincontent ol, ul {
     font-size: 1.03em;
     margin-left: 49px;
-    margin-right: 40px;
+    margin-right: 73px;
     margin-bottom: 2.5em;
     line-height: 1.44em;
 }
