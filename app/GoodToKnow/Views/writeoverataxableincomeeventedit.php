@@ -31,7 +31,7 @@
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
-            <textarea id="comment" name="comment" rows="4" cols="87" wrap="soft" maxlength="800"
+            <textarea id="comment" name="comment" rows="4" cols="89" wrap="soft" maxlength="800"
                       placeholder="The frequency of this income is _ _ _ _."><?= $object->comment ?></textarea>
         </p>
     </section>
