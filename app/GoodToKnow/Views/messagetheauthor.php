@@ -15,8 +15,8 @@
         <section>
             <p>
                 <label for="textarea"></label>
-                <textarea id="textarea" spellcheck="false" name="markdown" rows="43"" cols="92"
-                wrap="soft"><?= $pre_populate ?></textarea>
+                <textarea id="textarea" spellcheck="false" name="markdown" rows="41" cols="90"
+                          wrap="soft"><?= $pre_populate ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>
