@@ -9,7 +9,7 @@
         <p>
             <label for="comment"></label>
             <textarea id="comment" spellcheck="false" name="comment" rows="29"
-                      cols="89" wrap="soft" maxlength="800"><?php /** @noinspection PhpUndefinedVariableInspection */
+                      cols="99" wrap="soft" maxlength="800"><?php /** @noinspection PhpUndefinedVariableInspection */
                 echo $user_object->comment; ?></textarea>
         </p>
     </section>
