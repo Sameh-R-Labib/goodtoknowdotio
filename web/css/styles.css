@@ -402,6 +402,11 @@ b, strong {
     color: #604f4f;
 }
 
+i, em {
+    font-style: italic;
+    font-weight: bold;
+}
+
 #maincontent hr {
     margin-top: 2.1em;
     margin-bottom: 2.2em;
