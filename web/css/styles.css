@@ -212,12 +212,12 @@ figcaption {
 
 a {
     text-decoration-line: none;
-    color: #241819;
+    color: #bb000a;
     font-weight: bolder;
 }
 
 a:hover {
-    color: #ba330b;
+    color: #241819;
 }
 
 a:active {
