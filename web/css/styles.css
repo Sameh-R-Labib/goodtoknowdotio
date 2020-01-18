@@ -368,7 +368,7 @@ p {
 #maincontent p {
     line-height: 1.5em;
     font-size: 1.38em;
-    font-weight: 200;
+    font-weight: normal;
     color: black;
     margin-left: 47px;
     margin-right: 47px;
