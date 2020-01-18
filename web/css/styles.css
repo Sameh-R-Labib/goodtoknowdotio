@@ -404,7 +404,8 @@ b, strong {
 
 i, em {
     font-style: italic;
-    font-weight: 200;
+    font-weight: 300;
+    color: #241819;
 }
 
 #maincontent hr {
