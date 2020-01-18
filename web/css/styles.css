@@ -1,6 +1,18 @@
 @charset "UTF-8";
 
 @font-face {
+    font-family: 'Droid Sans Mono';
+    src: url('/droid-sans-mono-fontfacekit/web fonts/droidsansmono_regular_macroman/DroidSansMono-webfont.eot');
+    src: url('/droid-sans-mono-fontfacekit/web fonts/droidsansmono_regular_macroman/DroidSansMono-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/droid-sans-mono-fontfacekit/web fonts/droidsansmono_regular_macroman/DroidSansMono-webfont.woff') format('woff'),
+    url('/droid-sans-mono-fontfacekit/web fonts/droidsansmono_regular_macroman/DroidSansMono-webfont.ttf') format('truetype'),
+    url('/droid-sans-mono-fontfacekit/web fonts/droidsansmono_regular_macroman/DroidSansMono-webfont.svg#droid_sans_monoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'Roboto';
     src: url('/roboto-fontfacekit/web fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot');
     src: url('/roboto-fontfacekit/web fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
