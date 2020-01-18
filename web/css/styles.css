@@ -342,6 +342,7 @@ pre code {
 }
 
 p {
+    font-weight: 200;
     line-height: 1.48em;
     font-size: 1.15em;
     letter-spacing: .002em;
