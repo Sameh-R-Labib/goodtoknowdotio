@@ -324,7 +324,7 @@ a.greenbtn:active {
 
 code {
     color: #3a3aef;
-    font-size: 96%;
+    font-size: 88%;
     font-weight: normal;
     line-height: 1.2;
     text-transform: none;
@@ -335,7 +335,7 @@ code {
 }
 
 pre code {
-    font-size: 1.1em;
+    font-size: 1.15em;
     display: block;
     margin-left: 44px;
     white-space: pre;
