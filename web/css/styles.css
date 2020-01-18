@@ -323,14 +323,14 @@ a.greenbtn:active {
 }
 
 code {
-    color: #0000ba;
+    color: #5656ff;
     font-size: 96%;
     font-weight: normal;
     line-height: 1.2;
     text-transform: none;
     letter-spacing: normal;
     word-spacing: -0.2ex;
-    padding: 0px 0.3ex;
+    padding: 0 0.3ex;
     font-family: Consolas, "Droid Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 }
 
