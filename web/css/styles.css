@@ -342,7 +342,6 @@ pre code {
 }
 
 p {
-    font-weight: 200;
     line-height: 1.48em;
     font-size: 1.15em;
     letter-spacing: .002em;
@@ -355,6 +354,8 @@ p {
 }
 
 #maincontent p {
+    font-weight: 200;
+    color: black;
     line-height: 1.48em;
     margin-left: 47px;
     margin-right: 47px;
