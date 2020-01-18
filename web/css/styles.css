@@ -331,8 +331,7 @@ code {
     letter-spacing: normal;
     word-spacing: -0.2ex;
     padding: 0 0.3ex;
-    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-    /*font-family: Consolas, "Droid Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;*/
+    font-family: Consolas, "Droid Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 }
 
 pre code {
