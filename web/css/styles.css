@@ -132,6 +132,8 @@ body {
     background-image: url("/golden.jpg");
     /*background-color: whitesmoke;*/
     background-attachment: fixed;
+    background-color: whitesmoke;
+    opacity: 0.79;
     left: 0px;
     top: 0px;
     color: #5a5a5a;
