@@ -123,6 +123,15 @@ font-weight: 200;
 }
 
 body {
+    left: 0px;
+    top: 0px;
+    color: #5a5a5a;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-variant-numeric: lining-nums proportional-nums;
+    line-height: 1.45;
+}
+
+body:after {
     -webkit-background-size: auto 100%;
     -moz-background-size: auto 100%;
     -o-background-size: auto 100%;
@@ -131,13 +140,10 @@ body {
     background-position: center;
     background-image: url("/golden.jpg");
     background-attachment: fixed;
-    background: rgba(240, 240, 240, 0.6);
     left: 0px;
     top: 0px;
-    color: #5a5a5a;
-    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-    font-variant-numeric: lining-nums proportional-nums;
-    line-height: 1.45;
+    opacity: 0.2;
+    z-index: -1;
 }
 
 /* Style the button that is used to open and close the collapsible content */
