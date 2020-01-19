@@ -123,6 +123,7 @@ font-weight: 200;
 }
 
 body {
+    position: relative;
     left: 0px;
     top: 0px;
     color: #5a5a5a;
@@ -132,6 +133,11 @@ body {
 }
 
 body:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     -webkit-background-size: auto 100%;
     -moz-background-size: auto 100%;
     -o-background-size: auto 100%;
@@ -140,8 +146,6 @@ body:after {
     background-position: center;
     background-image: url("/golden.jpg");
     background-attachment: fixed;
-    left: 0px;
-    top: 0px;
     opacity: 0.2;
     z-index: -1;
 }
