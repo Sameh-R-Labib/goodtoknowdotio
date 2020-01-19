@@ -130,10 +130,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("/golden.jpg");
-    /*background-color: whitesmoke;*/
     background-attachment: fixed;
-    background-color: whitesmoke;
-    opacity: 0.79;
+    background: rgba(240, 240, 240, 0.6);
     left: 0px;
     top: 0px;
     color: #5a5a5a;
