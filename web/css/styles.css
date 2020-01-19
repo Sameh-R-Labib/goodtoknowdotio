@@ -134,7 +134,7 @@ body {
     background-attachment: fixed;
     left: 0px;
     top: 0px;
-    color: #222;
+    color: #333;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     font-variant-numeric: lining-nums proportional-nums;
     line-height: 1.45;
@@ -369,7 +369,6 @@ p {
     line-height: 1.68em;
     font-size: 1.38em;
     font-weight: normal;
-    color: black;
     margin-left: 47px;
     margin-right: 47px;
     font-variant-numeric: lining-nums;
