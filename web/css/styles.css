@@ -353,8 +353,10 @@ pre code {
 }
 
 p {
-    line-height: 1.48em;
-    font-size: 1.08em;
+    color: #444444;
+    font-weight: normal;
+    line-height: 1.52em;
+    font-size: 1.14em;
     letter-spacing: .024em;
     margin-left: 23px;
     margin-right: 23px;
