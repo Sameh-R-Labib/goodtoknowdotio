@@ -483,10 +483,10 @@ table {
     font-size: 1.38em;
     font-weight: normal;
     letter-spacing: .024em;
-    max-width: 55em;
+    max-width: 42em;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
-    margin: 12px 10px 14px 70px;
+    margin: 12px 10px 14px 48px;
 }
 
 th {
