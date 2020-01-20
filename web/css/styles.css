@@ -145,15 +145,21 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    -webkit-background-size: auto 100%;
+    /*-webkit-background-size: auto 100%;
     -moz-background-size: auto 100%;
     -o-background-size: auto 100%;
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("/golden.jpg");
+    background-attachment: fixed;*/
+    background-image: url("/golden.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
-    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    opacity: 0.62;
     z-index: -1;
 }
 
