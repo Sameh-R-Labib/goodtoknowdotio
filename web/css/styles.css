@@ -475,7 +475,7 @@ table.not_there {
     border-spacing: 2px;
     border: 0 gray;
     padding: 0;
-    margin: 15px 10px 21px 53px;
+    margin: 15px 10px 21px 39px;
 }
 
 table {
@@ -498,7 +498,7 @@ th {
 
 td {
     vertical-align: top;
-    padding: 0.25em 1em;
+    padding: 0.25em 0.25em;
 }
 
 tr {
