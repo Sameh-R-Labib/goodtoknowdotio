@@ -14,3 +14,4 @@
     <title><?= $html_title ?></title>
 </head>
 <body>
+<div id="main">
