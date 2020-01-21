@@ -59,7 +59,7 @@
 </figure>
 <figure>
     <img class="photo" alt="Bernie Sanders" src="/burnie_sanders.jpg">
-    <figcaption>Bernie Sanders (fights war overspending)</figcaption>
+    <figcaption>Bernie Sanders (opposes overspending on the military industrial complex)</figcaption>
 </figure>
 <figure>
     <img class="photo" alt="Chris Hedges" src="/chris_hedges.jpg">
