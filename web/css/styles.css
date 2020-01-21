@@ -196,12 +196,14 @@ img.photo {
     max-width: 873px;
     display: block;
     margin: 50px auto;
-    padding: 10px 20px;
+    padding: 17px 20px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 figure {
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
