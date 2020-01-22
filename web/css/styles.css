@@ -378,11 +378,9 @@ p {
 }
 
 #maincontent ol, ul {
-    font-size: 1.03em;
     margin-left: 49px;
     margin-right: 73px;
     margin-bottom: 2.5em;
-    line-height: 1.44em;
 }
 
 #maincontent h2 {
@@ -463,8 +461,8 @@ i, em {
 }
 
 #maincontent li {
-    line-height: 1.45em;
-    font-size: 1.17em;
+    line-height: 1.68em;
+    font-size: 1.38em;
     margin-top: .1em;
     margin-bottom: .9em;
 }
