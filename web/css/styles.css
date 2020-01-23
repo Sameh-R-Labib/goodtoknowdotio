@@ -352,12 +352,11 @@ pre code {
     font-size: 1.16em;
     display: block;
     margin-left: 44px;
+    margin-right: 6px;
     margin-top: 20px;
+    margin-bottom: 20px;
     white-space: pre;
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
+    padding: 16px 4px 16px 14px;
 }
 
 p {
