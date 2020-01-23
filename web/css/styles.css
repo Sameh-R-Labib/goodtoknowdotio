@@ -348,6 +348,7 @@ code {
 }
 
 pre code {
+    border-style: double;
     font-size: 1.16em;
     display: block;
     margin-left: 44px;
