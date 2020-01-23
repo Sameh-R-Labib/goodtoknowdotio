@@ -351,10 +351,7 @@ pre code {
     border-style: double;
     font-size: 1.16em;
     display: block;
-    margin-left: 44px;
-    margin-right: 6px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 4px 6px 44px 44px;
     white-space: pre;
     padding: 16px 4px 16px 14px;
 }
