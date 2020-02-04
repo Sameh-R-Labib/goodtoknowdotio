@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Control Panel</h1>
         <h2 class="topofpage">👤 🧰</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Tools</a>
             <a class="greenbtn" href="/ax1/CPTransactions/page">BA-Ledger</a>
