@@ -436,7 +436,7 @@ i, em {
 
 #maincontent blockquote {
     background: #f9f9f9;
-    margin: 2em 47px;
+    margin: 2.3em 47px;
     border-left: 10px solid #ccc;
     quotes: "\201C" "\201D" "\2018" "\2019";
     padding: 10px 20px;
@@ -490,7 +490,7 @@ table {
     max-width: 42em;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
-    margin: 12px 10px 14px 48px;
+    margin: 38px 10px 24px 48px;
 }
 
 th {
