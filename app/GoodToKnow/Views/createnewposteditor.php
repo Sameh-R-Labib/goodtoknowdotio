@@ -18,7 +18,7 @@
         <p>
             <label for="textarea"></label>
             <textarea id="textarea" spellcheck="false" name="markdown" rows="41"
-                      cols="90" wrap="soft">Edit these words and submit.</textarea>
+                      cols="90" wrap="soft">#</textarea>
         </p>
     </section>
     <?php require SUBMITABORT; ?>
