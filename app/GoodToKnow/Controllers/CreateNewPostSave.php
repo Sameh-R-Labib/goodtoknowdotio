@@ -27,7 +27,7 @@ class CreateNewPostSave
         /**
          * Overview
          *   Mainly we are here to store the new Post and its TopicToPost record. Then
-         * redirect to Home page with a confirmation message.
+         * redirect to a form for content creation.
          *
          * So far we have:
          *   - $user_id     (user_id)
