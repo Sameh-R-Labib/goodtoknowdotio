@@ -25,7 +25,7 @@ class NewTopic
         }
 
         if ($is_empty) {
-            $_SESSION['saved_int01'] = 10500000;
+            $_SESSION['saved_int01'] = 10000;
             redirect_to("/ax1/NewTopicName/page");
         } else {
             redirect_to("/ax1/NewTopicInsertPoint/page");

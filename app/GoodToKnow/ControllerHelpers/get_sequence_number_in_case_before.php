@@ -14,7 +14,7 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
      * object's sequence number.
      */
 
-    $sequence_number_of_currently_trailing_object = 21000000;
+    $sequence_number_of_currently_trailing_object = 40000000;
 
 
     /**
@@ -66,13 +66,13 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
 
     $difference = $point_of_reference_sequence_number - $sequence_number_of_currently_trailing_object;
 
-    if ($difference < 2) {
+    $decrease = intdiv($difference, 16);
+
+    if ($decrease < 1) {
 
         breakout(' Please choose another place to put the object. ');
 
     }
-
-    $decrease = intdiv($difference, 2);
 
     return $point_of_reference_sequence_number - $decrease;
 }
