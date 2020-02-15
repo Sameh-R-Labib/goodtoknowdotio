@@ -36,6 +36,24 @@ class Home
         global $is_guest;
         global $when_last_checked_suspend;  // timestamp
 
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Print_r \$community_id: </p>\n<pre>";
+        print_r($community_id);
+        echo "</pre>\n";
+        echo "<p>Print_r \$topic_id: </p>\n<pre>";
+        print_r($topic_id);
+        echo "</pre>\n";
+        echo "<p>Print_r \$post_id: </p>\n<pre>";
+        print_r($post_id);
+        echo "</pre>\n";
+        echo "<p>Print_r \$type_of_resource_requested: </p>\n<pre>";
+        print_r($type_of_resource_requested);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
         self::redirect_if_not_logged_in($sessionMessage, $is_logged_in);
 
         $db = 'not connected';
