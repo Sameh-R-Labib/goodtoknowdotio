@@ -16,7 +16,7 @@ function object_having_lowest_sequence_number(array &$array_of_objects)
 
     $key_of_lowest = -1;
 
-    $lowest_sequence_number = 21000001;
+    $lowest_sequence_number = 40000001;
 
     foreach ($array_of_objects as $key => $object) {
 
