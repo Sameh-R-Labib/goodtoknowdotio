@@ -374,14 +374,14 @@ p {
     line-height: 1.68em;
     font-size: 1.33em;
     font-weight: normal;
-    margin-left: 47px;
-    margin-right: 47px;
+    margin-left: 90px;
+    margin-right: 74px;
     font-variant-numeric: lining-nums;
 }
 
 #maincontent ol, ul {
-    margin-left: 49px;
-    margin-right: 73px;
+    margin-left: 85px;
+    margin-right: 77px;
     margin-bottom: 2.5em;
 }
 
