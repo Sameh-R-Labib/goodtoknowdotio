@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>See One Year's Commodities Sold 📽s</h1>
+        <h1>See 1 Year's Commodities Sold</h1>
         <hr>
         <?php if (!empty($array)): ?>
             <?php $last = count($array) - 1; ?>

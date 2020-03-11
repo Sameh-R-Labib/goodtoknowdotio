@@ -7,7 +7,7 @@
         <p>
             <a class="orangebtn" href="/ax1/StartATaxableIncomeEvent/page">Create‍</a>
             <a class="purplebtn" href="/ax1/WriteOverATaxableIncomeEvent/page">Edit</a>
-            <a class="purplebtn" href="/ax1/GawkAtAllTaxableIncomeEvents/page">See One Year's</a>
+            <a class="purplebtn" href="/ax1/GawkAtAllTaxableIncomeEvents/page">See 1 Year's</a>
             <a class="clearbtn" href="/ax1/NukeATaxableIncomeEvent/page">Delete</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
