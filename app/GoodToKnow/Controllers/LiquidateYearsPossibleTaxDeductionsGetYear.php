@@ -70,7 +70,7 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
          * 3) Give confirmation of deletion.
          */
 
-        $message = " The purge of Possible Tax Deductions for the year <b>{$year_paid}</b> has deleted <b>";
+        $message = " The purge of Possible Tax Write-offs for <b>{$year_paid}</b> has deleted <b>";
         $message .= $num_affected_rows . "</b> records. ";
         breakout($message);
     }

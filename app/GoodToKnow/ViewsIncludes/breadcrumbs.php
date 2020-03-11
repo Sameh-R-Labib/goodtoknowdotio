@@ -56,7 +56,7 @@ switch ($page) {
         echo "<a href=\"/ax1/CPCrypto/page\">Crypto</a>";
         break;
     case 'CPTaxDeductions':
-        echo "<a href=\"/ax1/CPTaxDeductions/page\">Tax Deductions</a>";
+        echo "<a href=\"/ax1/CPTaxDeductions/page\">Tax Write-offs</a>";
         break;
     case 'CPToDoList':
         echo "<a href=\"/ax1/CPToDoList/page\">Tasks</a>";
