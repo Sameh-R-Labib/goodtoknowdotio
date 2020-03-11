@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>1 Year's Tax ✍🏽 Offs</h1>
+        <h1>1 Year's Tax ✍🏽-offs</h1>
         <hr>
         <?php if (!empty($array)): ?>
             <?php $last = count($array) - 1; ?>

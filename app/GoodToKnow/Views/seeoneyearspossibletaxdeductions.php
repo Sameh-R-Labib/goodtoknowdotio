@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/SeeOneYearsPossibleTaxDeductionsYearFilter/page" method="post">
-        <h1>See 1 year's Tax ✍🏽 Offs</h1>
+        <h1>See 1 year's Tax ✍🏽-offs</h1>
         <?php require SESSIONMESSAGE; ?>
     <p>Which year_paid are you inquiring about?</p>
     <section>
