@@ -29,7 +29,7 @@ switch ($page) {
         echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">Account Balances</a>";
         break;
     case 'SeeOneYearsPossibleTaxDeductions':
-        echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">A Year's Deductions</a>";
+        echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Tax Write-offs</a>";
         break;
     case 'GlanceAtMyTasks':
         echo "<a href=\"/ax1/GlanceAtMyTasks/page\">Tasks</a>";
