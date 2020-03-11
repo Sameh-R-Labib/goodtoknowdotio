@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AlterAPossibleTaxDeductionUpdate/page" method="post">
-        <h1>Edit a 🤔 Tax ✍🏽🔽</h1>
+        <h1>Edit a Tax ✍🏽 Off</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Records will be deleted automatically after the fourth year.</span>
         </p>

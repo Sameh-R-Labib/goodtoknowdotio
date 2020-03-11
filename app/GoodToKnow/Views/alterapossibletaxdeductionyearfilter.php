@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/AlterAPossibleTaxDeductionEdit/page" method="post">
-    <h1>Edit a 🤔 Tax ✍🏽🔽</h1>
-    <?php require SESSIONMESSAGE; ?>
+    <form action="/ax1/AlterAPossibleTaxDeductionEdit/page" method="post">
+        <h1>Edit a Tax ✍🏽 Off</h1>
+        <?php require SESSIONMESSAGE; ?>
     <p>Which one?</p>
     <section>
         <?php foreach ($array as $key => $object): ?>
