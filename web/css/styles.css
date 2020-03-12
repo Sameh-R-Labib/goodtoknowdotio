@@ -562,6 +562,8 @@ h2 + p {
 }
 
 #breadcrumbs {
+    font-weight: normal;
+    font-size: 0.88em;
     opacity: 0.93;
     background-color: white;
     position: static;
