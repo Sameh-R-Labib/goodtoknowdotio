@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/CheckMyBankingAccountTxBalancesProcessor/page" method="post">
-    <h1>Check my 🏦ing 📋 ⚖️s</h1>
-    <p>Which Banking Account for Balances?</p>
-    <?php require SESSIONMESSAGE; ?>
+    <form action="/ax1/CheckMyBankingAccountTxBalancesProcessor/page" method="post">
+        <h1>Account Balances</h1>
+        <p>Which Bank Account?</p>
+        <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
         foreach ($array_of_objects as $key => $object): ?>
