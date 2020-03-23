@@ -451,6 +451,10 @@ i, em {
     line-height: 1.6;
 }
 
+blockquote p {
+    margin-left: 1.2em;
+}
+
 #maincontent blockquote:before {
     content: open-quote;
     display: inline;
