@@ -355,7 +355,8 @@ code {
 }
 
 pre code {
-    border-style: double;
+    border-left-style: ridge;
+    border-left-color: #00b3ff;
     font-size: .9em;
     line-height: 1.6em;
     display: block;
