@@ -398,8 +398,8 @@ p {
 #maincontent h2 {
     font-family: inherit;
     font-size: 1.6em;
-    font-weight: bold;
-    color: #545450;
+    font-weight: normal;
+    color: #191919;
     line-height: 150%;
     margin-left: 29px;
     margin-right: 58px;
@@ -430,7 +430,7 @@ i, em {
     font-family: inherit;
     font-weight: normal;
     color: #454541;
-    font-size: 2.6em;
+    font-size: 2.24em;
     line-height: 130%;
     margin: 8px 58px 19px 24px;
 }
