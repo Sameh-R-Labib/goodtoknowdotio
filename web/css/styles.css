@@ -155,14 +155,14 @@ body {
     text-align: left;
     outline: none;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-    font-size: 1.17em;
+    font-size: 1.07em;
     line-height: 1.6em;
     font-weight: bolder;
 }
 
 .collapsible:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
+    font-size: 1.07em;
     color: white;
     float: right;
     margin-left: 5px;
@@ -229,7 +229,7 @@ a.clearbtn:link, a.clearbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/blueclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.73em;
+    font-size: 0.88em;
     font-weight: normal;
     padding: 0 8px;
     text-align: center;
@@ -253,7 +253,7 @@ a.orangebtn:link, a.orangebtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/orangeclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.73em;
+    font-size: 0.88em;
     font-weight: normal;
     padding: 0 8px;
     text-align: center;
@@ -277,7 +277,7 @@ a.purplebtn:link, a.purplebtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/purpleclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.73em;
+    font-size: 0.88em;
     font-weight: normal;
     padding: 0 8px;
     text-align: center;
@@ -301,7 +301,7 @@ a.blackbtn:link, a.blackbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/blackclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.73em;
+    font-size: 0.88em;
     font-weight: normal;
     padding: 0 8px;
     text-align: center;
@@ -325,7 +325,7 @@ a.greenbtn:link, a.greenbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/seafoamclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.73em;
+    font-size: 0.88em;
     font-weight: normal;
     padding: 0 8px;
     text-align: center;
@@ -368,14 +368,14 @@ p {
     color: #2c2c2c;
     font-weight: normal;
     line-height: 1.6em;
-    font-size: 1.38em;
+    font-size: 1.07em;
     letter-spacing: .024em;
     margin-left: 23px;
     margin-right: 23px;
 }
 
 #topbar p {
-    font-size: 1.31em;
+    font-size: 1.07em;
 }
 
 #maincontent p {
@@ -466,13 +466,13 @@ i, em {
 #maincontent footer {
     margin: 0;
     text-align: right;
-    font-size: 1em;
+    font-size: 1.07em;
     font-style: italic;
 }
 
 #maincontent li {
     line-height: 1.6em;
-    font-size: 1.38em;
+    font-size: 1.07em;
     margin-top: .1em;
     margin-bottom: .9em;
 }
@@ -529,7 +529,7 @@ fieldset p {
 
 legend {
     font-variant: small-caps;
-    font-size: 1.5em;
+    font-size: 1.07em;
 }
 
 h2 {
@@ -560,7 +560,6 @@ h2 + p {
 }
 
 #breadcrumbs {
-    font-size: 0.64em;
     opacity: 0.93;
     background-color: white;
     position: static;
