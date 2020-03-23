@@ -64,9 +64,9 @@ class RecurringPaymentSeeMyRecords
 
         }
 
-        $html_title = 'Enjoy ʘ‿ʘ at your 🌀 💳 📽s.';
+        $html_title = 'Enjoy ʘ‿ʘ at your 🌀 💳s.';
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🌀 💳 📽s. ';
+        $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🌀 💳s. ';
 
         require VIEWS . DIRSEP . 'recurringpaymentseemyrecords.php';
     }
