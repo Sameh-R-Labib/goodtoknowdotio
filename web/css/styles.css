@@ -382,9 +382,9 @@ p {
 
 #maincontent p {
     line-height: 1.6em;
-    font-size: 1.33em;
+    font-size: 1.07em;
     font-weight: normal;
-    margin-left: 90px;
+    margin-left: 91px;
     margin-right: 87px;
     font-variant-numeric: lining-nums;
 }
@@ -437,7 +437,7 @@ i, em {
 
 #maincontent h3 {
     font-family: inherit;
-    font-size: 1.41em;
+    font-size: 1.33em;
     font-weight: bold;
     color: #545450;
     line-height: 150%;
@@ -493,8 +493,8 @@ table.not_there {
 }
 
 table {
-    line-height: 1.68em;
-    font-size: 1.38em;
+    line-height: 1.48em;
+    font-size: 1.07em;
     font-weight: normal;
     letter-spacing: .024em;
     max-width: 42em;
