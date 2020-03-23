@@ -452,7 +452,8 @@ i, em {
 }
 
 #maincontent blockquote p {
-    margin-left: 1.2em;
+    margin-left: 2.2em;
+    margin-right: 2.2em;
 }
 
 #maincontent blockquote:before {
