@@ -14,7 +14,7 @@ body {
     top: 0px;
     color: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.03em;
+    line-height: 1.6;
 }
 
 input, textarea, select, button {
@@ -35,7 +35,7 @@ input, textarea, select, button {
     font-variant-numeric: normal;
     font-variant-east-asian: normal;
     font-stretch: normal;
-    font-size: 19px;
+    font-size: 1.07em;
     line-height: normal;
 }
 
@@ -53,14 +53,14 @@ button {
 }
 
 h2 {
-    font-size: 1.32em;
+    font-size: 1.6em;
     margin: 1.86em 0.56em 0.79em;
     /*margin-block-start: 0.63em;*/
     /*margin-block-end: -0.13em;*/
 }
 
 p {
-    font-size: 1.03em;
+    font-size: 1.07em;
     margin: 1.34em 23px 1.34em 29px;
 }
 
