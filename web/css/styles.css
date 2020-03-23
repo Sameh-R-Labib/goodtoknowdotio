@@ -359,9 +359,9 @@ code {
 
 pre code {
     border-style: double;
-    font-size: 1.14em;
+    font-size: .86em;
     display: block;
-    margin: 22px 6px 35px 44px;
+    margin: 22px 28px 35px 91px;
     white-space: pre;
     padding: 16px 4px 16px 14px;
 }
