@@ -397,13 +397,13 @@ p {
 
 #maincontent h2 {
     font-family: inherit;
-    font-size: 1.6em;
+    font-size: 1.57em;
     font-weight: normal;
     color: #191919;
     line-height: 150%;
-    margin-left: 29px;
+    margin-left: 30px;
     margin-right: 58px;
-    margin-top: 52px;
+    margin-top: 76px;
 }
 
 #maincontent h2.topofpage {
