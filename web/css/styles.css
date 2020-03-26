@@ -146,8 +146,7 @@ body {
     display: block;
     margin: auto;
     clear: both;
-    /*background-color: #ffffb3;*/
-    color: #333;
+    color: #5a5a5a;
     cursor: pointer;
     padding: 5px 21px;
     width: 1024px;
