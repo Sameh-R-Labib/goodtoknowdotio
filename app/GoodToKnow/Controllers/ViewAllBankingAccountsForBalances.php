@@ -42,9 +42,9 @@ class ViewAllBankingAccountsForBalances
 
         $show_poof = true;
 
-        $html_title = 'Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s.';
+        $html_title = 'Bank Accounts And Their Starting Balances';
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at all your 🏦ing 📒s for ⚖️s. ';
+        $sessionMessage .= ' Enjoy ʘ‿ʘ at all your bank accounts and their starting balances. ';
 
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';
     }
