@@ -23,7 +23,7 @@ switch ($page) {
         echo "<a href=\"/ax1/RecurringPaymentSeeMyRecords/page\">Recurring Payments</a>";
         break;
     case 'ViewAllBankingAccountsForBalances':
-        echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">List My Bank Accounts</a>";
+        echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">Bank Accounts And Their Starting Balances</a>";
         break;
     case 'CheckMyBankingAccountTxBalances':
         echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">Account Balances</a>";

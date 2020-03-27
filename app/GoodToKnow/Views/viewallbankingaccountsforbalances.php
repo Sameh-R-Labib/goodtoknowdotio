@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>See all 🏦ing 📒s for ⚖️s</h1>
+        <h1>Bank Accounts And Their Starting Balances</h1>
         <hr>
         <?php if (!empty($array_of_objects)): ?>
             <?php $last = count($array_of_objects) - 1; ?>
