@@ -492,6 +492,7 @@ table.not_there {
     border: 0 gray;
     padding: 0;
     margin: 29px 1px 27px 91px;
+    box-sizing: border-box
 }
 
 table {
@@ -504,6 +505,7 @@ table {
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
     margin: 28px 1px 27px 91px;
+    box-sizing: border-box
 }
 
 th {
