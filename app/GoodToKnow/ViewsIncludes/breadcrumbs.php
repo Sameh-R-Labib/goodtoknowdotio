@@ -50,7 +50,7 @@ switch ($page) {
         echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payments</a>";
         break;
     case 'CPBankingAccounts':
-        echo "<a href=\"/ax1/CPBankingAccounts/page\">CP For Bank Accounts And Their Starting Balances</a>";
+        echo "<a href=\"/ax1/CPBankingAccounts/page\">CRUD For Bank Accounts And Their Starting Balances</a>";
         break;
     case 'CPCrypto':
         echo "<a href=\"/ax1/CPCrypto/page\">Crypto</a>";

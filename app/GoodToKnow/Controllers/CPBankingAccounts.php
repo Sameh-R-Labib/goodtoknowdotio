@@ -18,7 +18,7 @@ class CPBankingAccounts
 
         $show_poof = true;
 
-        $html_title = 'CP For Bank Accounts And Their Starting Balances';
+        $html_title = 'CRUD For Bank Accounts And Their Starting Balances';
 
         $sessionMessage .= ' Manage banking accounts. ';
 
