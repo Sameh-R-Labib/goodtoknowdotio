@@ -570,8 +570,7 @@ h2 + p {
     position: static;
     width: 1024px;
     padding: 1px 0 1px 0;
-    margin-left: 4em;
-    margin-right: 1em;
+    margin: auto;
     clear: both;
 }
 
