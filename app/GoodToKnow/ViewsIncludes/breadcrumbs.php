@@ -26,7 +26,7 @@ switch ($page) {
         echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">Bank Accounts And Their Starting Balances</a>";
         break;
     case 'CheckMyBankingAccountTxBalances':
-        echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">Account Balances</a>";
+        echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">See Bank Account Balances</a>";
         break;
     case 'SeeOneYearsPossibleTaxDeductions':
         echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Tax Write-offs</a>";
@@ -44,7 +44,7 @@ switch ($page) {
         echo "<a href=\"/ax1/CPBasics/page\">Tools</a>";
         break;
     case 'CPTransactions':
-        echo "<a href=\"/ax1/CPTransactions/page\">Account Balances</a>";
+        echo "<a href=\"/ax1/CPTransactions/page\">Bank Account Balances</a>";
         break;
     case 'CPRecurringPayments':
         echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payments</a>";
