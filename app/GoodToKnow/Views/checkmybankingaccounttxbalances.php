@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/CheckMyBankingAccountTxBalancesProcessor/page" method="post">
-        <h1>View Balance</h1>
-        <p>Which Account?</p>
+        <h1>See Bank Account Balances</h1>
+        <p>For which bank account?</p>
         <?php require SESSIONMESSAGE; ?>
     <section>
         <?php /** @noinspection PhpUndefinedVariableInspection */
