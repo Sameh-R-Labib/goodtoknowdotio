@@ -9,7 +9,7 @@
             <a class="blackbtn" href="/ax1/CPBankingAccounts/page">Bank Accounts and Their Starting Balances</a>
             <a class="orangebtn" href="/ax1/CPCrypto/page">Crypto</a>
             <a class="clearbtn" href="/ax1/CPToDoList/page">Tasks</a>
-            <a class="purplebtn" href="/ax1/CPRecurringPayments/page">Recurring Payments</a>
+            <a class="purplebtn" href="/ax1/CPRecurringPayments/page">See All Recurring Payments</a>
             <a class="clearbtn" href="/ax1/CPTaxDeductions/page">Tax Write-offs</a>
             <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodities Sold</a></p>

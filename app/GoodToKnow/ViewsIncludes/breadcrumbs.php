@@ -20,13 +20,13 @@ switch ($page) {
         echo "What is this site?";
         break;
     case 'RecurringPaymentSeeMyRecords':
-        echo "<a href=\"/ax1/RecurringPaymentSeeMyRecords/page\">Recurring Payments</a>";
+        echo "<a href=\"/ax1/RecurringPaymentSeeMyRecords/page\">See All Recurring Payments</a>";
         break;
     case 'ViewAllBankingAccountsForBalances':
         echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">Bank Accounts And Their Starting Balances</a>";
         break;
     case 'CheckMyBankingAccountTxBalances':
-        echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">See Bank Account Balances</a>";
+        echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">See One Bank Account's Balances</a>";
         break;
     case 'SeeOneYearsPossibleTaxDeductions':
         echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Tax Write-offs</a>";

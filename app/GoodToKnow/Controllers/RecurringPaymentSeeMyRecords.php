@@ -25,7 +25,7 @@ class RecurringPaymentSeeMyRecords
 
         $db = get_db();
 
-        $html_title = 'Show Me my Recurring Payments';
+        $html_title = 'See All Recurring Payments';
 
         $page = 'RecurringPaymentSeeMyRecords';
 
