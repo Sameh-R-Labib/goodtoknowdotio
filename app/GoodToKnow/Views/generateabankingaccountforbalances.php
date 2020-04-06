@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/GenerateABankingAccountForBalancesProcessor/page" method="post">
-        <h1>Create a 🏦ing 📒 for ⚖️s</h1>
+        <h1>Create Bank Account</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>

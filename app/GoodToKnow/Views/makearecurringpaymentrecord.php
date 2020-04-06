@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/MakeARecurringPaymentRecordProcessor/page" method="post">
-        <h1>Create a 🌀 💳 📽</h1>
+        <h1>Create Recurring Payment</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
