@@ -85,6 +85,6 @@ class BuildABankingTransactionForBalancesProcessor
          * Wrap it up.
          */
 
-        breakout(' A Banking Transaction For Balances was created! ');
+        breakout(' A Bank Account Transaction was created! ');
     }
 }
