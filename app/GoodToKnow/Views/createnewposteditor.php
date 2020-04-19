@@ -17,7 +17,7 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="markdown" rows="41"
+            <textarea id="textarea" spellcheck="false" name="markdown" rows="40"
                       cols="90" wrap="soft">#</textarea>
         </p>
     </section>
