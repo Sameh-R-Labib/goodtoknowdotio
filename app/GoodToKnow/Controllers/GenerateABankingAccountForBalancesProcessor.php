@@ -67,13 +67,13 @@ class GenerateABankingAccountForBalancesProcessor
         $result = $object->save($db, $sessionMessage);
 
         if (!$result) {
-            breakout(' The save for Banking Acct For Balances failed. ');
+            breakout(' Your save for bank account failed 😟 ');
         }
 
         if (!empty($sessionMessage)) {
 
-            breakout(' The save for Banking Acct For Balances did not fail but it did send back a message.
-             Therefore, it probably did not create the Banking Acct For Balances. ');
+            breakout(' Your save for bank account did not fail but it did send back a message.
+             Therefore, it probably did not create the bank account 😟 ');
 
         }
 
@@ -82,6 +82,6 @@ class GenerateABankingAccountForBalancesProcessor
          * Wrap it up.
          */
 
-        breakout(' A Banking Account For Balances was created 👍🏽. ');
+        breakout(' Your new bank account has just been created 👍🏽 ');
     }
 }

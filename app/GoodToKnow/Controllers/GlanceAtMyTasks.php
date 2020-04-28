@@ -31,7 +31,7 @@ class GlanceAtMyTasks
 
         if (!$array || !empty($sessionMessage)) {
 
-            breakout(' I could NOT find any tasks ¯\_(ツ)_/¯. ');
+            breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 
         }
 

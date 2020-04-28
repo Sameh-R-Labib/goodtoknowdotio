@@ -25,7 +25,7 @@ class ForgetATask
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            breakout(' I could NOT find any tasks ¯\_(ツ)_/¯. ');
+            breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
         }
 
         $html_title = 'Which task?';

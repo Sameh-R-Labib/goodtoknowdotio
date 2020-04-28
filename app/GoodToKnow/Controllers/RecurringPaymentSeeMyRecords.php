@@ -41,7 +41,7 @@ class RecurringPaymentSeeMyRecords
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
-            breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯. ');
+            breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯ ');
         }
 
 

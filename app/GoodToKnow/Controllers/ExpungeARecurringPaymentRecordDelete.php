@@ -60,6 +60,6 @@ class ExpungeARecurringPaymentRecordDelete
 
         // Report successful deletion of post.
 
-        breakout(' I have deleted the 🌀 💳 📽. ');
+        breakout(' Your recurring payment has just been deleted. ');
     }
 }

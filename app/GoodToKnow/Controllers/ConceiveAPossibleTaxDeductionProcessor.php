@@ -64,6 +64,6 @@ class ConceiveAPossibleTaxDeductionProcessor
          * Wrap it up.
          */
 
-        breakout(' A Possible Tax Deduction was created! ');
+        breakout(' Your new tax write-off has just been created 👍🏽 ');
     }
 }

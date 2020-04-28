@@ -60,6 +60,6 @@ class FatherACommoditySoldProcessor
          * Wrap it up.
          */
 
-        breakout(' A Commodity Sold was created 👍🏿. ');
+        breakout(' Your new commodity sold has just been created 👍🏿 ');
     }
 }

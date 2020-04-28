@@ -73,7 +73,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array || !empty($sessionMessage)) {
-            breakout(' I could NOT find any banking transactions for balances ¯\_(ツ)_/¯. ');
+            breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
         }
 
 

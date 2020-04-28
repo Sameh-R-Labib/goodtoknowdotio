@@ -43,7 +43,7 @@ function get_html_select_box_containing_the_bank_accounts(mysqli $db, int $user_
 
     if (!$array_of_objects || !empty($sessionMessage)) {
 
-        breakout(' I could NOT find any banking acct for balances ¯\_(ツ)_/¯. ');
+        breakout(' I could NOT find any banking acct for balances ¯\_(ツ)_/¯ ');
 
     }
 

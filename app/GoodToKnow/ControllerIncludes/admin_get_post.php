@@ -17,6 +17,6 @@ $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
 
 if (!$post_object) {
 
-    breakout(' EditMyPostEditor says: Error 011299. ');
+    breakout(' EditMyPostEditor: Error 011299. ');
 
 }

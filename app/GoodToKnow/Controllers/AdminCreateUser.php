@@ -146,6 +146,6 @@ class AdminCreateUser
          * Announce success.
          */
 
-        breakout(' The user account was created! ');
+        breakout(' The new user account has just been created 👍🏽 ');
     }
 }

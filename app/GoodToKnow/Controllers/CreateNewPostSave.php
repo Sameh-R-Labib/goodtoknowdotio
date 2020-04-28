@@ -118,7 +118,7 @@ class CreateNewPostSave
         $result = $post->save($db, $sessionMessage);
 
         if (!$result) {
-            breakout(' CreateNewPostSave says: Unexpected save was unable to save the new post. ');
+            breakout(' CreateNewPostSave: Unexpected save was unable to save the new post. ');
         }
 
 
@@ -133,7 +133,7 @@ class CreateNewPostSave
         $result = $topictopost->save($db, $sessionMessage);
 
         if (!$result) {
-            breakout(' CreateNewPostSave says: Unexpected save was unable to save the TopicToPost. ');
+            breakout(' CreateNewPostSave: Unexpected save was unable to save the TopicToPost. ');
         }
 
 

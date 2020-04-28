@@ -18,7 +18,7 @@ function timezone_form_field_prep(string $field_name): string
 
     if (!date_default_timezone_set($timezone)) {
 
-        breakout(' Invalid PHP time zone submitted 👎🏽. ');
+        breakout(' Invalid PHP time zone submitted 👎🏽 ');
 
     }
 

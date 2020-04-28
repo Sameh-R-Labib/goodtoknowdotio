@@ -22,7 +22,7 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
      * object is the first object (since here we are looking to place the new object BEFORE the point of reference object.
      */
 
-    if ($point_of_reference_sequence_number === 0) breakout(' Please choose another place to put the new object. ');
+    if ($point_of_reference_sequence_number === 0) breakout(' Please choose a different place to put the new object. ');
 
 
     /**

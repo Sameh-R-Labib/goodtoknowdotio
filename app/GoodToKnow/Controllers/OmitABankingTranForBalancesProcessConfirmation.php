@@ -60,6 +60,6 @@ class OmitABankingTranForBalancesProcessConfirmation
 
         // Report successful deletion of post.
 
-        breakout(' I have deleted the 🏦ing 🔃 for ⚖️s. ');
+        breakout(' Your bank transaction has just been deleted. ');
     }
 }

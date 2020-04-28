@@ -61,6 +61,6 @@ class DropACommoditySoldConfirmation
 
         // Report successful deletion of post.
 
-        breakout(' I deleted the Commodity Sold 📽. ');
+        breakout(' Your commodity sold has just been deleted. ');
     }
 }

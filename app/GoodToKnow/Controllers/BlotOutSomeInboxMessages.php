@@ -25,7 +25,7 @@ class BlotOutSomeInboxMessages
 
         if ($inbox_messages_array === false) {
 
-            breakout(' Your inbox is empty 📭. ');
+            breakout(' Your inbox is empty 📭 ');
 
         }
 
