@@ -127,7 +127,7 @@ class Home
             }
         }
 
-        $sessionMessage .= ' <br><br>Post: <a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
+        $sessionMessage .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
             <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a>
             <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
     }
