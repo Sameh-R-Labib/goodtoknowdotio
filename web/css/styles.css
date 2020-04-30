@@ -184,13 +184,13 @@ body {
 }
 
 #maincontent img {
-    max-width: 944px;
+    max-width: 847px;
     margin-top: 19px;
     margin-bottom: 26px;
 }
 
 img.photo {
-    max-width: 873px;
+    max-width: 847px;
     display: block;
     margin: 50px auto;
     padding: 17px 20px;
