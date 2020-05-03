@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/ForgetATaskProcessor/page" method="post">
-        <h1>Delete a Task/💪</h1>
+        <h1>Delete a Task</h1>
         <?php require SESSIONMESSAGE; ?>
     <p>Which Task?</p>
     <section>

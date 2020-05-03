@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/InduceATaskCreate/page" method="post">
-        <h1>Create a Task/💪</h1>
+        <h1>Create a Task</h1>
         <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
