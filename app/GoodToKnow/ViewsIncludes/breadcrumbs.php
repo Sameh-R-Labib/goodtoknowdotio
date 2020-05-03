@@ -32,7 +32,7 @@ switch ($page) {
         echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Tax Write-offs</a>";
         break;
     case 'GlanceAtMyTasks':
-        echo "<a href=\"/ax1/GlanceAtMyTasks/page\">Tasks</a>";
+        echo "<a href=\"/ax1/GlanceAtMyTasks/page\">All My Tasks</a>";
         break;
     case 'GawkAtAllTaxableIncomeEvents':
         echo "<a href=\"/ax1/GawkAtAllTaxableIncomeEvents/page\">A Year's Taxable Income Events</a>";

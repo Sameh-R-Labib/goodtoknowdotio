@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Tasks</h1>
+        <h1>All My Tasks</h1>
         <?php if (!empty($array)): ?>
             <?php foreach ($array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
