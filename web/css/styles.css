@@ -367,19 +367,19 @@ p {
     color: #212121;
     font-weight: normal;
     line-height: 1.6em;
-    font-size: 1.07em;
+    font-size: 1.1em;
     letter-spacing: .024em;
     margin-left: 23px;
     margin-right: 23px;
 }
 
 #topbar p {
-    font-size: 1.07em;
+    font-size: 1.1em;
 }
 
 #maincontent p {
     line-height: 1.6em;
-    font-size: 1.07em;
+    font-size: 1.1em;
     font-weight: normal;
     margin-left: 91px;
     margin-right: 87px;
@@ -470,13 +470,13 @@ i, em {
 #maincontent footer {
     margin: 0;
     text-align: right;
-    font-size: 1.07em;
+    font-size: 1.1em;
     font-style: italic;
 }
 
 #maincontent li {
     line-height: 1.6em;
-    font-size: 1.07em;
+    font-size: 1.1em;
     margin-top: .1em;
     margin-bottom: .9em;
 }
@@ -496,7 +496,7 @@ table.not_there {
 
 table {
     line-height: 1.6em;
-    font-size: 1.07em;
+    font-size: 1.1em;
     font-weight: normal;
     letter-spacing: .024em;
     max-width: 43em;
@@ -534,7 +534,7 @@ fieldset p {
 
 legend {
     font-variant: small-caps;
-    font-size: 1.07em;
+    font-size: 1.1em;
 }
 
 h2 {

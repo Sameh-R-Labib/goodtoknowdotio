@@ -35,7 +35,7 @@ input, textarea, select, button {
     font-variant-numeric: normal;
     font-variant-east-asian: normal;
     font-stretch: normal;
-    font-size: 1.07em;
+    font-size: 1.1em;
     line-height: normal;
 }
 
@@ -60,7 +60,7 @@ h2 {
 }
 
 p {
-    font-size: 1.07em;
+    font-size: 1.1em;
     margin: 1.34em 23px 1.34em 29px;
 }
 
