@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/KommunityDescriptionEditorFormProcessor/page" method="post">
-        <h1><?= $saved_str01 ?> Description</h1>
+        <h2><?= $saved_str01 ?> Description</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 230 bytes</span>
         </p>
@@ -8,7 +8,7 @@
         <section>
             <p>
                 <label for="textarea"></label>
-                <textarea id="textarea" spellcheck="false" name="text" rows="41"
+                <textarea id="textarea" spellcheck="false" name="text" rows="28"
                           cols="77" wrap="soft"
                           maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
                     echo $community_object->community_description; ?></textarea>
