@@ -85,6 +85,6 @@ class BuildABankingTransactionForBalancesProcessor
          * Wrap it up.
          */
 
-        breakout(' Your new bank account transaction has just been created 👍🏽 ');
+        breakout(' Your new transaction has just been created 👍🏽 ');
     }
 }
