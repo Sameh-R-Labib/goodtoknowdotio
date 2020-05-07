@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/NewCommunityProcessor/page" method="post">
-    <h1>Create 🧑🏿‍🤝‍🧑🏽</h1>
+    <h2>Create A Community</h2>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">⚠️ all fields required ✅ emoji</span>
     </p>

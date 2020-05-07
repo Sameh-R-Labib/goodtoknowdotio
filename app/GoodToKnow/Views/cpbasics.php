@@ -4,7 +4,7 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Basics</h1>
-        <p><span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">To get new topic or 🧑🏿‍🤝‍🧑🏽 request it from ♠👔♠.</span></span>
+        <p><span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">To get new topic or community request it from admin.</span></span>
             <a class="blackbtn" href="/ax1/AuthorDeletesOwnPost/page">Delete 📄</a>
             <a class="orangebtn" href="/ax1/ByUsernameMessage/page">💬 User</a>
             <a class="clearbtn" href="/ax1/BlotOutSomeInboxMessages/page">Delete Some 📥 💬s</a>

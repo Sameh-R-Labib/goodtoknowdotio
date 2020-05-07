@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/KommunityDescriptionEditorProcessor/page" method="post">
-    <h1>🧑🏿‍🤝‍🧑🏽 Description Editor</h1>
-    <?php require SESSIONMESSAGE; ?>
+    <form action="/ax1/KommunityDescriptionEditorProcessor/page" method="post">
+        <h2>Community Description Editor</h2>
+        <?php require SESSIONMESSAGE; ?>
     <p>Enter the Name of Community</p>
     <section>
         <p>
