@@ -41,9 +41,9 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
         /** @noinspection PhpUndefinedVariableInspection */
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at One Year of your Taxable 💸 Event 📽s. ';
+        $sessionMessage .= " Here is one year of your taxable income event records. ";
 
-        $html_title = 'Enjoy ʘ‿ʘ at One Year of your Taxable 💸 Event 📽s.';
+        $html_title = "One year of your taxable income event records";
 
         $page = 'GawkAtAllTaxableIncomeEvents';
 

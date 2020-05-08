@@ -30,9 +30,9 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
             $item->comment = nl2br($item->comment, false);
         }
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at One Year of your 🤔 Tax ✍🏽🔽s. ';
+        $sessionMessage .= " Here are one year's tax write-offs. ";
 
-        $html_title = 'Enjoy ʘ‿ʘ at One Year of your 🤔 Tax ✍🏽🔽s.';
+        $html_title = "One year\'s tax write-offs.";
 
         $page = 'SeeOneYearsPossibleTaxDeductions';
 

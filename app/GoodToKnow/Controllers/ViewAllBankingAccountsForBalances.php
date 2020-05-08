@@ -42,9 +42,9 @@ class ViewAllBankingAccountsForBalances
 
         $show_poof = true;
 
-        $html_title = 'Bank Accounts And Their Starting Balances';
+        $html_title = "The Bank Accounts";
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at all your bank accounts and their starting balances. ';
+        $sessionMessage .= " Here are all your bank accounts. ";
 
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';
     }

@@ -50,9 +50,9 @@ class SpyCommoditiesSoldYearFilter
         }
 
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at One Year\'s Commodities Sold 📽s. ';
+        $sessionMessage .= " Here is one year's commodities sold records. ";
 
-        $html_title = 'Enjoy ʘ‿ʘ at One Year\'s Commodities Sold 📽s.';
+        $html_title = "One year's commodities sold records";
 
         $page = 'SpyCommoditiesSoldYear';
 

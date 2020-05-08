@@ -29,7 +29,7 @@ class BitcoinSeeMyRecords
 
         }
 
-        $html_title = 'Enjoy ʘ‿ʘ at your ₿.';
+        $html_title = 'Your ₿ records';
 
         $page = 'BitcoinSeeMyRecords';
 
@@ -37,7 +37,7 @@ class BitcoinSeeMyRecords
 
         /** @noinspection PhpUndefinedVariableInspection */
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at your ₿ 📽s. ';
+        $sessionMessage .= ' Here are your ₿ records. ';
 
         require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';
     }

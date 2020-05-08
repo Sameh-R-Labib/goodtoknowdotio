@@ -147,7 +147,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         $show_poof = true;
 
-        $sessionMessage .= ' Enjoy ʘ‿ʘ at your 🏦ing 📋 ⚖️s. ';
+        $sessionMessage .= ' Here are your transactions and their balances. ';
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';
     }
