@@ -6,9 +6,7 @@
         <h1>All My Tasks</h1>
         <?php if (!empty($array)): ?>
             <?php foreach ($array as $key => $object): ?>
-                <h2 class="topofpage"><?= $object->label ?></h2>
-                <p><?= $object->next ?></p>
-                <p><?= $object->cycle_type ?></p>
+                <p>➤ <?= $object->label ?> <?= $object->next ?> <?= $object->cycle_type ?></p>
             <?php endforeach; ?>
         <?php else: ?>
             <p>There are no to-do tasks.</p>
