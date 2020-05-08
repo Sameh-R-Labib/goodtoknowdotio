@@ -14,9 +14,9 @@
             <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodities Sold</a></p>
         <h2>♠👔♠ 🧰</h2>
-        <p><a class="greenbtn" href="/ax1/CPPurges/page">Purging Old Stuff</a>
-            <a class="clearbtn" href="/ax1/CPAccounts/page">Account Management</a>
-            <a class="orangebtn" href="/ax1/CPPostings/page">Post Related</a>
+        <p><a class="greenbtn" href="/ax1/CPPurges/page">Cleanup</a>
+            <a class="clearbtn" href="/ax1/CPAccounts/page">User</a>
+            <a class="orangebtn" href="/ax1/CPPostings/page">Blog</a>
         </p>
         <?php require COLLAGE; ?>
     </div>
