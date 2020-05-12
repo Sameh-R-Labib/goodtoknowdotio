@@ -26,7 +26,7 @@ switch ($page) {
         echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">Bank Accounts And Their Starting Balances</a>";
         break;
     case 'CheckMyBankingAccountTxBalances':
-        echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">See One Bank Account's Balances</a>";
+        echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">See B. Account</a>";
         break;
     case 'SeeOneYearsPossibleTaxDeductions':
         echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Tax Write-offs</a>";
