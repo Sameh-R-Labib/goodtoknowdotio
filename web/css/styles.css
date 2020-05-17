@@ -434,9 +434,9 @@ i, em {
 
 #maincontent h3 {
     font-family: inherit;
-    font-size: 1.33em;
-    font-weight: bold;
-    color: #545450;
+    font-size: 1.4em;
+    font-weight: normal;
+    color: #242416;
     line-height: 150%;
     margin: 31px 58px -5px 60px;
 }
