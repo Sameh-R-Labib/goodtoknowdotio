@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>See all ₿ 📽s</h1>
+        <h1>Show ₿ 📽s</h1>
         <hr>
         <?php if (!empty($array_of_bitcoin_objects)): ?>
             <?php $last = count($array_of_bitcoin_objects) - 1; ?>
