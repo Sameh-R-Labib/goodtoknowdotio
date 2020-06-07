@@ -5,7 +5,7 @@
     <div id="maincontent">
         <h2 class="topofpage">👤 🧰</h2>
         <p><a class="clearbtn" href="/ax1/CPBasics/page">Tools</a>
-            <a class="greenbtn" href="/ax1/CPTransactions/page">Bank Account Balances</a>
+            <a class="greenbtn" href="/ax1/CPTransactions/page">Bank Account Ledger</a>
             <a class="orangebtn" href="/ax1/CPCrypto/page">Crypto</a>
             <a class="blackbtn" href="/ax1/CPBankingAccounts/page">The Bank Accounts</a>
             <a class="clearbtn" href="/ax1/CPToDoList/page">Tasks</a>

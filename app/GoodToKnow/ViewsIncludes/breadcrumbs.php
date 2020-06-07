@@ -44,7 +44,7 @@ switch ($page) {
         echo "<a href=\"/ax1/CPBasics/page\">Tools</a>";
         break;
     case 'CPTransactions':
-        echo "<a href=\"/ax1/CPTransactions/page\">Bank Account Balances</a>";
+        echo "<a href=\"/ax1/CPTransactions/page\">Bank Account Ledger</a>";
         break;
     case 'CPRecurringPayments':
         echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payments</a>";
