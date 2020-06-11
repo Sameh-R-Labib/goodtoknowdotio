@@ -15,8 +15,8 @@
             </p>
             <p>
                 <label for="price_sold">Price Sold <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts are being displayed having 8 instead of 2 decimal places then let the admin
-                        know to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
+                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="price_sold" name="price_sold" type="text" required minlength="1" maxlength="24" size="24"
                        placeholder="150.24">
             </p>
@@ -27,8 +27,8 @@
             </p>
             <p>
                 <label for="commodity_amount">Commodity Amount <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts are being displayed having 8 instead of 2 decimal places then let the admin
-                        know to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
+                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="commodity_amount" name="commodity_amount" type="text" required minlength="1" maxlength="24"
                        size="24" placeholder="150.24">
             </p>

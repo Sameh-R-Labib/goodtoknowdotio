@@ -94,6 +94,6 @@ class PopulateABankingAccountForBalancesSubmit
          * Report success.
          */
 
-        breakout(" I've updated the BankingAcctForBalances <b>{$object->acct_name}</b> record. ");
+        breakout(" I've updated the record for bank account <b>{$object->acct_name}</b>. ");
     }
 }

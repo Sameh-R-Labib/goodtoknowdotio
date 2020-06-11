@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>The Bank Accounts</h1>
+        <h1>Bank Accounts</h1>
         <hr>
         <?php if (!empty($array_of_objects)): ?>
             <?php $last = count($array_of_objects) - 1; ?>
@@ -17,7 +17,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>There are no banking accounts for balances.</p>
+            <p>There are no bank accounts.</p>
         <?php endif; ?>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>

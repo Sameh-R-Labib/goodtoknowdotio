@@ -42,7 +42,7 @@ class ViewAllBankingAccountsForBalances
 
         $show_poof = true;
 
-        $html_title = "The Bank Accounts";
+        $html_title = "Bank Account";
 
         $sessionMessage .= " Here are all your bank accounts. ";
 
