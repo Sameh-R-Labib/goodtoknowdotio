@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Tasks</h1>
         <p>
             <a class="clearbtn" href="/ax1/InduceATask/page">Create</a>
             <a class="orangebtn" href="/ax1/FeatureATask/page">Edit‍</a>

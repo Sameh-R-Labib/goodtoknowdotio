@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Commodity Sold 📽</h1>
         <p>
             <a class="greenbtn" href="/ax1/FatherACommoditySold/page">Create</a>
             <a class="purplebtn" href="/ax1/FineTuneACommoditySold/page">Edit</a>

@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Tax ✍🏽-offs</h1>
         <p>
             <a class="orangebtn" href="/ax1/ConceiveAPossibleTaxDeduction/page">Create</a>
             <a class="clearbtn" href="/ax1/AlterAPossibleTaxDeduction/page">Edit</a>

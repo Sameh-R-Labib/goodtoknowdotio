@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>🌀 💳</h1>
         <p>
             <a class="greenbtn" href="/ax1/MakeARecurringPaymentRecord/page">Create</a>
             <a class="purplebtn" href="/ax1/PolishARecurringPaymentRecord/page">Edit</a>

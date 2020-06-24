@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Crypto</h1>
         <p>
             <a class="blackbtn" href="/ax1/InitializeABitcoinRecord/page">Create</a>
             <a class="orangebtn" href="/ax1/EditABitcoinRecord/page">Edit</a>

@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Purges</h1>
         <p><a href="/ax1/PurgeOldMessages/page">Purge Old Email Messages</a></p>
         <p><a href="/ax1/PurgeNinetyDayOldBTFBs/page">Purge 90 Day Old Bank Transactions</a></p>
         <p><a href="/ax1/LiquidateYearsPossibleTaxDeductions/page">Purge a Specific Year's Tax Write-offs</a></p>

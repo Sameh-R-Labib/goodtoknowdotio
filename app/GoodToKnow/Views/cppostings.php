@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Postings</h1>
         <p><a href="/ax1/NewCommunity/page">Create Community</a></p>
         <p><a href="/ax1/KommunityDescriptionEditor/page">Edit A Community Description</a></p>
         <p><a href="/ax1/NewTopic/page">Create Topic</a></p>

@@ -3,7 +3,6 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>CRUD For Bank Accounts</h1>
         <p>
             <a class="purplebtn" href="/ax1/GenerateABankingAccountForBalances/page">Create</a>
             <a class="blackbtn" href="/ax1/PopulateABankingAccountForBalances/page">Edit</a>
