@@ -509,13 +509,13 @@ table {
 th {
     background-color: #ddd;
     color: #4c4c4c;
-    /*padding: 0.4em 0.4em;*/
+    padding: 0.4em 0.4em;
     text-align: left;
 }
 
 td {
     vertical-align: top;
-    /*padding: 0.38em 0.38em;*/
+    padding: 0.38em 0.38em;
 }
 
 tr {
