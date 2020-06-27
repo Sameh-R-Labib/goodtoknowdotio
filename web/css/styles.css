@@ -495,14 +495,12 @@ table.not_there {
 }
 
 table {
-    table-layout: fixed;
-    width: 100%;
     line-height: 1.6em;
     font-size: 1.1em;
     font-weight: normal;
     letter-spacing: .024em;
-    /*max-width: 40em;*/
-    /*min-width: 37em;*/
+    max-width: 43em;
+    min-width: 40em;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
     margin: 28px 1px 27px 91px;
@@ -511,13 +509,13 @@ table {
 th {
     background-color: #ddd;
     color: #4c4c4c;
-    padding: 0.4em 0.4em;
+    /*padding: 0.4em 0.4em;*/
     text-align: left;
 }
 
 td {
     vertical-align: top;
-    padding: 0.38em 0.38em;
+    /*padding: 0.38em 0.38em;*/
 }
 
 tr {
