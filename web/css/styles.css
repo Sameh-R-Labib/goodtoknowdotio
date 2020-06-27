@@ -577,7 +577,7 @@ h2 + p {
     background: rgba(255, 255, 255, 0.01);
     position: static;
     width: 1024px;
-    height: 183px;
+    height: 180px;
     margin: auto;
     clear: both;
 }
@@ -616,7 +616,7 @@ h2 + p {
 #scriptmessage {
     background-color: rgba(233, 243, 255, 0.78);
     width: 865px;
-    height: 183px;
+    height: 180px;
     margin: auto;
     float: left;
 }
@@ -651,7 +651,7 @@ h2 + p {
     opacity: 0.45;
     float: left;
     width: 158px;
-    height: 62px;
+    height: 61px;
     margin: auto;
 }
 
@@ -660,7 +660,7 @@ h2 + p {
     opacity: 0.97;
     float: left;
     width: 108px;
-    height: 70px;
+    height: 68px;
     margin: auto;
     padding: 25px;
 }
