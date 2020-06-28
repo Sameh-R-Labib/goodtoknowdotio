@@ -373,6 +373,11 @@ p {
     margin-right: 23px;
 }
 
+#breadcrumbs p {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
 #topbar p {
     font-size: 1.1em;
 }
