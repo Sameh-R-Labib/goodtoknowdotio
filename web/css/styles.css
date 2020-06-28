@@ -374,8 +374,7 @@ p {
 }
 
 #scriptoutput p {
-    margin: 5px;
-    line-height: 1;
+    margin: 9px;
 }
 
 #breadcrumbs p {
