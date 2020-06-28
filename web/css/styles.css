@@ -669,10 +669,9 @@ h2 + p {
     background-color: rgba(75, 145, 215, 0.34);
     opacity: 0.97;
     float: left;
-    width: 82px;
-    height: 68px;
-    margin: auto;
-    padding: 12px;
+    width: 132px;
+    height: 119px;
+    margin: 12px;
 }
 
 #inboxlink {
