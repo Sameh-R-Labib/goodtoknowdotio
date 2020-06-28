@@ -373,6 +373,11 @@ p {
     margin-right: 23px;
 }
 
+#scriptoutput p {
+    margin: 5px;
+    line-height: 1;
+}
+
 #breadcrumbs p {
     margin-top: 5px;
     margin-bottom: 5px;
