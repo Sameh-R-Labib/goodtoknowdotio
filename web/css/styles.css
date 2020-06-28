@@ -671,7 +671,7 @@ h2 + p {
     float: left;
     width: 132px;
     height: 119px;
-    margin: 12px;
+    padding: 12px;
 }
 
 #inboxlink {
