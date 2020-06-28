@@ -557,7 +557,7 @@ h2 + p {
     background-color: rgba(255, 255, 255, 0.01);
     position: static;
     width: 1024px;
-    height: 70px;
+    height: 57px;
     margin: auto;
     clear: both;
 }
@@ -618,7 +618,7 @@ h2 + p {
     opacity: 0.51;
     background-color: #008A70;
     width: 239px;
-    height: 70px;
+    height: 57px;
     margin: auto;
     float: left;
 }
@@ -678,7 +678,7 @@ h2 + p {
     opacity: 0.45;
     background-color: lightslategray;
     width: 216px;
-    height: 70px;
+    height: 57px;
     margin: auto;
     float: left;
 }
@@ -687,7 +687,7 @@ h2 + p {
     opacity: 0.48;
     background-color: #ff9a10;
     width: 258px;
-    height: 70px;
+    height: 57px;
     margin: auto;
     float: left;
 }
