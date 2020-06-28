@@ -373,6 +373,10 @@ p {
     margin-right: 23px;
 }
 
+#footerbar p {
+    margin: 14px;
+}
+
 #scriptoutput p {
     margin: 9px;
 }
