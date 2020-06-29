@@ -578,8 +578,8 @@ h2 + p {
 
 #breadcrumbs {
     line-height: 1;
-    opacity: 0.93;
-    background-color: #ffe6ea;
+    opacity: 0.73;
+    background-color: #ffe8ec;
     position: static;
     width: 1024px;
     padding: 1px 0 1px 0;
