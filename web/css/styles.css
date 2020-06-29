@@ -578,8 +578,8 @@ h2 + p {
 
 #breadcrumbs {
     line-height: 1;
-    opacity: 0.73;
-    background-color: #ffe8ec;
+    opacity: 0.7;
+    background-color: #fffbf7;
     position: static;
     width: 1024px;
     padding: 1px 0 1px 0;
@@ -619,7 +619,7 @@ h2 + p {
 }
 
 #sendmessage {
-    opacity: 0.51;
+    opacity: 0.64;
     background-color: #008A70;
     width: 258px;
     height: 57px;
@@ -679,7 +679,7 @@ h2 + p {
 }
 
 #inboxlink {
-    opacity: 0.45;
+    opacity: 0.65;
     background-color: lightslategray;
     width: 235px;
     height: 57px;
@@ -688,7 +688,7 @@ h2 + p {
 }
 
 #logindiv {
-    opacity: 0.48;
+    opacity: 0.68;
     background-color: #ff9a10;
     width: 277px;
     height: 57px;
