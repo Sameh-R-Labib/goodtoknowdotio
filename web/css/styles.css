@@ -394,10 +394,7 @@ p {
     line-height: 1.6em;
     font-size: 1.1em;
     font-weight: normal;
-    margin-top: 1.58em;
-    margin-bottom: .7em;
-    margin-left: 91px;
-    margin-right: 87px;
+    margin: 1.58em 87px -0.28em 91px;
     font-variant-numeric: lining-nums;
 }
 
