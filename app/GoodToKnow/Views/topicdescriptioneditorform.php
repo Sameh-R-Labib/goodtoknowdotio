@@ -9,7 +9,7 @@
             <p>
                 <label for="textarea"></label>
                 <textarea id="textarea" spellcheck="false" name="text" rows="28"
-                          cols="77" wrap="soft"
+                          cols="83" wrap="soft"
                           maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
                     echo $topic_object->topic_description; ?></textarea>
         </p>

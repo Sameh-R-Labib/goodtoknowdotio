@@ -17,8 +17,8 @@
     <section>
         <p>
             <label for="textarea"></label>
-            <textarea id="textarea" spellcheck="false" name="markdown" rows="39"
-                      cols="77" wrap="soft">#</textarea>
+            <textarea id="textarea" spellcheck="false" name="markdown" rows="32"
+                      cols="83" wrap="soft">#</textarea>
         </p>
     </section>
     <?php require SUBMITABORT; ?>
