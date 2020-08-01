@@ -343,7 +343,7 @@ a.greenbtn:active {
 }
 
 code {
-    color: #000093;
+    color: #000023;
     text-transform: none;
     letter-spacing: normal;
     word-spacing: -0.2ex;
@@ -355,7 +355,7 @@ pre code {
     border-left-style: ridge;
     border-left-color: #e3e3e3;
     font-size: .83em;
-    color: #000073;
+    color: #00001b;
     line-height: 1.6em;
     display: block;
     margin: 35px 28px 27px 91px;
