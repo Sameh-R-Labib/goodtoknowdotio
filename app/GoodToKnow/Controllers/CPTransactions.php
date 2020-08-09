@@ -20,7 +20,7 @@ class CPTransactions
 
         $html_title = 'Transactions';
 
-        $sessionMessage .= ' Manage <em>transactions</em> of bank accounts. ';
+        $sessionMessage .= ' Manage my copy of my bank transactions. ';
 
         require VIEWS . DIRSEP . 'cptransactions.php';
     }
