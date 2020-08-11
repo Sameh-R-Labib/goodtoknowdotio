@@ -343,7 +343,7 @@ a.greenbtn:active {
 }
 
 code {
-    color: #005aab;
+    color: #0a4f9f;
     text-transform: none;
     letter-spacing: normal;
     word-spacing: -0.2ex;
@@ -426,7 +426,7 @@ b, strong {
 i, em {
     font-style: italic;
     font-weight: 300;
-    color: #4980c2;
+    color: #4471b0;
 }
 
 #maincontent hr {
