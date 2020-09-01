@@ -581,7 +581,7 @@ h2 + p {
     background-color: #fffbf7;
     position: static;
     width: 1024px;
-    height: 87px;
+    height: 62px;
     padding: 1px 0 1px 0;
     margin: auto;
     clear: both;
@@ -599,7 +599,7 @@ h2 + p {
 #maincontent {
     background-color: white;
     position: static;
-    height: 61vh;
+    height: 60vh;
     width: 1024px;
     padding: 13px 0 83px 0;
     margin: auto;
