@@ -570,6 +570,7 @@ h2 + p {
     background-color: #ff9a10;
     position: static;
     width: 1024px;
+    height: 87px;
     padding: 0;
     margin: auto;
     clear: both;
