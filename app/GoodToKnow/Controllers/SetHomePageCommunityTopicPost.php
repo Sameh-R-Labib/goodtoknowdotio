@@ -127,7 +127,7 @@ class SetHomePageCommunityTopicPost
 
             $publish_date = date("m/d/Y T", $epoch_time);
 
-            $_SESSION['post_full_name'] = ' Description: ' . $post_object->extensionfortitle . ' [ ' .
+            $_SESSION['post_full_name'] = $post_object->extensionfortitle . ' [' .
                 $publish_date . ']';
 
 
