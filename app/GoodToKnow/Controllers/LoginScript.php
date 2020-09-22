@@ -109,7 +109,7 @@ class LoginScript
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $user->id_of_default_community);
 
         if (!$special_topic_array) {
-            $error .= " I did'nt find any topics for your default community. ";
+            $error .= " I didn't find any topics for your default community. ";
             $_SESSION['message'] .= $error;
 
             redirect_to("/ax1/Home/page");
