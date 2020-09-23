@@ -164,7 +164,7 @@ class Home
 
         $time_since_refresh = time() - $last_refresh_communities;  // seconds
 
-        if ($time_since_refresh > 10800) {
+        if ($time_since_refresh > 250) {
             if ($db == 'not connected') {
                 $db = db_connect($error);
 
@@ -190,12 +190,12 @@ class Home
         /**
          * If the type_of_resource_requested == 'community'
          * and the special_topic_array has not been refreshed
-         * for a period longer than 12 minutes then refresh it.
+         * for a period longer than 4 minutes then refresh it.
          */
 
         $time_since_refresh = time() - $last_refresh_topics;
 
-        if ($time_since_refresh > 720 && $type_of_resource_requested == 'community') {
+        if ($time_since_refresh > 240 && $type_of_resource_requested == 'community') {
             if ($db == 'not connected') {
                 $db = db_connect($error);
 
