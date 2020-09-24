@@ -146,9 +146,9 @@ $saved_int01 = (isset($_SESSION['saved_int01'])) ? $_SESSION['saved_int01'] : 0;
 
 $saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
 
-$is_logged_in = (!empty($user_id)) ? true : false;
+$is_logged_in = !empty($user_id);
 
-$is_admin = ($role === 'admin') ? true : false;
+$is_admin = $role === 'admin';
 
 $is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
 
