@@ -13,6 +13,8 @@ class TestCode
          * html special characters especially when code blocks or inline code is involved.
          */
 
+        global $markdown;
+
         $markdown = <<<DEMO
 Regular >>
 

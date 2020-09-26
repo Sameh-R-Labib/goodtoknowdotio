@@ -9,6 +9,7 @@ class EditMyPostEditor
     function page()
     {
         global $sessionMessage;
+        global $markdown;
         global $user_id;
         global $url_of_most_recent_upload;
 

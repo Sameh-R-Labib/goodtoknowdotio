@@ -15,6 +15,7 @@ class EditMyPostEditProcessor
          */
 
         global $sessionMessage;
+        global $markdown;
         global $saved_str01;                // path for markdown file
         global $saved_str02;                // path for html file
         global $community_id;

@@ -27,6 +27,7 @@ class TransferPostOwnershipGetPost
          */
 
         global $html_title;
+        global $long_title_of_post;
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 

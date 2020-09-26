@@ -13,6 +13,8 @@ class GiveComsChoices
         global $sessionMessage;
         global $saved_str01; // Has user's username
         global $html_title;
+        global $coms_user_belongs_to;
+
 
         kick_out_nonadmins();
 

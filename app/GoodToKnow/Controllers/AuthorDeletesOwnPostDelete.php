@@ -16,6 +16,7 @@ class AuthorDeletesOwnPostDelete
         global $sessionMessage;
         global $user_id;
         global $html_title;
+        global $long_title_of_post;
 
         kick_out_loggedoutusers();
 

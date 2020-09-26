@@ -36,6 +36,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $user_id;
         global $show_poof;
         global $html_title;
+        global $array;
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
