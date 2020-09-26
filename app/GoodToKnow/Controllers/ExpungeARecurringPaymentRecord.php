@@ -15,6 +15,7 @@ class ExpungeARecurringPaymentRecord
 
         global $sessionMessage;
         global $user_id;            // We need this.
+        global $html_title;
 
         kick_out_loggedoutusers();
 

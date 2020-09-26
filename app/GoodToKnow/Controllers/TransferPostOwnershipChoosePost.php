@@ -14,6 +14,8 @@ class TransferPostOwnershipChoosePost
          * For each post we will show the complete name of the post along with the username of its author.
          */
 
+        global $html_title;
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_posts_along_with_their_authors.php';
 
 

@@ -13,6 +13,7 @@ class ControlPanel
         global $sessionMessage;
         global $special_community_array;
         global $type_of_resource_requested;
+        global $html_title;
 
         if (!$is_logged_in or $is_admin) {
             breakout(' Hey, either your session timed out or you are an admin and do not belong here in this CP. ');

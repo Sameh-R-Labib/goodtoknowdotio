@@ -18,6 +18,7 @@ class MessageTheAuthor
          */
 
         global $sessionMessage;
+        global $html_title;
         global $author_username;
         global $post_name;
         global $topic_name;

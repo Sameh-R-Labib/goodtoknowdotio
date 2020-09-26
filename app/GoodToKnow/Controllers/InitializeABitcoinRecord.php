@@ -20,6 +20,8 @@ class InitializeABitcoinRecord
 
         global $sessionMessage;
 
+        global $html_title;
+
         global $timezone;
 
         kick_out_loggedoutusers();

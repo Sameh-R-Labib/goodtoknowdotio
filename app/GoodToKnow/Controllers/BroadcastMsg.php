@@ -6,6 +6,7 @@ class BroadcastMsg
 {
     function page()
     {
+        global $html_title;
         global $sessionMessage;
         global $user_username;
         global $url_of_most_recent_upload;

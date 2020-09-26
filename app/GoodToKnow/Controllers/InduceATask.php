@@ -10,6 +10,8 @@ class InduceATask
          * Create a task record based on a label for it.
          */
 
+        global $html_title;
+
         global $sessionMessage;
 
         global $timezone;

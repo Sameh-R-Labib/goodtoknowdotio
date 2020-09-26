@@ -16,6 +16,7 @@ class WriteOverATaxableIncomeEventEdit
          * 4) Present a form which is populated with data from the taxable_income_event object.
          */
 
+        global $html_title;
 
         /** @var $object */
 

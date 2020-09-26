@@ -8,6 +8,7 @@ class DefaultCommunity
     {
         global $sessionMessage;
         global $special_community_array;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

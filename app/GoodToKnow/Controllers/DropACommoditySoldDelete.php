@@ -13,6 +13,7 @@ class DropACommoditySoldDelete
          *
          */
 
+        global $html_title;
 
         /** @var $object */
 

@@ -14,6 +14,7 @@ class FeatureATask
 
         global $sessionMessage;
         global $user_id;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

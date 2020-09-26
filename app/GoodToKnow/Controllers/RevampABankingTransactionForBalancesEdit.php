@@ -18,6 +18,7 @@ class RevampABankingTransactionForBalancesEdit
          * 4) Present a form which is populated with data from the banking_transaction_for_balances object.
          */
 
+        global $html_title;
 
         /** @var $object */
         /** @var $db */

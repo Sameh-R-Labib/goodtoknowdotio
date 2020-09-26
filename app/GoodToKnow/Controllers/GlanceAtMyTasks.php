@@ -19,6 +19,7 @@ class GlanceAtMyTasks
         global $show_poof;
         global $is_admin;
         global $is_guest;
+        global $html_title;
         global $special_community_array;
         global $type_of_resource_requested;
 

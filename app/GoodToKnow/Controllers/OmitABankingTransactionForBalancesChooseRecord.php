@@ -16,6 +16,8 @@ class OmitABankingTransactionForBalancesChooseRecord
          * The ultimate goal is to present a BankingTransactionForBalances for deletion.
          */
 
+        global $html_title;
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_banking_transactions_within_a_time_range.php';
 
 

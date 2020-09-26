@@ -16,6 +16,7 @@ class EditABitcoinRecordProcessor
          * 4) Present a form which is populated with data from the object. (except the bitcoin address should not be changeable.)
          */
 
+        global $html_title;
 
         /** @var $bitcoin_object */
 

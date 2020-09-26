@@ -15,6 +15,7 @@ class FeatureATaskEdit
          * 4) Present a form which is populated with data from the task object.
          */
 
+        global $html_title;
 
         /** @var $object */
 

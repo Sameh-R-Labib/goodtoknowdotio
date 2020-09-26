@@ -12,6 +12,8 @@ class QuickPostDeleteDelete
          * wants to delete the post.
          */
 
+        global $html_title;
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
         /** @noinspection PhpUndefinedVariableInspection */

@@ -20,6 +20,7 @@ class AuthorDeletesOwnPostChoosePost
         global $sessionMessage;
         global $saved_int01;        // id of topic
         global $user_id;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

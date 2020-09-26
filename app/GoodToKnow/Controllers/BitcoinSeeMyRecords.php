@@ -11,6 +11,7 @@ class BitcoinSeeMyRecords
         global $is_admin;
         global $is_guest;
         global $show_poof;
+        global $html_title;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 

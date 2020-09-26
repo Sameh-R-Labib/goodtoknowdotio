@@ -8,6 +8,7 @@ class DropACommoditySoldYearFilter
 {
     function page()
     {
+        global $html_title;
 
         /** @var $array */
 

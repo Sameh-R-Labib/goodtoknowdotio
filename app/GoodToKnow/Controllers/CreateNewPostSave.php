@@ -10,6 +10,7 @@ class CreateNewPostSave
     function page()
     {
         global $sessionMessage;
+        global $html_title;
         global $type_of_resource_requested;
         global $url_of_most_recent_upload;
         global $user_id;

@@ -11,6 +11,8 @@ class TopicDescriptionEditor
          * ones found in the user's current community.
          */
 
+        global $html_title;
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
 

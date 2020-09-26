@@ -11,6 +11,7 @@ class ByUsernameMessage
          */
 
         global $sessionMessage;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

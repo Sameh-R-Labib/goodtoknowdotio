@@ -16,6 +16,7 @@ class ExpungeARecurringPaymentRecordProcessor
          * 4) Presents a form containing data from the record and asking for confirmation to delete.
          */
 
+        global $html_title;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
 

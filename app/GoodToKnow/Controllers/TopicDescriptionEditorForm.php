@@ -17,6 +17,7 @@ class TopicDescriptionEditorForm
         global $sessionMessage;
         global $saved_str01; // topic name
         global $saved_int01; // community id
+        global $html_title;
 
         kick_out_nonadmins();
 

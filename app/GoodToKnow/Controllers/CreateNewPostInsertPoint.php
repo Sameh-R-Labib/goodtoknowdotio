@@ -20,6 +20,7 @@ class CreateNewPostInsertPoint
          */
 
         global $sessionMessage;
+        global $html_title;
         global $saved_int01;
 
         kick_out_loggedoutusers();

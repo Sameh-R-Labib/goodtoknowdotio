@@ -17,6 +17,8 @@ class BlotOutSomeInboxMessages
 
         global $user_id;
 
+        global $html_title;
+
         kick_out_loggedoutusers();
 
         $db = get_db();

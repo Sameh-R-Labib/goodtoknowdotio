@@ -18,9 +18,9 @@ class OmitABankingTransactionForBalancesDelete
          *    and asks for approval for deletion to proceed.
          */
 
+        global $html_title;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
-
 
 
         /**

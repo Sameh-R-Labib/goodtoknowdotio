@@ -14,6 +14,7 @@ class OmitABankingTransactionForBalances
          */
 
         global $sessionMessage;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

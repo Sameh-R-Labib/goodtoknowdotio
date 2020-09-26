@@ -42,6 +42,8 @@ class PopulateABankingAccountForBalancesProcessor
          * date, hour, minute, second.
          */
 
+        global $html_title;
+
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
         $time = get_date_h_m_s_from_a_timestamp($object->start_time);

@@ -10,6 +10,7 @@ class AdminHome
         global $is_guest;
         global $show_poof;
         global $sessionMessage;
+        global $html_title;
         global $special_community_array;
         global $type_of_resource_requested;
 

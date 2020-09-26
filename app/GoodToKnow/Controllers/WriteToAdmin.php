@@ -9,6 +9,7 @@ class WriteToAdmin
         global $sessionMessage;
         global $user_username;
         global $url_of_most_recent_upload;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

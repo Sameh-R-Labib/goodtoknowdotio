@@ -8,6 +8,7 @@ class LoginForm
     {
         global $is_logged_in;
         global $sessionMessage;
+        global $html_title;
 
         if ($is_logged_in) {
             $_SESSION['message'] = $sessionMessage;

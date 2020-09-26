@@ -7,6 +7,7 @@ class CPPostings
     function page()
     {
         global $sessionMessage;
+        global $html_title;
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;

@@ -12,6 +12,7 @@ class CPTaxDeductions
         global $is_admin;
         global $is_guest;
         global $show_poof;
+        global $html_title;
 
         kick_out_loggedoutusers();
 

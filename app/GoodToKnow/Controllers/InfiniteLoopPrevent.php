@@ -8,6 +8,7 @@ class InfiniteLoopPrevent
     {
 
         global $sessionMessage;
+        global $html_title;
 
         $html_title = 'For Infinite Loop Prevention';
 

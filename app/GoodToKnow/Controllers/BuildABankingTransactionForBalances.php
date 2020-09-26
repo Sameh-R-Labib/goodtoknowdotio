@@ -13,6 +13,8 @@ class BuildABankingTransactionForBalances
          * banking_transaction_for_balances table.
          */
 
+        global $html_title;
+
         global $sessionMessage;
 
         global $user_id;

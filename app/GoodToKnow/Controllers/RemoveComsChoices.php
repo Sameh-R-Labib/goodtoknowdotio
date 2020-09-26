@@ -11,6 +11,7 @@ class RemoveComsChoices
     {
         global $sessionMessage;
         global $saved_str01;    // user's username
+        global $html_title;
 
         kick_out_nonadmins();
 

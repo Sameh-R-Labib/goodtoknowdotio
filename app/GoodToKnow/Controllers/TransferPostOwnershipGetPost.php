@@ -26,6 +26,8 @@ class TransferPostOwnershipGetPost
          *  - Author username
          */
 
+        global $html_title;
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 

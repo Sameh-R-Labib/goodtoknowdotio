@@ -11,6 +11,7 @@ class KommunityDescriptionEditorForm
         global $sessionMessage;
         global $saved_str01; // community name
         global $saved_int01; // community id
+        global $html_title;
 
         kick_out_nonadmins();
 

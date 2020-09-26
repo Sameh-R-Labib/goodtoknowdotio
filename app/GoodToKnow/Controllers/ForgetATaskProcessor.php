@@ -15,6 +15,7 @@ class ForgetATaskProcessor
          * 4) Presents a form containing data from the record and asking for permission to delete.
          */
 
+        global $html_title;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
 

@@ -16,6 +16,7 @@ class PolishARecurringPaymentRecordProcessor
          * 4) Present a form which is populated with data from the recurring_payment object.
          */
 
+        global $html_title;
 
         /** @var $recurring_payment_object */
 

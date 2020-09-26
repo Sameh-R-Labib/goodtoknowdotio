@@ -6,6 +6,8 @@ class AnnulABankingAcctForBalances
 {
     function page()
     {
+        global $html_title;
+
         /**
          * Presenting a form for getting the user to tell us
          * which BankingAcctForBalances record he wants to delete.

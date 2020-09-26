@@ -11,6 +11,7 @@ class UserRoster
     function page()
     {
         global $sessionMessage;
+        global $html_title;
         global $is_admin;
         global $is_guest;
         global $show_poof;

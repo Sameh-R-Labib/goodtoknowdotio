@@ -18,6 +18,7 @@ class WhatIsThisSite
         global $show_poof;
         global $special_community_array;
         global $type_of_resource_requested;
+        global $html_title;
 
         $is_guest = true;
 

@@ -13,6 +13,7 @@ class Inbox
         global $is_admin;
         global $is_guest;
         global $show_poof;
+        global $html_title;
         global $special_community_array;
         global $community_id;
         global $community_name;

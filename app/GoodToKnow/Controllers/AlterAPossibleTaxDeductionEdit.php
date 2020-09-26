@@ -6,6 +6,8 @@ class AlterAPossibleTaxDeductionEdit
 {
     function page()
     {
+        global $html_title;
+
         /**
          * 1) Store the submitted possible_tax_deduction id in the session.
          * 2) Retrieve the possible_tax_deduction object with that id from the database.

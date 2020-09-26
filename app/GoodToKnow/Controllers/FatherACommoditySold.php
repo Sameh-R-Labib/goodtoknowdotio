@@ -10,6 +10,8 @@ class FatherACommoditySold
          * This feature enables any user to create a database record in the commodities_sold table.
          */
 
+        global $html_title;
+
         global $sessionMessage;
 
         global $timezone;

@@ -13,6 +13,8 @@ class PopulateABankingAccountForBalances
          * record he wants to edit. It will present a series of radio buttons to choose from.
          */
 
+        global $html_title;
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
         $html_title = 'Which banking_acct_for_balances record?';

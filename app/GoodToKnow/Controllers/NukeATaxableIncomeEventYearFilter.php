@@ -13,6 +13,7 @@ class NukeATaxableIncomeEventYearFilter
          * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
 
+        global $html_title;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
 
