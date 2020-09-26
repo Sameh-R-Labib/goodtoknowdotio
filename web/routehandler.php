@@ -175,7 +175,7 @@ $db = null;
 
 
 /**
- * Timezone set to user's default.
+ * Default (for runtime of this script) timezone set to the one the user has chosen.
  */
 date_default_timezone_set($timezone);
 
