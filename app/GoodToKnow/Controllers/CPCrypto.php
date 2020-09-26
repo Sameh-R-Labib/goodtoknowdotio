@@ -11,6 +11,7 @@ class CPCrypto
         global $type_of_resource_requested;
         global $is_admin;
         global $is_guest;
+        global $show_poof;
 
         kick_out_loggedoutusers();
 

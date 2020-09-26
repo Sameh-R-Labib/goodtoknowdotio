@@ -16,6 +16,7 @@ class GlanceAtMyTasks
 
         global $user_id;
         global $sessionMessage;
+        global $show_poof;
         global $is_admin;
         global $is_guest;
         global $special_community_array;
