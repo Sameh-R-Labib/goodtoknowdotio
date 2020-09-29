@@ -236,7 +236,7 @@ $controller_object = new $fully_qualified_controller_name;
  * and call it
  */
 
-$method_name = 'page';
+$method_name = 'page';    // Default method
 
 if (!empty($route_segments_array[1])) {
     if (method_exists($controller_object, $route_segments_array[1])) {
