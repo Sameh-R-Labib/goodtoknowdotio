@@ -29,7 +29,7 @@ class CreateNewPostEditProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $markdown = markdown_form_field_prep('markdown', 1, 38000);
+        $markdown = markdown_form_field_prep('markdown', 1, 58000);
 
 
         /**
@@ -96,7 +96,7 @@ class CreateNewPostEditProcessor
         $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $community_id . '/' .
             $saved_int01 . '/' . $saved_int02 . '">here </a>';
 
-        breakout(" <b>{$bytes_written_text}</b> written (max allowed 37.1 KB.) Click
+        breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");
     }
 }

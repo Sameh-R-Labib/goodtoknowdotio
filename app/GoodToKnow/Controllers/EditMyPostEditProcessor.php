@@ -33,7 +33,7 @@ class EditMyPostEditProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $markdown = markdown_form_field_prep('markdown', 1, 38000);
+        $markdown = markdown_form_field_prep('markdown', 1, 58000);
 
 
         // $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
