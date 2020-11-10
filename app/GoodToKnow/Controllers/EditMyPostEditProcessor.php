@@ -89,7 +89,7 @@ class EditMyPostEditProcessor
         $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $community_id . '/' .
             $saved_int01 . '/' . $saved_int02 . '">here </a>';
 
-        breakout(" <b>{$bytes_written_text}</b> written (max allowed 37.1 KB.) Click
+        breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");
     }
 }
