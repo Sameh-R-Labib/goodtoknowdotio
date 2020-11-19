@@ -26,7 +26,7 @@
             </p>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
-                <textarea id="comment" name="comment" rows="4" cols="83" wrap="soft" maxlength="800" spellcheck="false"
+                <textarea id="comment" name="comment" rows="4" cols="77" wrap="soft" maxlength="800" spellcheck="false"
                           placeholder="This banking account is my _ _ _ _ bank's _ _ _ _ account."></textarea>
             </p>
         </section>
