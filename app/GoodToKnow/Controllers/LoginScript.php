@@ -32,8 +32,7 @@ class LoginScript
 
         self::store_application_state($db, $sessionMessage, $user);
 
-        breakout(' It is advisable to logout at least once a week so that your session will Not expire in the middle of
-         doing something. ');
+        breakout(' Logout once a day so that your session will Not expire. ');
     }
 
     /**
