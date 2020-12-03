@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Show 🌀 💳s</h1>
+        <h1>Last Payment for a RP</h1>
         <hr>
         <?php if (!empty($array_of_recurring_payment_objects)): ?>
             <?php $last = count($array_of_recurring_payment_objects) - 1; ?>
