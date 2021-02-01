@@ -354,7 +354,7 @@ pre code {
     border-left-style: ridge;
     border-left-color: #e3e3e3;
     font-size: .8em;
-    color: #00001b;
+    color: #00000b;
     line-height: 1.6em;
     display: block;
     margin: 35px 28px 27px 91px;
@@ -363,7 +363,7 @@ pre code {
 }
 
 p {
-    color: #212121;
+    color: #000000;
     font-weight: normal;
     line-height: 1.6em;
     font-size: 1.1em;
@@ -407,7 +407,7 @@ p {
     font-family: inherit;
     font-size: 1.6em;
     font-weight: normal;
-    color: #191919;
+    color: #000000;
     line-height: 150%;
     margin-left: 36px;
     margin-right: 58px;
@@ -419,7 +419,7 @@ p {
 }
 
 b, strong {
-    color: #404040;
+    color: #000000;
 }
 
 i, em {
@@ -437,7 +437,7 @@ i, em {
     text-align: center;
     font-family: inherit;
     font-weight: normal;
-    color: #454541;
+    color: #252521;
     font-size: 2.6em;
     line-height: 130%;
     margin: 45px 58px 19px 24px;
@@ -447,7 +447,7 @@ i, em {
     font-family: inherit;
     font-size: 1.4em;
     font-weight: normal;
-    color: #242416;
+    color: #141406;
     line-height: 150%;
     margin: 70px 58px -5px 60px;
 }
