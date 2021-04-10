@@ -40,6 +40,9 @@ class CreateNewPostEditProcessor
         $parser->no_entities = true;
         $html = $parser->transform($markdown);
 
+        // Call to global function
+        fix_michelf($html);
+
 //        $html = MarkdownExtra::defaultTransform($markdown);
 
 //        $parsedown_object = new \ParsedownExtra();

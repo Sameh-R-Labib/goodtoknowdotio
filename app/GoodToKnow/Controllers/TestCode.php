@@ -31,6 +31,9 @@ DEMO;
         $parser->no_entities = false;
         $html = $parser->transform($markdown);
 
+        // Call to global function
+        fix_michelf($html);
+
         var_dump($html);
     }
 }
