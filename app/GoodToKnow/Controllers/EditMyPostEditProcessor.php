@@ -48,10 +48,8 @@ class EditMyPostEditProcessor
         $parser->no_entities = true;
         $html = $parser->transform($markdown);
 
-        // Fix bugs caused by MarkdownExtra
-        $bad = array("&amp;amp;", "&amp;lt;");
-        $good = array("&amp;", "&lt;");
-        $html = str_replace($bad, $good, $html);
+        // Call to global function
+        fix_michelf($html);
 
 //        $html = MarkdownExtra::defaultTransform($markdown);
 

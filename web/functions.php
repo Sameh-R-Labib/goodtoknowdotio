@@ -6,6 +6,18 @@ use GoodToKnow\Models\UserToCommunity;
 
 
 /**
+ * @param string $html
+ */
+function fix_michelf(string &$html)
+{
+    // Fix bugs caused by MarkdownExtra
+    $bad = array("&amp;amp;", "&amp;lt;");
+    $good = array("&amp;", "&lt;");
+    $html = str_replace($bad, $good, $html);
+}
+
+
+/**
  * @param mysqli $db
  * @param string $error
  * @param $user_id
