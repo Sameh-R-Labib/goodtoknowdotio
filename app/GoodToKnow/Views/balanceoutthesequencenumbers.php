@@ -3,7 +3,7 @@
         <h2>The Type & Name of the Thing</h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
-            // Some foreach loop
+            <!-- Some foreach loop -->
         </section>
         <?php require SUBMITABORT; ?>
     </form>
