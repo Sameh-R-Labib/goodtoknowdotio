@@ -213,7 +213,7 @@ function redirect_to(string $location)
  * @param int $size
  * @return string
  */
-function size_as_text(int $size)
+function size_as_text(int $size): string
 {
     // takes a size in bytes and returns a more use friendly equivalent
     if ($size < 1024) {
