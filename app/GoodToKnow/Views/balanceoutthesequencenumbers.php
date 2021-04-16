@@ -1,6 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
 <?php global $thing_type; ?>
 <?php global $thing_name; ?>
+<?php global $result; ?>
+
     <form action="/ax1/BalanceOutTheSequenceNumbersFormProcessor/page" method="post">
         <h2>Adjust sequence numbers</h2>
         <p><b><?= $thing_type ?>:</b> <?= $thing_name ?></p>
@@ -8,6 +10,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <!-- Some foreach loop -->
+            <?php var_dump($result); ?>
         </section>
         <?php require SUBMITABORT; ?>
     </form>
