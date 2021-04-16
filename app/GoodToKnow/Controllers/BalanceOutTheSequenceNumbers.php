@@ -92,8 +92,7 @@ class BalanceOutTheSequenceNumbers
         $fields = '';
 
         if ($thing_type === 'Community') {
-            // Assemble $fields_str for topic records.
-            // One html line for each record.
+            // Assemble $fields for topic records. One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}}\"><b>⇰</b> </label>\n";
@@ -103,8 +102,7 @@ class BalanceOutTheSequenceNumbers
                 $fields .= "</p>\n";
             }
         } else {
-            // Assemble $fields_str for post records.
-            // One html line for each record.
+            // Assemble $fields for post records. One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}}\"><b>⇰</b> </label>\n";
