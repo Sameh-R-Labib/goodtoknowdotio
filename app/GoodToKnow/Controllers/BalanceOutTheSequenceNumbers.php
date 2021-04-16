@@ -96,20 +96,22 @@ class BalanceOutTheSequenceNumbers
             // One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
-                $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
-                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\"> ";
+                $fields .= "<p><label for=\"animal{$object->id}}\">Record: </label>\n";
+                $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
+                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" required > ";
                 $fields .= $object->topic_description;
-                $fields .= "<br>\n";
+                $fields .= "</p>\n";
             }
         } else {
             // Assemble $fields_str for post records.
             // One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
+                $fields .= "<p><label for=\"animal{$object->id}}\">Record: </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
-                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\"> ";
+                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" required > ";
                 $fields .= $object->title;
-                $fields .= "<br>\n";
+                $fields .= "</p>\n";
             }
         }
 
