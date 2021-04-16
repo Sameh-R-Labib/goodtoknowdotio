@@ -23,8 +23,6 @@ class BalanceOutTheSequenceNumbers
         global $community_name;
         global $topic_id;
         global $topic_name;
-        global $special_topic_array;
-        global $special_post_array;
 
         kick_out_nonadmins();
 
