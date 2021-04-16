@@ -13,6 +13,7 @@ class BalanceOutTheSequenceNumbers
         global $thing_type;
         global $thing_name;
         global $thing_id;
+        global $result;
         global $is_admin;
         global $is_logged_in;
         global $sessionMessage;
