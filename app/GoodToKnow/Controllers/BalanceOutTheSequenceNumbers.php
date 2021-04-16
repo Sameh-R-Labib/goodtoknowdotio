@@ -1,8 +1,9 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\TopicToPost;
 
 class BalanceOutTheSequenceNumbers
 {
@@ -54,9 +55,26 @@ class BalanceOutTheSequenceNumbers
          * If thing is a topic then it holds post records.
          */
 
-        // Already, we have a special array which contains the id and name corresponding to each record.
-        // However, we're only interested in the ids of each record.
-        // We'll use the ids to help us retrieve the record objects from the database.
+        $db = get_db();
+
+        if ($thing_type === 'community') {
+            // Get all topics for community.
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+            if (!$result) {
+                breakout(' The community does not contain any topics. ');
+            }
+        } else {
+            // Get all posts for topic.
+            $result = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            if (!$result) {
+                breakout(' The topic does not contain any posts. ');
+            }
+        }
+
+        /**
+         * foreach ($result as $key => $object) {
+         * if ($object->id == $chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
+         * } **/
 
         $html_title = 'Balance Out The Sequence Numbers';
 

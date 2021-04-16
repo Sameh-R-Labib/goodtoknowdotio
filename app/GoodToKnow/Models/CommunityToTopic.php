@@ -37,7 +37,7 @@ class CommunityToTopic extends GoodObject
      * @param mysqli $db
      * @param string $error
      * @param int $topic_id
-     * @return bool
+     * @return string|bool
      */
     public static function derive_community_id(mysqli $db, string &$error, int $topic_id)
     {

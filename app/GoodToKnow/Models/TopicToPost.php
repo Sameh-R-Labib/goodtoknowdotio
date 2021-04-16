@@ -37,7 +37,7 @@ class TopicToPost extends GoodObject
      * @param mysqli $db
      * @param string $error
      * @param int $post_id
-     * @return bool
+     * @return string|bool
      */
     public static function derive_topic_id(mysqli $db, string &$error, int $post_id)
     {
@@ -63,7 +63,7 @@ class TopicToPost extends GoodObject
     /**
      * @param mysqli $db
      * @param string $error
-     * @param $topic_id
+     * @param int $topic_id
      * @return array|bool
      */
     public static function get_posts_array_for_a_topic(mysqli $db, string &$error, int $topic_id)
