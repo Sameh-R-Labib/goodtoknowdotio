@@ -98,7 +98,7 @@ class BalanceOutTheSequenceNumbers
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}}\"><b>⇰</b> </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
-                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" size=\"12\" required > ";
+                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" size=\"9\" required > ";
                 $fields .= $object->topic_description;
                 $fields .= "</p>\n";
             }
@@ -109,7 +109,7 @@ class BalanceOutTheSequenceNumbers
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}}\"><b>⇰</b> </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
-                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" size=\"12\" required > ";
+                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" size=\"9\" required > ";
                 $fields .= $object->title;
                 $fields .= "</p>\n";
             }
