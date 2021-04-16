@@ -14,6 +14,7 @@ class BalanceOutTheSequenceNumbers
         global $thing_name;
         global $thing_id;
         global $result;
+        global $fields;
         global $is_admin;
         global $is_logged_in;
         global $sessionMessage;
@@ -73,9 +74,46 @@ class BalanceOutTheSequenceNumbers
         }
 
         /**
-         * foreach ($result as $key => $object) {
-         * if ($object->id == $chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
-         * } **/
+         * Now, we have $result.
+         * $result is either an array of topics or an array of posts.
+         * We need to put together the HTML for the form fields.
+         * Each form field row will look like this:
+         *   [text input for a sequence number] [The name of the topic or post]
+         * When formulating each test input field we will be using a trick to
+         * make the submitted form easier to process. Usually the name of the field
+         * results in a post variable of the same name. For example if we have 10
+         * text input fields with 10 different names we end up with 10 post variables.
+         * Instead, I want us to end up with one array variable where the key for each
+         * element is the id for the topic / post.
+         *
+         * To start off we need separate loops for our two types records (one loop will
+         * be used if we are dealing with topics and another loop will be used if we are
+         * dealing with posts.
+         */
+
+        $fields = '';
+
+        if ($thing_type === 'Community') {
+            // Assemble $fields_str for topic records.
+            // One html line for each record.
+            foreach ($result as $object) {
+                // $object is current record
+                $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
+                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\"> ";
+                $fields .= $object->topic_description;
+                $fields .= "<br>\n";
+            }
+        } else {
+            // Assemble $fields_str for post records.
+            // One html line for each record.
+            foreach ($result as $object) {
+                // $object is current record
+                $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
+                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\"> ";
+                $fields .= $object->title;
+                $fields .= "<br>\n";
+            }
+        }
 
         $html_title = 'Balance Out The Sequence Numbers';
 
