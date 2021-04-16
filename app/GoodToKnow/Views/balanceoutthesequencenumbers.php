@@ -10,7 +10,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <!-- Some foreach loop -->
-            <?php var_dump($result); ?>
+            <pre><?php var_dump($result); ?></pre>
         </section>
         <?php require SUBMITABORT; ?>
     </form>
