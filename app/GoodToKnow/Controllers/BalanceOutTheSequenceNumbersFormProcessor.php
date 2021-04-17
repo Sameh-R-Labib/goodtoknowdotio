@@ -48,6 +48,18 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    String is the type of value of all form submits.
          */
 
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$_POST: </p>\n<pre>";
+        var_dump($_POST);
+        echo "</pre>\n";
+        echo "<p>Print_r \$_POST: </p>\n<pre>";
+        print_r($_POST);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
         $html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbersformprocessor.php';
