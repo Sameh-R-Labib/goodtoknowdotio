@@ -95,9 +95,9 @@ class BalanceOutTheSequenceNumbers
             // Assemble $fields for topic records. One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
-                $fields .= "<p><label for=\"animal{$object->id}}\"><b>⇰</b> </label>\n";
+                $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
-                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" size=\"9\" required > ";
+                $fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
                 $fields .= $object->topic_description;
                 $fields .= "</p>\n";
             }
@@ -105,9 +105,9 @@ class BalanceOutTheSequenceNumbers
             // Assemble $fields for post records. One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
-                $fields .= "<p><label for=\"animal{$object->id}}\"><b>⇰</b> </label>\n";
+                $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
-                $fields .= "name=\"animal[{$object->id}}]\" id=\"animal{$object->id}}\" size=\"9\" required > ";
+                $fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
                 $fields .= $object->title;
                 $fields .= "</p>\n";
             }
