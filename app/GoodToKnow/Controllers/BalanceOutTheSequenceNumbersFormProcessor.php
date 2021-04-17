@@ -33,9 +33,20 @@ class BalanceOutTheSequenceNumbersFormProcessor
         global $topic_id;
         global $topic_name;
 
+        /**
+         * Preliminary things to take care of.
+         */
+
         kick_out_nonadmins();
 
         $thing_type = ucfirst($type_of_resource_requested);
+
+        /**
+         * 1) Make sure array element $_POST['animal'] is itself an array (aka. "that array.)
+         *    That array must have keys which correspond to record id fields.
+         *    The value field of each element of that array must contain the submitted sequence_number value.
+         *    String is the type of value of all form submits.
+         */
 
         $html_title = 'Balance Out The Sequence Numbers';
 
