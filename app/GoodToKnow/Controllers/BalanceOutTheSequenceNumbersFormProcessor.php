@@ -9,7 +9,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
     function page()
     {
         /**
-         * 1) Make sure array element $_POST['animal'] is itself an array (aka. "that array.)
+         * 1) Make sure array element $_POST["animal"] is itself an array (aka. "that array".)
          *    That array must have keys which correspond to record id fields.
          *    The value field of each element of that array must contain the submitted sequence_number value.
          *    String is the type of value of all form submits.
@@ -42,21 +42,15 @@ class BalanceOutTheSequenceNumbersFormProcessor
         $thing_type = ucfirst($type_of_resource_requested);
 
         /**
-         * 1) Make sure array element $_POST['animal'] is itself an array (aka. "that array.)
+         * 1) Make sure array element $_POST["animal"] is itself an array (aka. "that array".)
          *    That array must have keys which correspond to record id fields.
          *    The value field of each element of that array must contain the submitted sequence_number value.
          *    String is the type of value of all form submits.
          */
 
+        // √s ok
         $animal_arr = $_POST["animal"];
 
-        /**
-         * Debug Code
-         */
-        echo "<p>var_dump \$animal_arr: </p>\n<pre>";
-        var_dump($animal_arr);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
 
         $html_title = 'Balance Out The Sequence Numbers';
 
