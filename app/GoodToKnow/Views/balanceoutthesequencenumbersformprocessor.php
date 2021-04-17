@@ -4,7 +4,7 @@
     <form>
         <h2>Save or Cancel</h2>
         <?php require SESSIONMESSAGE; ?>
-        <!-- Display the data which would be saved -->
+        <!-- Display (All) the data which would be saved -->
         <!-- Present link buttons for Save and Cancel -->
     </form>
 <?php require BOTTOMOFPAGES; ?>

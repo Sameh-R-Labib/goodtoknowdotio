@@ -51,6 +51,9 @@ class BalanceOutTheSequenceNumbersFormProcessor
         // √s ok
         $animal_arr = $_POST["animal"];
 
+        /**
+         * 2) Retrieve the same $result set which was retrieved in the previous route.
+         */
 
         $html_title = 'Balance Out The Sequence Numbers';
 
