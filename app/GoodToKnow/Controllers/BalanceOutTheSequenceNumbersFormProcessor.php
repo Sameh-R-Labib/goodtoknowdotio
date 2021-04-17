@@ -50,14 +50,12 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         $animal_arr = $_POST["animal"];
 
-        echo "The animal with key 545 is: " . $animal_arr[545] . "<br>\n";
-
         /**
          * Debug Code
          */
-//        echo "<p>Print_r \$_POST: </p>\n<pre>";
-//        print_r($_POST);
-//        echo "</pre>\n";
+        echo "<p>var_dump \$animal_arr: </p>\n<pre>";
+        var_dump($animal_arr);
+        echo "</pre>\n";
         die("<p>End debug</p>\n");
 
         $html_title = 'Balance Out The Sequence Numbers';
