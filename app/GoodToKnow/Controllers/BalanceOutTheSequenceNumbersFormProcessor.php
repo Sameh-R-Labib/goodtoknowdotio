@@ -1,8 +1,9 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\TopicToPost;
 
 class BalanceOutTheSequenceNumbersFormProcessor
 {
@@ -54,6 +55,31 @@ class BalanceOutTheSequenceNumbersFormProcessor
         /**
          * 2) Retrieve the same $result set which was retrieved in the previous route.
          */
+
+        $db = get_db();
+
+        if ($thing_type === 'Community') {
+            // Get all topics for community.
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+            if (!$result) {
+                breakout(' The community does not contain any topics. ');
+            }
+        } else {
+            // Get all posts for topic.
+            $result = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            if (!$result) {
+                breakout(' The topic does not contain any posts. ');
+            }
+        }
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$result: </p>\n<pre>";
+        var_dump($result);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
 
         $html_title = 'Balance Out The Sequence Numbers';
 
