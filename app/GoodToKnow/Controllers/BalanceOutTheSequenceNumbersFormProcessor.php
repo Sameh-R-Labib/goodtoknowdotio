@@ -76,34 +76,11 @@ class BalanceOutTheSequenceNumbersFormProcessor
          * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST["animal"].
          */
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Before</p>\n";
-        echo "<p>Var_dump \$animal_arr: </p>\n<pre>";
-        var_dump($animal_arr);
-        echo "</pre>\n";
-        echo "<p>Print_r \$result: </p>\n<pre>";
-        print_r($result);
-        echo "</pre>\n";
-
         foreach ($result as $object) {
             // Set the $object->sequence_number to the sequence_number found in
             // the $animal_arr element whose key is the same as the id of the object.
             $object->sequence_number = $animal_arr[$object->id];
         }
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>After</p>\n";
-        echo "<p>Var_dump \$animal_arr: </p>\n<pre>";
-        var_dump($animal_arr);
-        echo "</pre>\n";
-        echo "<p>Print_r \$result: </p>\n<pre>";
-        print_r($result);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
 
         $html_title = 'Balance Out The Sequence Numbers';
 
