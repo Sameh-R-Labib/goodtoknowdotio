@@ -15,7 +15,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    The value field of each element of that array must contain the submitted sequence_number value.
          *    String is the type of value of all form submits.
          * 2) Retrieve the same $result set which was retrieved in the previous route.
-         * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST['animal'].
+         * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST["animal"].
          * 4) Save $result to the session.
          * 5) Present all the contents of $result in the view (which will be the type of view with round corners.)
          *    The records should and will be in order by sequence_number.
@@ -70,6 +70,15 @@ class BalanceOutTheSequenceNumbersFormProcessor
             if (!$result) {
                 breakout(' The topic does not contain any posts. ');
             }
+        }
+
+        /**
+         * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST["animal"].
+         */
+
+        foreach ($result as $object) {
+            // Set the $object->sequence_number to the sequence_number found in
+            // the $animal_arr element whose key is the same as the id of the object.
         }
 
         $html_title = 'Balance Out The Sequence Numbers';
