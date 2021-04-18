@@ -72,15 +72,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
             }
         }
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$result: </p>\n<pre>";
-        var_dump($result);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
         $html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbersformprocessor.php';
