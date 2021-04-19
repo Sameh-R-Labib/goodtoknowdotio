@@ -17,8 +17,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          * 2) Retrieve the same $result set which was retrieved in the previous route.
          * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST["animal"].
          * 4) Save $result to the session.
-         * 5) Present all the contents of $result in the view (which will be the type of view with round corners.)
-         *    The records should and will be in order by sequence_number.
+         * 5) Present the relevant parts of $result in a view of the type with round corners.
          * 6) Present a Save button and a Cancel button.
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
@@ -89,8 +88,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
         $_SESSION['saved_arr01'] = $result;
 
         /**
-         * 5) Present all the contents of $result in the view (which will be the type of view with round corners.)
-         *    The records should and will be in order by sequence_number.
+         * 5) Present the relevant parts of $result in a view of the type with round corners.
          */
 
         $present = '';
