@@ -25,6 +25,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         global $thing_type;
         global $html_title;
+        global $result;
         global $is_admin;
         global $is_logged_in;;
         global $sessionMessage;
@@ -81,6 +82,16 @@ class BalanceOutTheSequenceNumbersFormProcessor
             // the $animal_arr element whose key is the same as the id of the object.
             $object->sequence_number = $animal_arr[$object->id];
         }
+
+        /**
+         * 4) Save $result to the session.
+         */
+        $_SESSION['saved_arr01'] = $result;
+
+        /**
+         * 5) Present all the contents of $result in the view (which will be the type of view with round corners.)
+         *    The records should and will be in order by sequence_number.
+         */
 
         $html_title = 'Balance Out The Sequence Numbers';
 
