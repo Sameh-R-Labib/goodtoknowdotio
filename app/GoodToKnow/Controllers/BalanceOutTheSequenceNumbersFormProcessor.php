@@ -101,7 +101,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
             } else {
                 $short = substr($object->title, 0, 38);
             }
-            $present .= "<p>{$object->sequence_number} → {$short}</p>\n";
+            $present .= "<p>{$object->sequence_number} ↔ {$short}</p>\n";
         }
 
         $html_title = 'Balance Out The Sequence Numbers';

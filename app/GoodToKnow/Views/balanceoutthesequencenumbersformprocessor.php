@@ -5,7 +5,7 @@
     <form>
         <h2>Save or Cancel</h2>
         <?php require SESSIONMESSAGE; ?>
-        <p>What you see is what will be saved.</p>
+        <p><b>What you see is what will be saved:</b></p>
         <?= $present ?>
         <!-- Present link buttons for Save and Cancel -->
     </form>
