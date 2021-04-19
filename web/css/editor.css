@@ -135,6 +135,12 @@ a.abort {
     cursor: pointer;
 }
 
+a.save {
+    margin-left: 252px;
+    opacity: 0.95;
+    cursor: pointer;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
