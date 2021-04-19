@@ -94,7 +94,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
          */
 
         $present = '';
-        $short = '';
 
         foreach ($result as $object) {
             if ($thing_type === 'Community') {
