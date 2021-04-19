@@ -102,6 +102,11 @@ class BalanceOutTheSequenceNumbersFormProcessor
             $present .= "<p>{$object->sequence_number} ↔ {$short}</p>\n";
         }
 
+        /**
+         * 6) Present a Save button and a Cancel button.
+         *    **These buttons will be link buttons instead of form submit buttons.**
+         */
+
         $html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbersformprocessor.php';
