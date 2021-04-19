@@ -25,7 +25,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         global $thing_type;
         global $html_title;
-        global $result;
+        global $present;
         global $is_admin;
         global $is_logged_in;;
         global $sessionMessage;
@@ -92,6 +92,18 @@ class BalanceOutTheSequenceNumbersFormProcessor
          * 5) Present all the contents of $result in the view (which will be the type of view with round corners.)
          *    The records should and will be in order by sequence_number.
          */
+
+        $present = '';
+        $short = '';
+
+        foreach ($result as $object) {
+            if ($thing_type === 'Community') {
+                $short = substr($object->topic_name, 0, 38);
+            } else {
+                $short = substr($object->title, 0, 38);
+            }
+            $present .= "<p>{$object->sequence_number} → {$short}</p>\n";
+        }
 
         $html_title = 'Balance Out The Sequence Numbers';
 
