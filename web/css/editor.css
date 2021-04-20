@@ -117,7 +117,7 @@ a:active {
 }
 
 a:link, a:visited {
-    background-color: #f436c9ab;
+    background-color: #f436c9;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -136,8 +136,9 @@ a.abort {
 }
 
 a.save {
+    background-color: #0079BB;
     margin-left: 252px;
-    opacity: 0.95;
+    opacity: 1;
     cursor: pointer;
 }
 
