@@ -17,8 +17,8 @@ class BalanceOutTheSequenceNumbersSave
          * We are to update using the records found in the array $_SESSION['saved_arr01'].
          * STEPS:
          *  1) Update the database using the array we have.
-         *  2) Compose a session message based on success or failure.
-         *  3) Breakout to Home page.
+         *  2) Compose a session message **based on success or failure**.
+         *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to Home page.
          */
     }
 }
