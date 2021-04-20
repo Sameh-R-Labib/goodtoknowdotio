@@ -130,7 +130,7 @@ a:hover, a:active {
 }
 
 a.save:hover, a.save:active {
-    background-color: darkslategrey;
+    background-color: goldenrod;
 }
 
 a.abort {
@@ -140,7 +140,7 @@ a.abort {
 }
 
 a.save {
-    background-color: #0079BB;
+    background-color: #218b55;
     margin-left: 252px;
     opacity: 1;
     cursor: pointer;
