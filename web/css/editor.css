@@ -97,7 +97,7 @@ form {
 /* unvisited link */
 a:link {
     color: red;
-    padding: 6px 8px;
+    padding: 4px 14px;
 }
 
 /* visited link */
@@ -140,6 +140,10 @@ a.save {
     margin-left: 252px;
     opacity: 1;
     cursor: pointer;
+}
+
+a.save:hover {
+    color: darkslategrey;
 }
 
 .tooltip {
