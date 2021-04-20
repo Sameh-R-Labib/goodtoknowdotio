@@ -20,5 +20,17 @@ class BalanceOutTheSequenceNumbersSave
          *  2) Compose a session message **based on success or failure**.
          *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to Home page.
          */
+
+        /**
+         * Before I start, I just want to take a look at what's in $_SESSION['saved_arr01'].
+         */
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$_SESSION['saved_arr01']: </p>\n<pre>";
+        var_dump($_SESSION['saved_arr01']);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
     }
 }
