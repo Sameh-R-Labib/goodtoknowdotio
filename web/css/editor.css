@@ -129,6 +129,10 @@ a:hover, a:active {
     background-color: red;
 }
 
+a.save:hover, a.save:active {
+    background-color: darkslategrey;
+}
+
 a.abort {
     margin-left: 252px;
     opacity: 0.35;
@@ -140,10 +144,6 @@ a.save {
     margin-left: 252px;
     opacity: 1;
     cursor: pointer;
-}
-
-a.save:hover {
-    color: darkslategrey;
 }
 
 .tooltip {
