@@ -22,15 +22,7 @@ class BalanceOutTheSequenceNumbersSave
          */
 
         /**
-         * Before I start, I just want to take a look at what's in $_SESSION['saved_arr01'].
+         * 1) Update the database using the array we have.
          */
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$_SESSION['saved_arr01']: </p>\n<pre>";
-        var_dump($_SESSION['saved_arr01']);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
     }
 }
