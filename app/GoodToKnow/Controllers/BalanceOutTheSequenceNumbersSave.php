@@ -44,7 +44,7 @@ class BalanceOutTheSequenceNumbersSave
         if ($thing_type === 'Community') {
             // Using $_SESSION['saved_arr01'], update the topics table.
         } else {
-            // Using $_SESSION['saved_arr01'], update the topics table.
+            // Using $_SESSION['saved_arr01'], update the posts table.
         }
     }
 }
