@@ -26,7 +26,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
         global $html_title;
         global $present;
         global $is_admin;
-        global $is_logged_in;;
+        global $is_logged_in;
         global $sessionMessage;
         global $type_of_resource_requested;
         global $community_id;

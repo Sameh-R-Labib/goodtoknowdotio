@@ -21,8 +21,30 @@ class BalanceOutTheSequenceNumbersSave
          *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to Home page.
          */
 
+        global $is_admin;
+        global $is_logged_in;
+        global $sessionMessage;
+        global $type_of_resource_requested;
+        global $community_id;
+        global $topic_id;
+
+        /**
+         * Preliminary things to take care of.
+         */
+
+        kick_out_nonadmins();
+
+        $thing_type = ucfirst($type_of_resource_requested);
+
         /**
          * 1) Update the database using the array we have.
          */
+
+        // The function we call will be different based on which types of objects we have.
+        if ($thing_type === 'Community') {
+            // Using $_SESSION['saved_arr01'], update the topics table.
+        } else {
+            // Using $_SESSION['saved_arr01'], update the topics table.
+        }
     }
 }
