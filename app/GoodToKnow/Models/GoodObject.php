@@ -624,7 +624,8 @@ abstract class GoodObject
 
         } else {
 
-            $error .= ' GoodObject update() FAILED to update its row. ';
+            // It is normal to fail to update whenever the new data is the same as the existing data in the database.
+            // $error .= ' GoodObject update() FAILED to update its row. ';
 
             return false;
 

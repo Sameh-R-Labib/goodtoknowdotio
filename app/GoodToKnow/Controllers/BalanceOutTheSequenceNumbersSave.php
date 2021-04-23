@@ -41,17 +41,13 @@ class BalanceOutTheSequenceNumbersSave
         // It doesn't matter which type of object it is
         // since every type of object has a save() method.
         foreach ($_SESSION['saved_arr01'] as $item) {
-            // Update one of the topics.
             $result = $item->save($db, $sessionMessage);
-            if ($result === false) {
-                breakout(' Failed operation to update the object. ');
-            }
         }
 
         /**
          * Report success.
          */
 
-        breakout(" I've updated the record. ");
+        breakout(" Success or failure? Either way, The script has reached its end. ");
     }
 }
