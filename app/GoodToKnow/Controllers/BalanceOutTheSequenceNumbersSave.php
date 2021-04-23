@@ -4,6 +4,8 @@
 namespace GoodToKnow\Controllers;
 
 
+use GoodToKnow\Models\Topic;
+
 class BalanceOutTheSequenceNumbersSave
 {
     function page()
@@ -21,12 +23,7 @@ class BalanceOutTheSequenceNumbersSave
          *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to Home page.
          */
 
-        global $is_admin;
-        global $is_logged_in;
         global $sessionMessage;
-        global $type_of_resource_requested;
-        global $community_id;
-        global $topic_id;
 
         /**
          * Preliminary things to take care of.
@@ -34,17 +31,27 @@ class BalanceOutTheSequenceNumbersSave
 
         kick_out_nonadmins();
 
-        $thing_type = ucfirst($type_of_resource_requested);
-
         /**
-         * 1) Update the database using the array we have.
+         * 1, 2, 3) All steps in one section of code.
          */
 
-        // The function we call will be different based on which types of objects we have.
-        if ($thing_type === 'Community') {
-            // Using $_SESSION['saved_arr01'], update the topics table.
-        } else {
-            // Using $_SESSION['saved_arr01'], update the posts table.
+        $db = get_db();
+
+        // We will call the save function on each object.
+        // It doesn't matter which type of object it is
+        // since every type of object has a save() method.
+        foreach ($_SESSION['saved_arr01'] as $item) {
+            // Update one of the topics.
+            $result = $item->save($db, $sessionMessage);
+            if ($result === false) {
+                breakout(' Failed operation to update the object. ');
+            }
         }
+
+        /**
+         * Report success.
+         */
+
+        breakout(" I've updated the record. ");
     }
 }
