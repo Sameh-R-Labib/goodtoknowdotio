@@ -1,3 +1,5 @@
+<?php global $special_topic_array; ?>
+<?php global $community_id; ?>
 <?php if (empty($special_topic_array)): ?>
     <p><em>[No topics in this community]</em></p>
 <?php endif; ?>

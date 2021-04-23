@@ -1,5 +1,7 @@
 <?php
 
+global $page;
+
 switch ($page) {
     case 'Inbox':
         echo "<a href=\"/ax1/Inbox/page\">Inbox</a>";

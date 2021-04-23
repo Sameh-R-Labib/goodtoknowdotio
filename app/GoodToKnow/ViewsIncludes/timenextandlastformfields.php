@@ -1,3 +1,4 @@
+<?php global $timezone; ?>
 <p>
     <label for="lastdate">Last: </label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"

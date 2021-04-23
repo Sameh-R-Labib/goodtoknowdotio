@@ -1,3 +1,4 @@
+<?php global $timezone; ?>
 <p>️
     <label for="date"></label>
     <input id="date" name="date" type="text" required minlength="10" maxlength="14" size="14" placeholder="mm/dd/yyyy">

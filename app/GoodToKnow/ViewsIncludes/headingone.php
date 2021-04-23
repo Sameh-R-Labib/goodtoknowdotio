@@ -1,5 +1,7 @@
 <?php
 
+global $type_of_resource_requested;
+
 switch ($type_of_resource_requested) {
     case 'community':
         echo '<h1>Topics</h1>';

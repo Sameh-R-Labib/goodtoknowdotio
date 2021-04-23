@@ -1,3 +1,6 @@
+<?php global $time_bought; ?>
+<?php global $time_sold; ?>
+<?php global $timezone; ?>
 <hr>
 <p>
     <label for="time_bought_date">Time Bought: </label>
