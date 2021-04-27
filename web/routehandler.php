@@ -171,7 +171,7 @@ $coms_user_belongs_to = [];
 $show_poof = false;
 
 /**
- * Various initializations
+ * Various initializations.
  */
 $db = null;
 
