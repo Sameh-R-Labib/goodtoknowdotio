@@ -1,3 +1,7 @@
+<?php global $long_title_of_post; ?>
+<?php global $community_name; ?>
+<?php global $topic_name; ?>
+<?php global $author_username; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipGetUsername/page" method="post">
     <h1>Confirm</h1>

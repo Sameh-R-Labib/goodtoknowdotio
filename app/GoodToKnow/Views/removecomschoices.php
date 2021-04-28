@@ -1,3 +1,4 @@
+<?php global $coms_user_belongs_to; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/RemoveComsChoicesProcessor/page" method="post">
     <h1>Remove Communities From the User</h1>

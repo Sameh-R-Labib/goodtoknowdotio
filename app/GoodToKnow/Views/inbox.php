@@ -1,3 +1,4 @@
+<?php global $inbox_messages_array; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>

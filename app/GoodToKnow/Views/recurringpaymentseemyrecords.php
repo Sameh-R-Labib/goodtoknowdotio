@@ -1,3 +1,4 @@
+<?php global $array_of_recurring_payment_objects; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>

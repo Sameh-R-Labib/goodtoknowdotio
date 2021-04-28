@@ -1,3 +1,4 @@
+<?php global $special_topic_array; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditMyPostProcessor/page" method="post">
         <h2>Which topic?</h2>
@@ -5,14 +6,14 @@
             <span class="tooltiptext tooltip-top">Shown above are the topics within your current community.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
-    <section>
-        <?php foreach ($special_topic_array as $key => $value): ?>
-            <label for="choice-<?= $key ?>" class="radio">
-                <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
-                <?= $value ?>
-            </label>
-        <?php endforeach; ?>
-    </section>
-    <?php require SUBMITABORT; ?>
+        <section>
+            <?php foreach ($special_topic_array as $key => $value): ?>
+                <label for="choice-<?= $key ?>" class="radio">
+                    <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
+                    <?= $value ?>
+                </label>
+            <?php endforeach; ?>
+        </section>
+        <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

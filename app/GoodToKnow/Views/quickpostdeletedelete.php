@@ -1,3 +1,4 @@
+<?php global $long_title_of_post; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/QuickPostDeleteDelProc/page" method="post">
     <h1>Confirm</h1>

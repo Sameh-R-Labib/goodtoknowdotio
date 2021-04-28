@@ -1,7 +1,7 @@
+<?php global $bitcoin_object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditABitcoinRecordSubmit/page" method="post">
-        <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $bitcoin_object->address; ?></h2>
+        <h2><?php echo $bitcoin_object->address; ?></h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>

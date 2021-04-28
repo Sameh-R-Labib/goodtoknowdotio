@@ -1,3 +1,4 @@
+<?php global $account_type; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/BuildABankingTransactionForBalancesProcessor/page" method="post">
         <h1>Create Transaction</h1>
@@ -24,8 +25,7 @@
             </p>
         </section>
         <section>
-            <?= /** @noinspection PhpUndefinedVariableInspection */
-            $account_type ?>
+            <?= $account_type ?>
         </section>
         <?php require SUBMITABORT; ?>
     </form>

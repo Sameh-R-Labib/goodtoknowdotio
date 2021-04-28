@@ -1,3 +1,4 @@
+<?php global $inbox_messages_array; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/BlotOutSomeInboxMessagesProcessor/page" method="post">
     <h1>Delete Some 📥 💬s</h1>

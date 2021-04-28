@@ -1,14 +1,14 @@
+<?php global $recurring_payment_object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/PolishARecurringPaymentRecordSubmit/page" method="post">
-        <h2><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $recurring_payment_object->label; ?></h2>
+        <h2><?php echo $recurring_payment_object->label; ?></h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text"
-                       value="<?php /** @noinspection PhpUndefinedVariableInspection */
-                       echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264" size="60"
+                       value="<?php echo $recurring_payment_object->label; ?>" required minlength="4" maxlength="264"
+                       size="60"
                        spellcheck="false" placeholder="Cell Phone Each Month">
             </p>
             <p>

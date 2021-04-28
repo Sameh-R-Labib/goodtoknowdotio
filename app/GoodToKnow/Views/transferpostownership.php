@@ -1,3 +1,4 @@
+<?php global $special_topic_array; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipProcessor/page" method="post">
     <h1>Transfer 📄 Ownership</h1>

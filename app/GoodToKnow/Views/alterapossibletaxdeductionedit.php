@@ -1,3 +1,4 @@
+<?php global $object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AlterAPossibleTaxDeductionUpdate/page" method="post">
         <h1>Edit a Tax ✍🏽 Off</h1>

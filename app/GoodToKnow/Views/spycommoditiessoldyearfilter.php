@@ -1,3 +1,4 @@
+<?php global $array; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>

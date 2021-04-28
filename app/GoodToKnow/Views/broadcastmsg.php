@@ -1,3 +1,4 @@
+<?php global $pre_populate; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/BroadcastMsgProcessor/page" method="post">
         <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>

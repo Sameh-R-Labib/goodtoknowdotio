@@ -1,3 +1,4 @@
+<?php global $special_topic_array; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AuthorDeletesOwnPostProcessor/page" method="post">
         <h1>Author Deletes Own 📄 (Post)</h1>

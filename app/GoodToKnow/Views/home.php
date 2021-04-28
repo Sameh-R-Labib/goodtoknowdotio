@@ -1,3 +1,5 @@
+<?php global $post_content; ?>
+<?php global $type_of_resource_requested; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>

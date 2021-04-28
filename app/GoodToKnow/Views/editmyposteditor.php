@@ -1,3 +1,4 @@
+<?php global $markdown; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditMyPostEditProcessor/page" method="post">
         <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>

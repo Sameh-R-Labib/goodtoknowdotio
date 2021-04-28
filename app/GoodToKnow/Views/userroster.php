@@ -1,3 +1,4 @@
+<?php global $readable_user_objects_array; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>

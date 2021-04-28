@@ -1,3 +1,4 @@
+<?php global $object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/FineTuneACommoditySoldUpdate/page" method="post">
         <h1>Edit a Commodity Sold 📽</h1>

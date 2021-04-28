@@ -1,3 +1,4 @@
+<?php global $pre_populate; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/ByUsernameMessageSave/page" method="post">
         <h1>Message Editor</h1>

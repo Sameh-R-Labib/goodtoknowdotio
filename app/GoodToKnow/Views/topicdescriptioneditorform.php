@@ -1,3 +1,5 @@
+<?php global $saved_str01; ?>
+<?php global $topic_object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/TopicDescriptionEditorFormProcessor/page" method="post">
         <h2><?= $saved_str01 ?> Description</h2>
@@ -10,10 +12,9 @@
                 <label for="textarea"></label>
                 <textarea id="textarea" spellcheck="false" name="text" rows="28"
                           cols="77" wrap="soft"
-                          maxlength="230"><?php /** @noinspection PhpUndefinedVariableInspection */
-                    echo $topic_object->topic_description; ?></textarea>
-        </p>
-    </section>
-    <?php require SUBMITABORT; ?>
-</form>
+                          maxlength="230"><?php echo $topic_object->topic_description; ?></textarea>
+            </p>
+        </section>
+        <?php require SUBMITABORT; ?>
+    </form>
 <?php require BOTTOMOFPAGES; ?>

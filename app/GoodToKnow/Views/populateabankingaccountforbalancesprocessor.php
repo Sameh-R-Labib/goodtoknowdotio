@@ -1,3 +1,4 @@
+<?php global $object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/PopulateABankingAccountForBalancesSubmit/page" method="post">
         <h1>Edit a 🏦ing 📒 for ⚖️s</h1>

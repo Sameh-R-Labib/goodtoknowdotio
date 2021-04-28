@@ -1,3 +1,4 @@
+<?php global $array ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/FineTuneACommoditySoldEdit/page" method="post">
         <h1>Edit a Commodity Sold 📽</h1>

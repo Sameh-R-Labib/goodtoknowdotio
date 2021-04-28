@@ -1,10 +1,11 @@
+<?php global $account; ?>
+<?php global $array; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $account->acct_name; ?></h1>
+        <h1><?php echo $account->acct_name; ?></h1>
         <table class="not_there">
             <col width="92%">
             <col width="10">
