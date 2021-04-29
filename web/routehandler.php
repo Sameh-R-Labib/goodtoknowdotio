@@ -6,48 +6,48 @@
 
 require(__DIR__ . '/../config.php');
 
-define('DIRSEP', DIRECTORY_SEPARATOR);
-define('WEB_DIR', PROJ_ROOT . DIRSEP . 'web');
-define('VENDOR_DIR', PROJ_ROOT . DIRSEP . 'vendor');
+const DIRSEP = DIRECTORY_SEPARATOR;
+const WEB_DIR = PROJ_ROOT . DIRSEP . 'web';
+const VENDOR_DIR = PROJ_ROOT . DIRSEP . 'vendor';
 
 /**
  * Here I can define constants for the location
  * of the directory for view includes and for
  * the files for view includes.
  */
-define('VIEWS', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Views');
-define('VIEWSINCLUDES', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsIncludes');
-define('CONTROLLERHELPERS', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerHelpers');
-define('CONTROLLERINCLUDES', PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerIncludes');
+const VIEWS = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Views';
+const VIEWSINCLUDES = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsIncludes';
+const CONTROLLERHELPERS = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerHelpers';
+const CONTROLLERINCLUDES = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerIncludes';
 
-define('SESSIONMESSAGE', VIEWSINCLUDES . DIRSEP . 'sessionmessage.php');
-define('URLOFMOSTRECENTUPLOAD', VIEWSINCLUDES . DIRSEP . 'urlofmostrecentupload.php');
-define('COMMUNITIESFORTHISUSER', VIEWSINCLUDES . DIRSEP . 'communitiesforthisuser.php');
-define('CURRENTTOPIC', VIEWSINCLUDES . DIRSEP . 'currenttopic.php');
-define('LISTTOPICS', VIEWSINCLUDES . DIRSEP . 'listtopics.php');
-define('LISTPOSTS', VIEWSINCLUDES . DIRSEP . 'listposts.php');
-define('CURRENTPOST', VIEWSINCLUDES . DIRSEP . 'currentpost.php');
-define('CONTROLPANELLINK', VIEWSINCLUDES . DIRSEP . 'controlpanellink.php');
-define('SENDMESSAGELINK', VIEWSINCLUDES . DIRSEP . 'sendmessagelink.php');
-define('LOGINDIVLINK', VIEWSINCLUDES . DIRSEP . 'logindivlink.php');
-define('MESSAGETHEAUTHOR', VIEWSINCLUDES . DIRSEP . 'messagetheauthor.php');
-define('BREADCRUMBS', VIEWSINCLUDES . DIRSEP . 'breadcrumbs.php');
-define('CURRENTCOMMUNITY', VIEWSINCLUDES . DIRSEP . 'currentcommunity.php');
-define('TOPOFREGULARPAGE', VIEWSINCLUDES . DIRSEP . 'topofregularpage.php');
-define('BOTTOMOFPAGES', VIEWSINCLUDES . DIRSEP . 'bottomofpages.php');
-define('COLLAGE', VIEWSINCLUDES . DIRSEP . 'collage.php');
-define('TOPFORFORMPAGES', VIEWSINCLUDES . DIRSEP . 'topforformpages.php');
-define('TOPBARDIV', VIEWSINCLUDES . DIRSEP . 'topbardiv.php');
-define('CBSOFREGULARPAGES', VIEWSINCLUDES . DIRSEP . 'cbsofregularpages.php');
-define('FOOTERBAR', VIEWSINCLUDES . DIRSEP . 'footerbar.php');
-define('SUBMITABORT', VIEWSINCLUDES . DIRSEP . 'submitabort.php');
-define('HEADINGONE', VIEWSINCLUDES . DIRSEP . 'headingone.php');
-define('TIMEFORMFIELD', VIEWSINCLUDES . DIRSEP . 'timeformfield.php');
-define('TIMEFORMFIELDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeformfieldprefilled.php');
-define('TIMENEXTANDLASTFORMFIELDS', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php');
-define('TIMENEXTANDLASTFORMFIELDSPREFILLED', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php');
-define('TIMEBOUGHTSOLD', VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php');
-define('TIMEBOUGHTSOLDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php');
+const SESSIONMESSAGE = VIEWSINCLUDES . DIRSEP . 'sessionmessage.php';
+const URLOFMOSTRECENTUPLOAD = VIEWSINCLUDES . DIRSEP . 'urlofmostrecentupload.php';
+const COMMUNITIESFORTHISUSER = VIEWSINCLUDES . DIRSEP . 'communitiesforthisuser.php';
+const CURRENTTOPIC = VIEWSINCLUDES . DIRSEP . 'currenttopic.php';
+const LISTTOPICS = VIEWSINCLUDES . DIRSEP . 'listtopics.php';
+const LISTPOSTS = VIEWSINCLUDES . DIRSEP . 'listposts.php';
+const CURRENTPOST = VIEWSINCLUDES . DIRSEP . 'currentpost.php';
+const CONTROLPANELLINK = VIEWSINCLUDES . DIRSEP . 'controlpanellink.php';
+const SENDMESSAGELINK = VIEWSINCLUDES . DIRSEP . 'sendmessagelink.php';
+const LOGINDIVLINK = VIEWSINCLUDES . DIRSEP . 'logindivlink.php';
+const MESSAGETHEAUTHOR = VIEWSINCLUDES . DIRSEP . 'messagetheauthor.php';
+const BREADCRUMBS = VIEWSINCLUDES . DIRSEP . 'breadcrumbs.php';
+const CURRENTCOMMUNITY = VIEWSINCLUDES . DIRSEP . 'currentcommunity.php';
+const TOPOFREGULARPAGE = VIEWSINCLUDES . DIRSEP . 'topofregularpage.php';
+const BOTTOMOFPAGES = VIEWSINCLUDES . DIRSEP . 'bottomofpages.php';
+const COLLAGE = VIEWSINCLUDES . DIRSEP . 'collage.php';
+const TOPFORFORMPAGES = VIEWSINCLUDES . DIRSEP . 'topforformpages.php';
+const TOPBARDIV = VIEWSINCLUDES . DIRSEP . 'topbardiv.php';
+const CBSOFREGULARPAGES = VIEWSINCLUDES . DIRSEP . 'cbsofregularpages.php';
+const FOOTERBAR = VIEWSINCLUDES . DIRSEP . 'footerbar.php';
+const SUBMITABORT = VIEWSINCLUDES . DIRSEP . 'submitabort.php';
+const HEADINGONE = VIEWSINCLUDES . DIRSEP . 'headingone.php';
+const TIMEFORMFIELD = VIEWSINCLUDES . DIRSEP . 'timeformfield.php';
+const TIMEFORMFIELDPREFILLED = VIEWSINCLUDES . DIRSEP . 'timeformfieldprefilled.php';
+const TIMENEXTANDLASTFORMFIELDS = VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php';
+const TIMENEXTANDLASTFORMFIELDSPREFILLED = VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php';
+const TIMEBOUGHTSOLD = VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php';
+const TIMEBOUGHTSOLDPREFILLED = VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php';
 
 /**
  * More require statements
@@ -159,7 +159,9 @@ $is_admin = $role === 'admin';
 $is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
 
 /**
- * I have these here to prevent PhpStorm from telling me they are out of scope.
+ * The strategy is for vars used in views to be declared global both
+ * in the view file and in the view's controller class method. To round things
+ * off we will also initialize the vars "not initialized above" below.
  */
 $page = 'Home';
 $html_title = '';
@@ -168,7 +170,34 @@ $pre_populate = '';
 $array = [];
 $markdown = '';
 $coms_user_belongs_to = [];
+$coms_user_does_not_belong_to = [];
 $show_poof = false;
+$time_bought = [];
+$time_sold = [];
+$time = [];
+$last = [];
+$next = [];
+$object = '';
+$community_object = '';
+$topic_object = '';
+$bitcoin_object = '';
+$user_object = '';
+$recurring_payment_object = '';
+$thing_type = '';
+$thing_name = '';
+$result = '';
+$fields = '';
+$present = '';
+$array_of_post_objects = [];
+$array_of_author_usernames = [];
+$array_of_recurring_payment_objects = [];
+$array_of_bitcoin_objects = [];
+$array_of_objects = [];
+$inbox_messages_array = [];
+$readable_user_objects_array = [];
+$account = '';
+$account_type = '';
+$bank = '';
 
 /**
  * Various initializations.
