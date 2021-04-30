@@ -22,17 +22,15 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
+        global $db;
         global $thing_type;
         global $html_title;
         global $present;
-        global $is_admin;
-        global $is_logged_in;
         global $sessionMessage;
         global $type_of_resource_requested;
         global $community_id;
-        global $community_name;
         global $topic_id;
-        global $topic_name;
+
 
         /**
          * Preliminary things to take care of.
@@ -41,6 +39,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
         kick_out_nonadmins();
 
         $thing_type = ucfirst($type_of_resource_requested);
+
 
         /**
          * 1) Make sure array element $_POST["animal"] is itself an array (aka. "that array".)

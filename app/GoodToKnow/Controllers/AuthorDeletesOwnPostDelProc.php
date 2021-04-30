@@ -15,11 +15,6 @@ class AuthorDeletesOwnPostDelProc
          * and redirect to the home page.
          */
 
-        global $sessionMessage;
-        global $saved_int02;
-        global $saved_int01;
-        global $saved_str01;
-        global $saved_str02;
 
         kick_out_loggedoutusers();
 

@@ -9,13 +9,9 @@ class DropACommoditySoldDelete
 {
     function page()
     {
-        /**
-         *
-         */
-
         global $html_title;
-
         global $object;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
 

@@ -9,8 +9,8 @@ class FineTuneACommoditySoldYearFilter
     function page()
     {
         global $html_title;
+        global $array;
 
-        /** @var $array */
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
 
@@ -29,6 +29,7 @@ class FineTuneACommoditySoldYearFilter
 
 
         $html_title = 'Which Commodity Sold?';
+
 
         require VIEWS . DIRSEP . 'finetuneacommoditysoldyearfilter.php';
     }

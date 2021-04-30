@@ -1,5 +1,5 @@
-<?php require TOPFORFORMPAGES; ?>
 <?php global $present; ?>
+<?php require TOPFORFORMPAGES; ?>
     <!-- I will use form tags only for style css issues -->
     <form>
         <h2>Save or Cancel</h2>

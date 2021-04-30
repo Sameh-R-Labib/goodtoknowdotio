@@ -14,15 +14,16 @@ class ConceiveAPossibleTaxDeductionProcessor
          * Create a database record in the possible_tax_deduction table using the submitted possible_tax_deduction data.
          */
 
+
         global $db;
         global $sessionMessage;
         global $user_id;
+
 
         kick_out_loggedoutusers();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
         $label = standard_form_field_prep('label', 3, 264);

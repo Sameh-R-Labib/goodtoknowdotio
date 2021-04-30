@@ -15,10 +15,12 @@ class FeatureATaskEdit
          * 4) Present a form which is populated with data from the task object.
          */
 
+
         global $html_title;
         global $object;
         global $next;
         global $last;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
 
@@ -39,7 +41,9 @@ class FeatureATaskEdit
 
         $next = get_date_h_m_s_from_a_timestamp($object->next);
 
+
         $html_title = 'Edit the task record';
+
 
         require VIEWS . DIRSEP . 'featureataskedit.php';
     }

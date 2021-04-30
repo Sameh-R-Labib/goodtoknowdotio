@@ -24,7 +24,9 @@ class EditMyPostChoosePost
         global $html_title;
         global $special_post_array;
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 

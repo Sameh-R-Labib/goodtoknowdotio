@@ -7,10 +7,6 @@ class BitcoinSeeMyRecords
     function page()
     {
         global $array_of_bitcoin_objects;
-        global $special_community_array;
-        global $type_of_resource_requested;
-        global $is_admin;
-        global $is_guest;
         global $page;
         global $show_poof;
         global $html_title;

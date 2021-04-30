@@ -32,21 +32,20 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    Reverse the order of the transactions before displaying them.
          */
 
+
         global $db;
-        global $page;
-        global $account;
         global $sessionMessage;
         global $user_id;
         global $show_poof;
         global $html_title;
+        global $page;
+        global $account;
         global $array;
-        global $special_community_array;
-        global $type_of_resource_requested;
-        global $is_admin;
-        global $is_guest;
         global $saved_int01;    // id of BankingAcctForBalances record
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 
@@ -121,10 +120,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
+
 
         foreach ($array as $transaction) {
             if (is_crypto($account->currency)) {
@@ -138,6 +136,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
             $transaction->time = get_readable_time($transaction->time);
         }
 
+
         $account->start_time = get_readable_time($account->start_time);
         $account->start_balance = readable_amount_of_money($account->currency, $account->start_balance);
 
@@ -149,11 +148,15 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         $html_title = 'Transactions';
 
+
         $page = 'CheckMyBankingAccountTxBalances';
+
 
         $show_poof = true;
 
+
         $sessionMessage .= ' Here are your transactions and their balances. ';
+
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';
     }

@@ -10,11 +10,13 @@ class ChangePasswordProcessor
 {
     function page()
     {
+        global $db;
         global $user_id;
         global $sessionMessage;
-        global $db;
+
 
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 
@@ -29,6 +31,7 @@ class ChangePasswordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $current_password = standard_form_field_prep('current_password', 10, 264);
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'password_for_regandchange_prep.php';
 

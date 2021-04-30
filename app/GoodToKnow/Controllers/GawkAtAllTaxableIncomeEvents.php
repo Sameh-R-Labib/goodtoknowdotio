@@ -11,12 +11,15 @@ class GawkAtAllTaxableIncomeEvents
          * so that the subsequent code can display the taxable_income_event(s/plural) for that year.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which year received?';
+
 
         require VIEWS . DIRSEP . 'gawkatalltaxableincomeevents.php';
     }

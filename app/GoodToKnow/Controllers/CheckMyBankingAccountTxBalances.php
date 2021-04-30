@@ -15,11 +15,15 @@ class CheckMyBankingAccountTxBalances
          *  It will present to you a selection of your banking  accounts so you can choose one.
          */
 
+
         global $html_title;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
+
         $html_title = 'Which banking account for balances?';
+
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalances.php';
     }

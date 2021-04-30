@@ -17,18 +17,20 @@ class FineTuneACommoditySoldUpdate
          * 5) Report success.
          */
 
-        /** @var $user_id */
-        /** @var $time_bought */
-        /** @var $time_sold */
-        /** @var $price_bought */
-        /** @var $price_sold */
-        /** @var $currency_transacted */
-        /** @var $commodity_amount */
-        /** @var $commodity_type */
-        /** @var $commodity_label */
-        /** @var $tax_year */
-        /** @var $profit */
-        /** @var $saved_int01 */
+
+        global $db;
+        global $time_bought;
+        global $time_sold;
+        global $price_bought;
+        global $price_sold;
+        global $currency_transacted;
+        global $commodity_amount;
+        global $commodity_type;
+        global $commodity_label;
+        global $tax_year;
+        global $profit;
+        global $saved_int01;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
 

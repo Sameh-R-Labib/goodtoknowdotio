@@ -13,6 +13,7 @@ class DefaultCommunityProcessor
         global $sessionMessage;
         global $special_community_array;
 
+
         kick_out_loggedoutusers();
 
 

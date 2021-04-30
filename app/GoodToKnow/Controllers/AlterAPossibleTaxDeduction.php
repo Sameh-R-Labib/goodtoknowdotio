@@ -13,12 +13,14 @@ class AlterAPossibleTaxDeduction
          * to narrow down the choices for which possible_tax_deduction to edit.
          */
 
-        global $sessionMessage;
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which year paid?';
+
 
         require VIEWS . DIRSEP . 'alterapossibletaxdeduction.php';
     }

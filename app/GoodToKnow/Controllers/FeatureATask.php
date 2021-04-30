@@ -12,13 +12,16 @@ class FeatureATask
          * Present the Task(s/plural) as radio buttons.
          */
 
+
         global $db;
         global $sessionMessage;
         global $user_id;
         global $html_title;
         global $array;
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 
@@ -33,7 +36,9 @@ class FeatureATask
             breakout(' I could NOT find any tasks. ');
         }
 
+
         $html_title = 'Which task record?';
+
 
         require VIEWS . DIRSEP . 'featureatask.php';
     }

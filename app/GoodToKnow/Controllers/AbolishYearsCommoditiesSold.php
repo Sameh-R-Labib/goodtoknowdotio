@@ -10,7 +10,6 @@ class AbolishYearsCommoditiesSold
          * Note: It's an admin script.
          */
 
-        global $sessionMessage;
         global $html_title;
 
         kick_out_nonadmins();

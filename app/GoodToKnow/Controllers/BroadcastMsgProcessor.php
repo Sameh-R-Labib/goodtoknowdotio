@@ -15,8 +15,10 @@ class BroadcastMsgProcessor
          * users will receive this message.
          */
 
+        global $db;
         global $message_object;
         global $sessionMessage;
+
 
         kick_out_nonadmins();
 
@@ -29,12 +31,11 @@ class BroadcastMsgProcessor
 
         require CONTROLLERINCLUDES . DIRSEP . "add_a_message_in_the_database.php";
 
+
         /**
          * Create an array of MessageToUser objects
          * One for each user in the system.
          */
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_of_user_objects = User::find_all($db, $sessionMessage);
 

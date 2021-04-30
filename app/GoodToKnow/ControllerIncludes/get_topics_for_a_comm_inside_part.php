@@ -3,12 +3,12 @@
 use GoodToKnow\Models\CommunityToTopic;
 
 global $special_topic_array;
-
 global $sessionMessage;
-
 global $community_id;
 
+
 kick_out_loggedoutusers();
+
 
 /**
  * Refresh special_topic_array

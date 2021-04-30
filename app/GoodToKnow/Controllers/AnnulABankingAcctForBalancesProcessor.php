@@ -10,6 +10,7 @@ class AnnulABankingAcctForBalancesProcessor
     function page()
     {
         global $html_title;
+        global $object;
 
         /**
          * 1) Determines the id of the banking_acct_for_balances record from 'choice' and
@@ -29,8 +30,6 @@ class AnnulABankingAcctForBalancesProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $object->start_time = get_readable_time($object->start_time);
         $object->start_balance = readable_amount_of_money($object->currency, $object->start_balance);

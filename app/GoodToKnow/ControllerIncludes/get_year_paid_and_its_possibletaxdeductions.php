@@ -3,11 +3,11 @@
 use GoodToKnow\Models\PossibleTaxDeduction;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
+
 global $sessionMessage;
-
 global $user_id;
-
 global $array;
+
 
 kick_out_loggedoutusers();
 

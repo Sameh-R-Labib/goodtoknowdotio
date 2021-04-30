@@ -22,6 +22,7 @@ class FineTuneACommoditySoldEdit
         global $time_sold;
         global $object;
 
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
 
 
@@ -73,6 +74,7 @@ class FineTuneACommoditySoldEdit
 
 
         $html_title = 'Edit the commodity sold';
+
 
         require VIEWS . DIRSEP . 'finetuneacommoditysoldedit.php';
     }

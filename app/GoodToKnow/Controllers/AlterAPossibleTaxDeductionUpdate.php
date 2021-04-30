@@ -20,8 +20,10 @@ class AlterAPossibleTaxDeductionUpdate
          * 5) Report success.
          */
 
+        global $db;
         global $sessionMessage;
         global $saved_int01;    // record id
+        global $object;
 
         kick_out_loggedoutusers();
 

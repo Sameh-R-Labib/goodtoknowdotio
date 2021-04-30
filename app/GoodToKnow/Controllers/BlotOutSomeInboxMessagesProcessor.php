@@ -8,17 +8,20 @@ class BlotOutSomeInboxMessagesProcessor
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
-
         global $user_id;
 
+
         kick_out_loggedoutusers();
+
 
         if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
 
             breakout(' Unexpected deficiencies in the POST array. ');
 
         }
+
 
         $submitted_message_ids_array = [];
 

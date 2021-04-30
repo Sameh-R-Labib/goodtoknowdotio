@@ -17,7 +17,6 @@ class CreateNewPostTitleProcessor
          *   - Redirect to route for saving the new post
          */
 
-        global $sessionMessage;
 
         kick_out_loggedoutusers();
 

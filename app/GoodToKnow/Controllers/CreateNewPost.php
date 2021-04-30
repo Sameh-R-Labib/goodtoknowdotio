@@ -16,6 +16,7 @@ class CreateNewPost
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_community.php';
 
+
         require VIEWS . DIRSEP . 'createnewpost.php';
     }
 }

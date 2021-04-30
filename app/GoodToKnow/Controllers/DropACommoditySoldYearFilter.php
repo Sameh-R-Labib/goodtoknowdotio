@@ -9,8 +9,8 @@ class DropACommoditySoldYearFilter
     function page()
     {
         global $html_title;
-
         global $array;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
 

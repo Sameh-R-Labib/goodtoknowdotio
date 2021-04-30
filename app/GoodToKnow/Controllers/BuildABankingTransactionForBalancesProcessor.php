@@ -16,15 +16,18 @@ class BuildABankingTransactionForBalancesProcessor
          * table using the submitted banking_transaction_for_balances data.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $user_id;
+        global $time;
+
 
         kick_out_loggedoutusers();
 
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
 
@@ -46,9 +49,6 @@ class BuildABankingTransactionForBalancesProcessor
         /**
          * Create a BankingTransactionForBalances array for the record.
          */
-
-        // I don't want to make $time global. That's why I'm suppressing PhpStorm inspection here.
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_record = ['user_id' => $user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
 

@@ -15,17 +15,19 @@ class DefaultTimeZoneProcessor
          * Also, switch to the default time zone in the session.
          */
 
+
         global $db;
-
         global $sessionMessage;
-
         global $user_id;
 
+
         kick_out_loggedoutusers();
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
         $timezone = timezone_form_field_prep('timezone');
+
 
         $db = get_db();
 
@@ -37,7 +39,9 @@ class DefaultTimeZoneProcessor
 
         }
 
+
         $user_object->timezone = $timezone;
+
 
         $was_updated = $user_object->save($db, $sessionMessage);
 
@@ -46,6 +50,7 @@ class DefaultTimeZoneProcessor
             breakout(' Failed to update your user record. ');
 
         }
+
 
         $_SESSION['timezone'] = $timezone;
 

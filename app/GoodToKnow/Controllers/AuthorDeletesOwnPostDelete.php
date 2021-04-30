@@ -13,14 +13,18 @@ class AuthorDeletesOwnPostDelete
          * stores the post's info in the session, and present a form asking the user if he is sure he wants to delete the post.
          */
 
-        global $sessionMessage;
+
+        global $db;
         global $user_id;
         global $html_title;
         global $long_title_of_post;
 
+
         kick_out_loggedoutusers();
 
+
         $db = get_db();
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 

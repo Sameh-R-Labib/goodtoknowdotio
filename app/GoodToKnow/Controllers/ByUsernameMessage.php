@@ -10,8 +10,9 @@ class ByUsernameMessage
          * Make it possible to message a user if the only thing you know about this user is their username.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 

@@ -13,12 +13,15 @@ class DropACommoditySold
          * for which CommoditySold to delete.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which tax year?';
+
 
         require VIEWS . DIRSEP . 'dropacommoditysold.php';
     }

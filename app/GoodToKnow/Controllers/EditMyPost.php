@@ -15,7 +15,9 @@ class EditMyPost
          * first we need to have the user identify the post. So this first step will help.
          */
 
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_community.php';
+
 
         require VIEWS . DIRSEP . 'editmypost.php';
     }

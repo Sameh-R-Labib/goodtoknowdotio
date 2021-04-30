@@ -16,8 +16,8 @@ class ExpungeARecurringPaymentRecordProcessor
          * 4) Presents a form containing data from the record and asking for confirmation to delete.
          */
 
-        global $html_title;
 
+        global $html_title;
         global $recurring_payment_object;
 
 
@@ -31,7 +31,6 @@ class ExpungeARecurringPaymentRecordProcessor
         // Format its attributes for easy viewing.
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         $recurring_payment_object->time = get_readable_time($recurring_payment_object->time);

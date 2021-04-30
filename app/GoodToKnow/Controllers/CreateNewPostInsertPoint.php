@@ -19,12 +19,16 @@ class CreateNewPostInsertPoint
          * Note: Here it is assumed there is at least one post in the chosen topic. Otherwise, this route will have had been skipped.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $html_title;
         global $saved_int01;
         global $special_post_array;
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 

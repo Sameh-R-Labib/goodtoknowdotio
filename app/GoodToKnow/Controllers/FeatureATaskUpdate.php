@@ -18,12 +18,13 @@ class FeatureATaskUpdate
          * 5) Report success.
          */
 
+
         global $db;
         global $sessionMessage;
         global $saved_int01;    // task id
         global $last;
         global $next;
-        global $timezone;   // just to reaffirm that "timezone" mean the script's PHP runtime timezone.
+
 
         kick_out_loggedoutusers();
 

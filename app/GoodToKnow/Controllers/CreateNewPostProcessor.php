@@ -9,8 +9,8 @@ class CreateNewPostProcessor
     function page()
     {
         global $db;
-
         global $chosen_topic_id;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 

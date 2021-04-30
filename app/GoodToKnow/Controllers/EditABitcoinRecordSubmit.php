@@ -18,11 +18,13 @@ class EditABitcoinRecordSubmit
          * 4) Update/save the updated record in the database.
          */
 
+
         global $db;
         global $sessionMessage;
         global $saved_int01;    // bitcoin record id
         global $bitcoin_object;
         global $time;
+
 
         kick_out_loggedoutusers();
 

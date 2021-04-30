@@ -1,8 +1,6 @@
 <?php
 
-
 namespace GoodToKnow\Controllers;
-
 
 use GoodToKnow\Models\Topic;
 
@@ -23,13 +21,17 @@ class BalanceOutTheSequenceNumbersSave
          *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to Home page.
          */
 
+
+        global $db;
         global $sessionMessage;
+
 
         /**
          * Preliminary things to take care of.
          */
 
         kick_out_nonadmins();
+
 
         /**
          * 1, 2, 3) All steps in one section of code.
@@ -43,6 +45,7 @@ class BalanceOutTheSequenceNumbersSave
         foreach ($_SESSION['saved_arr01'] as $item) {
             $result = $item->save($db, $sessionMessage);
         }
+
 
         /**
          * Report success.

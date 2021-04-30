@@ -11,12 +11,15 @@ class FineTuneACommoditySold
          * to narrow down the choices for which CommoditySold to edit.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which tax year?';
+
 
         require VIEWS . DIRSEP . 'finetuneacommoditysold.php';
     }

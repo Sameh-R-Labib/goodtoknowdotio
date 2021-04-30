@@ -3,13 +3,12 @@
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
+global $db;
 global $sessionMessage;
-
 global $timezone;
-
 global $user_id;
-
 global $bitcoin_object;
+
 
 kick_out_loggedoutusers();
 

@@ -30,7 +30,9 @@ class CreateNewPostIPProcessor
         global $special_post_array;
         global $saved_int01;
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 

@@ -14,13 +14,14 @@ class EditMyPostEditProcessor
          * edited post's markdown and html files.
          */
 
-        global $sessionMessage;
+
         global $markdown;
         global $saved_str01;                // path for markdown file
         global $saved_str02;                // path for html file
         global $community_id;
         global $saved_int01;                // id of edited post's Topic
         global $saved_int02;                // id of edited post
+
 
         kick_out_loggedoutusers();
 

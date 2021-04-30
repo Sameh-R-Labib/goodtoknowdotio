@@ -13,15 +13,16 @@ class BlotOutSomeInboxMessages
          * The ones chosen will be deleted in the subsequent route.
          */
 
+
+        global $db;
         global $inbox_messages_array;
-
         global $sessionMessage;
-
         global $user_id;
-
         global $html_title;
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 

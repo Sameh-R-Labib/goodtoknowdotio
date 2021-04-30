@@ -16,8 +16,12 @@ class AnnulABankingAcctForBalancesDelete
          * some session variables and redirect to the home page.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_int01;
+        global $object;
+
 
         kick_out_loggedoutusers();
 

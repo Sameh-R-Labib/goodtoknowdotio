@@ -20,13 +20,15 @@ class ConceiveAPossibleTaxDeduction
          * label + year_paid for the "to be created" possible_tax_deduction record.
          */
 
-        global $sessionMessage;
 
         global $html_title;
 
+
         kick_out_loggedoutusers();
 
+
         $html_title = 'Create a New Possible Tax Deduction';
+
 
         require VIEWS . DIRSEP . 'conceiveapossibletaxdeduction.php';
     }

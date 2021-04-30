@@ -20,10 +20,12 @@ class ByUsernameMessageSave
          * It ALSO saves a record in the message_to_user table.
          */
 
+
         global $db;
         global $message_object;
         global $sessionMessage;
         global $saved_str01;
+
 
         kick_out_loggedoutusers();
 

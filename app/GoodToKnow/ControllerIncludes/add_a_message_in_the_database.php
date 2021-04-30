@@ -4,11 +4,11 @@ use GoodToKnow\Models\Message;
 use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
+
 global $db;
-
 global $user_id;
-
 global $message_object;
+
 
 require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 

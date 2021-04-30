@@ -8,8 +8,11 @@ class AdminPassCodeGenerationForm
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $html_title;
+        global $community_array;
+
 
         kick_out_nonadmins();
 

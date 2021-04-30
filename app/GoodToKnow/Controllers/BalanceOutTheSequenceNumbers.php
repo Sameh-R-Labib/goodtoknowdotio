@@ -9,14 +9,13 @@ class BalanceOutTheSequenceNumbers
 {
     function page()
     {
+        global $db;
         global $html_title;
         global $thing_type;
         global $thing_name;
         global $thing_id;
         global $result;
         global $fields;
-        global $is_admin;
-        global $is_logged_in;
         global $sessionMessage;
         global $type_of_resource_requested;
         global $community_id;
@@ -24,7 +23,9 @@ class BalanceOutTheSequenceNumbers
         global $topic_id;
         global $topic_name;
 
+
         kick_out_nonadmins();
+
 
         /**
          * The "thing" whose sequence numbers will be getting balanced.

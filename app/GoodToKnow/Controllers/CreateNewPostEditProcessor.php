@@ -26,7 +26,9 @@ class CreateNewPostEditProcessor
         global $saved_int02;     // post id
         global $community_id;
 
+
         kick_out_loggedoutusers();
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 

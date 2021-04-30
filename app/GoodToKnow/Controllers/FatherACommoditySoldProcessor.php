@@ -12,6 +12,8 @@ class FatherACommoditySoldProcessor
          * Create a database record in the commodities_sold table using the submitted commodities_sold data.
          */
 
+
+        global $db;
         global $user_id;
         global $time_bought;
         global $time_sold;
@@ -23,6 +25,7 @@ class FatherACommoditySoldProcessor
         global $commodity_label;
         global $tax_year;
         global $profit;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
 

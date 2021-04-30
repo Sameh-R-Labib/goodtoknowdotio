@@ -8,9 +8,8 @@ class BroadcastMsg
     {
         global $html_title;
         global $pre_populate;
-        global $sessionMessage;
         global $user_username;
-        global $url_of_most_recent_upload;
+
 
         kick_out_nonadmins();
 

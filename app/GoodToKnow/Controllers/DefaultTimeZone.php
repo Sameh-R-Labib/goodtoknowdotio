@@ -10,8 +10,9 @@ class DefaultTimeZone
          * Make it possible to change one's own default timezone.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 

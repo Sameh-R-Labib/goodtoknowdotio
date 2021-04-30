@@ -13,15 +13,21 @@ class ForgetATask
          * a series of radio buttons to choose from.
          */
 
+        global $db;
         global $sessionMessage;
         global $user_id;            // We need this.
         global $html_title;
+        global $array;
+
 
         kick_out_loggedoutusers();
 
+
         $db = get_db();
 
+
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+
 
         $array = Task::find_by_sql($db, $sessionMessage, $sql);
 
@@ -29,7 +35,9 @@ class ForgetATask
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
         }
 
+
         $html_title = 'Which task?';
+
 
         require VIEWS . DIRSEP . 'forgetatask.php';
     }

@@ -10,12 +10,15 @@ class CleanupYearsTaxableIncomeEvents
          * Note: It's an admin script.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_nonadmins();
 
+
         $html_title = 'Which year?';
+
 
         require VIEWS . DIRSEP . 'cleanupyearstaxableincomeevents.php';
     }

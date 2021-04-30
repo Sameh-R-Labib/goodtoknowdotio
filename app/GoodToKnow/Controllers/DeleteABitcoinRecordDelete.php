@@ -14,8 +14,11 @@ class DeleteABitcoinRecordDelete
          * On the other hand if no then reset some session variables and redirect to the home page.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_int01;
+
 
         kick_out_loggedoutusers();
 
@@ -48,6 +51,7 @@ class DeleteABitcoinRecordDelete
             breakout(' I was NOT able to find the bitcoin record. ');
 
         }
+
 
         $result = $bitcoin->delete($db, $sessionMessage);
 

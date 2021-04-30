@@ -9,15 +9,16 @@ class EditMyPostEditor
     function page()
     {
         global $db;
-        global $sessionMessage;
         global $user_id;
         global $html_title;
         global $markdown;
-        global $url_of_most_recent_upload;
+
 
         kick_out_loggedoutusers();
 
+
         $db = get_db();
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 

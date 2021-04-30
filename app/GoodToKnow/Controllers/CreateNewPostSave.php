@@ -13,7 +13,6 @@ class CreateNewPostSave
         global $sessionMessage;
         global $html_title;
         global $type_of_resource_requested;
-        global $url_of_most_recent_upload;
         global $user_id;
         global $topic_id;
         global $saved_str01;                // The main title
@@ -21,7 +20,9 @@ class CreateNewPostSave
         global $saved_int01;                // The topic id
         global $saved_int02;                // The sequence number
 
+
         kick_out_loggedoutusers();
+
 
         $db = get_db();
 
@@ -47,7 +48,9 @@ class CreateNewPostSave
          * our topic which has the sequence number.
          */
 
+
         $created = time();
+
 
         $filenamestub = '';
 

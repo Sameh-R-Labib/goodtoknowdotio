@@ -14,9 +14,10 @@ class CleanupYearsTaxableIncomeEventsGetYear
          * 3) Give confirmation of deletion.
          */
 
-        global $db;
 
+        global $db;
         global $sessionMessage;
+
 
         kick_out_nonadmins();
 
