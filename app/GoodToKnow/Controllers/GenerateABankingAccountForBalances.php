@@ -17,15 +17,15 @@ class GenerateABankingAccountForBalances
          * acct_name for the "to be created" banking_acct_for_balances record.
          */
 
-        global $sessionMessage;
-
-        global $timezone;
 
         global $html_title;
 
+
         kick_out_loggedoutusers();
 
+
         $html_title = 'Create a New BankingAcctForBalances';
+
 
         require VIEWS . DIRSEP . 'generateabankingaccountforbalances.php';
     }

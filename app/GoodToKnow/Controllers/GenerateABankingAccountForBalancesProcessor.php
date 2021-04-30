@@ -15,22 +15,24 @@ class GenerateABankingAccountForBalancesProcessor
          * data.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $user_id;
+        global $time;
+
 
         kick_out_loggedoutusers();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $acct_name = standard_form_field_prep('acct_name', 3, 30);
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
 
 
@@ -40,14 +42,10 @@ class GenerateABankingAccountForBalancesProcessor
 
         $comment = standard_form_field_prep('comment', 0, 800);
 
-        $db = get_db();
-
 
         /**
          * Create a BankingAcctForBalances array for the record.
          */
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => $time,
             'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
@@ -63,6 +61,8 @@ class GenerateABankingAccountForBalancesProcessor
         /**
          * Save the object.
          */
+
+        $db = get_db();
 
         $result = $object->save($db, $sessionMessage);
 

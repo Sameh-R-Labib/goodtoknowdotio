@@ -1,6 +1,8 @@
 <?php
 
-global $sessionMessage;
+
+global $submitted_community_ids_array;
+
 
 kick_out_nonadmins();
 

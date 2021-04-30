@@ -10,10 +10,12 @@ class GiveComsChoices
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $saved_str01; // Has user's username
         global $html_title;
         global $coms_user_belongs_to;
+        global $coms_user_does_not_belong_to;
 
 
         kick_out_nonadmins();
@@ -37,7 +39,9 @@ class GiveComsChoices
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 
         if (!$user_object) {
+
             breakout(' Unexpected unable to retrieve user. ');
+
         }
 
         $user_id = (int)$user_object->id;

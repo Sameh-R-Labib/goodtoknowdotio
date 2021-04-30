@@ -199,6 +199,7 @@ $array_of_bitcoin_objects = [];
 $array_of_objects = [];
 $inbox_messages_array = [];
 $readable_user_objects_array = [];
+$submitted_community_ids_array = [];
 $community_array = [];
 $account = '';
 $account_type = '';

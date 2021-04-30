@@ -8,12 +8,14 @@ class GiveComsChoicesProcessor
 {
     function page()
     {
+        global $db;
+        global $sessionMessage;
         global $saved_str01; // Has user's username
         global $saved_int01; // Has user's id
+        global $submitted_community_ids_array;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';
-
-        $db = get_db();
 
 
         /**
@@ -38,8 +40,6 @@ class GiveComsChoicesProcessor
 
         $array_of_usertocommunity_objects = [];
 
-        /** @noinspection PhpUndefinedVariableInspection */
-
         foreach ($submitted_community_ids_array as $a_community_id) {
             $a_community_id = (int)$a_community_id;
 
@@ -57,6 +57,8 @@ class GiveComsChoicesProcessor
         /**
          * The goal now is to insert all these objects into the database.
          */
+
+        $db = get_db();
 
         $result = UserToCommunity::insert_multiple_objects($db, $sessionMessage, $array_of_usertocommunity_objects);
 
