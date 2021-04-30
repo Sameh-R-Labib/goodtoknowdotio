@@ -2,6 +2,7 @@
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
+global $chosen_topic_id;
 global $special_topic_array;
 global $sessionMessage;
 

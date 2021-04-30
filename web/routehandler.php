@@ -162,6 +162,9 @@ $is_guest = false;  // Set this here so we don't need to check to see if $is_gue
  * The strategy is for vars used in views to be declared global both
  * in the view file and in the view's controller class method. To round things
  * off we will also initialize the vars "not initialized above" below.
+ *
+ * Also, it's good to make global the vars which traverse multiple include files.
+ * For example $message_object.
  */
 $page = 'Home';
 $html_title = '';
@@ -179,6 +182,7 @@ $last = [];
 $next = [];
 $object = '';
 $community_object = '';
+$message_object = '';   // Example of a var which just traverses multiple include files.
 $topic_object = '';
 $bitcoin_object = '';
 $user_object = '';
@@ -198,6 +202,15 @@ $readable_user_objects_array = [];
 $account = '';
 $account_type = '';
 $bank = '';
+$chosen_topic_id = 0;
+$price_bought = 0;
+$price_sold = 0;
+$currency_transacted = '';
+$commodity_amount = 0;
+$commodity_type = '';
+$commodity_label = '';
+$tax_year = 0;
+$profit = 0;
 
 /**
  * Various initializations.

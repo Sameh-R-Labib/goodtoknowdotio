@@ -14,6 +14,7 @@ class ConceiveAPossibleTaxDeductionProcessor
          * Create a database record in the possible_tax_deduction table using the submitted possible_tax_deduction data.
          */
 
+        global $db;
         global $sessionMessage;
         global $user_id;
 

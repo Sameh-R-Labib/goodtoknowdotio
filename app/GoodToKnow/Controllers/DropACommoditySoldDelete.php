@@ -15,7 +15,7 @@ class DropACommoditySoldDelete
 
         global $html_title;
 
-        /** @var $object */
+        global $object;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
 

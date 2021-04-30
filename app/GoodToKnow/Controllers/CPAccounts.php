@@ -11,7 +11,9 @@ class CPAccounts
         global $type_of_resource_requested;
         global $is_admin;
         global $is_guest;
+        global $html_title;
         global $show_poof;
+        global $page;
 
         kick_out_loggedoutusers();
 

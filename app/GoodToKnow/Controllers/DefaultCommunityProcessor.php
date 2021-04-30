@@ -8,6 +8,7 @@ class DefaultCommunityProcessor
 {
     function page()
     {
+        global $db;
         global $user_id;
         global $sessionMessage;
         global $special_community_array;

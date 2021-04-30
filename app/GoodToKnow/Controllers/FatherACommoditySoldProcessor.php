@@ -12,17 +12,17 @@ class FatherACommoditySoldProcessor
          * Create a database record in the commodities_sold table using the submitted commodities_sold data.
          */
 
-        /** @var $user_id */
-        /** @var $time_bought */
-        /** @var $time_sold */
-        /** @var $price_bought */
-        /** @var $price_sold */
-        /** @var $currency_transacted */
-        /** @var $commodity_amount */
-        /** @var $commodity_type */
-        /** @var $commodity_label */
-        /** @var $tax_year */
-        /** @var $profit */
+        global $user_id;
+        global $time_bought;
+        global $time_sold;
+        global $price_bought;
+        global $price_sold;
+        global $currency_transacted;
+        global $commodity_amount;
+        global $commodity_type;
+        global $commodity_label;
+        global $tax_year;
+        global $profit;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
 

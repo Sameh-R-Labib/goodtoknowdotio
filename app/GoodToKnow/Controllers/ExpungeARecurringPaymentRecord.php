@@ -13,9 +13,11 @@ class ExpungeARecurringPaymentRecord
          * It will present a series of radio buttons to choose from.
          */
 
+        global $db;
         global $sessionMessage;
         global $user_id;            // We need this.
         global $html_title;
+        global $array_of_recurring_payment_objects;
 
         kick_out_loggedoutusers();
 

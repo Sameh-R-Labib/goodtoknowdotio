@@ -2,6 +2,8 @@
 
 use GoodToKnow\Models\Bitcoin;
 
+global $db;
+global $array_of_bitcoin_objects;
 global $sessionMessage;
 global $user_id;            // We need this.
 

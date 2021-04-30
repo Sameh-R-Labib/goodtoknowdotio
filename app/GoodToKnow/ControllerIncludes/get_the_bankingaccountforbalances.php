@@ -3,6 +3,10 @@
 use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
+global $db;
+
+global $object;
+
 global $sessionMessage;
 
 global $user_id;

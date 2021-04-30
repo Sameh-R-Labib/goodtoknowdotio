@@ -5,6 +5,16 @@ use GoodToKnow\Models\TopicToPost;
 
 $db = get_db();
 
+global $sessionMessage;
+
+global $saved_int02;
+
+global $saved_int01;
+
+global $saved_str01;
+
+global $saved_str02;
+
 $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
 
 if (!$post) {

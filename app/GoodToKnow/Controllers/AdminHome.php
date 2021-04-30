@@ -6,6 +6,7 @@ class AdminHome
 {
     function page()
     {
+        global $page;
         global $is_admin;
         global $is_guest;
         global $show_poof;

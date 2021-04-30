@@ -32,6 +32,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    Reverse the order of the transactions before displaying them.
          */
 
+        global $db;
+        global $page;
+        global $account;
         global $sessionMessage;
         global $user_id;
         global $show_poof;

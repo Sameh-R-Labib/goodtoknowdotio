@@ -4,8 +4,7 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Account: </b><?php /** @noinspection PhpUndefinedVariableInspection */
-            echo $object->acct_name; ?></p>
+        <p><b>Account: </b><?php echo $object->acct_name; ?></p>
         <p><b>Start 🕒: </b><?= $object->start_time ?></p>
         <p><b>Start ⚖️: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?></p>
         <p><?= $object->comment ?></p>

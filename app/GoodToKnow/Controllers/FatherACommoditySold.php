@@ -11,9 +11,7 @@ class FatherACommoditySold
          */
 
         global $html_title;
-
         global $sessionMessage;
-
         global $timezone;
 
         kick_out_loggedoutusers();

@@ -5,6 +5,11 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
+global $timezone;
+global $time_bought;
+global $time_sold;
+
+
 /**
  * These includes may be redundant. But that's okay!
  */

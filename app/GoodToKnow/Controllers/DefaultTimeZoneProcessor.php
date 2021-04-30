@@ -15,6 +15,8 @@ class DefaultTimeZoneProcessor
          * Also, switch to the default time zone in the session.
          */
 
+        global $db;
+
         global $sessionMessage;
 
         global $user_id;

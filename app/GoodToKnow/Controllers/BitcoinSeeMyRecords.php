@@ -6,12 +6,15 @@ class BitcoinSeeMyRecords
 {
     function page()
     {
+        global $array_of_bitcoin_objects;
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
         global $is_guest;
+        global $page;
         global $show_poof;
         global $html_title;
+        global $sessionMessage;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 
@@ -22,8 +25,6 @@ class BitcoinSeeMyRecords
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($array_of_bitcoin_objects as $bitcoin_object) {
 
@@ -36,8 +37,6 @@ class BitcoinSeeMyRecords
         $page = 'BitcoinSeeMyRecords';
 
         $show_poof = true;
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $sessionMessage .= ' Here are your ₿ records. ';
 

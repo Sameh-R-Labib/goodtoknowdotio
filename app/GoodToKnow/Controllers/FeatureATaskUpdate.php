@@ -18,9 +18,12 @@ class FeatureATaskUpdate
          * 5) Report success.
          */
 
+        global $db;
         global $sessionMessage;
-
         global $saved_int01;    // task id
+        global $last;
+        global $next;
+        global $timezone;   // just to reaffirm that "timezone" mean the script's PHP runtime timezone.
 
         kick_out_loggedoutusers();
 
@@ -43,8 +46,6 @@ class FeatureATaskUpdate
         // + + + Get $last and $next (which are timestamps) based on submitted:
         // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
 
-        /** @var $last */
-        /** @var $next */
 
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_next_and_last_epochs.php';
 

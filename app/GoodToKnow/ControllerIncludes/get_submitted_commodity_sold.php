@@ -7,12 +7,19 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 global $user_id;
-
 global $timezone;
-
 global $sessionMessage;
-
 global $saved_int01;    // commodities_sold id
+global $time_bought;
+global $time_sold;
+global $price_bought;
+global $price_sold;
+global $currency_transacted;
+global $commodity_amount;
+global $commodity_type;
+global $commodity_label;
+global $tax_year;
+global $profit;
 
 kick_out_loggedoutusers();
 
@@ -36,8 +43,6 @@ require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
  * `time_sold_date` `time_sold_hour` `time_sold_minute` `time_sold_second`
  */
 
-/** @var $time_bought */
-/** @var $time_sold */
 
 require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_bought_and_time_sold_epochs.php';
 

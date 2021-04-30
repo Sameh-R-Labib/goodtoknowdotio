@@ -13,6 +13,8 @@ class BlotOutSomeInboxMessages
          * The ones chosen will be deleted in the subsequent route.
          */
 
+        global $inbox_messages_array;
+
         global $sessionMessage;
 
         global $user_id;

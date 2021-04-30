@@ -17,7 +17,10 @@ class FineTuneACommoditySoldEdit
          */
 
 
-        /** @var $object */
+        global $html_title;
+        global $time_bought;
+        global $time_sold;
+        global $object;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
 

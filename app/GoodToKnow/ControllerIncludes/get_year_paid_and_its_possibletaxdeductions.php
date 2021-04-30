@@ -7,6 +7,8 @@ global $sessionMessage;
 
 global $user_id;
 
+global $array;
+
 kick_out_loggedoutusers();
 
 

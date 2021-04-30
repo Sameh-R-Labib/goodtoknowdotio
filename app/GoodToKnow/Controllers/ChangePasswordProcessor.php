@@ -12,6 +12,7 @@ class ChangePasswordProcessor
     {
         global $user_id;
         global $sessionMessage;
+        global $db;
 
         kick_out_loggedoutusers();
 

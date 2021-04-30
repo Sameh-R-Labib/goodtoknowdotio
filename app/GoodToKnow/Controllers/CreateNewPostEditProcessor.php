@@ -19,6 +19,7 @@ class CreateNewPostEditProcessor
          * files related to it using the submitted post content as the source material.
          */
 
+        global $db;
         global $sessionMessage;
         global $markdown;
         global $saved_int01;     // topic id

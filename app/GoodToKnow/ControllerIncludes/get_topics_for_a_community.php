@@ -1,5 +1,6 @@
 <?php
 
+global $special_topic_array;
 global $sessionMessage;
 global $community_id;
 

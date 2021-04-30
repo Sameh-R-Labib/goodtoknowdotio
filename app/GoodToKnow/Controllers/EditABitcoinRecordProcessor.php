@@ -18,7 +18,9 @@ class EditABitcoinRecordProcessor
 
         global $html_title;
 
-        /** @var $bitcoin_object */
+        global $time;
+
+        global $bitcoin_object;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_record_of_user.php';
 

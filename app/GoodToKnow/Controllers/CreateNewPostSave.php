@@ -9,6 +9,7 @@ class CreateNewPostSave
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $html_title;
         global $type_of_resource_requested;

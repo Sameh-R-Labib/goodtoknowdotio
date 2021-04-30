@@ -16,8 +16,9 @@ class FeatureATaskEdit
          */
 
         global $html_title;
-
-        /** @var $object */
+        global $object;
+        global $next;
+        global $last;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
 

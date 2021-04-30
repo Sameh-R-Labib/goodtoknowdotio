@@ -8,9 +8,11 @@ class EditMyPostEditor
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
-        global $markdown;
         global $user_id;
+        global $html_title;
+        global $markdown;
         global $url_of_most_recent_upload;
 
         kick_out_loggedoutusers();

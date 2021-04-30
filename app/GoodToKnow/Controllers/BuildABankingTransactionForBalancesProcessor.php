@@ -47,6 +47,7 @@ class BuildABankingTransactionForBalancesProcessor
          * Create a BankingTransactionForBalances array for the record.
          */
 
+        // I don't want to make $time global. That's why I'm suppressing PhpStorm inspection here.
         /** @noinspection PhpUndefinedVariableInspection */
 
         $array_record = ['user_id' => $user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];

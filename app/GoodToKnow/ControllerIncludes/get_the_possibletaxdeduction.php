@@ -9,6 +9,8 @@ global $user_id;
 
 global $timezone;
 
+global $object;
+
 kick_out_loggedoutusers();
 
 

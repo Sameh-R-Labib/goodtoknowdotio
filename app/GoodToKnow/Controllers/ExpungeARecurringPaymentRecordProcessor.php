@@ -18,6 +18,9 @@ class ExpungeARecurringPaymentRecordProcessor
 
         global $html_title;
 
+        global $recurring_payment_object;
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
 
 
@@ -30,8 +33,6 @@ class ExpungeARecurringPaymentRecordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $recurring_payment_object->time = get_readable_time($recurring_payment_object->time);
         $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);

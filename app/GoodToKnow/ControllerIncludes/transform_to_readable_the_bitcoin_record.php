@@ -3,7 +3,7 @@
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-/** @noinspection PhpUndefinedVariableInspection */
+global $bitcoin_object;
 
 $bitcoin_object->time = get_readable_time($bitcoin_object->time);
 $bitcoin_object->comment = nl2br($bitcoin_object->comment, false);

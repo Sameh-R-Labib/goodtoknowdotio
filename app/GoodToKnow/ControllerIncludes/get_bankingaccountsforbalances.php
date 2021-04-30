@@ -2,6 +2,7 @@
 
 use GoodToKnow\Models\BankingAcctForBalances;
 
+global $array_of_objects;
 global $sessionMessage;
 global $user_id;            // We need this.
 

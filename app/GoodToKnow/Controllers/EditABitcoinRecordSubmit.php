@@ -18,8 +18,11 @@ class EditABitcoinRecordSubmit
          * 4) Update/save the updated record in the database.
          */
 
+        global $db;
         global $sessionMessage;
         global $saved_int01;    // bitcoin record id
+        global $bitcoin_object;
+        global $time;
 
         kick_out_loggedoutusers();
 
@@ -88,8 +91,6 @@ class EditABitcoinRecordSubmit
         $bitcoin_object->current_balance = $edited_current_balance;
         $bitcoin_object->currency = $edited_currency;
         $bitcoin_object->price_point = $edited_price_point;
-
-        /** @noinspection PhpUndefinedVariableInspection */
         $bitcoin_object->time = $time;
         $bitcoin_object->comment = $edited_comment;
 

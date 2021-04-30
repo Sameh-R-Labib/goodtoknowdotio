@@ -9,6 +9,8 @@ global $timezone;
 
 global $user_id;
 
+global $bitcoin_object;
+
 kick_out_loggedoutusers();
 
 

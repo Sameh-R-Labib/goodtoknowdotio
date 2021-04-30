@@ -17,9 +17,12 @@ class EditMyPostChoosePost
          * criteria then we'll store a session message and redirect back home.
          */
 
+        global $db;
         global $sessionMessage;
         global $saved_int01;        // id of topic
         global $user_id;
+        global $html_title;
+        global $special_post_array;
 
         kick_out_loggedoutusers();
 

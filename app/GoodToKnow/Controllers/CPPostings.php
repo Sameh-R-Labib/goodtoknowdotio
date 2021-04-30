@@ -7,12 +7,13 @@ class CPPostings
     function page()
     {
         global $sessionMessage;
-        global $html_title;
         global $special_community_array;
         global $type_of_resource_requested;
         global $is_admin;
         global $is_logged_in;
         global $is_guest;
+        global $page;
+        global $html_title;
         global $show_poof;
 
         kick_out_nonadmins();
