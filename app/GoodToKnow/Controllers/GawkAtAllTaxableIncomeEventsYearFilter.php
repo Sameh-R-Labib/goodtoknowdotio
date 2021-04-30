@@ -14,12 +14,12 @@ class GawkAtAllTaxableIncomeEventsYearFilter
          * 2) Present the TaxableIncomeEvent(s/plural) in a page whose layout is similar to the Home page.
          */
 
-        global $is_admin;
-        global $is_guest;
-        global $show_poof;
+
+        global $sessionMessage;
         global $html_title;
-        global $special_community_array;
-        global $type_of_resource_requested;
+        global $show_poof;
+        global $page;
+        global $array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
@@ -33,7 +33,6 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($array as $item) {
             $item->time = get_readable_time($item->time);
@@ -41,15 +40,18 @@ class GawkAtAllTaxableIncomeEventsYearFilter
             $item->amount = readable_amount_of_money($item->currency, $item->amount);
         }
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $sessionMessage .= " Here is one year of your taxable income event records. ";
 
+
         $html_title = "One year of your taxable income event records";
+
 
         $page = 'GawkAtAllTaxableIncomeEvents';
 
+
         $show_poof = true;
+
 
         require VIEWS . DIRSEP . 'gawkatalltaxableincomeeventsyearfilter.php';
     }

@@ -3,9 +3,12 @@
 use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-global $sessionMessage;
 
+global $db;
+global $array;
+global $sessionMessage;
 global $user_id;
+
 
 kick_out_loggedoutusers();
 
