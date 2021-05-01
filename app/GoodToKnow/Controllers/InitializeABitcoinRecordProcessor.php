@@ -16,16 +16,17 @@ class InitializeABitcoinRecordProcessor
          *
          */
 
+
+        global $db;
         global $sessionMessage;
         global $user_id;
+        global $time;
 
         kick_out_loggedoutusers();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $address = bitcoin_address_form_field_prep('address');
@@ -40,23 +41,16 @@ class InitializeABitcoinRecordProcessor
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
 
 
         $comment = standard_form_field_prep('comment', 0, 800);
 
 
-        $db = get_db();
-
-
         /**
          * Create a Bitcoin array for the record.
          */
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => $initial_balance,
             'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
@@ -73,6 +67,8 @@ class InitializeABitcoinRecordProcessor
         /**
          * Save the object.
          */
+
+        $db = get_db();
 
         $result = $bitcoin_object->save($db, $sessionMessage);
 

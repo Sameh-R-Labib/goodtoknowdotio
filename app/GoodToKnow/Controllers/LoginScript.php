@@ -14,6 +14,7 @@ class LoginScript
 {
     function page()
     {
+        global $db;
         global $is_logged_in;
         global $sessionMessage;
 

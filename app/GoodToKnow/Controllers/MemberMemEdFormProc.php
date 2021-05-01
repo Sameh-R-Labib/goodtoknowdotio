@@ -23,9 +23,12 @@ class MemberMemEdFormProc
          *  7) Update the database with this User object.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_str01;                // The member's username
         global $saved_int01;                // The member's id
+
 
         kick_out_nonadmins();
 

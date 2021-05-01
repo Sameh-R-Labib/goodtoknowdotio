@@ -14,9 +14,12 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
          * 3) Give confirmation of deletion.
          */
 
+        global $db;
         global $sessionMessage;
 
+
         kick_out_nonadmins();
+
 
         $db = get_db();
 

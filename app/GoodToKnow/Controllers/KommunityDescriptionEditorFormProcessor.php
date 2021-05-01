@@ -22,6 +22,7 @@ class KommunityDescriptionEditorFormProcessor
          *  7) Update the database with this Community object.
          */
 
+        global $db;
         global $sessionMessage;
         global $saved_str01;                // The community's name
         global $saved_int01;                // The community's id

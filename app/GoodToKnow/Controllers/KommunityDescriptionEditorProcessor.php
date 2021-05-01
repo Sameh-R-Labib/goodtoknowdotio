@@ -9,7 +9,9 @@ class KommunityDescriptionEditorProcessor
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
+
 
         kick_out_nonadmins();
 

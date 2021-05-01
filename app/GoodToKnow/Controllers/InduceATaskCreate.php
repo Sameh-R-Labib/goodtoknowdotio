@@ -13,28 +13,26 @@ class InduceATaskCreate
          * Create a database record in the task table using the submitted data.
          */
 
-        global $sessionMessage;
 
+        global $db;
+        global $sessionMessage;
         global $user_id;
+        global $next;
+        global $last;
+
 
         kick_out_loggedoutusers();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $label = standard_form_field_prep('label', 3, 264);
 
 
         // + + + Get $last and $next (which are timestamps) based on submitted:
         // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
-
-        /** @var $last */
-        /** @var $next */
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_next_and_last_epochs.php';
-
         // + + +
-
 
 
         $cycle_type = standard_form_field_prep('cycle_type', 3, 60);
@@ -46,8 +44,6 @@ class InduceATaskCreate
          * Use the submitted data to add a record to the database.
          */
 
-        $db = get_db();
-
         $array_record = ['user_id' => $user_id, 'label' => $label, 'last' => $last, 'next' => $next,
             'cycle_type' => $cycle_type, 'comment' => $comment];
 
@@ -55,6 +51,8 @@ class InduceATaskCreate
         // In memory object.
 
         $object = Task::array_to_object($array_record);
+
+        $db = get_db();
 
         $result = $object->save($db, $sessionMessage);
 

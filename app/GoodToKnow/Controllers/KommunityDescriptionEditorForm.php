@@ -8,10 +8,15 @@ class KommunityDescriptionEditorForm
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
-        global $saved_str01; // community name
         global $saved_int01; // community id
         global $html_title;
+        global $community_object;
+
+
+        // $saved_str01 is the community name. The view file will get it directly from global scope.
+
 
         kick_out_nonadmins();
 
@@ -22,10 +27,10 @@ class KommunityDescriptionEditorForm
          *  2) Present a (pre-filled with current description) form for editing.
          */
 
-        $db = get_db();
-
 
         // 1) Retrieve the Community object for the community whose description the admin wants to edit.
+
+        $db = get_db();
 
         $community_object = Community::find_by_id($db, $sessionMessage, $saved_int01);
 

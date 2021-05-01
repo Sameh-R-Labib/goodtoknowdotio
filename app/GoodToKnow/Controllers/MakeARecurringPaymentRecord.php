@@ -17,15 +17,15 @@ class MakeARecurringPaymentRecord
          * recurring_payment record.
          */
 
-        global $sessionMessage;
-
-        global $timezone;
 
         global $html_title;
 
+
         kick_out_loggedoutusers();
 
+
         $html_title = 'Create a New Recurring Payment Record';
+
 
         require VIEWS . DIRSEP . 'makearecurringpaymentrecord.php';
     }

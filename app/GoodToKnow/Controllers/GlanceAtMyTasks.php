@@ -14,16 +14,22 @@ class GlanceAtMyTasks
          * Display all tasks for the user.
          */
 
+
+        global $db;
         global $user_id;
         global $sessionMessage;
-        global $show_poof;
-        global $is_admin;
-        global $is_guest;
         global $html_title;
-        global $special_community_array;
-        global $type_of_resource_requested;
+        global $show_poof;
+        global $page;
+        global $array;
+
 
         kick_out_loggedoutusers();
+
+
+        /**
+         * Retrieve Tasks.
+         */
 
         $db = get_db();
 
@@ -45,7 +51,6 @@ class GlanceAtMyTasks
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'get_proximity_task_label.php';
 
         foreach ($array as $object) {
@@ -54,6 +59,11 @@ class GlanceAtMyTasks
             $object->next = get_readable_date($object->next);
             $object->comment = nl2br($object->comment, false);
         }
+
+
+        /**
+         * The view.
+         */
 
         $html_title = 'All my Tasks';
 

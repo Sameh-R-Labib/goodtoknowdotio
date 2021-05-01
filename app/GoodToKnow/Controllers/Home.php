@@ -90,6 +90,9 @@ class Home
                                                $post_content, $author_username, $type_of_resource_requested, $sessionMessage,
                                                $is_admin, $is_guest, &$show_poof)
     {
+        global $html_title;
+        global $page;
+
         $show_poof = false;
 
         $html_title = 'GoodToKnow.io';

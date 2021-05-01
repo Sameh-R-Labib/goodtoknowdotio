@@ -15,14 +15,17 @@ class MakeARecurringPaymentRecordProcessor
          * recurring_payment data.
          */
 
-        global $sessionMessage;
 
+        global $db;
+        global $sessionMessage;
         global $user_id;
+        global $time;
+
 
         kick_out_loggedoutusers();
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $label = standard_form_field_prep('label', 4, 264);
@@ -33,9 +36,7 @@ class MakeARecurringPaymentRecordProcessor
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
 
 
@@ -46,7 +47,6 @@ class MakeARecurringPaymentRecordProcessor
          * Create a RecurringPayment array for the record.
          */
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => $currency,
             'amount_paid' => $amount_paid, 'time' => $time, 'comment' => $comment];

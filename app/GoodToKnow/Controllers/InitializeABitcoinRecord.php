@@ -18,15 +18,15 @@ class InitializeABitcoinRecord
          * address for the "to be created" bitcoin record.
          */
 
-        global $sessionMessage;
 
         global $html_title;
 
-        global $timezone;
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Create a New Bitcoin Record';
+
 
         require VIEWS . DIRSEP . 'initializeabitcoinrecord.php';
     }

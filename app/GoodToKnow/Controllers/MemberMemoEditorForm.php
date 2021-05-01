@@ -8,8 +8,12 @@ class MemberMemoEditorForm
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
-        global $saved_str01; // Has user's username
+        global $saved_str01; // Has user's username. Is changed in this file and is used in the view.
+        global $html_title;
+        global $user_object;
+
 
         kick_out_nonadmins();
 
@@ -21,13 +25,13 @@ class MemberMemoEditorForm
          *  3) Present a (pre-filled with current memo) form for editing the memo.
          */
 
-        $db = get_db();
-
 
         /**
          *  1) Retrieve the User object for the member whose memo the admin wants to edit.
          *  2) Save the id of the User in the session.
          */
+
+        $db = get_db();
 
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 

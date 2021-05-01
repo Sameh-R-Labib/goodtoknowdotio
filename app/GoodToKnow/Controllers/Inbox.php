@@ -8,31 +8,29 @@ class Inbox
 {
     function page()
     {
-        global $user_id;
+        global $db;
         global $sessionMessage;
-        global $is_admin;
-        global $is_guest;
+        global $user_id;
         global $show_poof;
         global $html_title;
-        global $special_community_array;
-        global $community_id;
-        global $community_name;
-        global $topic_id;
-        global $topic_name;
-        global $post_id;
-        global $post_name;
-        global $type_of_resource_requested;
-        global $author_username;
+        global $page;
+        global $inbox_messages_array;
+
 
         kick_out_loggedoutusers();
 
-        $db = get_db();
 
         $html_title = 'Inbox';
 
+
         $page = 'Inbox';
 
+
         $show_poof = true;
+
+
+        $db = get_db();
+
 
         $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($db, $sessionMessage, $user_id);
 
@@ -49,7 +47,9 @@ class Inbox
             }
         }
 
+
         $sessionMessage .= ' 90 day old messages will be deleted by admin. ';
+
 
         require VIEWS . DIRSEP . 'inbox.php';
     }
