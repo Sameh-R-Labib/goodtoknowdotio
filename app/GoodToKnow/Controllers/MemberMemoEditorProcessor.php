@@ -8,7 +8,8 @@ class MemberMemoEditorProcessor
 {
     function page()
     {
-        global $sessionMessage;
+        global $db;
+
 
         kick_out_nonadmins();
 
@@ -20,13 +21,17 @@ class MemberMemoEditorProcessor
          *  3) Redirect to a route
          */
 
+
         $db = get_db();
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_specifying_which_prep.php';
 
         $submitted_username = username_for_specifying_which_prep($db);
 
+
         $_SESSION['saved_str01'] = $submitted_username;
+
 
         redirect_to("/ax1/MemberMemoEditorForm/page");
     }

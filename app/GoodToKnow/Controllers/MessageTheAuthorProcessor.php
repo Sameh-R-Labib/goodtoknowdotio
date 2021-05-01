@@ -13,19 +13,20 @@ class MessageTheAuthorProcessor
          * It also saves a record in the message_to_user table.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $author_id;
         global $author_username;
+        global $message_object;
+
 
         kick_out_loggedoutusers();
 
 
         /**
          * $message_object and $db are defined when we include add_a_message_in_the_database.php.
-         * I know the PhpStorm linter does not recognize this and marks up the code below as if
-         * something is wrong with it. But I can't do anything about it.
          */
-
 
         require CONTROLLERINCLUDES . DIRSEP . "add_a_message_in_the_database.php";
 
@@ -38,8 +39,6 @@ class MessageTheAuthorProcessor
          *  - message_id
          *  - user_id
          */
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
 

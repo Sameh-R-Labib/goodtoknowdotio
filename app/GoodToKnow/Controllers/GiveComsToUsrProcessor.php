@@ -8,8 +8,8 @@ class GiveComsToUsrProcessor
 {
     function page()
     {
-
         global $db;
+
 
         kick_out_nonadmins();
 

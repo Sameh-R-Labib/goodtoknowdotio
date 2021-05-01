@@ -17,7 +17,7 @@ class MessageTheAuthor
          * At the top of the form there shall be the statement: "You can use markdown and UTF-8 characters."
          */
 
-        global $sessionMessage;
+
         global $pre_populate;
         global $html_title;
         global $author_username;
@@ -25,7 +25,7 @@ class MessageTheAuthor
         global $topic_name;
         global $community_name;
         global $user_username;
-        global $url_of_most_recent_upload;
+
 
         kick_out_loggedoutusers();
 

@@ -15,12 +15,15 @@ class NewCommunity
          *  - community_description varchar(230)
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_nonadmins();
 
+
         $html_title = 'Create a New Community';
+
 
         require VIEWS . DIRSEP . 'newcommunity.php';
     }

@@ -201,6 +201,15 @@ function redirect_to(string $location)
 // Location header. Output buffering must be set
 // to be on for this to work.
 
+    /**
+     * There is no reason we shouldn't carry over
+     * any generated messages to the route we are
+     * redirecting to.
+     */
+    global $sessionMessage;
+
+    $_SESSION['message'] = $sessionMessage;
+
     if ($location != NULL) {
 
         header("Location: {$location}");
