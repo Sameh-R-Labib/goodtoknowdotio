@@ -21,10 +21,13 @@ class NewTopicIPProcessor
          * Once that's done redirect to the next script.
          */
 
+        global $db;
         global $sessionMessage;
         global $community_id;
 
+
         kick_out_nonadmins();
+
 
         $db = get_db();
 
@@ -96,7 +99,6 @@ class NewTopicIPProcessor
         }
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_sequence_number_in_case_after.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'get_sequence_number_in_case_before.php';
 
         if ($relate == 'after') {

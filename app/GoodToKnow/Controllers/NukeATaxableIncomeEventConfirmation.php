@@ -14,9 +14,11 @@ class NukeATaxableIncomeEventConfirmation
          * delete it. On the other hand if no then reset some session variables and redirect to the home page.
          */
 
-        global $sessionMessage;
 
+        global $db;
+        global $sessionMessage;
         global $saved_int01;
+
 
         kick_out_loggedoutusers();
 

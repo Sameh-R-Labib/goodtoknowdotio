@@ -9,15 +9,16 @@ class NewTopicSave
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $community_id;
         global $saved_str01;                // The topic name
         global $saved_str02;                // The topic description
         global $saved_int01;                // The sequence number
 
+
         kick_out_nonadmins();
 
-        $db = get_db();
 
         /**
          * Create some variables and their values which will be needed for the two objects
@@ -38,6 +39,8 @@ class NewTopicSave
         /**
          * Get all the topics in out community.
          */
+
+        $db = get_db();
 
         $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
 

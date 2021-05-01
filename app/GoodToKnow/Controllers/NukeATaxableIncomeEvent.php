@@ -13,12 +13,15 @@ class NukeATaxableIncomeEvent
          * to narrow down the choices for which taxable_income_event to delete.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which year received?';
+
 
         require VIEWS . DIRSEP . 'nukeataxableincomeevent.php';
     }

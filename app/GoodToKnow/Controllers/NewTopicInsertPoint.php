@@ -17,11 +17,15 @@ class NewTopicInsertPoint
          * Otherwise, this route will have had been skipped.
          */
 
+
         global $html_title;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
+
         $html_title = 'Where will the new topic go?';
+
 
         require VIEWS . DIRSEP . 'newtopicinsertpoint.php';
     }

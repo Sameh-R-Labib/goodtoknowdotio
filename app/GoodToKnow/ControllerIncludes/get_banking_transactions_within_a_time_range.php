@@ -2,13 +2,13 @@
 
 use GoodToKnow\Models\BankingTransactionForBalances;
 
+
+global $db;
 global $sessionMessage;
-
 global $user_id;
-
 global $saved_int01;     // min time
-
 global $saved_int02;     // max time
+global $array;
 
 kick_out_loggedoutusers();
 

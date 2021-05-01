@@ -17,7 +17,10 @@ class NukeATaxableIncomeEventDelete
          *    and asks for approval for deletion to proceed.
          */
 
+
+        global $object;
         global $html_title;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_taxableincomeevent.php';
 
@@ -30,10 +33,8 @@ class NukeATaxableIncomeEventDelete
         // Replace attributes with more readable ones.
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $object->time = get_readable_time($object->time);
         $object->comment = nl2br($object->comment, false);

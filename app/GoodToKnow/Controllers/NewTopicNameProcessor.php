@@ -17,7 +17,6 @@ class NewTopicNameProcessor
          *   - Redirect to route for saving the new post
          */
 
-        global $sessionMessage;
 
         kick_out_nonadmins();
 
@@ -27,9 +26,10 @@ class NewTopicNameProcessor
 
         $topic_description = standard_form_field_prep('topic_description', 1, 230);
 
-        $_SESSION['saved_str01'] = $topic_name;
 
+        $_SESSION['saved_str01'] = $topic_name;
         $_SESSION['saved_str02'] = $topic_description;
+
 
         redirect_to("/ax1/NewTopicSave/page");
     }

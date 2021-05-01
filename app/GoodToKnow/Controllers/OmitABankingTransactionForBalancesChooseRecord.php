@@ -16,7 +16,10 @@ class OmitABankingTransactionForBalancesChooseRecord
          * The ultimate goal is to present a BankingTransactionForBalances for deletion.
          */
 
+
+        global $array;
         global $html_title;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_banking_transactions_within_a_time_range.php';
 
@@ -26,8 +29,6 @@ class OmitABankingTransactionForBalancesChooseRecord
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($array as $object) {
             $object->time = get_readable_time($object->time);

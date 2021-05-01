@@ -14,15 +14,19 @@ class NewTopic
          * insertion point.
          */
 
+
+        global $special_topic_array;
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         if (sizeof($special_topic_array) > 0) {
             $is_empty = false;
         } else {
             $is_empty = true;
         }
+
 
         if ($is_empty) {
             $_SESSION['saved_int01'] = 10000;
