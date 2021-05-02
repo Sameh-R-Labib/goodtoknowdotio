@@ -196,10 +196,11 @@ function redirect_to(string $location)
      *    2. Routes which end in  redirect_to().
      *
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
-     * by passing on their "to display message"
+     * by passing on their "to display message" within redirect_to().
      */
     global $sessionMessage;
 
+    // passing on the "to display message"
     $_SESSION['message'] = $sessionMessage;
 
     if ($location !== '') {
@@ -224,7 +225,7 @@ function breakout(string $newMessage)
      *    2. Routes which end in  redirect_to().
      *
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
-     * by passing on their "to display message"
+     * by passing on their "to display message" within redirect_to().
      */
     global $sessionMessage;
 
