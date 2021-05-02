@@ -3,15 +3,13 @@
 use GoodToKnow\Models\RecurringPayment;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
+
 global $db;
-
 global $sessionMessage;
-
 global $user_id;
-
 global $timezone;
-
 global $recurring_payment_object;
+
 
 kick_out_loggedoutusers();
 

@@ -17,11 +17,12 @@ class PurgeOldMessagesProcessor
          *   3) Report success or failure.
          */
 
+
+        global $db;
         global $sessionMessage;
 
-        kick_out_nonadmins();
 
-        $db = get_db();
+        kick_out_nonadmins();
 
 
         /**
@@ -48,6 +49,8 @@ class PurgeOldMessagesProcessor
          * The assumption is that all messages sent before the zero hour (12am) will be deleted.
          */
 
+        $db = get_db();
+
         $result = Message::purge_all_messages_older_than_date($db, $sessionMessage, $timestamp);
 
 
@@ -62,7 +65,9 @@ class PurgeOldMessagesProcessor
          */
 
         if ($result === false) {
+
             breakout(' Something inside of purge_all_messages_older_than_date failed. ');
+
         }
 
 

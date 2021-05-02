@@ -31,10 +31,14 @@ class OmitABankingTransactionForBalancesChooseRecord
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
         foreach ($array as $object) {
+
             $object->time = get_readable_time($object->time);
+
         }
 
+
         $html_title = 'Which banking transaction for balances record?';
+
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalanceschooserecord.php';
     }

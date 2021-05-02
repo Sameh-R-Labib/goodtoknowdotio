@@ -9,6 +9,10 @@ class PopulateABankingAccountForBalancesProcessor
 {
     function page()
     {
+        global $object;
+        global $time;
+
+
         /**
          * 1) Store the submitted banking_acct_for_balances record id in the session.
          * 2) Retrieve the banking_acct_for_balances object with that id from the database.
@@ -16,8 +20,6 @@ class PopulateABankingAccountForBalancesProcessor
          * 4) Present a form which is populated with data from the banking_acct_for_balances object.
          */
 
-
-        /** @var $object */
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
 
@@ -44,11 +46,14 @@ class PopulateABankingAccountForBalancesProcessor
 
         global $html_title;
 
+
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
         $time = get_date_h_m_s_from_a_timestamp($object->start_time);
 
+
         $html_title = 'Edit the banking_acct_for_balances record';
+
 
         require VIEWS . DIRSEP . 'populateabankingaccountforbalancesprocessor.php';
     }

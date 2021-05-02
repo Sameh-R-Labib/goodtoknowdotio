@@ -18,7 +18,12 @@ class OmitABankingTransactionForBalancesDelete
          *    and asks for approval for deletion to proceed.
          */
 
+
+        global $db;
         global $html_title;
+        global $object;
+        global $bank;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
 
@@ -38,8 +43,6 @@ class OmitABankingTransactionForBalancesDelete
          * We need to know what the currency is. To do this we need the BankingAcctForBalances object.
          */
 
-        /** @noinspection PhpUndefinedVariableInspection */
-
         $bank = BankingAcctForBalances::find_by_id($db, $sessionMessage, $object->bank_id);
 
         if (!$bank) {
@@ -49,14 +52,15 @@ class OmitABankingTransactionForBalancesDelete
         }
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         $object->time = get_readable_time($object->time);
 
         $object->amount = readable_amount_of_money($bank->currency, $object->amount);
 
+
         $html_title = 'Are you sure?';
+
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalancesdelete.php';
     }

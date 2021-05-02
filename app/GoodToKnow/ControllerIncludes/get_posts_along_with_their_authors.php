@@ -2,10 +2,16 @@
 
 use GoodToKnow\Models\TopicToPost;
 
+
+global $db;
 global $sessionMessage;
 global $saved_int01;        // id of topic
+global $array_of_author_usernames;
+global $array_of_post_objects;
+
 
 kick_out_nonadmins();
+
 
 $db = get_db();
 

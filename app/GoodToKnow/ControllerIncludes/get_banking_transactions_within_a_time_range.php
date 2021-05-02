@@ -10,15 +10,16 @@ global $saved_int01;     // min time
 global $saved_int02;     // max time
 global $array;
 
-kick_out_loggedoutusers();
 
-$db = get_db();
+kick_out_loggedoutusers();
 
 
 /**
  * Get an array of BankingTransactionForBalances objects belonging to the user and falling
  * within the prescribed time range.
  */
+
+$db = get_db();
 
 $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
 $sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($saved_int01) . '" AND "' . $db->real_escape_string($saved_int02) . '"';

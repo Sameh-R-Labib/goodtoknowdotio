@@ -13,11 +13,12 @@ class OmitABankingTransactionForBalancesTimeRange
          * 4) Redirect.
          */
 
-        global $sessionMessage;
 
         kick_out_loggedoutusers();
 
+
         require CONTROLLERINCLUDES . DIRSEP . 'find_min_max_time_range_based_on_choice.php';
+
 
         redirect_to("/ax1/OmitABankingTransactionForBalancesChooseRecord/page");
     }

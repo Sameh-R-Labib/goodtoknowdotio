@@ -19,8 +19,12 @@ class PopulateABankingAccountForBalancesSubmit
          * 4) Update/save the updated record in the database.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_int01;    // record id
+        global $time;
+
 
         kick_out_loggedoutusers();
 
@@ -31,16 +35,13 @@ class PopulateABankingAccountForBalancesSubmit
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
         $edited_acct_name = standard_form_field_prep('acct_name', 3, 30);
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
 
 
@@ -71,8 +72,6 @@ class PopulateABankingAccountForBalancesSubmit
          */
 
         $object->acct_name = $edited_acct_name;
-
-        /** @noinspection PhpUndefinedVariableInspection */
         $object->start_time = $time;
         $object->start_balance = $edited_start_balance;
         $object->currency = $edited_currency;
@@ -86,7 +85,9 @@ class PopulateABankingAccountForBalancesSubmit
         $result = $object->save($db, $sessionMessage);
 
         if ($result === false) {
+
             breakout(' I failed at saving the updated banking account for balances. ');
+
         }
 
 

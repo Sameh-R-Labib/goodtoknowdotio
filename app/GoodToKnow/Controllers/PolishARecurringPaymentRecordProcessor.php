@@ -16,9 +16,11 @@ class PolishARecurringPaymentRecordProcessor
          * 4) Present a form which is populated with data from the recurring_payment object.
          */
 
-        global $html_title;
 
-        /** @var $recurring_payment_object */
+        global $html_title;
+        global $recurring_payment_object;
+        global $time;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
 
@@ -47,7 +49,9 @@ class PolishARecurringPaymentRecordProcessor
 
         $time = get_date_h_m_s_from_a_timestamp($recurring_payment_object->time);
 
+
         $html_title = 'Edit the recurring_payment record';
+
 
         require VIEWS . DIRSEP . 'polisharecurringpaymentrecordprocessor.php';
     }

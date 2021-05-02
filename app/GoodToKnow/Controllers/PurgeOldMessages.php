@@ -17,12 +17,15 @@ class PurgeOldMessages
          * sent before the zero hour (12am) will be deleted.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_nonadmins();
 
+
         $html_title = 'Purge Old Messages';
+
 
         require VIEWS . DIRSEP . 'purgeoldmessages.php';
     }

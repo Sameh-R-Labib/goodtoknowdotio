@@ -20,9 +20,11 @@ class PolishARecurringPaymentRecordSubmit
          * 5) Report success.
          */
 
+        global $db;
         global $sessionMessage;
-
         global $saved_int01;    // recurring_payment id
+        global $time;
+
 
         kick_out_loggedoutusers();
 
@@ -33,35 +35,18 @@ class PolishARecurringPaymentRecordSubmit
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
-
-
-        /** @var $edited_label */
 
         $edited_label = standard_form_field_prep('label', 4, 264);
 
-
-        /** @var  $edited_currency */
-
         $edited_currency = standard_form_field_prep('currency', 1, 15);
-
-
-        /** @var  $edited_amount_paid */
 
         $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 999999999999999.99);
 
 
-        /** @var $time */
-
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
-
-
-        /** @var $edited_comment */
 
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 

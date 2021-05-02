@@ -1,5 +1,9 @@
 <?php
 
+
+global $sessionMessage;
+
+
 /**
  * 1) Validate the submitted choice of time range (A,B,C,D,E.)
  */

@@ -17,11 +17,12 @@ class PurgeNinetyDayOldBTFBs
          * 4) Redirect to Home page.
          */
 
+
+        global $db;
         global $sessionMessage;
 
-        kick_out_nonadmins();
 
-        $db = get_db();
+        kick_out_nonadmins();
 
 
         /**
@@ -35,6 +36,8 @@ class PurgeNinetyDayOldBTFBs
          */
 
         $num_affected_rows = 0;
+
+        $db = get_db();
 
         $sql = 'DELETE FROM `banking_transaction_for_balances` WHERE `time` < ';
         $sql .= $db->real_escape_string($time_90_days_ago);

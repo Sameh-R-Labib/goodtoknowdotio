@@ -16,9 +16,12 @@ class QuickPostDelete
          * first we need to have the admin identify the post. So this first step will help.
          */
 
+
         kick_out_nonadmins();
 
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_comm_inside_part.php';
+
 
         require VIEWS . DIRSEP . 'quickpostdelete.php';
     }

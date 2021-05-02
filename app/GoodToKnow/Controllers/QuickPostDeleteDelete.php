@@ -12,18 +12,19 @@ class QuickPostDeleteDelete
          * wants to delete the post.
          */
 
+
         global $html_title;
+        global $post_object;
+        global $chosen_post_id;
         global $long_title_of_post;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $_SESSION['saved_str01'] = $post_object->markdown_file;
 
         $_SESSION['saved_str02'] = $post_object->html_file;
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $_SESSION['saved_int02'] = $chosen_post_id;
 
@@ -32,7 +33,9 @@ class QuickPostDeleteDelete
 
         $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
+
         $html_title = 'Are you sure?';
+
 
         require VIEWS . DIRSEP . 'quickpostdeletedelete.php';
     }
