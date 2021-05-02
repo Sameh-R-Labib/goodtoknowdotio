@@ -9,10 +9,12 @@ class RemoveComsChoices
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $saved_str01;    // user's username
         global $html_title;
         global $coms_user_belongs_to;
+
 
         kick_out_nonadmins();
 
@@ -35,7 +37,9 @@ class RemoveComsChoices
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 
         if (!$user_object) {
+
             breakout(' Unexpected unable to retrieve target user\'s object. ');
+
         }
 
         $user_id = (int)$user_object->id;

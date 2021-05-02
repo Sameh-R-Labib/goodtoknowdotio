@@ -9,9 +9,10 @@ class QuickPostDeleteProcessor
     function page()
     {
         global $special_topic_array;
-        global $sessionMessage;
+
 
         kick_out_nonadmins();
+
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
@@ -34,6 +35,7 @@ class QuickPostDeleteProcessor
          */
 
         $_SESSION['saved_int01'] = $chosen_topic_id;
+
 
         redirect_to("/ax1/QuickPostDeleteChoosePost/page");
     }

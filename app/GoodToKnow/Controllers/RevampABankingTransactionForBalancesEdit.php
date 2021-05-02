@@ -18,12 +18,14 @@ class RevampABankingTransactionForBalancesEdit
          * 4) Present a form which is populated with data from the banking_transaction_for_balances object.
          */
 
-        global $html_title;
 
-        /** @var $object */
-        /** @var $db */
-        /** @var $user_id */
-        /** @var $sessionMessage */
+        global $db;
+        global $sessionMessage;
+        global $user_id;
+        global $html_title;
+        global $object;
+        global $time;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
 
@@ -72,7 +74,9 @@ class RevampABankingTransactionForBalancesEdit
 
         $time = get_date_h_m_s_from_a_timestamp($object->time);
 
+
         $html_title = 'Edit the banking_transaction_for_balances record';
+
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';
     }

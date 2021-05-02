@@ -11,12 +11,15 @@ class RevampABankingTransactionForBalances
          * time range the user wants to see further choices of transactions for.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which time range for filtering your transaction choices?';
+
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalances.php';
     }

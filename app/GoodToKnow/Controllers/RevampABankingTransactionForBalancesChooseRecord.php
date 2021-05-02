@@ -16,7 +16,10 @@ class RevampABankingTransactionForBalancesChooseRecord
          * The ultimate goal is to present a BankingTransactionForBalances for editing.
          */
 
+
         global $html_title;
+        global $array;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_banking_transactions_within_a_time_range.php';
 
@@ -27,13 +30,16 @@ class RevampABankingTransactionForBalancesChooseRecord
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
 
         foreach ($array as $object) {
+
             $object->time = get_readable_time($object->time);
+
         }
 
+
         $html_title = 'Which banking_transaction_for_balances record?';
+
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalanceschooserecord.php';
     }

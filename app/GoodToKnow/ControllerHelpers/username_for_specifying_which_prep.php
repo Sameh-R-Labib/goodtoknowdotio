@@ -19,17 +19,21 @@ function username_for_specifying_which_prep(mysqli $db): string
      * 3) If it represents a user account.
      */
 
+
     global $sessionMessage;
+
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
     $submitted_username = standard_form_field_prep('username', 7, 12);
+
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 
     if (!is_username_syntactandexists($db, $sessionMessage, $submitted_username)) {
 
         breakout(' The username field failed validation. ');
+
     }
 
     return $submitted_username;

@@ -6,6 +6,7 @@ global $submitted_community_ids_array;
 
 kick_out_nonadmins();
 
+
 /**
  * Now we know the ids of the communities the administrator
  * wants the user to belong to. The goal is to assign these

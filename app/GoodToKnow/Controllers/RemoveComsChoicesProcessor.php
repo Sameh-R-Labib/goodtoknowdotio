@@ -8,13 +8,14 @@ class RemoveComsChoicesProcessor
 {
     function page()
     {
-
+        global $db;
+        global $sessionMessage;
         global $saved_str01; // Has user's username
         global $saved_int01; // Has user's id
+        global $submitted_community_ids_array;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';
-
-        $db = get_db();
 
 
         /**
@@ -48,7 +49,7 @@ class RemoveComsChoicesProcessor
 
         $usertocommunity_objects_array = [];
 
-        /** @noinspection PhpUndefinedVariableInspection */
+        $db = get_db();
 
         foreach ($submitted_community_ids_array as $a_community_id) {
 
@@ -84,7 +85,9 @@ class RemoveComsChoicesProcessor
             $result_of_delete = $object->delete($db, $sessionMessage);
 
             if (!$result_of_delete) {
+
                 breakout(' Failed to delete User To Community. ');
+
             }
 
         }

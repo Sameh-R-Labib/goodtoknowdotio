@@ -14,35 +14,33 @@ class RecurringPaymentSeeMyRecords
          * Similar to BitcoinSeeMyRecords.
          */
 
-        global $user_id;
+
+        global $db;
         global $sessionMessage;
-        global $special_community_array;
-        global $type_of_resource_requested;
-        global $is_admin;
-        global $is_guest;
+        global $user_id;
         global $show_poof;
+        global $html_title;
+        global $page;
+        global $array_of_recurring_payment_objects;
+
 
         kick_out_loggedoutusers();
-
-        $db = get_db();
-
-        $html_title = 'See All Recurring Payments';
-
-        $page = 'RecurringPaymentSeeMyRecords';
-
-        $show_poof = true;
 
 
         /**
          * Get an array of RecurringPayment objects for the user who has id == $user_id.
          */
 
+        $db = get_db();
+
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
+
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯ ');
+
         }
 
 
@@ -52,7 +50,6 @@ class RecurringPaymentSeeMyRecords
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         foreach ($array_of_recurring_payment_objects as $object) {
@@ -65,9 +62,18 @@ class RecurringPaymentSeeMyRecords
 
         }
 
+
+        $page = 'RecurringPaymentSeeMyRecords';
+
+
+        $show_poof = true;
+
+
         $html_title = "Your recurring transactions";
 
+
         $sessionMessage .= " Here are your recurring transactions. ";
+
 
         require VIEWS . DIRSEP . 'recurringpaymentseemyrecords.php';
     }
