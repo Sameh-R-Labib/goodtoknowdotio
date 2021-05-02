@@ -163,19 +163,6 @@ function get_db()
     return $db;
 }
 
-
-/**
- * @param string $newMessage
- */
-function breakout(string $newMessage)
-{
-    global $sessionMessage;
-
-    $_SESSION['message'] = $sessionMessage . $newMessage;
-    reset_feature_session_vars();
-    redirect_to("/ax1/Home/page");
-}
-
 /**
  *
  */
@@ -202,20 +189,48 @@ function redirect_to(string $location)
 // to be on for this to work.
 
     /**
-     * There is no reason we shouldn't carry over
-     * any generated messages to the route we are
-     * redirecting to.
+     * OUR GOAL: The routes which do NOT present a view must pass on
+     * their "to display message" to the next route. There
+     * are two types of routes which do NOT present a view:
+     *    1. Routes which end in breakout().
+     *    2. Routes which end in  redirect_to().
+     *
+     * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
+     * by passing on their "to display message"
      */
     global $sessionMessage;
 
     $_SESSION['message'] = $sessionMessage;
 
-    if ($location != NULL) {
+    if ($location !== '') {
 
         header("Location: {$location}");
         exit;
 
     }
+}
+
+
+/**
+ * @param string $newMessage
+ */
+function breakout(string $newMessage)
+{
+    /**
+     * OUR GOAL: The routes which do NOT present a view must pass on
+     * their "to display message" to the next route. There
+     * are two types of routes which do NOT present a view:
+     *    1. Routes which end in breakout().
+     *    2. Routes which end in  redirect_to().
+     *
+     * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
+     * by passing on their "to display message"
+     */
+    global $sessionMessage;
+
+    $sessionMessage .= $newMessage;
+    reset_feature_session_vars();
+    redirect_to("/ax1/Home/page");
 }
 
 

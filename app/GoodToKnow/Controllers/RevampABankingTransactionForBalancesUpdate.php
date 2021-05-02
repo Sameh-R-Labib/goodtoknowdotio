@@ -21,9 +21,12 @@ class RevampABankingTransactionForBalancesUpdate
          * 5) Report success.
          */
 
-        global $sessionMessage;
 
+        global $db;
+        global $sessionMessage;
         global $saved_int01;    // record id
+        global $time;
+
 
         kick_out_loggedoutusers();
 
@@ -34,9 +37,7 @@ class RevampABankingTransactionForBalancesUpdate
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
 
@@ -46,9 +47,7 @@ class RevampABankingTransactionForBalancesUpdate
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
 
 
@@ -84,8 +83,6 @@ class RevampABankingTransactionForBalancesUpdate
         $object->bank_id = $edited_bank_id;
         $object->label = $edited_label;
         $object->amount = $edited_amount;
-
-        /** @noinspection PhpUndefinedVariableInspection */
         $object->time = $time;
 
 
