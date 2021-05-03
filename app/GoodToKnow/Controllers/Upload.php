@@ -12,14 +12,15 @@ class Upload
          * It shall do all this while making sure the upload contains no malicious code.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
 
         /**
-         * Display the editor interface.
+         * Present the editor interface.
          */
 
         $html_title = 'Upload an image';

@@ -13,7 +13,9 @@ class TestCode
          * html special characters especially when code blocks or inline code is involved.
          */
 
+
         global $markdown;
+
 
         $markdown = <<<DEMO
 Regular >>
@@ -33,6 +35,7 @@ DEMO;
 
         // Call to global function
         fix_michelf($html);
+
 
         var_dump($html);
     }

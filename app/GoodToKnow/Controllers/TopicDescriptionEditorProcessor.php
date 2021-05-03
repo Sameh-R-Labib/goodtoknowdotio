@@ -20,8 +20,9 @@ class TopicDescriptionEditorProcessor
          *  4) Redirect to a function which will bring up the editor for the description.
          */
 
-        global $sessionMessage;
+
         global $special_topic_array;
+
 
         kick_out_nonadmins();
 

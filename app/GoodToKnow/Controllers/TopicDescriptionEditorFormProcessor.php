@@ -22,9 +22,12 @@ class TopicDescriptionEditorFormProcessor
          *  7) Update the database with this Topic object.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_str01;                // The topic's name
         global $saved_int01;                // The topic's id
+
 
         kick_out_nonadmins();
 

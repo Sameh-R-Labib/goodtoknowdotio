@@ -15,8 +15,9 @@ class TransferPostOwnershipGetUsername
          * If the confirmation is negative then it will reset the session variables used so far and redirect to home page.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_nonadmins();
 
@@ -37,7 +38,7 @@ class TransferPostOwnershipGetUsername
 
 
         /**
-         * Show view.
+         * Present the view.
          */
 
         $html_title = 'What is the username of the person?';

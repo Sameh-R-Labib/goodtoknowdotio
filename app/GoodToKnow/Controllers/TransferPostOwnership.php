@@ -16,9 +16,12 @@ class TransferPostOwnership
          * As usual the topics presented are the topics in the current community.
          */
 
+
         kick_out_nonadmins();
 
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_comm_inside_part.php';
+
 
         require VIEWS . DIRSEP . 'transferpostownership.php';
     }

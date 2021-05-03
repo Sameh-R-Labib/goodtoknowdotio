@@ -11,7 +11,9 @@ class TopicDescriptionEditor
          * ones found in the user's current community.
          */
 
+
         global $html_title;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
@@ -19,10 +21,14 @@ class TopicDescriptionEditor
         // Abort if the community doesn't have any topics yet
 
         if (empty($special_topic_array)) {
+
             breakout(' Aborted because you can\'t create a post in a community which has no topics. ');
+
         }
 
+
         $html_title = "Topic's Description Editor";
+
 
         require VIEWS . DIRSEP . 'topicdescriptioneditor.php';
     }

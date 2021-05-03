@@ -26,30 +26,32 @@ class TransferPostOwnershipGetPost
          *  - Author username
          */
 
+
+        global $db;
         global $html_title;
         global $long_title_of_post;
+        global $chosen_post_id;
+        global $post_object;
+        global $community_name;
+        global $topic_name;
+        global $author_username;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 
         // (2) stores the post's id in the session
 
-        /** @noinspection PhpUndefinedVariableInspection */
-
         $_SESSION['saved_int02'] = $chosen_post_id;
 
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
         // Post id is $chosen_post_id
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $derived_topic_id = TopicToPost::derive_topic_id($db, $sessionMessage, $chosen_post_id);
 
@@ -110,7 +112,7 @@ class TransferPostOwnershipGetPost
         $author_username = $user_object->username;
 
 
-        // Call the view
+        // Present the view
 
         $html_title = 'Are you sure?';
 

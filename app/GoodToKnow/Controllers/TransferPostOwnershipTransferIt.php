@@ -16,12 +16,14 @@ class TransferPostOwnershipTransferIt
          * Here we take the username submitted and use it to make its id part of the record for for the post.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_int02;  // Post id
 
+
         kick_out_nonadmins();
 
-        $db = get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
@@ -29,6 +31,8 @@ class TransferPostOwnershipTransferIt
 
 
         // Get the user id which corresponds with the username.
+
+        $db = get_db();
 
         $user_object = User::find_by_username($db, $sessionMessage, $username);
 

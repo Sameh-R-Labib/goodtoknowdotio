@@ -8,8 +8,10 @@ class UnsuspendAccountUnsuspend
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $saved_str01; // Has user's username
+
 
         kick_out_nonadmins();
 
@@ -23,18 +25,20 @@ class UnsuspendAccountUnsuspend
          *  4) Show a message indicating we've successfully suspended the user's account.
          */
 
-        $db = get_db();
-
 
         /**
          * 1) Retrieve the User object for the member
          *     whose is_suspended field the admin wants to edit.
          */
 
+        $db = get_db();
+
         $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
 
         if (!$user_object) {
+
             breakout(' Unexpected unable to retrieve target user\'s object. ');
+
         }
 
 
@@ -52,12 +56,16 @@ class UnsuspendAccountUnsuspend
         $consequence_of_save = $user_object->save($db, $sessionMessage);
 
         if (!$consequence_of_save) {
+
             breakout(' The save method for User returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(" The save method for User did not return false but it did send back a message.
              Therefore, it probably did not update {$saved_str01}'s account. ");
+
         }
 
 
