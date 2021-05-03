@@ -15,17 +15,18 @@ class StartATaxableIncomeEventProcessor
          * Create a database record in the taxable_income_event table using the submitted taxable_income_event data.
          */
 
-        global $sessionMessage;
 
+        global $db;
+        global $sessionMessage;
         global $user_id;
+        global $time;
+
 
         kick_out_loggedoutusers();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
 
@@ -35,9 +36,7 @@ class StartATaxableIncomeEventProcessor
 
 
         // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
-
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
-
         // - - -
 
 
@@ -51,8 +50,6 @@ class StartATaxableIncomeEventProcessor
         /**
          * Create a taxable_income_event array for the record.
          */
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $array_record = ['user_id' => $user_id, 'time' => $time, 'year_received' => $year_received,
             'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];
