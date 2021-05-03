@@ -24,6 +24,8 @@ class SetHomePageCommunityTopicPost
          *  - Save the extracted information to the SESSION.
          */
 
+
+        global $db;
         global $is_logged_in;
         global $sessionMessage;
         global $special_community_array;  // array (key: id of community, value: name of community)
@@ -31,6 +33,7 @@ class SetHomePageCommunityTopicPost
         global $special_post_array;
         global $post_content;
         global $type_of_resource_requested;
+
 
         self::abort_if_an_anomalous_condition_exists($sessionMessage, $is_logged_in);
 
@@ -169,25 +172,37 @@ class SetHomePageCommunityTopicPost
         if ($type_of_resource_requested === 'post') {
 
             if (!array_key_exists($post_id, $special_post_array)) {
+
                 breakout(' Your resource request is defective.  (errno 4) ');
+
             }
+
 
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
 
             if (!$post_object) {
+
                 breakout(' SetHomePageCommunityTopicPost says: Error 58498. ');
+
             }
+
 
             $post_content = file_get_contents($post_object->html_file);
 
             if ($post_content === false) {
+
                 breakout(' Unable to read the post\'s html source file. ');
+
             }
+
 
             $post_author_object = User::find_by_id($db, $sessionMessage, $post_object->user_id);
 
+
             if ($post_author_object === false) {
+
                 breakout(' Unable to get the post author object from the database. ');
+
             }
         }
     }
@@ -218,7 +233,9 @@ class SetHomePageCommunityTopicPost
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
 
             if (!$special_post_array) {
+
                 $special_post_array = [];
+
             }
 
 
@@ -233,7 +250,9 @@ class SetHomePageCommunityTopicPost
                 $type_of_resource_requested = 'post';
 
             } else {
+
                 breakout(' Anomalous situation #2954. ');
+
             }
         }
     }
@@ -260,26 +279,37 @@ class SetHomePageCommunityTopicPost
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
 
         if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
+
             breakout(' Your resource request is defective.  (errno 6) ');
+
         }
 
         if (!$special_topic_array && $topic_id != 0) {
+
             breakout(' Your resource request is defective. (errno 8) ');
+
         }
 
         if (!$special_topic_array) {
+
             $special_topic_array = [];
+
         }
 
         if ($topic_id == 0) {
+
             $type_of_resource_requested = 'community';
 
             if ($post_id != 0) {
+
                 breakout(' Your resource request is defective. (errno 1) ');
+
             }
 
         } else {
+
             $type_of_resource_requested = 'topic_or_post';
+
         }
     }
 
@@ -294,7 +324,9 @@ class SetHomePageCommunityTopicPost
                                                                                 &$special_community_array)
     {
         if (!empty($sessionMessage) || $db === false) {
+
             breakout(' Database connection failed. ');
+
         }
 
 
@@ -303,7 +335,9 @@ class SetHomePageCommunityTopicPost
          */
 
         if (!array_key_exists($community_id, $special_community_array)) {
+
             breakout(' Invalid community_id. ');
+
         }
     }
 
@@ -315,9 +349,13 @@ class SetHomePageCommunityTopicPost
     private static function abort_if_an_anomalous_condition_exists(&$sessionMessage, &$is_logged_in)
     {
         if (!$is_logged_in || !empty($sessionMessage)) {
+
             $_SESSION['message'] = $sessionMessage;
+
             reset_feature_session_vars();
+
             redirect_to("/ax1/LoginForm/page");
+
         }
     }
 }

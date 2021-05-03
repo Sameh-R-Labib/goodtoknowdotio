@@ -14,17 +14,13 @@ class SpyCommoditiesSoldYearFilter
          * 2) Present the CommoditySold(s/plural) in a page whose layout is similar to the Home page.
          */
 
-        global $is_admin;
-        global $is_guest;
+
+        global $sessionMessage;
+        global $html_title;
         global $show_poof;
-        global $special_community_array;
-        global $type_of_resource_requested;
+        global $page;
+        global $array;
 
-
-        /** @var $sessionMessage */
-        /** @var $user_id */
-        /** @var $tax_year */
-        /** @var $array */
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
 
@@ -37,7 +33,6 @@ class SpyCommoditiesSoldYearFilter
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
@@ -50,6 +45,10 @@ class SpyCommoditiesSoldYearFilter
             $item->commodity_amount = readable_amount_of_money($item->commodity_type, $item->commodity_amount);
         }
 
+
+        /**
+         * Prep the view.
+         */
 
         $sessionMessage .= " Here is one year's commodities sold records. ";
 

@@ -11,12 +11,15 @@ class SpyCommoditiesSold
          * so that the subsequent code can display the commodities_sold(s/plural) for that year.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which tax year?';
+
 
         require VIEWS . DIRSEP . 'spycommoditiessold.php';
     }

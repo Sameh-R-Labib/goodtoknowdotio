@@ -12,25 +12,24 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          */
 
 
-        global $is_admin;
-        global $is_guest;
+        global $sessionMessage;
         global $show_poof;
-        global $special_community_array;
-        global $type_of_resource_requested;
         global $html_title;
+        global $page;
+        global $array;
 
-        $array = [];    // Just to satisfy PhpStorm.
-
-        global $sessionMessage;  // Just to satisfy PhpStorm.
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_year_paid_and_its_possibletaxdeductions.php';
+
 
         /**
          * Loop through the array and replace attributes with more readable ones.
          */
 
         foreach ($array as $item) {
+
             $item->comment = nl2br($item->comment, false);
+
         }
 
         $sessionMessage .= " Here are one year's tax write-offs. ";
