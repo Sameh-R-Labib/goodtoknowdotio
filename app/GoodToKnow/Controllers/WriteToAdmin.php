@@ -6,13 +6,13 @@ class WriteToAdmin
 {
     function page()
     {
-        global $sessionMessage;
         global $user_username;
-        global $url_of_most_recent_upload;
         global $html_title;
         global $pre_populate;
 
+
         kick_out_loggedoutusers();
+
 
         $admin_username = ADMINUSERNAME;
 

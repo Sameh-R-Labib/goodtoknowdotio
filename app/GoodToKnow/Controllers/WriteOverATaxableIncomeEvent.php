@@ -11,12 +11,15 @@ class WriteOverATaxableIncomeEvent
          * choices for which taxable_income_event to edit.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which year received?';
+
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeevent.php';
     }

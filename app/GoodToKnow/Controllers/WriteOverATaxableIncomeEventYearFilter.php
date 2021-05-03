@@ -13,7 +13,10 @@ class WriteOverATaxableIncomeEventYearFilter
          * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
          */
 
+
         global $html_title;
+        global $array;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
 
@@ -24,11 +27,16 @@ class WriteOverATaxableIncomeEventYearFilter
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
-        /** @noinspection PhpUndefinedVariableInspection */
-
         foreach ($array as $item) {
+
             $item->time = get_readable_time($item->time);
+
         }
+
+
+        /**
+         * Present the view.
+         */
 
         $html_title = 'Which taxable income event?';
 

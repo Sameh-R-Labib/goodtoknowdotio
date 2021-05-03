@@ -16,9 +16,11 @@ class WriteOverATaxableIncomeEventEdit
          * 4) Present a form which is populated with data from the taxable_income_event object.
          */
 
-        global $html_title;
 
-        /** @var $object */
+        global $html_title;
+        global $object;
+        global $time;
+
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_taxableincomeevent.php';
 
@@ -46,6 +48,11 @@ class WriteOverATaxableIncomeEventEdit
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
         $time = get_date_h_m_s_from_a_timestamp($object->time);
+
+
+        /**
+         * Present the view.
+         */
 
         $html_title = 'Edit the taxable income event\'s record';
 

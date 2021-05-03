@@ -21,8 +21,12 @@ class WriteOverATaxableIncomeEventUpdate
          * 5) Report success.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_int01;    // record id
+        global $time;
+
 
         kick_out_loggedoutusers();
 
@@ -95,8 +99,6 @@ class WriteOverATaxableIncomeEventUpdate
         $object->comment = $edited_comment;
         $object->amount = $edited_amount;
         $object->currency = $edited_currency;
-
-        /** @noinspection PhpUndefinedVariableInspection */
         $object->time = $time;
 
 

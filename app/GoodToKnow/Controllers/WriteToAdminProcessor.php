@@ -14,10 +14,15 @@ class WriteToAdminProcessor
          * It also saves a record in the message_to_user table.
          */
 
+
+        global $db;
         global $sessionMessage;
+        global $message_object;
+
 
         // ADMINUSERID   constant
         // ADMINUSERNAME constant
+
 
         kick_out_loggedoutusers();
 
@@ -41,8 +46,6 @@ class WriteToAdminProcessor
          *  - user_id
          */
 
-        /** @noinspection PhpUndefinedVariableInspection */
-
         $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => ADMINUSERID];
 
 
@@ -56,8 +59,6 @@ class WriteToAdminProcessor
         /**
          * Save that object to the database using save().
          */
-
-        /** @noinspection PhpUndefinedVariableInspection */
 
         $result = $message_to_user_object->save($db, $sessionMessage);
 
