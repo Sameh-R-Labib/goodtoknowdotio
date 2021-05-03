@@ -29,11 +29,8 @@ kick_out_loggedoutusers();
  */
 
 require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
-
 require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
 require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
-
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
 

@@ -27,7 +27,6 @@ class DeleteABitcoinRecordProcessor
         // Format the attributes for easy viewing
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';

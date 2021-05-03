@@ -16,8 +16,11 @@ class WipeOutAPossibleTaxDeductionConfirmation
          * some session variables and redirect to the home page.
          */
 
+
+        global $db;
         global $sessionMessage;
         global $saved_int01;
+
 
         kick_out_loggedoutusers();
 
@@ -31,7 +34,9 @@ class WipeOutAPossibleTaxDeductionConfirmation
         $choice = yes_no_form_field_prep('choice');
 
         if ($choice == "no") {
+
             breakout(' Nothing was deleted. ');
+
         }
 
 
@@ -44,13 +49,17 @@ class WipeOutAPossibleTaxDeductionConfirmation
         $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $saved_int01);
 
         if (!$object) {
+
             breakout(' I was not able to find the record. ');
+
         }
 
         $result = $object->delete($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' Unexpectedly I could not delete the record. ');
+
         }
 
 

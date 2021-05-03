@@ -23,5 +23,7 @@ $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->re
 $array_of_objects = BankingAcctForBalances::find_by_sql($db, $sessionMessage, $sql);
 
 if (!$array_of_objects || !empty($sessionMessage)) {
+
     breakout(' I could NOT find any banking accounts for balances ¯\_(ツ)_/¯. ');
+
 }

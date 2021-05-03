@@ -6,11 +6,12 @@ class BitcoinSeeMyRecords
 {
     function page()
     {
-        global $array_of_bitcoin_objects;
+        global $sessionMessage;
         global $page;
         global $show_poof;
         global $html_title;
-        global $sessionMessage;
+        global $array_of_bitcoin_objects;
+        global $bitcoin_object;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 
@@ -27,6 +28,11 @@ class BitcoinSeeMyRecords
             require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
 
         }
+
+
+        /**
+         * Present the view.
+         */
 
         $html_title = 'Your ₿ records';
 

@@ -14,13 +14,17 @@ class UploadProcessor
          * It shall do all this while making sure the upload contains no malicious code.
          */
 
+
         global $sessionMessage;
+
 
         kick_out_loggedoutusers();
 
 
         if (!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
+
             breakout(' You didn\'t select a file. ');
+
         }
 
 
@@ -77,10 +81,14 @@ class UploadProcessor
          */
 
         if ($check !== false) {
+
             $image_file_mime_type = $check["mime"];
+
         } else {
+
             // File is not an image.
             breakout(' Error 546224. ');
+
         }
 
 
@@ -89,7 +97,9 @@ class UploadProcessor
          */
 
         if (file_exists($target_file)) {
+
             breakout(' The file already exists. ');
+
         }
 
 
@@ -98,7 +108,9 @@ class UploadProcessor
          */
 
         if ($_FILES["fileToUpload"]["size"] > 5767168) {
+
             breakout(' Your file is too large. ');
+
         }
 
 

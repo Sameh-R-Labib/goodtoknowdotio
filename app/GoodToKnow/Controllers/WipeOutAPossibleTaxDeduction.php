@@ -15,12 +15,15 @@ class WipeOutAPossibleTaxDeduction
          * possible_tax_deduction to delete.
          */
 
-        global $sessionMessage;
+
         global $html_title;
+
 
         kick_out_loggedoutusers();
 
+
         $html_title = 'Which year_paid for filtering your tax deduction choices?';
+
 
         require VIEWS . DIRSEP . 'wipeoutapossibletaxdeduction.php';
     }

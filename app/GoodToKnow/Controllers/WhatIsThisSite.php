@@ -7,18 +7,22 @@ class WhatIsThisSite
     function page()
     {
         /**
-         * This function will present a page
-         * which informs the people from the Internet who
-         * land on the login page by chance and don't
-         * have an idea what this site is for.
+         * This function will present a page which informs the people
+         * from the Internet who land on the login page by chance and
+         * don't have an idea what this site is for.
          */
 
-        global $is_admin;
-        global $is_guest;
-        global $show_poof;
-        global $special_community_array;
-        global $type_of_resource_requested;
+
+        global $sessionMessage;
         global $html_title;
+        global $show_poof;
+        global $page;
+        global $is_guest;
+
+
+        /**
+         * Present the view.
+         */
 
         $is_guest = true;
 

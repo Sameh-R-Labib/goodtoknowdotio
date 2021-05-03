@@ -17,7 +17,9 @@ $choice = standard_form_field_prep('choice', 1, 1);
 $values = ['A', 'B', 'C', 'D', 'E'];
 
 if (!in_array($choice, $values)) {
+
     breakout(' You choice is invalid. ');
+
 }
 
 

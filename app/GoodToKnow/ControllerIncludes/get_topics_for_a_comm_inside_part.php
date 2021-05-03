@@ -2,9 +2,12 @@
 
 use GoodToKnow\Models\CommunityToTopic;
 
-global $special_topic_array;
+
+global $db;
 global $sessionMessage;
+global $special_topic_array;
 global $community_id;
+global $html_title;
 
 
 kick_out_loggedoutusers();
@@ -28,7 +31,9 @@ $_SESSION['last_refresh_topics'] = time();
 // Abort if the community doesn't have any topics yet
 
 if (empty($special_topic_array)) {
+
     breakout(' Aborted because this community has no topics. ');
+
 }
 
 $html_title = 'Which topic is your post in?';

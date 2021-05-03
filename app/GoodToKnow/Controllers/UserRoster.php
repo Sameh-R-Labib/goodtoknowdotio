@@ -10,21 +10,25 @@ class UserRoster
 {
     function page()
     {
+        global $db;
         global $sessionMessage;
         global $html_title;
-        global $is_admin;
-        global $is_guest;
+        global $page;
         global $show_poof;
-        global $special_community_array;
-        global $type_of_resource_requested;
+        global $readable_user_objects_array;
+
 
         kick_out_nonadmins();
 
+
         $db = get_db();
+
 
         $html_title = 'User Roster';
 
+
         $page = 'UserRoster';
+
 
         $show_poof = true;
 
@@ -37,8 +41,9 @@ class UserRoster
         $user_objects_array = User::find_all($db, $sessionMessage);
 
         if ($user_objects_array === false || empty($user_objects_array)) {
-            $sessionMessage .= " Unable to retrieve any user objects. ";
-            breakout('');
+
+            breakout(' Unable to retrieve any user objects. ');
+
         }
 
 
@@ -63,18 +68,24 @@ class UserRoster
         $array_of_all_community_objects = Community::find_all($db, $sessionMessage);
 
         if ($array_of_all_community_objects === false || empty($array_of_all_community_objects)) {
+
             breakout(' Unable to retrieve any community objects. ');
+
         }
 
         foreach ($array_of_all_community_objects as $community) {
+
             $community_values_array[$community->id] = $community->community_name;
+
         }
 
 
         // $readable_user_objects_array is what we will use in the view.
 
         foreach ($user_objects_array as $user) {
+
             $readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
+
         }
 
         $sessionMessage .= " I have generated the User Roster (<em>shown below.</em>) ";
