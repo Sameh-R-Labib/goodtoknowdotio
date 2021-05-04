@@ -88,8 +88,10 @@ class NewTopicIPProcessor
 
         $chosen_topic_sequence_number = -1;
 
-        foreach ($topic_objects_array as $key => $object) {
+        foreach ($topic_objects_array as $object) {
+
             if ($object->id == $chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
+
         }
 
         if ($chosen_topic_sequence_number == -1) {

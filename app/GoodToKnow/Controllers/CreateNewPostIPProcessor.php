@@ -89,7 +89,7 @@ class CreateNewPostIPProcessor
 
         $chosen_post_sequence_number = -1;
 
-        foreach ($all_posts_as_objects as $key => $object) {
+        foreach ($all_posts_as_objects as $object) {
 
             if ($object->id == $chosen_post_id) $chosen_post_sequence_number = $object->sequence_number;
 

@@ -84,10 +84,12 @@ class LoginScript
         $special_community_array = find_communities_of_user($db, $error, $user->id);
 
         if ($special_community_array === false) {
+
             $error .= " Failed to find the array of the user's communities. ";
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
+
         }
 
 
@@ -109,10 +111,12 @@ class LoginScript
         $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $user->id_of_default_community);
 
         if (!$special_topic_array) {
+
             $error .= " I didn't find any topics for your default community. ";
             $_SESSION['message'] .= $error;
 
             redirect_to("/ax1/Home/page");
+
         }
 
         $_SESSION['special_topic_array'] = $special_topic_array;
@@ -126,10 +130,12 @@ class LoginScript
     private static function login_the_user(string $error, $user)
     {
         if ($user === false) {
+
             $error .= " Authentication failed! ";
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
+
         }
 
         /**
@@ -140,10 +146,12 @@ class LoginScript
          * If this user is suspended don't let them in.
          */
         if ($user->is_suspended) {
+
             $error .= " No active account exists for this username. ";
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
+
         }
 
         /**
@@ -171,9 +179,11 @@ class LoginScript
 
         if (!is_username_syntactically($error, $submitted_username) ||
             !is_password_syntactically($error, $submitted_password)) {
+
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
+
         }
     }
 
@@ -185,21 +195,25 @@ class LoginScript
     private static function init($db, $error, $is_logged_in)
     {
         if ($is_logged_in) {
+
             $error .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
+
         }
 
         // For denial of service attacks
         sleep(1);
 
         if (!empty($error) || $db === false) {
+
             $error .= ' Database connection failed. ';
             $_SESSION['message'] = $error;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
+
         }
     }
 }

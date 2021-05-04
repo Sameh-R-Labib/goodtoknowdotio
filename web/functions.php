@@ -89,7 +89,7 @@ function find_communities_of_user(mysqli $db, string &$error, $user_id)
  * @param int $user_id
  * @return bool
  */
-function enforce_suspension(mysqli $db, string &$error, int $user_id)
+function enforce_suspension(mysqli $db, string &$error, int $user_id): bool
 {
     /**
      *   1) Determine whether or not the user is suspended per database
