@@ -13,6 +13,13 @@ class CreateNewPostIPProcessor
     function page()
     {
         /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        die("<p>End debug</p>\n");
+
+
+        /**
          * So far we know which topic the new post belongs in and the user just submitted a form letting us know
          * 'relate' and 'choice'.
          *
