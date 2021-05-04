@@ -3,14 +3,15 @@
  * Parent class for all other database object.
  *
  * To create a new object do:
- *   1. Create an associative array containing the attribute names and values.
- *   WARNING: Do Not include id attribute. Do Include all other attributes and assign them values.
+ *   1. Create an associative array containing ALL the attribute names
+ *      and values **other than 'id'.**
+ *      (WARNING: Do Not include id attribute.)
  *   2. Call array_to_object($array) to create the object in memory.
  *   3. Save that object to the database using save().
  *
- * Sanitize manually SQL variable values
- * when using find_by_sql()
- * If you code other methods for this class or its
+ * Manually sanitize SQL variable values
+ * when using find_by_sql(). If you code
+ * other methods for this class or its
  * children make sure you sanitize.
  *
  * Sanitizing prepares sql variable values
