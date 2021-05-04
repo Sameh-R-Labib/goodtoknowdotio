@@ -24,6 +24,7 @@ namespace GoodToKnow\Models;
 use Exception;
 use mysqli;
 
+
 abstract class GoodObject
 {
 // ATTRIBUTES (all are dummies/abstract)

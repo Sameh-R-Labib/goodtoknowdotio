@@ -14,5 +14,6 @@
     "config": {
       "optimize-autoloader": true
     }
-  }
+  },
+  "description": "A platform for communal knowledge."
 }
