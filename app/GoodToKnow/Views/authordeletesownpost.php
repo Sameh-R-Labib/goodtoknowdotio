@@ -8,8 +8,7 @@
         <p>From which topic?</p>
         <?php require SESSIONMESSAGE; ?>
         <section>
-            <?php /** @noinspection PhpUndefinedVariableInspection */
-            foreach ($special_topic_array as $key => $value): ?>
+            <?php foreach ($special_topic_array as $key => $value): ?>
                 <label for="choice-<?php echo $key; ?>" class="radio">
                     <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                     <?= $value ?>
