@@ -38,6 +38,16 @@ class CreateNewPostIPProcessor
 
 
         /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$sessionMessage: </p>\n<pre>";
+        var_dump($sessionMessage);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
+        /**
          * Make sure we are NOT dealing with a topic which has zero
          * posts.
          */
