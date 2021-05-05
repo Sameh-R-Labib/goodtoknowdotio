@@ -55,7 +55,7 @@ abstract class GoodObject
 
 
     /**
-     * Returns an associative ARRAY which mimics the objects attributes.
+     * Returns an associative ARRAY which mimics the object's attributes.
      *
      * attributes() will get an ARRAY element for every field specified in $fields.
      * However, if that field doesn't have a matching value in the object then the value
@@ -69,7 +69,7 @@ abstract class GoodObject
     /**
      * @return array
      */
-    public function attributes()
+    public function attributes(): array
     {
         $attributes = [];
 
