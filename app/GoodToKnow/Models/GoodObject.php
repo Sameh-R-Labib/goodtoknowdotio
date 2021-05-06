@@ -79,7 +79,7 @@ abstract class GoodObject
 
         foreach (static::$fields as $field) {
 
-            // property_exists — Checks if the object or class has a property
+            // property_exists — Checks if the object or class has a property.
             // As opposed with isset(), property_exists() returns true
             // even if the property has the value null.
             if (property_exists($this, $field)) {
@@ -88,6 +88,7 @@ abstract class GoodObject
 
             }
         }
+
         return $attributes;
     }
 
