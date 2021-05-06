@@ -56,14 +56,18 @@ abstract class GoodObject
 
     /**
      * Returns an associative ARRAY which mimics the object's attributes.
+     * In other words attributes() gives you the array version of the object
+     * on which you call the function.
      *
-     * attributes() will get an ARRAY element for every field specified in $fields.
-     * However, if that field doesn't have a matching value in the object then the value
-     * assigned to the element will be an empty string. In every case we will have
-     * an id as the first field. So, this rule will always apply to new objects.
+     * attributes() will get an ARRAY element for every field specified in $fields which
+     * has a matching attribute / property in the class definition.
+     * However, if an attribute was not assigned a value then the value assigned
+     * for that element will be an empty string. For every object we will have
+     * an id. So, so null or empty string will be the value in the array element for id
+     * when the object is new.
      *
-     * attributes() won't get an ARRAY element that's not for a property for the class
-     * of this object.
+     * attributes() only returns array elements which correspond to an attribute that has
+     * both a $fields presence and an actual attribute declaration in the class.
      */
 
     /**
@@ -92,7 +96,7 @@ abstract class GoodObject
      * @param mysqli $db
      * @return array
      */
-    protected function sanitized_attributes(mysqli $db)
+    protected function sanitized_attributes(mysqli $db): array
     {
         $clean_attributes = [];
 
@@ -113,7 +117,7 @@ abstract class GoodObject
      * @param array $array
      * @return GoodObject
      */
-    public static function array_to_object(array $array)
+    public static function array_to_object(array $array): GoodObject
     {
         $object_in_memory = new static();
 
@@ -252,15 +256,13 @@ abstract class GoodObject
      * @param array $objects_array
      * @return bool
      */
-    public static function insert_multiple_objects(mysqli $db, string &$error, array $objects_array)
+    public static function insert_multiple_objects(mysqli $db, string &$error, array $objects_array): bool
     {
         /**
          * Unlike create() (AFTER it executes) this function will NOT set id field values to the objects.
          * It is assumed that the objects have unassigned id fields and do NOT exist in the database.
          * The function returns true on success and false if no objects were inserted.
          */
-
-        $num_affected_rows = 0;
 
         $sql = 'INSERT INTO ' . static::$table_name;
 
