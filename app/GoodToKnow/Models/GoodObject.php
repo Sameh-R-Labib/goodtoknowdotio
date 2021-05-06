@@ -79,6 +79,9 @@ abstract class GoodObject
 
         foreach (static::$fields as $field) {
 
+            // property_exists — Checks if the object or class has a property
+            // As opposed with isset(), property_exists() returns true
+            // even if the property has the value null.
             if (property_exists($this, $field)) {
 
                 $attributes[$field] = $this->$field;
@@ -90,8 +93,7 @@ abstract class GoodObject
 
 
     /**
-     * Gets db-escaped attributes (as array) from this object.
-     * These attributes may (or may not) include the id attribute
+     * Gets db-escaped value attributes (as associative array) of this object.
      *
      * @param mysqli $db
      * @return array
