@@ -62,8 +62,8 @@ abstract class GoodObject
      * attributes() will get an ARRAY element for every field specified in $fields which
      * has a matching attribute / property in the class definition.
      * However, if an attribute was not assigned a value then the value assigned
-     * for that element will be an empty string. For every object we will have
-     * an id. So, so null or empty string will be the value in the array element for id
+     * for that element will be null. For every object we will have
+     * an id. So, null will be the value in the array element for id
      * when the object is new.
      *
      * attributes() only returns array elements which correspond to an attribute that has
@@ -145,7 +145,7 @@ abstract class GoodObject
      * @param string $possible_attribute
      * @return bool
      */
-    protected function has_attribute(string $possible_attribute)
+    protected function has_attribute(string $possible_attribute): bool
     {
         return array_key_exists($possible_attribute, $this->attributes());
     }
@@ -172,12 +172,8 @@ abstract class GoodObject
      * @param string $error
      * @return bool
      */
-    protected function create(mysqli $db, string &$error)
+    protected function create(mysqli $db, string &$error): bool
     {
-        $num_affected_rows = 0;
-
-        $insert_id = 0;
-
         if ($this->id) {
 
             $error .= ' GoodObject create() method says: Whichever code is calling create() is trying
@@ -189,7 +185,10 @@ abstract class GoodObject
         }
 
         try {
-            // Gets array of this object's attributes
+            // Get an array of this object's attributes.
+            // Yes, id will be included in this array as will
+            // all the other fields. If the field hadn't been
+            // assigned a value then an empty string will be its value.
 
             $attributes = $this->sanitized_attributes($db);
 
