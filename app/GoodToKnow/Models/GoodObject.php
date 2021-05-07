@@ -31,6 +31,9 @@ abstract class GoodObject
 
     public $id;
 
+    // (In the $fields array below) The id field must be
+    // specified before all the other fields.
+
     protected static $fields = ['id'];
 
     protected static $table_name = "goodobjects";
