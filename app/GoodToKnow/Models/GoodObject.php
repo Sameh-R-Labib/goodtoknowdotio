@@ -253,7 +253,7 @@ abstract class GoodObject
 
     /**
      * WARNING: This method will fail if the objects you are trying
-     * to insert in the table do not have ALL their attributes set
+     * to insert into the table do not have ALL their attributes set
      * to VALID values.
      *
      * @param mysqli $db
@@ -264,8 +264,14 @@ abstract class GoodObject
     public static function insert_multiple_objects(mysqli $db, string &$error, array $objects_array): bool
     {
         /**
-         * Unlike create() (AFTER it executes) this function will NOT set id field values to the objects.
-         * It is assumed that the objects have unassigned id fields and do NOT exist in the database.
+         * Unlike create() (AFTER it executes) this function will NOT have had set
+         * id field values to the in-memory objects. The code which follows a call
+         * to insert_multiple_objects() should assume that the objects used by
+         * insert_multiple_objects() have unassigned id fields and still do NOT
+         * exist in the database as if the function call never happened. As a
+         * matter of fact it is best to delete the in-memory objects after the
+         * call to this function. They've already served their purpose.
+         *
          * The function returns true on success and false if no objects were inserted.
          */
 
