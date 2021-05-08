@@ -122,6 +122,9 @@ abstract class GoodObject
      * Returns a newly formulated (in-memory) object based on values gleaned from
      * an array which you provide as parameter.
      *
+     * WARNING: If you are creating a new object which is to be
+     * saved / created to the database then Do NOT assign a value for 'id'.
+     *
      * @param array $array
      * @return GoodObject
      */
@@ -419,7 +422,7 @@ abstract class GoodObject
      * @param string $error
      * @return bool
      */
-    public function save(mysqli $db, string &$error)
+    public function save(mysqli $db, string &$error): bool
     {
         // A database object without an id is one that has never been saved in the database.
 
