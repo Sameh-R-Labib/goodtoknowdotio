@@ -31,10 +31,12 @@ abstract class GoodObject
 
     public $id;
 
+
     // (In the $fields array below) The id field must be
     // specified before all the other fields.
 
     protected static $fields = ['id'];
+
 
     protected static $table_name = "goodobjects";
 
@@ -348,7 +350,7 @@ abstract class GoodObject
      * @param array $objects_array
      * @return string
      */
-    public static function value_sets_sql_string(mysqli $db, array $objects_array)
+    public static function value_sets_sql_string(mysqli $db, array $objects_array): string
     {
         /**
          * Takes an array of objects and forms
@@ -362,7 +364,7 @@ abstract class GoodObject
 
         foreach ($objects_array as $key => $object) {
 
-            $is_last = ($key === $array_key_last) ? true : false;
+            $is_last = $key === $array_key_last;
 
             $sql .= static::value_sql_for_object($db, $object, $is_last);
 
@@ -378,7 +380,7 @@ abstract class GoodObject
      * @param bool $is_last
      * @return string
      */
-    public static function value_sql_for_object(mysqli $db, object $object, bool $is_last)
+    public static function value_sql_for_object(mysqli $db, object $object, bool $is_last): string
     {
         /**
          * This function helps function value_sets_sql_string
