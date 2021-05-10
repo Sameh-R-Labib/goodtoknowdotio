@@ -424,6 +424,11 @@ abstract class GoodObject
      */
     public function save(mysqli $db, string &$error): bool
     {
+        /**
+         * save() may do an update() and it is normal for update() to fail when the
+         * values in the object are the same as the values in the database row.
+         */
+
         // A database object without an id is one that has never been saved in the database.
 
         return isset($this->id) ? $this->update($db, $error) : $this->create($db, $error);
@@ -571,7 +576,7 @@ abstract class GoodObject
      * @param string $error
      * @return bool
      */
-    protected function update(mysqli $db, string &$error)
+    protected function update(mysqli $db, string &$error): bool
     {
         $num_affected_rows = 0;
 
@@ -642,10 +647,16 @@ abstract class GoodObject
 
             return true;
 
-        } else {
+        } elseif ($num_affected_rows == 0) {
 
             // It is normal to fail to update whenever the new data is the same as the existing data in the database.
             // $error .= ' GoodObject update() FAILED to update its row. ';
+
+            return false;
+
+        } else {
+
+            $error .= " GoodObject update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
 
             return false;
 
