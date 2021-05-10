@@ -671,7 +671,7 @@ abstract class GoodObject
      * @param string $error
      * @return bool
      */
-    public function delete(mysqli $db, string &$error)
+    public function delete(mysqli $db, string &$error): bool
     {
         $num_affected_rows = 0;
 
