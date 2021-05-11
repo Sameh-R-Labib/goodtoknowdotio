@@ -133,11 +133,11 @@ class UploadProcessor
 
         $a_link_href_content = SERVER_URL . '/image/' . rawurlencode(CLASSICFILENAME);
 
-        $a_link_href_content = htmlspecialchars($a_link_href_content);
+        $a_link_href_content = htmlspecialchars($a_link_href_content, ENT_NOQUOTES | ENT_HTML5);
 
         $a_link_display_text = SERVER_URL . '/image/' . rawurlencode(CLASSICFILENAME);
 
-        $a_link_display_text = htmlspecialchars($a_link_display_text);
+        $a_link_display_text = htmlspecialchars($a_link_display_text, ENT_NOQUOTES | ENT_HTML5);
 
         $a_link_entire_embed = '<a href="' . $a_link_href_content . '" target="_blank">' . $a_link_display_text . '</a>';
 
