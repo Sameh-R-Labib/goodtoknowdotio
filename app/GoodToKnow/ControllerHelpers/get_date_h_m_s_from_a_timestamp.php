@@ -17,6 +17,8 @@ function get_date_h_m_s_from_a_timestamp(string $timestamp): array
      * - ['minute'] : (string) 0-59 minutes.
      * - ['second'] : (string) 0-59 seconds.
      *
+     * No leading zeroes for hour, minute and second.
+     *
      * This array will be used to pre-populate form fields for the specified timestamp.
      *
      * It is assumed that the timestamp is valid.
