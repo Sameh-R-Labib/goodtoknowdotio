@@ -77,7 +77,9 @@ class CreateNewPostEditProcessor
         $bytes_written = file_put_contents($post->markdown_file, $markdown);
 
         if ($bytes_written === false) {
+
             breakout(' Function file_put_contents() unable to write markdown file. Mission aborted! ');
+
         }
 
 
@@ -89,7 +91,9 @@ class CreateNewPostEditProcessor
         $bytes_written = file_put_contents($post->html_file, $html);
 
         if ($bytes_written === false) {
+
             breakout(' Function file_put_contents() unable to write html file. But the markdown file did get written. ');
+
         }
 
 
