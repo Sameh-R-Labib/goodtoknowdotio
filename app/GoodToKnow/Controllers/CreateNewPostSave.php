@@ -61,7 +61,9 @@ class CreateNewPostSave
 
             foreach ($result as $object) {
 
-                if ($object->sequence_number == $saved_int02) {
+                $a = (int)$object->sequence_number;
+
+                if ($a == (int)$saved_int02) {
 
                     $sequence_number_already_exists_in_db = true;
                     break;

@@ -50,7 +50,9 @@ class NewTopicSave
 
             foreach ($result as $object) {
 
-                if ($object->sequence_number == $saved_int01) {
+                $a = (int)$object->sequence_number;
+
+                if ($a == (int)$saved_int01) {
 
                     $sequence_number_already_exists_in_db = true;
                     break;
@@ -60,8 +62,10 @@ class NewTopicSave
         }
 
         if ($sequence_number_already_exists_in_db) {
+
             breakout(' Unfortunately someone was putting a topic in the same spot while you were
             trying to do the same and they beat you to the punch. Please start over. ');
+
         }
 
 
