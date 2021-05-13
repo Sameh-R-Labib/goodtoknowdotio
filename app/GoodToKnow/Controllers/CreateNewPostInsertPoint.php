@@ -16,7 +16,8 @@ class CreateNewPostInsertPoint
          *  1) Before or After?
          *  2) Which post?
          *
-         * Note: Here it is assumed there is at least one post in the chosen topic. Otherwise, this route will have had been skipped.
+         * Note: Here it is assumed there is at least one post in the chosen topic.
+         * Otherwise, this route will have had been skipped.
          */
 
 
@@ -44,7 +45,9 @@ class CreateNewPostInsertPoint
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
 
         if (!$special_post_array) {
+
             breakout(' Unable to get posts for the topic specified. ');
+
         }
 
         $html_title = 'Where will the new post go?';

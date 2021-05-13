@@ -49,50 +49,8 @@ class CreateNewPostSave
          */
 
 
-        $created = time();
-
-
-        $filenamestub = '';
-
-
         /**
-         * I need to generate the random part of the file name.
-         * I need to make sure the generated filename doesn't already exist.
-         */
-
-        try {
-            $filenamestub = random_bytes(5);
-        } catch (\Exception $e) {
-            $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' .
-                htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
-        }
-
-        if (!empty($sessionMessage)) {
-            breakout('');
-        }
-
-        $filenamestub = bin2hex($filenamestub);
-
-        $markdown_file = tempnam(MARKDOWN, $filenamestub);
-
-        $html_file = tempnam(STATICHTML, $filenamestub);
-
-        if (!$markdown_file || !$html_file) {
-            breakout(' Failed to create files. ');
-        }
-
-        // Assemble the Post object
-
-        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extensionfortitle' => $saved_str02,
-            'user_id' => $user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
-
-        $post = Post::array_to_object($post_as_array);
-
-
-        // Verify that our sequence number hasn't been taken.
-
-        /**
-         * Get all the posts in out topic.
+         * Verify that our sequence number hasn't been taken.
          */
 
         $result = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
@@ -113,9 +71,62 @@ class CreateNewPostSave
         }
 
         if ($sequence_number_already_exists_in_db) {
+
             breakout(' Unfortunately someone was putting a post in the same spot while you were
             trying to do the same and they beat you to the punch. Please start over. ');
+
         }
+
+
+        /**
+         * Initialize some variables.
+         */
+
+        $created = time();
+
+        $filenamestub = '';
+
+
+        /**
+         * I need to generate the random part of the file name.
+         * I need to make sure the generated filename doesn't already exist.
+         */
+
+        try {
+
+            $filenamestub = random_bytes(5);
+
+        } catch (\Exception $e) {
+
+            $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' .
+                htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
+        }
+
+        if (!empty($sessionMessage)) {
+
+            breakout('');
+
+        }
+
+        $filenamestub = bin2hex($filenamestub);
+
+        $markdown_file = tempnam(MARKDOWN, $filenamestub);
+
+        $html_file = tempnam(STATICHTML, $filenamestub);
+
+        if (!$markdown_file || !$html_file) {
+
+            breakout(' Failed to create files. ');
+
+        }
+
+        // Assemble the Post object
+
+        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extensionfortitle' => $saved_str02,
+            'user_id' => $user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
+
+        $post = Post::array_to_object($post_as_array);
 
 
         // Save the new Post
@@ -123,7 +134,9 @@ class CreateNewPostSave
         $result = $post->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' CreateNewPostSave: Unexpected save was unable to save the new post. ');
+
         }
 
 
@@ -138,7 +151,9 @@ class CreateNewPostSave
         $result = $topictopost->save($db, $sessionMessage);
 
         if (!$result) {
+
             breakout(' CreateNewPostSave: Unexpected save was unable to save the TopicToPost. ');
+
         }
 
 
@@ -151,7 +166,9 @@ class CreateNewPostSave
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
 
             if ($special_post_array === false) {
+
                 breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
+
             }
 
             $_SESSION['special_post_array'] = $special_post_array;

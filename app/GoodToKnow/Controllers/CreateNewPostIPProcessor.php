@@ -34,13 +34,12 @@ class CreateNewPostIPProcessor
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
-
-
         /**
          * Make sure we are NOT dealing with a topic which has zero
          * posts.
          */
+
+        $db = get_db();
 
         $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
 

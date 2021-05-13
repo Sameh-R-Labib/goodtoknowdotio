@@ -13,6 +13,7 @@ class CreateNewPostProcessor
         global $chosen_topic_id;
 
 
+        // $_SESSION['saved_int01'] will acquire $chosen_topic_id in get_and_save_the_topic_id.php
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
