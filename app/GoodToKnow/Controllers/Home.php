@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\UserToCommunity;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
@@ -182,7 +183,7 @@ class Home
                 }
             }
 
-            $special_community_array = find_communities_of_user($db, $error, $user_id);
+            $special_community_array = UserToCommunity::find_communities_of_user($db, $error, $user_id);
 
             if ($special_community_array === false) {
                 $error .= " Failed to find the array of the user's communities. ";

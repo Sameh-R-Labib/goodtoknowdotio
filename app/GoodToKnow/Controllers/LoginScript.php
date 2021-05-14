@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\UserToCommunity;
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
@@ -81,7 +82,7 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-        $special_community_array = find_communities_of_user($db, $error, $user->id);
+        $special_community_array = UserToCommunity::find_communities_of_user($db, $error, $user->id);
 
         if ($special_community_array === false) {
 
