@@ -280,24 +280,15 @@ class Home
                 }
             }
 
-
-            /**
-             * Debug Code
-             */
-            echo "\n<p>Begin debug</p>\n";
-            echo "<p>Var_dump \$db: </p>\n<pre>";
-            var_dump($db);
-            echo "</pre>\n";
-            die("<p>End debug</p>\n");
-
-
             $result = User::enforce_suspension($db, $sessionMessage, $user_id);
 
             if ($result === false) {
+
                 $sessionMessage .= " Failed to find the user by id. ";
                 $_SESSION['message'] = $sessionMessage;
                 reset_feature_session_vars();
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
+
             }
         }
     }
