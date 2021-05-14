@@ -37,7 +37,7 @@ class SetHomePageCommunityTopicPost
 
         self::abort_if_an_anomalous_condition_exists($sessionMessage, $is_logged_in);
 
-        $db = db_connect($sessionMessage);
+        $db = db_connect();
 
         self::mostly_making_sure_chosen_community_is_ok_to_choose($db, $sessionMessage, $community_id,
             $special_community_array);

@@ -39,23 +39,6 @@ function kick_out_nonadmins()
 
 
 /**
- * @return bool|mysqli
- */
-function get_db()
-{
-    global $sessionMessage;
-
-    $db = db_connect($sessionMessage);
-
-    if (!empty($sessionMessage) || $db === false) {
-        breakout(' I was unable to connect to the database. ');
-    }
-
-    return $db;
-}
-
-
-/**
  *
  */
 function reset_feature_session_vars()
@@ -148,18 +131,19 @@ function size_as_text(int $size): string
 
 
 /**
- * @param string $error
  * @return bool|mysqli
  */
-function db_connect(string &$error)
+function db_connect()
 {
+    global $sessionMessage;
+
     try {
 
         $db = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
         if ($db->connect_error) {
 
-            $error .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
 
         }
@@ -168,8 +152,27 @@ function db_connect(string &$error)
 
     } catch (Exception $e) {
 
-        $error .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        $sessionMessage .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         return false;
+
+    }
+
+    return $db;
+}
+
+
+/**
+ * @return bool|mysqli
+ */
+function get_db()
+{
+    global $sessionMessage;
+
+    $db = db_connect();
+
+    if (!empty($sessionMessage) || $db === false) {
+
+        breakout(' I was unable to connect to the database. ');
 
     }
 

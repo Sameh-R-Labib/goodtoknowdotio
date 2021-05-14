@@ -19,7 +19,7 @@ class LoginScript
         global $is_logged_in;
         global $sessionMessage;
 
-        $db = db_connect($sessionMessage);
+        $db = db_connect();
 
         $submitted_username = '';
         $submitted_password = '';

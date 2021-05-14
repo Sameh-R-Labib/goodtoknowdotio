@@ -105,7 +105,8 @@ class Home
 
         if ($time_since_refresh > 250) {
             if ($db == 'not connected') {
-                $db = db_connect($sessionMessage);
+
+                $db = db_connect();
 
                 if ($db === false) {
                     $sessionMessage .= " Failed to connect to the database. ";
@@ -113,6 +114,7 @@ class Home
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
+
             }
 
             $special_community_array = UserToCommunity::find_communities_of_user($db, $sessionMessage, $user_id);
@@ -136,14 +138,18 @@ class Home
 
         if ($time_since_refresh > 240 && $type_of_resource_requested == 'community') {
             if ($db == 'not connected') {
-                $db = db_connect($sessionMessage);
+
+                $db = db_connect();
 
                 if ($db === false) {
+
                     $sessionMessage .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $sessionMessage;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
+
                 }
+
             }
 
             $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
@@ -165,14 +171,18 @@ class Home
 
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
-                $db = db_connect($sessionMessage);
+
+                $db = db_connect();
 
                 if ($db === false) {
+
                     $sessionMessage .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $sessionMessage;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
+
                 }
+
             }
 
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
@@ -193,15 +203,20 @@ class Home
         $time_since_refresh = time() - $last_refresh_content;
 
         if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
+
             if ($db == 'not connected') {
-                $db = db_connect($sessionMessage);
+
+                $db = db_connect();
 
                 if ($db === false) {
+
                     $sessionMessage .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $sessionMessage;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
+
                 }
+
             }
 
             $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
@@ -209,20 +224,27 @@ class Home
             if ($post_object === false) {
                 $sessionMessage .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
             } else {
+
                 $post_content = file_get_contents($post_object->html_file);
 
                 if ($post_content === false) {
+
                     $sessionMessage .= " Unable to read the post's file. ";
                     $post_content = '';
+
                 }
+
             }
 
             if (empty(trim($post_content))) {
+
                 $post_content = '<p><em>[No post content]</em></p>';
+
             }
 
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
+
         }
     }
 
@@ -265,14 +287,18 @@ class Home
             $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
 
             if ($db == 'not connected') {
-                $db = db_connect($sessionMessage);
+
+                $db = db_connect();
 
                 if ($db === false) {
+
                     $sessionMessage .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $sessionMessage;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
+
                 }
+
             }
 
             $result = User::enforce_suspension($db, $sessionMessage, $user_id);

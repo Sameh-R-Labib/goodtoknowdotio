@@ -12,14 +12,18 @@ global $messages_last_time;
 
 if ($messages_last_time === null) {
     if ($db == 'not connected') {
-        $db = db_connect($sessionMessage);
+
+        $db = db_connect();
 
         if ($db === false) {
+
             $sessionMessage .= " Failed to connect to the database. ";
             $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
+
         }
+
     }
 
     $quantity = MessageToUser::user_message_quantity($db, $sessionMessage, $user_id);
@@ -44,7 +48,7 @@ if ($messages_last_time === null) {
 
     if ($time_since_last > 17) {
         if ($db == 'not connected') {
-            $db = db_connect($sessionMessage);
+            $db = db_connect();
 
             if ($db === false) {
 
