@@ -280,6 +280,17 @@ class Home
                 }
             }
 
+
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Begin debug</p>\n";
+            echo "<p>Var_dump \$db: </p>\n<pre>";
+            var_dump($db);
+            echo "</pre>\n";
+            die("<p>End debug</p>\n");
+
+
             $result = User::enforce_suspension($db, $sessionMessage, $user_id);
 
             if ($result === false) {
