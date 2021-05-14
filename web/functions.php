@@ -139,7 +139,7 @@ function redirect_to(string $location)
 
     if ($location !== '') {
 
-        header("Location: {$location}");
+        header("Location: $location");
         exit;
 
     }
@@ -177,13 +177,13 @@ function size_as_text(int $size): string
 {
     // takes a size in bytes and returns a more use friendly equivalent
     if ($size < 1024) {
-        return "{$size} bytes";
+        return "$size bytes";
     } elseif ($size < 1048576) {
         $size_kb = round($size / 1024);
-        return "{$size_kb} KB";
+        return "$size_kb KB";
     } else {
         $size_mb = round($size / 1048576, 1);
-        return "{$size_mb} MB";
+        return "$size_mb MB";
     }
 }
 
