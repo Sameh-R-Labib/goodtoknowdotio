@@ -32,18 +32,19 @@ class LoginScript
 
         self::login_the_user($sessionMessage, $user);
 
-        self::store_application_state($db, $sessionMessage, $user);
+        self::store_application_state($db, $user);
 
         breakout(' Logout once a day so that your session will Not expire. ');
     }
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param object $user
      */
-    private static function store_application_state(mysqli $db, string &$error, object $user)
+    private static function store_application_state(mysqli $db, object $user)
     {
+        global $sessionMessage;
+
         /**
          * Put user's data in session.
          */
@@ -63,7 +64,7 @@ class LoginScript
          * Put the community_name which corresponds with
          * community_id in the session.
          */
-        $community_object = Community::find_by_id($db, $error, $user->id_of_default_community);
+        $community_object = Community::find_by_id($db, $sessionMessage, $user->id_of_default_community);
 
         $_SESSION['community_name'] = $community_object->community_name;
 
@@ -82,12 +83,12 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-        $special_community_array = UserToCommunity::find_communities_of_user($db, $error, $user->id);
+        $special_community_array = UserToCommunity::find_communities_of_user($db, $sessionMessage, $user->id);
 
         if ($special_community_array === false) {
 
-            $error .= " Failed to find the array of the user's communities. ";
-            $_SESSION['message'] = $error;
+            $sessionMessage .= " Failed to find the array of the user's communities. ";
+            $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -109,12 +110,12 @@ class LoginScript
          * Find and save in session a value for special_topic_array.
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $error, $user->id_of_default_community);
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $user->id_of_default_community);
 
         if (!$special_topic_array) {
 
-            $error .= " I didn't find any topics for your default community. ";
-            $_SESSION['message'] .= $error;
+            $sessionMessage .= " I didn't find any topics for your default community. ";
+            $_SESSION['message'] .= $sessionMessage;
 
             redirect_to("/ax1/Home/page");
 
