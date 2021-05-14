@@ -12,11 +12,6 @@ class Home
 {
     function page()
     {
-        global $db;
-
-        // This is used as a trigger.
-        $db = 'not connected';
-
         self::redirect_if_not_logged_in();
 
         self::logout_the_user_if_he_is_suspended();

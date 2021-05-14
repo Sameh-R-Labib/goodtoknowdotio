@@ -230,7 +230,7 @@ $profit = 0;
 /**
  * Various initializations.
  */
-$db = null;
+$db = 'not connected';
 
 
 /**
