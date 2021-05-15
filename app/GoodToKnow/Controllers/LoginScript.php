@@ -30,7 +30,7 @@ class LoginScript
 
         $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
 
-        self::login_the_user($sessionMessage, $user);
+        self::login_the_user($user);
 
         self::store_application_state($db, $user);
 
@@ -125,16 +125,18 @@ class LoginScript
         $_SESSION['last_refresh_topics'] = time();
     }
 
+
     /**
-     * @param string $error
      * @param $user
      */
-    private static function login_the_user(string $error, $user)
+    private static function login_the_user($user)
     {
+        global $sessionMessage;
+
         if ($user === false) {
 
-            $error .= " Authentication failed! ";
-            $_SESSION['message'] = $error;
+            $sessionMessage .= " Authentication failed! ";
+            $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -149,8 +151,8 @@ class LoginScript
          */
         if ($user->is_suspended) {
 
-            $error .= " No active account exists for this username. ";
-            $_SESSION['message'] = $error;
+            $sessionMessage .= " No active account exists for this username. ";
+            $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -161,6 +163,7 @@ class LoginScript
          */
         $_SESSION['when_last_checked_suspend'] = time();
     }
+
 
     /**
      * @param string $error
