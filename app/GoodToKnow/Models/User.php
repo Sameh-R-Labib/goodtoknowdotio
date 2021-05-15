@@ -115,14 +115,15 @@ class User extends GoodObject
 
 
     /**
-     * @param \mysqli $db
-     * @param string $error
+     * @param mysqli $db
      * @param string $username
      * @param string $password
      * @return bool|object|stdClass
      */
-    public static function authenticate(\mysqli $db, string &$error, string $username, string $password)
+    public static function authenticate(mysqli $db, string $username, string $password)
     {
+        global $sessionMessage;
+
         /**
          * What you see here could have been done using the find_by_sql
          * but I chose to do this explicitly using a prepared statement since
@@ -139,7 +140,7 @@ class User extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $error .= $stmt->error . ' ';
+                $sessionMessage .= $stmt->error . ' ';
 
                 return false;
 
@@ -168,7 +169,7 @@ class User extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $error .= ' User::authenticate() caught a thrown exception: ' .
+            $sessionMessage .= ' User::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -177,7 +178,7 @@ class User extends GoodObject
 
         if (!password_verify($password, $user->password)) {
 
-            $error .= " Authentication failed! ";
+            $sessionMessage .= " Authentication failed! ";
 
             return false;
         }
@@ -187,12 +188,12 @@ class User extends GoodObject
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param string $username
      * @return bool
      */
-    public static function is_taken_username(\mysqli $db, string &$error, string $username): bool
+    public static function is_taken_username(mysqli $db, string &$error, string $username): bool
     {
         $sql = 'SELECT username FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
@@ -210,12 +211,12 @@ class User extends GoodObject
 
 
     /**
-     * @param \mysqli $db
+     * @param mysqli $db
      * @param string $error
      * @param string $username
      * @return bool|mixed
      */
-    public static function find_by_username(\mysqli $db, string &$error, string $username)
+    public static function find_by_username(mysqli $db, string &$error, string $username)
     {
         /**
          * You give it a username and it returns the
