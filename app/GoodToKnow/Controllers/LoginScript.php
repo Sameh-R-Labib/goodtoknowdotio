@@ -24,7 +24,7 @@ class LoginScript
         $submitted_username = '';
         $submitted_password = '';
 
-        self::init($db, $sessionMessage, $is_logged_in);
+        self::init($db, $is_logged_in);
 
         self::assimilate_input($submitted_username, $submitted_password);
 
@@ -195,16 +195,17 @@ class LoginScript
 
     /**
      * @param $db
-     * @param $error
      * @param $is_logged_in
      */
-    private static function init($db, $error, $is_logged_in)
+    private static function init($db, $is_logged_in)
     {
+        global $sessionMessage;
+
         if ($is_logged_in) {
 
-            $error .= " I don't know exactly why you ended up on this page but what I do know is that
+            $sessionMessage .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";
-            $_SESSION['message'] = $error;
+            $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -213,10 +214,10 @@ class LoginScript
         // For denial of service attacks
         sleep(1);
 
-        if (!empty($error) || $db === false) {
+        if (!empty($sessionMessage) || $db === false) {
 
-            $error .= ' Database connection failed. ';
-            $_SESSION['message'] = $error;
+            $sessionMessage .= ' Database connection failed. ';
+            $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
