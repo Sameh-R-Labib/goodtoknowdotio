@@ -3,6 +3,7 @@
 namespace GoodToKnow\Models;
 
 use stdClass;
+use mysqli;
 
 class User extends GoodObject
 {
@@ -75,12 +76,14 @@ class User extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $user_id
      * @return bool
      */
-    public static function enforce_suspension(mysqli $db, string &$error, int $user_id): bool
+    public static function enforce_suspension(mysqli $db, int $user_id): bool
     {
+        global $sessionMessage;
+
+
         /**
          *   1) Determine whether or not the user is suspended per database
          *   2) If the user is suspended log him out and redirect to the page for logging in.
@@ -90,7 +93,7 @@ class User extends GoodObject
 
         // Determine whether or not the user is suspended per database
 
-        $user_object = User::find_by_id($db, $error, $user_id);
+        $user_object = User::find_by_id($db, $sessionMessage, $user_id);
 
         if ($user_object === false) return false;
 
