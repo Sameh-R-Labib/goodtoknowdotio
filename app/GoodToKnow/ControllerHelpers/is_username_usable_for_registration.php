@@ -22,7 +22,7 @@ function is_username_usable_for_registration(mysqli $db, string &$message, strin
         return false;
     }
 
-    $is_in_use = User::is_taken_username($db, $message, $username);
+    $is_in_use = User::is_taken_username($db, $username);
 
     if ($is_in_use) {
 

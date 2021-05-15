@@ -189,16 +189,17 @@ class User extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param string $username
      * @return bool
      */
-    public static function is_taken_username(mysqli $db, string &$error, string $username): bool
+    public static function is_taken_username(mysqli $db, string $username): bool
     {
+        global $sessionMessage;
+
         $sql = 'SELECT username FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
-        $array_of_User_objects = parent::find_by_sql($db, $error, $sql);
+        $array_of_User_objects = parent::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_User_objects) {
 

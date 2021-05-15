@@ -22,7 +22,7 @@ function is_username_syntactandexists(mysqli $db, string &$message, string &$use
         return false;
     }
 
-    $is_in_use = User::is_taken_username($db, $message, $username);
+    $is_in_use = User::is_taken_username($db, $username);
 
     if (!$is_in_use) {
 
