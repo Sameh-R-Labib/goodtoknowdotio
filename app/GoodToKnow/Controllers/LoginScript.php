@@ -26,7 +26,7 @@ class LoginScript
 
         self::init($db, $sessionMessage, $is_logged_in);
 
-        self::assimilate_input($sessionMessage, $submitted_username, $submitted_password);
+        self::assimilate_input($submitted_username, $submitted_password);
 
         $user = User::authenticate($db, $sessionMessage, $submitted_username, $submitted_password);
 
@@ -166,12 +166,13 @@ class LoginScript
 
 
     /**
-     * @param string $error
      * @param string $submitted_username
      * @param string $submitted_password
      */
-    private static function assimilate_input(string $error, string &$submitted_username, string &$submitted_password)
+    private static function assimilate_input(string &$submitted_username, string &$submitted_password)
     {
+        global $sessionMessage;
+
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $submitted_username = standard_form_field_prep('username', 7, 12);
@@ -182,10 +183,10 @@ class LoginScript
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_syntactically.php';
 
-        if (!is_username_syntactically($error, $submitted_username) ||
-            !is_password_syntactically($error, $submitted_password)) {
+        if (!is_username_syntactically($sessionMessage, $submitted_username) ||
+            !is_password_syntactically($sessionMessage, $submitted_password)) {
 
-            $_SESSION['message'] = $error;
+            $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
