@@ -66,7 +66,7 @@ class BalanceOutTheSequenceNumbers
             }
         } else {
             // Get all posts for topic.
-            $result = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            $result = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
             if (!$result) {
                 breakout(' The topic does not contain any posts. ');
             }

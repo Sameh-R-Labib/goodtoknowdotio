@@ -25,7 +25,7 @@ class CreateNewPostProcessor
 
         $db = get_db();
 
-        $posts = TopicToPost::get_posts_array_for_a_topic($db, $sessionMessage, $chosen_topic_id);
+        $posts = TopicToPost::get_posts_array_for_a_topic($db, $chosen_topic_id);
 
         if ($posts == false) $posts = [];
 

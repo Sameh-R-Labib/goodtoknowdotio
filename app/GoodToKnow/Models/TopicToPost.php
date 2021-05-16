@@ -63,11 +63,10 @@ class TopicToPost extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $topic_id
      * @return array|bool
      */
-    public static function get_posts_array_for_a_topic(mysqli $db, string &$error, int $topic_id)
+    public static function get_posts_array_for_a_topic(mysqli $db, int $topic_id)
     {
         /**
          * Note: I've modified this method to return
@@ -84,6 +83,9 @@ class TopicToPost extends GoodObject
          *
          * Then I will get (in array) all the posts listed in the first array.
          */
+
+
+        global $sessionMessage;
 
 
         // get (in array) all the TopicToPost objects with a particular $topic_id.
@@ -103,7 +105,7 @@ class TopicToPost extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $error .= ' ' . $stmt->error . ' ';
+                $sessionMessage .= ' ' . $stmt->error . ' ';
 
                 return false;
 
@@ -139,7 +141,7 @@ class TopicToPost extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $error .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
+            $sessionMessage .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -148,7 +150,7 @@ class TopicToPost extends GoodObject
 
         if ($count < 1) {
 
-            $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
+            $sessionMessage .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
 
             return false;
 
@@ -163,13 +165,13 @@ class TopicToPost extends GoodObject
 
         foreach ($array_of_TopicToPost as $item) {
 
-            $array_of_Posts[] = Post::find_by_id($db, $error, $item->post_id);
+            $array_of_Posts[] = Post::find_by_id($db, $sessionMessage, $item->post_id);
 
         }
 
         if (empty($array_of_Posts)) {
 
-            $error .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
+            $sessionMessage .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
 
             return false;
 
@@ -240,7 +242,7 @@ class TopicToPost extends GoodObject
          *  - Each item value is the post title for that post id
          */
 
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
+        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
 
         if (empty($posts_array) || $posts_array === false) {
 
@@ -269,7 +271,7 @@ class TopicToPost extends GoodObject
      */
     public static function special_posts_array_for_user_and_topic(mysqli $db, string &$error, int $user_id, int $topic_id)
     {
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $error, $topic_id);
+        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
 
         if (empty($posts_array) || $posts_array === false) {
 
