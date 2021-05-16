@@ -91,7 +91,7 @@ class Message extends GoodObject
 
         foreach ($array_of_found_messages as $found_message) {
 
-            $result = MessageToUser::delete_all_having_particular_message_id($db, $error, $found_message->id);
+            $result = MessageToUser::delete_all_having_particular_message_id($db, $found_message->id);
 
             if ($result === false) {
 

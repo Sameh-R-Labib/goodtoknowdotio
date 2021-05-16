@@ -82,11 +82,10 @@ class MessageToUser extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $message_id
      * @return bool
      */
-    public static function delete_all_having_particular_message_id(mysqli $db, string &$error, int $message_id)
+    public static function delete_all_having_particular_message_id(mysqli $db, int $message_id): bool
     {
         /**
          * It will return false if an error occurs while
@@ -95,6 +94,8 @@ class MessageToUser extends GoodObject
          * Otherwise, it will return true (even if nothing
          * was deleted.)
          */
+
+        global $sessionMessage;
 
         // Formulate the sql for the delete
 
@@ -108,14 +109,14 @@ class MessageToUser extends GoodObject
 
             if (!empty($query_error)) {
 
-                $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $sessionMessage .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $error .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
