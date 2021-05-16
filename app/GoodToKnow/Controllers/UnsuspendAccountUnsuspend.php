@@ -33,7 +33,7 @@ class UnsuspendAccountUnsuspend
 
         $db = get_db();
 
-        $user_object = User::find_by_username($db, $sessionMessage, $saved_str01);
+        $user_object = User::find_by_username($db, $saved_str01);
 
         if (!$user_object) {
 
