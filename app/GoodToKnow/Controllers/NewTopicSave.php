@@ -42,7 +42,7 @@ class NewTopicSave
 
         $db = get_db();
 
-        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $community_id);
 
         $sequence_number_already_exists_in_db = false;
 

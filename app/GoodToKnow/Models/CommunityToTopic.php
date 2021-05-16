@@ -70,15 +70,16 @@ class CommunityToTopic extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $community_id
      * @return array|bool
      */
-    public static function get_array_of_topic_objects_for_a_community(mysqli $db, string &$error, int $community_id)
+    public static function get_array_of_topic_objects_for_a_community(mysqli $db, int $community_id)
     {
         /**
          * This method gets all the topic objects for a community when given a community id.
          */
+
+        global $sessionMessage;
 
         // get (in array) all the CommunityToTopic objects with a particular $community_id.
         $array_of_CommunityToTopic = [];
@@ -96,7 +97,7 @@ class CommunityToTopic extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $error .= ' ' . $stmt->error . ' ';
+                $sessionMessage .= ' ' . $stmt->error . ' ';
 
                 return false;
 
@@ -133,7 +134,7 @@ class CommunityToTopic extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
+            $sessionMessage .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -142,7 +143,7 @@ class CommunityToTopic extends GoodObject
 
         if ($count < 1) {
 
-            $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
+            $sessionMessage .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
 
             return false;
 
@@ -155,13 +156,13 @@ class CommunityToTopic extends GoodObject
 
         foreach ($array_of_CommunityToTopic as $item) {
 
-            $array_of_Topics[] = Topic::find_by_id($db, $error, $item->topic_id);
+            $array_of_Topics[] = Topic::find_by_id($db, $sessionMessage, $item->topic_id);
 
         }
 
         if (empty($array_of_Topics)) {
 
-            $error .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
+            $sessionMessage .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
 
             return false;
 
@@ -187,7 +188,7 @@ class CommunityToTopic extends GoodObject
          * This method gets a $special_topics_array (if you know what I mean.)
          */
 
-        $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $error, $community_id);
+        $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $community_id);
 
         if (empty($topics_array) || $topics_array === false) {
 

@@ -60,7 +60,7 @@ class BalanceOutTheSequenceNumbers
 
         if ($thing_type === 'Community') {
             // Get all topics for community.
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $sessionMessage, $community_id);
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $community_id);
             if (!$result) {
                 breakout(' The community does not contain any topics. ');
             }
