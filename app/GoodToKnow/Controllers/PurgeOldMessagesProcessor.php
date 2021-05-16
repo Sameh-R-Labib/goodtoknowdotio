@@ -51,7 +51,7 @@ class PurgeOldMessagesProcessor
 
         $db = get_db();
 
-        $result = Message::purge_all_messages_older_than_date($db, $sessionMessage, $timestamp);
+        $result = Message::purge_all_messages_older_than_date($db, $timestamp);
 
 
         /**

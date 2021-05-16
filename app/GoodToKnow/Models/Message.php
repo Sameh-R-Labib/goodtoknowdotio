@@ -39,11 +39,10 @@ class Message extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $timestamp
      * @return bool
      */
-    public static function purge_all_messages_older_than_date(mysqli $db, string &$error, int $timestamp)
+    public static function purge_all_messages_older_than_date(mysqli $db, int $timestamp): bool
     {
         /**
          * Actually it will delete both the message records
@@ -54,6 +53,8 @@ class Message extends GoodObject
          *   4) Return true or false.
          */
 
+        global $sessionMessage;
+
         /**
          * 1) Find all old messages.
          */
@@ -62,14 +63,14 @@ class Message extends GoodObject
 
         $sql = "SELECT * FROM " . self::$table_name . " WHERE `created`<" . $db->real_escape_string($timestamp);
 
-        $array_of_found_messages = self::find_by_sql($db, $error, $sql);
+        $array_of_found_messages = self::find_by_sql($db, $sessionMessage, $sql);
 
 
         // Handling the case where an unexpected error occured
 
         if ($array_of_found_messages === false) {
 
-            $error .= " An error occured while trying to find messages. ";
+            $sessionMessage .= " An error occured while trying to find messages. ";
 
             return false;
 
@@ -95,7 +96,7 @@ class Message extends GoodObject
 
             if ($result === false) {
 
-                $error .= " An error occured while trying to delete_all_having_particular_message_id. ";
+                $sessionMessage .= " An error occured while trying to delete_all_having_particular_message_id. ";
 
                 return false;
 
@@ -109,11 +110,11 @@ class Message extends GoodObject
 
         foreach ($array_of_found_messages as $found_message) {
 
-            $result = $found_message->delete($db, $error);
+            $result = $found_message->delete($db, $sessionMessage);
 
             if ($result === false) {
 
-                $error .= " An error occured while running delete method on a Message object within purge_all_messages_older_than_date ";
+                $sessionMessage .= " An error occured while running delete method on a Message object within purge_all_messages_older_than_date ";
 
                 return false;
 
