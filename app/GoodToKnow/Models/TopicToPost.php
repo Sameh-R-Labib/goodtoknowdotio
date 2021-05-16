@@ -35,24 +35,25 @@ class TopicToPost extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $post_id
      * @return string|bool
      */
-    public static function derive_topic_id(mysqli $db, string &$error, int $post_id)
+    public static function derive_topic_id(mysqli $db, int $post_id)
     {
+        global $sessionMessage;
+
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `post_id` = "' . $db->real_escape_string($post_id) . '" LIMIT 1';
 
-        $array_of_objects = TopicToPost::find_by_sql($db, $error, $sql);
-        if (!$array_of_objects || !empty($error)) {
-            $error .= ' derive_topic_id says: Failed to get a TopicToPost object. ';
+        $array_of_objects = TopicToPost::find_by_sql($db, $sessionMessage, $sql);
+        if (!$array_of_objects || !empty($sessionMessage)) {
+            $sessionMessage .= ' derive_topic_id says: Failed to get a TopicToPost object. ';
             return false;
         }
 
         $topictopost_object = array_shift($array_of_objects);
         if (!is_object($topictopost_object)) {
-            $error .= ' derive_topic_id says: Unexpectedly return value is not an object. ';
+            $sessionMessage .= ' derive_topic_id says: Unexpectedly return value is not an object. ';
             return false;
         }
 
