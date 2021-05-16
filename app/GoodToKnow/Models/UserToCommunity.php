@@ -34,17 +34,20 @@ class UserToCommunity extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $user_id
      * @return array|bool
      */
-    public static function coms_user_belongs_to(mysqli $db, string &$error, int $user_id)
+    public static function coms_user_belongs_to(mysqli $db, int $user_id)
     {
         /**
          * Returns array of communities if no unexpected error occurs.
          * Returns false if an error occurs.
          * Note: this "array of communities" may be empty.
          */
+
+
+        global $sessionMessage;
+
 
         // This is what we hope to return
 
@@ -57,11 +60,11 @@ class UserToCommunity extends GoodObject
 
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
 
-        $user_to_community_array = self::find_by_sql($db, $error, $sql);
+        $user_to_community_array = self::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$user_to_community_array) {
 
-            $error .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
+            $sessionMessage .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
 
             return $array_of_coms_for_this_user;
 
@@ -76,7 +79,7 @@ class UserToCommunity extends GoodObject
             // Add a community object to $array_of_coms_for_this_user.
             // Obviously this community which we will add will be the one specified by the UserToCommunity object.
 
-            $community = Community::find_by_id($db, $error, $user_to_community_object->community_id);
+            $community = Community::find_by_id($db, $sessionMessage, $user_to_community_object->community_id);
 
             if ($community === false) {
 
@@ -91,7 +94,7 @@ class UserToCommunity extends GoodObject
 
         if (empty($array_of_coms_for_this_user)) {
 
-            $error .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
+            $sessionMessage .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
 
             return false;
 

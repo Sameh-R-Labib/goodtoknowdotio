@@ -56,7 +56,7 @@ class RemoveComsChoices
          * 3) Get all the communities the user belongs to.
          */
 
-        $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $sessionMessage, $user_id);
+        $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $user_id);
 
         if ($coms_user_belongs_to === false) {
 
