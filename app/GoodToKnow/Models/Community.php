@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Models;
 
+use mysqli;
+
 class Community extends GoodObject
 {
     /**
@@ -31,24 +33,25 @@ class Community extends GoodObject
 
 
     /**
-     * @param \mysqli $db
-     * @param string $error
+     * @param mysqli $db
      * @param string $community_name
      * @return bool|mixed
      */
-    public static function find_by_community_name(\mysqli $db, string &$error, string $community_name)
+    public static function find_by_community_name(mysqli $db, string $community_name)
     {
         /**
          * You give it a username and it returns the
          * corresponding User object or false.
          */
 
+        global $sessionMessage;
+
         $sql = 'SELECT * FROM `communities`
                 WHERE `community_name` = "' . $db->real_escape_string($community_name) . '" LIMIT 1';
 
-        $array_of_Community_objects = parent::find_by_sql($db, $error, $sql);
+        $array_of_Community_objects = parent::find_by_sql($db, $sessionMessage, $sql);
 
-        $temp_error = trim($error);
+        $temp_error = trim($sessionMessage);
 
         if (!$array_of_Community_objects || !empty($temp_error)) {
 
