@@ -177,14 +177,15 @@ abstract class GoodObject
      * because the id table field is autoincrement.
      *
      * @param mysqli $db
-     * @param string $error
      * @return bool
      */
-    protected function create(mysqli $db, string &$error): bool
+    protected function create(mysqli $db): bool
     {
+        global $sessionMessage;
+
         if ($this->id) {
 
-            $error .= ' GoodObject create() method says: Whichever code is calling create() is trying
+            $sessionMessage .= ' GoodObject create() method says: Whichever code is calling create() is trying
             to insert a new table row using an object which already exists in the table. We know this
             because that object already has an id. ';
 
@@ -221,7 +222,7 @@ abstract class GoodObject
 
             if (!empty($query_error)) {
 
-                $error .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $sessionMessage .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
             }
@@ -232,7 +233,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $error .= ' GoodObject create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' GoodObject create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -248,7 +249,7 @@ abstract class GoodObject
 
         } else {
 
-            $error .= ' The GoodObject create() method failed to insert a row. ';
+            $sessionMessage .= ' The GoodObject create() method failed to insert a row. ';
 
             return false;
 
@@ -431,7 +432,7 @@ abstract class GoodObject
 
         // A database object without an id is one that has never been saved in the database.
 
-        return isset($this->id) ? $this->update($db, $error) : $this->create($db, $error);
+        return isset($this->id) ? $this->update($db, $error) : $this->create($db);
     }
 
 
