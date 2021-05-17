@@ -178,11 +178,10 @@ class CommunityToTopic extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $community_id
      * @return array|bool
      */
-    public static function get_topics_array_for_a_community(mysqli $db, string &$error, int $community_id)
+    public static function get_topics_array_for_a_community(mysqli $db, int $community_id)
     {
         /**
          * This method gets a $special_topics_array (if you know what I mean.)

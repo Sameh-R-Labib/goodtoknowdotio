@@ -276,7 +276,7 @@ class SetHomePageCommunityTopicPost
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $sessionMessage, $community_id);
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $community_id);
 
         if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
 
