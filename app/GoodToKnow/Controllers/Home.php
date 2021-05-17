@@ -117,10 +117,12 @@ class Home
 
             }
 
-            $special_community_array = UserToCommunity::find_communities_of_user($db, $sessionMessage, $user_id);
+            $special_community_array = UserToCommunity::find_communities_of_user($db, $user_id);
 
             if ($special_community_array === false) {
+
                 $sessionMessage .= " Failed to find the array of the user's communities. ";
+
             }
 
             $_SESSION['special_community_array'] = $special_community_array;

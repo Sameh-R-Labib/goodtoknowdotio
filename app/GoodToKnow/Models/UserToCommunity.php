@@ -158,11 +158,10 @@ class UserToCommunity extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param $user_id
      * @return array|bool
      */
-    public static function find_communities_of_user(mysqli $db, string &$error, $user_id)
+    public static function find_communities_of_user(mysqli $db, $user_id)
     {
         /**
          * The goal of this function is to return a special_community_array.
@@ -172,17 +171,20 @@ class UserToCommunity extends GoodObject
          */
 
 
+        global $sessionMessage;
+
+
         /**
          * Get all the communities for the user.
          */
 
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
 
-        $array_of_user_to_community_objects = UserToCommunity::find_by_sql($db, $error, $sql);
+        $array_of_user_to_community_objects = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
 
         if (!$array_of_user_to_community_objects) {
 
-            $error .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
+            $sessionMessage .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
 
             return false;
 
@@ -201,11 +203,11 @@ class UserToCommunity extends GoodObject
              * Talking about the right side of the assignment statement First we're getting a Community object.
              */
 
-            $special_community_array[$object->community_id] = Community::find_by_id($db, $error, $object->community_id);
+            $special_community_array[$object->community_id] = Community::find_by_id($db, $sessionMessage, $object->community_id);
 
             if (!$special_community_array[$object->community_id]) {
 
-                $error .= " find_communities_of_user() says err_no 20848. ";
+                $sessionMessage .= " find_communities_of_user() says err_no 20848. ";
 
                 return false;
 

@@ -83,7 +83,7 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-        $special_community_array = UserToCommunity::find_communities_of_user($db, $sessionMessage, $user->id);
+        $special_community_array = UserToCommunity::find_communities_of_user($db, $user->id);
 
         if ($special_community_array === false) {
 
