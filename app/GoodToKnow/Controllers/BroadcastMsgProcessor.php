@@ -66,7 +66,7 @@ class BroadcastMsgProcessor
          * Save all these MessageToUser objects in the database.
          */
 
-        $result = MessageToUser::insert_multiple_objects($db, $sessionMessage, $array_of_messagetouser_objects);
+        $result = MessageToUser::insert_multiple_objects($db, $array_of_messagetouser_objects);
 
         if (!$result) {
 

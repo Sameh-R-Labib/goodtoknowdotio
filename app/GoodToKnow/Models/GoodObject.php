@@ -263,11 +263,10 @@ abstract class GoodObject
      * to VALID values.
      *
      * @param mysqli $db
-     * @param string $error
      * @param array $objects_array
      * @return bool
      */
-    public static function insert_multiple_objects(mysqli $db, string &$error, array $objects_array): bool
+    public static function insert_multiple_objects(mysqli $db, array $objects_array): bool
     {
         /**
          * Unlike create() (AFTER it executes) this function will NOT have had set
@@ -281,11 +280,13 @@ abstract class GoodObject
          * The function returns true on success and false if no objects were inserted.
          */
 
+        global $sessionMessage;
+
         $sql = 'INSERT INTO ' . static::$table_name;
 
         if (empty($objects_array)) {
 
-            $error .= ' The function insert_multiple_objects did NOT receive any objects to insert. ';
+            $sessionMessage .= ' The function insert_multiple_objects did NOT receive any objects to insert. ';
 
             return false;
 
@@ -320,7 +321,7 @@ abstract class GoodObject
 
             if (!empty($query_error)) {
 
-                $error .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $sessionMessage .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
@@ -330,7 +331,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $error .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -342,7 +343,7 @@ abstract class GoodObject
 
         } else {
 
-            $error .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
+            $sessionMessage .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
 
             return false;
 

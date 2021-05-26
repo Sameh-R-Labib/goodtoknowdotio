@@ -60,7 +60,7 @@ class GiveComsChoicesProcessor
 
         $db = get_db();
 
-        $result = UserToCommunity::insert_multiple_objects($db, $sessionMessage, $array_of_usertocommunity_objects);
+        $result = UserToCommunity::insert_multiple_objects($db, $array_of_usertocommunity_objects);
 
         if (!$result) {
             breakout(' In GiveComsChoicesProcessor encountered error due to
