@@ -172,17 +172,18 @@ class MessageToUser extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param int $user_id
-     * @return array|bool|mixed
+     * @return array|bool
      */
-    public static function get_array_of_message_objects_for_a_user(mysqli $db, string &$error, int $user_id)
+    public static function get_array_of_message_objects_for_a_user(mysqli $db, int $user_id)
     {
         /**
          * Sequential ordering (by time created) will take place
          * on the array before it is returned. The first array
          * item will be the one which was created last.
          */
+
+        global $sessionMessage;
 
         // get (in array) all the MessageToUser objects with a particular $user_id.
 
@@ -201,7 +202,7 @@ class MessageToUser extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $error .= ' ' . $stmt->error . ' ';
+                $sessionMessage .= ' ' . $stmt->error . ' ';
 
                 return false;
 
@@ -236,7 +237,8 @@ class MessageToUser extends GoodObject
                 }
             }
         } catch (Exception $e) {
-            $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
+
+            $sessionMessage .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -244,7 +246,7 @@ class MessageToUser extends GoodObject
 
         if ($count < 1) {
 
-            $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 87. ';
+            $sessionMessage .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 87. ';
 
             return false;
 
@@ -260,13 +262,13 @@ class MessageToUser extends GoodObject
 
         foreach ($array_of_MessageToUser as $item) {
 
-            $array_of_Messages[] = Message::find_by_id($db, $error, $item->message_id);
+            $array_of_Messages[] = Message::find_by_id($db, $sessionMessage, $item->message_id);
 
         }
 
         if (empty($array_of_Messages)) {
 
-            $error .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
+            $sessionMessage .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
 
             return false;
 
