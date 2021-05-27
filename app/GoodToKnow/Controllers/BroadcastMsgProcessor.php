@@ -37,7 +37,7 @@ class BroadcastMsgProcessor
          * One for each user in the system.
          */
 
-        $array_of_user_objects = User::find_all($db, $sessionMessage);
+        $array_of_user_objects = User::find_all($db);
 
         if (!$array_of_user_objects) {
 

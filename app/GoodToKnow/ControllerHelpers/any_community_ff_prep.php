@@ -28,7 +28,7 @@ function any_community_ff_prep(string $field_name, mysqli $db): int
      * Make sure the submitted id is one of the existing community ids.
      */
 
-    $community_array = Community::find_all($db, $sessionMessage);
+    $community_array = Community::find_all($db);
 
     $is_found = false;
 

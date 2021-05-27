@@ -69,7 +69,7 @@ class GiveComsChoices
         // Second get all the communities that exist in this system.
         // By "this system" I mean this instance of the app.
 
-        $coms_in_this_system = Community::find_all($db, $sessionMessage);
+        $coms_in_this_system = Community::find_all($db);
 
         if ($coms_in_this_system === false) {
             breakout(' Unable to retrieve communities. ');

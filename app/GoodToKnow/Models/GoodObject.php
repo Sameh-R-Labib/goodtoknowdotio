@@ -489,12 +489,13 @@ abstract class GoodObject
      * Or gives me false when in error state.
      *
      * @param mysqli $db
-     * @param string $error
      * @return array|bool
      */
-    public static function find_all(mysqli $db, string &$error)
+    public static function find_all(mysqli $db)
     {
-        return static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name);
+        global $sessionMessage;
+
+        return static::find_by_sql($db, $sessionMessage, "SELECT * FROM " . static::$table_name);
     }
 
 

@@ -38,7 +38,7 @@ class UserRoster
          * to all the Users in the system.
          */
 
-        $user_objects_array = User::find_all($db, $sessionMessage);
+        $user_objects_array = User::find_all($db);
 
         if ($user_objects_array === false || empty($user_objects_array)) {
 
@@ -65,7 +65,7 @@ class UserRoster
 
         $community_values_array = [];
 
-        $array_of_all_community_objects = Community::find_all($db, $sessionMessage);
+        $array_of_all_community_objects = Community::find_all($db);
 
         if ($array_of_all_community_objects === false || empty($array_of_all_community_objects)) {
 
