@@ -43,7 +43,7 @@ class DefaultTimeZoneProcessor
         $user_object->timezone = $timezone;
 
 
-        $was_updated = $user_object->save($db, $sessionMessage);
+        $was_updated = $user_object->save($db);
 
         if (!$was_updated) {
 

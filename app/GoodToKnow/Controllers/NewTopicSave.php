@@ -71,10 +71,12 @@ class NewTopicSave
 
         // Save the new Topic
 
-        $result = $topic->save($db, $sessionMessage);
+        $result = $topic->save($db);
 
         if (!$result) {
+
             breakout(' NewTopicSave says: Unexpected save was unable to save the new topic. ');
+
         }
 
 
@@ -84,7 +86,7 @@ class NewTopicSave
 
         $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
 
-        $result = $communitytotopic->save($db, $sessionMessage);
+        $result = $communitytotopic->save($db);
 
         if (!$result) {
 

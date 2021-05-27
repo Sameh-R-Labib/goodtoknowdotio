@@ -100,7 +100,7 @@ class AdminCreateUser
 
         // Third step
 
-        $consequence_of_save = $new_user_object->save($db, $sessionMessage);
+        $consequence_of_save = $new_user_object->save($db);
 
         if (!$consequence_of_save) {
 
@@ -126,7 +126,7 @@ class AdminCreateUser
 
         $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
 
-        $consequence_of_save = $new_user_to_community_object->save($db, $sessionMessage);
+        $consequence_of_save = $new_user_to_community_object->save($db);
 
         if (!$consequence_of_save) {
 

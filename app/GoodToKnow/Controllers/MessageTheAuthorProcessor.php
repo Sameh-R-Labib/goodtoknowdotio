@@ -54,7 +54,7 @@ class MessageTheAuthorProcessor
          * Save that object to the database using save().
          */
 
-        $result = $message_to_user_object->save($db, $sessionMessage);
+        $result = $message_to_user_object->save($db);
 
         if (!$result) {
 

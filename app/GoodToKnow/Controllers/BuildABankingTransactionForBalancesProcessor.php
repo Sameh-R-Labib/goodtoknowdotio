@@ -64,7 +64,7 @@ class BuildABankingTransactionForBalancesProcessor
 
         $db = get_db();
 
-        $result = $object->save($db, $sessionMessage);
+        $result = $object->save($db);
 
         if (!$result) {
 

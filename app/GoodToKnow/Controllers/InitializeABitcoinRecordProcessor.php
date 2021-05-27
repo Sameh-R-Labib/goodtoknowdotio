@@ -70,15 +70,19 @@ class InitializeABitcoinRecordProcessor
 
         $db = get_db();
 
-        $result = $bitcoin_object->save($db, $sessionMessage);
+        $result = $bitcoin_object->save($db);
 
         if (!$result) {
+
             breakout(' The save method for Bitcoin returned false. ');
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout(' The save method for Bitcoin did not return false but it did send back a message.
              Therefore, it probably did not create the Bitcoin record. ');
+
         }
 
 

@@ -133,7 +133,7 @@ class CreateNewPostSave
 
         // Save the new Post
 
-        $result = $post->save($db, $sessionMessage);
+        $result = $post->save($db);
 
         if (!$result) {
 
@@ -150,7 +150,7 @@ class CreateNewPostSave
 
         // Save the new TopicToPost
 
-        $result = $topictopost->save($db, $sessionMessage);
+        $result = $topictopost->save($db);
 
         if (!$result) {
 

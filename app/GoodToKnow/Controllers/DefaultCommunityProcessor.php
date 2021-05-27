@@ -42,7 +42,7 @@ class DefaultCommunityProcessor
 
         $user_object->id_of_default_community = $chosen_id;
 
-        $was_updated = $user_object->save($db, $sessionMessage);
+        $was_updated = $user_object->save($db);
 
         if (!$was_updated) {
 

@@ -60,7 +60,7 @@ class ChangePasswordProcessor
 
         // Save the user object
 
-        $is_saved = $user_object->save($db, $sessionMessage);
+        $is_saved = $user_object->save($db);
 
         if (!$is_saved || !empty($sessionMessage)) {
 

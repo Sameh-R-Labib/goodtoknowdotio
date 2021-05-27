@@ -34,7 +34,7 @@ $message_object = Message::array_to_object($message_array);
 
 $db = get_db();
 
-$result = $message_object->save($db, $sessionMessage);
+$result = $message_object->save($db);
 
 if (!$result) {
 

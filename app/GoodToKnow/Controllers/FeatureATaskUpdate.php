@@ -93,7 +93,7 @@ class FeatureATaskUpdate
          * 4) Update/save the updated record in the database.
          */
 
-        $result = $object->save($db, $sessionMessage);
+        $result = $object->save($db);
 
         if ($result === false) {
 

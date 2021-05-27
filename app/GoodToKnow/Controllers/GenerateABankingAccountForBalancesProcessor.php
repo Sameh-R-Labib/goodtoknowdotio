@@ -64,10 +64,12 @@ class GenerateABankingAccountForBalancesProcessor
 
         $db = get_db();
 
-        $result = $object->save($db, $sessionMessage);
+        $result = $object->save($db);
 
         if (!$result) {
+
             breakout(' Your save for bank account failed 😟 ');
+
         }
 
         if (!empty($sessionMessage)) {

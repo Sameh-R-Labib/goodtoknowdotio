@@ -9,7 +9,6 @@ class NewCommunitySave
     function page()
     {
         global $db;
-        global $sessionMessage;
         global $saved_str01;                // The topic name
         global $saved_str02;                // The topic description
 
@@ -26,11 +25,13 @@ class NewCommunitySave
         $db = get_db();
 
 
-        $result = $community->save($db, $sessionMessage);
+        $result = $community->save($db);
 
 
         if (!$result) {
+
             breakout(' NewCommunitySave says: Unexpected save was unable to save the new community. ');
+
         }
 
 

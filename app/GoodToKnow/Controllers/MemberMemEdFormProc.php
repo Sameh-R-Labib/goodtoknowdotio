@@ -77,7 +77,7 @@ class MemberMemEdFormProc
          * 7) Update the database with this User object.
          */
 
-        $result = $user_object->save($db, $sessionMessage);
+        $result = $user_object->save($db);
 
         if ($result === false) {
 

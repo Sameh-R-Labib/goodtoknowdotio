@@ -421,19 +421,20 @@ abstract class GoodObject
      * Otherwise, it runs create().
      *
      * @param mysqli $db
-     * @param string $error
      * @return bool
      */
-    public function save(mysqli $db, string &$error): bool
+    public function save(mysqli $db): bool
     {
         /**
          * save() may do an update() and it is normal for update() to fail when the
          * values in the object are the same as the values in the database row.
          */
 
+        global $sessionMessage;
+
         // A database object without an id is one that has never been saved in the database.
 
-        return isset($this->id) ? $this->update($db, $error) : $this->create($db);
+        return isset($this->id) ? $this->update($db, $sessionMessage) : $this->create($db);
     }
 
 
