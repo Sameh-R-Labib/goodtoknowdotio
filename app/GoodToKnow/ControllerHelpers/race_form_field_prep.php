@@ -16,7 +16,7 @@ function race_form_field_prep(string $field_name): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_race_inoursystem.php';
 
-    if (!is_race_inoursystem($sessionMessage, $submitted_race)) {
+    if (!is_race_inoursystem($submitted_race)) {
 
         breakout(' This race value is invalid. ');
 

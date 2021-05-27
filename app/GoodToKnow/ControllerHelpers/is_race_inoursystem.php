@@ -3,11 +3,10 @@
 namespace GoodToKnow\ControllerHelpers;
 
 /**
- * @param string $message
  * @param string $race
  * @return bool
  */
-function is_race_inoursystem(string &$message, string &$race): bool
+function is_race_inoursystem(string &$race): bool
 {
     /**
      * Trim it.
@@ -15,9 +14,11 @@ function is_race_inoursystem(string &$message, string &$race): bool
      * Must be one of the ones I have in the form.
      */
 
+    global $sessionMessage;
+
     $race = trim($race);
     if (empty($race)) {
-        $message .= " The value for race is missing. ";
+        $sessionMessage .= " The value for race is missing. ";
         return false;
     }
 
@@ -26,7 +27,7 @@ function is_race_inoursystem(string &$message, string &$race): bool
         'native-american'];
 
     if (!in_array($race, $races)) {
-        $message .= " Your race field does not contain a valid value. ";
+        $sessionMessage .= " Your race field does not contain a valid value. ";
         return false;
     }
 
