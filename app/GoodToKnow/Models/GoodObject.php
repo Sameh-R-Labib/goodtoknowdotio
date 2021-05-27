@@ -434,7 +434,7 @@ abstract class GoodObject
 
         // A database object without an id is one that has never been saved in the database.
 
-        return isset($this->id) ? $this->update($db, $sessionMessage) : $this->create($db);
+        return isset($this->id) ? $this->update($db) : $this->create($db);
     }
 
 
@@ -576,16 +576,17 @@ abstract class GoodObject
      * in the attributes of this object.
      *
      * @param mysqli $db
-     * @param string $error
      * @return bool
      */
-    protected function update(mysqli $db, string &$error): bool
+    protected function update(mysqli $db): bool
     {
+        global $sessionMessage;
+
         $num_affected_rows = 0;
 
         if ($this->id < 1 || !is_numeric($this->id)) {
 
-            $error .= 'GoodObject update() says: Whichever code is calling this method is trying
+            $sessionMessage .= 'GoodObject update() says: Whichever code is calling this method is trying
             to update a table row using an object which has a negative or non-numeric id. ';
 
             return false;
@@ -633,7 +634,7 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $error .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $sessionMessage .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
             }
@@ -642,7 +643,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $error .= ' GoodObject update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' GoodObject update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -659,7 +660,7 @@ abstract class GoodObject
 
         } else {
 
-            $error .= " GoodObject update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
+            $sessionMessage .= " GoodObject update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
 
             return false;
 
