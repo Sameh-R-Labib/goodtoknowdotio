@@ -39,7 +39,7 @@ class NewTopicIPProcessor
          * Besides, we want a fresh copy of special_topic_array.
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $community_id);
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
 
         if (!$special_topic_array) {
 

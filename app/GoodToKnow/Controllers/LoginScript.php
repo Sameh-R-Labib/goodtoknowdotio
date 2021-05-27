@@ -109,7 +109,7 @@ class LoginScript
          * Find and save in session a value for special_topic_array.
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($db, $user->id_of_default_community);
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($user->id_of_default_community);
 
         if (!$special_topic_array) {
 
