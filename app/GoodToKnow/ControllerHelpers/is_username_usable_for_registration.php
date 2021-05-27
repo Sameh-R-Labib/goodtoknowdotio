@@ -7,17 +7,18 @@ use mysqli;
 
 /**
  * @param mysqli $db
- * @param string $message
  * @param string $username
  * @return bool
  */
-function is_username_usable_for_registration(mysqli $db, string &$message, string &$username): bool
+function is_username_usable_for_registration(mysqli $db, string &$username): bool
 {
+    global $sessionMessage;
+
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
     if (!is_username_syntactically($username)) {
 
-        $message .= " The username field failed validation due to its lack of conformity. ";
+        $sessionMessage .= " The username field failed validation due to its lack of conformity. ";
 
         return false;
     }
@@ -26,7 +27,7 @@ function is_username_usable_for_registration(mysqli $db, string &$message, strin
 
     if ($is_in_use) {
 
-        $message .= " The username is taken. Find a different one and try again. ";
+        $sessionMessage .= " The username is taken. Find a different one and try again. ";
 
         return false;
     }
