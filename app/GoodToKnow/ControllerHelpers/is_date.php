@@ -3,11 +3,10 @@
 namespace GoodToKnow\ControllerHelpers;
 
 /**
- * @param string $message
  * @param string $date
  * @return bool
  */
-function is_date(string &$message, string &$date): bool
+function is_date(string &$date): bool
 {
     /**
      * Returns true if $date string is formatted as mm/dd/yyyy and is a real calender date.
@@ -17,11 +16,13 @@ function is_date(string &$message, string &$date): bool
      *               - $message may be modified.
      */
 
+    global $sessionMessage;
+
     $date = trim($date);
 
     if (empty($date)) {
 
-        $message .= " The date is missing. ";
+        $sessionMessage .= " The date is missing. ";
 
         return false;
 
@@ -31,7 +32,7 @@ function is_date(string &$message, string &$date): bool
 
     if ($number_of_slashes != 2) {
 
-        $message .= " You don't have two slashes in date. ";
+        $sessionMessage .= " You don't have two slashes in date. ";
 
         return false;
     }
@@ -51,14 +52,14 @@ function is_date(string &$message, string &$date): bool
 
     if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy) != 4) {
 
-        $message .= " You did not use correct mm/dd/yyyy date format. ";
+        $sessionMessage .= " You did not use correct mm/dd/yyyy date format. ";
 
         return false;
     }
 
     if (!is_numeric($mm) || !is_numeric($dd) || !is_numeric($yyyy)) {
 
-        $message .= " The date must consist of numeric digits and 2 forward slashes. And, it does not have
+        $sessionMessage .= " The date must consist of numeric digits and 2 forward slashes. And, it does not have
             required numeric digits! ";
 
         return false;
@@ -66,7 +67,7 @@ function is_date(string &$message, string &$date): bool
 
     if (!checkdate($words[0], $words[1], $words[2])) {
 
-        $message .= " That's not a valid date. ";
+        $sessionMessage .= " That's not a valid date. ";
 
         return false;
     }
