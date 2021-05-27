@@ -3,11 +3,10 @@
 namespace GoodToKnow\ControllerHelpers;
 
 /**
- * @param string $message
  * @param string $title
  * @return bool
  */
-function is_title_ofaperson(string &$message, string &$title): bool
+function is_title_ofaperson(string &$title): bool
 {
     /**
      * Trim it.
@@ -15,11 +14,13 @@ function is_title_ofaperson(string &$message, string &$title): bool
      * Mr. and Mrs. are the only valid values for title.
      */
 
+    global $sessionMessage;
+
     $title = trim($title);
 
     if (empty($title)) {
 
-        $message .= " Your title is missing. ";
+        $sessionMessage .= " Your title is missing. ";
 
         return false;
     }
@@ -28,7 +29,7 @@ function is_title_ofaperson(string &$message, string &$title): bool
 
     if (!in_array($title, $possible)) {
 
-        $message .= " Your title field does not contain a valid value. ";
+        $sessionMessage .= " Your title field does not contain a valid value. ";
 
         return false;
     }
