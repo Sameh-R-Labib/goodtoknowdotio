@@ -24,7 +24,7 @@ class AdminPassCodeGenFormProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'any_community_ff_prep.php';
 
-        $community_id = any_community_ff_prep('choice', $db);
+        $community_id = any_community_ff_prep();
 
         $_SESSION['saved_int01'] = $community_id;
 
