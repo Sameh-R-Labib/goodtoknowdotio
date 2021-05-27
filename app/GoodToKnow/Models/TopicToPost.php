@@ -233,11 +233,10 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $topic_id
      * @return array|bool
      */
-    public static function special_get_posts_array_for_a_topic(mysqli $db, int $topic_id)
+    public static function special_get_posts_array_for_a_topic(int $topic_id)
     {
         /**
          * This function is like (and uses) get_posts_array_for_a_topic
@@ -247,6 +246,8 @@ class TopicToPost extends GoodObject
          *  - Each item key is a post id
          *  - Each item value is the post title for that post id
          */
+
+        global $db;
 
         $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
 

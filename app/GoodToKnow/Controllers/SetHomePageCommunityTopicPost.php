@@ -230,7 +230,7 @@ class SetHomePageCommunityTopicPost
 
             // Either way we need this
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $topic_id);
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
 
             if (!$special_post_array) {
 
