@@ -51,7 +51,7 @@ class DropACommoditySoldConfirmation
 
         }
 
-        $result = $object->delete($db);
+        $result = $object->delete();
 
         if (!$result) {
 

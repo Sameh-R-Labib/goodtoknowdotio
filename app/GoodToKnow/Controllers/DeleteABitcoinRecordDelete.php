@@ -53,7 +53,7 @@ class DeleteABitcoinRecordDelete
         }
 
 
-        $result = $bitcoin->delete($db);
+        $result = $bitcoin->delete();
 
         if (!$result) {
 

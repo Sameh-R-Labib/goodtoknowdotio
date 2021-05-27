@@ -670,11 +670,11 @@ abstract class GoodObject
     // Delete
 
     /**
-     * @param mysqli $db
      * @return bool
      */
-    public function delete(mysqli $db): bool
+    public function delete(): bool
     {
+        global $db;
         global $sessionMessage;
 
         $num_affected_rows = 0;

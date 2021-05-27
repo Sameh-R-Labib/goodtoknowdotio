@@ -110,7 +110,7 @@ class Message extends GoodObject
 
         foreach ($array_of_found_messages as $found_message) {
 
-            $result = $found_message->delete($db);
+            $result = $found_message->delete();
 
             if ($result === false) {
 

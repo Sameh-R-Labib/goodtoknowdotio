@@ -52,7 +52,7 @@ class OmitABankingTranForBalancesProcessConfirmation
 
         }
 
-        $result = $object->delete($db);
+        $result = $object->delete();
 
         if (!$result) {
 
