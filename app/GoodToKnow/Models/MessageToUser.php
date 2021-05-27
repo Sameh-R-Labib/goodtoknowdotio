@@ -284,12 +284,14 @@ class MessageToUser extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @param array $inbox_messages_array
      * @return bool
      */
-    public static function replace_attributes(mysqli $db, string &$error, array &$inbox_messages_array)
+    public static function replace_attributes(mysqli $db, array &$inbox_messages_array): bool
     {
+        global $sessionMessage;
+
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
 
@@ -301,11 +303,11 @@ class MessageToUser extends GoodObject
 
         foreach ($inbox_messages_array as $message_object) {
 
-            $message_object->user_id = self::get_username($db, $error, $message_object->user_id);
+            $message_object->user_id = self::get_username($db, $sessionMessage, $message_object->user_id);
 
             if ($message_object->user_id === false) {
 
-                $error .= " MessageToUser::replace_attributes says: get_username failed. ";
+                $sessionMessage .= " MessageToUser::replace_attributes says: get_username failed. ";
 
                 return false;
 

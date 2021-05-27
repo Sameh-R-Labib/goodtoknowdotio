@@ -40,11 +40,15 @@ class Inbox
          */
 
         if (!empty($inbox_messages_array)) {
-            $return = MessageToUser::replace_attributes($db, $sessionMessage, $inbox_messages_array);
+
+            $return = MessageToUser::replace_attributes($db, $inbox_messages_array);
 
             if ($return === false) {
+
                 breakout(' Unexpected error 01551. ');
+
             }
+
         }
 
 
