@@ -53,7 +53,7 @@ class CreateNewPostSave
          * Verify that our sequence number hasn't been taken.
          */
 
-        $result = TopicToPost::get_posts_array_for_a_topic($db, $saved_int01);
+        $result = TopicToPost::get_posts_array_for_a_topic($saved_int01);
 
         $sequence_number_already_exists_in_db = false;
 

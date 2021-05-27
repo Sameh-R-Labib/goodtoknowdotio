@@ -68,11 +68,10 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $topic_id
      * @return array|bool
      */
-    public static function get_posts_array_for_a_topic(mysqli $db, int $topic_id)
+    public static function get_posts_array_for_a_topic(int $topic_id)
     {
         /**
          * Note: I've modified this method to return
@@ -91,6 +90,7 @@ class TopicToPost extends GoodObject
          */
 
 
+        global $db;
         global $sessionMessage;
 
 
@@ -249,7 +249,7 @@ class TopicToPost extends GoodObject
 
         global $db;
 
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
+        $posts_array = TopicToPost::get_posts_array_for_a_topic($topic_id);
 
         if (empty($posts_array) || $posts_array === false) {
 
@@ -277,7 +277,7 @@ class TopicToPost extends GoodObject
      */
     public static function special_posts_array_for_user_and_topic(mysqli $db, int $user_id, int $topic_id)
     {
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
+        $posts_array = TopicToPost::get_posts_array_for_a_topic($topic_id);
 
         if (empty($posts_array) || $posts_array === false) {
 

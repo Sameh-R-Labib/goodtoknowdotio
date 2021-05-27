@@ -78,7 +78,7 @@ class CreateNewPostIPProcessor
          * post. The code below implements that algorithm.
          */
 
-        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($db, $saved_int01);
+        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($saved_int01);
 
         if (!$all_posts_as_objects) {
 
