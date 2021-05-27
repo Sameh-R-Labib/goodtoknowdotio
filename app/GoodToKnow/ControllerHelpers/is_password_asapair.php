@@ -17,7 +17,7 @@ function is_password_asapair(string &$str01, string &$str02): bool
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_password_syntactically.php';
 
-    if (!is_password_syntactically($sessionMessage, $str01)) {
+    if (!is_password_syntactically($str01)) {
 
         $sessionMessage .= " The password's syntax is invalid. ";
 

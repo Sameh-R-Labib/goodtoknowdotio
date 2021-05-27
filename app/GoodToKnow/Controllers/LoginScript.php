@@ -184,7 +184,7 @@ class LoginScript
         require_once CONTROLLERHELPERS . DIRSEP . 'is_password_syntactically.php';
 
         if (!is_username_syntactically($submitted_username) ||
-            !is_password_syntactically($sessionMessage, $submitted_password)) {
+            !is_password_syntactically($submitted_password)) {
 
             $_SESSION['message'] = $sessionMessage;
             reset_feature_session_vars();
