@@ -43,7 +43,7 @@ class OmitABankingTransactionForBalancesDelete
          * We need to know what the currency is. To do this we need the BankingAcctForBalances object.
          */
 
-        $bank = BankingAcctForBalances::find_by_id($db, $object->bank_id);
+        $bank = BankingAcctForBalances::find_by_id($object->bank_id);
 
         if (!$bank) {
 

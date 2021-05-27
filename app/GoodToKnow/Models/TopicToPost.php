@@ -171,7 +171,7 @@ class TopicToPost extends GoodObject
 
         foreach ($array_of_TopicToPost as $item) {
 
-            $array_of_Posts[] = Post::find_by_id($db, $item->post_id);
+            $array_of_Posts[] = Post::find_by_id($item->post_id);
 
         }
 
@@ -212,7 +212,7 @@ class TopicToPost extends GoodObject
 
         foreach ($array_of_post_objects as $key => $array_of_post_object) {
 
-            $author_user_object = User::find_by_id($db, $array_of_post_object->user_id);
+            $author_user_object = User::find_by_id($array_of_post_object->user_id);
 
             if (!$author_user_object) {
 

@@ -30,7 +30,7 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$bitcoin_object = Bitcoin::find_by_id($db, $chosen_id);
+$bitcoin_object = Bitcoin::find_by_id($chosen_id);
 
 if (!$bitcoin_object) {
 

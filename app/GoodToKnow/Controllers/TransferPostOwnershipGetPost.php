@@ -75,7 +75,7 @@ class TransferPostOwnershipGetPost
 
         // Third find the community name based on the community id.
 
-        $community_object = Community::find_by_id($db, $derived_community_id);
+        $community_object = Community::find_by_id($derived_community_id);
 
         if ($community_object === false) {
 
@@ -88,7 +88,7 @@ class TransferPostOwnershipGetPost
 
         // Find the topic name based on $derived_topic_id
 
-        $topic_object = Topic::find_by_id($db, $derived_topic_id);
+        $topic_object = Topic::find_by_id($derived_topic_id);
 
         if ($topic_object === false) {
 
@@ -101,7 +101,7 @@ class TransferPostOwnershipGetPost
 
         // Find the author's username.
 
-        $user_object = User::find_by_id($db, $post_object->user_id);
+        $user_object = User::find_by_id($post_object->user_id);
 
         if ($user_object === false) {
 

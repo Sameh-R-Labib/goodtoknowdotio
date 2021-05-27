@@ -88,7 +88,7 @@ class SetHomePageCommunityTopicPost
 
         // First get and store the community_name
 
-        $community_object = Community::find_by_id($db, $community_id);
+        $community_object = Community::find_by_id($community_id);
 
         $_SESSION['community_name'] = $community_object->community_name;
         $_SESSION['community_description'] = $community_object->community_description;
@@ -102,7 +102,7 @@ class SetHomePageCommunityTopicPost
         if ($type_of_resource_requested === 'topic') {
             // Second get and store the topic_name
 
-            $topic_object = Topic::find_by_id($db, $topic_id);
+            $topic_object = Topic::find_by_id($topic_id);
 
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
@@ -116,7 +116,7 @@ class SetHomePageCommunityTopicPost
         } elseif ($type_of_resource_requested === 'post') {
             // Second get and store the topic_name
 
-            $topic_object = Topic::find_by_id($db, $topic_id);
+            $topic_object = Topic::find_by_id($topic_id);
 
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
@@ -178,7 +178,7 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $post_object = Post::find_by_id($db, $post_id);
+            $post_object = Post::find_by_id($post_id);
 
             if (!$post_object) {
 
@@ -196,7 +196,7 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $post_author_object = User::find_by_id($db, $post_object->user_id);
+            $post_author_object = User::find_by_id($post_object->user_id);
 
 
             if ($post_author_object === false) {

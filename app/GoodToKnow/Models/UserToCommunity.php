@@ -79,7 +79,7 @@ class UserToCommunity extends GoodObject
             // Add a community object to $array_of_coms_for_this_user.
             // Obviously this community which we will add will be the one specified by the UserToCommunity object.
 
-            $community = Community::find_by_id($db, $user_to_community_object->community_id);
+            $community = Community::find_by_id($user_to_community_object->community_id);
 
             if ($community === false) {
 
@@ -203,7 +203,7 @@ class UserToCommunity extends GoodObject
              * Talking about the right side of the assignment statement First we're getting a Community object.
              */
 
-            $special_community_array[$object->community_id] = Community::find_by_id($db, $object->community_id);
+            $special_community_array[$object->community_id] = Community::find_by_id($object->community_id);
 
             if (!$special_community_array[$object->community_id]) {
 

@@ -81,7 +81,7 @@ class WriteOverATaxableIncomeEventUpdate
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($db, $saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($saved_int01);
 
         if (!$object) {
 

@@ -44,7 +44,7 @@ class OmitABankingTranForBalancesProcessConfirmation
 
         $db = get_db();
 
-        $object = BankingTransactionForBalances::find_by_id($db, $saved_int01);
+        $object = BankingTransactionForBalances::find_by_id($saved_int01);
 
         if (!$object) {
 

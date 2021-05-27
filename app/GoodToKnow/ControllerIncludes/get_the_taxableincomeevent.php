@@ -31,7 +31,7 @@ $_SESSION['saved_int01'] = $id;
 
 $db = get_db();
 
-$object = TaxableIncomeEvent::find_by_id($db, $id);
+$object = TaxableIncomeEvent::find_by_id($id);
 
 if (!$object) {
 

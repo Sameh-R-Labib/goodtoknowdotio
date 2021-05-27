@@ -32,7 +32,7 @@ class KommunityDescriptionEditorForm
 
         $db = get_db();
 
-        $community_object = Community::find_by_id($db, $saved_int01);
+        $community_object = Community::find_by_id($saved_int01);
 
         if (!$community_object) {
 

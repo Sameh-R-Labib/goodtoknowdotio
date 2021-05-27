@@ -31,7 +31,7 @@ $_SESSION['saved_int01'] = $id;
 
 $db = get_db();
 
-$object = PossibleTaxDeduction::find_by_id($db, $id);
+$object = PossibleTaxDeduction::find_by_id($id);
 
 if (!$object) {
 

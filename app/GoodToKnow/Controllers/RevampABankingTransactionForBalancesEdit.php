@@ -44,7 +44,7 @@ class RevampABankingTransactionForBalancesEdit
          * But first we need to discern the currency from the BankingAcctForBalances.
          */
 
-        $bank = BankingAcctForBalances::find_by_id($db, $object->bank_id);
+        $bank = BankingAcctForBalances::find_by_id($object->bank_id);
 
         if (!$bank) {
 

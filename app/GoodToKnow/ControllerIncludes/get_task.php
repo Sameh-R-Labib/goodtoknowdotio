@@ -32,7 +32,7 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$object = Task::find_by_id($db, $chosen_id);
+$object = Task::find_by_id($chosen_id);
 
 if (!$object) {
 

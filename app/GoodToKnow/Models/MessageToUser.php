@@ -262,7 +262,7 @@ class MessageToUser extends GoodObject
 
         foreach ($array_of_MessageToUser as $item) {
 
-            $array_of_Messages[] = Message::find_by_id($db, $item->message_id);
+            $array_of_Messages[] = Message::find_by_id($item->message_id);
 
         }
 
@@ -329,7 +329,7 @@ class MessageToUser extends GoodObject
     {
         $user_id = (int)$user_id;
 
-        $user = User::find_by_id($db, $user_id);
+        $user = User::find_by_id($user_id);
 
 
         // Value of $user can be false

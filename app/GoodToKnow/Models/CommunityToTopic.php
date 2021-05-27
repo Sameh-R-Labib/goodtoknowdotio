@@ -156,7 +156,7 @@ class CommunityToTopic extends GoodObject
 
         foreach ($array_of_CommunityToTopic as $item) {
 
-            $array_of_Topics[] = Topic::find_by_id($db, $item->topic_id);
+            $array_of_Topics[] = Topic::find_by_id($item->topic_id);
 
         }
 

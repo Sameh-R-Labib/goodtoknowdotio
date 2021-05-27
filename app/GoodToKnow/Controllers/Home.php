@@ -221,7 +221,7 @@ class Home
 
             }
 
-            $post_object = Post::find_by_id($db, $post_id);
+            $post_object = Post::find_by_id($post_id);
 
             if ($post_object === false) {
 

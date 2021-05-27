@@ -54,7 +54,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
 
-        $account = BankingAcctForBalances::find_by_id($db, $saved_int01);
+        $account = BankingAcctForBalances::find_by_id($saved_int01);
 
         if (!$account) {
 

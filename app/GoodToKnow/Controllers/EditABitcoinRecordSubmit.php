@@ -74,7 +74,7 @@ class EditABitcoinRecordSubmit
 
         $db = get_db();
 
-        $bitcoin_object = Bitcoin::find_by_id($db, $saved_int01);
+        $bitcoin_object = Bitcoin::find_by_id($saved_int01);
 
         if (!$bitcoin_object) {
 
