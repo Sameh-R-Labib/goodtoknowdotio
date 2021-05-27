@@ -84,7 +84,7 @@ class RemoveComsChoicesProcessor
 
         foreach ($usertocommunity_objects_array as $object) {
 
-            $result_of_delete = $object->delete($db, $sessionMessage);
+            $result_of_delete = $object->delete($db);
 
             if (!$result_of_delete) {
 

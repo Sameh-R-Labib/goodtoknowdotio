@@ -672,11 +672,12 @@ abstract class GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @return bool
      */
-    public function delete(mysqli $db, string &$error): bool
+    public function delete(mysqli $db): bool
     {
+        global $sessionMessage;
+
         $num_affected_rows = 0;
 
         $sql = "DELETE FROM " . static::$table_name . " ";
@@ -690,7 +691,7 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $error .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $sessionMessage .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
@@ -700,7 +701,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $error .= ' GoodObject delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' GoodObject delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -710,7 +711,7 @@ abstract class GoodObject
 
         } else {
 
-            $error .= ' GoodObject delete() FAILED to delete a row. ';
+            $sessionMessage .= ' GoodObject delete() FAILED to delete a row. ';
 
             return false;
 

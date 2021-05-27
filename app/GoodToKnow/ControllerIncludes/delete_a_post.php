@@ -22,7 +22,7 @@ if (!$post) {
 
 }
 
-$result = $post->delete($db, $sessionMessage);
+$result = $post->delete($db);
 
 if (!$result) {
 
@@ -53,7 +53,7 @@ if (!is_object($topictopost_object)) {
 
 }
 
-$result = $topictopost_object->delete($db, $sessionMessage);
+$result = $topictopost_object->delete($db);
 
 if (!$result) {
 

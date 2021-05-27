@@ -52,7 +52,7 @@ class ExpungeARecurringPaymentRecordDelete
 
         }
 
-        $result = $object->delete($db, $sessionMessage);
+        $result = $object->delete($db);
 
         if (!$result) {
 
