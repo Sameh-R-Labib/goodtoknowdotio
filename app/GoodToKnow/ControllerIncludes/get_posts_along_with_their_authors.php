@@ -29,7 +29,7 @@ if (!$array_of_post_objects) {
  * is the username corresponding to the user_id of the corresponding element in the $array_of_post_objects.
  */
 
-$array_of_author_usernames = TopicToPost::get_author_usernames($db, $sessionMessage, $array_of_post_objects);
+$array_of_author_usernames = TopicToPost::get_author_usernames($db, $array_of_post_objects);
 
 if (!$array_of_author_usernames) {
 

@@ -187,11 +187,10 @@ class TopicToPost extends GoodObject
 
     /**
      * @param mysqli $db
-     * @param $error
      * @param array $array_of_post_objects
      * @return array|bool
      */
-    public static function get_author_usernames(mysqli $db, &$error, array $array_of_post_objects)
+    public static function get_author_usernames(mysqli $db, array $array_of_post_objects)
     {
         /**
          * Generate an array of author usernames.
@@ -201,15 +200,17 @@ class TopicToPost extends GoodObject
          * $array_of_post_objects.
          */
 
+        global $sessionMessage;
+
         $author_usernames_array = [];
 
         foreach ($array_of_post_objects as $key => $array_of_post_object) {
 
-            $author_user_object = User::find_by_id($db, $error, $array_of_post_object->user_id);
+            $author_user_object = User::find_by_id($db, $sessionMessage, $array_of_post_object->user_id);
 
             if (!$author_user_object) {
 
-                $error .= " TopicToPost::get_author_usernames() says: find_by_id failed to find the user object. ";
+                $sessionMessage .= " TopicToPost::get_author_usernames() says: find_by_id failed to find the user object. ";
 
                 return false;
 
