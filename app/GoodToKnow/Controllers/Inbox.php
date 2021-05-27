@@ -41,7 +41,7 @@ class Inbox
 
         if (!empty($inbox_messages_array)) {
 
-            $return = MessageToUser::replace_attributes($db, $inbox_messages_array);
+            $return = MessageToUser::replace_attributes($inbox_messages_array);
 
             if ($return === false) {
 

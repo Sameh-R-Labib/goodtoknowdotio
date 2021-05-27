@@ -283,12 +283,12 @@ class MessageToUser extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param array $inbox_messages_array
      * @return bool
      */
-    public static function replace_attributes(mysqli $db, array &$inbox_messages_array): bool
+    public static function replace_attributes(array &$inbox_messages_array): bool
     {
+        global $db;
         global $sessionMessage;
 
 

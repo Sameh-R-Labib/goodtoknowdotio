@@ -38,7 +38,7 @@ class BlotOutSomeInboxMessages
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
 
-        $return = MessageToUser::replace_attributes($db, $inbox_messages_array);
+        $return = MessageToUser::replace_attributes($inbox_messages_array);
 
         if ($return === false) {
 
