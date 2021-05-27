@@ -16,7 +16,7 @@ function is_username_syntactandexists(mysqli $db, string &$username): bool
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
-    if (!is_username_syntactically($sessionMessage, $username)) {
+    if (!is_username_syntactically($username)) {
 
         $sessionMessage .= " The username field was empty. ";
 
