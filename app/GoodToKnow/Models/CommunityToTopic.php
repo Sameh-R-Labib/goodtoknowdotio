@@ -69,16 +69,16 @@ class CommunityToTopic extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $community_id
      * @return array|bool
      */
-    public static function get_array_of_topic_objects_for_a_community(mysqli $db, int $community_id)
+    public static function get_array_of_topic_objects_for_a_community(int $community_id)
     {
         /**
          * This method gets all the topic objects for a community when given a community id.
          */
 
+        global $db;
         global $sessionMessage;
 
         // get (in array) all the CommunityToTopic objects with a particular $community_id.
@@ -187,7 +187,7 @@ class CommunityToTopic extends GoodObject
          * This method gets a $special_topics_array (if you know what I mean.)
          */
 
-        $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $community_id);
+        $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
 
         if (empty($topics_array) || $topics_array === false) {
 

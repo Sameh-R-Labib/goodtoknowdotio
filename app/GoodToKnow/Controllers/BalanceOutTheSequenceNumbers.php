@@ -42,11 +42,15 @@ class BalanceOutTheSequenceNumbers
         $thing_type = ucfirst($type_of_resource_requested);
 
         if ($thing_type === 'Community') {
+
             $thing_name = $community_name;
             $thing_id = $community_id;
+
         } else {
+
             $thing_name = $topic_name;
             $thing_id = $topic_id;
+
         }
 
         /**
@@ -58,17 +62,29 @@ class BalanceOutTheSequenceNumbers
         $db = get_db();
 
         if ($thing_type === 'Community') {
+
             // Get all topics for community.
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $community_id);
+
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
+
             if (!$result) {
+
                 breakout(' The community does not contain any topics. ');
+
             }
+
         } else {
+
             // Get all posts for topic.
+
             $result = TopicToPost::get_posts_array_for_a_topic($db, $topic_id);
+
             if (!$result) {
+
                 breakout(' The topic does not contain any posts. ');
+
             }
+
         }
 
         /**

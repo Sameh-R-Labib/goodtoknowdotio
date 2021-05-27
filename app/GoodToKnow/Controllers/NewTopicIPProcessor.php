@@ -78,7 +78,7 @@ class NewTopicIPProcessor
 
         // Determine the sequence number for the new topic
 
-        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($db, $community_id);
+        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
 
         if (!$topic_objects_array) {
 
