@@ -28,7 +28,7 @@ class AuthorDeletesOwnPostDelete
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 
-        $post_object = post_object_for_owner_prep('choice', $db, $user_id);
+        $post_object = post_object_for_owner_prep('choice', $user_id);
 
 
         /**

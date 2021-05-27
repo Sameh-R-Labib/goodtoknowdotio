@@ -7,12 +7,14 @@ use mysqli;
 
 /**
  * @param string $field_name
- * @param mysqli $db
  * @param $user_id
  * @return object
  */
-function post_object_for_owner_prep(string $field_name, mysqli $db, $user_id): object
+function post_object_for_owner_prep(string $field_name, $user_id): object
 {
+    global $db;
+
+
     /**
      * Returns a Post object belonging to the user.
      * Also saves the post id in the session.
