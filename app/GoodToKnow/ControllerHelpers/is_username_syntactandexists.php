@@ -7,17 +7,18 @@ use mysqli;
 
 /**
  * @param mysqli $db
- * @param string $message
  * @param string $username
  * @return bool
  */
-function is_username_syntactandexists(mysqli $db, string &$message, string &$username): bool
+function is_username_syntactandexists(mysqli $db, string &$username): bool
 {
+    global $sessionMessage;
+
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
-    if (!is_username_syntactically($message, $username)) {
+    if (!is_username_syntactically($sessionMessage, $username)) {
 
-        $message .= " The username field was empty. ";
+        $sessionMessage .= " The username field was empty. ";
 
         return false;
     }
@@ -26,7 +27,7 @@ function is_username_syntactandexists(mysqli $db, string &$message, string &$use
 
     if (!$is_in_use) {
 
-        $message .= " The username could not be found. ";
+        $sessionMessage .= " The username could not be found. ";
 
         return false;
     }

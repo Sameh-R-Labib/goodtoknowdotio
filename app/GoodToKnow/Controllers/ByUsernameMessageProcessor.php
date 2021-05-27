@@ -43,7 +43,7 @@ class ByUsernameMessageProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 
-        $is_username = is_username_syntactandexists($db, $sessionMessage, $submitted_username);
+        $is_username = is_username_syntactandexists($db, $submitted_username);
 
         if (!$is_username) {
 

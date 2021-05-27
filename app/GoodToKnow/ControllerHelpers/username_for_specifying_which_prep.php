@@ -20,9 +20,6 @@ function username_for_specifying_which_prep(mysqli $db): string
      */
 
 
-    global $sessionMessage;
-
-
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
     $submitted_username = standard_form_field_prep('username', 7, 12);
@@ -30,7 +27,7 @@ function username_for_specifying_which_prep(mysqli $db): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 
-    if (!is_username_syntactandexists($db, $sessionMessage, $submitted_username)) {
+    if (!is_username_syntactandexists($db, $submitted_username)) {
 
         breakout(' The username field failed validation. ');
 

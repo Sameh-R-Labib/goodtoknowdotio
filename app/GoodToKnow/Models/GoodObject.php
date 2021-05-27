@@ -654,7 +654,6 @@ abstract class GoodObject
         } elseif ($num_affected_rows == 0) {
 
             // It is normal to fail to update whenever the new data is the same as the existing data in the database.
-            // $error .= ' GoodObject update() FAILED to update its row. ';
 
             return false;
 
