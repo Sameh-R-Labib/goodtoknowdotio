@@ -31,7 +31,7 @@ $_SESSION['saved_int01'] = $id;
 
 $db = get_db();
 
-$object = CommoditySold::find_by_id($db, $sessionMessage, $id);
+$object = CommoditySold::find_by_id($db, $id);
 
 if (!$object) {
 

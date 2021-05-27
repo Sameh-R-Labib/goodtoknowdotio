@@ -46,7 +46,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
 
         $db = get_db();
 
-        $object = PossibleTaxDeduction::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = PossibleTaxDeduction::find_by_id($db, $saved_int01);
 
         if (!$object) {
 

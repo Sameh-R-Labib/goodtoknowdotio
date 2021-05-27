@@ -29,7 +29,7 @@ class TopicDescriptionEditorForm
 
         $db = get_db();
 
-        $topic_object = Topic::find_by_id($db, $sessionMessage, $saved_int01);
+        $topic_object = Topic::find_by_id($db, $saved_int01);
 
         if (!$topic_object) {
 

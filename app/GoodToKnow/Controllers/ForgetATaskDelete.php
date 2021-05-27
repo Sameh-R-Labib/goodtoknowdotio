@@ -45,7 +45,7 @@ class ForgetATaskDelete
 
         $db = get_db();
 
-        $object = Task::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = Task::find_by_id($db, $saved_int01);
 
         if (!$object) {
 

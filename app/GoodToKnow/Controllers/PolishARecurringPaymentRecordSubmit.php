@@ -57,7 +57,7 @@ class PolishARecurringPaymentRecordSubmit
 
         $db = get_db();
 
-        $object = RecurringPayment::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = RecurringPayment::find_by_id($db, $saved_int01);
 
         if (!$object) {
 

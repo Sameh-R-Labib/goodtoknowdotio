@@ -60,7 +60,7 @@ class CreateNewPostEditProcessor
 
         $db = get_db();
 
-        $post = Post::find_by_id($db, $sessionMessage, $saved_int02);
+        $post = Post::find_by_id($db, $saved_int02);
 
         if ($post === false) {
 

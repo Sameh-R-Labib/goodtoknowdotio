@@ -32,7 +32,7 @@ class DefaultCommunityProcessor
 
         $db = get_db();
 
-        $user_object = User::find_by_id($db, $sessionMessage, $user_id);
+        $user_object = User::find_by_id($db, $user_id);
 
         if (!$user_object) {
 

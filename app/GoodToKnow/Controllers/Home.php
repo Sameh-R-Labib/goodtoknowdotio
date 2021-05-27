@@ -221,10 +221,12 @@ class Home
 
             }
 
-            $post_object = Post::find_by_id($db, $sessionMessage, $post_id);
+            $post_object = Post::find_by_id($db, $post_id);
 
             if ($post_object === false) {
+
                 $sessionMessage .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
+
             } else {
 
                 $post_content = file_get_contents($post_object->html_file);

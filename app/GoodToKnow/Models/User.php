@@ -93,7 +93,7 @@ class User extends GoodObject
 
         // Determine whether or not the user is suspended per database
 
-        $user_object = User::find_by_id($db, $sessionMessage, $user_id);
+        $user_object = User::find_by_id($db, $user_id);
 
         if ($user_object === false) return false;
 

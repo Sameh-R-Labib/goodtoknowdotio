@@ -42,7 +42,7 @@ class ChangePasswordProcessor
          * Get the user object for the current user and make sure $current_password is a valid submission.
          */
 
-        $user_object = User::find_by_id($db, $sessionMessage, $user_id);
+        $user_object = User::find_by_id($db, $user_id);
 
         if (!password_verify($current_password, $user_object->password)) {
 

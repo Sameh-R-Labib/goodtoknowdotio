@@ -31,7 +31,7 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$object = BankingTransactionForBalances::find_by_id($db, $sessionMessage, $chosen_id);
+$object = BankingTransactionForBalances::find_by_id($db, $chosen_id);
 
 if (!$object) {
 

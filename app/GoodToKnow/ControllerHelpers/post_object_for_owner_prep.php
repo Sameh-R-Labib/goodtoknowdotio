@@ -25,7 +25,7 @@ function post_object_for_owner_prep(string $field_name, mysqli $db, $user_id): o
     $chosen_post_id = integer_form_field_prep($field_name, 1, PHP_INT_MAX);
 
 
-    $post_object = Post::find_by_id($db, $sessionMessage, $chosen_post_id);
+    $post_object = Post::find_by_id($db, $chosen_post_id);
 
     if (!$post_object) {
 

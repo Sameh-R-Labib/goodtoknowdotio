@@ -44,7 +44,7 @@ class NukeATaxableIncomeEventConfirmation
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($db, $saved_int01);
 
         if (!$object) {
 

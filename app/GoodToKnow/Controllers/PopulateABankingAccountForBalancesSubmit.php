@@ -58,7 +58,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $db = get_db();
 
-        $object = BankingAcctForBalances::find_by_id($db, $sessionMessage, $saved_int01);
+        $object = BankingAcctForBalances::find_by_id($db, $saved_int01);
 
         if (!$object) {
 

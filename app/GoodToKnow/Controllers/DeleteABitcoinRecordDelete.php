@@ -44,7 +44,7 @@ class DeleteABitcoinRecordDelete
 
         $db = get_db();
 
-        $bitcoin = Bitcoin::find_by_id($db, $sessionMessage, $saved_int01);
+        $bitcoin = Bitcoin::find_by_id($db, $saved_int01);
 
         if (!$bitcoin) {
 

@@ -31,7 +31,7 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$recurring_payment_object = RecurringPayment::find_by_id($db, $sessionMessage, $chosen_id);
+$recurring_payment_object = RecurringPayment::find_by_id($db, $chosen_id);
 
 if (!$recurring_payment_object) {
 

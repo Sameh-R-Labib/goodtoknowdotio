@@ -503,13 +503,14 @@ abstract class GoodObject
      * Gives me a GoodObject for the id specified.
      *
      * @param mysqli $db
-     * @param string $error
      * @param $id
      * @return bool|mixed
      */
-    public static function find_by_id(mysqli $db, string &$error, $id)
+    public static function find_by_id(mysqli $db, $id)
     {
-        $result_array = static::find_by_sql($db, $error, "SELECT * FROM " . static::$table_name . "
+        global $sessionMessage;
+
+        $result_array = static::find_by_sql($db, $sessionMessage, "SELECT * FROM " . static::$table_name . "
 			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
 
         return !empty($result_array) ? array_shift($result_array) : false;

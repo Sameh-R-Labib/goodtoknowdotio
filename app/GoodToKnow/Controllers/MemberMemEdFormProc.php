@@ -49,7 +49,7 @@ class MemberMemEdFormProc
 
         $db = get_db();
 
-        $user_object = User::find_by_id($db, $sessionMessage, $saved_int01);
+        $user_object = User::find_by_id($db, $saved_int01);
 
         if (!$user_object) {
 
