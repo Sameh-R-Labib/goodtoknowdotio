@@ -60,7 +60,7 @@ class UserToCommunity extends GoodObject
 
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
 
-        $user_to_community_array = self::find_by_sql($db, $sessionMessage, $sql);
+        $user_to_community_array = self::find_by_sql($db, $sql);
 
         if (!$user_to_community_array) {
 
@@ -180,7 +180,7 @@ class UserToCommunity extends GoodObject
 
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
 
-        $array_of_user_to_community_objects = UserToCommunity::find_by_sql($db, $sessionMessage, $sql);
+        $array_of_user_to_community_objects = UserToCommunity::find_by_sql($db, $sql);
 
         if (!$array_of_user_to_community_objects) {
 

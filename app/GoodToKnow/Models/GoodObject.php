@@ -493,9 +493,7 @@ abstract class GoodObject
      */
     public static function find_all(mysqli $db)
     {
-        global $sessionMessage;
-
-        return static::find_by_sql($db, $sessionMessage, "SELECT * FROM " . static::$table_name);
+        return static::find_by_sql($db, "SELECT * FROM " . static::$table_name);
     }
 
 
@@ -508,9 +506,7 @@ abstract class GoodObject
      */
     public static function find_by_id(mysqli $db, $id)
     {
-        global $sessionMessage;
-
-        $result_array = static::find_by_sql($db, $sessionMessage, "SELECT * FROM " . static::$table_name . "
+        $result_array = static::find_by_sql($db, "SELECT * FROM " . static::$table_name . "
 			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
 
         return !empty($result_array) ? array_shift($result_array) : false;
@@ -527,12 +523,13 @@ abstract class GoodObject
      * Gives me an array of objects for the sql I give it.
      *
      * @param mysqli $db
-     * @param string $error
      * @param string $sql
      * @return array|bool
      */
-    public static function find_by_sql(mysqli $db, string &$error, string $sql)
+    public static function find_by_sql(mysqli $db, string $sql)
     {
+        global $sessionMessage;
+
         $object_array = [];
 
         try {
@@ -542,14 +539,14 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $error .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $sessionMessage .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $error .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $sessionMessage .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 

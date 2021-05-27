@@ -37,7 +37,7 @@ $sql = 'SELECT * FROM `topic_to_post`
         WHERE `topic_id` = "' . $db->real_escape_string($saved_int01) . '" AND `post_id` = "' .
     $db->real_escape_string($saved_int02) . '" LIMIT 1';
 
-$array_of_objects = TopicToPost::find_by_sql($db, $sessionMessage, $sql);
+$array_of_objects = TopicToPost::find_by_sql($db, $sql);
 
 if (!$array_of_objects || !empty($sessionMessage)) {
 

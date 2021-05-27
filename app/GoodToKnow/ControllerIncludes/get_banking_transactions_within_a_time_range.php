@@ -25,7 +25,7 @@ $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . 
 $sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($saved_int01) . '" AND "' . $db->real_escape_string($saved_int02) . '"';
 $sql .= ' ORDER BY `time`';
 
-$array = BankingTransactionForBalances::find_by_sql($db, $sessionMessage, $sql);
+$array = BankingTransactionForBalances::find_by_sql($db, $sql);
 
 if (!$array || !empty($sessionMessage)) {
 

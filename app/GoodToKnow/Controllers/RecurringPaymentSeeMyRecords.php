@@ -35,7 +35,7 @@ class RecurringPaymentSeeMyRecords
 
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
 
-        $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sessionMessage, $sql);
+        $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($db, $sql);
 
         if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
 

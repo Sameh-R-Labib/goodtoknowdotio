@@ -32,7 +32,7 @@ $db = get_db();
 $sql = 'SELECT * FROM `commodities_sold` WHERE `tax_year` = ' . $db->real_escape_string($tax_year);
 $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
 
-$array = CommoditySold::find_by_sql($db, $sessionMessage, $sql);
+$array = CommoditySold::find_by_sql($db, $sql);
 
 if (!$array || !empty($sessionMessage)) {
 

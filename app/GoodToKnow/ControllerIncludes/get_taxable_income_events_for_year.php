@@ -31,7 +31,7 @@ $db = get_db();
 $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
 $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
 
-$array = TaxableIncomeEvent::find_by_sql($db, $sessionMessage, $sql);
+$array = TaxableIncomeEvent::find_by_sql($db, $sql);
 
 if (!$array || !empty($sessionMessage)) {
 
