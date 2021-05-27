@@ -42,7 +42,7 @@ class SetHomePageCommunityTopicPost
         self::mostly_making_sure_chosen_community_is_ok_to_choose($db, $sessionMessage, $community_id,
             $special_community_array);
 
-        self::get_the_topics_and_derive_the_data_surrounding_it($db, $sessionMessage, $community_id, $special_topic_array,
+        self::get_the_topics_and_derive_the_data_surrounding_it($community_id, $special_topic_array,
             $post_id, $topic_id, $type_of_resource_requested);
 
         self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($db, $sessionMessage,
@@ -259,15 +259,13 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $db
-     * @param $sessionMessage
      * @param $community_id
      * @param $special_topic_array
      * @param $post_id
      * @param $topic_id
      * @param $type_of_resource_requested
      */
-    private static function get_the_topics_and_derive_the_data_surrounding_it(&$db, &$sessionMessage, &$community_id,
+    private static function get_the_topics_and_derive_the_data_surrounding_it(&$community_id,
                                                                               &$special_topic_array, &$post_id,
                                                                               &$topic_id, &$type_of_resource_requested)
     {
