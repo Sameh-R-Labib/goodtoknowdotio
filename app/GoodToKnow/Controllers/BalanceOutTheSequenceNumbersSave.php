@@ -44,7 +44,7 @@ class BalanceOutTheSequenceNumbersSave
         // since every type of object has a save() method.
         foreach ($_SESSION['saved_arr01'] as $item) {
 
-            $result = $item->save($db);
+            $result = $item->save();
 
         }
 

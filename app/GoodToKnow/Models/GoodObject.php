@@ -420,17 +420,16 @@ abstract class GoodObject
      * Basically, it runs update() if isset($this->id).
      * Otherwise, it runs create().
      *
-     * @param mysqli $db
      * @return bool
      */
-    public function save(mysqli $db): bool
+    public function save(): bool
     {
         /**
          * save() may do an update() and it is normal for update() to fail when the
          * values in the object are the same as the values in the database row.
          */
 
-        global $sessionMessage;
+        global $db;
 
         // A database object without an id is one that has never been saved in the database.
 

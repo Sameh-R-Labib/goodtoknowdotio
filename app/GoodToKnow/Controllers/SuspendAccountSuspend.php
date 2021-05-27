@@ -53,7 +53,7 @@ class SuspendAccountSuspend
          * 3) Save changes to User object. In other words update the User record in the database.
          */
 
-        $consequence_of_save = $user_object->save($db);
+        $consequence_of_save = $user_object->save();
 
         if (!$consequence_of_save) {
 

@@ -64,7 +64,7 @@ class GenerateABankingAccountForBalancesProcessor
 
         $db = get_db();
 
-        $result = $object->save($db);
+        $result = $object->save();
 
         if (!$result) {
 

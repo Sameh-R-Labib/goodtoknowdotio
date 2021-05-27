@@ -63,7 +63,7 @@ class TransferPostOwnershipTransferIt
 
         // Save the Post to the database.
 
-        $result = $post_object->save($db);
+        $result = $post_object->save();
 
         if ($result === false) {
 

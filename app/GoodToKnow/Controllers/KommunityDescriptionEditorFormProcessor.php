@@ -74,7 +74,7 @@ class KommunityDescriptionEditorFormProcessor
          *  7) Update the database with this Community object.
          */
 
-        $result = $community_object->save($db);
+        $result = $community_object->save();
 
         if ($result === false) {
 

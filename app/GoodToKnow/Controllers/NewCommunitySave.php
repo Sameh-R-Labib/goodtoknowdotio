@@ -25,7 +25,7 @@ class NewCommunitySave
         $db = get_db();
 
 
-        $result = $community->save($db);
+        $result = $community->save();
 
 
         if (!$result) {

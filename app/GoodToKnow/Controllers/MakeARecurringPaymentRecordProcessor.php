@@ -65,7 +65,7 @@ class MakeARecurringPaymentRecordProcessor
 
         $db = get_db();
 
-        $result = $recurring_payment_object->save($db);
+        $result = $recurring_payment_object->save();
 
         if (!$result) {
 

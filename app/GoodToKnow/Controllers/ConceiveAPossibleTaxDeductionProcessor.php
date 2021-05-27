@@ -46,7 +46,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $object = PossibleTaxDeduction::array_to_object($array_record);
 
-        $result = $object->save($db);
+        $result = $object->save();
 
         if (!$result) {
 

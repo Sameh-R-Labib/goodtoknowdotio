@@ -71,7 +71,7 @@ class NewTopicSave
 
         // Save the new Topic
 
-        $result = $topic->save($db);
+        $result = $topic->save();
 
         if (!$result) {
 
@@ -86,7 +86,7 @@ class NewTopicSave
 
         $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
 
-        $result = $communitytotopic->save($db);
+        $result = $communitytotopic->save();
 
         if (!$result) {
 

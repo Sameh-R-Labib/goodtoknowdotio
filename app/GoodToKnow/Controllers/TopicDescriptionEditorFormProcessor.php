@@ -78,7 +78,7 @@ class TopicDescriptionEditorFormProcessor
          *  7) Update the database with this Topic object.
          */
 
-        $result = $topic_object->save($db);
+        $result = $topic_object->save();
 
         if ($result === false) {
 

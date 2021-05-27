@@ -99,7 +99,7 @@ class EditABitcoinRecordSubmit
          * 4) Update/save the updated record in the database.
          */
 
-        $result = $bitcoin_object->save($db);
+        $result = $bitcoin_object->save();
 
         if ($result === false) {
 

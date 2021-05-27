@@ -70,7 +70,7 @@ class InitializeABitcoinRecordProcessor
 
         $db = get_db();
 
-        $result = $bitcoin_object->save($db);
+        $result = $bitcoin_object->save();
 
         if (!$result) {
 
