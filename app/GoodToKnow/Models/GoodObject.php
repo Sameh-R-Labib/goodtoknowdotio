@@ -442,11 +442,12 @@ abstract class GoodObject
 
     /**
      * @param mysqli $db
-     * @param string $error
      * @return bool|mixed
      */
-    public static function count_all(mysqli $db, string &$error)
+    public static function count_all(mysqli $db)
     {
+        global $sessionMessage;
+
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
 
         try {
@@ -456,14 +457,14 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $error .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $sessionMessage .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $error .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $sessionMessage .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
 
             return false;
 
@@ -471,7 +472,7 @@ abstract class GoodObject
 
         if (!$result->num_rows) {
 
-            $error .= ' count_all failed. ';
+            $sessionMessage .= ' count_all failed. ';
 
             return false;
 
