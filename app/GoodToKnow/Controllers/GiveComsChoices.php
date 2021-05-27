@@ -11,7 +11,6 @@ class GiveComsChoices
     function page()
     {
         global $db;
-        global $sessionMessage;
         global $saved_str01; // Has user's username
         global $html_title;
         global $coms_user_belongs_to;

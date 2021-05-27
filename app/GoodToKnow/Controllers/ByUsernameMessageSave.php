@@ -23,7 +23,6 @@ class ByUsernameMessageSave
 
         global $db;
         global $message_object;
-        global $sessionMessage;
         global $saved_str01;
 
 

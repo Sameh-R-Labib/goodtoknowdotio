@@ -21,7 +21,6 @@ class AlterAPossibleTaxDeductionUpdate
          */
 
         global $db;
-        global $sessionMessage;
         global $saved_int01;    // record id
         global $object;
 

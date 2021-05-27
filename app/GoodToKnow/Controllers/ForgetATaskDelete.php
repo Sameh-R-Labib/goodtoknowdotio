@@ -17,7 +17,6 @@ class ForgetATaskDelete
 
 
         global $db;
-        global $sessionMessage;
         global $saved_int01;
 
 

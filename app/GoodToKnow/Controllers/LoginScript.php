@@ -17,7 +17,6 @@ class LoginScript
     {
         global $db;
         global $is_logged_in;
-        global $sessionMessage;
 
         $db = db_connect();
 

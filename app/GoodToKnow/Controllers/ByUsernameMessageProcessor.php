@@ -17,7 +17,6 @@ class ByUsernameMessageProcessor
          */
 
         global $db;
-        global $sessionMessage;
         global $user_username;
         global $html_title;
         global $pre_populate;

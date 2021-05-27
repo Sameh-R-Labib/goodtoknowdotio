@@ -40,24 +40,32 @@ class AbolishYearsCommoditiesSoldGetYear
         $sql .= $db->real_escape_string($tax_year);
 
         try {
+
             $db->query($sql);
 
             $query_error = $db->error;
 
             if (!empty(trim($query_error))) {
+
                 $message = ' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 breakout($message);
+
             }
 
             $num_affected_rows = $db->affected_rows;
+
         } catch (\Exception $e) {
+
             $sessionMessage .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout('');
+
         }
 
 

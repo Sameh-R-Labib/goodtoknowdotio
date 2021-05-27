@@ -16,7 +16,6 @@ class BalanceOutTheSequenceNumbers
         global $thing_id;
         global $result;
         global $fields;
-        global $sessionMessage;
         global $type_of_resource_requested;
         global $community_id;
         global $community_name;

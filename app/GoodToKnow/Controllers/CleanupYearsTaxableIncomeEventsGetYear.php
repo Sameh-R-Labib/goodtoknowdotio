@@ -43,6 +43,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
         $sql .= $db->real_escape_string($year_received);
 
         try {
+
             $db->query($sql);
 
             $query_error = $db->error;
@@ -54,13 +55,18 @@ class CleanupYearsTaxableIncomeEventsGetYear
             }
 
             $num_affected_rows = $db->affected_rows;
+
         } catch (\Exception $e) {
+
             $sessionMessage .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+
         }
 
         if (!empty($sessionMessage)) {
+
             breakout('');
+
         }
 
 

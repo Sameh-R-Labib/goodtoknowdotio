@@ -16,7 +16,6 @@ class WriteToAdminProcessor
 
 
         global $db;
-        global $sessionMessage;
         global $message_object;
 
 

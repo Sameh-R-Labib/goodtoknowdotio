@@ -16,7 +16,6 @@ class BlotOutSomeInboxMessages
 
         global $db;
         global $inbox_messages_array;
-        global $sessionMessage;
         global $user_id;
         global $html_title;
 

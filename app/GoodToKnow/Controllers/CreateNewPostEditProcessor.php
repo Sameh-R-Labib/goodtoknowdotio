@@ -20,7 +20,6 @@ class CreateNewPostEditProcessor
          */
 
         global $db;
-        global $sessionMessage;
         global $markdown;
         global $saved_int01;     // topic id
         global $saved_int02;     // post id

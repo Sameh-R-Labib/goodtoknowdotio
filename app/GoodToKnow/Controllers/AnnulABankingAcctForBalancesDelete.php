@@ -18,7 +18,6 @@ class AnnulABankingAcctForBalancesDelete
 
 
         global $db;
-        global $sessionMessage;
         global $saved_int01;
         global $object;
 

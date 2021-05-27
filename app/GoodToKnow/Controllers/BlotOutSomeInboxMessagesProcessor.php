@@ -9,7 +9,6 @@ class BlotOutSomeInboxMessagesProcessor
     function page()
     {
         global $db;
-        global $sessionMessage;
         global $user_id;
 
 
