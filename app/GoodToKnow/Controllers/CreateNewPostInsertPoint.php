@@ -42,7 +42,7 @@ class CreateNewPostInsertPoint
          * all the posts in said topic.
          */
 
-        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $saved_int01);
+        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $saved_int01);
 
         if (!$special_post_array) {
 

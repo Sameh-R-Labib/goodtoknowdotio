@@ -165,7 +165,7 @@ class CreateNewPostSave
 
         if ($type_of_resource_requested === 'topic' || $type_of_resource_requested === 'post') {
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $sessionMessage, $topic_id);
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($db, $topic_id);
 
             if ($special_post_array === false) {
 
