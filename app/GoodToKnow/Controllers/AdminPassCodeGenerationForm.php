@@ -32,7 +32,7 @@ class AdminPassCodeGenerationForm
 
         // Community::find_all() should return the array we are looking for (see above)
 
-        $community_array = Community::find_all($db);
+        $community_array = Community::find_all();
 
 
         $html_title = 'Admin Pass-Code Generation Form';

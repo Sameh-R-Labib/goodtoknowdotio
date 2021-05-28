@@ -487,10 +487,9 @@ abstract class GoodObject
      * Gives me an array of all the objects.
      * Or gives me false when in error state.
      *
-     * @param mysqli $db
      * @return array|bool
      */
-    public static function find_all(mysqli $db)
+    public static function find_all()
     {
         return static::find_by_sql("SELECT * FROM " . static::$table_name);
     }
