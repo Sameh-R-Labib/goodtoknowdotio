@@ -27,7 +27,6 @@ class SetHomePageCommunityTopicPost
 
         global $db;
         global $is_logged_in;
-        global $sessionMessage;
         global $special_community_array;  // array (key: id of community, value: name of community)
         global $special_topic_array;
         global $special_post_array;
@@ -35,18 +34,17 @@ class SetHomePageCommunityTopicPost
         global $type_of_resource_requested;
 
 
-        self::abort_if_an_anomalous_condition_exists($sessionMessage, $is_logged_in);
+        self::abort_if_an_anomalous_condition_exists($is_logged_in);
 
         $db = db_connect();
 
-        self::mostly_making_sure_chosen_community_is_ok_to_choose($db, $sessionMessage, $community_id,
-            $special_community_array);
+        self::mostly_making_sure_chosen_community_is_ok_to_choose($community_id, $special_community_array);
 
         self::get_the_topics_and_derive_the_data_surrounding_it($community_id, $special_topic_array,
             $post_id, $topic_id, $type_of_resource_requested);
 
-        self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($db, $sessionMessage,
-            $type_of_resource_requested, $topic_id, $post_id, $special_post_array);
+        self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($type_of_resource_requested,
+            $topic_id, $post_id, $special_post_array);
 
         $post_object = null;
         $post_author_object = null;
@@ -205,16 +203,13 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $db
-     * @param $sessionMessage
      * @param $type_of_resource_requested
      * @param $topic_id
      * @param $post_id
      * @param $special_post_array
      */
-    private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it(&$db, &$sessionMessage,
-                                                                                                 &$type_of_resource_requested,
-                                                                                                 &$topic_id, &$post_id,
+    private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it(&$type_of_resource_requested,
+                                                                                                 $topic_id, $post_id,
                                                                                                  &$special_post_array)
     {
         /**
@@ -309,14 +304,14 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $db
-     * @param $sessionMessage
      * @param $community_id
      * @param $special_community_array
      */
-    private static function mostly_making_sure_chosen_community_is_ok_to_choose(&$db, &$sessionMessage, &$community_id,
-                                                                                &$special_community_array)
+    private static function mostly_making_sure_chosen_community_is_ok_to_choose($community_id, $special_community_array)
     {
+        global $db;
+        global $sessionMessage;
+
         if (!empty($sessionMessage) || $db === false) {
 
             breakout(' Database connection failed. ');
@@ -337,11 +332,12 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $sessionMessage
      * @param $is_logged_in
      */
-    private static function abort_if_an_anomalous_condition_exists(&$sessionMessage, &$is_logged_in)
+    private static function abort_if_an_anomalous_condition_exists($is_logged_in)
     {
+        global $sessionMessage;
+
         if (!$is_logged_in || !empty($sessionMessage)) {
 
             $_SESSION['message'] = $sessionMessage;
