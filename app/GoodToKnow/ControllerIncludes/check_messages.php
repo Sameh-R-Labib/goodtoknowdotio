@@ -26,7 +26,7 @@ if ($messages_last_time === null) {
 
     }
 
-    $quantity = MessageToUser::user_message_quantity($db, $sessionMessage, $user_id);
+    $quantity = MessageToUser::user_message_quantity($user_id);
 
     if ($quantity === false) {
 
@@ -60,7 +60,7 @@ if ($messages_last_time === null) {
             }
         }
 
-        $quantity = MessageToUser::user_message_quantity($db, $sessionMessage, $user_id);
+        $quantity = MessageToUser::user_message_quantity($user_id);
 
         if ($quantity === false) {
 

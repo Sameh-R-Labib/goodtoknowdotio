@@ -37,13 +37,14 @@ class MessageToUser extends GoodObject
 
 
     /**
-     * @param mysqli $db
-     * @param string $sessionMessage
      * @param $user_id
      * @return bool|mixed
      */
-    public static function user_message_quantity(mysqli $db, string &$sessionMessage, $user_id)
+    public static function user_message_quantity($user_id)
     {
+        global $db;
+        global $sessionMessage;
+
         $sql = "SELECT COUNT(*) FROM message_to_user WHERE user_id=" . $user_id;
 
         try {
