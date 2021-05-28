@@ -212,17 +212,17 @@ class User extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param string $username
      * @return bool|mixed
      */
-    public static function find_by_username(mysqli $db, string $username)
+    public static function find_by_username(string $username)
     {
         /**
          * You give it a username and it returns the
          * corresponding User object or false.
          */
 
+        global $db;
         global $sessionMessage;
 
         $sql = 'SELECT * FROM `users`

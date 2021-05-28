@@ -34,7 +34,7 @@ class TransferPostOwnershipTransferIt
 
         $db = get_db();
 
-        $user_object = User::find_by_username($db, $username);
+        $user_object = User::find_by_username($username);
 
         if (!$user_object) {
 

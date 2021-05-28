@@ -35,7 +35,7 @@ class GiveComsChoices
 
         $db = get_db();
 
-        $user_object = User::find_by_username($db, $saved_str01);
+        $user_object = User::find_by_username($saved_str01);
 
         if (!$user_object) {
 

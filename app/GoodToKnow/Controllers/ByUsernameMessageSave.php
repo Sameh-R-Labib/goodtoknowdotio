@@ -57,7 +57,7 @@ class ByUsernameMessageSave
 
         }
 
-        $target_user_object = User::find_by_username($db, $saved_str01);
+        $target_user_object = User::find_by_username($saved_str01);
 
         if (!$target_user_object) {
 

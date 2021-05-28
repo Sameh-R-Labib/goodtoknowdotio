@@ -33,10 +33,12 @@ class MemberMemoEditorForm
 
         $db = get_db();
 
-        $user_object = User::find_by_username($db, $saved_str01);
+        $user_object = User::find_by_username($saved_str01);
 
         if (!$user_object) {
+
             breakout(' Unexpected unable to retrieve target user\'s object. ');
+
         }
 
         $_SESSION['saved_int01'] = (int)$user_object->id;
