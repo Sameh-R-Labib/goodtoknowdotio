@@ -53,7 +53,7 @@ class SetHomePageCommunityTopicPost
         $community_object = null;
         $topic_object = null;
 
-        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($db, $sessionMessage,
+        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it(
             $type_of_resource_requested, $special_post_array, $post_id, $post_object, $post_content,
             $post_author_object);
 
@@ -152,8 +152,6 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $db
-     * @param $sessionMessage
      * @param $type_of_resource_requested
      * @param $special_post_array
      * @param $post_id
@@ -161,10 +159,9 @@ class SetHomePageCommunityTopicPost
      * @param $post_content
      * @param $post_author_object
      */
-    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it(&$db, &$sessionMessage,
-                                                                                                  &$type_of_resource_requested,
-                                                                                                  &$special_post_array,
-                                                                                                  &$post_id, &$post_object,
+    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($type_of_resource_requested,
+                                                                                                  $special_post_array,
+                                                                                                  $post_id, &$post_object,
                                                                                                   &$post_content,
                                                                                                   &$post_author_object)
     {
