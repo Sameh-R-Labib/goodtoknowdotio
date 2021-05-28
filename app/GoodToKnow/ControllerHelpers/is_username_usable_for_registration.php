@@ -6,12 +6,12 @@ use GoodToKnow\Models\User;
 use mysqli;
 
 /**
- * @param mysqli $db
  * @param string $username
  * @return bool
  */
-function is_username_usable_for_registration(mysqli $db, string &$username): bool
+function is_username_usable_for_registration(string &$username): bool
 {
+    global $db;
     global $sessionMessage;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';

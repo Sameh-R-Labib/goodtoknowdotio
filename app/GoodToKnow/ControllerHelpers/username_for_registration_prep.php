@@ -17,7 +17,7 @@ function username_for_registration_prep(): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_usable_for_registration.php';
 
-    if (!is_username_usable_for_registration($db, $submitted_username)) {
+    if (!is_username_usable_for_registration($submitted_username)) {
 
         breakout(' This username value is invalid. ');
 
