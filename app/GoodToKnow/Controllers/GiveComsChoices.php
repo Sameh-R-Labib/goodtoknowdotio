@@ -62,7 +62,9 @@ class GiveComsChoices
         $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
 
         if ($coms_user_belongs_to === false) {
+
             breakout(' Error encountered trying to retrieve communities for this user. ');
+
         }
 
         // Second get all the communities that exist in this system.
@@ -71,7 +73,9 @@ class GiveComsChoices
         $coms_in_this_system = Community::find_all();
 
         if ($coms_in_this_system === false) {
+
             breakout(' Unable to retrieve communities. ');
+
         }
 
 
@@ -83,7 +87,9 @@ class GiveComsChoices
         // Redirect if no communities user doesn't belong to.
 
         if (empty($coms_user_does_not_belong_to)) {
+
             breakout(' This user belongs to all communities. So, there\'s no need to do anything. ');
+
         }
 
 

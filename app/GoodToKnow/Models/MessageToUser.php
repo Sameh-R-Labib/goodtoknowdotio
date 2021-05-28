@@ -172,11 +172,10 @@ class MessageToUser extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $user_id
      * @return array|bool
      */
-    public static function get_array_of_message_objects_for_a_user(mysqli $db, int $user_id)
+    public static function get_array_of_message_objects_for_a_user(int $user_id)
     {
         /**
          * Sequential ordering (by time created) will take place
@@ -184,6 +183,7 @@ class MessageToUser extends GoodObject
          * item will be the one which was created last.
          */
 
+        global $db;
         global $sessionMessage;
 
         // get (in array) all the MessageToUser objects with a particular $user_id.
