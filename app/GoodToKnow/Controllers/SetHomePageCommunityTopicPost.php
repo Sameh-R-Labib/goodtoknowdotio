@@ -57,7 +57,7 @@ class SetHomePageCommunityTopicPost
             $type_of_resource_requested, $special_post_array, $post_id, $post_object, $post_content,
             $post_author_object);
 
-        self::store_derived_info_in_the_session($db, $sessionMessage, $community_object, $community_id,
+        self::store_derived_info_in_the_session($community_object, $community_id,
             $special_topic_array, $topic_id, $topic_object, $special_post_array, $post_object, $post_content,
             $post_author_object, $post_id, $type_of_resource_requested);
 
@@ -65,8 +65,6 @@ class SetHomePageCommunityTopicPost
     }
 
     /**
-     * @param $db
-     * @param $sessionMessage
      * @param $community_object
      * @param $community_id
      * @param $special_topic_array
@@ -79,11 +77,12 @@ class SetHomePageCommunityTopicPost
      * @param $post_id
      * @param $type_of_resource_requested
      */
-    private static function store_derived_info_in_the_session(&$db, &$sessionMessage, &$community_object, &$community_id,
+    private static function store_derived_info_in_the_session(&$community_object, &$community_id,
                                                               &$special_topic_array, &$topic_id, &$topic_object,
                                                               &$special_post_array, &$post_object, &$post_content,
                                                               &$post_author_object, &$post_id, &$type_of_resource_requested)
     {
+        global $sessionMessage;
 
 
         // First get and store the community_name
