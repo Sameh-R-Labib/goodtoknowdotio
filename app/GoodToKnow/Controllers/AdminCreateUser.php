@@ -31,20 +31,14 @@ class AdminCreateUser
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'title_ofaperson_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'race_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_registration_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'password_for_regandchange_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
-        $submitted_username = username_for_registration_prep($db);
+        $submitted_username = username_for_registration_prep();
 
         $submitted_password = password_for_regandchange_prep();
 
