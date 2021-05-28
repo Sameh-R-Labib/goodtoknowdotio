@@ -59,7 +59,7 @@ class GiveComsChoices
 
         // First get all the communities the user DOES belong to.
 
-        $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($db, $user_id);
+        $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
 
         if ($coms_user_belongs_to === false) {
             breakout(' Error encountered trying to retrieve communities for this user. ');

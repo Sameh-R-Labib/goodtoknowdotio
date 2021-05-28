@@ -33,11 +33,10 @@ class UserToCommunity extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $user_id
      * @return array|bool
      */
-    public static function coms_user_belongs_to(mysqli $db, int $user_id)
+    public static function coms_user_belongs_to(int $user_id)
     {
         /**
          * Returns array of communities if no unexpected error occurs.
