@@ -492,7 +492,7 @@ abstract class GoodObject
      */
     public static function find_all(mysqli $db)
     {
-        return static::find_by_sql($db, "SELECT * FROM " . static::$table_name);
+        return static::find_by_sql("SELECT * FROM " . static::$table_name);
     }
 
 
@@ -506,7 +506,7 @@ abstract class GoodObject
     {
         global $db;
 
-        $result_array = static::find_by_sql($db, "SELECT * FROM " . static::$table_name . "
+        $result_array = static::find_by_sql("SELECT * FROM " . static::$table_name . "
 			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
 
         return !empty($result_array) ? array_shift($result_array) : false;
@@ -522,12 +522,12 @@ abstract class GoodObject
     /**
      * Gives me an array of objects for the sql I give it.
      *
-     * @param mysqli $db
      * @param string $sql
      * @return array|bool
      */
-    public static function find_by_sql(mysqli $db, string $sql)
+    public static function find_by_sql(string $sql)
     {
+        global $db;
         global $sessionMessage;
 
         $object_array = [];

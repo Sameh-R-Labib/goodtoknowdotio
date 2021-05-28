@@ -45,7 +45,7 @@ class TopicToPost extends GoodObject
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `post_id` = "' . $db->real_escape_string($post_id) . '" LIMIT 1';
 
-        $array_of_objects = TopicToPost::find_by_sql($db, $sql);
+        $array_of_objects = TopicToPost::find_by_sql($sql);
 
         if (!$array_of_objects || !empty($sessionMessage)) {
 

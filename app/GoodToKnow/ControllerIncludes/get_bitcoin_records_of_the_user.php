@@ -23,7 +23,7 @@ $db = get_db();
 
 $sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
 
-$array_of_bitcoin_objects = Bitcoin::find_by_sql($db, $sql);
+$array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
 
 if (!$array_of_bitcoin_objects || !empty($sessionMessage)) {
 

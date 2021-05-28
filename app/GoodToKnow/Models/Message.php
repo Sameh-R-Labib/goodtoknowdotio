@@ -63,7 +63,7 @@ class Message extends GoodObject
 
         $sql = "SELECT * FROM " . self::$table_name . " WHERE `created`<" . $db->real_escape_string($timestamp);
 
-        $array_of_found_messages = self::find_by_sql($db, $sql);
+        $array_of_found_messages = self::find_by_sql($sql);
 
 
         // Handling the case where an unexpected error occured

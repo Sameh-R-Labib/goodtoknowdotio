@@ -77,7 +77,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
-        $array = BankingTransactionForBalances::find_by_sql($db, $sql);
+        $array = BankingTransactionForBalances::find_by_sql($sql);
 
         if (!$array || !empty($sessionMessage)) {
 

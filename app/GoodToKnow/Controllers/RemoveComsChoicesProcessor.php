@@ -64,7 +64,7 @@ class RemoveComsChoicesProcessor
                 '" AND `community_id` = "' . $db->real_escape_string($a_community_id) .
                 '" LIMIT 1';
 
-            $array_with_one_element = UserToCommunity::find_by_sql($db, $sql);
+            $array_with_one_element = UserToCommunity::find_by_sql($sql);
 
             if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
 

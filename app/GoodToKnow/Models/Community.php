@@ -49,7 +49,7 @@ class Community extends GoodObject
         $sql = 'SELECT * FROM `communities`
                 WHERE `community_name` = "' . $db->real_escape_string($community_name) . '" LIMIT 1';
 
-        $array_of_Community_objects = parent::find_by_sql($db, $sql);
+        $array_of_Community_objects = parent::find_by_sql($sql);
 
         $temp_error = trim($sessionMessage);
 

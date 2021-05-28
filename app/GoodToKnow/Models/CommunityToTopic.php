@@ -45,7 +45,7 @@ class CommunityToTopic extends GoodObject
         $sql = 'SELECT * FROM `community_to_topic`
         WHERE `topic_id` = "' . $db->real_escape_string($topic_id) . '" LIMIT 1';
 
-        $array_of_objects = CommunityToTopic::find_by_sql($db, $sql);
+        $array_of_objects = CommunityToTopic::find_by_sql($sql);
 
         if (!$array_of_objects || !empty($sessionMessage)) {
 

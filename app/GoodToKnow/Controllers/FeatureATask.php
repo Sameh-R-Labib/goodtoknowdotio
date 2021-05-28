@@ -30,7 +30,7 @@ class FeatureATask
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
 
-        $array = Task::find_by_sql($db, $sql);
+        $array = Task::find_by_sql($sql);
 
         if (!$array || !empty($sessionMessage)) {
             breakout(' I could NOT find any tasks. ');
