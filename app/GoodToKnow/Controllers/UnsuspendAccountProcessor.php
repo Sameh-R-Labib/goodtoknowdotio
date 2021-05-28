@@ -24,7 +24,7 @@ class UnsuspendAccountProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_specifying_which_prep.php';
 
-        $submitted_username = username_for_specifying_which_prep($db);
+        $submitted_username = username_for_specifying_which_prep();
 
 
         $_SESSION['saved_str01'] = $submitted_username;

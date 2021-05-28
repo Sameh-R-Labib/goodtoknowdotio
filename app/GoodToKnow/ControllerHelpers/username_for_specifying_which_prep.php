@@ -5,10 +5,9 @@ namespace GoodToKnow\ControllerHelpers;
 use mysqli;
 
 /**
- * @param mysqli $db
  * @return string
  */
-function username_for_specifying_which_prep(mysqli $db): string
+function username_for_specifying_which_prep(): string
 {
     /**
      * Get the submitted username. It is assumed that this username is being submitted solely to identify an account.
@@ -18,6 +17,9 @@ function username_for_specifying_which_prep(mysqli $db): string
      * 2) If it fits the requirements for what a GTK.io username should look like.
      * 3) If it represents a user account.
      */
+
+
+    global $db;
 
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
