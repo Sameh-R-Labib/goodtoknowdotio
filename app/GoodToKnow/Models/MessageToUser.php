@@ -304,7 +304,7 @@ class MessageToUser extends GoodObject
 
         foreach ($inbox_messages_array as $message_object) {
 
-            $message_object->user_id = self::get_username($db, $message_object->user_id);
+            $message_object->user_id = self::get_username($message_object->user_id);
 
             if ($message_object->user_id === false) {
 
@@ -322,11 +322,10 @@ class MessageToUser extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param $user_id
      * @return bool
      */
-    public static function get_username(mysqli $db, $user_id): bool
+    public static function get_username($user_id): bool
     {
         $user_id = (int)$user_id;
 
