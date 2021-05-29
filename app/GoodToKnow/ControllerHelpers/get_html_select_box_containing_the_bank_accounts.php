@@ -3,16 +3,15 @@
 namespace GoodToKnow\ControllerHelpers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
-use mysqli;
 
 /**
- * @param mysqli $db
  * @param int $user_id
  * @param int $bank_id
  * @return string
  */
-function get_html_select_box_containing_the_bank_accounts(mysqli $db, int $user_id, int $bank_id): string
+function get_html_select_box_containing_the_bank_accounts(int $user_id, int $bank_id): string
 {
+    global $db;
     global $sessionMessage;
 
 

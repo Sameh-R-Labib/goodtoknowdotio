@@ -61,7 +61,7 @@ class RevampABankingTransactionForBalancesEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $object->bank_id = get_html_select_box_containing_the_bank_accounts($db, $user_id, $object->bank_id);
+        $object->bank_id = get_html_select_box_containing_the_bank_accounts($user_id, $object->bank_id);
 
 
         /**
