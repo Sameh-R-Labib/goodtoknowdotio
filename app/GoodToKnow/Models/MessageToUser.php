@@ -129,18 +129,18 @@ class MessageToUser extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $message_id
      * @param int $user_id
      * @return bool
      */
-    public static function delete_all_particular(mysqli $db, int $message_id, int $user_id): bool
+    public static function delete_all_particular(int $message_id, int $user_id): bool
     {
         /**
          * It will return false if an error occurs while trying to delete.
          * Otherwise, it will return true (even if nothing was deleted.)
          */
 
+        global $db;
         global $sessionMessage;
 
         $sql = "DELETE FROM " . self::$table_name . " ";

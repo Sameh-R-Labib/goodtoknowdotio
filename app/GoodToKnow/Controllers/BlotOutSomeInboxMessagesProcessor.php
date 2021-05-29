@@ -50,7 +50,7 @@ class BlotOutSomeInboxMessagesProcessor
 
             // Only delete the MessageToUser record. Do Not delete the Message record since it may be needed by another user.
 
-            $return = MessageToUser::delete_all_particular($db, $id, $user_id);
+            $return = MessageToUser::delete_all_particular($id, $user_id);
 
             if ($return === false) {
 
