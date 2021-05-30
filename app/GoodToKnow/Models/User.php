@@ -75,11 +75,10 @@ class User extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $user_id
      * @return bool
      */
-    public static function enforce_suspension(mysqli $db, int $user_id): bool
+    public static function enforce_suspension(int $user_id): bool
     {
         /**
          *   1) Determine whether or not the user is suspended per database

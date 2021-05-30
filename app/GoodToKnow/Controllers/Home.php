@@ -305,7 +305,7 @@ class Home
 
             }
 
-            $result = User::enforce_suspension($db, $user_id);
+            $result = User::enforce_suspension($user_id);
 
             if ($result === false) {
 
