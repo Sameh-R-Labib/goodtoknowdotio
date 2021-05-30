@@ -101,11 +101,12 @@ abstract class GoodObject
     /**
      * Gets db-escaped value attributes (as associative array) of this object.
      *
-     * @param mysqli $db
      * @return array
      */
-    protected function sanitized_attributes(mysqli $db): array
+    protected function sanitized_attributes(): array
     {
+        global $db;
+
         $clean_attributes = [];
 
         foreach ($this->attributes() as $key => $value) {
@@ -199,7 +200,7 @@ abstract class GoodObject
             // all the other fields. If the field hadn't been
             // assigned a value then an empty string will be its value.
 
-            $attributes = $this->sanitized_attributes($db);
+            $attributes = $this->sanitized_attributes();
 
 
             // Pop off the first element
@@ -394,7 +395,7 @@ abstract class GoodObject
          * a multi insert sql statement.
          */
 
-        $attributes = $object->sanitized_attributes($db);
+        $attributes = $object->sanitized_attributes();
 
 
         // Pop off the first element
@@ -593,7 +594,7 @@ abstract class GoodObject
         }
 
         try {
-            $attributes = $this->sanitized_attributes($db);
+            $attributes = $this->sanitized_attributes();
 
             array_shift($attributes);
 
