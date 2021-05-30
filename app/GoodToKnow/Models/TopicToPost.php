@@ -34,12 +34,12 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $post_id
      * @return string|bool
      */
-    public static function derive_topic_id(mysqli $db, int $post_id)
+    public static function derive_topic_id(int $post_id)
     {
+        global $db;
         global $sessionMessage;
 
         $sql = 'SELECT * FROM `topic_to_post`

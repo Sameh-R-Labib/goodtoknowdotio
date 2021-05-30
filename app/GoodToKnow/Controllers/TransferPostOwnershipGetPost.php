@@ -53,7 +53,7 @@ class TransferPostOwnershipGetPost
         // Find the community name based on the post id. First derive the topic id from the post id.
         // Post id is $chosen_post_id
 
-        $derived_topic_id = TopicToPost::derive_topic_id($db, $chosen_post_id);
+        $derived_topic_id = TopicToPost::derive_topic_id($chosen_post_id);
 
         if ($derived_topic_id === false) {
 
