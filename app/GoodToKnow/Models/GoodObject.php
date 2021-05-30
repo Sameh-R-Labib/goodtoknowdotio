@@ -177,11 +177,11 @@ abstract class GoodObject
      * This object's id must not be set (!isset())
      * because the id table field is autoincrement.
      *
-     * @param mysqli $db
      * @return bool
      */
-    protected function create(mysqli $db): bool
+    protected function create(): bool
     {
+        global $db;
         global $sessionMessage;
 
         if ($this->id) {
@@ -434,7 +434,7 @@ abstract class GoodObject
 
         // A database object without an id is one that has never been saved in the database.
 
-        return isset($this->id) ? $this->update($db) : $this->create($db);
+        return isset($this->id) ? $this->update($db) : $this->create();
     }
 
 
