@@ -26,7 +26,7 @@ class LoginScript
 
         self::assimilate_input($submitted_username, $submitted_password);
 
-        $user = User::authenticate($db, $submitted_username, $submitted_password);
+        $user = User::authenticate($submitted_username, $submitted_password);
 
         self::login_the_user($user);
 

@@ -111,13 +111,13 @@ class User extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param string $username
      * @param string $password
      * @return bool|object|stdClass
      */
-    public static function authenticate(mysqli $db, string $username, string $password)
+    public static function authenticate(string $username, string $password)
     {
+        global $db;
         global $sessionMessage;
 
         /**
