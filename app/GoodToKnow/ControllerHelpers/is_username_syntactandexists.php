@@ -22,7 +22,7 @@ function is_username_syntactandexists(string &$username): bool
         return false;
     }
 
-    $is_in_use = User::is_taken_username($db, $username);
+    $is_in_use = User::is_taken_username($username);
 
     if (!$is_in_use) {
 

@@ -3,7 +3,6 @@
 namespace GoodToKnow\Models;
 
 use stdClass;
-use mysqli;
 
 class User extends GoodObject
 {
@@ -184,12 +183,13 @@ class User extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param string $username
      * @return bool
      */
-    public static function is_taken_username(mysqli $db, string $username): bool
+    public static function is_taken_username(string $username): bool
     {
+        global $db;
+
         $sql = 'SELECT username FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
