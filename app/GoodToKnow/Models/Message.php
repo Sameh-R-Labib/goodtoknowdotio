@@ -2,8 +2,6 @@
 
 namespace GoodToKnow\Models;
 
-use mysqli;
-
 class Message extends GoodObject
 {
     /**
@@ -38,11 +36,10 @@ class Message extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $timestamp
      * @return bool
      */
-    public static function purge_all_messages_older_than_date(mysqli $db, int $timestamp): bool
+    public static function purge_all_messages_older_than_date(int $timestamp): bool
     {
         /**
          * Actually it will delete both the message records
@@ -53,6 +50,7 @@ class Message extends GoodObject
          *   4) Return true or false.
          */
 
+        global $db;
         global $sessionMessage;
 
         /**
