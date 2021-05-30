@@ -263,11 +263,10 @@ abstract class GoodObject
      * to insert into the table do not have ALL their attributes set
      * to VALID values.
      *
-     * @param mysqli $db
      * @param array $objects_array
      * @return bool
      */
-    public static function insert_multiple_objects(mysqli $db, array $objects_array): bool
+    public static function insert_multiple_objects(array $objects_array): bool
     {
         /**
          * Unlike create() (AFTER it executes) this function will NOT have had set
@@ -281,6 +280,7 @@ abstract class GoodObject
          * The function returns true on success and false if no objects were inserted.
          */
 
+        global $db;
         global $sessionMessage;
 
         $sql = 'INSERT INTO ' . static::$table_name;

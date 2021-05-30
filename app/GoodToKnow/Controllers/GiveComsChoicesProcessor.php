@@ -59,11 +59,13 @@ class GiveComsChoicesProcessor
 
         $db = get_db();
 
-        $result = UserToCommunity::insert_multiple_objects($db, $array_of_usertocommunity_objects);
+        $result = UserToCommunity::insert_multiple_objects($array_of_usertocommunity_objects);
 
         if (!$result) {
+
             breakout(' In GiveComsChoicesProcessor encountered error due to
             UserToCommunity::array_to_object being unable to save the user_to_community records. ');
+
         }
 
 
