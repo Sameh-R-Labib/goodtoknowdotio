@@ -3,7 +3,6 @@
 namespace GoodToKnow\Models;
 
 use Exception;
-use mysqli;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\order_them_from_most_recent_to_oldest;
 
@@ -82,11 +81,10 @@ class MessageToUser extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $message_id
      * @return bool
      */
-    public static function delete_all_having_particular_message_id(mysqli $db, int $message_id): bool
+    public static function delete_all_having_particular_message_id(int $message_id): bool
     {
         /**
          * It will return false if an error occurs while
@@ -96,6 +94,7 @@ class MessageToUser extends GoodObject
          * was deleted.)
          */
 
+        global $db;
         global $sessionMessage;
 
         // Formulate the sql for the delete
