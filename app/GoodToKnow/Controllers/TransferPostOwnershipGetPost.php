@@ -64,7 +64,7 @@ class TransferPostOwnershipGetPost
 
         // Second derive the community id from $derived_topic_id.
 
-        $derived_community_id = CommunityToTopic::derive_community_id($db, $derived_topic_id);
+        $derived_community_id = CommunityToTopic::derive_community_id($derived_topic_id);
 
         if ($derived_community_id === false) {
 

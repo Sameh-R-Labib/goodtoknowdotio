@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Models;
 
-use mysqli;
 use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
 
 class CommunityToTopic extends GoodObject
@@ -34,12 +33,12 @@ class CommunityToTopic extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param int $topic_id
      * @return string|bool
      */
-    public static function derive_community_id(mysqli $db, int $topic_id)
+    public static function derive_community_id(int $topic_id)
     {
+        global $db;
         global $sessionMessage;
 
         $sql = 'SELECT * FROM `community_to_topic`
