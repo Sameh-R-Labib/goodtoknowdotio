@@ -6,7 +6,6 @@ use GoodToKnow\Models\UserToCommunity;
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\User;
-use mysqli;
 use function GoodToKnow\ControllerHelpers\is_password_syntactically;
 use function GoodToKnow\ControllerHelpers\is_username_syntactically;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -31,17 +30,17 @@ class LoginScript
 
         self::login_the_user($user);
 
-        self::store_application_state($db, $user);
+        self::store_application_state($user);
 
         breakout(' Logout once a day so that your session will Not expire. ');
     }
 
     /**
-     * @param mysqli $db
      * @param object $user
      */
-    private static function store_application_state(mysqli $db, object $user)
+    private static function store_application_state(object $user)
     {
+        global $db;
         global $sessionMessage;
 
         /**
