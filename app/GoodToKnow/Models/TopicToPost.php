@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Models;
 
-use mysqli;
 use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
 
 class TopicToPost extends GoodObject
@@ -192,11 +191,10 @@ class TopicToPost extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param array $array_of_post_objects
      * @return array|bool
      */
-    public static function get_author_usernames(mysqli $db, array $array_of_post_objects)
+    public static function get_author_usernames(array $array_of_post_objects)
     {
         /**
          * Generate an array of author usernames.
