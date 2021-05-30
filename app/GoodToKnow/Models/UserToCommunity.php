@@ -2,8 +2,6 @@
 
 namespace GoodToKnow\Models;
 
-use mysqli;
-
 class UserToCommunity extends GoodObject
 {
     /**
@@ -156,11 +154,10 @@ class UserToCommunity extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param $user_id
      * @return array|bool
      */
-    public static function find_communities_of_user(mysqli $db, $user_id)
+    public static function find_communities_of_user($user_id)
     {
         /**
          * The goal of this function is to return a special_community_array.
