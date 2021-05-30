@@ -3,7 +3,6 @@
 namespace GoodToKnow\ControllerHelpers;
 
 use GoodToKnow\Models\Post;
-use mysqli;
 
 /**
  * @param string $field_name

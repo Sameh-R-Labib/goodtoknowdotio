@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use mysqli;
 
 /**
  * @return string

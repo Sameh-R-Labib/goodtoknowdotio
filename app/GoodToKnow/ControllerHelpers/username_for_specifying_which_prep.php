@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use mysqli;
 
 /**
  * @return string
@@ -29,7 +28,7 @@ function username_for_specifying_which_prep(): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 
-    if (!is_username_syntactandexists($db, $submitted_username)) {
+    if (!is_username_syntactandexists($submitted_username)) {
 
         breakout(' The username field failed validation. ');
 

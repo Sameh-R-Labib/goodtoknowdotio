@@ -3,7 +3,6 @@
 namespace GoodToKnow\ControllerHelpers;
 
 use GoodToKnow\Models\Community;
-use mysqli;
 
 /**
  * @return int

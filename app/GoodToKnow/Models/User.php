@@ -81,9 +81,6 @@ class User extends GoodObject
      */
     public static function enforce_suspension(mysqli $db, int $user_id): bool
     {
-        global $sessionMessage;
-
-
         /**
          *   1) Determine whether or not the user is suspended per database
          *   2) If the user is suspended log him out and redirect to the page for logging in.
@@ -194,8 +191,6 @@ class User extends GoodObject
      */
     public static function is_taken_username(mysqli $db, string $username): bool
     {
-        global $sessionMessage;
-
         $sql = 'SELECT username FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 

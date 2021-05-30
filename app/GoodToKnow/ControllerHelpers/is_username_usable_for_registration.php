@@ -3,7 +3,6 @@
 namespace GoodToKnow\ControllerHelpers;
 
 use GoodToKnow\Models\User;
-use mysqli;
 
 /**
  * @param string $username
