@@ -28,7 +28,7 @@ class KommunityDescriptionEditorProcessor
 
         $db = get_db();
 
-        $community = Community::find_by_community_name($db, $submitted_community_name);
+        $community = Community::find_by_community_name($submitted_community_name);
 
         if (!$community) {
 

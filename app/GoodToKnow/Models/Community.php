@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Models;
 
-use mysqli;
 
 class Community extends GoodObject
 {
@@ -33,17 +32,17 @@ class Community extends GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param string $community_name
      * @return bool|mixed
      */
-    public static function find_by_community_name(mysqli $db, string $community_name)
+    public static function find_by_community_name(string $community_name)
     {
         /**
          * You give it a username and it returns the
          * corresponding User object or false.
          */
 
+        global $db;
         global $sessionMessage;
 
         $sql = 'SELECT * FROM `communities`
