@@ -363,8 +363,6 @@ abstract class GoodObject
          * insert sql statement.
          */
 
-        global $db;
-
         $sql = '';
 
         $array_key_last = count($objects_array) - 1;
@@ -373,7 +371,7 @@ abstract class GoodObject
 
             $is_last = $key === $array_key_last;
 
-            $sql .= static::value_sql_for_object($db, $object, $is_last);
+            $sql .= static::value_sql_for_object($object, $is_last);
 
         }
 
@@ -382,12 +380,11 @@ abstract class GoodObject
 
 
     /**
-     * @param mysqli $db
      * @param object $object
      * @param bool $is_last
      * @return string
      */
-    public static function value_sql_for_object(mysqli $db, object $object, bool $is_last): string
+    public static function value_sql_for_object(object $object, bool $is_last): string
     {
         /**
          * This function helps function value_sets_sql_string
