@@ -9,7 +9,6 @@ class EditMyPostEditor
     function page()
     {
         global $db;
-        global $user_id;
         global $html_title;
         global $markdown;
 
@@ -22,7 +21,7 @@ class EditMyPostEditor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 
-        $post_object = post_object_for_owner_prep('choice', $user_id);
+        $post_object = post_object_for_owner_prep('choice');
 
 
         /**

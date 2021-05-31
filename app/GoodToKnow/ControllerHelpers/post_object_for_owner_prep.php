@@ -6,16 +6,15 @@ use GoodToKnow\Models\Post;
 
 /**
  * @param string $field_name
- * @param $user_id
  * @return object
  */
-function post_object_for_owner_prep(string $field_name, $user_id): object
+function post_object_for_owner_prep(string $field_name): object
 {
-    global $db;
+    global $user_id;
 
 
     /**
-     * Returns a Post object belonging to the user.
+     * Returns a Post object belonging to the current user.
      * Also saves the post id in the session.
      */
 

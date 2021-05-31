@@ -15,7 +15,6 @@ class AuthorDeletesOwnPostDelete
 
 
         global $db;
-        global $user_id;
         global $html_title;
         global $long_title_of_post;
 
@@ -28,7 +27,7 @@ class AuthorDeletesOwnPostDelete
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 
-        $post_object = post_object_for_owner_prep('choice', $user_id);
+        $post_object = post_object_for_owner_prep('choice');
 
 
         /**
