@@ -74,16 +74,18 @@ class User extends GoodObject
 
 
     /**
-     * @param int $user_id
      * @return bool
      */
-    public static function enforce_suspension(int $user_id): bool
+    public static function enforce_suspension(): bool
     {
         /**
          *   1) Determine whether or not the user is suspended per database
          *   2) If the user is suspended log him out and redirect to the page for logging in.
          *   3) Otherwise, return control over to where the function was called.
          */
+
+
+        global $user_id;
 
 
         // Determine whether or not the user is suspended per database
