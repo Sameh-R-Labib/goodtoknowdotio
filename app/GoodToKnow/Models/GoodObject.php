@@ -22,7 +22,6 @@ namespace GoodToKnow\Models;
 
 
 use Exception;
-use mysqli;
 
 
 abstract class GoodObject
@@ -439,11 +438,11 @@ abstract class GoodObject
     // Read
 
     /**
-     * @param mysqli $db
      * @return bool|mixed
      */
-    public static function count_all(mysqli $db)
+    public static function count_all()
     {
+        global $db;
         global $sessionMessage;
 
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
@@ -573,11 +572,11 @@ abstract class GoodObject
      * field values by replacing them with the values found
      * in the attributes of this object.
      *
-     * @param mysqli $db
      * @return bool
      */
-    protected function update(mysqli $db): bool
+    protected function update(): bool
     {
+        global $db;
         global $sessionMessage;
 
         $num_affected_rows = 0;
