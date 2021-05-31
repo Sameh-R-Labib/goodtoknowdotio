@@ -288,7 +288,6 @@ class MessageToUser extends GoodObject
      */
     public static function replace_attributes(array &$inbox_messages_array): bool
     {
-        global $db;
         global $sessionMessage;
 
 
@@ -322,9 +321,9 @@ class MessageToUser extends GoodObject
 
     /**
      * @param $user_id
-     * @return bool
+     * @return false|string
      */
-    public static function get_username($user_id): bool
+    public static function get_username($user_id)
     {
         $user_id = (int)$user_id;
 
