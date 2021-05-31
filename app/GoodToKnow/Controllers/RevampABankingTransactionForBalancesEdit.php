@@ -19,8 +19,6 @@ class RevampABankingTransactionForBalancesEdit
          */
 
 
-        global $db;
-        global $sessionMessage;
         global $user_id;
         global $html_title;
         global $object;

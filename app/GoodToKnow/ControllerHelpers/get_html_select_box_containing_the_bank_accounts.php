@@ -11,6 +11,11 @@ use GoodToKnow\Models\BankingAcctForBalances;
  */
 function get_html_select_box_containing_the_bank_accounts(int $user_id, int $bank_id): string
 {
+    /**
+     * The reason this function needs the $bank_id is to
+     * make that bank account selected.
+     */
+
     global $db;
     global $sessionMessage;
 
