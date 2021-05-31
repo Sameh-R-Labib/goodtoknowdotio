@@ -314,7 +314,7 @@ abstract class GoodObject
             // Now $array_keys_array contains the field names. And they are in correct order.
 
             $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ";
-            $sql .= static::value_sets_sql_string($db, $objects_array);
+            $sql .= static::value_sets_sql_string($objects_array);
 
             $db->query($sql);
 
@@ -352,17 +352,18 @@ abstract class GoodObject
     }
 
     /**
-     * @param mysqli $db
      * @param array $objects_array
      * @return string
      */
-    public static function value_sets_sql_string(mysqli $db, array $objects_array): string
+    public static function value_sets_sql_string(array $objects_array): string
     {
         /**
          * Takes an array of objects and forms
          * the sql values string for a multi object
          * insert sql statement.
          */
+
+        global $db;
 
         $sql = '';
 
