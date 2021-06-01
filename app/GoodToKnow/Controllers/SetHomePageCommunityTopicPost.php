@@ -74,10 +74,10 @@ class SetHomePageCommunityTopicPost
      * @param $post_id
      * @param $type_of_resource_requested
      */
-    private static function store_derived_info_in_the_session(&$community_object, &$community_id,
-                                                              &$special_topic_array, &$topic_id, &$topic_object,
-                                                              &$special_post_array, &$post_object, &$post_content,
-                                                              &$post_author_object, &$post_id, &$type_of_resource_requested)
+    private static function store_derived_info_in_the_session(&$community_object, $community_id,
+                                                              $special_topic_array, $topic_id, &$topic_object,
+                                                              $special_post_array, $post_object, $post_content,
+                                                              $post_author_object, $post_id, $type_of_resource_requested)
     {
         global $sessionMessage;
 
@@ -255,9 +255,9 @@ class SetHomePageCommunityTopicPost
      * @param $topic_id
      * @param $type_of_resource_requested
      */
-    private static function get_the_topics_and_derive_the_data_surrounding_it(&$community_id,
-                                                                              &$special_topic_array, &$post_id,
-                                                                              &$topic_id, &$type_of_resource_requested)
+    private static function get_the_topics_and_derive_the_data_surrounding_it($community_id,
+                                                                              &$special_topic_array, $post_id,
+                                                                              $topic_id, &$type_of_resource_requested)
     {
         /**
          * But before we get started let's establish whether or not
