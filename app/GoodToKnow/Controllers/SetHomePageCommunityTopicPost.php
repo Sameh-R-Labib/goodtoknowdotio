@@ -27,7 +27,6 @@ class SetHomePageCommunityTopicPost
 
         global $db;
         global $is_logged_in;
-        global $special_community_array;  // array (key: id of community, value: name of community)
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
@@ -38,7 +37,7 @@ class SetHomePageCommunityTopicPost
 
         $db = db_connect();
 
-        self::mostly_making_sure_chosen_community_is_ok_to_choose($community_id, $special_community_array);
+        self::mostly_making_sure_chosen_community_is_ok_to_choose($community_id);
 
         self::get_the_topics_and_derive_the_data_surrounding_it($community_id, $special_topic_array,
             $post_id, $topic_id, $type_of_resource_requested);
@@ -305,12 +304,12 @@ class SetHomePageCommunityTopicPost
 
     /**
      * @param $community_id
-     * @param $special_community_array
      */
-    private static function mostly_making_sure_chosen_community_is_ok_to_choose($community_id, $special_community_array)
+    private static function mostly_making_sure_chosen_community_is_ok_to_choose($community_id)
     {
         global $db;
         global $sessionMessage;
+        global $special_community_array;
 
         if (!empty($sessionMessage) || $db === false) {
 
