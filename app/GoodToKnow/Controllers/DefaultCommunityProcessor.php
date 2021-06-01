@@ -10,7 +10,6 @@ class DefaultCommunityProcessor
     {
         global $db;
         global $user_id;
-        global $sessionMessage;
         global $special_community_array;
 
 
@@ -19,7 +18,7 @@ class DefaultCommunityProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'community_for_regular_user_prep.php';
 
-        $chosen_id = community_for_regular_user_prep('choice', $special_community_array);
+        $chosen_id = community_for_regular_user_prep('choice');
 
 
         /**

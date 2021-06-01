@@ -4,10 +4,9 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 /**
  * @param string $field_name
- * @param array $special_community_array
  * @return int
  */
-function community_for_regular_user_prep(string $field_name, array $special_community_array): int
+function community_for_regular_user_prep(string $field_name): int
 {
     /**
      * Returns a community id or exits with a message.
@@ -15,8 +14,11 @@ function community_for_regular_user_prep(string $field_name, array $special_comm
      * It will exit if the id is not one of the users ids as found in $special_community_array.
      */
 
-    require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
+    global $special_community_array;
+
+
+    require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
     // int(10) in mysql has max 4294967295
 
