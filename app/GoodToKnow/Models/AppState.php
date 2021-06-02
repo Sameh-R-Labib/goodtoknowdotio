@@ -11,6 +11,13 @@ class AppState
      */
     public $message;
 
+
+    /**
+     * @var string
+     */
+    public $url_of_most_recent_upload;
+
+
     /**
      * AppState constructor.
      */
@@ -19,5 +26,7 @@ class AppState
         $this->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
 
         $_SESSION['message'] = '';
+
+        $this->url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
     }
 }
