@@ -27,7 +27,6 @@ class SetHomePageCommunityTopicPost
 
         global $db;
         global $is_logged_in;
-        global $special_topic_array;
         global $special_post_array;
         global $post_content;
 
@@ -38,8 +37,7 @@ class SetHomePageCommunityTopicPost
 
         self::mostly_making_sure_chosen_community_is_ok_to_choose($community_id);
 
-        self::get_the_topics_and_derive_the_data_surrounding_it($community_id, $special_topic_array,
-            $post_id, $topic_id);
+        self::get_the_topics_and_derive_the_data_surrounding_it($community_id, $post_id, $topic_id);
 
         self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id, $special_post_array);
 
@@ -52,9 +50,8 @@ class SetHomePageCommunityTopicPost
             $special_post_array, $post_id, $post_object, $post_content,
             $post_author_object);
 
-        self::store_derived_info_in_the_session($community_object, $community_id,
-            $special_topic_array, $topic_id, $topic_object, $special_post_array, $post_object, $post_content,
-            $post_author_object, $post_id);
+        self::store_derived_info_in_the_session($community_object, $community_id, $topic_id, $topic_object,
+            $special_post_array, $post_object, $post_content, $post_author_object, $post_id);
 
         redirect_to("/ax1/Home/page");
     }
@@ -62,7 +59,6 @@ class SetHomePageCommunityTopicPost
     /**
      * @param $community_object
      * @param $community_id
-     * @param $special_topic_array
      * @param $topic_id
      * @param $topic_object
      * @param $special_post_array
@@ -71,13 +67,13 @@ class SetHomePageCommunityTopicPost
      * @param $post_author_object
      * @param $post_id
      */
-    private static function store_derived_info_in_the_session(&$community_object, $community_id,
-                                                              $special_topic_array, $topic_id, &$topic_object,
+    private static function store_derived_info_in_the_session(&$community_object, $community_id, $topic_id, &$topic_object,
                                                               $special_post_array, $post_object, $post_content,
                                                               $post_author_object, $post_id)
     {
         global $sessionMessage;
         global $type_of_resource_requested;
+        global $special_topic_array;
 
 
         // First get and store the community_name
@@ -250,15 +246,13 @@ class SetHomePageCommunityTopicPost
 
     /**
      * @param $community_id
-     * @param $special_topic_array
      * @param $post_id
      * @param $topic_id
      */
-    private static function get_the_topics_and_derive_the_data_surrounding_it($community_id,
-                                                                              &$special_topic_array, $post_id,
-                                                                              $topic_id)
+    private static function get_the_topics_and_derive_the_data_surrounding_it($community_id, $post_id, $topic_id)
     {
         global $type_of_resource_requested;
+        global $special_topic_array;
 
         /**
          * But before we get started let's establish whether or not
