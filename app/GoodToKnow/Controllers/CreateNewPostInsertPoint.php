@@ -22,7 +22,6 @@ class CreateNewPostInsertPoint
 
 
         global $db;
-        global $sessionMessage;
         global $html_title;
         global $saved_int01;
         global $special_post_array;
