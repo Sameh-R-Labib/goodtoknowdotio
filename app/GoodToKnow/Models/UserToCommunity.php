@@ -105,10 +105,9 @@ class UserToCommunity extends GoodObject
 
     /**
      * @param array $coms_in_this_system
-     * @param array $coms_user_belongs_to
      * @return array
      */
-    public static function coms_user_does_not_belong_to(array $coms_in_this_system, array $coms_user_belongs_to): array
+    public static function coms_user_does_not_belong_to(array $coms_in_this_system): array
     {
         /**
          * Returns an array of Community objects which the user doesn't belong to.
@@ -118,7 +117,7 @@ class UserToCommunity extends GoodObject
 
         foreach ($coms_in_this_system as $community) {
 
-            if (self::community_is_one_which_user_already_belongs_to($community, $coms_user_belongs_to)) {
+            if (self::community_is_one_which_user_already_belongs_to($community)) {
 
                 continue;
 
@@ -134,11 +133,12 @@ class UserToCommunity extends GoodObject
 
     /**
      * @param object $community
-     * @param array $coms_user_belongs_to
      * @return bool
      */
-    public static function community_is_one_which_user_already_belongs_to(object $community, array $coms_user_belongs_to): bool
+    public static function community_is_one_which_user_already_belongs_to(object $community): bool
     {
+        global $coms_user_belongs_to;
+
         foreach ($coms_user_belongs_to as $object) {
 
             if ($community->id == $object->id) {

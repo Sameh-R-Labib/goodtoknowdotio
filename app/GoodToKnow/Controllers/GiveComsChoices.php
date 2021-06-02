@@ -81,7 +81,7 @@ class GiveComsChoices
 
         // Get communities user DOES NOT belong to.
 
-        $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system, $coms_user_belongs_to);
+        $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system);
 
 
         // Redirect if no communities user doesn't belong to.
