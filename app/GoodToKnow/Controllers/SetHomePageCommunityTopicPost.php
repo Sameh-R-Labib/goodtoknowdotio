@@ -30,7 +30,6 @@ class SetHomePageCommunityTopicPost
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
-        global $type_of_resource_requested;
 
 
         self::abort_if_an_anomalous_condition_exists($is_logged_in);
@@ -40,10 +39,9 @@ class SetHomePageCommunityTopicPost
         self::mostly_making_sure_chosen_community_is_ok_to_choose($community_id);
 
         self::get_the_topics_and_derive_the_data_surrounding_it($community_id, $special_topic_array,
-            $post_id, $topic_id, $type_of_resource_requested);
+            $post_id, $topic_id);
 
-        self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($type_of_resource_requested,
-            $topic_id, $post_id, $special_post_array);
+        self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id, $special_post_array);
 
         $post_object = null;
         $post_author_object = null;
@@ -51,12 +49,12 @@ class SetHomePageCommunityTopicPost
         $topic_object = null;
 
         self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it(
-            $type_of_resource_requested, $special_post_array, $post_id, $post_object, $post_content,
+            $special_post_array, $post_id, $post_object, $post_content,
             $post_author_object);
 
         self::store_derived_info_in_the_session($community_object, $community_id,
             $special_topic_array, $topic_id, $topic_object, $special_post_array, $post_object, $post_content,
-            $post_author_object, $post_id, $type_of_resource_requested);
+            $post_author_object, $post_id);
 
         redirect_to("/ax1/Home/page");
     }
@@ -72,14 +70,14 @@ class SetHomePageCommunityTopicPost
      * @param $post_content
      * @param $post_author_object
      * @param $post_id
-     * @param $type_of_resource_requested
      */
     private static function store_derived_info_in_the_session(&$community_object, $community_id,
                                                               $special_topic_array, $topic_id, &$topic_object,
                                                               $special_post_array, $post_object, $post_content,
-                                                              $post_author_object, $post_id, $type_of_resource_requested)
+                                                              $post_author_object, $post_id)
     {
         global $sessionMessage;
+        global $type_of_resource_requested;
 
 
         // First get and store the community_name
@@ -149,19 +147,20 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $type_of_resource_requested
      * @param $special_post_array
      * @param $post_id
      * @param $post_object
      * @param $post_content
      * @param $post_author_object
      */
-    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($type_of_resource_requested,
-                                                                                                  $special_post_array,
+    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($special_post_array,
                                                                                                   $post_id, &$post_object,
                                                                                                   &$post_content,
                                                                                                   &$post_author_object)
     {
+        global $type_of_resource_requested;
+
+
         if ($type_of_resource_requested === 'post') {
 
             if (!array_key_exists($post_id, $special_post_array)) {
@@ -202,15 +201,16 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $type_of_resource_requested
      * @param $topic_id
      * @param $post_id
      * @param $special_post_array
      */
-    private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it(&$type_of_resource_requested,
-                                                                                                 $topic_id, $post_id,
+    private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id,
                                                                                                  &$special_post_array)
     {
+        global $type_of_resource_requested;
+
+
         /**
          * If the request is for a post then let us
          * make sure that post id is valid.
@@ -253,12 +253,13 @@ class SetHomePageCommunityTopicPost
      * @param $special_topic_array
      * @param $post_id
      * @param $topic_id
-     * @param $type_of_resource_requested
      */
     private static function get_the_topics_and_derive_the_data_surrounding_it($community_id,
                                                                               &$special_topic_array, $post_id,
-                                                                              $topic_id, &$type_of_resource_requested)
+                                                                              $topic_id)
     {
+        global $type_of_resource_requested;
+
         /**
          * But before we get started let's establish whether or not
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
