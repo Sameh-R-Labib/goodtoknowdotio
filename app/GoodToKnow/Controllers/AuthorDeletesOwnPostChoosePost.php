@@ -19,7 +19,6 @@ class AuthorDeletesOwnPostChoosePost
 
         global $db;
         global $special_post_array;
-        global $sessionMessage;
         global $saved_int01;        // id of topic
         global $user_id;
         global $html_title;
