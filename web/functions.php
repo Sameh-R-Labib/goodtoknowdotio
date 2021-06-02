@@ -20,7 +20,9 @@ function kick_out_loggedoutusers()
     global $is_logged_in, $sessionMessage;
 
     if (!$is_logged_in || !empty($sessionMessage)) {
+
         breakout(' Log back in because your session has expired. ');
+
     }
 }
 

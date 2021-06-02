@@ -15,14 +15,13 @@ class LoginScript
     function page()
     {
         global $db;
-        global $is_logged_in;
 
         $db = db_connect();
 
         $submitted_username = '';
         $submitted_password = '';
 
-        self::init($is_logged_in);
+        self::init();
 
         self::assimilate_input($submitted_username, $submitted_password);
 
@@ -192,12 +191,13 @@ class LoginScript
     }
 
     /**
-     * @param $is_logged_in
+     *
      */
-    private static function init($is_logged_in)
+    private static function init()
     {
         global $db;
         global $sessionMessage;
+        global $is_logged_in;
 
         if ($is_logged_in) {
 

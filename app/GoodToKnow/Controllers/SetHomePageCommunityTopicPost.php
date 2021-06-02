@@ -26,10 +26,9 @@ class SetHomePageCommunityTopicPost
 
 
         global $db;
-        global $is_logged_in;
 
 
-        self::abort_if_an_anomalous_condition_exists($is_logged_in);
+        self::abort_if_an_anomalous_condition_exists();
 
         $db = db_connect();
 
@@ -319,11 +318,11 @@ class SetHomePageCommunityTopicPost
 
 
     /**
-     * @param $is_logged_in
      */
-    private static function abort_if_an_anomalous_condition_exists($is_logged_in)
+    private static function abort_if_an_anomalous_condition_exists()
     {
         global $sessionMessage;
+        global $is_logged_in;
 
         if (!$is_logged_in || !empty($sessionMessage)) {
 
