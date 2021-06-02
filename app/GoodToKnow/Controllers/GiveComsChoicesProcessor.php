@@ -40,11 +40,13 @@ class GiveComsChoicesProcessor
         $array_of_usertocommunity_objects = [];
 
         foreach ($submitted_community_ids_array as $a_community_id) {
+
             $a_community_id = (int)$a_community_id;
 
             $usertocommunity_object_as_array = ['user_id' => $saved_int01, 'community_id' => $a_community_id];
 
             $array_of_usertocommunity_objects[] = UserToCommunity::array_to_object($usertocommunity_object_as_array);
+
         }
 
 

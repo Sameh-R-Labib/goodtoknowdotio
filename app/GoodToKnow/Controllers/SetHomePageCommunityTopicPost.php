@@ -45,8 +45,7 @@ class SetHomePageCommunityTopicPost
         self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, $post_object,
             $post_author_object);
 
-        self::store_derived_info_in_the_session($community_id, $topic_id, $topic_object,
-            $post_object, $post_author_object, $post_id);
+        self::store_derived_info_in_the_session($community_id, $topic_id, $post_object, $post_author_object, $post_id);
 
         redirect_to("/ax1/Home/page");
     }
@@ -54,12 +53,11 @@ class SetHomePageCommunityTopicPost
     /**
      * @param $community_id
      * @param $topic_id
-     * @param $topic_object
      * @param $post_object
      * @param $post_author_object
      * @param $post_id
      */
-    private static function store_derived_info_in_the_session($community_id, $topic_id, &$topic_object,
+    private static function store_derived_info_in_the_session($community_id, $topic_id,
                                                               $post_object, $post_author_object, $post_id)
     {
         global $sessionMessage;
@@ -68,6 +66,7 @@ class SetHomePageCommunityTopicPost
         global $special_post_array;
         global $post_content;
         global $community_object;
+        global $topic_object;
 
 
         // First get and store the community_name
