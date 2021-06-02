@@ -15,7 +15,7 @@ class TopicDescriptionEditorForm
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_int01; // community id
         global $html_title;
         global $topic_object;

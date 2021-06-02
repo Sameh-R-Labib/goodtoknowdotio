@@ -16,7 +16,7 @@ class PolishARecurringPaymentRecord
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;            // We need this.
         global $html_title;
         global $array_of_recurring_payment_objects;
@@ -35,7 +35,7 @@ class PolishARecurringPaymentRecord
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 
-        if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
+        if (!$array_of_recurring_payment_objects || !empty($app_state->message)) {
 
             breakout(' I could NOT find any recurring payment records ¯\_(ツ)_/¯. ');
 

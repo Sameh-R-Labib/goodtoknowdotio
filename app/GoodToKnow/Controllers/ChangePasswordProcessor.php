@@ -12,7 +12,7 @@ class ChangePasswordProcessor
     {
         global $db;
         global $user_id;
-        global $sessionMessage;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
@@ -62,7 +62,7 @@ class ChangePasswordProcessor
 
         $is_saved = $user_object->save();
 
-        if (!$is_saved || !empty($sessionMessage)) {
+        if (!$is_saved || !empty($app_state->message)) {
 
             breakout(' Failed to update your record. ');
 

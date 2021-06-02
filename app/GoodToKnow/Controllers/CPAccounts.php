@@ -6,7 +6,7 @@ class CPAccounts
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $show_poof;
         global $page;
@@ -24,7 +24,7 @@ class CPAccounts
         $html_title = 'Accounts';
 
 
-        $sessionMessage .= ' Manage accounts. ';
+        $app_state->message .= ' Manage accounts. ';
 
 
         require VIEWS . DIRSEP . 'cpaccounts.php';

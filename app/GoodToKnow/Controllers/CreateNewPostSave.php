@@ -10,7 +10,7 @@ class CreateNewPostSave
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $type_of_resource_requested;
         global $user_id;
@@ -100,12 +100,12 @@ class CreateNewPostSave
 
         } catch (\Exception $e) {
 
-            $sessionMessage .= ' CreateNewPostSave page() caught a thrown exception: ' .
+            $app_state->message .= ' CreateNewPostSave page() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout('');
 

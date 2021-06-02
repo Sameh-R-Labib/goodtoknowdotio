@@ -9,7 +9,7 @@ class Inbox
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $show_poof;
         global $html_title;
@@ -52,7 +52,7 @@ class Inbox
         }
 
 
-        $sessionMessage .= ' 90 day old messages will be deleted by admin. ';
+        $app_state->message .= ' 90 day old messages will be deleted by admin. ';
 
 
         require VIEWS . DIRSEP . 'inbox.php';

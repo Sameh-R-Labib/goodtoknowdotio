@@ -6,7 +6,7 @@ class BitcoinSeeMyRecords
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -40,7 +40,7 @@ class BitcoinSeeMyRecords
 
         $show_poof = true;
 
-        $sessionMessage .= ' Here are your ₿ records. ';
+        $app_state->message .= ' Here are your ₿ records. ';
 
         require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';
     }

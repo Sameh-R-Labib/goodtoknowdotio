@@ -17,7 +17,7 @@ class DefaultTimeZoneProcessor
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
 
 

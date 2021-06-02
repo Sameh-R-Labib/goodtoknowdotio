@@ -17,7 +17,7 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
      */
 
     global $db;
-    global $sessionMessage;
+    global $app_state;
 
 
     /**
@@ -45,7 +45,7 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
 
     $array_of_objects = BankingAcctForBalances::find_by_sql($sql);
 
-    if (!$array_of_objects || !empty($sessionMessage)) {
+    if (!$array_of_objects || !empty($app_state->message)) {
 
         breakout(' I could NOT find any banking acct for balances ¯\_(ツ)_/¯ ');
 

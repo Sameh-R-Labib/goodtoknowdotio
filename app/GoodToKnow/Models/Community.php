@@ -43,14 +43,14 @@ class Community extends GoodObject
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
         $sql = 'SELECT * FROM `communities`
                 WHERE `community_name` = "' . $db->real_escape_string($community_name) . '" LIMIT 1';
 
         $array_of_Community_objects = parent::find_by_sql($sql);
 
-        $temp_error = trim($sessionMessage);
+        $temp_error = trim($app_state->message);
 
         if (!$array_of_Community_objects || !empty($temp_error)) {
 

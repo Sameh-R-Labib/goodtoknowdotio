@@ -6,7 +6,7 @@ class CPRecurringPayments
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPRecurringPayments
         $html_title = 'Recurring Payments';
 
 
-        $sessionMessage .= ' Manage recurring payments. ';
+        $app_state->message .= ' Manage recurring payments. ';
 
 
         require VIEWS . DIRSEP . 'cprecurringpayments.php';

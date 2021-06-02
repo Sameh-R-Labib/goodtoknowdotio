@@ -1,7 +1,7 @@
 <?php
 
 
-global $sessionMessage;
+global $app_state;
 
 
 /**
@@ -57,7 +57,7 @@ switch ($choice) {
         $max = time();
         break;
     default:
-        $sessionMessage .= " Unexpectedly the switch statement failed. ";
+        $app_state->message .= " Unexpectedly the switch statement failed. ";
         breakout('');
 }
 

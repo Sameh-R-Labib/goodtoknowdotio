@@ -13,7 +13,7 @@ class WhatIsThisSite
          */
 
 
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $show_poof;
         global $page;
@@ -32,7 +32,7 @@ class WhatIsThisSite
 
         $show_poof = true;
 
-        $sessionMessage = " Read and decide if you'd like to use this. ";
+        $app_state->message = " Read and decide if you'd like to use this. ";
 
         require VIEWS . DIRSEP . 'whatisthissite.php';
     }

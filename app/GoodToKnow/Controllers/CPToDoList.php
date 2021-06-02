@@ -6,7 +6,7 @@ class CPToDoList
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPToDoList
         $html_title = 'Task List';
 
 
-        $sessionMessage .= ' Manage to-do list. ';
+        $app_state->message .= ' Manage to-do list. ';
 
 
         require VIEWS . DIRSEP . 'cptodolist.php';

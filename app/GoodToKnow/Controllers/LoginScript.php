@@ -40,7 +40,7 @@ class LoginScript
     private static function store_application_state(object $user)
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
         /**
          * Put user's data in session.
@@ -84,8 +84,8 @@ class LoginScript
 
         if ($special_community_array === false) {
 
-            $sessionMessage .= " Failed to find the array of the user's communities. ";
-            $_SESSION['message'] = $sessionMessage;
+            $app_state->message .= " Failed to find the array of the user's communities. ";
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -111,8 +111,8 @@ class LoginScript
 
         if (!$special_topic_array) {
 
-            $sessionMessage .= " I didn't find any topics for your default community. ";
-            $_SESSION['message'] .= $sessionMessage;
+            $app_state->message .= " I didn't find any topics for your default community. ";
+            $_SESSION['message'] .= $app_state->message;
 
             redirect_to("/ax1/Home/page");
 
@@ -128,12 +128,12 @@ class LoginScript
      */
     private static function login_the_user($user)
     {
-        global $sessionMessage;
+        global $app_state;
 
         if ($user === false) {
 
-            $sessionMessage .= " Authentication failed! ";
-            $_SESSION['message'] = $sessionMessage;
+            $app_state->message .= " Authentication failed! ";
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -148,8 +148,8 @@ class LoginScript
          */
         if ($user->is_suspended) {
 
-            $sessionMessage .= " No active account exists for this username. ";
-            $_SESSION['message'] = $sessionMessage;
+            $app_state->message .= " No active account exists for this username. ";
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -168,7 +168,7 @@ class LoginScript
      */
     private static function assimilate_input(string &$submitted_username, string &$submitted_password)
     {
-        global $sessionMessage;
+        global $app_state;
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
@@ -183,7 +183,7 @@ class LoginScript
         if (!is_username_syntactically($submitted_username) ||
             !is_password_syntactically($submitted_password)) {
 
-            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -196,14 +196,14 @@ class LoginScript
     private static function init()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $is_logged_in;
 
         if ($is_logged_in) {
 
-            $sessionMessage .= " I don't know exactly why you ended up on this page but what I do know is that
+            $app_state->message .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";
-            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -212,10 +212,10 @@ class LoginScript
         // For denial of service attacks
         sleep(1);
 
-        if (!empty($sessionMessage) || $db === false) {
+        if (!empty($app_state->message) || $db === false) {
 
-            $sessionMessage .= ' Database connection failed. ';
-            $_SESSION['message'] = $sessionMessage;
+            $app_state->message .= ' Database connection failed. ';
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 

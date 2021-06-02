@@ -15,7 +15,7 @@ class SpyCommoditiesSoldYearFilter
          */
 
 
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $show_poof;
         global $page;
@@ -50,7 +50,7 @@ class SpyCommoditiesSoldYearFilter
          * Prep the view.
          */
 
-        $sessionMessage .= " Here is one year's commodities sold records. ";
+        $app_state->message .= " Here is one year's commodities sold records. ";
 
         $html_title = "One year's commodities sold records";
 

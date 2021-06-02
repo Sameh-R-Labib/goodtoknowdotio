@@ -14,8 +14,6 @@ function any_community_ff_prep(): int
      * Here any existing community id is considered a valid one.
      */
 
-    global $db;
-
     require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
     $id = integer_form_field_prep('choice', 1, PHP_INT_MAX);

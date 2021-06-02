@@ -21,7 +21,7 @@ class PolishARecurringPaymentRecordSubmit
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_int01;    // recurring_payment id
         global $time;
 

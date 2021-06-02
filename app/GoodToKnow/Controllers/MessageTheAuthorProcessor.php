@@ -15,7 +15,7 @@ class MessageTheAuthorProcessor
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $author_id;
         global $author_username;
         global $message_object;

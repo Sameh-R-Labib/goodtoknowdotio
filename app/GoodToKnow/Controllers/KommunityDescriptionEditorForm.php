@@ -9,7 +9,7 @@ class KommunityDescriptionEditorForm
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_int01; // community id
         global $html_title;
         global $community_object;

@@ -14,7 +14,7 @@ class AbolishYearsCommoditiesSoldGetYear
          * 3) Give confirmation of deletion.
          */
 
-        global $sessionMessage;
+        global $app_state;
 
         kick_out_nonadmins();
 
@@ -57,12 +57,12 @@ class AbolishYearsCommoditiesSoldGetYear
 
         } catch (\Exception $e) {
 
-            $sessionMessage .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
+            $app_state->message .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout('');
 

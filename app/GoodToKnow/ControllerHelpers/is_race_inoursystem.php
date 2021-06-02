@@ -14,11 +14,11 @@ function is_race_inoursystem(string &$race): bool
      * Must be one of the ones I have in the form.
      */
 
-    global $sessionMessage;
+    global $app_state;
 
     $race = trim($race);
     if (empty($race)) {
-        $sessionMessage .= " The value for race is missing. ";
+        $app_state->message .= " The value for race is missing. ";
         return false;
     }
 
@@ -27,7 +27,7 @@ function is_race_inoursystem(string &$race): bool
         'native-american'];
 
     if (!in_array($race, $races)) {
-        $sessionMessage .= " Your race field does not contain a valid value. ";
+        $app_state->message .= " Your race field does not contain a valid value. ";
         return false;
     }
 

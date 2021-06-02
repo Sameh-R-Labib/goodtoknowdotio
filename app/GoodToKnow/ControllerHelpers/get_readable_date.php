@@ -10,7 +10,5 @@ function get_readable_date($created): string
 {
     $created = (int)$created;
 
-    $date = date('m/d/Y T ', $created);
-
-    return $date;
+    return date('m/d/Y T ', $created);
 }

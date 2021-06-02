@@ -8,7 +8,7 @@ class ControlPanel
     {
         global $is_logged_in;
         global $is_admin;
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $page;
         global $show_poof;
@@ -30,7 +30,7 @@ class ControlPanel
         $show_poof = true;
 
 
-        $sessionMessage .= " Welcome to your Control Panel. ";
+        $app_state->message .= " Welcome to your Control Panel. ";
 
 
         require VIEWS . DIRSEP . 'controlpanel.php';

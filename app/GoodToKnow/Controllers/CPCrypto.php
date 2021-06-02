@@ -6,7 +6,7 @@ class CPCrypto
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPCrypto
         $html_title = 'Crypto';
 
 
-        $sessionMessage .= ' Manage crypto. ';
+        $app_state->message .= ' Manage crypto. ';
 
 
         require VIEWS . DIRSEP . 'cpcrypto.php';

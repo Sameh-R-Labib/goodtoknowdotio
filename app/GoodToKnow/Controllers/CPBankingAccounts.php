@@ -6,7 +6,7 @@ class CPBankingAccounts
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPBankingAccounts
         $html_title = 'CRUD For Bank Accounts And Their Starting Balances';
 
 
-        $sessionMessage .= ' Manage banking accounts. ';
+        $app_state->message .= ' Manage banking accounts. ';
 
 
         require VIEWS . DIRSEP . 'cpbankingaccounts.php';

@@ -9,7 +9,7 @@ class MemberMemoEditorForm
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_str01; // Has user's username. Is changed in this file and is used in the view.
         global $html_title;
         global $user_object;

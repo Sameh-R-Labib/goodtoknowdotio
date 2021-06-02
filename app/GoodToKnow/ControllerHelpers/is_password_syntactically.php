@@ -8,7 +8,7 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function is_password_syntactically(string &$password): bool
 {
-    global $sessionMessage;
+    global $app_state;
 
     /**
      * We want to help prevent sql injection
@@ -18,7 +18,7 @@ function is_password_syntactically(string &$password): bool
 
     if (empty($trimmed)) {
 
-        $sessionMessage .= " The password field is required. ";
+        $app_state->message .= " The password field is required. ";
 
         return false;
     }
@@ -32,7 +32,7 @@ function is_password_syntactically(string &$password): bool
 
     if ($length > 264 || $length < 10) {
 
-        $sessionMessage .= " The length of your password must be 10 to 264 characters. ";
+        $app_state->message .= " The length of your password must be 10 to 264 characters. ";
 
         return false;
     }
@@ -44,7 +44,7 @@ function is_password_syntactically(string &$password): bool
 
     if (strpos($password, ' ')) {
 
-        $sessionMessage .= " Non-conforming password because it contains space. ";
+        $app_state->message .= " Non-conforming password because it contains space. ";
 
         return false;
     }
@@ -56,7 +56,7 @@ function is_password_syntactically(string &$password): bool
 
     if (preg_match('/[\'$?<>=]/', $password)) {
 
-        $sessionMessage .= " Non-conforming password because it contains one or more disallowed characters. ";
+        $app_state->message .= " Non-conforming password because it contains one or more disallowed characters. ";
 
         return false;
     }
@@ -95,42 +95,42 @@ function is_password_syntactically(string &$password): bool
 
     if ($uc > $max) {
 
-        $sessionMessage .= " The password has too many upper case characters. ";
+        $app_state->message .= " The password has too many upper case characters. ";
 
         return false;
     }
 
     if ($lc > $max) {
 
-        $sessionMessage .= " The password has too many lower case characters. ";
+        $app_state->message .= " The password has too many lower case characters. ";
 
         return false;
     }
 
     if ($num > $max) {
 
-        $sessionMessage .= " The password has too many numeric characters. ";
+        $app_state->message .= " The password has too many numeric characters. ";
 
         return false;
     }
 
     if ($num < 2) {
 
-        $sessionMessage .= " Your password needs at least two digit. ";
+        $app_state->message .= " Your password needs at least two digit. ";
 
         return false;
     }
 
     if ($other < 2) {
 
-        $sessionMessage .= " Your password needs at least two non-alphanumeric characters. ";
+        $app_state->message .= " Your password needs at least two non-alphanumeric characters. ";
 
         return false;
     }
 
     if ($other > $max) {
 
-        $sessionMessage .= " The password has too many special characters. ";
+        $app_state->message .= " The password has too many special characters. ";
 
         return false;
     }

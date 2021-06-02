@@ -6,7 +6,7 @@ class CPPostings
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $html_title;
         global $show_poof;
@@ -24,7 +24,7 @@ class CPPostings
         $html_title = 'Postings';
 
 
-        $sessionMessage .= ' Manage postings. ';
+        $app_state->message .= ' Manage postings. ';
 
 
         require VIEWS . DIRSEP . 'cppostings.php';

@@ -4,7 +4,7 @@ use GoodToKnow\Models\Post;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $chosen_post_id;
 global $post_object;
 

@@ -119,7 +119,7 @@ class User extends GoodObject
     public static function authenticate(string $username, string $password)
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
         /**
          * What you see here could have been done using the find_by_sql
@@ -137,7 +137,7 @@ class User extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $sessionMessage .= $stmt->error . ' ';
+                $app_state->message .= $stmt->error . ' ';
 
                 return false;
 
@@ -166,7 +166,7 @@ class User extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $sessionMessage .= ' User::authenticate() caught a thrown exception: ' .
+            $app_state->message .= ' User::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -175,7 +175,7 @@ class User extends GoodObject
 
         if (!password_verify($password, $user->password)) {
 
-            $sessionMessage .= " Authentication failed! ";
+            $app_state->message .= " Authentication failed! ";
 
             return false;
         }
@@ -219,14 +219,14 @@ class User extends GoodObject
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
         $sql = 'SELECT * FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($sql);
 
-        if (!$array_of_User_objects || !empty($sessionMessage)) {
+        if (!$array_of_User_objects || !empty($app_state->message)) {
 
             return false;
 

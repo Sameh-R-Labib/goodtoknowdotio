@@ -1,7 +1,7 @@
 <?php
 
 global $special_topic_array;
-global $sessionMessage;
+global $app_state;
 global $community_id;
 
 kick_out_loggedoutusers();

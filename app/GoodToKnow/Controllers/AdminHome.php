@@ -8,7 +8,7 @@ class AdminHome
     {
         global $page;
         global $show_poof;
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
 
         kick_out_nonadmins();
@@ -19,7 +19,7 @@ class AdminHome
 
         $show_poof = true;
 
-        $sessionMessage .= " Welcome to your Admin Control Panel. ";
+        $app_state->message .= " Welcome to your Admin Control Panel. ";
 
         require VIEWS . DIRSEP . 'adminhome.php';
     }

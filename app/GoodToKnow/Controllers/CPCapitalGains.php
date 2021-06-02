@@ -6,7 +6,7 @@ class CPCapitalGains
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPCapitalGains
         $html_title = 'Capital Gains';
 
 
-        $sessionMessage .= ' Manage capital gains. ';
+        $app_state->message .= ' Manage capital gains. ';
 
 
         require VIEWS . DIRSEP . 'cpcapitalgains.php';

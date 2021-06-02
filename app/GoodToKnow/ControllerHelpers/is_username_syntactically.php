@@ -8,7 +8,7 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function is_username_syntactically(string &$username): bool
 {
-    global $sessionMessage;
+    global $app_state;
 
     /**
      * Returns true if $username fits the requirements for what a GTK.io username should look like.
@@ -34,7 +34,7 @@ function is_username_syntactically(string &$username): bool
 
     if (empty($username)) {
 
-        $sessionMessage .= " The username field was empty. ";
+        $app_state->message .= " The username field was empty. ";
 
         return false;
     }
@@ -49,7 +49,7 @@ function is_username_syntactically(string &$username): bool
 
     if (count($words) != 2) {
 
-        $sessionMessage .= " The username must have two parts separated by an underscore character. ";
+        $app_state->message .= " The username must have two parts separated by an underscore character. ";
 
         return false;
     }
@@ -66,7 +66,7 @@ function is_username_syntactically(string &$username): bool
 
     if (!$is_all_alpha) {
 
-        $sessionMessage .= " The username's first part must have alphabet characters only. ";
+        $app_state->message .= " The username's first part must have alphabet characters only. ";
 
         return false;
     }
@@ -84,7 +84,7 @@ function is_username_syntactically(string &$username): bool
 
     if (!$is_cap) {
 
-        $sessionMessage .= " The username needs to start with a capital letter. ";
+        $app_state->message .= " The username needs to start with a capital letter. ";
 
         return false;
     }
@@ -100,7 +100,7 @@ function is_username_syntactically(string &$username): bool
 
     if (!$is_lower) {
 
-        $sessionMessage .= " The username's first part has a letter with improper case. ";
+        $app_state->message .= " The username's first part has a letter with improper case. ";
 
         return false;
     }
@@ -114,7 +114,7 @@ function is_username_syntactically(string &$username): bool
 
     if ($length > 9 || $length < 4) {
 
-        $sessionMessage .= " The username's first part doesn't have a proper length. ";
+        $app_state->message .= " The username's first part doesn't have a proper length. ";
 
         return false;
     }
@@ -128,14 +128,14 @@ function is_username_syntactically(string &$username): bool
 
     if ($length_of_second_word != 2) {
 
-        $sessionMessage .= " The username's second part is not two digits. ";
+        $app_state->message .= " The username's second part is not two digits. ";
 
         return false;
     }
 
     if (!is_numeric($last_word)) {
 
-        $sessionMessage .= " The username's second part is not numeric. ";
+        $app_state->message .= " The username's second part is not numeric. ";
 
         return false;
     }

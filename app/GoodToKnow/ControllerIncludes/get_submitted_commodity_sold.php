@@ -8,7 +8,7 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $user_id;
 global $timezone;
-global $sessionMessage;
+global $app_state;
 global $saved_int01;    // commodities_sold id
 global $time_bought;
 global $time_sold;

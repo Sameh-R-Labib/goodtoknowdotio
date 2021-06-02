@@ -6,7 +6,7 @@ class CPPurges
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPPurges
         $html_title = 'Purges';
 
 
-        $sessionMessage .= ' Manage purges. ';
+        $app_state->message .= ' Manage purges. ';
 
 
         require VIEWS . DIRSEP . 'cppurges.php';

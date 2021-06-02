@@ -16,7 +16,7 @@ class DeleteABitcoinRecordDelete
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_int01;
 
 

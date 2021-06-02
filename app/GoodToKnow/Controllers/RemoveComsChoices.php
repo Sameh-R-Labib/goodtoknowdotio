@@ -10,7 +10,7 @@ class RemoveComsChoices
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_str01;    // user's username
         global $html_title;
         global $coms_user_belongs_to;

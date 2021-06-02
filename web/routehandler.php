@@ -4,6 +4,8 @@
  * Time: 8:22 PM
  */
 
+use GoodToKnow\Models\AppState;
+
 require(__DIR__ . '/../config.php');
 
 const DIRSEP = DIRECTORY_SEPARATOR;
@@ -89,8 +91,12 @@ session_start();
 // from happening IF our server should crash. The session file may survive a server crash; and, if it does, then
 // "the message" would survive the server crash. And, that's undesirable. On the other hand it's not a big deal if
 // the other state variables survive a server crash because we're only deleting them to save disc space.
-$sessionMessage = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
-$_SESSION['message'] = '';
+//$app_state->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
+//$_SESSION['message'] = '';
+
+
+$app_state = new AppState();
+
 
 $url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
 

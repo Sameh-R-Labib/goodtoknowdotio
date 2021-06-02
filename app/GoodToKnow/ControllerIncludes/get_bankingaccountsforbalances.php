@@ -5,7 +5,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 
 global $db;
 global $array_of_objects;
-global $sessionMessage;
+global $app_state;
 global $user_id;            // We need this.
 
 
@@ -22,7 +22,7 @@ $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->re
 
 $array_of_objects = BankingAcctForBalances::find_by_sql($sql);
 
-if (!$array_of_objects || !empty($sessionMessage)) {
+if (!$array_of_objects || !empty($app_state->message)) {
 
     breakout(' I could NOT find any banking accounts for balances ¯\_(ツ)_/¯. ');
 

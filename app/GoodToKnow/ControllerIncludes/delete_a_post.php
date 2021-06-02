@@ -5,7 +5,7 @@ use GoodToKnow\Models\TopicToPost;
 
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $saved_int01;
 global $saved_int02;
 global $saved_str01;
@@ -39,7 +39,7 @@ $sql = 'SELECT * FROM `topic_to_post`
 
 $array_of_objects = TopicToPost::find_by_sql($sql);
 
-if (!$array_of_objects || !empty($sessionMessage)) {
+if (!$array_of_objects || !empty($app_state->message)) {
 
     breakout(' Unexpectedly failed to get a TopicToPost object to delete. ');
 

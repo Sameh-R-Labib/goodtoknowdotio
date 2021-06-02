@@ -9,7 +9,7 @@ class AdminPassCodeGenerationForm
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $community_array;
 

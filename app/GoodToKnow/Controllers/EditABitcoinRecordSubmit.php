@@ -20,7 +20,7 @@ class EditABitcoinRecordSubmit
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_int01;    // bitcoin record id
         global $bitcoin_object;
         global $time;

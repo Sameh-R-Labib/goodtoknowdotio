@@ -4,7 +4,7 @@ use GoodToKnow\Models\MessageToUser;
 
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $user_id;
 global $messages_last_quantity;
 global $messages_last_time;
@@ -17,8 +17,8 @@ if ($messages_last_time === null) {
 
         if ($db === false) {
 
-            $sessionMessage .= " Failed to connect to the database. ";
-            $_SESSION['message'] = $sessionMessage;
+            $app_state->message .= " Failed to connect to the database. ";
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -30,14 +30,14 @@ if ($messages_last_time === null) {
 
     if ($quantity === false) {
 
-        $sessionMessage .= " Failed to get quantity of messages. ";
-        $_SESSION['message'] = $sessionMessage;
+        $app_state->message .= " Failed to get quantity of messages. ";
+        $_SESSION['message'] = $app_state->message;
         reset_feature_session_vars();
         redirect_to("/ax1/InfiniteLoopPrevent/page");
 
     }
 
-    $sessionMessage .= "<br><br>You have {$quantity} message(s).
+    $app_state->message .= "<br><br>You have {$quantity} message(s).
     <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
@@ -52,8 +52,8 @@ if ($messages_last_time === null) {
 
             if ($db === false) {
 
-                $sessionMessage .= " Failed to connect to the database. ";
-                $_SESSION['message'] = $sessionMessage;
+                $app_state->message .= " Failed to connect to the database. ";
+                $_SESSION['message'] = $app_state->message;
                 reset_feature_session_vars();
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -64,8 +64,8 @@ if ($messages_last_time === null) {
 
         if ($quantity === false) {
 
-            $sessionMessage .= " Failed to get quantity of messages. ";
-            $_SESSION['message'] = $sessionMessage;
+            $app_state->message .= " Failed to get quantity of messages. ";
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -75,7 +75,7 @@ if ($messages_last_time === null) {
 
         if ($quantity > $messages_last_quantity) {
 
-            $sessionMessage .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
+            $app_state->message .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
             <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
             $_SESSION['messages_last_quantity'] = $quantity;

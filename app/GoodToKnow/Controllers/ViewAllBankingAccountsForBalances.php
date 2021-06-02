@@ -14,7 +14,7 @@ class ViewAllBankingAccountsForBalances
          */
 
 
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $show_poof;
         global $page;
@@ -50,7 +50,7 @@ class ViewAllBankingAccountsForBalances
 
         $page = 'ViewAllBankingAccountsForBalances';
 
-        $sessionMessage .= " Here are all your bank accounts. ";
+        $app_state->message .= " Here are all your bank accounts. ";
 
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';
     }

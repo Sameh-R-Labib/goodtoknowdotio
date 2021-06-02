@@ -43,7 +43,7 @@ class UserToCommunity extends GoodObject
          */
 
 
-        global $sessionMessage;
+        global $app_state;
 
 
         // This is what we hope to return
@@ -61,7 +61,7 @@ class UserToCommunity extends GoodObject
 
         if (!$user_to_community_array) {
 
-            $sessionMessage .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
+            $app_state->message .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
 
             return $array_of_coms_for_this_user;
 
@@ -91,7 +91,7 @@ class UserToCommunity extends GoodObject
 
         if (empty($array_of_coms_for_this_user)) {
 
-            $sessionMessage .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
+            $app_state->message .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
 
             return false;
 
@@ -167,7 +167,7 @@ class UserToCommunity extends GoodObject
          */
 
 
-        global $sessionMessage;
+        global $app_state;
 
 
         /**
@@ -180,7 +180,7 @@ class UserToCommunity extends GoodObject
 
         if (!$array_of_user_to_community_objects) {
 
-            $sessionMessage .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
+            $app_state->message .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
 
             return false;
 
@@ -203,7 +203,7 @@ class UserToCommunity extends GoodObject
 
             if (!$special_community_array[$object->community_id]) {
 
-                $sessionMessage .= " find_communities_of_user() says err_no 20848. ";
+                $app_state->message .= " find_communities_of_user() says err_no 20848. ";
 
                 return false;
 

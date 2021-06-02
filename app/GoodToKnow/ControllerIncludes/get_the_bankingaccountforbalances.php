@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
 global $object;
-global $sessionMessage;
+global $app_state;
 global $user_id;
 
 

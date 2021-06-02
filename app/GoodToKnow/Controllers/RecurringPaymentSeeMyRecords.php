@@ -16,7 +16,7 @@ class RecurringPaymentSeeMyRecords
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $show_poof;
         global $html_title;
@@ -37,7 +37,7 @@ class RecurringPaymentSeeMyRecords
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 
-        if (!$array_of_recurring_payment_objects || !empty($sessionMessage)) {
+        if (!$array_of_recurring_payment_objects || !empty($app_state->message)) {
 
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯ ');
 
@@ -72,7 +72,7 @@ class RecurringPaymentSeeMyRecords
         $html_title = "Your recurring transactions";
 
 
-        $sessionMessage .= " Here are your recurring transactions. ";
+        $app_state->message .= " Here are your recurring transactions. ";
 
 
         require VIEWS . DIRSEP . 'recurringpaymentseemyrecords.php';

@@ -9,7 +9,7 @@ class RemoveComsChoicesProcessor
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_str01; // Has user's username
         global $saved_int01; // Has user's id
         global $submitted_community_ids_array;

@@ -23,7 +23,7 @@ class BalanceOutTheSequenceNumbersSave
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
 
         /**

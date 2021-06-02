@@ -22,7 +22,7 @@ class NewTopicIPProcessor
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $community_id;
 
 

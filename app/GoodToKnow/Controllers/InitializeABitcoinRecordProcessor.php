@@ -18,7 +18,7 @@ class InitializeABitcoinRecordProcessor
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $time;
 
@@ -78,7 +78,7 @@ class InitializeABitcoinRecordProcessor
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(' The save method for Bitcoin did not return false but it did send back a message.
              Therefore, it probably did not create the Bitcoin record. ');

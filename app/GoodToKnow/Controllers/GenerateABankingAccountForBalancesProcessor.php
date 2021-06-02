@@ -17,7 +17,7 @@ class GenerateABankingAccountForBalancesProcessor
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $time;
 
@@ -72,7 +72,7 @@ class GenerateABankingAccountForBalancesProcessor
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(' Your save for bank account did not fail but it did send back a message.
              Therefore, it probably did not create the bank account 😟 ');

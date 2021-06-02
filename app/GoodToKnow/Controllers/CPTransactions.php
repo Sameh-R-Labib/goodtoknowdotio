@@ -6,7 +6,7 @@ class CPTransactions
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPTransactions
         $html_title = 'Transactions';
 
 
-        $sessionMessage .= ' Manage my copy of my bank transactions. ';
+        $app_state->message .= ' Manage my copy of my bank transactions. ';
 
 
         require VIEWS . DIRSEP . 'cptransactions.php';

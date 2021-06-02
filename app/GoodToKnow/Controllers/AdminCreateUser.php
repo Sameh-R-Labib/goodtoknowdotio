@@ -16,7 +16,7 @@ class AdminCreateUser
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $saved_int01;    // choice
 
         kick_out_nonadmins();
@@ -102,7 +102,7 @@ class AdminCreateUser
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(' The save method for User did not return false but it did send back a message.
              Therefore, it probably did not create your account. ');
@@ -128,7 +128,7 @@ class AdminCreateUser
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(' The save method for UserToCommunity did not return false but it did send back a message.
              Therefore, it probably did not create the association for your account. ');

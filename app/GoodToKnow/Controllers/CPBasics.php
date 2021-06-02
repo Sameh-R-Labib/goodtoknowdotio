@@ -6,7 +6,7 @@ class CPBasics
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPBasics
         $html_title = 'Basics';
 
 
-        $sessionMessage .= ' Manage account and posts. ';
+        $app_state->message .= ' Manage account and posts. ';
 
 
         require VIEWS . DIRSEP . 'cpbasics.php';

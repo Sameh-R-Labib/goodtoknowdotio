@@ -16,7 +16,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
 
 
@@ -54,7 +54,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(' The object\'s save method did not return false but it did send
             back a message. Therefore, it most likely did not create a new record. ');

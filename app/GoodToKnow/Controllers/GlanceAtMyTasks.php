@@ -17,7 +17,7 @@ class GlanceAtMyTasks
 
         global $db;
         global $user_id;
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $show_poof;
         global $page;
@@ -37,7 +37,7 @@ class GlanceAtMyTasks
 
         $array = Task::find_by_sql($sql);
 
-        if (!$array || !empty($sessionMessage)) {
+        if (!$array || !empty($app_state->message)) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 
@@ -71,7 +71,7 @@ class GlanceAtMyTasks
 
         $show_poof = true;
 
-        $sessionMessage .= ' ʘ‿ʘ at your Tasks. ';
+        $app_state->message .= ' ʘ‿ʘ at your Tasks. ';
 
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
     }

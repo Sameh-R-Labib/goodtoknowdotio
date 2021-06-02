@@ -4,7 +4,7 @@ use GoodToKnow\Models\Bitcoin;
 
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $array_of_bitcoin_objects;
 global $user_id;            // We need this.
 global $html_title;
@@ -25,7 +25,7 @@ $sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($
 
 $array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
 
-if (!$array_of_bitcoin_objects || !empty($sessionMessage)) {
+if (!$array_of_bitcoin_objects || !empty($app_state->message)) {
 
     breakout(' I could NOT find any bitcoin records ¯\_(ツ)_/¯. ');
 

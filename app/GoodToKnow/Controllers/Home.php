@@ -45,7 +45,7 @@ class Home
 
     private static function put_together_a_good_sessionmessage()
     {
-        global $sessionMessage;
+        global $app_state;
         global $type_of_resource_requested;
         global $community_description;
         global $topic_description;
@@ -53,25 +53,25 @@ class Home
 
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($community_description))) {
-                if (empty(trim($sessionMessage))) {
-                    $sessionMessage .= ' ' . nl2br($community_description, false) . ' ';
+                if (empty(trim($app_state->message))) {
+                    $app_state->message .= ' ' . nl2br($community_description, false) . ' ';
                 }
             }
         } elseif ($type_of_resource_requested === 'topic') {
             if (!empty(trim($topic_description))) {
-                if (empty(trim($sessionMessage))) {
-                    $sessionMessage .= ' ' . nl2br($topic_description, false) . ' ';
+                if (empty(trim($app_state->message))) {
+                    $app_state->message .= ' ' . nl2br($topic_description, false) . ' ';
                 }
             }
         } else {
             if (!empty(trim($post_full_name))) {
-                if (empty(trim($sessionMessage))) {
-                    $sessionMessage .= ' ' . $post_full_name . ' ';
+                if (empty(trim($app_state->message))) {
+                    $app_state->message .= ' ' . $post_full_name . ' ';
                 }
             }
         }
 
-        $sessionMessage .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
+        $app_state->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
             <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a>
             <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
     }
@@ -86,7 +86,7 @@ class Home
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $special_community_array;
         global $special_topic_array;
         global $special_post_array;
@@ -109,8 +109,8 @@ class Home
                 $db = db_connect();
 
                 if ($db === false) {
-                    $sessionMessage .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $sessionMessage;
+                    $app_state->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $app_state->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
@@ -121,7 +121,7 @@ class Home
 
             if ($special_community_array === false) {
 
-                $sessionMessage .= " Failed to find the array of the user's communities. ";
+                $app_state->message .= " Failed to find the array of the user's communities. ";
 
             }
 
@@ -145,8 +145,8 @@ class Home
 
                 if ($db === false) {
 
-                    $sessionMessage .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $sessionMessage;
+                    $app_state->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $app_state->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -178,8 +178,8 @@ class Home
 
                 if ($db === false) {
 
-                    $sessionMessage .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $sessionMessage;
+                    $app_state->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $app_state->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -212,8 +212,8 @@ class Home
 
                 if ($db === false) {
 
-                    $sessionMessage .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $sessionMessage;
+                    $app_state->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $app_state->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -225,7 +225,7 @@ class Home
 
             if ($post_object === false) {
 
-                $sessionMessage .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
+                $app_state->message .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
 
             } else {
 
@@ -233,7 +233,7 @@ class Home
 
                 if ($post_content === false) {
 
-                    $sessionMessage .= " Unable to read the post's file. ";
+                    $app_state->message .= " Unable to read the post's file. ";
                     $post_content = '';
 
                 }
@@ -279,7 +279,7 @@ class Home
          */
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $when_last_checked_suspend;
 
@@ -296,8 +296,8 @@ class Home
 
                 if ($db === false) {
 
-                    $sessionMessage .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $sessionMessage;
+                    $app_state->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $app_state->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -309,8 +309,8 @@ class Home
 
             if ($result === false) {
 
-                $sessionMessage .= " Failed to find the user by id. ";
-                $_SESSION['message'] = $sessionMessage;
+                $app_state->message .= " Failed to find the user by id. ";
+                $_SESSION['message'] = $app_state->message;
                 reset_feature_session_vars();
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -321,12 +321,12 @@ class Home
 
     private static function redirect_if_not_logged_in()
     {
-        global $sessionMessage;
+        global $app_state;
         global $is_logged_in;
 
         if (!$is_logged_in) {
 
-            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 

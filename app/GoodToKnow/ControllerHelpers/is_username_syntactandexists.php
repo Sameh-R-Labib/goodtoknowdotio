@@ -11,13 +11,13 @@ use GoodToKnow\Models\User;
 function is_username_syntactandexists(string &$username): bool
 {
     global $db;
-    global $sessionMessage;
+    global $app_state;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
     if (!is_username_syntactically($username)) {
 
-        $sessionMessage .= " The username field was empty. ";
+        $app_state->message .= " The username field was empty. ";
 
         return false;
     }
@@ -26,7 +26,7 @@ function is_username_syntactandexists(string &$username): bool
 
     if (!$is_in_use) {
 
-        $sessionMessage .= " The username could not be found. ";
+        $app_state->message .= " The username could not be found. ";
 
         return false;
     }

@@ -6,7 +6,7 @@ class CPTaxableIncome
 {
     function page()
     {
-        global $sessionMessage;
+        global $app_state;
         global $page;
         global $show_poof;
         global $html_title;
@@ -24,7 +24,7 @@ class CPTaxableIncome
         $html_title = 'Taxable Income';
 
 
-        $sessionMessage .= ' Manage taxable income. ';
+        $app_state->message .= ' Manage taxable income. ';
 
 
         require VIEWS . DIRSEP . 'cptaxableincome.php';

@@ -25,7 +25,7 @@ class MemberMemEdFormProc
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_str01;                // The member's username
         global $saved_int01;                // The member's id
 

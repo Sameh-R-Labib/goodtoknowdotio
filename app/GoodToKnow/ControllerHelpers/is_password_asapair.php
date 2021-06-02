@@ -9,7 +9,7 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function is_password_asapair(string &$str01, string &$str02): bool
 {
-    global $sessionMessage;
+    global $app_state;
 
     /**
      * First make sure it has proper syntax.
@@ -19,7 +19,7 @@ function is_password_asapair(string &$str01, string &$str02): bool
 
     if (!is_password_syntactically($str01)) {
 
-        $sessionMessage .= " The password's syntax is invalid. ";
+        $app_state->message .= " The password's syntax is invalid. ";
 
         return false;
     }
@@ -33,7 +33,7 @@ function is_password_asapair(string &$str01, string &$str02): bool
 
     if (!$are_equal) {
 
-        $sessionMessage .= " Your two passwords don't match. ";
+        $app_state->message .= " Your two passwords don't match. ";
 
         return false;
     }

@@ -24,7 +24,7 @@ class TopicDescriptionEditorFormProcessor
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_str01;                // The topic's name
         global $saved_int01;                // The topic's id
 

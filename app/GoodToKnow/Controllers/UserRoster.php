@@ -11,7 +11,7 @@ class UserRoster
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $html_title;
         global $page;
         global $show_poof;
@@ -88,7 +88,7 @@ class UserRoster
 
         }
 
-        $sessionMessage .= " I have generated the User Roster (<em>shown below.</em>) ";
+        $app_state->message .= " I have generated the User Roster (<em>shown below.</em>) ";
 
         require VIEWS . DIRSEP . 'userroster.php';
     }

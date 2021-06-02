@@ -39,16 +39,16 @@ class TopicToPost extends GoodObject
     public static function derive_topic_id(int $post_id)
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `post_id` = "' . $db->real_escape_string($post_id) . '" LIMIT 1';
 
         $array_of_objects = TopicToPost::find_by_sql($sql);
 
-        if (!$array_of_objects || !empty($sessionMessage)) {
+        if (!$array_of_objects || !empty($app_state->message)) {
 
-            $sessionMessage .= ' derive_topic_id says: Failed to get a TopicToPost object. ';
+            $app_state->message .= ' derive_topic_id says: Failed to get a TopicToPost object. ';
             return false;
 
         }
@@ -57,7 +57,7 @@ class TopicToPost extends GoodObject
 
         if (!is_object($topictopost_object)) {
 
-            $sessionMessage .= ' derive_topic_id says: Unexpectedly return value is not an object. ';
+            $app_state->message .= ' derive_topic_id says: Unexpectedly return value is not an object. ';
             return false;
 
         }
@@ -90,7 +90,7 @@ class TopicToPost extends GoodObject
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
 
 
         // get (in array) all the TopicToPost objects with a particular $topic_id.
@@ -110,7 +110,7 @@ class TopicToPost extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $sessionMessage .= ' ' . $stmt->error . ' ';
+                $app_state->message .= ' ' . $stmt->error . ' ';
 
                 return false;
 
@@ -146,7 +146,7 @@ class TopicToPost extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $sessionMessage .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
+            $app_state->message .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -155,7 +155,7 @@ class TopicToPost extends GoodObject
 
         if ($count < 1) {
 
-            $sessionMessage .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
+            $app_state->message .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
 
             return false;
 
@@ -176,7 +176,7 @@ class TopicToPost extends GoodObject
 
         if (empty($array_of_Posts)) {
 
-            $sessionMessage .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
+            $app_state->message .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
 
             return false;
 
@@ -204,7 +204,7 @@ class TopicToPost extends GoodObject
          * $array_of_post_objects.
          */
 
-        global $sessionMessage;
+        global $app_state;
 
         $author_usernames_array = [];
 
@@ -214,7 +214,7 @@ class TopicToPost extends GoodObject
 
             if (!$author_user_object) {
 
-                $sessionMessage .= " TopicToPost::get_author_usernames() says: find_by_id failed to find the user object. ";
+                $app_state->message .= " TopicToPost::get_author_usernames() says: find_by_id failed to find the user object. ";
 
                 return false;
 

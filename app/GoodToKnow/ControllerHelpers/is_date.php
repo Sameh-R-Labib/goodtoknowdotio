@@ -16,13 +16,13 @@ function is_date(string &$date): bool
      *               - $message may be modified.
      */
 
-    global $sessionMessage;
+    global $app_state;
 
     $date = trim($date);
 
     if (empty($date)) {
 
-        $sessionMessage .= " The date is missing. ";
+        $app_state->message .= " The date is missing. ";
 
         return false;
 
@@ -32,7 +32,7 @@ function is_date(string &$date): bool
 
     if ($number_of_slashes != 2) {
 
-        $sessionMessage .= " You don't have two slashes in date. ";
+        $app_state->message .= " You don't have two slashes in date. ";
 
         return false;
     }
@@ -52,14 +52,14 @@ function is_date(string &$date): bool
 
     if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy) != 4) {
 
-        $sessionMessage .= " You did not use correct mm/dd/yyyy date format. ";
+        $app_state->message .= " You did not use correct mm/dd/yyyy date format. ";
 
         return false;
     }
 
     if (!is_numeric($mm) || !is_numeric($dd) || !is_numeric($yyyy)) {
 
-        $sessionMessage .= " The date must consist of numeric digits and 2 forward slashes. And, it does not have
+        $app_state->message .= " The date must consist of numeric digits and 2 forward slashes. And, it does not have
             required numeric digits! ";
 
         return false;
@@ -67,7 +67,7 @@ function is_date(string &$date): bool
 
     if (!checkdate($words[0], $words[1], $words[2])) {
 
-        $sessionMessage .= " That's not a valid date. ";
+        $app_state->message .= " That's not a valid date. ";
 
         return false;
     }

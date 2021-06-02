@@ -9,7 +9,7 @@ class UnsuspendAccountUnsuspend
     function page()
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $saved_str01; // Has user's username
 
 
@@ -61,7 +61,7 @@ class UnsuspendAccountUnsuspend
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(" The save method for User did not return false but it did send back a message.
              Therefore, it probably did not update {$saved_str01}'s account. ");

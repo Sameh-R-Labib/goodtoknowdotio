@@ -11,13 +11,13 @@ use GoodToKnow\Models\User;
 function is_username_usable_for_registration(string &$username): bool
 {
     global $db;
-    global $sessionMessage;
+    global $app_state;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';
 
     if (!is_username_syntactically($username)) {
 
-        $sessionMessage .= " The username field failed validation due to its lack of conformity. ";
+        $app_state->message .= " The username field failed validation due to its lack of conformity. ";
 
         return false;
     }
@@ -26,7 +26,7 @@ function is_username_usable_for_registration(string &$username): bool
 
     if ($is_in_use) {
 
-        $sessionMessage .= " The username is taken. Find a different one and try again. ";
+        $app_state->message .= " The username is taken. Find a different one and try again. ";
 
         return false;
     }

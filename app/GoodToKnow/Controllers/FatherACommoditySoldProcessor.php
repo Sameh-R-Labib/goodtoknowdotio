@@ -51,7 +51,7 @@ class FatherACommoditySoldProcessor
 
         }
 
-        if (!empty($sessionMessage)) {
+        if (!empty($app_state->message)) {
 
             breakout(' The save method for CommoditySold did not return false but it did send
             back a message. Therefore, it probably did not create the CommoditySold record. ');

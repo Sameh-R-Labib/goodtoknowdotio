@@ -5,7 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $user_id;
 global $array;
 
@@ -33,7 +33,7 @@ $sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
 
 $array = PossibleTaxDeduction::find_by_sql($sql);
 
-if (!$array || !empty($sessionMessage)) {
+if (!$array || !empty($app_state->message)) {
 
     breakout(" For <b>{$year_paid}</b> I could NOT find any Possible Tax Write-offs. ");
 

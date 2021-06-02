@@ -4,7 +4,7 @@ use GoodToKnow\Models\CommunityToTopic;
 
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $community_id;
 global $special_topic_array;
 

@@ -4,7 +4,7 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 
 global $db;
-global $sessionMessage;
+global $app_state;
 global $user_id;
 global $saved_int01;     // min time
 global $saved_int02;     // max time
@@ -27,7 +27,7 @@ $sql .= ' ORDER BY `time`';
 
 $array = BankingTransactionForBalances::find_by_sql($sql);
 
-if (!$array || !empty($sessionMessage)) {
+if (!$array || !empty($app_state->message)) {
 
     breakout(' I could NOT find any banking transaction for balances records ¯\_(ツ)_/¯ ');
 

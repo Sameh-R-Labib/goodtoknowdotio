@@ -60,7 +60,7 @@ class SetHomePageCommunityTopicPost
     private static function store_derived_info_in_the_session($community_id, $topic_id,
                                                               $post_object, $post_author_object, $post_id)
     {
-        global $sessionMessage;
+        global $app_state;
         global $type_of_resource_requested;
         global $special_topic_array;
         global $special_post_array;
@@ -131,7 +131,7 @@ class SetHomePageCommunityTopicPost
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;
-        $_SESSION['message'] = $sessionMessage;
+        $_SESSION['message'] = $app_state->message;
     }
 
 
@@ -293,10 +293,10 @@ class SetHomePageCommunityTopicPost
     private static function mostly_making_sure_chosen_community_is_ok_to_choose($community_id)
     {
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $special_community_array;
 
-        if (!empty($sessionMessage) || $db === false) {
+        if (!empty($app_state->message) || $db === false) {
 
             breakout(' Database connection failed. ');
 
@@ -319,12 +319,12 @@ class SetHomePageCommunityTopicPost
      */
     private static function abort_if_an_anomalous_condition_exists()
     {
-        global $sessionMessage;
+        global $app_state;
         global $is_logged_in;
 
-        if (!$is_logged_in || !empty($sessionMessage)) {
+        if (!$is_logged_in || !empty($app_state->message)) {
 
-            $_SESSION['message'] = $sessionMessage;
+            $_SESSION['message'] = $app_state->message;
 
             reset_feature_session_vars();
 

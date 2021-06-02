@@ -34,7 +34,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $show_poof;
         global $html_title;
@@ -79,7 +79,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         $array = BankingTransactionForBalances::find_by_sql($sql);
 
-        if (!$array || !empty($sessionMessage)) {
+        if (!$array || !empty($app_state->message)) {
 
             breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
 
@@ -159,7 +159,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $show_poof = true;
 
 
-        $sessionMessage .= ' Here are your transactions and their balances. ';
+        $app_state->message .= ' Here are your transactions and their balances. ';
 
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';

@@ -12,7 +12,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          */
 
 
-        global $sessionMessage;
+        global $app_state;
         global $show_poof;
         global $html_title;
         global $page;
@@ -32,7 +32,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         }
 
-        $sessionMessage .= " Here are one year's tax write-offs. ";
+        $app_state->message .= " Here are one year's tax write-offs. ";
 
         $html_title = "One year\'s tax write-offs.";
 

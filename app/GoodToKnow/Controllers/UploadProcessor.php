@@ -15,7 +15,7 @@ class UploadProcessor
          */
 
 
-        global $sessionMessage;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
@@ -148,12 +148,12 @@ class UploadProcessor
 
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-            $sessionMessage .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
+            $app_state->message .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
             file. Here is the link: " . $a_link_entire_embed . ". ";
 
         } else {
 
-            $sessionMessage .= " Sorry, there was an error uploading your file. ";
+            $app_state->message .= " Sorry, there was an error uploading your file. ";
 
         }
 

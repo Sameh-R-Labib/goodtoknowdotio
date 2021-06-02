@@ -14,7 +14,7 @@ class FeatureATask
 
 
         global $db;
-        global $sessionMessage;
+        global $app_state;
         global $user_id;
         global $html_title;
         global $array;
@@ -32,7 +32,7 @@ class FeatureATask
 
         $array = Task::find_by_sql($sql);
 
-        if (!$array || !empty($sessionMessage)) {
+        if (!$array || !empty($app_state->message)) {
             breakout(' I could NOT find any tasks. ');
         }
 

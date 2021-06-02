@@ -17,9 +17,9 @@ function fix_michelf(string &$html)
  */
 function kick_out_loggedoutusers()
 {
-    global $is_logged_in, $sessionMessage;
+    global $is_logged_in, $app_state;
 
-    if (!$is_logged_in || !empty($sessionMessage)) {
+    if (!$is_logged_in || !empty($app_state->message)) {
 
         breakout(' Log back in because your session has expired. ');
 
@@ -32,9 +32,9 @@ function kick_out_loggedoutusers()
  */
 function kick_out_nonadmins()
 {
-    global $is_logged_in, $is_admin, $sessionMessage;
+    global $is_logged_in, $is_admin, $app_state;
 
-    if (!$is_logged_in || !$is_admin || !empty($sessionMessage)) {
+    if (!$is_logged_in || !$is_admin || !empty($app_state->message)) {
 
         breakout(' You are not authorized. ');
 
@@ -78,10 +78,10 @@ function redirect_to(string $location)
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
      */
-    global $sessionMessage;
+    global $app_state;
 
     // passing on the "to display message"
-    $_SESSION['message'] = $sessionMessage;
+    $_SESSION['message'] = $app_state->message;
 
     if ($location !== '') {
 
@@ -107,9 +107,9 @@ function breakout(string $newMessage)
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
      */
-    global $sessionMessage;
+    global $app_state;
 
-    $sessionMessage .= $newMessage;
+    $app_state->message .= $newMessage;
     reset_feature_session_vars();
     redirect_to("/ax1/Home/page");
 }
@@ -123,13 +123,19 @@ function size_as_text(int $size): string
 {
     // takes a size in bytes and returns a more use friendly equivalent
     if ($size < 1024) {
+
         return "$size bytes";
+
     } elseif ($size < 1048576) {
+
         $size_kb = round($size / 1024);
         return "$size_kb KB";
+
     } else {
+
         $size_mb = round($size / 1048576, 1);
         return "$size_mb MB";
+
     }
 }
 
@@ -139,7 +145,7 @@ function size_as_text(int $size): string
  */
 function db_connect()
 {
-    global $sessionMessage;
+    global $app_state;
 
     try {
 
@@ -147,7 +153,7 @@ function db_connect()
 
         if ($db->connect_error) {
 
-            $sessionMessage .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $app_state->message .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
 
         }
@@ -156,7 +162,7 @@ function db_connect()
 
     } catch (Exception $e) {
 
-        $sessionMessage .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        $app_state->message .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         return false;
 
     }
@@ -170,11 +176,11 @@ function db_connect()
  */
 function get_db()
 {
-    global $sessionMessage;
+    global $app_state;
 
     $db = db_connect();
 
-    if (!empty($sessionMessage) || $db === false) {
+    if (!empty($app_state->message) || $db === false) {
 
         breakout(' I was unable to connect to the database. ');
 
