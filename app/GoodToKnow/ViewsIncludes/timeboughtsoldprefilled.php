@@ -1,6 +1,6 @@
+<?php global $app_state; ?>
 <?php global $time_bought; ?>
 <?php global $time_sold; ?>
-<?php global $timezone; ?>
 <hr>
 <p>
     <label for="time_bought_date">Time Bought: </label>
@@ -42,7 +42,7 @@
            value="<?= $time_sold['second'] ?>">
     <label for="timezone"></label>
     <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
-           minlength="2" maxlength="60" size="18" value="<?= $timezone ?>">
+           minlength="2" maxlength="60" size="18" value="<?= $app_state->timezone ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
                             <a href="https://www.php.net/manual/en/timezones.php"
                                target="_blank">www.php.net/manual/en/timezones.php</a></span></span>

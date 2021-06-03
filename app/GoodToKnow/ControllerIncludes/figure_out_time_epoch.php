@@ -5,8 +5,8 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
+global $app_state;
 global $time;
-global $timezone;
 
 
 /**
@@ -22,7 +22,7 @@ require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
  * Get `timezone`.
  */
 
-$timezone = timezone_form_field_prep('timezone');
+$app_state->timezone = timezone_form_field_prep('timezone');
 
 
 /**

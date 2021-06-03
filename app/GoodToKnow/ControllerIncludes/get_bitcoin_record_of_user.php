@@ -5,7 +5,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
 global $app_state;
-global $timezone;
 global $bitcoin_object;
 
 

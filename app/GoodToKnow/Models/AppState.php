@@ -36,6 +36,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $timezone;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -51,5 +57,7 @@ class AppState
         $this->user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
 
         $this->role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
+
+        $this->timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
     }
 }

@@ -106,7 +106,7 @@ $app_state = new AppState();
 
 //$role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 
-$timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
+//$timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
 
 $community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 
@@ -242,7 +242,7 @@ $db = 'not connected';
 /**
  * Default (for runtime of this script) timezone set to the one the user has chosen.
  */
-date_default_timezone_set($timezone);
+date_default_timezone_set($app_state->timezone);
 
 
 /**

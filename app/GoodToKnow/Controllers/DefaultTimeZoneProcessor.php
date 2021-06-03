@@ -25,7 +25,7 @@ class DefaultTimeZoneProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
-        $timezone = timezone_form_field_prep('timezone');
+        $app_state->timezone = timezone_form_field_prep('timezone');
 
 
         $db = get_db();
@@ -39,7 +39,7 @@ class DefaultTimeZoneProcessor
         }
 
 
-        $user_object->timezone = $timezone;
+        $user_object->timezone = $app_state->timezone;
 
 
         $was_updated = $user_object->save();
@@ -51,11 +51,11 @@ class DefaultTimeZoneProcessor
         }
 
 
-        $_SESSION['timezone'] = $timezone;
+        $_SESSION['timezone'] = $app_state->timezone;
 
 
         // User will know default community by logging out then in.
 
-        breakout(" Your default timezone has been changed to <b>{$timezone}</b>. ");
+        breakout(" Your default timezone has been changed to <b>{$app_state->timezone}</b>. ");
     }
 }
