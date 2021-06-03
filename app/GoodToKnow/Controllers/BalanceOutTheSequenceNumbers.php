@@ -18,7 +18,6 @@ class BalanceOutTheSequenceNumbers
         global $result;
         global $fields;
         global $type_of_resource_requested;
-        global $community_name;
         global $topic_id;
         global $topic_name;
 
@@ -43,7 +42,7 @@ class BalanceOutTheSequenceNumbers
 
         if ($thing_type === 'Community') {
 
-            $thing_name = $community_name;
+            $thing_name = $app_state->community_name;
             $thing_id = $app_state->community_id;
 
         } else {

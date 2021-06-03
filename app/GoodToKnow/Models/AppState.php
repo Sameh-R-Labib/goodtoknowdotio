@@ -48,6 +48,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $community_name;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -67,5 +73,7 @@ class AppState
         $this->timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
 
         $this->community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
+
+        $this->community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
     }
 }

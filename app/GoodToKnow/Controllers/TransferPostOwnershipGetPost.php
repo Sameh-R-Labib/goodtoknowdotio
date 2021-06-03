@@ -27,12 +27,11 @@ class TransferPostOwnershipGetPost
          */
 
 
-        global $db;
+        global $app_state;
         global $html_title;
         global $long_title_of_post;
         global $chosen_post_id;
         global $post_object;
-        global $community_name;
         global $topic_name;
         global $author_username;
 
@@ -83,7 +82,7 @@ class TransferPostOwnershipGetPost
 
         }
 
-        $community_name = $community_object->community_name;
+        $app_state->community_name = $community_object->community_name;
 
 
         // Find the topic name based on $derived_topic_id
