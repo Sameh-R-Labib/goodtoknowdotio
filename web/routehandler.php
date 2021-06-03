@@ -102,7 +102,7 @@ $app_state = new AppState();
 
 //$user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
-$user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
+//$user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
 
 $role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 

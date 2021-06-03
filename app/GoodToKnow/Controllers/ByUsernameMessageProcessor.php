@@ -17,7 +17,7 @@ class ByUsernameMessageProcessor
          */
 
         global $db;
-        global $user_username;
+        global $app_state;
         global $html_title;
         global $pre_populate;
 
@@ -59,7 +59,7 @@ I have something I want to tell you.
 
 Sincerely,
 
-{$user_username}
+{$app_state->user_username}
 ROI;
 
         $html_title = "Compose Message for {$submitted_username}";

@@ -6,7 +6,7 @@ class WriteToAdmin
 {
     function page()
     {
-        global $user_username;
+        global $app_state;
         global $html_title;
         global $pre_populate;
 
@@ -30,7 +30,7 @@ I would like you to add a particular topic to a particular community.
 
 Sincerely,
 
-{$user_username}
+{$app_state->user_username}
 ROI;
 
         require VIEWS . DIRSEP . 'writetoadmin.php';

@@ -24,6 +24,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $user_username;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -35,5 +41,7 @@ class AppState
         $this->url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
 
         $this->user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
+
+        $this->user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
     }
 }

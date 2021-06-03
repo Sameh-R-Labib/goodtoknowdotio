@@ -18,13 +18,13 @@ class MessageTheAuthor
          */
 
 
+        global $app_state;
         global $pre_populate;
         global $html_title;
         global $author_username;
         global $post_name;
         global $topic_name;
         global $community_name;
-        global $user_username;
 
 
         kick_out_loggedoutusers();
@@ -43,7 +43,7 @@ This message is in regards to your "{$post_name}" post in the "{$topic_name}" to
 
 Sincerely,
 
-{$user_username}
+{$app_state->user_username}
 
 
 ROI;

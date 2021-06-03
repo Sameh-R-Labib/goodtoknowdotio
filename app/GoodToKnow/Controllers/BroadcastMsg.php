@@ -8,7 +8,7 @@ class BroadcastMsg
     {
         global $html_title;
         global $pre_populate;
-        global $user_username;
+        global $app_state;
 
 
         kick_out_nonadmins();
@@ -27,7 +27,7 @@ Dear Users,
 
 Sincerely,
 
-Admin {$user_username}
+Admin {$app_state->user_username}
 ROI;
 
         require VIEWS . DIRSEP . 'broadcastmsg.php';
