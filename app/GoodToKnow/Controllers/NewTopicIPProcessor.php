@@ -23,7 +23,6 @@ class NewTopicIPProcessor
 
         global $db;
         global $app_state;
-        global $community_id;
 
 
         kick_out_nonadmins();
@@ -39,7 +38,7 @@ class NewTopicIPProcessor
          * Besides, we want a fresh copy of special_topic_array.
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
+        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
 
         if (!$special_topic_array) {
 
@@ -78,7 +77,7 @@ class NewTopicIPProcessor
 
         // Determine the sequence number for the new topic
 
-        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
+        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($app_state->community_id);
 
         if (!$topic_objects_array) {
 

@@ -108,7 +108,7 @@ $app_state = new AppState();
 
 //$timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
 
-$community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
+//$community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 
 $community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
 

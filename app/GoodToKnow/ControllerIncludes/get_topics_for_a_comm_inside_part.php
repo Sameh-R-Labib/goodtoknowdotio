@@ -6,7 +6,6 @@ use GoodToKnow\Models\CommunityToTopic;
 global $db;
 global $app_state;
 global $special_topic_array;
-global $community_id;
 global $html_title;
 
 
@@ -19,7 +18,7 @@ kick_out_loggedoutusers();
 
 $db = get_db();
 
-$special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
+$special_topic_array = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
 
 if ($special_topic_array == false) $special_topic_array = [];
 

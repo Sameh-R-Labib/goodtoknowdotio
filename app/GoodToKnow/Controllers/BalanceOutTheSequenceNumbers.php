@@ -9,6 +9,7 @@ class BalanceOutTheSequenceNumbers
 {
     function page()
     {
+        global $app_state;
         global $db;
         global $html_title;
         global $thing_type;
@@ -17,7 +18,6 @@ class BalanceOutTheSequenceNumbers
         global $result;
         global $fields;
         global $type_of_resource_requested;
-        global $community_id;
         global $community_name;
         global $topic_id;
         global $topic_name;
@@ -44,7 +44,7 @@ class BalanceOutTheSequenceNumbers
         if ($thing_type === 'Community') {
 
             $thing_name = $community_name;
-            $thing_id = $community_id;
+            $thing_id = $app_state->community_id;
 
         } else {
 
@@ -65,7 +65,7 @@ class BalanceOutTheSequenceNumbers
 
             // Get all topics for community.
 
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($app_state->community_id);
 
             if (!$result) {
 

@@ -11,7 +11,6 @@ class NewTopicSave
     {
         global $db;
         global $app_state;
-        global $community_id;
         global $saved_str01;                // The topic name
         global $saved_str02;                // The topic description
         global $saved_int01;                // The sequence number
@@ -42,7 +41,7 @@ class NewTopicSave
 
         $db = get_db();
 
-        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
+        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($app_state->community_id);
 
         $sequence_number_already_exists_in_db = false;
 
@@ -82,7 +81,7 @@ class NewTopicSave
 
         // Assemble the CommunityToTopic object
 
-        $communitytotopic_as_array = ['community_id' => $community_id, 'topic_id' => $topic->id];
+        $communitytotopic_as_array = ['community_id' => $app_state->community_id, 'topic_id' => $topic->id];
 
         $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
 
@@ -99,7 +98,7 @@ class NewTopicSave
          * Save a fresh copy of special_topic_array
          */
 
-        $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($community_id);
+        $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
 
         $_SESSION['last_refresh_topics'] = time();
 

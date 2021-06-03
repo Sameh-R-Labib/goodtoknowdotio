@@ -22,12 +22,12 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
+        global $app_state;
         global $db;
         global $thing_type;
         global $html_title;
         global $present;
         global $type_of_resource_requested;
-        global $community_id;
         global $topic_id;
 
 
@@ -60,7 +60,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
             // Get all topics for community.
 
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($app_state->community_id);
 
             if (!$result) {
 

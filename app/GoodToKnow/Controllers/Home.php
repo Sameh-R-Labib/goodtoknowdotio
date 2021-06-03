@@ -91,7 +91,6 @@ class Home
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
-        global $community_id;
         global $topic_id;
         global $post_id;
         global $type_of_resource_requested;
@@ -153,7 +152,7 @@ class Home
 
             }
 
-            $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
+            $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
 
             if ($special_topic_array === false) $special_topic_array = [];
 
