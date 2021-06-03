@@ -54,6 +54,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $community_description;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -75,5 +81,7 @@ class AppState
         $this->community_id = (isset($_SESSION['community_id'])) ? $_SESSION['community_id'] : 0;
 
         $this->community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
+
+        $this->community_description = (isset($_SESSION['community_description'])) ? $_SESSION['community_description'] : '';
     }
 }

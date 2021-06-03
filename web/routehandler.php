@@ -112,7 +112,7 @@ $app_state = new AppState();
 
 //$community_name = (isset($_SESSION['community_name'])) ? $_SESSION['community_name'] : '';
 
-$community_description = (isset($_SESSION['community_description'])) ? $_SESSION['community_description'] : '';
+//$community_description = (isset($_SESSION['community_description'])) ? $_SESSION['community_description'] : '';
 
 /**
  * communities for this user

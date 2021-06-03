@@ -47,14 +47,13 @@ class Home
     {
         global $app_state;
         global $type_of_resource_requested;
-        global $community_description;
         global $topic_description;
         global $post_full_name;
 
         if ($type_of_resource_requested === 'community') {
-            if (!empty(trim($community_description))) {
+            if (!empty(trim($app_state->community_description))) {
                 if (empty(trim($app_state->message))) {
-                    $app_state->message .= ' ' . nl2br($community_description, false) . ' ';
+                    $app_state->message .= ' ' . nl2br($app_state->community_description, false) . ' ';
                 }
             }
         } elseif ($type_of_resource_requested === 'topic') {
