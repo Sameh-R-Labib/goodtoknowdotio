@@ -18,7 +18,6 @@ class BalanceOutTheSequenceNumbers
         global $result;
         global $fields;
         global $type_of_resource_requested;
-        global $topic_id;
         global $topic_name;
 
 
@@ -48,7 +47,7 @@ class BalanceOutTheSequenceNumbers
         } else {
 
             $thing_name = $topic_name;
-            $thing_id = $topic_id;
+            $thing_id = $app_state->topic_id;
 
         }
 
@@ -76,7 +75,7 @@ class BalanceOutTheSequenceNumbers
 
             // Get all posts for topic.
 
-            $result = TopicToPost::get_posts_array_for_a_topic($topic_id);
+            $result = TopicToPost::get_posts_array_for_a_topic($app_state->topic_id);
 
             if (!$result) {
 

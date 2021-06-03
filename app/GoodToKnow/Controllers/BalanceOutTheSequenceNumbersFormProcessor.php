@@ -28,7 +28,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
         global $html_title;
         global $present;
         global $type_of_resource_requested;
-        global $topic_id;
 
 
         /**
@@ -72,7 +71,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
             // Get all posts for topic.
 
-            $result = TopicToPost::get_posts_array_for_a_topic($topic_id);
+            $result = TopicToPost::get_posts_array_for_a_topic($app_state->topic_id);
 
             if (!$result) {
 
@@ -109,7 +108,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
             } else {
                 $short = substr($object->title, 0, 38);
             }
-            $present .= "<p>{$object->sequence_number} ↔ {$short}</p>\n";
+            $present .= "<p>$object->sequence_number ↔ $short</p>\n";
         }
 
         /**

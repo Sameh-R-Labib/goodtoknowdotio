@@ -89,7 +89,6 @@ class Home
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
-        global $topic_id;
         global $post_id;
         global $type_of_resource_requested;
         global $last_refresh_communities;
@@ -183,7 +182,7 @@ class Home
 
             }
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
 
             if ($special_post_array === false) $special_post_array = [];
 

@@ -123,7 +123,7 @@ $app_state = new AppState();
  */
 //$special_community_array = (isset($_SESSION['special_community_array'])) ? $_SESSION['special_community_array'] : [];
 
-$topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
+//$topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
 $topic_name = (isset($_SESSION['topic_name'])) ? $_SESSION['topic_name'] : '';
 

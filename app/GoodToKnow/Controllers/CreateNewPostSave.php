@@ -13,7 +13,6 @@ class CreateNewPostSave
         global $app_state;
         global $html_title;
         global $type_of_resource_requested;
-        global $topic_id;
         global $saved_str01;                // The main title
         global $saved_str02;                // The title extension
         global $saved_int01;                // The topic id
@@ -164,7 +163,7 @@ class CreateNewPostSave
 
         if ($type_of_resource_requested === 'topic' || $type_of_resource_requested === 'post') {
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
+            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
 
             if ($special_post_array === false) {
 

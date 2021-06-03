@@ -18,7 +18,7 @@ class AppState
     public $url_of_most_recent_upload;
 
     /**
-     * @var int
+     * @var int|mixed
      */
     public $user_id;
 
@@ -42,7 +42,7 @@ class AppState
 
 
     /**
-     * @var int
+     * @var int|mixed
      */
     public $community_id;
 
@@ -63,6 +63,12 @@ class AppState
      * @var array
      */
     public $special_community_array;
+
+
+    /**
+     * @var int|mixed
+     */
+    public $topic_id;
 
 
     /**
@@ -91,5 +97,7 @@ class AppState
         $this->community_description = (isset($_SESSION['community_description'])) ? $_SESSION['community_description'] : '';
 
         $this->special_community_array = (isset($_SESSION['special_community_array'])) ? $_SESSION['special_community_array'] : [];
+
+        $this->topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
     }
 }
