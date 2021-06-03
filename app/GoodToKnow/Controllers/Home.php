@@ -86,7 +86,6 @@ class Home
 
         global $db;
         global $app_state;
-        global $special_community_array;
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
@@ -114,15 +113,15 @@ class Home
 
             }
 
-            $special_community_array = UserToCommunity::find_communities_of_user($app_state->user_id);
+            $app_state->special_community_array = UserToCommunity::find_communities_of_user($app_state->user_id);
 
-            if ($special_community_array === false) {
+            if ($app_state->special_community_array === false) {
 
                 $app_state->message .= " Failed to find the array of the user's communities. ";
 
             }
 
-            $_SESSION['special_community_array'] = $special_community_array;
+            $_SESSION['special_community_array'] = $app_state->special_community_array;
             $_SESSION['last_refresh_communities'] = time();
         }
 

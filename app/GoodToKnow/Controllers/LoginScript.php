@@ -39,7 +39,6 @@ class LoginScript
      */
     private static function store_application_state(object $user)
     {
-        global $db;
         global $app_state;
 
         /**
@@ -80,9 +79,9 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-        $special_community_array = UserToCommunity::find_communities_of_user($user->id);
+        $app_state->special_community_array = UserToCommunity::find_communities_of_user($user->id);
 
-        if ($special_community_array === false) {
+        if ($app_state->special_community_array === false) {
 
             $app_state->message .= " Failed to find the array of the user's communities. ";
             $_SESSION['message'] = $app_state->message;
@@ -96,7 +95,7 @@ class LoginScript
          * Finally save them to session
          */
 
-        $_SESSION['special_community_array'] = $special_community_array;
+        $_SESSION['special_community_array'] = $app_state->special_community_array;
         $_SESSION['last_refresh_communities'] = time();
         $_SESSION['type_of_resource_requested'] = 'community';
         $_SESSION['topic_id'] = 0;

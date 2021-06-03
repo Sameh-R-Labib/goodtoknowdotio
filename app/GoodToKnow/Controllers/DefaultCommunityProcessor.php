@@ -10,7 +10,6 @@ class DefaultCommunityProcessor
     {
         global $db;
         global $app_state;
-        global $special_community_array;
 
 
         kick_out_loggedoutusers();
@@ -52,6 +51,6 @@ class DefaultCommunityProcessor
 
         // User will know default community by logging out then in.
 
-        breakout(" Your default community has been changed to {$special_community_array[$chosen_id]}. ");
+        breakout(" Your default community has been changed to {$app_state->special_community_array[$chosen_id]}. ");
     }
 }

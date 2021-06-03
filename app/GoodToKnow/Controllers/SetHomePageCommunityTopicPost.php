@@ -294,7 +294,6 @@ class SetHomePageCommunityTopicPost
     {
         global $db;
         global $app_state;
-        global $special_community_array;
 
         if (!empty($app_state->message) || $db === false) {
 
@@ -307,7 +306,7 @@ class SetHomePageCommunityTopicPost
          * Make sure the community_id belongs to one of the user's communities.
          */
 
-        if (!array_key_exists($community_id, $special_community_array)) {
+        if (!array_key_exists($community_id, $app_state->special_community_array)) {
 
             breakout(' Invalid community_id. ');
 

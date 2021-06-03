@@ -121,7 +121,7 @@ $app_state = new AppState();
  *  - Key   is a community id
  *  - Value is a community name
  */
-$special_community_array = (isset($_SESSION['special_community_array'])) ? $_SESSION['special_community_array'] : [];
+//$special_community_array = (isset($_SESSION['special_community_array'])) ? $_SESSION['special_community_array'] : [];
 
 $topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 

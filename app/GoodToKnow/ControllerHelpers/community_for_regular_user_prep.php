@@ -11,11 +11,11 @@ function community_for_regular_user_prep(string $field_name): int
     /**
      * Returns a community id or exits with a message.
      *
-     * It will exit if the id is not one of the users ids as found in $special_community_array.
+     * It will exit if the id is not one of the users ids as found in $app_state->special_community_array.
      */
 
 
-    global $special_community_array;
+    global $app_state;
 
 
     require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
@@ -31,7 +31,7 @@ function community_for_regular_user_prep(string $field_name): int
 
     $is_found = false;
 
-    if (array_key_exists($chosen_id, $special_community_array)) $is_found = true;
+    if (array_key_exists($chosen_id, $app_state->special_community_array)) $is_found = true;
 
     if (!$is_found) {
 
