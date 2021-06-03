@@ -19,7 +19,6 @@ class BuildABankingTransactionForBalancesProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
         global $time;
 
 
@@ -48,7 +47,7 @@ class BuildABankingTransactionForBalancesProcessor
          * Create a BankingTransactionForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
+        $array_record = ['user_id' => $app_state->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
 
 
         /**

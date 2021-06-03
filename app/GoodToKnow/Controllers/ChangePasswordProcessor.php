@@ -11,7 +11,6 @@ class ChangePasswordProcessor
     function page()
     {
         global $db;
-        global $user_id;
         global $app_state;
 
 
@@ -42,7 +41,7 @@ class ChangePasswordProcessor
          * Get the user object for the current user and make sure $current_password is a valid submission.
          */
 
-        $user_object = User::find_by_id($user_id);
+        $user_object = User::find_by_id($app_state->user_id);
 
         if (!password_verify($current_password, $user_object->password)) {
 

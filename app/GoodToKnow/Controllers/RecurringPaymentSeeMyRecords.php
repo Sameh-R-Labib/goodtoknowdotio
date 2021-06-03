@@ -17,7 +17,6 @@ class RecurringPaymentSeeMyRecords
 
         global $db;
         global $app_state;
-        global $user_id;
         global $show_poof;
         global $html_title;
         global $page;
@@ -33,7 +32,7 @@ class RecurringPaymentSeeMyRecords
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 

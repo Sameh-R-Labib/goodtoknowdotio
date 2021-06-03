@@ -9,7 +9,7 @@ class DefaultCommunityProcessor
     function page()
     {
         global $db;
-        global $user_id;
+        global $app_state;
         global $special_community_array;
 
 
@@ -31,7 +31,7 @@ class DefaultCommunityProcessor
 
         $db = get_db();
 
-        $user_object = User::find_by_id($user_id);
+        $user_object = User::find_by_id($app_state->user_id);
 
         if (!$user_object) {
 

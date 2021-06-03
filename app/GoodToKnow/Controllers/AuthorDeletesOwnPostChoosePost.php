@@ -18,9 +18,9 @@ class AuthorDeletesOwnPostChoosePost
          */
 
         global $db;
+        global $app_state;
         global $special_post_array;
         global $saved_int01;        // id of topic
-        global $user_id;
         global $html_title;
 
 
@@ -32,7 +32,7 @@ class AuthorDeletesOwnPostChoosePost
 
         // Get all posts (as special array) for the user and topic.
 
-        $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($user_id, $saved_int01);
+        $special_post_array = TopicToPost::special_posts_array_for_user_and_topic($app_state->user_id, $saved_int01);
 
         if (!$special_post_array) {
 

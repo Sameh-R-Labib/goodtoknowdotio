@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
-global $user_id;
 global $timezone;
 global $app_state;
 global $saved_int01;    // commodities_sold id

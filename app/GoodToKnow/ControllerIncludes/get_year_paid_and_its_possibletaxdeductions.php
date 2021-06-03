@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
 global $app_state;
-global $user_id;
 global $array;
 
 
@@ -29,7 +28,7 @@ $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 $db = get_db();
 
 $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
-$sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
+$sql .= ' AND `user_id` = ' . $db->real_escape_string($app_state->user_id);
 
 $array = PossibleTaxDeduction::find_by_sql($sql);
 

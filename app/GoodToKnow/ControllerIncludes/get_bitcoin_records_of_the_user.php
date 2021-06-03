@@ -6,7 +6,6 @@ use GoodToKnow\Models\Bitcoin;
 global $db;
 global $app_state;
 global $array_of_bitcoin_objects;
-global $user_id;            // We need this.
 global $html_title;
 
 
@@ -21,7 +20,7 @@ $db = get_db();
  * belonging to the current user.
  */
 
-$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
 
 $array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
 

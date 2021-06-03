@@ -91,7 +91,6 @@ class Home
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
-        global $user_id;
         global $community_id;
         global $topic_id;
         global $post_id;
@@ -117,7 +116,7 @@ class Home
 
             }
 
-            $special_community_array = UserToCommunity::find_communities_of_user($user_id);
+            $special_community_array = UserToCommunity::find_communities_of_user($app_state->user_id);
 
             if ($special_community_array === false) {
 
@@ -280,7 +279,6 @@ class Home
 
         global $db;
         global $app_state;
-        global $user_id;
         global $when_last_checked_suspend;
 
         $elapsed_time = time() - $when_last_checked_suspend;

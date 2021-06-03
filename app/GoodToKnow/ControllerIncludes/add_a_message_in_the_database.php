@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
 
 global $db;
-global $user_id;
+global $app_state;
 global $message_object;
 
 
@@ -28,7 +28,7 @@ fix_michelf($html);
 //$parsedown_object->setSafeMode(true);
 //$html = $parsedown_object->text($markdown);
 
-$message_array = ['user_id' => $user_id, 'created' => time(), 'content' => $html];
+$message_array = ['user_id' => $app_state->user_id, 'created' => time(), 'content' => $html];
 
 $message_object = Message::array_to_object($message_array);
 

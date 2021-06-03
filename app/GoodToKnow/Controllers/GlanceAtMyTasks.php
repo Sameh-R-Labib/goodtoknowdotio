@@ -16,7 +16,6 @@ class GlanceAtMyTasks
 
 
         global $db;
-        global $user_id;
         global $app_state;
         global $html_title;
         global $show_poof;
@@ -33,7 +32,7 @@ class GlanceAtMyTasks
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($app_state->user_id);
 
         $array = Task::find_by_sql($sql);
 

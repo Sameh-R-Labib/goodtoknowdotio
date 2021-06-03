@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
 global $app_state;
-global $user_id;
 global $array;
 global $tax_year;
 
@@ -30,7 +29,7 @@ $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 $db = get_db();
 
 $sql = 'SELECT * FROM `commodities_sold` WHERE `tax_year` = ' . $db->real_escape_string($tax_year);
-$sql .= ' AND `user_id` = ' . $db->real_escape_string($user_id);
+$sql .= ' AND `user_id` = ' . $db->real_escape_string($app_state->user_id);
 
 $array = CommoditySold::find_by_sql($sql);
 

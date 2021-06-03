@@ -18,7 +18,6 @@ class StartATaxableIncomeEventProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
         global $time;
 
 
@@ -51,7 +50,7 @@ class StartATaxableIncomeEventProcessor
          * Create a taxable_income_event array for the record.
          */
 
-        $array_record = ['user_id' => $user_id, 'time' => $time, 'year_received' => $year_received,
+        $array_record = ['user_id' => $app_state->user_id, 'time' => $time, 'year_received' => $year_received,
             'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];
 
 

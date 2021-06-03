@@ -14,7 +14,7 @@ class FatherACommoditySoldProcessor
 
 
         global $db;
-        global $user_id;
+        global $app_state;
         global $time_bought;
         global $time_sold;
         global $price_bought;
@@ -34,7 +34,7 @@ class FatherACommoditySoldProcessor
          * Start formulating the CommoditySold object so we can save it.
          */
 
-        $array = ['user_id' => $user_id, 'time_bought' => $time_bought, 'time_sold' => $time_sold,
+        $array = ['user_id' => $app_state->user_id, 'time_bought' => $time_bought, 'time_sold' => $time_sold,
             'price_bought' => $price_bought, 'price_sold' => $price_sold, 'currency_transacted' => $currency_transacted,
             'commodity_amount' => $commodity_amount, 'commodity_type' => $commodity_type,
             'commodity_label' => $commodity_label, 'tax_year' => $tax_year, 'profit' => $profit];

@@ -17,7 +17,6 @@ class PolishARecurringPaymentRecord
 
         global $db;
         global $app_state;
-        global $user_id;            // We need this.
         global $html_title;
         global $array_of_recurring_payment_objects;
 
@@ -31,7 +30,7 @@ class PolishARecurringPaymentRecord
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 

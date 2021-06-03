@@ -17,7 +17,6 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
 
 
         kick_out_loggedoutusers();
@@ -39,7 +38,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $db = get_db();
 
-        $array_record = ['user_id' => $user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => $comment];
+        $array_record = ['user_id' => $app_state->user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => $comment];
 
 
         // In memory object.

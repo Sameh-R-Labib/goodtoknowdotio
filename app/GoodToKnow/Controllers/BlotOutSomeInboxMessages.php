@@ -15,8 +15,8 @@ class BlotOutSomeInboxMessages
 
 
         global $db;
+        global $app_state;
         global $inbox_messages_array;
-        global $user_id;
         global $html_title;
 
 
@@ -25,7 +25,7 @@ class BlotOutSomeInboxMessages
 
         $db = get_db();
 
-        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($user_id);
+        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($app_state->user_id);
 
         if ($inbox_messages_array === false) {
 

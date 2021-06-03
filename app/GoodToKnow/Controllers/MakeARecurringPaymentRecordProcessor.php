@@ -18,7 +18,6 @@ class MakeARecurringPaymentRecordProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
         global $time;
 
 
@@ -48,7 +47,7 @@ class MakeARecurringPaymentRecordProcessor
          */
 
 
-        $array_recurring_payment_record = ['user_id' => $user_id, 'label' => $label, 'currency' => $currency,
+        $array_recurring_payment_record = ['user_id' => $app_state->user_id, 'label' => $label, 'currency' => $currency,
             'amount_paid' => $amount_paid, 'time' => $time, 'comment' => $comment];
 
 

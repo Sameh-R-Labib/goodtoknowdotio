@@ -7,7 +7,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $db;
 global $object;
 global $app_state;
-global $user_id;
 
 
 kick_out_loggedoutusers();
@@ -43,7 +42,7 @@ if (!$object) {
  * 3) Make sure this object belongs to the user.
  */
 
-if ($object->user_id != $user_id) {
+if ($object->user_id != $app_state->user_id) {
 
     breakout(' Error 15450232. ');
 

@@ -14,9 +14,9 @@ class BuildABankingTransactionForBalances
          */
 
         global $db;
+        global $app_state;
         global $account_type;
         global $html_title;
-        global $user_id;
 
 
         kick_out_loggedoutusers();
@@ -27,7 +27,7 @@ class BuildABankingTransactionForBalances
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $account_type = get_html_select_box_containing_the_bank_accounts($user_id, 0);
+        $account_type = get_html_select_box_containing_the_bank_accounts($app_state->user_id, 0);
 
 
         $html_title = 'Create a Banking Transaction For Balances';

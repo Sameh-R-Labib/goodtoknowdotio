@@ -10,7 +10,6 @@ class Inbox
     {
         global $db;
         global $app_state;
-        global $user_id;
         global $show_poof;
         global $html_title;
         global $page;
@@ -32,7 +31,7 @@ class Inbox
         $db = get_db();
 
 
-        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($user_id);
+        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($app_state->user_id);
 
 
         /**

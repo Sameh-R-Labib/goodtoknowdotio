@@ -15,7 +15,6 @@ class ForgetATask
 
         global $db;
         global $app_state;
-        global $user_id;            // We need this.
         global $html_title;
         global $array;
 
@@ -26,7 +25,7 @@ class ForgetATask
         $db = get_db();
 
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($app_state->user_id);
 
 
         $array = Task::find_by_sql($sql);

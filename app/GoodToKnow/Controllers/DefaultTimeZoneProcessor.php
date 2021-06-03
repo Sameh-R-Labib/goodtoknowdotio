@@ -18,7 +18,6 @@ class DefaultTimeZoneProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
 
 
         kick_out_loggedoutusers();
@@ -31,7 +30,7 @@ class DefaultTimeZoneProcessor
 
         $db = get_db();
 
-        $user_object = User::find_by_id($user_id);
+        $user_object = User::find_by_id($app_state->user_id);
 
         if (!$user_object) {
 

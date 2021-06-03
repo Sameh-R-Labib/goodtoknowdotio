@@ -18,7 +18,6 @@ class GenerateABankingAccountForBalancesProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
         global $time;
 
 
@@ -47,7 +46,7 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a BankingAcctForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $user_id, 'acct_name' => $acct_name, 'start_time' => $time,
+        $array_record = ['user_id' => $app_state->user_id, 'acct_name' => $acct_name, 'start_time' => $time,
             'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
 
 

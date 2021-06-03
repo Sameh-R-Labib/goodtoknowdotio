@@ -15,7 +15,6 @@ class FeatureATask
 
         global $db;
         global $app_state;
-        global $user_id;
         global $html_title;
         global $array;
 
@@ -28,7 +27,7 @@ class FeatureATask
 
         // Get an array of Task objects for this user.
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($app_state->user_id);
 
         $array = Task::find_by_sql($sql);
 

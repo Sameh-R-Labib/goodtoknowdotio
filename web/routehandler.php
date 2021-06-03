@@ -100,7 +100,7 @@ $app_state = new AppState();
 
 //$url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
 
-$user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
+//$user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
 $user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
 
@@ -171,7 +171,7 @@ $saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
 
 $saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
 
-$is_logged_in = !empty($user_id);
+$is_logged_in = !empty($app_state->user_id);
 
 $is_admin = $role === 'admin';
 

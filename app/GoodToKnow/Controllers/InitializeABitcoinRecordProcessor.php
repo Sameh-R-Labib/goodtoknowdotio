@@ -19,7 +19,6 @@ class InitializeABitcoinRecordProcessor
 
         global $db;
         global $app_state;
-        global $user_id;
         global $time;
 
         kick_out_loggedoutusers();
@@ -52,7 +51,7 @@ class InitializeABitcoinRecordProcessor
          * Create a Bitcoin array for the record.
          */
 
-        $array_bitcoin_record = ['user_id' => $user_id, 'address' => $address, 'initial_balance' => $initial_balance,
+        $array_bitcoin_record = ['user_id' => $app_state->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
             'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
             'time' => $time, 'comment' => $comment];
 

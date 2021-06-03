@@ -5,7 +5,6 @@ use GoodToKnow\Models\MessageToUser;
 
 global $db;
 global $app_state;
-global $user_id;
 global $messages_last_quantity;
 global $messages_last_time;
 
@@ -26,7 +25,7 @@ if ($messages_last_time === null) {
 
     }
 
-    $quantity = MessageToUser::user_message_quantity($user_id);
+    $quantity = MessageToUser::user_message_quantity($app_state->user_id);
 
     if ($quantity === false) {
 
@@ -60,7 +59,7 @@ if ($messages_last_time === null) {
             }
         }
 
-        $quantity = MessageToUser::user_message_quantity($user_id);
+        $quantity = MessageToUser::user_message_quantity($app_state->user_id);
 
         if ($quantity === false) {
 

@@ -13,7 +13,6 @@ class CreateNewPostSave
         global $app_state;
         global $html_title;
         global $type_of_resource_requested;
-        global $user_id;
         global $topic_id;
         global $saved_str01;                // The main title
         global $saved_str02;                // The title extension
@@ -126,7 +125,7 @@ class CreateNewPostSave
         // Assemble the Post object
 
         $post_as_array = ['sequence_number' => $saved_int02, 'title' => $saved_str01, 'extensionfortitle' => $saved_str02,
-            'user_id' => $user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
+            'user_id' => $app_state->user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
 
         $post = Post::array_to_object($post_as_array);
 
