@@ -18,7 +18,6 @@ class BalanceOutTheSequenceNumbers
         global $result;
         global $fields;
         global $type_of_resource_requested;
-        global $topic_name;
 
 
         kick_out_nonadmins();
@@ -46,7 +45,7 @@ class BalanceOutTheSequenceNumbers
 
         } else {
 
-            $thing_name = $topic_name;
+            $thing_name = $app_state->topic_name;
             $thing_id = $app_state->topic_id;
 
         }

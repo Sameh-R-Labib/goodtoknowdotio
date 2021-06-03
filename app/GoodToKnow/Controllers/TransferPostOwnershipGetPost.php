@@ -32,7 +32,6 @@ class TransferPostOwnershipGetPost
         global $long_title_of_post;
         global $chosen_post_id;
         global $post_object;
-        global $topic_name;
         global $author_username;
 
 
@@ -95,7 +94,7 @@ class TransferPostOwnershipGetPost
 
         }
 
-        $topic_name = $topic_object->topic_name;
+        $app_state->topic_name = $topic_object->topic_name;
 
 
         // Find the author's username.
