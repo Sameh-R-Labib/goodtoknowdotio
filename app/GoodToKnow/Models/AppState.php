@@ -30,6 +30,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $role;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -43,5 +49,7 @@ class AppState
         $this->user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 0;
 
         $this->user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
+
+        $this->role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
     }
 }

@@ -104,7 +104,7 @@ $app_state = new AppState();
 
 //$user_username = (isset($_SESSION['user_username'])) ? $_SESSION['user_username'] : '';
 
-$role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
+//$role = (isset($_SESSION['role'])) ? $_SESSION['role'] : '';
 
 $timezone = (isset($_SESSION['timezone'])) ? $_SESSION['timezone'] : 'America/New_York';
 
@@ -173,7 +173,7 @@ $saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : []
 
 $is_logged_in = !empty($app_state->user_id);
 
-$is_admin = $role === 'admin';
+$is_admin = $app_state->role === 'admin';
 
 $is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
 
