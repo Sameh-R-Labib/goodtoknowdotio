@@ -10,8 +10,8 @@ class CreateNewPostSave
 {
     function page()
     {
-        global $db;
         global $app_state;
+        global $db;
         global $html_title;
         global $saved_str01;                // The main title
         global $saved_str02;                // The title extension
@@ -163,15 +163,15 @@ class CreateNewPostSave
 
         if ($app_state->type_of_resource_requested === 'topic' || $app_state->type_of_resource_requested === 'post') {
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
+            $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
 
-            if ($special_post_array === false) {
+            if ($app_state->special_post_array === false) {
 
                 breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
 
             }
 
-            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['special_post_array'] = $app_state->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
         }

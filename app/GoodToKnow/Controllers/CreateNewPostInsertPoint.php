@@ -21,10 +21,10 @@ class CreateNewPostInsertPoint
          */
 
 
+        global $app_state;
         global $db;
         global $html_title;
         global $saved_int01;
-        global $special_post_array;
 
 
         kick_out_loggedoutusers();
@@ -41,9 +41,9 @@ class CreateNewPostInsertPoint
          * all the posts in said topic.
          */
 
-        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($saved_int01);
+        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($saved_int01);
 
-        if (!$special_post_array) {
+        if (!$app_state->special_post_array) {
 
             breakout(' Unable to get posts for the topic specified. ');
 

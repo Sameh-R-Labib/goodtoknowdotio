@@ -25,8 +25,8 @@ class CreateNewPostIPProcessor
          * of creating a new record in the posts table.
          */
 
+        global $app_state;
         global $db;
-        global $special_post_array;
         global $saved_int01;
 
 
@@ -40,9 +40,9 @@ class CreateNewPostIPProcessor
 
         $db = get_db();
 
-        $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($saved_int01);
+        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($saved_int01);
 
-        if (!$special_post_array) {
+        if (!$app_state->special_post_array) {
 
             breakout(' CreateNewPostIPProcessor: Error 074346. ');
 
@@ -59,7 +59,7 @@ class CreateNewPostIPProcessor
 
         $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (!array_key_exists($chosen_post_id, $special_post_array)) {
+        if (!array_key_exists($chosen_post_id, $app_state->special_post_array)) {
 
             breakout(' CreateNewPostIPProcessor: Error 421218. ');
 

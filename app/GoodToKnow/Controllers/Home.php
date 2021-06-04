@@ -95,7 +95,6 @@ class Home
 
         global $app_state;
         global $db;
-        global $special_post_array;
         global $post_content;
         global $last_refresh_communities;
         global $last_refresh_topics;
@@ -168,7 +167,7 @@ class Home
 
         /**
          * If the type_of_resource_requested == 'topic'
-         * and the special_post_array has not been refreshed
+         * and the $app_state->special_post_array has not been refreshed
          * for a period longer than 3 minutes then refresh it.
          */
 
@@ -190,11 +189,11 @@ class Home
 
             }
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
+            $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
 
-            if ($special_post_array === false) $special_post_array = [];
+            if ($app_state->special_post_array === false) $app_state->special_post_array = [];
 
-            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['special_post_array'] = $app_state->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
         }
 

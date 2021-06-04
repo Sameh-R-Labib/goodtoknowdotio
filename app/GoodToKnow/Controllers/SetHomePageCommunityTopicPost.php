@@ -59,7 +59,6 @@ class SetHomePageCommunityTopicPost
                                                               $post_object, $post_author_object, $post_id)
     {
         global $app_state;
-        global $special_post_array;
         global $post_content;
         global $community_object;
         global $topic_object;
@@ -89,7 +88,7 @@ class SetHomePageCommunityTopicPost
 
             // Then do the rest.
 
-            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['special_post_array'] = $app_state->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
         } elseif ($app_state->type_of_resource_requested === 'post') {
@@ -115,7 +114,7 @@ class SetHomePageCommunityTopicPost
 
             // Then do the rest.
 
-            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['special_post_array'] = $app_state->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
             $_SESSION['post_content'] = $post_content;
             $_SESSION['last_refresh_content'] = time();
@@ -140,13 +139,12 @@ class SetHomePageCommunityTopicPost
                                                                                                   &$post_author_object)
     {
         global $app_state;
-        global $special_post_array;
         global $post_content;
 
 
         if ($app_state->type_of_resource_requested === 'post') {
 
-            if (!array_key_exists($post_id, $special_post_array)) {
+            if (!array_key_exists($post_id, $app_state->special_post_array)) {
 
                 breakout(' Your resource request is defective.  (errno 4) ');
 
@@ -190,7 +188,6 @@ class SetHomePageCommunityTopicPost
     private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id)
     {
         global $app_state;
-        global $special_post_array;
 
 
         /**
@@ -202,11 +199,11 @@ class SetHomePageCommunityTopicPost
 
             // Either way we need this
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
+            $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
 
-            if (!$special_post_array) {
+            if (!$app_state->special_post_array) {
 
-                $special_post_array = [];
+                $app_state->special_post_array = [];
 
             }
 
