@@ -18,7 +18,7 @@ class EditMyPostEditProcessor
         global $app_state;
         global $markdown;
         // $app_state->saved_str01 is path for markdown file
-        global $saved_str02;                // path for html file
+        // $app_state->saved_str02 path for html file
         global $saved_int01;                // id of edited post's Topic
         global $saved_int02;                // id of edited post
 
@@ -68,7 +68,9 @@ class EditMyPostEditProcessor
         $bytes_written = file_put_contents($app_state->saved_str01, $markdown);
 
         if ($bytes_written === false) {
+
             breakout(' Function file_put_contents() unable to write markdown file. Mission aborted! ');
+
         }
 
 
@@ -77,10 +79,12 @@ class EditMyPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($saved_str02, $html);
+        $bytes_written = file_put_contents($app_state->saved_str02, $html);
 
         if ($bytes_written === false) {
+
             breakout(' Function file_put_contents() unable to write html file. But the markdown file did get written. ');
+
         }
 
 

@@ -14,7 +14,7 @@ class CreateNewPostSave
         global $db;
         global $html_title;
         // $app_state->saved_str01 is the main title
-        global $saved_str02;                // The title extension
+        // $app_state->saved_str02 is the title extension
         global $saved_int01;                // The topic id
         global $saved_int02;                // The sequence number
 
@@ -33,7 +33,7 @@ class CreateNewPostSave
          * So far we have:
          *   - $user_id     (user_id)
          *   - $app_state->saved_str01 (title)
-         *   - $saved_str02 (extesionfortitle)
+         *   - $app_state->saved_str02 (extesionfortitle)
          *   - $saved_int01 (topic id)
          *   - $saved_int02 (sequence_number)
          *
@@ -123,7 +123,7 @@ class CreateNewPostSave
 
         // Assemble the Post object
 
-        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $app_state->saved_str01, 'extensionfortitle' => $saved_str02,
+        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $app_state->saved_str01, 'extensionfortitle' => $app_state->saved_str02,
             'user_id' => $app_state->user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
 
         $post = Post::array_to_object($post_as_array);

@@ -12,7 +12,7 @@ class NewTopicSave
         global $app_state;
         global $db;
         // $app_state->saved_str01 the topic name
-        global $saved_str02;                // The topic description
+        // $app_state->saved_str02 the topic description
         global $saved_int01;                // The sequence number
 
 
@@ -28,7 +28,7 @@ class NewTopicSave
          */
 
         $topic_as_array = ['sequence_number' => $saved_int01, 'topic_name' => $app_state->saved_str01,
-            'topic_description' => $saved_str02];
+            'topic_description' => $app_state->saved_str02];
 
         $topic = Topic::array_to_object($topic_as_array);
 

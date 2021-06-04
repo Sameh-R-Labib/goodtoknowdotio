@@ -4,11 +4,10 @@ use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
 
-global $db;
 global $app_state;
+global $db;
 global $saved_int01;
 global $saved_int02;
-global $saved_str02;
 
 
 $db = get_db();
@@ -71,7 +70,7 @@ if (!$result) {
 
 }
 
-$result = unlink($saved_str02);
+$result = unlink($app_state->saved_str02);
 
 if (!$result) {
 
