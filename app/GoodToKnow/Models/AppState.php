@@ -96,6 +96,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $post_full_name;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -131,5 +137,7 @@ class AppState
         $this->post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 
         $this->post_name = (isset($_SESSION['post_name'])) ? $_SESSION['post_name'] : '';
+
+        $this->post_full_name = (isset($_SESSION['post_full_name'])) ? $_SESSION['post_full_name'] : '';
     }
 }

@@ -47,7 +47,6 @@ class Home
     {
         global $app_state;
         global $type_of_resource_requested;
-        global $post_full_name;
 
         if ($type_of_resource_requested === 'community') {
             if (!empty(trim($app_state->community_description))) {
@@ -62,9 +61,9 @@ class Home
                 }
             }
         } else {
-            if (!empty(trim($post_full_name))) {
+            if (!empty(trim($app_state->post_full_name))) {
                 if (empty(trim($app_state->message))) {
-                    $app_state->message .= ' ' . $post_full_name . ' ';
+                    $app_state->message .= ' ' . $app_state->post_full_name . ' ';
                 }
             }
         }
