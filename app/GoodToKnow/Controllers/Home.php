@@ -95,7 +95,6 @@ class Home
 
         global $app_state;
         global $db;
-        global $special_topic_array;
         global $special_post_array;
         global $post_content;
         global $last_refresh_communities;
@@ -157,11 +156,11 @@ class Home
 
             }
 
-            $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
+            $app_state->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
 
-            if ($special_topic_array === false) $special_topic_array = [];
+            if ($app_state->special_topic_array === false) $app_state->special_topic_array = [];
 
-            $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['special_topic_array'] = $app_state->special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
 
         }

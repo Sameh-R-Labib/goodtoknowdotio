@@ -12,6 +12,7 @@ class TopicDescriptionEditor
          */
 
 
+        global $app_state;
         global $html_title;
 
 
@@ -20,7 +21,7 @@ class TopicDescriptionEditor
 
         // Abort if the community doesn't have any topics yet
 
-        if (empty($special_topic_array)) {
+        if (empty($app_state->special_topic_array)) {
 
             breakout(' Aborted because you can\'t create a post in a community which has no topics. ');
 

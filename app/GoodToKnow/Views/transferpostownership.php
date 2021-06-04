@@ -1,4 +1,4 @@
-<?php global $special_topic_array; ?>
+<?php global $app_state; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipProcessor/page" method="post">
     <h1>Transfer 📄 Ownership</h1>
@@ -8,7 +8,7 @@
     <?php require SESSIONMESSAGE; ?>
     <p>Choose the topic where the post resides.</p>
     <section>
-        <?php foreach ($special_topic_array as $key => $value): ?>
+        <?php foreach ($app_state->special_topic_array as $key => $value): ?>
             <label for="choice-<?= $key ?>" class="radio">
                 <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                 <?= $value ?>

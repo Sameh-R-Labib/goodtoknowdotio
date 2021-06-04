@@ -108,6 +108,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $special_topic_array;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -147,5 +153,7 @@ class AppState
         $this->post_full_name = (isset($_SESSION['post_full_name'])) ? $_SESSION['post_full_name'] : '';
 
         $this->type_of_resource_requested = (isset($_SESSION['type_of_resource_requested'])) ? $_SESSION['type_of_resource_requested'] : '';
+
+        $this->special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
     }
 }

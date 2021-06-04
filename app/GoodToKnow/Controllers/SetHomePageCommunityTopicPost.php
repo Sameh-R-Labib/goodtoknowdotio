@@ -59,7 +59,6 @@ class SetHomePageCommunityTopicPost
                                                               $post_object, $post_author_object, $post_id)
     {
         global $app_state;
-        global $special_topic_array;
         global $special_post_array;
         global $post_content;
         global $community_object;
@@ -76,7 +75,7 @@ class SetHomePageCommunityTopicPost
 
         // Then do the rest.
 
-        $_SESSION['special_topic_array'] = $special_topic_array;
+        $_SESSION['special_topic_array'] = $app_state->special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
 
         if ($app_state->type_of_resource_requested === 'topic') {
@@ -239,30 +238,29 @@ class SetHomePageCommunityTopicPost
     private static function get_the_topics_and_derive_the_data_surrounding_it($community_id, $post_id, $topic_id)
     {
         global $app_state;
-        global $special_topic_array;
 
         /**
          * But before we get started let's establish whether or not
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
+        $app_state->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
 
-        if ($special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
+        if ($app_state->special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $app_state->special_topic_array)) {
 
             breakout(' Your resource request is defective.  (errno 6) ');
 
         }
 
-        if (!$special_topic_array && $topic_id != 0) {
+        if (!$app_state->special_topic_array && $topic_id != 0) {
 
             breakout(' Your resource request is defective. (errno 8) ');
 
         }
 
-        if (!$special_topic_array) {
+        if (!$app_state->special_topic_array) {
 
-            $special_topic_array = [];
+            $app_state->special_topic_array = [];
 
         }
 

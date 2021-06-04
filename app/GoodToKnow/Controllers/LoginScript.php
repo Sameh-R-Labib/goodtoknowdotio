@@ -106,9 +106,9 @@ class LoginScript
          * Find and save in session a value for special_topic_array.
          */
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($user->id_of_default_community);
+        $app_state->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($user->id_of_default_community);
 
-        if (!$special_topic_array) {
+        if (!$app_state->special_topic_array) {
 
             $app_state->message .= " I didn't find any topics for your default community. ";
             $_SESSION['message'] .= $app_state->message;
@@ -117,7 +117,7 @@ class LoginScript
 
         }
 
-        $_SESSION['special_topic_array'] = $special_topic_array;
+        $_SESSION['special_topic_array'] = $app_state->special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
     }
 

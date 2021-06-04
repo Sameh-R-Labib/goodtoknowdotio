@@ -137,7 +137,7 @@ $app_state = new AppState();
 
 //$type_of_resource_requested = (isset($_SESSION['type_of_resource_requested'])) ? $_SESSION['type_of_resource_requested'] : '';
 
-$special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
+//$special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
 
 $special_post_array = (isset($_SESSION['special_post_array'])) ? $_SESSION['special_post_array'] : [];
 
