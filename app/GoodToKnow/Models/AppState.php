@@ -120,6 +120,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $last_refresh_communities;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -163,5 +169,7 @@ class AppState
         $this->special_topic_array = (isset($_SESSION['special_topic_array'])) ? $_SESSION['special_topic_array'] : [];
 
         $this->special_post_array = (isset($_SESSION['special_post_array'])) ? $_SESSION['special_post_array'] : [];
+
+        $this->last_refresh_communities = (isset($_SESSION['last_refresh_communities'])) ? $_SESSION['last_refresh_communities'] : 1554825315;
     }
 }

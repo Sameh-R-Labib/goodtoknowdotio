@@ -141,7 +141,7 @@ $app_state = new AppState();
 
 //$special_post_array = (isset($_SESSION['special_post_array'])) ? $_SESSION['special_post_array'] : [];
 
-$last_refresh_communities = (isset($_SESSION['last_refresh_communities'])) ? $_SESSION['last_refresh_communities'] : 1554825315;
+//$last_refresh_communities = (isset($_SESSION['last_refresh_communities'])) ? $_SESSION['last_refresh_communities'] : 1554825315;
 
 $last_refresh_topics = (isset($_SESSION['last_refresh_topics'])) ? $_SESSION['last_refresh_topics'] : 1554825315;
 

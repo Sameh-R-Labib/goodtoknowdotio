@@ -96,12 +96,11 @@ class Home
         global $app_state;
         global $db;
         global $post_content;
-        global $last_refresh_communities;
         global $last_refresh_topics;
         global $last_refresh_posts;
         global $last_refresh_content;
 
-        $time_since_refresh = time() - $last_refresh_communities;  // seconds
+        $time_since_refresh = time() - $app_state->last_refresh_communities;  // seconds
 
         if ($time_since_refresh > 250) {
             if ($db == 'not connected') {
