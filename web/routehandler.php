@@ -131,7 +131,7 @@ $app_state = new AppState();
 
 //$post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 
-$post_name = (isset($_SESSION['post_name'])) ? $_SESSION['post_name'] : '';
+//$post_name = (isset($_SESSION['post_name'])) ? $_SESSION['post_name'] : '';
 
 $post_full_name = (isset($_SESSION['post_full_name'])) ? $_SESSION['post_full_name'] : '';
 
