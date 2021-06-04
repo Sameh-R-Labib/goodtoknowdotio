@@ -168,6 +168,12 @@ class AppState
 
 
     /**
+     * @var int|null
+     */
+    public $messages_last_quantity;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -227,5 +233,7 @@ class AppState
         $this->author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
 
         $this->when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 1554825315;
+
+        $this->messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
     }
 }

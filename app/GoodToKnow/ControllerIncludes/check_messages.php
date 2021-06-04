@@ -3,9 +3,8 @@
 use GoodToKnow\Models\MessageToUser;
 
 
-global $db;
 global $app_state;
-global $messages_last_quantity;
+global $db;
 global $messages_last_time;
 
 
@@ -46,7 +45,9 @@ if ($messages_last_time === null) {
     $time_since_last = $time_since_last / 60;
 
     if ($time_since_last > 17) {
+
         if ($db == 'not connected') {
+
             $db = db_connect();
 
             if ($db === false) {
@@ -57,6 +58,7 @@ if ($messages_last_time === null) {
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
 
             }
+
         }
 
         $quantity = MessageToUser::user_message_quantity($app_state->user_id);
@@ -70,9 +72,9 @@ if ($messages_last_time === null) {
 
         }
 
-        $quantity_new = $quantity - $messages_last_quantity;
+        $quantity_new = $quantity - $app_state->messages_last_quantity;
 
-        if ($quantity > $messages_last_quantity) {
+        if ($quantity > $app_state->messages_last_quantity) {
 
             $app_state->message .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
             <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
@@ -81,5 +83,7 @@ if ($messages_last_time === null) {
             $_SESSION['messages_last_time'] = time();
 
         }
+
     }
+
 }

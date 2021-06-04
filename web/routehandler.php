@@ -157,7 +157,7 @@ $app_state = new AppState();
 
 //$when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 1554825315;
 
-$messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
+//$messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
 
 $messages_last_time = (isset($_SESSION['messages_last_time'])) ? $_SESSION['messages_last_time'] : null;
 
