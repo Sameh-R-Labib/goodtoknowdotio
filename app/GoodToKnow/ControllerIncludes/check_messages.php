@@ -5,10 +5,10 @@ use GoodToKnow\Models\MessageToUser;
 
 global $app_state;
 global $db;
-global $messages_last_time;
 
 
-if ($messages_last_time === null) {
+if ($app_state->messages_last_time === null) {
+
     if ($db == 'not connected') {
 
         $db = db_connect();
@@ -41,7 +41,7 @@ if ($messages_last_time === null) {
     $_SESSION['messages_last_quantity'] = $quantity;
     $_SESSION['messages_last_time'] = time();
 } else {
-    $time_since_last = time() - $messages_last_time;
+    $time_since_last = time() - $app_state->messages_last_time;
     $time_since_last = $time_since_last / 60;
 
     if ($time_since_last > 17) {
