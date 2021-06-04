@@ -147,7 +147,7 @@ $app_state = new AppState();
 
 //$last_refresh_posts = (isset($_SESSION['last_refresh_posts'])) ? $_SESSION['last_refresh_posts'] : 1554825315;
 
-$last_refresh_content = (isset($_SESSION['last_refresh_content'])) ? $_SESSION['last_refresh_content'] : 1554825315;
+//$last_refresh_content = (isset($_SESSION['last_refresh_content'])) ? $_SESSION['last_refresh_content'] : 1554825315;
 
 $post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
 
