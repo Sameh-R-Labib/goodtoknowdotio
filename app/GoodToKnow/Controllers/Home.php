@@ -96,7 +96,6 @@ class Home
         global $app_state;
         global $db;
         global $post_content;
-        global $last_refresh_posts;
         global $last_refresh_content;
 
         $time_since_refresh = time() - $app_state->last_refresh_communities;  // seconds
@@ -169,7 +168,7 @@ class Home
          * for a period longer than 3 minutes then refresh it.
          */
 
-        $time_since_refresh = time() - $last_refresh_posts;
+        $time_since_refresh = time() - $app_state->last_refresh_posts;
 
         if ($time_since_refresh > 180 && $app_state->type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
