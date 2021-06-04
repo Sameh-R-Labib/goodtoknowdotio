@@ -151,7 +151,7 @@ $app_state = new AppState();
 
 //$post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
 
-$author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_username'] : '';
+//$author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_username'] : '';
 
 $author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
 

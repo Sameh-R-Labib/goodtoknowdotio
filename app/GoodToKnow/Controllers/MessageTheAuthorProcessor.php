@@ -14,10 +14,8 @@ class MessageTheAuthorProcessor
          */
 
 
-        global $db;
         global $app_state;
         global $author_id;
-        global $author_username;
         global $message_object;
 
 
@@ -67,6 +65,6 @@ class MessageTheAuthorProcessor
          * Declare success.
          */
 
-        breakout(" Your message to {$author_username} was sent! ");
+        breakout(" Your message to $app_state->author_username was sent! ");
     }
 }

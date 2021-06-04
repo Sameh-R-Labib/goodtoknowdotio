@@ -21,7 +21,6 @@ class MessageTheAuthor
         global $app_state;
         global $pre_populate;
         global $html_title;
-        global $author_username;
 
 
         kick_out_loggedoutusers();
@@ -34,7 +33,7 @@ class MessageTheAuthor
         $html_title = 'Message the Author';
 
         $pre_populate = <<<ROI
-Dear {$author_username},
+Dear $app_state->author_username,
 
 This message is in regards to your "$app_state->post_name" post in the "$app_state->topic_name" topic of the
 "$app_state->community_name" community.

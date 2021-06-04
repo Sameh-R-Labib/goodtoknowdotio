@@ -150,6 +150,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $author_username;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -203,5 +209,7 @@ class AppState
         $this->last_refresh_content = (isset($_SESSION['last_refresh_content'])) ? $_SESSION['last_refresh_content'] : 1554825315;
 
         $this->post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
+
+        $this->author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_username'] : '';
     }
 }

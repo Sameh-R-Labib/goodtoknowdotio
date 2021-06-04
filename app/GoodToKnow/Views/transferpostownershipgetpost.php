@@ -1,6 +1,5 @@
 <?php global $app_state; ?>
 <?php global $long_title_of_post; ?>
-<?php global $author_username; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipGetUsername/page" method="post">
     <h1>Confirm</h1>
@@ -9,7 +8,7 @@
         the <?= $app_state->community_name ?> community. Which resides in the <i><?= $app_state->topic_name ?></i>
         topic. And is
         currently
-        owned by <b><?= $author_username ?></b>.</p>
+        owned by <b><?= $app_state->author_username ?></b>.</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

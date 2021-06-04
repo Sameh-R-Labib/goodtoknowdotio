@@ -32,7 +32,6 @@ class TransferPostOwnershipGetPost
         global $long_title_of_post;
         global $chosen_post_id;
         global $post_object;
-        global $author_username;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
@@ -107,7 +106,7 @@ class TransferPostOwnershipGetPost
 
         }
 
-        $author_username = $user_object->username;
+        $app_state->author_username = $user_object->username;
 
 
         // Present the view
