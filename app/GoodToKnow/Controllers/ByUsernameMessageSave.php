@@ -21,9 +21,8 @@ class ByUsernameMessageSave
          */
 
 
-        global $db;
+        global $app_state;
         global $message_object;
-        global $saved_str01;
 
 
         kick_out_loggedoutusers();
@@ -48,16 +47,16 @@ class ByUsernameMessageSave
          * Here I need find the user ID number of
          * the target for the message. I already
          * know the username. It is stored in
-         * $saved_str01.
+         * $app_state->saved_str01.
          */
 
-        if (empty($saved_str01)) {
+        if (empty($app_state->saved_str01)) {
 
             breakout(' Unexpectedly no target username found in the session. ');
 
         }
 
-        $target_user_object = User::find_by_username($saved_str01);
+        $target_user_object = User::find_by_username($app_state->saved_str01);
 
         if (!$target_user_object) {
 
@@ -103,6 +102,6 @@ class ByUsernameMessageSave
          * Declare success.
          */
 
-        breakout(" Your message to {$saved_str01} was sent! ");
+        breakout(" Your message to $app_state->saved_str01 was sent! ");
     }
 }

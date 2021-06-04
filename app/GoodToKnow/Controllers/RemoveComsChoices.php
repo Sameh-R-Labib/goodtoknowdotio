@@ -11,7 +11,7 @@ class RemoveComsChoices
     {
         global $db;
         global $app_state;
-        global $saved_str01;    // user's username
+        // $app_state->saved_str01 is user's username
         global $html_title;
         global $coms_user_belongs_to;
 
@@ -34,7 +34,7 @@ class RemoveComsChoices
 
         $db = get_db();
 
-        $user_object = User::find_by_username($saved_str01);
+        $user_object = User::find_by_username($app_state->saved_str01);
 
         if (!$user_object) {
 

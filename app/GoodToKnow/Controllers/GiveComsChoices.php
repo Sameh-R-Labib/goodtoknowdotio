@@ -10,8 +10,9 @@ class GiveComsChoices
 {
     function page()
     {
+        global $app_state;
         global $db;
-        global $saved_str01; // Has user's username
+        // $app_state->saved_str01 has user's username
         global $html_title;
         global $coms_user_belongs_to;
         global $coms_user_does_not_belong_to;
@@ -35,7 +36,7 @@ class GiveComsChoices
 
         $db = get_db();
 
-        $user_object = User::find_by_username($saved_str01);
+        $user_object = User::find_by_username($app_state->saved_str01);
 
         if (!$user_object) {
 

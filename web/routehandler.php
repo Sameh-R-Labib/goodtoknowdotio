@@ -161,7 +161,7 @@ $app_state = new AppState();
 
 //$messages_last_time = (isset($_SESSION['messages_last_time'])) ? $_SESSION['messages_last_time'] : null;
 
-$saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
+//$saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 
 $saved_str02 = (isset($_SESSION['saved_str02'])) ? $_SESSION['saved_str02'] : '';
 

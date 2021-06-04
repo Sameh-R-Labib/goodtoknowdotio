@@ -8,8 +8,9 @@ class GiveComsChoicesProcessor
 {
     function page()
     {
+        global $app_state;
         global $db;
-        global $saved_str01; // Has user's username
+        // $app_state->saved_str01 Has user's username
         global $saved_int01; // Has user's id
         global $submitted_community_ids_array;
 
@@ -75,6 +76,6 @@ class GiveComsChoicesProcessor
          * Declare success.
          */
 
-        breakout(" New communities were assigned to {$saved_str01}! ");
+        breakout(" New communities were assigned to {$app_state->saved_str01}! ");
     }
 }

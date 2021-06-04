@@ -26,7 +26,7 @@ class MemberMemEdFormProc
 
         global $db;
         global $app_state;
-        global $saved_str01;                // The member's username
+        // $app_state->saved_str01 the member's username
         global $saved_int01;                // The member's id
 
 
@@ -90,6 +90,6 @@ class MemberMemEdFormProc
          * Report success.
          */
 
-        breakout(" I have updated {$saved_str01}'s record. ");
+        breakout(" I have updated $app_state->saved_str01's record. ");
     }
 }

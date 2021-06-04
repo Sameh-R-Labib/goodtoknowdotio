@@ -23,9 +23,9 @@ class TopicDescriptionEditorFormProcessor
          */
 
 
-        global $db;
         global $app_state;
-        global $saved_str01;                // The topic's name
+        global $db;
+        // $app_state->saved_str01 the topic's name
         global $saved_int01;                // The topic's id
 
 
@@ -91,6 +91,6 @@ class TopicDescriptionEditorFormProcessor
          * Report success.
          */
 
-        breakout(" I have updated {$saved_str01}'s record. ");
+        breakout(" I have updated $app_state->saved_str01's record. ");
     }
 }

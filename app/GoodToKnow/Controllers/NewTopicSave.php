@@ -9,9 +9,9 @@ class NewTopicSave
 {
     function page()
     {
-        global $db;
         global $app_state;
-        global $saved_str01;                // The topic name
+        global $db;
+        // $app_state->saved_str01 the topic name
         global $saved_str02;                // The topic description
         global $saved_int01;                // The sequence number
 
@@ -27,7 +27,7 @@ class NewTopicSave
          * CommunityToTopic $fields = ['id', 'community_id', 'topic_id']
          */
 
-        $topic_as_array = ['sequence_number' => $saved_int01, 'topic_name' => $saved_str01,
+        $topic_as_array = ['sequence_number' => $saved_int01, 'topic_name' => $app_state->saved_str01,
             'topic_description' => $saved_str02];
 
         $topic = Topic::array_to_object($topic_as_array);

@@ -8,7 +8,6 @@ global $db;
 global $app_state;
 global $saved_int01;
 global $saved_int02;
-global $saved_str01;
 global $saved_str02;
 
 
@@ -64,7 +63,7 @@ if (!$result) {
 
 // Delete both its files.
 
-$result = unlink($saved_str01);
+$result = unlink($app_state->saved_str01);
 
 if (!$result) {
 

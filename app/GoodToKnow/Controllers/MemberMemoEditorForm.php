@@ -10,7 +10,7 @@ class MemberMemoEditorForm
     {
         global $db;
         global $app_state;
-        global $saved_str01; // Has user's username. Is changed in this file and is used in the view.
+        // $app_state->saved_str01 has user's username. Is changed in this file and is used in the view.
         global $html_title;
         global $user_object;
 
@@ -33,7 +33,7 @@ class MemberMemoEditorForm
 
         $db = get_db();
 
-        $user_object = User::find_by_username($saved_str01);
+        $user_object = User::find_by_username($app_state->saved_str01);
 
         if (!$user_object) {
 

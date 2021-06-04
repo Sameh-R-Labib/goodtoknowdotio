@@ -15,7 +15,7 @@ class KommunityDescriptionEditorForm
         global $community_object;
 
 
-        // $saved_str01 is the community name. The view file will get it directly from global scope.
+        // $app_state->saved_str01 is the community name. The view file will get it directly from global scope.
 
 
         kick_out_nonadmins();

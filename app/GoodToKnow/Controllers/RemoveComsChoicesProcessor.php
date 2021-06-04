@@ -10,7 +10,7 @@ class RemoveComsChoicesProcessor
     {
         global $db;
         global $app_state;
-        global $saved_str01; // Has user's username
+        // $app_state->saved_str01 has user's username
         global $saved_int01; // Has user's id
         global $submitted_community_ids_array;
 
@@ -99,6 +99,6 @@ class RemoveComsChoicesProcessor
          * Declare success.
          */
 
-        breakout(" {$saved_str01}'s to-be-removed communities were removed! ");
+        breakout(" $app_state->saved_str01's to-be-removed communities were removed! ");
     }
 }

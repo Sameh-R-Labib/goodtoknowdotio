@@ -180,6 +180,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $saved_str01;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -243,5 +249,7 @@ class AppState
         $this->messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
 
         $this->messages_last_time = (isset($_SESSION['messages_last_time'])) ? $_SESSION['messages_last_time'] : null;
+
+        $this->saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
     }
 }

@@ -21,7 +21,7 @@ class TopicDescriptionEditorForm
         global $topic_object;
 
 
-        // $saved_str01 is the topic name
+        // $app_state->saved_str01 is the topic name
 
 
         kick_out_nonadmins();

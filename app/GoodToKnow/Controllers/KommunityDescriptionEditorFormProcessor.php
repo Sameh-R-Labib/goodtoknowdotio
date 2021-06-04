@@ -22,8 +22,9 @@ class KommunityDescriptionEditorFormProcessor
          *  7) Update the database with this Community object.
          */
 
+        global $app_state;
         global $db;
-        global $saved_str01;                // The community's name
+        // $app_state->saved_str01 the community's name
         global $saved_int01;                // The community's id
 
         kick_out_nonadmins();
@@ -87,6 +88,6 @@ class KommunityDescriptionEditorFormProcessor
          * Report success.
          */
 
-        breakout(" I have updated {$saved_str01}'s record. ");
+        breakout(" I have updated $app_state->saved_str01's record. ");
     }
 }

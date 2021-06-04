@@ -8,15 +8,16 @@ class NewCommunitySave
 {
     function page()
     {
+        global $app_state;
         global $db;
-        global $saved_str01;                // The topic name
+        // $app_state->saved_str01 the topic name
         global $saved_str02;                // The topic description
 
 
         kick_out_nonadmins();
 
 
-        $community_as_array = ['community_name' => $saved_str01, 'community_description' => $saved_str02];
+        $community_as_array = ['community_name' => $app_state->saved_str01, 'community_description' => $saved_str02];
 
 
         $community = Community::array_to_object($community_as_array);
