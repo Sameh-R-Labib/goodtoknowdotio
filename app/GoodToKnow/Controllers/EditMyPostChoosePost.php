@@ -19,7 +19,7 @@ class EditMyPostChoosePost
 
         global $app_state;
         global $db;
-        global $saved_int01;        // id of topic
+        // $app_state->saved_int01 id of topic
         global $html_title;
 
 
@@ -31,7 +31,7 @@ class EditMyPostChoosePost
 
         // Get all posts (as special array) for the user and topic.
 
-        $app_state->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($app_state->user_id, $saved_int01);
+        $app_state->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($app_state->user_id, $app_state->saved_int01);
 
         if (!$app_state->special_post_array) {
 

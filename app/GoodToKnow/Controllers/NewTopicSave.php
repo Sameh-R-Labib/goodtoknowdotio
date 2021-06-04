@@ -13,7 +13,7 @@ class NewTopicSave
         global $db;
         // $app_state->saved_str01 the topic name
         // $app_state->saved_str02 the topic description
-        global $saved_int01;                // The sequence number
+        // $app_state->saved_int01 the sequence number
 
 
         kick_out_nonadmins();
@@ -27,7 +27,7 @@ class NewTopicSave
          * CommunityToTopic $fields = ['id', 'community_id', 'topic_id']
          */
 
-        $topic_as_array = ['sequence_number' => $saved_int01, 'topic_name' => $app_state->saved_str01,
+        $topic_as_array = ['sequence_number' => $app_state->saved_int01, 'topic_name' => $app_state->saved_str01,
             'topic_description' => $app_state->saved_str02];
 
         $topic = Topic::array_to_object($topic_as_array);
@@ -51,7 +51,7 @@ class NewTopicSave
 
                 $a = (int)$object->sequence_number;
 
-                if ($a == (int)$saved_int01) {
+                if ($a == (int)$app_state->saved_int01) {
 
                     $sequence_number_already_exists_in_db = true;
                     break;

@@ -21,7 +21,7 @@ class EditABitcoinRecordSubmit
 
         global $db;
         global $app_state;
-        global $saved_int01;    // bitcoin record id
+        // $app_state->saved_int01 bitcoin record id
         global $bitcoin_object;
         global $time;
 
@@ -74,7 +74,7 @@ class EditABitcoinRecordSubmit
 
         $db = get_db();
 
-        $bitcoin_object = Bitcoin::find_by_id($saved_int01);
+        $bitcoin_object = Bitcoin::find_by_id($app_state->saved_int01);
 
         if (!$bitcoin_object) {
 

@@ -26,7 +26,7 @@ class TopicDescriptionEditorFormProcessor
         global $app_state;
         global $db;
         // $app_state->saved_str01 the topic's name
-        global $saved_int01;                // The topic's id
+        // $app_state->saved_int01 the topic's id
 
 
         kick_out_nonadmins();
@@ -48,7 +48,7 @@ class TopicDescriptionEditorFormProcessor
 
         $db = get_db();
 
-        $topic_object = Topic::find_by_id($saved_int01);
+        $topic_object = Topic::find_by_id($app_state->saved_int01);
 
         if (!$topic_object) {
 

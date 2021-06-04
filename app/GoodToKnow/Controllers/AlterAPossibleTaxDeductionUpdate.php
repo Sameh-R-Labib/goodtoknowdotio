@@ -20,8 +20,9 @@ class AlterAPossibleTaxDeductionUpdate
          * 5) Report success.
          */
 
+        global $app_state;
         global $db;
-        global $saved_int01;    // record id
+        // $app_state->saved_int01 record id
         global $object;
 
         kick_out_loggedoutusers();
@@ -50,7 +51,7 @@ class AlterAPossibleTaxDeductionUpdate
 
         $db = get_db();
 
-        $object = PossibleTaxDeduction::find_by_id($saved_int01);
+        $object = PossibleTaxDeduction::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

@@ -15,9 +15,8 @@ class ExpungeARecurringPaymentRecordDelete
          */
 
 
-        global $db;
         global $app_state;
-        global $saved_int01;
+        global $db;
 
 
         kick_out_loggedoutusers();
@@ -44,7 +43,7 @@ class ExpungeARecurringPaymentRecordDelete
 
         $db = get_db();
 
-        $object = RecurringPayment::find_by_id($saved_int01);
+        $object = RecurringPayment::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

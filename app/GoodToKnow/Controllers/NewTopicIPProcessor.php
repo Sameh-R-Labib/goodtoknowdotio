@@ -17,7 +17,7 @@ class NewTopicIPProcessor
          * which topic the new topic goes next to, and we know on which side of that topic the new topic goes.
          * Submitted 'relate' and 'choice'.
          *
-         * Now determine what the sequence number of the new topic will be. Store it in $_SESSION['$saved_int01'].
+         * Now determine what the sequence number of the new topic will be. Store it in $_SESSION['saved_int01'].
          * Once that's done redirect to the next script.
          */
 

@@ -17,7 +17,6 @@ class OmitABankingTranForBalancesProcessConfirmation
 
         global $db;
         global $app_state;
-        global $saved_int01;
 
 
         kick_out_loggedoutusers();
@@ -44,7 +43,7 @@ class OmitABankingTranForBalancesProcessConfirmation
 
         $db = get_db();
 
-        $object = BankingTransactionForBalances::find_by_id($saved_int01);
+        $object = BankingTransactionForBalances::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

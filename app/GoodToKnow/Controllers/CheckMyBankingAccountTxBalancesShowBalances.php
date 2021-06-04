@@ -33,14 +33,14 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
 
 
-        global $db;
         global $app_state;
+        global $db;
         global $show_poof;
         global $html_title;
         global $page;
         global $account;
         global $array;
-        global $saved_int01;    // id of BankingAcctForBalances record
+        // $app_state->saved_int01 id of BankingAcctForBalances record
 
 
         kick_out_loggedoutusers();
@@ -53,7 +53,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
 
-        $account = BankingAcctForBalances::find_by_id($saved_int01);
+        $account = BankingAcctForBalances::find_by_id($app_state->saved_int01);
 
         if (!$account) {
 

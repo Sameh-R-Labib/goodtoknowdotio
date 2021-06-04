@@ -17,8 +17,8 @@ class AnnulABankingAcctForBalancesDelete
          */
 
 
+        global $app_state;
         global $db;
-        global $saved_int01;
         global $object;
 
 
@@ -46,7 +46,7 @@ class AnnulABankingAcctForBalancesDelete
 
         $db = get_db();
 
-        $object = BankingAcctForBalances::find_by_id($saved_int01);
+        $object = BankingAcctForBalances::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

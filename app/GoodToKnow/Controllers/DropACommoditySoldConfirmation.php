@@ -15,8 +15,8 @@ class DropACommoditySoldConfirmation
          */
 
 
+        global $app_state;
         global $db;
-        global $saved_int01;
 
 
         kick_out_loggedoutusers();
@@ -43,7 +43,7 @@ class DropACommoditySoldConfirmation
 
         $db = get_db();
 
-        $object = CommoditySold::find_by_id($saved_int01);
+        $object = CommoditySold::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

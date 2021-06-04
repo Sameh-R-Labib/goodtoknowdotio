@@ -16,8 +16,8 @@ class ForgetATaskDelete
          */
 
 
+        global $app_state;
         global $db;
-        global $saved_int01;
 
 
         kick_out_loggedoutusers();
@@ -44,7 +44,7 @@ class ForgetATaskDelete
 
         $db = get_db();
 
-        $object = Task::find_by_id($saved_int01);
+        $object = Task::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

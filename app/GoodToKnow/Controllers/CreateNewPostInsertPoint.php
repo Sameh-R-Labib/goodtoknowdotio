@@ -24,7 +24,6 @@ class CreateNewPostInsertPoint
         global $app_state;
         global $db;
         global $html_title;
-        global $saved_int01;
 
 
         kick_out_loggedoutusers();
@@ -34,14 +33,14 @@ class CreateNewPostInsertPoint
 
 
         /**
-         * $saved_int01 should be the id of a topic This topic is the one the user is choosing
+         * $app_state->saved_int01 should be the id of a topic This topic is the one the user is choosing
          * for her new post.
          *
          * Before we can present the form we need to have a special post array so we can list
          * all the posts in said topic.
          */
 
-        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($saved_int01);
+        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->saved_int01);
 
         if (!$app_state->special_post_array) {
 

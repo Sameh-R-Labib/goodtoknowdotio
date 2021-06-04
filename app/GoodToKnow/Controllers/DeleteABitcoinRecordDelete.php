@@ -15,9 +15,8 @@ class DeleteABitcoinRecordDelete
          */
 
 
-        global $db;
         global $app_state;
-        global $saved_int01;
+        global $db;
 
 
         kick_out_loggedoutusers();
@@ -44,7 +43,7 @@ class DeleteABitcoinRecordDelete
 
         $db = get_db();
 
-        $bitcoin = Bitcoin::find_by_id($saved_int01);
+        $bitcoin = Bitcoin::find_by_id($app_state->saved_int01);
 
         if (!$bitcoin) {
 

@@ -17,7 +17,8 @@ class AdminCreateUser
     function page()
     {
         global $app_state;
-        global $saved_int01;    // choice
+        // $app_state->saved_int01 choice
+        global $db;
 
         kick_out_nonadmins();
 
@@ -26,7 +27,7 @@ class AdminCreateUser
 
         /**
          * Variables to work with:
-         *   $saved_int01, 'username', 'first_try', 'password',
+         *   $app_state->saved_int01, 'username', 'first_try', 'password',
          *   'title', 'race', 'comment', 'timezone', 'date', 'submit'
          */
 
@@ -77,7 +78,7 @@ class AdminCreateUser
 
         $array_of_submitted_data = ['username' => $submitted_username,
             'password' => $hash_of_submitted_password,
-            'id_of_default_community' => $saved_int01,
+            'id_of_default_community' => $app_state->saved_int01,
             'timezone' => $submitted_timezone,
             'title' => $submitted_title,
             'role' => $new_user_role,
@@ -116,7 +117,7 @@ class AdminCreateUser
 
         // The three steps again
 
-        $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $saved_int01];
+        $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $app_state->saved_int01];
 
         $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
 

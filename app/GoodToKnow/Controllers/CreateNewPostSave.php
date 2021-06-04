@@ -15,7 +15,7 @@ class CreateNewPostSave
         global $html_title;
         // $app_state->saved_str01 is the main title
         // $app_state->saved_str02 is the title extension
-        global $saved_int01;                // The topic id
+        // $app_state->saved_int01 the topic id
         global $saved_int02;                // The sequence number
 
 
@@ -34,7 +34,7 @@ class CreateNewPostSave
          *   - $user_id     (user_id)
          *   - $app_state->saved_str01 (title)
          *   - $app_state->saved_str02 (extesionfortitle)
-         *   - $saved_int01 (topic id)
+         *   - $app_state->saved_int01 (topic id)
          *   - $saved_int02 (sequence_number)
          *
          * Attributes we need to find values for:
@@ -51,7 +51,7 @@ class CreateNewPostSave
          * Verify that our sequence number hasn't been taken.
          */
 
-        $result = TopicToPost::get_posts_array_for_a_topic($saved_int01);
+        $result = TopicToPost::get_posts_array_for_a_topic($app_state->saved_int01);
 
         $sequence_number_already_exists_in_db = false;
 
@@ -142,7 +142,7 @@ class CreateNewPostSave
 
         // Assemble the TopicToPost object
 
-        $topictopost_as_array = ['topic_id' => $saved_int01, 'post_id' => $post->id];
+        $topictopost_as_array = ['topic_id' => $app_state->saved_int01, 'post_id' => $post->id];
 
         $topictopost = TopicToPost::array_to_object($topictopost_as_array);
 

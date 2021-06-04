@@ -6,7 +6,6 @@ use GoodToKnow\Models\TopicToPost;
 
 global $app_state;
 global $db;
-global $saved_int01;
 global $saved_int02;
 
 
@@ -32,7 +31,7 @@ if (!$result) {
 // Delete the TopicToPost record
 
 $sql = 'SELECT * FROM `topic_to_post`
-        WHERE `topic_id` = "' . $db->real_escape_string($saved_int01) . '" AND `post_id` = "' .
+        WHERE `topic_id` = "' . $db->real_escape_string($app_state->saved_int01) . '" AND `post_id` = "' .
     $db->real_escape_string($saved_int02) . '" LIMIT 1';
 
 $array_of_objects = TopicToPost::find_by_sql($sql);

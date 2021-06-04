@@ -8,9 +8,9 @@ class KommunityDescriptionEditorForm
 {
     function page()
     {
-        global $db;
         global $app_state;
-        global $saved_int01; // community id
+        global $db;
+        // $app_state->saved_int01 community id
         global $html_title;
         global $community_object;
 
@@ -32,7 +32,7 @@ class KommunityDescriptionEditorForm
 
         $db = get_db();
 
-        $community_object = Community::find_by_id($saved_int01);
+        $community_object = Community::find_by_id($app_state->saved_int01);
 
         if (!$community_object) {
 

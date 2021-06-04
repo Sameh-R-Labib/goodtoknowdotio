@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 
 global $app_state;
-global $saved_int01;    // commodities_sold id
+// $app_state->saved_int01 commodities_sold id
 global $time_bought;
 global $time_sold;
 global $price_bought;

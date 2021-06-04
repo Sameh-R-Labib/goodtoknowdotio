@@ -5,7 +5,7 @@ use GoodToKnow\Models\TopicToPost;
 
 global $db;
 global $app_state;
-global $saved_int01;        // id of topic
+// $app_state->saved_int01 id of topic
 global $array_of_author_usernames;
 global $array_of_post_objects;
 
@@ -15,7 +15,7 @@ kick_out_nonadmins();
 
 $db = get_db();
 
-$array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($saved_int01);
+$array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($app_state->saved_int01);
 
 if (!$array_of_post_objects) {
 

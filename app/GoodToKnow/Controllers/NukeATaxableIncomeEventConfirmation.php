@@ -15,9 +15,8 @@ class NukeATaxableIncomeEventConfirmation
          */
 
 
-        global $db;
         global $app_state;
-        global $saved_int01;
+        global $db;
 
 
         kick_out_loggedoutusers();
@@ -44,7 +43,7 @@ class NukeATaxableIncomeEventConfirmation
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($app_state->saved_int01);
 
         if (!$object) {
 

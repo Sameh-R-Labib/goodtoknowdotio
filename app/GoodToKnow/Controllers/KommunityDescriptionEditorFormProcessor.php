@@ -25,7 +25,7 @@ class KommunityDescriptionEditorFormProcessor
         global $app_state;
         global $db;
         // $app_state->saved_str01 the community's name
-        global $saved_int01;                // The community's id
+        // $app_state->saved_int01 the community's id
 
         kick_out_nonadmins();
 
@@ -45,7 +45,7 @@ class KommunityDescriptionEditorFormProcessor
 
         $db = get_db();
 
-        $community_object = Community::find_by_id($saved_int01);
+        $community_object = Community::find_by_id($app_state->saved_int01);
 
         if (!$community_object) {
 

@@ -27,7 +27,6 @@ class CreateNewPostIPProcessor
 
         global $app_state;
         global $db;
-        global $saved_int01;
 
 
         kick_out_loggedoutusers();
@@ -40,7 +39,7 @@ class CreateNewPostIPProcessor
 
         $db = get_db();
 
-        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($saved_int01);
+        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->saved_int01);
 
         if (!$app_state->special_post_array) {
 
@@ -77,7 +76,7 @@ class CreateNewPostIPProcessor
          * post. The code below implements that algorithm.
          */
 
-        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($saved_int01);
+        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($app_state->saved_int01);
 
         if (!$all_posts_as_objects) {
 
