@@ -256,7 +256,7 @@ class Home
          * Logout the user if he is suspended.
          * We are not going to check to see if he is suspended
          * every time this page loads. There will be a session
-         * variable called $when_last_checked_suspend which
+         * variable called $app_state->when_last_checked_suspend which
          * will record the timestamp of the last check to make
          * sure he wasn't suspended.
          *
@@ -266,7 +266,7 @@ class Home
          * This function will take arguments:
          *   A) $db
          *   B) The ID of the logged in user
-         *   C) $when_last_checked_suspend (which is a timestamp)
+         *   C) $app_state->when_last_checked_suspend (which is a timestamp)
          *
          * Within the function it will:
          *   1) Skip everything if it's too soon.
@@ -277,14 +277,14 @@ class Home
 
         global $db;
         global $app_state;
-        global $when_last_checked_suspend;
 
-        $elapsed_time = time() - $when_last_checked_suspend;
+        $elapsed_time = time() - $app_state->when_last_checked_suspend;
 
         if ($elapsed_time > 400) {
-            $when_last_checked_suspend = time();
 
-            $_SESSION['when_last_checked_suspend'] = $when_last_checked_suspend;
+            $app_state->when_last_checked_suspend = time();
+
+            $_SESSION['when_last_checked_suspend'] = $app_state->when_last_checked_suspend;
 
             if ($db == 'not connected') {
 
@@ -311,7 +311,9 @@ class Home
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
 
             }
+
         }
+
     }
 
 

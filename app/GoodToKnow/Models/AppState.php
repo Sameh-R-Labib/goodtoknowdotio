@@ -162,6 +162,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $when_last_checked_suspend;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -219,5 +225,7 @@ class AppState
         $this->author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_username'] : '';
 
         $this->author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
+
+        $this->when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 1554825315;
     }
 }
