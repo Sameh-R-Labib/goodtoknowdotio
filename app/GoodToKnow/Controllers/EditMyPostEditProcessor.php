@@ -20,7 +20,7 @@ class EditMyPostEditProcessor
         // $app_state->saved_str01 is path for markdown file
         // $app_state->saved_str02 path for html file
         // $app_state->saved_int01 id of edited post's Topic
-        global $saved_int02;                // id of edited post
+        // $app_state->saved_int02 id of edited post
 
 
         kick_out_loggedoutusers();
@@ -95,7 +95,7 @@ class EditMyPostEditProcessor
         $bytes_written_text = size_as_text($bytes_written);
 
         $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $app_state->community_id . '/' .
-            $app_state->saved_int01 . '/' . $saved_int02 . '">here </a>';
+            $app_state->saved_int01 . '/' . $app_state->saved_int02 . '">here </a>';
 
         breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");

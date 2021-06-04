@@ -20,7 +20,7 @@ class CreateNewPostIPProcessor
          * I mean you need to know that the posts for a specified topic each have a sequence number. The sequence number
          * helps display the posts in a sequential order.
          *
-         * Now determine what the sequence number of the new post will be. Store it in $_SESSION['$saved_int02'].
+         * Now determine what the sequence number of the new post will be. Store it in $_SESSION['saved_int02'].
          * Once that's done redirect to the next script. The next script will move the needle forwards to our goal
          * of creating a new record in the posts table.
          */

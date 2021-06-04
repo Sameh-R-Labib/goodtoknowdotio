@@ -198,6 +198,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $saved_int02;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -267,5 +273,7 @@ class AppState
         $this->saved_str02 = (isset($_SESSION['saved_str02'])) ? $_SESSION['saved_str02'] : '';
 
         $this->saved_int01 = (isset($_SESSION['saved_int01'])) ? $_SESSION['saved_int01'] : 0;
+
+        $this->saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
     }
 }

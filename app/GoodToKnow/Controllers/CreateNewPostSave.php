@@ -16,7 +16,7 @@ class CreateNewPostSave
         // $app_state->saved_str01 is the main title
         // $app_state->saved_str02 is the title extension
         // $app_state->saved_int01 the topic id
-        global $saved_int02;                // The sequence number
+        // $app_state->saved_int02 the sequence number
 
 
         kick_out_loggedoutusers();
@@ -31,11 +31,11 @@ class CreateNewPostSave
          * redirect to a form for content creation.
          *
          * So far we have:
-         *   - $user_id     (user_id)
+         *   - $app_state->user_id     (user_id)
          *   - $app_state->saved_str01 (title)
          *   - $app_state->saved_str02 (extesionfortitle)
          *   - $app_state->saved_int01 (topic id)
-         *   - $saved_int02 (sequence_number)
+         *   - $app_state->saved_int02 (sequence_number)
          *
          * Attributes we need to find values for:
          *   o $created
@@ -61,7 +61,7 @@ class CreateNewPostSave
 
                 $a = (int)$object->sequence_number;
 
-                if ($a == (int)$saved_int02) {
+                if ($a == (int)$app_state->saved_int02) {
 
                     $sequence_number_already_exists_in_db = true;
                     break;
@@ -123,8 +123,9 @@ class CreateNewPostSave
 
         // Assemble the Post object
 
-        $post_as_array = ['sequence_number' => $saved_int02, 'title' => $app_state->saved_str01, 'extensionfortitle' => $app_state->saved_str02,
-            'user_id' => $app_state->user_id, 'created' => $created, 'markdown_file' => $markdown_file, 'html_file' => $html_file];
+        $post_as_array = ['sequence_number' => $app_state->saved_int02, 'title' => $app_state->saved_str01,
+            'extensionfortitle' => $app_state->saved_str02, 'user_id' => $app_state->user_id, 'created' => $created,
+            'markdown_file' => $markdown_file, 'html_file' => $html_file];
 
         $post = Post::array_to_object($post_as_array);
 
