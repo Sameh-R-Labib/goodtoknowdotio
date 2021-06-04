@@ -127,7 +127,7 @@ $app_state = new AppState();
 
 //$topic_name = (isset($_SESSION['topic_name'])) ? $_SESSION['topic_name'] : '';
 
-$topic_description = (isset($_SESSION['topic_description'])) ? $_SESSION['topic_description'] : '';
+//$topic_description = (isset($_SESSION['topic_description'])) ? $_SESSION['topic_description'] : '';
 
 $post_id = (isset($_SESSION['post_id'])) ? $_SESSION['post_id'] : 0;
 

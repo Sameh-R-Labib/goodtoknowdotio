@@ -78,6 +78,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $topic_description;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -107,5 +113,7 @@ class AppState
         $this->topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
 
         $this->topic_name = (isset($_SESSION['topic_name'])) ? $_SESSION['topic_name'] : '';
+
+        $this->topic_description = (isset($_SESSION['topic_description'])) ? $_SESSION['topic_description'] : '';
     }
 }

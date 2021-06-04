@@ -47,7 +47,6 @@ class Home
     {
         global $app_state;
         global $type_of_resource_requested;
-        global $topic_description;
         global $post_full_name;
 
         if ($type_of_resource_requested === 'community') {
@@ -57,9 +56,9 @@ class Home
                 }
             }
         } elseif ($type_of_resource_requested === 'topic') {
-            if (!empty(trim($topic_description))) {
+            if (!empty(trim($app_state->topic_description))) {
                 if (empty(trim($app_state->message))) {
-                    $app_state->message .= ' ' . nl2br($topic_description, false) . ' ';
+                    $app_state->message .= ' ' . nl2br($app_state->topic_description, false) . ' ';
                 }
             }
         } else {
