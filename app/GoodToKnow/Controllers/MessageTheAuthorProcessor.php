@@ -15,7 +15,6 @@ class MessageTheAuthorProcessor
 
 
         global $app_state;
-        global $author_id;
         global $message_object;
 
 
@@ -38,7 +37,7 @@ class MessageTheAuthorProcessor
          *  - user_id
          */
 
-        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $author_id];
+        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $app_state->author_id];
 
 
         /**

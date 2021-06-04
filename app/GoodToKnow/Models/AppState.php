@@ -156,6 +156,12 @@ class AppState
 
 
     /**
+     * @var int|mixed
+     */
+    public $author_id;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -211,5 +217,7 @@ class AppState
         $this->post_content = (isset($_SESSION['post_content'])) ? $_SESSION['post_content'] : '';
 
         $this->author_username = (isset($_SESSION['author_username'])) ? $_SESSION['author_username'] : '';
+
+        $this->author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
     }
 }
