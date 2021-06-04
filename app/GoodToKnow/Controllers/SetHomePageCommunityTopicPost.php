@@ -59,7 +59,6 @@ class SetHomePageCommunityTopicPost
                                                               $post_object, $post_author_object, $post_id)
     {
         global $app_state;
-        global $type_of_resource_requested;
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
@@ -80,7 +79,7 @@ class SetHomePageCommunityTopicPost
         $_SESSION['special_topic_array'] = $special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
 
-        if ($type_of_resource_requested === 'topic') {
+        if ($app_state->type_of_resource_requested === 'topic') {
             // Second get and store the topic_name
 
             $topic_object = Topic::find_by_id($topic_id);
@@ -94,7 +93,7 @@ class SetHomePageCommunityTopicPost
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
-        } elseif ($type_of_resource_requested === 'post') {
+        } elseif ($app_state->type_of_resource_requested === 'post') {
             // Second get and store the topic_name
 
             $topic_object = Topic::find_by_id($topic_id);
@@ -125,7 +124,7 @@ class SetHomePageCommunityTopicPost
             $_SESSION['author_id'] = (int)$post_author_object->id;
         }
 
-        $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
+        $_SESSION['type_of_resource_requested'] = $app_state->type_of_resource_requested;
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;
@@ -141,12 +140,12 @@ class SetHomePageCommunityTopicPost
     private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, &$post_object,
                                                                                                   &$post_author_object)
     {
-        global $type_of_resource_requested;
+        global $app_state;
         global $special_post_array;
         global $post_content;
 
 
-        if ($type_of_resource_requested === 'post') {
+        if ($app_state->type_of_resource_requested === 'post') {
 
             if (!array_key_exists($post_id, $special_post_array)) {
 
@@ -191,7 +190,7 @@ class SetHomePageCommunityTopicPost
      */
     private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id)
     {
-        global $type_of_resource_requested;
+        global $app_state;
         global $special_post_array;
 
 
@@ -200,7 +199,7 @@ class SetHomePageCommunityTopicPost
          * make sure that post id is valid.
          */
 
-        if ($type_of_resource_requested === 'topic_or_post') {
+        if ($app_state->type_of_resource_requested === 'topic_or_post') {
 
             // Either way we need this
 
@@ -217,11 +216,11 @@ class SetHomePageCommunityTopicPost
 
             if ($post_id === 0 && $topic_id !== 0) {
 
-                $type_of_resource_requested = 'topic';
+                $app_state->type_of_resource_requested = 'topic';
 
             } elseif ($post_id !== 0 && $topic_id !== 0) {
 
-                $type_of_resource_requested = 'post';
+                $app_state->type_of_resource_requested = 'post';
 
             } else {
 
@@ -239,7 +238,7 @@ class SetHomePageCommunityTopicPost
      */
     private static function get_the_topics_and_derive_the_data_surrounding_it($community_id, $post_id, $topic_id)
     {
-        global $type_of_resource_requested;
+        global $app_state;
         global $special_topic_array;
 
         /**
@@ -269,7 +268,7 @@ class SetHomePageCommunityTopicPost
 
         if ($topic_id == 0) {
 
-            $type_of_resource_requested = 'community';
+            $app_state->type_of_resource_requested = 'community';
 
             if ($post_id != 0) {
 
@@ -279,7 +278,7 @@ class SetHomePageCommunityTopicPost
 
         } else {
 
-            $type_of_resource_requested = 'topic_or_post';
+            $app_state->type_of_resource_requested = 'topic_or_post';
 
         }
     }

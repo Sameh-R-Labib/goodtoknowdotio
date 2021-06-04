@@ -27,7 +27,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
         global $thing_type;
         global $html_title;
         global $present;
-        global $type_of_resource_requested;
 
 
         /**
@@ -36,7 +35,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         kick_out_nonadmins();
 
-        $thing_type = ucfirst($type_of_resource_requested);
+        $thing_type = ucfirst($app_state->type_of_resource_requested);
 
 
         /**

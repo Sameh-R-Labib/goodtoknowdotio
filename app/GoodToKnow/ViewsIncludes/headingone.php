@@ -1,8 +1,8 @@
 <?php
 
-global $type_of_resource_requested;
+global $app_state;
 
-switch ($type_of_resource_requested) {
+switch ($app_state->type_of_resource_requested) {
     case 'community':
         echo '<h1>Topics</h1>';
         break;

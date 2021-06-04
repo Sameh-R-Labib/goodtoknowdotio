@@ -46,26 +46,37 @@ class Home
     private static function put_together_a_good_sessionmessage()
     {
         global $app_state;
-        global $type_of_resource_requested;
 
-        if ($type_of_resource_requested === 'community') {
+        if ($app_state->type_of_resource_requested === 'community') {
+
             if (!empty(trim($app_state->community_description))) {
+
                 if (empty(trim($app_state->message))) {
                     $app_state->message .= ' ' . nl2br($app_state->community_description, false) . ' ';
                 }
+
             }
-        } elseif ($type_of_resource_requested === 'topic') {
+
+        } elseif ($app_state->type_of_resource_requested === 'topic') {
+
             if (!empty(trim($app_state->topic_description))) {
+
                 if (empty(trim($app_state->message))) {
                     $app_state->message .= ' ' . nl2br($app_state->topic_description, false) . ' ';
                 }
+
             }
+
         } else {
+
             if (!empty(trim($app_state->post_full_name))) {
+
                 if (empty(trim($app_state->message))) {
                     $app_state->message .= ' ' . $app_state->post_full_name . ' ';
                 }
+
             }
+
         }
 
         $app_state->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
@@ -87,7 +98,6 @@ class Home
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
-        global $type_of_resource_requested;
         global $last_refresh_communities;
         global $last_refresh_topics;
         global $last_refresh_posts;
@@ -130,7 +140,8 @@ class Home
 
         $time_since_refresh = time() - $last_refresh_topics;
 
-        if ($time_since_refresh > 240 && $type_of_resource_requested == 'community') {
+        if ($time_since_refresh > 240 && $app_state->type_of_resource_requested == 'community') {
+
             if ($db == 'not connected') {
 
                 $db = db_connect();
@@ -152,6 +163,7 @@ class Home
 
             $_SESSION['special_topic_array'] = $special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
+
         }
 
 
@@ -163,7 +175,7 @@ class Home
 
         $time_since_refresh = time() - $last_refresh_posts;
 
-        if ($time_since_refresh > 180 && $type_of_resource_requested == 'topic') {
+        if ($time_since_refresh > 180 && $app_state->type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
 
                 $db = db_connect();
@@ -196,7 +208,7 @@ class Home
 
         $time_since_refresh = time() - $last_refresh_content;
 
-        if ($time_since_refresh > 180 && $type_of_resource_requested == 'post') {
+        if ($time_since_refresh > 180 && $app_state->type_of_resource_requested == 'post') {
 
             if ($db == 'not connected') {
 

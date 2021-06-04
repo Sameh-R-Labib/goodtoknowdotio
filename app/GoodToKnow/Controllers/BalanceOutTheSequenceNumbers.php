@@ -17,7 +17,6 @@ class BalanceOutTheSequenceNumbers
         global $thing_id;
         global $result;
         global $fields;
-        global $type_of_resource_requested;
 
 
         kick_out_nonadmins();
@@ -32,11 +31,11 @@ class BalanceOutTheSequenceNumbers
          * Error out if the thing is a post.
          */
 
-        if ($type_of_resource_requested === 'post') {
+        if ($app_state->type_of_resource_requested === 'post') {
             breakout(' It is not possible to run this operation on a post. ');
         }
 
-        $thing_type = ucfirst($type_of_resource_requested);
+        $thing_type = ucfirst($app_state->type_of_resource_requested);
 
         if ($thing_type === 'Community') {
 

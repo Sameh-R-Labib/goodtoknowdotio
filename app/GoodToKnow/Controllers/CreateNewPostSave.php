@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use Exception;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
@@ -12,7 +13,6 @@ class CreateNewPostSave
         global $db;
         global $app_state;
         global $html_title;
-        global $type_of_resource_requested;
         global $saved_str01;                // The main title
         global $saved_str02;                // The title extension
         global $saved_int01;                // The topic id
@@ -96,7 +96,7 @@ class CreateNewPostSave
 
             $filenamestub = random_bytes(5);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $app_state->message .= ' CreateNewPostSave page() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
@@ -158,10 +158,10 @@ class CreateNewPostSave
 
 
         /**
-         * Refresh special_post_array if ($type_of_resource_requested === 'topic')
+         * Refresh special_post_array if ($app_state->type_of_resource_requested === 'topic')
          */
 
-        if ($type_of_resource_requested === 'topic' || $type_of_resource_requested === 'post') {
+        if ($app_state->type_of_resource_requested === 'topic' || $app_state->type_of_resource_requested === 'post') {
 
             $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
 

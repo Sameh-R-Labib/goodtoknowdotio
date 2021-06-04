@@ -102,6 +102,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $type_of_resource_requested;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -139,5 +145,7 @@ class AppState
         $this->post_name = (isset($_SESSION['post_name'])) ? $_SESSION['post_name'] : '';
 
         $this->post_full_name = (isset($_SESSION['post_full_name'])) ? $_SESSION['post_full_name'] : '';
+
+        $this->type_of_resource_requested = (isset($_SESSION['type_of_resource_requested'])) ? $_SESSION['type_of_resource_requested'] : '';
     }
 }
