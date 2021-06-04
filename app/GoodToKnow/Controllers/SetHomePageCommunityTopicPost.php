@@ -40,10 +40,8 @@ class SetHomePageCommunityTopicPost
 
         $post_object = null;
         $post_author_object = null;
-        $topic_object = null;
 
-        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, $post_object,
-            $post_author_object);
+        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, $post_object, $post_author_object);
 
         self::store_derived_info_in_the_session($community_id, $topic_id, $post_object, $post_author_object, $post_id);
 

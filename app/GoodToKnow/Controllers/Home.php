@@ -83,12 +83,11 @@ class Home
          * 3 hours then refresh it.
          */
 
-        global $db;
         global $app_state;
+        global $db;
         global $special_topic_array;
         global $special_post_array;
         global $post_content;
-        global $post_id;
         global $type_of_resource_requested;
         global $last_refresh_communities;
         global $last_refresh_topics;
@@ -215,7 +214,7 @@ class Home
 
             }
 
-            $post_object = Post::find_by_id($post_id);
+            $post_object = Post::find_by_id($app_state->post_id);
 
             if ($post_object === false) {
 
