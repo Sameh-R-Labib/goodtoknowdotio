@@ -95,7 +95,6 @@ class Home
 
         global $app_state;
         global $db;
-        global $post_content;
 
         $time_since_refresh = time() - $app_state->last_refresh_communities;  // seconds
 
@@ -227,24 +226,24 @@ class Home
 
             } else {
 
-                $post_content = file_get_contents($post_object->html_file);
+                $app_state->post_content = file_get_contents($post_object->html_file);
 
-                if ($post_content === false) {
+                if ($app_state->post_content === false) {
 
                     $app_state->message .= " Unable to read the post's file. ";
-                    $post_content = '';
+                    $app_state->post_content = '';
 
                 }
 
             }
 
-            if (empty(trim($post_content))) {
+            if (empty(trim($app_state->post_content))) {
 
-                $post_content = '<p><em>[No post content]</em></p>';
+                $app_state->post_content = '<p><em>[No post content]</em></p>';
 
             }
 
-            $_SESSION['post_content'] = $post_content;
+            $_SESSION['post_content'] = $app_state->post_content;
             $_SESSION['last_refresh_content'] = time();
 
         }

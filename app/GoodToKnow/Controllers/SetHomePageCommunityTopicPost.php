@@ -59,7 +59,6 @@ class SetHomePageCommunityTopicPost
                                                               $post_object, $post_author_object, $post_id)
     {
         global $app_state;
-        global $post_content;
         global $community_object;
         global $topic_object;
 
@@ -116,7 +115,7 @@ class SetHomePageCommunityTopicPost
 
             $_SESSION['special_post_array'] = $app_state->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
-            $_SESSION['post_content'] = $post_content;
+            $_SESSION['post_content'] = $app_state->post_content;
             $_SESSION['last_refresh_content'] = time();
             $_SESSION['author_username'] = $post_author_object->username;
             $_SESSION['author_id'] = (int)$post_author_object->id;
@@ -139,7 +138,6 @@ class SetHomePageCommunityTopicPost
                                                                                                   &$post_author_object)
     {
         global $app_state;
-        global $post_content;
 
 
         if ($app_state->type_of_resource_requested === 'post') {
@@ -160,9 +158,9 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $post_content = file_get_contents($post_object->html_file);
+            $app_state->post_content = file_get_contents($post_object->html_file);
 
-            if ($post_content === false) {
+            if ($app_state->post_content === false) {
 
                 breakout(' Unable to read the post\'s html source file. ');
 
