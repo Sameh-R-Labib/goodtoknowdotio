@@ -17,9 +17,9 @@ function fix_michelf(string &$html)
  */
 function kick_out_loggedoutusers()
 {
-    global $is_logged_in, $app_state;
+    global $app_state;
 
-    if (!$is_logged_in || !empty($app_state->message)) {
+    if (!$app_state->is_logged_in || !empty($app_state->message)) {
 
         breakout(' Log back in because your session has expired. ');
 
@@ -32,9 +32,9 @@ function kick_out_loggedoutusers()
  */
 function kick_out_nonadmins()
 {
-    global $is_logged_in, $is_admin, $app_state;
+    global $is_admin, $app_state;
 
-    if (!$is_logged_in || !$is_admin || !empty($app_state->message)) {
+    if (!$app_state->is_logged_in || !$is_admin || !empty($app_state->message)) {
 
         breakout(' You are not authorized. ');
 

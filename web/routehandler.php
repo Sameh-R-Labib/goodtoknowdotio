@@ -171,7 +171,7 @@ $app_state = new AppState();
 
 //$saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
 
-$is_logged_in = !empty($app_state->user_id);
+//$is_logged_in = !empty($app_state->user_id);
 
 $is_admin = $app_state->role === 'admin';
 

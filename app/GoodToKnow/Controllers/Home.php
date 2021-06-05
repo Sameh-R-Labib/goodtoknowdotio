@@ -320,9 +320,8 @@ class Home
     private static function redirect_if_not_logged_in()
     {
         global $app_state;
-        global $is_logged_in;
 
-        if (!$is_logged_in) {
+        if (!$app_state->is_logged_in) {
 
             $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();

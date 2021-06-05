@@ -6,12 +6,11 @@ class LoginForm
 {
     function page()
     {
-        global $is_logged_in;
         global $app_state;
         global $html_title;
 
 
-        if ($is_logged_in) {
+        if ($app_state->is_logged_in) {
 
             $_SESSION['message'] = $app_state->message;
             reset_feature_session_vars();

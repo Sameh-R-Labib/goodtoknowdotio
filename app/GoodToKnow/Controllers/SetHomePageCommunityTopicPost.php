@@ -309,9 +309,8 @@ class SetHomePageCommunityTopicPost
     private static function abort_if_an_anomalous_condition_exists()
     {
         global $app_state;
-        global $is_logged_in;
 
-        if (!$is_logged_in || !empty($app_state->message)) {
+        if (!$app_state->is_logged_in || !empty($app_state->message)) {
 
             $_SESSION['message'] = $app_state->message;
 

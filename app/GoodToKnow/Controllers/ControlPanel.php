@@ -6,15 +6,14 @@ class ControlPanel
 {
     function page()
     {
-        global $is_logged_in;
-        global $is_admin;
         global $app_state;
+        global $is_admin;
         global $html_title;
         global $page;
         global $show_poof;
 
 
-        if (!$is_logged_in or $is_admin) {
+        if (!$app_state->is_logged_in or $is_admin) {
 
             breakout(' Hey, either your session timed out or you are an admin and do not belong here in this CP. ');
 

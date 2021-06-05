@@ -194,11 +194,10 @@ class LoginScript
      */
     private static function init()
     {
-        global $db;
         global $app_state;
-        global $is_logged_in;
+        global $db;
 
-        if ($is_logged_in) {
+        if ($app_state->is_logged_in) {
 
             $app_state->message .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";

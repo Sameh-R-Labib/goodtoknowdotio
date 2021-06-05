@@ -210,6 +210,12 @@ class AppState
 
 
     /**
+     * @var bool
+     */
+    public $is_logged_in;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -283,5 +289,7 @@ class AppState
         $this->saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
 
         $this->saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
+
+        $this->is_logged_in = !empty($app_state->user_id);
     }
 }
