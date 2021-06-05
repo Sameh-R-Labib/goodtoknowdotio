@@ -1,4 +1,4 @@
-<?php global $pre_populate; ?>
+<?php global $gtk; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/ByUsernameMessageSave/page" method="post">
         <h1>Message Editor</h1>
@@ -19,7 +19,7 @@
             <p>
                 <label for="textarea"></label>
                 <textarea id="textarea" spellcheck="false" name="markdown" rows="32" cols="77"
-                          wrap="soft"><?= $pre_populate ?></textarea>
+                          wrap="soft"><?= $gtk->pre_populate ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

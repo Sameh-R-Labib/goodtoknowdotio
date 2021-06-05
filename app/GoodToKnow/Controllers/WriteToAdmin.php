@@ -7,7 +7,6 @@ class WriteToAdmin
     function page()
     {
         global $gtk;
-        global $pre_populate;
 
 
         kick_out_loggedoutusers();
@@ -22,7 +21,7 @@ class WriteToAdmin
 
         $gtk->html_title = 'Write to Admin';
 
-        $pre_populate = <<<ROI
+        $gtk->pre_populate = <<<ROI
 Dear Admin {$admin_username},
 
 I would like you to add a particular topic to a particular community.

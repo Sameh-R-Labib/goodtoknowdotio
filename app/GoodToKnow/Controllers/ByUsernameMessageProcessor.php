@@ -18,7 +18,6 @@ class ByUsernameMessageProcessor
 
         global $gtk;
         global $db;
-        global $pre_populate;
 
 
         kick_out_loggedoutusers();
@@ -51,7 +50,7 @@ class ByUsernameMessageProcessor
 
         $_SESSION['saved_str01'] = $submitted_username;
 
-        $pre_populate = <<<ROI
+        $gtk->pre_populate = <<<ROI
 Dear $submitted_username,
 
 I have something I want to tell you.

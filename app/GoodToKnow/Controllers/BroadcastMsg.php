@@ -7,7 +7,6 @@ class BroadcastMsg
     function page()
     {
         global $gtk;
-        global $pre_populate;
 
 
         kick_out_nonadmins();
@@ -19,7 +18,7 @@ class BroadcastMsg
 
         $gtk->html_title = 'Broadcast a Message';
 
-        $pre_populate = <<<ROI
+        $gtk->pre_populate = <<<ROI
 Dear Users,
 
 [Broadcast to all]

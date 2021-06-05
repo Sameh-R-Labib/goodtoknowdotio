@@ -19,7 +19,6 @@ class MessageTheAuthor
 
 
         global $gtk;
-        global $pre_populate;
 
 
         kick_out_loggedoutusers();
@@ -31,7 +30,7 @@ class MessageTheAuthor
 
         $gtk->html_title = 'Message the Author';
 
-        $pre_populate = <<<ROI
+        $gtk->pre_populate = <<<ROI
 Dear $gtk->author_username,
 
 This message is in regards to your "$gtk->post_name" post in the "$gtk->topic_name" topic of the
