@@ -29,15 +29,15 @@ class Home
 
     private static function show_the_home_page()
     {
+        global $app_state;
         global $html_title;
-        global $page;
         global $show_poof;
 
         $show_poof = false;
 
         $html_title = 'GoodToKnow.io';
 
-        $page = "Home";
+        $app_state->page = "Home";
 
         require VIEWS . DIRSEP . 'home.php';
     }

@@ -1,8 +1,8 @@
 <?php
 
-global $page;
+global $app_state;
 
-switch ($page) {
+switch ($app_state->page) {
     case 'Inbox':
         echo "<a href=\"/ax1/Inbox/page\">Inbox</a>";
         break;

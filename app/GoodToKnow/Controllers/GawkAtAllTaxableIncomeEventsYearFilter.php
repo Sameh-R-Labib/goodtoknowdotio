@@ -18,7 +18,6 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         global $app_state;
         global $html_title;
         global $show_poof;
-        global $page;
         global $array;
 
 
@@ -47,7 +46,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         $html_title = "One year of your taxable income event records";
 
 
-        $page = 'GawkAtAllTaxableIncomeEvents';
+        $app_state->page = 'GawkAtAllTaxableIncomeEvents';
 
 
         $show_poof = true;

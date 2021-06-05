@@ -7,7 +7,6 @@ class CPCrypto
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPCrypto
         kick_out_loggedoutusers();
 
 
-        $page = 'CPCrypto';
+        $app_state->page = 'CPCrypto';
 
 
         $show_poof = true;

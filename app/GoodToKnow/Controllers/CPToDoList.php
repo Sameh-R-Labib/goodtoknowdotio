@@ -7,7 +7,6 @@ class CPToDoList
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPToDoList
         kick_out_loggedoutusers();
 
 
-        $page = 'CPToDoList';
+        $app_state->page = 'CPToDoList';
 
 
         $show_poof = true;

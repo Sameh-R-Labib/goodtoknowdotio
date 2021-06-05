@@ -17,7 +17,6 @@ class ViewAllBankingAccountsForBalances
         global $app_state;
         global $html_title;
         global $show_poof;
-        global $page;
         global $array_of_objects;
 
 
@@ -48,7 +47,7 @@ class ViewAllBankingAccountsForBalances
 
         $show_poof = true;
 
-        $page = 'ViewAllBankingAccountsForBalances';
+        $app_state->page = 'ViewAllBankingAccountsForBalances';
 
         $app_state->message .= " Here are all your bank accounts. ";
 

@@ -7,7 +7,6 @@ class CPPurges
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPPurges
         kick_out_loggedoutusers();
 
 
-        $page = 'CPPurges';
+        $app_state->page = 'CPPurges';
 
 
         $show_poof = true;

@@ -185,7 +185,7 @@ $app_state = new AppState();
  * Also, it's good to make global the vars which traverse multiple include files.
  * For example $message_object.
  */
-$page = 'Home';
+//$page = 'Home';
 $html_title = '';
 $long_title_of_post = '';
 $pre_populate = '';

@@ -13,7 +13,6 @@ class UserRoster
         global $db;
         global $app_state;
         global $html_title;
-        global $page;
         global $show_poof;
         global $readable_user_objects_array;
 
@@ -27,7 +26,7 @@ class UserRoster
         $html_title = 'User Roster';
 
 
-        $page = 'UserRoster';
+        $app_state->page = 'UserRoster';
 
 
         $show_poof = true;

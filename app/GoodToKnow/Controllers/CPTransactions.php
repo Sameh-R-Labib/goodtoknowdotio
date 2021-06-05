@@ -7,7 +7,6 @@ class CPTransactions
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPTransactions
         kick_out_loggedoutusers();
 
 
-        $page = 'CPTransactions';
+        $app_state->page = 'CPTransactions';
 
 
         $show_poof = true;

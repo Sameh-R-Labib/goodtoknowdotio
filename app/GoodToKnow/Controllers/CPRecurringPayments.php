@@ -7,7 +7,6 @@ class CPRecurringPayments
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPRecurringPayments
         kick_out_loggedoutusers();
 
 
-        $page = 'CPRecurringPayments';
+        $app_state->page = 'CPRecurringPayments';
 
 
         $show_poof = true;

@@ -7,7 +7,6 @@ class CPTaxableIncome
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPTaxableIncome
         kick_out_loggedoutusers();
 
 
-        $page = 'CPTaxableIncome';
+        $app_state->page = 'CPTaxableIncome';
 
 
         $show_poof = true;

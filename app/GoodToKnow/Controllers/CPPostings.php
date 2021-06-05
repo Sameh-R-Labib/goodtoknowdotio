@@ -7,7 +7,6 @@ class CPPostings
     function page()
     {
         global $app_state;
-        global $page;
         global $html_title;
         global $show_poof;
 
@@ -15,7 +14,7 @@ class CPPostings
         kick_out_nonadmins();
 
 
-        $page = 'CPPostings';
+        $app_state->page = 'CPPostings';
 
 
         $show_poof = true;

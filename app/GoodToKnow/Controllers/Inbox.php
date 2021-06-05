@@ -12,7 +12,6 @@ class Inbox
         global $app_state;
         global $show_poof;
         global $html_title;
-        global $page;
         global $inbox_messages_array;
 
 
@@ -22,7 +21,7 @@ class Inbox
         $html_title = 'Inbox';
 
 
-        $page = 'Inbox';
+        $app_state->page = 'Inbox';
 
 
         $show_poof = true;

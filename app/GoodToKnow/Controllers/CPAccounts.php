@@ -9,13 +9,12 @@ class CPAccounts
         global $app_state;
         global $html_title;
         global $show_poof;
-        global $page;
 
 
         kick_out_loggedoutusers();
 
 
-        $page = 'CPAccounts';
+        $app_state->page = 'CPAccounts';
 
 
         $show_poof = true;

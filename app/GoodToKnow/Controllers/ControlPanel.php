@@ -8,7 +8,6 @@ class ControlPanel
     {
         global $app_state;
         global $html_title;
-        global $page;
         global $show_poof;
 
 
@@ -22,7 +21,7 @@ class ControlPanel
         $html_title = 'Control Panel';
 
 
-        $page = 'CP';
+        $app_state->page = 'CP';
 
 
         $show_poof = true;

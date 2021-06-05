@@ -15,11 +15,10 @@ class RecurringPaymentSeeMyRecords
          */
 
 
-        global $db;
         global $app_state;
+        global $db;
         global $show_poof;
         global $html_title;
-        global $page;
         global $array_of_recurring_payment_objects;
 
 
@@ -62,7 +61,7 @@ class RecurringPaymentSeeMyRecords
         }
 
 
-        $page = 'RecurringPaymentSeeMyRecords';
+        $app_state->page = 'RecurringPaymentSeeMyRecords';
 
 
         $show_poof = true;

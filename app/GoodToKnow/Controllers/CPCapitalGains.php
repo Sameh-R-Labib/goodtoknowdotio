@@ -7,7 +7,6 @@ class CPCapitalGains
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPCapitalGains
         kick_out_loggedoutusers();
 
 
-        $page = 'CPCapitalGains';
+        $app_state->page = 'CPCapitalGains';
 
 
         $show_poof = true;

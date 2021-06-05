@@ -7,7 +7,6 @@ class CPTaxDeductions
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPTaxDeductions
         kick_out_loggedoutusers();
 
 
-        $page = 'CPTaxDeductions';
+        $app_state->page = 'CPTaxDeductions';
 
 
         $show_poof = true;

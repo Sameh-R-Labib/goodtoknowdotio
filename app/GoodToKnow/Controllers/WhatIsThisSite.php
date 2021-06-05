@@ -16,7 +16,6 @@ class WhatIsThisSite
         global $app_state;
         global $html_title;
         global $show_poof;
-        global $page;
 
 
         /**
@@ -27,7 +26,7 @@ class WhatIsThisSite
 
         $html_title = 'What is this site?';
 
-        $page = 'About';
+        $app_state->page = 'About';
 
         $show_poof = true;
 

@@ -7,7 +7,6 @@ class BitcoinSeeMyRecords
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
         global $array_of_bitcoin_objects;
@@ -36,7 +35,7 @@ class BitcoinSeeMyRecords
 
         $html_title = 'Your ₿ records';
 
-        $page = 'BitcoinSeeMyRecords';
+        $app_state->page = 'BitcoinSeeMyRecords';
 
         $show_poof = true;
 

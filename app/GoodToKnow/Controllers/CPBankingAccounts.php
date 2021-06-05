@@ -7,7 +7,6 @@ class CPBankingAccounts
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPBankingAccounts
         kick_out_loggedoutusers();
 
 
-        $page = 'CPBankingAccounts';
+        $app_state->page = 'CPBankingAccounts';
 
 
         $show_poof = true;

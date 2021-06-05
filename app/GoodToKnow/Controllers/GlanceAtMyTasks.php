@@ -19,7 +19,6 @@ class GlanceAtMyTasks
         global $app_state;
         global $html_title;
         global $show_poof;
-        global $page;
         global $array;
 
 
@@ -66,7 +65,7 @@ class GlanceAtMyTasks
 
         $html_title = 'All my Tasks';
 
-        $page = 'GlanceAtMyTasks';
+        $app_state->page = 'GlanceAtMyTasks';
 
         $show_poof = true;
 

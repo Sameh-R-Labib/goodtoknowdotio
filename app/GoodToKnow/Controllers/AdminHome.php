@@ -6,16 +6,15 @@ class AdminHome
 {
     function page()
     {
-        global $page;
-        global $show_poof;
         global $app_state;
+        global $show_poof;
         global $html_title;
 
         kick_out_nonadmins();
 
         $html_title = 'Admin';
 
-        $page = 'Admin';
+        $app_state->page = 'Admin';
 
         $show_poof = true;
 

@@ -7,7 +7,6 @@ class CPBasics
     function page()
     {
         global $app_state;
-        global $page;
         global $show_poof;
         global $html_title;
 
@@ -15,7 +14,7 @@ class CPBasics
         kick_out_loggedoutusers();
 
 
-        $page = 'CPBasics';
+        $app_state->page = 'CPBasics';
 
 
         $show_poof = true;

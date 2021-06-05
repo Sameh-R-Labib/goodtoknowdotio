@@ -228,10 +228,20 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $page;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
     {
+        /**
+         * Extractors from $_SESSION
+         */
+
         $this->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
 
         $_SESSION['message'] = '';
@@ -302,6 +312,11 @@ class AppState
 
         $this->saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
 
+
+        /**
+         * Simplifies
+         */
+
         $this->is_logged_in = !empty($this->user_id);
 
         $this->is_admin = $this->role === 'admin';
@@ -309,5 +324,12 @@ class AppState
         // When set to true it tells some Gtk.io views to show version of parts of the page which
         // non-authenticated users should see and hide the parts which they should not see.
         $this->is_guest = false;
+
+
+        /**
+         * Globalizes
+         */
+
+        $this->page = 'Home';
     }
 }
