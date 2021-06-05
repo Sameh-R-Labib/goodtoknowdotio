@@ -222,6 +222,12 @@ class AppState
 
 
     /**
+     * @var bool
+     */
+    public $is_guest;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -299,5 +305,9 @@ class AppState
         $this->is_logged_in = !empty($this->user_id);
 
         $this->is_admin = $this->role === 'admin';
+
+        // When set to true it tells some Gtk.io views to show version of parts of the page which
+        // non-authenticated users should see and hide the parts which they should not see.
+        $this->is_guest = false;
     }
 }

@@ -17,14 +17,13 @@ class WhatIsThisSite
         global $html_title;
         global $show_poof;
         global $page;
-        global $is_guest;
 
 
         /**
          * Present the view.
          */
 
-        $is_guest = true;
+        $app_state->is_guest = true;
 
         $html_title = 'What is this site?';
 

@@ -175,7 +175,7 @@ $app_state = new AppState();
 
 //$is_admin = $app_state->role === 'admin';
 
-$is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
+//$is_guest = false;  // Tells some Gtk.io views to show parts of the page that a non-authenticated should see.
 
 /**
  * The strategy is for vars used in views to be declared global both

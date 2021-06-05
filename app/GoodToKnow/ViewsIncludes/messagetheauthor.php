@@ -1,6 +1,5 @@
 <?php global $app_state; ?>
 <?php global $show_poof; ?>
-<?php global $is_guest; ?>
 <?php if ($show_poof != true && $app_state->type_of_resource_requested === 'post'): ?>
     <div id="sendtoauthor"><p><a href="/ax1/MessageTheAuthor/page"><?= $app_state->author_username ?></a></p></div>
 <?php else: ?>
