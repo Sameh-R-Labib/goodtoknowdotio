@@ -169,7 +169,7 @@ $app_state = new AppState();
 
 //$saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
 
-$saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
+//$saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
 
 $is_logged_in = !empty($app_state->user_id);
 

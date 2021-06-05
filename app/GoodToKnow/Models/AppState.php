@@ -204,6 +204,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $saved_arr01;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -275,5 +281,7 @@ class AppState
         $this->saved_int01 = (isset($_SESSION['saved_int01'])) ? $_SESSION['saved_int01'] : 0;
 
         $this->saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
+
+        $this->saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
     }
 }

@@ -22,8 +22,8 @@ class BalanceOutTheSequenceNumbersSave
          */
 
 
-        global $db;
         global $app_state;
+        global $db;
 
 
         /**
