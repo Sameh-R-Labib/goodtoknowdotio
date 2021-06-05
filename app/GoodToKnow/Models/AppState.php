@@ -296,7 +296,7 @@ class AppState
 
         $this->saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
 
-        $this->is_logged_in = !empty($app_state->user_id);
+        $this->is_logged_in = !empty($this->user_id);
 
         $this->is_admin = $this->role === 'admin';
     }
