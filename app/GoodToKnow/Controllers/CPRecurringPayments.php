@@ -8,7 +8,6 @@ class CPRecurringPayments
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPRecurringPayments
         $show_poof = true;
 
 
-        $html_title = 'Recurring Payments';
+        $app_state->html_title = 'Recurring Payments';
 
 
         $app_state->message .= ' Manage recurring payments. ';

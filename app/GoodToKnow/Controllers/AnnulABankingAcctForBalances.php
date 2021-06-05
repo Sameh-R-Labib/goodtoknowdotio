@@ -6,7 +6,7 @@ class AnnulABankingAcctForBalances
 {
     function page()
     {
-        global $html_title;
+        global $app_state;
 
         /**
          * Presenting a form for getting the user to tell us
@@ -16,7 +16,7 @@ class AnnulABankingAcctForBalances
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
-        $html_title = 'Which banking_acct_for_balances?';
+        $app_state->html_title = 'Which banking_acct_for_balances?';
 
         require VIEWS . DIRSEP . 'annulabankingacctforbalances.php';
     }

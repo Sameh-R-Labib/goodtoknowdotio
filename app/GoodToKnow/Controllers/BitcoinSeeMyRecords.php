@@ -8,7 +8,6 @@ class BitcoinSeeMyRecords
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
         global $array_of_bitcoin_objects;
         global $bitcoin_object;
 
@@ -33,7 +32,7 @@ class BitcoinSeeMyRecords
          * Present the view.
          */
 
-        $html_title = 'Your ₿ records';
+        $app_state->html_title = 'Your ₿ records';
 
         $app_state->page = 'BitcoinSeeMyRecords';
 

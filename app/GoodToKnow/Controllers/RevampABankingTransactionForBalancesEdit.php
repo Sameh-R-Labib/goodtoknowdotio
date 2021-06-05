@@ -20,7 +20,6 @@ class RevampABankingTransactionForBalancesEdit
 
 
         global $app_state;
-        global $html_title;
         global $object;
         global $time;
 
@@ -73,7 +72,7 @@ class RevampABankingTransactionForBalancesEdit
         $time = get_date_h_m_s_from_a_timestamp($object->time);
 
 
-        $html_title = 'Edit the banking_transaction_for_balances record';
+        $app_state->html_title = 'Edit the banking_transaction_for_balances record';
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';

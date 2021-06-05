@@ -16,7 +16,7 @@ class ForgetATaskProcessor
          */
 
 
-        global $html_title;
+        global $app_state;
         global $object;
 
 
@@ -36,7 +36,7 @@ class ForgetATaskProcessor
         $object->next = get_readable_time($object->next);
 
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
 
         require VIEWS . DIRSEP . 'forgetataskprocessor.php';

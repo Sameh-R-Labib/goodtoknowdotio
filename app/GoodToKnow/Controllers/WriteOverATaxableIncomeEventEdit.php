@@ -17,7 +17,7 @@ class WriteOverATaxableIncomeEventEdit
          */
 
 
-        global $html_title;
+        global $app_state;
         global $object;
         global $time;
 
@@ -54,7 +54,7 @@ class WriteOverATaxableIncomeEventEdit
          * Present the view.
          */
 
-        $html_title = 'Edit the taxable income event\'s record';
+        $app_state->html_title = 'Edit the taxable income event\'s record';
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeeventedit.php';
     }

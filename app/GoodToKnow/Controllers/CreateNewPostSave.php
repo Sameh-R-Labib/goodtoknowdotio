@@ -12,7 +12,6 @@ class CreateNewPostSave
     {
         global $app_state;
         global $db;
-        global $html_title;
         // $app_state->saved_str01 is the main title
         // $app_state->saved_str02 is the title extension
         // $app_state->saved_int01 the topic id
@@ -187,7 +186,7 @@ class CreateNewPostSave
 
         $_SESSION['saved_int02'] = $post->id;
 
-        $html_title = 'Editor';
+        $app_state->html_title = 'Editor';
 
         require VIEWS . DIRSEP . 'createnewposteditor.php';
     }

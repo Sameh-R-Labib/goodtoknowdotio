@@ -36,7 +36,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $app_state;
         global $db;
         global $show_poof;
-        global $html_title;
         global $account;
         global $array;
         // $app_state->saved_int01 id of BankingAcctForBalances record
@@ -148,7 +147,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $array = array_reverse($array);
 
 
-        $html_title = 'Transactions';
+        $app_state->html_title = 'Transactions';
 
 
         $app_state->page = 'CheckMyBankingAccountTxBalances';

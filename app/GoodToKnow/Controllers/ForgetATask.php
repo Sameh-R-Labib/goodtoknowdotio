@@ -13,9 +13,9 @@ class ForgetATask
          * a series of radio buttons to choose from.
          */
 
-        global $db;
+
         global $app_state;
-        global $html_title;
+        global $db;
         global $array;
 
 
@@ -37,7 +37,7 @@ class ForgetATask
         }
 
 
-        $html_title = 'Which task?';
+        $app_state->html_title = 'Which task?';
 
 
         require VIEWS . DIRSEP . 'forgetatask.php';

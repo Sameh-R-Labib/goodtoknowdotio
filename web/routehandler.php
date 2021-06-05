@@ -186,7 +186,7 @@ $app_state = new AppState();
  * For example $message_object.
  */
 //$page = 'Home';
-$html_title = '';
+//$html_title = '';
 $long_title_of_post = '';
 $pre_populate = '';
 $array = [];

@@ -8,9 +8,8 @@ class AdminPassCodeGenerationForm
 {
     function page()
     {
-        global $db;
         global $app_state;
-        global $html_title;
+        global $db;
         global $community_array;
 
 
@@ -35,7 +34,7 @@ class AdminPassCodeGenerationForm
         $community_array = Community::find_all();
 
 
-        $html_title = 'Admin Pass-Code Generation Form';
+        $app_state->html_title = 'Admin Pass-Code Generation Form';
 
         require VIEWS . DIRSEP . 'adminpasscodegenerationform.php';
     }

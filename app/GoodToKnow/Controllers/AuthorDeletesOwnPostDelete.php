@@ -14,8 +14,8 @@ class AuthorDeletesOwnPostDelete
          */
 
 
+        global $app_state;
         global $db;
-        global $html_title;
         global $long_title_of_post;
 
 
@@ -54,7 +54,7 @@ class AuthorDeletesOwnPostDelete
          * Display a form which asks for confirmation.
          */
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'authordeletesownpostdelete.php';
     }

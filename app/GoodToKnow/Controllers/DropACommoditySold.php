@@ -14,13 +14,13 @@ class DropACommoditySold
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Which tax year?';
+        $app_state->html_title = 'Which tax year?';
 
 
         require VIEWS . DIRSEP . 'dropacommoditysold.php';

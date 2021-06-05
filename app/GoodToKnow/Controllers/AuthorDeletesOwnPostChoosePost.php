@@ -20,7 +20,6 @@ class AuthorDeletesOwnPostChoosePost
         global $app_state;
         global $db;
         // $app_state->saved_int01 id of topic
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -44,7 +43,7 @@ class AuthorDeletesOwnPostChoosePost
          * Allow user to choose from amongst the posts which remain.
          */
 
-        $html_title = 'Which post to delete?';
+        $app_state->html_title = 'Which post to delete?';
 
         require VIEWS . DIRSEP . 'authordeletesownpostchoosepost.php';
     }

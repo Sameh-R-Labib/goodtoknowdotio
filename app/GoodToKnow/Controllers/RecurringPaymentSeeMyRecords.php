@@ -18,7 +18,6 @@ class RecurringPaymentSeeMyRecords
         global $app_state;
         global $db;
         global $show_poof;
-        global $html_title;
         global $array_of_recurring_payment_objects;
 
 
@@ -67,7 +66,7 @@ class RecurringPaymentSeeMyRecords
         $show_poof = true;
 
 
-        $html_title = "Your recurring transactions";
+        $app_state->html_title = "Your recurring transactions";
 
 
         $app_state->message .= " Here are your recurring transactions. ";

@@ -16,13 +16,13 @@ class QuickPostDeleteChoosePost
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_posts_along_with_their_authors.php';
 
 
-        $html_title = 'Which post to delete?';
+        $app_state->html_title = 'Which post to delete?';
 
 
         require VIEWS . DIRSEP . 'quickpostdeletechoosepost.php';

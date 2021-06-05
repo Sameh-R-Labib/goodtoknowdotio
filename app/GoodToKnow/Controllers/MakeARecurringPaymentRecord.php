@@ -18,13 +18,13 @@ class MakeARecurringPaymentRecord
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Create a New Recurring Payment Record';
+        $app_state->html_title = 'Create a New Recurring Payment Record';
 
 
         require VIEWS . DIRSEP . 'makearecurringpaymentrecord.php';

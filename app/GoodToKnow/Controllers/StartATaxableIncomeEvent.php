@@ -12,13 +12,13 @@ class StartATaxableIncomeEvent
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Create a Taxable Income Event';
+        $app_state->html_title = 'Create a Taxable Income Event';
 
 
         require VIEWS . DIRSEP . 'startataxableincomeevent.php';

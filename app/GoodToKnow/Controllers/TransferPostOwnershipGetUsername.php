@@ -16,7 +16,7 @@ class TransferPostOwnershipGetUsername
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_nonadmins();
@@ -41,7 +41,7 @@ class TransferPostOwnershipGetUsername
          * Present the view.
          */
 
-        $html_title = 'What is the username of the person?';
+        $app_state->html_title = 'What is the username of the person?';
 
         require VIEWS . DIRSEP . 'transferpostownershipgetusername.php';
     }

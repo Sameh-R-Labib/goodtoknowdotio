@@ -7,7 +7,6 @@ class ControlPanel
     function page()
     {
         global $app_state;
-        global $html_title;
         global $show_poof;
 
 
@@ -18,7 +17,7 @@ class ControlPanel
         }
 
 
-        $html_title = 'Control Panel';
+        $app_state->html_title = 'Control Panel';
 
 
         $app_state->page = 'CP';

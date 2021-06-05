@@ -25,7 +25,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
         global $app_state;
         global $db;
         global $thing_type;
-        global $html_title;
         global $present;
 
 
@@ -115,7 +114,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
-        $html_title = 'Balance Out The Sequence Numbers';
+        $app_state->html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbersformprocessor.php';
     }

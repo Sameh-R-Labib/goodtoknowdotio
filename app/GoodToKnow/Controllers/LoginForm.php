@@ -7,7 +7,6 @@ class LoginForm
     function page()
     {
         global $app_state;
-        global $html_title;
 
 
         if ($app_state->is_logged_in) {
@@ -19,7 +18,7 @@ class LoginForm
         }
 
 
-        $html_title = 'GoodToKnow.io';
+        $app_state->html_title = 'GoodToKnow.io';
 
 
         require VIEWS . DIRSEP . 'loginform.php';

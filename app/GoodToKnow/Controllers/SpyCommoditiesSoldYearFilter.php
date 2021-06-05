@@ -16,7 +16,6 @@ class SpyCommoditiesSoldYearFilter
 
 
         global $app_state;
-        global $html_title;
         global $show_poof;
         global $array;
 
@@ -51,7 +50,7 @@ class SpyCommoditiesSoldYearFilter
 
         $app_state->message .= " Here is one year's commodities sold records. ";
 
-        $html_title = "One year's commodities sold records";
+        $app_state->html_title = "One year's commodities sold records";
 
         $app_state->page = 'SpyCommoditiesSoldYear';
 

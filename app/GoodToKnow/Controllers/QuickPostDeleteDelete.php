@@ -13,7 +13,7 @@ class QuickPostDeleteDelete
          */
 
 
-        global $html_title;
+        global $app_state;
         global $post_object;
         global $chosen_post_id;
         global $long_title_of_post;
@@ -34,7 +34,7 @@ class QuickPostDeleteDelete
         $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
 
         require VIEWS . DIRSEP . 'quickpostdeletedelete.php';

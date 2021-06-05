@@ -12,13 +12,13 @@ class SeeOneYearsPossibleTaxDeductions
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Which year_paid for showing possible_tax_deduction(s/plural)?';
+        $app_state->html_title = 'Which year_paid for showing possible_tax_deduction(s/plural)?';
 
 
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductions.php';

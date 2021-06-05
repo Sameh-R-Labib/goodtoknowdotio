@@ -6,9 +6,8 @@ class BroadcastMsg
 {
     function page()
     {
-        global $html_title;
-        global $pre_populate;
         global $app_state;
+        global $pre_populate;
 
 
         kick_out_nonadmins();
@@ -18,7 +17,7 @@ class BroadcastMsg
          * Display the editor interface.
          */
 
-        $html_title = 'Broadcast a Message';
+        $app_state->html_title = 'Broadcast a Message';
 
         $pre_populate = <<<ROI
 Dear Users,

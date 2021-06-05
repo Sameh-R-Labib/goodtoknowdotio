@@ -15,7 +15,6 @@ class ViewAllBankingAccountsForBalances
 
 
         global $app_state;
-        global $html_title;
         global $show_poof;
         global $array_of_objects;
 
@@ -43,7 +42,7 @@ class ViewAllBankingAccountsForBalances
          * Present the view.
          */
 
-        $html_title = "Bank Account";
+        $app_state->html_title = "Bank Account";
 
         $show_poof = true;
 

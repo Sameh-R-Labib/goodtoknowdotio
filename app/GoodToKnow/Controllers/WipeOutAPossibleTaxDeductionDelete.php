@@ -15,7 +15,7 @@ class WipeOutAPossibleTaxDeductionDelete
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_possibletaxdeduction.php';
@@ -26,7 +26,7 @@ class WipeOutAPossibleTaxDeductionDelete
          *    and asks for approval for deletion to proceed.
          */
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'wipeoutapossibletaxdeductiondelete.php';
     }

@@ -23,7 +23,6 @@ class CreateNewPostInsertPoint
 
         global $app_state;
         global $db;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -48,7 +47,7 @@ class CreateNewPostInsertPoint
 
         }
 
-        $html_title = 'Where will the new post go?';
+        $app_state->html_title = 'Where will the new post go?';
 
         require VIEWS . DIRSEP . 'createnewpostinsertpoint.php';
     }

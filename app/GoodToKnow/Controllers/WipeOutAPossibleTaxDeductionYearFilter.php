@@ -6,7 +6,7 @@ class WipeOutAPossibleTaxDeductionYearFilter
 {
     function page()
     {
-        global $html_title;
+        global $app_state;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_year_paid_and_its_possibletaxdeductions.php';
@@ -16,7 +16,7 @@ class WipeOutAPossibleTaxDeductionYearFilter
          * Present the view.
          */
 
-        $html_title = 'Which possible_tax_deduction record?';
+        $app_state->html_title = 'Which possible_tax_deduction record?';
 
         require VIEWS . DIRSEP . 'wipeoutapossibletaxdeductionyearfilter.php';
     }

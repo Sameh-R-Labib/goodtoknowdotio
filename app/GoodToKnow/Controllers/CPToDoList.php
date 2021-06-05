@@ -8,7 +8,6 @@ class CPToDoList
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPToDoList
         $show_poof = true;
 
 
-        $html_title = 'Task List';
+        $app_state->html_title = 'Task List';
 
 
         $app_state->message .= ' Manage to-do list. ';

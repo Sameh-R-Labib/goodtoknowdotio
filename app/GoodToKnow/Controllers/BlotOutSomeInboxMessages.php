@@ -14,10 +14,9 @@ class BlotOutSomeInboxMessages
          */
 
 
-        global $db;
         global $app_state;
+        global $db;
         global $inbox_messages_array;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -47,7 +46,7 @@ class BlotOutSomeInboxMessages
         }
 
 
-        $html_title = 'Choose Messages';
+        $app_state->html_title = 'Choose Messages';
 
         require VIEWS . DIRSEP . 'blotoutsomeinboxmessages.php';
     }

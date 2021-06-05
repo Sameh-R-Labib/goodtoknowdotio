@@ -8,7 +8,6 @@ class CPTaxDeductions
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPTaxDeductions
         $show_poof = true;
 
 
-        $html_title = 'TaxDeductions';
+        $app_state->html_title = 'TaxDeductions';
 
 
         $app_state->message .= ' Managing tax deductions. ';

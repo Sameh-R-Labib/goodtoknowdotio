@@ -11,7 +11,6 @@ class KommunityDescriptionEditorForm
         global $app_state;
         global $db;
         // $app_state->saved_int01 community id
-        global $html_title;
         global $community_object;
 
 
@@ -43,7 +42,7 @@ class KommunityDescriptionEditorForm
 
         // 2) Present a (pre-filled with current description) form for editing.
 
-        $html_title = "Community's Description Editor";
+        $app_state->html_title = "Community's Description Editor";
 
         require VIEWS . DIRSEP . 'kommunitydescriptioneditorform.php';
     }

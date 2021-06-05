@@ -30,12 +30,11 @@ class Home
     private static function show_the_home_page()
     {
         global $app_state;
-        global $html_title;
         global $show_poof;
 
         $show_poof = false;
 
-        $html_title = 'GoodToKnow.io';
+        $app_state->html_title = 'GoodToKnow.io';
 
         $app_state->page = "Home";
 

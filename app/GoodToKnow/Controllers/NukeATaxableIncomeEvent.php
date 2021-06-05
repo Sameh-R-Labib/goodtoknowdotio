@@ -14,13 +14,13 @@ class NukeATaxableIncomeEvent
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Which year received?';
+        $app_state->html_title = 'Which year received?';
 
 
         require VIEWS . DIRSEP . 'nukeataxableincomeevent.php';

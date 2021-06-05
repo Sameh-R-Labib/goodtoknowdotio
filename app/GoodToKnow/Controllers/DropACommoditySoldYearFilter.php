@@ -8,7 +8,7 @@ class DropACommoditySoldYearFilter
 {
     function page()
     {
-        global $html_title;
+        global $app_state;
         global $array;
 
 
@@ -28,7 +28,7 @@ class DropACommoditySoldYearFilter
         }
 
 
-        $html_title = 'Which Commodity Sold?';
+        $app_state->html_title = 'Which Commodity Sold?';
 
         require VIEWS . DIRSEP . 'dropacommoditysoldyearfilter.php';
     }

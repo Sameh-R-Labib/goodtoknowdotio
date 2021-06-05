@@ -20,7 +20,7 @@ class OmitABankingTransactionForBalancesDelete
 
 
         global $db;
-        global $html_title;
+        global $app_state;
         global $object;
         global $bank;
 
@@ -59,7 +59,7 @@ class OmitABankingTransactionForBalancesDelete
         $object->amount = readable_amount_of_money($bank->currency, $object->amount);
 
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalancesdelete.php';

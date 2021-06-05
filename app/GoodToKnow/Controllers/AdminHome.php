@@ -8,11 +8,10 @@ class AdminHome
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
         kick_out_nonadmins();
 
-        $html_title = 'Admin';
+        $app_state->html_title = 'Admin';
 
         $app_state->page = 'Admin';
 

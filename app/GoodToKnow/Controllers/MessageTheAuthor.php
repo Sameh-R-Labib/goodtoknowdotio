@@ -20,7 +20,6 @@ class MessageTheAuthor
 
         global $app_state;
         global $pre_populate;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -30,7 +29,7 @@ class MessageTheAuthor
          * Display the editor interface.
          */
 
-        $html_title = 'Message the Author';
+        $app_state->html_title = 'Message the Author';
 
         $pre_populate = <<<ROI
 Dear $app_state->author_username,

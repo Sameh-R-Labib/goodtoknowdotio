@@ -8,10 +8,9 @@ class MemberMemoEditorForm
 {
     function page()
     {
-        global $db;
         global $app_state;
+        global $db;
         // $app_state->saved_str01 has user's username. Is changed in this file and is used in the view.
-        global $html_title;
         global $user_object;
 
 
@@ -51,7 +50,7 @@ class MemberMemoEditorForm
          *     is to be used to pro-populate the form.
          */
 
-        $html_title = 'Member Memo Editor Form';
+        $app_state->html_title = 'Member Memo Editor Form';
 
         require VIEWS . DIRSEP . 'membermemoeditorform.php';
     }

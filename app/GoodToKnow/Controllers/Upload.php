@@ -13,7 +13,7 @@ class Upload
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
@@ -23,7 +23,7 @@ class Upload
          * Present the editor interface.
          */
 
-        $html_title = 'Upload an image';
+        $app_state->html_title = 'Upload an image';
 
         require VIEWS . DIRSEP . 'upload.php';
     }

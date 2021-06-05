@@ -11,14 +11,13 @@ class Inbox
         global $db;
         global $app_state;
         global $show_poof;
-        global $html_title;
         global $inbox_messages_array;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Inbox';
+        $app_state->html_title = 'Inbox';
 
 
         $app_state->page = 'Inbox';

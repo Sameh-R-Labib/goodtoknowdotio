@@ -16,9 +16,8 @@ class ByUsernameMessageProcessor
          * the session.
          */
 
-        global $db;
         global $app_state;
-        global $html_title;
+        global $db;
         global $pre_populate;
 
 
@@ -53,7 +52,7 @@ class ByUsernameMessageProcessor
         $_SESSION['saved_str01'] = $submitted_username;
 
         $pre_populate = <<<ROI
-Dear {$submitted_username},
+Dear $submitted_username,
 
 I have something I want to tell you.
 
@@ -62,7 +61,7 @@ Sincerely,
 {$app_state->user_username}
 ROI;
 
-        $html_title = "Compose Message for {$submitted_username}";
+        $app_state->html_title = "Compose Message for $submitted_username";
 
         require VIEWS . DIRSEP . 'byusernamemprocessor.php';
     }

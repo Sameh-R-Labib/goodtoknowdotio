@@ -8,7 +8,6 @@ class CPBankingAccounts
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPBankingAccounts
         $show_poof = true;
 
 
-        $html_title = 'CRUD For Bank Accounts And Their Starting Balances';
+        $app_state->html_title = 'CRUD For Bank Accounts And Their Starting Balances';
 
 
         $app_state->message .= ' Manage banking accounts. ';

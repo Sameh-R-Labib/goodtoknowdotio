@@ -8,7 +8,6 @@ class CPTransactions
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPTransactions
         $show_poof = true;
 
 
-        $html_title = 'Transactions';
+        $app_state->html_title = 'Transactions';
 
 
         $app_state->message .= ' Manage my copy of my bank transactions. ';

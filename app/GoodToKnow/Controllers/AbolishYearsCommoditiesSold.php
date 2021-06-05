@@ -10,11 +10,11 @@ class AbolishYearsCommoditiesSold
          * Note: It's an admin script.
          */
 
-        global $html_title;
+        global $app_state;
 
         kick_out_nonadmins();
 
-        $html_title = 'Which year?';
+        $app_state->html_title = 'Which year?';
 
         require VIEWS . DIRSEP . 'abolishyearscommoditiessold.php';
     }

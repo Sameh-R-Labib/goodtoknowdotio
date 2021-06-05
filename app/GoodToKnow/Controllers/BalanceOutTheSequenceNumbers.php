@@ -11,7 +11,6 @@ class BalanceOutTheSequenceNumbers
     {
         global $app_state;
         global $db;
-        global $html_title;
         global $thing_type;
         global $thing_name;
         global $thing_id;
@@ -125,7 +124,7 @@ class BalanceOutTheSequenceNumbers
             }
         }
 
-        $html_title = 'Balance Out The Sequence Numbers';
+        $app_state->html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbers.php';
     }

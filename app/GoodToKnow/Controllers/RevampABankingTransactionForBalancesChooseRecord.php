@@ -17,7 +17,7 @@ class RevampABankingTransactionForBalancesChooseRecord
          */
 
 
-        global $html_title;
+        global $app_state;
         global $array;
 
 
@@ -38,7 +38,7 @@ class RevampABankingTransactionForBalancesChooseRecord
         }
 
 
-        $html_title = 'Which banking_transaction_for_balances record?';
+        $app_state->html_title = 'Which banking_transaction_for_balances record?';
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalanceschooserecord.php';

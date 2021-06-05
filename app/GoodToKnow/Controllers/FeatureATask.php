@@ -13,9 +13,8 @@ class FeatureATask
          */
 
 
-        global $db;
         global $app_state;
-        global $html_title;
+        global $db;
         global $array;
 
 
@@ -36,7 +35,7 @@ class FeatureATask
         }
 
 
-        $html_title = 'Which task record?';
+        $app_state->html_title = 'Which task record?';
 
 
         require VIEWS . DIRSEP . 'featureatask.php';

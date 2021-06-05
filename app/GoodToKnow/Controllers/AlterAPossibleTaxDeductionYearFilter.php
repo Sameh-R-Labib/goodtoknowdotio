@@ -6,13 +6,13 @@ class AlterAPossibleTaxDeductionYearFilter
 {
     function page()
     {
-        global $html_title;
+        global $app_state;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_year_paid_and_its_possibletaxdeductions.php';
 
 
-        $html_title = 'Which possible_tax_deduction?';
+        $app_state->html_title = 'Which possible_tax_deduction?';
 
 
         require VIEWS . DIRSEP . 'alterapossibletaxdeductionyearfilter.php';

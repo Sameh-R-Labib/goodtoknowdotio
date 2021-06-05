@@ -13,10 +13,10 @@ class BuildABankingTransactionForBalances
          * banking_transaction_for_balances table.
          */
 
-        global $db;
+
         global $app_state;
+        global $db;
         global $account_type;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -30,7 +30,7 @@ class BuildABankingTransactionForBalances
         $account_type = get_html_select_box_containing_the_bank_accounts($app_state->user_id, 0);
 
 
-        $html_title = 'Create a Banking Transaction For Balances';
+        $app_state->html_title = 'Create a Banking Transaction For Balances';
 
 
         require VIEWS . DIRSEP . 'buildabankingtransactionforbalances.php';

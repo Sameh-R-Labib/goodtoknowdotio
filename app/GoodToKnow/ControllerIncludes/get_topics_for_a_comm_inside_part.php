@@ -3,9 +3,8 @@
 use GoodToKnow\Models\CommunityToTopic;
 
 
-global $db;
 global $app_state;
-global $html_title;
+global $db;
 
 
 kick_out_loggedoutusers();
@@ -34,4 +33,4 @@ if (empty($app_state->special_topic_array)) {
 
 }
 
-$html_title = 'Which topic is your post in?';
+$app_state->html_title = 'Which topic is your post in?';

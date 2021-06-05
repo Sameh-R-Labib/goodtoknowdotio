@@ -19,13 +19,13 @@ class InitializeABitcoinRecord
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Create a New Bitcoin Record';
+        $app_state->html_title = 'Create a New Bitcoin Record';
 
 
         require VIEWS . DIRSEP . 'initializeabitcoinrecord.php';

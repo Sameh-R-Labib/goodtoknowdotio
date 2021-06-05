@@ -28,7 +28,6 @@ class TransferPostOwnershipGetPost
 
 
         global $app_state;
-        global $html_title;
         global $long_title_of_post;
         global $chosen_post_id;
         global $post_object;
@@ -111,7 +110,7 @@ class TransferPostOwnershipGetPost
 
         // Present the view
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'transferpostownershipgetpost.php';
     }

@@ -11,13 +11,13 @@ class FatherACommoditySold
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Create a Commodity Sold';
+        $app_state->html_title = 'Create a Commodity Sold';
 
 
         require VIEWS . DIRSEP . 'fatheracommoditysold.php';

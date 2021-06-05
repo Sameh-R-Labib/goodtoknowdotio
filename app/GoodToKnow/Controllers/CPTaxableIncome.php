@@ -8,7 +8,6 @@ class CPTaxableIncome
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPTaxableIncome
         $show_poof = true;
 
 
-        $html_title = 'Taxable Income';
+        $app_state->html_title = 'Taxable Income';
 
 
         $app_state->message .= ' Manage taxable income. ';

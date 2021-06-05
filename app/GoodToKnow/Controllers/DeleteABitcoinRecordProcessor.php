@@ -14,7 +14,7 @@ class DeleteABitcoinRecordProcessor
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_record_of_user.php';
@@ -31,7 +31,7 @@ class DeleteABitcoinRecordProcessor
 
         require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
 
-        $html_title = 'Are you sure?';
+        $app_state->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'deleteabitcoinrecordprocessor.php';
     }

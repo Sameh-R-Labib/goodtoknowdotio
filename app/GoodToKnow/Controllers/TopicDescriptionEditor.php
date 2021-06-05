@@ -13,7 +13,6 @@ class TopicDescriptionEditor
 
 
         global $app_state;
-        global $html_title;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
@@ -28,7 +27,7 @@ class TopicDescriptionEditor
         }
 
 
-        $html_title = "Topic's Description Editor";
+        $app_state->html_title = "Topic's Description Editor";
 
 
         require VIEWS . DIRSEP . 'topicdescriptioneditor.php';

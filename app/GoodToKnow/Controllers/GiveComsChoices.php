@@ -13,7 +13,6 @@ class GiveComsChoices
         global $app_state;
         global $db;
         // $app_state->saved_str01 has user's username
-        global $html_title;
         global $coms_user_belongs_to;
         global $coms_user_does_not_belong_to;
 
@@ -105,7 +104,7 @@ class GiveComsChoices
          * as check boxes in a form.
          */
 
-        $html_title = 'Give Community Choices';
+        $app_state->html_title = 'Give Community Choices';
 
         require VIEWS . DIRSEP . 'givecomschoices.php';
     }

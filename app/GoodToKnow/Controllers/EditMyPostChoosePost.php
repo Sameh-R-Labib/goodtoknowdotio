@@ -20,7 +20,6 @@ class EditMyPostChoosePost
         global $app_state;
         global $db;
         // $app_state->saved_int01 id of topic
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -45,7 +44,7 @@ class EditMyPostChoosePost
          * the posts which remain.
          */
 
-        $html_title = 'Which post to edit?';
+        $app_state->html_title = 'Which post to edit?';
 
         require VIEWS . DIRSEP . 'editmypostchoosepost.php';
     }

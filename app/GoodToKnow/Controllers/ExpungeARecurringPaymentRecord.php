@@ -14,9 +14,8 @@ class ExpungeARecurringPaymentRecord
          */
 
 
-        global $db;
         global $app_state;
-        global $html_title;
+        global $db;
         global $array_of_recurring_payment_objects;
 
 
@@ -38,7 +37,7 @@ class ExpungeARecurringPaymentRecord
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯. ');
         }
 
-        $html_title = 'Which recurring_payment record?';
+        $app_state->html_title = 'Which recurring_payment record?';
 
         require VIEWS . DIRSEP . 'expungearecurringpaymentrecord.php';
     }

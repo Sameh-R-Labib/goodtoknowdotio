@@ -234,6 +234,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $html_title;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -331,5 +337,7 @@ class AppState
          */
 
         $this->page = 'Home';
+
+        $this->html_title = '';
     }
 }

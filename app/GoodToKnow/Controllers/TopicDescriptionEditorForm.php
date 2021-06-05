@@ -14,10 +14,10 @@ class TopicDescriptionEditorForm
          *  2) Present a (pre-filled with current description) form for editing.
          */
 
-        global $db;
+
         global $app_state;
+        global $db;
         // $app_state->saved_int01 community id
-        global $html_title;
         global $topic_object;
 
 
@@ -38,7 +38,7 @@ class TopicDescriptionEditorForm
         }
 
 
-        $html_title = "Topic's Description Editor";
+        $app_state->html_title = "Topic's Description Editor";
 
 
         require VIEWS . DIRSEP . 'topicdescriptioneditorform.php';

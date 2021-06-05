@@ -9,7 +9,7 @@ class EditMyPostEditor
     function page()
     {
         global $db;
-        global $html_title;
+        global $app_state;
         global $markdown;
 
 
@@ -56,7 +56,7 @@ class EditMyPostEditor
          * Display the editor interface.
          */
 
-        $html_title = 'Editor';
+        $app_state->html_title = 'Editor';
 
         require VIEWS . DIRSEP . 'editmyposteditor.php';
     }

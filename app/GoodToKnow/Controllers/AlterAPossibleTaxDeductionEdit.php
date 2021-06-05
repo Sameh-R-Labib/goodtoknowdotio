@@ -6,7 +6,7 @@ class AlterAPossibleTaxDeductionEdit
 {
     function page()
     {
-        global $html_title;
+        global $app_state;
 
         /**
          * 1) Store the submitted possible_tax_deduction id in the session.
@@ -23,7 +23,7 @@ class AlterAPossibleTaxDeductionEdit
          * 4) Present a form which is populated with data from the possible_tax_deduction object.
          */
 
-        $html_title = 'Edit the possible_tax_deduction record';
+        $app_state->html_title = 'Edit the possible_tax_deduction record';
 
         require VIEWS . DIRSEP . 'alterapossibletaxdeductionedit.php';
     }

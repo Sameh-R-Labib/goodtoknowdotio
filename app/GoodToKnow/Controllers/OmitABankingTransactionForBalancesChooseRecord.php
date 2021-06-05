@@ -18,7 +18,7 @@ class OmitABankingTransactionForBalancesChooseRecord
 
 
         global $array;
-        global $html_title;
+        global $app_state;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_banking_transactions_within_a_time_range.php';
@@ -37,7 +37,7 @@ class OmitABankingTransactionForBalancesChooseRecord
         }
 
 
-        $html_title = 'Which banking transaction for balances record?';
+        $app_state->html_title = 'Which banking transaction for balances record?';
 
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalanceschooserecord.php';

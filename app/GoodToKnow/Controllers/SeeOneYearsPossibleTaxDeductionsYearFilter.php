@@ -14,7 +14,6 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         global $app_state;
         global $show_poof;
-        global $html_title;
         global $array;
 
 
@@ -33,7 +32,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         $app_state->message .= " Here are one year's tax write-offs. ";
 
-        $html_title = "One year\'s tax write-offs.";
+        $app_state->html_title = "One year\'s tax write-offs.";
 
         $app_state->page = 'SeeOneYearsPossibleTaxDeductions';
 

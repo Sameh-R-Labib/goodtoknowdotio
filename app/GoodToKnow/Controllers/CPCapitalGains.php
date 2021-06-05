@@ -8,7 +8,6 @@ class CPCapitalGains
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPCapitalGains
         $show_poof = true;
 
 
-        $html_title = 'Capital Gains';
+        $app_state->html_title = 'Capital Gains';
 
 
         $app_state->message .= ' Manage capital gains. ';

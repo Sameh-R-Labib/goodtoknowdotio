@@ -16,13 +16,13 @@ class WipeOutAPossibleTaxDeduction
          */
 
 
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
 
 
-        $html_title = 'Which year_paid for filtering your tax deduction choices?';
+        $app_state->html_title = 'Which year_paid for filtering your tax deduction choices?';
 
 
         require VIEWS . DIRSEP . 'wipeoutapossibletaxdeduction.php';

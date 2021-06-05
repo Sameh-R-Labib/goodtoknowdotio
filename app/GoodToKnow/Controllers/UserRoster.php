@@ -10,9 +10,8 @@ class UserRoster
 {
     function page()
     {
-        global $db;
         global $app_state;
-        global $html_title;
+        global $db;
         global $show_poof;
         global $readable_user_objects_array;
 
@@ -23,7 +22,7 @@ class UserRoster
         $db = get_db();
 
 
-        $html_title = 'User Roster';
+        $app_state->html_title = 'User Roster';
 
 
         $app_state->page = 'UserRoster';

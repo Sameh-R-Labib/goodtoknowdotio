@@ -17,7 +17,6 @@ class GlanceAtMyTasks
 
         global $db;
         global $app_state;
-        global $html_title;
         global $show_poof;
         global $array;
 
@@ -63,7 +62,7 @@ class GlanceAtMyTasks
          * The view.
          */
 
-        $html_title = 'All my Tasks';
+        $app_state->html_title = 'All my Tasks';
 
         $app_state->page = 'GlanceAtMyTasks';
 

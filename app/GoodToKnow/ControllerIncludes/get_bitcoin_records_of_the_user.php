@@ -3,10 +3,9 @@
 use GoodToKnow\Models\Bitcoin;
 
 
-global $db;
 global $app_state;
+global $db;
 global $array_of_bitcoin_objects;
-global $html_title;
 
 
 kick_out_loggedoutusers();
@@ -30,4 +29,4 @@ if (!$array_of_bitcoin_objects || !empty($app_state->message)) {
 
 }
 
-$html_title = 'Which bitcoin record?';
+$app_state->html_title = 'Which bitcoin record?';

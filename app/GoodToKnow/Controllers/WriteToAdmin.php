@@ -7,7 +7,6 @@ class WriteToAdmin
     function page()
     {
         global $app_state;
-        global $html_title;
         global $pre_populate;
 
 
@@ -21,7 +20,7 @@ class WriteToAdmin
          * Display the editor interface.
          */
 
-        $html_title = 'Write to Admin';
+        $app_state->html_title = 'Write to Admin';
 
         $pre_populate = <<<ROI
 Dear Admin {$admin_username},

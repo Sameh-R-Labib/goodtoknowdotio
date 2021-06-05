@@ -7,7 +7,6 @@ class CPPostings
     function page()
     {
         global $app_state;
-        global $html_title;
         global $show_poof;
 
 
@@ -20,7 +19,7 @@ class CPPostings
         $show_poof = true;
 
 
-        $html_title = 'Postings';
+        $app_state->html_title = 'Postings';
 
 
         $app_state->message .= ' Manage postings. ';

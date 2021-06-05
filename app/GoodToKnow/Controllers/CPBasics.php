@@ -8,7 +8,7 @@ class CPBasics
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
+        global $app_state;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +20,7 @@ class CPBasics
         $show_poof = true;
 
 
-        $html_title = 'Basics';
+        $app_state->html_title = 'Basics';
 
 
         $app_state->message .= ' Manage account and posts. ';

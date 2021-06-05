@@ -8,7 +8,6 @@ class CPPurges
     {
         global $app_state;
         global $show_poof;
-        global $html_title;
 
 
         kick_out_loggedoutusers();
@@ -20,7 +19,7 @@ class CPPurges
         $show_poof = true;
 
 
-        $html_title = 'Purges';
+        $app_state->html_title = 'Purges';
 
 
         $app_state->message .= ' Manage purges. ';
