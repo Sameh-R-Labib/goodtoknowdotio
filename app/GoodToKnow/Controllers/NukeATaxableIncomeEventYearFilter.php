@@ -14,7 +14,7 @@ class NukeATaxableIncomeEventYearFilter
          */
 
 
-        global $app_state;
+        global $gtk;
         global $array;
 
 
@@ -34,7 +34,7 @@ class NukeATaxableIncomeEventYearFilter
         }
 
 
-        $app_state->html_title = 'Which taxable_income_event record?';
+        $gtk->html_title = 'Which taxable_income_event record?';
 
 
         require VIEWS . DIRSEP . 'nukeataxableincomeeventyearfilter.php';

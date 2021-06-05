@@ -11,7 +11,7 @@ class DefaultTimeZone
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
@@ -21,7 +21,7 @@ class DefaultTimeZone
          * Present a form for entering a PHP time zone.
          */
 
-        $app_state->html_title = 'Change Default Time Zone';
+        $gtk->html_title = 'Change Default Time Zone';
 
         require VIEWS . DIRSEP . 'defaulttimezone.php';
     }

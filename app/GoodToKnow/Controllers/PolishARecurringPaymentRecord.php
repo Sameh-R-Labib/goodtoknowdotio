@@ -16,7 +16,7 @@ class PolishARecurringPaymentRecord
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $array_of_recurring_payment_objects;
 
@@ -30,18 +30,18 @@ class PolishARecurringPaymentRecord
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($gtk->user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 
-        if (!$array_of_recurring_payment_objects || !empty($app_state->message)) {
+        if (!$array_of_recurring_payment_objects || !empty($gtk->message)) {
 
             breakout(' I could NOT find any recurring payment records ¯\_(ツ)_/¯. ');
 
         }
 
 
-        $app_state->html_title = 'Which recurring_payment record?';
+        $gtk->html_title = 'Which recurring_payment record?';
 
 
         require VIEWS . DIRSEP . 'polisharecurringpaymentrecord.php';

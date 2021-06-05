@@ -16,7 +16,7 @@ class ForgetATaskDelete
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
 
 
@@ -44,7 +44,7 @@ class ForgetATaskDelete
 
         $db = get_db();
 
-        $object = Task::find_by_id($app_state->saved_int01);
+        $object = Task::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

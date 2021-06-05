@@ -17,7 +17,7 @@ class ExpungeARecurringPaymentRecordProcessor
          */
 
 
-        global $app_state;
+        global $gtk;
         global $recurring_payment_object;
 
 
@@ -38,7 +38,7 @@ class ExpungeARecurringPaymentRecordProcessor
         $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->currency, $recurring_payment_object->amount_paid);
 
 
-        $app_state->html_title = 'Are you sure?';
+        $gtk->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'expungearecurringpaymentrecordprocessor.php';
     }

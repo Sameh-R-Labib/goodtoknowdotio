@@ -6,23 +6,23 @@ class CPCrypto
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->page = 'CPCrypto';
+        $gtk->page = 'CPCrypto';
 
 
         $show_poof = true;
 
 
-        $app_state->html_title = 'Crypto';
+        $gtk->html_title = 'Crypto';
 
 
-        $app_state->message .= ' Manage crypto. ';
+        $gtk->message .= ' Manage crypto. ';
 
 
         require VIEWS . DIRSEP . 'cpcrypto.php';

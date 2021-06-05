@@ -16,7 +16,7 @@ class ByUsernameMessageProcessor
          * the session.
          */
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $pre_populate;
 
@@ -58,10 +58,10 @@ I have something I want to tell you.
 
 Sincerely,
 
-{$app_state->user_username}
+{$gtk->user_username}
 ROI;
 
-        $app_state->html_title = "Compose Message for $submitted_username";
+        $gtk->html_title = "Compose Message for $submitted_username";
 
         require VIEWS . DIRSEP . 'byusernamemprocessor.php';
     }

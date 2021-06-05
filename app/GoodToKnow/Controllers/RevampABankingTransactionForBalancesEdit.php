@@ -19,7 +19,7 @@ class RevampABankingTransactionForBalancesEdit
          */
 
 
-        global $app_state;
+        global $gtk;
         global $object;
         global $time;
 
@@ -58,7 +58,7 @@ class RevampABankingTransactionForBalancesEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $object->bank_id = get_html_select_box_containing_the_bank_accounts($app_state->user_id, $object->bank_id);
+        $object->bank_id = get_html_select_box_containing_the_bank_accounts($gtk->user_id, $object->bank_id);
 
 
         /**
@@ -72,7 +72,7 @@ class RevampABankingTransactionForBalancesEdit
         $time = get_date_h_m_s_from_a_timestamp($object->time);
 
 
-        $app_state->html_title = 'Edit the banking_transaction_for_balances record';
+        $gtk->html_title = 'Edit the banking_transaction_for_balances record';
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';

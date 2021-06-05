@@ -9,7 +9,7 @@ class DefaultCommunityProcessor
     function page()
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
@@ -30,7 +30,7 @@ class DefaultCommunityProcessor
 
         $db = get_db();
 
-        $user_object = User::find_by_id($app_state->user_id);
+        $user_object = User::find_by_id($gtk->user_id);
 
         if (!$user_object) {
 
@@ -51,6 +51,6 @@ class DefaultCommunityProcessor
 
         // User will know default community by logging out then in.
 
-        breakout(" Your default community has been changed to {$app_state->special_community_array[$chosen_id]}. ");
+        breakout(" Your default community has been changed to {$gtk->special_community_array[$chosen_id]}. ");
     }
 }

@@ -6,18 +6,18 @@ class AdminHome
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
         kick_out_nonadmins();
 
-        $app_state->html_title = 'Admin';
+        $gtk->html_title = 'Admin';
 
-        $app_state->page = 'Admin';
+        $gtk->page = 'Admin';
 
         $show_poof = true;
 
-        $app_state->message .= " Welcome to your Admin Control Panel. ";
+        $gtk->message .= " Welcome to your Admin Control Panel. ";
 
         require VIEWS . DIRSEP . 'adminhome.php';
     }

@@ -6,7 +6,7 @@ class BitcoinSeeMyRecords
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
         global $array_of_bitcoin_objects;
         global $bitcoin_object;
@@ -32,13 +32,13 @@ class BitcoinSeeMyRecords
          * Present the view.
          */
 
-        $app_state->html_title = 'Your ₿ records';
+        $gtk->html_title = 'Your ₿ records';
 
-        $app_state->page = 'BitcoinSeeMyRecords';
+        $gtk->page = 'BitcoinSeeMyRecords';
 
         $show_poof = true;
 
-        $app_state->message .= ' Here are your ₿ records. ';
+        $gtk->message .= ' Here are your ₿ records. ';
 
         require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';
     }

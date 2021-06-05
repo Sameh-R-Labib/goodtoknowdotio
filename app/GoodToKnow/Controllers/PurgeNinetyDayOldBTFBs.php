@@ -19,7 +19,7 @@ class PurgeNinetyDayOldBTFBs
 
 
         global $db;
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
@@ -53,10 +53,10 @@ class PurgeNinetyDayOldBTFBs
 
             $num_affected_rows = $db->affected_rows;
         } catch (\Exception $e) {
-            $app_state->message .= ' PurgeNinetyDayOldBTFBs delete() exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' PurgeNinetyDayOldBTFBs delete() exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
             breakout('');
         }
 

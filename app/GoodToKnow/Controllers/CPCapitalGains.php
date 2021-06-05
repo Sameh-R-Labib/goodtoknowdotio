@@ -6,23 +6,23 @@ class CPCapitalGains
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->page = 'CPCapitalGains';
+        $gtk->page = 'CPCapitalGains';
 
 
         $show_poof = true;
 
 
-        $app_state->html_title = 'Capital Gains';
+        $gtk->html_title = 'Capital Gains';
 
 
-        $app_state->message .= ' Manage capital gains. ';
+        $gtk->message .= ' Manage capital gains. ';
 
 
         require VIEWS . DIRSEP . 'cpcapitalgains.php';

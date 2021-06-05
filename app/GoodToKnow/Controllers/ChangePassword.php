@@ -12,13 +12,13 @@ class ChangePassword
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->html_title = 'Change Password';
+        $gtk->html_title = 'Change Password';
 
 
         require VIEWS . DIRSEP . 'changepassword.php';

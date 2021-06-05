@@ -20,9 +20,9 @@ class PolishARecurringPaymentRecordSubmit
          * 5) Report success.
          */
 
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int01 recurring_payment id
+        // $gtk->saved_int01 recurring_payment id
         global $time;
 
 
@@ -57,7 +57,7 @@ class PolishARecurringPaymentRecordSubmit
 
         $db = get_db();
 
-        $object = RecurringPayment::find_by_id($app_state->saved_int01);
+        $object = RecurringPayment::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

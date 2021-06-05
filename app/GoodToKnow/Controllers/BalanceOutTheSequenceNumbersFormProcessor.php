@@ -22,7 +22,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $thing_type;
         global $present;
@@ -34,7 +34,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         kick_out_nonadmins();
 
-        $thing_type = ucfirst($app_state->type_of_resource_requested);
+        $thing_type = ucfirst($gtk->type_of_resource_requested);
 
 
         /**
@@ -57,7 +57,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
             // Get all topics for community.
 
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($app_state->community_id);
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($gtk->community_id);
 
             if (!$result) {
 
@@ -69,7 +69,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
             // Get all posts for topic.
 
-            $result = TopicToPost::get_posts_array_for_a_topic($app_state->topic_id);
+            $result = TopicToPost::get_posts_array_for_a_topic($gtk->topic_id);
 
             if (!$result) {
 
@@ -114,7 +114,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
-        $app_state->html_title = 'Balance Out The Sequence Numbers';
+        $gtk->html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbersformprocessor.php';
     }

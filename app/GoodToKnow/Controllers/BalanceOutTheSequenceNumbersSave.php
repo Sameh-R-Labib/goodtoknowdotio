@@ -22,7 +22,7 @@ class BalanceOutTheSequenceNumbersSave
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
 
 

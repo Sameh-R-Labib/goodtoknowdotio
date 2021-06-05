@@ -18,7 +18,7 @@ class InitializeABitcoinRecordProcessor
 
 
         global $db;
-        global $app_state;
+        global $gtk;
         global $time;
 
         kick_out_loggedoutusers();
@@ -51,7 +51,7 @@ class InitializeABitcoinRecordProcessor
          * Create a Bitcoin array for the record.
          */
 
-        $array_bitcoin_record = ['user_id' => $app_state->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
+        $array_bitcoin_record = ['user_id' => $gtk->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
             'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
             'time' => $time, 'comment' => $comment];
 
@@ -77,7 +77,7 @@ class InitializeABitcoinRecordProcessor
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout(' The save method for Bitcoin did not return false but it did send back a message.
              Therefore, it probably did not create the Bitcoin record. ');

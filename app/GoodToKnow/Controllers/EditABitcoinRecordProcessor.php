@@ -17,7 +17,7 @@ class EditABitcoinRecordProcessor
          */
 
 
-        global $app_state;
+        global $gtk;
         global $time;
         global $bitcoin_object;
 
@@ -50,7 +50,7 @@ class EditABitcoinRecordProcessor
 
         $time = get_date_h_m_s_from_a_timestamp($bitcoin_object->time);
 
-        $app_state->html_title = 'Edit the bitcoin record';
+        $gtk->html_title = 'Edit the bitcoin record';
 
         require VIEWS . DIRSEP . 'editabitcoinrecordprocessor.php';
     }

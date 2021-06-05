@@ -1,4 +1,4 @@
-<?php global $app_state; ?>
+<?php global $gtk; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/TopicDescriptionEditorProcessor/page" method="post">
         <h1>Topic Description Editor</h1>
@@ -8,7 +8,7 @@
         <?php require SESSIONMESSAGE; ?>
         <p>Which topic is the one whose description it is that you want to edit?</p>
         <section>
-            <?php foreach ($app_state->special_topic_array as $key => $value): ?>
+            <?php foreach ($gtk->special_topic_array as $key => $value): ?>
                 <label for="choice-<?= $key ?>" class="radio">
                     <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                     <?= $value ?>

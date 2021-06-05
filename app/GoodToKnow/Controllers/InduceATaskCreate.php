@@ -15,7 +15,7 @@ class InduceATaskCreate
 
 
         global $db;
-        global $app_state;
+        global $gtk;
         global $next;
         global $last;
 
@@ -43,7 +43,7 @@ class InduceATaskCreate
          * Use the submitted data to add a record to the database.
          */
 
-        $array_record = ['user_id' => $app_state->user_id, 'label' => $label, 'last' => $last, 'next' => $next,
+        $array_record = ['user_id' => $gtk->user_id, 'label' => $label, 'last' => $last, 'next' => $next,
             'cycle_type' => $cycle_type, 'comment' => $comment];
 
 
@@ -61,7 +61,7 @@ class InduceATaskCreate
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout(' The object\'s save method did not return false but it did send
             back a message. Therefore, it probably did not create a new record. ');

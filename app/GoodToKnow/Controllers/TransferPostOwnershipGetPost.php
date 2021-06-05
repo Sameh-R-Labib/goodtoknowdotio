@@ -27,8 +27,7 @@ class TransferPostOwnershipGetPost
          */
 
 
-        global $app_state;
-        global $long_title_of_post;
+        global $gtk;
         global $chosen_post_id;
         global $post_object;
 
@@ -43,7 +42,7 @@ class TransferPostOwnershipGetPost
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.
 
-        $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $gtk->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
@@ -79,7 +78,7 @@ class TransferPostOwnershipGetPost
 
         }
 
-        $app_state->community_name = $community_object->community_name;
+        $gtk->community_name = $community_object->community_name;
 
 
         // Find the topic name based on $derived_topic_id
@@ -92,7 +91,7 @@ class TransferPostOwnershipGetPost
 
         }
 
-        $app_state->topic_name = $topic_object->topic_name;
+        $gtk->topic_name = $topic_object->topic_name;
 
 
         // Find the author's username.
@@ -105,12 +104,12 @@ class TransferPostOwnershipGetPost
 
         }
 
-        $app_state->author_username = $user_object->username;
+        $gtk->author_username = $user_object->username;
 
 
         // Present the view
 
-        $app_state->html_title = 'Are you sure?';
+        $gtk->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'transferpostownershipgetpost.php';
     }

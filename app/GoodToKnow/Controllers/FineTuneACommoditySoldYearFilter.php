@@ -8,7 +8,7 @@ class FineTuneACommoditySoldYearFilter
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $array;
 
 
@@ -28,7 +28,7 @@ class FineTuneACommoditySoldYearFilter
         }
 
 
-        $app_state->html_title = 'Which Commodity Sold?';
+        $gtk->html_title = 'Which Commodity Sold?';
 
 
         require VIEWS . DIRSEP . 'finetuneacommoditysoldyearfilter.php';

@@ -14,7 +14,7 @@ class BuildABankingTransactionForBalances
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $account_type;
 
@@ -27,10 +27,10 @@ class BuildABankingTransactionForBalances
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $account_type = get_html_select_box_containing_the_bank_accounts($app_state->user_id, 0);
+        $account_type = get_html_select_box_containing_the_bank_accounts($gtk->user_id, 0);
 
 
-        $app_state->html_title = 'Create a Banking Transaction For Balances';
+        $gtk->html_title = 'Create a Banking Transaction For Balances';
 
 
         require VIEWS . DIRSEP . 'buildabankingtransactionforbalances.php';

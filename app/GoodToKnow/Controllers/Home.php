@@ -29,14 +29,14 @@ class Home
 
     private static function show_the_home_page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
         $show_poof = false;
 
-        $app_state->html_title = 'GoodToKnow.io';
+        $gtk->html_title = 'GoodToKnow.io';
 
-        $app_state->page = "Home";
+        $gtk->page = "Home";
 
         require VIEWS . DIRSEP . 'home.php';
     }
@@ -44,41 +44,41 @@ class Home
 
     private static function put_together_a_good_sessionmessage()
     {
-        global $app_state;
+        global $gtk;
 
-        if ($app_state->type_of_resource_requested === 'community') {
+        if ($gtk->type_of_resource_requested === 'community') {
 
-            if (!empty(trim($app_state->community_description))) {
+            if (!empty(trim($gtk->community_description))) {
 
-                if (empty(trim($app_state->message))) {
-                    $app_state->message .= ' ' . nl2br($app_state->community_description, false) . ' ';
+                if (empty(trim($gtk->message))) {
+                    $gtk->message .= ' ' . nl2br($gtk->community_description, false) . ' ';
                 }
 
             }
 
-        } elseif ($app_state->type_of_resource_requested === 'topic') {
+        } elseif ($gtk->type_of_resource_requested === 'topic') {
 
-            if (!empty(trim($app_state->topic_description))) {
+            if (!empty(trim($gtk->topic_description))) {
 
-                if (empty(trim($app_state->message))) {
-                    $app_state->message .= ' ' . nl2br($app_state->topic_description, false) . ' ';
+                if (empty(trim($gtk->message))) {
+                    $gtk->message .= ' ' . nl2br($gtk->topic_description, false) . ' ';
                 }
 
             }
 
         } else {
 
-            if (!empty(trim($app_state->post_full_name))) {
+            if (!empty(trim($gtk->post_full_name))) {
 
-                if (empty(trim($app_state->message))) {
-                    $app_state->message .= ' ' . $app_state->post_full_name . ' ';
+                if (empty(trim($gtk->message))) {
+                    $gtk->message .= ' ' . $gtk->post_full_name . ' ';
                 }
 
             }
 
         }
 
-        $app_state->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
+        $gtk->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
             <a class="purplebtn" href="/ax1/EditMyPost/page">Edit 📄</a>
             <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
     }
@@ -92,10 +92,10 @@ class Home
          * 3 hours then refresh it.
          */
 
-        global $app_state;
+        global $gtk;
         global $db;
 
-        $time_since_refresh = time() - $app_state->last_refresh_communities;  // seconds
+        $time_since_refresh = time() - $gtk->last_refresh_communities;  // seconds
 
         if ($time_since_refresh > 250) {
             if ($db == 'not connected') {
@@ -103,23 +103,23 @@ class Home
                 $db = db_connect();
 
                 if ($db === false) {
-                    $app_state->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $app_state->message;
+                    $gtk->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $gtk->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
                 }
 
             }
 
-            $app_state->special_community_array = UserToCommunity::find_communities_of_user($app_state->user_id);
+            $gtk->special_community_array = UserToCommunity::find_communities_of_user($gtk->user_id);
 
-            if ($app_state->special_community_array === false) {
+            if ($gtk->special_community_array === false) {
 
-                $app_state->message .= " Failed to find the array of the user's communities. ";
+                $gtk->message .= " Failed to find the array of the user's communities. ";
 
             }
 
-            $_SESSION['special_community_array'] = $app_state->special_community_array;
+            $_SESSION['special_community_array'] = $gtk->special_community_array;
             $_SESSION['last_refresh_communities'] = time();
         }
 
@@ -130,9 +130,9 @@ class Home
          * for a period longer than 4 minutes then refresh it.
          */
 
-        $time_since_refresh = time() - $app_state->last_refresh_topics;
+        $time_since_refresh = time() - $gtk->last_refresh_topics;
 
-        if ($time_since_refresh > 240 && $app_state->type_of_resource_requested == 'community') {
+        if ($time_since_refresh > 240 && $gtk->type_of_resource_requested == 'community') {
 
             if ($db == 'not connected') {
 
@@ -140,8 +140,8 @@ class Home
 
                 if ($db === false) {
 
-                    $app_state->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $app_state->message;
+                    $gtk->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $gtk->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -149,11 +149,11 @@ class Home
 
             }
 
-            $app_state->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($app_state->community_id);
+            $gtk->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($gtk->community_id);
 
-            if ($app_state->special_topic_array === false) $app_state->special_topic_array = [];
+            if ($gtk->special_topic_array === false) $gtk->special_topic_array = [];
 
-            $_SESSION['special_topic_array'] = $app_state->special_topic_array;
+            $_SESSION['special_topic_array'] = $gtk->special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
 
         }
@@ -161,21 +161,21 @@ class Home
 
         /**
          * If the type_of_resource_requested == 'topic'
-         * and the $app_state->special_post_array has not been refreshed
+         * and the $gtk->special_post_array has not been refreshed
          * for a period longer than 3 minutes then refresh it.
          */
 
-        $time_since_refresh = time() - $app_state->last_refresh_posts;
+        $time_since_refresh = time() - $gtk->last_refresh_posts;
 
-        if ($time_since_refresh > 180 && $app_state->type_of_resource_requested == 'topic') {
+        if ($time_since_refresh > 180 && $gtk->type_of_resource_requested == 'topic') {
             if ($db == 'not connected') {
 
                 $db = db_connect();
 
                 if ($db === false) {
 
-                    $app_state->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $app_state->message;
+                    $gtk->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $gtk->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -183,11 +183,11 @@ class Home
 
             }
 
-            $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
+            $gtk->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($gtk->topic_id);
 
-            if ($app_state->special_post_array === false) $app_state->special_post_array = [];
+            if ($gtk->special_post_array === false) $gtk->special_post_array = [];
 
-            $_SESSION['special_post_array'] = $app_state->special_post_array;
+            $_SESSION['special_post_array'] = $gtk->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
         }
 
@@ -198,9 +198,9 @@ class Home
          * for a period longer than 3 minutes then refresh it.
          */
 
-        $time_since_refresh = time() - $app_state->last_refresh_content;
+        $time_since_refresh = time() - $gtk->last_refresh_content;
 
-        if ($time_since_refresh > 180 && $app_state->type_of_resource_requested == 'post') {
+        if ($time_since_refresh > 180 && $gtk->type_of_resource_requested == 'post') {
 
             if ($db == 'not connected') {
 
@@ -208,8 +208,8 @@ class Home
 
                 if ($db === false) {
 
-                    $app_state->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $app_state->message;
+                    $gtk->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $gtk->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -217,32 +217,32 @@ class Home
 
             }
 
-            $post_object = Post::find_by_id($app_state->post_id);
+            $post_object = Post::find_by_id($gtk->post_id);
 
             if ($post_object === false) {
 
-                $app_state->message .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
+                $gtk->message .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
 
             } else {
 
-                $app_state->post_content = file_get_contents($post_object->html_file);
+                $gtk->post_content = file_get_contents($post_object->html_file);
 
-                if ($app_state->post_content === false) {
+                if ($gtk->post_content === false) {
 
-                    $app_state->message .= " Unable to read the post's file. ";
-                    $app_state->post_content = '';
+                    $gtk->message .= " Unable to read the post's file. ";
+                    $gtk->post_content = '';
 
                 }
 
             }
 
-            if (empty(trim($app_state->post_content))) {
+            if (empty(trim($gtk->post_content))) {
 
-                $app_state->post_content = '<p><em>[No post content]</em></p>';
+                $gtk->post_content = '<p><em>[No post content]</em></p>';
 
             }
 
-            $_SESSION['post_content'] = $app_state->post_content;
+            $_SESSION['post_content'] = $gtk->post_content;
             $_SESSION['last_refresh_content'] = time();
 
         }
@@ -255,7 +255,7 @@ class Home
          * Logout the user if he is suspended.
          * We are not going to check to see if he is suspended
          * every time this page loads. There will be a session
-         * variable called $app_state->when_last_checked_suspend which
+         * variable called $gtk->when_last_checked_suspend which
          * will record the timestamp of the last check to make
          * sure he wasn't suspended.
          *
@@ -265,7 +265,7 @@ class Home
          * This function will take arguments:
          *   A) $db
          *   B) The ID of the logged in user
-         *   C) $app_state->when_last_checked_suspend (which is a timestamp)
+         *   C) $gtk->when_last_checked_suspend (which is a timestamp)
          *
          * Within the function it will:
          *   1) Skip everything if it's too soon.
@@ -275,15 +275,15 @@ class Home
          */
 
         global $db;
-        global $app_state;
+        global $gtk;
 
-        $elapsed_time = time() - $app_state->when_last_checked_suspend;
+        $elapsed_time = time() - $gtk->when_last_checked_suspend;
 
         if ($elapsed_time > 400) {
 
-            $app_state->when_last_checked_suspend = time();
+            $gtk->when_last_checked_suspend = time();
 
-            $_SESSION['when_last_checked_suspend'] = $app_state->when_last_checked_suspend;
+            $_SESSION['when_last_checked_suspend'] = $gtk->when_last_checked_suspend;
 
             if ($db == 'not connected') {
 
@@ -291,8 +291,8 @@ class Home
 
                 if ($db === false) {
 
-                    $app_state->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $app_state->message;
+                    $gtk->message .= " Failed to connect to the database. ";
+                    $_SESSION['message'] = $gtk->message;
                     reset_feature_session_vars();
                     redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -304,8 +304,8 @@ class Home
 
             if ($result === false) {
 
-                $app_state->message .= " Failed to find the user by id. ";
-                $_SESSION['message'] = $app_state->message;
+                $gtk->message .= " Failed to find the user by id. ";
+                $_SESSION['message'] = $gtk->message;
                 reset_feature_session_vars();
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -318,11 +318,11 @@ class Home
 
     private static function redirect_if_not_logged_in()
     {
-        global $app_state;
+        global $gtk;
 
-        if (!$app_state->is_logged_in) {
+        if (!$gtk->is_logged_in) {
 
-            $_SESSION['message'] = $app_state->message;
+            $_SESSION['message'] = $gtk->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 

@@ -11,13 +11,13 @@ class CreateNewPostTitle
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->html_title = 'What is the title?';
+        $gtk->html_title = 'What is the title?';
 
 
         require VIEWS . DIRSEP . 'createnewposttitle.php';

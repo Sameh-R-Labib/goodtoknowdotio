@@ -1,8 +1,8 @@
-<?php global $app_state; ?>
+<?php global $gtk; ?>
 <?php global $user_object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/MemberMemEdFormProc/page" method="post">
-        <h1><?= $app_state->saved_str01 ?> Memo</h1>
+        <h1><?= $gtk->saved_str01 ?> Memo</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 800 bytes.</span>
         </p>

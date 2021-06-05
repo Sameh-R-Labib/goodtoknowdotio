@@ -6,23 +6,23 @@ class CPTransactions
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->page = 'CPTransactions';
+        $gtk->page = 'CPTransactions';
 
 
         $show_poof = true;
 
 
-        $app_state->html_title = 'Transactions';
+        $gtk->html_title = 'Transactions';
 
 
-        $app_state->message .= ' Manage my copy of my bank transactions. ';
+        $gtk->message .= ' Manage my copy of my bank transactions. ';
 
 
         require VIEWS . DIRSEP . 'cptransactions.php';

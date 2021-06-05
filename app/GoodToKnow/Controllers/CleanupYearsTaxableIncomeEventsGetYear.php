@@ -16,7 +16,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
 
         global $db;
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
@@ -58,12 +58,12 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         } catch (\Exception $e) {
 
-            $app_state->message .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
+            $gtk->message .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout('');
 

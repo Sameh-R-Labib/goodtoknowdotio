@@ -15,12 +15,12 @@ class EditMyPostEditProcessor
          */
 
 
-        global $app_state;
+        global $gtk;
         global $markdown;
-        // $app_state->saved_str01 is path for markdown file
-        // $app_state->saved_str02 path for html file
-        // $app_state->saved_int01 id of edited post's Topic
-        // $app_state->saved_int02 id of edited post
+        // $gtk->saved_str01 is path for markdown file
+        // $gtk->saved_str02 path for html file
+        // $gtk->saved_int01 id of edited post's Topic
+        // $gtk->saved_int02 id of edited post
 
 
         kick_out_loggedoutusers();
@@ -65,7 +65,7 @@ class EditMyPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($app_state->saved_str01, $markdown);
+        $bytes_written = file_put_contents($gtk->saved_str01, $markdown);
 
         if ($bytes_written === false) {
 
@@ -79,7 +79,7 @@ class EditMyPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($app_state->saved_str02, $html);
+        $bytes_written = file_put_contents($gtk->saved_str02, $html);
 
         if ($bytes_written === false) {
 
@@ -94,8 +94,8 @@ class EditMyPostEditProcessor
 
         $bytes_written_text = size_as_text($bytes_written);
 
-        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $app_state->community_id . '/' .
-            $app_state->saved_int01 . '/' . $app_state->saved_int02 . '">here </a>';
+        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $gtk->community_id . '/' .
+            $gtk->saved_int01 . '/' . $gtk->saved_int02 . '">here </a>';
 
         breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");

@@ -8,10 +8,10 @@ class GiveComsChoicesProcessor
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_str01 Has user's username
-        // $app_state->saved_int01 has user's id
+        // $gtk->saved_str01 Has user's username
+        // $gtk->saved_int01 has user's id
         global $submitted_community_ids_array;
 
 
@@ -44,7 +44,7 @@ class GiveComsChoicesProcessor
 
             $a_community_id = (int)$a_community_id;
 
-            $usertocommunity_object_as_array = ['user_id' => $app_state->saved_int01, 'community_id' => $a_community_id];
+            $usertocommunity_object_as_array = ['user_id' => $gtk->saved_int01, 'community_id' => $a_community_id];
 
             $array_of_usertocommunity_objects[] = UserToCommunity::array_to_object($usertocommunity_object_as_array);
 
@@ -76,6 +76,6 @@ class GiveComsChoicesProcessor
          * Declare success.
          */
 
-        breakout(" New communities were assigned to {$app_state->saved_str01}! ");
+        breakout(" New communities were assigned to {$gtk->saved_str01}! ");
     }
 }

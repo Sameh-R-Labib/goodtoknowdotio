@@ -19,11 +19,11 @@ class CreateNewPostEditProcessor
          * files related to it using the submitted post content as the source material.
          */
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $markdown;
-        // $app_state->saved_int01 topic id
-        // $app_state->saved_int02 post id
+        // $gtk->saved_int01 topic id
+        // $gtk->saved_int02 post id
 
 
         kick_out_loggedoutusers();
@@ -59,7 +59,7 @@ class CreateNewPostEditProcessor
 
         $db = get_db();
 
-        $post = Post::find_by_id($app_state->saved_int02);
+        $post = Post::find_by_id($gtk->saved_int02);
 
         if ($post === false) {
 
@@ -102,8 +102,8 @@ class CreateNewPostEditProcessor
 
         $bytes_written_text = size_as_text($bytes_written);
 
-        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $app_state->community_id . '/' .
-            $app_state->saved_int01 . '/' . $app_state->saved_int02 . '">here </a>';
+        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $gtk->community_id . '/' .
+            $gtk->saved_int01 . '/' . $gtk->saved_int02 . '">here </a>';
 
         breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");

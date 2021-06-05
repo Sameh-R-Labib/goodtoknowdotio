@@ -1,4 +1,4 @@
-<?php global $app_state; ?>
-<?php if (!empty($app_state->message)): ?>
-    <p>👨🏽‍🦱:&nbsp;&nbsp;<?= $app_state->message ?></p>
+<?php global $gtk; ?>
+<?php if (!empty($gtk->message)): ?>
+    <p>👨🏽‍🦱:&nbsp;&nbsp;<?= $gtk->message ?></p>
 <?php endif; ?>

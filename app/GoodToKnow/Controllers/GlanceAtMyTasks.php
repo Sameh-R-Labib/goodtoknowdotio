@@ -16,7 +16,7 @@ class GlanceAtMyTasks
 
 
         global $db;
-        global $app_state;
+        global $gtk;
         global $show_poof;
         global $array;
 
@@ -30,11 +30,11 @@ class GlanceAtMyTasks
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($app_state->user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
 
         $array = Task::find_by_sql($sql);
 
-        if (!$array || !empty($app_state->message)) {
+        if (!$array || !empty($gtk->message)) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 
@@ -62,13 +62,13 @@ class GlanceAtMyTasks
          * The view.
          */
 
-        $app_state->html_title = 'All my Tasks';
+        $gtk->html_title = 'All my Tasks';
 
-        $app_state->page = 'GlanceAtMyTasks';
+        $gtk->page = 'GlanceAtMyTasks';
 
         $show_poof = true;
 
-        $app_state->message .= ' ʘ‿ʘ at your Tasks. ';
+        $gtk->message .= ' ʘ‿ʘ at your Tasks. ';
 
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
     }

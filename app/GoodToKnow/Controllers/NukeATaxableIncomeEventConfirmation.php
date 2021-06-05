@@ -15,7 +15,7 @@ class NukeATaxableIncomeEventConfirmation
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
 
 
@@ -43,7 +43,7 @@ class NukeATaxableIncomeEventConfirmation
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($app_state->saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

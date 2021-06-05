@@ -10,12 +10,12 @@ class CreateNewPostSave
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_str01 is the main title
-        // $app_state->saved_str02 is the title extension
-        // $app_state->saved_int01 the topic id
-        // $app_state->saved_int02 the sequence number
+        // $gtk->saved_str01 is the main title
+        // $gtk->saved_str02 is the title extension
+        // $gtk->saved_int01 the topic id
+        // $gtk->saved_int02 the sequence number
 
 
         kick_out_loggedoutusers();
@@ -30,11 +30,11 @@ class CreateNewPostSave
          * redirect to a form for content creation.
          *
          * So far we have:
-         *   - $app_state->user_id     (user_id)
-         *   - $app_state->saved_str01 (title)
-         *   - $app_state->saved_str02 (extesionfortitle)
-         *   - $app_state->saved_int01 (topic id)
-         *   - $app_state->saved_int02 (sequence_number)
+         *   - $gtk->user_id     (user_id)
+         *   - $gtk->saved_str01 (title)
+         *   - $gtk->saved_str02 (extesionfortitle)
+         *   - $gtk->saved_int01 (topic id)
+         *   - $gtk->saved_int02 (sequence_number)
          *
          * Attributes we need to find values for:
          *   o $created
@@ -50,7 +50,7 @@ class CreateNewPostSave
          * Verify that our sequence number hasn't been taken.
          */
 
-        $result = TopicToPost::get_posts_array_for_a_topic($app_state->saved_int01);
+        $result = TopicToPost::get_posts_array_for_a_topic($gtk->saved_int01);
 
         $sequence_number_already_exists_in_db = false;
 
@@ -60,7 +60,7 @@ class CreateNewPostSave
 
                 $a = (int)$object->sequence_number;
 
-                if ($a == (int)$app_state->saved_int02) {
+                if ($a == (int)$gtk->saved_int02) {
 
                     $sequence_number_already_exists_in_db = true;
                     break;
@@ -97,12 +97,12 @@ class CreateNewPostSave
 
         } catch (Exception $e) {
 
-            $app_state->message .= ' CreateNewPostSave page() caught a thrown exception: ' .
+            $gtk->message .= ' CreateNewPostSave page() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout('');
 
@@ -122,8 +122,8 @@ class CreateNewPostSave
 
         // Assemble the Post object
 
-        $post_as_array = ['sequence_number' => $app_state->saved_int02, 'title' => $app_state->saved_str01,
-            'extensionfortitle' => $app_state->saved_str02, 'user_id' => $app_state->user_id, 'created' => $created,
+        $post_as_array = ['sequence_number' => $gtk->saved_int02, 'title' => $gtk->saved_str01,
+            'extensionfortitle' => $gtk->saved_str02, 'user_id' => $gtk->user_id, 'created' => $created,
             'markdown_file' => $markdown_file, 'html_file' => $html_file];
 
         $post = Post::array_to_object($post_as_array);
@@ -142,7 +142,7 @@ class CreateNewPostSave
 
         // Assemble the TopicToPost object
 
-        $topictopost_as_array = ['topic_id' => $app_state->saved_int01, 'post_id' => $post->id];
+        $topictopost_as_array = ['topic_id' => $gtk->saved_int01, 'post_id' => $post->id];
 
         $topictopost = TopicToPost::array_to_object($topictopost_as_array);
 
@@ -158,20 +158,20 @@ class CreateNewPostSave
 
 
         /**
-         * Refresh special_post_array if ($app_state->type_of_resource_requested === 'topic')
+         * Refresh special_post_array if ($gtk->type_of_resource_requested === 'topic')
          */
 
-        if ($app_state->type_of_resource_requested === 'topic' || $app_state->type_of_resource_requested === 'post') {
+        if ($gtk->type_of_resource_requested === 'topic' || $gtk->type_of_resource_requested === 'post') {
 
-            $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->topic_id);
+            $gtk->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($gtk->topic_id);
 
-            if ($app_state->special_post_array === false) {
+            if ($gtk->special_post_array === false) {
 
                 breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
 
             }
 
-            $_SESSION['special_post_array'] = $app_state->special_post_array;
+            $_SESSION['special_post_array'] = $gtk->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
         }
@@ -186,7 +186,7 @@ class CreateNewPostSave
 
         $_SESSION['saved_int02'] = $post->id;
 
-        $app_state->html_title = 'Editor';
+        $gtk->html_title = 'Editor';
 
         require VIEWS . DIRSEP . 'createnewposteditor.php';
     }

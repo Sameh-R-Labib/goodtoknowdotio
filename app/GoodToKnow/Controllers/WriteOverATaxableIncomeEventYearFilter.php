@@ -14,7 +14,7 @@ class WriteOverATaxableIncomeEventYearFilter
          */
 
 
-        global $app_state;
+        global $gtk;
         global $array;
 
 
@@ -38,7 +38,7 @@ class WriteOverATaxableIncomeEventYearFilter
          * Present the view.
          */
 
-        $app_state->html_title = 'Which taxable income event?';
+        $gtk->html_title = 'Which taxable income event?';
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeeventyearfilter.php';
     }

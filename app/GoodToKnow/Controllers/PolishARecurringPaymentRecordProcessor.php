@@ -17,7 +17,7 @@ class PolishARecurringPaymentRecordProcessor
          */
 
 
-        global $app_state;
+        global $gtk;
         global $recurring_payment_object;
         global $time;
 
@@ -50,7 +50,7 @@ class PolishARecurringPaymentRecordProcessor
         $time = get_date_h_m_s_from_a_timestamp($recurring_payment_object->time);
 
 
-        $app_state->html_title = 'Edit the recurring_payment record';
+        $gtk->html_title = 'Edit the recurring_payment record';
 
 
         require VIEWS . DIRSEP . 'polisharecurringpaymentrecordprocessor.php';

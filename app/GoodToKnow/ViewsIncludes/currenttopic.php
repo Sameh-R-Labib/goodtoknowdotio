@@ -1,4 +1,4 @@
-<?php global $app_state; ?>
-<?php if (!empty($app_state->topic_id)) {
-    echo " → <a href=\"/ax1/SetHomePageCommunityTopicPost/page/$app_state->community_id/$app_state->topic_id/0\">$app_state->topic_name</a>";
+<?php global $gtk; ?>
+<?php if (!empty($gtk->topic_id)) {
+    echo " → <a href=\"/ax1/SetHomePageCommunityTopicPost/page/$gtk->community_id/$gtk->topic_id/0\">$gtk->topic_name</a>";
 } ?>

@@ -17,7 +17,7 @@ class MakeARecurringPaymentRecordProcessor
 
 
         global $db;
-        global $app_state;
+        global $gtk;
         global $time;
 
 
@@ -47,7 +47,7 @@ class MakeARecurringPaymentRecordProcessor
          */
 
 
-        $array_recurring_payment_record = ['user_id' => $app_state->user_id, 'label' => $label, 'currency' => $currency,
+        $array_recurring_payment_record = ['user_id' => $gtk->user_id, 'label' => $label, 'currency' => $currency,
             'amount_paid' => $amount_paid, 'time' => $time, 'comment' => $comment];
 
 
@@ -72,7 +72,7 @@ class MakeARecurringPaymentRecordProcessor
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout(' The save method for RecurringPayment did not return false but it did send back a message.
              Therefore, it probably did not create the RecurringPayment record. ');

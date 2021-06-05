@@ -8,10 +8,10 @@ class RemoveComsChoicesProcessor
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_str01 has user's username
-        // $app_state->saved_int01 has user's id
+        // $gtk->saved_str01 has user's username
+        // $gtk->saved_int01 has user's id
         global $submitted_community_ids_array;
 
 
@@ -34,7 +34,7 @@ class RemoveComsChoicesProcessor
         /**
          * More specifically what we need to do is
          * delete the rows of the user_to_community db table
-         * which have a user_id == $app_state->saved_int01
+         * which have a user_id == $gtk->saved_int01
          * and any of the comm ids found in the $submitted_community_ids_array.
          *
          * To accomplish this:
@@ -55,12 +55,12 @@ class RemoveComsChoicesProcessor
 
             /**
              * Retrieve and add the UserToCommunity object
-             * whose user_id == $app_state->saved_int01 and community_id == $a_community_id
+             * whose user_id == $gtk->saved_int01 and community_id == $a_community_id
              */
 
             $sql = 'SELECT *
                     FROM `user_to_community`
-                    WHERE `user_id` = "' . $db->real_escape_string($app_state->saved_int01) .
+                    WHERE `user_id` = "' . $db->real_escape_string($gtk->saved_int01) .
                 '" AND `community_id` = "' . $db->real_escape_string($a_community_id) .
                 '" LIMIT 1';
 
@@ -99,6 +99,6 @@ class RemoveComsChoicesProcessor
          * Declare success.
          */
 
-        breakout(" $app_state->saved_str01's to-be-removed communities were removed! ");
+        breakout(" $gtk->saved_str01's to-be-removed communities were removed! ");
     }
 }

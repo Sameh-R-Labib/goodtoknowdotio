@@ -25,7 +25,7 @@ class CreateNewPostIPProcessor
          * of creating a new record in the posts table.
          */
 
-        global $app_state;
+        global $gtk;
         global $db;
 
 
@@ -39,9 +39,9 @@ class CreateNewPostIPProcessor
 
         $db = get_db();
 
-        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->saved_int01);
+        $gtk->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($gtk->saved_int01);
 
-        if (!$app_state->special_post_array) {
+        if (!$gtk->special_post_array) {
 
             breakout(' CreateNewPostIPProcessor: Error 074346. ');
 
@@ -58,7 +58,7 @@ class CreateNewPostIPProcessor
 
         $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (!array_key_exists($chosen_post_id, $app_state->special_post_array)) {
+        if (!array_key_exists($chosen_post_id, $gtk->special_post_array)) {
 
             breakout(' CreateNewPostIPProcessor: Error 421218. ');
 
@@ -76,7 +76,7 @@ class CreateNewPostIPProcessor
          * post. The code below implements that algorithm.
          */
 
-        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($app_state->saved_int01);
+        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($gtk->saved_int01);
 
         if (!$all_posts_as_objects) {
 

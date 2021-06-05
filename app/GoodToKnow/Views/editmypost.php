@@ -1,4 +1,4 @@
-<?php global $app_state; ?>
+<?php global $gtk; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditMyPostProcessor/page" method="post">
         <h2>Which topic?</h2>
@@ -7,7 +7,7 @@
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
-            <?php foreach ($app_state->special_topic_array as $key => $value): ?>
+            <?php foreach ($gtk->special_topic_array as $key => $value): ?>
                 <label for="choice-<?= $key ?>" class="radio">
                     <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                     <?= $value ?>

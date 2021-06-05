@@ -1,4 +1,4 @@
-<?php global $app_state; ?>
+<?php global $gtk; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,6 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title><?= $app_state->html_title ?></title>
+    <title><?= $gtk->html_title ?></title>
 </head>
 <body>

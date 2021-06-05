@@ -1,8 +1,8 @@
 <?php
 
-global $app_state;
+global $gtk;
 
-switch ($app_state->page) {
+switch ($gtk->page) {
     case 'Inbox':
         echo "<a href=\"/ax1/Inbox/page\">Inbox</a>";
         break;

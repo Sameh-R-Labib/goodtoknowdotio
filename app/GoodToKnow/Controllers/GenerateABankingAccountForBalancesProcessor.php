@@ -17,7 +17,7 @@ class GenerateABankingAccountForBalancesProcessor
 
 
         global $db;
-        global $app_state;
+        global $gtk;
         global $time;
 
 
@@ -46,7 +46,7 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a BankingAcctForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $app_state->user_id, 'acct_name' => $acct_name, 'start_time' => $time,
+        $array_record = ['user_id' => $gtk->user_id, 'acct_name' => $acct_name, 'start_time' => $time,
             'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
 
 
@@ -71,7 +71,7 @@ class GenerateABankingAccountForBalancesProcessor
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout(' Your save for bank account did not fail but it did send back a message.
              Therefore, it probably did not create the bank account 😟 ');

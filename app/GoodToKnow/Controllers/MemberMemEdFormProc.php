@@ -25,9 +25,9 @@ class MemberMemEdFormProc
 
 
         global $db;
-        global $app_state;
-        // $app_state->saved_str01 the member's username
-        // $app_state->saved_int01 the member's id
+        global $gtk;
+        // $gtk->saved_str01 the member's username
+        // $gtk->saved_int01 the member's id
 
 
         kick_out_nonadmins();
@@ -49,7 +49,7 @@ class MemberMemEdFormProc
 
         $db = get_db();
 
-        $user_object = User::find_by_id($app_state->saved_int01);
+        $user_object = User::find_by_id($gtk->saved_int01);
 
         if (!$user_object) {
 
@@ -90,6 +90,6 @@ class MemberMemEdFormProc
          * Report success.
          */
 
-        breakout(" I have updated $app_state->saved_str01's record. ");
+        breakout(" I have updated $gtk->saved_str01's record. ");
     }
 }

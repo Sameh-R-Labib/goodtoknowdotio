@@ -18,7 +18,7 @@ class MessageTheAuthor
          */
 
 
-        global $app_state;
+        global $gtk;
         global $pre_populate;
 
 
@@ -29,17 +29,17 @@ class MessageTheAuthor
          * Display the editor interface.
          */
 
-        $app_state->html_title = 'Message the Author';
+        $gtk->html_title = 'Message the Author';
 
         $pre_populate = <<<ROI
-Dear $app_state->author_username,
+Dear $gtk->author_username,
 
-This message is in regards to your "$app_state->post_name" post in the "$app_state->topic_name" topic of the
-"$app_state->community_name" community.
+This message is in regards to your "$gtk->post_name" post in the "$gtk->topic_name" topic of the
+"$gtk->community_name" community.
 
 Sincerely,
 
-{$app_state->user_username}
+{$gtk->user_username}
 
 
 ROI;

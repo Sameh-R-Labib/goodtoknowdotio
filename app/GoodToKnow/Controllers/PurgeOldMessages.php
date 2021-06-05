@@ -18,13 +18,13 @@ class PurgeOldMessages
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
 
 
-        $app_state->html_title = 'Purge Old Messages';
+        $gtk->html_title = 'Purge Old Messages';
 
 
         require VIEWS . DIRSEP . 'purgeoldmessages.php';

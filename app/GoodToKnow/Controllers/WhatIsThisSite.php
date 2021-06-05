@@ -13,7 +13,7 @@ class WhatIsThisSite
          */
 
 
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
 
@@ -21,15 +21,15 @@ class WhatIsThisSite
          * Present the view.
          */
 
-        $app_state->is_guest = true;
+        $gtk->is_guest = true;
 
-        $app_state->html_title = 'What is this site?';
+        $gtk->html_title = 'What is this site?';
 
-        $app_state->page = 'About';
+        $gtk->page = 'About';
 
         $show_poof = true;
 
-        $app_state->message = " Read and decide if you'd like to use this. ";
+        $gtk->message = " Read and decide if you'd like to use this. ";
 
         require VIEWS . DIRSEP . 'whatisthissite.php';
     }

@@ -39,16 +39,16 @@ class CommunityToTopic extends GoodObject
     public static function derive_community_id(int $topic_id)
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         $sql = 'SELECT * FROM `community_to_topic`
         WHERE `topic_id` = "' . $db->real_escape_string($topic_id) . '" LIMIT 1';
 
         $array_of_objects = CommunityToTopic::find_by_sql($sql);
 
-        if (!$array_of_objects || !empty($app_state->message)) {
+        if (!$array_of_objects || !empty($gtk->message)) {
 
-            $app_state->message .= ' derive_community_id says: Failed to get a CommunityToTopic object. ';
+            $gtk->message .= ' derive_community_id says: Failed to get a CommunityToTopic object. ';
 
             return false;
 
@@ -58,7 +58,7 @@ class CommunityToTopic extends GoodObject
 
         if (!is_object($communitytotopic_object)) {
 
-            $app_state->message .= ' derive_community_id says: Unexpectedly return value is not an object. ';
+            $gtk->message .= ' derive_community_id says: Unexpectedly return value is not an object. ';
 
             return false;
         }
@@ -78,7 +78,7 @@ class CommunityToTopic extends GoodObject
          */
 
         global $db;
-        global $app_state;
+        global $gtk;
 
         // get (in array) all the CommunityToTopic objects with a particular $community_id.
         $array_of_CommunityToTopic = [];
@@ -96,7 +96,7 @@ class CommunityToTopic extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $app_state->message .= ' ' . $stmt->error . ' ';
+                $gtk->message .= ' ' . $stmt->error . ' ';
 
                 return false;
 
@@ -133,7 +133,7 @@ class CommunityToTopic extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $app_state->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
+            $gtk->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -142,7 +142,7 @@ class CommunityToTopic extends GoodObject
 
         if ($count < 1) {
 
-            $app_state->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
+            $gtk->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
 
             return false;
 
@@ -161,7 +161,7 @@ class CommunityToTopic extends GoodObject
 
         if (empty($array_of_Topics)) {
 
-            $app_state->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
+            $gtk->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
 
             return false;
 

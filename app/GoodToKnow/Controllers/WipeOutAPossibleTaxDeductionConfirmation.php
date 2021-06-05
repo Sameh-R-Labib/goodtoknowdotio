@@ -17,7 +17,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
 
 
@@ -45,7 +45,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
 
         $db = get_db();
 
-        $object = PossibleTaxDeduction::find_by_id($app_state->saved_int01);
+        $object = PossibleTaxDeduction::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

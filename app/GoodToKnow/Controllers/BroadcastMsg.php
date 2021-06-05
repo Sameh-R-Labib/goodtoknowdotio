@@ -6,7 +6,7 @@ class BroadcastMsg
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $pre_populate;
 
 
@@ -17,7 +17,7 @@ class BroadcastMsg
          * Display the editor interface.
          */
 
-        $app_state->html_title = 'Broadcast a Message';
+        $gtk->html_title = 'Broadcast a Message';
 
         $pre_populate = <<<ROI
 Dear Users,
@@ -26,7 +26,7 @@ Dear Users,
 
 Sincerely,
 
-Admin {$app_state->user_username}
+Admin {$gtk->user_username}
 ROI;
 
         require VIEWS . DIRSEP . 'broadcastmsg.php';

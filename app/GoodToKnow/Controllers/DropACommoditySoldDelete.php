@@ -9,7 +9,7 @@ class DropACommoditySoldDelete
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $object;
 
 
@@ -55,7 +55,7 @@ class DropACommoditySoldDelete
         $object->profit = readable_amount_of_money($object->currency_transacted, $object->profit);
 
 
-        $app_state->html_title = 'Delete the commodity sold';
+        $gtk->html_title = 'Delete the commodity sold';
 
         require VIEWS . DIRSEP . 'dropacommoditysolddelete.php';
     }

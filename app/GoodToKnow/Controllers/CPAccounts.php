@@ -6,23 +6,23 @@ class CPAccounts
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->page = 'CPAccounts';
+        $gtk->page = 'CPAccounts';
 
 
         $show_poof = true;
 
 
-        $app_state->html_title = 'Accounts';
+        $gtk->html_title = 'Accounts';
 
 
-        $app_state->message .= ' Manage accounts. ';
+        $gtk->message .= ' Manage accounts. ';
 
 
         require VIEWS . DIRSEP . 'cpaccounts.php';

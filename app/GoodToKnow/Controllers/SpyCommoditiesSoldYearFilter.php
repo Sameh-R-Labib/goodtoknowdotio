@@ -15,7 +15,7 @@ class SpyCommoditiesSoldYearFilter
          */
 
 
-        global $app_state;
+        global $gtk;
         global $show_poof;
         global $array;
 
@@ -48,11 +48,11 @@ class SpyCommoditiesSoldYearFilter
          * Prep the view.
          */
 
-        $app_state->message .= " Here is one year's commodities sold records. ";
+        $gtk->message .= " Here is one year's commodities sold records. ";
 
-        $app_state->html_title = "One year's commodities sold records";
+        $gtk->html_title = "One year's commodities sold records";
 
-        $app_state->page = 'SpyCommoditiesSoldYear';
+        $gtk->page = 'SpyCommoditiesSoldYear';
 
         $show_poof = true;
 

@@ -15,13 +15,13 @@ class NewTopic
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
 
-        if (sizeof($app_state->special_topic_array) > 0) {
+        if (sizeof($gtk->special_topic_array) > 0) {
             $is_empty = false;
         } else {
             $is_empty = true;

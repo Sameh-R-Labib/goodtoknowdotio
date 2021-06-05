@@ -18,7 +18,7 @@ class FineTuneACommoditySoldUpdate
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $time_bought;
         global $time_sold;
@@ -41,7 +41,7 @@ class FineTuneACommoditySoldUpdate
 
         $db = get_db();
 
-        $object = CommoditySold::find_by_id($app_state->saved_int01);
+        $object = CommoditySold::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

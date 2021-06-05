@@ -44,7 +44,7 @@ class PopulateABankingAccountForBalancesProcessor
          * date, hour, minute, second.
          */
 
-        global $app_state;
+        global $gtk;
 
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
@@ -52,7 +52,7 @@ class PopulateABankingAccountForBalancesProcessor
         $time = get_date_h_m_s_from_a_timestamp($object->start_time);
 
 
-        $app_state->html_title = 'Edit the banking_acct_for_balances record';
+        $gtk->html_title = 'Edit the banking_acct_for_balances record';
 
 
         require VIEWS . DIRSEP . 'populateabankingaccountforbalancesprocessor.php';

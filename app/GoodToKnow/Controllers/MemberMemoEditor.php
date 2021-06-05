@@ -6,7 +6,7 @@ class MemberMemoEditor
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
@@ -16,7 +16,7 @@ class MemberMemoEditor
          * Collect the username.
          */
 
-        $app_state->html_title = "Member's Memo Editor";
+        $gtk->html_title = "Member's Memo Editor";
 
         require VIEWS . DIRSEP . 'membermemoeditor.php';
     }

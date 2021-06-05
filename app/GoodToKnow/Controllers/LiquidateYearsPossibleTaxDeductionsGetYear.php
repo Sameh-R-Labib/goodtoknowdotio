@@ -15,7 +15,7 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
          */
 
         global $db;
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
@@ -57,12 +57,12 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
 
         } catch (\Exception $e) {
 
-            $app_state->message .= ' LiquidateYearsPossibleTaxDeductionsGetYear page() exception: ' .
+            $gtk->message .= ' LiquidateYearsPossibleTaxDeductionsGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout('');
 

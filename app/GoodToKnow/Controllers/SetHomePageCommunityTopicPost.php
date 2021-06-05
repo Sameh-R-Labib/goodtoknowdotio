@@ -58,7 +58,7 @@ class SetHomePageCommunityTopicPost
     private static function store_derived_info_in_the_session($community_id, $topic_id,
                                                               $post_object, $post_author_object, $post_id)
     {
-        global $app_state;
+        global $gtk;
         global $community_object;
         global $topic_object;
 
@@ -73,10 +73,10 @@ class SetHomePageCommunityTopicPost
 
         // Then do the rest.
 
-        $_SESSION['special_topic_array'] = $app_state->special_topic_array;
+        $_SESSION['special_topic_array'] = $gtk->special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
 
-        if ($app_state->type_of_resource_requested === 'topic') {
+        if ($gtk->type_of_resource_requested === 'topic') {
             // Second get and store the topic_name
 
             $topic_object = Topic::find_by_id($topic_id);
@@ -87,10 +87,10 @@ class SetHomePageCommunityTopicPost
 
             // Then do the rest.
 
-            $_SESSION['special_post_array'] = $app_state->special_post_array;
+            $_SESSION['special_post_array'] = $gtk->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
-        } elseif ($app_state->type_of_resource_requested === 'post') {
+        } elseif ($gtk->type_of_resource_requested === 'post') {
             // Second get and store the topic_name
 
             $topic_object = Topic::find_by_id($topic_id);
@@ -113,19 +113,19 @@ class SetHomePageCommunityTopicPost
 
             // Then do the rest.
 
-            $_SESSION['special_post_array'] = $app_state->special_post_array;
+            $_SESSION['special_post_array'] = $gtk->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
-            $_SESSION['post_content'] = $app_state->post_content;
+            $_SESSION['post_content'] = $gtk->post_content;
             $_SESSION['last_refresh_content'] = time();
             $_SESSION['author_username'] = $post_author_object->username;
             $_SESSION['author_id'] = (int)$post_author_object->id;
         }
 
-        $_SESSION['type_of_resource_requested'] = $app_state->type_of_resource_requested;
+        $_SESSION['type_of_resource_requested'] = $gtk->type_of_resource_requested;
         $_SESSION['community_id'] = $community_id;
         $_SESSION['topic_id'] = $topic_id;
         $_SESSION['post_id'] = $post_id;
-        $_SESSION['message'] = $app_state->message;
+        $_SESSION['message'] = $gtk->message;
     }
 
 
@@ -137,12 +137,12 @@ class SetHomePageCommunityTopicPost
     private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, &$post_object,
                                                                                                   &$post_author_object)
     {
-        global $app_state;
+        global $gtk;
 
 
-        if ($app_state->type_of_resource_requested === 'post') {
+        if ($gtk->type_of_resource_requested === 'post') {
 
-            if (!array_key_exists($post_id, $app_state->special_post_array)) {
+            if (!array_key_exists($post_id, $gtk->special_post_array)) {
 
                 breakout(' Your resource request is defective.  (errno 4) ');
 
@@ -158,9 +158,9 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $app_state->post_content = file_get_contents($post_object->html_file);
+            $gtk->post_content = file_get_contents($post_object->html_file);
 
-            if ($app_state->post_content === false) {
+            if ($gtk->post_content === false) {
 
                 breakout(' Unable to read the post\'s html source file. ');
 
@@ -185,7 +185,7 @@ class SetHomePageCommunityTopicPost
      */
     private static function conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id)
     {
-        global $app_state;
+        global $gtk;
 
 
         /**
@@ -193,15 +193,15 @@ class SetHomePageCommunityTopicPost
          * make sure that post id is valid.
          */
 
-        if ($app_state->type_of_resource_requested === 'topic_or_post') {
+        if ($gtk->type_of_resource_requested === 'topic_or_post') {
 
             // Either way we need this
 
-            $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
+            $gtk->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
 
-            if (!$app_state->special_post_array) {
+            if (!$gtk->special_post_array) {
 
-                $app_state->special_post_array = [];
+                $gtk->special_post_array = [];
 
             }
 
@@ -210,11 +210,11 @@ class SetHomePageCommunityTopicPost
 
             if ($post_id === 0 && $topic_id !== 0) {
 
-                $app_state->type_of_resource_requested = 'topic';
+                $gtk->type_of_resource_requested = 'topic';
 
             } elseif ($post_id !== 0 && $topic_id !== 0) {
 
-                $app_state->type_of_resource_requested = 'post';
+                $gtk->type_of_resource_requested = 'post';
 
             } else {
 
@@ -232,36 +232,36 @@ class SetHomePageCommunityTopicPost
      */
     private static function get_the_topics_and_derive_the_data_surrounding_it($community_id, $post_id, $topic_id)
     {
-        global $app_state;
+        global $gtk;
 
         /**
          * But before we get started let's establish whether or not
          * $topic_id is not some topic id from amongst the topics belonging to the $community_id
          */
 
-        $app_state->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
+        $gtk->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
 
-        if ($app_state->special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $app_state->special_topic_array)) {
+        if ($gtk->special_topic_array && $topic_id != 0 && !array_key_exists($topic_id, $gtk->special_topic_array)) {
 
             breakout(' Your resource request is defective.  (errno 6) ');
 
         }
 
-        if (!$app_state->special_topic_array && $topic_id != 0) {
+        if (!$gtk->special_topic_array && $topic_id != 0) {
 
             breakout(' Your resource request is defective. (errno 8) ');
 
         }
 
-        if (!$app_state->special_topic_array) {
+        if (!$gtk->special_topic_array) {
 
-            $app_state->special_topic_array = [];
+            $gtk->special_topic_array = [];
 
         }
 
         if ($topic_id == 0) {
 
-            $app_state->type_of_resource_requested = 'community';
+            $gtk->type_of_resource_requested = 'community';
 
             if ($post_id != 0) {
 
@@ -271,7 +271,7 @@ class SetHomePageCommunityTopicPost
 
         } else {
 
-            $app_state->type_of_resource_requested = 'topic_or_post';
+            $gtk->type_of_resource_requested = 'topic_or_post';
 
         }
     }
@@ -283,9 +283,9 @@ class SetHomePageCommunityTopicPost
     private static function mostly_making_sure_chosen_community_is_ok_to_choose($community_id)
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
-        if (!empty($app_state->message) || $db === false) {
+        if (!empty($gtk->message) || $db === false) {
 
             breakout(' Database connection failed. ');
 
@@ -296,7 +296,7 @@ class SetHomePageCommunityTopicPost
          * Make sure the community_id belongs to one of the user's communities.
          */
 
-        if (!array_key_exists($community_id, $app_state->special_community_array)) {
+        if (!array_key_exists($community_id, $gtk->special_community_array)) {
 
             breakout(' Invalid community_id. ');
 
@@ -308,11 +308,11 @@ class SetHomePageCommunityTopicPost
      */
     private static function abort_if_an_anomalous_condition_exists()
     {
-        global $app_state;
+        global $gtk;
 
-        if (!$app_state->is_logged_in || !empty($app_state->message)) {
+        if (!$gtk->is_logged_in || !empty($gtk->message)) {
 
-            $_SESSION['message'] = $app_state->message;
+            $_SESSION['message'] = $gtk->message;
 
             reset_feature_session_vars();
 

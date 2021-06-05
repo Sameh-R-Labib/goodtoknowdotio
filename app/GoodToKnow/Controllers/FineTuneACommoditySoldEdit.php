@@ -17,7 +17,7 @@ class FineTuneACommoditySoldEdit
          */
 
 
-        global $app_state;
+        global $gtk;
         global $time_bought;
         global $time_sold;
         global $object;
@@ -73,7 +73,7 @@ class FineTuneACommoditySoldEdit
         $object->profit = readable_amount_no_commas($object->currency_transacted, $object->profit);
 
 
-        $app_state->html_title = 'Edit the commodity sold';
+        $gtk->html_title = 'Edit the commodity sold';
 
 
         require VIEWS . DIRSEP . 'finetuneacommoditysoldedit.php';

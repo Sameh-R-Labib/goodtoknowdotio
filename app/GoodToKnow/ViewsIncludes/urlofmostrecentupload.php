@@ -1,7 +1,7 @@
-<?php global $app_state; ?>
-<?php if ($app_state->url_of_most_recent_upload): ?>
+<?php global $gtk; ?>
+<?php if ($gtk->url_of_most_recent_upload): ?>
     <small>
-        ▶️&nbsp;Recent Upload: [ <?= $app_state->url_of_most_recent_upload ?> ] ◀️ ️✂️ + 📋
+        ▶️&nbsp;Recent Upload: [ <?= $gtk->url_of_most_recent_upload ?> ] ◀️ ️✂️ + 📋
     </small>
 <?php else: ?>
     <small>

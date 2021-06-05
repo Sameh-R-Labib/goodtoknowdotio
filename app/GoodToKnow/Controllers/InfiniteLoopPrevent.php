@@ -6,10 +6,10 @@ class InfiniteLoopPrevent
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
 
 
-        $app_state->html_title = 'For Infinite Loop Prevention';
+        $gtk->html_title = 'For Infinite Loop Prevention';
 
 
         require VIEWS . DIRSEP . 'infiniteloopprevent.php';

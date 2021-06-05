@@ -85,12 +85,12 @@ class User extends GoodObject
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         // Determine whether or not the user is suspended per database
 
-        $user_object = User::find_by_id($app_state->user_id);
+        $user_object = User::find_by_id($gtk->user_id);
 
         if ($user_object === false) return false;
 
@@ -119,7 +119,7 @@ class User extends GoodObject
     public static function authenticate(string $username, string $password)
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         /**
          * What you see here could have been done using the find_by_sql
@@ -137,7 +137,7 @@ class User extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $app_state->message .= $stmt->error . ' ';
+                $gtk->message .= $stmt->error . ' ';
 
                 return false;
 
@@ -166,7 +166,7 @@ class User extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $app_state->message .= ' User::authenticate() caught a thrown exception: ' .
+            $gtk->message .= ' User::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -175,7 +175,7 @@ class User extends GoodObject
 
         if (!password_verify($password, $user->password)) {
 
-            $app_state->message .= " Authentication failed! ";
+            $gtk->message .= " Authentication failed! ";
 
             return false;
         }
@@ -219,14 +219,14 @@ class User extends GoodObject
          */
 
         global $db;
-        global $app_state;
+        global $gtk;
 
         $sql = 'SELECT * FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($sql);
 
-        if (!$array_of_User_objects || !empty($app_state->message)) {
+        if (!$array_of_User_objects || !empty($gtk->message)) {
 
             return false;
 

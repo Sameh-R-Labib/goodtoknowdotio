@@ -17,9 +17,9 @@ class TransferPostOwnershipTransferIt
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int02 post id
+        // $gtk->saved_int02 post id
 
 
         kick_out_nonadmins();
@@ -47,7 +47,7 @@ class TransferPostOwnershipTransferIt
 
         // Get the Post object.
 
-        $post_object = Post::find_by_id($app_state->saved_int02);
+        $post_object = Post::find_by_id($gtk->saved_int02);
 
         if (!$post_object) {
 

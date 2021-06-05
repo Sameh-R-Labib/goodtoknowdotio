@@ -9,9 +9,9 @@ class RemoveComsChoices
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_str01 is user's username
+        // $gtk->saved_str01 is user's username
         global $coms_user_belongs_to;
 
 
@@ -33,7 +33,7 @@ class RemoveComsChoices
 
         $db = get_db();
 
-        $user_object = User::find_by_username($app_state->saved_str01);
+        $user_object = User::find_by_username($gtk->saved_str01);
 
         if (!$user_object) {
 
@@ -68,7 +68,7 @@ class RemoveComsChoices
          * 4) Present communities as check boxes
          */
 
-        $app_state->html_title = 'Remove Community Choices';
+        $gtk->html_title = 'Remove Community Choices';
 
         require VIEWS . DIRSEP . 'removecomschoices.php';
     }

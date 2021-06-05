@@ -16,13 +16,13 @@ function is_date(string &$date): bool
      *               - $message may be modified.
      */
 
-    global $app_state;
+    global $gtk;
 
     $date = trim($date);
 
     if (empty($date)) {
 
-        $app_state->message .= " The date is missing. ";
+        $gtk->message .= " The date is missing. ";
 
         return false;
 
@@ -32,7 +32,7 @@ function is_date(string &$date): bool
 
     if ($number_of_slashes != 2) {
 
-        $app_state->message .= " You don't have two slashes in date. ";
+        $gtk->message .= " You don't have two slashes in date. ";
 
         return false;
     }
@@ -52,14 +52,14 @@ function is_date(string &$date): bool
 
     if (strlen($mm) != 2 || strlen($dd) != 2 || strlen($yyyy) != 4) {
 
-        $app_state->message .= " You did not use correct mm/dd/yyyy date format. ";
+        $gtk->message .= " You did not use correct mm/dd/yyyy date format. ";
 
         return false;
     }
 
     if (!is_numeric($mm) || !is_numeric($dd) || !is_numeric($yyyy)) {
 
-        $app_state->message .= " The date must consist of numeric digits and 2 forward slashes. And, it does not have
+        $gtk->message .= " The date must consist of numeric digits and 2 forward slashes. And, it does not have
             required numeric digits! ";
 
         return false;
@@ -67,7 +67,7 @@ function is_date(string &$date): bool
 
     if (!checkdate($words[0], $words[1], $words[2])) {
 
-        $app_state->message .= " That's not a valid date. ";
+        $gtk->message .= " That's not a valid date. ";
 
         return false;
     }

@@ -3,11 +3,11 @@
 use GoodToKnow\Models\MessageToUser;
 
 
-global $app_state;
+global $gtk;
 global $db;
 
 
-if ($app_state->messages_last_time === null) {
+if ($gtk->messages_last_time === null) {
 
     if ($db == 'not connected') {
 
@@ -15,8 +15,8 @@ if ($app_state->messages_last_time === null) {
 
         if ($db === false) {
 
-            $app_state->message .= " Failed to connect to the database. ";
-            $_SESSION['message'] = $app_state->message;
+            $gtk->message .= " Failed to connect to the database. ";
+            $_SESSION['message'] = $gtk->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -24,24 +24,24 @@ if ($app_state->messages_last_time === null) {
 
     }
 
-    $quantity = MessageToUser::user_message_quantity($app_state->user_id);
+    $quantity = MessageToUser::user_message_quantity($gtk->user_id);
 
     if ($quantity === false) {
 
-        $app_state->message .= " Failed to get quantity of messages. ";
-        $_SESSION['message'] = $app_state->message;
+        $gtk->message .= " Failed to get quantity of messages. ";
+        $_SESSION['message'] = $gtk->message;
         reset_feature_session_vars();
         redirect_to("/ax1/InfiniteLoopPrevent/page");
 
     }
 
-    $app_state->message .= "<br><br>You have {$quantity} message(s).
+    $gtk->message .= "<br><br>You have {$quantity} message(s).
     <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
     $_SESSION['messages_last_time'] = time();
 } else {
-    $time_since_last = time() - $app_state->messages_last_time;
+    $time_since_last = time() - $gtk->messages_last_time;
     $time_since_last = $time_since_last / 60;
 
     if ($time_since_last > 17) {
@@ -52,8 +52,8 @@ if ($app_state->messages_last_time === null) {
 
             if ($db === false) {
 
-                $app_state->message .= " Failed to connect to the database. ";
-                $_SESSION['message'] = $app_state->message;
+                $gtk->message .= " Failed to connect to the database. ";
+                $_SESSION['message'] = $gtk->message;
                 reset_feature_session_vars();
                 redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -61,22 +61,22 @@ if ($app_state->messages_last_time === null) {
 
         }
 
-        $quantity = MessageToUser::user_message_quantity($app_state->user_id);
+        $quantity = MessageToUser::user_message_quantity($gtk->user_id);
 
         if ($quantity === false) {
 
-            $app_state->message .= " Failed to get quantity of messages. ";
-            $_SESSION['message'] = $app_state->message;
+            $gtk->message .= " Failed to get quantity of messages. ";
+            $_SESSION['message'] = $gtk->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
         }
 
-        $quantity_new = $quantity - $app_state->messages_last_quantity;
+        $quantity_new = $quantity - $gtk->messages_last_quantity;
 
-        if ($quantity > $app_state->messages_last_quantity) {
+        if ($quantity > $gtk->messages_last_quantity) {
 
-            $app_state->message .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
+            $gtk->message .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
             <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
             $_SESSION['messages_last_quantity'] = $quantity;

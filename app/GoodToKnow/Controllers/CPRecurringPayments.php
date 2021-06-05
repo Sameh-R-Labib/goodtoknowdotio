@@ -6,23 +6,23 @@ class CPRecurringPayments
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $show_poof;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->page = 'CPRecurringPayments';
+        $gtk->page = 'CPRecurringPayments';
 
 
         $show_poof = true;
 
 
-        $app_state->html_title = 'Recurring Payments';
+        $gtk->html_title = 'Recurring Payments';
 
 
-        $app_state->message .= ' Manage recurring payments. ';
+        $gtk->message .= ' Manage recurring payments. ';
 
 
         require VIEWS . DIRSEP . 'cprecurringpayments.php';

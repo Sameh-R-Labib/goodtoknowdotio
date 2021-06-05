@@ -19,9 +19,9 @@ class FeatureATaskUpdate
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int01 task id
+        // $gtk->saved_int01 task id
         global $last;
         global $next;
 
@@ -69,7 +69,7 @@ class FeatureATaskUpdate
 
         $db = get_db();
 
-        $object = Task::find_by_id($app_state->saved_int01);
+        $object = Task::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

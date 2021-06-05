@@ -3,7 +3,7 @@
 use GoodToKnow\Models\Bitcoin;
 
 
-global $app_state;
+global $gtk;
 global $db;
 global $array_of_bitcoin_objects;
 
@@ -19,14 +19,14 @@ $db = get_db();
  * belonging to the current user.
  */
 
-$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
+$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($gtk->user_id) . '"';
 
 $array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
 
-if (!$array_of_bitcoin_objects || !empty($app_state->message)) {
+if (!$array_of_bitcoin_objects || !empty($gtk->message)) {
 
     breakout(' I could NOT find any bitcoin records ¯\_(ツ)_/¯. ');
 
 }
 
-$app_state->html_title = 'Which bitcoin record?';
+$gtk->html_title = 'Which bitcoin record?';

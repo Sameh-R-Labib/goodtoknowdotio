@@ -14,7 +14,7 @@ class ExpungeARecurringPaymentRecord
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $array_of_recurring_payment_objects;
 
@@ -29,15 +29,15 @@ class ExpungeARecurringPaymentRecord
          * Get an array of RecurringPayment objects belonging to the current user.
          */
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($gtk->user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 
-        if (!$array_of_recurring_payment_objects || !empty($app_state->message)) {
+        if (!$array_of_recurring_payment_objects || !empty($gtk->message)) {
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯. ');
         }
 
-        $app_state->html_title = 'Which recurring_payment record?';
+        $gtk->html_title = 'Which recurring_payment record?';
 
         require VIEWS . DIRSEP . 'expungearecurringpaymentrecord.php';
     }

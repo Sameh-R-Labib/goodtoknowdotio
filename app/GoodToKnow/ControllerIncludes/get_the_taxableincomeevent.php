@@ -5,7 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $db;
-global $app_state;
+global $gtk;
 global $object;
 
 
@@ -42,7 +42,7 @@ if (!$object) {
  * 3) Make sure the object belongs to the user.
  */
 
-if ($object->user_id != $app_state->user_id) {
+if ($object->user_id != $gtk->user_id) {
 
     breakout(' Error 90703010. ');
 

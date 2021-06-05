@@ -12,13 +12,13 @@ class RevampABankingTransactionForBalances
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->html_title = 'Which time range for filtering your transaction choices?';
+        $gtk->html_title = 'Which time range for filtering your transaction choices?';
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalances.php';

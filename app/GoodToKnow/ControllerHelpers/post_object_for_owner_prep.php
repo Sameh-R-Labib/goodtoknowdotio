@@ -10,7 +10,7 @@ use GoodToKnow\Models\Post;
  */
 function post_object_for_owner_prep(string $field_name): object
 {
-    global $app_state;
+    global $gtk;
 
 
     /**
@@ -32,7 +32,7 @@ function post_object_for_owner_prep(string $field_name): object
 
     }
 
-    if ($post_object->user_id != $app_state->user_id) {
+    if ($post_object->user_id != $gtk->user_id) {
 
         breakout(' You can\'t edit or delete this post. ');
 

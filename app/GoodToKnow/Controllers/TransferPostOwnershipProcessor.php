@@ -8,7 +8,7 @@ class TransferPostOwnershipProcessor
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
@@ -20,10 +20,10 @@ class TransferPostOwnershipProcessor
 
 
         /**
-         * Make sure $chosen_topic_id is among the ids of $app_state->special_topic_array
+         * Make sure $chosen_topic_id is among the ids of $gtk->special_topic_array
          */
 
-        if (!array_key_exists($chosen_topic_id, $app_state->special_topic_array)) {
+        if (!array_key_exists($chosen_topic_id, $gtk->special_topic_array)) {
 
             breakout(' Unexpected error: topic id not found in topic array. ');
 

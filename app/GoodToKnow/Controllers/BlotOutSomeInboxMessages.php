@@ -14,7 +14,7 @@ class BlotOutSomeInboxMessages
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $inbox_messages_array;
 
@@ -24,7 +24,7 @@ class BlotOutSomeInboxMessages
 
         $db = get_db();
 
-        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($app_state->user_id);
+        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($gtk->user_id);
 
         if ($inbox_messages_array === false) {
 
@@ -46,7 +46,7 @@ class BlotOutSomeInboxMessages
         }
 
 
-        $app_state->html_title = 'Choose Messages';
+        $gtk->html_title = 'Choose Messages';
 
         require VIEWS . DIRSEP . 'blotoutsomeinboxmessages.php';
     }

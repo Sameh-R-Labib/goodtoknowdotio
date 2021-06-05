@@ -181,11 +181,11 @@ abstract class GoodObject
     protected function create(): bool
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         if ($this->id) {
 
-            $app_state->message .= ' GoodObject create() method says: Whichever code is calling create() is trying
+            $gtk->message .= ' GoodObject create() method says: Whichever code is calling create() is trying
             to insert a new table row using an object which already exists in the table. We know this
             because that object already has an id. ';
 
@@ -222,7 +222,7 @@ abstract class GoodObject
 
             if (!empty($query_error)) {
 
-                $app_state->message .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $gtk->message .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
             }
@@ -233,7 +233,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $app_state->message .= ' GoodObject create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' GoodObject create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -249,7 +249,7 @@ abstract class GoodObject
 
         } else {
 
-            $app_state->message .= ' The GoodObject create() method failed to insert a row. ';
+            $gtk->message .= ' The GoodObject create() method failed to insert a row. ';
 
             return false;
 
@@ -280,13 +280,13 @@ abstract class GoodObject
          */
 
         global $db;
-        global $app_state;
+        global $gtk;
 
         $sql = 'INSERT INTO ' . static::$table_name;
 
         if (empty($objects_array)) {
 
-            $app_state->message .= ' The function insert_multiple_objects did NOT receive any objects to insert. ';
+            $gtk->message .= ' The function insert_multiple_objects did NOT receive any objects to insert. ';
 
             return false;
 
@@ -321,7 +321,7 @@ abstract class GoodObject
 
             if (!empty($query_error)) {
 
-                $app_state->message .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $gtk->message .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
@@ -331,7 +331,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $app_state->message .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -343,7 +343,7 @@ abstract class GoodObject
 
         } else {
 
-            $app_state->message .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
+            $gtk->message .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
 
             return false;
 
@@ -443,7 +443,7 @@ abstract class GoodObject
     public static function count_all()
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
 
@@ -454,14 +454,14 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $app_state->message .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $gtk->message .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $app_state->message .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $gtk->message .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
 
             return false;
 
@@ -469,7 +469,7 @@ abstract class GoodObject
 
         if (!$result->num_rows) {
 
-            $app_state->message .= ' count_all failed. ';
+            $gtk->message .= ' count_all failed. ';
 
             return false;
 
@@ -525,7 +525,7 @@ abstract class GoodObject
     public static function find_by_sql(string $sql)
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         $object_array = [];
 
@@ -536,14 +536,14 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $app_state->message .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $gtk->message .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $app_state->message .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -577,13 +577,13 @@ abstract class GoodObject
     protected function update(): bool
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         $num_affected_rows = 0;
 
         if ($this->id < 1 || !is_numeric($this->id)) {
 
-            $app_state->message .= 'GoodObject update() says: Whichever code is calling this method is trying
+            $gtk->message .= 'GoodObject update() says: Whichever code is calling this method is trying
             to update a table row using an object which has a negative or non-numeric id. ';
 
             return false;
@@ -631,7 +631,7 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $app_state->message .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $gtk->message .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
             }
@@ -640,7 +640,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $app_state->message .= ' GoodObject update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' GoodObject update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -656,7 +656,7 @@ abstract class GoodObject
 
         } else {
 
-            $app_state->message .= " GoodObject update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
+            $gtk->message .= " GoodObject update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
 
             return false;
 
@@ -672,7 +672,7 @@ abstract class GoodObject
     public function delete(): bool
     {
         global $db;
-        global $app_state;
+        global $gtk;
 
         $num_affected_rows = 0;
 
@@ -687,7 +687,7 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $app_state->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $gtk->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
@@ -697,7 +697,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $app_state->message .= ' GoodObject delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' GoodObject delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -707,7 +707,7 @@ abstract class GoodObject
 
         } else {
 
-            $app_state->message .= ' GoodObject delete() FAILED to delete a row. ';
+            $gtk->message .= ' GoodObject delete() FAILED to delete a row. ';
 
             return false;
 

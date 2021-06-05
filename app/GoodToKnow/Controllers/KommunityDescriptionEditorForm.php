@@ -8,13 +8,13 @@ class KommunityDescriptionEditorForm
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int01 community id
+        // $gtk->saved_int01 community id
         global $community_object;
 
 
-        // $app_state->saved_str01 is the community name. The view file will get it directly from global scope.
+        // $gtk->saved_str01 is the community name. The view file will get it directly from global scope.
 
 
         kick_out_nonadmins();
@@ -31,7 +31,7 @@ class KommunityDescriptionEditorForm
 
         $db = get_db();
 
-        $community_object = Community::find_by_id($app_state->saved_int01);
+        $community_object = Community::find_by_id($gtk->saved_int01);
 
         if (!$community_object) {
 
@@ -42,7 +42,7 @@ class KommunityDescriptionEditorForm
 
         // 2) Present a (pre-filled with current description) form for editing.
 
-        $app_state->html_title = "Community's Description Editor";
+        $gtk->html_title = "Community's Description Editor";
 
         require VIEWS . DIRSEP . 'kommunitydescriptioneditorform.php';
     }

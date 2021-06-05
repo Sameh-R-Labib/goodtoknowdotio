@@ -20,9 +20,9 @@ class PopulateABankingAccountForBalancesSubmit
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int01 record id
+        // $gtk->saved_int01 record id
         global $time;
 
 
@@ -58,7 +58,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         $db = get_db();
 
-        $object = BankingAcctForBalances::find_by_id($app_state->saved_int01);
+        $object = BankingAcctForBalances::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

@@ -1,14 +1,13 @@
-<?php global $app_state; ?>
-<?php global $long_title_of_post; ?>
+<?php global $gtk; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/TransferPostOwnershipGetUsername/page" method="post">
     <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
-    <p>Are you sure you want me to transfer ownership of "<?= $long_title_of_post; ?>". Which resides in
-        the <?= $app_state->community_name ?> community. Which resides in the <i><?= $app_state->topic_name ?></i>
+    <p>Are you sure you want me to transfer ownership of "<?= $gtk->long_title_of_post; ?>". Which resides in
+        the <?= $gtk->community_name ?> community. Which resides in the <i><?= $gtk->topic_name ?></i>
         topic. And is
         currently
-        owned by <b><?= $app_state->author_username ?></b>.</p>
+        owned by <b><?= $gtk->author_username ?></b>.</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

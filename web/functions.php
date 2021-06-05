@@ -17,9 +17,9 @@ function fix_michelf(string &$html)
  */
 function kick_out_loggedoutusers()
 {
-    global $app_state;
+    global $gtk;
 
-    if (!$app_state->is_logged_in || !empty($app_state->message)) {
+    if (!$gtk->is_logged_in || !empty($gtk->message)) {
 
         breakout(' Log back in because your session has expired. ');
 
@@ -32,9 +32,9 @@ function kick_out_loggedoutusers()
  */
 function kick_out_nonadmins()
 {
-    global $app_state;
+    global $gtk;
 
-    if (!$app_state->is_logged_in || !$app_state->is_admin || !empty($app_state->message)) {
+    if (!$gtk->is_logged_in || !$gtk->is_admin || !empty($gtk->message)) {
 
         breakout(' You are not authorized. ');
 
@@ -78,10 +78,10 @@ function redirect_to(string $location)
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
      */
-    global $app_state;
+    global $gtk;
 
     // passing on the "to display message"
-    $_SESSION['message'] = $app_state->message;
+    $_SESSION['message'] = $gtk->message;
 
     if ($location !== '') {
 
@@ -107,9 +107,9 @@ function breakout(string $newMessage)
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
      */
-    global $app_state;
+    global $gtk;
 
-    $app_state->message .= $newMessage;
+    $gtk->message .= $newMessage;
     reset_feature_session_vars();
     redirect_to("/ax1/Home/page");
 }
@@ -145,7 +145,7 @@ function size_as_text(int $size): string
  */
 function db_connect()
 {
-    global $app_state;
+    global $gtk;
 
     try {
 
@@ -153,7 +153,7 @@ function db_connect()
 
         if ($db->connect_error) {
 
-            $app_state->message .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $gtk->message .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
 
         }
@@ -162,7 +162,7 @@ function db_connect()
 
     } catch (Exception $e) {
 
-        $app_state->message .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        $gtk->message .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         return false;
 
     }
@@ -176,11 +176,11 @@ function db_connect()
  */
 function get_db()
 {
-    global $app_state;
+    global $gtk;
 
     $db = db_connect();
 
-    if (!empty($app_state->message) || $db === false) {
+    if (!empty($gtk->message) || $db === false) {
 
         breakout(' I was unable to connect to the database. ');
 

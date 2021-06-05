@@ -12,13 +12,13 @@ class FineTuneACommoditySold
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->html_title = 'Which tax year?';
+        $gtk->html_title = 'Which tax year?';
 
 
         require VIEWS . DIRSEP . 'finetuneacommoditysold.php';

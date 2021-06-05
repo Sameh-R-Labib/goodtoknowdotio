@@ -33,12 +33,12 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $show_poof;
         global $account;
         global $array;
-        // $app_state->saved_int01 id of BankingAcctForBalances record
+        // $gtk->saved_int01 id of BankingAcctForBalances record
 
 
         kick_out_loggedoutusers();
@@ -51,7 +51,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
 
-        $account = BankingAcctForBalances::find_by_id($app_state->saved_int01);
+        $account = BankingAcctForBalances::find_by_id($gtk->saved_int01);
 
         if (!$account) {
 
@@ -69,14 +69,14 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * be for the currently chosen BankingAcctForBalances.
          */
 
-        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($app_state->user_id);
+        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
         $sql .= ' AND `bank_id` = ' . $db->real_escape_string($account->id);
         $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
         $array = BankingTransactionForBalances::find_by_sql($sql);
 
-        if (!$array || !empty($app_state->message)) {
+        if (!$array || !empty($gtk->message)) {
 
             breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
 
@@ -147,16 +147,16 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $array = array_reverse($array);
 
 
-        $app_state->html_title = 'Transactions';
+        $gtk->html_title = 'Transactions';
 
 
-        $app_state->page = 'CheckMyBankingAccountTxBalances';
+        $gtk->page = 'CheckMyBankingAccountTxBalances';
 
 
         $show_poof = true;
 
 
-        $app_state->message .= ' Here are your transactions and their balances. ';
+        $gtk->message .= ' Here are your transactions and their balances. ';
 
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';

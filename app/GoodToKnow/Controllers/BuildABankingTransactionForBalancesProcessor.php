@@ -18,7 +18,7 @@ class BuildABankingTransactionForBalancesProcessor
 
 
         global $db;
-        global $app_state;
+        global $gtk;
         global $time;
 
 
@@ -47,7 +47,7 @@ class BuildABankingTransactionForBalancesProcessor
          * Create a BankingTransactionForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $app_state->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
+        $array_record = ['user_id' => $gtk->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
 
 
         /**
@@ -71,7 +71,7 @@ class BuildABankingTransactionForBalancesProcessor
 
         }
 
-        if (!empty($app_state->message)) {
+        if (!empty($gtk->message)) {
 
             breakout(' The save method for BankingTransactionForBalances did not return false but it did send
             back a message. Therefore, it probably did not create the BankingTransactionForBalances record. ');

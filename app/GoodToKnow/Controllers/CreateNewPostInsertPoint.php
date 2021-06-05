@@ -21,7 +21,7 @@ class CreateNewPostInsertPoint
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
 
 
@@ -32,22 +32,22 @@ class CreateNewPostInsertPoint
 
 
         /**
-         * $app_state->saved_int01 should be the id of a topic This topic is the one the user is choosing
+         * $gtk->saved_int01 should be the id of a topic This topic is the one the user is choosing
          * for her new post.
          *
          * Before we can present the form we need to have a special post array so we can list
          * all the posts in said topic.
          */
 
-        $app_state->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($app_state->saved_int01);
+        $gtk->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($gtk->saved_int01);
 
-        if (!$app_state->special_post_array) {
+        if (!$gtk->special_post_array) {
 
             breakout(' Unable to get posts for the topic specified. ');
 
         }
 
-        $app_state->html_title = 'Where will the new post go?';
+        $gtk->html_title = 'Where will the new post go?';
 
         require VIEWS . DIRSEP . 'createnewpostinsertpoint.php';
     }

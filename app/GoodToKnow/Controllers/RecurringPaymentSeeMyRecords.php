@@ -15,7 +15,7 @@ class RecurringPaymentSeeMyRecords
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
         global $show_poof;
         global $array_of_recurring_payment_objects;
@@ -30,11 +30,11 @@ class RecurringPaymentSeeMyRecords
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($app_state->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($gtk->user_id) . '"';
 
         $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 
-        if (!$array_of_recurring_payment_objects || !empty($app_state->message)) {
+        if (!$array_of_recurring_payment_objects || !empty($gtk->message)) {
 
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯ ');
 
@@ -60,16 +60,16 @@ class RecurringPaymentSeeMyRecords
         }
 
 
-        $app_state->page = 'RecurringPaymentSeeMyRecords';
+        $gtk->page = 'RecurringPaymentSeeMyRecords';
 
 
         $show_poof = true;
 
 
-        $app_state->html_title = "Your recurring transactions";
+        $gtk->html_title = "Your recurring transactions";
 
 
-        $app_state->message .= " Here are your recurring transactions. ";
+        $gtk->message .= " Here are your recurring transactions. ";
 
 
         require VIEWS . DIRSEP . 'recurringpaymentseemyrecords.php';

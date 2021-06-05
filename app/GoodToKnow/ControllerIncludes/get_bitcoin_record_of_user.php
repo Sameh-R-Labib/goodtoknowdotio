@@ -4,7 +4,7 @@ use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
-global $app_state;
+global $gtk;
 global $bitcoin_object;
 
 
@@ -41,7 +41,7 @@ if (!$bitcoin_object) {
  * Verify that this object belongs to the user.
  */
 
-if ($bitcoin_object->user_id != $app_state->user_id) {
+if ($bitcoin_object->user_id != $gtk->user_id) {
 
     breakout(' Error 8006667. ');
 

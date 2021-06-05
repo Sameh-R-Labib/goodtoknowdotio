@@ -240,6 +240,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $long_title_of_post;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -339,5 +345,7 @@ class AppState
         $this->page = 'Home';
 
         $this->html_title = '';
+
+        $this->long_title_of_post = '';
     }
 }

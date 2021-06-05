@@ -10,13 +10,13 @@ class LiquidateYearsPossibleTaxDeductions
          * Admin script.
          */
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
 
 
-        $app_state->html_title = 'Which year?';
+        $gtk->html_title = 'Which year?';
 
 
         require VIEWS . DIRSEP . 'liquidateyearspossibletaxdeductions.php';

@@ -22,9 +22,9 @@ class WriteOverATaxableIncomeEventUpdate
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int01 record id
+        // $gtk->saved_int01 record id
         global $time;
 
 
@@ -81,7 +81,7 @@ class WriteOverATaxableIncomeEventUpdate
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($app_state->saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

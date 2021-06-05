@@ -11,7 +11,7 @@ class ByUsernameMessage
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
@@ -21,7 +21,7 @@ class ByUsernameMessage
          * Present a form for entering a username.
          */
 
-        $app_state->html_title = 'Username Message a User';
+        $gtk->html_title = 'Username Message a User';
 
         require VIEWS . DIRSEP . 'byusernamemessage.php';
     }

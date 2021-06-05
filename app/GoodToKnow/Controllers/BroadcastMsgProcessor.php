@@ -17,7 +17,7 @@ class BroadcastMsgProcessor
 
         global $db;
         global $message_object;
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();

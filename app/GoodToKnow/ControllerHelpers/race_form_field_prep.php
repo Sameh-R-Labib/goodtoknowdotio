@@ -8,7 +8,7 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function race_form_field_prep(string $field_name): string
 {
-    global $app_state;
+    global $gtk;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 

@@ -22,9 +22,9 @@ class RevampABankingTransactionForBalancesUpdate
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_int01 record id
+        // $gtk->saved_int01 record id
         global $time;
 
 
@@ -67,7 +67,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         $db = get_db();
 
-        $object = BankingTransactionForBalances::find_by_id($app_state->saved_int01);
+        $object = BankingTransactionForBalances::find_by_id($gtk->saved_int01);
 
         if (!$object) {
 

@@ -12,7 +12,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          */
 
 
-        global $app_state;
+        global $gtk;
         global $show_poof;
         global $array;
 
@@ -30,11 +30,11 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         }
 
-        $app_state->message .= " Here are one year's tax write-offs. ";
+        $gtk->message .= " Here are one year's tax write-offs. ";
 
-        $app_state->html_title = "One year\'s tax write-offs.";
+        $gtk->html_title = "One year\'s tax write-offs.";
 
-        $app_state->page = 'SeeOneYearsPossibleTaxDeductions';
+        $gtk->page = 'SeeOneYearsPossibleTaxDeductions';
 
         $show_poof = true;
 

@@ -14,9 +14,8 @@ class AuthorDeletesOwnPostDelete
          */
 
 
-        global $app_state;
+        global $gtk;
         global $db;
-        global $long_title_of_post;
 
 
         kick_out_loggedoutusers();
@@ -47,14 +46,14 @@ class AuthorDeletesOwnPostDelete
 
         // We need this in the view.
 
-        $long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $gtk->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
         /**
          * Display a form which asks for confirmation.
          */
 
-        $app_state->html_title = 'Are you sure?';
+        $gtk->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'authordeletesownpostdelete.php';
     }

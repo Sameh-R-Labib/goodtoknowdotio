@@ -11,13 +11,13 @@ class SuspendAccount
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_nonadmins();
 
 
-        $app_state->html_title = "Suspend Account";
+        $gtk->html_title = "Suspend Account";
 
 
         require VIEWS . DIRSEP . 'suspendaccount.php';

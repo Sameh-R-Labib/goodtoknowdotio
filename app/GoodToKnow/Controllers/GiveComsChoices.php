@@ -10,9 +10,9 @@ class GiveComsChoices
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $db;
-        // $app_state->saved_str01 has user's username
+        // $gtk->saved_str01 has user's username
         global $coms_user_belongs_to;
         global $coms_user_does_not_belong_to;
 
@@ -35,7 +35,7 @@ class GiveComsChoices
 
         $db = get_db();
 
-        $user_object = User::find_by_username($app_state->saved_str01);
+        $user_object = User::find_by_username($gtk->saved_str01);
 
         if (!$user_object) {
 
@@ -104,7 +104,7 @@ class GiveComsChoices
          * as check boxes in a form.
          */
 
-        $app_state->html_title = 'Give Community Choices';
+        $gtk->html_title = 'Give Community Choices';
 
         require VIEWS . DIRSEP . 'givecomschoices.php';
     }

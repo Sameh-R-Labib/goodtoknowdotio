@@ -1,6 +1,6 @@
-<?php global $app_state; ?>
-<?php if (!empty($app_state->post_id)) {
+<?php global $gtk; ?>
+<?php if (!empty($gtk->post_id)) {
     echo " → <a
-    href=\"/ax1/SetHomePageCommunityTopicPost/page/$app_state->community_id/$app_state->topic_id/$app_state->post_id\">
-    $app_state->post_name</a>";
+    href=\"/ax1/SetHomePageCommunityTopicPost/page/$gtk->community_id/$gtk->topic_id/$gtk->post_id\">
+    $gtk->post_name</a>";
 } ?>

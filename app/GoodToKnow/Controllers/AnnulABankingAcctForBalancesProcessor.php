@@ -9,7 +9,7 @@ class AnnulABankingAcctForBalancesProcessor
 {
     function page()
     {
-        global $app_state;
+        global $gtk;
         global $object;
 
         /**
@@ -40,7 +40,7 @@ class AnnulABankingAcctForBalancesProcessor
          * 3) Presents a form containing data from the record and asking for permission to delete.
          */
 
-        $app_state->html_title = 'Are you sure?';
+        $gtk->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'annulabankingacctforbalancesprocessor.php';
     }

@@ -17,7 +17,7 @@ class DefaultTimeZoneProcessor
 
 
         global $db;
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
@@ -25,12 +25,12 @@ class DefaultTimeZoneProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
-        $app_state->timezone = timezone_form_field_prep('timezone');
+        $gtk->timezone = timezone_form_field_prep('timezone');
 
 
         $db = get_db();
 
-        $user_object = User::find_by_id($app_state->user_id);
+        $user_object = User::find_by_id($gtk->user_id);
 
         if (!$user_object) {
 
@@ -39,7 +39,7 @@ class DefaultTimeZoneProcessor
         }
 
 
-        $user_object->timezone = $app_state->timezone;
+        $user_object->timezone = $gtk->timezone;
 
 
         $was_updated = $user_object->save();
@@ -51,11 +51,11 @@ class DefaultTimeZoneProcessor
         }
 
 
-        $_SESSION['timezone'] = $app_state->timezone;
+        $_SESSION['timezone'] = $gtk->timezone;
 
 
         // User will know default community by logging out then in.
 
-        breakout(" Your default timezone has been changed to <b>{$app_state->timezone}</b>. ");
+        breakout(" Your default timezone has been changed to <b>{$gtk->timezone}</b>. ");
     }
 }

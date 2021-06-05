@@ -16,7 +16,7 @@ class FeatureATaskEdit
          */
 
 
-        global $app_state;
+        global $gtk;
         global $object;
         global $next;
         global $last;
@@ -42,7 +42,7 @@ class FeatureATaskEdit
         $next = get_date_h_m_s_from_a_timestamp($object->next);
 
 
-        $app_state->html_title = 'Edit the task record';
+        $gtk->html_title = 'Edit the task record';
 
 
         require VIEWS . DIRSEP . 'featureataskedit.php';

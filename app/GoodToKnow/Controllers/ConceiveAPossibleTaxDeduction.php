@@ -21,13 +21,13 @@ class ConceiveAPossibleTaxDeduction
          */
 
 
-        global $app_state;
+        global $gtk;
 
 
         kick_out_loggedoutusers();
 
 
-        $app_state->html_title = 'Create a New Possible Tax Deduction';
+        $gtk->html_title = 'Create a New Possible Tax Deduction';
 
 
         require VIEWS . DIRSEP . 'conceiveapossibletaxdeduction.php';
