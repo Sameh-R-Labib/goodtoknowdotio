@@ -32,9 +32,9 @@ function kick_out_loggedoutusers()
  */
 function kick_out_nonadmins()
 {
-    global $is_admin, $app_state;
+    global $app_state;
 
-    if (!$app_state->is_logged_in || !$is_admin || !empty($app_state->message)) {
+    if (!$app_state->is_logged_in || !$app_state->is_admin || !empty($app_state->message)) {
 
         breakout(' You are not authorized. ');
 

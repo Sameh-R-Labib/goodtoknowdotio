@@ -173,7 +173,7 @@ $app_state = new AppState();
 
 //$is_logged_in = !empty($app_state->user_id);
 
-$is_admin = $app_state->role === 'admin';
+//$is_admin = $app_state->role === 'admin';
 
 $is_guest = false;  // Set this here so we don't need to check to see if $is_guest is set.
 
