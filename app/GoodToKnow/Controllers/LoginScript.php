@@ -14,12 +14,27 @@ class LoginScript
 {
     function page()
     {
+        global $app_state;
         global $db;
 
         $db = db_connect();
 
         $submitted_username = '';
         $submitted_password = '';
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$app_state: </p>\n<pre>";
+        var_dump($app_state);
+        echo "</pre>\n";
+        echo "<p>Print_r \$: </p>\n<pre>";
+        print_r($db);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
 
         self::init();
 
