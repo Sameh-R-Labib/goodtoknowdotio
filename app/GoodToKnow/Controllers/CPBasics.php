@@ -8,7 +8,6 @@ class CPBasics
     {
         global $app_state;
         global $show_poof;
-        global $app_state;
 
 
         kick_out_loggedoutusers();
