@@ -9,8 +9,8 @@ class PopulateABankingAccountForBalancesProcessor
 {
     function page()
     {
+        global $gtk;
         global $object;
-        global $time;
 
 
         /**
@@ -40,16 +40,14 @@ class PopulateABankingAccountForBalancesProcessor
 
         /**
          * This type of record has a field called `start_time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $time from it and use $time to pre-populate the following fields:
+         * Instead we derive an array called $gtk->time from it and use $gtk->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
-
-        global $gtk;
 
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $time = get_date_h_m_s_from_a_timestamp($object->start_time);
+        $gtk->time = get_date_h_m_s_from_a_timestamp($object->start_time);
 
 
         $gtk->html_title = 'Edit the banking_acct_for_balances record';

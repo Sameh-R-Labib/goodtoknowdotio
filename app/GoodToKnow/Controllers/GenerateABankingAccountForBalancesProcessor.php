@@ -18,7 +18,6 @@ class GenerateABankingAccountForBalancesProcessor
 
         global $db;
         global $gtk;
-        global $time;
 
 
         kick_out_loggedoutusers();
@@ -30,7 +29,7 @@ class GenerateABankingAccountForBalancesProcessor
         $acct_name = standard_form_field_prep('acct_name', 3, 30);
 
 
-        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -46,7 +45,7 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a BankingAcctForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'acct_name' => $acct_name, 'start_time' => $time,
+        $array_record = ['user_id' => $gtk->user_id, 'acct_name' => $acct_name, 'start_time' => $gtk->time,
             'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
 
 

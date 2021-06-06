@@ -294,6 +294,12 @@ class AppState
 
 
     /**
+     * @var array|int
+     */
+    public $time;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -408,8 +414,9 @@ class AppState
 
         $this->show_poof = false;
 
-        // Apparently, time_bought is sometimes an int and sometimes an array.
+        // Apparently, time is sometimes an int and sometimes an array.
         $this->time_bought = [];
         $this->time_sold = [];
+        $this->time = [];
     }
 }

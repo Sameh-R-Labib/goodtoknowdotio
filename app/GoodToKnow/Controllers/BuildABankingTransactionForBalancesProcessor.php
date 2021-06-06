@@ -19,7 +19,6 @@ class BuildABankingTransactionForBalancesProcessor
 
         global $db;
         global $gtk;
-        global $time;
 
 
         kick_out_loggedoutusers();
@@ -33,7 +32,7 @@ class BuildABankingTransactionForBalancesProcessor
         $label = standard_form_field_prep('label', 3, 30);
 
 
-        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -47,7 +46,7 @@ class BuildABankingTransactionForBalancesProcessor
          * Create a BankingTransactionForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $time];
+        $array_record = ['user_id' => $gtk->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $gtk->time];
 
 
         /**

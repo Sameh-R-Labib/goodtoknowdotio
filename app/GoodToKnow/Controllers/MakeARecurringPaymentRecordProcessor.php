@@ -18,7 +18,6 @@ class MakeARecurringPaymentRecordProcessor
 
         global $db;
         global $gtk;
-        global $time;
 
 
         kick_out_loggedoutusers();
@@ -34,7 +33,7 @@ class MakeARecurringPaymentRecordProcessor
         $amount_paid = float_form_field_prep('amount_paid', 0.0, 999999999999999.99);
 
 
-        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -48,7 +47,7 @@ class MakeARecurringPaymentRecordProcessor
 
 
         $array_recurring_payment_record = ['user_id' => $gtk->user_id, 'label' => $label, 'currency' => $currency,
-            'amount_paid' => $amount_paid, 'time' => $time, 'comment' => $comment];
+            'amount_paid' => $amount_paid, 'time' => $gtk->time, 'comment' => $comment];
 
 
         /**

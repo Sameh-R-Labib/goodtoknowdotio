@@ -19,7 +19,6 @@ class InitializeABitcoinRecordProcessor
 
         global $db;
         global $gtk;
-        global $time;
 
         kick_out_loggedoutusers();
 
@@ -39,7 +38,7 @@ class InitializeABitcoinRecordProcessor
         $price_point = float_form_field_prep('price_point', 0.0, 999999999999999.99);
 
 
-        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -53,7 +52,7 @@ class InitializeABitcoinRecordProcessor
 
         $array_bitcoin_record = ['user_id' => $gtk->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
             'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
-            'time' => $time, 'comment' => $comment];
+            'time' => $gtk->time, 'comment' => $comment];
 
 
         /**

@@ -18,7 +18,6 @@ class StartATaxableIncomeEventProcessor
 
         global $db;
         global $gtk;
-        global $time;
 
 
         kick_out_loggedoutusers();
@@ -34,7 +33,7 @@ class StartATaxableIncomeEventProcessor
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
 
-        // - - - Get $time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -50,7 +49,7 @@ class StartATaxableIncomeEventProcessor
          * Create a taxable_income_event array for the record.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'time' => $time, 'year_received' => $year_received,
+        $array_record = ['user_id' => $gtk->user_id, 'time' => $gtk->time, 'year_received' => $year_received,
             'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];
 
 

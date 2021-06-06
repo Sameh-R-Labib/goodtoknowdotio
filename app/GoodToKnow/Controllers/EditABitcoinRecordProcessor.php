@@ -18,7 +18,6 @@ class EditABitcoinRecordProcessor
 
 
         global $gtk;
-        global $time;
         global $bitcoin_object;
 
 
@@ -42,13 +41,13 @@ class EditABitcoinRecordProcessor
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $time from it and use $time to pre-populate the following fields:
+         * Instead we derive an array called $gtk->time from it and use $gtk->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $time = get_date_h_m_s_from_a_timestamp($bitcoin_object->time);
+        $gtk->time = get_date_h_m_s_from_a_timestamp($bitcoin_object->time);
 
         $gtk->html_title = 'Edit the bitcoin record';
 
