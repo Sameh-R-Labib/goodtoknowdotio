@@ -13,7 +13,6 @@ class GiveComsChoices
         global $gtk;
         global $db;
         // $gtk->saved_str01 has user's username
-        global $coms_user_does_not_belong_to;
 
 
         kick_out_nonadmins();
@@ -80,12 +79,12 @@ class GiveComsChoices
 
         // Get communities user DOES NOT belong to.
 
-        $coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system);
+        $gtk->coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system);
 
 
         // Redirect if no communities user doesn't belong to.
 
-        if (empty($coms_user_does_not_belong_to)) {
+        if (empty($gtk->coms_user_does_not_belong_to)) {
 
             breakout(' This user belongs to all communities. So, there\'s no need to do anything. ');
 
@@ -97,7 +96,7 @@ class GiveComsChoices
          */
 
         /**
-         * So, we have $coms_user_does_not_belong_to
+         * So, we have $gtk->coms_user_does_not_belong_to
          *
          * We need to present the ids of those communities (along with their community names)
          * as check boxes in a form.
