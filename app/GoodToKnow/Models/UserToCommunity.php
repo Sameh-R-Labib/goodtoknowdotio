@@ -137,9 +137,9 @@ class UserToCommunity extends GoodObject
      */
     public static function community_is_one_which_user_already_belongs_to(object $community): bool
     {
-        global $coms_user_belongs_to;
+        global $gtk;
 
-        foreach ($coms_user_belongs_to as $object) {
+        foreach ($gtk->coms_user_belongs_to as $object) {
 
             if ($community->id == $object->id) {
 

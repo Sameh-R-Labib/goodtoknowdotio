@@ -13,7 +13,6 @@ class GiveComsChoices
         global $gtk;
         global $db;
         // $gtk->saved_str01 has user's username
-        global $coms_user_belongs_to;
         global $coms_user_does_not_belong_to;
 
 
@@ -59,9 +58,9 @@ class GiveComsChoices
 
         // First get all the communities the user DOES belong to.
 
-        $coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
+        $gtk->coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
 
-        if ($coms_user_belongs_to === false) {
+        if ($gtk->coms_user_belongs_to === false) {
 
             breakout(' Error encountered trying to retrieve communities for this user. ');
 

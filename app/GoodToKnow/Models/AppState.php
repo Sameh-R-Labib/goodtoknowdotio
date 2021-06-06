@@ -264,6 +264,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $coms_user_belongs_to;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -371,5 +377,8 @@ class AppState
         $this->array = [];
 
         $this->markdown = '';
+
+        // coms_user_belongs_to is a temporary var used for managing any user's communities.
+        $this->coms_user_belongs_to = [];
     }
 }
