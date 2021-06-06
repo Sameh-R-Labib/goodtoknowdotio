@@ -13,7 +13,6 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
 
         global $gtk;
-        global $show_poof;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_year_paid_and_its_possibletaxdeductions.php';
@@ -35,7 +34,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         $gtk->page = 'SeeOneYearsPossibleTaxDeductions';
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }

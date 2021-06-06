@@ -16,7 +16,6 @@ class SpyCommoditiesSoldYearFilter
 
 
         global $gtk;
-        global $show_poof;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
@@ -53,7 +52,7 @@ class SpyCommoditiesSoldYearFilter
 
         $gtk->page = 'SpyCommoditiesSoldYear';
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
         require VIEWS . DIRSEP . 'spycommoditiessoldyearfilter.php';
     }

@@ -7,7 +7,6 @@ class BitcoinSeeMyRecords
     function page()
     {
         global $gtk;
-        global $show_poof;
         global $array_of_bitcoin_objects;
         global $bitcoin_object;
 
@@ -36,7 +35,7 @@ class BitcoinSeeMyRecords
 
         $gtk->page = 'BitcoinSeeMyRecords';
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
         $gtk->message .= ' Here are your ₿ records. ';
 

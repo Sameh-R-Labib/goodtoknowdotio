@@ -16,7 +16,6 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
 
         global $gtk;
-        global $show_poof;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
@@ -47,7 +46,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         $gtk->page = 'GawkAtAllTaxableIncomeEvents';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         require VIEWS . DIRSEP . 'gawkatalltaxableincomeeventsyearfilter.php';

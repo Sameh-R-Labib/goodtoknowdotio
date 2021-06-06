@@ -17,7 +17,6 @@ class RecurringPaymentSeeMyRecords
 
         global $gtk;
         global $db;
-        global $show_poof;
         global $array_of_recurring_payment_objects;
 
 
@@ -63,7 +62,7 @@ class RecurringPaymentSeeMyRecords
         $gtk->page = 'RecurringPaymentSeeMyRecords';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $gtk->html_title = "Your recurring transactions";

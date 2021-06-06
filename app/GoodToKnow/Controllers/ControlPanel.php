@@ -7,7 +7,6 @@ class ControlPanel
     function page()
     {
         global $gtk;
-        global $show_poof;
 
 
         if (!$gtk->is_logged_in or $gtk->is_admin) {
@@ -23,7 +22,7 @@ class ControlPanel
         $gtk->page = 'CP';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $gtk->message .= " Welcome to your Control Panel. ";

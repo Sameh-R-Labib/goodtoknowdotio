@@ -14,7 +14,6 @@ class WhatIsThisSite
 
 
         global $gtk;
-        global $show_poof;
 
 
         /**
@@ -27,7 +26,7 @@ class WhatIsThisSite
 
         $gtk->page = 'About';
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
         $gtk->message = " Read and decide if you'd like to use this. ";
 

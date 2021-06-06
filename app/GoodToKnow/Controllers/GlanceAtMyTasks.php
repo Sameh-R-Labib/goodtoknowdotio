@@ -17,7 +17,6 @@ class GlanceAtMyTasks
 
         global $gtk;
         global $db;
-        global $show_poof;
 
 
         kick_out_loggedoutusers();
@@ -67,7 +66,7 @@ class GlanceAtMyTasks
 
         $gtk->page = 'GlanceAtMyTasks';
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
         $gtk->message .= ' ʘ‿ʘ at your Tasks. ';
 

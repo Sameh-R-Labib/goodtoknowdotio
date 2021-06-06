@@ -7,7 +7,6 @@ class CPTaxableIncome
     function page()
     {
         global $gtk;
-        global $show_poof;
 
 
         kick_out_loggedoutusers();
@@ -16,7 +15,7 @@ class CPTaxableIncome
         $gtk->page = 'CPTaxableIncome';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $gtk->html_title = 'Taxable Income';

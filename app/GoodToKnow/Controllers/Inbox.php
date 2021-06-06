@@ -10,7 +10,6 @@ class Inbox
     {
         global $db;
         global $gtk;
-        global $show_poof;
         global $inbox_messages_array;
 
 
@@ -23,7 +22,7 @@ class Inbox
         $gtk->page = 'Inbox';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $db = get_db();

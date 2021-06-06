@@ -30,9 +30,8 @@ class Home
     private static function show_the_home_page()
     {
         global $gtk;
-        global $show_poof;
 
-        $show_poof = false;
+        $gtk->show_poof = false;
 
         $gtk->html_title = 'GoodToKnow.io';
 

@@ -276,6 +276,12 @@ class AppState
 
 
     /**
+     * @var bool
+     */
+    public $show_poof;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -386,7 +392,8 @@ class AppState
 
         // coms_user_belongs_to is a temporary var used for managing any user's communities.
         $this->coms_user_belongs_to = [];
-
         $this->coms_user_does_not_belong_to = [];
+
+        $this->show_poof = false;
     }
 }

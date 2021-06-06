@@ -7,7 +7,6 @@ class CPRecurringPayments
     function page()
     {
         global $gtk;
-        global $show_poof;
 
 
         kick_out_loggedoutusers();
@@ -16,7 +15,7 @@ class CPRecurringPayments
         $gtk->page = 'CPRecurringPayments';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $gtk->html_title = 'Recurring Payments';

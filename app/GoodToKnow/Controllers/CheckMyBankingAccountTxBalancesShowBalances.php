@@ -35,7 +35,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         global $gtk;
         global $db;
-        global $show_poof;
         global $account;
         // $gtk->saved_int01 id of BankingAcctForBalances record
 
@@ -152,7 +151,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $gtk->page = 'CheckMyBankingAccountTxBalances';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $gtk->message .= ' Here are your transactions and their balances. ';

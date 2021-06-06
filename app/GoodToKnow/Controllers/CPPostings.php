@@ -7,7 +7,6 @@ class CPPostings
     function page()
     {
         global $gtk;
-        global $show_poof;
 
 
         kick_out_nonadmins();
@@ -16,7 +15,7 @@ class CPPostings
         $gtk->page = 'CPPostings';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         $gtk->html_title = 'Postings';

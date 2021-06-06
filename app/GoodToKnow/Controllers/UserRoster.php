@@ -12,7 +12,6 @@ class UserRoster
     {
         global $gtk;
         global $db;
-        global $show_poof;
         global $readable_user_objects_array;
 
 
@@ -28,7 +27,7 @@ class UserRoster
         $gtk->page = 'UserRoster';
 
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
 
         /**

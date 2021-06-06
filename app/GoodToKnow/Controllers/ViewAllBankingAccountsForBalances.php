@@ -15,7 +15,6 @@ class ViewAllBankingAccountsForBalances
 
 
         global $gtk;
-        global $show_poof;
         global $array_of_objects;
 
 
@@ -44,7 +43,7 @@ class ViewAllBankingAccountsForBalances
 
         $gtk->html_title = "Bank Account";
 
-        $show_poof = true;
+        $gtk->show_poof = true;
 
         $gtk->page = 'ViewAllBankingAccountsForBalances';
 
