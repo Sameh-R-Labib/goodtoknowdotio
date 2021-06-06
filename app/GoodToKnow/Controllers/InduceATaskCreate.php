@@ -17,7 +17,6 @@ class InduceATaskCreate
         global $db;
         global $gtk;
         global $next;
-        global $last;
 
 
         kick_out_loggedoutusers();
@@ -28,7 +27,7 @@ class InduceATaskCreate
         $label = standard_form_field_prep('label', 3, 264);
 
 
-        // + + + Get $last and $next (which are timestamps) based on submitted:
+        // + + + Get $gtk->last and $next (which are timestamps) based on submitted:
         // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_next_and_last_epochs.php';
         // + + +
@@ -43,7 +42,7 @@ class InduceATaskCreate
          * Use the submitted data to add a record to the database.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'label' => $label, 'last' => $last, 'next' => $next,
+        $array_record = ['user_id' => $gtk->user_id, 'label' => $label, 'last' => $gtk->last, 'next' => $next,
             'cycle_type' => $cycle_type, 'comment' => $comment];
 
 

@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
 global $gtk;
-global $last;
 global $next;
 
 
@@ -122,10 +121,10 @@ $nextsecond = integer_form_field_prep('nextsecond', 0, 59);
 
 
 /**
- * Get the timestamps $last and $next from the gathered data.
+ * Get the timestamps $gtk->last and $next from the gathered data.
  */
 
-$last = mktime($lasthour, $lastminute, $lastsecond, $mm_last, $dd_last, $yyyy_last);
+$gtk->last = mktime($lasthour, $lastminute, $lastsecond, $mm_last, $dd_last, $yyyy_last);
 
 $next = mktime($nexthour, $nextminute, $nextsecond, $mm_next, $dd_next, $yyyy_next);
 
@@ -134,5 +133,5 @@ $next = mktime($nexthour, $nextminute, $nextsecond, $mm_next, $dd_next, $yyyy_ne
  * Never allow time to be 0.
  */
 
-if ($last === 0) $last = 1546300800;
+if ($gtk->last === 0) $gtk->last = 1546300800;
 if ($next === 0) $next = 1546300800;

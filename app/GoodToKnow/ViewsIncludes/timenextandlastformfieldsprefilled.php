@@ -1,21 +1,20 @@
 <?php global $gtk; ?>
-<?php global $last; ?>
 <?php global $next; ?>
 <p>
     <label for="lastdate">Last: </label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy"
-           value="<?= $last['date'] ?>">
+           value="<?= $gtk->last['date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
     <label for="lasthour"></label>
     <input id="lasthour" name="lasthour" type="text" required minlength="1" maxlength="2" size="3" placeholder="h"
-           value="<?= $last['hour'] ?>">
+           value="<?= $gtk->last['hour'] ?>">
     <label for="lastminute">: </label>
     <input id="lastminute" name="lastminute" type="text" required minlength="1" maxlength="2" size="3" placeholder="m"
-           value="<?= $last['minute'] ?>">
+           value="<?= $gtk->last['minute'] ?>">
     <label for="lastsecond">: </label>
     <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
-           value="<?= $last['second'] ?>">
+           value="<?= $gtk->last['second'] ?>">
 </p>
 <p>
     <label for="nextdate">Next: </label>

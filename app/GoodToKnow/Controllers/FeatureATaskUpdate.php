@@ -22,7 +22,6 @@ class FeatureATaskUpdate
         global $gtk;
         global $db;
         // $gtk->saved_int01 task id
-        global $last;
         global $next;
 
 
@@ -44,7 +43,7 @@ class FeatureATaskUpdate
 
         // Time related fields
 
-        // + + + Get $last and $next (which are timestamps) based on submitted:
+        // + + + Get $gtk->last and $next (which are timestamps) based on submitted:
         // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
 
 
@@ -83,7 +82,7 @@ class FeatureATaskUpdate
          */
 
         $object->label = $edited_label;
-        $object->last = $last;
+        $object->last = $gtk->last;
         $object->next = $next;
         $object->cycle_type = $edited_cycle_type;
         $object->comment = $edited_comment;

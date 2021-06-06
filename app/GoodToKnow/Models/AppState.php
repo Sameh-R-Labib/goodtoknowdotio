@@ -300,6 +300,12 @@ class AppState
 
 
     /**
+     * @var array|int
+     */
+    public $last;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -418,5 +424,6 @@ class AppState
         $this->time_bought = [];
         $this->time_sold = [];
         $this->time = [];
+        $this->last = [];
     }
 }
