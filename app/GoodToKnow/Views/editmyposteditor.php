@@ -1,4 +1,4 @@
-<?php global $markdown; ?>
+<?php global $gtk; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditMyPostEditProcessor/page" method="post">
         <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
@@ -19,7 +19,7 @@
             <p>
                 <label for="textarea"></label>
                 <textarea id="textarea" spellcheck="false" name="markdown" rows="32"
-                          cols="77" wrap="soft"><?= $markdown ?></textarea>
+                          cols="77" wrap="soft"><?= $gtk->markdown ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

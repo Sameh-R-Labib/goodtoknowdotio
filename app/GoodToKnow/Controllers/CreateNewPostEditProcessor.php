@@ -21,7 +21,6 @@ class CreateNewPostEditProcessor
 
         global $gtk;
         global $db;
-        global $markdown;
         // $gtk->saved_int01 topic id
         // $gtk->saved_int02 post id
 
@@ -31,26 +30,26 @@ class CreateNewPostEditProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $markdown = markdown_form_field_prep('markdown', 1, 58000);
+        $gtk->markdown = markdown_form_field_prep('markdown', 1, 58000);
 
 
         /**
-         * Generate the html equivalent for $markdown.
+         * Generate the html equivalent for $gtk->markdown.
          */
 
         $parser = new MarkdownExtra;
         $parser->no_entities = true;
-        $html = $parser->transform($markdown);
+        $html = $parser->transform($gtk->markdown);
 
         // Call to global function
         fix_michelf($html);
 
-//        $html = MarkdownExtra::defaultTransform($markdown);
+//        $html = MarkdownExtra::defaultTransform($gtk->markdown);
 
 //        $parsedown_object = new \ParsedownExtra();
 //        $parsedown_object->setMarkupEscaped(true);
 //        $parsedown_object->setSafeMode(true);
-//        $html = $parsedown_object->text($markdown);
+//        $html = $parsedown_object->text($gtk->markdown);
 
 
         /**
@@ -73,7 +72,7 @@ class CreateNewPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($post->markdown_file, $markdown);
+        $bytes_written = file_put_contents($post->markdown_file, $gtk->markdown);
 
         if ($bytes_written === false) {
 

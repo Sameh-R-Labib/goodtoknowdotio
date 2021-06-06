@@ -16,7 +16,6 @@ class EditMyPostEditProcessor
 
 
         global $gtk;
-        global $markdown;
         // $gtk->saved_str01 is path for markdown file
         // $gtk->saved_str02 path for html file
         // $gtk->saved_int01 id of edited post's Topic
@@ -34,30 +33,30 @@ class EditMyPostEditProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $markdown = markdown_form_field_prep('markdown', 1, 58000);
+        $gtk->markdown = markdown_form_field_prep('markdown', 1, 58000);
 
 
-        // $markdown = htmlspecialchars($markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
+        // $gtk->markdown = htmlspecialchars($gtk->markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
         // I commented out because parsedown will take care of this.
 
 
         /**
-         * Generate the html equivalent for $markdown.
+         * Generate the html equivalent for $gtk->markdown.
          */
 
         $parser = new MarkdownExtra;
         $parser->no_entities = true;
-        $html = $parser->transform($markdown);
+        $html = $parser->transform($gtk->markdown);
 
         // Call to global function
         fix_michelf($html);
 
-//        $html = MarkdownExtra::defaultTransform($markdown);
+//        $html = MarkdownExtra::defaultTransform($gtk->markdown);
 
 //        $parsedown_object = new \ParsedownExtra();
 //        $parsedown_object->setMarkupEscaped(true);
 //        $parsedown_object->setSafeMode(true);
-//        $html = $parsedown_object->text($markdown);
+//        $html = $parsedown_object->text($gtk->markdown);
 
 
         /**
@@ -65,7 +64,7 @@ class EditMyPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($gtk->saved_str01, $markdown);
+        $bytes_written = file_put_contents($gtk->saved_str01, $gtk->markdown);
 
         if ($bytes_written === false) {
 

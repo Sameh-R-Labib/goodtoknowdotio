@@ -8,9 +8,8 @@ class EditMyPostEditor
 {
     function page()
     {
-        global $db;
         global $gtk;
-        global $markdown;
+        global $db;
 
 
         kick_out_loggedoutusers();
@@ -43,9 +42,9 @@ class EditMyPostEditor
          * Retrieve the markdown for $post_object from the file system.
          */
 
-        $markdown = file_get_contents($post_object->markdown_file);
+        $gtk->markdown = file_get_contents($post_object->markdown_file);
 
-        if ($markdown === false) {
+        if ($gtk->markdown === false) {
 
             breakout(' Unable to read source file. ');
 

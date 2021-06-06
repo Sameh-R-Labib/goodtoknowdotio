@@ -258,6 +258,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $markdown;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -363,5 +369,7 @@ class AppState
         $this->pre_populate = '';
 
         $this->array = [];
+
+        $this->markdown = '';
     }
 }

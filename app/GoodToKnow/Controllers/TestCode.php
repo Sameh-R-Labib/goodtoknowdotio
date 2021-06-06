@@ -14,10 +14,10 @@ class TestCode
          */
 
 
-        global $markdown;
+        global $gtk;
 
 
-        $markdown = <<<DEMO
+        $gtk->markdown = <<<DEMO
 Regular >>
 
 Inline `>>`
@@ -31,7 +31,7 @@ DEMO;
 
         $parser = new MarkdownExtra;
         $parser->no_entities = false;
-        $html = $parser->transform($markdown);
+        $html = $parser->transform($gtk->markdown);
 
         // Call to global function
         fix_michelf($html);
