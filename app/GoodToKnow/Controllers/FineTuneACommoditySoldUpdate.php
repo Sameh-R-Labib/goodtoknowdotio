@@ -20,7 +20,6 @@ class FineTuneACommoditySoldUpdate
 
         global $gtk;
         global $db;
-        global $time_bought;
         global $time_sold;
         global $price_bought;
         global $price_sold;
@@ -54,7 +53,7 @@ class FineTuneACommoditySoldUpdate
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
 
-        $object->time_bought = $time_bought;
+        $object->time_bought = $gtk->time_bought;
         $object->time_sold = $time_sold;
         $object->price_bought = $price_bought;
         $object->price_sold = $price_sold;

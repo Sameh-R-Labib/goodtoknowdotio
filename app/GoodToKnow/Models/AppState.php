@@ -282,6 +282,12 @@ class AppState
 
 
     /**
+     * @var array|int
+     */
+    public $time_bought;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -395,5 +401,8 @@ class AppState
         $this->coms_user_does_not_belong_to = [];
 
         $this->show_poof = false;
+
+        // Apparently, time_bought is sometimes an int and sometimes an array.
+        $this->time_bought = [];
     }
 }

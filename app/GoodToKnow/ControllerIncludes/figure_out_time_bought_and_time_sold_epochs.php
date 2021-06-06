@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
 global $gtk;
-global $time_bought;
 global $time_sold;
 
 
@@ -122,10 +121,10 @@ $time_sold_second = integer_form_field_prep('time_sold_second', 0, 59);
 
 
 /**
- * Get the timestamps $time_bought and $time_sold from the gathered data.
+ * Get the timestamps $gtk->time_bought and $time_sold from the gathered data.
  */
 
-$time_bought = mktime($time_bought_hour, $time_bought_minute, $time_bought_second, $mm_time_bought, $dd_time_bought, $yyyy_time_bought);
+$gtk->time_bought = mktime($time_bought_hour, $time_bought_minute, $time_bought_second, $mm_time_bought, $dd_time_bought, $yyyy_time_bought);
 
 $time_sold = mktime($time_sold_hour, $time_sold_minute, $time_sold_second, $mm_time_sold, $dd_time_sold, $yyyy_time_sold);
 
@@ -134,5 +133,5 @@ $time_sold = mktime($time_sold_hour, $time_sold_minute, $time_sold_second, $mm_t
  * Never allow time to be 0.
  */
 
-if ($time_bought === 0) $time_bought = 1546300800;
+if ($gtk->time_bought === 0) $gtk->time_bought = 1546300800;
 if ($time_sold === 0) $time_sold = 1546300800;

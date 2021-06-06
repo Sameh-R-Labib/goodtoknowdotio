@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $gtk;
 // $gtk->saved_int01 commodities_sold id
-global $time_bought;
 global $time_sold;
 global $price_bought;
 global $price_sold;
@@ -33,7 +32,7 @@ require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
 
 /**
- * Get the $time_bought and $time_sold (which are timestamps) based on submitted:
+ * Get the $gtk->time_bought and $gtk->time_sold (which are timestamps) based on submitted:
  * `timezone` `time_bought_date` `time_bought_hour` `time_bought_minute` `time_bought_second`
  * `time_sold_date` `time_sold_hour` `time_sold_minute` `time_sold_second`
  */
