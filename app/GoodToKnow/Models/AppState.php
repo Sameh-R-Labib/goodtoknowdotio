@@ -252,6 +252,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $array;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -355,5 +361,7 @@ class AppState
         $this->long_title_of_post = '';
 
         $this->pre_populate = '';
+
+        $this->array = [];
     }
 }

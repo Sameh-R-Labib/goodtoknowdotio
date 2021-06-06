@@ -16,7 +16,6 @@ class ForgetATask
 
         global $gtk;
         global $db;
-        global $array;
 
 
         kick_out_loggedoutusers();
@@ -28,9 +27,9 @@ class ForgetATask
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
 
 
-        $array = Task::find_by_sql($sql);
+        $gtk->array = Task::find_by_sql($sql);
 
-        if (!$array || !empty($gtk->message)) {
+        if (!$gtk->array || !empty($gtk->message)) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 

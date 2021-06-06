@@ -1,4 +1,4 @@
-<?php global $array; ?>
+<?php global $gtk; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
@@ -6,9 +6,9 @@
     <div id="maincontent">
         <h1>See 1 Year's Taxable 💸 Events</h1>
         <hr>
-        <?php if (!empty($array)): ?>
-            <?php $last = count($array) - 1; ?>
-            <?php foreach ($array as $key => $object): ?>
+        <?php if (!empty($gtk->array)): ?>
+            <?php $last = count($gtk->array) - 1; ?>
+            <?php foreach ($gtk->array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
                 <p><b>Year when Received: </b><?= $object->year_received ?></p>
                 <p><b>Time when Received: </b><?= $object->time ?></p>

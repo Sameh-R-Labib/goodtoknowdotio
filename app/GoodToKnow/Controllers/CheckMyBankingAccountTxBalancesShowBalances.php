@@ -37,7 +37,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
         global $db;
         global $show_poof;
         global $account;
-        global $array;
         // $gtk->saved_int01 id of BankingAcctForBalances record
 
 
@@ -74,9 +73,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
-        $array = BankingTransactionForBalances::find_by_sql($sql);
+        $gtk->array = BankingTransactionForBalances::find_by_sql($sql);
 
-        if (!$array || !empty($gtk->message)) {
+        if (!$gtk->array || !empty($gtk->message)) {
 
             breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
 
@@ -90,7 +89,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         $running_total = $account->start_balance;
 
-        foreach ($array as $transaction) {
+        foreach ($gtk->array as $transaction) {
             $running_total += $transaction->amount;
 
             if (abs($running_total) >= abs(0.00000000001)) {
@@ -125,7 +124,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
 
 
-        foreach ($array as $transaction) {
+        foreach ($gtk->array as $transaction) {
             if (is_crypto($account->currency)) {
                 $transaction->amount = number_format($transaction->amount, 8);
                 $transaction->balance = number_format($transaction->balance, 8);
@@ -144,7 +143,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         // Reverse the order
 
-        $array = array_reverse($array);
+        $gtk->array = array_reverse($gtk->array);
 
 
         $gtk->html_title = 'Transactions';

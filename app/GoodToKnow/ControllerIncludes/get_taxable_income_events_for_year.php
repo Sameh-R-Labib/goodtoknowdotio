@@ -4,9 +4,8 @@ use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-global $db;
-global $array;
 global $gtk;
+global $db;
 
 
 kick_out_loggedoutusers();
@@ -30,9 +29,9 @@ $db = get_db();
 $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $db->real_escape_string($year_received);
 $sql .= ' AND `user_id` = ' . $db->real_escape_string($gtk->user_id);
 
-$array = TaxableIncomeEvent::find_by_sql($sql);
+$gtk->array = TaxableIncomeEvent::find_by_sql($sql);
 
-if (!$array || !empty($gtk->message)) {
+if (!$gtk->array || !empty($gtk->message)) {
 
     breakout(" For <b>{$year_received}</b> I could NOT find any taxable income. ");
 

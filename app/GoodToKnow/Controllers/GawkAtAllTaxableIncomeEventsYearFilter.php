@@ -17,7 +17,6 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
         global $gtk;
         global $show_poof;
-        global $array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
@@ -32,7 +31,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-        foreach ($array as $item) {
+        foreach ($gtk->array as $item) {
             $item->time = get_readable_time($item->time);
             $item->comment = nl2br($item->comment, false);
             $item->amount = readable_amount_of_money($item->currency, $item->amount);

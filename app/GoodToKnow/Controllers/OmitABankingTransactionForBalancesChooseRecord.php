@@ -17,7 +17,6 @@ class OmitABankingTransactionForBalancesChooseRecord
          */
 
 
-        global $array;
         global $gtk;
 
 
@@ -30,7 +29,7 @@ class OmitABankingTransactionForBalancesChooseRecord
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
-        foreach ($array as $object) {
+        foreach ($gtk->array as $object) {
 
             $object->time = get_readable_time($object->time);
 

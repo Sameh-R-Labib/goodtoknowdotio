@@ -1,5 +1,5 @@
+<?php global $gtk; ?>
 <?php global $account; ?>
-<?php global $array; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
@@ -28,7 +28,7 @@
                 <th>amount</th>
                 <th>balance</th>
             </tr>
-            <?php foreach ($array as $transaction): ?>
+            <?php foreach ($gtk->array as $transaction): ?>
                 <tr>
                     <td><?= $transaction->time ?></td>
                     <td align="right"><?= $transaction->label ?></td>

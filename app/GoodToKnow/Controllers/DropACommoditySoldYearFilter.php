@@ -9,7 +9,6 @@ class DropACommoditySoldYearFilter
     function page()
     {
         global $gtk;
-        global $array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
@@ -21,7 +20,7 @@ class DropACommoditySoldYearFilter
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        foreach ($array as $item) {
+        foreach ($gtk->array as $item) {
 
             $item->commodity_amount = readable_amount_of_money($item->commodity_type, $item->commodity_amount);
 

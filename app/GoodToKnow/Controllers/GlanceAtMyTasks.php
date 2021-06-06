@@ -15,10 +15,9 @@ class GlanceAtMyTasks
          */
 
 
-        global $db;
         global $gtk;
+        global $db;
         global $show_poof;
-        global $array;
 
 
         kick_out_loggedoutusers();
@@ -32,9 +31,9 @@ class GlanceAtMyTasks
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
 
-        $array = Task::find_by_sql($sql);
+        $gtk->array = Task::find_by_sql($sql);
 
-        if (!$array || !empty($gtk->message)) {
+        if (!$gtk->array || !empty($gtk->message)) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 
@@ -50,11 +49,13 @@ class GlanceAtMyTasks
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'get_proximity_task_label.php';
 
-        foreach ($array as $object) {
+        foreach ($gtk->array as $object) {
+
             $object->label = get_proximity_task_label($object->label, $object->next);
             $object->last = get_readable_date($object->last);
             $object->next = get_readable_date($object->next);
             $object->comment = nl2br($object->comment, false);
+
         }
 
 

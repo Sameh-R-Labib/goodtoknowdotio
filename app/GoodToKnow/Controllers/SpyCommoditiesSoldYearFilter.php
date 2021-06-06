@@ -17,7 +17,6 @@ class SpyCommoditiesSoldYearFilter
 
         global $gtk;
         global $show_poof;
-        global $array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
@@ -34,7 +33,7 @@ class SpyCommoditiesSoldYearFilter
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-        foreach ($array as $item) {
+        foreach ($gtk->array as $item) {
             $item->time_bought = get_readable_time($item->time_bought);
             $item->time_sold = get_readable_time($item->time_sold);
             $item->price_bought = readable_amount_of_money($item->currency_transacted, $item->price_bought);

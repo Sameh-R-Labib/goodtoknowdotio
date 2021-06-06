@@ -14,7 +14,6 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         global $gtk;
         global $show_poof;
-        global $array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_year_paid_and_its_possibletaxdeductions.php';
@@ -24,7 +23,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          * Loop through the array and replace attributes with more readable ones.
          */
 
-        foreach ($array as $item) {
+        foreach ($gtk->array as $item) {
 
             $item->comment = nl2br($item->comment, false);
 

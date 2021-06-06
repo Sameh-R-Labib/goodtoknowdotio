@@ -1,12 +1,12 @@
-<?php global $array; ?>
+<?php global $gtk; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
         <h1>All My Tasks</h1>
-        <?php if (!empty($array)): ?>
-            <?php foreach ($array as $key => $object): ?>
+        <?php if (!empty($gtk->array)): ?>
+            <?php foreach ($gtk->array as $key => $object): ?>
                 <p>⇀ <em><?= $object->label ?></em> ◜ <?= $object->next ?> ⇁ <?= $object->cycle_type ?></p>
             <?php endforeach; ?>
         <?php else: ?>
