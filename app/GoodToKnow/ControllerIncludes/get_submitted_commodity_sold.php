@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $gtk;
 // $gtk->saved_int01 commodities_sold id
-global $time_sold;
 global $price_bought;
 global $price_sold;
 global $currency_transacted;

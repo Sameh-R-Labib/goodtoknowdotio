@@ -288,6 +288,12 @@ class AppState
 
 
     /**
+     * @var array|int
+     */
+    public $time_sold;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -404,5 +410,6 @@ class AppState
 
         // Apparently, time_bought is sometimes an int and sometimes an array.
         $this->time_bought = [];
+        $this->time_sold = [];
     }
 }

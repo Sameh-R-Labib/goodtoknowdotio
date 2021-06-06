@@ -18,7 +18,6 @@ class FineTuneACommoditySoldEdit
 
 
         global $gtk;
-        global $time_sold;
         global $object;
 
 
@@ -31,15 +30,15 @@ class FineTuneACommoditySoldEdit
 
         /**
          * This type of record has a field called `time_bought` and a field called `time_sold`. We are Not going to
-         * pre-populate form fields with them. Instead we derive the arrays called $gtk->time_bought and $time_sold from them
-         * and use the derived arrays to pre-populate the corresponding fields in the form which we present below.
+         * pre-populate form fields with them. Instead we derive the arrays called $gtk->time_bought and $gtk->time_sold
+         * from them and use the derived arrays to pre-populate the corresponding fields in the form which we present below.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
         $gtk->time_bought = get_date_h_m_s_from_a_timestamp($object->time_bought);
 
-        $time_sold = get_date_h_m_s_from_a_timestamp($object->time_sold);
+        $gtk->time_sold = get_date_h_m_s_from_a_timestamp($object->time_sold);
 
 
         /**
