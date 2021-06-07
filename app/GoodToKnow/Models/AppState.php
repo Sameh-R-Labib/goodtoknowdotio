@@ -336,6 +336,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $bitcoin_object;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -464,5 +470,7 @@ class AppState
         $this->message_object = null;
 
         $this->topic_object = null;
+
+        $this->bitcoin_object = null;
     }
 }

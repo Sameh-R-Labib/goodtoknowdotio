@@ -22,7 +22,6 @@ class EditABitcoinRecordSubmit
         global $db;
         global $g;
         // $g->saved_int01 bitcoin record id
-        global $bitcoin_object;
 
 
         kick_out_loggedoutusers();
@@ -73,9 +72,9 @@ class EditABitcoinRecordSubmit
 
         $db = get_db();
 
-        $bitcoin_object = Bitcoin::find_by_id($g->saved_int01);
+        $g->bitcoin_object = Bitcoin::find_by_id($g->saved_int01);
 
-        if (!$bitcoin_object) {
+        if (!$g->bitcoin_object) {
 
             breakout(' Unexpectedly I could not find that bitcoin record. ');
 
@@ -86,19 +85,19 @@ class EditABitcoinRecordSubmit
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
 
-        $bitcoin_object->initial_balance = $edited_initial_balance;
-        $bitcoin_object->current_balance = $edited_current_balance;
-        $bitcoin_object->currency = $edited_currency;
-        $bitcoin_object->price_point = $edited_price_point;
-        $bitcoin_object->time = $g->time;
-        $bitcoin_object->comment = $edited_comment;
+        $g->bitcoin_object->initial_balance = $edited_initial_balance;
+        $g->bitcoin_object->current_balance = $edited_current_balance;
+        $g->bitcoin_object->currency = $edited_currency;
+        $g->bitcoin_object->price_point = $edited_price_point;
+        $g->bitcoin_object->time = $g->time;
+        $g->bitcoin_object->comment = $edited_comment;
 
 
         /**
          * 4) Update/save the updated record in the database.
          */
 
-        $result = $bitcoin_object->save();
+        $result = $g->bitcoin_object->save();
 
         if ($result === false) {
 
@@ -111,6 +110,6 @@ class EditABitcoinRecordSubmit
          * Report success.
          */
 
-        breakout(" I've updated address {$bitcoin_object->address}'s record. ");
+        breakout(" I've updated address {$g->bitcoin_object->address}'s record. ");
     }
 }

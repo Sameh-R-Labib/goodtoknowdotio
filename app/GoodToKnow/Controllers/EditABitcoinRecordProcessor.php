@@ -18,7 +18,6 @@ class EditABitcoinRecordProcessor
 
 
         global $g;
-        global $bitcoin_object;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_record_of_user.php';
@@ -36,7 +35,7 @@ class EditABitcoinRecordProcessor
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $bitcoin_object->price_point = readable_amount_no_commas($bitcoin_object->currency, $bitcoin_object->price_point);
+        $g->bitcoin_object->price_point = readable_amount_no_commas($g->bitcoin_object->currency, $g->bitcoin_object->price_point);
 
 
         /**
@@ -47,7 +46,7 @@ class EditABitcoinRecordProcessor
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $g->time = get_date_h_m_s_from_a_timestamp($bitcoin_object->time);
+        $g->time = get_date_h_m_s_from_a_timestamp($g->bitcoin_object->time);
 
         $g->html_title = 'Edit the bitcoin record';
 

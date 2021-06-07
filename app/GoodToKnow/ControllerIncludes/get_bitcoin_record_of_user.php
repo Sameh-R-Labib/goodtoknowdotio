@@ -5,7 +5,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
 global $g;
-global $bitcoin_object;
 
 
 kick_out_loggedoutusers();
@@ -28,9 +27,9 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$bitcoin_object = Bitcoin::find_by_id($chosen_id);
+$g->bitcoin_object = Bitcoin::find_by_id($chosen_id);
 
-if (!$bitcoin_object) {
+if (!$g->bitcoin_object) {
 
     breakout(' Unexpectedly I could not find that bitcoin record. ');
 
@@ -41,7 +40,7 @@ if (!$bitcoin_object) {
  * Verify that this object belongs to the user.
  */
 
-if ($bitcoin_object->user_id != $g->user_id) {
+if ($g->bitcoin_object->user_id != $g->user_id) {
 
     breakout(' Error 8006667. ');
 
