@@ -15,8 +15,7 @@ class BroadcastMsgProcessor
          * users will receive this message.
          */
 
-        global $db;
-        global $message_object;
+
         global $g;
 
 
@@ -50,15 +49,17 @@ class BroadcastMsgProcessor
          * Iterate over the array of user objects to build the array of MessageToUser objects.
          * Each MessageToUser object will hold a user id and the id of the message we created above.
          *
-         * The id of the message crated above is found in $message_object->id.
+         * The id of the message crated above is found in $g->message_object->id.
          */
 
         $array_of_messagetouser_objects = [];
 
         foreach ($array_of_user_objects as $user_object) {
-            $messagetouser_object_as_array = ['message_id' => $message_object->id, 'user_id' => $user_object->id];
+
+            $messagetouser_object_as_array = ['message_id' => $g->message_object->id, 'user_id' => $user_object->id];
 
             $array_of_messagetouser_objects[] = MessageToUser::array_to_object($messagetouser_object_as_array);
+
         }
 
 

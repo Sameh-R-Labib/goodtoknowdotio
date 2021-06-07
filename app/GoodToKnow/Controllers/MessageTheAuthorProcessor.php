@@ -15,14 +15,13 @@ class MessageTheAuthorProcessor
 
 
         global $g;
-        global $message_object;
 
 
         kick_out_loggedoutusers();
 
 
         /**
-         * $message_object and $db are defined when we include add_a_message_in_the_database.php.
+         * $g->message_object and $g->db are defined when we include add_a_message_in_the_database.php.
          */
 
         require CONTROLLERINCLUDES . DIRSEP . "add_a_message_in_the_database.php";
@@ -37,7 +36,7 @@ class MessageTheAuthorProcessor
          *  - user_id
          */
 
-        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $g->author_id];
+        $message_to_user_array = ['message_id' => $g->message_object->id, 'user_id' => $g->author_id];
 
 
         /**

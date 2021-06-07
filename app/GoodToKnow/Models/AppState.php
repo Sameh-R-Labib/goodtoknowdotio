@@ -324,6 +324,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $message_object;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -448,5 +454,7 @@ class AppState
         $this->object = null;
 
         $this->community_object = null;
+
+        $this->message_object = null;
     }
 }

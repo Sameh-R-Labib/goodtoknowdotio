@@ -7,7 +7,6 @@ use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
 global $db;
 global $g;
-global $message_object;
 
 
 require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
@@ -30,11 +29,11 @@ fix_michelf($html);
 
 $message_array = ['user_id' => $g->user_id, 'created' => time(), 'content' => $html];
 
-$message_object = Message::array_to_object($message_array);
+$g->message_object = Message::array_to_object($message_array);
 
 $db = get_db();
 
-$result = $message_object->save();
+$result = $g->message_object->save();
 
 if (!$result) {
 

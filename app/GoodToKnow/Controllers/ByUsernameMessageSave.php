@@ -22,14 +22,13 @@ class ByUsernameMessageSave
 
 
         global $g;
-        global $message_object;
 
 
         kick_out_loggedoutusers();
 
 
         /**
-         * $message_object and $db are defined when we include add_a_message_in_the_database.php.
+         * $g->message_object and $g->db are defined when we include add_a_message_in_the_database.php.
          * I know the PhpStorm linter does not recognize this and marks up the code below as if
          * something is wrong with it. But I can't do anything about it.
          */
@@ -75,7 +74,7 @@ class ByUsernameMessageSave
          */
 
 
-        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $target_user_object->id];
+        $message_to_user_array = ['message_id' => $g->message_object->id, 'user_id' => $target_user_object->id];
 
 
         /**

@@ -15,8 +15,7 @@ class WriteToAdminProcessor
          */
 
 
-        global $db;
-        global $message_object;
+        global $g;
 
 
         // ADMINUSERID   constant
@@ -27,7 +26,7 @@ class WriteToAdminProcessor
 
 
         /**
-         * $message_object and $db are defined when we include add_a_message_in_the_database.php.
+         * $g->message_object and $g->db are defined when we include add_a_message_in_the_database.php.
          * I know the PhpStorm linter does not recognize this and marks up the code below as if
          * something is wrong with it. But I can't do anything about it.
          */
@@ -45,7 +44,7 @@ class WriteToAdminProcessor
          *  - user_id
          */
 
-        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => ADMINUSERID];
+        $message_to_user_array = ['message_id' => $g->message_object->id, 'user_id' => ADMINUSERID];
 
 
         /**
@@ -74,6 +73,6 @@ class WriteToAdminProcessor
 
         $admin_username = ADMINUSERNAME;
 
-        breakout(" Your message to {$admin_username} was sent ✔️. ");
+        breakout(" Your message to $admin_username was sent ✔️. ");
     }
 }
