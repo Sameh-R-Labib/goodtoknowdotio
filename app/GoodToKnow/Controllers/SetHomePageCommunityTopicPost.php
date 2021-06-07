@@ -59,16 +59,15 @@ class SetHomePageCommunityTopicPost
                                                               $post_object, $post_author_object, $post_id)
     {
         global $g;
-        global $community_object;
         global $topic_object;
 
 
         // First get and store the community_name
 
-        $community_object = Community::find_by_id($community_id);
+        $g->community_object = Community::find_by_id($community_id);
 
-        $_SESSION['community_name'] = $community_object->community_name;
-        $_SESSION['community_description'] = $community_object->community_description;
+        $_SESSION['community_name'] = $g->community_object->community_name;
+        $_SESSION['community_description'] = $g->community_object->community_description;
 
 
         // Then do the rest.

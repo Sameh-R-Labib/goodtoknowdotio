@@ -318,6 +318,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $community_object;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -440,5 +446,7 @@ class AppState
         $this->next = [];
 
         $this->object = null;
+
+        $this->community_object = null;
     }
 }

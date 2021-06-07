@@ -11,9 +11,6 @@ class KommunityDescriptionEditorForm
         global $g;
         global $db;
         // $g->saved_int01 community id
-        global $community_object;
-
-
         // $g->saved_str01 is the community name. The view file will get it directly from global scope.
 
 
@@ -31,9 +28,9 @@ class KommunityDescriptionEditorForm
 
         $db = get_db();
 
-        $community_object = Community::find_by_id($g->saved_int01);
+        $g->community_object = Community::find_by_id($g->saved_int01);
 
-        if (!$community_object) {
+        if (!$g->community_object) {
 
             breakout(' I was unexpectedly unable to retrieve target community\'s object. ');
 
