@@ -11,13 +11,13 @@ class InduceATask
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Create a New Task';
+        $g->html_title = 'Create a New Task';
 
 
         require VIEWS . DIRSEP . 'induceatask.php';

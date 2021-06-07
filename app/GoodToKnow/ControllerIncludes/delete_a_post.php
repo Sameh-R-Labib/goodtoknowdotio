@@ -4,13 +4,13 @@ use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
 
-global $gtk;
+global $g;
 global $db;
 
 
 $db = get_db();
 
-$post = Post::find_by_id($gtk->saved_int02);
+$post = Post::find_by_id($g->saved_int02);
 
 if (!$post) {
 
@@ -30,12 +30,12 @@ if (!$result) {
 // Delete the TopicToPost record
 
 $sql = 'SELECT * FROM `topic_to_post`
-        WHERE `topic_id` = "' . $db->real_escape_string($gtk->saved_int01) . '" AND `post_id` = "' .
-    $db->real_escape_string($gtk->saved_int02) . '" LIMIT 1';
+        WHERE `topic_id` = "' . $db->real_escape_string($g->saved_int01) . '" AND `post_id` = "' .
+    $db->real_escape_string($g->saved_int02) . '" LIMIT 1';
 
 $array_of_objects = TopicToPost::find_by_sql($sql);
 
-if (!$array_of_objects || !empty($gtk->message)) {
+if (!$array_of_objects || !empty($g->message)) {
 
     breakout(' Unexpectedly failed to get a TopicToPost object to delete. ');
 
@@ -60,7 +60,7 @@ if (!$result) {
 
 // Delete both its files.
 
-$result = unlink($gtk->saved_str01);
+$result = unlink($g->saved_str01);
 
 if (!$result) {
 
@@ -68,7 +68,7 @@ if (!$result) {
 
 }
 
-$result = unlink($gtk->saved_str02);
+$result = unlink($g->saved_str02);
 
 if (!$result) {
 

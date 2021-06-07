@@ -15,7 +15,7 @@ class WipeOutAPossibleTaxDeductionDelete
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_possibletaxdeduction.php';
@@ -26,7 +26,7 @@ class WipeOutAPossibleTaxDeductionDelete
          *    and asks for approval for deletion to proceed.
          */
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'wipeoutapossibletaxdeductiondelete.php';
     }

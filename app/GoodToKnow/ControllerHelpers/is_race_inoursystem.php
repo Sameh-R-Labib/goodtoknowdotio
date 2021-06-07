@@ -14,11 +14,11 @@ function is_race_inoursystem(string &$race): bool
      * Must be one of the ones I have in the form.
      */
 
-    global $gtk;
+    global $g;
 
     $race = trim($race);
     if (empty($race)) {
-        $gtk->message .= " The value for race is missing. ";
+        $g->message .= " The value for race is missing. ";
         return false;
     }
 
@@ -27,7 +27,7 @@ function is_race_inoursystem(string &$race): bool
         'native-american'];
 
     if (!in_array($race, $races)) {
-        $gtk->message .= " Your race field does not contain a valid value. ";
+        $g->message .= " Your race field does not contain a valid value. ";
         return false;
     }
 

@@ -18,8 +18,7 @@ class NukeATaxableIncomeEventDelete
          */
 
 
-        global $object;
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_taxableincomeevent.php';
@@ -36,11 +35,11 @@ class NukeATaxableIncomeEventDelete
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-        $object->time = get_readable_time($object->time);
-        $object->comment = nl2br($object->comment, false);
-        $object->amount = readable_amount_of_money($object->currency, $object->amount);
+        $g->object->time = get_readable_time($g->object->time);
+        $g->object->comment = nl2br($g->object->comment, false);
+        $g->object->amount = readable_amount_of_money($g->object->currency, $g->object->amount);
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'nukeataxableincomeeventdelete.php';
     }

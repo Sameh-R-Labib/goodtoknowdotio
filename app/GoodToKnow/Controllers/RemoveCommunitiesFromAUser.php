@@ -6,7 +6,7 @@ class RemoveCommunitiesFromAUser
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -16,7 +16,7 @@ class RemoveCommunitiesFromAUser
          * Collect the username.
          */
 
-        $gtk->html_title = 'Remove Communities from A User';
+        $g->html_title = 'Remove Communities from A User';
 
         require VIEWS . DIRSEP . 'removecommunitiesfromauser.php';
     }

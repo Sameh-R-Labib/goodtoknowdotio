@@ -15,7 +15,7 @@ class SpyCommoditiesSoldYearFilter
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
@@ -32,7 +32,7 @@ class SpyCommoditiesSoldYearFilter
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-        foreach ($gtk->array as $item) {
+        foreach ($g->array as $item) {
             $item->time_bought = get_readable_time($item->time_bought);
             $item->time_sold = get_readable_time($item->time_sold);
             $item->price_bought = readable_amount_of_money($item->currency_transacted, $item->price_bought);
@@ -46,13 +46,13 @@ class SpyCommoditiesSoldYearFilter
          * Prep the view.
          */
 
-        $gtk->message .= " Here is one year's commodities sold records. ";
+        $g->message .= " Here is one year's commodities sold records. ";
 
-        $gtk->html_title = "One year's commodities sold records";
+        $g->html_title = "One year's commodities sold records";
 
-        $gtk->page = 'SpyCommoditiesSoldYear';
+        $g->page = 'SpyCommoditiesSoldYear';
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
         require VIEWS . DIRSEP . 'spycommoditiessoldyearfilter.php';
     }

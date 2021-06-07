@@ -14,13 +14,13 @@ class PopulateABankingAccountForBalances
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
 
-        $gtk->html_title = 'Which banking_acct_for_balances record?';
+        $g->html_title = 'Which banking_acct_for_balances record?';
 
 
         require VIEWS . DIRSEP . 'populateabankingaccountforbalances.php';

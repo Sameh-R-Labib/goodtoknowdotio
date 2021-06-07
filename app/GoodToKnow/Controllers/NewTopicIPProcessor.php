@@ -21,7 +21,7 @@ class NewTopicIPProcessor
          * Once that's done redirect to the next script.
          */
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -38,9 +38,9 @@ class NewTopicIPProcessor
          * Besides, we want a fresh copy of special_topic_array.
          */
 
-        $gtk->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($gtk->community_id);
+        $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 
-        if (!$gtk->special_topic_array) {
+        if (!$g->special_topic_array) {
 
             breakout(' NewTopicIPProcessor says: Unexpected error 39684. ');
 
@@ -49,7 +49,7 @@ class NewTopicIPProcessor
 
         /**
          * At this point:
-         *   We have a fresh copy of $gtk->special_topic_array.
+         *   We have a fresh copy of $g->special_topic_array.
          *   We know it's got at least one topic.
          *   We should have 'relate' and 'choice'
          */
@@ -68,7 +68,7 @@ class NewTopicIPProcessor
 
         $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (!array_key_exists($chosen_topic_id, $gtk->special_topic_array)) {
+        if (!array_key_exists($chosen_topic_id, $g->special_topic_array)) {
 
             breakout(' NewTopicIPProcessor says: Error 124213. ');
 
@@ -77,7 +77,7 @@ class NewTopicIPProcessor
 
         // Determine the sequence number for the new topic
 
-        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($gtk->community_id);
+        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
 
         if (!$topic_objects_array) {
 

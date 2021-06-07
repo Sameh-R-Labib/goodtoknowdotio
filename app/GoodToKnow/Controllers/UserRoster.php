@@ -10,7 +10,7 @@ class UserRoster
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
         global $readable_user_objects_array;
 
@@ -21,13 +21,13 @@ class UserRoster
         $db = get_db();
 
 
-        $gtk->html_title = 'User Roster';
+        $g->html_title = 'User Roster';
 
 
-        $gtk->page = 'UserRoster';
+        $g->page = 'UserRoster';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
         /**
@@ -85,7 +85,7 @@ class UserRoster
 
         }
 
-        $gtk->message .= " I have generated the User Roster (<em>shown below.</em>) ";
+        $g->message .= " I have generated the User Roster (<em>shown below.</em>) ";
 
         require VIEWS . DIRSEP . 'userroster.php';
     }

@@ -13,7 +13,7 @@ class QuickPostDeleteDelete
          */
 
 
-        global $gtk;
+        global $g;
         global $post_object;
         global $chosen_post_id;
 
@@ -30,10 +30,10 @@ class QuickPostDeleteDelete
 
         // We need this in the view.
 
-        $gtk->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $g->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
 
         require VIEWS . DIRSEP . 'quickpostdeletedelete.php';

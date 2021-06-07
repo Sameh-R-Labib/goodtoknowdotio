@@ -1,4 +1,4 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/QuickPostDeleteProcessor/page" method="post">
         <h1>Delete Any 📄</h1>
@@ -8,7 +8,7 @@
         <?php require SESSIONMESSAGE; ?>
         <p>In which topic?</p>
         <section>
-            <?php foreach ($gtk->special_topic_array as $key => $value): ?>
+            <?php foreach ($g->special_topic_array as $key => $value): ?>
                 <label for="choice-<?= $key ?>" class="radio">
                     <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                     <?= $value ?>

@@ -8,9 +8,9 @@ class SuspendAccountSuspend
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_str01 has user's username
+        // $g->saved_str01 has user's username
 
 
         kick_out_nonadmins();
@@ -33,7 +33,7 @@ class SuspendAccountSuspend
 
         $db = get_db();
 
-        $user_object = User::find_by_username($gtk->saved_str01);
+        $user_object = User::find_by_username($g->saved_str01);
 
         if (!$user_object) {
 
@@ -61,10 +61,10 @@ class SuspendAccountSuspend
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(" The save method for User did not return false but it did send back a message.
-             Therefore, it probably did not update $gtk->saved_str01's account. ");
+             Therefore, it probably did not update $g->saved_str01's account. ");
 
         }
 
@@ -73,6 +73,6 @@ class SuspendAccountSuspend
          * 4) Show a message indicating we've successfully suspended the user's account.
          */
 
-        breakout(" User $gtk->saved_str01's account has been suspended 👍. ");
+        breakout(" User $g->saved_str01's account has been suspended 👍. ");
     }
 }

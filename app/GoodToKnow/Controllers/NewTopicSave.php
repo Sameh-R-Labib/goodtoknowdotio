@@ -9,11 +9,11 @@ class NewTopicSave
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_str01 the topic name
-        // $gtk->saved_str02 the topic description
-        // $gtk->saved_int01 the sequence number
+        // $g->saved_str01 the topic name
+        // $g->saved_str02 the topic description
+        // $g->saved_int01 the sequence number
 
 
         kick_out_nonadmins();
@@ -27,8 +27,8 @@ class NewTopicSave
          * CommunityToTopic $fields = ['id', 'community_id', 'topic_id']
          */
 
-        $topic_as_array = ['sequence_number' => $gtk->saved_int01, 'topic_name' => $gtk->saved_str01,
-            'topic_description' => $gtk->saved_str02];
+        $topic_as_array = ['sequence_number' => $g->saved_int01, 'topic_name' => $g->saved_str01,
+            'topic_description' => $g->saved_str02];
 
         $topic = Topic::array_to_object($topic_as_array);
 
@@ -41,7 +41,7 @@ class NewTopicSave
 
         $db = get_db();
 
-        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($gtk->community_id);
+        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
 
         $sequence_number_already_exists_in_db = false;
 
@@ -51,7 +51,7 @@ class NewTopicSave
 
                 $a = (int)$object->sequence_number;
 
-                if ($a == (int)$gtk->saved_int01) {
+                if ($a == (int)$g->saved_int01) {
 
                     $sequence_number_already_exists_in_db = true;
                     break;
@@ -81,7 +81,7 @@ class NewTopicSave
 
         // Assemble the CommunityToTopic object
 
-        $communitytotopic_as_array = ['community_id' => $gtk->community_id, 'topic_id' => $topic->id];
+        $communitytotopic_as_array = ['community_id' => $g->community_id, 'topic_id' => $topic->id];
 
         $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
 
@@ -98,7 +98,7 @@ class NewTopicSave
          * Save a fresh copy of special_topic_array
          */
 
-        $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($gtk->community_id);
+        $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 
         $_SESSION['last_refresh_topics'] = time();
 

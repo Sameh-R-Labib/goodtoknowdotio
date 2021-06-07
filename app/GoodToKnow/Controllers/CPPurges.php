@@ -6,22 +6,22 @@ class CPPurges
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->page = 'CPPurges';
+        $g->page = 'CPPurges';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'Purges';
+        $g->html_title = 'Purges';
 
 
-        $gtk->message .= ' Manage purges. ';
+        $g->message .= ' Manage purges. ';
 
 
         require VIEWS . DIRSEP . 'cppurges.php';

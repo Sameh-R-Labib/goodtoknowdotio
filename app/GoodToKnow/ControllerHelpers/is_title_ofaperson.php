@@ -14,13 +14,13 @@ function is_title_ofaperson(string &$title): bool
      * Mr. and Mrs. are the only valid values for title.
      */
 
-    global $gtk;
+    global $g;
 
     $title = trim($title);
 
     if (empty($title)) {
 
-        $gtk->message .= " Your title is missing. ";
+        $g->message .= " Your title is missing. ";
 
         return false;
     }
@@ -29,7 +29,7 @@ function is_title_ofaperson(string &$title): bool
 
     if (!in_array($title, $possible)) {
 
-        $gtk->message .= " Your title field does not contain a valid value. ";
+        $g->message .= " Your title field does not contain a valid value. ";
 
         return false;
     }

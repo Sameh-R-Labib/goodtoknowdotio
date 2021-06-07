@@ -17,9 +17,9 @@ class EditMyPostChoosePost
          * criteria then we'll store a session message and redirect back home.
          */
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 id of topic
+        // $g->saved_int01 id of topic
 
 
         kick_out_loggedoutusers();
@@ -30,9 +30,9 @@ class EditMyPostChoosePost
 
         // Get all posts (as special array) for the user and topic.
 
-        $gtk->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($gtk->user_id, $gtk->saved_int01);
+        $g->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($g->user_id, $g->saved_int01);
 
-        if (!$gtk->special_post_array) {
+        if (!$g->special_post_array) {
 
             breakout(' There are NO posts for YOU to edit here. ');
 
@@ -44,7 +44,7 @@ class EditMyPostChoosePost
          * the posts which remain.
          */
 
-        $gtk->html_title = 'Which post to edit?';
+        $g->html_title = 'Which post to edit?';
 
         require VIEWS . DIRSEP . 'editmypostchoosepost.php';
     }

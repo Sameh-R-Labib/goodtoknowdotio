@@ -9,8 +9,7 @@ class PopulateABankingAccountForBalancesProcessor
 {
     function page()
     {
-        global $gtk;
-        global $object;
+        global $g;
 
 
         /**
@@ -35,22 +34,22 @@ class PopulateABankingAccountForBalancesProcessor
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $object->start_balance = readable_amount_no_commas($object->currency, $object->start_balance);
+        $g->object->start_balance = readable_amount_no_commas($g->object->currency, $g->object->start_balance);
 
 
         /**
          * This type of record has a field called `start_time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $gtk->time from it and use $gtk->time to pre-populate the following fields:
+         * Instead we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $gtk->time = get_date_h_m_s_from_a_timestamp($object->start_time);
+        $g->time = get_date_h_m_s_from_a_timestamp($g->object->start_time);
 
 
-        $gtk->html_title = 'Edit the banking_acct_for_balances record';
+        $g->html_title = 'Edit the banking_acct_for_balances record';
 
 
         require VIEWS . DIRSEP . 'populateabankingaccountforbalancesprocessor.php';

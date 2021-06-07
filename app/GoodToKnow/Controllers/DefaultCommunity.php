@@ -6,13 +6,13 @@ class DefaultCommunity
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Default Community';
+        $g->html_title = 'Default Community';
 
 
         require VIEWS . DIRSEP . 'defaultcommunity.php';

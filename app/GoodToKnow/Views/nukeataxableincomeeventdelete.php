@@ -1,14 +1,14 @@
-<?php global $object; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/NukeATaxableIncomeEventConfirmation/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Label: </b><?php echo $object->label; ?></p>
-        <p><b>Year: </b><?= $object->year_received ?></p>
-        <p><b>Time: </b><?= $object->time ?></p>
-        <p><b>Amount: </b><?= $object->currency ?>&nbsp;<?= $object->amount ?></p>
-        <p><?= $object->comment ?></p>
+        <p><b>Label: </b><?php echo $g->object->label; ?></p>
+        <p><b>Year: </b><?= $g->object->year_received ?></p>
+        <p><b>Time: </b><?= $g->object->time ?></p>
+        <p><b>Amount: </b><?= $g->object->currency ?>&nbsp;<?= $g->object->amount ?></p>
+        <p><?= $g->object->comment ?></p>
         <p>&nbsp;</p>
         <p>Are you sure you want to delete this?</p>
         <section>

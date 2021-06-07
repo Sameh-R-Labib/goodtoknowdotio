@@ -18,13 +18,13 @@ class GenerateABankingAccountForBalances
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Create a New BankingAcctForBalances';
+        $g->html_title = 'Create a New BankingAcctForBalances';
 
 
         require VIEWS . DIRSEP . 'generateabankingaccountforbalances.php';

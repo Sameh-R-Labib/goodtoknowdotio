@@ -18,7 +18,7 @@ class BuildABankingTransactionForBalancesProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -32,7 +32,7 @@ class BuildABankingTransactionForBalancesProcessor
         $label = standard_form_field_prep('label', 3, 30);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -46,7 +46,7 @@ class BuildABankingTransactionForBalancesProcessor
          * Create a BankingTransactionForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $gtk->time];
+        $array_record = ['user_id' => $g->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $g->time];
 
 
         /**
@@ -70,7 +70,7 @@ class BuildABankingTransactionForBalancesProcessor
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The save method for BankingTransactionForBalances did not return false but it did send
             back a message. Therefore, it probably did not create the BankingTransactionForBalances record. ');

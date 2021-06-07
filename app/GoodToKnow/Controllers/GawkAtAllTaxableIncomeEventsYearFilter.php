@@ -15,7 +15,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
@@ -30,23 +30,23 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-        foreach ($gtk->array as $item) {
+        foreach ($g->array as $item) {
             $item->time = get_readable_time($item->time);
             $item->comment = nl2br($item->comment, false);
             $item->amount = readable_amount_of_money($item->currency, $item->amount);
         }
 
 
-        $gtk->message .= " Here is one year of your taxable income event records. ";
+        $g->message .= " Here is one year of your taxable income event records. ";
 
 
-        $gtk->html_title = "One year of your taxable income event records";
+        $g->html_title = "One year of your taxable income event records";
 
 
-        $gtk->page = 'GawkAtAllTaxableIncomeEvents';
+        $g->page = 'GawkAtAllTaxableIncomeEvents';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
         require VIEWS . DIRSEP . 'gawkatalltaxableincomeeventsyearfilter.php';

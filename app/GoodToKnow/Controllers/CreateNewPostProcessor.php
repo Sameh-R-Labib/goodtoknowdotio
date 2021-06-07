@@ -9,7 +9,7 @@ class CreateNewPostProcessor
     function page()
     {
         global $db;
-        global $gtk;
+        global $g;
         global $chosen_topic_id;
 
 

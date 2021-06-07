@@ -14,7 +14,7 @@ class WriteOverATaxableIncomeEventYearFilter
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
@@ -26,7 +26,7 @@ class WriteOverATaxableIncomeEventYearFilter
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
-        foreach ($gtk->array as $item) {
+        foreach ($g->array as $item) {
 
             $item->time = get_readable_time($item->time);
 
@@ -37,7 +37,7 @@ class WriteOverATaxableIncomeEventYearFilter
          * Present the view.
          */
 
-        $gtk->html_title = 'Which taxable income event?';
+        $g->html_title = 'Which taxable income event?';
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeeventyearfilter.php';
     }

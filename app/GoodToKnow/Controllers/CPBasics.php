@@ -6,22 +6,22 @@ class CPBasics
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->page = 'CPBasics';
+        $g->page = 'CPBasics';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'Basics';
+        $g->html_title = 'Basics';
 
 
-        $gtk->message .= ' Manage account and posts. ';
+        $g->message .= ' Manage account and posts. ';
 
 
         require VIEWS . DIRSEP . 'cpbasics.php';

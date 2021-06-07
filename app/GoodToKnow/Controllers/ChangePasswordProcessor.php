@@ -11,7 +11,7 @@ class ChangePasswordProcessor
     function page()
     {
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -41,7 +41,7 @@ class ChangePasswordProcessor
          * Get the user object for the current user and make sure $current_password is a valid submission.
          */
 
-        $user_object = User::find_by_id($gtk->user_id);
+        $user_object = User::find_by_id($g->user_id);
 
         if (!password_verify($current_password, $user_object->password)) {
 
@@ -61,7 +61,7 @@ class ChangePasswordProcessor
 
         $is_saved = $user_object->save();
 
-        if (!$is_saved || !empty($gtk->message)) {
+        if (!$is_saved || !empty($g->message)) {
 
             breakout(' Failed to update your record. ');
 

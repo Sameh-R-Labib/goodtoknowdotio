@@ -15,7 +15,7 @@ class UploadProcessor
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -148,12 +148,12 @@ class UploadProcessor
 
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-            $gtk->message .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
+            $g->message .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
             file. Here is the link: " . $a_link_entire_embed . ". ";
 
         } else {
 
-            $gtk->message .= " Sorry, there was an error uploading your file. ";
+            $g->message .= " Sorry, there was an error uploading your file. ";
 
         }
 

@@ -14,7 +14,7 @@ class MessageTheAuthorProcessor
          */
 
 
-        global $gtk;
+        global $g;
         global $message_object;
 
 
@@ -37,7 +37,7 @@ class MessageTheAuthorProcessor
          *  - user_id
          */
 
-        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $gtk->author_id];
+        $message_to_user_array = ['message_id' => $message_object->id, 'user_id' => $g->author_id];
 
 
         /**
@@ -64,6 +64,6 @@ class MessageTheAuthorProcessor
          * Declare success.
          */
 
-        breakout(" Your message to $gtk->author_username was sent! ");
+        breakout(" Your message to $g->author_username was sent! ");
     }
 }

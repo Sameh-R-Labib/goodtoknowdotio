@@ -6,7 +6,7 @@ class GiveCommunitiesToUser
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -16,7 +16,7 @@ class GiveCommunitiesToUser
          * Collect the username.
          */
 
-        $gtk->html_title = 'Give Communities to User';
+        $g->html_title = 'Give Communities to User';
 
         require VIEWS . DIRSEP . 'givecommunitiestouser.php';
     }

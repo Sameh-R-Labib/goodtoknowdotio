@@ -6,22 +6,22 @@ class CPTaxDeductions
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->page = 'CPTaxDeductions';
+        $g->page = 'CPTaxDeductions';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'TaxDeductions';
+        $g->html_title = 'TaxDeductions';
 
 
-        $gtk->message .= ' Managing tax deductions. ';
+        $g->message .= ' Managing tax deductions. ';
 
 
         require VIEWS . DIRSEP . 'cptaxdeductions.php';

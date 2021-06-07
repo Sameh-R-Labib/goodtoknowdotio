@@ -6,7 +6,7 @@ class WriteToAdmin
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -19,16 +19,16 @@ class WriteToAdmin
          * Display the editor interface.
          */
 
-        $gtk->html_title = 'Write to Admin';
+        $g->html_title = 'Write to Admin';
 
-        $gtk->pre_populate = <<<ROI
+        $g->pre_populate = <<<ROI
 Dear Admin {$admin_username},
 
 I would like you to add a particular topic to a particular community.
 
 Sincerely,
 
-{$gtk->user_username}
+{$g->user_username}
 ROI;
 
         require VIEWS . DIRSEP . 'writetoadmin.php';

@@ -15,7 +15,7 @@ class GlanceAtMyTasks
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -28,11 +28,11 @@ class GlanceAtMyTasks
 
         $db = get_db();
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
 
-        $gtk->array = Task::find_by_sql($sql);
+        $g->array = Task::find_by_sql($sql);
 
-        if (!$gtk->array || !empty($gtk->message)) {
+        if (!$g->array || !empty($g->message)) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 
@@ -48,7 +48,7 @@ class GlanceAtMyTasks
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'get_proximity_task_label.php';
 
-        foreach ($gtk->array as $object) {
+        foreach ($g->array as $object) {
 
             $object->label = get_proximity_task_label($object->label, $object->next);
             $object->last = get_readable_date($object->last);
@@ -62,13 +62,13 @@ class GlanceAtMyTasks
          * The view.
          */
 
-        $gtk->html_title = 'All my Tasks';
+        $g->html_title = 'All my Tasks';
 
-        $gtk->page = 'GlanceAtMyTasks';
+        $g->page = 'GlanceAtMyTasks';
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
-        $gtk->message .= ' ʘ‿ʘ at your Tasks. ';
+        $g->message .= ' ʘ‿ʘ at your Tasks. ';
 
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
     }

@@ -6,22 +6,22 @@ class CPToDoList
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->page = 'CPToDoList';
+        $g->page = 'CPToDoList';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'Task List';
+        $g->html_title = 'Task List';
 
 
-        $gtk->message .= ' Manage to-do list. ';
+        $g->message .= ' Manage to-do list. ';
 
 
         require VIEWS . DIRSEP . 'cptodolist.php';

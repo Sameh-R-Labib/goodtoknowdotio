@@ -14,7 +14,7 @@ class AbolishYearsCommoditiesSoldGetYear
          * 3) Give confirmation of deletion.
          */
 
-        global $gtk;
+        global $g;
 
         kick_out_nonadmins();
 
@@ -57,12 +57,12 @@ class AbolishYearsCommoditiesSoldGetYear
 
         } catch (\Exception $e) {
 
-            $gtk->message .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
+            $g->message .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout('');
 

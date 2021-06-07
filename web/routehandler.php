@@ -91,11 +91,11 @@ session_start();
 // from happening IF our server should crash. The session file may survive a server crash; and, if it does, then
 // "the message" would survive the server crash. And, that's undesirable. On the other hand it's not a big deal if
 // the other state variables survive a server crash because we're only deleting them to save disc space.
-//$gtk->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
+//$g->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
 //$_SESSION['message'] = '';
 
 
-$gtk = new AppState();
+$g = new AppState();
 
 
 //$url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
@@ -171,9 +171,9 @@ $gtk = new AppState();
 
 //$saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
 
-//$is_logged_in = !empty($gtk->user_id);
+//$is_logged_in = !empty($g->user_id);
 
-//$is_admin = $gtk->role === 'admin';
+//$is_admin = $g->role === 'admin';
 
 //$is_guest = false;  // Tells some Gtk.io views to show parts of the page that a non-authenticated should see.
 
@@ -199,7 +199,7 @@ $gtk = new AppState();
 //$time = [];
 //$last = [];
 //$next = [];
-$object = '';
+//$object = '';
 $community_object = null;
 $message_object = null;
 $topic_object = null;
@@ -242,7 +242,7 @@ $db = 'not connected';
 /**
  * Default (for runtime of this script) timezone set to the one the user has chosen.
  */
-date_default_timezone_set($gtk->timezone);
+date_default_timezone_set($g->timezone);
 
 
 /**

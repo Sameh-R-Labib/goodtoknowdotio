@@ -43,7 +43,7 @@ class UserToCommunity extends GoodObject
          */
 
 
-        global $gtk;
+        global $g;
 
 
         // This is what we hope to return
@@ -61,7 +61,7 @@ class UserToCommunity extends GoodObject
 
         if (!$user_to_community_array) {
 
-            $gtk->message .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
+            $g->message .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
 
             return $array_of_coms_for_this_user;
 
@@ -91,7 +91,7 @@ class UserToCommunity extends GoodObject
 
         if (empty($array_of_coms_for_this_user)) {
 
-            $gtk->message .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
+            $g->message .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
 
             return false;
 
@@ -137,9 +137,9 @@ class UserToCommunity extends GoodObject
      */
     public static function community_is_one_which_user_already_belongs_to(object $community): bool
     {
-        global $gtk;
+        global $g;
 
-        foreach ($gtk->coms_user_belongs_to as $object) {
+        foreach ($g->coms_user_belongs_to as $object) {
 
             if ($community->id == $object->id) {
 
@@ -167,7 +167,7 @@ class UserToCommunity extends GoodObject
          */
 
 
-        global $gtk;
+        global $g;
 
 
         /**
@@ -180,7 +180,7 @@ class UserToCommunity extends GoodObject
 
         if (!$array_of_user_to_community_objects) {
 
-            $gtk->message .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
+            $g->message .= " find_communities_of_user() says unexpectedly received No user_to_community_array. ";
 
             return false;
 
@@ -203,7 +203,7 @@ class UserToCommunity extends GoodObject
 
             if (!$special_community_array[$object->community_id]) {
 
-                $gtk->message .= " find_communities_of_user() says err_no 20848. ";
+                $g->message .= " find_communities_of_user() says err_no 20848. ";
 
                 return false;
 

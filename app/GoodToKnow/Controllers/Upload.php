@@ -13,7 +13,7 @@ class Upload
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -23,7 +23,7 @@ class Upload
          * Present the editor interface.
          */
 
-        $gtk->html_title = 'Upload an image';
+        $g->html_title = 'Upload an image';
 
         require VIEWS . DIRSEP . 'upload.php';
     }

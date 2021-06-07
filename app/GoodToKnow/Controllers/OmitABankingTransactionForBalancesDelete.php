@@ -19,9 +19,7 @@ class OmitABankingTransactionForBalancesDelete
          */
 
 
-        global $db;
-        global $gtk;
-        global $object;
+        global $g;
         global $bank;
 
 
@@ -43,7 +41,7 @@ class OmitABankingTransactionForBalancesDelete
          * We need to know what the currency is. To do this we need the BankingAcctForBalances object.
          */
 
-        $bank = BankingAcctForBalances::find_by_id($object->bank_id);
+        $bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
 
         if (!$bank) {
 
@@ -54,12 +52,12 @@ class OmitABankingTransactionForBalancesDelete
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        $object->time = get_readable_time($object->time);
+        $g->object->time = get_readable_time($g->object->time);
 
-        $object->amount = readable_amount_of_money($bank->currency, $object->amount);
+        $g->object->amount = readable_amount_of_money($bank->currency, $g->object->amount);
 
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalancesdelete.php';

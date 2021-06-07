@@ -14,7 +14,7 @@ class NukeATaxableIncomeEventYearFilter
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_taxable_income_events_for_year.php';
@@ -26,14 +26,14 @@ class NukeATaxableIncomeEventYearFilter
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
-        foreach ($gtk->array as $item) {
+        foreach ($g->array as $item) {
 
             $item->time = get_readable_time($item->time);
 
         }
 
 
-        $gtk->html_title = 'Which taxable_income_event record?';
+        $g->html_title = 'Which taxable_income_event record?';
 
 
         require VIEWS . DIRSEP . 'nukeataxableincomeeventyearfilter.php';

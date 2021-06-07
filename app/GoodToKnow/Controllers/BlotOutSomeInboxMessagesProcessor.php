@@ -9,7 +9,7 @@ class BlotOutSomeInboxMessagesProcessor
     function page()
     {
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -50,7 +50,7 @@ class BlotOutSomeInboxMessagesProcessor
 
             // Only delete the MessageToUser record. Do Not delete the Message record since it may be needed by another user.
 
-            $return = MessageToUser::delete_all_particular($id, $gtk->user_id);
+            $return = MessageToUser::delete_all_particular($id, $g->user_id);
 
             if ($return === false) {
 

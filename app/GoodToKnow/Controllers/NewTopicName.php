@@ -11,13 +11,13 @@ class NewTopicName
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
 
 
-        $gtk->html_title = "What's its name?";
+        $g->html_title = "What's its name?";
 
         require VIEWS . DIRSEP . 'newtopicname.php';
     }

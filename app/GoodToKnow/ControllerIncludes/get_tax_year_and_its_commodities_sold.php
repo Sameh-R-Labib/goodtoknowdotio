@@ -4,7 +4,7 @@ use GoodToKnow\Models\CommoditySold;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-global $gtk;
+global $g;
 global $db;
 global $tax_year;
 
@@ -28,11 +28,11 @@ $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 $db = get_db();
 
 $sql = 'SELECT * FROM `commodities_sold` WHERE `tax_year` = ' . $db->real_escape_string($tax_year);
-$sql .= ' AND `user_id` = ' . $db->real_escape_string($gtk->user_id);
+$sql .= ' AND `user_id` = ' . $db->real_escape_string($g->user_id);
 
-$gtk->array = CommoditySold::find_by_sql($sql);
+$g->array = CommoditySold::find_by_sql($sql);
 
-if (!$gtk->array || !empty($gtk->message)) {
+if (!$g->array || !empty($g->message)) {
 
     breakout(" For <b>{$tax_year}</b> I could NOT find any CommoditySold(s/plural) ¯\_(ツ)_/¯. ");
 

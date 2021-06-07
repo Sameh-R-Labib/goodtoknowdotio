@@ -11,13 +11,13 @@ class CleanupYearsTaxableIncomeEvents
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
 
 
-        $gtk->html_title = 'Which year?';
+        $g->html_title = 'Which year?';
 
 
         require VIEWS . DIRSEP . 'cleanupyearstaxableincomeevents.php';

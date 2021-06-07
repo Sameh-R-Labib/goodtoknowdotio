@@ -1,8 +1,8 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
 <?php global $community_object; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/KommunityDescriptionEditorFormProcessor/page" method="post">
-        <h2><?= $gtk->saved_str01 ?> Description</h2>
+        <h2><?= $g->saved_str01 ?> Description</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 230 bytes</span>
         </p>

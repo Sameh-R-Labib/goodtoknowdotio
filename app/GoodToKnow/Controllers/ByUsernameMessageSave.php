@@ -21,7 +21,7 @@ class ByUsernameMessageSave
          */
 
 
-        global $gtk;
+        global $g;
         global $message_object;
 
 
@@ -47,16 +47,16 @@ class ByUsernameMessageSave
          * Here I need find the user ID number of
          * the target for the message. I already
          * know the username. It is stored in
-         * $gtk->saved_str01.
+         * $g->saved_str01.
          */
 
-        if (empty($gtk->saved_str01)) {
+        if (empty($g->saved_str01)) {
 
             breakout(' Unexpectedly no target username found in the session. ');
 
         }
 
-        $target_user_object = User::find_by_username($gtk->saved_str01);
+        $target_user_object = User::find_by_username($g->saved_str01);
 
         if (!$target_user_object) {
 
@@ -102,6 +102,6 @@ class ByUsernameMessageSave
          * Declare success.
          */
 
-        breakout(" Your message to $gtk->saved_str01 was sent! ");
+        breakout(" Your message to $g->saved_str01 was sent! ");
     }
 }

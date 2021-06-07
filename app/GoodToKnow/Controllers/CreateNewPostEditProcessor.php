@@ -19,10 +19,10 @@ class CreateNewPostEditProcessor
          * files related to it using the submitted post content as the source material.
          */
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 topic id
-        // $gtk->saved_int02 post id
+        // $g->saved_int01 topic id
+        // $g->saved_int02 post id
 
 
         kick_out_loggedoutusers();
@@ -30,26 +30,26 @@ class CreateNewPostEditProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $gtk->markdown = markdown_form_field_prep('markdown', 1, 58000);
+        $g->markdown = markdown_form_field_prep('markdown', 1, 58000);
 
 
         /**
-         * Generate the html equivalent for $gtk->markdown.
+         * Generate the html equivalent for $g->markdown.
          */
 
         $parser = new MarkdownExtra;
         $parser->no_entities = true;
-        $html = $parser->transform($gtk->markdown);
+        $html = $parser->transform($g->markdown);
 
         // Call to global function
         fix_michelf($html);
 
-//        $html = MarkdownExtra::defaultTransform($gtk->markdown);
+//        $html = MarkdownExtra::defaultTransform($g->markdown);
 
 //        $parsedown_object = new \ParsedownExtra();
 //        $parsedown_object->setMarkupEscaped(true);
 //        $parsedown_object->setSafeMode(true);
-//        $html = $parsedown_object->text($gtk->markdown);
+//        $html = $parsedown_object->text($g->markdown);
 
 
         /**
@@ -58,7 +58,7 @@ class CreateNewPostEditProcessor
 
         $db = get_db();
 
-        $post = Post::find_by_id($gtk->saved_int02);
+        $post = Post::find_by_id($g->saved_int02);
 
         if ($post === false) {
 
@@ -72,7 +72,7 @@ class CreateNewPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($post->markdown_file, $gtk->markdown);
+        $bytes_written = file_put_contents($post->markdown_file, $g->markdown);
 
         if ($bytes_written === false) {
 
@@ -101,8 +101,8 @@ class CreateNewPostEditProcessor
 
         $bytes_written_text = size_as_text($bytes_written);
 
-        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $gtk->community_id . '/' .
-            $gtk->saved_int01 . '/' . $gtk->saved_int02 . '">here </a>';
+        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $g->community_id . '/' .
+            $g->saved_int01 . '/' . $g->saved_int02 . '">here </a>';
 
         breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");

@@ -12,7 +12,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_year_paid_and_its_possibletaxdeductions.php';
@@ -22,19 +22,19 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
          * Loop through the array and replace attributes with more readable ones.
          */
 
-        foreach ($gtk->array as $item) {
+        foreach ($g->array as $item) {
 
             $item->comment = nl2br($item->comment, false);
 
         }
 
-        $gtk->message .= " Here are one year's tax write-offs. ";
+        $g->message .= " Here are one year's tax write-offs. ";
 
-        $gtk->html_title = "One year\'s tax write-offs.";
+        $g->html_title = "One year\'s tax write-offs.";
 
-        $gtk->page = 'SeeOneYearsPossibleTaxDeductions';
+        $g->page = 'SeeOneYearsPossibleTaxDeductions';
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }

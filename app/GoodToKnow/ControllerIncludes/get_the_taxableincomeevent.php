@@ -5,8 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $db;
-global $gtk;
-global $object;
+global $g;
 
 
 kick_out_loggedoutusers();
@@ -29,9 +28,9 @@ $_SESSION['saved_int01'] = $id;
 
 $db = get_db();
 
-$object = TaxableIncomeEvent::find_by_id($id);
+$g->object = TaxableIncomeEvent::find_by_id($id);
 
-if (!$object) {
+if (!$g->object) {
 
     breakout(' Unexpectedly, I could not find that taxable income event. ');
 
@@ -42,7 +41,7 @@ if (!$object) {
  * 3) Make sure the object belongs to the user.
  */
 
-if ($object->user_id != $gtk->user_id) {
+if ($g->object->user_id != $g->user_id) {
 
     breakout(' Error 90703010. ');
 

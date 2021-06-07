@@ -16,8 +16,8 @@ class AdminCreateUser
 {
     function page()
     {
-        global $gtk;
-        // $gtk->saved_int01 choice
+        global $g;
+        // $g->saved_int01 choice
         global $db;
 
         kick_out_nonadmins();
@@ -27,7 +27,7 @@ class AdminCreateUser
 
         /**
          * Variables to work with:
-         *   $gtk->saved_int01, 'username', 'first_try', 'password',
+         *   $g->saved_int01, 'username', 'first_try', 'password',
          *   'title', 'race', 'comment', 'timezone', 'date', 'submit'
          */
 
@@ -78,7 +78,7 @@ class AdminCreateUser
 
         $array_of_submitted_data = ['username' => $submitted_username,
             'password' => $hash_of_submitted_password,
-            'id_of_default_community' => $gtk->saved_int01,
+            'id_of_default_community' => $g->saved_int01,
             'timezone' => $submitted_timezone,
             'title' => $submitted_title,
             'role' => $new_user_role,
@@ -103,7 +103,7 @@ class AdminCreateUser
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The save method for User did not return false but it did send back a message.
              Therefore, it probably did not create your account. ');
@@ -117,7 +117,7 @@ class AdminCreateUser
 
         // The three steps again
 
-        $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $gtk->saved_int01];
+        $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $g->saved_int01];
 
         $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
 
@@ -129,7 +129,7 @@ class AdminCreateUser
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The save method for UserToCommunity did not return false but it did send back a message.
              Therefore, it probably did not create the association for your account. ');

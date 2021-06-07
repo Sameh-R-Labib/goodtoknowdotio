@@ -16,8 +16,7 @@ class ForgetATaskProcessor
          */
 
 
-        global $gtk;
-        global $object;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
@@ -31,12 +30,12 @@ class ForgetATaskProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
-        $object->last = get_readable_time($object->last);
+        $g->object->last = get_readable_time($g->object->last);
 
-        $object->next = get_readable_time($object->next);
+        $g->object->next = get_readable_time($g->object->next);
 
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
 
         require VIEWS . DIRSEP . 'forgetataskprocessor.php';

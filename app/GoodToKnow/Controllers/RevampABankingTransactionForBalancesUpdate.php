@@ -22,9 +22,9 @@ class RevampABankingTransactionForBalancesUpdate
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 record id
+        // $g->saved_int01 record id
 
 
         kick_out_loggedoutusers();
@@ -45,7 +45,7 @@ class RevampABankingTransactionForBalancesUpdate
         $edited_amount = float_form_field_prep('amount', -999999999999999.99, 999999999999999.99);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -66,7 +66,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         $db = get_db();
 
-        $object = BankingTransactionForBalances::find_by_id($gtk->saved_int01);
+        $object = BankingTransactionForBalances::find_by_id($g->saved_int01);
 
         if (!$object) {
 
@@ -82,7 +82,7 @@ class RevampABankingTransactionForBalancesUpdate
         $object->bank_id = $edited_bank_id;
         $object->label = $edited_label;
         $object->amount = $edited_amount;
-        $object->time = $gtk->time;
+        $object->time = $g->time;
 
 
         /**

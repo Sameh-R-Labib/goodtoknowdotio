@@ -17,7 +17,7 @@ class StartATaxableIncomeEventProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -33,7 +33,7 @@ class StartATaxableIncomeEventProcessor
         $year_received = integer_form_field_prep('year_received', 1992, 65535);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -49,7 +49,7 @@ class StartATaxableIncomeEventProcessor
          * Create a taxable_income_event array for the record.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'time' => $gtk->time, 'year_received' => $year_received,
+        $array_record = ['user_id' => $g->user_id, 'time' => $g->time, 'year_received' => $year_received,
             'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];
 
 
@@ -74,7 +74,7 @@ class StartATaxableIncomeEventProcessor
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The save method for TaxableIncomeEvent did not return false but it did send
             back a message. Therefore, it probably did not create the TaxableIncomeEvent record. ');

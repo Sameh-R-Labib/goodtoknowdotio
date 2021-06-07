@@ -20,8 +20,8 @@ class EditABitcoinRecordSubmit
 
 
         global $db;
-        global $gtk;
-        // $gtk->saved_int01 bitcoin record id
+        global $g;
+        // $g->saved_int01 bitcoin record id
         global $bitcoin_object;
 
 
@@ -57,7 +57,7 @@ class EditABitcoinRecordSubmit
         $edited_price_point = float_form_field_prep('price_point', 0.0, 999999999999999.99);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -73,7 +73,7 @@ class EditABitcoinRecordSubmit
 
         $db = get_db();
 
-        $bitcoin_object = Bitcoin::find_by_id($gtk->saved_int01);
+        $bitcoin_object = Bitcoin::find_by_id($g->saved_int01);
 
         if (!$bitcoin_object) {
 
@@ -90,7 +90,7 @@ class EditABitcoinRecordSubmit
         $bitcoin_object->current_balance = $edited_current_balance;
         $bitcoin_object->currency = $edited_currency;
         $bitcoin_object->price_point = $edited_price_point;
-        $bitcoin_object->time = $gtk->time;
+        $bitcoin_object->time = $g->time;
         $bitcoin_object->comment = $edited_comment;
 
 

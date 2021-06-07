@@ -14,7 +14,7 @@ class AuthorDeletesOwnPostDelete
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -46,14 +46,14 @@ class AuthorDeletesOwnPostDelete
 
         // We need this in the view.
 
-        $gtk->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $g->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
 
 
         /**
          * Display a form which asks for confirmation.
          */
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'authordeletesownpostdelete.php';
     }

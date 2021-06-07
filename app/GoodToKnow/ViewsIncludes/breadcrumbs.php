@@ -1,8 +1,8 @@
 <?php
 
-global $gtk;
+global $g;
 
-switch ($gtk->page) {
+switch ($g->page) {
     case 'Inbox':
         echo "<a href=\"/ax1/Inbox/page\">Inbox</a>";
         break;

@@ -12,13 +12,13 @@ class SpyCommoditiesSold
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Which tax year?';
+        $g->html_title = 'Which tax year?';
 
 
         require VIEWS . DIRSEP . 'spycommoditiessold.php';

@@ -19,7 +19,7 @@ class PurgeOldMessagesProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -57,9 +57,9 @@ class PurgeOldMessagesProcessor
         /**
          * If $result === false that means the code has a bug.
          *
-         * Add something reflecting general failure of this route to $gtk->message.
+         * Add something reflecting general failure of this route to $g->message.
          *
-         * Add $gtk->message to the session.
+         * Add $g->message to the session.
          *
          * Redirect to Home page.
          */
@@ -74,9 +74,9 @@ class PurgeOldMessagesProcessor
         /**
          * Report that we have completed the purge.
          *
-         * Say something reflecting success $gtk->message.
+         * Say something reflecting success $g->message.
          *
-         * Add $gtk->message to the session.
+         * Add $g->message to the session.
          *
          * Redirect to Home page
          */

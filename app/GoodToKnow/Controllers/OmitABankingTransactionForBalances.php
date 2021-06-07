@@ -14,13 +14,13 @@ class OmitABankingTransactionForBalances
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Which time range for filtering your transaction choices?';
+        $g->html_title = 'Which time range for filtering your transaction choices?';
 
 
         require VIEWS . DIRSEP . 'omitabankingtransactionforbalances.php';

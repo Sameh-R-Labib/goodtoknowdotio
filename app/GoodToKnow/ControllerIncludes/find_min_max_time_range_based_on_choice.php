@@ -1,7 +1,7 @@
 <?php
 
 
-global $gtk;
+global $g;
 
 
 /**
@@ -57,7 +57,7 @@ switch ($choice) {
         $max = time();
         break;
     default:
-        $gtk->message .= " Unexpectedly the switch statement failed. ";
+        $g->message .= " Unexpectedly the switch statement failed. ";
         breakout('');
 }
 

@@ -1,9 +1,9 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/QuickPostDeleteDelProc/page" method="post">
     <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
-    <p>Are you sure you want me to delete "<?= $gtk->long_title_of_post ?>".</p>
+    <p>Are you sure you want me to delete "<?= $g->long_title_of_post ?>".</p>
     <section>
         <label for="yes" class="radio">
             <input type="radio" id="yes" name="choice" value="yes">

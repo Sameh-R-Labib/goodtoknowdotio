@@ -17,9 +17,9 @@ class AuthorDeletesOwnPostChoosePost
          * we'll store a session message and redirect back home.
          */
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 id of topic
+        // $g->saved_int01 id of topic
 
 
         kick_out_loggedoutusers();
@@ -30,9 +30,9 @@ class AuthorDeletesOwnPostChoosePost
 
         // Get all posts (as special array) for the user and topic.
 
-        $gtk->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($gtk->user_id, $gtk->saved_int01);
+        $g->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($g->user_id, $g->saved_int01);
 
-        if (!$gtk->special_post_array) {
+        if (!$g->special_post_array) {
 
             breakout(' There are NO posts for YOU to delete here. ');
 
@@ -43,7 +43,7 @@ class AuthorDeletesOwnPostChoosePost
          * Allow user to choose from amongst the posts which remain.
          */
 
-        $gtk->html_title = 'Which post to delete?';
+        $g->html_title = 'Which post to delete?';
 
         require VIEWS . DIRSEP . 'authordeletesownpostchoosepost.php';
     }

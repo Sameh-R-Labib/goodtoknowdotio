@@ -15,13 +15,13 @@ class TransferPostOwnershipChoosePost
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_posts_along_with_their_authors.php';
 
 
-        $gtk->html_title = 'Which post to transfer ownership of?';
+        $g->html_title = 'Which post to transfer ownership of?';
 
 
         require VIEWS . DIRSEP . 'transferpostownershipchoosepost.php';

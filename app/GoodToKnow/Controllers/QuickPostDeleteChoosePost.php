@@ -16,13 +16,13 @@ class QuickPostDeleteChoosePost
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_posts_along_with_their_authors.php';
 
 
-        $gtk->html_title = 'Which post to delete?';
+        $g->html_title = 'Which post to delete?';
 
 
         require VIEWS . DIRSEP . 'quickpostdeletechoosepost.php';

@@ -1,11 +1,11 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/FineTuneACommoditySoldEdit/page" method="post">
         <h1>Edit a Commodity Sold 📽</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Commodity Sold?</p>
         <section>
-            <?php foreach ($gtk->array as $key => $object): ?>
+            <?php foreach ($g->array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
                     <b><?= $object->commodity_label ?></b>

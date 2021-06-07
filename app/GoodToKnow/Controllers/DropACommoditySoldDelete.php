@@ -9,8 +9,7 @@ class DropACommoditySoldDelete
 {
     function page()
     {
-        global $gtk;
-        global $object;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
@@ -30,32 +29,32 @@ class DropACommoditySoldDelete
 
         // Make `time_bought` and `time_sold`
 
-        $object->time_bought = get_readable_time($object->time_bought);
+        $g->object->time_bought = get_readable_time($g->object->time_bought);
 
-        $object->time_sold = get_readable_time($object->time_sold);
+        $g->object->time_sold = get_readable_time($g->object->time_sold);
 
 
         // Make it so that if price_bought is fiat then price_bought has only two decimal places.
 
-        $object->price_bought = readable_amount_of_money($object->currency_transacted, $object->price_bought);
+        $g->object->price_bought = readable_amount_of_money($g->object->currency_transacted, $g->object->price_bought);
 
 
         // Make it so that if price_sold is fiat then price_bought has only two decimal places.
 
-        $object->price_sold = readable_amount_of_money($object->currency_transacted, $object->price_sold);
+        $g->object->price_sold = readable_amount_of_money($g->object->currency_transacted, $g->object->price_sold);
 
 
         // Make it so that if commodity_amount is fiat then commodity_amount has only two decimal places.
 
-        $object->commodity_amount = readable_amount_of_money($object->commodity_type, $object->commodity_amount);
+        $g->object->commodity_amount = readable_amount_of_money($g->object->commodity_type, $g->object->commodity_amount);
 
 
         // Make it so that if currency_transacted is fiat then profit has only two decimal places.
 
-        $object->profit = readable_amount_of_money($object->currency_transacted, $object->profit);
+        $g->object->profit = readable_amount_of_money($g->object->currency_transacted, $g->object->profit);
 
 
-        $gtk->html_title = 'Delete the commodity sold';
+        $g->html_title = 'Delete the commodity sold';
 
         require VIEWS . DIRSEP . 'dropacommoditysolddelete.php';
     }

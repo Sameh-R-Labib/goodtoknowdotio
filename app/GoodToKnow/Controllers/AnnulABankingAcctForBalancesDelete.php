@@ -17,9 +17,8 @@ class AnnulABankingAcctForBalancesDelete
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
-        global $object;
 
 
         kick_out_loggedoutusers();
@@ -46,15 +45,15 @@ class AnnulABankingAcctForBalancesDelete
 
         $db = get_db();
 
-        $object = BankingAcctForBalances::find_by_id($gtk->saved_int01);
+        $g->object = BankingAcctForBalances::find_by_id($g->saved_int01);
 
-        if (!$object) {
+        if (!$g->object) {
 
             breakout(' I was not able to find the record so I have aborted. ');
 
         }
 
-        $result = $object->delete();
+        $result = $g->object->delete();
 
         if (!$result) {
 

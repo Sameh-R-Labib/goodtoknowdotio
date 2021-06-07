@@ -18,7 +18,7 @@ class MessageTheAuthor
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -28,17 +28,17 @@ class MessageTheAuthor
          * Display the editor interface.
          */
 
-        $gtk->html_title = 'Message the Author';
+        $g->html_title = 'Message the Author';
 
-        $gtk->pre_populate = <<<ROI
-Dear $gtk->author_username,
+        $g->pre_populate = <<<ROI
+Dear $g->author_username,
 
-This message is in regards to your "$gtk->post_name" post in the "$gtk->topic_name" topic of the
-"$gtk->community_name" community.
+This message is in regards to your "$g->post_name" post in the "$g->topic_name" topic of the
+"$g->community_name" community.
 
 Sincerely,
 
-{$gtk->user_username}
+{$g->user_username}
 
 
 ROI;

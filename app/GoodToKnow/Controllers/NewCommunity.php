@@ -16,13 +16,13 @@ class NewCommunity
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
 
 
-        $gtk->html_title = 'Create a New Community';
+        $g->html_title = 'Create a New Community';
 
 
         require VIEWS . DIRSEP . 'newcommunity.php';

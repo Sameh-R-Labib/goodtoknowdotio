@@ -17,8 +17,7 @@ class WriteOverATaxableIncomeEventEdit
          */
 
 
-        global $gtk;
-        global $object;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_taxableincomeevent.php';
@@ -35,25 +34,25 @@ class WriteOverATaxableIncomeEventEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $object->amount = readable_amount_no_commas($object->currency, $object->amount);
+        $g->object->amount = readable_amount_no_commas($g->object->currency, $g->object->amount);
 
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $gtk->time from it and use $gtk->time to pre-populate the following fields:
+         * Instead we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $gtk->time = get_date_h_m_s_from_a_timestamp($object->time);
+        $g->time = get_date_h_m_s_from_a_timestamp($g->object->time);
 
 
         /**
          * Present the view.
          */
 
-        $gtk->html_title = 'Edit the taxable income event\'s record';
+        $g->html_title = 'Edit the taxable income event\'s record';
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeeventedit.php';
     }

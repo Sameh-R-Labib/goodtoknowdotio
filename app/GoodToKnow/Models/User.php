@@ -85,12 +85,12 @@ class User extends GoodObject
          */
 
 
-        global $gtk;
+        global $g;
 
 
         // Determine whether or not the user is suspended per database
 
-        $user_object = User::find_by_id($gtk->user_id);
+        $user_object = User::find_by_id($g->user_id);
 
         if ($user_object === false) return false;
 
@@ -119,7 +119,7 @@ class User extends GoodObject
     public static function authenticate(string $username, string $password)
     {
         global $db;
-        global $gtk;
+        global $g;
 
         /**
          * What you see here could have been done using the find_by_sql
@@ -137,7 +137,7 @@ class User extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $gtk->message .= $stmt->error . ' ';
+                $g->message .= $stmt->error . ' ';
 
                 return false;
 
@@ -166,7 +166,7 @@ class User extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $gtk->message .= ' User::authenticate() caught a thrown exception: ' .
+            $g->message .= ' User::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -175,7 +175,7 @@ class User extends GoodObject
 
         if (!password_verify($password, $user->password)) {
 
-            $gtk->message .= " Authentication failed! ";
+            $g->message .= " Authentication failed! ";
 
             return false;
         }
@@ -219,14 +219,14 @@ class User extends GoodObject
          */
 
         global $db;
-        global $gtk;
+        global $g;
 
         $sql = 'SELECT * FROM `users`
                 WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($sql);
 
-        if (!$array_of_User_objects || !empty($gtk->message)) {
+        if (!$array_of_User_objects || !empty($g->message)) {
 
             return false;
 

@@ -16,7 +16,7 @@ class ByUsernameMessageProcessor
          * the session.
          */
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -50,17 +50,17 @@ class ByUsernameMessageProcessor
 
         $_SESSION['saved_str01'] = $submitted_username;
 
-        $gtk->pre_populate = <<<ROI
+        $g->pre_populate = <<<ROI
 Dear $submitted_username,
 
 I have something I want to tell you.
 
 Sincerely,
 
-{$gtk->user_username}
+{$g->user_username}
 ROI;
 
-        $gtk->html_title = "Compose Message for $submitted_username";
+        $g->html_title = "Compose Message for $submitted_username";
 
         require VIEWS . DIRSEP . 'byusernamemprocessor.php';
     }

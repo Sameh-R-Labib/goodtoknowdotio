@@ -1,14 +1,14 @@
-<?php global $object; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/ForgetATaskDelete/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Label: </b><?php echo $object->label; ?></p>
-        <p><b>Last 🕒: </b><?= $object->last ?></p>
-        <p><b>Next 🕒: </b><?= $object->next ?></p>
-        <p><b>Cycle Type: </b><?= $object->cycle_type ?></p>
-        <p><?= $object->comment ?></p>
+        <p><b>Label: </b><?php echo $g->object->label; ?></p>
+        <p><b>Last 🕒: </b><?= $g->object->last ?></p>
+        <p><b>Next 🕒: </b><?= $g->object->next ?></p>
+        <p><b>Cycle Type: </b><?= $g->object->cycle_type ?></p>
+        <p><?= $g->object->comment ?></p>
         <p>&nbsp;</p>
         <p>Are you sure you want to delete this?</p>
         <section>

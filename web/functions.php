@@ -17,9 +17,9 @@ function fix_michelf(string &$html)
  */
 function kick_out_loggedoutusers()
 {
-    global $gtk;
+    global $g;
 
-    if (!$gtk->is_logged_in || !empty($gtk->message)) {
+    if (!$g->is_logged_in || !empty($g->message)) {
 
         breakout(' Log back in because your session has expired. ');
 
@@ -32,9 +32,9 @@ function kick_out_loggedoutusers()
  */
 function kick_out_nonadmins()
 {
-    global $gtk;
+    global $g;
 
-    if (!$gtk->is_logged_in || !$gtk->is_admin || !empty($gtk->message)) {
+    if (!$g->is_logged_in || !$g->is_admin || !empty($g->message)) {
 
         breakout(' You are not authorized. ');
 
@@ -78,10 +78,10 @@ function redirect_to(string $location)
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
      */
-    global $gtk;
+    global $g;
 
     // passing on the "to display message"
-    $_SESSION['message'] = $gtk->message;
+    $_SESSION['message'] = $g->message;
 
     if ($location !== '') {
 
@@ -107,9 +107,9 @@ function breakout(string $newMessage)
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
      */
-    global $gtk;
+    global $g;
 
-    $gtk->message .= $newMessage;
+    $g->message .= $newMessage;
     reset_feature_session_vars();
     redirect_to("/ax1/Home/page");
 }
@@ -145,7 +145,7 @@ function size_as_text(int $size): string
  */
 function db_connect()
 {
-    global $gtk;
+    global $g;
 
     try {
 
@@ -153,7 +153,7 @@ function db_connect()
 
         if ($db->connect_error) {
 
-            $gtk->message .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
 
         }
@@ -162,7 +162,7 @@ function db_connect()
 
     } catch (Exception $e) {
 
-        $gtk->message .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        $g->message .= ' ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         return false;
 
     }
@@ -176,11 +176,11 @@ function db_connect()
  */
 function get_db()
 {
-    global $gtk;
+    global $g;
 
     $db = db_connect();
 
-    if (!empty($gtk->message) || $db === false) {
+    if (!empty($g->message) || $db === false) {
 
         breakout(' I was unable to connect to the database. ');
 

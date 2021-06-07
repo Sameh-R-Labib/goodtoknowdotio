@@ -17,7 +17,7 @@ class GenerateABankingAccountForBalancesProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -29,7 +29,7 @@ class GenerateABankingAccountForBalancesProcessor
         $acct_name = standard_form_field_prep('acct_name', 3, 30);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -45,7 +45,7 @@ class GenerateABankingAccountForBalancesProcessor
          * Create a BankingAcctForBalances array for the record.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'acct_name' => $acct_name, 'start_time' => $gtk->time,
+        $array_record = ['user_id' => $g->user_id, 'acct_name' => $acct_name, 'start_time' => $g->time,
             'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
 
 
@@ -70,7 +70,7 @@ class GenerateABankingAccountForBalancesProcessor
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' Your save for bank account did not fail but it did send back a message.
              Therefore, it probably did not create the bank account 😟 ');

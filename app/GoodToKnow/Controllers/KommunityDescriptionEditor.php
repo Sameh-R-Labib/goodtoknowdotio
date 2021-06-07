@@ -6,7 +6,7 @@ class KommunityDescriptionEditor
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -16,7 +16,7 @@ class KommunityDescriptionEditor
          * Present a form which collects the community's name.
          */
 
-        $gtk->html_title = "Community's Description Editor";
+        $g->html_title = "Community's Description Editor";
 
         require VIEWS . DIRSEP . 'kommunitydescriptioneditor.php';
     }

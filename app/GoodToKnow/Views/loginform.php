@@ -1,4 +1,4 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -13,7 +13,7 @@
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <title><?= $gtk->html_title ?></title>
+        <title><?= $g->html_title ?></title>
     </head>
 <body>
 <form class="login" action="/ax1/LoginScript/page" method="post">

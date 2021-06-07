@@ -9,7 +9,7 @@ class BalanceOutTheSequenceNumbers
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
         global $thing_type;
         global $thing_name;
@@ -30,21 +30,21 @@ class BalanceOutTheSequenceNumbers
          * Error out if the thing is a post.
          */
 
-        if ($gtk->type_of_resource_requested === 'post') {
+        if ($g->type_of_resource_requested === 'post') {
             breakout(' It is not possible to run this operation on a post. ');
         }
 
-        $thing_type = ucfirst($gtk->type_of_resource_requested);
+        $thing_type = ucfirst($g->type_of_resource_requested);
 
         if ($thing_type === 'Community') {
 
-            $thing_name = $gtk->community_name;
-            $thing_id = $gtk->community_id;
+            $thing_name = $g->community_name;
+            $thing_id = $g->community_id;
 
         } else {
 
-            $thing_name = $gtk->topic_name;
-            $thing_id = $gtk->topic_id;
+            $thing_name = $g->topic_name;
+            $thing_id = $g->topic_id;
 
         }
 
@@ -60,7 +60,7 @@ class BalanceOutTheSequenceNumbers
 
             // Get all topics for community.
 
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($gtk->community_id);
+            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
 
             if (!$result) {
 
@@ -72,7 +72,7 @@ class BalanceOutTheSequenceNumbers
 
             // Get all posts for topic.
 
-            $result = TopicToPost::get_posts_array_for_a_topic($gtk->topic_id);
+            $result = TopicToPost::get_posts_array_for_a_topic($g->topic_id);
 
             if (!$result) {
 
@@ -124,7 +124,7 @@ class BalanceOutTheSequenceNumbers
             }
         }
 
-        $gtk->html_title = 'Balance Out The Sequence Numbers';
+        $g->html_title = 'Balance Out The Sequence Numbers';
 
         require VIEWS . DIRSEP . 'balanceoutthesequencenumbers.php';
     }

@@ -6,26 +6,26 @@ class ControlPanel
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
-        if (!$gtk->is_logged_in or $gtk->is_admin) {
+        if (!$g->is_logged_in or $g->is_admin) {
 
             breakout(' Hey, either your session timed out or you are an admin and do not belong here in this CP. ');
 
         }
 
 
-        $gtk->html_title = 'Control Panel';
+        $g->html_title = 'Control Panel';
 
 
-        $gtk->page = 'CP';
+        $g->page = 'CP';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->message .= " Welcome to your Control Panel. ";
+        $g->message .= " Welcome to your Control Panel. ";
 
 
         require VIEWS . DIRSEP . 'controlpanel.php';

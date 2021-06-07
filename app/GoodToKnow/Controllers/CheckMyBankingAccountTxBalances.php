@@ -16,13 +16,13 @@ class CheckMyBankingAccountTxBalances
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
 
-        $gtk->html_title = 'Which banking account for balances?';
+        $g->html_title = 'Which banking account for balances?';
 
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalances.php';

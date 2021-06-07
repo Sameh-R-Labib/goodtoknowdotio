@@ -12,13 +12,13 @@ class WriteOverATaxableIncomeEvent
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Which year received?';
+        $g->html_title = 'Which year received?';
 
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeevent.php';

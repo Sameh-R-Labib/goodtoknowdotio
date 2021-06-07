@@ -6,7 +6,7 @@ class UnsuspendAccount
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -16,7 +16,7 @@ class UnsuspendAccount
          * Present a form which collects the username.
          */
 
-        $gtk->html_title = "Unsuspend Account";
+        $g->html_title = "Unsuspend Account";
 
         require VIEWS . DIRSEP . 'unsuspendaccount.php';
     }

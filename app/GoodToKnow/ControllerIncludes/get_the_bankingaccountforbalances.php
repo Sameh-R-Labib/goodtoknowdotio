@@ -5,8 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $db;
-global $object;
-global $gtk;
+global $g;
 
 
 kick_out_loggedoutusers();
@@ -29,9 +28,9 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$object = BankingAcctForBalances::find_by_id($chosen_id);
+$g->object = BankingAcctForBalances::find_by_id($chosen_id);
 
-if (!$object) {
+if (!$g->object) {
 
     breakout(' Unexpectedly I could not find that banking account for balances. ');
 
@@ -42,7 +41,7 @@ if (!$object) {
  * 3) Make sure this object belongs to the user.
  */
 
-if ($object->user_id != $gtk->user_id) {
+if ($g->object->user_id != $g->user_id) {
 
     breakout(' Error 15450232. ');
 

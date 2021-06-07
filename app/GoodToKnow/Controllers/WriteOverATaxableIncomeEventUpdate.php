@@ -22,9 +22,9 @@ class WriteOverATaxableIncomeEventUpdate
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 record id
+        // $g->saved_int01 record id
 
 
         kick_out_loggedoutusers();
@@ -55,7 +55,7 @@ class WriteOverATaxableIncomeEventUpdate
         $edited_comment = standard_form_field_prep('comment', 0, 800);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
 
@@ -80,7 +80,7 @@ class WriteOverATaxableIncomeEventUpdate
 
         $db = get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($gtk->saved_int01);
+        $object = TaxableIncomeEvent::find_by_id($g->saved_int01);
 
         if (!$object) {
 
@@ -98,7 +98,7 @@ class WriteOverATaxableIncomeEventUpdate
         $object->comment = $edited_comment;
         $object->amount = $edited_amount;
         $object->currency = $edited_currency;
-        $object->time = $gtk->time;
+        $object->time = $g->time;
 
 
         /**

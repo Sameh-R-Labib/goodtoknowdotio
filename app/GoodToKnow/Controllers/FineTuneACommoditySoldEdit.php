@@ -17,8 +17,7 @@ class FineTuneACommoditySoldEdit
          */
 
 
-        global $gtk;
-        global $object;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
@@ -30,15 +29,15 @@ class FineTuneACommoditySoldEdit
 
         /**
          * This type of record has a field called `time_bought` and a field called `time_sold`. We are Not going to
-         * pre-populate form fields with them. Instead we derive the arrays called $gtk->time_bought and $gtk->time_sold
+         * pre-populate form fields with them. Instead we derive the arrays called $g->time_bought and $g->time_sold
          * from them and use the derived arrays to pre-populate the corresponding fields in the form which we present below.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $gtk->time_bought = get_date_h_m_s_from_a_timestamp($object->time_bought);
+        $g->time_bought = get_date_h_m_s_from_a_timestamp($g->object->time_bought);
 
-        $gtk->time_sold = get_date_h_m_s_from_a_timestamp($object->time_sold);
+        $g->time_sold = get_date_h_m_s_from_a_timestamp($g->object->time_sold);
 
 
         /**
@@ -47,31 +46,31 @@ class FineTuneACommoditySoldEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $object->price_bought = readable_amount_no_commas($object->currency_transacted, $object->price_bought);
+        $g->object->price_bought = readable_amount_no_commas($g->object->currency_transacted, $g->object->price_bought);
 
 
         /**
          * Make it so that if currency_transacted is fiat then price_sold has only two decimal places.
          */
 
-        $object->price_sold = readable_amount_no_commas($object->currency_transacted, $object->price_sold);
+        $g->object->price_sold = readable_amount_no_commas($g->object->currency_transacted, $g->object->price_sold);
 
 
         /**
          * Make it so that if commodity_amount is fiat then commodity_amount has only two decimal places.
          */
 
-        $object->commodity_amount = readable_amount_no_commas($object->commodity_type, $object->commodity_amount);
+        $g->object->commodity_amount = readable_amount_no_commas($g->object->commodity_type, $g->object->commodity_amount);
 
 
         /**
          * Make it so that if currency_transacted is fiat then profit has only two decimal places.
          */
 
-        $object->profit = readable_amount_no_commas($object->currency_transacted, $object->profit);
+        $g->object->profit = readable_amount_no_commas($g->object->currency_transacted, $g->object->profit);
 
 
-        $gtk->html_title = 'Edit the commodity sold';
+        $g->html_title = 'Edit the commodity sold';
 
 
         require VIEWS . DIRSEP . 'finetuneacommoditysoldedit.php';

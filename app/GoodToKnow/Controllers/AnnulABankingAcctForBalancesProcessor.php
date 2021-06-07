@@ -9,8 +9,7 @@ class AnnulABankingAcctForBalancesProcessor
 {
     function page()
     {
-        global $gtk;
-        global $object;
+        global $g;
 
         /**
          * 1) Determines the id of the banking_acct_for_balances record from 'choice' and
@@ -31,16 +30,16 @@ class AnnulABankingAcctForBalancesProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-        $object->start_time = get_readable_time($object->start_time);
-        $object->start_balance = readable_amount_of_money($object->currency, $object->start_balance);
-        $object->comment = nl2br($object->comment, false);
+        $g->object->start_time = get_readable_time($g->object->start_time);
+        $g->object->start_balance = readable_amount_of_money($g->object->currency, $g->object->start_balance);
+        $g->object->comment = nl2br($g->object->comment, false);
 
 
         /**
          * 3) Presents a form containing data from the record and asking for permission to delete.
          */
 
-        $gtk->html_title = 'Are you sure?';
+        $g->html_title = 'Are you sure?';
 
         require VIEWS . DIRSEP . 'annulabankingacctforbalancesprocessor.php';
     }

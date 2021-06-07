@@ -18,7 +18,7 @@ class InitializeABitcoinRecordProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
         kick_out_loggedoutusers();
 
@@ -38,7 +38,7 @@ class InitializeABitcoinRecordProcessor
         $price_point = float_form_field_prep('price_point', 0.0, 999999999999999.99);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -50,9 +50,9 @@ class InitializeABitcoinRecordProcessor
          * Create a Bitcoin array for the record.
          */
 
-        $array_bitcoin_record = ['user_id' => $gtk->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
+        $array_bitcoin_record = ['user_id' => $g->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
             'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
-            'time' => $gtk->time, 'comment' => $comment];
+            'time' => $g->time, 'comment' => $comment];
 
 
         /**
@@ -76,7 +76,7 @@ class InitializeABitcoinRecordProcessor
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The save method for Bitcoin did not return false but it did send back a message.
              Therefore, it probably did not create the Bitcoin record. ');

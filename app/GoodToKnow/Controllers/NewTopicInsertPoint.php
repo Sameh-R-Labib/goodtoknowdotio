@@ -18,13 +18,13 @@ class NewTopicInsertPoint
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
 
-        $gtk->html_title = 'Where will the new topic go?';
+        $g->html_title = 'Where will the new topic go?';
 
 
         require VIEWS . DIRSEP . 'newtopicinsertpoint.php';

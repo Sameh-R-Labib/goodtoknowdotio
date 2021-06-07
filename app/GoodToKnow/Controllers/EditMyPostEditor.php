@@ -8,7 +8,7 @@ class EditMyPostEditor
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -42,9 +42,9 @@ class EditMyPostEditor
          * Retrieve the markdown for $post_object from the file system.
          */
 
-        $gtk->markdown = file_get_contents($post_object->markdown_file);
+        $g->markdown = file_get_contents($post_object->markdown_file);
 
-        if ($gtk->markdown === false) {
+        if ($g->markdown === false) {
 
             breakout(' Unable to read source file. ');
 
@@ -55,7 +55,7 @@ class EditMyPostEditor
          * Display the editor interface.
          */
 
-        $gtk->html_title = 'Editor';
+        $g->html_title = 'Editor';
 
         require VIEWS . DIRSEP . 'editmyposteditor.php';
     }

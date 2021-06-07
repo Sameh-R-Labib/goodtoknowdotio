@@ -15,7 +15,7 @@ class DropACommoditySoldConfirmation
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -43,7 +43,7 @@ class DropACommoditySoldConfirmation
 
         $db = get_db();
 
-        $object = CommoditySold::find_by_id($gtk->saved_int01);
+        $object = CommoditySold::find_by_id($g->saved_int01);
 
         if (!$object) {
 

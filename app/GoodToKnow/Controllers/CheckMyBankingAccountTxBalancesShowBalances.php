@@ -33,10 +33,10 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
         global $account;
-        // $gtk->saved_int01 id of BankingAcctForBalances record
+        // $g->saved_int01 id of BankingAcctForBalances record
 
 
         kick_out_loggedoutusers();
@@ -49,7 +49,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
 
-        $account = BankingAcctForBalances::find_by_id($gtk->saved_int01);
+        $account = BankingAcctForBalances::find_by_id($g->saved_int01);
 
         if (!$account) {
 
@@ -67,14 +67,14 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * be for the currently chosen BankingAcctForBalances.
          */
 
-        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
+        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
         $sql .= ' AND `bank_id` = ' . $db->real_escape_string($account->id);
         $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
-        $gtk->array = BankingTransactionForBalances::find_by_sql($sql);
+        $g->array = BankingTransactionForBalances::find_by_sql($sql);
 
-        if (!$gtk->array || !empty($gtk->message)) {
+        if (!$g->array || !empty($g->message)) {
 
             breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
 
@@ -88,7 +88,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         $running_total = $account->start_balance;
 
-        foreach ($gtk->array as $transaction) {
+        foreach ($g->array as $transaction) {
             $running_total += $transaction->amount;
 
             if (abs($running_total) >= abs(0.00000000001)) {
@@ -123,7 +123,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
 
 
-        foreach ($gtk->array as $transaction) {
+        foreach ($g->array as $transaction) {
             if (is_crypto($account->currency)) {
                 $transaction->amount = number_format($transaction->amount, 8);
                 $transaction->balance = number_format($transaction->balance, 8);
@@ -142,19 +142,19 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         // Reverse the order
 
-        $gtk->array = array_reverse($gtk->array);
+        $g->array = array_reverse($g->array);
 
 
-        $gtk->html_title = 'Transactions';
+        $g->html_title = 'Transactions';
 
 
-        $gtk->page = 'CheckMyBankingAccountTxBalances';
+        $g->page = 'CheckMyBankingAccountTxBalances';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->message .= ' Here are your transactions and their balances. ';
+        $g->message .= ' Here are your transactions and their balances. ';
 
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';

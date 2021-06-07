@@ -13,7 +13,7 @@ class FeatureATask
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -25,18 +25,18 @@ class FeatureATask
 
         // Get an array of Task objects for this user.
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
 
-        $gtk->array = Task::find_by_sql($sql);
+        $g->array = Task::find_by_sql($sql);
 
-        if (!$gtk->array || !empty($gtk->message)) {
+        if (!$g->array || !empty($g->message)) {
 
             breakout(' I could NOT find any tasks. ');
 
         }
 
 
-        $gtk->html_title = 'Which task record?';
+        $g->html_title = 'Which task record?';
 
 
         require VIEWS . DIRSEP . 'featureatask.php';

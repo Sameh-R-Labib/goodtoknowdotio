@@ -5,7 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
-global $gtk;
+global $g;
 
 
 /**
@@ -23,7 +23,7 @@ require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
  * Get `timezone`.
  */
 
-$gtk->timezone = timezone_form_field_prep('timezone');
+$g->timezone = timezone_form_field_prep('timezone');
 
 
 /**
@@ -120,17 +120,17 @@ $time_sold_second = integer_form_field_prep('time_sold_second', 0, 59);
 
 
 /**
- * Get the timestamps $gtk->time_bought and $gtk->time_sold from the gathered data.
+ * Get the timestamps $g->time_bought and $g->time_sold from the gathered data.
  */
 
-$gtk->time_bought = mktime($time_bought_hour, $time_bought_minute, $time_bought_second, $mm_time_bought, $dd_time_bought, $yyyy_time_bought);
+$g->time_bought = mktime($time_bought_hour, $time_bought_minute, $time_bought_second, $mm_time_bought, $dd_time_bought, $yyyy_time_bought);
 
-$gtk->time_sold = mktime($time_sold_hour, $time_sold_minute, $time_sold_second, $mm_time_sold, $dd_time_sold, $yyyy_time_sold);
+$g->time_sold = mktime($time_sold_hour, $time_sold_minute, $time_sold_second, $mm_time_sold, $dd_time_sold, $yyyy_time_sold);
 
 
 /**
  * Never allow time to be 0.
  */
 
-if ($gtk->time_bought === 0) $gtk->time_bought = 1546300800;
-if ($gtk->time_sold === 0) $gtk->time_sold = 1546300800;
+if ($g->time_bought === 0) $g->time_bought = 1546300800;
+if ($g->time_sold === 0) $g->time_sold = 1546300800;

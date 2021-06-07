@@ -6,22 +6,22 @@ class CPPostings
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
 
 
-        $gtk->page = 'CPPostings';
+        $g->page = 'CPPostings';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'Postings';
+        $g->html_title = 'Postings';
 
 
-        $gtk->message .= ' Manage postings. ';
+        $g->message .= ' Manage postings. ';
 
 
         require VIEWS . DIRSEP . 'cppostings.php';

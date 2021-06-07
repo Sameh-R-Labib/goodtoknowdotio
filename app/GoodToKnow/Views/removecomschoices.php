@@ -1,4 +1,4 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/RemoveComsChoicesProcessor/page" method="post">
     <h1>Remove Communities From the User</h1>
@@ -8,7 +8,7 @@
     </p>
     <?php require SESSIONMESSAGE; ?>
     <section>
-        <?php foreach ($gtk->coms_user_belongs_to as $key => $value): ?>
+        <?php foreach ($g->coms_user_belongs_to as $key => $value): ?>
             <label class="checkbox">
                 <input type="checkbox" name="choice-<?= $key + 1 ?>" value="<?= $value->id ?>">
                 <?= $value->community_name ?>

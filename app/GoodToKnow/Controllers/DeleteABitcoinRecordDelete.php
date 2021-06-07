@@ -15,7 +15,7 @@ class DeleteABitcoinRecordDelete
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -43,7 +43,7 @@ class DeleteABitcoinRecordDelete
 
         $db = get_db();
 
-        $bitcoin = Bitcoin::find_by_id($gtk->saved_int01);
+        $bitcoin = Bitcoin::find_by_id($g->saved_int01);
 
         if (!$bitcoin) {
 

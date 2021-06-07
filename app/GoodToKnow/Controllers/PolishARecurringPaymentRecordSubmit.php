@@ -20,9 +20,9 @@ class PolishARecurringPaymentRecordSubmit
          * 5) Report success.
          */
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 recurring_payment id
+        // $g->saved_int01 recurring_payment id
 
 
         kick_out_loggedoutusers();
@@ -43,7 +43,7 @@ class PolishARecurringPaymentRecordSubmit
         $edited_amount_paid = float_form_field_prep('amount_paid', 0.0, 999999999999999.99);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -56,7 +56,7 @@ class PolishARecurringPaymentRecordSubmit
 
         $db = get_db();
 
-        $object = RecurringPayment::find_by_id($gtk->saved_int01);
+        $object = RecurringPayment::find_by_id($g->saved_int01);
 
         if (!$object) {
 
@@ -72,7 +72,7 @@ class PolishARecurringPaymentRecordSubmit
         $object->label = $edited_label;
         $object->currency = $edited_currency;
         $object->amount_paid = $edited_amount_paid;
-        $object->time = $gtk->time;
+        $object->time = $g->time;
         $object->comment = $edited_comment;
 
 

@@ -51,7 +51,7 @@ class Message extends GoodObject
          */
 
         global $db;
-        global $gtk;
+        global $g;
 
         /**
          * 1) Find all old messages.
@@ -68,7 +68,7 @@ class Message extends GoodObject
 
         if ($array_of_found_messages === false) {
 
-            $gtk->message .= " An error occured while trying to find messages. ";
+            $g->message .= " An error occured while trying to find messages. ";
 
             return false;
 
@@ -94,7 +94,7 @@ class Message extends GoodObject
 
             if ($result === false) {
 
-                $gtk->message .= " An error occured while trying to delete_all_having_particular_message_id. ";
+                $g->message .= " An error occured while trying to delete_all_having_particular_message_id. ";
 
                 return false;
 
@@ -112,7 +112,7 @@ class Message extends GoodObject
 
             if ($result === false) {
 
-                $gtk->message .= " An error occured while running delete method on a Message object within purge_all_messages_older_than_date ";
+                $g->message .= " An error occured while running delete method on a Message object within purge_all_messages_older_than_date ";
 
                 return false;
 

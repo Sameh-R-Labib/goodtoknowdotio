@@ -5,7 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
 
-global $gtk;
+global $g;
 
 
 /**
@@ -21,7 +21,7 @@ require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
  * Get `timezone`.
  */
 
-$gtk->timezone = timezone_form_field_prep('timezone');
+$g->timezone = timezone_form_field_prep('timezone');
 
 
 /**
@@ -79,14 +79,14 @@ $second = integer_form_field_prep('second', 0, 59);
 
 
 /**
- * Get the timestamp $gtk->time from the gathered data.
+ * Get the timestamp $g->time from the gathered data.
  */
 
-$gtk->time = mktime($hour, $minute, $second, $mm, $dd, $yyyy);
+$g->time = mktime($hour, $minute, $second, $mm, $dd, $yyyy);
 
 
 /**
- * Never allow $gtk->time to be 0.
+ * Never allow $g->time to be 0.
  */
 
-if ($gtk->time === 0) $gtk->time = 1546300800;
+if ($g->time === 0) $g->time = 1546300800;

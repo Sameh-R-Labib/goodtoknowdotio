@@ -8,7 +8,7 @@ class AdminPassCodeGenFormProcessor
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -33,7 +33,7 @@ class AdminPassCodeGenFormProcessor
          * Present a form where Admin can enter comments about new person/user.
          */
 
-        $gtk->html_title = 'Admin Pass-Code Gen Form Processor';
+        $g->html_title = 'Admin Pass-Code Gen Form Processor';
 
         require VIEWS . DIRSEP . 'adminpasscodegenformprocessor.php';
     }

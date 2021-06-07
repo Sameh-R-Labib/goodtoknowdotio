@@ -22,10 +22,10 @@ class KommunityDescriptionEditorFormProcessor
          *  7) Update the database with this Community object.
          */
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_str01 the community's name
-        // $gtk->saved_int01 the community's id
+        // $g->saved_str01 the community's name
+        // $g->saved_int01 the community's id
 
         kick_out_nonadmins();
 
@@ -45,7 +45,7 @@ class KommunityDescriptionEditorFormProcessor
 
         $db = get_db();
 
-        $community_object = Community::find_by_id($gtk->saved_int01);
+        $community_object = Community::find_by_id($g->saved_int01);
 
         if (!$community_object) {
 
@@ -88,6 +88,6 @@ class KommunityDescriptionEditorFormProcessor
          * Report success.
          */
 
-        breakout(" I have updated $gtk->saved_str01's record. ");
+        breakout(" I have updated $g->saved_str01's record. ");
     }
 }

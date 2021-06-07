@@ -9,9 +9,9 @@ class RemoveComsChoices
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_str01 is user's username
+        // $g->saved_str01 is user's username
 
 
         kick_out_nonadmins();
@@ -32,7 +32,7 @@ class RemoveComsChoices
 
         $db = get_db();
 
-        $user_object = User::find_by_username($gtk->saved_str01);
+        $user_object = User::find_by_username($g->saved_str01);
 
         if (!$user_object) {
 
@@ -54,9 +54,9 @@ class RemoveComsChoices
          * 3) Get all the communities the user belongs to.
          */
 
-        $gtk->coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
+        $g->coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
 
-        if ($gtk->coms_user_belongs_to === false) {
+        if ($g->coms_user_belongs_to === false) {
 
             breakout(' Error encountered trying to retrieve communities for this user. ');
 
@@ -67,7 +67,7 @@ class RemoveComsChoices
          * 4) Present communities as check boxes
          */
 
-        $gtk->html_title = 'Remove Community Choices';
+        $g->html_title = 'Remove Community Choices';
 
         require VIEWS . DIRSEP . 'removecomschoices.php';
     }

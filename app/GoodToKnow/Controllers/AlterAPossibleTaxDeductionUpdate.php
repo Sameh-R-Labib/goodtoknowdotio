@@ -20,10 +20,9 @@ class AlterAPossibleTaxDeductionUpdate
          * 5) Report success.
          */
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 record id
-        global $object;
+        // $g->saved_int01 record id
 
         kick_out_loggedoutusers();
 
@@ -51,9 +50,9 @@ class AlterAPossibleTaxDeductionUpdate
 
         $db = get_db();
 
-        $object = PossibleTaxDeduction::find_by_id($gtk->saved_int01);
+        $g->object = PossibleTaxDeduction::find_by_id($g->saved_int01);
 
-        if (!$object) {
+        if (!$g->object) {
 
             breakout(' Unexpectedly I could not find that record. ');
 
@@ -64,16 +63,16 @@ class AlterAPossibleTaxDeductionUpdate
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
 
-        $object->label = $edited_label;
-        $object->year_paid = $edited_year_paid;
-        $object->comment = $edited_comment;
+        $g->object->label = $edited_label;
+        $g->object->year_paid = $edited_year_paid;
+        $g->object->comment = $edited_comment;
 
 
         /**
          * 4) Update/save the updated record in the database.
          */
 
-        $result = $object->save();
+        $result = $g->object->save();
 
         if ($result === false) {
 
@@ -86,6 +85,6 @@ class AlterAPossibleTaxDeductionUpdate
          * 5) Report success.
          */
 
-        breakout(" I've updated <b>{$object->label}</b>. ");
+        breakout(" I've updated <b>{$g->object->label}</b>. ");
     }
 }

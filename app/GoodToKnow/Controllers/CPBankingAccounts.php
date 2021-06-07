@@ -6,22 +6,22 @@ class CPBankingAccounts
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->page = 'CPBankingAccounts';
+        $g->page = 'CPBankingAccounts';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'CRUD For Bank Accounts And Their Starting Balances';
+        $g->html_title = 'CRUD For Bank Accounts And Their Starting Balances';
 
 
-        $gtk->message .= ' Manage banking accounts. ';
+        $g->message .= ' Manage banking accounts. ';
 
 
         require VIEWS . DIRSEP . 'cpbankingaccounts.php';

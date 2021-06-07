@@ -19,8 +19,7 @@ class RevampABankingTransactionForBalancesEdit
          */
 
 
-        global $gtk;
-        global $object;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
@@ -40,7 +39,7 @@ class RevampABankingTransactionForBalancesEdit
          * But first we need to discern the currency from the BankingAcctForBalances.
          */
 
-        $bank = BankingAcctForBalances::find_by_id($object->bank_id);
+        $bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
 
         if (!$bank) {
 
@@ -50,28 +49,28 @@ class RevampABankingTransactionForBalancesEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $object->amount = readable_amount_no_commas($bank->currency, $object->amount);
+        $g->object->amount = readable_amount_no_commas($bank->currency, $g->object->amount);
 
 
         // I had to move this down here to use bank_id before it got changed.
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $object->bank_id = get_html_select_box_containing_the_bank_accounts($gtk->user_id, $object->bank_id);
+        $g->object->bank_id = get_html_select_box_containing_the_bank_accounts($g->user_id, $g->object->bank_id);
 
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $gtk->time from it and use $gtk->time to pre-populate the following fields:
+         * Instead we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $gtk->time = get_date_h_m_s_from_a_timestamp($object->time);
+        $g->time = get_date_h_m_s_from_a_timestamp($g->object->time);
 
 
-        $gtk->html_title = 'Edit the banking_transaction_for_balances record';
+        $g->html_title = 'Edit the banking_transaction_for_balances record';
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';

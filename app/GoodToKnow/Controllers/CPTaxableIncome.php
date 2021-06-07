@@ -6,22 +6,22 @@ class CPTaxableIncome
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->page = 'CPTaxableIncome';
+        $g->page = 'CPTaxableIncome';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
-        $gtk->html_title = 'Taxable Income';
+        $g->html_title = 'Taxable Income';
 
 
-        $gtk->message .= ' Manage taxable income. ';
+        $g->message .= ' Manage taxable income. ';
 
 
         require VIEWS . DIRSEP . 'cptaxableincome.php';

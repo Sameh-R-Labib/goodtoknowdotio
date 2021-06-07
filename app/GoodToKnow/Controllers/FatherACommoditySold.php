@@ -11,13 +11,13 @@ class FatherACommoditySold
          */
 
 
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Create a Commodity Sold';
+        $g->html_title = 'Create a Commodity Sold';
 
 
         require VIEWS . DIRSEP . 'fatheracommoditysold.php';

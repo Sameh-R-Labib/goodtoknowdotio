@@ -14,7 +14,7 @@ class ForgetATask
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -24,19 +24,19 @@ class ForgetATask
         $db = get_db();
 
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($gtk->user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
 
 
-        $gtk->array = Task::find_by_sql($sql);
+        $g->array = Task::find_by_sql($sql);
 
-        if (!$gtk->array || !empty($gtk->message)) {
+        if (!$g->array || !empty($g->message)) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 
         }
 
 
-        $gtk->html_title = 'Which task?';
+        $g->html_title = 'Which task?';
 
 
         require VIEWS . DIRSEP . 'forgetatask.php';

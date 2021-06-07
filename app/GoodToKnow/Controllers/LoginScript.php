@@ -14,7 +14,7 @@ class LoginScript
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
 
         $db = db_connect();
@@ -41,7 +41,7 @@ class LoginScript
      */
     private static function store_application_state(object $user)
     {
-        global $gtk;
+        global $g;
 
         /**
          * Put user's data in session.
@@ -81,12 +81,12 @@ class LoginScript
          *  - Key is a community id
          *  - Value is a community name
          */
-        $gtk->special_community_array = UserToCommunity::find_communities_of_user($user->id);
+        $g->special_community_array = UserToCommunity::find_communities_of_user($user->id);
 
-        if ($gtk->special_community_array === false) {
+        if ($g->special_community_array === false) {
 
-            $gtk->message .= " Failed to find the array of the user's communities. ";
-            $_SESSION['message'] = $gtk->message;
+            $g->message .= " Failed to find the array of the user's communities. ";
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -97,7 +97,7 @@ class LoginScript
          * Finally save them to session
          */
 
-        $_SESSION['special_community_array'] = $gtk->special_community_array;
+        $_SESSION['special_community_array'] = $g->special_community_array;
         $_SESSION['last_refresh_communities'] = time();
         $_SESSION['type_of_resource_requested'] = 'community';
         $_SESSION['topic_id'] = 0;
@@ -108,18 +108,18 @@ class LoginScript
          * Find and save in session a value for special_topic_array.
          */
 
-        $gtk->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($user->id_of_default_community);
+        $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($user->id_of_default_community);
 
-        if (!$gtk->special_topic_array) {
+        if (!$g->special_topic_array) {
 
-            $gtk->message .= " I didn't find any topics for your default community. ";
-            $_SESSION['message'] .= $gtk->message;
+            $g->message .= " I didn't find any topics for your default community. ";
+            $_SESSION['message'] .= $g->message;
 
             redirect_to("/ax1/Home/page");
 
         }
 
-        $_SESSION['special_topic_array'] = $gtk->special_topic_array;
+        $_SESSION['special_topic_array'] = $g->special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
     }
 
@@ -129,12 +129,12 @@ class LoginScript
      */
     private static function login_the_user($user)
     {
-        global $gtk;
+        global $g;
 
         if ($user === false) {
 
-            $gtk->message .= " Authentication failed! ";
-            $_SESSION['message'] = $gtk->message;
+            $g->message .= " Authentication failed! ";
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -149,8 +149,8 @@ class LoginScript
          */
         if ($user->is_suspended) {
 
-            $gtk->message .= " No active account exists for this username. ";
-            $_SESSION['message'] = $gtk->message;
+            $g->message .= " No active account exists for this username. ";
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -169,7 +169,7 @@ class LoginScript
      */
     private static function assimilate_input(string &$submitted_username, string &$submitted_password)
     {
-        global $gtk;
+        global $g;
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
@@ -184,7 +184,7 @@ class LoginScript
         if (!is_username_syntactically($submitted_username) ||
             !is_password_syntactically($submitted_password)) {
 
-            $_SESSION['message'] = $gtk->message;
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 
@@ -196,14 +196,14 @@ class LoginScript
      */
     private static function init()
     {
-        global $gtk;
+        global $g;
         global $db;
 
-        if ($gtk->is_logged_in) {
+        if ($g->is_logged_in) {
 
-            $gtk->message .= " I don't know exactly why you ended up on this page but what I do know is that
+            $g->message .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";
-            $_SESSION['message'] = $gtk->message;
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
@@ -212,10 +212,10 @@ class LoginScript
         // For denial of service attacks
         sleep(1);
 
-        if (!empty($gtk->message) || $db === false) {
+        if (!empty($g->message) || $db === false) {
 
-            $gtk->message .= ' Database connection failed. ';
-            $_SESSION['message'] = $gtk->message;
+            $g->message .= ' Database connection failed. ';
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/LoginForm/page");
 

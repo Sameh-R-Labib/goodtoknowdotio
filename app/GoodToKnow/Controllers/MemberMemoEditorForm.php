@@ -8,9 +8,9 @@ class MemberMemoEditorForm
 {
     function page()
     {
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_str01 has user's username. Is changed in this file and is used in the view.
+        // $g->saved_str01 has user's username. Is changed in this file and is used in the view.
         global $user_object;
 
 
@@ -32,7 +32,7 @@ class MemberMemoEditorForm
 
         $db = get_db();
 
-        $user_object = User::find_by_username($gtk->saved_str01);
+        $user_object = User::find_by_username($g->saved_str01);
 
         if (!$user_object) {
 
@@ -50,7 +50,7 @@ class MemberMemoEditorForm
          *     is to be used to pro-populate the form.
          */
 
-        $gtk->html_title = 'Member Memo Editor Form';
+        $g->html_title = 'Member Memo Editor Form';
 
         require VIEWS . DIRSEP . 'membermemoeditorform.php';
     }

@@ -5,8 +5,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $db;
-global $gtk;
-global $object;
+global $g;
 
 
 kick_out_loggedoutusers();
@@ -30,9 +29,9 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$object = Task::find_by_id($chosen_id);
+$g->object = Task::find_by_id($chosen_id);
 
-if (!$object) {
+if (!$g->object) {
 
     breakout(' Unexpectedly, I could not find that task. ');
 
@@ -43,7 +42,7 @@ if (!$object) {
  * 3) Make sure that object belongs to this user.
  */
 
-if ($object->user_id != $gtk->user_id) {
+if ($g->object->user_id != $g->user_id) {
 
     breakout(' Error 46985422. ');
 

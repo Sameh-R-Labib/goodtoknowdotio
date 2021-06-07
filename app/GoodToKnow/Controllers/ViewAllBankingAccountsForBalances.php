@@ -14,7 +14,7 @@ class ViewAllBankingAccountsForBalances
          */
 
 
-        global $gtk;
+        global $g;
         global $array_of_objects;
 
 
@@ -41,13 +41,13 @@ class ViewAllBankingAccountsForBalances
          * Present the view.
          */
 
-        $gtk->html_title = "Bank Account";
+        $g->html_title = "Bank Account";
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
-        $gtk->page = 'ViewAllBankingAccountsForBalances';
+        $g->page = 'ViewAllBankingAccountsForBalances';
 
-        $gtk->message .= " Here are all your bank accounts. ";
+        $g->message .= " Here are all your bank accounts. ";
 
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';
     }

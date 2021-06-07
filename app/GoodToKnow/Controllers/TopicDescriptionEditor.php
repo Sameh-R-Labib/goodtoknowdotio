@@ -12,7 +12,7 @@ class TopicDescriptionEditor
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
@@ -20,14 +20,14 @@ class TopicDescriptionEditor
 
         // Abort if the community doesn't have any topics yet
 
-        if (empty($gtk->special_topic_array)) {
+        if (empty($g->special_topic_array)) {
 
             breakout(' Aborted because you can\'t create a post in a community which has no topics. ');
 
         }
 
 
-        $gtk->html_title = "Topic's Description Editor";
+        $g->html_title = "Topic's Description Editor";
 
 
         require VIEWS . DIRSEP . 'topicdescriptioneditor.php';

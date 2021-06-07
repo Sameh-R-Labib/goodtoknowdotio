@@ -14,7 +14,7 @@ class InduceATaskCreate
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
 
 
@@ -26,7 +26,7 @@ class InduceATaskCreate
         $label = standard_form_field_prep('label', 3, 264);
 
 
-        // + + + Get $gtk->last and $gtk->next (which are timestamps) based on submitted:
+        // + + + Get $g->last and $g->next (which are timestamps) based on submitted:
         // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_next_and_last_epochs.php';
         // + + +
@@ -41,7 +41,7 @@ class InduceATaskCreate
          * Use the submitted data to add a record to the database.
          */
 
-        $array_record = ['user_id' => $gtk->user_id, 'label' => $label, 'last' => $gtk->last, 'next' => $gtk->next,
+        $array_record = ['user_id' => $g->user_id, 'label' => $label, 'last' => $g->last, 'next' => $g->next,
             'cycle_type' => $cycle_type, 'comment' => $comment];
 
 
@@ -59,7 +59,7 @@ class InduceATaskCreate
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The object\'s save method did not return false but it did send
             back a message. Therefore, it probably did not create a new record. ');

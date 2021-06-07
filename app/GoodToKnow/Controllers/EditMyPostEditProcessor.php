@@ -15,11 +15,11 @@ class EditMyPostEditProcessor
          */
 
 
-        global $gtk;
-        // $gtk->saved_str01 is path for markdown file
-        // $gtk->saved_str02 path for html file
-        // $gtk->saved_int01 id of edited post's Topic
-        // $gtk->saved_int02 id of edited post
+        global $g;
+        // $g->saved_str01 is path for markdown file
+        // $g->saved_str02 path for html file
+        // $g->saved_int01 id of edited post's Topic
+        // $g->saved_int02 id of edited post
 
 
         kick_out_loggedoutusers();
@@ -33,30 +33,30 @@ class EditMyPostEditProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 
-        $gtk->markdown = markdown_form_field_prep('markdown', 1, 58000);
+        $g->markdown = markdown_form_field_prep('markdown', 1, 58000);
 
 
-        // $gtk->markdown = htmlspecialchars($gtk->markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
+        // $g->markdown = htmlspecialchars($g->markdown, ENT_NOQUOTES | ENT_HTML5, "UTF-8");
         // I commented out because parsedown will take care of this.
 
 
         /**
-         * Generate the html equivalent for $gtk->markdown.
+         * Generate the html equivalent for $g->markdown.
          */
 
         $parser = new MarkdownExtra;
         $parser->no_entities = true;
-        $html = $parser->transform($gtk->markdown);
+        $html = $parser->transform($g->markdown);
 
         // Call to global function
         fix_michelf($html);
 
-//        $html = MarkdownExtra::defaultTransform($gtk->markdown);
+//        $html = MarkdownExtra::defaultTransform($g->markdown);
 
 //        $parsedown_object = new \ParsedownExtra();
 //        $parsedown_object->setMarkupEscaped(true);
 //        $parsedown_object->setSafeMode(true);
-//        $html = $parsedown_object->text($gtk->markdown);
+//        $html = $parsedown_object->text($g->markdown);
 
 
         /**
@@ -64,7 +64,7 @@ class EditMyPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($gtk->saved_str01, $gtk->markdown);
+        $bytes_written = file_put_contents($g->saved_str01, $g->markdown);
 
         if ($bytes_written === false) {
 
@@ -78,7 +78,7 @@ class EditMyPostEditProcessor
          * If fails then add message.
          */
 
-        $bytes_written = file_put_contents($gtk->saved_str02, $html);
+        $bytes_written = file_put_contents($g->saved_str02, $html);
 
         if ($bytes_written === false) {
 
@@ -93,8 +93,8 @@ class EditMyPostEditProcessor
 
         $bytes_written_text = size_as_text($bytes_written);
 
-        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $gtk->community_id . '/' .
-            $gtk->saved_int01 . '/' . $gtk->saved_int02 . '">here </a>';
+        $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $g->community_id . '/' .
+            $g->saved_int01 . '/' . $g->saved_int02 . '">here </a>';
 
         breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
          ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");

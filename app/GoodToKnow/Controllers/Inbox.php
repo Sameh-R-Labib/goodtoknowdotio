@@ -9,26 +9,26 @@ class Inbox
     function page()
     {
         global $db;
-        global $gtk;
+        global $g;
         global $inbox_messages_array;
 
 
         kick_out_loggedoutusers();
 
 
-        $gtk->html_title = 'Inbox';
+        $g->html_title = 'Inbox';
 
 
-        $gtk->page = 'Inbox';
+        $g->page = 'Inbox';
 
 
-        $gtk->show_poof = true;
+        $g->show_poof = true;
 
 
         $db = get_db();
 
 
-        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($gtk->user_id);
+        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
 
 
         /**
@@ -48,7 +48,7 @@ class Inbox
         }
 
 
-        $gtk->message .= ' 90 day old messages will be deleted by admin. ';
+        $g->message .= ' 90 day old messages will be deleted by admin. ';
 
 
         require VIEWS . DIRSEP . 'inbox.php';

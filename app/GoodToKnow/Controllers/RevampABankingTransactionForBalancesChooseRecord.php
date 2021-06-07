@@ -17,7 +17,7 @@ class RevampABankingTransactionForBalancesChooseRecord
          */
 
 
-        global $gtk;
+        global $g;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_banking_transactions_within_a_time_range.php';
@@ -30,14 +30,14 @@ class RevampABankingTransactionForBalancesChooseRecord
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
 
 
-        foreach ($gtk->array as $object) {
+        foreach ($g->array as $object) {
 
             $object->time = get_readable_time($object->time);
 
         }
 
 
-        $gtk->html_title = 'Which banking_transaction_for_balances record?';
+        $g->html_title = 'Which banking_transaction_for_balances record?';
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalanceschooserecord.php';

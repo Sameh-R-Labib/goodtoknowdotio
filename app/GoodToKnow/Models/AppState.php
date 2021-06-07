@@ -312,6 +312,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $object;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -432,5 +438,7 @@ class AppState
         $this->time = [];
         $this->last = [];
         $this->next = [];
+
+        $this->object = null;
     }
 }

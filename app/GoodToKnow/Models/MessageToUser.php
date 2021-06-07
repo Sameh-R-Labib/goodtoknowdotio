@@ -42,7 +42,7 @@ class MessageToUser extends GoodObject
     public static function user_message_quantity($user_id)
     {
         global $db;
-        global $gtk;
+        global $g;
 
         $sql = "SELECT COUNT(*) FROM message_to_user WHERE user_id=" . $user_id;
 
@@ -53,14 +53,14 @@ class MessageToUser extends GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $gtk->message .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
+                $g->message .= ' The count failed. The reason given by mysqli is: ' . $query_error . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $gtk->message .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $g->message .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
 
             return false;
 
@@ -68,7 +68,7 @@ class MessageToUser extends GoodObject
 
         if (!$result->num_rows) {
 
-            $gtk->message .= ' count_all failed. ';
+            $g->message .= ' count_all failed. ';
 
             return false;
 
@@ -95,7 +95,7 @@ class MessageToUser extends GoodObject
          */
 
         global $db;
-        global $gtk;
+        global $g;
 
         // Formulate the sql for the delete
 
@@ -109,14 +109,14 @@ class MessageToUser extends GoodObject
 
             if (!empty($query_error)) {
 
-                $gtk->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $gtk->message .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -140,7 +140,7 @@ class MessageToUser extends GoodObject
          */
 
         global $db;
-        global $gtk;
+        global $g;
 
         $sql = "DELETE FROM " . self::$table_name . " ";
         $sql .= "WHERE `message_id`={$message_id} AND `user_id`={$user_id}";
@@ -153,14 +153,14 @@ class MessageToUser extends GoodObject
 
             if (!empty($query_error)) {
 
-                $gtk->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $gtk->message .= ' MessageToUser delete_all_particular() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' MessageToUser delete_all_particular() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -183,7 +183,7 @@ class MessageToUser extends GoodObject
          */
 
         global $db;
-        global $gtk;
+        global $g;
 
         // get (in array) all the MessageToUser objects with a particular $user_id.
 
@@ -202,7 +202,7 @@ class MessageToUser extends GoodObject
 
             if (!$stmt->prepare($sql)) {
 
-                $gtk->message .= ' ' . $stmt->error . ' ';
+                $g->message .= ' ' . $stmt->error . ' ';
 
                 return false;
 
@@ -238,7 +238,7 @@ class MessageToUser extends GoodObject
             }
         } catch (Exception $e) {
 
-            $gtk->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
+            $g->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -246,7 +246,7 @@ class MessageToUser extends GoodObject
 
         if ($count < 1) {
 
-            $gtk->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 87. ';
+            $g->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 87. ';
 
             return false;
 
@@ -268,7 +268,7 @@ class MessageToUser extends GoodObject
 
         if (empty($array_of_Messages)) {
 
-            $gtk->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
+            $g->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
 
             return false;
 
@@ -288,7 +288,7 @@ class MessageToUser extends GoodObject
      */
     public static function replace_attributes(array &$inbox_messages_array): bool
     {
-        global $gtk;
+        global $g;
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
@@ -306,7 +306,7 @@ class MessageToUser extends GoodObject
 
             if ($message_object->user_id === false) {
 
-                $gtk->message .= " MessageToUser::replace_attributes says: get_username failed. ";
+                $g->message .= " MessageToUser::replace_attributes says: get_username failed. ";
 
                 return false;
 

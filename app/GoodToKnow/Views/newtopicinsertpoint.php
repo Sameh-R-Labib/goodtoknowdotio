@@ -1,4 +1,4 @@
-<?php global $gtk; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/NewTopicIPProcessor/page" method="post">
         <h1>Insertion Point</h1>
@@ -17,7 +17,7 @@
             </label>
         </section>
         <section>
-            <?php foreach ($gtk->special_topic_array as $key => $value): ?>
+            <?php foreach ($g->special_topic_array as $key => $value): ?>
                 <label for="choice-<?= $key ?>" class="radio">
                     <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                     <?= $value ?>

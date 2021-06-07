@@ -15,13 +15,13 @@ class TopicDescriptionEditorForm
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_int01 community id
+        // $g->saved_int01 community id
         global $topic_object;
 
 
-        // $gtk->saved_str01 is the topic name
+        // $g->saved_str01 is the topic name
 
 
         kick_out_nonadmins();
@@ -29,7 +29,7 @@ class TopicDescriptionEditorForm
 
         $db = get_db();
 
-        $topic_object = Topic::find_by_id($gtk->saved_int01);
+        $topic_object = Topic::find_by_id($g->saved_int01);
 
         if (!$topic_object) {
 
@@ -38,7 +38,7 @@ class TopicDescriptionEditorForm
         }
 
 
-        $gtk->html_title = "Topic's Description Editor";
+        $g->html_title = "Topic's Description Editor";
 
 
         require VIEWS . DIRSEP . 'topicdescriptioneditorform.php';

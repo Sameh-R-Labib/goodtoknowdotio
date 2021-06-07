@@ -3,7 +3,7 @@
 use GoodToKnow\Models\CommunityToTopic;
 
 
-global $gtk;
+global $g;
 global $db;
 
 
@@ -16,21 +16,21 @@ kick_out_loggedoutusers();
 
 $db = get_db();
 
-$gtk->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($gtk->community_id);
+$g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 
-if ($gtk->special_topic_array == false) $gtk->special_topic_array = [];
+if ($g->special_topic_array == false) $g->special_topic_array = [];
 
-$_SESSION['special_topic_array'] = $gtk->special_topic_array;
+$_SESSION['special_topic_array'] = $g->special_topic_array;
 
 $_SESSION['last_refresh_topics'] = time();
 
 
 // Abort if the community doesn't have any topics yet
 
-if (empty($gtk->special_topic_array)) {
+if (empty($g->special_topic_array)) {
 
     breakout(' Aborted because this community has no topics. ');
 
 }
 
-$gtk->html_title = 'Which topic is your post in?';
+$g->html_title = 'Which topic is your post in?';

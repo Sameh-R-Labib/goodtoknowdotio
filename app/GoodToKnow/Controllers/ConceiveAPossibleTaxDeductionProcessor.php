@@ -16,7 +16,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -38,7 +38,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         $db = get_db();
 
-        $array_record = ['user_id' => $gtk->user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => $comment];
+        $array_record = ['user_id' => $g->user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => $comment];
 
 
         // In memory object.
@@ -53,7 +53,7 @@ class ConceiveAPossibleTaxDeductionProcessor
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The object\'s save method did not return false but it did send
             back a message. Therefore, it most likely did not create a new record. ');

@@ -4,7 +4,7 @@ use GoodToKnow\Models\PossibleTaxDeduction;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-global $gtk;
+global $g;
 global $db;
 
 
@@ -27,11 +27,11 @@ $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 $db = get_db();
 
 $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $db->real_escape_string($year_paid);
-$sql .= ' AND `user_id` = ' . $db->real_escape_string($gtk->user_id);
+$sql .= ' AND `user_id` = ' . $db->real_escape_string($g->user_id);
 
-$gtk->array = PossibleTaxDeduction::find_by_sql($sql);
+$g->array = PossibleTaxDeduction::find_by_sql($sql);
 
-if (!$gtk->array || !empty($gtk->message)) {
+if (!$g->array || !empty($g->message)) {
 
     breakout(" For <b>{$year_paid}</b> I could NOT find any Possible Tax Write-offs. ");
 

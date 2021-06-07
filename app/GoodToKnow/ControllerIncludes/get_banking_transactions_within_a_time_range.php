@@ -3,10 +3,10 @@
 use GoodToKnow\Models\BankingTransactionForBalances;
 
 
-global $gtk;
+global $g;
 global $db;
-// $gtk->saved_int01 min time
-// $gtk->saved_int02 max time
+// $g->saved_int01 min time
+// $g->saved_int02 max time
 
 
 kick_out_loggedoutusers();
@@ -19,13 +19,13 @@ kick_out_loggedoutusers();
 
 $db = get_db();
 
-$sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($gtk->user_id) . '"';
-$sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($gtk->saved_int01) . '" AND "' . $db->real_escape_string($gtk->saved_int02) . '"';
+$sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
+$sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($g->saved_int01) . '" AND "' . $db->real_escape_string($g->saved_int02) . '"';
 $sql .= ' ORDER BY `time`';
 
-$gtk->array = BankingTransactionForBalances::find_by_sql($sql);
+$g->array = BankingTransactionForBalances::find_by_sql($sql);
 
-if (!$gtk->array || !empty($gtk->message)) {
+if (!$g->array || !empty($g->message)) {
 
     breakout(' I could NOT find any banking transaction for balances records ¯\_(ツ)_/¯ ');
 

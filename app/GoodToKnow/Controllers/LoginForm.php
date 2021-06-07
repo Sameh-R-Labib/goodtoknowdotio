@@ -6,19 +6,19 @@ class LoginForm
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
-        if ($gtk->is_logged_in) {
+        if ($g->is_logged_in) {
 
-            $_SESSION['message'] = $gtk->message;
+            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/InfiniteLoopPrevent/page");
 
         }
 
 
-        $gtk->html_title = 'GoodToKnow.io';
+        $g->html_title = 'GoodToKnow.io';
 
 
         require VIEWS . DIRSEP . 'loginform.php';

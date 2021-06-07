@@ -23,10 +23,10 @@ class TopicDescriptionEditorFormProcessor
          */
 
 
-        global $gtk;
+        global $g;
         global $db;
-        // $gtk->saved_str01 the topic's name
-        // $gtk->saved_int01 the topic's id
+        // $g->saved_str01 the topic's name
+        // $g->saved_int01 the topic's id
 
 
         kick_out_nonadmins();
@@ -48,7 +48,7 @@ class TopicDescriptionEditorFormProcessor
 
         $db = get_db();
 
-        $topic_object = Topic::find_by_id($gtk->saved_int01);
+        $topic_object = Topic::find_by_id($g->saved_int01);
 
         if (!$topic_object) {
 
@@ -91,6 +91,6 @@ class TopicDescriptionEditorFormProcessor
          * Report success.
          */
 
-        breakout(" I have updated $gtk->saved_str01's record. ");
+        breakout(" I have updated $g->saved_str01's record. ");
     }
 }

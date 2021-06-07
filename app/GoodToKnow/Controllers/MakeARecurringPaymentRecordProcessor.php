@@ -17,7 +17,7 @@ class MakeARecurringPaymentRecordProcessor
 
 
         global $db;
-        global $gtk;
+        global $g;
 
 
         kick_out_loggedoutusers();
@@ -33,7 +33,7 @@ class MakeARecurringPaymentRecordProcessor
         $amount_paid = float_form_field_prep('amount_paid', 0.0, 999999999999999.99);
 
 
-        // - - - Get $gtk->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
         // - - -
 
@@ -46,8 +46,8 @@ class MakeARecurringPaymentRecordProcessor
          */
 
 
-        $array_recurring_payment_record = ['user_id' => $gtk->user_id, 'label' => $label, 'currency' => $currency,
-            'amount_paid' => $amount_paid, 'time' => $gtk->time, 'comment' => $comment];
+        $array_recurring_payment_record = ['user_id' => $g->user_id, 'label' => $label, 'currency' => $currency,
+            'amount_paid' => $amount_paid, 'time' => $g->time, 'comment' => $comment];
 
 
         /**
@@ -71,7 +71,7 @@ class MakeARecurringPaymentRecordProcessor
 
         }
 
-        if (!empty($gtk->message)) {
+        if (!empty($g->message)) {
 
             breakout(' The save method for RecurringPayment did not return false but it did send back a message.
              Therefore, it probably did not create the RecurringPayment record. ');

@@ -6,7 +6,7 @@ class BroadcastMsg
 {
     function page()
     {
-        global $gtk;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -16,16 +16,16 @@ class BroadcastMsg
          * Display the editor interface.
          */
 
-        $gtk->html_title = 'Broadcast a Message';
+        $g->html_title = 'Broadcast a Message';
 
-        $gtk->pre_populate = <<<ROI
+        $g->pre_populate = <<<ROI
 Dear Users,
 
 [Broadcast to all]
 
 Sincerely,
 
-Admin {$gtk->user_username}
+Admin {$g->user_username}
 ROI;
 
         require VIEWS . DIRSEP . 'broadcastmsg.php';

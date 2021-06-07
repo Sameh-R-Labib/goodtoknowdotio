@@ -1,13 +1,13 @@
-<?php global $object; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AnnulABankingAcctForBalancesDelete/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Account: </b><?php echo $object->acct_name; ?></p>
-        <p><b>Start 🕒: </b><?= $object->start_time ?></p>
-        <p><b>Start ⚖️: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?></p>
-        <p><?= $object->comment ?></p>
+        <p><b>Account: </b><?php echo $g->object->acct_name; ?></p>
+        <p><b>Start 🕒: </b><?= $g->object->start_time ?></p>
+        <p><b>Start ⚖️: </b><?= $g->object->currency ?>&nbsp;<?= $g->object->start_balance ?></p>
+        <p><?= $g->object->comment ?></p>
         <p>&nbsp;</p>
         <p>Are you sure you want to delete this?</p>
         <section>
