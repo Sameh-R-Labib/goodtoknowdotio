@@ -1,5 +1,4 @@
 <?php global $gtk; ?>
-<?php global $next; ?>
 <p>
     <label for="lastdate">Last: </label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
@@ -20,17 +19,17 @@
     <label for="nextdate">Next: </label>
     <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy"
-           value="<?= $next['date'] ?>">
+           value="<?= $gtk->next['date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
     <label for="nexthour"></label>
     <input id="nexthour" name="nexthour" type="text" required minlength="1" maxlength="2" size="3" placeholder="h"
-           value="<?= $next['hour'] ?>">
+           value="<?= $gtk->next['hour'] ?>">
     <label for="nextminute">: </label>
     <input id="nextminute" name="nextminute" type="text" required minlength="1" maxlength="2" size="3" placeholder="m"
-           value="<?= $next['minute'] ?>">
+           value="<?= $gtk->next['minute'] ?>">
     <label for="nextsecond">: </label>
     <input id="nextsecond" name="nextsecond" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
-           value="<?= $next['second'] ?>">
+           value="<?= $gtk->next['second'] ?>">
     <label for="timezone"></label>
     <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
            minlength="2" maxlength="60" size="18" value="<?= $gtk->timezone ?>">

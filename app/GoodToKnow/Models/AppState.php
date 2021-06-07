@@ -306,6 +306,12 @@ class AppState
 
 
     /**
+     * @var array|int
+     */
+    public $next;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -425,5 +431,6 @@ class AppState
         $this->time_sold = [];
         $this->time = [];
         $this->last = [];
+        $this->next = [];
     }
 }

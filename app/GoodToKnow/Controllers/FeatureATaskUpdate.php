@@ -21,8 +21,7 @@ class FeatureATaskUpdate
 
         global $gtk;
         global $db;
-        // $gtk->saved_int01 task id
-        global $next;
+        // $gtk->saved_int01 is the task id
 
 
         kick_out_loggedoutusers();
@@ -43,7 +42,7 @@ class FeatureATaskUpdate
 
         // Time related fields
 
-        // + + + Get $gtk->last and $next (which are timestamps) based on submitted:
+        // + + + Get $gtk->last and $gtk->next (which are timestamps) based on submitted:
         // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
 
 
@@ -83,7 +82,7 @@ class FeatureATaskUpdate
 
         $object->label = $edited_label;
         $object->last = $gtk->last;
-        $object->next = $next;
+        $object->next = $gtk->next;
         $object->cycle_type = $edited_cycle_type;
         $object->comment = $edited_comment;
 

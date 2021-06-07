@@ -18,7 +18,6 @@ class FeatureATaskEdit
 
         global $gtk;
         global $object;
-        global $next;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
@@ -30,7 +29,7 @@ class FeatureATaskEdit
 
         /**
          * This type of record has a field called `last` and a field called `next`. We are Not going to pre-populate
-         * form fields with them. Instead we derive the arrays called $gtk->last and $next from them and use
+         * form fields with them. Instead we derive the arrays called $gtk->last and $gtk->next from them and use
          * the derived arrays to pre-populate the corresponding fields in the form which we present below.
          */
 
@@ -38,7 +37,7 @@ class FeatureATaskEdit
 
         $gtk->last = get_date_h_m_s_from_a_timestamp($object->last);
 
-        $next = get_date_h_m_s_from_a_timestamp($object->next);
+        $gtk->next = get_date_h_m_s_from_a_timestamp($object->next);
 
 
         $gtk->html_title = 'Edit the task record';
