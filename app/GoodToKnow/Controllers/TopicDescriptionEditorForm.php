@@ -18,7 +18,6 @@ class TopicDescriptionEditorForm
         global $g;
         global $db;
         // $g->saved_int01 community id
-        global $topic_object;
 
 
         // $g->saved_str01 is the topic name
@@ -29,9 +28,9 @@ class TopicDescriptionEditorForm
 
         $db = get_db();
 
-        $topic_object = Topic::find_by_id($g->saved_int01);
+        $g->topic_object = Topic::find_by_id($g->saved_int01);
 
-        if (!$topic_object) {
+        if (!$g->topic_object) {
 
             breakout(' I was unexpectedly unable to retrieve target topic\'s object. ');
 

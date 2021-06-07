@@ -59,7 +59,6 @@ class SetHomePageCommunityTopicPost
                                                               $post_object, $post_author_object, $post_id)
     {
         global $g;
-        global $topic_object;
 
 
         // First get and store the community_name
@@ -78,10 +77,10 @@ class SetHomePageCommunityTopicPost
         if ($g->type_of_resource_requested === 'topic') {
             // Second get and store the topic_name
 
-            $topic_object = Topic::find_by_id($topic_id);
+            $g->topic_object = Topic::find_by_id($topic_id);
 
-            $_SESSION['topic_name'] = $topic_object->topic_name;
-            $_SESSION['topic_description'] = $topic_object->topic_description;
+            $_SESSION['topic_name'] = $g->topic_object->topic_name;
+            $_SESSION['topic_description'] = $g->topic_object->topic_description;
 
 
             // Then do the rest.
@@ -92,10 +91,10 @@ class SetHomePageCommunityTopicPost
         } elseif ($g->type_of_resource_requested === 'post') {
             // Second get and store the topic_name
 
-            $topic_object = Topic::find_by_id($topic_id);
+            $g->topic_object = Topic::find_by_id($topic_id);
 
-            $_SESSION['topic_name'] = $topic_object->topic_name;
-            $_SESSION['topic_description'] = $topic_object->topic_description;
+            $_SESSION['topic_name'] = $g->topic_object->topic_name;
+            $_SESSION['topic_description'] = $g->topic_object->topic_description;
 
 
             // Third store the post_name
