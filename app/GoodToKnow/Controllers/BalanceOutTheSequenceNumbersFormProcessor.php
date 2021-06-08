@@ -24,7 +24,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         global $g;
         global $db;
-        global $present;
 
 
         /**
@@ -78,35 +77,45 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         }
 
+
         /**
          * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST["animal"].
          */
 
         foreach ($result as $object) {
+
             // Set the $object->sequence_number to the sequence_number found in
             // the $animal_arr element whose key is the same as the id of the object.
             $object->sequence_number = $animal_arr[$object->id];
+
         }
+
 
         /**
          * 4) Save $result to the session.
          */
         $_SESSION['saved_arr01'] = $result;
 
+
         /**
          * 5) Present the relevant parts of $result in a view of the type with round corners.
          */
 
-        $present = '';
-
         foreach ($result as $object) {
+
             if ($g->thing_type === 'Community') {
+
                 $short = substr($object->topic_name, 0, 38);
+
             } else {
+
                 $short = substr($object->title, 0, 38);
+
             }
-            $present .= "<p>$object->sequence_number ↔ $short</p>\n";
+            $g->present .= "<p>$object->sequence_number ↔ $short</p>\n";
+
         }
+
 
         /**
          * 6) Present a Save button and a Abort button.

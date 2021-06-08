@@ -378,6 +378,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $present;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -520,5 +526,7 @@ class AppState
         $this->result = '';
 
         $this->fields = '';
+
+        $this->present = '';
     }
 }
