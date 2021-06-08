@@ -11,7 +11,6 @@ class BalanceOutTheSequenceNumbers
     {
         global $g;
         global $db;
-        global $thing_type;
         global $thing_name;
         global $thing_id;
         global $result;
@@ -31,12 +30,14 @@ class BalanceOutTheSequenceNumbers
          */
 
         if ($g->type_of_resource_requested === 'post') {
+
             breakout(' It is not possible to run this operation on a post. ');
+
         }
 
-        $thing_type = ucfirst($g->type_of_resource_requested);
+        $g->thing_type = ucfirst($g->type_of_resource_requested);
 
-        if ($thing_type === 'Community') {
+        if ($g->thing_type === 'Community') {
 
             $thing_name = $g->community_name;
             $thing_id = $g->community_id;
@@ -56,7 +57,7 @@ class BalanceOutTheSequenceNumbers
 
         $db = get_db();
 
-        if ($thing_type === 'Community') {
+        if ($g->thing_type === 'Community') {
 
             // Get all topics for community.
 
@@ -102,17 +103,21 @@ class BalanceOutTheSequenceNumbers
 
         $fields = '';
 
-        if ($thing_type === 'Community') {
+        if ($g->thing_type === 'Community') {
+
             // Assemble $fields for topic records. One html line for each record.
             foreach ($result as $object) {
+
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
                 $fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
                 $fields .= $object->topic_name;
                 $fields .= "</p>\n";
+
             }
         } else {
+
             // Assemble $fields for post records. One html line for each record.
             foreach ($result as $object) {
                 // $object is current record
@@ -121,6 +126,7 @@ class BalanceOutTheSequenceNumbers
                 $fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
                 $fields .= $object->title;
                 $fields .= "</p>\n";
+
             }
         }
 

@@ -354,6 +354,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $thing_type;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -488,5 +494,7 @@ class AppState
         $this->user_object = null;
 
         $this->recurring_payment_object = null;
+
+        $this->thing_type = '';
     }
 }

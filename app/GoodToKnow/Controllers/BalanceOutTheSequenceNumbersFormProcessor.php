@@ -24,7 +24,6 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         global $g;
         global $db;
-        global $thing_type;
         global $present;
 
 
@@ -34,7 +33,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         kick_out_nonadmins();
 
-        $thing_type = ucfirst($g->type_of_resource_requested);
+        $g->thing_type = ucfirst($g->type_of_resource_requested);
 
 
         /**
@@ -53,7 +52,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
 
         $db = get_db();
 
-        if ($thing_type === 'Community') {
+        if ($g->thing_type === 'Community') {
 
             // Get all topics for community.
 
@@ -101,7 +100,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
         $present = '';
 
         foreach ($result as $object) {
-            if ($thing_type === 'Community') {
+            if ($g->thing_type === 'Community') {
                 $short = substr($object->topic_name, 0, 38);
             } else {
                 $short = substr($object->title, 0, 38);
