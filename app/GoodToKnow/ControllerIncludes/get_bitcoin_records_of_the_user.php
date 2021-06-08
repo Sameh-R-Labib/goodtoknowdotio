@@ -5,7 +5,6 @@ use GoodToKnow\Models\Bitcoin;
 
 global $g;
 global $db;
-global $array_of_bitcoin_objects;
 
 
 kick_out_loggedoutusers();
@@ -21,9 +20,9 @@ $db = get_db();
 
 $sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
 
-$array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
+$g->array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
 
-if (!$array_of_bitcoin_objects || !empty($g->message)) {
+if (!$g->array_of_bitcoin_objects || !empty($g->message)) {
 
     breakout(' I could NOT find any bitcoin records ¯\_(ツ)_/¯. ');
 

@@ -1,11 +1,11 @@
-<?php global $array_of_bitcoin_objects; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/DeleteABitcoinRecordProcessor/page" method="post">
         <h1>Delete a ₿ 📽</h1>
         <p>Which Bitcoin Record?</p>
         <?php require SESSIONMESSAGE; ?>
         <section>
-            <?php foreach ($array_of_bitcoin_objects as $key => $bitcoin_object): ?>
+            <?php foreach ($g->array_of_bitcoin_objects as $key => $bitcoin_object): ?>
                 <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $bitcoin_object->id ?>">
                     <?= $bitcoin_object->address ?>

@@ -7,7 +7,6 @@ class BitcoinSeeMyRecords
     function page()
     {
         global $g;
-        global $array_of_bitcoin_objects;
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 
@@ -19,7 +18,7 @@ class BitcoinSeeMyRecords
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        foreach ($array_of_bitcoin_objects as $g->bitcoin_object) {
+        foreach ($g->array_of_bitcoin_objects as $g->bitcoin_object) {
 
             require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
 
