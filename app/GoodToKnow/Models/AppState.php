@@ -408,6 +408,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $array_of_objects;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -560,5 +566,7 @@ class AppState
         $this->array_of_recurring_payment_objects = [];
 
         $this->array_of_bitcoin_objects = [];
+
+        $this->array_of_objects = [];
     }
 }

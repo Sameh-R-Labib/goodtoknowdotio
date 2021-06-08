@@ -15,7 +15,6 @@ class ViewAllBankingAccountsForBalances
 
 
         global $g;
-        global $array_of_objects;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
@@ -28,7 +27,7 @@ class ViewAllBankingAccountsForBalances
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        foreach ($array_of_objects as $object) {
+        foreach ($g->array_of_objects as $object) {
 
             $object->start_time = get_readable_time($object->start_time);
             $object->comment = nl2br($object->comment, false);
