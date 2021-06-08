@@ -1,4 +1,4 @@
-<?php global $readable_user_objects_array; ?>
+<?php global $g; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
@@ -6,9 +6,9 @@
     <div id="maincontent">
         <h1>User Roster</h1>
         <hr>
-        <?php if (!empty($readable_user_objects_array)): ?>
-            <?php $last = count($readable_user_objects_array) - 1; ?>
-            <?php foreach ($readable_user_objects_array as $key => $user): ?>
+        <?php if (!empty($g->readable_user_objects_array)): ?>
+            <?php $last = count($g->readable_user_objects_array) - 1; ?>
+            <?php foreach ($g->readable_user_objects_array as $key => $user): ?>
                 <p>&nbsp;</p>
                 <p><b>U/N:&nbsp;&nbsp;</b><?= $user->username ?></p>
                 <p><b>Default Community:&nbsp;&nbsp;</b><?= $user->readable_community_name ?></p>

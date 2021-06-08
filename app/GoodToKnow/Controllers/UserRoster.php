@@ -12,7 +12,6 @@ class UserRoster
     {
         global $g;
         global $db;
-        global $readable_user_objects_array;
 
 
         kick_out_nonadmins();
@@ -52,10 +51,8 @@ class UserRoster
 
         // We need to have an array of a different object type called ReadableUser.
 
-        $readable_user_objects_array = [];
 
-
-        // $community_values_array is a helper for finding $readable_user_objects_array
+        // $community_values_array is a helper for finding $g->readable_user_objects_array
 
 
         // Assign $community_values_array. $community_values_array is described in class ReadableUser.
@@ -77,11 +74,11 @@ class UserRoster
         }
 
 
-        // $readable_user_objects_array is what we will use in the view.
+        // $g->readable_user_objects_array is what we will use in the view.
 
         foreach ($user_objects_array as $user) {
 
-            $readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
+            $g->readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
 
         }
 

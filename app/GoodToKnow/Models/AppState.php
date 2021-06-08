@@ -420,6 +420,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $readable_user_objects_array;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -576,5 +582,7 @@ class AppState
         $this->array_of_objects = [];
 
         $this->inbox_messages_array = [];
+
+        $this->readable_user_objects_array = [];
     }
 }
