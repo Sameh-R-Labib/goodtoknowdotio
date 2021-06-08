@@ -12,7 +12,6 @@ class BalanceOutTheSequenceNumbers
         global $g;
         global $db;
         global $thing_id;
-        global $result;
         global $fields;
 
 
@@ -60,9 +59,9 @@ class BalanceOutTheSequenceNumbers
 
             // Get all topics for community.
 
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
+            $g->result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
 
-            if (!$result) {
+            if (!$g->result) {
 
                 breakout(' The community does not contain any topics. ');
 
@@ -72,9 +71,9 @@ class BalanceOutTheSequenceNumbers
 
             // Get all posts for topic.
 
-            $result = TopicToPost::get_posts_array_for_a_topic($g->topic_id);
+            $g->result = TopicToPost::get_posts_array_for_a_topic($g->topic_id);
 
-            if (!$result) {
+            if (!$g->result) {
 
                 breakout(' The topic does not contain any posts. ');
 
@@ -83,8 +82,8 @@ class BalanceOutTheSequenceNumbers
         }
 
         /**
-         * Now, we have $result.
-         * $result is either an array of topics or an array of posts.
+         * Now, we have $g->result.
+         * $g->result is either an array of topics or an array of posts.
          * We need to put together the HTML for the form fields.
          * Each form field row will look like this:
          *   [text input for a sequence number] [The name of the topic or post]
@@ -105,7 +104,7 @@ class BalanceOutTheSequenceNumbers
         if ($g->thing_type === 'Community') {
 
             // Assemble $fields for topic records. One html line for each record.
-            foreach ($result as $object) {
+            foreach ($g->result as $object) {
 
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
@@ -118,7 +117,7 @@ class BalanceOutTheSequenceNumbers
         } else {
 
             // Assemble $fields for post records. One html line for each record.
-            foreach ($result as $object) {
+            foreach ($g->result as $object) {
                 // $object is current record
                 $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
                 $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";

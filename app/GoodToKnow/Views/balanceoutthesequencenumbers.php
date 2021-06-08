@@ -1,6 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
 <?php global $g; ?>
-<?php global $result; ?>
 <?php global $fields; ?>
     <form action="/ax1/BalanceOutTheSequenceNumbersFormProcessor/page" method="post">
         <h2>Adjust Sequence Numbers</h2>

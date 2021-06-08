@@ -366,6 +366,12 @@ class AppState
 
 
     /**
+     * @var string|mixed
+     */
+    public $result;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -504,5 +510,7 @@ class AppState
         $this->thing_type = '';
 
         $this->thing_name = '';
+
+        $this->result = '';
     }
 }
