@@ -1,5 +1,4 @@
 <?php global $g; ?>
-<?php global $array_of_author_usernames; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/QuickPostDeleteDelete/page" method="post">
     <h1>Delete a Post</h1>
@@ -11,7 +10,7 @@
                 <input type="radio" id="choice-<?= $key ?>" name="choice"
                        value="<?= $post_object->id ?>">
                 <?php echo $post_object->title . " | " . $post_object->extensionfortitle . " [" .
-                    $array_of_author_usernames[$key] . " ]"; ?>
+                    $g->array_of_author_usernames[$key] . " ]"; ?>
             </label>
         <?php endforeach; ?>
     </section>

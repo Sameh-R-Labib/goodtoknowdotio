@@ -390,6 +390,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $array_of_author_usernames;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -536,5 +542,7 @@ class AppState
         $this->present = '';
 
         $this->array_of_post_objects = [];
+
+        $this->array_of_author_usernames = [];
     }
 }

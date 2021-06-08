@@ -6,7 +6,6 @@ use GoodToKnow\Models\TopicToPost;
 global $db;
 global $g;
 // $g->saved_int01 id of topic
-global $array_of_author_usernames;
 
 
 kick_out_nonadmins();
@@ -28,9 +27,9 @@ if (!$g->array_of_post_objects) {
  * is the username corresponding to the user_id of the corresponding element in the $g->array_of_post_objects.
  */
 
-$array_of_author_usernames = TopicToPost::get_author_usernames($g->array_of_post_objects);
+$g->array_of_author_usernames = TopicToPost::get_author_usernames($g->array_of_post_objects);
 
-if (!$array_of_author_usernames) {
+if (!$g->array_of_author_usernames) {
 
     breakout(' Anomalous condition: Supposedly we have posts but do not have any authors. ');
 
