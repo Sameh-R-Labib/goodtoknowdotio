@@ -10,7 +10,6 @@ class Inbox
     {
         global $db;
         global $g;
-        global $inbox_messages_array;
 
 
         kick_out_loggedoutusers();
@@ -28,16 +27,16 @@ class Inbox
         $db = get_db();
 
 
-        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
+        $g->inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
 
 
         /**
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
 
-        if (!empty($inbox_messages_array)) {
+        if (!empty($g->inbox_messages_array)) {
 
-            $return = MessageToUser::replace_attributes($inbox_messages_array);
+            $return = MessageToUser::replace_attributes($g->inbox_messages_array);
 
             if ($return === false) {
 

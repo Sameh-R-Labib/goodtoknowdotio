@@ -1,4 +1,4 @@
-<?php global $inbox_messages_array; ?>
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/BlotOutSomeInboxMessagesProcessor/page" method="post">
     <h1>Delete Some 📥 💬s</h1>
@@ -7,8 +7,7 @@
     </p>
     <?php require SESSIONMESSAGE; ?>
     <section>
-        <?php /** @var array $inbox_messages_array */
-        foreach ($inbox_messages_array as $key => $value): ?>
+        <?php foreach ($g->inbox_messages_array as $key => $value): ?>
             <label class="checkbox">
                 <input type="checkbox" name="choice-<?= $key + 1 ?>" value="<?= $value->id ?>">
                 <?= $value->user_id ?> <small>[<?= $value->created ?>]</small>

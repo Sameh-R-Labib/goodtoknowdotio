@@ -16,7 +16,6 @@ class BlotOutSomeInboxMessages
 
         global $g;
         global $db;
-        global $inbox_messages_array;
 
 
         kick_out_loggedoutusers();
@@ -24,9 +23,9 @@ class BlotOutSomeInboxMessages
 
         $db = get_db();
 
-        $inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
+        $g->inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
 
-        if ($inbox_messages_array === false) {
+        if ($g->inbox_messages_array === false) {
 
             breakout(' Your inbox is empty 📭 ');
 
@@ -37,7 +36,7 @@ class BlotOutSomeInboxMessages
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
 
-        $return = MessageToUser::replace_attributes($inbox_messages_array);
+        $return = MessageToUser::replace_attributes($g->inbox_messages_array);
 
         if ($return === false) {
 

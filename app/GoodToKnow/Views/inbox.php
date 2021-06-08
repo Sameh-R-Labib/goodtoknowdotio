@@ -1,14 +1,14 @@
-<?php global $inbox_messages_array; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
+<?php global $g; ?>
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Inbox</h1>
         <hr>
-        <?php if (!empty($inbox_messages_array)): ?>
-            <?php $last = count($inbox_messages_array) - 1; ?>
-            <?php foreach ($inbox_messages_array as $key => $message): ?>
+        <?php if (!empty($g->inbox_messages_array)): ?>
+            <?php $last = count($g->inbox_messages_array) - 1; ?>
+            <?php foreach ($g->inbox_messages_array as $key => $message): ?>
                 <p><b>Time: </b><?php echo $message->created; ?></p>
                 <p><b>Sender: </b><?php echo $message->user_id; ?></p>
                 <p>&nbsp;</p>
