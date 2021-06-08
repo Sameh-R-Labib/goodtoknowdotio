@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $db;
 global $g;
-global $recurring_payment_object;
 
 
 kick_out_loggedoutusers();
@@ -29,9 +28,9 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 $db = get_db();
 
-$recurring_payment_object = RecurringPayment::find_by_id($chosen_id);
+$g->recurring_payment_object = RecurringPayment::find_by_id($chosen_id);
 
-if (!$recurring_payment_object) {
+if (!$g->recurring_payment_object) {
 
     breakout(' Unexpectedly I could not find that recurring payment. ');
 
@@ -42,7 +41,7 @@ if (!$recurring_payment_object) {
  *  3) Make sure this object belongs to the user.
  */
 
-if ($recurring_payment_object->user_id != $g->user_id) {
+if ($g->recurring_payment_object->user_id != $g->user_id) {
 
     breakout(' Error 7783714. ');
 

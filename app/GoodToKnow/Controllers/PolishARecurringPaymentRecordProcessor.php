@@ -18,7 +18,6 @@ class PolishARecurringPaymentRecordProcessor
 
 
         global $g;
-        global $recurring_payment_object;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
@@ -35,7 +34,7 @@ class PolishARecurringPaymentRecordProcessor
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $recurring_payment_object->amount_paid = readable_amount_no_commas($recurring_payment_object->currency, $recurring_payment_object->amount_paid);
+        $g->recurring_payment_object->amount_paid = readable_amount_no_commas($g->recurring_payment_object->currency, $g->recurring_payment_object->amount_paid);
 
 
         /**
@@ -46,7 +45,7 @@ class PolishARecurringPaymentRecordProcessor
 
         require CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
 
-        $g->time = get_date_h_m_s_from_a_timestamp($recurring_payment_object->time);
+        $g->time = get_date_h_m_s_from_a_timestamp($g->recurring_payment_object->time);
 
 
         $g->html_title = 'Edit the recurring_payment record';

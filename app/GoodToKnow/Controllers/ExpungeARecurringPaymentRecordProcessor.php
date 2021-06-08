@@ -18,7 +18,6 @@ class ExpungeARecurringPaymentRecordProcessor
 
 
         global $g;
-        global $recurring_payment_object;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
@@ -33,9 +32,9 @@ class ExpungeARecurringPaymentRecordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        $recurring_payment_object->time = get_readable_time($recurring_payment_object->time);
-        $recurring_payment_object->comment = nl2br($recurring_payment_object->comment, false);
-        $recurring_payment_object->amount_paid = readable_amount_of_money($recurring_payment_object->currency, $recurring_payment_object->amount_paid);
+        $g->recurring_payment_object->time = get_readable_time($g->recurring_payment_object->time);
+        $g->recurring_payment_object->comment = nl2br($g->recurring_payment_object->comment, false);
+        $g->recurring_payment_object->amount_paid = readable_amount_of_money($g->recurring_payment_object->currency, $g->recurring_payment_object->amount_paid);
 
 
         $g->html_title = 'Are you sure?';

@@ -348,6 +348,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $recurring_payment_object;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -480,5 +486,7 @@ class AppState
         $this->bitcoin_object = null;
 
         $this->user_object = null;
+
+        $this->recurring_payment_object = null;
     }
 }
