@@ -12,7 +12,6 @@ class RemoveComsChoicesProcessor
         global $db;
         // $g->saved_str01 has user's username
         // $g->saved_int01 has user's id
-        global $submitted_community_ids_array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';
@@ -35,7 +34,7 @@ class RemoveComsChoicesProcessor
          * More specifically what we need to do is
          * delete the rows of the user_to_community db table
          * which have a user_id == $g->saved_int01
-         * and any of the comm ids found in the $submitted_community_ids_array.
+         * and any of the comm ids found in the $g->submitted_community_ids_array.
          *
          * To accomplish this:
          *   1) I will retrieve the pertinent UserToCommunity objects.
@@ -51,7 +50,7 @@ class RemoveComsChoicesProcessor
 
         $db = get_db();
 
-        foreach ($submitted_community_ids_array as $a_community_id) {
+        foreach ($g->submitted_community_ids_array as $a_community_id) {
 
             /**
              * Retrieve and add the UserToCommunity object

@@ -1,7 +1,7 @@
 <?php
 
 
-global $submitted_community_ids_array;
+global $g;
 
 
 kick_out_nonadmins();
@@ -42,18 +42,16 @@ if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
 
 }
 
-$submitted_community_ids_array = [];
-
 foreach ($_POST as $item) {
 
     if (is_numeric($item)) {
 
-        $submitted_community_ids_array[] = $item;
+        $g->submitted_community_ids_array[] = $item;
 
     }
 }
 
-if (empty($submitted_community_ids_array)) {
+if (empty($g->submitted_community_ids_array)) {
 
     breakout(' You did not submit any community ids. ');
 

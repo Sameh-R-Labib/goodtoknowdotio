@@ -12,7 +12,6 @@ class GiveComsChoicesProcessor
         global $db;
         // $g->saved_str01 Has user's username
         // $g->saved_int01 has user's id
-        global $submitted_community_ids_array;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';
@@ -40,7 +39,7 @@ class GiveComsChoicesProcessor
 
         $array_of_usertocommunity_objects = [];
 
-        foreach ($submitted_community_ids_array as $a_community_id) {
+        foreach ($g->submitted_community_ids_array as $a_community_id) {
 
             $a_community_id = (int)$a_community_id;
 

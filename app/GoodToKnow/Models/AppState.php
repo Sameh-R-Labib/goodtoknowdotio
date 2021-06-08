@@ -426,6 +426,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $submitted_community_ids_array;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -584,5 +590,7 @@ class AppState
         $this->inbox_messages_array = [];
 
         $this->readable_user_objects_array = [];
+
+        $this->submitted_community_ids_array = [];
     }
 }
