@@ -11,7 +11,6 @@ class BalanceOutTheSequenceNumbers
     {
         global $g;
         global $db;
-        global $thing_name;
         global $thing_id;
         global $result;
         global $fields;
@@ -39,12 +38,12 @@ class BalanceOutTheSequenceNumbers
 
         if ($g->thing_type === 'Community') {
 
-            $thing_name = $g->community_name;
+            $g->thing_name = $g->community_name;
             $thing_id = $g->community_id;
 
         } else {
 
-            $thing_name = $g->topic_name;
+            $g->thing_name = $g->topic_name;
             $thing_id = $g->topic_id;
 
         }

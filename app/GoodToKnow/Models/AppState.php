@@ -360,6 +360,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $thing_name;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -496,5 +502,7 @@ class AppState
         $this->recurring_payment_object = null;
 
         $this->thing_type = '';
+
+        $this->thing_name = '';
     }
 }
