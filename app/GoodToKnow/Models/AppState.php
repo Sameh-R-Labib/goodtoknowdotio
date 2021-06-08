@@ -396,6 +396,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $array_of_recurring_payment_objects;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -544,5 +550,7 @@ class AppState
         $this->array_of_post_objects = [];
 
         $this->array_of_author_usernames = [];
+
+        $this->array_of_recurring_payment_objects = [];
     }
 }

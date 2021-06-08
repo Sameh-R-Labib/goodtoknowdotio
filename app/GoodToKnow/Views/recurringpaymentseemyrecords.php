@@ -1,4 +1,4 @@
-<?php global $array_of_recurring_payment_objects; ?>
+<?php global $g; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
@@ -6,9 +6,9 @@
     <div id="maincontent">
         <h1>Last Payment for a RP</h1>
         <hr>
-        <?php if (!empty($array_of_recurring_payment_objects)): ?>
-            <?php $last = count($array_of_recurring_payment_objects) - 1; ?>
-            <?php foreach ($array_of_recurring_payment_objects as $key => $object): ?>
+        <?php if (!empty($g->array_of_recurring_payment_objects)): ?>
+            <?php $last = count($g->array_of_recurring_payment_objects) - 1; ?>
+            <?php foreach ($g->array_of_recurring_payment_objects as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
                 <p>🕒: <?= $object->time ?></p>
                 <p><?= $object->currency ?>&nbsp;<?= $object->amount_paid ?></p>

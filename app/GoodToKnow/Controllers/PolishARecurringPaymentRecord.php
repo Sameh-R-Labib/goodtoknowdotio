@@ -18,7 +18,6 @@ class PolishARecurringPaymentRecord
 
         global $g;
         global $db;
-        global $array_of_recurring_payment_objects;
 
 
         kick_out_loggedoutusers();
@@ -32,9 +31,9 @@ class PolishARecurringPaymentRecord
 
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
 
-        $array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
+        $g->array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 
-        if (!$array_of_recurring_payment_objects || !empty($g->message)) {
+        if (!$g->array_of_recurring_payment_objects || !empty($g->message)) {
 
             breakout(' I could NOT find any recurring payment records ¯\_(ツ)_/¯. ');
 
