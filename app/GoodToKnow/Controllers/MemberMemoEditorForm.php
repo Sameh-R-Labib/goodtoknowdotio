@@ -11,7 +11,6 @@ class MemberMemoEditorForm
         global $g;
         global $db;
         // $g->saved_str01 has user's username. Is changed in this file and is used in the view.
-        global $user_object;
 
 
         kick_out_nonadmins();
@@ -32,15 +31,15 @@ class MemberMemoEditorForm
 
         $db = get_db();
 
-        $user_object = User::find_by_username($g->saved_str01);
+        $g->user_object = User::find_by_username($g->saved_str01);
 
-        if (!$user_object) {
+        if (!$g->user_object) {
 
             breakout(' Unexpected unable to retrieve target user\'s object. ');
 
         }
 
-        $_SESSION['saved_int01'] = (int)$user_object->id;
+        $_SESSION['saved_int01'] = (int)$g->user_object->id;
 
 
         /**
