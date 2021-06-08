@@ -372,6 +372,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $fields;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -512,5 +518,7 @@ class AppState
         $this->thing_name = '';
 
         $this->result = '';
+
+        $this->fields = '';
     }
 }

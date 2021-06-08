@@ -12,7 +12,6 @@ class BalanceOutTheSequenceNumbers
         global $g;
         global $db;
         global $thing_id;
-        global $fields;
 
 
         kick_out_nonadmins();
@@ -99,31 +98,29 @@ class BalanceOutTheSequenceNumbers
          * dealing with posts.
          */
 
-        $fields = '';
-
         if ($g->thing_type === 'Community') {
 
-            // Assemble $fields for topic records. One html line for each record.
+            // Assemble $g->fields for topic records. One html line for each record.
             foreach ($g->result as $object) {
 
                 // $object is current record
-                $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
-                $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
-                $fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
-                $fields .= $object->topic_name;
-                $fields .= "</p>\n";
+                $g->fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
+                $g->fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
+                $g->fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
+                $g->fields .= $object->topic_name;
+                $g->fields .= "</p>\n";
 
             }
         } else {
 
-            // Assemble $fields for post records. One html line for each record.
+            // Assemble $g->fields for post records. One html line for each record.
             foreach ($g->result as $object) {
                 // $object is current record
-                $fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
-                $fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
-                $fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
-                $fields .= $object->title;
-                $fields .= "</p>\n";
+                $g->fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
+                $g->fields .= "<input type=\"text\" value=\"{$object->sequence_number}\" ";
+                $g->fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
+                $g->fields .= $object->title;
+                $g->fields .= "</p>\n";
 
             }
         }
