@@ -384,6 +384,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $array_of_post_objects;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -528,5 +534,7 @@ class AppState
         $this->fields = '';
 
         $this->present = '';
+
+        $this->array_of_post_objects = [];
     }
 }

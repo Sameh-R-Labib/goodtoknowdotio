@@ -7,7 +7,6 @@ global $db;
 global $g;
 // $g->saved_int01 id of topic
 global $array_of_author_usernames;
-global $array_of_post_objects;
 
 
 kick_out_nonadmins();
@@ -15,9 +14,9 @@ kick_out_nonadmins();
 
 $db = get_db();
 
-$array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($g->saved_int01);
+$g->array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($g->saved_int01);
 
-if (!$array_of_post_objects) {
+if (!$g->array_of_post_objects) {
 
     breakout(' This topic does not contain any posts. ');
 
@@ -26,10 +25,10 @@ if (!$array_of_post_objects) {
 
 /**
  * Generate an array of author usernames. Each array element's value is a username which
- * is the username corresponding to the user_id of the corresponding element in the $array_of_post_objects.
+ * is the username corresponding to the user_id of the corresponding element in the $g->array_of_post_objects.
  */
 
-$array_of_author_usernames = TopicToPost::get_author_usernames($array_of_post_objects);
+$array_of_author_usernames = TopicToPost::get_author_usernames($g->array_of_post_objects);
 
 if (!$array_of_author_usernames) {
 
