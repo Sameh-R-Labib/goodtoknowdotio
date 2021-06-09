@@ -35,7 +35,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         global $g;
         global $db;
-        global $account;
         // $g->saved_int01 id of BankingAcctForBalances record
 
 
@@ -49,9 +48,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * 1) Get (from the database) the BankingAcctForBalances object.
          */
 
-        $account = BankingAcctForBalances::find_by_id($g->saved_int01);
+        $g->account = BankingAcctForBalances::find_by_id($g->saved_int01);
 
-        if (!$account) {
+        if (!$g->account) {
 
             breakout(' Unexpectedly I could not find that banking account for balances. ');
 
@@ -68,8 +67,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
          */
 
         $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
-        $sql .= ' AND `bank_id` = ' . $db->real_escape_string($account->id);
-        $sql .= ' AND `time` > ' . $db->real_escape_string($account->start_time);
+        $sql .= ' AND `bank_id` = ' . $db->real_escape_string($g->account->id);
+        $sql .= ' AND `time` > ' . $db->real_escape_string($g->account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
         $g->array = BankingTransactionForBalances::find_by_sql($sql);
@@ -86,16 +85,22 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * object. This gets assigned to each BankingTransactionForBalances object's balance field.
          */
 
-        $running_total = $account->start_balance;
+        $running_total = $g->account->start_balance;
 
         foreach ($g->array as $transaction) {
+
             $running_total += $transaction->amount;
 
             if (abs($running_total) >= abs(0.00000000001)) {
+
                 $transaction->balance = $running_total;
+
             } else {
+
                 $transaction->balance = 0.0;
+
             }
+
         }
 
 
@@ -124,20 +129,26 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
 
         foreach ($g->array as $transaction) {
-            if (is_crypto($account->currency)) {
+
+            if (is_crypto($g->account->currency)) {
+
                 $transaction->amount = number_format($transaction->amount, 8);
                 $transaction->balance = number_format($transaction->balance, 8);
+
             } else {
+
                 $transaction->amount = number_format($transaction->amount, 2);
                 $transaction->balance = number_format($transaction->balance, 2);
+
             }
 
             $transaction->time = get_readable_time($transaction->time);
+
         }
 
 
-        $account->start_time = get_readable_time($account->start_time);
-        $account->start_balance = readable_amount_of_money($account->currency, $account->start_balance);
+        $g->account->start_time = get_readable_time($g->account->start_time);
+        $g->account->start_balance = readable_amount_of_money($g->account->currency, $g->account->start_balance);
 
 
         // Reverse the order

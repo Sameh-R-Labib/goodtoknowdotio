@@ -1,20 +1,19 @@
-<?php global $g; ?>
-<?php global $account; ?>
 <?php require TOPOFREGULARPAGE; ?>
 <?php require TOPBARDIV; ?>
 <?php require CBSOFREGULARPAGES; ?>
+<?php global $g; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1><?php echo $account->acct_name; ?></h1>
+        <h1><?php echo $g->account->acct_name; ?></h1>
         <table class="not_there">
             <col width="92%">
             <col width="10">
             <tr>
-                <td><b>Starting time: </b><?= $account->start_time ?></td>
+                <td><b>Starting time: </b><?= $g->account->start_time ?></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td><b>Starting balance: </b><?= $account->currency ?>&nbsp;<?= $account->start_balance ?></td>
+                <td><b>Starting balance: </b><?= $g->account->currency ?>&nbsp;<?= $g->account->start_balance ?></td>
                 <td><span class="tooltip">ℹ️
                         <span class="tooltiptext tooltip-top">Balance will be incorrect if admin has purged transactions
                             older than 90 days and the start_time for this account is older than 90 days.</span>

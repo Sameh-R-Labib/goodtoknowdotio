@@ -438,6 +438,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $account;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -600,5 +606,7 @@ class AppState
         $this->submitted_community_ids_array = [];
 
         $this->community_array = [];
+
+        $this->account = '';
     }
 }
