@@ -39,9 +39,9 @@ class RevampABankingTransactionForBalancesEdit
          * But first we need to discern the currency from the BankingAcctForBalances.
          */
 
-        $bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
+        $g->bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
 
-        if (!$bank) {
+        if (!$g->bank) {
 
             breakout(' Unexpectedly I could not find that banking account for balances. ');
 
@@ -49,7 +49,7 @@ class RevampABankingTransactionForBalancesEdit
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $g->object->amount = readable_amount_no_commas($bank->currency, $g->object->amount);
+        $g->object->amount = readable_amount_no_commas($g->bank->currency, $g->object->amount);
 
 
         // I had to move this down here to use bank_id before it got changed.

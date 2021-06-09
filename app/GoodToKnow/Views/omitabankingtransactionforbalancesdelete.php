@@ -1,5 +1,4 @@
 <?php global $g; ?>
-<?php global $bank; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/OmitABankingTranForBalancesProcessConfirmation/page" method="post">
         <h1>Confirm</h1>
@@ -7,7 +6,7 @@
         <p>&nbsp;</p>
         <p><b>Label: </b><?php echo $g->object->label; ?></p>
         <p>🕒<b>: </b><?= $g->object->time ?></p>
-        <p><b>Amount: </b><?php echo $bank->currency; ?>&nbsp;<?= $g->object->amount ?></p>
+        <p><b>Amount: </b><?php echo $g->bank->currency; ?>&nbsp;<?= $g->object->amount ?></p>
         <p>&nbsp;</p>
         <p>Are you sure you want to delete this?</p>
         <section>

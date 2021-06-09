@@ -20,7 +20,6 @@ class OmitABankingTransactionForBalancesDelete
 
 
         global $g;
-        global $bank;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
@@ -41,9 +40,9 @@ class OmitABankingTransactionForBalancesDelete
          * We need to know what the currency is. To do this we need the BankingAcctForBalances object.
          */
 
-        $bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
+        $g->bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
 
-        if (!$bank) {
+        if (!$g->bank) {
 
             breakout(' Unexpectedly I could not find that banking account for balances. ');
 
@@ -54,7 +53,7 @@ class OmitABankingTransactionForBalancesDelete
 
         $g->object->time = get_readable_time($g->object->time);
 
-        $g->object->amount = readable_amount_of_money($bank->currency, $g->object->amount);
+        $g->object->amount = readable_amount_of_money($g->bank->currency, $g->object->amount);
 
 
         $g->html_title = 'Are you sure?';

@@ -450,6 +450,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $bank;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -616,5 +622,7 @@ class AppState
         $this->account = '';
 
         $this->account_type = '';
+
+        $this->bank = '';
     }
 }
