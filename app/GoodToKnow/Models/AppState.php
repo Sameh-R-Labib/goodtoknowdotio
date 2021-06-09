@@ -492,6 +492,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $commodity_label;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -672,5 +678,7 @@ class AppState
         $this->commodity_amount = 0;
 
         $this->commodity_type = '';
+
+        $this->commodity_label = '';
     }
 }

@@ -229,7 +229,7 @@ $g = new AppState();
 //$currency_transacted = '';
 //$commodity_amount = 0;
 //$commodity_type = '';
-$commodity_label = '';
+//$commodity_label = '';
 $tax_year = 0;
 $profit = 0;
 

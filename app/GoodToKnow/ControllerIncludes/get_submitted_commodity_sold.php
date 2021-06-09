@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $g;
 // $g->saved_int01 commodities_sold id
-global $commodity_label;
 global $tax_year;
 global $profit;
 
@@ -71,12 +70,12 @@ $g->commodity_type = standard_form_field_prep('commodity_type', 1, 15);
 
 
 /**
- * Get $commodity_label
+ * Get $g->commodity_label
  *
  * Most typically this is a bitcoin address or something which can be perceived like it.
  */
 
-$commodity_label = bitcoin_address_form_field_prep('commodity_label');
+$g->commodity_label = bitcoin_address_form_field_prep('commodity_label');
 
 
 /**
