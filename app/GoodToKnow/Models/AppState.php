@@ -468,6 +468,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $price_sold;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -640,5 +646,7 @@ class AppState
         $this->chosen_topic_id = 0;
 
         $this->price_bought = 0;
+
+        $this->price_sold = 0;
     }
 }
