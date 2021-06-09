@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $g;
 // $g->saved_int01 commodities_sold id
-global $price_bought;
 global $price_sold;
 global $currency_transacted;
 global $commodity_amount;
@@ -41,10 +40,10 @@ require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_bought_and_time_sold_epoc
 
 
 /**
- * Get $price_bought
+ * Get $g->price_bought
  */
 
-$price_bought = float_form_field_prep('price_bought', 0.0, 999999999999999.99);
+$g->price_bought = float_form_field_prep('price_bought', 0.0, 999999999999999.99);
 
 
 /**

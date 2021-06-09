@@ -15,7 +15,6 @@ class FatherACommoditySoldProcessor
 
         global $db;
         global $g;
-        global $price_bought;
         global $price_sold;
         global $currency_transacted;
         global $commodity_amount;
@@ -33,7 +32,7 @@ class FatherACommoditySoldProcessor
          */
 
         $array = ['user_id' => $g->user_id, 'time_bought' => $g->time_bought, 'time_sold' => $g->time_sold,
-            'price_bought' => $price_bought, 'price_sold' => $price_sold, 'currency_transacted' => $currency_transacted,
+            'price_bought' => $g->price_bought, 'price_sold' => $price_sold, 'currency_transacted' => $currency_transacted,
             'commodity_amount' => $commodity_amount, 'commodity_type' => $commodity_type,
             'commodity_label' => $commodity_label, 'tax_year' => $tax_year, 'profit' => $profit];
 

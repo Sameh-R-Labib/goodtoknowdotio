@@ -20,7 +20,6 @@ class FineTuneACommoditySoldUpdate
 
         global $g;
         global $db;
-        global $price_bought;
         global $price_sold;
         global $currency_transacted;
         global $commodity_amount;
@@ -54,7 +53,7 @@ class FineTuneACommoditySoldUpdate
 
         $object->time_bought = $g->time_bought;
         $object->time_sold = $g->time_sold;
-        $object->price_bought = $price_bought;
+        $object->price_bought = $g->price_bought;
         $object->price_sold = $price_sold;
         $object->currency_transacted = $currency_transacted;
         $object->commodity_amount = $commodity_amount;
