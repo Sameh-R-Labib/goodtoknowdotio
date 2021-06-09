@@ -20,7 +20,6 @@ class FineTuneACommoditySoldUpdate
 
         global $g;
         global $db;
-        global $commodity_amount;
         global $commodity_type;
         global $commodity_label;
         global $tax_year;
@@ -54,7 +53,7 @@ class FineTuneACommoditySoldUpdate
         $object->price_bought = $g->price_bought;
         $object->price_sold = $g->price_sold;
         $object->currency_transacted = $g->currency_transacted;
-        $object->commodity_amount = $commodity_amount;
+        $object->commodity_amount = $g->commodity_amount;
         $object->commodity_type = $commodity_type;
         $object->commodity_label = $commodity_label;
         $object->tax_year = $tax_year;

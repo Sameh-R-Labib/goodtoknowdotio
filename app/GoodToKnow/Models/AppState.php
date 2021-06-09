@@ -480,6 +480,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $commodity_amount;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -656,5 +662,7 @@ class AppState
         $this->price_sold = 0;
 
         $this->currency_transacted = '';
+
+        $this->commodity_amount = 0;
     }
 }
