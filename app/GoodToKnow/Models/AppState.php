@@ -474,6 +474,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $currency_transacted;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -648,5 +654,7 @@ class AppState
         $this->price_bought = 0;
 
         $this->price_sold = 0;
+
+        $this->currency_transacted = '';
     }
 }
