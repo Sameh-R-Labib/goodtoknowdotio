@@ -10,7 +10,6 @@ class AdminPassCodeGenerationForm
     {
         global $g;
         global $db;
-        global $community_array;
 
 
         kick_out_nonadmins();
@@ -31,7 +30,7 @@ class AdminPassCodeGenerationForm
 
         // Community::find_all() should return the array we are looking for (see above)
 
-        $community_array = Community::find_all();
+        $g->community_array = Community::find_all();
 
 
         $g->html_title = 'Admin Pass-Code Generation Form';

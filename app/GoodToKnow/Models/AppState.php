@@ -432,6 +432,12 @@ class AppState
 
 
     /**
+     * @var array
+     */
+    public $community_array;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -592,5 +598,7 @@ class AppState
         $this->readable_user_objects_array = [];
 
         $this->submitted_community_ids_array = [];
+
+        $this->community_array = [];
     }
 }
