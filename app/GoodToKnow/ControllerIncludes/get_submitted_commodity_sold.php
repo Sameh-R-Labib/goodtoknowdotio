@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $g;
 // $g->saved_int01 commodities_sold id
-global $commodity_type;
 global $commodity_label;
 global $tax_year;
 global $profit;
@@ -65,10 +64,10 @@ $g->commodity_amount = float_form_field_prep('commodity_amount', 0.0, 9999999999
 
 
 /**
- * Get $commodity_type
+ * Get $g->commodity_type
  */
 
-$commodity_type = standard_form_field_prep('commodity_type', 1, 15);
+$g->commodity_type = standard_form_field_prep('commodity_type', 1, 15);
 
 
 /**
