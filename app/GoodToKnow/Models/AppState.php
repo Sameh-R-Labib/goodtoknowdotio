@@ -444,6 +444,12 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $account_type;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -608,5 +614,7 @@ class AppState
         $this->community_array = [];
 
         $this->account = '';
+
+        $this->account_type = '';
     }
 }
