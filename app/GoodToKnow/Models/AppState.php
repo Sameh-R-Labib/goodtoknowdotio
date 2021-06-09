@@ -498,6 +498,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $tax_year;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -680,5 +686,7 @@ class AppState
         $this->commodity_type = '';
 
         $this->commodity_label = '';
+
+        $this->tax_year = 0;
     }
 }

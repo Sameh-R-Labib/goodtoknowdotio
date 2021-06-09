@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $g;
 // $g->saved_int01 commodities_sold id
-global $tax_year;
 global $profit;
 
 kick_out_loggedoutusers();
@@ -79,10 +78,10 @@ $g->commodity_label = bitcoin_address_form_field_prep('commodity_label');
 
 
 /**
- * Get $tax_year
+ * Get $g->tax_year
  */
 
-$tax_year = integer_form_field_prep('tax_year', 1992, 65535);
+$g->tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
 
 /**

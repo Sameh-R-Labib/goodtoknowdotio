@@ -230,7 +230,7 @@ $g = new AppState();
 //$commodity_amount = 0;
 //$commodity_type = '';
 //$commodity_label = '';
-$tax_year = 0;
+//$tax_year = 0;
 $profit = 0;
 
 /**

@@ -15,7 +15,6 @@ class FatherACommoditySoldProcessor
 
         global $db;
         global $g;
-        global $tax_year;
         global $profit;
 
 
@@ -29,7 +28,7 @@ class FatherACommoditySoldProcessor
         $array = ['user_id' => $g->user_id, 'time_bought' => $g->time_bought, 'time_sold' => $g->time_sold,
             'price_bought' => $g->price_bought, 'price_sold' => $g->price_sold, 'currency_transacted' => $g->currency_transacted,
             'commodity_amount' => $g->commodity_amount, 'commodity_type' => $g->commodity_type,
-            'commodity_label' => $g->commodity_label, 'tax_year' => $tax_year, 'profit' => $profit];
+            'commodity_label' => $g->commodity_label, 'tax_year' => $g->tax_year, 'profit' => $profit];
 
         $object = CommoditySold::array_to_object($array);
 

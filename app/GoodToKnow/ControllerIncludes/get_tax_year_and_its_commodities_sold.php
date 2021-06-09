@@ -6,7 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $g;
 global $db;
-global $tax_year;
 
 
 kick_out_loggedoutusers();
@@ -18,7 +17,7 @@ kick_out_loggedoutusers();
 
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-$tax_year = integer_form_field_prep('tax_year', 1992, 65535);
+$g->tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
 
 /**
@@ -27,13 +26,13 @@ $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
 $db = get_db();
 
-$sql = 'SELECT * FROM `commodities_sold` WHERE `tax_year` = ' . $db->real_escape_string($tax_year);
+$sql = 'SELECT * FROM `commodities_sold` WHERE `tax_year` = ' . $db->real_escape_string($g->tax_year);
 $sql .= ' AND `user_id` = ' . $db->real_escape_string($g->user_id);
 
 $g->array = CommoditySold::find_by_sql($sql);
 
 if (!$g->array || !empty($g->message)) {
 
-    breakout(" For <b>{$tax_year}</b> I could NOT find any CommoditySold(s/plural) ¯\_(ツ)_/¯. ");
+    breakout(" For <b>{$g->tax_year}</b> I could NOT find any CommoditySold(s/plural) ¯\_(ツ)_/¯. ");
 
 }
