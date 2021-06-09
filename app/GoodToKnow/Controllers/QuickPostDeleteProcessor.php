@@ -16,14 +16,14 @@ class QuickPostDeleteProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+        $g->chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
 
         /**
-         * Make sure $chosen_topic_id is among the ids of $g->special_topic_array
+         * Make sure $g->chosen_topic_id is among the ids of $g->special_topic_array
          */
 
-        if (!array_key_exists($chosen_topic_id, $g->special_topic_array)) {
+        if (!array_key_exists($g->chosen_topic_id, $g->special_topic_array)) {
 
             breakout(' Unexpected error: topic id not found in topic array. ');
 
@@ -34,7 +34,7 @@ class QuickPostDeleteProcessor
          * Save it in the session
          */
 
-        $_SESSION['saved_int01'] = $chosen_topic_id;
+        $_SESSION['saved_int01'] = $g->chosen_topic_id;
 
 
         redirect_to("/ax1/QuickPostDeleteChoosePost/page");

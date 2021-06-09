@@ -12,7 +12,7 @@ class CreateNewPostEditProcessor
     {
         /**
          * Starting off with $_SESSION['saved_int02'] which is the post id AND starting off with
-         * a submitted form which gives us the markdown for the post AND $_SESSION['saved_int01'] = $chosen_topic_id;
+         * a submitted form which gives us the markdown for the post AND $_SESSION['saved_int01'] = $g->chosen_topic_id;
          *
          * The task at hand is to do the same things which are done by the EditMyPost series of
          * controllers in order to use the post record from the database so that we can update the markdown and html

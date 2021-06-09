@@ -66,9 +66,9 @@ class NewTopicIPProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+        $g->chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (!array_key_exists($chosen_topic_id, $g->special_topic_array)) {
+        if (!array_key_exists($g->chosen_topic_id, $g->special_topic_array)) {
 
             breakout(' NewTopicIPProcessor says: Error 124213. ');
 
@@ -89,7 +89,7 @@ class NewTopicIPProcessor
 
         foreach ($topic_objects_array as $object) {
 
-            if ($object->id == $chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
+            if ($object->id == $g->chosen_topic_id) $chosen_topic_sequence_number = $object->sequence_number;
 
         }
 

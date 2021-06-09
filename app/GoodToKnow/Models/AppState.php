@@ -456,6 +456,12 @@ class AppState
 
 
     /**
+     * @var int
+     */
+    public $chosen_topic_id;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -624,5 +630,7 @@ class AppState
         $this->account_type = '';
 
         $this->bank = '';
+
+        $this->chosen_topic_id = 0;
     }
 }

@@ -10,10 +10,9 @@ class CreateNewPostProcessor
     {
         global $db;
         global $g;
-        global $chosen_topic_id;
 
 
-        // $_SESSION['saved_int01'] will acquire $chosen_topic_id in get_and_save_the_topic_id.php
+        // $_SESSION['saved_int01'] will acquire $g->chosen_topic_id in get_and_save_the_topic_id.php
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
@@ -25,7 +24,7 @@ class CreateNewPostProcessor
 
         $db = get_db();
 
-        $posts = TopicToPost::get_posts_array_for_a_topic($chosen_topic_id);
+        $posts = TopicToPost::get_posts_array_for_a_topic($g->chosen_topic_id);
 
         if ($posts == false) $posts = [];
 
