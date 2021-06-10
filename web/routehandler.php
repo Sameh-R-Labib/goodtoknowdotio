@@ -177,61 +177,6 @@ $g = new AppState();
 
 //$is_guest = false;  // Tells some Gtk.io views to show parts of the page that a non-authenticated should see.
 
-/**
- * The strategy is for vars used in views to be declared global both
- * in the view file and in the view's controller class method. To round things
- * off we will also initialize the vars "not initialized above" below.
- *
- * Also, it's good to make global the vars which traverse multiple include files.
- * For example $message_object.
- */
-//$page = 'Home';
-//$html_title = '';
-//$long_title_of_post = '';
-//$pre_populate = '';
-//$array = [];
-//$markdown = '';
-//$coms_user_belongs_to = [];
-//$coms_user_does_not_belong_to = [];
-//$show_poof = false;
-//$time_bought = [];
-//$time_sold = [];
-//$time = [];
-//$last = [];
-//$next = [];
-//$object = '';
-//$community_object = null;
-//$message_object = null;
-//$topic_object = null;
-//$bitcoin_object = null;
-//$user_object = null;
-//$recurring_payment_object = null;
-//$thing_type = '';
-//$thing_name = '';
-//$result = '';
-//$fields = '';
-//$present = '';
-//$array_of_post_objects = [];
-//$array_of_author_usernames = [];
-//$array_of_recurring_payment_objects = [];
-//$array_of_bitcoin_objects = [];
-//$array_of_objects = [];
-//$inbox_messages_array = [];
-//$readable_user_objects_array = [];
-//$submitted_community_ids_array = [];
-//$community_array = [];
-//$account = '';
-//$account_type = '';
-//$bank = '';
-//$chosen_topic_id = 0;
-//$price_bought = 0;
-//$price_sold = 0;
-//$currency_transacted = '';
-//$commodity_amount = 0;
-//$commodity_type = '';
-//$commodity_label = '';
-//$tax_year = 0;
-//$profit = 0.0;
 
 /**
  * Various initializations.

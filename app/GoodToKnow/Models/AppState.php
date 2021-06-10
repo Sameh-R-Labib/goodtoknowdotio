@@ -612,7 +612,12 @@ class AppState
 
 
         /**
-         * Globalizes
+         * Globalizes - initializes vars which are to be declared global.
+         *
+         * In other words:  This is the central home base place where we initialize app state globals.
+         *
+         * Our standard practice: $g (an AppState object), and also with all globals in general, shall be declared
+         *                        global in every file that uses that global.
          */
 
         $this->page = 'Home';
