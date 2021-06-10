@@ -10,7 +10,6 @@ use GoodToKnow\Models\User;
  */
 function is_username_usable_for_registration(string &$username): bool
 {
-    global $db;
     global $g;
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactically.php';

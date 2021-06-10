@@ -21,7 +21,6 @@ class AlterAPossibleTaxDeductionUpdate
          */
 
         global $g;
-        global $db;
         // $g->saved_int01 record id
 
         kick_out_loggedoutusers();
@@ -48,7 +47,7 @@ class AlterAPossibleTaxDeductionUpdate
          * 2) Retrieve the existing record from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $g->object = PossibleTaxDeduction::find_by_id($g->saved_int01);
 

@@ -4,16 +4,15 @@ use GoodToKnow\Models\MessageToUser;
 
 
 global $g;
-global $db;
 
 
 if ($g->messages_last_time === null) {
 
-    if ($db == 'not connected') {
+    if ($g->db == 'not connected') {
 
-        $db = db_connect();
+        $g->db = db_connect();
 
-        if ($db === false) {
+        if ($g->db === false) {
 
             $g->message .= " Failed to connect to the database. ";
             $_SESSION['message'] = $g->message;
@@ -46,11 +45,11 @@ if ($g->messages_last_time === null) {
 
     if ($time_since_last > 17) {
 
-        if ($db == 'not connected') {
+        if ($g->db == 'not connected') {
 
-            $db = db_connect();
+            $g->db = db_connect();
 
-            if ($db === false) {
+            if ($g->db === false) {
 
                 $g->message .= " Failed to connect to the database. ";
                 $_SESSION['message'] = $g->message;

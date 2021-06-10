@@ -52,7 +52,7 @@ abstract class GoodObject
      *             - each element's value the corresponding value
      * object == objectified record
      * array == array of records
-     * field == static::$db_fields $field
+     * field == static::fields field
      */
 
     // Class Helpers
@@ -104,13 +104,13 @@ abstract class GoodObject
      */
     protected function sanitized_attributes(): array
     {
-        global $db;
+        global $g;
 
         $clean_attributes = [];
 
         foreach ($this->attributes() as $key => $value) {
 
-            $clean_attributes[$key] = $db->real_escape_string($value);
+            $clean_attributes[$key] = $g->db->real_escape_string($value);
 
         }
 
@@ -180,7 +180,6 @@ abstract class GoodObject
      */
     protected function create(): bool
     {
-        global $db;
         global $g;
 
         if ($this->id) {
@@ -216,9 +215,9 @@ abstract class GoodObject
             $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ('";
             $sql .= join("', '", $array_values_array) . "')";
 
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty($query_error)) {
 
@@ -227,9 +226,9 @@ abstract class GoodObject
                 return false;
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
-            $insert_id = $db->insert_id;
+            $insert_id = $g->db->insert_id;
 
         } catch (Exception $e) {
 
@@ -279,7 +278,6 @@ abstract class GoodObject
          * The function returns true on success and false if no objects were inserted.
          */
 
-        global $db;
         global $g;
 
         $sql = 'INSERT INTO ' . static::$table_name;
@@ -315,9 +313,9 @@ abstract class GoodObject
             $sql .= " (`" . join("`, `", $array_keys_array) . "`) VALUES ";
             $sql .= static::value_sets_sql_string($objects_array);
 
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty($query_error)) {
 
@@ -327,7 +325,7 @@ abstract class GoodObject
 
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
         } catch (Exception $e) {
 
@@ -427,11 +425,11 @@ abstract class GoodObject
          * values in the object are the same as the values in the database row.
          */
 
-        global $db;
+        global $g;
 
         // A database object without an id is one that has never been saved in the database.
 
-        return isset($this->id) ? $this->update($db) : $this->create();
+        return isset($this->id) ? $this->update($g->db) : $this->create();
     }
 
 
@@ -442,15 +440,14 @@ abstract class GoodObject
      */
     public static function count_all()
     {
-        global $db;
         global $g;
 
         $sql = "SELECT COUNT(*) FROM " . static::$table_name;
 
         try {
-            $result = $db->query($sql);
+            $result = $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
 
@@ -501,10 +498,10 @@ abstract class GoodObject
      */
     public static function find_by_id($id)
     {
-        global $db;
+        global $g;
 
         $result_array = static::find_by_sql("SELECT * FROM " . static::$table_name . "
-			WHERE `id`=" . $db->real_escape_string($id) . " LIMIT 1");
+			WHERE `id`=" . $g->db->real_escape_string($id) . " LIMIT 1");
 
         return !empty($result_array) ? array_shift($result_array) : false;
     }
@@ -524,15 +521,14 @@ abstract class GoodObject
      */
     public static function find_by_sql(string $sql)
     {
-        global $db;
         global $g;
 
         $object_array = [];
 
         try {
-            $result = $db->query($sql);
+            $result = $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
 
@@ -576,7 +572,6 @@ abstract class GoodObject
      */
     protected function update(): bool
     {
-        global $db;
         global $g;
 
         $num_affected_rows = 0;
@@ -623,11 +618,11 @@ abstract class GoodObject
 
             $sql = "UPDATE " . static::$table_name . " SET ";
             $sql .= join(", ", $attribute_pairs);
-            $sql .= " WHERE `id`=" . $db->real_escape_string($this->id) . " LIMIT 1";
+            $sql .= " WHERE `id`=" . $g->db->real_escape_string($this->id) . " LIMIT 1";
 
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
 
@@ -636,7 +631,7 @@ abstract class GoodObject
                 return false;
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
         } catch (Exception $e) {
 
@@ -671,19 +666,18 @@ abstract class GoodObject
      */
     public function delete(): bool
     {
-        global $db;
         global $g;
 
         $num_affected_rows = 0;
 
         $sql = "DELETE FROM " . static::$table_name . " ";
-        $sql .= "WHERE `id`=" . $db->real_escape_string($this->id);
+        $sql .= "WHERE `id`=" . $g->db->real_escape_string($this->id);
         $sql .= " LIMIT 1";
 
         try {
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
 
@@ -693,7 +687,7 @@ abstract class GoodObject
 
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
         } catch (Exception $e) {
 

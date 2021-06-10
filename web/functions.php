@@ -151,14 +151,14 @@ function db_connect()
 
         $db = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
-        if ($db->connect_error) {
+        if ($g->db->connect_error) {
 
-            $g->message .= ' ' . htmlspecialchars($db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' ' . htmlspecialchars($g->db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
 
         }
 
-        $db->set_charset('utf8mb4');
+        $g->db->set_charset('utf8mb4');
 
     } catch (Exception $e) {
 

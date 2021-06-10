@@ -16,7 +16,6 @@ class TopicDescriptionEditorForm
 
 
         global $g;
-        global $db;
         // $g->saved_int01 community id
 
 
@@ -26,7 +25,7 @@ class TopicDescriptionEditorForm
         kick_out_nonadmins();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
         $g->topic_object = Topic::find_by_id($g->saved_int01);
 

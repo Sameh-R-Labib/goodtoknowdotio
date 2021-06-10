@@ -4,6 +4,9 @@
 namespace GoodToKnow\Models;
 
 
+use mysqli;
+
+
 class AppState
 {
     /**
@@ -510,6 +513,12 @@ class AppState
 
 
     /**
+     * @var string|mysqli;
+     */
+    public $db;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -696,5 +705,7 @@ class AppState
         $this->tax_year = 0;
 
         $this->profit = 0.0;
+
+        $this->db = 'not connected';
     }
 }

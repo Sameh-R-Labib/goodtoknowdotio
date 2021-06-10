@@ -18,14 +18,13 @@ class AuthorDeletesOwnPostChoosePost
          */
 
         global $g;
-        global $db;
         // $g->saved_int01 id of topic
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         // Get all posts (as special array) for the user and topic.

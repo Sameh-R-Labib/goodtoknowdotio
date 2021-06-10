@@ -10,8 +10,6 @@ class BalanceOutTheSequenceNumbers
     function page()
     {
         global $g;
-        global $db;
-        global $thing_id;
 
 
         kick_out_nonadmins();
@@ -37,12 +35,10 @@ class BalanceOutTheSequenceNumbers
         if ($g->thing_type === 'Community') {
 
             $g->thing_name = $g->community_name;
-            $thing_id = $g->community_id;
 
         } else {
 
             $g->thing_name = $g->topic_name;
-            $thing_id = $g->topic_id;
 
         }
 
@@ -52,7 +48,7 @@ class BalanceOutTheSequenceNumbers
          * If thing is a topic then it holds post records.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         if ($g->thing_type === 'Community') {
 

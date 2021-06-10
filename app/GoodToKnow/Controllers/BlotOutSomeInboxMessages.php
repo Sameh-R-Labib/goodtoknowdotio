@@ -15,13 +15,12 @@ class BlotOutSomeInboxMessages
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
         $g->inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
 

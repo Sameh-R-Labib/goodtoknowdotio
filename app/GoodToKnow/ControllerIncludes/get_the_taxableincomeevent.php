@@ -4,7 +4,6 @@ use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-global $db;
 global $g;
 
 
@@ -26,7 +25,7 @@ $_SESSION['saved_int01'] = $id;
  * 2) Retrieve the taxable_income_event object with that id from the database.
  */
 
-$db = get_db();
+$g->db = get_db();
 
 $g->object = TaxableIncomeEvent::find_by_id($id);
 

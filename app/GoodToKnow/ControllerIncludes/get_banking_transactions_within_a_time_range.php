@@ -4,7 +4,6 @@ use GoodToKnow\Models\BankingTransactionForBalances;
 
 
 global $g;
-global $db;
 // $g->saved_int01 min time
 // $g->saved_int02 max time
 
@@ -17,10 +16,10 @@ kick_out_loggedoutusers();
  * within the prescribed time range.
  */
 
-$db = get_db();
+$g->db = get_db();
 
-$sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
-$sql .= ' AND `time` BETWEEN "' . $db->real_escape_string($g->saved_int01) . '" AND "' . $db->real_escape_string($g->saved_int02) . '"';
+$sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
+$sql .= ' AND `time` BETWEEN "' . $g->db->real_escape_string($g->saved_int01) . '" AND "' . $g->db->real_escape_string($g->saved_int02) . '"';
 $sql .= ' ORDER BY `time`';
 
 $g->array = BankingTransactionForBalances::find_by_sql($sql);

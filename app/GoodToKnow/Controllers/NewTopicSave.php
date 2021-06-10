@@ -10,7 +10,6 @@ class NewTopicSave
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 the topic name
         // $g->saved_str02 the topic description
         // $g->saved_int01 the sequence number
@@ -39,7 +38,7 @@ class NewTopicSave
          * Get all the topics in out community.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
 

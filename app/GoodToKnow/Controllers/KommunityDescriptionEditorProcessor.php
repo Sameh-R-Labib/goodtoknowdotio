@@ -9,7 +9,7 @@ class KommunityDescriptionEditorProcessor
 {
     function page()
     {
-        global $db;
+        global $g;
 
 
         kick_out_nonadmins();
@@ -26,7 +26,7 @@ class KommunityDescriptionEditorProcessor
 
         $submitted_community_name = standard_form_field_prep('community', 1, 200);
 
-        $db = get_db();
+        $g->db = get_db();
 
         $community = Community::find_by_community_name($submitted_community_name);
 

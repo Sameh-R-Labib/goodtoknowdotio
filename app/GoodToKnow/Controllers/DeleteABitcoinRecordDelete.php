@@ -16,7 +16,6 @@ class DeleteABitcoinRecordDelete
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
@@ -41,7 +40,7 @@ class DeleteABitcoinRecordDelete
          * Delete the record.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $bitcoin = Bitcoin::find_by_id($g->saved_int01);
 

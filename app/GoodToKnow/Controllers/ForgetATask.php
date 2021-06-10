@@ -15,16 +15,15 @@ class ForgetATask
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
 
 
         $g->array = Task::find_by_sql($sql);

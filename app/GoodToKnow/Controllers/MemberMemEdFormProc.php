@@ -24,7 +24,6 @@ class MemberMemEdFormProc
          */
 
 
-        global $db;
         global $g;
         // $g->saved_str01 the member's username
         // $g->saved_int01 the member's id
@@ -47,7 +46,7 @@ class MemberMemEdFormProc
          * 4) Get a copy of the User object for the member.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $user_object = User::find_by_id($g->saved_int01);
 

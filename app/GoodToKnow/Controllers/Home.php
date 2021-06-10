@@ -92,16 +92,15 @@ class Home
          */
 
         global $g;
-        global $db;
 
         $time_since_refresh = time() - $g->last_refresh_communities;  // seconds
 
         if ($time_since_refresh > 250) {
-            if ($db == 'not connected') {
+            if ($g->db == 'not connected') {
 
-                $db = db_connect();
+                $g->db = db_connect();
 
-                if ($db === false) {
+                if ($g->db === false) {
                     $g->message .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $g->message;
                     reset_feature_session_vars();
@@ -133,11 +132,11 @@ class Home
 
         if ($time_since_refresh > 240 && $g->type_of_resource_requested == 'community') {
 
-            if ($db == 'not connected') {
+            if ($g->db == 'not connected') {
 
-                $db = db_connect();
+                $g->db = db_connect();
 
-                if ($db === false) {
+                if ($g->db === false) {
 
                     $g->message .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $g->message;
@@ -167,11 +166,11 @@ class Home
         $time_since_refresh = time() - $g->last_refresh_posts;
 
         if ($time_since_refresh > 180 && $g->type_of_resource_requested == 'topic') {
-            if ($db == 'not connected') {
+            if ($g->db == 'not connected') {
 
-                $db = db_connect();
+                $g->db = db_connect();
 
-                if ($db === false) {
+                if ($g->db === false) {
 
                     $g->message .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $g->message;
@@ -201,11 +200,11 @@ class Home
 
         if ($time_since_refresh > 180 && $g->type_of_resource_requested == 'post') {
 
-            if ($db == 'not connected') {
+            if ($g->db == 'not connected') {
 
-                $db = db_connect();
+                $g->db = db_connect();
 
-                if ($db === false) {
+                if ($g->db === false) {
 
                     $g->message .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $g->message;
@@ -262,7 +261,7 @@ class Home
          * enforce_suspension
          *
          * This function will take arguments:
-         *   A) $db
+         *   A) $g->db
          *   B) The ID of the logged in user
          *   C) $g->when_last_checked_suspend (which is a timestamp)
          *
@@ -273,7 +272,6 @@ class Home
          *   4) Otherwise, return control over to where the function was called.
          */
 
-        global $db;
         global $g;
 
         $elapsed_time = time() - $g->when_last_checked_suspend;
@@ -284,11 +282,11 @@ class Home
 
             $_SESSION['when_last_checked_suspend'] = $g->when_last_checked_suspend;
 
-            if ($db == 'not connected') {
+            if ($g->db == 'not connected') {
 
-                $db = db_connect();
+                $g->db = db_connect();
 
-                if ($db === false) {
+                if ($g->db === false) {
 
                     $g->message .= " Failed to connect to the database. ";
                     $_SESSION['message'] = $g->message;

@@ -4,7 +4,6 @@ use GoodToKnow\Models\RecurringPayment;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-global $db;
 global $g;
 
 
@@ -26,7 +25,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
  */
 
-$db = get_db();
+$g->db = get_db();
 
 $g->recurring_payment_object = RecurringPayment::find_by_id($chosen_id);
 

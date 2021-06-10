@@ -8,7 +8,6 @@ class BlotOutSomeInboxMessagesProcessor
 {
     function page()
     {
-        global $db;
         global $g;
 
 
@@ -44,7 +43,7 @@ class BlotOutSomeInboxMessagesProcessor
          * Delete each of the chosen messages.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         foreach ($submitted_message_ids_array as $id) {
 

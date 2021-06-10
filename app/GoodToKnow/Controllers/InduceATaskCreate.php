@@ -15,7 +15,6 @@ class InduceATaskCreate
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
@@ -49,7 +48,7 @@ class InduceATaskCreate
 
         $object = Task::array_to_object($array_record);
 
-        $db = get_db();
+        $g->db = get_db();
 
         $result = $object->save();
 

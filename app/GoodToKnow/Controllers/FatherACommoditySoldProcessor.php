@@ -13,7 +13,6 @@ class FatherACommoditySoldProcessor
          */
 
 
-        global $db;
         global $g;
 
 
@@ -31,7 +30,7 @@ class FatherACommoditySoldProcessor
 
         $object = CommoditySold::array_to_object($array);
 
-        $db = get_db();
+        $g->db = get_db();
 
         $result = $object->save();
 

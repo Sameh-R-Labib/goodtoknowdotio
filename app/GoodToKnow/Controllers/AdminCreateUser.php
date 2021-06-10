@@ -18,11 +18,10 @@ class AdminCreateUser
     {
         global $g;
         // $g->saved_int01 choice
-        global $db;
 
         kick_out_nonadmins();
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**

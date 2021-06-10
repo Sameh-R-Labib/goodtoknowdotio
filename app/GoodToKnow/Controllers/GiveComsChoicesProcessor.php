@@ -9,7 +9,6 @@ class GiveComsChoicesProcessor
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 Has user's username
         // $g->saved_int01 has user's id
 
@@ -59,7 +58,7 @@ class GiveComsChoicesProcessor
          * The goal now is to insert all these objects into the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $result = UserToCommunity::insert_multiple_objects($array_of_usertocommunity_objects);
 

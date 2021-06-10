@@ -20,7 +20,6 @@ class CreateNewPostEditProcessor
          */
 
         global $g;
-        global $db;
         // $g->saved_int01 topic id
         // $g->saved_int02 post id
 
@@ -56,7 +55,7 @@ class CreateNewPostEditProcessor
          * Get the post from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $post = Post::find_by_id($g->saved_int02);
 
@@ -104,7 +103,7 @@ class CreateNewPostEditProcessor
         $embedded_link_to_post = '<a href="/ax1/SetHomePageCommunityTopicPost/page/' . $g->community_id . '/' .
             $g->saved_int01 . '/' . $g->saved_int02 . '">here </a>';
 
-        breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
-         ➡️ {$embedded_link_to_post} ⬅️ to view your edited post. ");
+        breakout(" <b>$bytes_written_text</b> written (max allowed 57.1 KB.) Click
+         ➡️ $embedded_link_to_post ⬅️ to view your edited post. ");
     }
 }

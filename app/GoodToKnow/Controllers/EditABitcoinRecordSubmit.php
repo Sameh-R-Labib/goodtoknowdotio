@@ -19,7 +19,6 @@ class EditABitcoinRecordSubmit
          */
 
 
-        global $db;
         global $g;
         // $g->saved_int01 bitcoin record id
 
@@ -70,7 +69,7 @@ class EditABitcoinRecordSubmit
          * 2) Retrieve the existing record from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $g->bitcoin_object = Bitcoin::find_by_id($g->saved_int01);
 

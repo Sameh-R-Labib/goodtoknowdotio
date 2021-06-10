@@ -236,7 +236,7 @@ $g = new AppState();
 /**
  * Various initializations.
  */
-$db = 'not connected';
+//$db = 'not connected';
 
 
 /**

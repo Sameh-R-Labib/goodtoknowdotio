@@ -25,12 +25,12 @@ class SetHomePageCommunityTopicPost
          */
 
 
-        global $db;
+        global $g;
 
 
         self::abort_if_an_anomalous_condition_exists();
 
-        $db = db_connect();
+        $g->db = db_connect();
 
         self::mostly_making_sure_chosen_community_is_ok_to_choose($community_id);
 
@@ -280,10 +280,9 @@ class SetHomePageCommunityTopicPost
      */
     private static function mostly_making_sure_chosen_community_is_ok_to_choose($community_id)
     {
-        global $db;
         global $g;
 
-        if (!empty($g->message) || $db === false) {
+        if (!empty($g->message) || $g->db === false) {
 
             breakout(' Database connection failed. ');
 

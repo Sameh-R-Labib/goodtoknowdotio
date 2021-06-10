@@ -42,11 +42,10 @@ class Community extends GoodObject
          * corresponding User object or false.
          */
 
-        global $db;
         global $g;
 
         $sql = 'SELECT * FROM `communities`
-                WHERE `community_name` = "' . $db->real_escape_string($community_name) . '" LIMIT 1';
+                WHERE `community_name` = "' . $g->db->real_escape_string($community_name) . '" LIMIT 1';
 
         $array_of_Community_objects = parent::find_by_sql($sql);
 

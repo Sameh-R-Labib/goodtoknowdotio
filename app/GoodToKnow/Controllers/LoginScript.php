@@ -15,9 +15,8 @@ class LoginScript
     function page()
     {
         global $g;
-        global $db;
 
-        $db = db_connect();
+        $g->db = db_connect();
 
         $submitted_username = '';
         $submitted_password = '';
@@ -197,7 +196,6 @@ class LoginScript
     private static function init()
     {
         global $g;
-        global $db;
 
         if ($g->is_logged_in) {
 
@@ -212,7 +210,7 @@ class LoginScript
         // For denial of service attacks
         sleep(1);
 
-        if (!empty($g->message) || $db === false) {
+        if (!empty($g->message) || $g->db === false) {
 
             $g->message .= ' Database connection failed. ';
             $_SESSION['message'] = $g->message;

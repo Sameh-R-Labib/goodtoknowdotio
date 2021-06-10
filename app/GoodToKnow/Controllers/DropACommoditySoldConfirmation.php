@@ -16,7 +16,6 @@ class DropACommoditySoldConfirmation
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
@@ -41,7 +40,7 @@ class DropACommoditySoldConfirmation
          * Delete the record.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $object = CommoditySold::find_by_id($g->saved_int01);
 

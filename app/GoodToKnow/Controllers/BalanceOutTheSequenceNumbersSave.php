@@ -23,7 +23,6 @@ class BalanceOutTheSequenceNumbersSave
 
 
         global $g;
-        global $db;
 
 
         /**
@@ -37,7 +36,7 @@ class BalanceOutTheSequenceNumbersSave
          * 1, 2, 3) All steps in one section of code.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         // We will call the save function on each object.
         // It doesn't matter which type of object it is

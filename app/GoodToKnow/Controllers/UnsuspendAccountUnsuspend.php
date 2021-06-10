@@ -9,7 +9,6 @@ class UnsuspendAccountUnsuspend
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 has user's username
 
 
@@ -31,7 +30,7 @@ class UnsuspendAccountUnsuspend
          *     whose is_suspended field the admin wants to edit.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $user_object = User::find_by_username($g->saved_str01);
 

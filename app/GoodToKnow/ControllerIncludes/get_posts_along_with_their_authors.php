@@ -3,7 +3,6 @@
 use GoodToKnow\Models\TopicToPost;
 
 
-global $db;
 global $g;
 // $g->saved_int01 id of topic
 
@@ -11,7 +10,7 @@ global $g;
 kick_out_nonadmins();
 
 
-$db = get_db();
+$g->db = get_db();
 
 $g->array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($g->saved_int01);
 

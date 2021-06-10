@@ -4,13 +4,12 @@ use GoodToKnow\Models\Bitcoin;
 
 
 global $g;
-global $db;
 
 
 kick_out_loggedoutusers();
 
 
-$db = get_db();
+$g->db = get_db();
 
 
 /**
@@ -18,7 +17,7 @@ $db = get_db();
  * belonging to the current user.
  */
 
-$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
+$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 
 $g->array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
 

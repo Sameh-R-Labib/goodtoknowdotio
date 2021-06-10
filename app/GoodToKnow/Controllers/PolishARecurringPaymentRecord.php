@@ -17,7 +17,6 @@ class PolishARecurringPaymentRecord
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
@@ -27,9 +26,9 @@ class PolishARecurringPaymentRecord
          * Get an array of RecurringPayment objects belonging to the current user.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 
         $g->array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 

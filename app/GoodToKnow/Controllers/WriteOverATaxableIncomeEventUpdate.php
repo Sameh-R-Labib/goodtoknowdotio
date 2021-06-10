@@ -23,7 +23,6 @@ class WriteOverATaxableIncomeEventUpdate
 
 
         global $g;
-        global $db;
         // $g->saved_int01 record id
 
 
@@ -78,7 +77,7 @@ class WriteOverATaxableIncomeEventUpdate
          * 2) Retrieve the existing record from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $object = TaxableIncomeEvent::find_by_id($g->saved_int01);
 

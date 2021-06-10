@@ -118,7 +118,6 @@ class User extends GoodObject
      */
     public static function authenticate(string $username, string $password)
     {
-        global $db;
         global $g;
 
         /**
@@ -133,7 +132,7 @@ class User extends GoodObject
                     WHERE `username` = ?
                     LIMIT 1';
 
-            $stmt = $db->stmt_init();
+            $stmt = $g->db->stmt_init();
 
             if (!$stmt->prepare($sql)) {
 
@@ -190,10 +189,10 @@ class User extends GoodObject
      */
     public static function is_taken_username(string $username): bool
     {
-        global $db;
+        global $g;
 
         $sql = 'SELECT username FROM `users`
-                WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
+                WHERE `username` = "' . $g->db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($sql);
 
@@ -218,11 +217,10 @@ class User extends GoodObject
          * corresponding User object or false.
          */
 
-        global $db;
         global $g;
 
         $sql = 'SELECT * FROM `users`
-                WHERE `username` = "' . $db->real_escape_string($username) . '" LIMIT 1';
+                WHERE `username` = "' . $g->db->real_escape_string($username) . '" LIMIT 1';
 
         $array_of_User_objects = parent::find_by_sql($sql);
 

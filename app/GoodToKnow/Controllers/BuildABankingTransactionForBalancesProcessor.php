@@ -17,7 +17,6 @@ class BuildABankingTransactionForBalancesProcessor
          */
 
 
-        global $db;
         global $g;
 
 
@@ -60,7 +59,7 @@ class BuildABankingTransactionForBalancesProcessor
          * Save the object.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $result = $object->save();
 

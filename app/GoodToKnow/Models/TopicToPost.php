@@ -38,11 +38,10 @@ class TopicToPost extends GoodObject
      */
     public static function derive_topic_id(int $post_id)
     {
-        global $db;
         global $g;
 
         $sql = 'SELECT * FROM `topic_to_post`
-        WHERE `post_id` = "' . $db->real_escape_string($post_id) . '" LIMIT 1';
+        WHERE `post_id` = "' . $g->db->real_escape_string($post_id) . '" LIMIT 1';
 
         $array_of_objects = TopicToPost::find_by_sql($sql);
 
@@ -89,7 +88,6 @@ class TopicToPost extends GoodObject
          */
 
 
-        global $db;
         global $g;
 
 
@@ -106,7 +104,7 @@ class TopicToPost extends GoodObject
                 WHERE `topic_id` = ?';
 
         try {
-            $stmt = $db->stmt_init();
+            $stmt = $g->db->stmt_init();
 
             if (!$stmt->prepare($sql)) {
 
@@ -245,7 +243,6 @@ class TopicToPost extends GoodObject
          *  - Each item value is the post title for that post id
          */
 
-        global $db;
 
         $posts_array = TopicToPost::get_posts_array_for_a_topic($topic_id);
 

@@ -9,7 +9,6 @@ class RemoveComsChoicesProcessor
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 has user's username
         // $g->saved_int01 has user's id
 
@@ -48,7 +47,7 @@ class RemoveComsChoicesProcessor
 
         $usertocommunity_objects_array = [];
 
-        $db = get_db();
+        $g->db = get_db();
 
         foreach ($g->submitted_community_ids_array as $a_community_id) {
 
@@ -59,8 +58,8 @@ class RemoveComsChoicesProcessor
 
             $sql = 'SELECT *
                     FROM `user_to_community`
-                    WHERE `user_id` = "' . $db->real_escape_string($g->saved_int01) .
-                '" AND `community_id` = "' . $db->real_escape_string($a_community_id) .
+                    WHERE `user_id` = "' . $g->db->real_escape_string($g->saved_int01) .
+                '" AND `community_id` = "' . $g->db->real_escape_string($a_community_id) .
                 '" LIMIT 1';
 
             $array_with_one_element = UserToCommunity::find_by_sql($sql);

@@ -24,7 +24,6 @@ class TopicDescriptionEditorFormProcessor
 
 
         global $g;
-        global $db;
         // $g->saved_str01 the topic's name
         // $g->saved_int01 the topic's id
 
@@ -46,7 +45,7 @@ class TopicDescriptionEditorFormProcessor
          *  4) Get a copy of the Topic object.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $topic_object = Topic::find_by_id($g->saved_int01);
 

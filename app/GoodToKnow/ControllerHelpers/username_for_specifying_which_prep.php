@@ -18,9 +18,6 @@ function username_for_specifying_which_prep(): string
      */
 
 
-    global $db;
-
-
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
     $submitted_username = standard_form_field_prep('username', 7, 12);

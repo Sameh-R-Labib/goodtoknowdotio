@@ -4,13 +4,12 @@ use GoodToKnow\Models\CommunityToTopic;
 
 
 global $g;
-global $db;
 
 
 kick_out_nonadmins();
 
 
-$db = get_db();
+$g->db = get_db();
 
 $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 

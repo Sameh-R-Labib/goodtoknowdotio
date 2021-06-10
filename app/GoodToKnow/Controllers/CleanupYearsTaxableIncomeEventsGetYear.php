@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use Exception;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class CleanupYearsTaxableIncomeEventsGetYear
@@ -15,13 +16,12 @@ class CleanupYearsTaxableIncomeEventsGetYear
          */
 
 
-        global $db;
         global $g;
 
 
         kick_out_nonadmins();
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**
@@ -40,13 +40,13 @@ class CleanupYearsTaxableIncomeEventsGetYear
         $num_affected_rows = 0;
 
         $sql = 'DELETE FROM `taxable_income_event` WHERE `year_received` = ';
-        $sql .= $db->real_escape_string($year_received);
+        $sql .= $g->db->real_escape_string($year_received);
 
         try {
 
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
                 $message = ' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
@@ -54,9 +54,9 @@ class CleanupYearsTaxableIncomeEventsGetYear
                 breakout($message);
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $g->message .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
@@ -74,7 +74,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
          * 3) Give confirmation of deletion.
          */
 
-        $message = " The purge of Taxable Income Events for the year <b>{$year_received}</b> has resulted in deletion of <b>";
+        $message = " The purge of Taxable Income Events for the year <b>$year_received</b> has resulted in deletion of <b>";
         $message .= $num_affected_rows . "</b> records. ";
 
         breakout($message);

@@ -23,7 +23,6 @@ class RevampABankingTransactionForBalancesUpdate
 
 
         global $g;
-        global $db;
         // $g->saved_int01 record id
 
 
@@ -64,7 +63,7 @@ class RevampABankingTransactionForBalancesUpdate
          * 2) Retrieve the existing record from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $object = BankingTransactionForBalances::find_by_id($g->saved_int01);
 

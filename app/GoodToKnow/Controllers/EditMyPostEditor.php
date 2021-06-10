@@ -9,13 +9,12 @@ class EditMyPostEditor
     function page()
     {
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';

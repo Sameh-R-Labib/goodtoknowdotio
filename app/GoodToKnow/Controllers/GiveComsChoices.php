@@ -11,7 +11,6 @@ class GiveComsChoices
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 has user's username
 
 
@@ -31,7 +30,7 @@ class GiveComsChoices
          * 1) Get the id of the user.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $user_object = User::find_by_username($g->saved_str01);
 

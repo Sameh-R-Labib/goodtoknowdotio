@@ -9,7 +9,6 @@ class NewCommunitySave
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 the topic name
         // $g->saved_str02 the topic description
 
@@ -23,7 +22,7 @@ class NewCommunitySave
         $community = Community::array_to_object($community_as_array);
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         $result = $community->save();

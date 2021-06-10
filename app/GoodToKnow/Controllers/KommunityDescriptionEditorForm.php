@@ -9,7 +9,6 @@ class KommunityDescriptionEditorForm
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_int01 community id
         // $g->saved_str01 is the community name. The view file will get it directly from global scope.
 
@@ -26,7 +25,7 @@ class KommunityDescriptionEditorForm
 
         // 1) Retrieve the Community object for the community whose description the admin wants to edit.
 
-        $db = get_db();
+        $g->db = get_db();
 
         $g->community_object = Community::find_by_id($g->saved_int01);
 

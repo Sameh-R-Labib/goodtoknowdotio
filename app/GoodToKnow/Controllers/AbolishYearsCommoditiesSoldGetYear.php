@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use Exception;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class AbolishYearsCommoditiesSoldGetYear
@@ -18,7 +19,7 @@ class AbolishYearsCommoditiesSoldGetYear
 
         kick_out_nonadmins();
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**
@@ -37,13 +38,13 @@ class AbolishYearsCommoditiesSoldGetYear
         $num_affected_rows = 0;
 
         $sql = 'DELETE FROM `commodities_sold` WHERE `tax_year` = ';
-        $sql .= $db->real_escape_string($tax_year);
+        $sql .= $g->db->real_escape_string($tax_year);
 
         try {
 
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
 
@@ -53,9 +54,9 @@ class AbolishYearsCommoditiesSoldGetYear
 
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $g->message .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';

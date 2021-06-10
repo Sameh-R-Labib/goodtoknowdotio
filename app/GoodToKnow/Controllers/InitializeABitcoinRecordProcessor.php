@@ -17,7 +17,6 @@ class InitializeABitcoinRecordProcessor
          */
 
 
-        global $db;
         global $g;
 
         kick_out_loggedoutusers();
@@ -66,7 +65,7 @@ class InitializeABitcoinRecordProcessor
          * Save the object.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $result = $bitcoin_object->save();
 

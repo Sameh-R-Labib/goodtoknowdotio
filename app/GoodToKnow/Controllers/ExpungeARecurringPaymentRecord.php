@@ -15,20 +15,19 @@ class ExpungeARecurringPaymentRecord
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**
          * Get an array of RecurringPayment objects belonging to the current user.
          */
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $db->real_escape_string($g->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 
         $g->array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
 

@@ -18,7 +18,6 @@ class WipeOutAPossibleTaxDeductionConfirmation
 
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
@@ -43,7 +42,7 @@ class WipeOutAPossibleTaxDeductionConfirmation
          * Delete the record.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $object = PossibleTaxDeduction::find_by_id($g->saved_int01);
 

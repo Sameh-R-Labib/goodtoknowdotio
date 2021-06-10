@@ -41,15 +41,14 @@ class MessageToUser extends GoodObject
      */
     public static function user_message_quantity($user_id)
     {
-        global $db;
         global $g;
 
         $sql = "SELECT COUNT(*) FROM message_to_user WHERE user_id=" . $user_id;
 
         try {
-            $result = $db->query($sql);
+            $result = $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
 
@@ -94,7 +93,6 @@ class MessageToUser extends GoodObject
          * was deleted.)
          */
 
-        global $db;
         global $g;
 
         // Formulate the sql for the delete
@@ -103,9 +101,9 @@ class MessageToUser extends GoodObject
         $sql .= "WHERE `message_id`={$message_id}";
 
         try {
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty($query_error)) {
 
@@ -139,7 +137,6 @@ class MessageToUser extends GoodObject
          * Otherwise, it will return true (even if nothing was deleted.)
          */
 
-        global $db;
         global $g;
 
         $sql = "DELETE FROM " . self::$table_name . " ";
@@ -147,9 +144,9 @@ class MessageToUser extends GoodObject
 
 
         try {
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty($query_error)) {
 
@@ -182,7 +179,6 @@ class MessageToUser extends GoodObject
          * item will be the one which was created last.
          */
 
-        global $db;
         global $g;
 
         // get (in array) all the MessageToUser objects with a particular $user_id.
@@ -198,7 +194,7 @@ class MessageToUser extends GoodObject
                 WHERE `user_id` = ?';
 
         try {
-            $stmt = $db->stmt_init();
+            $stmt = $g->db->stmt_init();
 
             if (!$stmt->prepare($sql)) {
 

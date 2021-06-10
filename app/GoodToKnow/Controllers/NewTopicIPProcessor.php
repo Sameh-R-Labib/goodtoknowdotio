@@ -22,13 +22,12 @@ class NewTopicIPProcessor
          */
 
         global $g;
-        global $db;
 
 
         kick_out_nonadmins();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**

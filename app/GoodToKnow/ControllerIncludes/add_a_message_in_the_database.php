@@ -5,7 +5,6 @@ use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
 
-global $db;
 global $g;
 
 
@@ -31,7 +30,7 @@ $message_array = ['user_id' => $g->user_id, 'created' => time(), 'content' => $h
 
 $g->message_object = Message::array_to_object($message_array);
 
-$db = get_db();
+$g->db = get_db();
 
 $result = $g->message_object->save();
 

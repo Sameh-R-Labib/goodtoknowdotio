@@ -11,7 +11,6 @@ class CreateNewPostSave
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 is the main title
         // $g->saved_str02 is the title extension
         // $g->saved_int01 the topic id
@@ -21,7 +20,7 @@ class CreateNewPostSave
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**

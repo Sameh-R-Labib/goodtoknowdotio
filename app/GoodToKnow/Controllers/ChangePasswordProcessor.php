@@ -10,14 +10,13 @@ class ChangePasswordProcessor
 {
     function page()
     {
-        global $db;
         global $g;
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**

@@ -8,7 +8,6 @@ class Inbox
 {
     function page()
     {
-        global $db;
         global $g;
 
 
@@ -24,7 +23,7 @@ class Inbox
         $g->show_poof = true;
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         $g->inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);

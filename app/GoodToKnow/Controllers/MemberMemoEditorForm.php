@@ -9,7 +9,6 @@ class MemberMemoEditorForm
     function page()
     {
         global $g;
-        global $db;
         // $g->saved_str01 has user's username. Is changed in this file and is used in the view.
 
 
@@ -29,7 +28,7 @@ class MemberMemoEditorForm
          *  2) Save the id of the User in the session.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $g->user_object = User::find_by_username($g->saved_str01);
 

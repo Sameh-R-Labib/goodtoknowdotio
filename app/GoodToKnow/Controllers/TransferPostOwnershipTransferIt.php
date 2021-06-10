@@ -18,7 +18,6 @@ class TransferPostOwnershipTransferIt
 
 
         global $g;
-        global $db;
         // $g->saved_int02 post id
 
 
@@ -32,7 +31,7 @@ class TransferPostOwnershipTransferIt
 
         // Get the user id which corresponds with the username.
 
-        $db = get_db();
+        $g->db = get_db();
 
         $user_object = User::find_by_username($username);
 

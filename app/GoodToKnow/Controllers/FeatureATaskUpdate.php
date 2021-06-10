@@ -20,7 +20,6 @@ class FeatureATaskUpdate
 
 
         global $g;
-        global $db;
         // $g->saved_int01 is the task id
 
 
@@ -65,7 +64,7 @@ class FeatureATaskUpdate
          * 2) Retrieve the existing record from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $object = Task::find_by_id($g->saved_int01);
 

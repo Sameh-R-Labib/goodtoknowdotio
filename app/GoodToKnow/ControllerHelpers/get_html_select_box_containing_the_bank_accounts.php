@@ -16,7 +16,6 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
      * make that bank account selected.
      */
 
-    global $db;
     global $g;
 
 
@@ -41,7 +40,7 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
      * First I need to get all the BankingAcctForBalances object for this user.
      */
 
-    $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $db->real_escape_string($user_id) . '"';
+    $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($user_id) . '"';
 
     $array_of_objects = BankingAcctForBalances::find_by_sql($sql);
 

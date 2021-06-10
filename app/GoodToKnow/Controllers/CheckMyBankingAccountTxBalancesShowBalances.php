@@ -34,14 +34,13 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
 
         global $g;
-        global $db;
         // $g->saved_int01 id of BankingAcctForBalances record
 
 
         kick_out_loggedoutusers();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**
@@ -66,9 +65,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * be for the currently chosen BankingAcctForBalances.
          */
 
-        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $db->real_escape_string($g->user_id);
-        $sql .= ' AND `bank_id` = ' . $db->real_escape_string($g->account->id);
-        $sql .= ' AND `time` > ' . $db->real_escape_string($g->account->start_time);
+        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
+        $sql .= ' AND `bank_id` = ' . $g->db->real_escape_string($g->account->id);
+        $sql .= ' AND `time` > ' . $g->db->real_escape_string($g->account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
         $g->array = BankingTransactionForBalances::find_by_sql($sql);

@@ -42,6 +42,11 @@ class Message extends GoodObject
     public static function purge_all_messages_older_than_date(int $timestamp): bool
     {
         /**
+         * Make sure $g->db is a mysqli connection object before calling this function.
+         */
+
+
+        /**
          * Actually it will delete both the message records
          * and their corresponding MessageToUser records.
          *   1) Find all old messages.
@@ -50,8 +55,9 @@ class Message extends GoodObject
          *   4) Return true or false.
          */
 
-        global $db;
+
         global $g;
+
 
         /**
          * 1) Find all old messages.
@@ -59,7 +65,7 @@ class Message extends GoodObject
 
         // Compose the sql.
 
-        $sql = "SELECT * FROM " . self::$table_name . " WHERE `created`<" . $db->real_escape_string($timestamp);
+        $sql = "SELECT * FROM " . self::$table_name . " WHERE `created`<" . $g->db->real_escape_string($timestamp);
 
         $array_of_found_messages = self::find_by_sql($sql);
 

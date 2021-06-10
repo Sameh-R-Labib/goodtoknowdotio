@@ -3,7 +3,6 @@
 use GoodToKnow\Models\Bitcoin;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-global $db;
 global $g;
 
 
@@ -25,7 +24,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  * Retrieve the Bitcoin object with that id from the database.
  */
 
-$db = get_db();
+$g->db = get_db();
 
 $g->bitcoin_object = Bitcoin::find_by_id($chosen_id);
 

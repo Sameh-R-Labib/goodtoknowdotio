@@ -19,7 +19,6 @@ class FineTuneACommoditySoldUpdate
 
 
         global $g;
-        global $db;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
@@ -29,7 +28,7 @@ class FineTuneACommoditySoldUpdate
          * 2) Retrieve the existing record from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $object = CommoditySold::find_by_id($g->saved_int01);
 

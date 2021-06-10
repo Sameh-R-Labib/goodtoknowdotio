@@ -17,7 +17,6 @@ class ByUsernameMessageProcessor
          */
 
         global $g;
-        global $db;
 
 
         kick_out_loggedoutusers();
@@ -36,7 +35,7 @@ class ByUsernameMessageProcessor
          * Make sure $submitted_username is valid.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 

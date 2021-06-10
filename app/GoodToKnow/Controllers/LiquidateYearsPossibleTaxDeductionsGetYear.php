@@ -14,14 +14,14 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
          * 3) Give confirmation of deletion.
          */
 
-        global $db;
+
         global $g;
 
 
         kick_out_nonadmins();
 
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         /**
@@ -41,19 +41,19 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
 
         $sql = 'DELETE FROM `possible_tax_deduction` WHERE `year_paid` = ';
 
-        $sql .= $db->real_escape_string($year_paid);
+        $sql .= $g->db->real_escape_string($year_paid);
 
         try {
 
-            $db->query($sql);
+            $g->db->query($sql);
 
-            $query_error = $db->error;
+            $query_error = $g->db->error;
 
             if (!empty(trim($query_error))) {
                 breakout(' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ');
             }
 
-            $num_affected_rows = $db->affected_rows;
+            $num_affected_rows = $g->db->affected_rows;
 
         } catch (\Exception $e) {
 

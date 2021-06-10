@@ -8,7 +8,6 @@ class DefaultCommunityProcessor
 {
     function page()
     {
-        global $db;
         global $g;
 
 
@@ -28,7 +27,7 @@ class DefaultCommunityProcessor
          * Get the user object from the database.
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
         $user_object = User::find_by_id($g->user_id);
 

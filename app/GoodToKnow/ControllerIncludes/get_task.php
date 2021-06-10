@@ -4,7 +4,6 @@ use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
-global $db;
 global $g;
 
 
@@ -27,7 +26,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  *    And, format its attributes for easy viewing.
  */
 
-$db = get_db();
+$g->db = get_db();
 
 $g->object = Task::find_by_id($chosen_id);
 

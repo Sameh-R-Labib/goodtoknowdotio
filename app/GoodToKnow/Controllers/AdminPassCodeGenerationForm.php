@@ -9,7 +9,6 @@ class AdminPassCodeGenerationForm
     function page()
     {
         global $g;
-        global $db;
 
 
         kick_out_nonadmins();
@@ -25,7 +24,7 @@ class AdminPassCodeGenerationForm
          *   - community_description
          */
 
-        $db = get_db();
+        $g->db = get_db();
 
 
         // Community::find_all() should return the array we are looking for (see above)

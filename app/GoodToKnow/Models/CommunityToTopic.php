@@ -38,11 +38,10 @@ class CommunityToTopic extends GoodObject
      */
     public static function derive_community_id(int $topic_id)
     {
-        global $db;
         global $g;
 
         $sql = 'SELECT * FROM `community_to_topic`
-        WHERE `topic_id` = "' . $db->real_escape_string($topic_id) . '" LIMIT 1';
+        WHERE `topic_id` = "' . $g->db->real_escape_string($topic_id) . '" LIMIT 1';
 
         $array_of_objects = CommunityToTopic::find_by_sql($sql);
 
@@ -77,7 +76,6 @@ class CommunityToTopic extends GoodObject
          * This method gets all the topic objects for a community when given a community id.
          */
 
-        global $db;
         global $g;
 
         // get (in array) all the CommunityToTopic objects with a particular $community_id.
@@ -92,7 +90,7 @@ class CommunityToTopic extends GoodObject
                 WHERE `community_id` = ?';
 
         try {
-            $stmt = $db->stmt_init();
+            $stmt = $g->db->stmt_init();
 
             if (!$stmt->prepare($sql)) {
 
