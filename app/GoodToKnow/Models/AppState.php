@@ -547,6 +547,8 @@ class AppState
 
         $this->community_description = (isset($_SESSION['community_description'])) ? $_SESSION['community_description'] : '';
 
+        // The term "special" refers to the fact that the key of the array elements is an id
+        // and the value of the array is a name which corresponds to that id.
         $this->special_community_array = (isset($_SESSION['special_community_array'])) ? $_SESSION['special_community_array'] : [];
 
         $this->topic_id = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 0;
