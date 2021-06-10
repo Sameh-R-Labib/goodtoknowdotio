@@ -8,7 +8,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 global $g;
 // $g->saved_int01 commodities_sold id
-global $profit;
 
 kick_out_loggedoutusers();
 
@@ -85,7 +84,7 @@ $g->tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
 
 /**
- * Get $profit
+ * Get $g->profit
  */
 
-$profit = float_form_field_prep('profit', 0.0, 999999999999999.99);
+$g->profit = float_form_field_prep('profit', 0.0, 999999999999999.99);

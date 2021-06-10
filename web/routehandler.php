@@ -231,7 +231,7 @@ $g = new AppState();
 //$commodity_type = '';
 //$commodity_label = '';
 //$tax_year = 0;
-$profit = 0;
+//$profit = 0.0;
 
 /**
  * Various initializations.

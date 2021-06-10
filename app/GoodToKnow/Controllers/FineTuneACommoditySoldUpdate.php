@@ -20,7 +20,6 @@ class FineTuneACommoditySoldUpdate
 
         global $g;
         global $db;
-        global $profit;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
@@ -54,7 +53,7 @@ class FineTuneACommoditySoldUpdate
         $object->commodity_type = $g->commodity_type;
         $object->commodity_label = $g->commodity_label;
         $object->tax_year = $g->tax_year;
-        $object->profit = $profit;
+        $object->profit = $g->profit;
 
 
         /**

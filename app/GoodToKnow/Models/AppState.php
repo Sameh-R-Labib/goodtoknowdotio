@@ -504,6 +504,12 @@ class AppState
 
 
     /**
+     * @var float
+     */
+    public $profit;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -688,5 +694,7 @@ class AppState
         $this->commodity_label = '';
 
         $this->tax_year = 0;
+
+        $this->profit = 0.0;
     }
 }
