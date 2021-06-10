@@ -51,13 +51,13 @@ const TIMENEXTANDLASTFORMFIELDSPREFILLED = VIEWSINCLUDES . DIRSEP . 'timenextand
 const TIMEBOUGHTSOLD = VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php';
 const TIMEBOUGHTSOLDPREFILLED = VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php';
 
+
 /**
- * More require statements
+ * More require
  */
-$path3 = VENDOR_DIR . DIRSEP . 'autoload.php';
-$path4 = WEB_DIR . DIRSEP . 'functions.php';
-require $path3;
-require $path4;
+require VENDOR_DIR . DIRSEP . 'autoload.php';
+require WEB_DIR . DIRSEP . 'functions.php';
+
 
 // Define Stripe Keys
 //if (ENVIRONMENT == 'development') {
