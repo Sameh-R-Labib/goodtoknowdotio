@@ -527,9 +527,16 @@ class AppState
          * Extractors from $_SESSION
          */
 
-        $this->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
+        // We erase $_SESSION['message'] after reading it to make sure the message doesn't unintentionally
+        // last beyond this request / response cycle. However, sometimes we do want the message to
+        // last beyond this request / response cycle.
 
+        $this->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
         $_SESSION['message'] = '';
+
+        // We do want the rest of these session related vars to last throughout each particular series
+        // of request / response cycles (the  series which make up a feature like for example "Create a bank transaction".)
+        // These vars get erased via call to reset_feature_session_vars() inside of breakout().
 
         $this->url_of_most_recent_upload = (isset($_SESSION['url_of_most_recent_upload'])) ? $_SESSION['url_of_most_recent_upload'] : '';
 

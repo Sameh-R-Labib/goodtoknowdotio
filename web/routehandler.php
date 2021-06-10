@@ -70,30 +70,7 @@ require $path4;
 //    die('I do not know which environment I am in.');
 //}
 
-/**
- * Before we call the controller method
- * let us gather some knowledge from
- * the session and put it into variables
- * which have friendly names.
- */
 session_start();
-
-// The "to display message" is handled DIFFERENTLY. Whereas the rest of the state's
-// variables get to be completely expunged via a call to reset_feature_session_vars() during a breakout(),
-// the "to display message" needs to be expunged from existence when execution results in a view being presented.
-// That is why, "right here", we do "$_SESSION['message'] = '';". We could have expunged the message
-// directly before presenting the view; however, I chose to do it now. And, as a consequence this design decision
-// we end up needing to explicitly transfer the message during redirections. My point is that the  "to display message"
-// is handled DIFFERENTLY from other state variables.
-//
-// The reason we go through the trouble of handling the "to display message" this way is to
-// PREVENT AN ANOMALY
-// from happening IF our server should crash. The session file may survive a server crash; and, if it does, then
-// "the message" would survive the server crash. And, that's undesirable. On the other hand it's not a big deal if
-// the other state variables survive a server crash because we're only deleting them to save disc space.
-//$g->message = (isset($_SESSION['message'])) ? $_SESSION['message'] : '';
-//$_SESSION['message'] = '';
-
 
 $g = new AppState();
 
