@@ -99,12 +99,6 @@ $g = new AppState();
 
 
 /**
- * Various initializations.
- */
-//$db = 'not connected';
-
-
-/**
  * Default (for runtime of this script) timezone set to the one the user has chosen.
  */
 date_default_timezone_set($g->timezone);

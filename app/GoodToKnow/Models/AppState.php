@@ -713,6 +713,7 @@ class AppState
 
         $this->profit = 0.0;
 
+        // ★★★
         $this->db = 'not connected';
     }
 }
