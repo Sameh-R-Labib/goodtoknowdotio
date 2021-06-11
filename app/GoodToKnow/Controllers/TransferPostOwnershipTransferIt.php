@@ -31,7 +31,7 @@ class TransferPostOwnershipTransferIt
 
         // Get the user id which corresponds with the username.
 
-        $g->db = get_db();
+        get_db();
 
         $user_object = User::find_by_username($username);
 

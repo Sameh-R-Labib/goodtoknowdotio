@@ -20,7 +20,7 @@ class ExpungeARecurringPaymentRecord
         kick_out_loggedoutusers();
 
 
-        $g->db = get_db();
+        get_db();
 
 
         /**

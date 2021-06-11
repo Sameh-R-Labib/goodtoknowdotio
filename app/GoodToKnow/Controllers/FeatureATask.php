@@ -19,7 +19,7 @@ class FeatureATask
         kick_out_loggedoutusers();
 
 
-        $g->db = get_db();
+        get_db();
 
 
         // Get an array of Task objects for this user.

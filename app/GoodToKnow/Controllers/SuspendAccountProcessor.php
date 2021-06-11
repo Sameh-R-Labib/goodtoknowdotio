@@ -16,13 +16,10 @@ class SuspendAccountProcessor
          */
 
 
-        global $g;
-
-
         kick_out_nonadmins();
 
 
-        $g->db = get_db();
+        get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_specifying_which_prep.php';
 

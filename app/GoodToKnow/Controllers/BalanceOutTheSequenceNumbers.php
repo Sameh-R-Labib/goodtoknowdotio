@@ -48,7 +48,7 @@ class BalanceOutTheSequenceNumbers
          * If thing is a topic then it holds post records.
          */
 
-        $g->db = get_db();
+        get_db();
 
         if ($g->thing_type === 'Community') {
 

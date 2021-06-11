@@ -26,7 +26,7 @@ class PolishARecurringPaymentRecord
          * Get an array of RecurringPayment objects belonging to the current user.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 

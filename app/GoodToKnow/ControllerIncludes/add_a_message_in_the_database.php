@@ -30,7 +30,7 @@ $message_array = ['user_id' => $g->user_id, 'created' => time(), 'content' => $h
 
 $g->message_object = Message::array_to_object($message_array);
 
-$g->db = get_db();
+get_db();
 
 $result = $g->message_object->save();
 

@@ -26,7 +26,7 @@ class KommunityDescriptionEditorProcessor
 
         $submitted_community_name = standard_form_field_prep('community', 1, 200);
 
-        $g->db = get_db();
+        get_db();
 
         $community = Community::find_by_community_name($submitted_community_name);
 

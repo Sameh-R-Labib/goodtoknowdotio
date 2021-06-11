@@ -25,7 +25,7 @@ class TopicDescriptionEditorForm
         kick_out_nonadmins();
 
 
-        $g->db = get_db();
+        get_db();
 
         $g->topic_object = Topic::find_by_id($g->saved_int01);
 

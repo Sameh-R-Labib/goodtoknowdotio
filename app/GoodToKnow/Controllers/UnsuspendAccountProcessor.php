@@ -20,7 +20,7 @@ class UnsuspendAccountProcessor
          *  3) Redirect to a route
          */
 
-        $g->db = get_db();
+        get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_specifying_which_prep.php';
 

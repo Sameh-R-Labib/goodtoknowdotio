@@ -28,7 +28,7 @@ class MemberMemoEditorForm
          *  2) Save the id of the User in the session.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $g->user_object = User::find_by_username($g->saved_str01);
 

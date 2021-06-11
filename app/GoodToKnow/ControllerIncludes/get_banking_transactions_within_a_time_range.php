@@ -16,7 +16,7 @@ kick_out_loggedoutusers();
  * within the prescribed time range.
  */
 
-$g->db = get_db();
+get_db();
 
 $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 $sql .= ' AND `time` BETWEEN "' . $g->db->real_escape_string($g->saved_int01) . '" AND "' . $g->db->real_escape_string($g->saved_int02) . '"';

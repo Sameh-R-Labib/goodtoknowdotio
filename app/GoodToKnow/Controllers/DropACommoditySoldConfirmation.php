@@ -40,7 +40,7 @@ class DropACommoditySoldConfirmation
          * Delete the record.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $object = CommoditySold::find_by_id($g->saved_int01);
 

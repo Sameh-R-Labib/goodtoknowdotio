@@ -24,7 +24,7 @@ class AuthorDeletesOwnPostChoosePost
         kick_out_loggedoutusers();
 
 
-        $g->db = get_db();
+        get_db();
 
 
         // Get all posts (as special array) for the user and topic.

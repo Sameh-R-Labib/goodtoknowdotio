@@ -22,7 +22,7 @@ class NewCommunitySave
         $community = Community::array_to_object($community_as_array);
 
 
-        $g->db = get_db();
+        get_db();
 
 
         $result = $community->save();

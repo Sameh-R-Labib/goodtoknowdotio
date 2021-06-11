@@ -58,7 +58,7 @@ class GiveComsChoicesProcessor
          * The goal now is to insert all these objects into the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $result = UserToCommunity::insert_multiple_objects($array_of_usertocommunity_objects);
 

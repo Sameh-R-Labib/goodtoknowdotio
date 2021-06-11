@@ -35,7 +35,7 @@ class ConceiveAPossibleTaxDeductionProcessor
          * Use the submitted data to add a record to the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $array_record = ['user_id' => $g->user_id, 'label' => $label, 'year_paid' => $year_paid, 'comment' => $comment];
 

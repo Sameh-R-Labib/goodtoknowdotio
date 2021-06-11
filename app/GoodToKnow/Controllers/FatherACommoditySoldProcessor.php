@@ -30,7 +30,7 @@ class FatherACommoditySoldProcessor
 
         $object = CommoditySold::array_to_object($array);
 
-        $g->db = get_db();
+        get_db();
 
         $result = $object->save();
 

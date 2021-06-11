@@ -10,7 +10,7 @@ global $g;
 kick_out_nonadmins();
 
 
-$g->db = get_db();
+get_db();
 
 $g->array_of_post_objects = TopicToPost::get_posts_array_for_a_topic($g->saved_int01);
 

@@ -47,7 +47,7 @@ class RemoveComsChoicesProcessor
 
         $usertocommunity_objects_array = [];
 
-        $g->db = get_db();
+        get_db();
 
         foreach ($g->submitted_community_ids_array as $a_community_id) {
 

@@ -48,7 +48,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          * 2) Retrieve the same $result set which was retrieved in the previous route.
          */
 
-        $g->db = get_db();
+        get_db();
 
         if ($g->thing_type === 'Community') {
 

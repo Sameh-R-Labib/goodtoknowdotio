@@ -42,7 +42,7 @@ class KommunityDescriptionEditorFormProcessor
          *  4) Get a copy of the Community object.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $community_object = Community::find_by_id($g->saved_int01);
 

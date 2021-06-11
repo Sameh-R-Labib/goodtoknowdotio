@@ -40,7 +40,7 @@ class NukeATaxableIncomeEventConfirmation
          * Delete the record.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $object = TaxableIncomeEvent::find_by_id($g->saved_int01);
 

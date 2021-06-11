@@ -47,7 +47,7 @@ class AlterAPossibleTaxDeductionUpdate
          * 2) Retrieve the existing record from the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $g->object = PossibleTaxDeduction::find_by_id($g->saved_int01);
 

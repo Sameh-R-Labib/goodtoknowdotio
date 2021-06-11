@@ -25,7 +25,7 @@ class GlanceAtMyTasks
          * Retrieve Tasks.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
 

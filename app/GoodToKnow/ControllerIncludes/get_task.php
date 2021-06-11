@@ -26,7 +26,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  *    And, format its attributes for easy viewing.
  */
 
-$g->db = get_db();
+get_db();
 
 $g->object = Task::find_by_id($chosen_id);
 

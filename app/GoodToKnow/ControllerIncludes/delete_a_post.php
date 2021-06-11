@@ -7,7 +7,7 @@ use GoodToKnow\Models\TopicToPost;
 global $g;
 
 
-$g->db = get_db();
+get_db();
 
 $post = Post::find_by_id($g->saved_int02);
 

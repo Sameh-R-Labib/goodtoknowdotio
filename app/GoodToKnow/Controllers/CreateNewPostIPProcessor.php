@@ -36,7 +36,7 @@ class CreateNewPostIPProcessor
          * posts.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->saved_int01);
 

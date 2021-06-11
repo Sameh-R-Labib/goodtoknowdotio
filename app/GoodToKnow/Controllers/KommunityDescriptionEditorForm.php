@@ -25,7 +25,7 @@ class KommunityDescriptionEditorForm
 
         // 1) Retrieve the Community object for the community whose description the admin wants to edit.
 
-        $g->db = get_db();
+        get_db();
 
         $g->community_object = Community::find_by_id($g->saved_int01);
 

@@ -59,7 +59,7 @@ class GenerateABankingAccountForBalancesProcessor
          * Save the object.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $result = $object->save();
 

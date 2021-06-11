@@ -60,7 +60,7 @@ class MakeARecurringPaymentRecordProcessor
          * Save the object.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $result = $recurring_payment_object->save();
 

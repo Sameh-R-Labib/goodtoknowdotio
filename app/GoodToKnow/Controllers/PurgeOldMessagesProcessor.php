@@ -18,9 +18,6 @@ class PurgeOldMessagesProcessor
          */
 
 
-        global $g;
-
-
         kick_out_nonadmins();
 
 
@@ -48,7 +45,7 @@ class PurgeOldMessagesProcessor
          * The assumption is that all messages sent before the zero hour (12am) will be deleted.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $result = Message::purge_all_messages_older_than_date($timestamp);
 

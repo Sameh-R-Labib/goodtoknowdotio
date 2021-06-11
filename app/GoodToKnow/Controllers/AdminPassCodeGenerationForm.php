@@ -24,7 +24,7 @@ class AdminPassCodeGenerationForm
          *   - community_description
          */
 
-        $g->db = get_db();
+        get_db();
 
 
         // Community::find_all() should return the array we are looking for (see above)

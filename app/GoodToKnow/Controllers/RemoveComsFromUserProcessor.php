@@ -21,7 +21,7 @@ class RemoveComsFromUserProcessor
          *  3) Redirect to a route which will present a form with checkboxes for choosing communities
          */
 
-        $g->db = get_db();
+        get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'username_for_specifying_which_prep.php';
 

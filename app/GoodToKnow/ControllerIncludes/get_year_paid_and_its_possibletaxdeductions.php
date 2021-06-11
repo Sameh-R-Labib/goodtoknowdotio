@@ -23,7 +23,7 @@ $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
  * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
  */
 
-$g->db = get_db();
+get_db();
 
 $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $g->db->real_escape_string($year_paid);
 $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);

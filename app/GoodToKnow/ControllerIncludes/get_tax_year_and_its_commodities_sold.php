@@ -23,7 +23,7 @@ $g->tax_year = integer_form_field_prep('tax_year', 1992, 65535);
  * 2) Present the CommoditySold(s/plural) which fall in that year as radio buttons.
  */
 
-$g->db = get_db();
+get_db();
 
 $sql = 'SELECT * FROM `commodities_sold` WHERE `tax_year` = ' . $g->db->real_escape_string($g->tax_year);
 $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);

@@ -21,7 +21,7 @@ class CreateNewPostProcessor
          * Where we redirect depends on whether or not there is one or more post in the chosen topic.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $posts = TopicToPost::get_posts_array_for_a_topic($g->chosen_topic_id);
 

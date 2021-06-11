@@ -43,7 +43,7 @@ class BlotOutSomeInboxMessagesProcessor
          * Delete each of the chosen messages.
          */
 
-        $g->db = get_db();
+        get_db();
 
         foreach ($submitted_message_ids_array as $id) {
 

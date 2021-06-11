@@ -38,7 +38,7 @@ class NewTopicSave
          * Get all the topics in out community.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
 

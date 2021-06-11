@@ -13,7 +13,7 @@ kick_out_loggedoutusers();
  * Refresh special_topic_array
  */
 
-$g->db = get_db();
+get_db();
 
 $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 

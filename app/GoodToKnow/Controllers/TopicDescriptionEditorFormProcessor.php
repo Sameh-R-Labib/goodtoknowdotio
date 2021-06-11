@@ -45,7 +45,7 @@ class TopicDescriptionEditorFormProcessor
          *  4) Get a copy of the Topic object.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $topic_object = Topic::find_by_id($g->saved_int01);
 

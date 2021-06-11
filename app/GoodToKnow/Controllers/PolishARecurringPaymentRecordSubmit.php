@@ -53,7 +53,7 @@ class PolishARecurringPaymentRecordSubmit
          * 2) Retrieve the existing record from the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $object = RecurringPayment::find_by_id($g->saved_int01);
 

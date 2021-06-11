@@ -13,7 +13,7 @@ kick_out_loggedoutusers();
  * Get an array of BankingAcctForBalances objects belonging to the current user.
  */
 
-$g->db = get_db();
+get_db();
 
 $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 

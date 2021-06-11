@@ -25,7 +25,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  * 2) Retrieve the banking_transaction_for_balances object with that id from the database.
  */
 
-$g->db = get_db();
+get_db();
 
 $g->object = BankingTransactionForBalances::find_by_id($chosen_id);
 

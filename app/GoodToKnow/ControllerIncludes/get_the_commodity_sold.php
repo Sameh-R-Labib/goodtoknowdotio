@@ -25,7 +25,7 @@ $_SESSION['saved_int01'] = $id;
  * 2) Retrieve the commodities_sold object with that id from the database.
  */
 
-$g->db = get_db();
+get_db();
 
 $g->object = CommoditySold::find_by_id($id);
 

@@ -36,7 +36,7 @@ class BalanceOutTheSequenceNumbersSave
          * 1, 2, 3) All steps in one section of code.
          */
 
-        $g->db = get_db();
+        get_db();
 
         // We will call the save function on each object.
         // It doesn't matter which type of object it is

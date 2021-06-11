@@ -55,7 +55,7 @@ class CreateNewPostEditProcessor
          * Get the post from the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $post = Post::find_by_id($g->saved_int02);
 

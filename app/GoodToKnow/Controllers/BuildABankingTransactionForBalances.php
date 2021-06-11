@@ -20,7 +20,7 @@ class BuildABankingTransactionForBalances
         kick_out_loggedoutusers();
 
 
-        $g->db = get_db();
+        get_db();
 
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';

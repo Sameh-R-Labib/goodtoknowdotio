@@ -25,7 +25,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
  */
 
-$g->db = get_db();
+get_db();
 
 $g->recurring_payment_object = RecurringPayment::find_by_id($chosen_id);
 

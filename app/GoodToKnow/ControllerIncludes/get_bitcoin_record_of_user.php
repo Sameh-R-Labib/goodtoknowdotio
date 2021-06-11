@@ -24,7 +24,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  * Retrieve the Bitcoin object with that id from the database.
  */
 
-$g->db = get_db();
+get_db();
 
 $g->bitcoin_object = Bitcoin::find_by_id($chosen_id);
 

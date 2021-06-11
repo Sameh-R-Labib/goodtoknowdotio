@@ -54,7 +54,7 @@ class PopulateABankingAccountForBalancesSubmit
          * 2) Retrieve the existing record from the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $object = BankingAcctForBalances::find_by_id($g->saved_int01);
 

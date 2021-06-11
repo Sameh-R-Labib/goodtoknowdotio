@@ -27,7 +27,7 @@ class DefaultCommunityProcessor
          * Get the user object from the database.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $user_object = User::find_by_id($g->user_id);
 

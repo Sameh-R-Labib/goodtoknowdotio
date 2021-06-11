@@ -48,7 +48,7 @@ class InduceATaskCreate
 
         $object = Task::array_to_object($array_record);
 
-        $g->db = get_db();
+        get_db();
 
         $result = $object->save();
 

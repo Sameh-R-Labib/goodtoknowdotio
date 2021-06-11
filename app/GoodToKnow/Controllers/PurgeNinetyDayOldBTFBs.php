@@ -36,7 +36,7 @@ class PurgeNinetyDayOldBTFBs
 
         $num_affected_rows = 0;
 
-        $g->db = get_db();
+        get_db();
 
         $sql = 'DELETE FROM `banking_transaction_for_balances` WHERE `time` < ';
         $sql .= $g->db->real_escape_string($time_90_days_ago);

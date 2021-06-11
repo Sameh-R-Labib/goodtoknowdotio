@@ -16,7 +16,7 @@ class UserRoster
         kick_out_nonadmins();
 
 
-        $g->db = get_db();
+        get_db();
 
 
         $g->html_title = 'User Roster';

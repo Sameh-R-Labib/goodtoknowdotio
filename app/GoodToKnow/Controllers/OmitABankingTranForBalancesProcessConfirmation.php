@@ -40,7 +40,7 @@ class OmitABankingTranForBalancesProcessConfirmation
          * Delete the record.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $object = BankingTransactionForBalances::find_by_id($g->saved_int01);
 

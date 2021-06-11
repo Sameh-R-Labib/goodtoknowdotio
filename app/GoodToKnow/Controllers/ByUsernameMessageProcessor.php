@@ -35,7 +35,7 @@ class ByUsernameMessageProcessor
          * Make sure $submitted_username is valid.
          */
 
-        $g->db = get_db();
+        get_db();
 
         require_once CONTROLLERHELPERS . DIRSEP . 'is_username_syntactandexists.php';
 

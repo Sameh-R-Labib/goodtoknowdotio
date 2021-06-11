@@ -42,7 +42,7 @@ class AnnulABankingAcctForBalancesDelete
          * Delete the record.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $g->object = BankingAcctForBalances::find_by_id($g->saved_int01);
 

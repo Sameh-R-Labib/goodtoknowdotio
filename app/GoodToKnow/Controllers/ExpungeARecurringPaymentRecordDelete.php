@@ -40,7 +40,7 @@ class ExpungeARecurringPaymentRecordDelete
          * Delete the record.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $object = RecurringPayment::find_by_id($g->saved_int01);
 

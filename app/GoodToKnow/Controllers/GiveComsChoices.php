@@ -30,7 +30,7 @@ class GiveComsChoices
          * 1) Get the id of the user.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $user_object = User::find_by_username($g->saved_str01);
 

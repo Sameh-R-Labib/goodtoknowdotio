@@ -27,7 +27,7 @@ class DefaultTimeZoneProcessor
         $g->timezone = timezone_form_field_prep('timezone');
 
 
-        $g->db = get_db();
+        get_db();
 
         $user_object = User::find_by_id($g->user_id);
 

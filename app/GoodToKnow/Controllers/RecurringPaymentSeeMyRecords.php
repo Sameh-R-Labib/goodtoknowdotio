@@ -25,7 +25,7 @@ class RecurringPaymentSeeMyRecords
          * Get an array of RecurringPayment objects for the user who has id == $user_id.
          */
 
-        $g->db = get_db();
+        get_db();
 
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 

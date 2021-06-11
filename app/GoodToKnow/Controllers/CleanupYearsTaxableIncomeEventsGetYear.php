@@ -21,7 +21,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         kick_out_nonadmins();
 
-        $g->db = get_db();
+        get_db();
 
 
         /**
