@@ -130,7 +130,7 @@ class Home
 
         $time_since_refresh = time() - $g->last_refresh_topics;
 
-        if ($time_since_refresh > 240 && $g->type_of_resource_requested == 'community') {
+        if ($time_since_refresh > 60 && $g->type_of_resource_requested == 'community') {
 
             if ($g->db == 'not connected') {
 
@@ -165,7 +165,7 @@ class Home
 
         $time_since_refresh = time() - $g->last_refresh_posts;
 
-        if ($time_since_refresh > 180 && $g->type_of_resource_requested == 'topic') {
+        if ($time_since_refresh > 50 && $g->type_of_resource_requested == 'topic') {
             if ($g->db == 'not connected') {
 
                 $g->db = db_connect();
@@ -198,7 +198,7 @@ class Home
 
         $time_since_refresh = time() - $g->last_refresh_content;
 
-        if ($time_since_refresh > 180 && $g->type_of_resource_requested == 'post') {
+        if ($time_since_refresh > 42 && $g->type_of_resource_requested == 'post') {
 
             if ($g->db == 'not connected') {
 
