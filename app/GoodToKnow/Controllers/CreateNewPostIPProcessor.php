@@ -55,9 +55,9 @@ class CreateNewPostIPProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+        $g->chosen_post_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
 
-        if (!array_key_exists($chosen_post_id, $g->special_post_array)) {
+        if (!array_key_exists($g->chosen_post_id, $g->special_post_array)) {
 
             breakout(' CreateNewPostIPProcessor: Error 421218. ');
 
@@ -87,7 +87,7 @@ class CreateNewPostIPProcessor
 
         foreach ($all_posts_as_objects as $object) {
 
-            if ($object->id == $chosen_post_id) $chosen_post_sequence_number = $object->sequence_number;
+            if ($object->id == $g->chosen_post_id) $chosen_post_sequence_number = $object->sequence_number;
 
         }
 

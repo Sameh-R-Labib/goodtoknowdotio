@@ -25,7 +25,7 @@ class AuthorDeletesOwnPostDelete
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 
-        $post_object = post_object_for_owner_prep('choice');
+        $g->post_object = post_object_for_owner_prep('choice');
 
 
         /**
@@ -38,14 +38,14 @@ class AuthorDeletesOwnPostDelete
          * We will need the file names for the post later so let's save them in the session. (markdown_file, html_file)
          */
 
-        $_SESSION['saved_str01'] = $post_object->markdown_file;
+        $_SESSION['saved_str01'] = $g->post_object->markdown_file;
 
-        $_SESSION['saved_str02'] = $post_object->html_file;
+        $_SESSION['saved_str02'] = $g->post_object->html_file;
 
 
         // We need this in the view.
 
-        $g->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $g->long_title_of_post = $g->post_object->title . " | " . $g->post_object->extensionfortitle;
 
 
         /**

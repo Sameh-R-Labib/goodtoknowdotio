@@ -46,9 +46,9 @@ class TransferPostOwnershipTransferIt
 
         // Get the Post object.
 
-        $post_object = Post::find_by_id($g->saved_int02);
+        $g->post_object = Post::find_by_id($g->saved_int02);
 
-        if (!$post_object) {
+        if (!$g->post_object) {
 
             breakout(' TransferPostOwnershipTransferIt says: Unexpected could not get a post object. ');
 
@@ -57,12 +57,12 @@ class TransferPostOwnershipTransferIt
 
         // Change the user_id to that of the new person.
 
-        $post_object->user_id = $user_id;
+        $g->post_object->user_id = $user_id;
 
 
         // Save the Post to the database.
 
-        $result = $post_object->save();
+        $result = $g->post_object->save();
 
         if ($result === false) {
 
@@ -73,6 +73,6 @@ class TransferPostOwnershipTransferIt
 
         // Report success.
 
-        breakout(" I've updated \"{$post_object->title}\" post's record to belong to <b>{$username}</b>. ");
+        breakout(" I've updated \"{$g->post_object->title}\" post's record to belong to <b>{$username}</b>. ");
     }
 }

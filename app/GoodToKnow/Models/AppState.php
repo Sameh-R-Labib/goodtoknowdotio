@@ -370,6 +370,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $post_object;
+
+
+    /**
      * @var string
      */
     public $thing_type;
@@ -475,6 +481,12 @@ class AppState
      * @var int
      */
     public $chosen_topic_id;
+
+
+    /**
+     * @var int
+     */
+    public $chosen_post_id;
 
 
     /**
@@ -681,6 +693,8 @@ class AppState
 
         $this->recurring_payment_object = null;
 
+        $this->post_object = null;
+
         $this->thing_type = '';
 
         $this->thing_name = '';
@@ -716,6 +730,8 @@ class AppState
         $this->bank = '';
 
         $this->chosen_topic_id = 0;
+
+        $this->chosen_post_id = 0;
 
         $this->price_bought = 0;
 

@@ -38,12 +38,11 @@ class SetHomePageCommunityTopicPost
 
         self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id);
 
-        $post_object = null;
         $post_author_object = null;
 
-        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, $post_object, $post_author_object);
+        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, $post_author_object);
 
-        self::store_derived_info_in_the_session($community_id, $topic_id, $post_object, $post_author_object, $post_id);
+        self::store_derived_info_in_the_session($community_id, $topic_id, $post_author_object, $post_id);
 
         redirect_to("/ax1/Home/page");
     }
@@ -51,12 +50,10 @@ class SetHomePageCommunityTopicPost
     /**
      * @param $community_id
      * @param $topic_id
-     * @param $post_object
      * @param $post_author_object
      * @param $post_id
      */
-    private static function store_derived_info_in_the_session($community_id, $topic_id,
-                                                              $post_object, $post_author_object, $post_id)
+    private static function store_derived_info_in_the_session($community_id, $topic_id, $post_author_object, $post_id)
     {
         global $g;
 
@@ -99,14 +96,13 @@ class SetHomePageCommunityTopicPost
 
             // Third store the post_name
 
-            $_SESSION['post_name'] = $post_object->title;
+            $_SESSION['post_name'] = $g->post_object->title;
 
-            $epoch_time = (int)$post_object->created;
+            $epoch_time = (int)$g->post_object->created;
 
             $publish_date = date("m/d/Y T", $epoch_time);
 
-            $_SESSION['post_full_name'] = $post_object->extensionfortitle . ' [' .
-                $publish_date . ']';
+            $_SESSION['post_full_name'] = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
 
 
             // Then do the rest.
@@ -129,11 +125,9 @@ class SetHomePageCommunityTopicPost
 
     /**
      * @param $post_id
-     * @param $post_object
      * @param $post_author_object
      */
-    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, &$post_object,
-                                                                                                  &$post_author_object)
+    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, &$post_author_object)
     {
         global $g;
 
@@ -147,16 +141,16 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $post_object = Post::find_by_id($post_id);
+            $g->post_object = Post::find_by_id($post_id);
 
-            if (!$post_object) {
+            if (!$g->post_object) {
 
                 breakout(' SetHomePageCommunityTopicPost says: Error 58498. ');
 
             }
 
 
-            $g->post_content = file_get_contents($post_object->html_file);
+            $g->post_content = file_get_contents($g->post_object->html_file);
 
             if ($g->post_content === false) {
 
@@ -165,7 +159,7 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $post_author_object = User::find_by_id($post_object->user_id);
+            $post_author_object = User::find_by_id($g->post_object->user_id);
 
 
             if ($post_author_object === false) {

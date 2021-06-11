@@ -14,8 +14,6 @@ class QuickPostDeleteDelete
 
 
         global $g;
-        global $post_object;
-        global $chosen_post_id;
 
 
         kick_out_nonadmins();
@@ -27,16 +25,16 @@ class QuickPostDeleteDelete
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 
-        $_SESSION['saved_str01'] = $post_object->markdown_file;
+        $_SESSION['saved_str01'] = $g->post_object->markdown_file;
 
-        $_SESSION['saved_str02'] = $post_object->html_file;
+        $_SESSION['saved_str02'] = $g->post_object->html_file;
 
-        $_SESSION['saved_int02'] = $chosen_post_id;
+        $_SESSION['saved_int02'] = $g->chosen_post_id;
 
 
         // We need this in the view.
 
-        $g->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $g->long_title_of_post = $g->post_object->title . " | " . $g->post_object->extensionfortitle;
 
 
         $g->html_title = 'Are you sure?';

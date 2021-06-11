@@ -19,7 +19,7 @@ class EditMyPostEditor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
 
-        $post_object = post_object_for_owner_prep('choice');
+        post_object_for_owner_prep('choice');
 
 
         /**
@@ -33,15 +33,15 @@ class EditMyPostEditor
          * (markdown_file, html_file)
          */
 
-        $_SESSION['saved_str01'] = $post_object->markdown_file;
-        $_SESSION['saved_str02'] = $post_object->html_file;
+        $_SESSION['saved_str01'] = $g->post_object->markdown_file;
+        $_SESSION['saved_str02'] = $g->post_object->html_file;
 
 
         /**
-         * Retrieve the markdown for $post_object from the file system.
+         * Retrieve the markdown for $g->post_object from the file system.
          */
 
-        $g->markdown = file_get_contents($post_object->markdown_file);
+        $g->markdown = file_get_contents($g->post_object->markdown_file);
 
         if ($g->markdown === false) {
 

@@ -28,7 +28,6 @@ class TransferPostOwnershipGetPost
 
 
         global $g;
-        global $chosen_post_id;
         global $post_object;
 
 
@@ -43,7 +42,7 @@ class TransferPostOwnershipGetPost
 
         // (2) stores the post's id in the session
 
-        $_SESSION['saved_int02'] = $chosen_post_id;
+        $_SESSION['saved_int02'] = $g->chosen_post_id;
 
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.
@@ -52,9 +51,9 @@ class TransferPostOwnershipGetPost
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
-        // Post id is $chosen_post_id
+        // Post id is $g->chosen_post_id
 
-        $derived_topic_id = TopicToPost::derive_topic_id($chosen_post_id);
+        $derived_topic_id = TopicToPost::derive_topic_id($g->chosen_post_id);
 
         if ($derived_topic_id === false) {
 
