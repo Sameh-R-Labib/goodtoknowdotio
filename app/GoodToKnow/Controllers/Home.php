@@ -165,7 +165,7 @@ class Home
 
         $time_since_refresh = time() - $g->last_refresh_posts;
 
-        if ($time_since_refresh > 20 && $g->type_of_resource_requested == 'topic') {
+        if ($time_since_refresh > 7 && $g->type_of_resource_requested == 'topic') {
             if ($g->db == 'not connected') {
 
                 $g->db = db_connect();
