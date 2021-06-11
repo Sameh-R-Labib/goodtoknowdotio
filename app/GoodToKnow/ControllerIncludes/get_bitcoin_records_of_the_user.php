@@ -6,12 +6,6 @@ use GoodToKnow\Models\Bitcoin;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
-get_db();
-
-
 /**
  * Get an array of Bitcoin objects
  * belonging to the current user.

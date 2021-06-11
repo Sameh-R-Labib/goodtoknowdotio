@@ -7,8 +7,6 @@ use GoodToKnow\Models\TopicToPost;
 global $g;
 
 
-get_db();
-
 $post = Post::find_by_id($g->saved_int02);
 
 if (!$post) {

@@ -18,6 +18,12 @@ class SpyCommoditiesSoldYearFilter
         global $g;
 
 
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_tax_year_and_its_commodities_sold.php';
 
 

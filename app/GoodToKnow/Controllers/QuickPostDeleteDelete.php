@@ -18,6 +18,12 @@ class QuickPostDeleteDelete
         global $chosen_post_id;
 
 
+        kick_out_nonadmins();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 

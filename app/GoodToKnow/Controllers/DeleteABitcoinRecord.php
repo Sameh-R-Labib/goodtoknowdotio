@@ -12,6 +12,12 @@ class DeleteABitcoinRecord
          */
 
 
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
 
 

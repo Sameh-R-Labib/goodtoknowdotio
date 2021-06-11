@@ -19,6 +19,9 @@ class QuickPostDeleteDelProc
         kick_out_nonadmins();
 
 
+        get_db();
+
+
         /**
          * Do nothing if user changed mind.
          */

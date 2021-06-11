@@ -25,6 +25,9 @@ class WriteToAdminProcessor
         kick_out_loggedoutusers();
 
 
+        get_db();
+
+
         /**
          * $g->message_object and $g->db are defined when we include add_a_message_in_the_database.php.
          * I know the PhpStorm linter does not recognize this and marks up the code below as if

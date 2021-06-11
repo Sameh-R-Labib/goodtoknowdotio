@@ -6,14 +6,9 @@ use GoodToKnow\Models\CommunityToTopic;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 /**
  * Refresh special_topic_array
  */
-
-get_db();
 
 $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 

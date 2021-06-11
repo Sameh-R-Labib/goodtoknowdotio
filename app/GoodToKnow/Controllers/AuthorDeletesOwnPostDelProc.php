@@ -19,6 +19,9 @@ class AuthorDeletesOwnPostDelProc
         kick_out_loggedoutusers();
 
 
+        get_db();
+
+
         /**
          * Do nothing if user changed mind.
          */

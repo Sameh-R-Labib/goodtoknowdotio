@@ -6,9 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 /**
  * Determines the id of the bitcoin record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
  */
@@ -23,8 +20,6 @@ $_SESSION['saved_int01'] = $chosen_id;
 /**
  * Retrieve the Bitcoin object with that id from the database.
  */
-
-get_db();
 
 $g->bitcoin_object = Bitcoin::find_by_id($chosen_id);
 

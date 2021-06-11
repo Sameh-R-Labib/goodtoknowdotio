@@ -7,9 +7,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 /**
  * 1) Store the submitted banking_acct_for_balances record id in the session.
  */
@@ -24,8 +21,6 @@ $_SESSION['saved_int01'] = $chosen_id;
 /**
  * 2) Retrieve the banking_acct_for_balances object with that id from the database.
  */
-
-get_db();
 
 $g->object = BankingAcctForBalances::find_by_id($chosen_id);
 

@@ -7,9 +7,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 /**
  * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
  */
@@ -25,8 +22,6 @@ $_SESSION['saved_int01'] = $chosen_id;
  * 2) Retrieve the task object with that id from the database.
  *    And, format its attributes for easy viewing.
  */
-
-get_db();
 
 $g->object = Task::find_by_id($chosen_id);
 

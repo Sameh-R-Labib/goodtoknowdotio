@@ -6,9 +6,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
 $g->chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);

@@ -18,6 +18,12 @@ class TransferPostOwnershipChoosePost
         global $g;
 
 
+        kick_out_nonadmins();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_posts_along_with_their_authors.php';
 
 

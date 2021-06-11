@@ -20,6 +20,12 @@ class RevampABankingTransactionForBalancesChooseRecord
         global $g;
 
 
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_banking_transactions_within_a_time_range.php';
 
 

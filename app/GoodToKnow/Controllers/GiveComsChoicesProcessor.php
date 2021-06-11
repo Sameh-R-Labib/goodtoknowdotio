@@ -13,6 +13,9 @@ class GiveComsChoicesProcessor
         // $g->saved_int01 has user's id
 
 
+        kick_out_nonadmins();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';
 
 

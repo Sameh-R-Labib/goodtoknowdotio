@@ -20,6 +20,12 @@ class PopulateABankingAccountForBalancesProcessor
          */
 
 
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
 
 

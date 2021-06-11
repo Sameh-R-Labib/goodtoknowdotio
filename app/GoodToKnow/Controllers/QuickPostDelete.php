@@ -20,6 +20,9 @@ class QuickPostDelete
         kick_out_nonadmins();
 
 
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_comm_inside_part.php';
 
 

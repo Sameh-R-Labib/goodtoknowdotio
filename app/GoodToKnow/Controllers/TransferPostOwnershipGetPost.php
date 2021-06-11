@@ -32,6 +32,12 @@ class TransferPostOwnershipGetPost
         global $post_object;
 
 
+        kick_out_nonadmins();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 

@@ -8,15 +8,10 @@ global $g;
 // $g->saved_int02 max time
 
 
-kick_out_loggedoutusers();
-
-
 /**
  * Get an array of BankingTransactionForBalances objects belonging to the user and falling
  * within the prescribed time range.
  */
-
-get_db();
 
 $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 $sql .= ' AND `time` BETWEEN "' . $g->db->real_escape_string($g->saved_int01) . '" AND "' . $g->db->real_escape_string($g->saved_int02) . '"';

@@ -21,6 +21,12 @@ class NewTopicInsertPoint
         global $g;
 
 
+        kick_out_nonadmins();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
 

@@ -7,9 +7,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 /**
  * 1) Store the submitted taxable_income_event id in the session.
  */
@@ -24,8 +21,6 @@ $_SESSION['saved_int01'] = $id;
 /**
  * 2) Retrieve the taxable_income_event object with that id from the database.
  */
-
-get_db();
 
 $g->object = TaxableIncomeEvent::find_by_id($id);
 

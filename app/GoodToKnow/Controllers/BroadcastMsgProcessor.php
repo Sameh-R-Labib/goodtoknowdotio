@@ -22,6 +22,9 @@ class BroadcastMsgProcessor
         kick_out_nonadmins();
 
 
+        get_db();
+
+
         /**
          * Verify that a string representing
          * the message was submitted.

@@ -17,6 +17,12 @@ class PopulateABankingAccountForBalances
         global $g;
 
 
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
 

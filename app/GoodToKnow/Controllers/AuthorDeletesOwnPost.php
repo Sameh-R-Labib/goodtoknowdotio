@@ -16,7 +16,15 @@ class AuthorDeletesOwnPost
          * first we need to have the user identify the post. So this first step will help.
          */
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_community.php';
+
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
+        require CONTROLLERINCLUDES . DIRSEP . 'get_topics_for_a_comm_inside_part.php';
+
 
         require VIEWS . DIRSEP . 'authordeletesownpost.php';
     }

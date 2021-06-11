@@ -7,9 +7,6 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 global $g;
 
 
-kick_out_loggedoutusers();
-
-
 /**
  *  1) Validate the submitted year_paid.
  */
@@ -22,8 +19,6 @@ $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 /**
  * 2) Present the PossibleTaxDeduction(s/plural) which fall in that year as radio buttons.
  */
-
-get_db();
 
 $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $g->db->real_escape_string($year_paid);
 $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);

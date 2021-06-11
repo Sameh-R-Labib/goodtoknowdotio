@@ -16,6 +16,9 @@ class FatherACommoditySoldProcessor
         global $g;
 
 
+        kick_out_loggedoutusers();
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_submitted_commodity_sold.php';
 
 

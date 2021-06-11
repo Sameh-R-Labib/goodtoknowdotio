@@ -9,8 +9,6 @@ use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 global $g;
 // $g->saved_int01 commodities_sold id
 
-kick_out_loggedoutusers();
-
 
 /**
  * 1) Validate the submitted finetuneacommoditysoldedit.php form data. (and apply htmlspecialchars)
