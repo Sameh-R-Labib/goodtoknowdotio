@@ -38,11 +38,9 @@ class SetHomePageCommunityTopicPost
 
         self::conditionally_get_the_posts_array_and_derive_the_info_surrounding_it($topic_id, $post_id);
 
-        $post_author_object = null;
+        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id);
 
-        self::conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, $post_author_object);
-
-        self::store_derived_info_in_the_session($community_id, $topic_id, $post_author_object, $post_id);
+        self::store_derived_info_in_the_session($community_id, $topic_id, $post_id);
 
         redirect_to("/ax1/Home/page");
     }
@@ -50,10 +48,9 @@ class SetHomePageCommunityTopicPost
     /**
      * @param $community_id
      * @param $topic_id
-     * @param $post_author_object
      * @param $post_id
      */
-    private static function store_derived_info_in_the_session($community_id, $topic_id, $post_author_object, $post_id)
+    private static function store_derived_info_in_the_session($community_id, $topic_id, $post_id)
     {
         global $g;
 
@@ -111,8 +108,8 @@ class SetHomePageCommunityTopicPost
             $_SESSION['last_refresh_posts'] = time();
             $_SESSION['post_content'] = $g->post_content;
             $_SESSION['last_refresh_content'] = time();
-            $_SESSION['author_username'] = $post_author_object->username;
-            $_SESSION['author_id'] = (int)$post_author_object->id;
+            $_SESSION['author_username'] = $g->post_author_object->username;
+            $_SESSION['author_id'] = (int)$g->post_author_object->id;
         }
 
         $_SESSION['type_of_resource_requested'] = $g->type_of_resource_requested;
@@ -125,9 +122,8 @@ class SetHomePageCommunityTopicPost
 
     /**
      * @param $post_id
-     * @param $post_author_object
      */
-    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id, &$post_author_object)
+    private static function conditionally_get_the_post_content_and_derive_the_info_surrounding_it($post_id)
     {
         global $g;
 
@@ -159,10 +155,10 @@ class SetHomePageCommunityTopicPost
             }
 
 
-            $post_author_object = User::find_by_id($g->post_object->user_id);
+            $g->post_author_object = User::find_by_id($g->post_object->user_id);
 
 
-            if ($post_author_object === false) {
+            if ($g->post_author_object === false) {
 
                 breakout(' Unable to get the post author object from the database. ');
 

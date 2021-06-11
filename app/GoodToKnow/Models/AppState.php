@@ -376,6 +376,12 @@ class AppState
 
 
     /**
+     * @var null|object
+     */
+    public $post_author_object;
+
+
+    /**
      * @var string
      */
     public $thing_type;
@@ -694,6 +700,8 @@ class AppState
         $this->recurring_payment_object = null;
 
         $this->post_object = null;
+
+        $this->post_author_object = null;
 
         $this->thing_type = '';
 
