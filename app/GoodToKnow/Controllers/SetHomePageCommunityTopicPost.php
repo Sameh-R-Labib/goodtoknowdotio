@@ -276,7 +276,7 @@ class SetHomePageCommunityTopicPost
     {
         global $g;
 
-        if (!empty($g->message) || $g->db === false) {
+        if (!empty($g->message) || $g->db == false) {
 
             breakout(' Database connection failed. ');
 

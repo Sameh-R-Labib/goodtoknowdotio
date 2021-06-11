@@ -12,7 +12,7 @@ if ($g->messages_last_time === null) {
 
         $g->db = db_connect();
 
-        if ($g->db === false) {
+        if ($g->db == false) {
 
             $g->message .= " Failed to connect to the database. ";
             $_SESSION['message'] = $g->message;
@@ -49,7 +49,7 @@ if ($g->messages_last_time === null) {
 
             $g->db = db_connect();
 
-            if ($g->db === false) {
+            if ($g->db == false) {
 
                 $g->message .= " Failed to connect to the database. ";
                 $_SESSION['message'] = $g->message;
