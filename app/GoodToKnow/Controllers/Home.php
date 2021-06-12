@@ -96,18 +96,8 @@ class Home
         $time_since_refresh = time() - $g->last_refresh_communities;  // seconds
 
         if ($time_since_refresh > 23) {
-            if (is_null($g->db)) {
 
-                $g->db = db_connect();
-
-                if ($g->db === false) {
-                    $g->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $g->message;
-                    reset_feature_session_vars();
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-                }
-
-            }
+            db_connect_if_not_connected();
 
             $g->special_community_array = UserToCommunity::find_communities_of_user($g->user_id);
 
@@ -132,20 +122,7 @@ class Home
 
         if ($time_since_refresh > 20 && $g->type_of_resource_requested == 'community') {
 
-            if (is_null($g->db)) {
-
-                $g->db = db_connect();
-
-                if ($g->db === false) {
-
-                    $g->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $g->message;
-                    reset_feature_session_vars();
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-
-                }
-
-            }
+            db_connect_if_not_connected();
 
             $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 
@@ -166,20 +143,8 @@ class Home
         $time_since_refresh = time() - $g->last_refresh_posts;
 
         if ($time_since_refresh > 7 && $g->type_of_resource_requested == 'topic') {
-            if (is_null($g->db)) {
 
-                $g->db = db_connect();
-
-                if ($g->db === false) {
-
-                    $g->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $g->message;
-                    reset_feature_session_vars();
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-
-                }
-
-            }
+            db_connect_if_not_connected();
 
             $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->topic_id);
 
@@ -200,20 +165,7 @@ class Home
 
         if ($time_since_refresh > 7 && $g->type_of_resource_requested == 'post') {
 
-            if (is_null($g->db)) {
-
-                $g->db = db_connect();
-
-                if ($g->db === false) {
-
-                    $g->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $g->message;
-                    reset_feature_session_vars();
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-
-                }
-
-            }
+            db_connect_if_not_connected();
 
             $g->post_object = Post::find_by_id($g->post_id);
 
@@ -282,20 +234,7 @@ class Home
 
             $_SESSION['when_last_checked_suspend'] = $g->when_last_checked_suspend;
 
-            if (is_null($g->db)) {
-
-                $g->db = db_connect();
-
-                if ($g->db === false) {
-
-                    $g->message .= " Failed to connect to the database. ";
-                    $_SESSION['message'] = $g->message;
-                    reset_feature_session_vars();
-                    redirect_to("/ax1/InfiniteLoopPrevent/page");
-
-                }
-
-            }
+            db_connect_if_not_connected();
 
             $result = User::enforce_suspension();
 

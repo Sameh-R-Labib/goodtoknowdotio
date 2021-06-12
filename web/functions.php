@@ -188,3 +188,24 @@ function get_db()
 
     return $g->db;
 }
+
+
+function db_connect_if_not_connected()
+{
+    global $g;
+
+    if (is_null($g->db)) {
+
+        $g->db = db_connect();
+
+        if ($g->db === false) {
+
+            $g->message .= " Failed to connect to the database. ";
+            $_SESSION['message'] = $g->message;
+            reset_feature_session_vars();
+            redirect_to("/ax1/InfiniteLoopPrevent/page");
+
+        }
+
+    }
+}
