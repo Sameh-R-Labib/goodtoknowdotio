@@ -21,7 +21,7 @@
             </p>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
-                <textarea id="comment" name="comment" rows="4" cols="77" wrap="soft" maxlength="800"
+                <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="800"
                           placeholder="List the actual payments here (Assuming there were multiple.)"><?= $g->object->comment ?></textarea>
             </p>
         </section>
