@@ -544,7 +544,7 @@ class AppState
 
 
     /**
-     * @var string|mysqli;
+     * @var null|mysqli;
      */
     public $db;
 
@@ -758,6 +758,6 @@ class AppState
         $this->profit = 0.0;
 
         // ★★★
-        $this->db = 'not connected';
+        $this->db = null;
     }
 }

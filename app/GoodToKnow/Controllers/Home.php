@@ -96,7 +96,7 @@ class Home
         $time_since_refresh = time() - $g->last_refresh_communities;  // seconds
 
         if ($time_since_refresh > 23) {
-            if ($g->db == 'not connected') {
+            if (is_null($g->db)) {
 
                 $g->db = db_connect();
 
@@ -132,7 +132,7 @@ class Home
 
         if ($time_since_refresh > 20 && $g->type_of_resource_requested == 'community') {
 
-            if ($g->db == 'not connected') {
+            if (is_null($g->db)) {
 
                 $g->db = db_connect();
 
@@ -166,7 +166,7 @@ class Home
         $time_since_refresh = time() - $g->last_refresh_posts;
 
         if ($time_since_refresh > 7 && $g->type_of_resource_requested == 'topic') {
-            if ($g->db == 'not connected') {
+            if (is_null($g->db)) {
 
                 $g->db = db_connect();
 
@@ -200,7 +200,7 @@ class Home
 
         if ($time_since_refresh > 7 && $g->type_of_resource_requested == 'post') {
 
-            if ($g->db == 'not connected') {
+            if (is_null($g->db)) {
 
                 $g->db = db_connect();
 
@@ -282,7 +282,7 @@ class Home
 
             $_SESSION['when_last_checked_suspend'] = $g->when_last_checked_suspend;
 
-            if ($g->db == 'not connected') {
+            if (is_null($g->db)) {
 
                 $g->db = db_connect();
 

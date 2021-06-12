@@ -8,7 +8,7 @@ global $g;
 
 if ($g->messages_last_time === null) {
 
-    if ($g->db == 'not connected') {
+    if (is_null($g->db)) {
 
         $g->db = db_connect();
 
@@ -34,7 +34,7 @@ if ($g->messages_last_time === null) {
 
     }
 
-    $g->message .= "<br><br>You have {$quantity} message(s).
+    $g->message .= "<br><br>You have $quantity message(s).
     <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
@@ -45,7 +45,7 @@ if ($g->messages_last_time === null) {
 
     if ($time_since_last > 17) {
 
-        if ($g->db == 'not connected') {
+        if (is_null($g->db)) {
 
             $g->db = db_connect();
 
