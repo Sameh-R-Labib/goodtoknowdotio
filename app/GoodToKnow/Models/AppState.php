@@ -23,6 +23,8 @@ use mysqli;
 class AppState
 {
     /**
+     * The system message which is to be displayed.
+     *
      * @var string
      */
     public $message;
@@ -58,12 +60,16 @@ class AppState
 
 
     /**
+     * Id of the current community.
+     *
      * @var int|mixed
      */
     public $community_id;
 
 
     /**
+     * Name of the current community.
+     *
      * @var string
      */
     public $community_name;
@@ -76,18 +82,24 @@ class AppState
 
 
     /**
+     * A "special" array representing the communities of the user.
+     *
      * @var array
      */
     public $special_community_array;
 
 
     /**
+     * Id of the current topic.
+     *
      * @var int|mixed
      */
     public $topic_id;
 
 
     /**
+     * Name of the current topic.
+     *
      * @var string
      */
     public $topic_name;
@@ -100,12 +112,16 @@ class AppState
 
 
     /**
+     * Id of the current post.
+     *
      * @var int|mixed
      */
     public $post_id;
 
 
     /**
+     * Name of the current post.
+     *
      * @var string
      */
     public $post_name;
@@ -118,18 +134,27 @@ class AppState
 
 
     /**
+     * The name of the type of thing currently earmarked to be displayed
+     * on the Home page.
+     *
+     * Possible values are: 'community', 'topic', 'post', 'topic_or_post'
+     *
      * @var string
      */
     public $type_of_resource_requested;
 
 
     /**
+     * A "special" array representing the topics in the current community.
+     *
      * @var array
      */
     public $special_topic_array;
 
 
     /**
+     * A "special" array representing the posts in the current topic.
+     *
      * @var array
      */
     public $special_post_array;
@@ -160,18 +185,24 @@ class AppState
 
 
     /**
+     * The content of the current post.
+     *
      * @var string
      */
     public $post_content;
 
 
     /**
+     * The username of the author of the current post.
+     *
      * @var string
      */
     public $author_username;
 
 
     /**
+     * Id of the author of the current post.
+     *
      * @var int|mixed
      */
     public $author_id;
@@ -232,24 +263,36 @@ class AppState
 
 
     /**
+     * Evaluates to true if (when the constructor is called) $this->role === 'admin'.
+     *
      * @var bool
      */
     public $is_admin;
 
 
     /**
+     * Indicates whether or not the person viewing the page is viewing it as a user of
+     * the system. When $is_guest == true then we want the view to shows stuff intended
+     * for visitors to see. The controller will set $is_guest appropriately.
+     *
+     * $is_guest default to false.
+     *
      * @var bool
      */
     public $is_guest;
 
 
     /**
+     * The value of $page determines what is to be shown in breadcrumbs.
+     *
      * @var string
      */
     public $page;
 
 
     /**
+     * Text for <title> HTML tag.
+     *
      * @var string
      */
     public $html_title;
@@ -292,6 +335,12 @@ class AppState
 
 
     /**
+     * Whether or not to show a poof rather than what is normally be shown in that space.
+     * What is normally shown is a link to the route for messaging the author
+     * of the current post.
+     *
+     * $show_poof default is false.
+     *
      * @var bool
      */
     public $show_poof;
@@ -646,7 +695,7 @@ class AppState
 
         $this->is_admin = $this->role === 'admin';
 
-        // When set to true it tells some Gtk.io views to show version of parts of the page which
+        // When set to true it tells some Gtk.io views to show the version of parts of the page which
         // non-authenticated users should see and hide the parts which they should not see.
         $this->is_guest = false;
 
@@ -757,7 +806,8 @@ class AppState
 
         $this->profit = 0.0;
 
-        // ★★★
+        // ★ ★ ★
         $this->db = null;
+        // ★ ★ ★
     }
 }
