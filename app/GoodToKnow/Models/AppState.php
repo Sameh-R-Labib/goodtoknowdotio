@@ -36,24 +36,33 @@ class AppState
     public $url_of_most_recent_upload;
 
     /**
-     * @var int|mixed
+     * Id of currently logged in user.
+     *
+     * @var int
      */
     public $user_id;
 
 
     /**
+     * Username of currently logged in user.
+     *
      * @var string
      */
     public $user_username;
 
 
     /**
+     * Role of currently logged in user.
+     *
      * @var string
      */
     public $role;
 
 
     /**
+     * The database record specified PHP timezone for the current user.
+     * This gets used in routehandler.php for initially setting the timezone for script execution.
+     *
      * @var string
      */
     public $timezone;
@@ -76,6 +85,8 @@ class AppState
 
 
     /**
+     * Description of the current community.
+     *
      * @var string
      */
     public $community_description;
@@ -106,6 +117,8 @@ class AppState
 
 
     /**
+     * Description of the current topic.
+     *
      * @var string
      */
     public $topic_description;
@@ -128,6 +141,8 @@ class AppState
 
 
     /**
+     * The extended title plus the date for the current post.
+     *
      * @var string
      */
     public $post_full_name;
