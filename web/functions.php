@@ -172,6 +172,8 @@ function db_connect()
 
 
 /**
+ * Also see comment for db_connect_if_not_connected().
+ *
  * @return bool|mysqli
  */
 function get_db()
@@ -189,7 +191,11 @@ function get_db()
     return $g->db;
 }
 
-
+/**
+ * We use db_connect_if_not_connected() rather than get_db()
+ * when we want redirection upon failure to be to the
+ * /ax1/InfiniteLoopPrevent/page page.
+ */
 function db_connect_if_not_connected()
 {
     global $g;
