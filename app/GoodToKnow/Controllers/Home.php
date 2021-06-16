@@ -235,7 +235,7 @@ class Home
                 $epoch_time = (int)$g->post_object->created;
                 $publish_date = date("m/d/Y T", $epoch_time);
                 $g->post_full_name = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
-                $_SESSION['post_name'] = $g->post_object->title;
+                $_SESSION['post_name'] = $g->post_name;
                 $_SESSION['post_full_name'] = $g->post_full_name;
                 $_SESSION['post_content'] = $g->post_content;
 
