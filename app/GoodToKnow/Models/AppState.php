@@ -238,7 +238,7 @@ class AppState
     /**
      * @var int|null
      */
-    public $messages_last_time;
+    public $when_last_checked_messages;
 
 
     /**
@@ -689,7 +689,7 @@ class AppState
 
         $this->messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
 
-        $this->messages_last_time = (isset($_SESSION['messages_last_time'])) ? $_SESSION['messages_last_time'] : null;
+        $this->when_last_checked_messages = (isset($_SESSION['when_last_checked_messages'])) ? $_SESSION['when_last_checked_messages'] : null;
 
         $this->saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 

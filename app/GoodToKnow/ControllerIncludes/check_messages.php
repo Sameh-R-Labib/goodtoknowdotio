@@ -6,7 +6,7 @@ use GoodToKnow\Models\MessageToUser;
 global $g;
 
 
-if ($g->messages_last_time === null) {
+if ($g->when_last_checked_messages === null) {
 
     db_connect_if_not_connected();
 
@@ -21,16 +21,18 @@ if ($g->messages_last_time === null) {
 
     }
 
-    $g->message .= "<br><br>You have $quantity message(s).
+    $g->message .= "<br>You have $quantity message(s).
     <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
-    $_SESSION['messages_last_time'] = time();
+    $_SESSION['when_last_checked_messages'] = time();
+
 } else {
-    $time_since_last = time() - $g->messages_last_time;
+
+    $time_since_last = time() - $g->when_last_checked_messages;
     $time_since_last = $time_since_last / 60;
 
-    if ($time_since_last > 17) {
+    if ($time_since_last > 5) {
 
         db_connect_if_not_connected();
 
@@ -53,9 +55,10 @@ if ($g->messages_last_time === null) {
             <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
             $_SESSION['messages_last_quantity'] = $quantity;
-            $_SESSION['messages_last_time'] = time();
 
         }
+
+        $_SESSION['when_last_checked_messages'] = time();
 
     }
 

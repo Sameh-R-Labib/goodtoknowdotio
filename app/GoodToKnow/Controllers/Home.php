@@ -14,15 +14,37 @@ class Home
     {
         self::redirect_if_not_logged_in();
 
+
         self::logout_the_user_if_he_is_suspended();
 
+
+        /**
+         * SetHomePageCommunityTopicPost does set all these vars. However, since the user may
+         * just hit refresh in browser, it's good to refresh these variables (once in a while
+         * on the Home page.)
+         *
+         * Not every variable is refreshed. Just the main ones.
+         */
         self::refresh_vars_which_may_be_stale();
 
+
+        /**
+         * Home should always present a message.
+         */
         self::put_together_a_good_sessionmessage();
 
-        // Announce something about the quantity of inbox messages.
+
+        /**
+         * Announce something about the quantity of inbox messages.
+         *
+         * This, also, gets appended to the session message.
+         */
         require CONTROLLERINCLUDES . DIRSEP . 'check_messages.php';
 
+
+        /**
+         * Sets a few vars ans summons the view.
+         */
         self::show_the_home_page();
     }
 
@@ -31,11 +53,19 @@ class Home
     {
         global $g;
 
+
+        /**
+         * false is JUST to indicate to the view that this is the Home page.
+         * The viw will still show the author messaging link if Home is showing a post.
+         */
         $g->show_poof = false;
+
 
         $g->html_title = 'GoodToKnow.io';
 
+
         $g->page = "Home";
+
 
         require VIEWS . DIRSEP . 'home.php';
     }
@@ -50,7 +80,9 @@ class Home
             if (!empty(trim($g->community_description))) {
 
                 if (empty(trim($g->message))) {
+
                     $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
+
                 }
 
             }
@@ -70,7 +102,9 @@ class Home
             if (!empty(trim($g->post_full_name))) {
 
                 if (empty(trim($g->message))) {
+
                     $g->message .= ' ' . $g->post_full_name . ' ';
+
                 }
 
             }
@@ -88,7 +122,7 @@ class Home
         /**
          * If the special_community_array has not been
          * refreshed for a period of time longer than
-         * 3 hours then refresh it.
+         * 23 seconds then refresh it.
          */
 
         global $g;
@@ -108,14 +142,15 @@ class Home
             }
 
             $_SESSION['special_community_array'] = $g->special_community_array;
-            $_SESSION['last_refresh_communities'] = time();
+            $g->last_refresh_communities = time();
+            $_SESSION['last_refresh_communities'] = $g->last_refresh_communities;
         }
 
 
         /**
          * If the type_of_resource_requested == 'community'
          * and the special_topic_array has not been refreshed
-         * for a period longer than 4 minutes then refresh it.
+         * for a period longer than 20 seconds then refresh it.
          */
 
         $time_since_refresh = time() - $g->last_refresh_topics;
@@ -129,7 +164,8 @@ class Home
             if ($g->special_topic_array === false) $g->special_topic_array = [];
 
             $_SESSION['special_topic_array'] = $g->special_topic_array;
-            $_SESSION['last_refresh_topics'] = time();
+            $g->last_refresh_topics = time();
+            $_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
 
         }
 
@@ -137,7 +173,7 @@ class Home
         /**
          * If the type_of_resource_requested == 'topic'
          * and the $g->special_post_array has not been refreshed
-         * for a period longer than 3 minutes then refresh it.
+         * for a period longer than 7 seconds then refresh it.
          */
 
         $time_since_refresh = time() - $g->last_refresh_posts;
@@ -151,14 +187,15 @@ class Home
             if ($g->special_post_array === false) $g->special_post_array = [];
 
             $_SESSION['special_post_array'] = $g->special_post_array;
-            $_SESSION['last_refresh_posts'] = time();
+            $g->last_refresh_posts = time();
+            $_SESSION['last_refresh_posts'] = $g->last_refresh_posts;
         }
 
 
         /**
          * If the type_of_resource_requested == 'post'
          * and the post_content has not been refreshed
-         * for a period longer than 3 minutes then refresh it.
+         * for a period longer than 7 seconds then refresh it.
          */
 
         $time_since_refresh = time() - $g->last_refresh_content;
@@ -171,6 +208,8 @@ class Home
 
             if ($g->post_object === false) {
 
+                $g->post_content = "[Missing Post Record]";
+                $_SESSION['post_content'] = $g->post_content;
                 $g->message .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
 
             } else {
@@ -179,8 +218,9 @@ class Home
 
                 if ($g->post_content === false) {
 
+                    $g->post_content = '[Missing Post Content]';
+                    $_SESSION['post_content'] = $g->post_content;
                     $g->message .= " Unable to read the post's file. ";
-                    $g->post_content = '';
 
                 }
 
@@ -193,7 +233,8 @@ class Home
             }
 
             $_SESSION['post_content'] = $g->post_content;
-            $_SESSION['last_refresh_content'] = time();
+            $g->last_refresh_content = time();
+            $_SESSION['last_refresh_content'] = $g->last_refresh_content;
 
         }
     }
