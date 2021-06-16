@@ -224,6 +224,21 @@ class Home
 
                 }
 
+                /**
+                 * You'll notice more than usual amount of things are being
+                 * refreshed for a post. I'm doing this to take advantage of
+                 * the fact we've retrieved the post object from the database.
+                 * As for communities and topics not so much can be efficiently
+                 * refreshed.
+                 */
+                $g->post_name = $g->post_object->title;
+                $epoch_time = (int)$g->post_object->created;
+                $publish_date = date("m/d/Y T", $epoch_time);
+                $g->post_full_name = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
+                $_SESSION['post_name'] = $g->post_object->title;
+                $_SESSION['post_full_name'] = $g->post_full_name;
+                $_SESSION['post_content'] = $g->post_content;
+
             }
 
             if (empty(trim($g->post_content))) {
@@ -233,21 +248,14 @@ class Home
             }
 
             /**
-             * You'll notice more than usual amount of things are being
-             * refreshed for a post. I'm doing this to take advantage of
-             * the fact we've retrieved the post object from the database.
-             * As for communities and topics not so much can be efficiently
-             * refreshed.
+             * Whether or not we were able to get the post object and post content
+             * we reset the clock since we did something for refreshing the post.
              */
-            $_SESSION['post_name'] = $g->post_object->title;
-            $epoch_time = (int)$g->post_object->created;
-            $publish_date = date("m/d/Y T", $epoch_time);
-            $_SESSION['post_full_name'] = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
-            $_SESSION['post_content'] = $g->post_content;
             $g->last_refresh_content = time();
             $_SESSION['last_refresh_content'] = $g->last_refresh_content;
 
         }
+
     }
 
 
