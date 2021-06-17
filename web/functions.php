@@ -80,7 +80,7 @@ function redirect_to(string $location)
      *
      * There are two types of routes which do NOT present a view:
      *    1. Routes which end in breakout().
-     *    2. Routes which end in  redirect_to().
+     *    2. Routes which end in redirect_to().
      *
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
