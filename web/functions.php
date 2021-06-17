@@ -13,7 +13,13 @@ function fix_michelf(string &$html)
 
 
 /**
- *
+ * Overall perspective:
+ *  -- kick_out_loggedoutusers is NOT used on the Home page. However, it is used on most of the other pages.
+ *  -- If there is no session file then $g->is_logged_in will be null (and thus breakout will happen.)
+ *  -- If there is a message then breakout will happen.
+ * Breakout just means control is handed over to the Home page.
+ * In the case where there is no session file the Home page will log out the user.
+ * In the case where there is a message the Home page will show that message.
  */
 function kick_out_loggedoutusers()
 {
@@ -70,8 +76,9 @@ function redirect_to(string $location)
 
     /**
      * OUR GOAL: The routes which do NOT present a view must pass on
-     * their "to display message" to the next route. There
-     * are two types of routes which do NOT present a view:
+     * their "to display message" to the next route.
+     *
+     * There are two types of routes which do NOT present a view:
      *    1. Routes which end in breakout().
      *    2. Routes which end in  redirect_to().
      *
@@ -99,10 +106,11 @@ function breakout(string $newMessage)
 {
     /**
      * OUR GOAL: The routes which do NOT present a view must pass on
-     * their "to display message" to the next route. There
-     * are two types of routes which do NOT present a view:
+     * their "to display message" to the next route.
+     *
+     * There are two types of routes which do NOT present a view:
      *    1. Routes which end in breakout().
-     *    2. Routes which end in  redirect_to().
+     *    2. Routes which end in redirect_to().
      *
      * Since, breakout() calls redirect_to() we can accomplish OUR GOAL
      * by passing on their "to display message" within redirect_to().
