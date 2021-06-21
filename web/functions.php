@@ -201,8 +201,9 @@ function get_db()
 
 /**
  * We use db_connect_if_not_connected() rather than get_db()
- * when we want redirection upon failure to be to the
- * /ax1/InfiniteLoopPrevent/page page.
+ * when we:
+ *  A. want redirection upon failure to be to the /ax1/InfiniteLoopPrevent/page page.
+ *  B. want to connect ONLY IF we don't already have a connection.
  */
 function db_connect_if_not_connected()
 {
