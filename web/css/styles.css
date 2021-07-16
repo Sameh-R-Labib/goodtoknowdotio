@@ -222,6 +222,23 @@ a:active {
     color: seagreen;
 }
 
+a.cross {
+    background-color: #218b55;
+    margin-left: 252px;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 4px 14px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.cross:hover, a.cross:active {
+    background-color: goldenrod;
+}
+
 a.clearbtn:link, a.clearbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/blueclear.png') no-repeat 0 0;
     background-size: 100% 100%;
