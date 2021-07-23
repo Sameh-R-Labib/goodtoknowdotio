@@ -119,6 +119,9 @@ class Home
         $g->message .= '<br><br>';
 
 
+        $g->message .= ' <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
+
+
         if ($g->type_of_resource_requested == 'topic') {
 
             $g->message .= ' <a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
@@ -130,9 +133,6 @@ class Home
 
             $g->message .= ' <a class="purplebtn" href="/ax1/EditMyPostDirect/page">Edit 📄</a> ';
         }
-
-
-        $g->message .= ' <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
 
     }
 
