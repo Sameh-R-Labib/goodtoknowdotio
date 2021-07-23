@@ -112,18 +112,9 @@ class Home
         }
 
 
-        /**
-         * We need these br tags to preced the buttons.
-         */
-
-        $g->message .= '<br>';
-
-
-        $g->message .= ' <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
-
-
         if ($g->type_of_resource_requested == 'topic') {
 
+            $g->message .= '<br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️ For Create 📄</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
 
         }
@@ -131,6 +122,7 @@ class Home
 
         if ($g->type_of_resource_requested == 'post' and $g->author_id == $g->user_id) {
 
+            $g->message .= '<br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
             $g->message .= ' <a class="purplebtn" href="/ax1/EditMyPostDirect/page">Edit 📄</a> ';
         }
 
