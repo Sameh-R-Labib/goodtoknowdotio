@@ -12,14 +12,22 @@ class EditMyPostDirect
         /**
          * This method is similar to EditMyPostEditor::page().
          *
-         * The only difference is that th id of the post comes from $g->post_id
-         * instead of from the submitted form.
+         * The only two differences are:
+         * - The id of the post comes from $g->post_id instead of from the submitted form.
+         * - $g->type_of_resource_requested must be 'post'.
          */
 
         global $g;
 
 
         kick_out_loggedoutusers();
+
+
+        if ($g->type_of_resource_requested != 'post') {
+
+            breakout(' Error: The type of resource MUST be post. ');
+
+        }
 
 
         get_db();
