@@ -114,7 +114,7 @@ class Home
 
         if ($g->type_of_resource_requested == 'community') {
 
-            $g->message .= '<br><br><a class="orangebtn" href="">Only the Admin can Add a New Topic to this Community</a> ';
+            $g->message .= '<br><br><a class="orangebtn" href="">Only Admin can Add Topics</a> ';
 
         }
 
