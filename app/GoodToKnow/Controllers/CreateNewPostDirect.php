@@ -18,6 +18,16 @@ class CreateNewPostDirect
 
         kick_out_loggedoutusers();
 
+        /**
+         * Error out if we are not at the topic level because.
+         */
+
+        if ($g->type_of_resource_requested != 'topic') {
+
+            breakout(' Error: You must be at the topic level to run this feature. ');
+
+        }
+
 
         $_SESSION['saved_int01'] = $g->topic_id;
 
