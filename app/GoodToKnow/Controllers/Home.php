@@ -114,6 +114,13 @@ class Home
 
         if ($g->type_of_resource_requested == 'topic') {
 
+            $g->message .= '<br><br><a class="orangebtn">Only the Admin can Add a New Topic to this Community</a> ';
+
+        }
+
+
+        if ($g->type_of_resource_requested == 'topic') {
+
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️ for ⇒</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
 
