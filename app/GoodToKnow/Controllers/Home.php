@@ -56,7 +56,7 @@ class Home
 
         /**
          * false is JUST to indicate to the view that this is the Home page.
-         * The viw will still show the author messaging link if Home is showing a post.
+         * The view will still show the author messaging link if Home is showing a post.
          */
         $g->show_poof = false;
 
@@ -111,9 +111,18 @@ class Home
 
         }
 
-        $g->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a>
-            <a class="purplebtn" href="/ax1/EditMyPostDirect/page">Edit 📄</a>
-            <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
+
+        $g->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a> ';
+
+
+        if ($g->type_of_resource_requested == 'post' and $g->author_id == $g->user_id) {
+
+            $g->message .= ' <a class="purplebtn" href="/ax1/EditMyPostDirect/page">Edit 📄</a> ';
+        }
+
+
+        $g->message .= ' <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
+
     }
 
 
