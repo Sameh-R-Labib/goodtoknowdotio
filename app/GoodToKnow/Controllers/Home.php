@@ -112,9 +112,16 @@ class Home
         }
 
 
+        /**
+         * We need these br tags to preced the buttons.
+         */
+
+        $g->message .= '<br><br>';
+
+
         if ($g->type_of_resource_requested == 'topic') {
 
-            $g->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
+            $g->message .= ' <a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
 
         }
 
