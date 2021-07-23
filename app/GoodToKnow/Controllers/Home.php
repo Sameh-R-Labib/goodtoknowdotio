@@ -116,7 +116,7 @@ class Home
          * We need these br tags to preced the buttons.
          */
 
-        $g->message .= '<br><br>';
+        $g->message .= '<br>';
 
 
         $g->message .= ' <a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
