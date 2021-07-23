@@ -112,7 +112,7 @@ class Home
         }
 
 
-        $g->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPost/page">Create 📄</a> ';
+        $g->message .= ' <br><br><a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
 
 
         if ($g->type_of_resource_requested == 'post' and $g->author_id == $g->user_id) {
