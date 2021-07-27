@@ -1,13 +1,12 @@
 <h1>Proclamation</h1>
 <h2>Beliefs</h2>
 <p>We believe our world is too complicated and is too evil. Gtk.io is software which collates the pieces
-    of information which we need to find when we need to find it. Hopefully, achieving the goal of organizing
-    our knowledge of the things we need to master will give us the peace of mind necessary to eliminate the
-    evil found in our world.</p>
+    of information which we need to find when we need to find them. Hopefully, achieving the goal of organizing
+    knowledge of things we need to master will give us the serenity which is needed to enable us to eliminate the
+    evil found in the world.</p>
 <h2>Instruction to users</h2>
-<p>When writing a post, let it be your goal to concisely write in a manner which helps the reader wrap their head
-    around the <em>community's</em> subject matter. Where I said "<em>community</em>" I mean as in our hierarchy:
-    community &Rarr; topic &Rarr; post.</p>
+<p>When writing a post, let it be your goal to concisely write and thus help the person reading wrap their head
+    around the subject matter.</p>
 <h2>Photo Gallery</h2>
 <figure>
     <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
