@@ -17,7 +17,6 @@
             <a class="clearbtn" href="/ax1/CPAccounts/page">User</a>
             <a class="orangebtn" href="/ax1/CPPostings/page">Blog</a>
         </p>
-        <?php require COLLAGE; ?>
     </div>
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

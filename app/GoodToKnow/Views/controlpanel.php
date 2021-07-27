@@ -13,7 +13,6 @@
             <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodities Sold</a>
             <a class="greenbtn" href="/ax1/Proclamation/page">Proclamation</a></p>
-        <?php require COLLAGE; ?>
     </div>
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
