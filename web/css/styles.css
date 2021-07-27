@@ -140,7 +140,7 @@ body {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    opacity: 0.43;
+    /* opacity: 0.43; */
     position: static;
     display: block;
     margin: auto;
@@ -224,7 +224,7 @@ a:active {
 
 a.cross {
     background-color: #f6ba35;
-    opacity: 1;
+    /* opacity: 1; */
     cursor: pointer;
     border-radius: 4px;
     padding: 0 6px;
@@ -581,15 +581,15 @@ h2 + p {
 }
 
 #communities {
-    opacity: 1;
+    /* opacity: 1; */
     z-index: 3;
     background-color: #ff9a10;
     padding: 0;
     clear: both;
     width: 1024px;
 
-    /** To center the div
-        Trick from: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ **/
+    /* To center the div
+        Trick from: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ */
     position: absolute;
     left: 0;
     right: 0;
@@ -598,7 +598,7 @@ h2 + p {
 
 #breadcrumbs {
     line-height: 1;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     background-color: #fffbf7;
     position: static;
     width: 1024px;
@@ -631,7 +631,7 @@ h2 + p {
 
 #footerbar {
     background-color: rgba(32, 178, 170, 0.42);
-    opacity: 0.86;
+    /* opacity: 0.86; */
     position: static;
     width: 1024px;
     padding: 1px 0 1px 0;
@@ -640,7 +640,7 @@ h2 + p {
 }
 
 #sendmessage {
-    opacity: 0.64;
+    /* opacity: 0.64; */
     background-color: #008A70;
     width: 258px;
     height: 57px;
@@ -674,7 +674,7 @@ h2 + p {
 
 #sendtoauthor {
     background-color: #d9b039;
-    opacity: 0.94;
+    /* opacity: 0.94; */
     float: left;
     width: 132px;
     height: 48px;
@@ -683,7 +683,7 @@ h2 + p {
 
 #show_poof {
     background-color: #d9b039;
-    opacity: 0.45;
+    /* opacity: 0.45; */
     float: left;
     width: 132px;
     height: 48px;
@@ -692,7 +692,7 @@ h2 + p {
 
 #admindiv {
     background-color: rgba(75, 145, 215, 0.34);
-    opacity: 0.97;
+    /* opacity: 0.97; */
     float: left;
     width: 108px;
     height: 85px;
@@ -700,7 +700,7 @@ h2 + p {
 }
 
 #inboxlink {
-    opacity: 0.65;
+    /* opacity: 0.65; */
     background-color: lightslategray;
     width: 235px;
     height: 57px;
@@ -709,7 +709,7 @@ h2 + p {
 }
 
 #logindiv {
-    opacity: 0.68;
+    /* opacity: 0.68; */
     background-color: #ff9a10;
     width: 277px;
     height: 57px;
