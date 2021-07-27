@@ -584,11 +584,16 @@ h2 + p {
     opacity: 1;
     z-index: 3;
     background-color: #ff9a10;
-    position: absolute;
-    width: 1024px;
     padding: 0;
-    margin: auto;
     clear: both;
+    width: 1024px;
+
+    /** To center the div
+        Trick from: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ **/
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 #breadcrumbs {
