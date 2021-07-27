@@ -78,6 +78,9 @@ switch ($g->page) {
     case 'CPPostings':
         echo "<a href=\"/ax1/CPPostings/page\">Postings</a>";
         break;
+    case 'Proclamation':
+        echo "<a href=\"/ax1/Proclamation/page\">Proclamation</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;

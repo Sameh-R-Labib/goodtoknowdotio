@@ -9,7 +9,7 @@ class CPAccounts
         global $g;
 
 
-        kick_out_loggedoutusers();
+        kick_out_nonadmins();
 
 
         $g->page = 'CPAccounts';
