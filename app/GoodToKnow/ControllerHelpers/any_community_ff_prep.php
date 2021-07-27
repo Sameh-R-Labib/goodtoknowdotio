@@ -10,7 +10,7 @@ use GoodToKnow\Models\Community;
 function any_community_ff_prep(): int
 {
     /**
-     * Returns a community id if the POST variable for $field_name is a valid community id.
+     * Returns a community id if the value of POST[] element for 'choice' is a valid community id.
      * Here any existing community id is considered a valid one.
      */
 
