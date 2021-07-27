@@ -587,7 +587,7 @@ h2 + p {
     position: absolute;
     width: 1024px;
     padding: 0;
-    margin: auto;
+    margin: 0 auto;
     clear: both;
 }
 
