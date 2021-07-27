@@ -611,7 +611,10 @@ h2 + p {
 }
 
 #scriptoutput {
-    background: rgba(255, 255, 255, 0.01);
+
+    /* opacity is determined by 4th parameter of background */
+    background: rgba(255, 255, 255, 1);
+
     position: static;
     width: 1024px;
     height: 157px;
