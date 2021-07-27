@@ -131,6 +131,7 @@ body {
     background-position: center;
     background-image: url("/goldenfade.jpg");
     background-attachment: fixed;
+    margin: 0;
     left: 0;
     top: 0;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
