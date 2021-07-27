@@ -581,9 +581,10 @@ h2 + p {
 }
 
 #communities {
-    opacity: 0.48;
+    opacity: 1;
+    z-index: 3;
     background-color: #ff9a10;
-    position: static;
+    position: absolute;
     width: 1024px;
     padding: 0;
     margin: auto;
