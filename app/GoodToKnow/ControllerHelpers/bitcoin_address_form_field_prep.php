@@ -46,7 +46,6 @@ function bitcoin_address_form_field_prep(string $field_name): string
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-    $string_for_return = standard_form_field_prep($field_name, 2, 264);
+    return standard_form_field_prep($field_name, 2, 264);
 
-    return $string_for_return;
 }
