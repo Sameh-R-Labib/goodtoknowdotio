@@ -28,7 +28,7 @@ function standard_form_field_prep(string $field_name, int $min_length, int $max_
      * B) or if it fails validation
      * then it breaks out.
      *
-     * If the post value is an empty string and $min_length above is 0
+     * If the post value is an empty string and $min_length is 0
      * then an empty string is returned by the function.
      *
      * How does it prep the data?
