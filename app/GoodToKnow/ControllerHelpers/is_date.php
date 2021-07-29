@@ -9,7 +9,7 @@ namespace GoodToKnow\ControllerHelpers;
 function is_date(string &$date): bool
 {
     /**
-     * Returns true if $date string is formatted as mm/dd/yyyy and is a real calender date.
+     * Returns true if $date string is formatted as mm/dd/yyyy and is a real calendar date.
      * Otherwise, returns false.
      *
      * Side Effects: - $date will be trimmed.
