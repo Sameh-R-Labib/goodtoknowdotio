@@ -36,14 +36,14 @@ function float_form_field_prep(string $field_name, float $min_value, float $max_
     }
 
 
-    // Convert the string to an float.
+    // Convert the string to a float.
 
     $float_for_return = (float)$float_for_return;
 
 
-    // Makes sure the int is in range.
+    // Makes sure the float is in range.
 
-    if ($float_for_return < $min_value || $float_for_return > $max_value) {
+    if ($float_for_return <= $min_value || $float_for_return >= $max_value) {
 
         breakout(" The value for {$field_name} is out of range. ");
 
