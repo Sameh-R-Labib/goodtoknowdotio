@@ -10,8 +10,6 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function float_form_field_prep(string $field_name, float $min_value, float $max_value): float
 {
-    // If the $_POST[$field_name] var is not set then return null.
-
     if (!isset($_POST[$field_name])) {
 
         breakout(" The value for {$field_name} is missing. ");
