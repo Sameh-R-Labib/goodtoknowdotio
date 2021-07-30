@@ -133,9 +133,9 @@ body {
     /*background-image: url("/goldenfade.jpg");*/
     background-attachment: fixed;
     background: rgb(9, 105, 186);
-    background: -moz-linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(214, 255, 214, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(214, 255, 214, 1) 100%);
-    background: linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(214, 255, 214, 1) 100%);
+    background: -moz-linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(224, 256, 224, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(224, 256, 224, 1) 100%);
+    background: linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(224, 256, 224, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0969ba", endColorstr="#d6ffd6", GradientType=1);
     margin: 0;
     left: 0;
