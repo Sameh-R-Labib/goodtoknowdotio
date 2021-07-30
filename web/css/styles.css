@@ -636,8 +636,8 @@ h2 + p {
 }
 
 #footerbar {
-    background-color: rgba(32, 178, 170, 0.42);
-    opacity: 1;
+    /* Opacity is the 4th parameter in background-color */
+    background-color: rgba(32, 178, 170, 1);
     /* opacity: 0.86; */
     position: static;
     width: 1024px;
