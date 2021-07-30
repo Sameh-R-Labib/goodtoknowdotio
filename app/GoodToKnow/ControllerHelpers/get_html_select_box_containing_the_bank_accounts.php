@@ -12,17 +12,24 @@ use GoodToKnow\Models\BankingAcctForBalances;
 function get_html_select_box_containing_the_bank_accounts(int $user_id, int $bank_id): string
 {
     /**
-     * The reason this function needs the $bank_id is to
-     * make that bank account selected.
+     * This function generates the html for a drop-down select box
+     * containing all the banks of a particular user.
+     *
+     * The bank id argument determines which bank account will appear
+     * in the box before the user clicks on it to expand its selections.
+     * (the bank account is thus said to be [pre]selected)
+     * When editing an existing transaction, the form appears having
+     * the existing bank for that transaction already selected in the
+     * drop-down selection box.
      */
 
     global $g;
 
 
     /**
-     * The current bank account will be pre selected.
+     * The current bank account will be preselected.
      *
-     * This is what HTML for a drop down looks like:
+     * This is what HTML for a drop-down looks like:
      *         <label for="bank_id" class="dropdown">Bank Account:
      *             <select id="bank_id" name="bank_id">
      *                 <option value="4">Citibank checking</option>
