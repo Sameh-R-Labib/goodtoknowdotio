@@ -133,9 +133,9 @@ body {
     /*background-image: url("/goldenfade.jpg");*/
     background-attachment: fixed;
     background: rgb(9, 105, 186);
-    background: -moz-linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(224, 256, 224, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(224, 256, 224, 1) 100%);
-    background: linear-gradient(0deg, rgba(9, 105, 186, 1) 10%, rgba(224, 256, 224, 1) 100%);
+    background: -moz-linear-gradient(0deg, rgba(9, 105, 186, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(9, 105, 186, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background: linear-gradient(0deg, rgba(9, 105, 186, 1) 40%, rgba(230, 243, 230, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0969ba", endColorstr="#d6ffd6", GradientType=1);
     margin: 0;
     left: 0;
@@ -580,7 +580,7 @@ h2 + p {
 }
 
 #topbar {
-    background-color: rgba(255, 255, 255, 0.01);
+    background-color: rgba(255, 255, 255, 1);
     position: static;
     width: 1024px;
     height: 57px;
@@ -663,8 +663,7 @@ h2 + p {
 }
 
 #scriptmessage {
-    opacity: 1;
-    background-color: rgba(233, 243, 255, 0.78);
+    background-color: rgba(233, 243, 255, 1);
     width: 891px;
     height: 157px;
     margin: auto;
@@ -709,8 +708,7 @@ h2 + p {
 }
 
 #admindiv {
-    background-color: rgba(75, 145, 215, 0.34);
-    opacity: 1;
+    background-color: rgba(75, 145, 215, 1);
     /* opacity: 0.97; */
     float: left;
     width: 108px;
