@@ -27,7 +27,7 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
 
 
     /**
-     * The current bank account will be preselected.
+     * The current bank account corresponding to $bank_id will be preselected.
      *
      * This is what HTML for a drop-down looks like:
      *         <label for="bank_id" class="dropdown">Bank Account:
