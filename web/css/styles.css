@@ -132,10 +132,15 @@ body {
     /*background-color: #d6ffd6;*/
     /*background-image: url("/goldenfade.jpg");*/
     background-attachment: fixed;
+    /*background: rgb(0, 84, 160);*/
+    /*background: -moz-linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
+    /*background: -webkit-linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
+    /*background: linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0969ba", endColorstr="#d6ffd6", GradientType=1);*/
     background: rgb(0, 84, 160);
-    background: -moz-linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);
-    background: linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background-image: -moz-linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background-image: linear-gradient(0deg, rgba(0, 84, 160, 1) 40%, rgba(230, 243, 230, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0969ba", endColorstr="#d6ffd6", GradientType=1);
     margin: 0;
     left: 0;
