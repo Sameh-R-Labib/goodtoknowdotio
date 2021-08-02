@@ -132,15 +132,15 @@ body {
     /*background-color: #e6f3e5;*/
     /*background-image: url("/goldenfade.jpg");*/
     background-attachment: fixed;
-    /*background: rgb(26, 26, 255);*/
-    /*background: -moz-linear-gradient(0deg, rgba(26, 26, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
-    /*background: -webkit-linear-gradient(0deg, rgba(26, 26, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
-    /*background: linear-gradient(0deg, rgba(26, 26, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
-    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1aff", endColorstr="#e6f3e5", GradientType=1);*/
-    background-image: -moz-linear-gradient(0deg, rgba(26, 26, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);
-    background-image: -webkit-linear-gradient(0deg, rgba(26, 26, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);
-    background-image: linear-gradient(0deg, rgba(26, 26, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1aff", endColorstr="#e6f3e5", GradientType=1);
+    /*background: rgb(51, 51, 255);*/
+    /*background: -moz-linear-gradient(0deg, rgba(51, 51, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
+    /*background: -webkit-linear-gradient(0deg, rgba(51, 51, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
+    /*background: linear-gradient(0deg, rgba(51, 51, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3333ff", endColorstr="#e6f3e5", GradientType=1);*/
+    background-image: -moz-linear-gradient(0deg, rgba(51, 51, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgba(51, 51, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    background-image: linear-gradient(0deg, rgba(51, 51, 255, 1) 40%, rgba(230, 243, 230, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3333ff", endColorstr="#e6f3e5", GradientType=1);
     margin: 0;
     left: 0;
     top: 0;
@@ -647,7 +647,7 @@ h2 + p {
 
 #footerbar {
     /* Opacity is the 4th parameter in background-color */
-    background-color: rgba(26, 26, 255, 1);
+    background-color: rgba(51, 51, 255, 1);
     /* opacity: 0.86; */
     position: static;
     width: 1024px;
