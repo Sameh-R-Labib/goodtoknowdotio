@@ -18,7 +18,7 @@ function get_sequence_number_in_case_after(array $array_of_objects, int $point_o
 
 
     /**
-     * Obviously, there can't be a sequence number to be gotten in the case where our our point of reference
+     * Obviously, there can't be a sequence number to be gotten in the case where our point of reference
      * object is the last object (since here we are looking to place the new object AFTER the point of reference object.
      */
 
