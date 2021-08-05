@@ -18,8 +18,8 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
 
 
     /**
-     * Obviously, there can't be a sequence number to be gotten in the case where our our point of reference
-     * object is the first object (since here we are looking to place the new object BEFORE the point of reference object.
+     * Obviously, there can't be a sequence number to be gotten in the case where our point of reference
+     * object is the first object (since here we are looking to place the new object BEFORE the point of reference object.)
      */
 
     if ($point_of_reference_sequence_number === 0) breakout(' Please choose a different place to put the new object. ');
@@ -32,7 +32,7 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
 
     $there_is_an_object_before_the_por_object = false;
 
-    foreach ($array_of_objects as $key => $object) {
+    foreach ($array_of_objects as $object) {
 
         if ($object->sequence_number < $point_of_reference_sequence_number) {
 
@@ -50,7 +50,7 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
     } else {
         $reversed = array_reverse($array_of_objects);
 
-        foreach ($reversed as $key => $object) {
+        foreach ($reversed as $object) {
 
             if ($object->sequence_number < $point_of_reference_sequence_number) {
 
