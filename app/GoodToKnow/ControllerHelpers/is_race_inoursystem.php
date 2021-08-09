@@ -14,21 +14,29 @@ function is_race_inoursystem(string &$race): bool
      * Must be one of the ones I have in the form.
      */
 
+
     global $g;
 
+
     $race = trim($race);
+
     if (empty($race)) {
+
         $g->message .= " The value for race is missing. ";
         return false;
+
     }
+
 
     $races = ['caucasian-american', 'caucasian-european', 'caucasian-african', 'black-european', 'black-american',
         'black-african', 'asian', 'south-american', 'greek', 'middle-eastern-christian', 'middle-eastern-moslem',
         'native-american'];
 
     if (!in_array($race, $races)) {
+
         $g->message .= " Your race field does not contain a valid value. ";
         return false;
+        
     }
 
     return true;
