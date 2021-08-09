@@ -7,7 +7,7 @@ namespace GoodToKnow\ControllerHelpers;
  * @param string $str02
  * @return bool
  */
-function is_password_asapair(string &$str01, string &$str02): bool
+function is_password_asapair(string &$str01, string $str02): bool
 {
     global $g;
 
