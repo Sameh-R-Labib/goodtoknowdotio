@@ -12,7 +12,7 @@ function is_username_syntactically(string &$username): bool
 
     /**
      * Returns true if $username fits the requirements for what a GTK.io username should look like.
-     * Otherwise returns false.
+     * Otherwise, returns false.
      *
      * Side Effects: - $username will be trimmed.
      *               - $message may be modified.
