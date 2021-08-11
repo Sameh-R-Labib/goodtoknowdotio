@@ -10,7 +10,7 @@ namespace GoodToKnow\ControllerHelpers;
 function object_which_is_most_recent(array &$array_of_objects, $time_field_name): object
 {
     /**
-     * It returns the object which has the highest time value and it removes that object from the array.
+     * It returns the object which has the highest time value, and it removes that object from the array.
      */
 
     if (empty($array_of_objects)) {
