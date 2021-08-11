@@ -9,7 +9,7 @@ namespace GoodToKnow\ControllerHelpers;
 function object_having_lowest_sequence_number(array &$array_of_objects)
 {
     /**
-     * It returns the object which has the lowest sequence number and it removes that object from the array.
+     * It returns the object which has the lowest sequence number, and it removes that object from the array.
      */
 
     if (empty($array_of_objects)) breakout(' Error 07007. ');
