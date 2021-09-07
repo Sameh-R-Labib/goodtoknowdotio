@@ -11,9 +11,8 @@
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text"
-                       value="<?= $g->object->label ?>" required minlength="3" maxlength="30" size="34"
-                       spellcheck="false"
-                       placeholder="Internet Service Fee">
+                       value="<?= $g->object->label ?>" required minlength="3" maxlength="264" size="61"
+                       spellcheck="false" placeholder="Internet Service Fee">
             </p>
             <hr>
             <p>Time</p>

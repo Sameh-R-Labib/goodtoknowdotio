@@ -35,7 +35,7 @@ class PolishARecurringPaymentRecordSubmit
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
-        $edited_label = standard_form_field_prep('label', 4, 264);
+        $edited_label = standard_form_field_prep('label', 3, 264);
 
         $edited_currency = standard_form_field_prep('currency', 1, 15);
 

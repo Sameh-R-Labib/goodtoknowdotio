@@ -9,8 +9,8 @@
         <section>
             <p>
                 <label for="label">Label (✅ emoji): </label>
-                <input id="label" name="label" type="text" value="" required minlength="3" maxlength="30"
-                       size="34" spellcheck="false" placeholder="Monthly Car Payment">
+                <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
+                       size="61" spellcheck="false" placeholder="Monthly Car Payment">
             </p>
             <hr>
             <p>Time</p>

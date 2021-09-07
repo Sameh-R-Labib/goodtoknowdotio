@@ -56,7 +56,7 @@ class RevampABankingTransactionForBalancesUpdate
 
         // label
 
-        $edited_label = standard_form_field_prep('label', 3, 30);
+        $edited_label = standard_form_field_prep('label', 3, 264);
 
 
         /**

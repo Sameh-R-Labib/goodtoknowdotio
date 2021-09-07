@@ -5,7 +5,7 @@
         <section>
             <p>
                 <label for="label">Label (✅ emoji): </label>
-                <input id="label" name="label" type="text" value="" required minlength="4" maxlength="264"
+                <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
                        size="60" spellcheck="false" placeholder="Cell Phone Each Month">
             </p>
             <p>

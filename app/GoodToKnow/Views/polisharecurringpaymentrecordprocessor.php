@@ -7,9 +7,8 @@
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text"
-                       value="<?php echo $g->recurring_payment_object->label; ?>" required minlength="4" maxlength="264"
-                       size="60"
-                       spellcheck="false" placeholder="Cell Phone Each Month">
+                       value="<?php echo $g->recurring_payment_object->label; ?>" required minlength="3" maxlength="264"
+                       size="60" spellcheck="false" placeholder="Cell Phone Each Month">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>

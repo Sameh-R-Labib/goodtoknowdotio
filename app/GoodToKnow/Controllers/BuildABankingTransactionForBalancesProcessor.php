@@ -28,7 +28,7 @@ class BuildABankingTransactionForBalancesProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
 
-        $label = standard_form_field_prep('label', 3, 30);
+        $label = standard_form_field_prep('label', 3, 264);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
