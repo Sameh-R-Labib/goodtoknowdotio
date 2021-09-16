@@ -8,14 +8,8 @@ use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 global $g;
 
 
-/**
- * These includes may be redundant. But that's okay!
- */
-
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
 require_once CONTROLLERHELPERS . DIRSEP . 'date_form_field_prep.php';
-
 require_once CONTROLLERHELPERS . DIRSEP . 'timezone_form_field_prep.php';
 
 
