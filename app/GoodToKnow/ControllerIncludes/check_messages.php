@@ -54,10 +54,9 @@ if ($g->when_last_checked_messages === null) {
             $g->message .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
             <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
-            $_SESSION['messages_last_quantity'] = $quantity;
-
         }
 
+        $_SESSION['messages_last_quantity'] = $quantity;
         $_SESSION['when_last_checked_messages'] = time();
 
     }
