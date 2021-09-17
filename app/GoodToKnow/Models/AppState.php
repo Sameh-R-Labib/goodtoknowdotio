@@ -52,7 +52,7 @@ class AppState
 
 
     /**
-     * Role of currently logged in user.
+     * Role of currently logged-in user.
      *
      * @var string
      */
@@ -60,8 +60,10 @@ class AppState
 
 
     /**
-     * The database record specified PHP timezone for the current user.
-     * This gets used in routehandler.php for initially setting the timezone for script execution.
+     * The database record for the current logged-in user specifies the user's default PHP timezone.
+     * Initially the session timezone variable gets assigned to a hard coded value in routehandler.php.
+     * However, when the user logs in, his default timezone value will be assigned to both $g->timezone
+     * and session timezone.
      *
      * @var string
      */
@@ -69,7 +71,7 @@ class AppState
 
 
     /**
-     * Id of the current community.
+     * id of the current community.
      *
      * @var int|mixed
      */
