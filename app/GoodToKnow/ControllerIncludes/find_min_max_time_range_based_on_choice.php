@@ -57,8 +57,7 @@ switch ($choice) {
         $max = time();
         break;
     default:
-        $g->message .= " Unexpectedly the switch statement failed. ";
-        breakout('');
+        breakout(' Unexpectedly the switch statement failed. ');
 }
 
 
