@@ -33,7 +33,7 @@ global $g;
  * }
  */
 
-if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
+if (empty($_POST) || !is_array($_POST)) {
 
     breakout(' Unexpected deficiencies in the _POST array. ');
 
