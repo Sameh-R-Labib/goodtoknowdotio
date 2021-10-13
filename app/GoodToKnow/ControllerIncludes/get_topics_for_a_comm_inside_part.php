@@ -1,8 +1,5 @@
 <?php
 
-use GoodToKnow\Models\CommunityToTopic;
-
-
 global $g;
 
 
@@ -10,13 +7,7 @@ global $g;
  * Refresh special_topic_array
  */
 
-$g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
-
-if ($g->special_topic_array == false) $g->special_topic_array = [];
-
-$_SESSION['special_topic_array'] = $g->special_topic_array;
-
-$_SESSION['last_refresh_topics'] = time();
+require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
 
 
 // Abort if the community doesn't have any topics yet
