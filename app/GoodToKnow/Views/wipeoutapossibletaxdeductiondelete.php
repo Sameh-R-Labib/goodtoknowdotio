@@ -4,7 +4,7 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Label: </b><?php echo $g->object->label; ?></p>
+        <p><b>Label: </b><?= $g->object->label ?></p>
         <p><b>Year Paid: </b><?= $g->object->year_paid ?></p>
         <p><?= $g->object->comment ?></p>
         <p>&nbsp;</p>

@@ -11,7 +11,7 @@
                 <label for="textarea"></label>
                 <textarea id="textarea" spellcheck="false" name="text" rows="28"
                           cols="77" wrap="soft"
-                          maxlength="230"><?php echo $g->community_object->community_description; ?></textarea>
+                          maxlength="230"><?= $g->community_object->community_description ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

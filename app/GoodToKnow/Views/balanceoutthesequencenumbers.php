@@ -6,7 +6,7 @@
         <p><b>Range:</b> 0 - 40000000</p>
         <?php require SESSIONMESSAGE; ?>
         <section>
-            <?php echo $g->fields; ?>
+            <?= $g->fields ?>
         </section>
         <?php require SUBMITABORT; ?>
     </form>

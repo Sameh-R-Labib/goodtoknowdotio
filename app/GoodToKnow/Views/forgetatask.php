@@ -6,7 +6,7 @@
         <p>Which Task?</p>
         <section>
             <?php foreach ($g->array as $key => $object): ?>
-                <label for="c<?php echo $key; ?>" class="radio">
+                <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
                     <?= $object->label ?>
                 </label>

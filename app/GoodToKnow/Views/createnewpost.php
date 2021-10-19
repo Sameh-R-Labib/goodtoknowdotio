@@ -9,7 +9,7 @@
         <p>Which <em>topic</em> do you want the new <em>post</em> to live in?</p>
         <section>
             <?php foreach ($g->special_topic_array as $key => $value): ?>
-                <label for="choice-<?php echo $key; ?>" class="radio">
+                <label for="choice-<?= $key ?>" class="radio">
                     <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
                     <?= $value ?>
                 </label>

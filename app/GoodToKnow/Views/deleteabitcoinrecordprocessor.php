@@ -4,7 +4,7 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Time of purchase: </b><?php echo $g->bitcoin_object->time; ?></p>
+        <p><b>Time of purchase: </b><?= $g->bitcoin_object->time ?></p>
         <p><b>Address: </b><?= $g->bitcoin_object->address ?></p>
         <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $g->bitcoin_object->currency ?>
             &nbsp;<?= $g->bitcoin_object->price_point ?>

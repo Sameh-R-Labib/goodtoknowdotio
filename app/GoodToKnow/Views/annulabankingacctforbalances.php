@@ -6,7 +6,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <?php foreach ($g->array_of_objects as $key => $object): ?>
-                <label for="c<?php echo $key; ?>" class="radio">
+                <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
                     <?= $object->acct_name ?>
                 </label>

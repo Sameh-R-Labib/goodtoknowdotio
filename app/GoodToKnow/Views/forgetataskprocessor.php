@@ -4,7 +4,7 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Label: </b><?php echo $g->object->label; ?></p>
+        <p><b>Label: </b><?= $g->object->label ?></p>
         <p><b>Last 🕒: </b><?= $g->object->last ?></p>
         <p><b>Next 🕒: </b><?= $g->object->next ?></p>
         <p><b>Cycle Type: </b><?= $g->object->cycle_type ?></p>

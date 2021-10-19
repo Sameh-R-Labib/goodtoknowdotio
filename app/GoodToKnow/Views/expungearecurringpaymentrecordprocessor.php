@@ -4,7 +4,7 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Label: </b><?php echo $g->recurring_payment_object->label; ?></p>
+        <p><b>Label: </b><?= $g->recurring_payment_object->label ?></p>
         <p>🕒: <?= $g->recurring_payment_object->time ?></p>
         <p><b>Last's Amount: </b><?= $g->recurring_payment_object->currency ?>
             &nbsp;<?= $g->recurring_payment_object->amount_paid ?></p>

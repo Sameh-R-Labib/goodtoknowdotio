@@ -4,7 +4,7 @@
 <?php global $g; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1><?php echo $g->account->acct_name; ?></h1>
+        <h1><?= $g->account->acct_name ?></h1>
         <table class="not_there">
             <col width="92%">
             <col width="10">

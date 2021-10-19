@@ -4,7 +4,7 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Time Sold: </b><?php echo $g->object->time_sold; ?></p>
+        <p><b>Time Sold: </b><?= $g->object->time_sold ?></p>
         <p><b>Time Bought: </b><?= $g->object->time_bought ?></p>
         <p><b>Price Bought: </b><?= $g->object->currency_transacted ?>&nbsp;<?= $g->object->price_bought ?></p>
         <p><b>Price Sold: </b><?= $g->object->currency_transacted ?>&nbsp;<?= $g->object->price_sold ?></p>
