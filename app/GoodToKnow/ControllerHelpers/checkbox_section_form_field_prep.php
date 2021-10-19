@@ -13,6 +13,8 @@ function checkbox_section_form_field_prep(string $prepend): array
      *
      * Convention: $prepend must be at least 2 characters long.
      *
+     * Convention: htmlspecialchars() is applied to the retrieved submitted form values.
+     *
      *
      * CAUTION: This function simply returns an empty array if the user didn't check any
      * of the checkboxes within specified checkbox section.
@@ -93,7 +95,7 @@ function checkbox_section_form_field_prep(string $prepend): array
 
         if ($substring and $substring == $prepend) {
 
-            $array[] = $value;
+            $array[] = htmlspecialchars($value, ENT_NOQUOTES | ENT_HTML5);
 
         }
 
