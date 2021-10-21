@@ -1,5 +1,7 @@
 <?php
 
+use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
+
 
 global $g;
 
@@ -33,23 +35,29 @@ global $g;
  * }
  */
 
-if (empty($_POST) || !is_array($_POST)) {
+// Begin new code
 
-    breakout(' Unexpected deficiencies in the _POST array. ');
+require_once CONTROLLERHELPERS . DIRSEP . 'checkbox_section_form_field_prep.php';
 
-}
+$g->submitted_community_ids_array = checkbox_section_form_field_prep('choice-');
 
-foreach ($_POST as $item) {
-
-    if (is_numeric($item)) {
-
-        $g->submitted_community_ids_array[] = $item;
-
-    }
-}
 
 if (empty($g->submitted_community_ids_array)) {
 
     breakout(' You did not submit any community ids. ');
+
+}
+
+
+/**
+ * Make sure the data is numeric.
+ */
+
+foreach ($g->submitted_community_ids_array as $item) {
+
+    if (!is_numeric($item)) {
+
+        breakout(' Unexpectedly one or more values turned out to be non-numeric.');
+    }
 
 }
