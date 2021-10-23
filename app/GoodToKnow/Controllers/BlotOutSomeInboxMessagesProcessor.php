@@ -3,6 +3,8 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\MessageToUser;
+use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
+
 
 class BlotOutSomeInboxMessagesProcessor
 {
@@ -14,27 +16,28 @@ class BlotOutSomeInboxMessagesProcessor
         kick_out_loggedoutusers();
 
 
-        if (!isset($_POST) || empty($_POST) || !is_array($_POST)) {
+        require_once CONTROLLERHELPERS . DIRSEP . 'checkbox_section_form_field_prep.php';
 
-            breakout(' Unexpected deficiencies in the POST array. ');
+        $submitted_message_ids_array = checkbox_section_form_field_prep('choice-');
 
-        }
-
-
-        $submitted_message_ids_array = [];
-
-        foreach ($_POST as $item) {
-
-            if (is_numeric($item)) {
-
-                $submitted_message_ids_array[] = $item;
-
-            }
-        }
 
         if (empty($submitted_message_ids_array)) {
 
             breakout(' You did not submit any message ids. ');
+
+        }
+
+
+        /**
+         * Make sure the data is numeric.
+         */
+
+        foreach ($submitted_message_ids_array as $item) {
+
+            if (!is_numeric($item)) {
+
+                breakout(' Unexpectedly one or more values turned out to be non-numeric.');
+            }
 
         }
 
@@ -65,5 +68,7 @@ class BlotOutSomeInboxMessagesProcessor
          */
 
         breakout(" Message deletion completed. ");
+
     }
+
 }

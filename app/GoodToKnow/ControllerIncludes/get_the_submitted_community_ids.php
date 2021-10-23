@@ -58,6 +58,7 @@ foreach ($g->submitted_community_ids_array as $item) {
     if (!is_numeric($item)) {
 
         breakout(' Unexpectedly one or more values turned out to be non-numeric.');
+
     }
 
 }
