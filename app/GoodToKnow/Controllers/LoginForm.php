@@ -9,6 +9,16 @@ class LoginForm
         global $g;
 
 
+        /**
+         * We do not want to show the login form if the user is already logged in. In other words if
+         * $g->is_logged_in is set to true (per session file) and the user was redirected here then
+         * there is the possibility the user is experiencing an infinite loop situation (which we
+         * must stop.)
+         *
+         * If there is no session file for the user or if $g->is_logged_in is set to false then
+         * we want to show loginform.php.
+         */
+
         if ($g->is_logged_in) {
 
             $_SESSION['message'] = $g->message;
