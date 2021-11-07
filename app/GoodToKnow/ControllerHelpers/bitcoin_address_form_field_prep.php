@@ -8,6 +8,17 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function bitcoin_address_form_field_prep(string $field_name): string
 {
+    /**
+     * Make sure that a form was submitted.
+     */
+
+    if (empty($_POST) || !is_array($_POST)) {
+
+        breakout(' Unexpected deficiencies in the _POST array. ');
+
+    }
+
+
     if (!isset($_POST[$field_name])) {
 
         breakout(" The value for {$field_name} is missing. ");

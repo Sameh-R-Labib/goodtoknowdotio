@@ -31,6 +31,17 @@ function integer_form_field_prep(string $field_name, int $min_value, int $max_va
      */
 
 
+    /**
+     * Make sure that a form was submitted.
+     */
+
+    if (empty($_POST) || !is_array($_POST)) {
+
+        breakout(' Unexpected deficiencies in the _POST array. ');
+
+    }
+
+
     // If the $_POST[$field_name] var is not set then return null.
 
     if (!isset($_POST[$field_name])) {

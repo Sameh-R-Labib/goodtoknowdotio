@@ -40,6 +40,17 @@ function standard_form_field_prep(string $field_name, int $min_length, int $max_
      */
 
 
+    /**
+     * Make sure that a form was submitted.
+     */
+
+    if (empty($_POST) || !is_array($_POST)) {
+
+        breakout(' Unexpected deficiencies in the _POST array. ');
+
+    }
+
+
     // If the post var is not set.
 
     if (!isset($_POST[$field_name])) {

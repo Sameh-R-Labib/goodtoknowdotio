@@ -10,6 +10,17 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function float_form_field_prep(string $field_name, float $min_value, float $max_value): float
 {
+    /**
+     * Make sure that a form was submitted.
+     */
+
+    if (empty($_POST) || !is_array($_POST)) {
+
+        breakout(' Unexpected deficiencies in the _POST array. ');
+
+    }
+
+
     if (!isset($_POST[$field_name])) {
 
         breakout(" The value for {$field_name} is missing. ");
