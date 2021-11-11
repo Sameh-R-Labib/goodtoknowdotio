@@ -12,5 +12,5 @@ switch ($g->type_of_resource_requested) {
     case 'post':
         break;
     default:
-        echo 'Information';
+        echo '<h1>Information</h1>';
 }
