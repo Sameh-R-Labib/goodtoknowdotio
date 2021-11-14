@@ -43,6 +43,12 @@ class InduceATaskCreate
          * form data because we will also be giving the user ONE opportunity to
          * edit and re-submit the form. In other words the currently submitted
          * form data will be used to conveniently populate the redo form.
+         *
+         * As you see in the code there is a mechanism which causes what we are
+         * doing here to happen only once for the submitted data set. In other
+         * words the first time the user submits his data set we will check it
+         * and give him a chance to fix it. On the subsequent submit we will
+         * just let the submitted data be saved.
          */
 
         if ($g->is_first_attempt) {
@@ -60,6 +66,15 @@ class InduceATaskCreate
             }
 
         }
+
+
+        /**
+         * Reset 'is_first_attempt' in the session.
+         *
+         * We need to set it to true so the next time the user creates a task
+         * he will have the same opportunity to have his data checked.
+         */
+        $_SESSION['is_first_attempt'] = true;
 
 
         /**

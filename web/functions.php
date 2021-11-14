@@ -53,6 +53,12 @@ function kick_out_nonadmins()
  */
 function reset_feature_session_vars()
 {
+    // We are doing this in case user chooses to abort. If he chooses to abort
+    // then we won't get the opportunity to do this while the form is being processed.
+
+    $_SESSION['is_first_attempt'] = true;
+
+
     $_SESSION['saved_str01'] = '';
     $_SESSION['saved_str02'] = '';
     $_SESSION['saved_int01'] = 0;
