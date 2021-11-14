@@ -610,9 +610,15 @@ class AppState
 
 
     /**
-     * @var null|mysqli;
+     * @var null|mysqli
      */
     public $db;
+
+
+    /**
+     * @var bool
+     */
+    public $is_first_attempt;
 
 
     /**
@@ -692,6 +698,10 @@ class AppState
         $this->messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
 
         $this->when_last_checked_messages = (isset($_SESSION['when_last_checked_messages'])) ? $_SESSION['when_last_checked_messages'] : null;
+
+        // Is this the first time the form was submitted while trying to use the feature?
+        // That is what 'is_first_attempt' means.
+        $this->is_first_attempt = (isset($_SESSION['is_first_attempt'])) ? $_SESSION['is_first_attempt'] : true;
 
         $this->saved_str01 = (isset($_SESSION['saved_str01'])) ? $_SESSION['saved_str01'] : '';
 

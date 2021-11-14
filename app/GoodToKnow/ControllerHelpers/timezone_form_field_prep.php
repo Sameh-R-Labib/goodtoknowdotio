@@ -9,7 +9,7 @@ namespace GoodToKnow\ControllerHelpers;
 function timezone_form_field_prep(string $field_name): string
 {
     /**
-     * Side-effect: changes default timezone for the script.
+     * Side effect: changes default timezone for the script.
      */
 
     require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
