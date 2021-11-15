@@ -41,6 +41,13 @@ class InduceATask
         $_SESSION['saved_arr01']['next']['second'] = '';
 
 
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
+
+
         require VIEWS . DIRSEP . 'induceatask.php';
     }
 }
