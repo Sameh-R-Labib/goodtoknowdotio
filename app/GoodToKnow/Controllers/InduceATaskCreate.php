@@ -65,8 +65,22 @@ class InduceATaskCreate
                 $_SESSION['is_first_attempt'] = false;
 
 
-                $_SESSION['saved_arr01'] = ['label' => $label, 'last' => $g->last, 'next' => $g->next,
-                    'cycle_type' => $cycle_type, 'comment' => $comment];
+                /**
+                 * Save the form data and make it survive the redirect.
+                 */
+                $g->saved_arr01['label'] = $label;
+                $g->saved_arr01['cycle_type'] = $cycle_type;
+                $g->saved_arr01['comment'] = $comment;
+                $g->saved_arr01['last'] = $g->last;
+                $g->saved_arr01['next'] = $g->next;
+
+                // make it survive the redirect
+                $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+                /**
+                 * Tell the user he is seeing the form a 2nd time.
+                 */
 
                 $g->message .= ' <b>We are giving you one chance to fix the time values which we think are wrong.</b> ';
                 redirect_to("/ax1/InduceATaskRedo/page");

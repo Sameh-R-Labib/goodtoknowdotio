@@ -1,3 +1,4 @@
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/InduceATaskCreate/page" method="post">
         <h1>Create a Task</h1>
@@ -5,7 +6,7 @@
         <section>
             <p>
                 <label for="label">Label (✅ emoji): </label>
-                <input id="label" name="label" type="text" value="<?= $_SESSION['saved_arr01']['label'] ?>" required
+                <input id="label" name="label" type="text" value="<?= $g->saved_arr01['label'] ?>" required
                        minlength="3" maxlength="264" size="61" spellcheck="false" placeholder="Read GTK.io messages">
             </p>
             <?php require TIMENEXTANDLASTFORMFIELDS; ?>
@@ -18,7 +19,7 @@
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="800" spellcheck="false"
-                          placeholder="Remarks about decision whether to"><?= $_SESSION['saved_arr01']['comment'] ?></textarea>
+                          placeholder="Remarks about decision whether to"><?= $g->saved_arr01['comment'] ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

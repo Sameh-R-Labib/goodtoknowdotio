@@ -21,24 +21,27 @@ class InduceATask
 
 
         /**
-         * We need to give default values for the form field
+         * We need to assign default values for the form field
          * variables. The reason we need these variables in the
          * first place is that the form is also used by the redo.
          *
-         * The variables are elements of $_SESSION['saved_arr01'].
+         * The variables are elements of $g->saved_arr01.
          */
 
-        $_SESSION['saved_arr01']['label'] = '';
-        $_SESSION['saved_arr01']['cycle_type'] = '';
-        $_SESSION['saved_arr01']['comment'] = '';
-        $_SESSION['saved_arr01']['last']['date'] = '';
-        $_SESSION['saved_arr01']['last']['hour'] = '';
-        $_SESSION['saved_arr01']['last']['minute'] = '';
-        $_SESSION['saved_arr01']['last']['second'] = '';
-        $_SESSION['saved_arr01']['next']['date'] = '';
-        $_SESSION['saved_arr01']['next']['hour'] = '';
-        $_SESSION['saved_arr01']['next']['minute'] = '';
-        $_SESSION['saved_arr01']['next']['second'] = '';
+        $g->saved_arr01['label'] = '';
+        $g->saved_arr01['cycle_type'] = '';
+        $g->saved_arr01['comment'] = '';
+        $g->saved_arr01['last']['date'] = '';
+        $g->saved_arr01['last']['hour'] = '';
+        $g->saved_arr01['last']['minute'] = '';
+        $g->saved_arr01['last']['second'] = '';
+        $g->saved_arr01['next']['date'] = '';
+        $g->saved_arr01['next']['hour'] = '';
+        $g->saved_arr01['next']['minute'] = '';
+        $g->saved_arr01['next']['second'] = '';
+
+        // Update the session variable
+        $_SESSION['saved_arr01'] = $g->saved_arr01;
 
 
         /**
