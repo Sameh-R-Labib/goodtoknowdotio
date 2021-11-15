@@ -55,12 +55,20 @@ class InduceATaskCreate
 
             if ($g->last > time() or $g->next < time()) {
 
-                // We have the anomalous condition, so we will do what is described above.
+                /**
+                 * Reset 'is_first_attempt' in the session.
+                 *
+                 * We are setting 'is_first_attempt' to false so that once the user submits the form,
+                 * and it is being processed it will not be retested for anomalous time entries.
+                 */
+
+                $_SESSION['is_first_attempt'] = false;
+
 
                 $_SESSION['saved_arr01'] = ['label' => $label, 'last' => $g->last, 'next' => $g->next,
                     'cycle_type' => $cycle_type, 'comment' => $comment];
 
-                $_SESSION['message'] = $g->message;
+                $g->message .= ' <b>We are giving you one chance to fix the time values which we think are wrong.</b> ';
                 redirect_to("/ax1/InduceATaskRedo/page");
 
             }
@@ -74,6 +82,7 @@ class InduceATaskCreate
          * We need to set it to true so the next time the user creates a task
          * he will have the same opportunity to have his data checked.
          */
+
         $_SESSION['is_first_attempt'] = true;
 
 
