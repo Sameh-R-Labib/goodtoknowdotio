@@ -10,8 +10,6 @@ class InduceATaskRedo
          * Q: So, where are we now?
          * A: - We know that there is an anomalous condition for the submitted time fields.
          *    - We have the previously submitted form data, although ...
-         *    - The submitted time values are in timestamp form (which needs to be
-         *      converted to appear in the form again.)
          *    - We need to inform the user he is being shown the form again because
          *      we are giving him the opportunity to fix the times.
          *    - We need to present the form again.
@@ -22,20 +20,26 @@ class InduceATaskRedo
         /**
          * The data we have:
          *   $g->saved_arr01['label'], $g->saved_arr01['cycle_type'],
-         *   $g->saved_arr01['comment'], $g->saved_arr01['last'],
-         *   $g->saved_arr01['next']
+         *   $g->saved_arr01['comment'], $g->saved_arr01['timezone'],
+         *   $g->saved_arr01['lastdate'], $g->saved_arr01['nextdate']
+         *   $g->saved_arr01['lasthour'], $g->saved_arr01['nexthour']
+         *   $g->saved_arr01['lastminute'], $g->saved_arr01['nextminute']
+         *   $g->saved_arr01['lastsecond'], $g->saved_arr01['nextsecond']
          *
-         * The data we need:
-         *   $g->saved_arr01['label'], $g->saved_arr01['cycle_type'],
-         *   $g->saved_arr01['comment'], $g->saved_arr01['last']['date'],
-         *   $g->saved_arr01['last']['hour'], $g->saved_arr01['last']['minute'],
-         *   $g->saved_arr01['last']['second'], $g->saved_arr01['next']['date'],
-         *   $g->saved_arr01['next']['hour'], $g->saved_arr01['next']['minute'],
-         *   $g->saved_arr01['next']['second']
-         *
-         *  The Problem Is:
-         *    $g->saved_arr01['last'], and $g->saved_arr01['next']
-         *    are timestamps. They need to be arrays having elements for date, hour, minute, and second.
+         * This all came from or was derived from the first submit of data by the user.
+         * We were diverted here because we perceived an anomaly.
          */
+
+
+        global $g;
+
+
+        kick_out_loggedoutusers();
+
+
+        $g->html_title = 'One chance to redo';
+
+
+        require VIEWS . DIRSEP . 'induceatask.php';
     }
 }

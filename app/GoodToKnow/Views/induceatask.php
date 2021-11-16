@@ -13,7 +13,7 @@
             <p>
                 <label for="cycle_type">Cycle Type (✅ emoji): </label>
                 <input id="cycle_type" name="cycle_type" type="text"
-                       value="<?= $_SESSION['saved_arr01']['cycle_type'] ?>" required minlength="3" maxlength="60"
+                       value="<?= $g->saved_arr01['cycle_type'] ?>" required minlength="3" maxlength="60"
                        size="50" spellcheck="false" placeholder="Daily 🛅">
             </p>
             <p>

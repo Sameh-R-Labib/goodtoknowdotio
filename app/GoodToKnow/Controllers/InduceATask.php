@@ -31,17 +31,19 @@ class InduceATask
         $g->saved_arr01['label'] = '';
         $g->saved_arr01['cycle_type'] = '';
         $g->saved_arr01['comment'] = '';
-        $g->saved_arr01['last']['date'] = '';
-        $g->saved_arr01['last']['hour'] = '';
-        $g->saved_arr01['last']['minute'] = '';
-        $g->saved_arr01['last']['second'] = '';
-        $g->saved_arr01['next']['date'] = '';
-        $g->saved_arr01['next']['hour'] = '';
-        $g->saved_arr01['next']['minute'] = '';
-        $g->saved_arr01['next']['second'] = '';
+        $g->saved_arr01['lastdate'] = '';
+        $g->saved_arr01['lasthour'] = '';
+        $g->saved_arr01['lastminute'] = '';
+        $g->saved_arr01['lastsecond'] = '';
+        $g->saved_arr01['nextdate'] = '';
+        $g->saved_arr01['nexthour'] = '';
+        $g->saved_arr01['nextminute'] = '';
+        $g->saved_arr01['nextsecond'] = '';
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
 
-        // Update the session variable
-        $_SESSION['saved_arr01'] = $g->saved_arr01;
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
 
 
         /**

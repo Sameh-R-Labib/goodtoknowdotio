@@ -34,7 +34,7 @@ class FeatureATaskEdit
 
         /**
          * This type of record has a field called `last` and a field called `next`. We are Not going to pre-populate
-         * form fields with them. Instead we derive the arrays called $g->last and $g->next from them and use
+         * form fields with them. Instead, we derive the arrays called $g->last and $g->next from them and use
          * the derived arrays to pre-populate the corresponding fields in the form which we present below.
          */
 

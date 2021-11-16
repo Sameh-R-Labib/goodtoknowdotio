@@ -65,17 +65,23 @@ class InduceATaskCreate
                 $_SESSION['is_first_attempt'] = false;
 
 
-                /**
-                 * Save the form data and make it survive the redirect.
-                 */
-                $g->saved_arr01['label'] = $label;
-                $g->saved_arr01['cycle_type'] = $cycle_type;
-                $g->saved_arr01['comment'] = $comment;
-                $g->saved_arr01['last'] = $g->last;
-                $g->saved_arr01['next'] = $g->next;
+                // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
+                $saved_arr01['label'] = $label;
+                $saved_arr01['cycle_type'] = $cycle_type;
+                $saved_arr01['comment'] = $comment;
+                $saved_arr01['timezone'] = $g->timezone; // this is the actual timezone the user had entered
+                $saved_arr01['lastdate'] = $g->lastdate;
+                $saved_arr01['nextdate'] = $g->nextdate;
+                $saved_arr01['lasthour'] = $g->lasthour;
+                $saved_arr01['nexthour'] = $g->nexthour;
+                $saved_arr01['lastminute'] = $g->lastminute;
+                $saved_arr01['nextminute'] = $g->nextminute;
+                $saved_arr01['lastsecond'] = $g->lastsecond;
+                $saved_arr01['nextsecond'] = $g->nextsecond;
 
-                // make it survive the redirect
-                $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+                // make form data survive the redirect
+                $_SESSION['saved_arr01'] = $saved_arr01;
 
 
                 /**
@@ -83,6 +89,8 @@ class InduceATaskCreate
                  */
 
                 $g->message .= ' <b>We are giving you one chance to fix the time values which we think are wrong.</b> ';
+
+
                 redirect_to("/ax1/InduceATaskRedo/page");
 
             }

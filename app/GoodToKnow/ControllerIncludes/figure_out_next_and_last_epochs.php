@@ -30,14 +30,14 @@ $g->timezone = timezone_form_field_prep('timezone');
  * Get `lastdate`.
  */
 
-$lastdate = date_form_field_prep('lastdate');
+$g->lastdate = date_form_field_prep('lastdate');
 
 
 /**
  * Get `nextdate`.
  */
 
-$nextdate = date_form_field_prep('nextdate');
+$g->nextdate = date_form_field_prep('nextdate');
 
 
 /**
@@ -47,7 +47,7 @@ $nextdate = date_form_field_prep('nextdate');
 
 // First let's do it to $lastdate.
 
-$words = explode('/', $lastdate);
+$words = explode('/', $g->lastdate);
 
 $mm_last = (int)$words[0];
 
@@ -57,7 +57,7 @@ $yyyy_last = (int)$words[2];
 
 // Next let's do it to $nextdate.
 
-$words = explode('/', $nextdate);
+$words = explode('/', $g->nextdate);
 
 $mm_next = (int)$words[0];
 
@@ -75,51 +75,51 @@ $yyyy_next = (int)$words[2];
  * Get `lasthour`.
  */
 
-$lasthour = integer_form_field_prep('lasthour', 0, 23);
+$g->lasthour = integer_form_field_prep('lasthour', 0, 23);
 
 
 /**
  * Get `nexthour`.
  */
 
-$nexthour = integer_form_field_prep('nexthour', 0, 23);
+$g->nexthour = integer_form_field_prep('nexthour', 0, 23);
 
 
 /**
  * Get `lastminute`.
  */
 
-$lastminute = integer_form_field_prep('lastminute', 0, 59);
+$g->lastminute = integer_form_field_prep('lastminute', 0, 59);
 
 
 /**
  * Get `nextminute`.
  */
 
-$nextminute = integer_form_field_prep('nextminute', 0, 59);
+$g->nextminute = integer_form_field_prep('nextminute', 0, 59);
 
 
 /**
  * Get `lastsecond`.
  */
 
-$lastsecond = integer_form_field_prep('lastsecond', 0, 59);
+$g->lastsecond = integer_form_field_prep('lastsecond', 0, 59);
 
 
 /**
  * Get `nextsecond`.
  */
 
-$nextsecond = integer_form_field_prep('nextsecond', 0, 59);
+$g->nextsecond = integer_form_field_prep('nextsecond', 0, 59);
 
 
 /**
  * Get the timestamps $g->last and $g->next from the gathered data.
  */
 
-$g->last = mktime($lasthour, $lastminute, $lastsecond, $mm_last, $dd_last, $yyyy_last);
+$g->last = mktime($g->lasthour, $g->lastminute, $g->lastsecond, $mm_last, $dd_last, $yyyy_last);
 
-$g->next = mktime($nexthour, $nextminute, $nextsecond, $mm_next, $dd_next, $yyyy_next);
+$g->next = mktime($g->nexthour, $g->nextminute, $g->nextsecond, $mm_next, $dd_next, $yyyy_next);
 
 
 /**

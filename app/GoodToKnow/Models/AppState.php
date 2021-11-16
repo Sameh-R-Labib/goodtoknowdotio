@@ -622,6 +622,54 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $lastdate;
+
+
+    /**
+     * @var string
+     */
+    public $nextdate;
+
+
+    /**
+     * @var string
+     */
+    public $lasthour;
+
+
+    /**
+     * @var string
+     */
+    public $nexthour;
+
+
+    /**
+     * @var string
+     */
+    public $lastminute;
+
+
+    /**
+     * @var string
+     */
+    public $nextminute;
+
+
+    /**
+     * @var string
+     */
+    public $lastsecond;
+
+
+    /**
+     * @var string
+     */
+    public $nextsecond;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -760,6 +808,15 @@ class AppState
         $this->time = [];
         $this->last = [];
         $this->next = [];
+
+        $this->lastdate = '';
+        $this->nextdate = '';
+        $this->lasthour = '';
+        $this->nexthour = '';
+        $this->lastminute = '';
+        $this->nextminute = '';
+        $this->lastsecond = '';
+        $this->nextsecond = '';
 
         $this->object = null;
 
