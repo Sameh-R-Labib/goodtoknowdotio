@@ -9,7 +9,7 @@ class InduceATaskRedo
         /**
          * Q: So, where are we now?
          * A: - We know that there is an anomalous condition for the submitted time fields.
-         *    - We have the previously submitted form data, although ...
+         *    - We have the previously submitted form data.
          *    - We need to inform the user he is being shown the form again because
          *      we are giving him the opportunity to fix the times.
          *    - We need to present the form again.
@@ -35,6 +35,13 @@ class InduceATaskRedo
 
 
         kick_out_loggedoutusers();
+
+
+        /**
+         * Tell the user he is seeing the form a 2nd time.
+         */
+
+        $g->message .= ' <b>We are giving you one chance to fix the time values which we think are wrong.</b> ';
 
 
         $g->html_title = 'One chance to redo';

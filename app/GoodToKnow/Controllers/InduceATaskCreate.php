@@ -84,13 +84,6 @@ class InduceATaskCreate
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                /**
-                 * Tell the user he is seeing the form a 2nd time.
-                 */
-
-                $g->message .= ' <b>We are giving you one chance to fix the time values which we think are wrong.</b> ';
-
-
                 redirect_to("/ax1/InduceATaskRedo/page");
 
             }
