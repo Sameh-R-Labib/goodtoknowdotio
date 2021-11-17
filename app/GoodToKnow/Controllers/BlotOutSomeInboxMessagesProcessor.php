@@ -13,7 +13,7 @@ class BlotOutSomeInboxMessagesProcessor
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg_or_if_there_is_error_msg();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'checkbox_section_form_field_prep.php';

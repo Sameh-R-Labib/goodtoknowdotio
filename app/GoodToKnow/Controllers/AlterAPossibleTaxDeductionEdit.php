@@ -16,7 +16,7 @@ class AlterAPossibleTaxDeductionEdit
          */
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg_or_if_there_is_error_msg();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         get_db();
