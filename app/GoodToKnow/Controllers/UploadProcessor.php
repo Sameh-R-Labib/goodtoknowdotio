@@ -18,7 +18,7 @@ class UploadProcessor
         global $g;
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         if (!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {

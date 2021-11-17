@@ -16,7 +16,7 @@ class CreateNewPostDirect
         global $g;
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
         /**
          * Error out if we are not at the topic level because.

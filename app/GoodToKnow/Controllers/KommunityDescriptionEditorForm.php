@@ -13,7 +13,7 @@ class KommunityDescriptionEditorForm
         // $g->saved_str01 is the community name. The view file will get it directly from global scope.
 
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         /**

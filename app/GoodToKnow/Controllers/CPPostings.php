@@ -9,7 +9,7 @@ class CPPostings
         global $g;
 
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         $g->page = 'CPPostings';

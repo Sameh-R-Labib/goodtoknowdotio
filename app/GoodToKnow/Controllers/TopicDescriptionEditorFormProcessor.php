@@ -28,7 +28,7 @@ class TopicDescriptionEditorFormProcessor
         // $g->saved_int01 the topic's id
 
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         /**

@@ -21,7 +21,7 @@ class AuthorDeletesOwnPostChoosePost
         // $g->saved_int01 id of topic
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg_or_if_there_is_error_msg();
 
 
         get_db();

@@ -17,7 +17,7 @@ class InduceATaskCreate
         global $g;
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

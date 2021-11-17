@@ -14,7 +14,7 @@ class RevampABankingTransactionForBalancesTimeRange
          */
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'find_min_max_time_range_based_on_choice.php';

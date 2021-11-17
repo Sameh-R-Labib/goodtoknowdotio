@@ -14,14 +14,14 @@ function fix_michelf(string &$html)
 
 /**
  * Overall perspective:
- *  -- kick_out_loggedoutusers is NOT used on the Home page. However, it is used on most of the other pages.
+ *  -- kick_out_loggedoutusers_or_if_there_is_error_msg is NOT used on the Home page. However, it is used on most of the other pages.
  *  -- If there is no session file then $g->is_logged_in will be null (and thus breakout will happen.)
  *  -- If there is a message then breakout will happen.
  * Breakout just means control is handed over to the Home page.
  * In the case where there is no session file the Home page will log out the user.
  * In the case where there is a message the Home page will show that message.
  */
-function kick_out_loggedoutusers()
+function kick_out_loggedoutusers_or_if_there_is_error_msg()
 {
     global $g;
 
@@ -36,7 +36,7 @@ function kick_out_loggedoutusers()
 /**
  *
  */
-function kick_out_nonadmins()
+function kick_out_nonadmins_or_if_there_is_error_msg()
 {
     global $g;
 

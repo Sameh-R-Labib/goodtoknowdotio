@@ -11,7 +11,7 @@ class CreateNewPostProcessor
         global $g;
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         // $_SESSION['saved_int01'] will acquire $g->chosen_topic_id in get_and_save_the_topic_id.php

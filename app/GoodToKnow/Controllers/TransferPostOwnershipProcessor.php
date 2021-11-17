@@ -11,7 +11,7 @@ class TransferPostOwnershipProcessor
         global $g;
 
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';

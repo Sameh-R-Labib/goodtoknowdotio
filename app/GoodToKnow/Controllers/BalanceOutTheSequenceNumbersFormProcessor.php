@@ -29,7 +29,7 @@ class BalanceOutTheSequenceNumbersFormProcessor
          * Preliminary things to take care of.
          */
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
         $g->thing_type = ucfirst($g->type_of_resource_requested);
 

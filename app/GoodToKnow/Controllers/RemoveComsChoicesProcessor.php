@@ -13,7 +13,7 @@ class RemoveComsChoicesProcessor
         // $g->saved_int01 has user's id
 
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_submitted_community_ids.php';

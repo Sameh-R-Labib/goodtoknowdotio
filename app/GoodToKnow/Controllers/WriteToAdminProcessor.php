@@ -22,7 +22,7 @@ class WriteToAdminProcessor
         // ADMINUSERNAME constant
 
 
-        kick_out_loggedoutusers();
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         get_db();

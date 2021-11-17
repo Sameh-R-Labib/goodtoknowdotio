@@ -13,7 +13,7 @@ class NewCommunitySave
         // $g->saved_str02 the topic description
 
 
-        kick_out_nonadmins();
+        kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         $community_as_array = ['community_name' => $g->saved_str01, 'community_description' => $g->saved_str02];
