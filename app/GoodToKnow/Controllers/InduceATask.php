@@ -22,10 +22,10 @@ class InduceATask
 
         /**
          * We need to assign default values for the form field
-         * variables. The reason we need these variables in the
-         * first place is that the form is also used by the redo.
+         * variables. The reason we need these particular variable names
+         * is that the form is also used by the redo.
          *
-         * The variables are elements of $g->saved_arr01.
+         * All the form's variables are elements of $g->saved_arr01.
          */
 
         $g->saved_arr01['label'] = '';
