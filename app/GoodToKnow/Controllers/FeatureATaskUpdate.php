@@ -50,7 +50,7 @@ class FeatureATaskUpdate
         // + + +
 
 
-        // cycle_type - a string which is between 3 to 6 characters long
+        // cycle_type - a string which is between 3 and 6 characters long
 
         $edited_cycle_type = standard_form_field_prep('cycle_type', 3, 60);
 
