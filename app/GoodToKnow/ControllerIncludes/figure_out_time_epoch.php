@@ -35,7 +35,7 @@ $g->timezone = timezone_form_field_prep('timezone');
  * Get `date`.
  */
 
-$date = date_form_field_prep('date');
+$g->date = date_form_field_prep('date');
 
 
 /**
@@ -43,7 +43,7 @@ $date = date_form_field_prep('date');
  * While we're at it remove leading zeros.
  */
 
-$words = explode('/', $date);
+$words = explode('/', $g->date);
 
 $mm = (int)$words[0];
 
@@ -61,28 +61,28 @@ $yyyy = (int)$words[2];
  * Get `hour`.
  */
 
-$hour = integer_form_field_prep('hour', 0, 23);
+$g->hour = integer_form_field_prep('hour', 0, 23);
 
 
 /**
  * Get `minute`.
  */
 
-$minute = integer_form_field_prep('minute', 0, 59);
+$g->minute = integer_form_field_prep('minute', 0, 59);
 
 
 /**
  * Get `second`.
  */
 
-$second = integer_form_field_prep('second', 0, 59);
+$g->second = integer_form_field_prep('second', 0, 59);
 
 
 /**
  * Get the timestamp $g->time from the gathered data.
  */
 
-$g->time = mktime($hour, $minute, $second, $mm, $dd, $yyyy);
+$g->time = mktime($g->hour, $g->minute, $g->second, $mm, $dd, $yyyy);
 
 
 /**
