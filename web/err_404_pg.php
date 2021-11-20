@@ -38,7 +38,6 @@ define('FOOTERBAR', VIEWSINCLUDES . DIRSEP . 'footerbar.php');
 define('SUBMITABORT', VIEWSINCLUDES . DIRSEP . 'submitabort.php');
 define('HEADINGONE', VIEWSINCLUDES . DIRSEP . 'headingone.php');
 define('TIMEFORMFIELD', VIEWSINCLUDES . DIRSEP . 'timeformfield.php');
-define('TIMEFORMFIELDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeformfieldprefilled.php');
 define('TIMENEXTANDLASTFORMFIELDS', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php');
 define('TIMENEXTANDLASTFORMFIELDSPREFILLED', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php');
 define('TIMEBOUGHTSOLD', VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php');

@@ -25,6 +25,9 @@ class RevampABankingTransactionForBalancesEdit
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        $g->html_title = 'Edit the banking_transaction_for_balances record';
+
+
         get_db();
 
 
@@ -34,7 +37,7 @@ class RevampABankingTransactionForBalancesEdit
         /**
          * 4) Present a form which is populated with data from the banking_transaction_for_balances object.
          *
-         * Note: Replace bank_id with the HTML for the drop down select box. Then use bank_id in the HTML form
+         * Note: Replace bank_id with the HTML for the drop-down select box. Then use bank_id in the HTML form
          * to supply the HTML for that input field.
          */
 
@@ -58,16 +61,18 @@ class RevampABankingTransactionForBalancesEdit
         $g->object->amount = readable_amount_no_commas($g->bank->currency, $g->object->amount);
 
 
-        // I had to move this down here to use bank_id before it got changed.
+        /**
+         * Drop down select box html
+         */
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $g->object->bank_id = get_html_select_box_containing_the_bank_accounts($g->user_id, $g->object->bank_id);
+        $g->account_type = get_html_select_box_containing_the_bank_accounts($g->user_id, $g->object->bank_id);
 
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
+         * Instead, we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
@@ -76,7 +81,27 @@ class RevampABankingTransactionForBalancesEdit
         $g->time = get_date_h_m_s_from_a_timestamp($g->object->time);
 
 
-        $g->html_title = 'Edit the banking_transaction_for_balances record';
+        /**
+         * Aside from $g->account_type, assign values to
+         * the variables which will appear in the view.
+         */
+
+        $g->saved_arr01['label'] = $g->object->label;
+        $g->saved_arr01['amount'] = $g->object->amount;
+        $g->saved_arr01['date'] = $g->time['date'];
+        $g->saved_arr01['hour'] = $g->time['hour'];
+        $g->saved_arr01['minute'] = $g->time['minute'];
+        $g->saved_arr01['second'] = $g->time['second'];
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+        $g->saved_arr01['bank_id'] = $g->object->bank_id;  // This statement serves no programmatic purpose.
+        // It's here for completeness.
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
 
 
         require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';

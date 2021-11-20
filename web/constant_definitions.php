@@ -37,7 +37,6 @@ const FOOTERBAR = VIEWSINCLUDES . DIRSEP . 'footerbar.php';
 const SUBMITABORT = VIEWSINCLUDES . DIRSEP . 'submitabort.php';
 const HEADINGONE = VIEWSINCLUDES . DIRSEP . 'headingone.php';
 const TIMEFORMFIELD = VIEWSINCLUDES . DIRSEP . 'timeformfield.php';
-const TIMEFORMFIELDPREFILLED = VIEWSINCLUDES . DIRSEP . 'timeformfieldprefilled.php';
 const TIMENEXTANDLASTFORMFIELDS = VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php';
 const TIMEBOUGHTSOLD = VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php';
 const TIMEBOUGHTSOLDPREFILLED = VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php';
