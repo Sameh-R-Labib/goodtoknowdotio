@@ -24,8 +24,6 @@ class BuildABankingTransactionForBalancesRedo
         /**
          * Get the html for form's select box.
          * It comes with one of the select options marked as selected.
-         * When the 2nd argument (banking_id) of get_html_select_box_containing_the_bank_accounts
-         * is 0 then none of the choices are marked as selected.
          */
 
         get_db(); // Is needed for get_html_select_box_containing_the_bank_accounts()
