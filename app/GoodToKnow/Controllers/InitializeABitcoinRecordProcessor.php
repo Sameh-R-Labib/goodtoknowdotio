@@ -92,6 +92,15 @@ class InitializeABitcoinRecordProcessor
                 // make form data survive the redirect
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
+                /**
+                 * Debug Code
+                 */
+                echo "\n<p>Begin debug</p>\n";
+                echo "<p>Var_dump \$_SESSION['saved_arr01']: </p>\n<pre>";
+                var_dump($_SESSION['saved_arr01']);
+                echo "</pre>\n";
+                die("<p>End debug</p>\n");
+
 
                 redirect_to("/ax1/InitializeABitcoinRecordRedo/page");
 
