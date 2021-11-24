@@ -1,9 +1,16 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditABitcoinRecordSubmit/page" method="post">
-        <h2><?= $g->saved_arr01['address'] ?></h2>
+        <h2>Edit A ₿ 📽></h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
+            <p>
+                <label for="address">Address: </label>
+                <input id="address" name="address" type="text"
+                       value="<?= $g->saved_arr01['address'] ?>" required
+                       minlength="8" maxlength="264"
+                       size="60" spellcheck="false">
+            </p>
             <p>
                 <label for="initial_balance">Initial BTC Balance: </label>
                 <input id="initial_balance" name="initial_balance" type="text" placeholder="0.00000000"

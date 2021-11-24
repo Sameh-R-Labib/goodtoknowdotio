@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Bitcoin;
+use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -30,9 +31,14 @@ class EditABitcoinRecordSubmit
          * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
          */
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
+
+
+        // address
+
+        $address = bitcoin_address_form_field_prep('address');
 
 
         // initial_balance
@@ -96,6 +102,7 @@ class EditABitcoinRecordSubmit
 
 
                 // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
+                $saved_arr01['address'] = $address;
                 $saved_arr01['initial_balance'] = $initial_balance;
                 $saved_arr01['current_balance'] = $current_balance;
                 $saved_arr01['currency'] = $currency;
