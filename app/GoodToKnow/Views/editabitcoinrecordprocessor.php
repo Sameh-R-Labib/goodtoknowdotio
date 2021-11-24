@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditABitcoinRecordSubmit/page" method="post">
-        <h2>Edit A ₿ 📽></h2>
+        <h2>Edit A ₿ 📽</h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
