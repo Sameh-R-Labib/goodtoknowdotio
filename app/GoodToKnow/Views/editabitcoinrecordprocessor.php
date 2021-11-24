@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/EditABitcoinRecordSubmit/page" method="post">
-        <h2><?= $g->bitcoin_object->address ?></h2>
+        <h2><?= $g->saved_arr01['address'] ?></h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
