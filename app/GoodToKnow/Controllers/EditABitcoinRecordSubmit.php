@@ -155,6 +155,7 @@ class EditABitcoinRecordSubmit
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
 
+        $g->bitcoin_object->address = $address;
         $g->bitcoin_object->initial_balance = $initial_balance;
         $g->bitcoin_object->current_balance = $current_balance;
         $g->bitcoin_object->currency = $currency;
