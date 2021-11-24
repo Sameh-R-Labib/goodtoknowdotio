@@ -23,7 +23,7 @@ class InitializeABitcoinRecord
 
         /**
          * Because of the concept of redo we need to
-         * have a way of injecting values into the form.
+         * have a **generic** way of injecting values into the form.
          * That is why you see the code below.
          */
 

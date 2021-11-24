@@ -26,6 +26,9 @@ class EditABitcoinRecordProcessor
         get_db();
 
 
+        $g->html_title = 'Edit the bitcoin record';
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_record_of_user.php';
 
 
@@ -54,7 +57,35 @@ class EditABitcoinRecordProcessor
 
         $g->time = get_date_h_m_s_from_a_timestamp($g->bitcoin_object->time);
 
-        $g->html_title = 'Edit the bitcoin record';
+
+        /**
+         * Because of the concept of redo we need to
+         * have a **generic** way of injecting values into the form.
+         * That is why you see the code below.
+         */
+
+        $g->saved_arr01['address'] = $g->bitcoin_object->address;
+        $g->saved_arr01['initial_balance'] = $g->bitcoin_object->initial_balance;
+        $g->saved_arr01['current_balance'] = $g->bitcoin_object->current_balance;
+        $g->saved_arr01['currency'] = $g->bitcoin_object->currency;
+        $g->saved_arr01['price_point'] = $g->bitcoin_object->price_point;
+        $g->saved_arr01['comment'] = $g->bitcoin_object->comment;
+        $g->saved_arr01['date'] = $g->time['date'];
+        $g->saved_arr01['hour'] = $g->time['hour'];
+        $g->saved_arr01['minute'] = $g->time['minute'];
+        $g->saved_arr01['second'] = $g->time['second'];
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
 
         require VIEWS . DIRSEP . 'editabitcoinrecordprocessor.php';
     }
