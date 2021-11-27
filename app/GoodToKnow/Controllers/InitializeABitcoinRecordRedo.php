@@ -16,7 +16,7 @@ class InitializeABitcoinRecordRedo
          * Tell the user he is seeing the form a 2nd time.
          */
 
-        $g->message .= ' <b>We are giving you one chance to fix the time value which we think are wrong.</b> ';
+        $g->message .= ' <b>We are giving you one chance to fix the time value which we think is wrong.</b> ';
 
 
         $g->html_title = 'One chance to redo';
