@@ -1,3 +1,4 @@
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/MakeARecurringPaymentRecordProcessor/page" method="post">
         <h1>Create Recurring Payment</h1>
@@ -5,20 +6,21 @@
         <section>
             <p>
                 <label for="label">Label (✅ emoji): </label>
-                <input id="label" name="label" type="text" value="" required minlength="3" maxlength="264"
-                       size="60" spellcheck="false" placeholder="Cell Phone Each Month">
+                <input id="label" name="label" type="text" required minlength="3" maxlength="264"
+                       size="60" spellcheck="false" placeholder="Cell Phone Each Month"
+                       value="<?= $g->saved_arr01['label'] ?>"
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>
-                <input id="currency" name="currency" type="text" value="" required minlength="1" maxlength="15"
-                       size="15" placeholder="💵">
+                <input id="currency" name="currency" type="text" required minlength="1" maxlength="15"
+                       size="15" placeholder="💵" value="<?= $g->saved_arr01['currency'] ?>">
             </p>
             <p>
                 <label for="amount_paid">Amount of currency paid <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
-                <input id="amount_paid" name="amount_paid" type="text" value="" required minlength="1" maxlength="24"
-                       size="24" placeholder="108.49">
+                <input id="amount_paid" name="amount_paid" type="text" required minlength="1" maxlength="24"
+                       size="24" placeholder="108.49" value="<?= $g->saved_arr01['amount_paid'] ?>">
             </p>
             <hr>
             <p>Time at Last Payment</p>
@@ -27,7 +29,7 @@
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="800"
-                          placeholder="Notes to self."></textarea>
+                          placeholder="Notes to self."><?= $g->saved_arr01['comment'] ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>
