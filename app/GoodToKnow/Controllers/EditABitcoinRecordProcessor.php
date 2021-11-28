@@ -34,7 +34,6 @@ class EditABitcoinRecordProcessor
 
         /**
          * 4) Present a form which is populated with data from the object.
-         *    (except do the bitcoin address should not be changeable.)
          */
 
 

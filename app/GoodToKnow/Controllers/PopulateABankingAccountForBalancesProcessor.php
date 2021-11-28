@@ -26,6 +26,9 @@ class PopulateABankingAccountForBalancesProcessor
         get_db();
 
 
+        $g->html_title = 'Edit the banking_acct_for_balances record';
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
 
 
@@ -55,7 +58,33 @@ class PopulateABankingAccountForBalancesProcessor
         $g->time = get_date_h_m_s_from_a_timestamp($g->object->start_time);
 
 
-        $g->html_title = 'Edit the banking_acct_for_balances record';
+        /**
+         * Because of the concept of redo we need to
+         * have a **generic** way of injecting values into the form.
+         * That is why you see the code below.
+         */
+
+        $g->saved_arr01['acct_name'] = $g->object->acct_name;
+        $g->saved_arr01['start_balance'] = $g->object->start_balance;
+        $g->saved_arr01['currency'] = $g->object->currency;
+        $g->saved_arr01['comment'] = $g->object->comment;
+        $g->saved_arr01['date'] = $g->time['date'];
+        $g->saved_arr01['hour'] = $g->time['hour'];
+        $g->saved_arr01['minute'] = $g->time['minute'];
+        $g->saved_arr01['second'] = $g->time['second'];
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+
+
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
 
 
         require VIEWS . DIRSEP . 'populateabankingaccountforbalancesprocessor.php';
