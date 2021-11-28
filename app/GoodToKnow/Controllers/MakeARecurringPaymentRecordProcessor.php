@@ -86,7 +86,7 @@ class MakeARecurringPaymentRecordProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/InitializeABitcoinRecordRedo/page");
+                redirect_to("/ax1/MakeARecurringPaymentRecordRedo/page");
 
             }
 
