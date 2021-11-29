@@ -7,13 +7,13 @@
             <p>
                 <label for="label">Label (✅ emoji): </label>
                 <input id="label" name="label" type="text"
-                       value="<?= $g->recurring_payment_object->label ?>" required minlength="3" maxlength="264"
+                       value="<?= $g->saved_arr01['label'] ?>" required minlength="3" maxlength="264"
                        size="60" spellcheck="false" placeholder="Cell Phone Each Month">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>
                 <input id="currency" name="currency" type="text"
-                       value="<?= $g->recurring_payment_object->currency ?>" required minlength="1" maxlength="15"
+                       value="<?= $g->saved_arr01['currency'] ?>" required minlength="1" maxlength="15"
                        size="15" placeholder="💵">
             </p>
             <p>
@@ -21,17 +21,17 @@
                 tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="amount_paid" name="amount_paid" type="text"
-                       value="<?= $g->recurring_payment_object->amount_paid ?>" required minlength="1" maxlength="24"
+                       value="<?= $g->saved_arr01['amount_paid'] ?>" required minlength="1" maxlength="24"
                        size="24" placeholder="108.49">
             </p>
             <hr>
             <p>Time at Last Payment</p>
-            <?php require TIMEFORMFIELDPREFILLED; ?>
+            <?php require TIMEFORMFIELD; ?>
             <hr>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="800"
-                          placeholder="Notes to self."><?= $g->recurring_payment_object->comment ?></textarea>
+                          placeholder="Notes to self."><?= $g->saved_arr01['comment'] ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>
