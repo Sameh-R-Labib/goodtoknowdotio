@@ -26,6 +26,9 @@ class PolishARecurringPaymentRecordProcessor
         get_db();
 
 
+        $g->html_title = 'Edit the recurring_payment record';
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';
 
 
@@ -35,7 +38,7 @@ class PolishARecurringPaymentRecordProcessor
 
 
         /**
-         * Make it so that if price_point is fiat then price_point has only two decimal places.
+         * Format the amount_paid to have the correct number of zeros after the decimal point.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
@@ -45,7 +48,7 @@ class PolishARecurringPaymentRecordProcessor
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
+         * Instead, we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
@@ -54,7 +57,32 @@ class PolishARecurringPaymentRecordProcessor
         $g->time = get_date_h_m_s_from_a_timestamp($g->recurring_payment_object->time);
 
 
-        $g->html_title = 'Edit the recurring_payment record';
+        /**
+         * Because of the concept of redo we need to
+         * have a **generic** way of injecting values into the form.
+         * That is why you see the code below.
+         */
+
+        $g->saved_arr01['label'] = $g->recurring_payment_object->label;
+        $g->saved_arr01['currency'] = $g->recurring_payment_object->currency;
+        $g->saved_arr01['amount_paid'] = $g->recurring_payment_object->amount_paid;
+        $g->saved_arr01['comment'] = $g->recurring_payment_object->comment;
+        $g->saved_arr01['date'] = $g->time['date'];
+        $g->saved_arr01['hour'] = $g->time['hour'];
+        $g->saved_arr01['minute'] = $g->time['minute'];
+        $g->saved_arr01['second'] = $g->time['second'];
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
 
 
         require VIEWS . DIRSEP . 'polisharecurringpaymentrecordprocessor.php';
