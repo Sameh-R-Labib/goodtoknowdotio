@@ -54,7 +54,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * A correct time entry for a Bitcoin record would be in the past.
+         * A correct time entry for a Banking Account record would be in the past.
          *
          * The currently submitted form data will be used to conveniently
          * populate the redo form.
