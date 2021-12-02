@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/PolishARecurringPaymentRecordSubmit/page" method="post">
-        <h2><?= $g->recurring_payment_object->label ?></h2>
+        <h2><?= $g->saved_arr01['label'] ?></h2>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
