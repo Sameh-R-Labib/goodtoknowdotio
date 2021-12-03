@@ -37,7 +37,7 @@
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
                 <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="800"
-                          placeholder="The frequency of this income is _ _ _ _."><?= $g->saved_arr01['comment'] ?></textarea>
+                          placeholder="The frequency of this income is _ _ ."><?= $g->saved_arr01['comment'] ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

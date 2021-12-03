@@ -26,6 +26,9 @@ class WriteOverATaxableIncomeEventEdit
         get_db();
 
 
+        $g->html_title = 'Edit the taxable income event\'s record';
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_taxableincomeevent.php';
 
 
@@ -45,7 +48,7 @@ class WriteOverATaxableIncomeEventEdit
 
         /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
-         * Instead we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
+         * Instead, we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
          */
 
@@ -55,10 +58,37 @@ class WriteOverATaxableIncomeEventEdit
 
 
         /**
-         * Present the view.
+         * Because of the concept of redo we need to
+         * have a **generic** way of injecting values into the form.
+         * That is why you see the code below.
          */
 
-        $g->html_title = 'Edit the taxable income event\'s record';
+        $g->saved_arr01['label'] = $g->object->label;
+        $g->saved_arr01['year_received'] = $g->object->year_received;
+        $g->saved_arr01['currency'] = $g->object->currency;
+        $g->saved_arr01['amount'] = $g->object->amount;
+        $g->saved_arr01['comment'] = $g->object->comment;
+        $g->saved_arr01['date'] = $g->time['date'];
+        $g->saved_arr01['hour'] = $g->time['hour'];
+        $g->saved_arr01['minute'] = $g->time['minute'];
+        $g->saved_arr01['second'] = $g->time['second'];
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
+
+
+        /**
+         * Present the view.
+         */
 
         require VIEWS . DIRSEP . 'writeoverataxableincomeeventedit.php';
     }
