@@ -36,14 +36,14 @@ $g->timezone = timezone_form_field_prep('timezone');
  * Get `time_bought_date`.
  */
 
-$time_bought_date = date_form_field_prep('time_bought_date');
+$g->time_bought_date = date_form_field_prep('time_bought_date');
 
 
 /**
  * Get `time_sold_date`.
  */
 
-$time_sold_date = date_form_field_prep('time_sold_date');
+$g->time_sold_date = date_form_field_prep('time_sold_date');
 
 
 /**
@@ -53,7 +53,7 @@ $time_sold_date = date_form_field_prep('time_sold_date');
 
 // First let's do it to $time_bought_date.
 
-$words = explode('/', $time_bought_date);
+$words = explode('/', $g->time_bought_date);
 
 $mm_time_bought = (int)$words[0];
 
@@ -63,7 +63,7 @@ $yyyy_time_bought = (int)$words[2];
 
 // Next let's do it to $time_sold_date.
 
-$words = explode('/', $time_sold_date);
+$words = explode('/', $g->time_sold_date);
 
 $mm_time_sold = (int)$words[0];
 
@@ -81,51 +81,51 @@ $yyyy_time_sold = (int)$words[2];
  * Get `time_bought_hour`.
  */
 
-$time_bought_hour = integer_form_field_prep('time_bought_hour', 0, 23);
+$g->time_bought_hour = integer_form_field_prep('time_bought_hour', 0, 23);
 
 
 /**
  * Get `time_sold_hour`.
  */
 
-$time_sold_hour = integer_form_field_prep('time_sold_hour', 0, 23);
+$g->time_sold_hour = integer_form_field_prep('time_sold_hour', 0, 23);
 
 
 /**
  * Get `time_bought_minute`.
  */
 
-$time_bought_minute = integer_form_field_prep('time_bought_minute', 0, 59);
+$g->time_bought_minute = integer_form_field_prep('time_bought_minute', 0, 59);
 
 
 /**
  * Get `time_sold_minute`.
  */
 
-$time_sold_minute = integer_form_field_prep('time_sold_minute', 0, 59);
+$g->time_sold_minute = integer_form_field_prep('time_sold_minute', 0, 59);
 
 
 /**
  * Get `time_bought_second`.
  */
 
-$time_bought_second = integer_form_field_prep('time_bought_second', 0, 59);
+$g->time_bought_second = integer_form_field_prep('time_bought_second', 0, 59);
 
 
 /**
  * Get `time_sold_second`.
  */
 
-$time_sold_second = integer_form_field_prep('time_sold_second', 0, 59);
+$g->time_sold_second = integer_form_field_prep('time_sold_second', 0, 59);
 
 
 /**
  * Get the timestamps $g->time_bought and $g->time_sold from the gathered data.
  */
 
-$g->time_bought = mktime($time_bought_hour, $time_bought_minute, $time_bought_second, $mm_time_bought, $dd_time_bought, $yyyy_time_bought);
+$g->time_bought = mktime($g->time_bought_hour, $g->time_bought_minute, $g->time_bought_second, $mm_time_bought, $dd_time_bought, $yyyy_time_bought);
 
-$g->time_sold = mktime($time_sold_hour, $time_sold_minute, $time_sold_second, $mm_time_sold, $dd_time_sold, $yyyy_time_sold);
+$g->time_sold = mktime($g->time_sold_hour, $g->time_sold_minute, $g->time_sold_second, $mm_time_sold, $dd_time_sold, $yyyy_time_sold);
 
 
 /**

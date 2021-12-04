@@ -34,7 +34,6 @@ class FatherACommoditySold
         $g->saved_arr01['commodity_label'] = '';
         $g->saved_arr01['tax_year'] = '';
         $g->saved_arr01['profit'] = '';
-        $g->saved_arr01['comment'] = '';
         $g->saved_arr01['time_bought_date'] = '';
         $g->saved_arr01['time_bought_hour'] = '';
         $g->saved_arr01['time_bought_minute'] = '';

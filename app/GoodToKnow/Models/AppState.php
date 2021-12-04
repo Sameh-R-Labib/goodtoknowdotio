@@ -352,7 +352,7 @@ class AppState
 
 
     /**
-     * Whether or not to show a poof rather than what is normally be shown in that space.
+     * Whether to show a poof rather than what is normally be shown in that space.
      * What is normally shown is a link to the route for messaging the author
      * of the current post.
      *
@@ -370,9 +370,57 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $time_bought_date;
+
+
+    /**
+     * @var int
+     */
+    public $time_bought_hour;
+
+
+    /**
+     * @var int
+     */
+    public $time_bought_minute;
+
+
+    /**
+     * @var int
+     */
+    public $time_bought_second;
+
+
+    /**
      * @var array|int
      */
     public $time_sold;
+
+
+    /**
+     * @var string
+     */
+    public $time_sold_date;
+
+
+    /**
+     * @var int
+     */
+    public $time_sold_hour;
+
+
+    /**
+     * @var int
+     */
+    public $time_sold_minute;
+
+
+    /**
+     * @var int
+     */
+    public $time_sold_second;
 
 
     /**
@@ -634,37 +682,37 @@ class AppState
 
 
     /**
-     * @var string
+     * @var int
      */
     public $lasthour;
 
 
     /**
-     * @var string
+     * @var int
      */
     public $nexthour;
 
 
     /**
-     * @var string
+     * @var int
      */
     public $lastminute;
 
 
     /**
-     * @var string
+     * @var int
      */
     public $nextminute;
 
 
     /**
-     * @var string
+     * @var int
      */
     public $lastsecond;
 
 
     /**
-     * @var string
+     * @var int
      */
     public $nextsecond;
 
@@ -809,14 +857,24 @@ class AppState
         $this->last = [];
         $this->next = [];
 
+        $this->time_bought_date = '';
+        $this->time_bought_hour = 0;
+        $this->time_bought_minute = 0;
+        $this->time_bought_second = 0;
+
+        $this->time_sold_date = '';
+        $this->time_sold_hour = 0;
+        $this->time_sold_minute = 0;
+        $this->time_sold_second = 0;
+
         $this->lastdate = '';
         $this->nextdate = '';
-        $this->lasthour = '';
-        $this->nexthour = '';
-        $this->lastminute = '';
-        $this->nextminute = '';
-        $this->lastsecond = '';
-        $this->nextsecond = '';
+        $this->lasthour = 0;
+        $this->nexthour = 0;
+        $this->lastminute = 0;
+        $this->nextminute = 0;
+        $this->lastsecond = 0;
+        $this->nextsecond = 0;
 
         $this->object = null;
 
