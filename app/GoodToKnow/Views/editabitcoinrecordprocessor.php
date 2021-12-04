@@ -8,8 +8,8 @@
                 <label for="address">Address: </label>
                 <input id="address" name="address" type="text"
                        value="<?= $g->saved_arr01['address'] ?>" required
-                       minlength="8" maxlength="264"
-                       size="60" spellcheck="false">
+                       minlength="8" maxlength="264" size="60" spellcheck="false"
+                       placeholder="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">
             </p>
             <p>
                 <label for="initial_balance">Initial BTC Balance: </label>
