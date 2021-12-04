@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/ConceiveAPossibleTaxDeductionProcessor/page" method="post">
-        <h1>Create a 🤔 Tax ✍🏽🔽</h1>
+        <h1>Create a Possible Tax Deduction</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Records will be deleted automatically after the fourth year.</span>
         </p>

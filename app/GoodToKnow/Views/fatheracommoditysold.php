@@ -3,8 +3,7 @@
     <form action="/ax1/FatherACommoditySoldProcessor/page" method="post">
         <h1>Create a Commodity Sold Record</h1>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">Use this form `only` if you sold a capital gains taxable commodity.
-            Warning: Commodity Sold records older than six (6) years are purged from the system.</span>
+            <span class="tooltiptext tooltip-top">Warning: Commodity Sold older than six years get purged.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
@@ -16,8 +15,8 @@
             </p>
             <p>
                 <label for="price_sold">Price Sold <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
-                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">If the amounts should have 2 decimal places ask admin
+                        to add your currency to list of fiat.</span></span>: </label>
                 <input id="price_sold" name="price_sold" type="text" value="<?= $g->saved_arr01['price_sold'] ?>"
                        required minlength="1" maxlength="24" size="24" placeholder="150.24">
             </p>
@@ -29,8 +28,8 @@
             </p>
             <p>
                 <label for="commodity_amount">Commodity Amount <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
-                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">If the amounts should have 2 decimal places ask admin
+                        to add your currency to the list of fiat.</span></span>: </label>
                 <input id="commodity_amount" name="commodity_amount" type="text"
                        value="<?= $g->saved_arr01['commodity_amount'] ?>" required minlength="1" maxlength="24"
                        size="24" placeholder="150.24">
@@ -49,8 +48,8 @@
             </p>
             <p>
                 <label for="tax_year">Tax Year <span class="tooltip">ℹ️
-                <span class="tooltiptext tooltip-top">Here the <em>tax year</em> is defined as the year you sold the commodity.</span>
-            </span>: </label>
+                <span class="tooltiptext tooltip-top">Here the <em>tax year</em> is defined as the year you sold the
+                    commodity.</span></span>: </label>
                 <input id="tax_year" name="tax_year" type="text" value="<?= $g->saved_arr01['tax_year'] ?>"
                        required minlength="4" maxlength="6" size="6" placeholder="2018">
             </p>
