@@ -45,7 +45,7 @@
                 <label for="commodity_label">Commodity Label: </label>
                 <input id="commodity_label" name="commodity_label" type="text"
                        value="<?= $g->saved_arr01['commodity_label'] ?>" required minlength="8" maxlength="264"
-                       size="60" spellcheck="false">
+                       size="54" spellcheck="false">
             </p>
             <p>
                 <label for="tax_year">Tax Year <span class="tooltip">ℹ️
