@@ -1,6 +1,7 @@
 <?php global $g; ?>
+<p>Last</p>
 <p>
-    <label for="lastdate">Last: </label>
+    <label for="lastdate"></label>
     <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['lastdate'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
@@ -14,8 +15,9 @@
     <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
            value="<?= $g->saved_arr01['lastsecond'] ?>">
 </p>
+<p>Next</p>
 <p>
-    <label for="nextdate">Next: </label>
+    <label for="nextdate"></label>
     <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['nextdate'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
