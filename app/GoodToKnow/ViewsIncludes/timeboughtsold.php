@@ -1,7 +1,8 @@
 <?php global $g ?>
 <hr>
+<p>Time Bought: </p>
 <p>
-    <label for="time_bought_date">Time Bought: </label>
+    <label for="time_bought_date"></label>
     <input id="time_bought_date" name="time_bought_date" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['time_bought_date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
@@ -16,8 +17,9 @@
            placeholder="s" value="<?= $g->saved_arr01['time_bought_second'] ?>">
 </p>
 <hr>
+<p>Time Sold: </p>
 <p>
-    <label for="time_sold_date">Time Sold: </label>
+    <label for="time_sold_date"></label>
     <input id="time_sold_date" name="time_sold_date" type="text" required minlength="10" maxlength="14" size="14"
            placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['time_sold_date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
