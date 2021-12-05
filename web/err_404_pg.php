@@ -41,7 +41,6 @@ define('TIMEFORMFIELD', VIEWSINCLUDES . DIRSEP . 'timeformfield.php');
 define('TIMENEXTANDLASTFORMFIELDS', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php');
 define('TIMENEXTANDLASTFORMFIELDSPREFILLED', VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php');
 define('TIMEBOUGHTSOLD', VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php');
-define('TIMEBOUGHTSOLDPREFILLED', VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php');
 
 
 // Trick to get PhpStorm not to show as error.

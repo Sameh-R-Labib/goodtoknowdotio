@@ -39,4 +39,3 @@ const HEADINGONE = VIEWSINCLUDES . DIRSEP . 'headingone.php';
 const TIMEFORMFIELD = VIEWSINCLUDES . DIRSEP . 'timeformfield.php';
 const TIMENEXTANDLASTFORMFIELDS = VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php';
 const TIMEBOUGHTSOLD = VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php';
-const TIMEBOUGHTSOLDPREFILLED = VIEWSINCLUDES . DIRSEP . 'timeboughtsoldprefilled.php';

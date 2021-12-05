@@ -3,7 +3,7 @@
     <form action="/ax1/FatherACommoditySoldProcessor/page" method="post">
         <h1>Create a Commodity Sold Record</h1>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">Warning: Commodity Sold older than six years get purged.</span>
+            <span class="tooltiptext tooltip-top">Warning: Records will be deleted automatically after the sixth year back.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
