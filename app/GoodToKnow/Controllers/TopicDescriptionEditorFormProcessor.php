@@ -81,7 +81,7 @@ class TopicDescriptionEditorFormProcessor
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated topic object. ');
+            breakout(' I failed at saving the updated topic object (most likely because you didn\'t make any changes to it.) ');
 
         }
 

@@ -147,7 +147,7 @@ class PopulateABankingAccountForBalancesSubmit
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated banking account for balances. ');
+            breakout(' I failed at saving the updated banking account for balances (most likely because you didn\'t make any changes to it.) ');
 
         }
 

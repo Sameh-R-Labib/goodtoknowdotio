@@ -159,7 +159,7 @@ class FeatureATaskUpdate
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated object. ');
+            breakout(' I failed at saving the updated object (most likely because you didn\'t make any changes to it.) ');
 
         }
 

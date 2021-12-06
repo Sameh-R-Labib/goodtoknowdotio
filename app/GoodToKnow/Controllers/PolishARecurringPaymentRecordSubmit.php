@@ -146,7 +146,7 @@ class PolishARecurringPaymentRecordSubmit
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated Recurring Payment. ');
+            breakout(' I failed at saving the updated Recurring Payment (most likely because you didn\'t make any changes to it.) ');
 
         }
 
