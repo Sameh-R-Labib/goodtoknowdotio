@@ -22,14 +22,35 @@ class AlterAPossibleTaxDeductionEdit
         get_db();
 
 
+        $g->html_title = 'Edit the possible_tax_deduction record';
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_possibletaxdeduction.php';
 
 
         /**
-         * 4) Present a form which is populated with data from the possible_tax_deduction object.
+         * I know this feature does not do a redo. However, ...
+         *
+         * Because of the concept of redo we need to
+         * have a **generic** way of injecting values into the form.
+         * That is why you see the code below.
          */
 
-        $g->html_title = 'Edit the possible_tax_deduction record';
+        $g->saved_arr01['label'] = $g->object->label;
+        $g->saved_arr01['year_paid'] = $g->object->year_paid;
+        $g->saved_arr01['comment'] = $g->object->comment;
+
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
+
 
         require VIEWS . DIRSEP . 'alterapossibletaxdeductionedit.php';
     }
