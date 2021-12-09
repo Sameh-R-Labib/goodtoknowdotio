@@ -75,7 +75,8 @@ class AlterAPossibleTaxDeductionUpdate
 
         if ($result === false) {
 
-            breakout(' I aborted because I failed at saving the updated object (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I aborted because I failed at saving the updated object (most likely because you didn\'t make any
+            changes to it.) ');
 
         }
 
