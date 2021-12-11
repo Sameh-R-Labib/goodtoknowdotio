@@ -27,17 +27,17 @@ $g->timezone = timezone_form_field_prep('timezone');
 
 
 /**
- * Get `lastdate`.
+ * Get `last_date`.
  */
 
-$g->lastdate = date_form_field_prep('lastdate');
+$g->last_date = date_form_field_prep('last_date');
 
 
 /**
- * Get `nextdate`.
+ * Get `next_date`.
  */
 
-$g->nextdate = date_form_field_prep('nextdate');
+$g->next_date = date_form_field_prep('next_date');
 
 
 /**
@@ -45,9 +45,9 @@ $g->nextdate = date_form_field_prep('nextdate');
  * While we're at it remove leading zeros.
  */
 
-// First let's do it to $lastdate.
+// First let's do it to $last_date.
 
-$words = explode('/', $g->lastdate);
+$words = explode('/', $g->last_date);
 
 $mm_last = (int)$words[0];
 
@@ -55,9 +55,9 @@ $dd_last = (int)$words[1];
 
 $yyyy_last = (int)$words[2];
 
-// Next let's do it to $nextdate.
+// Next let's do it to $next_date.
 
-$words = explode('/', $g->nextdate);
+$words = explode('/', $g->next_date);
 
 $mm_next = (int)$words[0];
 
@@ -72,54 +72,54 @@ $yyyy_next = (int)$words[2];
 
 
 /**
- * Get `lasthour`.
+ * Get `last_hour`.
  */
 
-$g->lasthour = integer_form_field_prep('lasthour', 0, 23);
+$g->last_hour = integer_form_field_prep('last_hour', 0, 23);
 
 
 /**
- * Get `nexthour`.
+ * Get `next_hour`.
  */
 
-$g->nexthour = integer_form_field_prep('nexthour', 0, 23);
+$g->next_hour = integer_form_field_prep('next_hour', 0, 23);
 
 
 /**
- * Get `lastminute`.
+ * Get `last_minute`.
  */
 
-$g->lastminute = integer_form_field_prep('lastminute', 0, 59);
+$g->last_minute = integer_form_field_prep('last_minute', 0, 59);
 
 
 /**
- * Get `nextminute`.
+ * Get `next_minute`.
  */
 
-$g->nextminute = integer_form_field_prep('nextminute', 0, 59);
+$g->next_minute = integer_form_field_prep('next_minute', 0, 59);
 
 
 /**
- * Get `lastsecond`.
+ * Get `last_second`.
  */
 
-$g->lastsecond = integer_form_field_prep('lastsecond', 0, 59);
+$g->last_second = integer_form_field_prep('last_second', 0, 59);
 
 
 /**
- * Get `nextsecond`.
+ * Get `next_second`.
  */
 
-$g->nextsecond = integer_form_field_prep('nextsecond', 0, 59);
+$g->next_second = integer_form_field_prep('next_second', 0, 59);
 
 
 /**
  * Get the timestamps $g->last and $g->next from the gathered data.
  */
 
-$g->last = mktime($g->lasthour, $g->lastminute, $g->lastsecond, $mm_last, $dd_last, $yyyy_last);
+$g->last = mktime($g->last_hour, $g->last_minute, $g->last_second, $mm_last, $dd_last, $yyyy_last);
 
-$g->next = mktime($g->nexthour, $g->nextminute, $g->nextsecond, $mm_next, $dd_next, $yyyy_next);
+$g->next = mktime($g->next_hour, $g->next_minute, $g->next_second, $mm_next, $dd_next, $yyyy_next);
 
 
 /**

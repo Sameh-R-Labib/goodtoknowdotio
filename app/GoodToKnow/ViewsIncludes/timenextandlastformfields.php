@@ -1,35 +1,35 @@
 <?php global $g; ?>
 <p>Last</p>
 <p>
-    <label for="lastdate"></label>
-    <input id="lastdate" name="lastdate" type="text" required minlength="10" maxlength="14" size="14"
-           placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['lastdate'] ?>">
+    <label for="last_date"></label>
+    <input id="last_date" name="last_date" type="text" required minlength="10" maxlength="14" size="14"
+           placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['last_date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
-    <label for="lasthour"></label>
-    <input id="lasthour" name="lasthour" type="text" required minlength="1" maxlength="2" size="3" placeholder="h"
-           value="<?= $g->saved_arr01['lasthour'] ?>">
-    <label for="lastminute">: </label>
-    <input id="lastminute" name="lastminute" type="text" required minlength="1" maxlength="2" size="3" placeholder="m"
-           value="<?= $g->saved_arr01['lastminute'] ?>">
-    <label for="lastsecond">: </label>
-    <input id="lastsecond" name="lastsecond" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
-           value="<?= $g->saved_arr01['lastsecond'] ?>">
+    <label for="last_hour"></label>
+    <input id="last_hour" name="last_hour" type="text" required minlength="1" maxlength="2" size="3" placeholder="h"
+           value="<?= $g->saved_arr01['last_hour'] ?>">
+    <label for="last_minute">: </label>
+    <input id="last_minute" name="last_minute" type="text" required minlength="1" maxlength="2" size="3" placeholder="m"
+           value="<?= $g->saved_arr01['last_minute'] ?>">
+    <label for="last_second">: </label>
+    <input id="last_second" name="last_second" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
+           value="<?= $g->saved_arr01['last_second'] ?>">
 </p>
 <p>Next</p>
 <p>
-    <label for="nextdate"></label>
-    <input id="nextdate" name="nextdate" type="text" required minlength="10" maxlength="14" size="14"
-           placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['nextdate'] ?>">
+    <label for="next_date"></label>
+    <input id="next_date" name="next_date" type="text" required minlength="10" maxlength="14" size="14"
+           placeholder="mm/dd/yyyy" value="<?= $g->saved_arr01['next_date'] ?>">
     <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">hr is military hour (0-23)</span></span>
-    <label for="nexthour"></label>
-    <input id="nexthour" name="nexthour" type="text" required minlength="1" maxlength="2" size="3" placeholder="h"
-           value="<?= $g->saved_arr01['nexthour'] ?>">
-    <label for="nextminute">: </label>
-    <input id="nextminute" name="nextminute" type="text" required minlength="1" maxlength="2" size="3" placeholder="m"
-           value="<?= $g->saved_arr01['nextminute'] ?>">
-    <label for="nextsecond">: </label>
-    <input id="nextsecond" name="nextsecond" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
-           value="<?= $g->saved_arr01['nextsecond'] ?>">
+    <label for="next_hour"></label>
+    <input id="next_hour" name="next_hour" type="text" required minlength="1" maxlength="2" size="3" placeholder="h"
+           value="<?= $g->saved_arr01['next_hour'] ?>">
+    <label for="next_minute">: </label>
+    <input id="next_minute" name="next_minute" type="text" required minlength="1" maxlength="2" size="3" placeholder="m"
+           value="<?= $g->saved_arr01['next_minute'] ?>">
+    <label for="next_second">: </label>
+    <input id="next_second" name="next_second" type="text" required minlength="1" maxlength="2" size="3" placeholder="s"
+           value="<?= $g->saved_arr01['next_second'] ?>">
     <label for="timezone"></label>
     <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
            minlength="2" maxlength="60" size="18" value="<?= $g->saved_arr01['timezone'] ?>">

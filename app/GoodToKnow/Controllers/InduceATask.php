@@ -31,14 +31,14 @@ class InduceATask
         $g->saved_arr01['label'] = '';
         $g->saved_arr01['cycle_type'] = '';
         $g->saved_arr01['comment'] = '';
-        $g->saved_arr01['lastdate'] = '';
-        $g->saved_arr01['lasthour'] = '';
-        $g->saved_arr01['lastminute'] = '';
-        $g->saved_arr01['lastsecond'] = '';
-        $g->saved_arr01['nextdate'] = '';
-        $g->saved_arr01['nexthour'] = '';
-        $g->saved_arr01['nextminute'] = '';
-        $g->saved_arr01['nextsecond'] = '';
+        $g->saved_arr01['last_date'] = '';
+        $g->saved_arr01['last_hour'] = '';
+        $g->saved_arr01['last_minute'] = '';
+        $g->saved_arr01['last_second'] = '';
+        $g->saved_arr01['next_date'] = '';
+        $g->saved_arr01['next_hour'] = '';
+        $g->saved_arr01['next_minute'] = '';
+        $g->saved_arr01['next_second'] = '';
         $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
 
         // Not Necessary:

@@ -672,49 +672,73 @@ class AppState
     /**
      * @var string
      */
-    public $lastdate;
+    public $last_date;
 
 
     /**
      * @var string
      */
-    public $nextdate;
+    public $next_date;
 
 
     /**
      * @var int
      */
-    public $lasthour;
+    public $last_hour;
 
 
     /**
      * @var int
      */
-    public $nexthour;
+    public $next_hour;
 
 
     /**
      * @var int
      */
-    public $lastminute;
+    public $last_minute;
 
 
     /**
      * @var int
      */
-    public $nextminute;
+    public $next_minute;
 
 
     /**
      * @var int
      */
-    public $lastsecond;
+    public $last_second;
 
 
     /**
      * @var int
      */
-    public $nextsecond;
+    public $next_second;
+
+
+    /**
+     * @var string
+     */
+    public $date;
+
+
+    /**
+     * @var int
+     */
+    public $hour;
+
+
+    /**
+     * @var int
+     */
+    public $minute;
+
+
+    /**
+     * @var int
+     */
+    public $second;
 
 
     /**
@@ -857,24 +881,35 @@ class AppState
         $this->last = [];
         $this->next = [];
 
+        // time
+        $this->date = '';
+        $this->hour = 0;
+        $this->minute = 0;
+        $this->second = 0;
+
+        // time_bought
         $this->time_bought_date = '';
         $this->time_bought_hour = 0;
         $this->time_bought_minute = 0;
         $this->time_bought_second = 0;
 
+        // time_sold
         $this->time_sold_date = '';
         $this->time_sold_hour = 0;
         $this->time_sold_minute = 0;
         $this->time_sold_second = 0;
 
-        $this->lastdate = '';
-        $this->nextdate = '';
-        $this->lasthour = 0;
-        $this->nexthour = 0;
-        $this->lastminute = 0;
-        $this->nextminute = 0;
-        $this->lastsecond = 0;
-        $this->nextsecond = 0;
+        // last
+        $this->last_date = '';
+        $this->last_hour = 0;
+        $this->last_minute = 0;
+        $this->last_second = 0;
+
+        // next
+        $this->next_date = '';
+        $this->next_hour = 0;
+        $this->next_minute = 0;
+        $this->next_second = 0;
 
         $this->object = null;
 

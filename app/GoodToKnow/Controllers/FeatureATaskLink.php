@@ -75,14 +75,14 @@ class FeatureATaskLink
         $g->saved_arr01['label'] = $g->object->label;
         $g->saved_arr01['cycle_type'] = $g->object->cycle_type;
         $g->saved_arr01['comment'] = $g->object->comment;
-        $g->saved_arr01['lastdate'] = $g->last['date'];
-        $g->saved_arr01['lasthour'] = $g->last['hour'];
-        $g->saved_arr01['lastminute'] = $g->last['minute'];
-        $g->saved_arr01['lastsecond'] = $g->last['second'];
-        $g->saved_arr01['nextdate'] = $g->next['date'];
-        $g->saved_arr01['nexthour'] = $g->next['hour'];
-        $g->saved_arr01['nextminute'] = $g->next['minute'];
-        $g->saved_arr01['nextsecond'] = $g->next['second'];
+        $g->saved_arr01['last_date'] = $g->last['date'];
+        $g->saved_arr01['last_hour'] = $g->last['hour'];
+        $g->saved_arr01['last_minute'] = $g->last['minute'];
+        $g->saved_arr01['last_second'] = $g->last['second'];
+        $g->saved_arr01['next_date'] = $g->next['date'];
+        $g->saved_arr01['next_hour'] = $g->next['hour'];
+        $g->saved_arr01['next_minute'] = $g->next['minute'];
+        $g->saved_arr01['next_second'] = $g->next['second'];
         $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone (the hours minutes and seconds above are
         // for this timezone)
 

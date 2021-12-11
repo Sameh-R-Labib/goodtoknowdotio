@@ -26,7 +26,7 @@ class InduceATaskCreate
 
 
         // + + + Get $g->last and $g->next (which are timestamps) based on submitted:
-        // `timezone` `lastdate` `lasthour` `lastminute` `lastsecond` `nextdate` `nexthour` `nextminute` `nextsecond`
+        // `timezone` `last_date` `last_hour` `last_minute` `last_second` `next_date` `next_hour` `next_minute` `next_second`
 
         require CONTROLLERINCLUDES . DIRSEP . 'figure_out_next_and_last_epochs.php';
 
@@ -72,14 +72,14 @@ class InduceATaskCreate
                 $saved_arr01['cycle_type'] = $cycle_type;
                 $saved_arr01['comment'] = $comment;
                 $saved_arr01['timezone'] = $g->timezone; // this is the actual timezone the user had entered
-                $saved_arr01['lastdate'] = $g->lastdate;
-                $saved_arr01['nextdate'] = $g->nextdate;
-                $saved_arr01['lasthour'] = $g->lasthour;
-                $saved_arr01['nexthour'] = $g->nexthour;
-                $saved_arr01['lastminute'] = $g->lastminute;
-                $saved_arr01['nextminute'] = $g->nextminute;
-                $saved_arr01['lastsecond'] = $g->lastsecond;
-                $saved_arr01['nextsecond'] = $g->nextsecond;
+                $saved_arr01['last_date'] = $g->last_date;
+                $saved_arr01['next_date'] = $g->next_date;
+                $saved_arr01['last_hour'] = $g->last_hour;
+                $saved_arr01['next_hour'] = $g->next_hour;
+                $saved_arr01['last_minute'] = $g->last_minute;
+                $saved_arr01['next_minute'] = $g->next_minute;
+                $saved_arr01['last_second'] = $g->last_second;
+                $saved_arr01['next_second'] = $g->next_second;
 
 
                 // make form data survive the redirect

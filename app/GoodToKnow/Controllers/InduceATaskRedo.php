@@ -21,10 +21,10 @@ class InduceATaskRedo
          * The data we have:
          *   $g->saved_arr01['label'], $g->saved_arr01['cycle_type'],
          *   $g->saved_arr01['comment'], $g->saved_arr01['timezone'],
-         *   $g->saved_arr01['lastdate'], $g->saved_arr01['nextdate']
-         *   $g->saved_arr01['lasthour'], $g->saved_arr01['nexthour']
-         *   $g->saved_arr01['lastminute'], $g->saved_arr01['nextminute']
-         *   $g->saved_arr01['lastsecond'], $g->saved_arr01['nextsecond']
+         *   $g->saved_arr01['last_date'], $g->saved_arr01['next_date']
+         *   $g->saved_arr01['last_hour'], $g->saved_arr01['next_hour']
+         *   $g->saved_arr01['last_minute'], $g->saved_arr01['next_minute']
+         *   $g->saved_arr01['last_second'], $g->saved_arr01['next_second']
          *
          * This all came from or was derived from the first submit of data by the user.
          * We were diverted here because we perceived an anomaly.
