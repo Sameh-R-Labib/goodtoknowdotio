@@ -112,11 +112,11 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *
          * BankingTransactionForBalances fields in need of transforming:
          * - amount [comma separator for thousands]
-         * - time [human readable time]
+         * - time [human-readable time]
          * - balance [comma separator for thousands]
          *
          * BankingAcctForBalances fields in need of transformation.
-         * - start_time [human readable time]
+         * - start_time [human-readable time]
          * - start_balance [comma separator for thousands]
          *
          * Reverse the order of the transactions before displaying them.
@@ -129,17 +129,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         foreach ($g->array as $transaction) {
 
-            if (is_crypto($g->account->currency)) {
-
-                $transaction->amount = number_format($transaction->amount, 8);
-                $transaction->balance = number_format($transaction->balance, 8);
-
-            } else {
-
-                $transaction->amount = number_format($transaction->amount, 2);
-                $transaction->balance = number_format($transaction->balance, 2);
-
-            }
+            $transaction->amount = readable_amount_of_money($g->account->currency, $transaction->amount);
+            $transaction->balance = readable_amount_of_money($g->account->currency, $transaction->balance);
 
             $transaction->time = get_readable_time($transaction->time);
 
