@@ -39,12 +39,14 @@ class SpyCommoditiesSoldYearFilter
 
 
         foreach ($g->array as $item) {
+
             $item->time_bought = get_readable_time($item->time_bought);
             $item->time_sold = get_readable_time($item->time_sold);
             $item->price_bought = readable_amount_of_money($item->currency_transacted, $item->price_bought);
             $item->price_sold = readable_amount_of_money($item->currency_transacted, $item->price_sold);
             $item->profit = readable_amount_of_money($item->currency_transacted, $item->profit);
             $item->commodity_amount = readable_amount_of_money($item->commodity_type, $item->commodity_amount);
+
         }
 
 

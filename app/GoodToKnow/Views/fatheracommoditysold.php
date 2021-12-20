@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/FatherACommoditySoldProcessor/page" method="post">
-        <h1>Create a Commodity Sold Record</h1>
+        <h1>Create a Commodity Sold</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Warning: Records will be deleted automatically after the sixth year back.</span>
         </p>
@@ -11,34 +11,34 @@
             <p>
                 <label for="price_bought">Price Bought: </label>
                 <input id="price_bought" name="price_bought" type="text" value="<?= $g->saved_arr01['price_bought'] ?>"
-                       required minlength="1" maxlength="24" size="24" placeholder="150.24">
+                       required minlength="1" maxlength="33" size="33" placeholder="150.33">
             </p>
             <p>
                 <label for="price_sold">Price Sold <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts should have 2 decimal places ask admin
-                        to add your currency to list of fiat.</span></span>: </label>
+                tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to list of
+                            fiat.</span></span>: </label>
                 <input id="price_sold" name="price_sold" type="text" value="<?= $g->saved_arr01['price_sold'] ?>"
-                       required minlength="1" maxlength="24" size="24" placeholder="150.24">
+                       required minlength="1" maxlength="33" size="33" placeholder="150.33">
             </p>
             <p>
                 <label for="currency_transacted">Currency Transacted (✅ emoji): </label>
                 <input id="currency_transacted" name="currency_transacted" type="text"
-                       value="<?= $g->saved_arr01['currency_transacted'] ?>" required minlength="1"
-                       maxlength="15" size="15" placeholder="💵">
+                       value="<?= $g->saved_arr01['currency_transacted'] ?>" required
+                       minlength="1" maxlength="15" size="15" placeholder="💵">
             </p>
             <p>
                 <label for="commodity_amount">Commodity Amount <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts should have 2 decimal places ask admin
-                        to add your currency to the list of fiat.</span></span>: </label>
+                tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to the list of
+                            fiat.</span></span>: </label>
                 <input id="commodity_amount" name="commodity_amount" type="text"
-                       value="<?= $g->saved_arr01['commodity_amount'] ?>" required minlength="1" maxlength="24"
-                       size="24" placeholder="150.24">
+                       value="<?= $g->saved_arr01['commodity_amount'] ?>"
+                       required minlength="1" maxlength="33" size="33" placeholder="150.33">
             </p>
             <p>
                 <label for="commodity_type">Commodity Type (✅ emoji): </label>
                 <input id="commodity_type" name="commodity_type" type="text"
-                       value="<?= $g->saved_arr01['commodity_type'] ?>" required minlength="1" maxlength="15"
-                       size="15" placeholder="₿">
+                       value="<?= $g->saved_arr01['commodity_type'] ?>"
+                       required minlength="1" maxlength="15" size="15" placeholder="₿">
             </p>
             <p>
                 <label for="commodity_label">Commodity Label: </label>
@@ -56,7 +56,7 @@
             <p>
                 <label for="profit">Profit: </label>
                 <input id="profit" name="profit" type="text" value="<?= $g->saved_arr01['profit'] ?>"
-                       required minlength="1" maxlength="24" size="24" placeholder="150.24">
+                       required minlength="1" maxlength="33" size="33" placeholder="150.33">
             </p>
         </section>
         <?php require SUBMITABORT; ?>

@@ -37,9 +37,13 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
 
         foreach ($g->array as $item) {
+
             $item->time = get_readable_time($item->time);
+
             $item->comment = nl2br($item->comment, false);
+
             $item->amount = readable_amount_of_money($item->currency, $item->amount);
+
         }
 
 

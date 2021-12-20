@@ -13,14 +13,14 @@
             <p>
                 <label for="initial_balance">Initial BTC Balance: </label>
                 <input id="initial_balance" name="initial_balance" type="text" placeholder="0.01500002"
-                       value="<?= $g->saved_arr01['initial_balance'] ?>" required minlength="10" spellcheck="false"
-                       size="24" maxlength="24">
+                       value="<?= $g->saved_arr01['initial_balance'] ?>" required minlength="1" spellcheck="false"
+                       size="33" maxlength="33">
             </p>
             <p>
                 <label for="current_balance">Current BTC Balance: </label>
                 <input id="current_balance" name="current_balance" type="text" placeholder="0.01500002"
-                       value="<?= $g->saved_arr01['current_balance'] ?>" required minlength="10" spellcheck="false"
-                       size="24" maxlength="24">
+                       value="<?= $g->saved_arr01['current_balance'] ?>" required minlength="1" spellcheck="false"
+                       size="33" maxlength="33">
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>
@@ -32,8 +32,8 @@
                 tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="price_point" name="price_point" type="text" placeholder="0.00"
-                       value="<?= $g->saved_arr01['price_point'] ?>" minlength="1" spellcheck="false" size="24"
-                       maxlength="24">
+                       value="<?= $g->saved_arr01['price_point'] ?>" minlength="1" spellcheck="false" size="33"
+                       maxlength="33">
             </p>
             <hr>
             <p>Time at Purchase</p>

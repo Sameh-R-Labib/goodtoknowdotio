@@ -31,7 +31,7 @@
                 tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="amount" name="amount" type="text" value="<?= $g->saved_arr01['amount'] ?>" required
-                       minlength="1" maxlength="24" size="24" placeholder="150.24">
+                       minlength="1" maxlength="33" size="33" placeholder="150.24">
             </p>
             <p>
                 <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
