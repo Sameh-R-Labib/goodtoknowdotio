@@ -30,7 +30,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_received = integer_form_field_prep('year_received', 1992, 65535);
+        $g->tax_year = integer_form_field_prep('year_received', 1992, 65535);
 
 
         /**
@@ -40,7 +40,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
         $num_affected_rows = 0;
 
         $sql = 'DELETE FROM `taxable_income_event` WHERE `year_received` = ';
-        $sql .= $g->db->real_escape_string($year_received);
+        $sql .= $g->db->real_escape_string($g->tax_year);
 
         try {
 
@@ -74,7 +74,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
          * 3) Give confirmation of deletion.
          */
 
-        $message = " The purge of Taxable Income Events for the year <b>$year_received</b> has resulted in deletion of <b>";
+        $message = " The purge of Taxable Income Events for the year <b>$g->tax_year</b> has resulted in deletion of <b>";
         $message .= $num_affected_rows . "</b> records. ";
 
         breakout($message);

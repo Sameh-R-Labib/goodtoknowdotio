@@ -46,7 +46,7 @@ class WriteOverATaxableIncomeEventUpdate
 
         require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $year_received = integer_form_field_prep('year_received', 1992, 65535);
+        $g->tax_year = integer_form_field_prep('year_received', 1992, 65535);
 
 
         // comment
@@ -103,7 +103,7 @@ class WriteOverATaxableIncomeEventUpdate
 
                 // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
                 $saved_arr01['label'] = $label;
-                $saved_arr01['year_received'] = $year_received;
+                $saved_arr01['year_received'] = $g->tax_year;
                 $saved_arr01['currency'] = $currency;
                 $saved_arr01['amount'] = $amount;
                 $saved_arr01['comment'] = $comment;
@@ -155,7 +155,7 @@ class WriteOverATaxableIncomeEventUpdate
          */
 
         $object->label = $label;
-        $object->year_received = $year_received;
+        $object->year_received = $g->tax_year;
         $object->comment = $comment;
         $object->amount = $amount;
         $object->currency = $currency;

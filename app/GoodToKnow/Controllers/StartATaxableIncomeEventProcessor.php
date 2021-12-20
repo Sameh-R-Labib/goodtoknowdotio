@@ -29,7 +29,7 @@ class StartATaxableIncomeEventProcessor
 
         $label = standard_form_field_prep('label', 3, 264);
 
-        $year_received = integer_form_field_prep('year_received', 1992, 65535);
+        $g->tax_year = integer_form_field_prep('year_received', 1992, 65535);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
@@ -76,7 +76,7 @@ class StartATaxableIncomeEventProcessor
 
                 // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
                 $saved_arr01['label'] = $label;
-                $saved_arr01['year_received'] = $year_received;
+                $saved_arr01['year_received'] = $g->tax_year;
                 $saved_arr01['currency'] = $currency;
                 $saved_arr01['amount'] = $amount;
                 $saved_arr01['comment'] = $comment;
@@ -112,7 +112,7 @@ class StartATaxableIncomeEventProcessor
          * Create a taxable_income_event array for the record.
          */
 
-        $array_record = ['user_id' => $g->user_id, 'time' => $g->time, 'year_received' => $year_received,
+        $array_record = ['user_id' => $g->user_id, 'time' => $g->time, 'year_received' => $g->tax_year,
             'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];
 
 
