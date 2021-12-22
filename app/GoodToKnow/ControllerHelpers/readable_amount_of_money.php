@@ -9,23 +9,36 @@ namespace GoodToKnow\ControllerHelpers;
  */
 function readable_amount_of_money(string $currency, string $amount): string
 {
+
     /**
      * This function will format a monetary amount so
      * that (A) the whole part will have comma separated
-     * thousands and (B) it will result in decimal places
-     * according to the following rules:
-     * 1) If the currency is a government fiat currency then only 2 decimal places will be in the result.
-     * 2) If not then (assumed to be a cryptocurrency) 8 decimal places will be in the result.
-     *
-     * It is assumed that the parameter $amount is a string version of a 16 digit floating number having 8 decimal places.
+     * thousands and (B) it will result in an appropriate
+     * quantity of decimal places.
      */
 
     require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
+    require_once CONTROLLERHELPERS . DIRSEP . 'is_sixteen_decimal_places_currency.php';
+
 
     if (!is_crypto($currency)) {
 
+        // It's fiat
+
         return number_format($amount, 2);
 
+    } elseif (is_sixteen_decimal_places_currency($currency)) {
+
+        // It's a sixteen decimal place currency
+
+        return number_format($amount, 16);
+
+    } else {
+
+        // It's an eight decimal place currency
+
+        return number_format($amount, 8);
+
     }
-    return number_format($amount, 8);
+
 }
