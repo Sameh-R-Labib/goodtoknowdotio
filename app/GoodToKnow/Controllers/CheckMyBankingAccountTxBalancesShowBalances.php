@@ -3,7 +3,6 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
-use function GoodToKnow\ControllerHelpers\is_crypto;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 use GoodToKnow\Models\BankingTransactionForBalances;
@@ -23,6 +22,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    be for the currently chosen BankingAcctForBalances.
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
          *    object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         *    Also, we're formatting the amount for each transaction.
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
          *    will be wrong if admin has deleted transactions older than 90 days and the start
          *    time for the BankingAcctForBalances is set to a time older than 90 days.
@@ -82,6 +82,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         /**
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
          * object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         * Also, we're formatting the amount for each transaction.
          */
 
         $running_total = $g->account->start_balance;
@@ -90,9 +91,11 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
             $running_total += $transaction->amount;
 
-            if (abs($running_total) >= abs(0.00000000001)) {
+            $transaction->amount = readable_amount_of_money($g->account->currency, $transaction->amount);
 
-                $transaction->balance = $running_total;
+            if (abs($running_total) >= abs(0.0000000000000001)) {
+
+                $transaction->balance = readable_amount_of_money($g->account->currency, $running_total);
 
             } else {
 
