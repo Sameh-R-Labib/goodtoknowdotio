@@ -87,21 +87,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-
-        // I need to inspect $g->account->start_balance, $g->array
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$g->account->start_balance: </p>\n<pre>";
-        var_dump($g->account->start_balance);
-        echo "</pre>\n";
-        echo "<p>Var_dump \$g->array: </p>\n<pre>";
-        var_dump($g->array);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
         $running_total = (float)$g->account->start_balance;
 
         foreach ($g->array as $transaction) {
@@ -110,7 +95,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
             $transaction->amount = readable_amount_of_money($g->account->currency, $transaction->amount);
 
-            if (abs($running_total) >= abs(0.0000000000000001)) {
+            if (abs($running_total) >= 0.0000000000000001) {
 
                 $running_total = (string)$running_total;
 
