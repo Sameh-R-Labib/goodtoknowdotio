@@ -2,12 +2,12 @@
 
 namespace GoodToKnow\Models;
 
-class Bitcoin extends GoodObject
+class Commodity extends GoodObject
 {
     /**
      * @var string
      */
-    protected static $table_name = "bitcoin";
+    protected static $table_name = "commodity";
 
     /**
      * @var array

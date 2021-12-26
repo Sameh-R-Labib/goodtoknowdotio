@@ -54,8 +54,8 @@ switch ($g->page) {
     case 'CPBankingAccounts':
         echo "<a href=\"/ax1/CPBankingAccounts/page\">CRUD For Bank Accounts And Their Starting Balances</a>";
         break;
-    case 'CPCrypto':
-        echo "<a href=\"/ax1/CPCrypto/page\">Crypto</a>";
+    case 'CPCommodities':
+        echo "<a href=\"/ax1/CPCommodities/page\">Commodities</a>";
         break;
     case 'CPTaxDeductions':
         echo "<a href=\"/ax1/CPTaxDeductions/page\">Tax Write-offs</a>";

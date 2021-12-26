@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPCrypto
+class CPCommodities
 {
     function page()
     {
@@ -12,18 +12,18 @@ class CPCrypto
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPCrypto';
+        $g->page = 'CPCommodities';
 
 
         $g->show_poof = true;
 
 
-        $g->html_title = 'Crypto';
+        $g->html_title = 'Commodities';
 
 
-        $g->message .= ' Manage crypto. ';
+        $g->message .= ' Manage commodities. ';
 
 
-        require VIEWS . DIRSEP . 'cpcrypto.php';
+        require VIEWS . DIRSEP . 'cpcommodities.php';
     }
 }
