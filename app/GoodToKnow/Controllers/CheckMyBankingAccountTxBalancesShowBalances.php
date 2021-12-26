@@ -22,7 +22,6 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    be for the currently chosen BankingAcctForBalances.
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
          *    object. This gets assigned to each BankingTransactionForBalances object's balance field.
-         *    Also, we're formatting the amount for each transaction.
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
          *    will be wrong if admin has deleted transactions older than 90 days and the start
          *    time for the BankingAcctForBalances is set to a time older than 90 days.
@@ -82,10 +81,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         /**
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
          * object. This gets assigned to each BankingTransactionForBalances object's balance field.
-         * Also, we're formatting the amount for each transaction.
          */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         $running_total = (float)$g->account->start_balance;
 
@@ -93,15 +89,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
             $running_total += (float)$transaction->amount;
 
-            $transaction->amount = readable_amount_of_money($g->account->currency, $transaction->amount);
-
-            if (abs($running_total) >= 0.0000000000000001) {
-
-                $running_total = (string)$running_total;
-
-                $transaction->balance = readable_amount_of_money($g->account->currency, $running_total);
-
-            } else {
+            if (!abs($running_total) >= 0.0000000000000001) {
 
                 $transaction->balance = 0.0;
 
@@ -129,7 +117,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * Reverse the order of the transactions before displaying them.
          */
 
-
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
 
