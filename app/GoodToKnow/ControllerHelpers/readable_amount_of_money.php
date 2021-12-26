@@ -25,6 +25,12 @@ function readable_amount_of_money(string $currency, string $amount): string
 
         // It's fiat
 
+        // Debug code
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$amount: </p>\n<pre>";
+        var_dump($amount);
+        echo "</pre>\n";
+
         return number_format($amount, 2);
 
     } elseif (is_sixteen_decimal_places_currency($currency)) {
