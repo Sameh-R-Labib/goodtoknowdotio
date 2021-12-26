@@ -89,7 +89,11 @@ class CheckMyBankingAccountTxBalancesShowBalances
 
             $running_total += (float)$transaction->amount;
 
-            if (!abs($running_total) >= 0.0000000000000001) {
+            if (abs($running_total) >= 0.0000000000000001) {
+
+                $transaction->balance = $running_total;
+
+            } else {
 
                 $transaction->balance = 0.0;
 
@@ -125,7 +129,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         foreach ($g->array as $transaction) {
 
             $transaction->amount = readable_amount_of_money($g->account->currency, $transaction->amount);
-            $transaction->balance = readable_amount_of_money($g->account->currency, $transaction->balance);
+            $transaction->balance = readable_amount_of_money($g->account->currency, (string)$transaction->balance);
 
             $transaction->time = get_readable_time($transaction->time);
 
