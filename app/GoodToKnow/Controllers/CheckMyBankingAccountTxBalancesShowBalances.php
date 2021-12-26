@@ -85,6 +85,8 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * Also, we're formatting the amount for each transaction.
          */
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         $running_total = $g->account->start_balance;
 
         foreach ($g->array as $transaction) {
@@ -125,7 +127,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          * Reverse the order of the transactions before displaying them.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'is_crypto.php';
 
