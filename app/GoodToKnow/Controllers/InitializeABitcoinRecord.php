@@ -28,6 +28,7 @@ class InitializeABitcoinRecord
          */
 
         $g->saved_arr01['address'] = '';
+        $g->saved_arr01['commodity'] = '';
         $g->saved_arr01['initial_balance'] = '';
         $g->saved_arr01['current_balance'] = '';
         $g->saved_arr01['currency'] = '';
