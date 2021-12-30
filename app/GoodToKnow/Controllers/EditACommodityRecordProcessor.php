@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class EditACommodityRecordProcessor
 {
@@ -38,10 +39,14 @@ class EditACommodityRecordProcessor
 
 
         /**
-         * Make it so that if price_point is fiat then price_point has only two decimal places.
+         * Make it so that these have the correct quantity of decimal places.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
+
+        $g->commodity_object->initial_balance = readable_amount_of_money($g->commodity_object->commodity, $g->commodity_object->initial_balance);
+
+        $g->commodity_object->current_balance = readable_amount_of_money($g->commodity_object->commodity, $g->commodity_object->current_balance);
 
         $g->commodity_object->price_point = readable_amount_no_commas($g->commodity_object->currency, $g->commodity_object->price_point);
 
@@ -64,6 +69,7 @@ class EditACommodityRecordProcessor
          */
 
         $g->saved_arr01['address'] = $g->commodity_object->address;
+        $g->saved_arr01['commodity'] = $g->commodity_object->commodity;
         $g->saved_arr01['initial_balance'] = $g->commodity_object->initial_balance;
         $g->saved_arr01['current_balance'] = $g->commodity_object->current_balance;
         $g->saved_arr01['currency'] = $g->commodity_object->currency;
