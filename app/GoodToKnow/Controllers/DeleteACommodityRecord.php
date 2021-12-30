@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class DeleteABitcoinRecord
+class DeleteACommodityRecord
 {
     function page()
     {
@@ -18,9 +18,9 @@ class DeleteABitcoinRecord
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
 
 
-        require VIEWS . DIRSEP . 'deleteabitcoinrecord.php';
+        require VIEWS . DIRSEP . 'deleteacommodityrecord.php';
     }
 }

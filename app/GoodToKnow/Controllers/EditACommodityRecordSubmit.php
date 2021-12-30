@@ -3,17 +3,17 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Commodity;
-use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
+use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class EditABitcoinRecordSubmit
+class EditACommodityRecordSubmit
 {
     function page()
     {
         /**
          * This function will:
-         * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
+         * 1) Validate the submitted editacommodityrecordprocessor.php form data.
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
@@ -28,17 +28,17 @@ class EditABitcoinRecordSubmit
 
 
         /**
-         * 1) Validate the submitted editabitcoinrecordprocessor.php form data.
+         * 1) Validate the submitted editacommodityrecordprocessor.php form data.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'commodity_address_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
 
         // address
 
-        $address = bitcoin_address_form_field_prep('address');
+        $address = commodity_address_form_field_prep('address');
 
 
         // initial_balance
@@ -119,7 +119,7 @@ class EditABitcoinRecordSubmit
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/EditABitcoinRecordRedo/page");
+                redirect_to("/ax1/EditACommodityRecordRedo/page");
 
             }
 

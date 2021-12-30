@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class DeleteABitcoinRecordProcessor
+class DeleteACommodityRecordProcessor
 {
     function page()
     {
@@ -23,7 +23,7 @@ class DeleteABitcoinRecordProcessor
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_record_of_user.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_record_of_user.php';
 
 
         /**
@@ -35,10 +35,10 @@ class DeleteABitcoinRecordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_commodity_record.php';
 
         $g->html_title = 'Are you sure?';
 
-        require VIEWS . DIRSEP . 'deleteabitcoinrecordprocessor.php';
+        require VIEWS . DIRSEP . 'deleteacommodityrecordprocessor.php';
     }
 }

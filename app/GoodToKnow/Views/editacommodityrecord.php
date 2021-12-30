@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <?php global $g; ?>
-    <form action="/ax1/EditABitcoinRecordProcessor/page" method="post">
+    <form action="/ax1/EditACommodityRecordProcessor/page" method="post">
         <h1>Edit a Commodity Record</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>

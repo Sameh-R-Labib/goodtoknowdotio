@@ -2,16 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-class InitializeABitcoinRecord
+class InitializeACommodityRecord
 {
     function page()
     {
         /**
-         * F.Y.I.: When we started coding this feature we assumed the only
-         * Commodity was Bitcoin. We should replace the word Bitcoin with
-         * the word Commodity in the class and file names of this feature,
-         * but we've decided not to do so.
-         *
          * This feature enables a user to create a database record in the
          * Commodity table.
          */
@@ -57,6 +52,6 @@ class InitializeABitcoinRecord
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'initializeabitcoinrecord.php';
+        require VIEWS . DIRSEP . 'initializeacommodityrecord.php';
     }
 }

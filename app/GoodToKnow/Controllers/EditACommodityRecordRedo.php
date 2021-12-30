@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class EditABitcoinRecordRedo
+class EditACommodityRecordRedo
 {
     function page()
     {
@@ -22,6 +22,6 @@ class EditABitcoinRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'editabitcoinrecordprocessor.php';
+        require VIEWS . DIRSEP . 'editacommodityrecordprocessor.php';
     }
 }

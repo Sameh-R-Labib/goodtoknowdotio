@@ -11,7 +11,7 @@ class RecurringPaymentSeeMyRecords
     function page()
     {
         /**
-         * Similar to BitcoinSeeMyRecords.
+         * Similar to CommoditySeeMyRecords.
          */
 
 

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class InitializeABitcoinRecordRedo
+class InitializeACommodityRecordRedo
 {
     function page()
     {
@@ -22,6 +22,6 @@ class InitializeABitcoinRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'initializeabitcoinrecord.php';
+        require VIEWS . DIRSEP . 'initializeacommodityrecord.php';
     }
 }

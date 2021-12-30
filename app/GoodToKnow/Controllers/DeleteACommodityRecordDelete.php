@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Commodity;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class DeleteABitcoinRecordDelete
+class DeleteACommodityRecordDelete
 {
     function page()
     {

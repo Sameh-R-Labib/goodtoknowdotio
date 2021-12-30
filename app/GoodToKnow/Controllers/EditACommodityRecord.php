@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class EditABitcoinRecord
+class EditACommodityRecord
 {
     function page()
     {
@@ -20,9 +20,9 @@ class EditABitcoinRecord
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
 
 
-        require VIEWS . DIRSEP . 'editabitcoinrecord.php';
+        require VIEWS . DIRSEP . 'editacommodityrecord.php';
     }
 }

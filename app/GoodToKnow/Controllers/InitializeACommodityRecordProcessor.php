@@ -3,11 +3,11 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Commodity;
-use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
+use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class InitializeABitcoinRecordProcessor
+class InitializeACommodityRecordProcessor
 {
     function page()
     {
@@ -22,11 +22,11 @@ class InitializeABitcoinRecordProcessor
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'commodity_address_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
-        $address = bitcoin_address_form_field_prep('address');
+        $address = commodity_address_form_field_prep('address');
 
         $initial_balance = float_form_field_prep('initial_balance', 0.0, 21000000000.0);
 
@@ -96,7 +96,7 @@ class InitializeABitcoinRecordProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/InitializeABitcoinRecordRedo/page");
+                redirect_to("/ax1/InitializeACommodityRecordRedo/page");
 
             }
 

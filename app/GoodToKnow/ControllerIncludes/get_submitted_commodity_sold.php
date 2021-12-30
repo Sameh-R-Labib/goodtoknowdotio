@@ -1,6 +1,6 @@
 <?php
 
-use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
+use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -16,7 +16,7 @@ global $g;
 
 require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-require_once CONTROLLERHELPERS . DIRSEP . 'bitcoin_address_form_field_prep.php';
+require_once CONTROLLERHELPERS . DIRSEP . 'commodity_address_form_field_prep.php';
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
 
@@ -68,10 +68,10 @@ $g->commodity_type = standard_form_field_prep('commodity_type', 1, 15);
 /**
  * Get $g->commodity_label
  *
- * Most typically this is a bitcoin address or something which can be perceived like it.
+ * Most typically this is a bitcoin address. But, it can be a commodity address / label.
  */
 
-$g->commodity_label = bitcoin_address_form_field_prep('commodity_label');
+$g->commodity_label = commodity_address_form_field_prep('commodity_label');
 
 
 /**

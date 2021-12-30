@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/InitializeABitcoinRecordProcessor/page" method="post">
+    <form action="/ax1/InitializeACommodityRecordProcessor/page" method="post">
         <h1>Create a Commodity Record</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>

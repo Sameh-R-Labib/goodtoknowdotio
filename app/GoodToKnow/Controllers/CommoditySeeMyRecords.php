@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class BitcoinSeeMyRecords
+class CommoditySeeMyRecords
 {
     function page()
     {
@@ -15,7 +15,7 @@ class BitcoinSeeMyRecords
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_records_of_the_user.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
 
 
         /**
@@ -28,7 +28,7 @@ class BitcoinSeeMyRecords
 
         foreach ($g->array_of_commodity_objects as $g->commodity_object) {
 
-            require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
+            require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_commodity_record.php';
 
         }
 
@@ -39,12 +39,12 @@ class BitcoinSeeMyRecords
 
         $g->html_title = 'Your ₿ records';
 
-        $g->page = 'BitcoinSeeMyRecords';
+        $g->page = 'CommoditySeeMyRecords';
 
         $g->show_poof = true;
 
         $g->message .= ' Here are your commodity records. ';
 
-        require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';
+        require VIEWS . DIRSEP . 'commodityseemyrecords.php';
     }
 }

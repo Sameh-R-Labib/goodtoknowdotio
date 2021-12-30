@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
-class EditABitcoinRecordProcessor
+class EditACommodityRecordProcessor
 {
     function page()
     {
@@ -29,7 +29,7 @@ class EditABitcoinRecordProcessor
         $g->html_title = 'Edit the commodity record';
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_bitcoin_record_of_user.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_record_of_user.php';
 
 
         /**
@@ -86,6 +86,6 @@ class EditABitcoinRecordProcessor
 
         $_SESSION['is_first_attempt'] = true;
 
-        require VIEWS . DIRSEP . 'editabitcoinrecordprocessor.php';
+        require VIEWS . DIRSEP . 'editacommodityrecordprocessor.php';
     }
 }

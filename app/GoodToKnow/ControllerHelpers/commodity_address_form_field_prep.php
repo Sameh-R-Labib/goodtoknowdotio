@@ -6,7 +6,7 @@ namespace GoodToKnow\ControllerHelpers;
  * @param string $field_name
  * @return string
  */
-function bitcoin_address_form_field_prep(string $field_name): string
+function commodity_address_form_field_prep(string $field_name): string
 {
     /**
      * Make sure that a form was submitted.
