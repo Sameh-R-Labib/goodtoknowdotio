@@ -16,7 +16,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/UserRoster/page\">User Roster</a>";
         break;
     case 'BitcoinSeeMyRecords':
-        echo "<a href=\"/ax1/BitcoinSeeMyRecords/page\">List My Bitcoin Records</a>";
+        echo "<a href=\"/ax1/BitcoinSeeMyRecords/page\">List My Commodity Records</a>";
         break;
     case 'About':
         echo "What is this site?";

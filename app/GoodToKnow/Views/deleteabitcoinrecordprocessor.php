@@ -4,16 +4,16 @@
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
-        <p><b>Time of purchase: </b><?= $g->bitcoin_object->time ?></p>
-        <p><b>Address: </b><?= $g->bitcoin_object->address ?></p>
-        <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $g->bitcoin_object->currency ?>
-            &nbsp;<?= $g->bitcoin_object->price_point ?>
+        <p><b>Time of purchase: </b><?= $g->commodity_object->time ?></p>
+        <p><b>Address: </b><?= $g->commodity_object->address ?></p>
+        <p><b>Price of 1₿ at 🕒 of purchase: </b><?= $g->commodity_object->currency ?>
+            &nbsp;<?= $g->commodity_object->price_point ?>
         </p>
-        <p><b>Initial Balance: </b>₿&nbsp;<?= $g->bitcoin_object->initial_balance ?></p>
-        <p><b>Current Balance: </b>₿&nbsp;<?= $g->bitcoin_object->current_balance ?></p>
-        <p><?= $g->bitcoin_object->comment ?></p>
+        <p><b>Initial Balance: </b>₿&nbsp;<?= $g->commodity_object->initial_balance ?></p>
+        <p><b>Current Balance: </b>₿&nbsp;<?= $g->commodity_object->current_balance ?></p>
+        <p><?= $g->commodity_object->comment ?></p>
         <p>&nbsp;</p>
-        <p>Are you sure you want me to delete "<?= $g->bitcoin_object->address ?>".</p>
+        <p>Are you sure you want me to delete "<?= $g->commodity_object->address ?>".</p>
         <section>
             <label for="yes" class="radio">
                 <input type="radio" id="yes" name="choice" value="yes">

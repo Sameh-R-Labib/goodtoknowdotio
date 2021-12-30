@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Bitcoin;
+use GoodToKnow\Models\Commodity;
 use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -12,7 +12,7 @@ class InitializeABitcoinRecordProcessor
     function page()
     {
         /**
-         * Create a database record in the bitcoin table using the submitted data.
+         * Create a database record in the commodity table using the submitted data.
          *
          */
 
@@ -32,6 +32,8 @@ class InitializeABitcoinRecordProcessor
 
         $current_balance = float_form_field_prep('current_balance', 0.0, 21000000000.0);
 
+        $commodity = standard_form_field_prep('commodity', 1, 15);
+
         $currency = standard_form_field_prep('currency', 1, 15);
 
         $price_point = float_form_field_prep('price_point', 0.0, 999999999999999.99);
@@ -49,7 +51,7 @@ class InitializeABitcoinRecordProcessor
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * A correct time entry for a Bitcoin record would be in the past.
+         * A correct time entry for a Commodity record would be in the past.
          *
          * The currently submitted form data will be used to conveniently
          * populate the redo form.
@@ -77,6 +79,7 @@ class InitializeABitcoinRecordProcessor
 
                 // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
                 $saved_arr01['address'] = $address;
+                $saved_arr01['commodity'] = $commodity;
                 $saved_arr01['initial_balance'] = $initial_balance;
                 $saved_arr01['current_balance'] = $current_balance;
                 $saved_arr01['currency'] = $currency;
@@ -111,19 +114,19 @@ class InitializeABitcoinRecordProcessor
 
 
         /**
-         * Create a Bitcoin array for the record.
+         * Create a Commodity array for the record.
          */
 
-        $array_bitcoin_record = ['user_id' => $g->user_id, 'address' => $address, 'initial_balance' => $initial_balance,
-            'current_balance' => $current_balance, 'currency' => $currency, 'price_point' => $price_point,
-            'time' => $g->time, 'comment' => $comment];
+        $array_commodity_record = ['user_id' => $g->user_id, 'address' => $address, 'commodity' => $commodity,
+            'initial_balance' => $initial_balance, 'current_balance' => $current_balance, 'currency' => $currency,
+            'price_point' => $price_point, 'time' => $g->time, 'comment' => $comment];
 
 
         /**
-         * Make the array into an in memory Bitcoin object for the record.
+         * Make the array into an in memory Commodity object for the record.
          */
 
-        $bitcoin_object = Bitcoin::array_to_object($array_bitcoin_record);
+        $commodity_object = Commodity::array_to_object($array_commodity_record);
 
 
         /**
@@ -132,18 +135,18 @@ class InitializeABitcoinRecordProcessor
 
         get_db();
 
-        $result = $bitcoin_object->save();
+        $result = $commodity_object->save();
 
         if (!$result) {
 
-            breakout(' The save method for Bitcoin returned false. ');
+            breakout(' The save method for Commodity returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for Bitcoin did not return false but it did send back a message.
-             Therefore, it probably did not create the Bitcoin record. ');
+            breakout(' The save method for Commodity did not return false but it did send back a message.
+             Therefore, it probably did not create the Commodity record. ');
 
         }
 
@@ -152,6 +155,6 @@ class InitializeABitcoinRecordProcessor
          * Wrap it up.
          */
 
-        breakout(' A new bitcoin record was created 👏. ');
+        breakout(' A new commodity record was created 👏. ');
     }
 }

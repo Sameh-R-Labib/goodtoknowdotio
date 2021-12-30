@@ -468,7 +468,7 @@ class AppState
     /**
      * @var null|object
      */
-    public $bitcoin_object;
+    public $commodity_object;
 
 
     /**
@@ -546,7 +546,7 @@ class AppState
     /**
      * @var array
      */
-    public $array_of_bitcoin_objects;
+    public $array_of_commodity_objects;
 
 
     /**
@@ -919,7 +919,7 @@ class AppState
 
         $this->topic_object = null;
 
-        $this->bitcoin_object = null;
+        $this->commodity_object = null;
 
         $this->user_object = null;
 
@@ -945,7 +945,7 @@ class AppState
 
         $this->array_of_recurring_payment_objects = [];
 
-        $this->array_of_bitcoin_objects = [];
+        $this->array_of_commodity_objects = [];
 
         $this->array_of_objects = [];
 

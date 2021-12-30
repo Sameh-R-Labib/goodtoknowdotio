@@ -7,7 +7,7 @@ class DeleteABitcoinRecord
     function page()
     {
         /**
-         * presenting a form for getting the user to tell us which Bitcoin record he wants to delete.
+         * presenting a form for getting the user to tell us which Commodity record he wants to delete.
          * It will present a series of radio buttons to choose from.
          */
 

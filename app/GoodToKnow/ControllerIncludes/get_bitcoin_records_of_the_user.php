@@ -1,24 +1,24 @@
 <?php
 
-use GoodToKnow\Models\Bitcoin;
+use GoodToKnow\Models\Commodity;
 
 
 global $g;
 
 
 /**
- * Get an array of Bitcoin objects
+ * Get an array of Commodity objects
  * belonging to the current user.
  */
 
-$sql = 'SELECT * FROM `bitcoin` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
+$sql = 'SELECT * FROM `commodity` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 
-$g->array_of_bitcoin_objects = Bitcoin::find_by_sql($sql);
+$g->array_of_commodity_objects = Commodity::find_by_sql($sql);
 
-if (!$g->array_of_bitcoin_objects || !empty($g->message)) {
+if (!$g->array_of_commodity_objects || !empty($g->message)) {
 
-    breakout(' I could NOT find any bitcoin records ¯\_(ツ)_/¯. ');
+    breakout(' I could NOT find any commodity records ¯\_(ツ)_/¯. ');
 
 }
 
-$g->html_title = 'Which bitcoin record?';
+$g->html_title = 'Which commodity record?';

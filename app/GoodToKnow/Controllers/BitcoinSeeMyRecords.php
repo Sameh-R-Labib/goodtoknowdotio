@@ -26,7 +26,7 @@ class BitcoinSeeMyRecords
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
-        foreach ($g->array_of_bitcoin_objects as $g->bitcoin_object) {
+        foreach ($g->array_of_commodity_objects as $g->commodity_object) {
 
             require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_bitcoin_record.php';
 
@@ -43,7 +43,7 @@ class BitcoinSeeMyRecords
 
         $g->show_poof = true;
 
-        $g->message .= ' Here are your ₿ records. ';
+        $g->message .= ' Here are your commodity records. ';
 
         require VIEWS . DIRSEP . 'bitcoinseemyrecords.php';
     }

@@ -8,7 +8,7 @@ class InitializeABitcoinRecord
     {
         /**
          * F.Y.I.: When we started coding this feature we assumed the only
-         * Commodity was Bitcoin. We should replace the wor Bitcoin with
+         * Commodity was Bitcoin. We should replace the word Bitcoin with
          * the word Commodity in the class and file names of this feature,
          * but we've decided not to do so.
          *
@@ -23,7 +23,7 @@ class InitializeABitcoinRecord
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->html_title = 'Create a New Bitcoin Record';
+        $g->html_title = 'Create a New Commodity Record';
 
 
         /**

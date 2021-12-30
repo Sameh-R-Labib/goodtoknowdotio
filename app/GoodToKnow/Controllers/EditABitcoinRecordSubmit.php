@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Bitcoin;
+use GoodToKnow\Models\Commodity;
 use function GoodToKnow\ControllerHelpers\bitcoin_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -21,7 +21,7 @@ class EditABitcoinRecordSubmit
 
 
         global $g;
-        // $g->saved_int01 bitcoin record id
+        // $g->saved_int01 commodity record id
 
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
@@ -75,7 +75,7 @@ class EditABitcoinRecordSubmit
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * A correct time entry for a Bitcoin record would be in the past.
+         * A correct time entry for a Commodity record would be in the past.
          *
          * The currently submitted form data will be used to conveniently
          * populate the redo form.
@@ -142,11 +142,11 @@ class EditABitcoinRecordSubmit
 
         get_db();
 
-        $g->bitcoin_object = Bitcoin::find_by_id($g->saved_int01);
+        $g->commodity_object = Commodity::find_by_id($g->saved_int01);
 
-        if (!$g->bitcoin_object) {
+        if (!$g->commodity_object) {
 
-            breakout(' Unexpectedly I could not find that bitcoin record. ');
+            breakout(' Unexpectedly I could not find that commodity record. ');
 
         }
 
@@ -155,24 +155,24 @@ class EditABitcoinRecordSubmit
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
 
-        $g->bitcoin_object->address = $address;
-        $g->bitcoin_object->initial_balance = $initial_balance;
-        $g->bitcoin_object->current_balance = $current_balance;
-        $g->bitcoin_object->currency = $currency;
-        $g->bitcoin_object->price_point = $price_point;
-        $g->bitcoin_object->time = $g->time;
-        $g->bitcoin_object->comment = $comment;
+        $g->commodity_object->address = $address;
+        $g->commodity_object->initial_balance = $initial_balance;
+        $g->commodity_object->current_balance = $current_balance;
+        $g->commodity_object->currency = $currency;
+        $g->commodity_object->price_point = $price_point;
+        $g->commodity_object->time = $g->time;
+        $g->commodity_object->comment = $comment;
 
 
         /**
          * 4) Update/save the updated record in the database.
          */
 
-        $result = $g->bitcoin_object->save();
+        $result = $g->commodity_object->save();
 
         if ($result === false) {
 
-            breakout(' Failed operation to save the Bitcoin object. ');
+            breakout(' Failed operation to save the Commodity object. ');
 
         }
 
@@ -181,6 +181,6 @@ class EditABitcoinRecordSubmit
          * Report success.
          */
 
-        breakout(" I've updated address {$g->bitcoin_object->address}'s record. ");
+        breakout(" I've updated address {$g->commodity_object->address}'s record. ");
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-use GoodToKnow\Models\Bitcoin;
+use GoodToKnow\Models\Commodity;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $g;
 
 
 /**
- * Determines the id of the bitcoin record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
+ * Determines the id of the commodity record from $_POST['choice'] and stores it in $_SESSION['saved_int01'].
  */
 
 require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
@@ -18,14 +18,14 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 
 /**
- * Retrieve the Bitcoin object with that id from the database.
+ * Retrieve the Commodity object with that id from the database.
  */
 
-$g->bitcoin_object = Bitcoin::find_by_id($chosen_id);
+$g->commodity_object = Commodity::find_by_id($chosen_id);
 
-if (!$g->bitcoin_object) {
+if (!$g->commodity_object) {
 
-    breakout(' Unexpectedly I could not find that bitcoin record. ');
+    breakout(' Unexpectedly I could not find that commodity record. ');
 
 }
 
@@ -34,7 +34,7 @@ if (!$g->bitcoin_object) {
  * Verify that this object belongs to the user.
  */
 
-if ($g->bitcoin_object->user_id != $g->user_id) {
+if ($g->commodity_object->user_id != $g->user_id) {
 
     breakout(' Error 8006667. ');
 

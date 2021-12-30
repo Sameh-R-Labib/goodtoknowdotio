@@ -7,9 +7,9 @@ class EditABitcoinRecord
     function page()
     {
         /**
-         * This feature is for editing/updating a Bitcoin record.
+         * This feature is for editing/updating a Commodity record.
          *
-         * This route is for presenting a form for getting the user to tell us which Bitcoin record he wants to edit.
+         * This route is for presenting a form for getting the user to tell us which Commodity record he wants to edit.
          * It will present a series of radio buttons to choose from.
          */
 

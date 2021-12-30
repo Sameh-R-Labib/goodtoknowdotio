@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Bitcoin;
+use GoodToKnow\Models\Commodity;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class DeleteABitcoinRecordDelete
@@ -10,7 +10,7 @@ class DeleteABitcoinRecordDelete
     function page()
     {
         /**
-         * Here we will read the choice of whether to delete the bitcoin record. If yes then delete it.
+         * Here we will read the choice of whether to delete the commodity record. If yes then delete it.
          * On the other hand if no then reset some session variables and redirect to the home page.
          */
 
@@ -42,26 +42,26 @@ class DeleteABitcoinRecordDelete
 
         get_db();
 
-        $bitcoin = Bitcoin::find_by_id($g->saved_int01);
+        $commodity = Commodity::find_by_id($g->saved_int01);
 
-        if (!$bitcoin) {
+        if (!$commodity) {
 
-            breakout(' I was NOT able to find the bitcoin record. ');
+            breakout(' I was NOT able to find the commodity record. ');
 
         }
 
 
-        $result = $bitcoin->delete();
+        $result = $commodity->delete();
 
         if (!$result) {
 
-            breakout(' Unexpectedly I could not delete the bitcoin record. ');
+            breakout(' Unexpectedly I could not delete the commodity record. ');
 
         }
 
 
         // Report successful deletion of post.
 
-        breakout(' I have deleted the ₿ record. ');
+        breakout(' I have deleted the commodity record. ');
     }
 }
