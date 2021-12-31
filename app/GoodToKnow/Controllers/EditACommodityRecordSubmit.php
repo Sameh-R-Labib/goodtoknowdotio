@@ -41,6 +41,11 @@ class EditACommodityRecordSubmit
         $address = commodity_address_form_field_prep('address');
 
 
+        // commodity
+
+        $commodity = standard_form_field_prep('commodity', 1, 15);
+
+
         // initial_balance
 
         $initial_balance = float_form_field_prep('initial_balance', 0.0, 21000000000.0);
@@ -103,6 +108,7 @@ class EditACommodityRecordSubmit
 
                 // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
                 $saved_arr01['address'] = $address;
+                $saved_arr01['commodity'] = $commodity;
                 $saved_arr01['initial_balance'] = $initial_balance;
                 $saved_arr01['current_balance'] = $current_balance;
                 $saved_arr01['currency'] = $currency;
@@ -156,6 +162,7 @@ class EditACommodityRecordSubmit
          */
 
         $g->commodity_object->address = $address;
+        $g->commodity_object->commodity = $commodity;
         $g->commodity_object->initial_balance = $initial_balance;
         $g->commodity_object->current_balance = $current_balance;
         $g->commodity_object->currency = $currency;
