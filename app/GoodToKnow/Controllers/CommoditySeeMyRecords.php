@@ -37,7 +37,7 @@ class CommoditySeeMyRecords
          * Present the view.
          */
 
-        $g->html_title = 'Your ₿ records';
+        $g->html_title = 'Your Commodity records';
 
         $g->page = 'CommoditySeeMyRecords';
 
