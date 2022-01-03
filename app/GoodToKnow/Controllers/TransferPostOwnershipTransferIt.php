@@ -44,7 +44,7 @@ class TransferPostOwnershipTransferIt
         $user_id = (int)$user_object->id;
 
 
-        // Get the Post object.
+        // Get the Blog Post object.
 
         $g->post_object = Post::find_by_id($g->saved_int02);
 
@@ -60,7 +60,7 @@ class TransferPostOwnershipTransferIt
         $g->post_object->user_id = $user_id;
 
 
-        // Save the Post to the database.
+        // Save the Blog Post to the database.
 
         $result = $g->post_object->save();
 

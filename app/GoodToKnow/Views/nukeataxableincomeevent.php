@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/NukeATaxableIncomeEventYearFilter/page" method="post">
-    <h1>Delete a Taxable 💸 Event 📽</h1>
-    <?php require SESSIONMESSAGE; ?>
+    <form action="/ax1/NukeATaxableIncomeEventYearFilter/page" method="post">
+        <h1>Delete a Taxable Income Event</h1>
+        <?php require SESSIONMESSAGE; ?>
     <p>Which Year Received does the event fall under?</p>
     <section>
         <p>

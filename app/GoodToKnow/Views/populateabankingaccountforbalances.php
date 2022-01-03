@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/PopulateABankingAccountForBalancesProcessor/page" method="post">
-        <h1>Edit a 🏦ing 📒 for ⚖️s</h1>
+        <h1>Edit a Bank Account for Ledger</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Banking Account for Balances?</p>
         <section>

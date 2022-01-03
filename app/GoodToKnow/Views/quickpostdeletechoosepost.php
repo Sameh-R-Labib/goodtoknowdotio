@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/QuickPostDeleteDelete/page" method="post">
-    <h1>Delete a Post</h1>
+    <h1>Delete a Blog Post</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>Which post do you want to delete?</p>
     <section>

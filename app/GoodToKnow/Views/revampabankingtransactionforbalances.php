@@ -1,8 +1,8 @@
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/RevampABankingTransactionForBalancesTimeRange/page" method="post">
-    <h1>Edit a 🏦ing 🔃 for ⚖️s</h1>
-    <p>Which time range does the transaction fall under?</p>
-    <?php require SESSIONMESSAGE; ?>
+    <form action="/ax1/RevampABankingTransactionForBalancesTimeRange/page" method="post">
+        <h1>Edit a Bank Transaction for Ledger</h1>
+        <p>Which time range does the transaction fall under?</p>
+        <?php require SESSIONMESSAGE; ?>
     <section>
         <label for="A" class="radio">
             <input type="radio" id="A" name="choice" value="A">

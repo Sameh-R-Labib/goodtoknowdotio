@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AlterAPossibleTaxDeductionEdit/page" method="post">
-        <h1>Edit a Tax ✍🏽 Off</h1>
+        <h1>Edit a Possible Tax Write-off</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which one?</p>
         <section>

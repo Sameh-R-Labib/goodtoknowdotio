@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AlterAPossibleTaxDeductionYearFilter/page" method="post">
-        <h1>Edit a Tax ✍🏽 Off</h1>
+        <h1>Edit a Possible Tax Write-off</h1>
         <p>Which <em>year paid</em> does the transaction fall under?</p>
         <?php require SESSIONMESSAGE; ?>
     <section>

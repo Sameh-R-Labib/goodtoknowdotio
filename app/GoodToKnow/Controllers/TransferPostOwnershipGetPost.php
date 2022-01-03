@@ -22,7 +22,7 @@ class TransferPostOwnershipGetPost
          * Based on the submitted post id the script will derive and present:
          *  - Community name
          *  - Topic name
-         *  - Post title | extensionfortitle
+         *  - Blog Post title | extensionfortitle
          *  - Author username
          */
 
@@ -51,7 +51,7 @@ class TransferPostOwnershipGetPost
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
-        // Post id is $g->chosen_post_id
+        // Blog Post id is $g->chosen_post_id
 
         $derived_topic_id = TopicToPost::derive_topic_id($g->chosen_post_id);
 

@@ -25,7 +25,7 @@ class CreateNewPostSave
 
         /**
          * Overview
-         *   Mainly we are here to store the new Post and its TopicToPost record. Then
+         *   Mainly we are here to store the new Blog Post and its TopicToPost record. Then
          * redirect to a form for content creation.
          *
          * So far we have:

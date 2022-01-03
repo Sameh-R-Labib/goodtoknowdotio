@@ -77,7 +77,7 @@ class TopicToPost extends GoodObject
          *
          * This time the array will be an array of objects
          *
-         * What I'm getting is an array of Post objects.
+         * What I'm getting is an array of Blog Post objects.
          * The objects I'm getting are the ones which belong
          * to a particular topic.
          *

@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AnnulABankingAcctForBalancesProcessor/page" method="post">
-        <h1>Delete a 🏦ing 📒 for ⚖️s</h1>
+        <h1>Delete a Bank Account for Ledger</h1>
         <p>Which Banking Account for Balances?</p>
         <?php require SESSIONMESSAGE; ?>
         <section>

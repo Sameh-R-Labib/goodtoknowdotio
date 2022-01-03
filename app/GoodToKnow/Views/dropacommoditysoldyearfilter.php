@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/DropACommoditySoldDelete/page" method="post">
-        <h1>Delete a Commodity Sold 📽</h1>
+        <h1>Delete a Commodity Sold Record</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Commodity Sold?</p>
         <section>

@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/DropACommoditySoldYearFilter/page" method="post">
-        <h1>Delete a Commodity Sold 📽</h1>
+        <h1>Delete a Commodity Sold Record</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Here the <em>tax year</em> is defined as the year you sold the commodity.</span>
         </p>
