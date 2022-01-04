@@ -13,6 +13,7 @@ const VIEWS = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'Vie
 const VIEWSINCLUDES = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsIncludes';
 const CONTROLLERHELPERS = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerHelpers';
 const CONTROLLERINCLUDES = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ControllerIncludes';
+const VIEWSDUPLICATESINCLUDES = PROJ_ROOT . DIRSEP . 'app' . DIRSEP . 'GoodToKnow' . DIRSEP . 'ViewsDuplicatesIncludes';
 
 const SESSIONMESSAGE = VIEWSINCLUDES . DIRSEP . 'sessionmessage.php';
 const URLOFMOSTRECENTUPLOAD = VIEWSINCLUDES . DIRSEP . 'urlofmostrecentupload.php';
