@@ -70,6 +70,5 @@ class BuildABankingTransactionForBalances
         $g->action = '/ax1/BuildABankingTransactionForBalancesProcessor/page';
         $g->heading_one = 'Create Transaction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
-        /*require VIEWS . DIRSEP . 'buildabankingtransactionforbalances.php';*/
     }
 }
