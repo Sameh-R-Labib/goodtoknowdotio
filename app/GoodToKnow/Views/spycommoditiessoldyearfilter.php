@@ -4,7 +4,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1><?= $g->tax_year ?>'s Commodities Sold</h1>
+        <h1><?= $g->tax_year ?>'s Commodity Sold Records</h1>
         <hr>
         <?php if (!empty($g->array)): ?>
             <?php $last = count($g->array) - 1; ?>
@@ -23,7 +23,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>There are no Commodities Sold 📽s.</p>
+            <p>There are no Commodity Sold records.</p>
         <?php endif; ?>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>

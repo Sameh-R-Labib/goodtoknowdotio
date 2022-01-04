@@ -40,7 +40,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/GawkAtAllTaxableIncomeEvents/page\">A Year's Taxable Income Events</a>";
         break;
     case 'SpyCommoditiesSoldYear':
-        echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodities Sold</a>";
+        echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodity Sold Records</a>";
         break;
     case 'CPBasics':
         echo "<a href=\"/ax1/CPBasics/page\">More &DotDot;</a>";
@@ -55,7 +55,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CPBankingAccounts/page\">CRUD For Bank Accounts And Their Starting Balances</a>";
         break;
     case 'CPCommodities':
-        echo "<a href=\"/ax1/CPCommodities/page\">Commodities</a>";
+        echo "<a href=\"/ax1/CPCommodities/page\">Commodity</a>";
         break;
     case 'CPTaxDeductions':
         echo "<a href=\"/ax1/CPTaxDeductions/page\">Tax Write-offs</a>";
@@ -67,16 +67,16 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CPTaxableIncome/page\">Taxable Income</a>";
         break;
     case 'CPCapitalGains':
-        echo "<a href=\"/ax1/CPCapitalGains/page\">Commodities Sold (Enables me to determine capital gains.)</a>";
+        echo "<a href=\"/ax1/CPCapitalGains/page\">Commodity Sold records (enable me to determine capital gains.)</a>";
         break;
     case 'CPPurges':
-        echo "<a href=\"/ax1/CPPurges/page\">Purges</a>";
+        echo "<a href=\"/ax1/CPPurges/page\">Purge</a>";
         break;
     case 'CPAccounts':
-        echo "<a href=\"/ax1/CPAccounts/page\">Accounts</a>";
+        echo "<a href=\"/ax1/CPAccounts/page\">Account</a>";
         break;
     case 'CPPostings':
-        echo "<a href=\"/ax1/CPPostings/page\">Postings</a>";
+        echo "<a href=\"/ax1/CPPostings/page\">Blog Post</a>";
         break;
     case 'Proclamation':
         echo "<a href=\"/ax1/Proclamation/page\">Proclamation</a>";

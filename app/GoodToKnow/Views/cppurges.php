@@ -8,7 +8,7 @@
         <p><a href="/ax1/LiquidateYearsPossibleTaxDeductions/page">Purge a Specific Year's Possible Tax Deductions</a>
         </p>
         <p><a href="/ax1/CleanupYearsTaxableIncomeEvents/page">Purge a Specific Year's Taxable Income Events</a></p>
-        <p><a href="/ax1/AbolishYearsCommoditiesSold/page">Purge a Specific Year's Commodities Sold</a></p>
+        <p><a href="/ax1/AbolishYearsCommoditiesSold/page">Purge a Specific Year's Commodity Sold Records</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

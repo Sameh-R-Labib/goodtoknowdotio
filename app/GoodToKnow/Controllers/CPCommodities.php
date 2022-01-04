@@ -18,7 +18,7 @@ class CPCommodities
         $g->show_poof = true;
 
 
-        $g->html_title = 'Commodities';
+        $g->html_title = 'Commodity';
 
 
         $g->message .= ' Manage commodities. ';
