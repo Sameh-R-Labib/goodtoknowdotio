@@ -40,6 +40,9 @@ class BuildABankingTransactionForBalancesRedo
         $g->message .= ' <b>We are giving you one chance to fix the time value which we think is wrong.</b> ';
 
 
-        require VIEWS . DIRSEP . 'buildabankingtransactionforbalances.php';
+        $g->action = '/ax1/BuildABankingTransactionForBalancesProcessor/page';
+        $g->heading_one = 'Create Transaction';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
+        /*require VIEWS . DIRSEP . 'buildabankingtransactionforbalances.php';*/
     }
 }

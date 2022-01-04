@@ -288,7 +288,7 @@ class AppState
 
 
     /**
-     * Indicates whether or not the person viewing the page is viewing it as a user of
+     * Indicates whether the person viewing the page is viewing it as a user of
      * the system. When $is_guest == true then we want the view to shows stuff intended
      * for visitors to see. The controller will set $is_guest appropriately.
      *
@@ -742,6 +742,18 @@ class AppState
 
 
     /**
+     * @var string
+     */
+    public $action;
+
+
+    /**
+     * @var string
+     */
+    public $heading_one;
+
+
+    /**
      * AppState constructor.
      */
     function __construct()
@@ -855,6 +867,10 @@ class AppState
          * Our standard practice: $g (an AppState object), and also with all globals in general, shall be declared
          *                        global in every file that uses that global.
          */
+
+        $this->action = '';
+
+        $this->heading_one = '';
 
         $this->page = 'Home';
 

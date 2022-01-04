@@ -104,6 +104,9 @@ class RevampABankingTransactionForBalancesEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';
+        $g->action = '/ax1/RevampABankingTransactionForBalancesUpdate/page';
+        $g->heading_one = 'Edit a Transaction';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
+        /*require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';*/
     }
 }

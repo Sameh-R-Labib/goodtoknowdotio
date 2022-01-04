@@ -40,6 +40,9 @@ class RevampABankingTransactionForBalancesRedo
         $g->message .= ' <b>We are giving you one chance to fix the time value which we think is wrong.</b> ';
 
 
-        require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';
+        $g->action = '/ax1/RevampABankingTransactionForBalancesUpdate/page';
+        $g->heading_one = 'Edit a Transaction';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
+        /*require VIEWS . DIRSEP . 'revampabankingtransactionforbalancesedit.php';*/
     }
 }
