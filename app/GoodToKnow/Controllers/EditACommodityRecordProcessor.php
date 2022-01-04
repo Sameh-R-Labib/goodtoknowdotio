@@ -44,9 +44,9 @@ class EditACommodityRecordProcessor
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
-        $g->commodity_object->initial_balance = readable_amount_of_money($g->commodity_object->commodity, $g->commodity_object->initial_balance);
+        $g->commodity_object->initial_balance = readable_amount_no_commas($g->commodity_object->commodity, $g->commodity_object->initial_balance);
 
-        $g->commodity_object->current_balance = readable_amount_of_money($g->commodity_object->commodity, $g->commodity_object->current_balance);
+        $g->commodity_object->current_balance = readable_amount_no_commas($g->commodity_object->commodity, $g->commodity_object->current_balance);
 
         $g->commodity_object->price_point = readable_amount_no_commas($g->commodity_object->currency, $g->commodity_object->price_point);
 
