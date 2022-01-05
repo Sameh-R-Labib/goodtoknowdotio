@@ -12,7 +12,7 @@ class PopulateABankingAccountForBalancesSubmit
     {
         /**
          * This function will:
-         * 1) Validate the submitted populateabankingaccountforbalancesprocessor.php form data.
+         * 1) Validate the submitted form data.
          *      (and apply htmlspecialchars)
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
@@ -28,7 +28,7 @@ class PopulateABankingAccountForBalancesSubmit
 
 
         /**
-         * 1) Validate the submitted populateabankingaccountforbalancesprocessor.php form data.
+         * 1) Validate the submitted form data.
          *      (and apply htmlspecialchars)
          */
 

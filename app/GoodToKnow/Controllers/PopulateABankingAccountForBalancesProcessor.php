@@ -87,6 +87,8 @@ class PopulateABankingAccountForBalancesProcessor
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'populateabankingaccountforbalancesprocessor.php';
+        $g->action = '/ax1/PopulateABankingAccountForBalancesSubmit/page';
+        $g->heading_one = 'Edit a Bank Account for Ledger';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }
 }

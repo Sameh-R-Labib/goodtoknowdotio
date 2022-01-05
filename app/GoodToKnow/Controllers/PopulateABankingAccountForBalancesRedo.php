@@ -22,6 +22,8 @@ class PopulateABankingAccountForBalancesRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'populateabankingaccountforbalancesprocessor.php';
+        $g->action = '/ax1/PopulateABankingAccountForBalancesSubmit/page';
+        $g->heading_one = 'Edit a Bank Account for Ledger';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }
 }

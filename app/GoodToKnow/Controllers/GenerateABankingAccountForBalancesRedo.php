@@ -22,6 +22,8 @@ class GenerateABankingAccountForBalancesRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'generateabankingaccountforbalances.php';
+        $g->action = '/ax1/GenerateABankingAccountForBalancesProcessor/page';
+        $g->heading_one = 'Create a Bank Account';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }
 }
