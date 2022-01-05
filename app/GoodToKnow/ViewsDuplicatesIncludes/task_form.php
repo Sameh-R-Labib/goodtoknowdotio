@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/InduceATaskCreate/page" method="post">
-        <h1>Create a Task</h1>
+    <form action="<?= $g->action ?>" method="post">
+        <h1><?= $g->heading_one ?></h1>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>

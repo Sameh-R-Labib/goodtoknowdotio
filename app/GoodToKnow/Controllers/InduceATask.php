@@ -53,6 +53,8 @@ class InduceATask
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'induceatask.php';
+        $g->action = '/ax1/InduceATaskCreate/page';
+        $g->heading_one = 'Create a Task';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }
 }

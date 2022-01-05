@@ -11,7 +11,7 @@ class FeatureATaskUpdate
     {
         /**
          * This function will:
-         * 1) Validate the submitted featureataskedit.php form data. (and apply htmlspecialchars)
+         * 1) Validate the submitted form data. (and apply htmlspecialchars)
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
@@ -27,7 +27,7 @@ class FeatureATaskUpdate
 
 
         /**
-         * 1) Validate the submitted featureataskedit.php form data.
+         * 1) Validate the submitted form data.
          *      (and apply htmlspecialchars)
          */
 

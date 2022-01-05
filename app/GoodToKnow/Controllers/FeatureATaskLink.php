@@ -94,6 +94,8 @@ class FeatureATaskLink
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'featureataskedit.php';
+        $g->action = '/ax1/FeatureATaskUpdate/page';
+        $g->heading_one = 'Edit a Task';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }
 }

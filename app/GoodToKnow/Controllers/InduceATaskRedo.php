@@ -47,6 +47,8 @@ class InduceATaskRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'induceatask.php';
+        $g->action = '/ax1/InduceATaskCreate/page';
+        $g->heading_one = 'Create a Task';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }
 }
