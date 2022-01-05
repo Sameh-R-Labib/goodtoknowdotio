@@ -22,6 +22,8 @@ class EditACommodityRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'editacommodityrecordprocessor.php';
+        $g->action = '/ax1/EditACommodityRecordSubmit/page';
+        $g->heading_one = 'Edit A Commodity Record';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_record_form.php';
     }
 }

@@ -13,7 +13,7 @@ class EditACommodityRecordSubmit
     {
         /**
          * This function will:
-         * 1) Validate the submitted editacommodityrecordprocessor.php form data.
+         * 1) Validate the submitted form data.
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
@@ -28,7 +28,7 @@ class EditACommodityRecordSubmit
 
 
         /**
-         * 1) Validate the submitted editacommodityrecordprocessor.php form data.
+         * 1) Validate the submitted form data.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'commodity_address_form_field_prep.php';

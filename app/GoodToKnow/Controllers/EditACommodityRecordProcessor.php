@@ -4,7 +4,6 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
-use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class EditACommodityRecordProcessor
 {
@@ -92,6 +91,8 @@ class EditACommodityRecordProcessor
 
         $_SESSION['is_first_attempt'] = true;
 
-        require VIEWS . DIRSEP . 'editacommodityrecordprocessor.php';
+        $g->action = '/ax1/EditACommodityRecordSubmit/page';
+        $g->heading_one = 'Edit A Commodity Record';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_record_form.php';
     }
 }

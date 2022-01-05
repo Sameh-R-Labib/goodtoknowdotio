@@ -52,6 +52,8 @@ class InitializeACommodityRecord
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'initializeacommodityrecord.php';
+        $g->action = '/ax1/InitializeACommodityRecordProcessor/page';
+        $g->heading_one = 'Create a Commodity Record';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_record_form.php';
     }
 }
