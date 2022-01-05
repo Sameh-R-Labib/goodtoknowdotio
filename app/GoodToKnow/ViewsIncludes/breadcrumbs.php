@@ -46,7 +46,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CPBasics/page\">More &DotDot;</a>";
         break;
     case 'CPTransactions':
-        echo "<a href=\"/ax1/CPTransactions/page\">Bank Account Ledger</a>";
+        echo "<a href=\"/ax1/CPTransactions/page\">Banking Transaction</a>";
         break;
     case 'CPRecurringPayments':
         echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payments</a>";
@@ -61,7 +61,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CPTaxDeductions/page\">Tax Write-offs</a>";
         break;
     case 'CPToDoList':
-        echo "<a href=\"/ax1/CPToDoList/page\">Tasks</a>";
+        echo "<a href=\"/ax1/CPToDoList/page\">Task</a>";
         break;
     case 'CPTaxableIncome':
         echo "<a href=\"/ax1/CPTaxableIncome/page\">Taxable Income</a>";
