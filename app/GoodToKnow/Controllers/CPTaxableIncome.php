@@ -18,7 +18,7 @@ class CPTaxableIncome
         $g->show_poof = true;
 
 
-        $g->html_title = 'Taxable Income';
+        $g->html_title = 'Taxable Income Event';
 
 
         $g->message .= ' Manage taxable income. ';

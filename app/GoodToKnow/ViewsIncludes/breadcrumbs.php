@@ -31,7 +31,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CheckMyBankingAccountTxBalances/page\">See B. Account</a>";
         break;
     case 'SeeOneYearsPossibleTaxDeductions':
-        echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Tax Write-offs</a>";
+        echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Possible Tax Deductions</a>";
         break;
     case 'GlanceAtMyTasks':
         echo "<a href=\"/ax1/GlanceAtMyTasks/page\">All My Tasks</a>";
@@ -49,7 +49,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CPTransactions/page\">Banking Transaction</a>";
         break;
     case 'CPRecurringPayments':
-        echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payments</a>";
+        echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payment</a>";
         break;
     case 'CPBankingAccounts':
         echo "<a href=\"/ax1/CPBankingAccounts/page\">CRUD For Bank Accounts And Their Starting Balances</a>";
@@ -58,16 +58,16 @@ switch ($g->page) {
         echo "<a href=\"/ax1/CPCommodities/page\">Commodity</a>";
         break;
     case 'CPTaxDeductions':
-        echo "<a href=\"/ax1/CPTaxDeductions/page\">Tax Write-offs</a>";
+        echo "<a href=\"/ax1/CPTaxDeductions/page\">Possible Tax Deductions</a>";
         break;
     case 'CPToDoList':
         echo "<a href=\"/ax1/CPToDoList/page\">Task</a>";
         break;
     case 'CPTaxableIncome':
-        echo "<a href=\"/ax1/CPTaxableIncome/page\">Taxable Income</a>";
+        echo "<a href=\"/ax1/CPTaxableIncome/page\">Taxable Income Event</a>";
         break;
     case 'CPCapitalGains':
-        echo "<a href=\"/ax1/CPCapitalGains/page\">Commodity Sold records (enable me to determine capital gains.)</a>";
+        echo "<a href=\"/ax1/CPCapitalGains/page\">Commodity Sold</a>";
         break;
     case 'CPPurges':
         echo "<a href=\"/ax1/CPPurges/page\">Purge</a>";

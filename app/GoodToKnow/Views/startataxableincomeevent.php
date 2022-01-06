@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/StartATaxableIncomeEventProcessor/page" method="post">
-        <h1>Create a Taxable Income Event 📽</h1>
+        <h1>Create a Taxable Income Event</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>

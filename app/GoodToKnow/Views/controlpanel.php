@@ -10,7 +10,7 @@
             <a class="clearbtn" href="/ax1/CPToDoList/page">Task</a>
             <a class="purplebtn" href="/ax1/CPRecurringPayments/page">Recurring Payment</a>
             <a class="clearbtn" href="/ax1/CPTaxDeductions/page">Possible Tax Deduction</a>
-            <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income</a>
+            <a class="purplebtn" href="/ax1/CPTaxableIncome/page">Taxable Income Event</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodity Sold</a>
             <a class="greenbtn" href="/ax1/Proclamation/page">Proclamation</a></p>
     </div>

@@ -18,7 +18,7 @@ class CPBankingAccounts
         $g->show_poof = true;
 
 
-        $g->html_title = 'CRUD For Bank Accounts And Their Starting Balances';
+        $g->html_title = 'Bank Account';
 
 
         $g->message .= ' Manage banking accounts. ';

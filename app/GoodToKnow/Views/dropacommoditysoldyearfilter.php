@@ -3,7 +3,7 @@
     <form action="/ax1/DropACommoditySoldDelete/page" method="post">
         <h1>Delete a Commodity Sold Record</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Commodity Sold?</p>
+        <p>Which Commodity Sold Record?</p>
         <section>
             <?php foreach ($g->array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

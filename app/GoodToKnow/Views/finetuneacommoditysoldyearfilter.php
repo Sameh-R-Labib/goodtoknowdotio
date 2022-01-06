@@ -1,9 +1,9 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/FineTuneACommoditySoldEdit/page" method="post">
-        <h1>Edit a Commodity Sold 📽</h1>
+        <h1>Edit a Commodity Sold Record</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Commodity Sold?</p>
+        <p>Which Commodity Sold Record?</p>
         <section>
             <?php foreach ($g->array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

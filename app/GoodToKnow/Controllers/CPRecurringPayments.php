@@ -18,7 +18,7 @@ class CPRecurringPayments
         $g->show_poof = true;
 
 
-        $g->html_title = 'Recurring Payments';
+        $g->html_title = 'Recurring Payment';
 
 
         $g->message .= ' Manage recurring payments. ';
