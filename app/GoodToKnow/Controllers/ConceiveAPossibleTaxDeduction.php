@@ -52,6 +52,8 @@ class ConceiveAPossibleTaxDeduction
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'conceiveapossibletaxdeduction.php';
+        $g->action = '/ax1/ConceiveAPossibleTaxDeductionProcessor/page';
+        $g->heading_one = 'Create a Possible Tax Deduction';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'possible_tax_deduction_form.php';
     }
 }

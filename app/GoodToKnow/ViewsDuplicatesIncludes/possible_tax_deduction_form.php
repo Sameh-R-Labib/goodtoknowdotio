@@ -1,14 +1,14 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/ConceiveAPossibleTaxDeductionProcessor/page" method="post">
-        <h1>Create a Possible Tax Deduction</h1>
+    <form action="<?= $g->action ?>" method="post">
+        <h1><?= $g->heading_one ?></h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Records will be deleted automatically after the fourth year.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
-                <label for="label">Label (✅ emoji): </label>
+                <label for="label">️Label (✅ emoji): </label>
                 <input id="label" name="label" type="text" value="<?= $g->saved_arr01['label'] ?>" required
                        minlength="3" maxlength="264" size="61" spellcheck="false"
                        placeholder="Monthly Linode hosting Fees for Web server of goodtoknow.io">

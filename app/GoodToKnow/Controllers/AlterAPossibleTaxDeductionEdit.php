@@ -52,6 +52,8 @@ class AlterAPossibleTaxDeductionEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'alterapossibletaxdeductionedit.php';
+        $g->action = '/ax1/AlterAPossibleTaxDeductionUpdate/page';
+        $g->heading_one = 'Edit a Possible Tax Deduction';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'possible_tax_deduction_form.php';
     }
 }
