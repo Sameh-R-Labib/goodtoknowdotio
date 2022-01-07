@@ -55,6 +55,8 @@ class MakeARecurringPaymentRecord
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'makearecurringpaymentrecord.php';
+        $g->action = '/ax1/MakeARecurringPaymentRecordProcessor/page';
+        $g->heading_one = 'Create Recurring Payment';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
     }
 }

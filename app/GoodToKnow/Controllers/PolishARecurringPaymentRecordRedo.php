@@ -22,6 +22,8 @@ class PolishARecurringPaymentRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'polisharecurringpaymentrecordprocessor.php';
+        $g->action = '/ax1/PolishARecurringPaymentRecordSubmit/page';
+        $g->heading_one = $g->saved_arr01['label'];
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
     }
 }

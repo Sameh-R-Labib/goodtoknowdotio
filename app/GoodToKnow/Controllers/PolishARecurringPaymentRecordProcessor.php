@@ -85,6 +85,8 @@ class PolishARecurringPaymentRecordProcessor
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'polisharecurringpaymentrecordprocessor.php';
+        $g->action = '/ax1/PolishARecurringPaymentRecordSubmit/page';
+        $g->heading_one = $g->saved_arr01['label'];
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
     }
 }

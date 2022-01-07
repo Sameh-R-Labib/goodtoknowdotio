@@ -1,27 +1,26 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/PolishARecurringPaymentRecordSubmit/page" method="post">
-        <h2><?= $g->saved_arr01['label'] ?></h2>
+    <form action="<?= $g->action ?>" method="post">
+        <h1><?= $g->heading_one ?></h1>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
                 <label for="label">Label (✅ emoji): </label>
-                <input id="label" name="label" type="text"
-                       value="<?= $g->saved_arr01['label'] ?>" required minlength="3" maxlength="264"
-                       size="60" spellcheck="false" placeholder="Cell Phone Each Month">
+                <input id="label" name="label" type="text" required minlength="3" maxlength="264"
+                       size="60" spellcheck="false" placeholder="Cell Phone Each Month"
+                       value="<?= $g->saved_arr01['label'] ?>"
             </p>
             <p>
                 <label for="currency">Currency (✅ emoji): </label>
-                <input id="currency" name="currency" type="text"
-                       value="<?= $g->saved_arr01['currency'] ?>" required minlength="1" maxlength="15"
-                       size="15" placeholder="💵">
+                <input id="currency" name="currency" type="text" required minlength="1" maxlength="15"
+                       size="15" placeholder="💵" value="<?= $g->saved_arr01['currency'] ?>">
             </p>
             <p>
-                <label for="amount_paid">Amount of currency paid <span class="tooltip">ℹ️<span class="tooltiptext
+                <label for="amount_paid">Amount paid <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
-                <input id="amount_paid" name="amount_paid" type="text" value="<?= $g->saved_arr01['amount_paid'] ?>"
-                       required minlength="1" maxlength="33" size="33" placeholder="108.49">
+                <input id="amount_paid" name="amount_paid" type="text" required minlength="1" maxlength="33"
+                       size="33" placeholder="108.49" value="<?= $g->saved_arr01['amount_paid'] ?>">
             </p>
             <hr>
             <p>Time at Last Payment</p>
