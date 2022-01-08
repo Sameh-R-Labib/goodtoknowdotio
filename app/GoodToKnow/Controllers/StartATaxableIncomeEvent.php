@@ -50,6 +50,8 @@ class StartATaxableIncomeEvent
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'startataxableincomeevent.php';
+        $g->action = '/ax1/StartATaxableIncomeEventProcessor/page';
+        $g->heading_one = 'Create a Taxable Income Event';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'taxable_income_event_form.php';
     }
 }

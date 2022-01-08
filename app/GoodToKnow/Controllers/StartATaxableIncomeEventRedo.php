@@ -22,6 +22,8 @@ class StartATaxableIncomeEventRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'startataxableincomeevent.php';
+        $g->action = '/ax1/StartATaxableIncomeEventProcessor/page';
+        $g->heading_one = 'Create a Taxable Income Event';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'taxable_income_event_form.php';
     }
 }
