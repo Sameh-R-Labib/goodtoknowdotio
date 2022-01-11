@@ -22,6 +22,8 @@ class FatherACommoditySoldRedo
         $g->html_title = 'One chance to redo';
 
 
-        require VIEWS . DIRSEP . 'fatheracommoditysold.php';
+        $g->action = '/ax1/FatherACommoditySoldProcessor/page';
+        $g->heading_one = 'Create a Commodity Sold Record';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }
 }

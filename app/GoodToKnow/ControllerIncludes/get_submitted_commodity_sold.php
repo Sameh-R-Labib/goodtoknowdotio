@@ -11,7 +11,7 @@ global $g;
 
 
 /**
- * 1) Validate the submitted finetuneacommoditysoldedit.php form data. (and apply htmlspecialchars)
+ * 1) Validate the submitted form data. (and apply htmlspecialchars)
  */
 
 require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';

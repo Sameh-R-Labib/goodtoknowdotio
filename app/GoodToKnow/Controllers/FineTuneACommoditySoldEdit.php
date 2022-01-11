@@ -115,6 +115,8 @@ class FineTuneACommoditySoldEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        require VIEWS . DIRSEP . 'finetuneacommoditysoldedit.php';
+        $g->action = '/ax1/FineTuneACommoditySoldUpdate/page';
+        $g->heading_one = 'Edit a Commodity Sold Record';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }
 }

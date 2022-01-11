@@ -1,11 +1,11 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/FatherACommoditySoldProcessor/page" method="post">
-        <h1>Create a Commodity Sold Record</h1>
+    <form action="<?= $g->action ?>" method="post">
+        <h1><?= $g->heading_one ?></h1>
+        <?php require SESSIONMESSAGE; ?>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Warning: Records will be deleted automatically after the sixth year back.</span>
         </p>
-        <?php require SESSIONMESSAGE; ?>
         <section>
             <?php require TIMEBOUGHTSOLD; ?>
             <p>
