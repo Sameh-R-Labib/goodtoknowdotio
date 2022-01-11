@@ -1,4 +1,5 @@
 <?php include 'a_form_top.php'; ?>
+<?php global $g; ?>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Warning: Records will be deleted automatically after the sixth year back.</span>
     </p>

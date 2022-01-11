@@ -1,4 +1,5 @@
 <?php include 'a_form_top.php'; ?>
+<?php global $g; ?>
     <section>
         <p>
             <label for="acct_name">Bank Account Name (✅ emoji): </label>

@@ -1,4 +1,5 @@
 <?php include 'a_form_top.php'; ?>
+<?php global $g; ?>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">A negative (-) amount shall signify money spent.</span>
     </p>

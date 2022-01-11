@@ -1,4 +1,5 @@
 <?php include 'a_form_top.php'; ?>
+<?php global $g; ?>
     <section>
         <p>
             <label for="label">Label (✅ emoji): </label>
