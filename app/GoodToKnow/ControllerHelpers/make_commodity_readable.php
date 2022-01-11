@@ -2,9 +2,6 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use function GoodToKnow\ControllerHelpers\get_readable_time;
-use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-
 function make_commodity_readable()
 {
     global $g;

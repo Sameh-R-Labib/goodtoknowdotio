@@ -39,7 +39,6 @@ class DeleteACommodityRecordProcessor
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         make_commodity_readable();
-        /*require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_commodity_record.php';*/
 
         $g->html_title = 'Are you sure?';
 

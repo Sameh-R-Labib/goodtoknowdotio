@@ -32,7 +32,6 @@ class CommoditySeeMyRecords
         foreach ($g->array_of_commodity_objects as $g->commodity_object) {
 
             make_commodity_readable();
-            /*require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_commodity_record.php';*/
 
         }
 
