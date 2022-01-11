@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\make_commodity_readable;
+
 class CommoditySeeMyRecords
 {
     function page()
@@ -23,12 +25,14 @@ class CommoditySeeMyRecords
          * And apply htmlspecialchars if necessary.
          */
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         foreach ($g->array_of_commodity_objects as $g->commodity_object) {
 
-            require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_commodity_record.php';
+            make_commodity_readable();
+            /*require CONTROLLERINCLUDES . DIRSEP . 'transform_to_readable_the_commodity_record.php';*/
 
         }
 
