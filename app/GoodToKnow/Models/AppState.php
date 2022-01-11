@@ -36,7 +36,7 @@ class AppState
     public $url_of_most_recent_upload;
 
     /**
-     * Id of currently logged in user.
+     * Identification number (id) of the currently logged-in user.
      *
      * @var int
      */
