@@ -18,7 +18,9 @@
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="currency_transacted">Currency Transacted (✅ emoji): </label>
+            <label for="currency_transacted">Currency Transacted (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">Do not change the currency type after you create this record unless you are sure the new
+                        type uses same number of decimal places.</span></span>: </label>
             <input id="currency_transacted" name="currency_transacted" type="text"
                    value="<?= $g->saved_arr01['currency_transacted'] ?>" required
                    minlength="1" maxlength="15" size="15" placeholder="💵">
@@ -32,7 +34,9 @@
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="commodity_type">Commodity Type (✅ emoji): </label>
+            <label for="commodity_type">Commodity Type (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
+                        type uses same number of decimal places.</span></span>: </label>
             <input id="commodity_type" name="commodity_type" type="text"
                    value="<?= $g->saved_arr01['commodity_type'] ?>"
                    required minlength="1" maxlength="15" size="15" placeholder="₿">

@@ -8,7 +8,9 @@
                    placeholder="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">
         </p>
         <p>
-            <label for="commodity">Commodity Purchased (✅ emoji): </label>
+            <label for="commodity">Commodity Purchased (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
+                        type uses same number of decimal places.</span></span>: </label>
             <input id="commodity" name="commodity" type="text" placeholder="₿"
                    value="<?= $g->saved_arr01['commodity'] ?>" required minlength="1" maxlength="15" size="15">
         </p>
@@ -25,7 +27,9 @@
                    size="33" minlength="1" maxlength="33">
         </p>
         <p>
-            <label for="currency">Currency Used to Purchase the C. (✅ emoji): </label>
+            <label for="currency">Currency Used to Purchase the C. (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">Do not change the currency type after you create this record unless you are sure the new
+                        type uses same number of decimal places.</span></span>: </label>
             <input id="currency" name="currency" type="text" placeholder="$"
                    value="<?= $g->saved_arr01['currency'] ?>" required size="15" minlength="1" maxlength="15">
         </p>

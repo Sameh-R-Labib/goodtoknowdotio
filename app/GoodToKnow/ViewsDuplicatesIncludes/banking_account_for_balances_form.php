@@ -20,7 +20,9 @@
                    size="33" minlength="1" maxlength="33">
         </p>
         <p>
-            <label for="currency">Currency (✅ emoji): </label>
+            <label for="currency">Currency (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">Do not change the currency type after you create this record unless you are sure the new
+                        type uses same number of decimal places.</span></span>: </label>
             <input id="currency" name="currency" type="text" required minlength="1" maxlength="15"
                    size="15" placeholder="💵" value="<?= $g->saved_arr01['currency'] ?>">
         </p>
