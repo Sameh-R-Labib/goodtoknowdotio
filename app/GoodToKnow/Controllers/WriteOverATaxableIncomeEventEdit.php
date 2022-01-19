@@ -38,12 +38,31 @@ class WriteOverATaxableIncomeEventEdit
 
 
         /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$g->object->amount before making it readable: </p>\n<pre>";
+        var_dump($g->object->amount);
+        echo "</pre>\n";
+
+
+        /**
          * Make it so that if amount is fiat then amount has only two decimal places.
          */
 
         require CONTROLLERHELPERS . DIRSEP . 'readable_amount_no_commas.php';
 
         $g->object->amount = readable_amount_no_commas($g->object->currency, $g->object->amount);
+
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$g->object->amount after making it readable: </p>\n<pre>";
+        var_dump($g->object->amount);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
 
 
         /**
