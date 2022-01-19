@@ -34,12 +34,21 @@ function readable_amount_of_money(string $currency, string $amount): string
         // Don't use number_format() because it will alter the value since PHP has limited floating point precision.
         /*return number_format($amount, 16);*/
 
+        // If data points are stored in the database
+        // within a field which holds 16 decimal places
+        // then the return amount will have 16 decimal places.
+        // However, this return value won't have the comma
+        // separator for the thousands.
         return $amount;
 
     } else {
 
         // It's an eight decimal place currency
 
+        // Warning: Don't use number_format if the currency has
+        // a supply greater than 99 million units.
+
+        // This should produce an accurate value for BTC.
         return number_format($amount, 8);
 
     }
