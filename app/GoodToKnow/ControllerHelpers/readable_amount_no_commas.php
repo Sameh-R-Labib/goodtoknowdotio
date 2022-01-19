@@ -31,7 +31,10 @@ function readable_amount_no_commas(string $currency, string $amount): string
 
         // It's a sixteen decimal place currency
 
-        return number_format($amount, 16, '.', '');
+        // Don't use number_format() because it will alter the value since PHP has limited floating point precision.
+        /*return number_format($amount, 16, '.', '');*/
+
+        return $amount;
 
     } else {
 
