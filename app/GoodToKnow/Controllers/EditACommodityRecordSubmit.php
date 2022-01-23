@@ -48,12 +48,14 @@ class EditACommodityRecordSubmit
 
         // initial_balance
 
-        $initial_balance = float_form_field_prep('initial_balance', 0.0, 21000000000.0);
+        // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+        $initial_balance = float_form_field_prep('initial_balance', -0.0000000000000001, 21000000000.0);
 
 
         // current_balance
 
-        $current_balance = float_form_field_prep('current_balance', 0.0, 21000000000.0);
+        // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+        $current_balance = float_form_field_prep('current_balance', -0.0000000000000001, 21000000000.0);
 
 
         // currency
@@ -63,7 +65,8 @@ class EditACommodityRecordSubmit
 
         // price_point
 
-        $price_point = float_form_field_prep('price_point', 0.0, 99999999999999.99);
+        // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+        $price_point = float_form_field_prep('price_point', -0.0000000000000001, 99999999999999.99);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`

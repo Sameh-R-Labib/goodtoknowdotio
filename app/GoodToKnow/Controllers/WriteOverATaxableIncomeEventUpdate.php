@@ -70,7 +70,7 @@ class WriteOverATaxableIncomeEventUpdate
 
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
-        $amount = float_form_field_prep('amount', 0.0, 99999999999999.99);
+        $amount = float_form_field_prep('amount', -0.0000000000000001, 99999999999999.99);
 
 
         /**

@@ -34,14 +34,16 @@ require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_bought_and_time_sold_epoc
  * Get $g->price_bought
  */
 
-$g->price_bought = float_form_field_prep('price_bought', 0.0, 99999999999999.99);
+// I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+$g->price_bought = float_form_field_prep('price_bought', -0.0000000000000001, 99999999999999.99);
 
 
 /**
  * Get $g->price_sold
  */
 
-$g->price_sold = float_form_field_prep('price_sold', 0.0, 99999999999999.99);
+// I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+$g->price_sold = float_form_field_prep('price_sold', -0.0000000000000001, 99999999999999.99);
 
 
 /**
@@ -55,7 +57,8 @@ $g->currency_transacted = standard_form_field_prep('currency_transacted', 1, 15)
  * Get $g->commodity_amount
  */
 
-$g->commodity_amount = float_form_field_prep('commodity_amount', 0.0, 99999999999999.99);
+// I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+$g->commodity_amount = float_form_field_prep('commodity_amount', -0.0000000000000001, 99999999999999.99);
 
 
 /**

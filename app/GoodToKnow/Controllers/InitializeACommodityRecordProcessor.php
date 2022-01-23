@@ -28,15 +28,15 @@ class InitializeACommodityRecordProcessor
 
         $address = commodity_address_form_field_prep('address');
 
-        $initial_balance = float_form_field_prep('initial_balance', 0.0, 21000000000.0);
+        $initial_balance = float_form_field_prep('initial_balance', -0.0000000000000001, 21000000000.0);
 
-        $current_balance = float_form_field_prep('current_balance', 0.0, 21000000000.0);
+        $current_balance = float_form_field_prep('current_balance', -0.0000000000000001, 21000000000.0);
 
         $commodity = standard_form_field_prep('commodity', 1, 15);
 
         $currency = standard_form_field_prep('currency', 1, 15);
 
-        $price_point = float_form_field_prep('price_point', 0.0, 99999999999999.99);
+        $price_point = float_form_field_prep('price_point', -0.0000000000000001, 99999999999999.99);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`

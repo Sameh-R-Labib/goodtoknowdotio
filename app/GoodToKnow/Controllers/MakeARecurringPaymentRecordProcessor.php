@@ -29,7 +29,8 @@ class MakeARecurringPaymentRecordProcessor
 
         $currency = standard_form_field_prep('currency', 1, 15);
 
-        $amount_paid = float_form_field_prep('amount_paid', 0.0, 99999999999999.99);
+        // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+        $amount_paid = float_form_field_prep('amount_paid', -0.0000000000000001, 99999999999999.99);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
