@@ -49,7 +49,7 @@ class RevampABankingTransactionForBalancesUpdate
         // - - -
 
 
-        $amount = float_form_field_prep('amount', -999999999999999.99, 999999999999999.99);
+        $amount = float_form_field_prep('amount', -99999999999999.99, 99999999999999.99);
 
 
         $bank_id = integer_form_field_prep('bank_id', 1, PHP_INT_MAX);

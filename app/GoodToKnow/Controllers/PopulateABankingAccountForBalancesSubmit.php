@@ -45,7 +45,7 @@ class PopulateABankingAccountForBalancesSubmit
         // - - -
 
 
-        $start_balance = float_form_field_prep('start_balance', -999999999999999.99, 999999999999999.99);
+        $start_balance = float_form_field_prep('start_balance', -99999999999999.99, 99999999999999.99);
 
         $currency = standard_form_field_prep('currency', 1, 15);
 
