@@ -54,7 +54,7 @@ function float_form_field_prep(string $field_name, float $min_value, float $max_
 
     // Makes sure the float is in range.
 
-    if ($float_for_return <= $min_value || $float_for_return >= $max_value) {
+    if ($float_for_return < $min_value || $float_for_return > $max_value) {
 
         breakout(" The value for {$field_name} is out of range. ");
 
