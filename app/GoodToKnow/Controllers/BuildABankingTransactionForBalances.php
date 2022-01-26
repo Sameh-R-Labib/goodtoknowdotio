@@ -20,7 +20,7 @@ class BuildABankingTransactionForBalances
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->html_title = 'Create a Banking Transaction For Balances';
+        $g->html_title = 'Create a Bank Transaction For Balances';
 
 
         /**

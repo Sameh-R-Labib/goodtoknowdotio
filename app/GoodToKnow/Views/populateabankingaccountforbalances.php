@@ -3,7 +3,7 @@
     <form action="/ax1/PopulateABankingAccountForBalancesProcessor/page" method="post">
         <h1>Edit a Bank Account for Ledger</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Banking Account for Balances?</p>
+        <p>Which Bank Account for Balances?</p>
         <section>
             <?php foreach ($g->array_of_objects as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

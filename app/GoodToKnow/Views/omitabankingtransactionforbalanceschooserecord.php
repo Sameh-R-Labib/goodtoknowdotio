@@ -1,9 +1,9 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/OmitABankingTransactionForBalancesDelete/page" method="post">
-        <h1>Delete a Banking Transaction for Balances</h1>
+        <h1>Delete a Bank Transaction for Balances</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Banking Transaction For Balances?</p>
+        <p>Which Bank Transaction For Balances?</p>
         <section>
             <?php foreach ($g->array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

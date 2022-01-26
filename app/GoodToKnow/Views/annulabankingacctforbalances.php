@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/AnnulABankingAcctForBalancesProcessor/page" method="post">
         <h1>Delete a Bank Account for Ledger</h1>
-        <p>Which Banking Account for Balances?</p>
+        <p>Which Bank Account for Balances?</p>
         <?php require SESSIONMESSAGE; ?>
         <section>
             <?php foreach ($g->array_of_objects as $key => $object): ?>
