@@ -16,7 +16,7 @@
                 </p>
                 <p><b>Price Per C Unit Sold: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?></p>
                 <p><b>Amount of C Sold: </b><?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?></p>
-                <p><b>Label of C Record From Which It Was Sold: </b><?= $object->commodity_label ?></p>
+                <p><b>Label of C Record From Which C Was Sold: </b><?= $object->commodity_label ?></p>
                 <p><b>Tax Year: </b><?= $object->tax_year ?></p>
                 <p><b>Net Profit: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->profit ?></p>
                 <?php if ($key != $last): ?>

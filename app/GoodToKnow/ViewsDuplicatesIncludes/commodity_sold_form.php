@@ -3,22 +3,23 @@
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Warning: Records will be deleted automatically after the sixth year back.</span>
     </p>
+    <p>C = Commodity</p>
     <section>
         <?php require TIMEBOUGHTSOLD; ?>
         <p>
-            <label for="price_bought">Price Bought: </label>
+            <label for="price_bought">Price Per C Unit Bought: </label>
             <input id="price_bought" name="price_bought" type="text" value="<?= $g->saved_arr01['price_bought'] ?>"
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="price_sold">Price Sold <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="price_sold">Price Per C Unit Sold <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to list of
                             fiat.</span></span>: </label>
             <input id="price_sold" name="price_sold" type="text" value="<?= $g->saved_arr01['price_sold'] ?>"
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="currency_transacted">Currency Transacted (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="currency_transacted">Currency C is Priced In (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the currency type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency_transacted" name="currency_transacted" type="text"
@@ -26,7 +27,7 @@
                    minlength="1" maxlength="15" size="15" placeholder="💵">
         </p>
         <p>
-            <label for="commodity_amount">Commodity Amount <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="commodity_amount">Amount of C Sold<span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to the list of
                             fiat.</span></span>: </label>
             <input id="commodity_amount" name="commodity_amount" type="text"
@@ -34,7 +35,7 @@
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="commodity_type">Commodity Type (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="commodity_type">Which Type of C Was Sold (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="commodity_type" name="commodity_type" type="text"
@@ -42,7 +43,7 @@
                    required minlength="1" maxlength="15" size="15" placeholder="₿">
         </p>
         <p>
-            <label for="commodity_label">Commodity Label: </label>
+            <label for="commodity_label">Label of C Record From Which C Was Sold: </label>
             <input id="commodity_label" name="commodity_label" type="text"
                    value="<?= $g->saved_arr01['commodity_label'] ?>" required minlength="8" maxlength="264"
                    size="54" spellcheck="false" placeholder="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">
@@ -55,7 +56,7 @@
                    required minlength="4" maxlength="6" size="6" placeholder="2018">
         </p>
         <p>
-            <label for="profit">Profit: </label>
+            <label for="profit">Profit Measured In Currency C Is Priced In: </label>
             <input id="profit" name="profit" type="text" value="<?= $g->saved_arr01['profit'] ?>"
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
