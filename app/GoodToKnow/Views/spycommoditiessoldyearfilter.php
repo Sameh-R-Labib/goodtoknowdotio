@@ -17,7 +17,7 @@
                 <p><b>What Was Sold: </b><?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?></p>
                 <p><b>Label of What Was Sold: </b><?= $object->commodity_label ?></p>
                 <p><b>Tax Year: </b><?= $object->tax_year ?></p>
-                <p><b>Net Profit: </b><?= $object->profit ?></p>
+                <p><b>Net Profit: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->profit ?></p>
                 <?php if ($key != $last): ?>
                     <hr>
                 <?php endif; ?>
