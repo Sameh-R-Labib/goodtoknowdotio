@@ -3,7 +3,9 @@
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Warning: Records will be deleted automatically after the sixth year back.</span>
     </p>
-    <p>C = Commodity</p>
+    <p>C = Commodity. A commodity sold record represents a portion of a commodity record which was sold. In other words
+        you may have sold 30 BTC at one point in time but this commodity sold record which you are creating or editing
+        only represents the portion of those 30 BTC which came from one particular commodity (purchase) record.</p>
     <section>
         <?php require TIMEBOUGHTSOLD; ?>
         <p>
