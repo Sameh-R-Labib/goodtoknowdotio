@@ -7,7 +7,9 @@
             <?php foreach ($g->array_of_commodity_objects as $key => $commodity_object): ?>
                 <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $commodity_object->id ?>">
-                    <?= $commodity_object->address ?>
+                    Label: <?= $commodity_object->address ?><br>
+                    Current Balance: <?= $commodity_object->commodity ?> <?= $commodity_object->current_balance ?><br>
+                    Time At Purchase / Cost Basis: <?= $commodity_object->time ?>
                 </label>
             <?php endforeach; ?>
         </section>
