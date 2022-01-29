@@ -40,7 +40,36 @@ class CommoditySeeMyRecords
          * Get user's commodity records from database.
          */
 
+        // Records will be received sorted by time.
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
+
+
+        /**
+         * Take the array $g->array_of_commodity_objects and do the following:
+         *  1. Remove objects which are not commodities of type $commodity_symbol.
+         *  2. Remove objects which are out of the time range.
+         */
+
+        foreach ($g->array_of_commodity_objects as $key => $commodity_object) {
+
+
+            if ($commodity_object->commodity !== $commodity_symbol) {
+
+                // Remove the object if it is not a commodity of type $commodity_symbol.
+
+                unset($g->array_of_commodity_objects[$key]);
+
+            } elseif ($commodity_object->time > ($g->end + 86400) or $commodity_object->time < $g->begin) {
+
+                // Remove the object if it is out of the time range.
+                // The time can be during the end time's day. Hence, the 86400.
+
+                unset($g->array_of_commodity_objects[$key]);
+
+            }
+
+        }
 
 
         /**
