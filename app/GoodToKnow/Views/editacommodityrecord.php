@@ -3,7 +3,7 @@
     <form action="/ax1/EditACommodityRecordProcessor/page" method="post">
         <h1>Edit a Commodity Record</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p><b>Suggestion:</b> Deleting useless records will unclutter this page and reduce our burden.</p>
+        <p>⭐ <b>Suggestion:</b> Deleting useless records will unclutter this page and reduce our burden.</p>
         <section>
             <?php foreach ($g->array_of_commodity_objects as $key => $commodity_object): ?>
                 <label for="c<?= $key ?>" class="radio">
