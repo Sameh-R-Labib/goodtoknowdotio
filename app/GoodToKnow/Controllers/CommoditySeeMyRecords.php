@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\make_commodity_readable;
+use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class CommoditySeeMyRecords
 {
@@ -16,6 +17,28 @@ class CommoditySeeMyRecords
 
         get_db();
 
+
+        /**
+         * Get data from $_POST array.
+         */
+
+        // Get $commodity_symbol
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
+
+        $commodity_symbol = standard_form_field_prep('commodity_symbol', 1, 15);
+
+        // + + + Get $g->begin and $g->end (which are timestamps) based on submitted:
+        // `timezone` `begin_date` `begin_hour` `begin_minute` `begin_second` `end_date` `end_hour` `end_minute` `end_second`
+
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_begin_and_end_epochs.php';
+
+        // + + +
+
+
+        /**
+         * Get user's commodity records from database.
+         */
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
 

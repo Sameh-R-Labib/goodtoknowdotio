@@ -8,7 +8,7 @@
             <p>
                 <label for="commodity_symbol">Commodity: </label>
                 <input id="commodity_symbol" name="commodity_symbol" type="text" value="" required minlength="1"
-                       maxlength="6" size="6" placeholder="OXT">
+                       maxlength="15" size="15" placeholder="OXT">
             </p>
             <p>Begin</p>
             <p>
