@@ -60,10 +60,9 @@ class CommoditySeeMyRecords
 
                 unset($g->array_of_commodity_objects[$key]);
 
-            } elseif ($commodity_object->time > ($g->end + 86400) or $commodity_object->time < $g->begin) {
+            } elseif ($commodity_object->time > $g->end or $commodity_object->time < $g->begin) {
 
                 // Remove the object if it is out of the time range.
-                // The time can be during the end time's day. Hence, the 86400.
 
                 unset($g->array_of_commodity_objects[$key]);
 
