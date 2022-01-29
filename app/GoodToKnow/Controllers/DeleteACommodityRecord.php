@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\make_commodity_readable;
+
 class DeleteACommodityRecord
 {
     function page()
@@ -11,6 +13,8 @@ class DeleteACommodityRecord
          * It will present a series of radio buttons to choose from.
          */
 
+        global $g;
+
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
@@ -19,6 +23,22 @@ class DeleteACommodityRecord
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
+
+
+        /**
+         * Loop through the array and replace some attributes with more readable versions of themselves.
+         * And apply htmlspecialchars if necessary.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
+        foreach ($g->array_of_commodity_objects as $g->commodity_object) {
+
+            make_commodity_readable();
+
+        }
 
 
         require VIEWS . DIRSEP . 'deleteacommodityrecord.php';
