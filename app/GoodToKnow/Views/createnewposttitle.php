@@ -3,7 +3,7 @@
         <h2>Create a title</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">The main title is title which appears in a listing of posts for topic.
-        While title extension is meta data. ✅ emoji. Both fields required</span>
+        While title extension is metadata. ✅ emoji. Both fields required</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>

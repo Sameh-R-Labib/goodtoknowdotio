@@ -4,7 +4,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>1 Year's Tax ✍🏽-offs</h1>
+        <h1><?= $g->year_paid ?>'s Possible Tax Deductions</h1>
         <hr>
         <?php if (!empty($g->array)): ?>
             <?php $last = count($g->array) - 1; ?>
