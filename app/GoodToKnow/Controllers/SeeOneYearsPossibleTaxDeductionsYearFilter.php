@@ -34,9 +34,9 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         }
 
-        $g->message .= " Here are one year's tax write-offs. ";
+        $g->message .= " Here are $g->year_paid's possible tax deductions. ";
 
-        $g->html_title = "$g->year_paid\'s possible tax deductions.";
+        $g->html_title = "$g->year_paid's possible tax deductions.";
 
         $g->page = 'SeeOneYearsPossibleTaxDeductions';
 
