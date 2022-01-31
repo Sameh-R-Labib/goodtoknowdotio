@@ -9,7 +9,7 @@ class TransferPostOwnership
         /**
          * This is the first route for transferring ownership of a post.
          *
-         * It's goal is to be the first in a bunch of routes to determine which post is to be deleted.
+         * Its goal is to be the first in a bunch of routes to determine which post is to be deleted.
          *
          * It will present radio buttons for choosing which topic the post is in. It will also describe what is being done.
          *

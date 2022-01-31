@@ -21,7 +21,7 @@ class CPTransactions
         $g->html_title = 'Transactions';
 
 
-        $g->message .= ' Manage my copy of my bank transactions. ';
+        $g->message .= ' Manage my bank transactions. ';
 
 
         require VIEWS . DIRSEP . 'cptransactions.php';
