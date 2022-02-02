@@ -1,3 +1,4 @@
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/TransferAnAmountFormProcessor/page" method="post">
         <h1>Transfer An Amount of Money Or Commodity</h1>
