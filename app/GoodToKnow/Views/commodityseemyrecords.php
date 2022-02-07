@@ -18,7 +18,7 @@
                 <p><b>Initial Balance: </b><?= $commodity->commodity ?>&nbsp;<?= $commodity->initial_balance ?></p>
                 <p><b>Current Balance: </b><?= $commodity->commodity ?>&nbsp;<?= $commodity->current_balance ?></p>
                 <p><?= $commodity->comment ?></p>
-                <?php if (++$i === $numItems): ?>
+                <?php if (++$i !== $numItems): ?>
                     <hr>
                 <?php endif; ?>
             <?php endforeach; ?>
