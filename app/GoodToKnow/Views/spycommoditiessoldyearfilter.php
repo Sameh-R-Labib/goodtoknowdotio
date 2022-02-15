@@ -20,11 +20,11 @@
                 <p><b>Tax Year: </b><?= $object->tax_year ?></p>
                 <p><b>Net Profit: </b><?= $object->currency_transacted ?>
                     <?php if ($object->profit < 0): ?>
-                        (
+                        🔥(
                     <?php endif; ?>
                     <?= $object->profit ?>
                     <?php if ($object->profit < 0): ?>
-                        )
+                        )🔥
                     <?php endif; ?>
                 </p>
                 <?php if ($key != $last): ?>
