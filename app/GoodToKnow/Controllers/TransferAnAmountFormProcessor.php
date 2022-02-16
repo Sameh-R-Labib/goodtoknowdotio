@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\BankingTransactionForBalances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -131,9 +132,55 @@ class TransferAnAmountFormProcessor
         $array_record = ['user_id' => $g->user_id, 'bank_id' => $sending_account, 'label' => $label, 'amount' => $deduction,
             'time' => $g->time];
 
+        $object = BankingTransactionForBalances::array_to_object($array_record);
 
-        echo "<p>Var_dump \$array_record: </p>\n<pre>";
-        var_dump($array_record);
-        echo "</pre>\n";
+        get_db();
+
+        $result = $object->save();
+
+        if (!$result) {
+
+            breakout(' I was unable to save transaction #1. ');
+
+        }
+
+        if (!empty($g->message)) {
+
+            breakout(' The #1 save method did not return false but it did send back a message. Therefore,
+             it probably did not create the BankingTransactionForBalances record. ');
+
+        }
+
+
+        /**
+         * Update the account sending the money.
+         */
+
+        $array_record = ['user_id' => $g->user_id, 'bank_id' => $receiving_account, 'label' => $label, 'amount' => $amount,
+            'time' => $g->time];
+
+        $object = BankingTransactionForBalances::array_to_object($array_record);
+
+        $result = $object->save();
+
+        if (!$result) {
+
+            breakout(' I was unable to save transaction #2. ');
+
+        }
+
+        if (!empty($g->message)) {
+
+            breakout(' The #2 save method did not return false but it did send back a message. Therefore,
+             it probably did not create the BankingTransactionForBalances record. ');
+
+        }
+
+
+        /**
+         * Wrap it up.
+         */
+
+        breakout(' Both transactions created 👍🏽 ');
     }
 }
