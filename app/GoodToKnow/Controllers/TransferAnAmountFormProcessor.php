@@ -3,7 +3,6 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
-use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -118,17 +117,23 @@ class TransferAnAmountFormProcessor
 
 
         /**
-         * Here I am testing.
+         * Here's some of what we have:
+         *  $label $g->time $amount $sending_account $receiving_account
          */
 
-        echo '<p>label: ' . $label . "</p>\n";
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
-        $time_arr = get_date_h_m_s_from_a_timestamp($g->time);
-        echo '<p>time: ' . $time_arr['date'] . ' ' . $time_arr['hour'] . ':' . $time_arr['minute'] . ':' . $time_arr['second'] . "</p>\n";
+        /**
+         * Update the account sending the money.
+         */
 
-        echo '<p>sending account: ' . $sending_account . "</p>\n";
+        $deduction = $amount * -1.0;
 
-        echo '<p>receiving account: ' . $receiving_account . "</p>\n";
+        $array_record = ['user_id' => $g->user_id, 'bank_id' => $sending_account, 'label' => $label, 'amount' => $deduction,
+            'time' => $g->time];
+
+
+        echo "<p>Var_dump \$array_record: </p>\n<pre>";
+        var_dump($array_record);
+        echo "</pre>\n";
     }
 }
