@@ -2,18 +2,21 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingTransactionForBalances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
+use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class BuildABankingTransactionForBalancesProcessor
+class TransferAnAmountFormProcessor
 {
     function page()
     {
         /**
-         * Create a database record in the banking_transaction_for_balances
-         * table using the submitted banking_transaction_for_balances data.
+         * Create two (2) database records in the banking_transaction_for_balances
+         * table using the submitted data. One record will be for the account
+         * sending the money and the other will be for the bank receiving the money.
+         *
+         * Also, there is a redo feature.
          */
 
 
@@ -38,10 +41,15 @@ class BuildABankingTransactionForBalancesProcessor
         // - - -
 
 
-        $amount = float_form_field_prep('amount', -99999999999999.99, 99999999999999.99);
+        // $amount can only be positive.
+
+        $amount = float_form_field_prep('amount', 0.0, 99999999999999.99);
 
 
-        $bank_id = integer_form_field_prep('bank_id', 1, PHP_INT_MAX);
+        $sending_account = integer_form_field_prep('sending_account', 1, PHP_INT_MAX);
+
+
+        $receiving_account = integer_form_field_prep('receiving_account', 1, PHP_INT_MAX);
 
 
         /**
@@ -80,14 +88,20 @@ class BuildABankingTransactionForBalancesProcessor
                 $saved_arr01['minute'] = $g->minute;
                 $saved_arr01['second'] = $g->second;
                 $saved_arr01['timezone'] = $g->timezone;
-                $saved_arr01['bank_id'] = $bank_id; // determines which choice from drop down is selected.
+
+                // In TransferAnAmountRedo I will formulate the html
+                // for the two drop-downs. And that's where I'll use
+                // two values below to mark as selected the appropriate
+                // bank account.
+                $saved_arr01['receiving_account'] = $receiving_account;
+                $saved_arr01['sending_account'] = $sending_account;
 
 
                 // make form data survive the redirect
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/BuildABankingTransactionForBalancesRedo/page");
+                redirect_to("/ax1/TransferAnAmountRedo/page");
             }
 
         }
@@ -104,45 +118,17 @@ class BuildABankingTransactionForBalancesProcessor
 
 
         /**
-         * Create a BankingTransactionForBalances array for the record.
+         * Here I am testing.
          */
 
-        $array_record = ['user_id' => $g->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $g->time];
+        echo '<p>label: ' . $label . "</p>\n";
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_date_h_m_s_from_a_timestamp.php';
+        $time_arr = get_date_h_m_s_from_a_timestamp($g->time);
+        echo '<p>time: ' . $time_arr['date'] . ' ' . $time_arr['hour'] . ':' . $time_arr['minute'] . ':' . $time_arr['second'] . "</p>\n";
 
-        /**
-         * Make the array into an in memory BankingTransactionForBalances object for the record.
-         */
+        echo '<p>sending account: ' . $sending_account . "</p>\n";
 
-        $object = BankingTransactionForBalances::array_to_object($array_record);
-
-
-        /**
-         * Save the object.
-         */
-
-        get_db();
-
-        $result = $object->save();
-
-        if (!$result) {
-
-            breakout(' I was unable to save the transaction. ');
-
-        }
-
-        if (!empty($g->message)) {
-
-            breakout(' The save method for BankingTransactionForBalances did not return false but it did send
-            back a message. Therefore, it probably did not create the BankingTransactionForBalances record. ');
-
-        }
-
-
-        /**
-         * Wrap it up.
-         */
-
-        breakout(' Transaction created 👍🏽 ');
+        echo '<p>receiving account: ' . $receiving_account . "</p>\n";
     }
 }
