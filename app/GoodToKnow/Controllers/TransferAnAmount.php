@@ -66,9 +66,11 @@ class TransferAnAmount
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_html_select_box.php';
 
-        $g->sending_account = get_html_select_box('0', "sending_account", "Sending Account:\n", 'dropdown', $assoc_array_val_to_text);
+        $g->sending_account = get_html_select_box('0', "sending_account", "Sending Account:\n", 'dropdown',
+            $assoc_array_val_to_text);
 
-        $g->receiving_account = get_html_select_box('0', "receiving_account", "Receiving Account:\n", 'dropdown', $assoc_array_val_to_text);
+        $g->receiving_account = get_html_select_box('0', "receiving_account", "Receiving Account:\n", 'dropdown',
+            $assoc_array_val_to_text);
 
 
         /**

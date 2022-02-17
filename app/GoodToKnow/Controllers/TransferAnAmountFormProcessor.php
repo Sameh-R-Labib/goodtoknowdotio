@@ -93,8 +93,8 @@ class TransferAnAmountFormProcessor
                 // for the two drop-downs. And that's where I'll use
                 // two values below to mark as selected the appropriate
                 // bank account.
-                $saved_arr01['receiving_account'] = $receiving_account;
-                $saved_arr01['sending_account'] = $sending_account;
+                $saved_arr01['receiving_account'] = (string)$receiving_account;
+                $saved_arr01['sending_account'] = (string)$sending_account;
 
 
                 // make form data survive the redirect

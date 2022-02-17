@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\BankingAcctForBalances;
+use function GoodToKnow\ControllerHelpers\get_html_select_box;
 
 class TransferAnAmountRedo
 {
@@ -44,57 +45,27 @@ class TransferAnAmountRedo
 
         }
 
-        // Build sending_account drop-down select box.
 
-        $g->sending_account = "        <label for=\"sending_account\" class=\"dropdown\">Sending Account:\n";
+        /**
+         * Use get_html_select_box to get $g->sending_account and $g->receiving_account.
+         * These contain the html for the two down-downs.
+         */
 
-        $g->sending_account .= "             <select id=\"sending_account\" name=\"sending_account\">\n";
-
-        foreach ($array_of_objects as $object) {
-            $g->sending_account .= "                 <option value=\"";
-
-            $g->sending_account .= $object->id;
-
-            if ($object->id == $g->saved_arr01['sending_account']) {
-                $g->sending_account .= "\" selected>";
-            } else {
-                $g->sending_account .= "\">";
-            }
-
-            $g->sending_account .= $object->acct_name;
-
-            $g->sending_account .= "</option>\n";
-        }
-
-        $g->sending_account .= "             </select>\n";
-
-        $g->sending_account .= "        </label>\n";
-
-        // Build receiving_account drop-down select box.
-
-        $g->receiving_account = "        <label for=\"receiving_account\" class=\"dropdown\">Receiving Account:\n";
-
-        $g->receiving_account .= "             <select id=\"receiving_account\" name=\"receiving_account\">\n";
+        // Generate the array.
 
         foreach ($array_of_objects as $object) {
-            $g->receiving_account .= "                 <option value=\"";
 
-            $g->receiving_account .= $object->id;
+            $assoc_array_val_to_text[$object->id] = $object->acct_name;
 
-            if ($object->id == $g->saved_arr01['receiving_account']) {
-                $g->receiving_account .= "\" selected>";
-            } else {
-                $g->receiving_account .= "\">";
-            }
-
-            $g->receiving_account .= $object->acct_name;
-
-            $g->receiving_account .= "</option>\n";
         }
 
-        $g->receiving_account .= "             </select>\n";
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_html_select_box.php';
 
-        $g->receiving_account .= "        </label>\n";
+        $g->sending_account = get_html_select_box((string)$g->saved_arr01['sending_account'], "sending_account",
+            "Sending Account:\n", 'dropdown', $assoc_array_val_to_text);
+
+        $g->receiving_account = get_html_select_box((string)$g->saved_arr01['receiving_account'], "receiving_account",
+            "Receiving Account:\n", 'dropdown', $assoc_array_val_to_text);
 
 
         /**

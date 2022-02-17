@@ -42,7 +42,7 @@ function get_html_select_box(string $preselected_option_value, string $name, str
 
         $html .= $value;
 
-        if ($value === $preselected_option_value) {
+        if ((string)$value === $preselected_option_value) {
             $html .= "\" selected>";
         } else {
             $html .= "\">";
