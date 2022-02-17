@@ -11,7 +11,7 @@ namespace GoodToKnow\ControllerHelpers;
  * @return string
  */
 function get_html_select_box(string $preselected_option_value, string $name, string $label_text, string $class_of_box,
-                             array  $assoc_array_val_to_text): string
+                             array  &$assoc_array_val_to_text): string
 {
     /**
      * "select box" and "drop-down" are the same thing.

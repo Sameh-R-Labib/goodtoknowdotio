@@ -38,10 +38,6 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
      *        </label>
      */
 
-    $html = "        <label for=\"bank_id\" class=\"dropdown\">Bank Account:\n";
-
-    $html .= "             <select id=\"bank_id\" name=\"bank_id\">\n";
-
 
     /**
      * First I need to get all the BankingAcctForBalances object for this user.
@@ -59,33 +55,16 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
 
 
     /**
-     * Build the options.
+     * Use get_html_select_box to get $html.
      */
+
+    // Generate the array.
 
     foreach ($array_of_objects as $object) {
-        $html .= "                 <option value=\"";
 
-        $html .= $object->id;
+        $assoc_array_val_to_text[$object->id] = $object->acct_name;
 
-        if ($object->id == $bank_id) {
-            $html .= "\" selected>";
-        } else {
-            $html .= "\">";
-        }
-
-        $html .= $object->acct_name;
-
-        $html .= "</option>\n";
     }
 
-
-    /**
-     * Close the HTML.
-     */
-
-    $html .= "             </select>\n";
-
-    $html .= "        </label>\n";
-
-    return $html;
+    return get_html_select_box($bank_id, 'bank_id', "Bank Account:\n", 'dropdown', $assoc_array_val_to_text);
 }
