@@ -66,5 +66,9 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
 
     }
 
+
+    require_once CONTROLLERHELPERS . DIRSEP . 'get_html_select_box.php';
+
+    
     return get_html_select_box($bank_id, 'bank_id', "Bank Account:\n", 'dropdown', $assoc_array_val_to_text);
 }
