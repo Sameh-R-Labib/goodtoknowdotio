@@ -34,7 +34,7 @@ switch ($choice) {
     case 'A':
         // Last 30 days
         $min = time() - 2592000;
-        $max = time();
+        $max = time() + 315569520;
         break;
     case 'B':
         // 30 - 60 day range
@@ -54,7 +54,7 @@ switch ($choice) {
     case 'E':
         // All
         $min = 1483259485;
-        $max = time();
+        $max = time() + 315569520;
         break;
     default:
         breakout(' Unexpectedly the switch statement failed. ');

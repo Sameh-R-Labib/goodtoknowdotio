@@ -30,7 +30,7 @@ class OmitABankingTransactionForBalancesChooseRecord
 
 
         /**
-         * Replace time with a human readable time.
+         * Replace time with a human-readable time.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
