@@ -6,7 +6,7 @@
         <section>
             <label for="A" class="radio">
                 <input type="radio" id="A" name="choice" value="A">
-                Round now<br>
+                Around now<br>
             </label>
             <label for="B" class="radio">
                 <input type="radio" id="B" name="choice" value="B">
