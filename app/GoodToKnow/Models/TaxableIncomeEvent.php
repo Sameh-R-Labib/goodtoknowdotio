@@ -12,7 +12,7 @@ class TaxableIncomeEvent extends GoodObject
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'time', 'year_received', 'currency', 'amount', 'label', 'comment'];
+    protected static $fields = ['id', 'user_id', 'time', 'year_received', 'currency', 'amount', 'price', 'fiat', 'label', 'comment'];
 
     /**
      * @var int
@@ -43,6 +43,16 @@ class TaxableIncomeEvent extends GoodObject
      * @var float
      */
     public $amount;
+
+    /**
+     * @var float
+     */
+    public $price;
+
+    /**
+     * @var string
+     */
+    public $fiat;
 
     /**
      * @var string
