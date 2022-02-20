@@ -73,6 +73,16 @@ class WriteOverATaxableIncomeEventUpdate
         $amount = float_form_field_prep('amount', -0.0000000000000001, 99999999999999.99);
 
 
+        // price
+
+        $price = float_form_field_prep('price', -0.0000000000000001, 99999999999999.99);
+
+
+        // fiat
+
+        $fiat = standard_form_field_prep('fiat', 1, 15);
+
+
         /**
          * Redirect to give the user one chance to fix their time entry.
          * A correct time entry for a Taxable Income Event record would be in the past.
@@ -106,6 +116,8 @@ class WriteOverATaxableIncomeEventUpdate
                 $saved_arr01['year_received'] = $g->tax_year;
                 $saved_arr01['currency'] = $currency;
                 $saved_arr01['amount'] = $amount;
+                $saved_arr01['price'] = $price;
+                $saved_arr01['fiat'] = $fiat;
                 $saved_arr01['comment'] = $comment;
                 $saved_arr01['date'] = $g->date;
                 $saved_arr01['hour'] = $g->hour;
@@ -160,6 +172,8 @@ class WriteOverATaxableIncomeEventUpdate
         $object->amount = $amount;
         $object->currency = $currency;
         $object->time = $g->time;
+        $object->price = $price;
+        $object->fiat = $fiat;
 
 
         /**

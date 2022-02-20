@@ -47,6 +47,13 @@ class WriteOverATaxableIncomeEventEdit
 
 
         /**
+         * Make it so that if price is fiat then amount has only two decimal places.
+         */
+
+        $g->object->price = readable_amount_no_commas($g->object->fiat, $g->object->price);
+
+
+        /**
          * This type of record has a field called `time`. We are not going to pre-populate a form field with it.
          * Instead, we derive an array called $g->time from it and use $g->time to pre-populate the following fields:
          * date, hour, minute, second.
@@ -67,6 +74,8 @@ class WriteOverATaxableIncomeEventEdit
         $g->saved_arr01['year_received'] = $g->object->year_received;
         $g->saved_arr01['currency'] = $g->object->currency;
         $g->saved_arr01['amount'] = $g->object->amount;
+        $g->saved_arr01['price'] = $g->object->price;
+        $g->saved_arr01['fiat'] = $g->object->fiat;
         $g->saved_arr01['comment'] = $g->object->comment;
         $g->saved_arr01['date'] = $g->time['date'];
         $g->saved_arr01['hour'] = $g->time['hour'];
