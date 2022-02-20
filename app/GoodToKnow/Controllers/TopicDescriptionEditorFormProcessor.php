@@ -38,7 +38,7 @@ class TopicDescriptionEditorFormProcessor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_description = standard_form_field_prep('text', 0, 1800);
+        $edited_description = standard_form_field_prep('text', 0, 230);
 
 
         /**
