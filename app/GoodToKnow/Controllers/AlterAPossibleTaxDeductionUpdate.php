@@ -40,7 +40,7 @@ class AlterAPossibleTaxDeductionUpdate
 
         $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
-        $edited_comment = standard_form_field_prep('comment', 0, 800);
+        $edited_comment = standard_form_field_prep('comment', 0, 1800);
 
 
         /**

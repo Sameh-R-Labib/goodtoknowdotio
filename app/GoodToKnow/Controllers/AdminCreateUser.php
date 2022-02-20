@@ -46,7 +46,7 @@ class AdminCreateUser
 
         $submitted_race = race_form_field_prep('race');
 
-        $submitted_comment = standard_form_field_prep('comment', 0, 800);
+        $submitted_comment = standard_form_field_prep('comment', 0, 1800);
 
         $submitted_timezone = timezone_form_field_prep('timezone');
 

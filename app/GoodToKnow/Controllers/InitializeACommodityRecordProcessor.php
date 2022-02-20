@@ -46,7 +46,7 @@ class InitializeACommodityRecordProcessor
         // - - -
 
 
-        $comment = standard_form_field_prep('comment', 0, 800);
+        $comment = standard_form_field_prep('comment', 0, 1800);
 
 
         /**

@@ -51,7 +51,7 @@ class WriteOverATaxableIncomeEventUpdate
 
         // comment
 
-        $comment = standard_form_field_prep('comment', 0, 800);
+        $comment = standard_form_field_prep('comment', 0, 1800);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`

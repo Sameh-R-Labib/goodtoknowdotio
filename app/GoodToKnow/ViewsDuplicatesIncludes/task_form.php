@@ -15,7 +15,7 @@
         </p>
         <p>
             <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
-            <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="800" spellcheck="false"
+            <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="1800" spellcheck="false"
                       placeholder="Remarks about decision whether to"><?= $g->saved_arr01['comment'] ?></textarea>
         </p>
     </section>

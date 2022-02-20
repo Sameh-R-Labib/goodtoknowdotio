@@ -29,7 +29,7 @@ class StartATaxableIncomeEventProcessor
 
         $label = standard_form_field_prep('label', 3, 264);
 
-        $g->tax_year = integer_form_field_prep('year_received', 1992, 65535);
+        $g->tax_year = integer_form_field_prep('year_received', 1992, 965535);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
@@ -39,11 +39,15 @@ class StartATaxableIncomeEventProcessor
         // - - -
 
 
-        $comment = standard_form_field_prep('comment', 0, 800);
+        $comment = standard_form_field_prep('comment', 0, 1800);
 
         $currency = standard_form_field_prep('currency', 1, 15);
 
         $amount = float_form_field_prep('amount', -0.0000000000000001, 99999999999999.99);
+
+        $price = float_form_field_prep('price', -0.0000000000000001, 99999999999999.99);
+
+        $fiat = standard_form_field_prep('fiat', 1, 15);
 
 
         /**
@@ -79,6 +83,8 @@ class StartATaxableIncomeEventProcessor
                 $saved_arr01['year_received'] = $g->tax_year;
                 $saved_arr01['currency'] = $currency;
                 $saved_arr01['amount'] = $amount;
+                $saved_arr01['price'] = $price;
+                $saved_arr01['fiat'] = $fiat;
                 $saved_arr01['comment'] = $comment;
                 $saved_arr01['date'] = $g->date;
                 $saved_arr01['hour'] = $g->hour;
@@ -113,7 +119,8 @@ class StartATaxableIncomeEventProcessor
          */
 
         $array_record = ['user_id' => $g->user_id, 'time' => $g->time, 'year_received' => $g->tax_year,
-            'currency' => $currency, 'amount' => $amount, 'label' => $label, 'comment' => $comment];
+            'currency' => $currency, 'amount' => $amount, 'price' => $price, 'fiat' => $fiat, 'label' => $label,
+            'comment' => $comment];
 
 
         /**

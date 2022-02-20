@@ -31,6 +31,8 @@ class StartATaxableIncomeEvent
         $g->saved_arr01['year_received'] = '';
         $g->saved_arr01['currency'] = '';
         $g->saved_arr01['amount'] = '';
+        $g->saved_arr01['price'] = '';
+        $g->saved_arr01['fiat'] = '';
         $g->saved_arr01['comment'] = '';
         $g->saved_arr01['date'] = '';
         $g->saved_arr01['hour'] = '';

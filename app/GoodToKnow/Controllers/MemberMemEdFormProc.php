@@ -39,7 +39,7 @@ class MemberMemEdFormProc
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_comment = standard_form_field_prep('comment', 0, 800);
+        $edited_comment = standard_form_field_prep('comment', 0, 1800);
 
 
         /**
