@@ -44,6 +44,8 @@ class GawkAtAllTaxableIncomeEventsYearFilter
 
             $item->amount = readable_amount_of_money($item->currency, $item->amount);
 
+            $item->price = readable_amount_of_money($item->fiat, $item->price);
+
         }
 
 
