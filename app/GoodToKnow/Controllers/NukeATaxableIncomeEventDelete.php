@@ -44,6 +44,7 @@ class NukeATaxableIncomeEventDelete
         $g->object->time = get_readable_time($g->object->time);
         $g->object->comment = nl2br($g->object->comment, false);
         $g->object->amount = readable_amount_of_money($g->object->currency, $g->object->amount);
+        $g->object->price = readable_amount_of_money($g->object->fiat, $g->object->price);
 
         $g->html_title = 'Are you sure?';
 

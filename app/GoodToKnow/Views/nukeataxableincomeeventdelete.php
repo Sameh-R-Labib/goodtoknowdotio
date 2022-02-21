@@ -8,6 +8,7 @@
         <p><b>Year: </b><?= $g->object->year_received ?></p>
         <p><b>Time: </b><?= $g->object->time ?></p>
         <p><b>Amount: </b><?= $g->object->currency ?>&nbsp;<?= $g->object->amount ?></p>
+        <p><b>Value of one unit of amount: </b><?= $g->object->fiat ?>&nbsp;<?= $g->object->price ?></p>
         <p><?= $g->object->comment ?></p>
         <p>&nbsp;</p>
         <p>Are you sure you want to delete this?</p>
