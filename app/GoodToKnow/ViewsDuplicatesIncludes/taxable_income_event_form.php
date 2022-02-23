@@ -47,7 +47,7 @@
                         class="tooltip">ℹ️<span
                             class="tooltiptext tooltip-top">Do not change the currency type after you create this record
                         unless you are sure the new type uses same number of decimal places.</span></span>: </label>
-            <input id="fiat" name="fiat" type="text" placeholder="$"
+            <input id="fiat" name="fiat" type="text" placeholder="$, £, ¥, €"
                    value="<?= $g->saved_arr01['fiat'] ?>" required size="15" minlength="1" maxlength="15">
         </p>
         <p>

@@ -27,7 +27,7 @@
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency_transacted" name="currency_transacted" type="text"
                    value="<?= $g->saved_arr01['currency_transacted'] ?>" required
-                   minlength="1" maxlength="15" size="15" placeholder="💵">
+                   minlength="1" maxlength="15" size="15" placeholder="$, £, ¥, €">
         </p>
         <p>
             <label for="commodity_amount">Amount of C Sold<span class="tooltip">ℹ️<span class="tooltiptext
@@ -43,7 +43,7 @@
                         type uses same number of decimal places.</span></span>: </label>
             <input id="commodity_type" name="commodity_type" type="text"
                    value="<?= $g->saved_arr01['commodity_type'] ?>"
-                   required minlength="1" maxlength="15" size="15" placeholder="₿">
+                   required minlength="1" maxlength="15" size="15" placeholder="BTC, BAT, OXT">
         </p>
         <p>
             <label for="commodity_label">Label of C Record From Which This CS C Was Sold: </label>

@@ -11,7 +11,7 @@
             <label for="commodity">Commodity Purchased (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
-            <input id="commodity" name="commodity" type="text" placeholder="₿"
+            <input id="commodity" name="commodity" type="text" placeholder="BAT, BTC"
                    value="<?= $g->saved_arr01['commodity'] ?>" required minlength="1" maxlength="15" size="15">
         </p>
         <p>
@@ -30,7 +30,7 @@
             <label for="currency">Currency Used to Purchase the C <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the currency type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
-            <input id="currency" name="currency" type="text" placeholder="$"
+            <input id="currency" name="currency" type="text" placeholder="$, £, ¥, €"
                    value="<?= $g->saved_arr01['currency'] ?>" required size="15" minlength="1" maxlength="15">
         </p>
         <p>

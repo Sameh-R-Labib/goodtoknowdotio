@@ -8,7 +8,7 @@
             <p>
                 <label for="commodity_symbol">Commodity: </label>
                 <input id="commodity_symbol" name="commodity_symbol" type="text" value="" required minlength="1"
-                       maxlength="15" size="15" placeholder="OXT">
+                       maxlength="15" size="15" placeholder="BTC, BAT, OXT">
             </p>
             <p>Begin</p>
             <p>
@@ -42,7 +42,7 @@
                 <input id="end_second" name="end_second" type="text" required minlength="1" maxlength="2" size="3"
                        placeholder="s" value="">
                 <label for="timezone"></label>
-                <input id="timezone" name="timezone" type="text" placeholder="PHP Timezone" required
+                <input id="timezone" name="timezone" type="text" placeholder="America/New_York" required
                        minlength="2" maxlength="60" size="18" value="<?= $g->timezone ?>">
                 <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
                             <a href="https://www.php.net/manual/en/timezones.php"
