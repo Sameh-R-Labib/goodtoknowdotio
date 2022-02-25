@@ -8,7 +8,7 @@
                    placeholder="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">
         </p>
         <p>
-            <label for="commodity">Commodity Purchased (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="commodity">Commodity Purchased <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="commodity" name="commodity" type="text" placeholder="BAT, BTC"
@@ -45,7 +45,7 @@
         <?php require TIMEFORMFIELD; ?>
         <hr>
         <p>
-            <label for="comment">Comment (🚫 markdown ✅ emoji ✅ line-break): </label>
+            <label for="comment">Comment (✅ line-break): </label>
             <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="1800" spellcheck="false"
                       placeholder="This record is for Commodity related to _ _."><?= $g->saved_arr01['comment'] ?></textarea>
         </p>

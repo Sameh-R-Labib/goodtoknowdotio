@@ -22,7 +22,7 @@
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="currency_transacted">Currency C is Priced In (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="currency_transacted">Currency C is Priced In <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the currency type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency_transacted" name="currency_transacted" type="text"
@@ -38,7 +38,7 @@
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
         </p>
         <p>
-            <label for="commodity_type">Which Type of C Was Sold (✅ emoji) <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="commodity_type">Which Type of C Was Sold <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="commodity_type" name="commodity_type" type="text"

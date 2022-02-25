@@ -5,7 +5,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <p>
-                <label for="label">Label (✅ emoji): </label>
+                <label for="label">Label: </label>
                 <input id="label" name="label" type="text" value="<?= $g->saved_arr01['label'] ?>" required
                        minlength="3" maxlength="264" size="61" spellcheck="false"
                        placeholder="Internet Service Fee">
