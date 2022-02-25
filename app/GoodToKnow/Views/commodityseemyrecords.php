@@ -11,7 +11,7 @@
             <?php $i = 0; ?>
             <?php foreach ($g->array_of_commodity_objects as $key => $commodity): ?>
                 <p><b>Time of purchase: </b><?= $commodity->time ?></p>
-                <p><b>Address: </b><?= $commodity->address ?></p>
+                <p><b>Address / Label: </b><?= $commodity->address ?></p>
                 <p><b>Price of 1<?= $commodity->commodity ?> at 🕒 of purchase: </b><?= $commodity->currency ?>
                     &nbsp;<?= $commodity->price_point ?>
                 </p>

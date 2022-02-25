@@ -5,7 +5,7 @@
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
         <p><b>Time of purchase: </b><?= $g->commodity_object->time ?></p>
-        <p><b>Address: </b><?= $g->commodity_object->address ?></p>
+        <p><b>Address / Label: </b><?= $g->commodity_object->address ?></p>
         <p><b>Commodity Type: </b><?= $g->commodity_object->commodity ?></p>
         <p><b>Price of 1 <?= $g->commodity_object->commodity ?> at 🕒 of
                 purchase: </b><?= $g->commodity_object->currency ?>
