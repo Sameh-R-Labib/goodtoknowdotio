@@ -30,5 +30,32 @@ class AddIncomeCommodity
          *
          * All the form's variables are elements of $g->saved_arr01.
          */
+
+        $g->saved_arr01['label'] = '';
+        $g->saved_arr01['date'] = '';
+        $g->saved_arr01['hour'] = '';
+        $g->saved_arr01['minute'] = '';
+        $g->saved_arr01['second'] = '';
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+        $g->saved_arr01['year'] = '';
+        $g->saved_arr01['commodity'] = '';
+        $g->saved_arr01['amount'] = '';
+        $g->saved_arr01['currency'] = '';
+        $g->saved_arr01['price'] = '';
+        $g->saved_arr01['comment'] = '';
+
+        // Not Necessary:
+        //   Update the session variable
+        //   $_SESSION['saved_arr01'] = $g->saved_arr01;
+
+
+        /**
+         * This may be redundant, but we need to be sure (better than be sorry.)
+         */
+
+        $_SESSION['is_first_attempt'] = true;
+
+
+        require VIEWS . DIRSEP . 'addincomecommodity.php';
     }
 }
