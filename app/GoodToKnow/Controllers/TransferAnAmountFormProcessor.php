@@ -43,7 +43,7 @@ class TransferAnAmountFormProcessor
 
         // $amount can only be positive.
 
-        $amount = float_form_field_prep('amount', 0.0, 99999999999999.99);
+        $amount = float_form_field_prep('amount', -0.0000000000000001, 99999999999999.99);
 
 
         $sending_account = integer_form_field_prep('sending_account', 1, PHP_INT_MAX);

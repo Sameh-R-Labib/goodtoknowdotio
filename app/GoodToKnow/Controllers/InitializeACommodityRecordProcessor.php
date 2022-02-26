@@ -28,9 +28,9 @@ class InitializeACommodityRecordProcessor
 
         $address = commodity_address_form_field_prep('address');
 
-        $initial_balance = float_form_field_prep('initial_balance', -0.0000000000000001, 21000000000.0);
+        $initial_balance = float_form_field_prep('initial_balance', -0.0000000000000001, 99999999999999.99);
 
-        $current_balance = float_form_field_prep('current_balance', -0.0000000000000001, 21000000000.0);
+        $current_balance = float_form_field_prep('current_balance', -0.0000000000000001, 99999999999999.99);
 
         $commodity = standard_form_field_prep('commodity', 1, 15);
 
