@@ -43,7 +43,7 @@ class Home
 
 
         /**
-         * Sets a few vars ans summons the view.
+         * Sets a few variables and summons the view.
          */
         self::show_the_home_page();
     }
@@ -267,7 +267,7 @@ class Home
             }
 
             /**
-             * Whether or not we were able to get the post object and post content
+             * Whether (or not) we were able to get the post object and post content
              * we reset the clock since we did something for refreshing the post.
              */
             $g->last_refresh_content = time();
@@ -293,12 +293,12 @@ class Home
          *
          * This function will take arguments:
          *   A) $g->db
-         *   B) The ID of the logged in user
+         *   B) The ID of the logged-in user
          *   C) $g->when_last_checked_suspend (which is a timestamp)
          *
          * Within the function it will:
          *   1) Skip everything if it's too soon.
-         *   2) Determine whether or not the user is suspended per database
+         *   2) Determine whether (or not) the user is suspended per database.
          *   3) If the user is suspended log him out and redirect to the page for logging in.
          *   4) Otherwise, return control over to where the function was called.
          */
