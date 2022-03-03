@@ -25,6 +25,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
          *    be for the currently chosen BankingAcctForBalances.
          * 3) Augment our data set with a running total in each BankingTransactionForBalances
          *    object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         * 3b) reset_feature_session_vars()
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
          *    will be wrong if admin has deleted transactions older than 90 days and the start
          *    time for the BankingAcctForBalances is set to a time older than 90 days.
@@ -116,6 +117,13 @@ class CheckMyBankingAccountTxBalancesShowBalances
             }
 
         }
+
+
+        /**
+         * 3b) reset_feature_session_vars()
+         */
+
+        reset_feature_session_vars();
 
 
         /**
