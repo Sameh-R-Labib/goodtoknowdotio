@@ -14,6 +14,9 @@ class CheckMyBankingAccountTxBalancesShowBalances
         /**
          * This function will:
          * 1) Get (from the database) the BankingAcctForBalances object.
+         * 1b) Verify that the account belongs to the user. This is redundant for
+         *     the "See Transactions" feature but is needed when Create or Edit use
+         *     this route handler.
          * 2) Get (from the database) all the BankingTransactionForBalances which
          *    have a time stamp greater than the start time for the account. Note:
          *    it can't be equal to the start time. Also: make sure the transactions
@@ -51,6 +54,19 @@ class CheckMyBankingAccountTxBalancesShowBalances
         if (!$g->account) {
 
             breakout(' Unexpectedly I could not find that banking account for balances. ');
+
+        }
+
+
+        /**
+         * 1b) Verify that the account belongs to the user. This is redundant for
+         *     the "See Transactions" feature but is needed when Create or Edit use
+         *     this route handler.
+         */
+
+        if ($g->account->user_id != $g->user_id) {
+
+            breakout(' Error 68804576. ');
 
         }
 
