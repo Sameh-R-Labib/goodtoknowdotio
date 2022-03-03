@@ -144,8 +144,6 @@ class BuildABankingTransactionForBalancesProcessor
          * So, we are going to hook into the "See Transactions" feature.
          */
 
-//        $g->message .= ' Transaction created 👍🏽 ';
-
         $_SESSION['saved_int01'] = $bank_id;
 
         redirect_to("/ax1/CheckMyBankingAccountTxBalancesShowBalances/page");
