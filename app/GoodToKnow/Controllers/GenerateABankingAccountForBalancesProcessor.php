@@ -144,6 +144,15 @@ class GenerateABankingAccountForBalancesProcessor
          * Wrap it up.
          */
 
-        breakout(' Your new bank account has just been created 👍🏽 ');
+        /*breakout(' Your new bank account has just been created 👍🏽 ');*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the banking account has been saved.
+         * So, we are going to hook into the "Bank Accounts And Their Starting Balances" feature.
+         */
+
+        redirect_to("/ax1/ViewAllBankingAccountsForBalances/page");
     }
 }
