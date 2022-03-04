@@ -5,8 +5,8 @@
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>
         <p><b>Account: </b><?= $g->object->acct_name ?></p>
-        <p><b>Start 🕒: </b><?= $g->object->start_time ?></p>
-        <p><b>Start ⚖️: </b><?= $g->object->currency ?>&nbsp;<?= $g->object->start_balance ?></p>
+        <p><b>When: </b><?= $g->object->start_time ?></p>
+        <p><b>Balance: </b><?= $g->object->currency ?>&nbsp;<?= $g->object->start_balance ?></p>
         <p><?= $g->object->comment ?></p>
         <p>&nbsp;</p>
         <p>Are you sure you want to delete this?</p>
