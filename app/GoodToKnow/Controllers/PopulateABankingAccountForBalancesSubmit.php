@@ -156,6 +156,15 @@ class PopulateABankingAccountForBalancesSubmit
          * Report success.
          */
 
-        breakout(" I've updated the record for bank account <b>{$object->acct_name}</b>. ");
+        /*breakout(" I've updated the record for bank account <b>{$object->acct_name}</b>. ");*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the banking account has been saved.
+         * So, we are going to hook into the "Bank Accounts And Their Starting Balances" feature.
+         */
+
+        redirect_to("/ax1/ViewAllBankingAccountsForBalances/page");
     }
 }
