@@ -156,6 +156,17 @@ class RevampABankingTransactionForBalancesUpdate
          * 5) Report success.
          */
 
-        breakout(" I've updated the <b>{$object->label}</b> record. ");
+        /*breakout(" I've updated the <b>{$object->label}</b> record. ");*/
+
+
+        /**
+         * We want to reassure the user that the transaction has been saved.
+         * So, we are going to hook into the "See Transactions" feature.
+         */
+
+        // I'm aware I'm re-using saved_int01 for something other than what this feature had been using it for.
+        $_SESSION['saved_int01'] = $bank_id;
+
+        redirect_to("/ax1/CheckMyBankingAccountTxBalancesShowBalances/page");
     }
 }
