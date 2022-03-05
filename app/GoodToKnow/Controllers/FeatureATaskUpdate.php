@@ -168,6 +168,15 @@ class FeatureATaskUpdate
          * 5) Report success.
          */
 
-        breakout(" I've updated <b>{$object->label}</b>. ");
+        /*breakout(" I've updated <b>{$object->label}</b>. ");*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the Task has been edited.
+         * So, we are going to hook into the "See Tasks" feature.
+         */
+
+        redirect_to("/ax1/GlanceAtMyTasks/page");
     }
 }

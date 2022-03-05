@@ -142,8 +142,8 @@ class InduceATaskCreate
 
 
         /**
-         * We want to reassure the user that the banking account has been saved.
-         * So, we are going to hook into the "Bank Accounts And Their Starting Balances" feature.
+         * We want to reassure the user that the task has been saved.
+         * So, we are going to hook into the "See Tasks" feature.
          */
 
         redirect_to("/ax1/GlanceAtMyTasks/page");
