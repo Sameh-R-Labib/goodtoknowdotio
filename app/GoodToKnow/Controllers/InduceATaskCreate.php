@@ -137,6 +137,15 @@ class InduceATaskCreate
          * Wrap it up.
          */
 
-        breakout(' A <b>task</b> record was created 👍. ');
+        /*breakout(' A <b>task</b> record was created 👍. ');*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the banking account has been saved.
+         * So, we are going to hook into the "Bank Accounts And Their Starting Balances" feature.
+         */
+
+        redirect_to("/ax1/GlanceAtMyTasks/page");
     }
 }
