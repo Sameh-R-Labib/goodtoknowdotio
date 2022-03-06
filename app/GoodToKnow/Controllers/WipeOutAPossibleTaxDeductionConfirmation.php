@@ -63,6 +63,6 @@ class WipeOutAPossibleTaxDeductionConfirmation
 
         // Report successful deletion of post.
 
-        breakout(' I have deleted the 🤔 Tax ✍🏽🔽. ');
+        breakout(' I have deleted the Possible Tax Deduction record. ');
     }
 }
