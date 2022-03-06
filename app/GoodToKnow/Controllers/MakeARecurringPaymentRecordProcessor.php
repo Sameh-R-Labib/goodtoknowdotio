@@ -146,7 +146,16 @@ class MakeARecurringPaymentRecordProcessor
          * Wrap it up.
          */
 
-        breakout(' A recurring payment record was created 👍. ');
+        /*breakout(' A recurring payment record was created 👍. ');*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the recurring payment has been saved.
+         * So, we are going to hook into the "See All Recurring Payments" feature.
+         */
+
+        redirect_to("/ax1/RecurringPaymentSeeMyRecords/page");
 
     }
 }
