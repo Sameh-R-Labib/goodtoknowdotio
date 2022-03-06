@@ -64,6 +64,16 @@ class ConceiveAPossibleTaxDeductionProcessor
          * Wrap it up.
          */
 
-        breakout(' Your new tax write-off has just been created 👍🏽 ');
+        /*breakout(' Your new tax write-off has just been created 👍🏽 ');*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the tax deduction record has been saved.
+         * So, we are going to hook into the "1 Year's Possible Tax Deductions" feature.
+         */
+
+        redirect_to("/ax1/SeeOneYearsPossibleTaxDeductions/page");
+
     }
 }
