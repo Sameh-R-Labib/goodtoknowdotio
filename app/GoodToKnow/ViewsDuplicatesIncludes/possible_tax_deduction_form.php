@@ -11,7 +11,7 @@
                    placeholder="Monthly Linode hosting Fees for Web server of goodtoknow.io">
         </p>
         <p>
-            <label for="year_paid">Year You Made the Expenditure: </label>
+            <label for="year_paid">Year: </label>
             <input id="year_paid" name="year_paid" type="text" value="<?= $g->saved_arr01['year_paid'] ?>" required
                    minlength="4" maxlength="6" size="6" placeholder="2018">
         </p>
