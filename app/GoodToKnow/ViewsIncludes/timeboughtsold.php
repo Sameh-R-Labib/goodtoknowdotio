@@ -1,6 +1,6 @@
 <?php global $g ?>
 <hr>
-<p>Time Bought</p>
+<p>Bought</p>
 <p>
     <label for="time_bought_date"></label>
     <input id="time_bought_date" name="time_bought_date" type="text" required minlength="10" maxlength="14" size="14"
@@ -17,7 +17,7 @@
            placeholder="s" value="<?= $g->saved_arr01['time_bought_second'] ?>">
 </p>
 <hr>
-<p>Time Sold</p>
+<p>Sold</p>
 <p>
     <label for="time_sold_date"></label>
     <input id="time_sold_date" name="time_sold_date" type="text" required minlength="10" maxlength="14" size="14"
