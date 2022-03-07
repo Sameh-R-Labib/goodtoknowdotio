@@ -8,17 +8,17 @@
                    placeholder="Customer six month contribution.">
         </p>
         <hr>
-        <p>When Received</p>
+        <p>When</p>
         <?php require TIMEFORMFIELD; ?>
         <hr>
         <p>
-            <label for="year_received">Year Received: </label>
+            <label for="year_received">Year: </label>
             <input id="year_received" name="year_received" type="text"
                    value="<?= $g->saved_arr01['year_received'] ?>"
                    required minlength="4" maxlength="6" size="6" placeholder="2018">
         </p>
         <p>
-            <label for="currency">Its Type <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="currency">Type <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">Do not change the currency type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency" name="currency" type="text"
@@ -26,7 +26,7 @@
                    placeholder="$ BTC BAT etc.">
         </p>
         <p>
-            <label for="amount">Its Amount <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="amount">Amount <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts to be displayed should have 2 instead of 8 decimal places then ask the admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
             <input id="amount" name="amount" type="text" value="<?= $g->saved_arr01['amount'] ?>" required
@@ -42,14 +42,14 @@
                 tooltip-top">"Type of income" means type of currency or commodity you got paid in.</span></span>
         </p>
         <p>
-            <label for="price">Price of 1 unit type of income <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="price">Price Of 1 Unit Type Of Income <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts for currency should have a different number of decimal places then ask the admin
                         to fix this.</span></span>: </label>
             <input id="price" name="price" type="text" placeholder="1.00" spellcheck="false"
                    value="<?= $g->saved_arr01['price'] ?>" size="33" minlength="1" maxlength="33">
         </p>
         <p>
-            <label for="fiat">Fiat symbol of type of income <span
+            <label for="fiat">Type Of Income <span
                         class="tooltip">ℹ️<span
                             class="tooltiptext tooltip-top">Do not change the currency type after you create this record
                         unless you are sure the new type uses same number of decimal places.</span></span>: </label>
