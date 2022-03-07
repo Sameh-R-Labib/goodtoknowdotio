@@ -145,6 +145,16 @@ class FineTuneACommoditySoldUpdate
          * 5) Report success.
          */
 
-        breakout(" I've updated <b>{$object->commodity_label}</b>. ");
+        /*breakout(" I've updated <b>{$object->commodity_label}</b>. ");*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the commodity sold record has been updated.
+         * So, we are going to hook into the "See a year's Commodity Sold Records" feature.
+         */
+
+        redirect_to("/ax1/SpyCommoditiesSold/page");
+
     }
 }
