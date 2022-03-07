@@ -155,6 +155,16 @@ class InitializeACommodityRecordProcessor
          * Wrap it up.
          */
 
-        breakout(' A new commodity record was created 👏. ');
+        /*breakout(' A new commodity record was created 👏. ');*/
+        reset_feature_session_vars();
+
+
+        /**
+         * We want to reassure the user that the commodity record has been saved.
+         * So, we are going to hook into the "See Commodities" feature.
+         */
+
+        redirect_to("/ax1/CommoditySeeMyRecordsSpecify/page");
+
     }
 }
