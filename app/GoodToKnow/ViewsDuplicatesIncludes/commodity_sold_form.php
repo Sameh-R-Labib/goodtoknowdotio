@@ -33,7 +33,7 @@
                    minlength="1" maxlength="15" size="15" placeholder="$, £, ¥, €">
         </p>
         <p>
-            <label for="commodity_amount">Amount Sold<span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="commodity_amount">Amount Sold <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to the list of
                             fiat.</span></span>: </label>
             <input id="commodity_amount" name="commodity_amount" type="text"
@@ -49,7 +49,7 @@
                    required minlength="1" maxlength="15" size="15" placeholder="BTC, BAT, OXT">
         </p>
         <p>
-            <label for="commodity_label">Label of C Record From Which This CS C Was Sold: </label>
+            <label for="commodity_label">Label Of C From Which This CS C Was Sold: </label>
             <input id="commodity_label" name="commodity_label" type="text"
                    value="<?= $g->saved_arr01['commodity_label'] ?>" required minlength="8" maxlength="264"
                    size="54" spellcheck="false" placeholder="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">
