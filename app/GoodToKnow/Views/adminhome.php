@@ -13,7 +13,7 @@
             <a class="orangebtn" href="/ax1/CPCommodities/page">Commodity</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodity Sold</a>
             <a class="greenbtn" href="/ax1/Proclamation/page">Proclamation</a></p>
-        <p><a class="greenbtn" href="/ax1/CPPurges/page">Cleanup</a>
+        <p>🛡️ <a class="greenbtn" href="/ax1/CPPurges/page">Cleanup</a>
             <a class="clearbtn" href="/ax1/CPAccounts/page">User</a>
             <a class="orangebtn" href="/ax1/CPPostings/page">Blog</a>
         </p>
