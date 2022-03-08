@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <p><a class="clearbtn" href="/ax1/CPBasics/page">More …</a>
+        <p>👤 <a class="clearbtn" href="/ax1/CPBasics/page">More …</a>
             <a class="greenbtn" href="/ax1/CPTransactions/page">Bank Transaction</a>
             <a class="blackbtn" href="/ax1/CPBankingAccounts/page">Bank Account</a>
             <a class="clearbtn" href="/ax1/CPToDoList/page">Task</a>
