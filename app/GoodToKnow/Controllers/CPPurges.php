@@ -18,10 +18,10 @@ class CPPurges
         $g->show_poof = true;
 
 
-        $g->html_title = 'Purges';
+        $g->html_title = 'System Maintenance';
 
 
-        $g->message .= ' Manage purges. ';
+        $g->message .= ' This Gtk.io\'s System Maintenance ';
 
 
         require VIEWS . DIRSEP . 'cppurges.php';

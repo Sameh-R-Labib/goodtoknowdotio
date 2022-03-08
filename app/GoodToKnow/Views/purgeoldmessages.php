@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/PurgeOldMessagesProcessor/page" method="post">
-    <h1>Purge Old 💬s</h1>
+    <h1>Purge Old Messages</h1>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Enter a date. All messages sent before the zero hour (12am) of that date
             will be deleted.</span>
