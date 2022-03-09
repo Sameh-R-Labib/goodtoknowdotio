@@ -23,7 +23,7 @@ class DownloadTheDatabase
         $db_password = DB_PASS;
         $database = DB_NAME;
 
-        $filename = "backup-" . date("d-m-Y_T") . ".sql.gz";
+        $filename = "backup-" . date("d-m-Y_G_i_s") . ".sql.gz";
 
         header("Content-Type: application/x-gzip");
         header('Content-Disposition: attachment; filename="' . $filename . '"');

@@ -110,7 +110,7 @@ class SetHomePageCommunityTopicPost
 
             $epoch_time = (int)$g->post_object->created;
 
-            $publish_date = date("m/d/Y T", $epoch_time);
+            $publish_date = date("m/d/Y", $epoch_time);
 
             $_SESSION['post_full_name'] = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
 
