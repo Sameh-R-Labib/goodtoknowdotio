@@ -29,7 +29,7 @@ class SetHomePageCommunityTopicPost
 
 
         /**
-         * We're "jumping the gun" a little bit by making these assignments -- but it makes our code neat.
+         * We're "jumping the gun" a little by making these assignments -- but it makes our code neat.
          * If these values are bad then these assignments will go poof when the script ends -- and the
          * session won't be affected.
          **/
@@ -181,12 +181,6 @@ class SetHomePageCommunityTopicPost
     {
         global $g;
 
-
-        /**
-         * If the request is for a post then let us
-         * make sure that post id is valid.
-         */
-
         if ($g->type_of_resource_requested === 'topic_or_post') {
 
             // Either way we need this
@@ -224,7 +218,7 @@ class SetHomePageCommunityTopicPost
         global $g;
 
         /**
-         * But before we get started let's establish whether or not
+         * But before we get started let's establish whether
          * $g->topic_id is not some topic id from amongst the topics belonging to the $g->community_id
          */
 
