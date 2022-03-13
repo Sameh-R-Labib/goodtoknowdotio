@@ -16,7 +16,7 @@
                    minlength="4" maxlength="6" size="6" placeholder="2018">
         </p>
         <p>
-            <label for="comment">Comment (✅ line-break): </label>
+            <label for="comment">Comment: </label>
             <textarea id="comment" name="comment" rows="5" cols="77" wrap="soft" maxlength="1800"
                       placeholder="List the actual payments here."><?= $g->saved_arr01['comment'] ?></textarea>
         </p>
