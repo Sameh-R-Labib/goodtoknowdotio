@@ -185,7 +185,7 @@ class CommunityToTopic extends GoodObject
 
         $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
 
-        if (empty($topics_array) || $topics_array === false) {
+        if (empty($topics_array)) {
 
             return false;
 

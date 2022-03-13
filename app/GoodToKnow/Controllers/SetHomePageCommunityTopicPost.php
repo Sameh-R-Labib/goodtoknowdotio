@@ -224,21 +224,15 @@ class SetHomePageCommunityTopicPost
 
         $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
 
-        if ($g->special_topic_array && $g->topic_id != 0 && !array_key_exists($g->topic_id, $g->special_topic_array)) {
-
-            breakout(' Your resource request is defective.  (errno 6) ');
-
-        }
-
-        if (!$g->special_topic_array && $g->topic_id != 0) {
-
-            breakout(' Your resource request is defective. (errno 8) ');
-
-        }
-
         if (!$g->special_topic_array) {
 
             $g->special_topic_array = [];
+
+        }
+
+        if ($g->topic_id != 0 && !array_key_exists($g->topic_id, $g->special_topic_array)) {
+
+            breakout(' Your resource request is defective.  (errno 6) ');
 
         }
 
