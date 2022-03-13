@@ -12,7 +12,7 @@ use GoodToKnow\Models\User;
 
 class SetHomePageCommunityTopicPost
 {
-    public function page(int $community_id, int $topic_id, int $post_id)
+    public function page(int $community_id = 0, int $topic_id = 0, int $post_id = 0)
     {
         /**
          * This script runs when a user (on Home page) clicks a community, a topic, or a post hyperlink.
