@@ -60,5 +60,42 @@ class SetHomeCommunityTopicPost
 
         $g->db = db_connect();
 
+
+        /**
+         * Figure out which type of resource is being requested.
+         * Is it a Community, a Topic or a Post?
+         */
+
+        if ($g->topic_id == 0) {
+
+            $g->type_of_resource_requested = 'community';
+
+            if ($g->post_id != 0) {
+
+                breakout(' Your resource request is defective. (errno 1) ');
+
+            }
+
+        } else {
+
+            $g->type_of_resource_requested = 'topic_or_post';
+
+        }
+
+
+        if ($g->post_id === 0 && $g->topic_id !== 0) {
+
+            $g->type_of_resource_requested = 'topic';
+
+        } elseif ($g->post_id !== 0 && $g->topic_id !== 0) {
+
+            $g->type_of_resource_requested = 'post';
+
+        } else {
+
+            breakout(' Anomalous situation #2954. ');
+
+        }
+        
     }
 }
