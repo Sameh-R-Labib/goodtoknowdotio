@@ -83,19 +83,23 @@ class SetHomeCommunityTopicPost
         }
 
 
-        if ($g->post_id === 0 && $g->topic_id !== 0) {
+        if ($g->type_of_resource_requested === 'topic_or_post') {
 
-            $g->type_of_resource_requested = 'topic';
+            if ($g->post_id === 0 && $g->topic_id !== 0) {
 
-        } elseif ($g->post_id !== 0 && $g->topic_id !== 0) {
+                $g->type_of_resource_requested = 'topic';
 
-            $g->type_of_resource_requested = 'post';
+            } elseif ($g->post_id !== 0 && $g->topic_id !== 0) {
 
-        } else {
+                $g->type_of_resource_requested = 'post';
 
-            breakout(' Anomalous situation #2954. ');
+            } else {
+
+                breakout(' Anomalous situation #2954. ');
+
+            }
 
         }
-        
+
     }
 }
