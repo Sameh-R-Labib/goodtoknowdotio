@@ -60,6 +60,12 @@ class SetHomeCommunityTopicPost
 
         $g->db = db_connect();
 
+        if (!empty($g->message) || $g->db === false) {
+
+            breakout(' Database connection failed. ');
+
+        }
+
 
         /**
          * Figure out which type of resource is being requested.
@@ -101,5 +107,21 @@ class SetHomeCommunityTopicPost
 
         }
 
+
+        /**
+         * This section is for these types of resources:
+         *
+         *      Community, Topic, Post
+         */
+
+        // Breakout if the Community does not belong to the user.
+
+        if (!array_key_exists($g->community_id, $g->special_community_array)) {
+
+            breakout(' Invalid community_id. ');
+
+        }
+
+        
     }
 }
