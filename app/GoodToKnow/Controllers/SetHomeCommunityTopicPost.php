@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\CommunityToTopic;
+
 class SetHomeCommunityTopicPost
 {
     public function page(int $community_id = 0, int $topic_id = 0, int $post_id = 0)
@@ -58,13 +60,7 @@ class SetHomeCommunityTopicPost
 
         // Get a database connection.
 
-        $g->db = db_connect();
-
-        if (!empty($g->message) || $g->db === false) {
-
-            breakout(' Database connection failed. ');
-
-        }
+        get_db();
 
 
         /**
@@ -114,6 +110,7 @@ class SetHomeCommunityTopicPost
          *      Community, Topic, Post
          */
 
+
         // Breakout if the Community does not belong to the user.
 
         if (!array_key_exists($g->community_id, $g->special_community_array)) {
@@ -122,6 +119,19 @@ class SetHomeCommunityTopicPost
 
         }
 
-        
+
+        // Get and store the special topic array.
+
+        $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
+
+        if (!$g->special_topic_array) {
+
+            $g->special_topic_array = [];
+
+        }
+
+        $_SESSION['special_topic_array'] = $g->special_topic_array;
+        $_SESSION['last_refresh_topics'] = time();
+
     }
 }
