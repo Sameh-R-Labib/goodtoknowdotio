@@ -208,93 +208,93 @@ class SetHomeCommunityTopicPost
             $_SESSION['special_post_array'] = $g->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
-
-            /**
-             * This section is for this type of resource:
-             *
-             *      Post
-             */
+        }
 
 
-            if ($g->type_of_resource_requested === 'post') {
+        /**
+         * This section is for this type of resource:
+         *
+         *      Post
+         */
 
 
-                // Breakout if the post id is not in the special post array.
-
-                if (!array_key_exists($g->post_id, $g->special_post_array)) {
-
-                    breakout(' Your resource request is defective.  (errno 4) ');
-
-                }
+        if ($g->type_of_resource_requested === 'post') {
 
 
-                // Get the Post object and its content.
+            // Breakout if the post id is not in the special post array.
 
-                $g->post_object = Post::find_by_id($g->post_id);
+            if (!array_key_exists($g->post_id, $g->special_post_array)) {
 
-                if (!$g->post_object) {
-
-                    breakout(' SetHomeCommunityTopicPost says: Error 58498. ');
-
-                }
-
-                $g->post_content = file_get_contents($g->post_object->html_file);
-
-                if ($g->post_content === false) {
-
-                    breakout(' Unable to read the post\'s html source file. ');
-
-                }
-
-
-                // Store the Post name in the session.
-
-                $_SESSION['post_name'] = $g->post_object->title;
-
-
-                // Generate a publishing date for the Post and store the Post's full name.
-
-                $epoch_time = (int)$g->post_object->created;
-
-                $publish_date = date("m/d/Y", $epoch_time);
-
-                $_SESSION['post_full_name'] = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
-
-
-                // Store post content and its last refresh time.
-
-                $_SESSION['post_content'] = $g->post_content;
-
-                $_SESSION['last_refresh_content'] = time();
-
-
-                // Get and store author information.
-
-                $g->post_author_object = User::find_by_id($g->post_object->user_id);
-
-                if ($g->post_author_object === false) {
-
-                    breakout(' Unable to get the post author object from the database. ');
-
-                }
-
-                $_SESSION['author_username'] = $g->post_author_object->username;
-
-                $_SESSION['author_id'] = (int)$g->post_author_object->id;
+                breakout(' Your resource request is defective.  (errno 4) ');
 
             }
 
 
-            // Store the message in the session.
+            // Get the Post object and its content.
 
-            $_SESSION['message'] = $g->message;
+            $g->post_object = Post::find_by_id($g->post_id);
+
+            if (!$g->post_object) {
+
+                breakout(' SetHomeCommunityTopicPost says: Error 58498. ');
+
+            }
+
+            $g->post_content = file_get_contents($g->post_object->html_file);
+
+            if ($g->post_content === false) {
+
+                breakout(' Unable to read the post\'s html source file. ');
+
+            }
 
 
-            // Redirect to Home page.
+            // Store the Post name in the session.
 
-            redirect_to("/ax1/Home/page");
+            $_SESSION['post_name'] = $g->post_object->title;
+
+
+            // Generate a publishing date for the Post and store the Post's full name.
+
+            $epoch_time = (int)$g->post_object->created;
+
+            $publish_date = date("m/d/Y", $epoch_time);
+
+            $_SESSION['post_full_name'] = $g->post_object->extensionfortitle . ' [' . $publish_date . ']';
+
+
+            // Store post content and its last refresh time.
+
+            $_SESSION['post_content'] = $g->post_content;
+
+            $_SESSION['last_refresh_content'] = time();
+
+
+            // Get and store author information.
+
+            $g->post_author_object = User::find_by_id($g->post_object->user_id);
+
+            if ($g->post_author_object === false) {
+
+                breakout(' Unable to get the post author object from the database. ');
+
+            }
+
+            $_SESSION['author_username'] = $g->post_author_object->username;
+
+            $_SESSION['author_id'] = (int)$g->post_author_object->id;
 
         }
+
+
+        // Store the message in the session.
+
+        $_SESSION['message'] = $g->message;
+
+
+        // Redirect to Home page.
+
+        redirect_to("/ax1/Home/page");
 
     }
     
