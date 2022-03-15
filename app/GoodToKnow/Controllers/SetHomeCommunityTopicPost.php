@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
 
 class SetHomeCommunityTopicPost
@@ -132,6 +133,38 @@ class SetHomeCommunityTopicPost
 
         $_SESSION['special_topic_array'] = $g->special_topic_array;
         $_SESSION['last_refresh_topics'] = time();
+
+
+        // Breakout if the user specified topic id is non-zero and is not in $g->special_topic_array.
+
+        if ($g->topic_id != 0 && !array_key_exists($g->topic_id, $g->special_topic_array)) {
+
+            breakout(' Your resource request is defective.  (errno 6) ');
+
+        }
+
+
+        // Get the community object.
+
+        $g->community_object = Community::find_by_id($g->community_id);
+
+
+        // Store the community name and community description in the session.
+
+        $_SESSION['community_name'] = $g->community_object->community_name;
+        $_SESSION['community_description'] = $g->community_object->community_description;
+
+
+        // Store the type of resource requested in the session.
+
+        $_SESSION['type_of_resource_requested'] = $g->type_of_resource_requested;
+
+
+        // Store the id of each.
+
+        $_SESSION['community_id'] = $g->community_id;
+        $_SESSION['topic_id'] = $g->topic_id;
+        $_SESSION['post_id'] = $g->post_id;
 
     }
 }
