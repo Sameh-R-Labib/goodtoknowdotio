@@ -4,6 +4,8 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Community;
 use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\TopicToPost;
 
 class SetHomeCommunityTopicPost
 {
@@ -165,6 +167,51 @@ class SetHomeCommunityTopicPost
         $_SESSION['community_id'] = $g->community_id;
         $_SESSION['topic_id'] = $g->topic_id;
         $_SESSION['post_id'] = $g->post_id;
+
+
+        /**
+         * This section is for these types of resources:
+         *
+         *      Topic, Post
+         */
+
+        if ($g->type_of_resource_requested == 'topic' or $g->type_of_resource_requested == 'post') {
+
+            // Get the Topic object.
+
+            $g->topic_object = Topic::find_by_id($g->topic_id);
+
+
+            // Store the Topic name and description.
+
+            $_SESSION['topic_name'] = $g->topic_object->topic_name;
+            $_SESSION['topic_description'] = $g->topic_object->topic_description;
+
+
+            // Get a fresh copy of $g->special_post_array.
+
+            $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->topic_id);
+
+            if (!$g->special_post_array) {
+
+                $g->special_post_array = [];
+
+            }
+
+
+            // Store the special post array.
+
+            $_SESSION['special_post_array'] = $g->special_post_array;
+            $_SESSION['last_refresh_posts'] = time();
+
+
+            /**
+             * This section is for this type of resource:
+             *
+             *      Post
+             */
+
+        }
 
     }
 }
