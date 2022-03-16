@@ -33,8 +33,7 @@ class MessageTheAuthor
         $g->pre_populate = <<<ROI
 Dear $g->author_username,
 
-This message is in regards to your "$g->post_name" post in the "$g->topic_name" topic of the
-"$g->community_name" community.
+This message is in regards to your "$g->post_name" post in the "$g->topic_name" topic of "$g->community_name" community.
 
 Sincerely,
 
