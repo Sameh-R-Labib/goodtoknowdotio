@@ -43,7 +43,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodity Sold Records</a>";
         break;
     case 'CPBasics':
-        echo "<a href=\"/ax1/CPBasics/page\">More …</a>";
+        echo "<a href=\"/ax1/CPBasics/page\">Blog And Message</a>";
         break;
     case 'CPTransactions':
         echo "<a href=\"/ax1/CPTransactions/page\">Banking Transaction</a>";
