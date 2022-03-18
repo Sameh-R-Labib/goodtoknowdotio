@@ -2,8 +2,8 @@
     <form action="/ax1/CreateNewPostTitleProcessor/page" method="post">
         <h2>Create a title</h2>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">The main title is title which appears in a listing of posts for topic.
-        While title extension is metadata. ✅ emoji. Both fields required</span>
+            <span class="tooltiptext tooltip-top">The main title is the title which appears in a listing of posts for topic.
+        While title extension is metadata.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
