@@ -155,7 +155,7 @@ class EditACommodityRecordSubmit
 
         if (!$g->commodity_object) {
 
-            breakout(' Unexpectedly I could not find that commodity record. ');
+            breakout(' Unexpectedly I could not find that Commodity record. ');
 
         }
 

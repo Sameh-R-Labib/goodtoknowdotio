@@ -20,11 +20,6 @@ class CreateNewPostTitleProcessor
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
-
-        /**
-         * I can't assume these post variables exist so I do the following.
-         */
-
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
         $main_title = standard_form_field_prep('main_title', 1, 200);
