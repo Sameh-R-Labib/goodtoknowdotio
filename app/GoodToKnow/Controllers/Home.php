@@ -131,7 +131,7 @@ class Home
 
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
             $g->message .= ' <a class="purplebtn" href="/ax1/EditMyPostDirect/page">Edit Content of 📄</a> ';
-            $g->message .= ' <a class="clearbtn" href="/ax1/EditPostTitleDirect/page">Edit Title of 📄</a> ';
+            $g->message .= ' <a class="blackbtn" href="/ax1/EditPostTitleDirect/page">Edit Title of 📄</a> ';
         }
 
     }
