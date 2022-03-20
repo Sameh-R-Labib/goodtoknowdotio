@@ -65,7 +65,7 @@ class EditMyPostDirect
          * - We know the user is allowed to edit the post.
          * - We have the post object ($g->post_object).
          *
-         * Since the subsequent routes are counting on it we will store
+         * Since the subsequent routes are counting on it, we will store
          * the id of the post in the session.
          */
 
