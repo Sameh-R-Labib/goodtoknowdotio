@@ -13,9 +13,9 @@
             <a class="orangebtn" href="/ax1/CPCommodities/page">Commodity</a>
             <a class="blackbtn" href="/ax1/CPCapitalGains/page">Commodity Sold</a>
             <a class="greenbtn" href="/ax1/Proclamation/page">Proclamation</a></p>
-        <p>🛡️ <a class="greenbtn" href="/ax1/CPPurges/page">System Maintenance</a>
+        <p>🛡️ <a class="orangebtn" href="/ax1/CPPostings/page">Blog Management</a>
             <a class="clearbtn" href="/ax1/CPAccounts/page">User Management</a>
-            <a class="orangebtn" href="/ax1/CPPostings/page">Blog Management</a>
+            <a class="greenbtn" href="/ax1/CPPurges/page">System Maintenance</a>
         </p>
     </div>
 <?php require FOOTERBAR; ?>
