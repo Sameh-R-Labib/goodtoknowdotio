@@ -18,7 +18,8 @@ class KommunityDescriptionEditorForm
 
         /**
          * Goals for this function:
-         *  1) Retrieve the Community object for the community whose description the admin wants to edit.
+         *  1) Retrieve the Community object for the community. I'm talking about the Community
+         *     whose description the admin wants to edit.
          *  2) Present a (pre-filled with current description) form for editing.
          */
 
