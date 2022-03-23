@@ -9,9 +9,7 @@ class TopicDescriptionEditorForm
     function page()
     {
         /**
-         * Goals for this function:
-         *  1) Retrieve the Topic object for the topic whose description the admin wants to edit.
-         *  2) Present a (pre-filled with current description) form for editing.
+         * Present a (pre-filled with current description) form for editing.
          */
 
 

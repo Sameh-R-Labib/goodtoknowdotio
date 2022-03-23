@@ -9,20 +9,6 @@ class TopicDescriptionEditorFormProcessor
 {
     function page()
     {
-        /**
-         * The purpose is to:
-         *  1) Read 'text'
-         *     (which is the edited community's description.)
-         *  2 & 3) Removed source code.
-         *  4) Get a copy of the Topic object.
-         *  5) Makes sure the description is escaped for suitability to being included in an sql statement. This may be
-         *     taken care of automatically by the GoodObject class
-         *     function I'll be using but make sure.
-         *  6) Replace the Topic's current description with the new one.
-         *  7) Update the database with this Topic object.
-         */
-
-
         global $g;
         // $g->saved_str01 the topic's name
         // $g->saved_int01 the topic's id
@@ -32,7 +18,7 @@ class TopicDescriptionEditorFormProcessor
 
 
         /**
-         *  1) Read 'text'
+         *  Read 'text'
          *     (which is the edited topic's description.)
          */
 
@@ -42,7 +28,7 @@ class TopicDescriptionEditorFormProcessor
 
 
         /**
-         *  4) Get a copy of the Topic object.
+         *  Get a copy of the Topic object.
          */
 
         get_db();
@@ -57,24 +43,14 @@ class TopicDescriptionEditorFormProcessor
 
 
         /**
-         *  5) Makes sure the description is escaped for suitability
-         *     to being included in an sql statement. This may be
-         *     taken care of automatically by the GoodObject class
-         *     function I'll be using but make sure.
-         *
-         *  Yes this is t.c.o. automatically. So, don't worry about it!
-         */
-
-
-        /**
-         *  6) Replace the Topic's current description with the new one.
+         *  Replace the Topic's current description with the new one.
          */
 
         $topic_object->topic_description = $edited_description;
 
 
         /**
-         *  7) Update the database with this Topic object.
+         *  Update the database with this Topic object.
          */
 
         $result = $topic_object->save();
