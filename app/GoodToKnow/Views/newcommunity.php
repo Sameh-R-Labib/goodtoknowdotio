@@ -5,7 +5,7 @@
         <span class="tooltiptext tooltip-top">⚠️ all fields required ✅ emoji</span>
     </p>
     <?php require SESSIONMESSAGE; ?>
-    <p>Details of Community To Be Created</p>
+    <p>Details of Community to be Created</p>
     <section>
         <p>
             <label for="name">Name: </label>
