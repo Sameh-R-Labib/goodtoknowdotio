@@ -9,19 +9,6 @@ class KommunityDescriptionEditorFormProcessor
 {
     function page()
     {
-        /**
-         * The purpose is to:
-         *  1) Read the edited community's description.
-         *  2 & 3) Removed source code.
-         *  4) Get a copy of the Community object.
-         *  5) Makes sure the description is escaped for suitability
-         *     to being included in an sql statement. This may be
-         *     taken care of automatically by the GoodObject class
-         *     function I'll be using but make sure.
-         *  6) Replace the Community's current description with the new one.
-         *  7) Update the database with this Community object.
-         */
-
         global $g;
         // $g->saved_str01 the community's name
         // $g->saved_int01 the community's id
@@ -30,12 +17,14 @@ class KommunityDescriptionEditorFormProcessor
 
 
         /**
-         *  1) Read the edited community's description.
+         *  1) Read the data.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_description = standard_form_field_prep('text', 0, 230);
+        $community_name = standard_form_field_prep('community_name', 1, 200);
+
+        $community_description = standard_form_field_prep('community_description', 1, 230);
 
 
         /**
@@ -54,20 +43,12 @@ class KommunityDescriptionEditorFormProcessor
 
 
         /**
-         *  5) Makes sure the description is escaped for suitability
-         *     to being included in an sql statement. This may be
-         *     taken care of automatically by the GoodObject class
-         *     function I'll be using but make sure.
-         *
-         *  Yes this is t.c.o. automatically. So, don't worry about it!
+         *  6) Replace the Community's current name and description with the new one.
          */
 
+        $community_object->community_name = $community_name;
 
-        /**
-         *  6) Replace the Community's current description with the new one.
-         */
-
-        $community_object->community_description = $edited_description;
+        $community_object->community_description = $community_description;
 
 
         /**
