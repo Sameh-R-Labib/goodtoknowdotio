@@ -27,7 +27,7 @@ class NewTopicInsertPoint
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_special_topic_array.php';
 
 
         $g->html_title = 'Where will the new topic go?';

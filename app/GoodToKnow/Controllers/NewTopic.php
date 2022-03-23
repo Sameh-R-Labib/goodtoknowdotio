@@ -7,10 +7,10 @@ class NewTopic
     function page()
     {
         /**
-         * We need to determine whether or not the community has any topics.
+         * We need to determine whether the community has any topics.
          * If it has no topics then we assign the sequence number for the new topic
          * a value of 10500000 and redirect to where we ask for the name of the topic.
-         * If the community has one or more topics then we redirect to where we as for the
+         * If the community has one or more topics, then we redirect to where we as for the
          * insertion point.
          */
 
@@ -24,7 +24,7 @@ class NewTopic
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_special_topic_array.php';
 
 
         if (sizeof($g->special_topic_array) > 0) {

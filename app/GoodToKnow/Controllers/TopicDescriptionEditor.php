@@ -21,7 +21,7 @@ class TopicDescriptionEditor
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'admin_get_special_topic_array.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_special_topic_array.php';
 
 
         // Abort if the community doesn't have any topics yet
