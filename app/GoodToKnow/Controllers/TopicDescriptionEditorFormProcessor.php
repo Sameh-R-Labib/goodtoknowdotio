@@ -18,13 +18,14 @@ class TopicDescriptionEditorFormProcessor
 
 
         /**
-         *  Read 'text'
-         *     (which is the edited topic's description.)
+         *  Read submitted data.
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $edited_description = standard_form_field_prep('text', 0, 230);
+        $topic_name = standard_form_field_prep('topic_name', 1, 200);
+
+        $topic_description = standard_form_field_prep('topic_description', 1, 230);
 
 
         /**
@@ -43,10 +44,12 @@ class TopicDescriptionEditorFormProcessor
 
 
         /**
-         *  Replace the Topic's current description with the new one.
+         *  Replace some of the Topic's current values.
          */
 
-        $topic_object->topic_description = $edited_description;
+        $topic_object->topic_name = $topic_name;
+
+        $topic_object->topic_description = $topic_description;
 
 
         /**
@@ -67,5 +70,7 @@ class TopicDescriptionEditorFormProcessor
          */
 
         breakout(" I have updated $g->saved_str01's record. ");
+
     }
+
 }
