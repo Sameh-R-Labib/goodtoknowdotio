@@ -1,13 +1,12 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/TopicDescriptionEditorFormProcessor/page" method="post">
-        <h2><?= $g->saved_str01 ?> Description</h2>
+        <h2>Edit The "<?= $g->saved_str01 ?>" Topic</h2>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 230 bytes
+            <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break<br>📲️ maximum 230 bytes
                 ⚠️ both fields required.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
-        <p>Name and description of topic</p>
         <section>
             <p>
                 <label for="name">Name: </label>

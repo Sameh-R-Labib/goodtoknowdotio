@@ -5,7 +5,6 @@
         <span class="tooltiptext tooltip-top">⚠️ both fields required ✅ emoji</span>
     </p>
     <?php require SESSIONMESSAGE; ?>
-    <p>Name and description of topic</p>
     <section>
         <p>
             <label for="name">Name: </label>
