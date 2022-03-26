@@ -21,7 +21,7 @@ if ($g->when_last_checked_messages === null) {
 
     }
 
-    $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫 $quantity 🔴</a> ";
+    $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫&nbsp;&nbsp;$quantity 🔴</a> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
     $_SESSION['when_last_checked_messages'] = time();
@@ -52,6 +52,10 @@ if ($g->when_last_checked_messages === null) {
 
             $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫&nbsp;&nbsp;$quantity 🔴&nbsp;&nbsp;$quantity_new new</a> ";
 
+        } else {
+
+            $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫&nbsp;&nbsp;$quantity</a> ";
+
         }
 
         $_SESSION['messages_last_quantity'] = $quantity;
@@ -63,7 +67,7 @@ if ($g->when_last_checked_messages === null) {
 
         $quantity = $_SESSION['messages_last_quantity'];
 
-        $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫 $quantity</a> ";
+        $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫&nbsp;&nbsp;$quantity</a> ";
 
     }
 
