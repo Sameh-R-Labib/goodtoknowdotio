@@ -74,3 +74,6 @@ if ($g->when_last_checked_messages === null) {
     }
 
 }
+
+
+$g->message .= $g->messages_button;

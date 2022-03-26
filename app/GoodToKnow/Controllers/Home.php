@@ -115,7 +115,6 @@ class Home
         if ($g->type_of_resource_requested == 'community') {
 
             $g->message .= '<br><br><a class="orangebtn" href="">Only Admin can Add Topics</a> ';
-            $g->message .= $g->messages_button;
 
         }
 
@@ -124,7 +123,6 @@ class Home
 
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️ for ⇒</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
-            $g->message .= $g->messages_button;
 
         }
 
@@ -134,7 +132,7 @@ class Home
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
             $g->message .= ' <a class="purplebtn" href="/ax1/EditMyPostDirect/page">Edit Content of 📄</a> ';
             $g->message .= ' <a class="orangebtn" href="/ax1/EditPostTitleDirect/page">Edit Title of 📄</a> ';
-            $g->message .= $g->messages_button;
+
         }
 
     }
