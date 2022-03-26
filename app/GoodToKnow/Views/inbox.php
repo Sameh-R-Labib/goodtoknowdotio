@@ -9,8 +9,7 @@
         <?php if (!empty($g->inbox_messages_array)): ?>
             <?php $last = count($g->inbox_messages_array) - 1; ?>
             <?php foreach ($g->inbox_messages_array as $key => $message): ?>
-                <p><b>Time: </b><?= $message->created ?></p>
-                <p><b>Sender: </b><?= $message->user_id ?></p>
+                <p><b>Time: </b><?= $message->created ?> <b>Sender: </b><?= $message->user_id ?></p>
                 <p>&nbsp;</p>
                 <?= $message->content ?>
                 <?php if ($key != $last): ?>

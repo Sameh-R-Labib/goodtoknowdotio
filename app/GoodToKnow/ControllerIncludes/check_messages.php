@@ -21,9 +21,6 @@ if ($g->when_last_checked_messages === null) {
 
     }
 
-//    $g->message .= "<br>You have $quantity message(s).
-//    <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
-
     $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫 $quantity 🔴</a> ";
 
     $_SESSION['messages_last_quantity'] = $quantity;
@@ -54,9 +51,6 @@ if ($g->when_last_checked_messages === null) {
         if ($quantity > $g->messages_last_quantity) {
 
             $g->messages_button = " <a class=\"blackbtn\" href=\"/ax1/Inbox/page\">🎫 $quantity 🔴 $quantity_new new</a> ";
-
-//            $g->message .= "<br><br>You have {$quantity} message(s). {$quantity_new} message(s) is/are new.
-//            <img src=\"\mdollnaery.gif\" alt=\"Smiley face\" height=\"22px\"> ";
 
         }
 
