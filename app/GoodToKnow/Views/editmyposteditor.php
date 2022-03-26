@@ -19,7 +19,7 @@
             <p>
                 <label for="textarea"></label>
                 <textarea id="textarea" spellcheck="false" name="markdown" rows="32"
-                          cols="71" wrap="soft"><?= $g->markdown ?></textarea>
+                          cols="67" wrap="soft"><?= $g->markdown ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

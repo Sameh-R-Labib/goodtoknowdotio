@@ -16,7 +16,7 @@
         <section>
             <p>
                 <label for="textarea"></label>
-                <textarea id="textarea" spellcheck="false" name="markdown" rows="32" cols="71"
+                <textarea id="textarea" spellcheck="false" name="markdown" rows="32" cols="67"
                           wrap="soft"><?= $g->pre_populate ?></textarea>
             </p>
         </section>

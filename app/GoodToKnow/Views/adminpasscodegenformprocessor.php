@@ -63,7 +63,7 @@
         <p>
             <label for="box1">Description <strong><abbr title="required">*</abbr></strong>:
             </label>
-            <textarea id="box1" name="comment" rows="5" cols="71" wrap="soft" maxlength="1800" spellcheck="false"
+            <textarea id="box1" name="comment" rows="5" cols="67" wrap="soft" maxlength="1800" spellcheck="false"
                       placeholder="How'd we meet?"></textarea>
         </p>
         <p>

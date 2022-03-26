@@ -10,7 +10,7 @@
             <p>
                 <label for="comment"></label>
                 <textarea id="comment" spellcheck="false" name="comment" rows="29"
-                          cols="71" wrap="soft" maxlength="1800"><?= $g->user_object->comment ?></textarea>
+                          cols="67" wrap="soft" maxlength="1800"><?= $g->user_object->comment ?></textarea>
             </p>
         </section>
         <?php require SUBMITABORT; ?>

@@ -27,7 +27,7 @@
         <hr>
         <p>
             <label for="comment">Comment: </label>
-            <textarea id="comment" name="comment" rows="5" cols="71" wrap="soft" maxlength="1800"
+            <textarea id="comment" name="comment" rows="5" cols="67" wrap="soft" maxlength="1800"
                       placeholder="Notes to self."><?= $g->saved_arr01['comment'] ?></textarea>
         </p>
     </section>
