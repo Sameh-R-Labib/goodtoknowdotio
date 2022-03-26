@@ -741,6 +741,10 @@ h2 + p {
     float: left;
 }
 
+.small-time {
+    font-size: xx-small;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
