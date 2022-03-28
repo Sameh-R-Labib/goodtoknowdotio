@@ -4,6 +4,6 @@
 <?php endif; ?>
 <?php foreach ($g->special_topic_array as $key => $value): ?>
     <p>
-        <a href="/ax1/SetHomeCommunityTopicPost/page/<?= $g->community_id ?>/<?= $key ?>/0"><?= $value ?></a>
+        <a href="/ax1/set_home_community_topic_post/page/<?= $g->community_id ?>/<?= $key ?>/0"><?= $value ?></a>
     </p>
 <?php endforeach; ?>

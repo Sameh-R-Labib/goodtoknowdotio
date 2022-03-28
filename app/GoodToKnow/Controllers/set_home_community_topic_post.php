@@ -9,7 +9,7 @@ use GoodToKnow\Models\Topic;
 use GoodToKnow\Models\TopicToPost;
 use GoodToKnow\Models\User;
 
-class SetHomeCommunityTopicPost
+class set_home_community_topic_post
 {
     public function page(int $community_id = 0, int $topic_id = 0, int $post_id = 0)
     {
@@ -234,7 +234,7 @@ class SetHomeCommunityTopicPost
 
             if (!$post_object) {
 
-                breakout(' SetHomeCommunityTopicPost says: Error 58498. ');
+                breakout(' set_home_community_topic_post says: Error 58498. ');
 
             }
 

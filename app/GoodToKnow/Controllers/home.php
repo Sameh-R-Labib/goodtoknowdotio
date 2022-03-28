@@ -19,7 +19,7 @@ class home
 
 
         /**
-         * SetHomeCommunityTopicPost does set all these vars. However, since the user may
+         * set_home_community_topic_post does set all these vars. However, since the user may
          * just hit refresh in browser, it's good to refresh these variables (once in a while
          * on the home page.)
          *

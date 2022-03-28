@@ -93,7 +93,7 @@ class EditMyPostEditProcessor
 
         $bytes_written_text = size_as_text($bytes_written);
 
-        $embedded_link_to_post = '<a href="/ax1/SetHomeCommunityTopicPost/page/' . $g->community_id . '/' .
+        $embedded_link_to_post = '<a href="/ax1/set_home_community_topic_post/page/' . $g->community_id . '/' .
             $g->saved_int01 . '/' . $g->saved_int02 . '">here </a>';
 
         breakout(" <b>{$bytes_written_text}</b> written (max allowed 57.1 KB.) Click
