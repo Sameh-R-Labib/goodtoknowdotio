@@ -8,7 +8,7 @@ use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
-class Home
+class home
 {
     function page()
     {
@@ -21,7 +21,7 @@ class Home
         /**
          * SetHomeCommunityTopicPost does set all these vars. However, since the user may
          * just hit refresh in browser, it's good to refresh these variables (once in a while
-         * on the Home page.)
+         * on the home page.)
          *
          * Not every variable is refreshed. Just the main ones.
          */
@@ -29,7 +29,7 @@ class Home
 
 
         /**
-         * Home should always present a message.
+         * home should always present a message.
          */
         self::put_together_a_good_sessionmessage();
 
@@ -55,8 +55,8 @@ class Home
 
 
         /**
-         * false is JUST to indicate to the view that this is the Home page.
-         * The view will still show the author messaging link if Home is showing a post.
+         * false is JUST to indicate to the view that this is the home page.
+         * The view will still show the author messaging link if home is showing a post.
          */
         $g->show_poof = false;
 
@@ -64,7 +64,7 @@ class Home
         $g->html_title = 'GoodToKnow.io';
 
 
-        $g->page = "Home";
+        $g->page = "home";
 
 
         require VIEWS . DIRSEP . 'home.php';
@@ -231,7 +231,7 @@ class Home
 
                 $g->post_content = "[Missing Post Record]";
                 $_SESSION['post_content'] = $g->post_content;
-                $g->message .= " The Home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
+                $g->message .= " The home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
 
             } else {
 

@@ -18,7 +18,7 @@ class BalanceOutTheSequenceNumbersSave
          * STEPS:
          *  1) Update the database using the array we have.
          *  2) Compose a session message **based on success or failure**.
-         *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to Home page.
+         *  3) Call breakout([the message]) to pass the message, reset session vars and redirect to home page.
          */
 
 

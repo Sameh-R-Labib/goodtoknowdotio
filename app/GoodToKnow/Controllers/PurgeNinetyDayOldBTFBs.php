@@ -14,7 +14,7 @@ class PurgeNinetyDayOldBTFBs
          * 1) Determine the unix time stamp for 90 days ago.
          * 2) Delete the BankingTransactionForBalances which are older than 90 days.
          * 3) Set a confirmation message in the session.
-         * 4) Redirect to Home page.
+         * 4) Redirect to home page.
          */
 
 
@@ -62,7 +62,7 @@ class PurgeNinetyDayOldBTFBs
 
         /**
          * 3) Set a confirmation message in the session.
-         * 4) Redirect to Home page.
+         * 4) Redirect to home page.
          */
 
         breakout(" The purge of BankingTransactionForBalances older than 90 days has deleted <b>" . $num_affected_rows .

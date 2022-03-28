@@ -152,7 +152,7 @@ class AppState
 
     /**
      * The name of the type of thing currently earmarked to be displayed
-     * on the Home page.
+     * on the home page.
      *
      * Possible values are: 'community', 'topic', 'post', 'topic_or_post'
      *
@@ -878,7 +878,7 @@ class AppState
 
         $this->heading_one = '';
 
-        $this->page = 'Home';
+        $this->page = 'home';
 
         $this->html_title = '';
 

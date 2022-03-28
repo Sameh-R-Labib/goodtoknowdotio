@@ -60,7 +60,7 @@ include TOPOFREGULARPAGE;
 <p>
     <small>unless you followed a stale link on Google.</small>
 </p>
-<h3><a href="http://<?= $_SERVER['HTTP_HOST'] ?>">Home &laquo; click here</a></h3>
+<h3><a href="http://<?= $_SERVER['HTTP_HOST'] ?>">home &laquo; click here</a></h3>
 
 <?php
 include BOTTOMOFPAGES;

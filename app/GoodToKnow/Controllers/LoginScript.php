@@ -114,7 +114,7 @@ class LoginScript
             $g->message .= " I didn't find any topics for your default community. ";
             $_SESSION['message'] .= $g->message;
 
-            redirect_to("/ax1/Home/page");
+            redirect_to("/ax1/home/page");
 
         }
 

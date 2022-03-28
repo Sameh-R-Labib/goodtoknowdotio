@@ -11,7 +11,7 @@ class SpyCommoditiesSoldYearFilter
     {
         /**
          * 1) Validate the submitted tax_year.
-         * 2) Present the CommoditySold(s/plural) in a page whose layout is similar to the Home page.
+         * 2) Present the CommoditySold(s/plural) in a page whose layout is similar to the home page.
          */
 
 

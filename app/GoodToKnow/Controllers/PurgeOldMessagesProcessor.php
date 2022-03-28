@@ -57,7 +57,7 @@ class PurgeOldMessagesProcessor
          *
          * Add $g->message to the session.
          *
-         * Redirect to Home page.
+         * Redirect to home page.
          */
 
         if ($result === false) {
@@ -74,7 +74,7 @@ class PurgeOldMessagesProcessor
          *
          * Add $g->message to the session.
          *
-         * Redirect to Home page
+         * Redirect to home page
          */
 
         breakout(' The purge of old messages completed. ');

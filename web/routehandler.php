@@ -106,7 +106,7 @@ if (!empty($_SERVER['PATH_INFO'])) {
 
 // Default controller
 
-$controller_name = 'Home';
+$controller_name = 'home';
 
 
 if (!empty($route_segments_array[0])) {

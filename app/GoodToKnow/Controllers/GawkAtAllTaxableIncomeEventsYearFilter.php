@@ -11,7 +11,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
     {
         /**
          * 1) Validate the submitted year_paid.
-         * 2) Present the TaxableIncomeEvent(s/plural) in a page whose layout is similar to the Home page.
+         * 2) Present the TaxableIncomeEvent(s/plural) in a page whose layout is similar to the home page.
          */
 
 

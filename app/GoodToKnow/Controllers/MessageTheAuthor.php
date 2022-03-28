@@ -8,7 +8,7 @@ class MessageTheAuthor
     {
         /**
          * This function presents a form where the user can enter a message intended to be received by the author of the
-         * post which was most recently displayed on the user's Home page.
+         * post which was most recently displayed on the user's home page.
          *
          * The textarea input field shall be pre populated with the statement: "Dear {author username},\n\n
          * This is a comment regarding your {post title} post in {topic name} topic of {community name} community.\n\n
