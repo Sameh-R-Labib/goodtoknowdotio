@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AuthorDeletesOwnPostProcessor
+class author_deletes_own_post_processor
 {
     function page()
     {
@@ -12,6 +12,6 @@ class AuthorDeletesOwnPostProcessor
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
-        redirect_to("/ax1/AuthorDeletesOwnPostChoosePost/page");
+        redirect_to("/ax1/author_deletes_own_post_choose_post/page");
     }
 }

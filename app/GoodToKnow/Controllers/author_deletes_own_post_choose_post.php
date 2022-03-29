@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TopicToPost;
 
-class AuthorDeletesOwnPostChoosePost
+class author_deletes_own_post_choose_post
 {
     function page()
     {

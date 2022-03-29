@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AuthorDeletesOwnPostDelete/page" method="post">
+    <form action="/ax1/author_deletes_own_post_delete/page" method="post">
         <h2>Which post do you want to delete?</h2>
         <?php require SESSIONMESSAGE; ?>
         <section>

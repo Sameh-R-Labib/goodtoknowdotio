@@ -7,7 +7,7 @@
             <a class="greenbtn" href="/ax1/CreateNewPost/page">Create A Post</a>
             <a class="purplebtn" href="/ax1/EditPostTitle/page">Edit Post Title</a>
             <a class="purplebtn" href="/ax1/EditMyPost/page">Edit Post Content</a>
-            <a class="blackbtn" href="/ax1/AuthorDeletesOwnPost/page">Delete A Post</a>
+            <a class="blackbtn" href="/ax1/author_deletes_own_post/page">Delete A Post</a>
             <a class="orangebtn" href="/ax1/ByUsernameMessage/page">Send A Message To Another User</a>
             <a class="clearbtn" href="/ax1/BlotOutSomeInboxMessages/page">Delete Some Messages</a>
             <a class="orangebtn" href="/ax1/DefaultCommunity/page">Switch To A Different Default Community</a>

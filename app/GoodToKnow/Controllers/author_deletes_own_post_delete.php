@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\post_object_for_owner_prep;
 
-class AuthorDeletesOwnPostDelete
+class author_deletes_own_post_delete
 {
     function page()
     {

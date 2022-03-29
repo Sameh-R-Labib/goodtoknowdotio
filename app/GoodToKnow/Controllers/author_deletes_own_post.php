@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AuthorDeletesOwnPost
+class author_deletes_own_post
 {
     function page()
     {
