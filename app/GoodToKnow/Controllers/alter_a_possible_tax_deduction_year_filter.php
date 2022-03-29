@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AlterAPossibleTaxDeductionYearFilter
+class alter_a_possible_tax_deduction_year_filter
 {
     function page()
     {

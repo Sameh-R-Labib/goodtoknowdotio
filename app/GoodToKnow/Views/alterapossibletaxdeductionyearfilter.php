@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AlterAPossibleTaxDeductionEdit/page" method="post">
+    <form action="/ax1/alter_a_possible_tax_deduction_edit/page" method="post">
         <h1>Edit a Possible Tax Deduction</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which one?</p>

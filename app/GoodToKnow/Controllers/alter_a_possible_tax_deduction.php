@@ -4,7 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
-class AlterAPossibleTaxDeduction
+class alter_a_possible_tax_deduction
 {
     function page()
     {

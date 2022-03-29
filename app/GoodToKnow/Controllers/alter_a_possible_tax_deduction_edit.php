@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AlterAPossibleTaxDeductionEdit
+class alter_a_possible_tax_deduction_edit
 {
     function page()
     {
@@ -52,7 +52,7 @@ class AlterAPossibleTaxDeductionEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/AlterAPossibleTaxDeductionUpdate/page';
+        $g->action = '/ax1/alter_a_possible_tax_deduction_update/page';
         $g->heading_one = 'Edit a Possible Tax Deduction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'possible_tax_deduction_form.php';
     }
