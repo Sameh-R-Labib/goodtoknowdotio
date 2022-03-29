@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Community;
 
-class AdminPassCodeGenerationForm
+class admin_pass_code_generation_form
 {
     function page()
     {

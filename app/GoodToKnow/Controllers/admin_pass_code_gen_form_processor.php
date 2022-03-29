@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\any_community_ff_prep;
 
-class AdminPassCodeGenFormProcessor
+class admin_pass_code_gen_form_processor
 {
     function page()
     {

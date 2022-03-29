@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AdminHome
+class admin_home
 {
     function page()
     {
@@ -10,9 +10,9 @@ class AdminHome
 
         kick_out_nonadmins_or_if_there_is_error_msg();
 
-        $g->html_title = 'Admin';
+        $g->html_title = 'admin';
 
-        $g->page = 'Admin';
+        $g->page = 'admin';
 
         $g->show_poof = true;
 

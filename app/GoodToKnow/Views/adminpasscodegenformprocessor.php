@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AdminCreateUser/page" method="post">
+    <form action="/ax1/admin_create_user/page" method="post">
         <h1>User</h1>
         <?php require SESSIONMESSAGE; ?>
         <h2>Log-in Credentials</h2>

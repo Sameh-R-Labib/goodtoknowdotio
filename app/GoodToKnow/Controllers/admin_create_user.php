@@ -12,7 +12,7 @@ use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 use function GoodToKnow\ControllerHelpers\title_ofaperson_form_field_prep;
 use function GoodToKnow\ControllerHelpers\username_for_registration_prep;
 
-class AdminCreateUser
+class admin_create_user
 {
     function page()
     {

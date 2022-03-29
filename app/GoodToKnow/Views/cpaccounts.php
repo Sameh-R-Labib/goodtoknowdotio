@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <p><a href="/ax1/AdminPassCodeGenerationForm/page">Create Account for Someone</a></p>
+        <p><a href="/ax1/admin_pass_code_generation_form/page">Create Account for Someone</a></p>
         <p><a href="/ax1/GiveCommunitiesToUser/page">Give Communities to User</a></p>
         <p><a href="/ax1/RemoveCommunitiesFromAUser/page">Remove Communities from A User</a></p>
         <p><a href="/ax1/UserRoster/page">User Roster</a></p>

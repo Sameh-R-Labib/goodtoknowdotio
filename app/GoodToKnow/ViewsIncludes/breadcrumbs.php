@@ -7,7 +7,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/Inbox/page\">Inbox</a>";
         break;
     case 'Admin':
-        echo "<a href=\"/ax1/AdminHome/page\">Admin Home</a>";
+        echo "<a href=\"/ax1/admin_home/page\">Admin Home</a>";
         break;
     case 'CP':
         echo "<a href=\"/ax1/ControlPanel/page\">Control Panel</a>";
