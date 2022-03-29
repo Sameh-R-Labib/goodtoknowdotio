@@ -6,7 +6,7 @@ use GoodToKnow\Models\MessageToUser;
 use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
 
 
-class BlotOutSomeInboxMessagesProcessor
+class blot_out_some_inbox_messages_processor
 {
     function page()
     {

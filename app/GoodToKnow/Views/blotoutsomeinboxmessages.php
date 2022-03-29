@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/BlotOutSomeInboxMessagesProcessor/page" method="post">
+<form action="/ax1/blot_out_some_inbox_messages_processor/page" method="post">
     <h1>Delete Some 📥 💬s</h1>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Ninety day old messages or older will be deleted without your intervention.</span>

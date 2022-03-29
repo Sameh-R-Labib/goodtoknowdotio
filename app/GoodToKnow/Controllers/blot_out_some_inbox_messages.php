@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\MessageToUser;
 
-class BlotOutSomeInboxMessages
+class blot_out_some_inbox_messages
 {
     function page()
     {
