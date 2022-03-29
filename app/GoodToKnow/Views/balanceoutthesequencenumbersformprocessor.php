@@ -7,7 +7,7 @@
         <p><b>What you see is what will be saved:</b></p>
         <?= $g->present ?>
         <!-- Present link buttons for Save and Abort -->
-        <p><a class="save" href="/ax1/BalanceOutTheSequenceNumbersSave/page">Save</a>
+        <p><a class="save" href="/ax1/balance_out_the_sequence_numbers_save/page">Save</a>
             <a class="abort" href="/ax1/ClearSessionVars/page">Abort</a></p>
     </form>
 <?php require BOTTOMOFPAGES; ?>

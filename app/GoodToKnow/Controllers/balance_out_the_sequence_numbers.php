@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\TopicToPost;
 
-class BalanceOutTheSequenceNumbers
+class balance_out_the_sequence_numbers
 {
     function page()
     {

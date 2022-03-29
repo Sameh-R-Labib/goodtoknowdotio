@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Topic;
 
-class BalanceOutTheSequenceNumbersSave
+class balance_out_the_sequence_numbers_save
 {
     function page()
     {

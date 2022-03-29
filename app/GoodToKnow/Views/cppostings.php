@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <p><a href="/ax1/BalanceOutTheSequenceNumbers/page">Balance Out The Sequence Numbers</a></p>
+        <p><a href="/ax1/balance_out_the_sequence_numbers/page">Balance Out The Sequence Numbers</a></p>
         <p><a href="/ax1/NewCommunity/page">Create Community</a></p>
         <p><a href="/ax1/KommunityDescriptionEditor/page">Edit A Community</a></p>
         <p><a href="/ax1/NewTopic/page">Create Topic</a></p>
