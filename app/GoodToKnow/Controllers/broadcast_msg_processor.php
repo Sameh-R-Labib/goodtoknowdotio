@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\MessageToUser;
 use GoodToKnow\Models\User;
 
-class BroadcastMsgProcessor
+class broadcast_msg_processor
 {
     function page()
     {
@@ -74,7 +74,7 @@ class BroadcastMsgProcessor
 
         if (!$result) {
 
-            breakout(' In BroadcastMsgProcessor encountered unexpected the fact that MessageToUser::insert_multiple_objects
+            breakout(' In broadcast_msg_processor encountered unexpected the fact that MessageToUser::insert_multiple_objects
              was unable to save message_to_user records for the message and all users. ');
 
         }

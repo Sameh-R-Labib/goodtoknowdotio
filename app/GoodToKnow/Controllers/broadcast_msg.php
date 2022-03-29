@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class BroadcastMsg
+class broadcast_msg
 {
     function page()
     {

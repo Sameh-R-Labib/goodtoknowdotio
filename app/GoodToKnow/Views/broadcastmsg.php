@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/BroadcastMsgProcessor/page" method="post">
+    <form action="/ax1/broadcast_msg_processor/page" method="post">
         <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
             <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">📄 Cheatsheet</a>
         </h2>
