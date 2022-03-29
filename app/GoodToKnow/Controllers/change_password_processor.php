@@ -6,7 +6,7 @@ use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class ChangePasswordProcessor
+class change_password_processor
 {
     function page()
     {

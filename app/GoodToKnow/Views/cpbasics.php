@@ -12,7 +12,7 @@
             <a class="clearbtn" href="/ax1/blot_out_some_inbox_messages/page">Delete Some Messages</a>
             <a class="orangebtn" href="/ax1/DefaultCommunity/page">Switch To A Different Default Community</a>
             <a class="purplebtn" href="/ax1/DefaultTimeZone/page">Switch Timezone</a>
-            <a class="greenbtn" href="/ax1/ChangePassword/page">Change Passphrase</a><br><br><br>
+            <a class="greenbtn" href="/ax1/change_password/page">Change Passphrase</a><br><br><br>
             <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">To have a new topic (or community) added you
                     need to ask admin.</span></span></p>
     </div><!-- End maincontent -->

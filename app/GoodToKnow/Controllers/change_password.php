@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class ChangePassword
+class change_password
 {
     function page()
     {
