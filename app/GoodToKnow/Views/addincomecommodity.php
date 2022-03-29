@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AddIncomeCommodityFormProcessor/page" method="post">
+    <form action="/ax1/add_income_commodity_form_processor/page" method="post">
         <h1>Add Records For Taxable Remuneration and Commodity</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>

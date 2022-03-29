@@ -8,7 +8,7 @@
             <a class="orangebtn" href="/ax1/EditACommodityRecord/page">Edit</a>
             <a class="clearbtn" href="/ax1/CommoditySeeMyRecordsSpecify/page">Show</a>
             <a class="orangebtn" href="/ax1/DeleteACommodityRecord/page">Delete</a>
-            <a class="greenbtn" href="/ax1/AddIncomeCommodity/page">Create Income Commodity</a></p>
+            <a class="greenbtn" href="/ax1/add_income_commodity/page">Create Income Commodity</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

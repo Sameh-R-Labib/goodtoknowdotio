@@ -9,7 +9,7 @@ use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class AddIncomeCommodityFormProcessor
+class add_income_commodity_form_processor
 {
     function page()
     {
@@ -102,7 +102,7 @@ class AddIncomeCommodityFormProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/AddIncomeCommodityRedo/page");
+                redirect_to("/ax1/add_income_commodity_redo/page");
 
             }
 

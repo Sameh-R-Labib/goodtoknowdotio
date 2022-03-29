@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AddIncomeCommodity
+class add_income_commodity
 {
     function page()
     {

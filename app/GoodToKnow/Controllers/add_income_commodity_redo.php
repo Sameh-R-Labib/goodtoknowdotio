@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AddIncomeCommodityRedo
+class add_income_commodity_redo
 {
     public function page()
     {

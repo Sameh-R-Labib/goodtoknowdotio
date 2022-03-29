@@ -8,7 +8,7 @@
             <a class="purplebtn" href="/ax1/WriteOverATaxableIncomeEvent/page">Edit</a>
             <a class="purplebtn" href="/ax1/GawkAtAllTaxableIncomeEvents/page">See 1 Year's</a>
             <a class="clearbtn" href="/ax1/NukeATaxableIncomeEvent/page">Delete</a>
-            <a class="blackbtn" href="/ax1/AddIncomeCommodity/page">Create Income Commodity</a></p>
+            <a class="blackbtn" href="/ax1/add_income_commodity/page">Create Income Commodity</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
