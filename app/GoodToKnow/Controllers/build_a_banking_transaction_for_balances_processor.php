@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class BuildABankingTransactionForBalancesProcessor
+class build_a_banking_transaction_for_balances_processor
 {
     function page()
     {
@@ -87,7 +87,7 @@ class BuildABankingTransactionForBalancesProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/BuildABankingTransactionForBalancesRedo/page");
+                redirect_to("/ax1/build_a_banking_transaction_for_balances_redo/page");
             }
 
         }

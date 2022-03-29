@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
 
-class BuildABankingTransactionForBalances
+class build_a_banking_transaction_for_balances
 {
     function page()
     {
@@ -67,7 +67,7 @@ class BuildABankingTransactionForBalances
 
         $_SESSION['is_first_attempt'] = true;
 
-        $g->action = '/ax1/BuildABankingTransactionForBalancesProcessor/page';
+        $g->action = '/ax1/build_a_banking_transaction_for_balances_processor/page';
         $g->heading_one = 'Create Transaction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
     }

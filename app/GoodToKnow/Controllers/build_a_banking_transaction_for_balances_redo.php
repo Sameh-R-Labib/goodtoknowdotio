@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
 
-class BuildABankingTransactionForBalancesRedo
+class build_a_banking_transaction_for_balances_redo
 {
     function page()
     {
@@ -40,7 +40,7 @@ class BuildABankingTransactionForBalancesRedo
         $g->message .= ' <b>We are giving you one chance to fix the time value which we think is wrong.</b> ';
 
 
-        $g->action = '/ax1/BuildABankingTransactionForBalancesProcessor/page';
+        $g->action = '/ax1/build_a_banking_transaction_for_balances_processor/page';
         $g->heading_one = 'Create Transaction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
     }

@@ -9,7 +9,7 @@ class RevampABankingTransactionForBalancesRedo
     function page()
     {
         /**
-         * This is similar to BuildABankingTransactionForBalancesRedo::page().
+         * This is similar to build_a_banking_transaction_for_balances_redo::page().
          */
 
         global $g;

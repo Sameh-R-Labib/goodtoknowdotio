@@ -10,7 +10,7 @@ class TransferAnAmountRedo
     function page()
     {
         /**
-         * This is similar to BuildABankingTransactionForBalancesRedo
+         * This is similar to build_a_banking_transaction_for_balances_redo
          */
 
         global $g;

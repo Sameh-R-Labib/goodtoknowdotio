@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <p><a class="clearbtn" href="/ax1/BuildABankingTransactionForBalances/page">Create Transaction</a>
+        <p><a class="clearbtn" href="/ax1/build_a_banking_transaction_for_balances/page">Create Transaction</a>
             <a class="greenbtn" href="/ax1/RevampABankingTransactionForBalances/page">Edit Transaction</a>
             <a class="purplebtn" href="/ax1/CheckMyBankingAccountTxBalances/page">See Transactions</a>
             <a class="blackbtn" href="/ax1/OmitABankingTransactionForBalances/page">Delete Transaction</a>
