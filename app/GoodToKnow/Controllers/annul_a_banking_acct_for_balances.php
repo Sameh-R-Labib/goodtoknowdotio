@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class AnnulABankingAcctForBalances
+class annul_a_banking_acct_for_balances
 {
     function page()
     {

@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AnnulABankingAcctForBalancesDelete/page" method="post">
+    <form action="/ax1/annul_a_banking_acct_for_balances_delete/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>

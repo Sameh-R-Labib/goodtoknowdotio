@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class AnnulABankingAcctForBalancesProcessor
+class annul_a_banking_acct_for_balances_processor
 {
     function page()
     {

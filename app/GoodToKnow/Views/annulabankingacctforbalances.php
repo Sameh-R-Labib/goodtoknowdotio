@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AnnulABankingAcctForBalancesProcessor/page" method="post">
+    <form action="/ax1/annul_a_banking_acct_for_balances_processor/page" method="post">
         <h1>Delete a Bank Account for Ledger</h1>
         <p>Which Bank Account for Balances?</p>
         <?php require SESSIONMESSAGE; ?>

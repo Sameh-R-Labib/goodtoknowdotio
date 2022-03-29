@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class AnnulABankingAcctForBalancesDelete
+class annul_a_banking_acct_for_balances_delete
 {
     function page()
     {
