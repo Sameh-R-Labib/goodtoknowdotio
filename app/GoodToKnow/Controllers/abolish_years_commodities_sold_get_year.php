@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use Exception;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class AbolishYearsCommoditiesSoldGetYear
+class abolish_years_commodities_sold_get_year
 {
     function page()
     {
@@ -58,7 +58,7 @@ class AbolishYearsCommoditiesSoldGetYear
 
         } catch (Exception $e) {
 
-            $g->message .= ' AbolishYearsCommoditiesSoldGetYear page() exception: ' .
+            $g->message .= ' abolish_years_commodities_sold_get_year page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }

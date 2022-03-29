@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/AbolishYearsCommoditiesSoldGetYear/page" method="post">
+    <form action="/ax1/abolish_years_commodities_sold_get_year/page" method="post">
         <h1>Admin delete a year's Commodity Sold Records</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">If today's year is 2019 then do not delete 2019, 2018, 2017, 2016
