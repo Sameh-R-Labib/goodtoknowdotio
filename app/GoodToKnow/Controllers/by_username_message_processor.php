@@ -6,7 +6,7 @@ use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\is_username_syntactandexists;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class ByUsernameMessageProcessor
+class by_username_message_processor
 {
     function page()
     {

@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/ByUsernameMessageProcessor/page" method="post">
-    <h1>Username 💬 a User</h1>
-    <?php require SESSIONMESSAGE; ?>
+    <form action="/ax1/by_username_message_processor/page" method="post">
+        <h1>Username 💬 a User</h1>
+        <?php require SESSIONMESSAGE; ?>
     <section>
         <p>
             <label for="username">U/N of Receiver: </label>

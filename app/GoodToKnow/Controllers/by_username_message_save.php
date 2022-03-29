@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\MessageToUser;
 use GoodToKnow\Models\User;
 
-class ByUsernameMessageSave
+class by_username_message_save
 {
     function page()
     {

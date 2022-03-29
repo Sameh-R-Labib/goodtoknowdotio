@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class ByUsernameMessage
+class by_username_message
 {
     function page()
     {
