@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CheckMyBankingAccountTxBalancesProcessor
+class check_my_banking_account_tx_balances_processor
 {
     function page()
     {
@@ -27,6 +27,6 @@ class CheckMyBankingAccountTxBalancesProcessor
          * 4) Redirect to next piece of code.
          */
 
-        redirect_to("/ax1/CheckMyBankingAccountTxBalancesShowBalances/page");
+        redirect_to("/ax1/check_my_banking_account_tx_balances_show_balances/page");
     }
 }

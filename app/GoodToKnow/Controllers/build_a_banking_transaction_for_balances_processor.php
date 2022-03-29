@@ -146,6 +146,6 @@ class build_a_banking_transaction_for_balances_processor
 
         $_SESSION['saved_int01'] = $bank_id;
 
-        redirect_to("/ax1/CheckMyBankingAccountTxBalancesShowBalances/page");
+        redirect_to("/ax1/check_my_banking_account_tx_balances_show_balances/page");
     }
 }

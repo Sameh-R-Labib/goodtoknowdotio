@@ -167,6 +167,6 @@ class RevampABankingTransactionForBalancesUpdate
         // I'm aware I'm re-using saved_int01 for something other than what this feature had been using it for.
         $_SESSION['saved_int01'] = $bank_id;
 
-        redirect_to("/ax1/CheckMyBankingAccountTxBalancesShowBalances/page");
+        redirect_to("/ax1/check_my_banking_account_tx_balances_show_balances/page");
     }
 }

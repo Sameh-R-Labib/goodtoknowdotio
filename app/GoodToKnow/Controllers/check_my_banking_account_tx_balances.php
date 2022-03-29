@@ -2,13 +2,13 @@
 
 namespace GoodToKnow\Controllers;
 
-class CheckMyBankingAccountTxBalances
+class check_my_banking_account_tx_balances
 {
     function page()
     {
         /**
          * About this feature:
-         *  CheckMyBankingAccountTxBalances is a feature for  showing you a ledger with balances for one of
+         *  check_my_banking_account_tx_balances is a feature for  showing you a ledger with balances for one of
          *  your banking accounts and its transactions.
          *
          * About this function:

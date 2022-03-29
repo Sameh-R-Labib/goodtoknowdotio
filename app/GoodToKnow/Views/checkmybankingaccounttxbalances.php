@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/CheckMyBankingAccountTxBalancesProcessor/page" method="post">
+    <form action="/ax1/check_my_banking_account_tx_balances_processor/page" method="post">
         <h1>See Transactions</h1>
         <p>Which one?</p>
         <?php require SESSIONMESSAGE; ?>

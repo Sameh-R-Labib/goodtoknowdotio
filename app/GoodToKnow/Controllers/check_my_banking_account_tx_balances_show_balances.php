@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\BankingAcctForBalances;
 use GoodToKnow\Models\BankingTransactionForBalances;
 
-class CheckMyBankingAccountTxBalancesShowBalances
+class check_my_banking_account_tx_balances_show_balances
 {
     function page()
     {
@@ -172,7 +172,7 @@ class CheckMyBankingAccountTxBalancesShowBalances
         $g->html_title = 'Transactions';
 
 
-        $g->page = 'CheckMyBankingAccountTxBalances';
+        $g->page = 'check_my_banking_account_tx_balances';
 
 
         $g->show_poof = true;
