@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CleanupYearsTaxableIncomeEvents
+class cleanup_years_taxable_income_events
 {
     function page()
     {

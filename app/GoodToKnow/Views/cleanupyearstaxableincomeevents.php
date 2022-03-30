@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/CleanupYearsTaxableIncomeEventsGetYear/page" method="post">
+    <form action="/ax1/cleanup_years_taxable_income_events_get_year/page" method="post">
         <h1>Admin delete a year's Taxable Income Event Records</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">If today's year is 2019 then do not delete 2019, 2018, 2017 or 2016 because that is what our users' are

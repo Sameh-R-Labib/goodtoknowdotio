@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use Exception;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class CleanupYearsTaxableIncomeEventsGetYear
+class cleanup_years_taxable_income_events_get_year
 {
     function page()
     {
@@ -58,7 +58,7 @@ class CleanupYearsTaxableIncomeEventsGetYear
 
         } catch (Exception $e) {
 
-            $g->message .= ' CleanupYearsTaxableIncomeEventsGetYear page() exception: ' .
+            $g->message .= ' cleanup_years_taxable_income_events_get_year page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
