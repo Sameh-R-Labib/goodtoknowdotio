@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Post;
 
-class EditPostTitleDirect
+class edit_post_title_direct
 {
     function page()
     {

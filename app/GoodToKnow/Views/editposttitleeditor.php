@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/EditPostTitleEditorProcessor/page" method="post">
+    <form action="/ax1/edit_post_title_editor_processor/page" method="post">
         <h2>Edit Title of Post</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">The main title is the title which appears in a listing of posts for topic.

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class EditPostTitleProcessor
+class edit_post_title_processor
 {
     function page()
     {
@@ -12,7 +12,7 @@ class EditPostTitleProcessor
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
-        redirect_to("/ax1/EditPostTitleChoosePost/page");
+        redirect_to("/ax1/edit_post_title_choose_post/page");
 
     }
 

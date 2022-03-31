@@ -5,7 +5,7 @@
     <div id="maincontent">
         <p>
             <a class="greenbtn" href="/ax1/create_new_post/page">Create A Post</a>
-            <a class="purplebtn" href="/ax1/EditPostTitle/page">Edit Post Title</a>
+            <a class="purplebtn" href="/ax1/edit_post_title/page">Edit Post Title</a>
             <a class="purplebtn" href="/ax1/edit_my_post/page">Edit Post Content</a>
             <a class="blackbtn" href="/ax1/author_deletes_own_post/page">Delete A Post</a>
             <a class="orangebtn" href="/ax1/by_username_message/page">Send A Message To Another User</a>

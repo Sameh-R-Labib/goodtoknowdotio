@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Post;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class EditPostTitleEditorProcessor
+class edit_post_title_editor_processor
 {
     function page()
     {
