@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/DefaultCommunityProcessor/page" method="post">
+    <form action="/ax1/default_community_processor/page" method="post">
         <h2>Change Default Community</h2>
         <p>Which of your communities do you want to be the default?</p>
         <?php require SESSIONMESSAGE; ?>

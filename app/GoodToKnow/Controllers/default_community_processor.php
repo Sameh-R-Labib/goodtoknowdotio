@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 
-class DefaultCommunityProcessor
+class default_community_processor
 {
     function page()
     {

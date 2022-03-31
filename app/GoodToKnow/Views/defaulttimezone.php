@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/DefaultTimeZoneProcessor/page" method="post">
+    <form action="/ax1/default_time_zone_processor/page" method="post">
         <h1>Change my Default ⌚🌐</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>New default timezone</p>

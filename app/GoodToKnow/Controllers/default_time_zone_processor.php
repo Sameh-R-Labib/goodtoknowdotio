@@ -6,7 +6,7 @@ use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
-class DefaultTimeZoneProcessor
+class default_time_zone_processor
 {
     function page()
     {

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class DefaultTimeZone
+class default_time_zone
 {
     function page()
     {
