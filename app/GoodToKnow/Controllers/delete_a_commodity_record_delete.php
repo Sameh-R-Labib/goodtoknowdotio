@@ -2,16 +2,16 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommoditySold;
+use GoodToKnow\Models\Commodity;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class DropACommoditySoldConfirmation
+class delete_a_commodity_record_delete
 {
     function page()
     {
         /**
-         * Here we will read the choice of whether or not to delete the record. If yes then
-         * delete it. On the other hand if no then reset some session variables and redirect to the home page.
+         * Here we will read the choice of whether to delete the commodity record. If yes then delete it.
+         * On the other hand if no then reset some session variables and redirect to the home page.
          */
 
 
@@ -42,25 +42,26 @@ class DropACommoditySoldConfirmation
 
         get_db();
 
-        $object = CommoditySold::find_by_id($g->saved_int01);
+        $commodity = Commodity::find_by_id($g->saved_int01);
 
-        if (!$object) {
+        if (!$commodity) {
 
-            breakout(' I was not able to find the record. ');
+            breakout(' I was NOT able to find the commodity record. ');
 
         }
 
-        $result = $object->delete();
+
+        $result = $commodity->delete();
 
         if (!$result) {
 
-            breakout(' Unexpectedly I could not delete the record. ');
+            breakout(' Unexpectedly I could not delete the commodity record. ');
 
         }
 
 
         // Report successful deletion of post.
 
-        breakout(' Your commodity sold has just been deleted. ');
+        breakout(' I have deleted the commodity record. ');
     }
 }

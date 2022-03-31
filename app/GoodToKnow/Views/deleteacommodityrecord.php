@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/DeleteACommodityRecordProcessor/page" method="post">
+    <form action="/ax1/delete_a_commodity_record_processor/page" method="post">
         <h1>Delete a Commodity Record</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>

@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\make_commodity_readable;
 
-class DeleteACommodityRecord
+class delete_a_commodity_record
 {
     function page()
     {

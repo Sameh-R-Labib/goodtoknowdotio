@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class DownloadTheDatabase
+class download_the_database
 {
     function page()
     {

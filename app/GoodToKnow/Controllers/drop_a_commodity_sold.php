@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class DropACommoditySold
+class drop_a_commodity_sold
 {
     function page()
     {

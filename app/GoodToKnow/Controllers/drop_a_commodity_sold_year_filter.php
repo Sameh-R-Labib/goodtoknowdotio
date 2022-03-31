@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class DropACommoditySoldYearFilter
+class drop_a_commodity_sold_year_filter
 {
     function page()
     {
