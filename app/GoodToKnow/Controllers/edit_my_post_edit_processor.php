@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
-class EditMyPostEditProcessor
+class edit_my_post_edit_processor
 {
     function page()
     {

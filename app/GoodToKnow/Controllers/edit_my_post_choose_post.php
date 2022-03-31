@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TopicToPost;
 
-class EditMyPostChoosePost
+class edit_my_post_choose_post
 {
     function page()
     {

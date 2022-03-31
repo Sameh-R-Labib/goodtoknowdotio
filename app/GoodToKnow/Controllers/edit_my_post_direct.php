@@ -4,13 +4,13 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Post;
 
-class EditMyPostDirect
+class edit_my_post_direct
 {
     function page()
     {
 
         /**
-         * This method is similar to EditMyPostEditor::page().
+         * This method is similar to edit_my_post_editor::page().
          *
          * The only two differences are:
          * - The id of the post comes from $g->post_id instead of from the submitted form.

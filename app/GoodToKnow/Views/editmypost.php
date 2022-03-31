@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/EditMyPostProcessor/page" method="post">
+    <form action="/ax1/edit_my_post_processor/page" method="post">
         <h2>Which topic?</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Shown below are the topics within your current community.</span>

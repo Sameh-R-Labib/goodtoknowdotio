@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\post_object_for_owner_prep;
 
-class EditMyPostEditor
+class edit_my_post_editor
 {
     function page()
     {

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class EditMyPostProcessor
+class edit_my_post_processor
 {
     function page()
     {
@@ -12,6 +12,6 @@ class EditMyPostProcessor
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
-        redirect_to("/ax1/EditMyPostChoosePost/page");
+        redirect_to("/ax1/edit_my_post_choose_post/page");
     }
 }

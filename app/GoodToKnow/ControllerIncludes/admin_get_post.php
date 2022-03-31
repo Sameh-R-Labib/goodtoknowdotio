@@ -15,6 +15,6 @@ $g->post_object = Post::find_by_id($g->chosen_post_id);
 
 if (!$g->post_object) {
 
-    breakout(' EditMyPostEditor: Error 011299. ');
+    breakout(' edit_my_post_editor: Error 011299. ');
 
 }

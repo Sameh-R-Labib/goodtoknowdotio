@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class EditMyPost
+class edit_my_post
 {
     function page()
     {
