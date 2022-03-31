@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class ControlPanel
+class control_panel
 {
     function page()
     {

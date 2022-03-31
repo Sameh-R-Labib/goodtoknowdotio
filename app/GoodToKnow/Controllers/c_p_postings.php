@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPAccounts
+class c_p_postings
 {
     function page()
     {
@@ -12,18 +12,18 @@ class CPAccounts
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPAccounts';
+        $g->page = 'c_p_postings';
 
 
         $g->show_poof = true;
 
 
-        $g->html_title = 'Accounts';
+        $g->html_title = 'Postings';
 
 
-        $g->message .= ' Manage accounts. ';
+        $g->message .= ' Manage postings. ';
 
 
-        require VIEWS . DIRSEP . 'cpaccounts.php';
+        require VIEWS . DIRSEP . 'cppostings.php';
     }
 }

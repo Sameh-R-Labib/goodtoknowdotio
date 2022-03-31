@@ -10,7 +10,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/admin_home/page\">Admin Home</a>";
         break;
     case 'CP':
-        echo "<a href=\"/ax1/ControlPanel/page\">Control Panel</a>";
+        echo "<a href=\"/ax1/control_panel/page\">Control Panel</a>";
         break;
     case 'UserRoster':
         echo "<a href=\"/ax1/UserRoster/page\">User Roster</a>";
@@ -42,41 +42,41 @@ switch ($g->page) {
     case 'SpyCommoditiesSoldYear':
         echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodity Sold Records</a>";
         break;
-    case 'CPBasics':
-        echo "<a href=\"/ax1/CPBasics/page\">Blog And Message</a>";
+    case 'c_p_basics':
+        echo "<a href=\"/ax1/c_p_basics/page\">Blog And Message</a>";
         break;
-    case 'CPTransactions':
-        echo "<a href=\"/ax1/CPTransactions/page\">Banking Transaction</a>";
+    case 'c_p_transactions':
+        echo "<a href=\"/ax1/c_p_transactions/page\">Banking Transaction</a>";
         break;
-    case 'CPRecurringPayments':
-        echo "<a href=\"/ax1/CPRecurringPayments/page\">Recurring Payment</a>";
+    case 'c_p_recurring_payments':
+        echo "<a href=\"/ax1/c_p_recurring_payments/page\">Recurring Payment</a>";
         break;
-    case 'CPBankingAccounts':
-        echo "<a href=\"/ax1/CPBankingAccounts/page\">Bank Account</a>";
+    case 'c_p_banking_accounts':
+        echo "<a href=\"/ax1/c_p_banking_accounts/page\">Bank Account</a>";
         break;
-    case 'CPCommodities':
-        echo "<a href=\"/ax1/CPCommodities/page\">Commodity</a>";
+    case 'c_p_commodities':
+        echo "<a href=\"/ax1/c_p_commodities/page\">Commodity</a>";
         break;
-    case 'CPTaxDeductions':
-        echo "<a href=\"/ax1/CPTaxDeductions/page\">Possible Tax Deductions</a>";
+    case 'c_p_tax_deductions':
+        echo "<a href=\"/ax1/c_p_tax_deductions/page\">Possible Tax Deductions</a>";
         break;
-    case 'CPToDoList':
-        echo "<a href=\"/ax1/CPToDoList/page\">Task</a>";
+    case 'c_p_to_do_list':
+        echo "<a href=\"/ax1/c_p_to_do_list/page\">Task</a>";
         break;
-    case 'CPTaxableIncome':
-        echo "<a href=\"/ax1/CPTaxableIncome/page\">Taxable Income Event</a>";
+    case 'c_p_taxable_income':
+        echo "<a href=\"/ax1/c_p_taxable_income/page\">Taxable Income Event</a>";
         break;
-    case 'CPCapitalGains':
-        echo "<a href=\"/ax1/CPCapitalGains/page\">Commodity Sold</a>";
+    case 'c_p_capital_gains':
+        echo "<a href=\"/ax1/c_p_capital_gains/page\">Commodity Sold</a>";
         break;
-    case 'CPPurges':
-        echo "<a href=\"/ax1/CPPurges/page\">System Maintenance</a>";
+    case 'c_p_purges':
+        echo "<a href=\"/ax1/c_p_purges/page\">System Maintenance</a>";
         break;
-    case 'CPAccounts':
-        echo "<a href=\"/ax1/CPAccounts/page\">Account</a>";
+    case 'c_p_accounts':
+        echo "<a href=\"/ax1/c_p_accounts/page\">Account</a>";
         break;
-    case 'CPPostings':
-        echo "<a href=\"/ax1/CPPostings/page\">Blog Post</a>";
+    case 'c_p_postings':
+        echo "<a href=\"/ax1/c_p_postings/page\">Blog Post</a>";
         break;
     case 'Proclamation':
         echo "<a href=\"/ax1/Proclamation/page\">Proclamation</a>";

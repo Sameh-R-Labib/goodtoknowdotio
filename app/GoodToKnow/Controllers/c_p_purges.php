@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPPurges
+class c_p_purges
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPPurges
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPPurges';
+        $g->page = 'c_p_purges';
 
 
         $g->show_poof = true;

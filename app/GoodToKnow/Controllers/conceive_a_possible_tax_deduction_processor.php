@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use GoodToKnow\Models\PossibleTaxDeduction;
 
-class ConceiveAPossibleTaxDeductionProcessor
+class conceive_a_possible_tax_deduction_processor
 {
     function page()
     {

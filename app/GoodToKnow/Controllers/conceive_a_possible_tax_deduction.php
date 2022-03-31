@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class ConceiveAPossibleTaxDeduction
+class conceive_a_possible_tax_deduction
 {
     function page()
     {
@@ -52,7 +52,7 @@ class ConceiveAPossibleTaxDeduction
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/ConceiveAPossibleTaxDeductionProcessor/page';
+        $g->action = '/ax1/conceive_a_possible_tax_deduction_processor/page';
         $g->heading_one = 'Create a Possible Tax Deduction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'possible_tax_deduction_form.php';
     }

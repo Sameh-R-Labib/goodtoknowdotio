@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPTaxDeductions
+class c_p_tax_deductions
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPTaxDeductions
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPTaxDeductions';
+        $g->page = 'c_p_tax_deductions';
 
 
         $g->show_poof = true;

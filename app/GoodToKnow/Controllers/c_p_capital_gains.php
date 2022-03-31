@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPCapitalGains
+class c_p_capital_gains
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPCapitalGains
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPCapitalGains';
+        $g->page = 'c_p_capital_gains';
 
 
         $g->show_poof = true;

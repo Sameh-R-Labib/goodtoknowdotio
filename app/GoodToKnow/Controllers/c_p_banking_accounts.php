@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPBankingAccounts
+class c_p_banking_accounts
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPBankingAccounts
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPBankingAccounts';
+        $g->page = 'c_p_banking_accounts';
 
 
         $g->show_poof = true;

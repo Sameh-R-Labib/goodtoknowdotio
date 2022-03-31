@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPBasics
+class c_p_to_do_list
 {
     function page()
     {
@@ -12,18 +12,18 @@ class CPBasics
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPBasics';
+        $g->page = 'c_p_to_do_list';
 
 
         $g->show_poof = true;
 
 
-        $g->html_title = 'Basics';
+        $g->html_title = 'Task List';
 
 
-        $g->message .= ' Manage account and posts. ';
+        $g->message .= ' Manage to-do list. ';
 
 
-        require VIEWS . DIRSEP . 'cpbasics.php';
+        require VIEWS . DIRSEP . 'cptodolist.php';
     }
 }

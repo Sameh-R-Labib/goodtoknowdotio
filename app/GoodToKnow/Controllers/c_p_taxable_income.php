@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPTaxableIncome
+class c_p_taxable_income
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPTaxableIncome
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPTaxableIncome';
+        $g->page = 'c_p_taxable_income';
 
 
         $g->show_poof = true;

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPTransactions
+class c_p_transactions
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPTransactions
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPTransactions';
+        $g->page = 'c_p_transactions';
 
 
         $g->show_poof = true;

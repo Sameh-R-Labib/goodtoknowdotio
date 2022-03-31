@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPRecurringPayments
+class c_p_recurring_payments
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPRecurringPayments
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPRecurringPayments';
+        $g->page = 'c_p_recurring_payments';
 
 
         $g->show_poof = true;

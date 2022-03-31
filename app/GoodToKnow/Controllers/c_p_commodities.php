@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CPCommodities
+class c_p_commodities
 {
     function page()
     {
@@ -12,7 +12,7 @@ class CPCommodities
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'CPCommodities';
+        $g->page = 'c_p_commodities';
 
 
         $g->show_poof = true;
