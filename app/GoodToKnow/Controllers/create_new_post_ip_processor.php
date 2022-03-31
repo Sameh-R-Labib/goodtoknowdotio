@@ -8,7 +8,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_before;
 use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_after;
 
-class CreateNewPostIPProcessor
+class create_new_post_ip_processor
 {
     function page()
     {
@@ -42,7 +42,7 @@ class CreateNewPostIPProcessor
 
         if (!$g->special_post_array) {
 
-            breakout(' CreateNewPostIPProcessor: Error 074346. ');
+            breakout(' create_new_post_ip_processor: Error 074346. ');
 
         }
 
@@ -59,7 +59,7 @@ class CreateNewPostIPProcessor
 
         if (!array_key_exists($g->chosen_post_id, $g->special_post_array)) {
 
-            breakout(' CreateNewPostIPProcessor: Error 421218. ');
+            breakout(' create_new_post_ip_processor: Error 421218. ');
 
         }
 
@@ -79,7 +79,7 @@ class CreateNewPostIPProcessor
 
         if (!$all_posts_as_objects) {
 
-            breakout(' CreateNewPostIPProcessor: Error 971249. ');
+            breakout(' create_new_post_ip_processor: Error 971249. ');
 
         }
 
@@ -93,7 +93,7 @@ class CreateNewPostIPProcessor
 
         if ($chosen_post_sequence_number == -1) {
 
-            breakout(' CreateNewPostIPProcessor: Error 537384. ');
+            breakout(' create_new_post_ip_processor: Error 537384. ');
 
         }
 
