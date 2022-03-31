@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class EditACommodityRecordRedo
+class edit_a_commodity_record_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class EditACommodityRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/EditACommodityRecordSubmit/page';
+        $g->action = '/ax1/edit_a_commodity_recordSubmit/page';
         $g->heading_one = 'Edit A Commodity Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_record_form.php';
     }

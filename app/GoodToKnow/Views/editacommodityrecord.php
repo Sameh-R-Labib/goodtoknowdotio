@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
 <?php global $g; ?>
-    <form action="/ax1/EditACommodityRecordProcessor/page" method="post">
+    <form action="/ax1/edit_a_commodity_record_processor/page" method="post">
         <h1>Edit a Commodity Record</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>⭐ <b>Suggestion:</b> Deleting useless records will unclutter this page and reduce our burden.</p>

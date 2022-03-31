@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class EditACommodityRecordSubmit
+class edit_a_commodity_record_submit
 {
     function page()
     {
@@ -128,7 +128,7 @@ class EditACommodityRecordSubmit
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/EditACommodityRecordRedo/page");
+                redirect_to("/ax1/edit_a_commodity_record_redo/page");
 
             }
 
