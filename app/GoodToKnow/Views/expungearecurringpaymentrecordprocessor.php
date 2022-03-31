@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/ExpungeARecurringPaymentRecordDelete/page" method="post">
+    <form action="/ax1/expunge_a_recurring_payment_record_delete/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>

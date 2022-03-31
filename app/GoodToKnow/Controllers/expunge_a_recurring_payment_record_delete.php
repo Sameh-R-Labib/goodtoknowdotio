@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\RecurringPayment;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class ExpungeARecurringPaymentRecordDelete
+class expunge_a_recurring_payment_record_delete
 {
     function page()
     {

@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\RecurringPayment;
 
-class ExpungeARecurringPaymentRecord
+class expunge_a_recurring_payment_record
 {
     function page()
     {

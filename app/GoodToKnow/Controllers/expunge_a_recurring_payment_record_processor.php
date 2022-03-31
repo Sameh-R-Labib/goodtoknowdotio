@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class ExpungeARecurringPaymentRecordProcessor
+class expunge_a_recurring_payment_record_processor
 {
     function page()
     {
