@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/create_new_post_titleProcessor/page" method="post">
+    <form action="/ax1/create_new_post_title_processor/page" method="post">
         <h2>Create a title</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">The main title is the title which appears in a listing of posts for topic.
