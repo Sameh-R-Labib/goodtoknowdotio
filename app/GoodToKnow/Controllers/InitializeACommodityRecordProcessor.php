@@ -164,7 +164,7 @@ class InitializeACommodityRecordProcessor
          * So, we are going to hook into the "See Commodities" feature.
          */
 
-        redirect_to("/ax1/CommoditySeeMyRecordsSpecify/page");
+        redirect_to("/ax1/commodity_see_my_records_specify/page");
 
     }
 }

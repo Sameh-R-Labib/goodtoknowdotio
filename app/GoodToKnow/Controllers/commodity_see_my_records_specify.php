@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CommoditySeeMyRecordsSpecify
+class commodity_see_my_records_specify
 {
     function page()
     {

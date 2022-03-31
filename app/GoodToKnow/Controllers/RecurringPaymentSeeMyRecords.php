@@ -11,7 +11,7 @@ class RecurringPaymentSeeMyRecords
     function page()
     {
         /**
-         * Similar to CommoditySeeMyRecords.
+         * Similar to commodity_see_my_records.
          */
 
 

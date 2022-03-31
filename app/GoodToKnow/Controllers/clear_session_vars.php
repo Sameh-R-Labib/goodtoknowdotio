@@ -4,7 +4,7 @@
 namespace GoodToKnow\Controllers;
 
 
-class ClearSessionVars
+class clear_session_vars
 {
     function page()
     {

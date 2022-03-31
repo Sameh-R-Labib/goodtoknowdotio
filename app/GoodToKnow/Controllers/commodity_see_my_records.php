@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\make_commodity_readable;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class CommoditySeeMyRecords
+class commodity_see_my_records
 {
     function page()
     {
@@ -93,7 +93,7 @@ class CommoditySeeMyRecords
 
         $g->html_title = 'Your Commodity records';
 
-        $g->page = 'CommoditySeeMyRecords';
+        $g->page = 'commodity_see_my_records';
 
         $g->show_poof = true;
 

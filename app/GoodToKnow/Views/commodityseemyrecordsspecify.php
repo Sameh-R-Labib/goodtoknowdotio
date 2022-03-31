@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/CommoditySeeMyRecords/page" method="post">
+    <form action="/ax1/commodity_see_my_records/page" method="post">
         <h1>See Your Commodity Records</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>I want to know which Commodity records you want to see.</p>
