@@ -4,7 +4,7 @@
     <!-- maincontent -->
     <div id="maincontent">
         <p>
-            <a class="greenbtn" href="/ax1/CreateNewPost/page">Create A Post</a>
+            <a class="greenbtn" href="/ax1/create_new_post/page">Create A Post</a>
             <a class="purplebtn" href="/ax1/EditPostTitle/page">Edit Post Title</a>
             <a class="purplebtn" href="/ax1/EditMyPost/page">Edit Post Content</a>
             <a class="blackbtn" href="/ax1/author_deletes_own_post/page">Delete A Post</a>

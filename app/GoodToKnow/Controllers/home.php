@@ -122,7 +122,7 @@ class home
         if ($g->type_of_resource_requested == 'topic') {
 
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️ for ⇒</a> ';
-            $g->message .= ' <a class="greenbtn" href="/ax1/CreateNewPostDirect/page">Create 📄</a> ';
+            $g->message .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
 
         }
 

@@ -6,7 +6,7 @@ use GoodToKnow\Models\Post;
 use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
-class CreateNewPostEditProcessor
+class create_new_post_edit_processor
 {
     function page()
     {

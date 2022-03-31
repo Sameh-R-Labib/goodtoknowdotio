@@ -4,12 +4,12 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TopicToPost;
 
-class CreateNewPostDirect
+class create_new_post_direct
 {
     function page()
     {
         /**
-         * CreateNewPostDirect is similar to CreateNewPostProcessor
+         * create_new_post_direct is similar to create_new_post_processor
          */
 
 
@@ -43,7 +43,7 @@ class CreateNewPostDirect
         $posts = TopicToPost::get_posts_array_for_a_topic($g->topic_id);
 
 
-        // The rest of this is the same as in CreateNewPostProcessor
+        // The rest of this is the same as in create_new_post_processor
 
         if ($posts == false) $posts = [];
 
@@ -53,7 +53,7 @@ class CreateNewPostDirect
 
             // We have some posts in our topic already
 
-            redirect_to("/ax1/CreateNewPostInsertPoint/page");
+            redirect_to("/ax1/create_new_post_insert_point/page");
 
         } else {
 
@@ -61,7 +61,7 @@ class CreateNewPostDirect
 
             $_SESSION['saved_int02'] = 10000;
 
-            redirect_to("/ax1/CreateNewPostTitle/page");
+            redirect_to("/ax1/create_new_post_title/page");
 
         }
     }

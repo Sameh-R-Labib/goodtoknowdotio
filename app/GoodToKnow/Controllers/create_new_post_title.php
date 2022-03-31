@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class CreateNewPostTitle
+class create_new_post_title
 {
     function page()
     {

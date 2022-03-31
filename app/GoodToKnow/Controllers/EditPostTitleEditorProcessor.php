@@ -10,7 +10,7 @@ class EditPostTitleEditorProcessor
     function page()
     {
         /**
-         * The code here is similar to that which is found in CreateNewPostTitleProcessor.
+         * The code here is similar to that which is found in create_new_post_title_processor.
          * However, the mission is slightly different.
          *
          * Mission:

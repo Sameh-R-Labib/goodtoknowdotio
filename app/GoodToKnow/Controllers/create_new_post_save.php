@@ -6,7 +6,7 @@ use Exception;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
-class CreateNewPostSave
+class create_new_post_save
 {
     function page()
     {
@@ -96,7 +96,7 @@ class CreateNewPostSave
 
         } catch (Exception $e) {
 
-            $g->message .= ' CreateNewPostSave page() caught a thrown exception: ' .
+            $g->message .= ' create_new_post_save page() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
@@ -134,7 +134,7 @@ class CreateNewPostSave
 
         if (!$result) {
 
-            breakout(' CreateNewPostSave: Unexpected save was unable to save the new post. ');
+            breakout(' create_new_post_save: Unexpected save was unable to save the new post. ');
 
         }
 
@@ -151,7 +151,7 @@ class CreateNewPostSave
 
         if (!$result) {
 
-            breakout(' CreateNewPostSave: Unexpected save was unable to save the TopicToPost. ');
+            breakout(' create_new_post_save: Unexpected save was unable to save the TopicToPost. ');
 
         }
 
@@ -166,7 +166,7 @@ class CreateNewPostSave
 
             if ($g->special_post_array === false) {
 
-                breakout(' CreateNewPostSave says: Unexpected unable to get special post array. ');
+                breakout(' create_new_post_save says: Unexpected unable to get special post array. ');
 
             }
 

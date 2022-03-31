@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class CreateNewPostTitleProcessor
+class create_new_post_title_processor
 {
     function page()
     {
@@ -36,6 +36,6 @@ class CreateNewPostTitleProcessor
 
         // Redirect
 
-        redirect_to("/ax1/CreateNewPostSave/page");
+        redirect_to("/ax1/create_new_post_save/page");
     }
 }

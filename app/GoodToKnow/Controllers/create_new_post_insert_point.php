@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TopicToPost;
 
-class CreateNewPostInsertPoint
+class create_new_post_insert_point
 {
     function page()
     {

@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\TopicToPost;
 
-class CreateNewPostProcessor
+class create_new_post_processor
 {
     function page()
     {
@@ -36,7 +36,7 @@ class CreateNewPostProcessor
 
             // We have some posts in our topic already
 
-            redirect_to("/ax1/CreateNewPostInsertPoint/page");
+            redirect_to("/ax1/create_new_post_insert_point/page");
 
         } else {
 
@@ -44,7 +44,7 @@ class CreateNewPostProcessor
 
             $_SESSION['saved_int02'] = 10000;
 
-            redirect_to("/ax1/CreateNewPostTitle/page");
+            redirect_to("/ax1/create_new_post_title/page");
 
         }
     }
