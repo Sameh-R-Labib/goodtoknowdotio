@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\CommunityToTopic;
 use GoodToKnow\Models\Topic;
 
-class NewTopicSave
+class new_topic_save
 {
     function page()
     {
@@ -73,7 +73,7 @@ class NewTopicSave
 
         if (!$result) {
 
-            breakout(' NewTopicSave says: Unexpected save was unable to save the new topic. ');
+            breakout(' new_topic_save says: Unexpected save was unable to save the new topic. ');
 
         }
 
@@ -88,7 +88,7 @@ class NewTopicSave
 
         if (!$result) {
 
-            breakout(' NewTopicSave says: Unexpected save was unable to save the CommunityToTopic. ');
+            breakout(' new_topic_save says: Unexpected save was unable to save the CommunityToTopic. ');
 
         }
 

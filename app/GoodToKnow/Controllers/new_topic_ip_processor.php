@@ -8,7 +8,7 @@ use function GoodToKnow\ControllerHelpers\before_after_form_field_prep;
 use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_before;
 use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_after;
 
-class NewTopicIPProcessor
+class new_topic_ip_processor
 {
     function page()
     {
@@ -41,7 +41,7 @@ class NewTopicIPProcessor
 
         if (!$g->special_topic_array) {
 
-            breakout(' NewTopicIPProcessor says: Unexpected error 39684. ');
+            breakout(' new_topic_ip_processor says: Unexpected error 39684. ');
 
         }
 
@@ -69,7 +69,7 @@ class NewTopicIPProcessor
 
         if (!array_key_exists($g->chosen_topic_id, $g->special_topic_array)) {
 
-            breakout(' NewTopicIPProcessor says: Error 124213. ');
+            breakout(' new_topic_ip_processor says: Error 124213. ');
 
         }
 
@@ -80,7 +80,7 @@ class NewTopicIPProcessor
 
         if (!$topic_objects_array) {
 
-            breakout(' NewTopicIPProcessor says: Error 860138. ');
+            breakout(' new_topic_ip_processor says: Error 860138. ');
 
         }
 
@@ -94,7 +94,7 @@ class NewTopicIPProcessor
 
         if ($chosen_topic_sequence_number == -1) {
 
-            breakout(' NewTopicIPProcessor says: Error 426273. ');
+            breakout(' new_topic_ip_processor says: Error 426273. ');
 
         }
 
@@ -113,6 +113,6 @@ class NewTopicIPProcessor
 
         $_SESSION['saved_int01'] = $sequence_number;
 
-        redirect_to("/ax1/NewTopicName/page");
+        redirect_to("/ax1/new_topic_name/page");
     }
 }

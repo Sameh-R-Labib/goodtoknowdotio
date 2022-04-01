@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class NewTopicInsertPoint
+class new_topic_insert_point
 {
     function page()
     {

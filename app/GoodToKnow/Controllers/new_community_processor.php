@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class NewCommunityProcessor
+class new_community_processor
 {
     function page()
     {
@@ -20,6 +20,6 @@ class NewCommunityProcessor
         $_SESSION['saved_str01'] = $community_name;
         $_SESSION['saved_str02'] = $community_description;
 
-        redirect_to("/ax1/NewCommunitySave/page");
+        redirect_to("/ax1/new_community_save/page");
     }
 }

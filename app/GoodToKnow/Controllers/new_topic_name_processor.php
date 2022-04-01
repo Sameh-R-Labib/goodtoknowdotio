@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class NewTopicNameProcessor
+class new_topic_name_processor
 {
     function page()
     {
@@ -32,6 +32,6 @@ class NewTopicNameProcessor
         $_SESSION['saved_str02'] = $topic_description;
 
 
-        redirect_to("/ax1/NewTopicSave/page");
+        redirect_to("/ax1/new_topic_save/page");
     }
 }

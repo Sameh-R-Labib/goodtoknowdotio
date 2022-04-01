@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Community;
 
-class NewCommunitySave
+class new_community_save
 {
     function page()
     {
@@ -30,7 +30,7 @@ class NewCommunitySave
 
         if (!$result) {
 
-            breakout(' NewCommunitySave says: Unexpected save was unable to save the new community. ');
+            breakout(' new_community_save says: Unexpected save was unable to save the new community. ');
 
         }
 

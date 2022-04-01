@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class NewCommunity
+class new_community
 {
     function page()
     {
