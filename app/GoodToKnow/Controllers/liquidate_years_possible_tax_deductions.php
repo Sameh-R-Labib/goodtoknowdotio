@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class LiquidateYearsPossibleTaxDeductions
+class liquidate_years_possible_tax_deductions
 {
     function page()
     {

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class LoginForm
+class login_form
 {
     function page()
     {

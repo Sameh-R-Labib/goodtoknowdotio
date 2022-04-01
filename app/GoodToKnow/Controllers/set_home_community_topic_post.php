@@ -51,7 +51,7 @@ class set_home_community_topic_post
 
             reset_feature_session_vars();
 
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/login_form/page");
 
         }
 

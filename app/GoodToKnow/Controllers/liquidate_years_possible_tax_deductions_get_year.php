@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class LiquidateYearsPossibleTaxDeductionsGetYear
+class liquidate_years_possible_tax_deductions_get_year
 {
     function page()
     {
@@ -57,7 +57,7 @@ class LiquidateYearsPossibleTaxDeductionsGetYear
 
         } catch (\Exception $e) {
 
-            $g->message .= ' LiquidateYearsPossibleTaxDeductionsGetYear page() exception: ' .
+            $g->message .= ' liquidate_years_possible_tax_deductions_get_year page() exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }

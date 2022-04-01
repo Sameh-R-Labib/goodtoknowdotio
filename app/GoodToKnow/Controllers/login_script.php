@@ -10,7 +10,7 @@ use function GoodToKnow\ControllerHelpers\is_password_syntactically;
 use function GoodToKnow\ControllerHelpers\is_username_syntactically;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class LoginScript
+class login_script
 {
     function page()
     {
@@ -87,7 +87,7 @@ class LoginScript
             $g->message .= " Failed to find the array of the user's communities. ";
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/login_form/page");
 
         }
 
@@ -135,7 +135,7 @@ class LoginScript
             $g->message .= " Authentication failed! ";
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/login_form/page");
 
         }
 
@@ -151,7 +151,7 @@ class LoginScript
             $g->message .= " No active account exists for this username. ";
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/login_form/page");
 
         }
 
@@ -185,7 +185,7 @@ class LoginScript
 
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/login_form/page");
 
         }
     }
@@ -215,7 +215,7 @@ class LoginScript
             $g->message .= ' Database connection failed. ';
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/LoginForm/page");
+            redirect_to("/ax1/login_form/page");
 
         }
     }

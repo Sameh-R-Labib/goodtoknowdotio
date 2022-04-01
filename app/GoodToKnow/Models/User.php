@@ -99,9 +99,9 @@ class User extends GoodObject
 
         if ($user_object->is_suspended) {
 
-            // The current script stops (we redirect to the Logout route.)
+            // The current script stops (we redirect to the logout route.)
 
-            redirect_to("/ax1/Logout/page");
+            redirect_to("/ax1/logout/page");
         }
 
         // Otherwise, return control over to where the function was called.

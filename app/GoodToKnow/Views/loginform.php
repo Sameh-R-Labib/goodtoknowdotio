@@ -16,7 +16,7 @@
         <title><?= $g->html_title ?></title>
     </head>
 <body>
-<form class="login" action="/ax1/LoginScript/page" method="post">
+<form class="login" action="/ax1/login_script/page" method="post">
     <h2>Log In</h2>
     <fieldset>
         <input type="text" name="username" spellcheck="false" placeholder="Username" minlength="7" required>

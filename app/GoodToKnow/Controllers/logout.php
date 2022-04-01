@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class Logout
+class logout
 {
     function page()
     {
@@ -13,6 +13,6 @@ class Logout
 
         $_SESSION = [];
         session_destroy();
-        redirect_to("/ax1/LoginForm/page");
+        redirect_to("/ax1/login_form/page");
     }
 }
