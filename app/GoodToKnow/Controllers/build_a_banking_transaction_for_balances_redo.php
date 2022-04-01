@@ -9,7 +9,7 @@ class build_a_banking_transaction_for_balances_redo
     function page()
     {
         /**
-         * This is similar to InduceATask::page().
+         * This is similar to induce_a_task::page().
          */
 
         global $g;

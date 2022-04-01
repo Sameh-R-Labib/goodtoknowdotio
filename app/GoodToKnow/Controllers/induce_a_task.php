@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class InduceATask
+class induce_a_task
 {
     function page()
     {
@@ -53,7 +53,7 @@ class InduceATask
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/InduceATaskCreate/page';
+        $g->action = '/ax1/induce_a_task_create/page';
         $g->heading_one = 'Create a Task';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }

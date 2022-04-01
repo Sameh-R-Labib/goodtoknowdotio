@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class InduceATaskRedo
+class induce_a_task_redo
 {
     function page()
     {
@@ -47,7 +47,7 @@ class InduceATaskRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/InduceATaskCreate/page';
+        $g->action = '/ax1/induce_a_task_create/page';
         $g->heading_one = 'Create a Task';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }

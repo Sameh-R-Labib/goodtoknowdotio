@@ -7,7 +7,7 @@ class feature_a_task_redo
     function page()
     {
         /**
-         * This is similar to InduceATask::page().
+         * This is similar to induce_a_task::page().
          */
 
         global $g;

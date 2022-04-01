@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use GoodToKnow\Models\Task;
 
-class InduceATaskCreate
+class induce_a_task_create
 {
     function page()
     {
@@ -86,7 +86,7 @@ class InduceATaskCreate
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/InduceATaskRedo/page");
+                redirect_to("/ax1/induce_a_task_redo/page");
 
             }
 
