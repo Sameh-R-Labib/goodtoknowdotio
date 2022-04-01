@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class GenerateABankingAccountForBalancesRedo
+class generate_a_banking_account_for_balances_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class GenerateABankingAccountForBalancesRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/GenerateABankingAccountForBalancesProcessor/page';
+        $g->action = '/ax1/generate_a_banking_account_for_balances_processor/page';
         $g->heading_one = 'Create a Bank Account';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }

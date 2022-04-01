@@ -6,7 +6,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class GenerateABankingAccountForBalancesProcessor
+class generate_a_banking_account_for_balances_processor
 {
     function page()
     {
@@ -86,7 +86,7 @@ class GenerateABankingAccountForBalancesProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/GenerateABankingAccountForBalancesRedo/page");
+                redirect_to("/ax1/generate_a_banking_account_for_balances_redo/page");
 
             }
 

@@ -4,7 +4,7 @@
     <!-- maincontent -->
     <div id="maincontent">
         <p>
-            <a class="purplebtn" href="/ax1/GenerateABankingAccountForBalances/page">Create</a>
+            <a class="purplebtn" href="/ax1/generate_a_banking_account_for_balances/page">Create</a>
             <a class="blackbtn" href="/ax1/PopulateABankingAccountForBalances/page">Edit</a>
             <a class="orangebtn" href="/ax1/ViewAllBankingAccountsForBalances/page">Show</a>
             <a class="clearbtn" href="/ax1/annul_a_banking_acct_for_balances/page">Delete</a></p>

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class GawkAtAllTaxableIncomeEvents
+class gawk_at_all_taxable_income_events
 {
     function page()
     {

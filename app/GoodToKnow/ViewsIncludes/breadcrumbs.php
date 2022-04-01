@@ -36,8 +36,8 @@ switch ($g->page) {
     case 'GlanceAtMyTasks':
         echo "<a href=\"/ax1/GlanceAtMyTasks/page\">All My Tasks</a>";
         break;
-    case 'GawkAtAllTaxableIncomeEvents':
-        echo "<a href=\"/ax1/GawkAtAllTaxableIncomeEvents/page\">A Year's Taxable Income Events</a>";
+    case 'gawk_at_all_taxable_income_events':
+        echo "<a href=\"/ax1/gawk_at_all_taxable_income_events/page\">A Year's Taxable Income Events</a>";
         break;
     case 'SpyCommoditiesSoldYear':
         echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodity Sold Records</a>";

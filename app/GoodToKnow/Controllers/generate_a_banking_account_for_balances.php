@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class GenerateABankingAccountForBalances
+class generate_a_banking_account_for_balances
 {
     function page()
     {
@@ -56,7 +56,7 @@ class GenerateABankingAccountForBalances
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/GenerateABankingAccountForBalancesProcessor/page';
+        $g->action = '/ax1/generate_a_banking_account_for_balances_processor/page';
         $g->heading_one = 'Create a Bank Account';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }

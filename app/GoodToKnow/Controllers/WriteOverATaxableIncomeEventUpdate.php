@@ -202,7 +202,7 @@ class WriteOverATaxableIncomeEventUpdate
          * So, we are going to hook into the "See a Year's Taxable Income Events" feature.
          */
 
-        redirect_to("/ax1/GawkAtAllTaxableIncomeEvents/page");
+        redirect_to("/ax1/gawk_at_all_taxable_income_events/page");
 
     }
 }

@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class GawkAtAllTaxableIncomeEventsYearFilter
+class gawk_at_all_taxable_income_events_year_filter
 {
     function page()
     {
@@ -55,7 +55,7 @@ class GawkAtAllTaxableIncomeEventsYearFilter
         $g->html_title = "One year of your taxable income event records";
 
 
-        $g->page = 'GawkAtAllTaxableIncomeEvents';
+        $g->page = 'gawk_at_all_taxable_income_events';
 
 
         $g->show_poof = true;
