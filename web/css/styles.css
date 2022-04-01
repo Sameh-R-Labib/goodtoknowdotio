@@ -703,7 +703,7 @@ h2 + p {
 }
 
 #show_poof {
-    background-color: #ffdfdf;
+    background-color: #ffe9d3;
     opacity: 1;
     /* opacity: 0.45; */
     float: left;
@@ -734,7 +734,7 @@ h2 + p {
 #logindiv {
     opacity: 1;
     /* opacity: 0.68; */
-    background-color: #ffdfdf;
+    background-color: #ffe9d3;
     width: 277px;
     height: 57px;
     margin: auto;
