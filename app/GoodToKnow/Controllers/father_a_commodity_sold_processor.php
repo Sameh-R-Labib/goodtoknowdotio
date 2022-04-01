@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\CommoditySold;
 
-class FatherACommoditySoldProcessor
+class father_a_commodity_sold_processor
 {
     function page()
     {
@@ -75,7 +75,7 @@ class FatherACommoditySoldProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/FatherACommoditySoldRedo/page");
+                redirect_to("/ax1/father_a_commodity_sold_redo/page");
 
             }
 

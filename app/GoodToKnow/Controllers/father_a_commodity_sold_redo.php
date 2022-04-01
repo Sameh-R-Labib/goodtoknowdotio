@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class FatherACommoditySoldRedo
+class father_a_commodity_sold_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class FatherACommoditySoldRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/FatherACommoditySoldProcessor/page';
+        $g->action = '/ax1/father_a_commodity_sold_processor/page';
         $g->heading_one = 'Create a Commodity Sold Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }

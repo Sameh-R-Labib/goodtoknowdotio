@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Task;
 
-class FeatureATask
+class feature_a_task
 {
     function page()
     {

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class FeatureATaskRedo
+class feature_a_task_redo
 {
     function page()
     {
@@ -18,7 +18,7 @@ class FeatureATaskRedo
 
         $g->html_title = 'One chance to redo';
 
-        $g->action = '/ax1/FeatureATaskUpdate/page';
+        $g->action = '/ax1/feature_a_task_update/page';
         $g->heading_one = 'Edit a Task';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }

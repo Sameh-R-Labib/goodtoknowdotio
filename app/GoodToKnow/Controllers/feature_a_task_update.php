@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use GoodToKnow\Models\Task;
 
-class FeatureATaskUpdate
+class feature_a_task_update
 {
     function page()
     {
@@ -108,7 +108,7 @@ class FeatureATaskUpdate
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/FeatureATaskRedo/page");
+                redirect_to("/ax1/feature_a_task_redo/page");
 
             }
 

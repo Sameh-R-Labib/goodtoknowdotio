@@ -2,19 +2,23 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 
-class FeatureATaskEdit
+class feature_a_task_link
 {
-    function page()
+    function page(int $id)
     {
         /**
-         * 1) Store the submitted task id in the session.
-         * 2) Retrieve the task object with that id from the database.
-         * 3) Make sure that object belongs to this user.
-         * 4) Present a form which is populated with data from the task object.
+         * This function handles the request received when a user clicks on a link
+         * on the Show Tasks page.
+         *
+         * This function is a modified version of feature_a_task_edit. The difference is that
+         * this function will get the id of the task from the request itself.
+         *
+         * A lot of comments were left out since the code was essentially copied from
+         * feature_a_task_edit.
          */
-
 
         global $g;
 
@@ -28,11 +32,25 @@ class FeatureATaskEdit
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
+        $_SESSION['saved_int01'] = $id;
+
+        $g->object = Task::find_by_id($id);
+
+        if (!$g->object) {
+
+            breakout(' Unexpectedly, I could not find that task. ');
+
+        }
+
+        if ($g->object->user_id != $g->user_id) {
+
+            breakout(' Error 46985423. ');
+
+        }
 
 
         /**
-         * 4) Present a form which is populated with data from the task object.
+         * Present a form which is populated with data from the task object.
          */
 
         /**
@@ -76,7 +94,7 @@ class FeatureATaskEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/FeatureATaskUpdate/page';
+        $g->action = '/ax1/feature_a_task_update/page';
         $g->heading_one = 'Edit a Task';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'task_form.php';
     }

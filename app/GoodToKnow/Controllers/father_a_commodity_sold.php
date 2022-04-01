@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class FatherACommoditySold
+class father_a_commodity_sold
 {
     function page()
     {
@@ -56,7 +56,7 @@ class FatherACommoditySold
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/FatherACommoditySoldProcessor/page';
+        $g->action = '/ax1/father_a_commodity_sold_processor/page';
         $g->heading_one = 'Create a Commodity Sold Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }

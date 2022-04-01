@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/FeatureATaskEdit/page" method="post">
+    <form action="/ax1/feature_a_task_edit/page" method="post">
         <h1>Edit a Task</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Task?</p>
