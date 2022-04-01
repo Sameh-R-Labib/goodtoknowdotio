@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\MessageToUser;
 
-class Inbox
+class inbox
 {
     function page()
     {
@@ -14,10 +14,10 @@ class Inbox
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->html_title = 'Inbox';
+        $g->html_title = 'inbox';
 
 
-        $g->page = 'Inbox';
+        $g->page = 'inbox';
 
 
         $g->show_poof = true;

@@ -146,6 +146,6 @@ class InduceATaskCreate
          * So, we are going to hook into the "See Tasks" feature.
          */
 
-        redirect_to("/ax1/GlanceAtMyTasks/page");
+        redirect_to("/ax1/glance_at_my_tasks/page");
     }
 }

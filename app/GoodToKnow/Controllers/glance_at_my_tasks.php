@@ -6,7 +6,7 @@ use GoodToKnow\Models\Task;
 use function GoodToKnow\ControllerHelpers\get_proximity_task_label;
 use function GoodToKnow\ControllerHelpers\get_readable_date;
 
-class GlanceAtMyTasks
+class glance_at_my_tasks
 {
     function page()
     {
@@ -63,7 +63,7 @@ class GlanceAtMyTasks
 
         $g->html_title = 'All my Tasks';
 
-        $g->page = 'GlanceAtMyTasks';
+        $g->page = 'glance_at_my_tasks';
 
         $g->show_poof = true;
 

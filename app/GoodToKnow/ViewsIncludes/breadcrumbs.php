@@ -3,8 +3,8 @@
 global $g;
 
 switch ($g->page) {
-    case 'Inbox':
-        echo "<a href=\"/ax1/Inbox/page\">Inbox</a>";
+    case 'inbox':
+        echo "<a href=\"/ax1/inbox/page\">Inbox</a>";
         break;
     case 'Admin':
         echo "<a href=\"/ax1/admin_home/page\">Admin Home</a>";
@@ -33,8 +33,8 @@ switch ($g->page) {
     case 'SeeOneYearsPossibleTaxDeductions':
         echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Possible Tax Deductions</a>";
         break;
-    case 'GlanceAtMyTasks':
-        echo "<a href=\"/ax1/GlanceAtMyTasks/page\">All My Tasks</a>";
+    case 'glance_at_my_tasks':
+        echo "<a href=\"/ax1/glance_at_my_tasks/page\">All My Tasks</a>";
         break;
     case 'gawk_at_all_taxable_income_events':
         echo "<a href=\"/ax1/gawk_at_all_taxable_income_events/page\">A Year's Taxable Income Events</a>";
