@@ -6,7 +6,7 @@ use GoodToKnow\Models\Community;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 
-class GiveComsChoices
+class give_coms_choices
 {
     function page()
     {

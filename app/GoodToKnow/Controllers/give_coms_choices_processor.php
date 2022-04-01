@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\UserToCommunity;
 
-class GiveComsChoicesProcessor
+class give_coms_choices_processor
 {
     function page()
     {
@@ -67,7 +67,7 @@ class GiveComsChoicesProcessor
 
         if (!$result) {
 
-            breakout(' In GiveComsChoicesProcessor encountered error due to
+            breakout(' In give_coms_choices_processor encountered error due to
             UserToCommunity::array_to_object being unable to save the user_to_community records. ');
 
         }

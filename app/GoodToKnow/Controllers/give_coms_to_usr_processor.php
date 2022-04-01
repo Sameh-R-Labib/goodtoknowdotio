@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
-class GiveComsToUsrProcessor
+class give_coms_to_usr_processor
 {
     function page()
     {
@@ -28,6 +28,6 @@ class GiveComsToUsrProcessor
         $_SESSION['saved_str01'] = $submitted_username;
 
 
-        redirect_to("/ax1/GiveComsChoices/page");
+        redirect_to("/ax1/give_coms_choices/page");
     }
 }

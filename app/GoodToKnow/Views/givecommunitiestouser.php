@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/GiveComsToUsrProcessor/page" method="post">
+    <form action="/ax1/give_coms_to_usr_processor/page" method="post">
         <h2>Give Communities to User</h2>
         <?php require SESSIONMESSAGE; ?>
     <p>Enter the Username</p>

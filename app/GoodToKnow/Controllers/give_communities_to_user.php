@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class GiveCommunitiesToUser
+class give_communities_to_user
 {
     function page()
     {
