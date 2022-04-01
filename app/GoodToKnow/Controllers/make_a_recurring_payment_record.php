@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class MakeARecurringPaymentRecord
+class make_a_recurring_payment_record
 {
     function page()
     {
@@ -55,7 +55,7 @@ class MakeARecurringPaymentRecord
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/MakeARecurringPaymentRecordProcessor/page';
+        $g->action = '/ax1/make_a_recurring_payment_record_processor/page';
         $g->heading_one = 'Create Recurring Payment';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
     }

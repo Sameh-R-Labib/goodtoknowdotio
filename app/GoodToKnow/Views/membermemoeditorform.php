@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/MemberMemEdFormProc/page" method="post">
+    <form action="/ax1/member_mem_ed_form_proc/page" method="post">
         <h1><?= $g->saved_str01 ?> Memo</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 1800 bytes.</span>

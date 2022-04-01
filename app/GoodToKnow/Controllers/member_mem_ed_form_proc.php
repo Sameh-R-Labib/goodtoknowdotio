@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class MemberMemEdFormProc
+class member_mem_ed_form_proc
 {
     function page()
     {

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class MakeARecurringPaymentRecordRedo
+class make_a_recurring_payment_record_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class MakeARecurringPaymentRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/MakeARecurringPaymentRecordProcessor/page';
+        $g->action = '/ax1/make_a_recurring_payment_record_processor/page';
         $g->heading_one = 'Create Recurring Payment';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
     }

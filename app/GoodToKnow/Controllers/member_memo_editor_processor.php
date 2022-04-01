@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
-class MemberMemoEditorProcessor
+class member_memo_editor_processor
 {
     function page()
     {
@@ -33,6 +33,6 @@ class MemberMemoEditorProcessor
         $_SESSION['saved_str01'] = $submitted_username;
 
 
-        redirect_to("/ax1/MemberMemoEditorForm/page");
+        redirect_to("/ax1/member_memo_editor_form/page");
     }
 }

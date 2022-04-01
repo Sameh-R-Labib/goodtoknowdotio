@@ -4,12 +4,12 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\MessageToUser;
 
-class MessageTheAuthorProcessor
+class message_the_author_processor
 {
     function page()
     {
         /**
-         * This function takes the submitted MessageTheAuthor form and saves the message in the messages table.
+         * This function takes the submitted message_the_author form and saves the message in the messages table.
          * It also saves a record in the message_to_user table.
          */
 

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class MessageTheAuthor
+class message_the_author
 {
     function page()
     {

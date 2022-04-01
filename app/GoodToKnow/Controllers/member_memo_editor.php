@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class MemberMemoEditor
+class member_memo_editor
 {
     function page()
     {

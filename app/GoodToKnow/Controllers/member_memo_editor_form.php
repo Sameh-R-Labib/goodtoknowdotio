@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 
-class MemberMemoEditorForm
+class member_memo_editor_form
 {
     function page()
     {
