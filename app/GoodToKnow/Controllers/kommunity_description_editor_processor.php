@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Community;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class KommunityDescriptionEditorProcessor
+class kommunity_description_editor_processor
 {
     function page()
     {
@@ -39,6 +39,6 @@ class KommunityDescriptionEditorProcessor
         $_SESSION['saved_int01'] = (int)$community->id;
         $_SESSION['saved_str01'] = $submitted_community_name;
 
-        redirect_to("/ax1/KommunityDescriptionEditorForm/page");
+        redirect_to("/ax1/kommunity_description_editor_form/page");
     }
 }

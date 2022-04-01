@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Community;
 
-class KommunityDescriptionEditorForm
+class kommunity_description_editor_form
 {
     function page()
     {

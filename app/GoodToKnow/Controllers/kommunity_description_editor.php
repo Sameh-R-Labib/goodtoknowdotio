@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class KommunityDescriptionEditor
+class kommunity_description_editor
 {
     function page()
     {

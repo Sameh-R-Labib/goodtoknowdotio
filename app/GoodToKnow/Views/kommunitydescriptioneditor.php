@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/KommunityDescriptionEditorProcessor/page" method="post">
+    <form action="/ax1/kommunity_description_editor_processor/page" method="post">
         <h2>Community Description Editor</h2>
         <?php require SESSIONMESSAGE; ?>
     <p>Enter the Name of Community</p>

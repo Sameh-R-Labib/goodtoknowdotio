@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Community;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class KommunityDescriptionEditorFormProcessor
+class kommunity_description_editor_form_processor
 {
     function page()
     {
