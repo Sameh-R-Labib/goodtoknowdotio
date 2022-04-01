@@ -26,7 +26,7 @@
         <?php require TIMEFORMFIELD; ?>
         <hr>
         <p>
-            <label for="comment">Comment: </label>
+            <label for="comment">Comment:<br></label>
             <textarea id="comment" name="comment" rows="5" cols="67" wrap="soft" maxlength="1800"
                       placeholder="Notes to self."><?= $g->saved_arr01['comment'] ?></textarea>
         </p>

@@ -27,7 +27,7 @@
                    size="15" placeholder="$, BTC, BAT" value="<?= $g->saved_arr01['currency'] ?>">
         </p>
         <p>
-            <label for="comment">Comment: </label>
+            <label for="comment">Comment:<br></label>
             <textarea id="comment" name="comment" rows="5" cols="67" wrap="soft" maxlength="1800" spellcheck="false"
                       placeholder="This banking is my _ _ bank's _ _ account."><?= $g->saved_arr01['comment'] ?></textarea>
         </p>

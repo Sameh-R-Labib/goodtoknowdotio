@@ -14,7 +14,7 @@
                    size="50" spellcheck="false" placeholder="Daily 🛅">
         </p>
         <p>
-            <label for="comment">Comment: </label>
+            <label for="comment">Comment:<br></label>
             <textarea id="comment" name="comment" rows="5" cols="67" wrap="soft" maxlength="1800" spellcheck="false"
                       placeholder="Remarks about decision whether to"><?= $g->saved_arr01['comment'] ?></textarea>
         </p>
