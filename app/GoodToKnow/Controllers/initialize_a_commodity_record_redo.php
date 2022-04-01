@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class InitializeACommodityRecordRedo
+class initialize_a_commodity_record_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class InitializeACommodityRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/InitializeACommodityRecordProcessor/page';
+        $g->action = '/ax1/initialize_a_commodity_record_processor/page';
         $g->heading_one = 'Create a Commodity Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_record_form.php';
     }

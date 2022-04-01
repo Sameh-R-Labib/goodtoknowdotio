@@ -203,7 +203,7 @@ class LoginScript
              you submitted your username and password to log in although the session already considers you logged in. ";
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/InfiniteLoopPrevent/page");
+            redirect_to("/ax1/infinite_loop_prevent/page");
 
         }
 

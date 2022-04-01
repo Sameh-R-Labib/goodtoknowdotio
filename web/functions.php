@@ -208,7 +208,7 @@ function get_db()
 /**
  * We use db_connect_if_not_connected() rather than get_db()
  * when we:
- *  A. want redirection upon failure to be to the /ax1/InfiniteLoopPrevent/page page.
+ *  A. want redirection upon failure to be to /ax1/infinite_loop_prevent/page.
  *  B. want to connect ONLY IF we don't already have a connection.
  */
 function db_connect_if_not_connected()
@@ -224,7 +224,7 @@ function db_connect_if_not_connected()
             $g->message .= " Failed to connect to the database. ";
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/InfiniteLoopPrevent/page");
+            redirect_to("/ax1/infinite_loop_prevent/page");
 
         }
 

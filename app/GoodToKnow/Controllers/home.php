@@ -324,7 +324,7 @@ class home
                 $g->message .= " Failed to find the user by id. ";
                 $_SESSION['message'] = $g->message;
                 reset_feature_session_vars();
-                redirect_to("/ax1/InfiniteLoopPrevent/page");
+                redirect_to("/ax1/infinite_loop_prevent/page");
 
             }
 

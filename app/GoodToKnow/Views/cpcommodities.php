@@ -4,7 +4,7 @@
     <!-- maincontent -->
     <div id="maincontent">
         <p>
-            <a class="blackbtn" href="/ax1/InitializeACommodityRecord/page">Create</a>
+            <a class="blackbtn" href="/ax1/initialize_a_commodity_record/page">Create</a>
             <a class="orangebtn" href="/ax1/edit_a_commodity_record/page">Edit</a>
             <a class="clearbtn" href="/ax1/commodity_see_my_records_specify/page">Show</a>
             <a class="orangebtn" href="/ax1/delete_a_commodity_record/page">Delete</a>

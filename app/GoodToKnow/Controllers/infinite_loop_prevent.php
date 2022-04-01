@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class InfiniteLoopPrevent
+class infinite_loop_prevent
 {
     function page()
     {
