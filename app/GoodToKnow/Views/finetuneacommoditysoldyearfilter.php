@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/FineTuneACommoditySoldEdit/page" method="post">
+    <form action="/ax1/fine_tune_a_commodity_sold_edit/page" method="post">
         <h1>Edit a Commodity Sold Record</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Commodity Sold Record?</p>

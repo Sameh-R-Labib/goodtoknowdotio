@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\CommoditySold;
 
-class FineTuneACommoditySoldUpdate
+class fine_tune_a_commodity_sold_update
 {
     function page()
     {
@@ -80,7 +80,7 @@ class FineTuneACommoditySoldUpdate
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/FineTuneACommoditySoldRedo/page");
+                redirect_to("/ax1/fine_tune_a_commodity_sold_redo/page");
 
             }
 

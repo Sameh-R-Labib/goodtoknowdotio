@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/FineTuneACommoditySoldYearFilter/page" method="post">
+    <form action="/ax1/fine_tune_a_commodity_sold_year_filter/page" method="post">
         <h1>Edit a Commodity Sold</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Here the <em>tax year</em> is defined as the year you sold the commodity.</span>

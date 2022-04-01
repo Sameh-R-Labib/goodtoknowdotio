@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class FineTuneACommoditySold
+class fine_tune_a_commodity_sold
 {
     function page()
     {

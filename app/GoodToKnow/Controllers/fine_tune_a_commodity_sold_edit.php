@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
-class FineTuneACommoditySoldEdit
+class fine_tune_a_commodity_sold_edit
 {
     function page()
     {
@@ -115,7 +115,7 @@ class FineTuneACommoditySoldEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/FineTuneACommoditySoldUpdate/page';
+        $g->action = '/ax1/fine_tune_a_commodity_sold_update/page';
         $g->heading_one = 'Edit a Commodity Sold Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }

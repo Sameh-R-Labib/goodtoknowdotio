@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class FineTuneACommoditySoldRedo
+class fine_tune_a_commodity_sold_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class FineTuneACommoditySoldRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/FineTuneACommoditySoldUpdate/page';
+        $g->action = '/ax1/fine_tune_a_commodity_sold_update/page';
         $g->heading_one = 'Edit a Commodity Sold Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
 
