@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class TopicDescriptionEditor
+class topic_description_editor
 {
     function page()
     {

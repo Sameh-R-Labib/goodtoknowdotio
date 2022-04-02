@@ -7,7 +7,7 @@
         <p><a href="/ax1/new_community/page">Create Community</a></p>
         <p><a href="/ax1/kommunity_description_editor/page">Edit A Community</a></p>
         <p><a href="/ax1/NewTopic/page">Create Topic</a></p>
-        <p><a href="/ax1/TopicDescriptionEditor/page">Edit A Topic</a></p>
+        <p><a href="/ax1/topic_description_editor/page">Edit A Topic</a></p>
         <p><a href="/ax1/quick_post_delete/page">Delete Any Post</a></p>
         <p><a href="/ax1/TransferPostOwnership/page">Transfer Post Ownership</a></p>
     </div><!-- End maincontent -->

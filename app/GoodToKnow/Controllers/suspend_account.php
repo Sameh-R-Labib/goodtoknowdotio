@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class SuspendAccount
+class suspend_account
 {
     function page()
     {

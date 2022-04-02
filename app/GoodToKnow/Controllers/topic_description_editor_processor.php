@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class TopicDescriptionEditorProcessor
+class topic_description_editor_processor
 {
     function page()
     {
@@ -63,6 +63,6 @@ class TopicDescriptionEditorProcessor
          * 4) Redirect to a function which will bring up the editor for the description.
          */
 
-        redirect_to("/ax1/TopicDescriptionEditorForm/page");
+        redirect_to("/ax1/topic_description_editor_form/page");
     }
 }

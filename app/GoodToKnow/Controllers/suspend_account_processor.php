@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
-class SuspendAccountProcessor
+class suspend_account_processor
 {
     function page()
     {
@@ -29,6 +29,6 @@ class SuspendAccountProcessor
         $_SESSION['saved_str01'] = $submitted_username;
 
 
-        redirect_to("/ax1/SuspendAccountSuspend/page");
+        redirect_to("/ax1/suspend_account_suspend/page");
     }
 }

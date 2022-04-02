@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\Topic;
 
-class TopicDescriptionEditorForm
+class topic_description_editor_form
 {
     function page()
     {

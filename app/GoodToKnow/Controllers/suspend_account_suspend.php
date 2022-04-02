@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 
-class SuspendAccountSuspend
+class suspend_account_suspend
 {
     function page()
     {

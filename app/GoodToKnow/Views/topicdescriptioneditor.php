@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/TopicDescriptionEditorProcessor/page" method="post">
+    <form action="/ax1/topic_description_editor_processor/page" method="post">
         <h1>Topic Description Editor</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">This is only for topics in current community</span>

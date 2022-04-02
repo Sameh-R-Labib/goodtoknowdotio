@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/TransferAnAmountFormProcessor/page" method="post">
+    <form action="/ax1/transfer_an_amount_form_processor/page" method="post">
         <h1>Transfer An Amount of Money Or Commodity</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>

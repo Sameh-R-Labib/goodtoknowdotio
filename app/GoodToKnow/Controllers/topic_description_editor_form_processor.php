@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\Topic;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class TopicDescriptionEditorFormProcessor
+class topic_description_editor_form_processor
 {
     function page()
     {

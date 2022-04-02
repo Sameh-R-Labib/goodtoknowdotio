@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class TransferAnAmountFormProcessor
+class transfer_an_amount_form_processor
 {
     function page()
     {
@@ -89,7 +89,7 @@ class TransferAnAmountFormProcessor
                 $saved_arr01['second'] = $g->second;
                 $saved_arr01['timezone'] = $g->timezone;
 
-                // In TransferAnAmountRedo I will formulate the html
+                // In transfer_an_amount_redo I will formulate the html
                 // for the two drop-downs. And that's where I'll use
                 // two values below to mark as selected the appropriate
                 // bank account.
@@ -101,7 +101,7 @@ class TransferAnAmountFormProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/TransferAnAmountRedo/page");
+                redirect_to("/ax1/transfer_an_amount_redo/page");
             }
 
         }

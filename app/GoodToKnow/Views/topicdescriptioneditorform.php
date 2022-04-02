@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/TopicDescriptionEditorFormProcessor/page" method="post">
+    <form action="/ax1/topic_description_editor_form_processor/page" method="post">
         <h2>Edit The "<?= $g->saved_str01 ?>" Topic</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break<br>📲️ maximum 230 bytes

@@ -4,12 +4,12 @@ namespace GoodToKnow\Controllers;
 
 use Michelf\MarkdownExtra;
 
-class TestCode
+class test_code
 {
     function page()
     {
         /**
-         * I'm trying to figure out why my scripts with markdown parsers are excessively converting
+         * I'm trying to figure out why my scripts with Markdown parsers are excessively converting
          * html special characters especially when code blocks or inline code is involved.
          */
 

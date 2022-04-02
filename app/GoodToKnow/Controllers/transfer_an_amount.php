@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\get_html_select_box;
 
-class TransferAnAmount
+class transfer_an_amount
 {
     function page()
     {
