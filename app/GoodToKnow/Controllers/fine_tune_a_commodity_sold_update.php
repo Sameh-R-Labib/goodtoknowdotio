@@ -154,7 +154,7 @@ class fine_tune_a_commodity_sold_update
          * So, we are going to hook into the "See a year's Commodity Sold Records" feature.
          */
 
-        redirect_to("/ax1/SpyCommoditiesSold/page");
+        redirect_to("/ax1/spy_commodities_sold/page");
 
     }
 }

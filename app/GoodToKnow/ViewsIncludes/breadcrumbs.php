@@ -30,8 +30,8 @@ switch ($g->page) {
     case 'check_my_banking_account_tx_balances':
         echo "<a href=\"/ax1/check_my_banking_account_tx_balances/page\">See Transactions</a>";
         break;
-    case 'SeeOneYearsPossibleTaxDeductions':
-        echo "<a href=\"/ax1/SeeOneYearsPossibleTaxDeductions/page\">1 Year's Possible Tax Deductions</a>";
+    case 'see_one_years_possible_tax_deductions':
+        echo "<a href=\"/ax1/see_one_years_possible_tax_deductions/page\">1 Year's Possible Tax Deductions</a>";
         break;
     case 'glance_at_my_tasks':
         echo "<a href=\"/ax1/glance_at_my_tasks/page\">All My Tasks</a>";
@@ -39,8 +39,8 @@ switch ($g->page) {
     case 'gawk_at_all_taxable_income_events':
         echo "<a href=\"/ax1/gawk_at_all_taxable_income_events/page\">A Year's Taxable Income Events</a>";
         break;
-    case 'SpyCommoditiesSoldYear':
-        echo "<a href=\"/ax1/SpyCommoditiesSold/page\">One Year's Commodity Sold Records</a>";
+    case 'spy_commodities_sold_year_filter':
+        echo "<a href=\"/ax1/spy_commodities_sold/page\">One Year's Commodity Sold Records</a>";
         break;
     case 'c_p_basics':
         echo "<a href=\"/ax1/c_p_basics/page\">Blog And Message</a>";

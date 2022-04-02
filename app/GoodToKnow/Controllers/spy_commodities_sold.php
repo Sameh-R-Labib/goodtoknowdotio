@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class SpyCommoditiesSold
+class spy_commodities_sold
 {
     function page()
     {

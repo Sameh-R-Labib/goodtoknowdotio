@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class SpyCommoditiesSoldYearFilter
+class spy_commodities_sold_year_filter
 {
     function page()
     {
@@ -58,7 +58,7 @@ class SpyCommoditiesSoldYearFilter
 
         $g->html_title = "One year's commodities sold records";
 
-        $g->page = 'SpyCommoditiesSoldYear';
+        $g->page = 'spy_commodities_sold_year_filter';
 
         $g->show_poof = true;
 

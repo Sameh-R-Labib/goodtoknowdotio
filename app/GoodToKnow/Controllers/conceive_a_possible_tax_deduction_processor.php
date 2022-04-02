@@ -73,7 +73,7 @@ class conceive_a_possible_tax_deduction_processor
          * So, we are going to hook into the "1 Year's Possible Tax Deductions" feature.
          */
 
-        redirect_to("/ax1/SeeOneYearsPossibleTaxDeductions/page");
+        redirect_to("/ax1/see_one_years_possible_tax_deductions/page");
 
     }
 }

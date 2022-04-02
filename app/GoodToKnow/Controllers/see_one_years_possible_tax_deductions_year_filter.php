@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class SeeOneYearsPossibleTaxDeductionsYearFilter
+class see_one_years_possible_tax_deductions_year_filter
 {
     function page()
     {
@@ -38,7 +38,7 @@ class SeeOneYearsPossibleTaxDeductionsYearFilter
 
         $g->html_title = "$g->year_paid's possible tax deductions.";
 
-        $g->page = 'SeeOneYearsPossibleTaxDeductions';
+        $g->page = 'see_one_years_possible_tax_deductions';
 
         $g->show_poof = true;
 

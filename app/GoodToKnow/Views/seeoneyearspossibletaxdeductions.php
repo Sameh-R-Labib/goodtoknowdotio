@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/SeeOneYearsPossibleTaxDeductionsYearFilter/page" method="post">
+    <form action="/ax1/see_one_years_possible_tax_deductions_year_filter/page" method="post">
         <h1>See 1 tax year's possible tax deductions</h1>
         <?php require SESSIONMESSAGE; ?>
         <section>

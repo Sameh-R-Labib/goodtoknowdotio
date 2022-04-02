@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class SeeOneYearsPossibleTaxDeductions
+class see_one_years_possible_tax_deductions
 {
     function page()
     {
