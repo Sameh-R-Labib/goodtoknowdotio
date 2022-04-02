@@ -4,7 +4,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1><?= $g->tax_year ?>'s Commodity (a.k.a. C) Sold Records</h1>
+        <h1><?= $g->tax_year ?>'s Commodity <small>(a.k.a. C)</small> Sold Records</h1>
         <hr>
         <?php if (!empty($g->array)): ?>
             <?php $last = count($g->array) - 1; ?>
