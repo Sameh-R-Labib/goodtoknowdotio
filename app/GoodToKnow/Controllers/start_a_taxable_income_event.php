@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class StartATaxableIncomeEvent
+class start_a_taxable_income_event
 {
     function page()
     {
@@ -52,7 +52,7 @@ class StartATaxableIncomeEvent
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/StartATaxableIncomeEventProcessor/page';
+        $g->action = '/ax1/start_a_taxable_income_event_processor/page';
         $g->heading_one = 'Create a Taxable Income Event';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'taxable_income_event_form.php';
     }

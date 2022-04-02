@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class StartATaxableIncomeEventProcessor
+class start_a_taxable_income_event_processor
 {
     function page()
     {
@@ -97,7 +97,7 @@ class StartATaxableIncomeEventProcessor
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/StartATaxableIncomeEventRedo/page");
+                redirect_to("/ax1/start_a_taxable_income_event_redo/page");
 
             }
 
