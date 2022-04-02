@@ -121,7 +121,7 @@ class home
 
         if ($g->type_of_resource_requested == 'topic') {
 
-            $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️ for ⇒</a> ';
+            $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
 
         }
@@ -129,7 +129,7 @@ class home
 
         if ($g->type_of_resource_requested == 'post' and $g->author_id == $g->user_id) {
 
-            $g->message .= '<br><br><a class="clearbtn" href="/ax1/Upload/page">Upload 🖼️</a> ';
+            $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
             $g->message .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
             $g->message .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
 

@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/UploadProcessor/page" method="post" enctype="multipart/form-data">
+    <form action="/ax1/upload_processor/page" method="post" enctype="multipart/form-data">
         <h1>Upload an 🖼️</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Only .jpg, .jpeg, .png, .gif files can be uploaded.<br><br>

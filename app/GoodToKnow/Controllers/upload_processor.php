@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class UploadProcessor
+class upload_processor
 {
     function page()
     {

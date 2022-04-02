@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class Upload
+class upload
 {
     function page()
     {
