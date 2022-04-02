@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 
-class OmitABankingTransactionForBalancesChooseRecord
+class omit_a_banking_transaction_for_balances_choose_record
 {
     function page()
     {

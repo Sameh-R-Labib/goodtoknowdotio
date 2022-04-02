@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/OmitABankingTransactionForBalancesDelete/page" method="post">
+    <form action="/ax1/omit_a_banking_transaction_for_balances_delete/page" method="post">
         <h1>Delete a Bank Transaction for Balances</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Bank Transaction For Balances?</p>

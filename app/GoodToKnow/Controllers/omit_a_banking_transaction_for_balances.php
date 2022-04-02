@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class OmitABankingTransactionForBalances
+class omit_a_banking_transaction_for_balances
 {
     function page()
     {

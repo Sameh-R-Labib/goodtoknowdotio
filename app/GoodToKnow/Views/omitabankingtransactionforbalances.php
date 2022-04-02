@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/OmitABankingTransactionForBalancesTimeRange/page" method="post">
+    <form action="/ax1/omit_a_banking_transaction_for_balances_time_range/page" method="post">
         <h1>Delete a Bank Transaction for Ledger</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which time range does the transaction fall under?</p>

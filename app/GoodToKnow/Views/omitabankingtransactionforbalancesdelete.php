@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/OmitABankingTranForBalancesProcessConfirmation/page" method="post">
+    <form action="/ax1/omit_a_banking_tran_for_balances_process_confirmation/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>

@@ -6,7 +6,7 @@ use GoodToKnow\Models\BankingAcctForBalances;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class OmitABankingTransactionForBalancesDelete
+class omit_a_banking_transaction_for_balances_delete
 {
     function page()
     {

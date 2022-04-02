@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\BankingTransactionForBalances;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class OmitABankingTranForBalancesProcessConfirmation
+class omit_a_banking_tran_for_balances_process_confirmation
 {
     function page()
     {
