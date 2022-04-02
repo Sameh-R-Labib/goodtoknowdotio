@@ -21,8 +21,8 @@ switch ($g->page) {
     case 'About':
         echo "What is this site?";
         break;
-    case 'RecurringPaymentSeeMyRecords':
-        echo "<a href=\"/ax1/RecurringPaymentSeeMyRecords/page\">See All Recurring Payments</a>";
+    case 'recurring_payment_see_my_records':
+        echo "<a href=\"/ax1/recurring_payment_see_my_records/page\">See All Recurring Payments</a>";
         break;
     case 'ViewAllBankingAccountsForBalances':
         echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">Bank Accounts And Their Starting Balances</a>";

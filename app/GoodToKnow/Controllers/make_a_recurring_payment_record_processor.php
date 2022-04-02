@@ -155,7 +155,7 @@ class make_a_recurring_payment_record_processor
          * So, we are going to hook into the "See All Recurring Payments" feature.
          */
 
-        redirect_to("/ax1/RecurringPaymentSeeMyRecords/page");
+        redirect_to("/ax1/recurring_payment_see_my_records/page");
 
     }
 }

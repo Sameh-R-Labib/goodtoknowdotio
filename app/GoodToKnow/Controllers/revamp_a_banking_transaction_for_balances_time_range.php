@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class RevampABankingTransactionForBalancesTimeRange
+class revamp_a_banking_transaction_for_balances_time_range
 {
     function page()
     {
@@ -20,6 +20,6 @@ class RevampABankingTransactionForBalancesTimeRange
         require CONTROLLERINCLUDES . DIRSEP . 'find_min_max_time_range_based_on_choice.php';
 
 
-        redirect_to("/ax1/RevampABankingTransactionForBalancesChooseRecord/page");
+        redirect_to("/ax1/revamp_a_banking_transaction_for_balances_choose_record/page");
     }
 }

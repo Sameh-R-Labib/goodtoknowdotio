@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class RemoveCommunitiesFromAUser
+class remove_communities_from_a_user
 {
     function page()
     {

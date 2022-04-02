@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
-class RemoveComsFromUserProcessor
+class remove_coms_from_user_processor
 {
     function page()
     {
@@ -31,6 +31,6 @@ class RemoveComsFromUserProcessor
         $_SESSION['saved_str01'] = $submitted_username;
 
 
-        redirect_to("/ax1/RemoveComsChoices/page");
+        redirect_to("/ax1/remove_coms_choices/page");
     }
 }

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class RevampABankingTransactionForBalances
+class revamp_a_banking_transaction_for_balances
 {
     function page()
     {

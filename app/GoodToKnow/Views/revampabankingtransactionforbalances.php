@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/RevampABankingTransactionForBalancesTimeRange/page" method="post">
+    <form action="/ax1/revamp_a_banking_transaction_for_balances_time_range/page" method="post">
         <h1>Edit a Bank Transaction for Ledger</h1>
         <p>Which time range does the transaction fall under?</p>
         <?php require SESSIONMESSAGE; ?>

@@ -10,7 +10,7 @@ class ViewAllBankingAccountsForBalances
     function page()
     {
         /**
-         * Similar to RecurringPaymentSeeMyRecords.
+         * Similar to recurring_payment_see_my_records.
          */
 
 

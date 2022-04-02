@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/RevampABankingTransactionForBalancesEdit/page" method="post">
+    <form action="/ax1/revamp_a_banking_transaction_for_balances_edit/page" method="post">
         <h1>Edit a Bank Transaction for Balances</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Bank Transaction For Balances?</p>

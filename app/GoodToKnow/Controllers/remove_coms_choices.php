@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\UserToCommunity;
 
-class RemoveComsChoices
+class remove_coms_choices
 {
     function page()
     {

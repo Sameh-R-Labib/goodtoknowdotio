@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\RecurringPayment;
 
-class RecurringPaymentSeeMyRecords
+class recurring_payment_see_my_records
 {
     function page()
     {
@@ -57,7 +57,7 @@ class RecurringPaymentSeeMyRecords
         }
 
 
-        $g->page = 'RecurringPaymentSeeMyRecords';
+        $g->page = 'recurring_payment_see_my_records';
 
 
         $g->show_poof = true;

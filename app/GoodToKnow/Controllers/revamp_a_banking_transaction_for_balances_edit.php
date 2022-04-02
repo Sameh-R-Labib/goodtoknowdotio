@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
-class RevampABankingTransactionForBalancesEdit
+class revamp_a_banking_transaction_for_balances_edit
 {
     function page()
     {
@@ -104,7 +104,7 @@ class RevampABankingTransactionForBalancesEdit
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/RevampABankingTransactionForBalancesUpdate/page';
+        $g->action = '/ax1/revamp_a_banking_transaction_for_balances_update/page';
         $g->heading_one = 'Edit a Transaction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_transaction_form.php';
     }
