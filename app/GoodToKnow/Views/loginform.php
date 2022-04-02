@@ -24,7 +24,7 @@
     </fieldset>
     <input type="submit" value="Log In">
     <div class="utilities">
-        <a href="/ax1/WhatIsThisSite/page">About</a>
+        <a href="/ax1/what_is_this_site/page">About</a>
         <a><?= ADMINONLOGINFORM ?></a>
         <?php require SESSIONMESSAGE; ?>
     </div>

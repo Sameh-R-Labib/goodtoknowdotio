@@ -165,6 +165,6 @@ class populate_a_banking_account_for_balances_submit
          * So, we are going to hook into the "Bank Accounts And Their Starting Balances" feature.
          */
 
-        redirect_to("/ax1/ViewAllBankingAccountsForBalances/page");
+        redirect_to("/ax1/view_all_banking_accounts_for_balances/page");
     }
 }

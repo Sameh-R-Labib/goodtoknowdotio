@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class WhatIsThisSite
+class what_is_this_site
 {
     function page()
     {

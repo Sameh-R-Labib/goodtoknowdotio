@@ -6,7 +6,7 @@ use GoodToKnow\Models\Community;
 use GoodToKnow\Models\ReadableUser;
 use GoodToKnow\Models\User;
 
-class UserRoster
+class user_roster
 {
     function page()
     {
@@ -22,7 +22,7 @@ class UserRoster
         $g->html_title = 'User Roster';
 
 
-        $g->page = 'UserRoster';
+        $g->page = 'user_roster';
 
 
         $g->show_poof = true;

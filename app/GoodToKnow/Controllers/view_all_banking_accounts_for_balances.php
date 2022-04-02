@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class ViewAllBankingAccountsForBalances
+class view_all_banking_accounts_for_balances
 {
     function page()
     {
@@ -50,7 +50,7 @@ class ViewAllBankingAccountsForBalances
 
         $g->show_poof = true;
 
-        $g->page = 'ViewAllBankingAccountsForBalances';
+        $g->page = 'view_all_banking_accounts_for_balances';
 
         $g->message .= " Here are all your bank accounts. ";
 

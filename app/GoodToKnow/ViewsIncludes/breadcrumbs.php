@@ -12,8 +12,8 @@ switch ($g->page) {
     case 'CP':
         echo "<a href=\"/ax1/control_panel/page\">Control Panel</a>";
         break;
-    case 'UserRoster':
-        echo "<a href=\"/ax1/UserRoster/page\">User Roster</a>";
+    case 'user_roster':
+        echo "<a href=\"/ax1/user_roster/page\">User Roster</a>";
         break;
     case 'commodity_see_my_records':
         echo "<a href=\"/ax1/commodity_see_my_records_specify/page\">List My Commodity Records</a>";
@@ -24,8 +24,8 @@ switch ($g->page) {
     case 'recurring_payment_see_my_records':
         echo "<a href=\"/ax1/recurring_payment_see_my_records/page\">See All Recurring Payments</a>";
         break;
-    case 'ViewAllBankingAccountsForBalances':
-        echo "<a href=\"/ax1/ViewAllBankingAccountsForBalances/page\">Bank Accounts And Their Starting Balances</a>";
+    case 'view_all_banking_accounts_for_balances':
+        echo "<a href=\"/ax1/view_all_banking_accounts_for_balances/page\">Bank Accounts And Their Starting Balances</a>";
         break;
     case 'check_my_banking_account_tx_balances':
         echo "<a href=\"/ax1/check_my_banking_account_tx_balances/page\">See Transactions</a>";
