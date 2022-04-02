@@ -5,12 +5,12 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class NukeATaxableIncomeEventConfirmation
+class nuke_a_taxable_income_event_confirmation
 {
     function page()
     {
         /**
-         * Here we will read the choice of whether or not to delete the record. If yes then
+         * Here we will read the choice of whether to delete the record. If yes then
          * delete it. On the other hand if no then reset some session variables and redirect to the home page.
          */
 

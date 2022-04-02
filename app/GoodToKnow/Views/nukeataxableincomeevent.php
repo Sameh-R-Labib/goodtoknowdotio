@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/NukeATaxableIncomeEventYearFilter/page" method="post">
+    <form action="/ax1/nuke_a_taxable_income_event_year_filter/page" method="post">
         <h1>Delete a Taxable Income Event</h1>
         <?php require SESSIONMESSAGE; ?>
     <p>Which Year Received does the event fall under?</p>

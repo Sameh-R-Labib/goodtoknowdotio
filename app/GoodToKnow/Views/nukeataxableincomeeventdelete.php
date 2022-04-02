@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/NukeATaxableIncomeEventConfirmation/page" method="post">
+    <form action="/ax1/nuke_a_taxable_income_event_confirmation/page" method="post">
         <h1>Confirm</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>&nbsp;</p>

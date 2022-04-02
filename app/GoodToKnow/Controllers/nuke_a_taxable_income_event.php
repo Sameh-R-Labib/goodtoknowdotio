@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class NukeATaxableIncomeEvent
+class nuke_a_taxable_income_event
 {
     function page()
     {

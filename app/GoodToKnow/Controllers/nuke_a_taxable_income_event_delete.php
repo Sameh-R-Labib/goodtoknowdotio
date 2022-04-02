@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
-class NukeATaxableIncomeEventDelete
+class nuke_a_taxable_income_event_delete
 {
     function page()
     {
