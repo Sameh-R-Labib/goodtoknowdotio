@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
-class PopulateABankingAccountForBalancesProcessor
+class populate_a_banking_account_for_balances_processor
 {
     function page()
     {
@@ -87,7 +87,7 @@ class PopulateABankingAccountForBalancesProcessor
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/PopulateABankingAccountForBalancesSubmit/page';
+        $g->action = '/ax1/populate_a_banking_account_for_balances_submit/page';
         $g->heading_one = 'Edit a Bank Account for Ledger';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }

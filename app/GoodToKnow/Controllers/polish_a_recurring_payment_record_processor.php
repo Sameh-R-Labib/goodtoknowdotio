@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
-class PolishARecurringPaymentRecordProcessor
+class polish_a_recurring_payment_record_processor
 {
     function page()
     {
@@ -85,7 +85,7 @@ class PolishARecurringPaymentRecordProcessor
         $_SESSION['is_first_attempt'] = true;
 
 
-        $g->action = '/ax1/PolishARecurringPaymentRecordSubmit/page';
+        $g->action = '/ax1/polish_a_recurring_payment_record_submit/page';
         $g->heading_one = $g->saved_arr01['label'];
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
     }

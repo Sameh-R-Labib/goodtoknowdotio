@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class PolishARecurringPaymentRecordRedo
+class populate_a_banking_account_for_balances_redo
 {
     function page()
     {
@@ -22,8 +22,8 @@ class PolishARecurringPaymentRecordRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/PolishARecurringPaymentRecordSubmit/page';
-        $g->heading_one = $g->saved_arr01['label'];
-        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'recurring_payment_record_form.php';
+        $g->action = '/ax1/populate_a_banking_account_for_balances_submit/page';
+        $g->heading_one = 'Edit a Bank Account for Ledger';
+        require VIEWSDUPLICATESINCLUDES . DIRSEP . 'banking_account_for_balances_form.php';
     }
 }

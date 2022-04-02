@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class PopulateABankingAccountForBalances
+class populate_a_banking_account_for_balances
 {
     function page()
     {

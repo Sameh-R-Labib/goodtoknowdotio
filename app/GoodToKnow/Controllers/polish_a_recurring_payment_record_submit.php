@@ -2,11 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\RecurringPayment;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class PopulateABankingAccountForBalancesSubmit
+class polish_a_recurring_payment_record_submit
 {
     function page()
     {
@@ -17,11 +17,11 @@ class PopulateABankingAccountForBalancesSubmit
          * 2) Retrieve the existing record from the database.
          * 3) Modify the retrieved record by updating it with the submitted data.
          * 4) Update/save the updated record in the database.
+         * 5) Report success.
          */
 
-
         global $g;
-        // $g->saved_int01 record id
+        // $g->saved_int01 recurring_payment id
 
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
@@ -35,7 +35,11 @@ class PopulateABankingAccountForBalancesSubmit
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
 
-        $acct_name = standard_form_field_prep('acct_name', 3, 30);
+        $label = standard_form_field_prep('label', 3, 264);
+
+        $currency = standard_form_field_prep('currency', 1, 15);
+
+        $amount_paid = float_form_field_prep('amount_paid', -0.0000000000000001, 99999999999999.99);
 
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
@@ -44,17 +48,12 @@ class PopulateABankingAccountForBalancesSubmit
 
         // - - -
 
-
-        $start_balance = float_form_field_prep('start_balance', -99999999999999.99, 99999999999999.99);
-
-        $currency = standard_form_field_prep('currency', 1, 15);
-
         $comment = standard_form_field_prep('comment', 0, 1800);
 
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * A correct time entry for a Bank Account record would be in the past.
+         * A correct time entry for a recurring payment record would be in the past.
          *
          * The currently submitted form data will be used to conveniently
          * populate the redo form.
@@ -81,9 +80,9 @@ class PopulateABankingAccountForBalancesSubmit
 
 
                 // Put form data in an array to prepare it to be stored in $_SESSION['saved_arr01'].
-                $saved_arr01['acct_name'] = $acct_name;
-                $saved_arr01['start_balance'] = $start_balance;
+                $saved_arr01['label'] = $label;
                 $saved_arr01['currency'] = $currency;
+                $saved_arr01['amount_paid'] = $amount_paid;
                 $saved_arr01['comment'] = $comment;
                 $saved_arr01['date'] = $g->date;
                 $saved_arr01['hour'] = $g->hour;
@@ -96,7 +95,7 @@ class PopulateABankingAccountForBalancesSubmit
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/PopulateABankingAccountForBalancesRedo/page");
+                redirect_to("/ax1/polish_a_recurring_payment_record_redo/page");
 
             }
 
@@ -119,11 +118,11 @@ class PopulateABankingAccountForBalancesSubmit
 
         get_db();
 
-        $object = BankingAcctForBalances::find_by_id($g->saved_int01);
+        $object = RecurringPayment::find_by_id($g->saved_int01);
 
         if (!$object) {
 
-            breakout(' Unexpectedly I could not find that banking account for balances. ');
+            breakout(' Unexpectedly I could not find that recurring payment record. ');
 
         }
 
@@ -132,10 +131,10 @@ class PopulateABankingAccountForBalancesSubmit
          * 3) Modify the retrieved record by updating it with the submitted data.
          */
 
-        $object->acct_name = $acct_name;
-        $object->start_time = $g->time;
-        $object->start_balance = $start_balance;
+        $object->label = $label;
         $object->currency = $currency;
+        $object->amount_paid = $amount_paid;
+        $object->time = $g->time;
         $object->comment = $comment;
 
 
@@ -147,24 +146,25 @@ class PopulateABankingAccountForBalancesSubmit
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated banking account for balances (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I failed at saving the updated Recurring Payment (most likely because you didn\'t make any changes to it.) ');
 
         }
 
 
         /**
-         * Report success.
+         * 5) Report success.
          */
 
-        /*breakout(" I've updated the record for bank account <b>{$object->acct_name}</b>. ");*/
+        /*breakout(" I've updated <b>{$object->label}</b>. ");*/
         reset_feature_session_vars();
 
 
         /**
-         * We want to reassure the user that the banking account has been saved.
-         * So, we are going to hook into the "Bank Accounts And Their Starting Balances" feature.
+         * We want to reassure the user that the recurring payment has been updated.
+         * So, we are going to hook into the "See All Recurring Payments" feature.
          */
 
-        redirect_to("/ax1/ViewAllBankingAccountsForBalances/page");
+        redirect_to("/ax1/RecurringPaymentSeeMyRecords/page");
+
     }
 }

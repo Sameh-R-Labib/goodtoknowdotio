@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/PolishARecurringPaymentRecordProcessor/page" method="post">
+    <form action="/ax1/polish_a_recurring_payment_record_processor/page" method="post">
         <h1>Edit a Recurring Payment</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Recurring Payment Record?</p>
