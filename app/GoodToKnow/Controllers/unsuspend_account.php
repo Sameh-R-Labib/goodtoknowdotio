@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class UnsuspendAccount
+class unsuspend_account
 {
     function page()
     {

@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/TransferPostOwnershipGetPost/page" method="post">
+    <form action="/ax1/transfer_post_ownership_get_post/page" method="post">
         <h1>Transfer Blog Post Ownership</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Select the post to be affected.</p>

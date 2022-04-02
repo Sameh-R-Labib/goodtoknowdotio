@@ -8,7 +8,7 @@ use GoodToKnow\Models\Topic;
 use GoodToKnow\Models\TopicToPost;
 use GoodToKnow\Models\User;
 
-class TransferPostOwnershipGetPost
+class transfer_post_ownership_get_post
 {
     function page()
     {
@@ -57,7 +57,7 @@ class TransferPostOwnershipGetPost
 
         if ($derived_topic_id === false) {
 
-            breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the topic id. ');
+            breakout(' transfer_post_ownership_get_post::page() says: Failed to get the topic id. ');
 
         }
 
@@ -68,7 +68,7 @@ class TransferPostOwnershipGetPost
 
         if ($derived_community_id === false) {
 
-            breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the community id. ');
+            breakout(' transfer_post_ownership_get_post::page() says: Failed to get the community id. ');
 
         }
 
@@ -79,7 +79,7 @@ class TransferPostOwnershipGetPost
 
         if ($community_object === false) {
 
-            breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the community object. ');
+            breakout(' transfer_post_ownership_get_post::page() says: Failed to get the community object. ');
 
         }
 
@@ -92,7 +92,7 @@ class TransferPostOwnershipGetPost
 
         if ($topic_object === false) {
 
-            breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the topic object. ');
+            breakout(' transfer_post_ownership_get_post::page() says: Failed to get the topic object. ');
 
         }
 
@@ -105,7 +105,7 @@ class TransferPostOwnershipGetPost
 
         if ($user_object === false) {
 
-            breakout(' TransferPostOwnershipGetPost::page() says: Failed to get the user object. ');
+            breakout(' transfer_post_ownership_get_post::page() says: Failed to get the user object. ');
 
         }
 

@@ -6,14 +6,14 @@ use GoodToKnow\Models\Post;
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class TransferPostOwnershipTransferIt
+class transfer_post_ownership_transfer_it
 {
     function page()
     {
         /**
-         * Last function for TransferPostOwnershipTransferIt.
+         * Last function for transfer_post_ownership_transfer_it.
          *
-         * Here we take the username submitted and use it to make its id part of the record for for the post.
+         * Here we take the username submitted and use it to make its id part of the record for the post.
          */
 
 
@@ -50,7 +50,7 @@ class TransferPostOwnershipTransferIt
 
         if (!$g->post_object) {
 
-            breakout(' TransferPostOwnershipTransferIt says: Unexpected could not get a post object. ');
+            breakout(' transfer_post_ownership_transfer_it says: Unexpected could not get a post object. ');
 
         }
 

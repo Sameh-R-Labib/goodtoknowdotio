@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class TransferPostOwnershipChoosePost
+class transfer_post_ownership_choose_post
 {
     function page()
     {

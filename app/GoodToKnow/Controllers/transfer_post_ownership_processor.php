@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class TransferPostOwnershipProcessor
+class transfer_post_ownership_processor
 {
     function page()
     {
@@ -37,6 +37,6 @@ class TransferPostOwnershipProcessor
         $_SESSION['saved_int01'] = $g->chosen_topic_id;
 
 
-        redirect_to("/ax1/TransferPostOwnershipChoosePost/page");
+        redirect_to("/ax1/transfer_post_ownership_choose_post/page");
     }
 }

@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/TransferPostOwnershipTransferIt/page" method="post">
+    <form action="/ax1/transfer_post_ownership_transfer_it/page" method="post">
         <h1>Transfer Blog Post Ownership</h1>
         <?php require SESSIONMESSAGE; ?>
     <p>Enter the Username of New Owner</p>

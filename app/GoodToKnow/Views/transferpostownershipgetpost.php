@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/TransferPostOwnershipGetUsername/page" method="post">
+<form action="/ax1/transfer_post_ownership_get_username/page" method="post">
     <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>Are you sure you want me to transfer ownership of "<?= $g->long_title_of_post; ?>". Which resides in

@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
 
-class UnsuspendAccountUnsuspend
+class unsuspend_account_unsuspend
 {
     function page()
     {

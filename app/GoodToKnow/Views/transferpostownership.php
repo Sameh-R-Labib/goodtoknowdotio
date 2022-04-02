@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/TransferPostOwnershipProcessor/page" method="post">
+<form action="/ax1/transfer_post_ownership_processor/page" method="post">
     <h1>Transfer 📄 Ownership</h1>
     <p class="tooltip">ℹ️
         <span class="tooltiptext tooltip-top">Your goal here is to specify which post to transfer ownership of.</span>

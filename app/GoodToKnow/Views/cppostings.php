@@ -9,7 +9,7 @@
         <p><a href="/ax1/NewTopic/page">Create Topic</a></p>
         <p><a href="/ax1/topic_description_editor/page">Edit A Topic</a></p>
         <p><a href="/ax1/quick_post_delete/page">Delete Any Post</a></p>
-        <p><a href="/ax1/TransferPostOwnership/page">Transfer Post Ownership</a></p>
+        <p><a href="/ax1/transfer_post_ownership/page">Transfer Post Ownership</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

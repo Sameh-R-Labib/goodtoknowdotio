@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class TransferPostOwnershipGetUsername
+class transfer_post_ownership_get_username
 {
     function page()
     {
