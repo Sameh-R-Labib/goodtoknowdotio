@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/QuickPostDeleteDelProc/page" method="post">
+<form action="/ax1/quick_post_delete_del_proc/page" method="post">
     <h1>Confirm</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>Are you sure you want me to delete "<?= $g->long_title_of_post ?>".</p>

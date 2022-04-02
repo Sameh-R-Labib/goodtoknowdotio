@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
-class QuickPostDeleteProcessor
+class quick_post_delete_processor
 {
     function page()
     {
@@ -37,6 +37,6 @@ class QuickPostDeleteProcessor
         $_SESSION['saved_int01'] = $g->chosen_topic_id;
 
 
-        redirect_to("/ax1/QuickPostDeleteChoosePost/page");
+        redirect_to("/ax1/quick_post_delete_choose_post/page");
     }
 }

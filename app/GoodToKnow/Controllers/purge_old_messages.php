@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class PurgeOldMessages
+class purge_old_messages
 {
     function page()
     {

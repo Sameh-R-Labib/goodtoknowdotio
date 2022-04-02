@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class PurgeNinetyDayOldBTFBs
+class purge_ninety_day_old_btfb_s
 {
     function page()
     {
@@ -52,7 +52,7 @@ class PurgeNinetyDayOldBTFBs
 
             $num_affected_rows = $g->db->affected_rows;
         } catch (\Exception $e) {
-            $g->message .= ' PurgeNinetyDayOldBTFBs delete() exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' purge_ninety_day_old_btfb_s delete() exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
         }
 
         if (!empty($g->message)) {

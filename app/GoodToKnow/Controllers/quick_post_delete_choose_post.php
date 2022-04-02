@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class QuickPostDeleteChoosePost
+class quick_post_delete_choose_post
 {
     function page()
     {

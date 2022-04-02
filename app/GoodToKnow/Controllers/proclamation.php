@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class Proclamation
+class proclamation
 {
     function page()
     {
@@ -12,13 +12,13 @@ class Proclamation
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->page = 'Proclamation';
+        $g->page = 'proclamation';
 
 
         $g->show_poof = true;
 
 
-        $g->html_title = 'Proclamation';
+        $g->html_title = 'proclamation';
 
 
         $g->message .= ' What the proponents of the Gtk.io project believe in and pursue. ';

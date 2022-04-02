@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/QuickPostDeleteProcessor/page" method="post">
+    <form action="/ax1/quick_post_delete_processor/page" method="post">
         <h1>Delete Any 📄</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">These are only topics from within the current community.</span>

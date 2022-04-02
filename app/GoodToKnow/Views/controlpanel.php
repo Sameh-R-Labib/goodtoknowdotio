@@ -12,7 +12,7 @@
             <a class="purplebtn" href="/ax1/c_p_taxable_income/page">Taxable Income Event</a>
             <a class="orangebtn" href="/ax1/c_p_commodities/page">Commodity</a>
             <a class="blackbtn" href="/ax1/c_p_capital_gains/page">Commodity Sold</a>
-            <a class="greenbtn" href="/ax1/Proclamation/page">Proclamation</a></p>
+            <a class="greenbtn" href="/ax1/proclamation/page">Proclamation</a></p>
     </div>
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

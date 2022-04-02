@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class QuickPostDelete
+class quick_post_delete
 {
     function page()
     {

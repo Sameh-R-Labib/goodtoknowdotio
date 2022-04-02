@@ -6,7 +6,7 @@ use GoodToKnow\Models\Message;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
 
-class PurgeOldMessagesProcessor
+class purge_old_messages_processor
 {
     function page()
     {

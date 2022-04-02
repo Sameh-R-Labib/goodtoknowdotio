@@ -78,8 +78,8 @@ switch ($g->page) {
     case 'c_p_postings':
         echo "<a href=\"/ax1/c_p_postings/page\">Blog Post</a>";
         break;
-    case 'Proclamation':
-        echo "<a href=\"/ax1/Proclamation/page\">Proclamation</a>";
+    case 'proclamation':
+        echo "<a href=\"/ax1/proclamation/page\">Proclamation</a>";
         break;
     default:
         require CURRENTCOMMUNITY;
