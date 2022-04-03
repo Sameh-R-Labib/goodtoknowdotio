@@ -3,7 +3,7 @@
     <form action="/ax1/commodity_see_my_records/page" method="post">
         <h1>See Your Commodity Records</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>I want to know which Commodity records you want to see.</p>
+        <p>I want to know which commodity records you want to see.</p>
         <section>
             <p>
                 <label for="commodity_symbol">Commodity: </label>

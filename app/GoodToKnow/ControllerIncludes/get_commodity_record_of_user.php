@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\Commodity;
+use GoodToKnow\Models\commodity;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 global $g;
@@ -18,10 +18,10 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 
 /**
- * Retrieve the Commodity object with that id from the database.
+ * Retrieve the commodity object with that id from the database.
  */
 
-$g->commodity_object = Commodity::find_by_id($chosen_id);
+$g->commodity_object = commodity::find_by_id($chosen_id);
 
 if (!$g->commodity_object) {
 

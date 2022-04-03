@@ -32,7 +32,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>There are no Commodity Sold records.</p>
+            <p>There are no commodity_sold records.</p>
         <?php endif; ?>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>

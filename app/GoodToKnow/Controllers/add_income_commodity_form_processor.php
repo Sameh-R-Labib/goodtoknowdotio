@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Commodity;
+use GoodToKnow\Models\commodity;
 use GoodToKnow\Models\TaxableIncomeEvent;
 use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
@@ -15,7 +15,7 @@ class add_income_commodity_form_processor
     {
         /**
          * Create two (2) database records. One in the taxable_income_event table and another in
-         * the Commodity table.
+         * the commodity table.
          *
          * Also, there is a redo feature.
          */
@@ -120,7 +120,7 @@ class add_income_commodity_form_processor
 
 
         /**
-         * Create a Commodity array for the record.
+         * Create a commodity array for the record.
          */
 
         $array_commodity_record = ['user_id' => $g->user_id, 'address' => $label, 'commodity' => $commodity,
@@ -129,10 +129,10 @@ class add_income_commodity_form_processor
 
 
         /**
-         * Make the array into an in memory Commodity object for the record.
+         * Make the array into an in memory commodity object for the record.
          */
 
-        $commodity_object = Commodity::array_to_object($array_commodity_record);
+        $commodity_object = commodity::array_to_object($array_commodity_record);
 
 
         /**
@@ -145,14 +145,14 @@ class add_income_commodity_form_processor
 
         if (!$result) {
 
-            breakout(' The save method for Commodity returned false. ');
+            breakout(' The save method for commodity returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for Commodity did not return false but it did send back a message.
-             Therefore, it probably did not create the Commodity record. ');
+            breakout(' The save method for commodity did not return false but it did send back a message.
+             Therefore, it probably did not create the commodity record. ');
 
         }
 

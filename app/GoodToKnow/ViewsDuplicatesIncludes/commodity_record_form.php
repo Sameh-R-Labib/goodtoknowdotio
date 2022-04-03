@@ -47,7 +47,7 @@
         <p>
             <label for="comment">Comment:<br></label>
             <textarea id="comment" name="comment" rows="5" cols="67" wrap="soft" maxlength="1800" spellcheck="false"
-                      placeholder="This record is for Commodity related to _ _."><?= $g->saved_arr01['comment'] ?></textarea>
+                      placeholder="This record is for commodity related to _ _."><?= $g->saved_arr01['comment'] ?></textarea>
         </p>
     </section>
 <?php include 'a_form_bottom.php'; ?>

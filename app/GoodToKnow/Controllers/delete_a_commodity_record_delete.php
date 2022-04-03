@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Commodity;
+use GoodToKnow\Models\commodity;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class delete_a_commodity_record_delete
@@ -42,7 +42,7 @@ class delete_a_commodity_record_delete
 
         get_db();
 
-        $commodity = Commodity::find_by_id($g->saved_int01);
+        $commodity = commodity::find_by_id($g->saved_int01);
 
         if (!$commodity) {
 

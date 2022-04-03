@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommoditySold;
+use GoodToKnow\Models\commodity_sold;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class drop_a_commodity_sold_confirmation
@@ -42,7 +42,7 @@ class drop_a_commodity_sold_confirmation
 
         get_db();
 
-        $object = CommoditySold::find_by_id($g->saved_int01);
+        $object = commodity_sold::find_by_id($g->saved_int01);
 
         if (!$object) {
 

@@ -9,9 +9,9 @@ class edit_a_commodity_record
     function page()
     {
         /**
-         * This feature is for editing/updating a Commodity record.
+         * This feature is for editing/updating a commodity record.
          *
-         * This route is for presenting a form for getting the user to tell us which Commodity record he wants to edit.
+         * This route is for presenting a form for getting the user to tell us which commodity record he wants to edit.
          * It will present a series of radio buttons to choose from.
          */
 

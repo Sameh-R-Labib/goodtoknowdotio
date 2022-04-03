@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Commodity;
+use GoodToKnow\Models\commodity;
 use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -83,7 +83,7 @@ class edit_a_commodity_record_submit
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * A correct time entry for a Commodity record would be in the past.
+         * A correct time entry for a commodity record would be in the past.
          *
          * The currently submitted form data will be used to conveniently
          * populate the redo form.
@@ -151,11 +151,11 @@ class edit_a_commodity_record_submit
 
         get_db();
 
-        $g->commodity_object = Commodity::find_by_id($g->saved_int01);
+        $g->commodity_object = commodity::find_by_id($g->saved_int01);
 
         if (!$g->commodity_object) {
 
-            breakout(' Unexpectedly I could not find that Commodity record. ');
+            breakout(' Unexpectedly I could not find that commodity record. ');
 
         }
 
@@ -182,7 +182,7 @@ class edit_a_commodity_record_submit
 
         if ($result === false) {
 
-            breakout(' Failed operation to save the Commodity object. ');
+            breakout(' Failed operation to save the commodity object. ');
 
         }
 

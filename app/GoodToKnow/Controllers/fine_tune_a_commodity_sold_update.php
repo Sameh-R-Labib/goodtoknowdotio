@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommoditySold;
+use GoodToKnow\Models\commodity_sold;
 
 class fine_tune_a_commodity_sold_update
 {
@@ -29,7 +29,7 @@ class fine_tune_a_commodity_sold_update
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * The correct time entries (both of them) for a Commodity Sold record
+         * The correct time entries (both of them) for a commodity_sold record
          * would be in the past.
          *
          * The currently submitted form data will be used to conveniently
@@ -103,7 +103,7 @@ class fine_tune_a_commodity_sold_update
 
         get_db();
 
-        $object = CommoditySold::find_by_id($g->saved_int01);
+        $object = commodity_sold::find_by_id($g->saved_int01);
 
         if (!$object) {
 
@@ -151,7 +151,7 @@ class fine_tune_a_commodity_sold_update
 
         /**
          * We want to reassure the user that the commodity sold record has been updated.
-         * So, we are going to hook into the "See a year's Commodity Sold Records" feature.
+         * So, we are going to hook into the "See a Year's Commodity Sold Records" feature.
          */
 
         redirect_to("/ax1/spy_commodities_sold/page");

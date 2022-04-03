@@ -11,7 +11,7 @@ class abolish_years_commodities_sold_get_year
     {
         /**
          * 1) Validate the submitted tax_year.
-         * 2) Delete the CommoditySold(s/plural) which have the specified tax_year.
+         * 2) Delete the commodity_sold(s/plural) which have the specified tax_year.
          * 3) Give confirmation of deletion.
          */
 
@@ -32,7 +32,7 @@ class abolish_years_commodities_sold_get_year
 
 
         /**
-         * 2) Delete the CommoditySold(s/plural) which have the specified tax_year.
+         * 2) Delete the commodity_sold(s/plural) which have the specified tax_year.
          */
 
         $num_affected_rows = 0;

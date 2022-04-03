@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Commodity;
+use GoodToKnow\Models\commodity;
 use function GoodToKnow\ControllerHelpers\commodity_address_form_field_prep;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -51,7 +51,7 @@ class initialize_a_commodity_record_processor
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * A correct time entry for a Commodity record would be in the past.
+         * A correct time entry for a commodity record would be in the past.
          *
          * The currently submitted form data will be used to conveniently
          * populate the redo form.
@@ -114,7 +114,7 @@ class initialize_a_commodity_record_processor
 
 
         /**
-         * Create a Commodity array for the record.
+         * Create a commodity array for the record.
          */
 
         $array_commodity_record = ['user_id' => $g->user_id, 'address' => $address, 'commodity' => $commodity,
@@ -123,10 +123,10 @@ class initialize_a_commodity_record_processor
 
 
         /**
-         * Make the array into an in memory Commodity object for the record.
+         * Make the array into an in memory commodity object for the record.
          */
 
-        $commodity_object = Commodity::array_to_object($array_commodity_record);
+        $commodity_object = commodity::array_to_object($array_commodity_record);
 
 
         /**
@@ -139,14 +139,14 @@ class initialize_a_commodity_record_processor
 
         if (!$result) {
 
-            breakout(' The save method for Commodity returned false. ');
+            breakout(' The save method for commodity returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for Commodity did not return false but it did send back a message.
-             Therefore, it probably did not create the Commodity record. ');
+            breakout(' The save method for commodity did not return false but it did send back a message.
+             Therefore, it probably did not create the commodity record. ');
 
         }
 

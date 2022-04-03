@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommoditySold;
+use GoodToKnow\Models\commodity_sold;
 
 class father_a_commodity_sold_processor
 {
@@ -24,7 +24,7 @@ class father_a_commodity_sold_processor
 
         /**
          * Redirect to give the user one chance to fix their time entry.
-         * The correct time entries (both of them) for a Commodity Sold record
+         * The correct time entries (both of them) for a commodity_sold record
          * would be in the past.
          *
          * The currently submitted form data will be used to conveniently
@@ -93,7 +93,7 @@ class father_a_commodity_sold_processor
 
 
         /**
-         * Start formulating the CommoditySold object, so we can save it.
+         * Start formulating the commodity_sold object, so we can save it.
          */
 
         $array = ['user_id' => $g->user_id, 'time_bought' => $g->time_bought, 'time_sold' => $g->time_sold,
@@ -101,7 +101,7 @@ class father_a_commodity_sold_processor
             'commodity_amount' => $g->commodity_amount, 'commodity_type' => $g->commodity_type,
             'commodity_label' => $g->commodity_label, 'tax_year' => $g->tax_year, 'profit' => $g->profit];
 
-        $object = CommoditySold::array_to_object($array);
+        $object = commodity_sold::array_to_object($array);
 
         get_db();
 
@@ -109,14 +109,14 @@ class father_a_commodity_sold_processor
 
         if (!$result) {
 
-            breakout(' The save method for CommoditySold returned false. ');
+            breakout(' The save method for commodity_sold returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for CommoditySold did not return false but it did send
-            back a message. Therefore, it probably did not create the CommoditySold record. ');
+            breakout(' The save method for commodity_sold did not return false but it did send
+            back a message. Therefore, it probably did not create the commodity_sold record. ');
 
         }
 
@@ -131,7 +131,7 @@ class father_a_commodity_sold_processor
 
         /**
          * We want to reassure the user that the commodity sold record has been saved.
-         * So, we are going to hook into the "See a year's Commodity Sold Records" feature.
+         * So, we are going to hook into the "See a Year's Commodity Sold Records" feature.
          */
 
         redirect_to("/ax1/spy_commodities_sold/page");

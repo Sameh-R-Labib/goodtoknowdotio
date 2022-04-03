@@ -8,7 +8,7 @@ class initialize_a_commodity_record
     {
         /**
          * This feature enables a user to create a database record in the
-         * Commodity table.
+         * commodity table.
          */
 
 

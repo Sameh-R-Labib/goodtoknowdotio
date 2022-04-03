@@ -12,7 +12,7 @@ class commodity_see_my_records_specify
          *  2. Time Range.
          *
          * Q: Why are we doing this?
-         * A: Because the goal is to enable the user to see a subset of his Commodity records.
+         * A: Because the goal is to enable the user to see a subset of his commodity records.
          */
 
 

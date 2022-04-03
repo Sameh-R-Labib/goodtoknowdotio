@@ -10,7 +10,7 @@ class delete_a_commodity_record_processor
     {
         /**
          * 1) Determines the id of the commodity record from 'choice' and stores it in $_SESSION['saved_int01'].
-         * 2) Retrieve the Commodity object with that id from the database.
+         * 2) Retrieve the commodity object with that id from the database.
          * 3) Verify the object belongs to the user.
          * 4) Presents a form containing data from the record and asking for confirmation to delete.
          */

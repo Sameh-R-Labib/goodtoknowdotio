@@ -91,7 +91,7 @@ class commodity_see_my_records
          * Present the view.
          */
 
-        $g->html_title = 'Your Commodity records';
+        $g->html_title = 'Your commodity records';
 
         $g->page = 'commodity_see_my_records';
 

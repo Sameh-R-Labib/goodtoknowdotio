@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/spy_commodities_sold_year_filter/page" method="post">
-        <h1>See a year's Commodity Sold Records</h1>
+        <h1>See a Year's Commodity Sold Records</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which tax year?</p>
         <section>

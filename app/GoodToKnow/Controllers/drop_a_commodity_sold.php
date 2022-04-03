@@ -7,10 +7,10 @@ class drop_a_commodity_sold
     function page()
     {
         /**
-         * Ultimately, this is about deleting a CommoditySold.
+         * Ultimately, this is about deleting a commodity_sold.
          *
          * This page is going to present a text box for entering a tax_year to be used to narrow down the choices
-         * for which CommoditySold to delete.
+         * for which commodity_sold to delete.
          */
 
 
