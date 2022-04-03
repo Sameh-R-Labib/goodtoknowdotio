@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
-class WriteOverATaxableIncomeEventEdit
+class write_over_a_taxable_income_event_edit
 {
     function page()
     {
@@ -99,7 +99,7 @@ class WriteOverATaxableIncomeEventEdit
          * Present the view.
          */
 
-        $g->action = '/ax1/WriteOverATaxableIncomeEventUpdate/page';
+        $g->action = '/ax1/write_over_a_taxable_income_event_update/page';
         $g->heading_one = 'Edit a Taxable Income Event';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'taxable_income_event_form.php';
     }

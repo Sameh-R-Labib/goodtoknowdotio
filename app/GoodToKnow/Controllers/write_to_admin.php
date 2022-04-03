@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class WriteToAdmin
+class write_to_admin
 {
     function page()
     {

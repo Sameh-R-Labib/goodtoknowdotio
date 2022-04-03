@@ -5,15 +5,15 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\PossibleTaxDeduction;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
-class WipeOutAPossibleTaxDeductionConfirmation
+class wipe_out_a_possible_tax_deduction_confirmation
 {
     function page()
     {
         /**
          * Here we will read the choice of whether
-         * or not to delete the record. If yes then
-         * delete it. On the other hand if no then reset
-         * some session variables and redirect to the home page.
+         * to delete the record. If yes then delete it.
+         * On the other hand if no then reset some session
+         * variables and redirect to the home page.
          */
 
 

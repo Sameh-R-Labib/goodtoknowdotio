@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class WipeOutAPossibleTaxDeductionDelete
+class wipe_out_a_possible_tax_deduction_delete
 {
     function page()
     {

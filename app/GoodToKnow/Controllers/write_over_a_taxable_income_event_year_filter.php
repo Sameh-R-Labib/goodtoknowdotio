@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 
-class WriteOverATaxableIncomeEventYearFilter
+class write_over_a_taxable_income_event_year_filter
 {
     function page()
     {

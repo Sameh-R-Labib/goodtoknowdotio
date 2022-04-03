@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/WipeOutAPossibleTaxDeductionYearFilter/page" method="post">
+    <form action="/ax1/wipe_out_a_possible_tax_deduction_year_filter/page" method="post">
         <h1>Delete a Possible Tax Deduction</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Your goal here is to narrow down the data set for 🤔 Tax ✍🏽🔽</span>

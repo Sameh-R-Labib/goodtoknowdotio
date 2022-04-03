@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class WriteOverATaxableIncomeEventRedo
+class write_over_a_taxable_income_event_redo
 {
     function page()
     {
@@ -22,7 +22,7 @@ class WriteOverATaxableIncomeEventRedo
         $g->html_title = 'One chance to redo';
 
 
-        $g->action = '/ax1/WriteOverATaxableIncomeEventUpdate/page';
+        $g->action = '/ax1/write_over_a_taxable_income_event_update/page';
         $g->heading_one = 'Edit a Taxable Income Event';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'taxable_income_event_form.php';
     }

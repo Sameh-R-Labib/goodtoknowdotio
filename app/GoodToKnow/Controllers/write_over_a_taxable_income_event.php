@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class WriteOverATaxableIncomeEvent
+class write_over_a_taxable_income_event
 {
     function page()
     {

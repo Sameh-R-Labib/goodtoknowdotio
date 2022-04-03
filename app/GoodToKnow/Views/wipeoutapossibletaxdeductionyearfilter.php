@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/WipeOutAPossibleTaxDeductionDelete/page" method="post">
+    <form action="/ax1/wipe_out_a_possible_tax_deduction_delete/page" method="post">
         <h1>Delete a Possible Tax Deduction</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Possible Tax Deduction?</p>

@@ -1,5 +1,5 @@
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/WriteOverATaxableIncomeEventYearFilter/page" method="post">
+    <form action="/ax1/write_over_a_taxable_income_event_year_filter/page" method="post">
         <h1>Edit a Taxable Income Event</h1>
         <?php require SESSIONMESSAGE; ?>
     <p>Which <em>year received</em> does the event fall under?</p>

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class WipeOutAPossibleTaxDeductionYearFilter
+class wipe_out_a_possible_tax_deduction_year_filter
 {
     function page()
     {

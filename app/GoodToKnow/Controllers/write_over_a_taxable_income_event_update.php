@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class WriteOverATaxableIncomeEventUpdate
+class write_over_a_taxable_income_event_update
 {
     function page()
     {
@@ -130,7 +130,7 @@ class WriteOverATaxableIncomeEventUpdate
                 $_SESSION['saved_arr01'] = $saved_arr01;
 
 
-                redirect_to("/ax1/WriteOverATaxableIncomeEventRedo/page");
+                redirect_to("/ax1/write_over_a_taxable_income_event_redo/page");
 
             }
 
