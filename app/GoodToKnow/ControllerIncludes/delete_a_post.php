@@ -1,13 +1,13 @@
 <?php
 
-use GoodToKnow\Models\Post;
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\post;
+use GoodToKnow\Models\topic_to_post;
 
 
 global $g;
 
 
-$post = Post::find_by_id($g->saved_int02);
+$post = post::find_by_id($g->saved_int02);
 
 if (!$post) {
 
@@ -24,17 +24,17 @@ if (!$result) {
 }
 
 
-// Delete the TopicToPost record
+// Delete the topic_to_post record
 
 $sql = 'SELECT * FROM `topic_to_post`
         WHERE `topic_id` = "' . $g->db->real_escape_string($g->saved_int01) . '" AND `post_id` = "' .
     $g->db->real_escape_string($g->saved_int02) . '" LIMIT 1';
 
-$array_of_objects = TopicToPost::find_by_sql($sql);
+$array_of_objects = topic_to_post::find_by_sql($sql);
 
 if (!$array_of_objects || !empty($g->message)) {
 
-    breakout(' Unexpectedly failed to get a TopicToPost object to delete. ');
+    breakout(' Unexpectedly failed to get a topic_to_post object to delete. ');
 
 }
 
@@ -50,7 +50,7 @@ $result = $topictopost_object->delete();
 
 if (!$result) {
 
-    breakout(' Unexpectedly could not delete the TopicToPost object. ');
+    breakout(' Unexpectedly could not delete the topic_to_post object. ');
 
 }
 

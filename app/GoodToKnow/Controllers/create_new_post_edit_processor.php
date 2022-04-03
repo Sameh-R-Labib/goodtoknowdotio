@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
@@ -57,7 +57,7 @@ class create_new_post_edit_processor
 
         get_db();
 
-        $post = Post::find_by_id($g->saved_int02);
+        $post = post::find_by_id($g->saved_int02);
 
         if ($post === false) {
 

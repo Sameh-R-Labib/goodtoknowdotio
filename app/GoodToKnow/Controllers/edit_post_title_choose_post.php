@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 
 class edit_post_title_choose_post
 {
@@ -29,7 +29,7 @@ class edit_post_title_choose_post
 
         // Get all posts (as special array) for the user and topic.
 
-        $g->special_post_array = TopicToPost::special_posts_array_for_user_and_topic($g->user_id, $g->saved_int01);
+        $g->special_post_array = topic_to_post::special_posts_array_for_user_and_topic($g->user_id, $g->saved_int01);
 
         if (!$g->special_post_array) {
 

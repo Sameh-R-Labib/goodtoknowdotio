@@ -59,7 +59,7 @@ Sincerely,
 {$g->user_username}
 ROI;
 
-        $g->html_title = "Compose Message for $submitted_username";
+        $g->html_title = "Compose message for $submitted_username";
 
         require VIEWS . DIRSEP . 'byusernamemprocessor.php';
     }

@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\PossibleTaxDeduction;
+use GoodToKnow\Models\possible_tax_deduction;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
@@ -22,7 +22,7 @@ $_SESSION['saved_int01'] = $id;
  * 2) Retrieve the possible_tax_deduction object with that id from the database.
  */
 
-$g->object = PossibleTaxDeduction::find_by_id($id);
+$g->object = possible_tax_deduction::find_by_id($id);
 
 if (!$g->object) {
 

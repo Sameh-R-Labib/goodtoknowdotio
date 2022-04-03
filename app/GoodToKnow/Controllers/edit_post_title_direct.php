@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 
 class edit_post_title_direct
 {
@@ -11,7 +11,7 @@ class edit_post_title_direct
         /**
          * The main goal in this route is to present view editposttitleeditor.php.
          * But before we do that we must:
-         *   - Store the Post id in $_SESSION['saved_int02'].
+         *   - Store the post id in $_SESSION['saved_int02'].
          *   - Acquire $g->post_object.
          */
 
@@ -36,7 +36,7 @@ class edit_post_title_direct
 
 
         /**
-         * Store the Post id in $_SESSION['saved_int02'].
+         * Store the post id in $_SESSION['saved_int02'].
          */
 
         $_SESSION['saved_int02'] = $g->post_id;
@@ -45,7 +45,7 @@ class edit_post_title_direct
         /**
          * Acquire $g->post_object.
          */
-        $g->post_object = Post::find_by_id($g->post_id);
+        $g->post_object = post::find_by_id($g->post_id);
 
         if (!$g->post_object) {
 

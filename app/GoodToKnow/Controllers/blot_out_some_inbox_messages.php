@@ -32,7 +32,7 @@ class blot_out_some_inbox_messages
 
 
         /**
-         * Replace (in each Message) the user_id and created with a username and a datetime.
+         * Replace (in each message) the user_id and created with a username and a datetime.
          */
 
         $return = message_to_user::replace_attributes($g->inbox_messages_array);

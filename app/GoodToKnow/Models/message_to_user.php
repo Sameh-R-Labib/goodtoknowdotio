@@ -251,18 +251,18 @@ class message_to_user extends good_object
 
         /**
          * Now we have all the message_to_user objects for the user.
-         * But what we want is the Message objects for the user.
+         * But what we want is the message objects for the user.
          */
 
-        $array_of_Messages = [];
+        $array_of_messages = [];
 
         foreach ($array_of_message_to_user as $item) {
 
-            $array_of_Messages[] = Message::find_by_id($item->message_id);
+            $array_of_messages[] = message::find_by_id($item->message_id);
 
         }
 
-        if (empty($array_of_Messages)) {
+        if (empty($array_of_messages)) {
 
             $g->message .= ' message_to_user::get_array_of_message_objects_for_a_user() says: Errno 88. ';
 
@@ -272,9 +272,9 @@ class message_to_user extends good_object
 
         require_once CONTROLLERHELPERS . DIRSEP . 'order_them_from_most_recent_to_oldest.php';
 
-        order_them_from_most_recent_to_oldest($array_of_Messages, 'created');
+        order_them_from_most_recent_to_oldest($array_of_messages, 'created');
 
-        return $array_of_Messages;
+        return $array_of_messages;
     }
 
 
@@ -291,7 +291,7 @@ class message_to_user extends good_object
 
 
         /**
-         * Replace (in each Message) the user_id and created with a username and a datetime.
+         * Replace (in each message) the user_id and created with a username and a datetime.
          *
          * Assumes $inbox_messages_array is not empty.
          */

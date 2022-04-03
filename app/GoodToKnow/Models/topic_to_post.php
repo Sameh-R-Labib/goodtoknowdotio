@@ -4,7 +4,7 @@ namespace GoodToKnow\Models;
 
 use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
 
-class TopicToPost extends good_object
+class topic_to_post extends good_object
 {
     /**
      * @var string
@@ -43,11 +43,11 @@ class TopicToPost extends good_object
         $sql = 'SELECT * FROM `topic_to_post`
         WHERE `post_id` = "' . $g->db->real_escape_string($post_id) . '" LIMIT 1';
 
-        $array_of_objects = TopicToPost::find_by_sql($sql);
+        $array_of_objects = topic_to_post::find_by_sql($sql);
 
         if (!$array_of_objects || !empty($g->message)) {
 
-            $g->message .= ' derive_topic_id says: Failed to get a TopicToPost object. ';
+            $g->message .= ' derive_topic_id says: Failed to get a topic_to_post object. ';
             return false;
 
         }
@@ -81,7 +81,7 @@ class TopicToPost extends good_object
          * The objects I'm getting are the ones which belong
          * to a particular topic.
          *
-         * First I will get (in array) all the TopicToPost objects with
+         * First I will get (in array) all the topic_to_post objects with
          * a particular $topic_id.
          *
          * Then I will get (in array) all the posts listed in the first array.
@@ -91,9 +91,9 @@ class TopicToPost extends good_object
         global $g;
 
 
-        // get (in array) all the TopicToPost objects with a particular $topic_id.
+        // get (in array) all the topic_to_post objects with a particular $topic_id.
 
-        $array_of_TopicToPost = [];
+        $array_of_topic_to_post = [];
 
         $count = 0;
 
@@ -128,9 +128,9 @@ class TopicToPost extends good_object
                     return false;
 
                 } else {
-                    while ($x = $result->fetch_object('\GoodToKnow\Models\TopicToPost')) {
+                    while ($x = $result->fetch_object('\GoodToKnow\Models\topic_to_post')) {
 
-                        $array_of_TopicToPost[] = $x;
+                        $array_of_topic_to_post[] = $x;
 
                         $count += 1;
 
@@ -144,7 +144,7 @@ class TopicToPost extends good_object
             }
         } catch (\Exception $e) {
 
-            $g->message .= ' TopicToPost::get_posts_array_for_a_topic() caught a thrown exception: ' .
+            $g->message .= ' topic_to_post::get_posts_array_for_a_topic() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -153,7 +153,7 @@ class TopicToPost extends good_object
 
         if ($count < 1) {
 
-            $g->message .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 15. ';
+            $g->message .= ' topic_to_post::get_posts_array_for_a_topic() says: Errno 15. ';
 
             return false;
 
@@ -161,20 +161,20 @@ class TopicToPost extends good_object
 
 
         /**
-         * get (in array) all the posts listed in $array_of_TopicToPost.
+         * get (in array) all the posts listed in $array_of_topic_to_post.
          */
 
-        $array_of_Posts = [];
+        $array_of_posts = [];
 
-        foreach ($array_of_TopicToPost as $item) {
+        foreach ($array_of_topic_to_post as $item) {
 
-            $array_of_Posts[] = Post::find_by_id($item->post_id);
+            $array_of_posts[] = post::find_by_id($item->post_id);
 
         }
 
-        if (empty($array_of_Posts)) {
+        if (empty($array_of_posts)) {
 
-            $g->message .= ' TopicToPost::get_posts_array_for_a_topic() says: Errno 16. ';
+            $g->message .= ' topic_to_post::get_posts_array_for_a_topic() says: Errno 16. ';
 
             return false;
 
@@ -182,9 +182,9 @@ class TopicToPost extends good_object
 
         require_once CONTROLLERHELPERS . DIRSEP . 'order_by_sequence_number.php';
 
-        order_by_sequence_number($array_of_Posts);
+        order_by_sequence_number($array_of_posts);
 
-        return $array_of_Posts;
+        return $array_of_posts;
     }
 
 
@@ -212,7 +212,7 @@ class TopicToPost extends good_object
 
             if (!$author_user_object) {
 
-                $g->message .= " TopicToPost::get_author_usernames() says: find_by_id failed to find the user object. ";
+                $g->message .= " topic_to_post::get_author_usernames() says: find_by_id failed to find the user object. ";
 
                 return false;
 
@@ -244,7 +244,7 @@ class TopicToPost extends good_object
          */
 
 
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($topic_id);
+        $posts_array = topic_to_post::get_posts_array_for_a_topic($topic_id);
 
         if (empty($posts_array) || $posts_array === false) {
 
@@ -271,7 +271,7 @@ class TopicToPost extends good_object
      */
     public static function special_posts_array_for_user_and_topic(int $user_id, int $topic_id)
     {
-        $posts_array = TopicToPost::get_posts_array_for_a_topic($topic_id);
+        $posts_array = topic_to_post::get_posts_array_for_a_topic($topic_id);
 
         if (empty($posts_array) || $posts_array === false) {
 

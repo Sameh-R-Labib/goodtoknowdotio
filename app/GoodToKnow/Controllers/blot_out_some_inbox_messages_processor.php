@@ -50,7 +50,7 @@ class blot_out_some_inbox_messages_processor
 
         foreach ($submitted_message_ids_array as $id) {
 
-            // Only delete the message_to_user record. Do Not delete the Message record since it may be needed by another user.
+            // Only delete the message_to_user record. Do Not delete the message record since it may be needed by another user.
 
             $return = message_to_user::delete_all_particular($id, $g->user_id);
 

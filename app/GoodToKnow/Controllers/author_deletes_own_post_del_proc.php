@@ -10,7 +10,7 @@ class author_deletes_own_post_del_proc
     {
         /**
          * Here we will read the choice of whether to delete the post. If yes then
-         * delete the post record, delete its TopicToPost record, and delete its
+         * delete the post record, delete its topic_to_post record, and delete its
          * html and markdown files. On the other hand if no then reset some session variables
          * and redirect to the home page.
          */

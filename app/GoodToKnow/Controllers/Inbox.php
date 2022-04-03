@@ -30,7 +30,7 @@ class inbox
 
 
         /**
-         * Replace (in each Message) the user_id and created with a username and a datetime.
+         * Replace (in each message) the user_id and created with a username and a datetime.
          */
 
         if (!empty($g->inbox_messages_array)) {

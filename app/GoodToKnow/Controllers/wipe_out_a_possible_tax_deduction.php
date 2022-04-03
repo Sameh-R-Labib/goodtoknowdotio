@@ -7,7 +7,7 @@ class wipe_out_a_possible_tax_deduction
     function page()
     {
         /**
-         * Ultimately, this is about deleting a PossibleTaxDeduction.
+         * Ultimately, this is about deleting a possible_tax_deduction.
          *
          * This page is going to present a text box
          * for entering a year_paid value to be used

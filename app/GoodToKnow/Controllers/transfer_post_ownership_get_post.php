@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\Topic;
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 use GoodToKnow\Models\User;
 
 class transfer_post_ownership_get_post
@@ -53,7 +53,7 @@ class transfer_post_ownership_get_post
         // Find the community name based on the post id. First derive the topic id from the post id.
         // Blog Post id is $g->chosen_post_id
 
-        $derived_topic_id = TopicToPost::derive_topic_id($g->chosen_post_id);
+        $derived_topic_id = topic_to_post::derive_topic_id($g->chosen_post_id);
 
         if ($derived_topic_id === false) {
 

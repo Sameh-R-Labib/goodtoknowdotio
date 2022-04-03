@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\Message;
+use GoodToKnow\Models\message;
 use Michelf\MarkdownExtra;
 use function GoodToKnow\ControllerHelpers\markdown_form_field_prep;
 
@@ -28,7 +28,7 @@ fix_michelf($html);
 
 $message_array = ['user_id' => $g->user_id, 'created' => time(), 'content' => $html];
 
-$g->message_object = Message::array_to_object($message_array);
+$g->message_object = message::array_to_object($message_array);
 
 $result = $g->message_object->save();
 

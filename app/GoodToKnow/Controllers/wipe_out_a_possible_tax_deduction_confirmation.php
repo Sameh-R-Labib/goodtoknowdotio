@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\PossibleTaxDeduction;
+use GoodToKnow\Models\possible_tax_deduction;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class wipe_out_a_possible_tax_deduction_confirmation
@@ -44,7 +44,7 @@ class wipe_out_a_possible_tax_deduction_confirmation
 
         get_db();
 
-        $object = PossibleTaxDeduction::find_by_id($g->saved_int01);
+        $object = possible_tax_deduction::find_by_id($g->saved_int01);
 
         if (!$object) {
 

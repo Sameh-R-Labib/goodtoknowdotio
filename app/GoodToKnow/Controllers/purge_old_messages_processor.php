@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Message;
+use GoodToKnow\Models\message;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\get_timestamp_from_date;
 
@@ -47,7 +47,7 @@ class purge_old_messages_processor
 
         get_db();
 
-        $result = Message::purge_all_messages_older_than_date($timestamp);
+        $result = message::purge_all_messages_older_than_date($timestamp);
 
 
         /**

@@ -8,7 +8,7 @@ class see_one_years_possible_tax_deductions_year_filter
     {
         /**
          * 1) Validate the submitted year_paid.
-         * 2) Present the PossibleTaxDeduction(s/plural) in a page whose layout is similar to the home page.
+         * 2) Present the possible_tax_deduction(s/plural) in a page whose layout is similar to the home page.
          */
 
 

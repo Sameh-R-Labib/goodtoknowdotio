@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 
 class create_new_post_insert_point
 {
@@ -38,7 +38,7 @@ class create_new_post_insert_point
          * all the posts in said topic.
          */
 
-        $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->saved_int01);
+        $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->saved_int01);
 
         if (!$g->special_post_array) {
 

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 
 class edit_my_post_direct
 {
@@ -42,7 +42,7 @@ class edit_my_post_direct
 
         // Get the post's object
 
-        $g->post_object = Post::find_by_id($g->post_id);
+        $g->post_object = post::find_by_id($g->post_id);
 
         if (!$g->post_object) {
 

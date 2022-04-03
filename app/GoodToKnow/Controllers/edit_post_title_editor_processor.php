@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class edit_post_title_editor_processor
@@ -14,10 +14,10 @@ class edit_post_title_editor_processor
          * However, the mission is slightly different.
          *
          * Mission:
-         *   - Run the reception functions for rhe Post's data (main_title and title_extension.)
-         *   - Update the Post's database record.
+         *   - Run the reception functions for rhe post's data (main_title and title_extension.)
+         *   - Update the post's database record.
          *
-         * Note: the Post id is in $g->saved_int02.
+         * Note: the post id is in $g->saved_int02.
          */
 
 
@@ -39,12 +39,12 @@ class edit_post_title_editor_processor
         get_db();
 
 
-        $post = Post::find_by_id($g->saved_int02);
+        $post = post::find_by_id($g->saved_int02);
 
 
         if (!$post) {
 
-            breakout(' Unexpectedly I could not find that Post record. ');
+            breakout(' Unexpectedly I could not find that post record. ');
 
         }
 
@@ -57,12 +57,12 @@ class edit_post_title_editor_processor
 
         if ($result === false) {
 
-            breakout(' Failed operation to save the Post object. ');
+            breakout(' Failed operation to save the post object. ');
 
         }
 
 
-        breakout(" I've updated Post <b>{$post->title}</b>'s record to include changes to its title. ");
+        breakout(" I've updated post <b>{$post->title}</b>'s record to include changes to its title. ");
 
     }
 }

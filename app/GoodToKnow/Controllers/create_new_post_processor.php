@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 
 class create_new_post_processor
 {
@@ -26,7 +26,7 @@ class create_new_post_processor
 
         get_db();
 
-        $posts = TopicToPost::get_posts_array_for_a_topic($g->chosen_topic_id);
+        $posts = topic_to_post::get_posts_array_for_a_topic($g->chosen_topic_id);
 
         if ($posts == false) $posts = [];
 

@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-use GoodToKnow\Models\PossibleTaxDeduction;
+use GoodToKnow\Models\possible_tax_deduction;
 
 class conceive_a_possible_tax_deduction_processor
 {
@@ -42,7 +42,7 @@ class conceive_a_possible_tax_deduction_processor
 
         // In memory object.
 
-        $object = PossibleTaxDeduction::array_to_object($array_record);
+        $object = possible_tax_deduction::array_to_object($array_record);
 
         $result = $object->save();
 

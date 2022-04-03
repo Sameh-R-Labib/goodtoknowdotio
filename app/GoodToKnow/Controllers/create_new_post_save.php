@@ -3,8 +3,8 @@
 namespace GoodToKnow\Controllers;
 
 use Exception;
-use GoodToKnow\Models\Post;
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\post;
+use GoodToKnow\Models\topic_to_post;
 
 class create_new_post_save
 {
@@ -25,7 +25,7 @@ class create_new_post_save
 
         /**
          * Overview
-         *   Mainly we are here to store the new Blog Post and its TopicToPost record. Then
+         *   Mainly we are here to store the new Blog Post and its topic_to_post record. Then
          * redirect to a form for content creation.
          *
          * So far we have:
@@ -49,7 +49,7 @@ class create_new_post_save
          * Verify that our sequence number hasn't been taken.
          */
 
-        $result = TopicToPost::get_posts_array_for_a_topic($g->saved_int01);
+        $result = topic_to_post::get_posts_array_for_a_topic($g->saved_int01);
 
         $sequence_number_already_exists_in_db = false;
 
@@ -119,16 +119,16 @@ class create_new_post_save
 
         }
 
-        // Assemble the Post object
+        // Assemble the post object
 
         $post_as_array = ['sequence_number' => $g->saved_int02, 'title' => $g->saved_str01,
             'extensionfortitle' => $g->saved_str02, 'user_id' => $g->user_id, 'created' => $created,
             'markdown_file' => $markdown_file, 'html_file' => $html_file];
 
-        $post = Post::array_to_object($post_as_array);
+        $post = post::array_to_object($post_as_array);
 
 
-        // Save the new Post
+        // Save the new post
 
         $result = $post->save();
 
@@ -139,19 +139,19 @@ class create_new_post_save
         }
 
 
-        // Assemble the TopicToPost object
+        // Assemble the topic_to_post object
 
         $topictopost_as_array = ['topic_id' => $g->saved_int01, 'post_id' => $post->id];
 
-        $topictopost = TopicToPost::array_to_object($topictopost_as_array);
+        $topictopost = topic_to_post::array_to_object($topictopost_as_array);
 
-        // Save the new TopicToPost
+        // Save the new topic_to_post
 
         $result = $topictopost->save();
 
         if (!$result) {
 
-            breakout(' create_new_post_save: Unexpected save was unable to save the TopicToPost. ');
+            breakout(' create_new_post_save: Unexpected save was unable to save the topic_to_post. ');
 
         }
 
@@ -162,7 +162,7 @@ class create_new_post_save
 
         if ($g->type_of_resource_requested === 'topic' || $g->type_of_resource_requested === 'post') {
 
-            $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->topic_id);
+            $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->topic_id);
 
             if ($g->special_post_array === false) {
 

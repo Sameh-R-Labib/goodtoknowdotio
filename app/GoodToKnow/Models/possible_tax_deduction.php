@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class PossibleTaxDeduction extends good_object
+class possible_tax_deduction extends good_object
 {
     /**
      * @var string

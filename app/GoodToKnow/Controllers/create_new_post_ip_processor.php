@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 use function GoodToKnow\ControllerHelpers\before_after_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_before;
@@ -38,7 +38,7 @@ class create_new_post_ip_processor
 
         get_db();
 
-        $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->saved_int01);
+        $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->saved_int01);
 
         if (!$g->special_post_array) {
 
@@ -75,7 +75,7 @@ class create_new_post_ip_processor
          * post. The code below implements that algorithm.
          */
 
-        $all_posts_as_objects = TopicToPost::get_posts_array_for_a_topic($g->saved_int01);
+        $all_posts_as_objects = topic_to_post::get_posts_array_for_a_topic($g->saved_int01);
 
         if (!$all_posts_as_objects) {
 

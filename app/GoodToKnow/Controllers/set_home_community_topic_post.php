@@ -4,9 +4,9 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 use GoodToKnow\Models\Topic;
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 use GoodToKnow\Models\User;
 
 class set_home_community_topic_post
@@ -21,7 +21,7 @@ class set_home_community_topic_post
          * It does its thing then redirects back to the home page.
          *
          * home is the route for displaying a blog resource.
-         * A blog resource is either a community, a Topic or a Post.
+         * A blog resource is either a community, a Topic or a post.
          *
          * This route sets up the session so that it is loads data for
          * a particular blog resource.  Then it redirects to home page.
@@ -63,7 +63,7 @@ class set_home_community_topic_post
 
         /**
          * Figure out which type of resource is being requested.
-         * Is it a community, a Topic or a Post?
+         * Is it a community, a Topic or a post?
          */
 
         if ($topic_id == 0) {
@@ -105,7 +105,7 @@ class set_home_community_topic_post
         /**
          * This section is for these types of resources:
          *
-         *      community, Topic, Post
+         *      community, Topic, post
          */
 
 
@@ -167,7 +167,7 @@ class set_home_community_topic_post
         /**
          * This section is for these types of resources:
          *
-         *      Topic, Post
+         *      Topic, post
          */
 
 
@@ -190,7 +190,7 @@ class set_home_community_topic_post
 
             // Get a fresh copy of $special_post_array.
 
-            $special_post_array = TopicToPost::special_get_posts_array_for_a_topic($topic_id);
+            $special_post_array = topic_to_post::special_get_posts_array_for_a_topic($topic_id);
 
             if (!$special_post_array) {
 
@@ -210,7 +210,7 @@ class set_home_community_topic_post
         /**
          * This section is for this type of resource:
          *
-         *      Post
+         *      post
          */
 
 
@@ -226,9 +226,9 @@ class set_home_community_topic_post
             }
 
 
-            // Get the Post object and its content.
+            // Get the post object and its content.
 
-            $post_object = Post::find_by_id($post_id);
+            $post_object = post::find_by_id($post_id);
 
             if (!$post_object) {
 
@@ -245,12 +245,12 @@ class set_home_community_topic_post
             }
 
 
-            // Store the Post name in the session.
+            // Store the post name in the session.
 
             $_SESSION['post_name'] = $post_object->title;
 
 
-            // Generate a publishing date for the Post and store the Post's full name.
+            // Generate a publishing date for the post and store the post's full name.
 
             $epoch_time = (int)$post_object->created;
 

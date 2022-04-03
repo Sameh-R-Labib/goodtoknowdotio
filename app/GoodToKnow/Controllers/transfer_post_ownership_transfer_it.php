@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -44,9 +44,9 @@ class transfer_post_ownership_transfer_it
         $user_id = (int)$user_object->id;
 
 
-        // Get the Blog Post object.
+        // Get the Blog post object.
 
-        $g->post_object = Post::find_by_id($g->saved_int02);
+        $g->post_object = post::find_by_id($g->saved_int02);
 
         if (!$g->post_object) {
 

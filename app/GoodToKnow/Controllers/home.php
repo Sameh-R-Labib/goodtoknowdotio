@@ -5,8 +5,8 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\User;
 use GoodToKnow\Models\user_to_community;
 use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\Post;
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\post;
+use GoodToKnow\Models\topic_to_post;
 
 class home
 {
@@ -203,7 +203,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->special_post_array = TopicToPost::special_get_posts_array_for_a_topic($g->topic_id);
+            $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->topic_id);
 
             if ($g->special_post_array === false) $g->special_post_array = [];
 
@@ -225,7 +225,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->post_object = Post::find_by_id($g->post_id);
+            $g->post_object = post::find_by_id($g->post_id);
 
             if ($g->post_object === false) {
 

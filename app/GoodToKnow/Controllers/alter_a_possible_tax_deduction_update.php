@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-use GoodToKnow\Models\PossibleTaxDeduction;
+use GoodToKnow\Models\possible_tax_deduction;
 
 class alter_a_possible_tax_deduction_update
 {
@@ -49,7 +49,7 @@ class alter_a_possible_tax_deduction_update
 
         get_db();
 
-        $g->object = PossibleTaxDeduction::find_by_id($g->saved_int01);
+        $g->object = possible_tax_deduction::find_by_id($g->saved_int01);
 
         if (!$g->object) {
 

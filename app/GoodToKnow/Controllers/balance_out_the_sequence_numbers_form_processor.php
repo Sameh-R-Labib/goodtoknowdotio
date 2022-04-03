@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\TopicToPost;
+use GoodToKnow\Models\topic_to_post;
 
 class balance_out_the_sequence_numbers_form_processor
 {
@@ -66,7 +66,7 @@ class balance_out_the_sequence_numbers_form_processor
 
             // Get all posts for topic.
 
-            $result = TopicToPost::get_posts_array_for_a_topic($g->topic_id);
+            $result = topic_to_post::get_posts_array_for_a_topic($g->topic_id);
 
             if (!$result) {
 

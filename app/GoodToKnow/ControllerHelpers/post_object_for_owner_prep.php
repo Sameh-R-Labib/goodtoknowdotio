@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use GoodToKnow\Models\Post;
+use GoodToKnow\Models\post;
 
 /**
  * @param string $field_name
@@ -14,7 +14,7 @@ function post_object_for_owner_prep(string $field_name): object
 
 
     /**
-     * Returns a Post object belonging to the current user.
+     * Returns a post object belonging to the current user.
      * Also saves the post id in the session.
      */
 
@@ -24,7 +24,7 @@ function post_object_for_owner_prep(string $field_name): object
     $g->chosen_post_id = integer_form_field_prep($field_name, 1, PHP_INT_MAX);
 
 
-    $g->post_object = Post::find_by_id($g->chosen_post_id);
+    $g->post_object = post::find_by_id($g->chosen_post_id);
 
     if (!$g->post_object) {
 
