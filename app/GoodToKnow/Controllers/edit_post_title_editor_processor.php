@@ -62,7 +62,7 @@ class edit_post_title_editor_processor
         }
 
 
-        breakout(" I've updated post <b>{$post->title}</b>'s record to include changes to its title. ");
+        breakout(" I've updated post <b>$post->title</b>'s record to include changes to its title. ");
 
     }
 }

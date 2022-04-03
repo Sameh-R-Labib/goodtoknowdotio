@@ -27,6 +27,6 @@ $g->array = taxable_income_event::find_by_sql($sql);
 
 if (!$g->array) {
 
-    breakout(" For <b>{$g->tax_year}</b> I could NOT find any taxable income events. ");
+    breakout(" For <b>$g->tax_year</b> I could NOT find any taxable income events. ");
 
 }

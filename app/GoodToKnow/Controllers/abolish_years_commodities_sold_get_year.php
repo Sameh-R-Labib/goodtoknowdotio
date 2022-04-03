@@ -74,7 +74,7 @@ class abolish_years_commodities_sold_get_year
          * 3) Give confirmation of deletion.
          */
 
-        $message = " The purge of Commodities Sold Records for the year <b>{$tax_year}</b> has resulted in deletion of <b>";
+        $message = " The purge of Commodities Sold Records for the year <b>$tax_year</b> has resulted in deletion of <b>";
         $message .= $num_affected_rows . "</b> records. ";
 
         breakout($message);

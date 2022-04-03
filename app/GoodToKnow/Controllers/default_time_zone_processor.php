@@ -55,6 +55,6 @@ class default_time_zone_processor
 
         // User can know his default community by logging out then in.
 
-        breakout(" Your default timezone has been changed to <b>{$g->timezone}</b>. ");
+        breakout(" Your default timezone has been changed to <b>$g->timezone</b>. ");
     }
 }

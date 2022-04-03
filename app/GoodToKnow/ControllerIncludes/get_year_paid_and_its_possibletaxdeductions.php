@@ -27,6 +27,6 @@ $g->array = possible_tax_deduction::find_by_sql($sql);
 
 if (!$g->array) {
 
-    breakout(" For <b>{$g->year_paid}</b> I could NOT find any Possible Tax Deductions. ");
+    breakout(" For <b>$g->year_paid</b> I could NOT find any Possible Tax Deductions. ");
 
 }
