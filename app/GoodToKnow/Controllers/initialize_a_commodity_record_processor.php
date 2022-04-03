@@ -155,7 +155,8 @@ class initialize_a_commodity_record_processor
          * Wrap it up.
          */
 
-        /*breakout(' A new commodity record was created 👏. ');*/
+        $g->message .= ' A new commodity record was created 👏. ';
+
         reset_feature_session_vars();
 
 

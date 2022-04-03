@@ -145,7 +145,8 @@ class fine_tune_a_commodity_sold_update
          * 5) Report success.
          */
 
-        /*breakout(" I've updated <b>{$object->commodity_label}</b>. ");*/
+        $g->message .= " I've updated <b>$object->commodity_label</b>. ";
+
         reset_feature_session_vars();
 
 

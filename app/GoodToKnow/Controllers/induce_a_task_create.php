@@ -137,7 +137,8 @@ class induce_a_task_create
          * Wrap it up.
          */
 
-        /*breakout(' A <b>task</b> record was created 👍. ');*/
+        $g->message .= ' A <b>task</b> record was created 👍. ';
+
         reset_feature_session_vars();
 
 

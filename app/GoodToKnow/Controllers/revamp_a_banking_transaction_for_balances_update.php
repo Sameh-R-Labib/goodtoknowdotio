@@ -156,7 +156,7 @@ class revamp_a_banking_transaction_for_balances_update
          * 5) Report success.
          */
 
-        /*breakout(" I've updated the <b>{$object->label}</b> record. ");*/
+        $g->message .= " I've updated the <b>{$object->label}</b> record. ";
 
 
         /**

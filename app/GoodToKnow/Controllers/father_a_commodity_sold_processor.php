@@ -125,7 +125,8 @@ class father_a_commodity_sold_processor
          * Wrap it up.
          */
 
-        /*breakout(' Your new commodity sold has just been created 👍🏿 ');*/
+        $g->message .= ' Your new commodity sold has just been created 👍🏿 ';
+
         reset_feature_session_vars();
 
 

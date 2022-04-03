@@ -144,7 +144,8 @@ class generate_a_banking_account_for_balances_processor
          * Wrap it up.
          */
 
-        /*breakout(' Your new bank account has just been created 👍🏽 ');*/
+        $g->message .= ' Your new bank account has just been created 👍🏽 ';
+
         reset_feature_session_vars();
 
 

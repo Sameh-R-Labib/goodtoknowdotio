@@ -85,7 +85,8 @@ class alter_a_possible_tax_deduction_update
          * 5) Report success.
          */
 
-        /*breakout(" I've updated <b>{$g->object->label}</b>. ");*/
+        $g->message .= " I've updated <b>{$g->object->label}</b>. ";
+
         reset_feature_session_vars();
 
 

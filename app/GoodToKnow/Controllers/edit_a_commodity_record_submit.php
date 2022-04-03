@@ -191,7 +191,8 @@ class edit_a_commodity_record_submit
          * Report success.
          */
 
-        /*breakout(" I've updated address {$g->commodity_object->address}'s record. ");*/
+        $g->message .= " I've updated address {$g->commodity_object->address}'s record. ";
+
         reset_feature_session_vars();
 
 

@@ -193,7 +193,8 @@ class write_over_a_taxable_income_event_update
          * 5) Report success.
          */
 
-        /*breakout(" I've updated <b>{$object->label}</b>. ");*/
+        $g->message .= " I've updated <b>$object->label</b>. ";
+
         reset_feature_session_vars();
 
 

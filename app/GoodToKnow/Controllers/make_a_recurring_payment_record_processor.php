@@ -146,7 +146,8 @@ class make_a_recurring_payment_record_processor
          * Wrap it up.
          */
 
-        /*breakout(' A recurring payment record was created 👍. ');*/
+        $g->message .= ' A recurring payment record was created 👍. ';
+
         reset_feature_session_vars();
 
 

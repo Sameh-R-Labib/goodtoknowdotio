@@ -156,7 +156,8 @@ class start_a_taxable_income_event_processor
          * Wrap it up.
          */
 
-        /*breakout(' A Taxable Income Event was created 👍🏿. ');*/
+        $g->message .= ' A Taxable Income Event was created 👍🏿. ';
+
         reset_feature_session_vars();
 
 
