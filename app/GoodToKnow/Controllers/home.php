@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use GoodToKnow\Models\user_to_community;
 use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\post;
@@ -317,7 +317,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $result = User::enforce_suspension();
+            $result = user::enforce_suspension();
 
             if ($result === false) {
 

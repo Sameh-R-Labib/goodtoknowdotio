@@ -6,7 +6,7 @@ use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\topic;
 use GoodToKnow\Models\topic_to_post;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 class transfer_post_ownership_get_post
 {
@@ -101,7 +101,7 @@ class transfer_post_ownership_get_post
 
         // Find the author's username.
 
-        $user_object = User::find_by_id($post_object->user_id);
+        $user_object = user::find_by_id($post_object->user_id);
 
         if ($user_object === false) {
 

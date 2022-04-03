@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -40,7 +40,7 @@ class change_password_processor
          * Get the user object for the current user and make sure $current_password is a valid submission.
          */
 
-        $user_object = User::find_by_id($g->user_id);
+        $user_object = user::find_by_id($g->user_id);
 
         if (!password_verify($current_password, $user_object->password)) {
 

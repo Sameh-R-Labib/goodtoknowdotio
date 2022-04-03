@@ -323,7 +323,7 @@ class message_to_user extends good_object
     {
         $user_id = (int)$user_id;
 
-        $user = User::find_by_id($user_id);
+        $user = user::find_by_id($user_id);
 
 
         // Value of $user can be false

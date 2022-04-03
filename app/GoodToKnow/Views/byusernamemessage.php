@@ -1,6 +1,6 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/by_username_message_processor/page" method="post">
-        <h1>Username 💬 a User</h1>
+        <h1>By Username Message a User</h1>
         <?php require SESSIONMESSAGE; ?>
     <section>
         <p>

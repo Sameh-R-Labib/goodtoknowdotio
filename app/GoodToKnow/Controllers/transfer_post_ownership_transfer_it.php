@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\post;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class transfer_post_ownership_transfer_it
@@ -33,7 +33,7 @@ class transfer_post_ownership_transfer_it
 
         get_db();
 
-        $user_object = User::find_by_username($username);
+        $user_object = user::find_by_username($username);
 
         if (!$user_object) {
 

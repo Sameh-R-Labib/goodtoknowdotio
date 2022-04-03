@@ -4,7 +4,7 @@ namespace GoodToKnow\Models;
 
 use stdClass;
 
-class User extends good_object
+class user extends good_object
 {
     /**
      * @var string
@@ -79,7 +79,7 @@ class User extends good_object
     public static function enforce_suspension(): bool
     {
         /**
-         *   1) Determine whether or not the user is suspended per database
+         *   1) Determine whether the user is suspended per database
          *   2) If the user is suspended log him out and redirect to the page for logging in.
          *   3) Otherwise, return control over to where the function was called.
          */
@@ -88,9 +88,9 @@ class User extends good_object
         global $g;
 
 
-        // Determine whether or not the user is suspended per database
+        // Determine whether the user is suspended per database
 
-        $user_object = User::find_by_id($g->user_id);
+        $user_object = user::find_by_id($g->user_id);
 
         if ($user_object === false) return false;
 
@@ -157,7 +157,7 @@ class User extends good_object
 
                 } else {
 
-                    $user = $result->fetch_object('\GoodToKnow\Models\User');
+                    $user = $result->fetch_object('\GoodToKnow\Models\user');
 
                     $stmt->close();
 
@@ -165,7 +165,7 @@ class User extends good_object
             }
         } catch (\Exception $e) {
 
-            $g->message .= ' User::authenticate() caught a thrown exception: ' .
+            $g->message .= ' user::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -194,9 +194,9 @@ class User extends good_object
         $sql = 'SELECT username FROM `users`
                 WHERE `username` = "' . $g->db->real_escape_string($username) . '" LIMIT 1';
 
-        $array_of_User_objects = parent::find_by_sql($sql);
+        $array_of_user_objects = parent::find_by_sql($sql);
 
-        if (!$array_of_User_objects) {
+        if (!$array_of_user_objects) {
 
             return false;
 
@@ -214,7 +214,7 @@ class User extends good_object
     {
         /**
          * You give it a username and it returns the
-         * corresponding User object or false.
+         * corresponding user object or false.
          */
 
         global $g;
@@ -222,14 +222,14 @@ class User extends good_object
         $sql = 'SELECT * FROM `users`
                 WHERE `username` = "' . $g->db->real_escape_string($username) . '" LIMIT 1';
 
-        $array_of_User_objects = parent::find_by_sql($sql);
+        $array_of_user_objects = parent::find_by_sql($sql);
 
-        if (!$array_of_User_objects || !empty($g->message)) {
+        if (!$array_of_user_objects || !empty($g->message)) {
 
             return false;
 
         }
 
-        return array_shift($array_of_User_objects);
+        return array_shift($array_of_user_objects);
     }
 }

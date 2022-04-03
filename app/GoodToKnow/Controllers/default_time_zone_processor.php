@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 use function GoodToKnow\ControllerHelpers\timezone_form_field_prep;
 
@@ -29,7 +29,7 @@ class default_time_zone_processor
 
         get_db();
 
-        $user_object = User::find_by_id($g->user_id);
+        $user_object = user::find_by_id($g->user_id);
 
         if (!$user_object) {
 
@@ -53,7 +53,7 @@ class default_time_zone_processor
         $_SESSION['timezone'] = $g->timezone;
 
 
-        // User will know default community by logging out then in.
+        // User can know his default community by logging out then in.
 
         breakout(" Your default timezone has been changed to <b>{$g->timezone}</b>. ");
     }

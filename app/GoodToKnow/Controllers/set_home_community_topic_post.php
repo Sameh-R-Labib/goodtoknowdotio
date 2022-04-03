@@ -7,7 +7,7 @@ use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\post;
 use GoodToKnow\Models\topic;
 use GoodToKnow\Models\topic_to_post;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 class set_home_community_topic_post
 {
@@ -268,7 +268,7 @@ class set_home_community_topic_post
 
             // Get and store author information.
 
-            $post_author_object = User::find_by_id($post_object->user_id);
+            $post_author_object = user::find_by_id($post_object->user_id);
 
             if ($post_author_object === false) {
 

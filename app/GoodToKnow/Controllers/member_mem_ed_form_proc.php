@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class member_mem_ed_form_proc
@@ -14,13 +14,13 @@ class member_mem_ed_form_proc
          *  1) Read 'text'
          *     (which is the edited member's comment.)
          *  2 & 3) Removed from source code.
-         *  4) Get a copy of the User object for the member.
+         *  4) Get a copy of the user object for the member.
          *  5) Makes sure the comment is escaped for suitability
          *     to being included in an sql statement. This may be
          *     taken care of automatically by the good_object class
          *     function I'll be using but make sure.
-         *  6) Replace the User's current comment with the new one.
-         *  7) Update the database with this User object.
+         *  6) Replace the user's current comment with the new one.
+         *  7) Update the database with this user object.
          */
 
 
@@ -43,12 +43,12 @@ class member_mem_ed_form_proc
 
 
         /**
-         * 4) Get a copy of the User object for the member.
+         * 4) Get a copy of the user object for the member.
          */
 
         get_db();
 
-        $user_object = User::find_by_id($g->saved_int01);
+        $user_object = user::find_by_id($g->saved_int01);
 
         if (!$user_object) {
 
@@ -66,14 +66,14 @@ class member_mem_ed_form_proc
 
 
         /**
-         * 6) Replace the User's current comment with the new one.
+         * 6) Replace the user's current comment with the new one.
          */
 
         $user_object->comment = $edited_comment;
 
 
         /**
-         * 7) Update the database with this User object.
+         * 7) Update the database with this user object.
          */
 
         $result = $user_object->save();

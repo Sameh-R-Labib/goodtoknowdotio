@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\message_to_user;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 class by_username_message_save
 {
@@ -58,7 +58,7 @@ class by_username_message_save
 
         }
 
-        $target_user_object = User::find_by_username($g->saved_str01);
+        $target_user_object = user::find_by_username($g->saved_str01);
 
         if (!$target_user_object) {
 

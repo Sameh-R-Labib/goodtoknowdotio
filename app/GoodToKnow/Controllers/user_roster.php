@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\readable_user;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 class user_roster
 {
@@ -29,11 +29,11 @@ class user_roster
 
 
         /**
-         * Get an array of User objects corresponding
-         * to all the Users in the system.
+         * Get an array of user objects corresponding
+         * to all the users in the system.
          */
 
-        $user_objects_array = User::find_all();
+        $user_objects_array = user::find_all();
 
         if ($user_objects_array === false || empty($user_objects_array)) {
 

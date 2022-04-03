@@ -208,7 +208,7 @@ class topic_to_post extends good_object
 
         foreach ($array_of_post_objects as $key => $array_of_post_object) {
 
-            $author_user_object = User::find_by_id($array_of_post_object->user_id);
+            $author_user_object = user::find_by_id($array_of_post_object->user_id);
 
             if (!$author_user_object) {
 

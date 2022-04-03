@@ -25,7 +25,7 @@ class give_coms_choices_processor
          */
 
         /**
-         * "The user" -- means The User we are attempting to assign new groups to.
+         * "The user" -- means The user we are attempting to assign new groups to.
          *
          * We know:
          *   saved_str01 -- contains the username

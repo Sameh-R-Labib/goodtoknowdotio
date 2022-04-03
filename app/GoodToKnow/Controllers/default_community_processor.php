@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 class default_community_processor
 {
@@ -29,7 +29,7 @@ class default_community_processor
 
         get_db();
 
-        $user_object = User::find_by_id($g->user_id);
+        $user_object = user::find_by_id($g->user_id);
 
         if (!$user_object) {
 
@@ -48,7 +48,7 @@ class default_community_processor
         }
 
 
-        // User will know default community by logging out then in.
+        // User can know his default community by logging out then in.
 
         breakout(" Your default community has been changed to {$g->special_community_array[$chosen_id]}. ");
     }

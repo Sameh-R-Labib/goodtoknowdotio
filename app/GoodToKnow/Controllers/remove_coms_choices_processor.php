@@ -25,7 +25,7 @@ class remove_coms_choices_processor
          */
 
         /**
-         * "The user" -- means The User we are attempting to remove new groups from.
+         * "The user" -- means The user we are attempting to remove new groups from.
          *
          * We know:
          *   saved_str01 -- contains the username

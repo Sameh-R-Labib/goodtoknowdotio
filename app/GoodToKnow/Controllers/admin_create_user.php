@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use GoodToKnow\Models\user_to_community;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
@@ -89,7 +89,7 @@ class admin_create_user
 
         // Second step
 
-        $new_user_object = User::array_to_object($array_of_submitted_data);
+        $new_user_object = user::array_to_object($array_of_submitted_data);
 
 
         // Third step
@@ -98,13 +98,13 @@ class admin_create_user
 
         if (!$consequence_of_save) {
 
-            breakout(' The save method for User returned false. ');
+            breakout(' The save method for user returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for User did not return false but it did send back a message.
+            breakout(' The save method for user did not return false but it did send back a message.
              Therefore, it probably did not create your account. ');
 
         }

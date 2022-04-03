@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use GoodToKnow\Models\user_to_community;
 
 class remove_coms_choices
@@ -31,7 +31,7 @@ class remove_coms_choices
 
         get_db();
 
-        $user_object = User::find_by_username($g->saved_str01);
+        $user_object = user::find_by_username($g->saved_str01);
 
         if (!$user_object) {
 

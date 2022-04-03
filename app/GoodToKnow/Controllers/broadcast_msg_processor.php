@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\message_to_user;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 class broadcast_msg_processor
 {
@@ -39,7 +39,7 @@ class broadcast_msg_processor
          * One for each user in the system.
          */
 
-        $array_of_user_objects = User::find_all();
+        $array_of_user_objects = user::find_all();
 
         if (!$array_of_user_objects) {
 

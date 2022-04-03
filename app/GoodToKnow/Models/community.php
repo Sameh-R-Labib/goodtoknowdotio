@@ -38,8 +38,8 @@ class community extends good_object
     public static function find_by_community_name(string $community_name)
     {
         /**
-         * You give it a username and it returns the
-         * corresponding User object or false.
+         * You give it a username, and it returns the
+         * corresponding user object or false.
          */
 
         global $g;

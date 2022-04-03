@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\user_to_community;
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 use function GoodToKnow\ControllerHelpers\is_password_syntactically;
 use function GoodToKnow\ControllerHelpers\is_username_syntactically;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -26,7 +26,7 @@ class login_script
 
         self::assimilate_input($submitted_username, $submitted_password);
 
-        $user = User::authenticate($submitted_username, $submitted_password);
+        $user = user::authenticate($submitted_username, $submitted_password);
 
         self::login_the_user($user);
 
@@ -140,7 +140,7 @@ class login_script
         }
 
         /**
-         * So we have a User object.
+         * So we have a user object.
          */
 
         /**

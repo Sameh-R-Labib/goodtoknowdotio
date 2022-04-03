@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use GoodToKnow\Models\User;
+use GoodToKnow\Models\user;
 
 /**
  * @param string $username
@@ -21,7 +21,7 @@ function is_username_usable_for_registration(string &$username): bool
         return false;
     }
 
-    $is_in_use = User::is_taken_username($username);
+    $is_in_use = user::is_taken_username($username);
 
     if ($is_in_use) {
 
