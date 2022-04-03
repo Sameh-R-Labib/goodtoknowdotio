@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingTransactionForBalances;
+use GoodToKnow\Models\banking_transaction_for_balances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -104,17 +104,17 @@ class build_a_banking_transaction_for_balances_processor
 
 
         /**
-         * Create a BankingTransactionForBalances array for the record.
+         * Create a banking_transaction_for_balances array for the record.
          */
 
         $array_record = ['user_id' => $g->user_id, 'bank_id' => $bank_id, 'label' => $label, 'amount' => $amount, 'time' => $g->time];
 
 
         /**
-         * Make the array into an in memory BankingTransactionForBalances object for the record.
+         * Make the array into an in memory banking_transaction_for_balances object for the record.
          */
 
-        $object = BankingTransactionForBalances::array_to_object($array_record);
+        $object = banking_transaction_for_balances::array_to_object($array_record);
 
 
         /**
@@ -133,8 +133,8 @@ class build_a_banking_transaction_for_balances_processor
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for BankingTransactionForBalances did not return false but it did send
-            back a message. Therefore, it probably did not create the BankingTransactionForBalances record. ');
+            breakout(' The save method for banking_transaction_for_balances did not return false but it did send
+            back a message. Therefore, it probably did not create the banking_transaction_for_balances record. ');
 
         }
 

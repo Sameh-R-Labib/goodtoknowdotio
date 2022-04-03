@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingTransactionForBalances;
+use GoodToKnow\Models\banking_transaction_for_balances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -132,7 +132,7 @@ class transfer_an_amount_form_processor
         $array_record = ['user_id' => $g->user_id, 'bank_id' => $sending_account, 'label' => $label, 'amount' => $deduction,
             'time' => $g->time];
 
-        $object = BankingTransactionForBalances::array_to_object($array_record);
+        $object = banking_transaction_for_balances::array_to_object($array_record);
 
         get_db();
 
@@ -147,7 +147,7 @@ class transfer_an_amount_form_processor
         if (!empty($g->message)) {
 
             breakout(' The #1 save method did not return false but it did send back a message. Therefore,
-             it probably did not create the BankingTransactionForBalances record. ');
+             it probably did not create the banking_transaction_for_balances record. ');
 
         }
 
@@ -159,7 +159,7 @@ class transfer_an_amount_form_processor
         $array_record = ['user_id' => $g->user_id, 'bank_id' => $receiving_account, 'label' => $label, 'amount' => $amount,
             'time' => $g->time];
 
-        $object = BankingTransactionForBalances::array_to_object($array_record);
+        $object = banking_transaction_for_balances::array_to_object($array_record);
 
         $result = $object->save();
 
@@ -172,7 +172,7 @@ class transfer_an_amount_form_processor
         if (!empty($g->message)) {
 
             breakout(' The #2 save method did not return false but it did send back a message. Therefore,
-             it probably did not create the BankingTransactionForBalances record. ');
+             it probably did not create the banking_transaction_for_balances record. ');
 
         }
 

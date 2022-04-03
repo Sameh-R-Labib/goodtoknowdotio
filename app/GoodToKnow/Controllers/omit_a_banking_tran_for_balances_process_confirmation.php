@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingTransactionForBalances;
+use GoodToKnow\Models\banking_transaction_for_balances;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class omit_a_banking_tran_for_balances_process_confirmation
@@ -42,7 +42,7 @@ class omit_a_banking_tran_for_balances_process_confirmation
 
         get_db();
 
-        $object = BankingTransactionForBalances::find_by_id($g->saved_int01);
+        $object = banking_transaction_for_balances::find_by_id($g->saved_int01);
 
         if (!$object) {
 

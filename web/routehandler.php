@@ -4,7 +4,7 @@
  * Time: 8:22 PM
  */
 
-use GoodToKnow\Models\AppState;
+use GoodToKnow\Models\app_state;
 
 
 require(__DIR__ . '/../config.php');
@@ -51,7 +51,7 @@ session_start();
  * files and function definitions.
  */
 
-$g = new AppState();
+$g = new app_state();
 
 
 /**

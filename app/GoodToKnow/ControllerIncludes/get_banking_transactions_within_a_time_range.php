@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\BankingTransactionForBalances;
+use GoodToKnow\Models\banking_transaction_for_balances;
 
 
 global $g;
@@ -9,7 +9,7 @@ global $g;
 
 
 /**
- * Get an array of BankingTransactionForBalances objects belonging to the user and falling
+ * Get an array of banking_transaction_for_balances objects belonging to the user and falling
  * within the prescribed time range.
  */
 
@@ -17,7 +17,7 @@ $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . 
 $sql .= ' AND `time` BETWEEN "' . $g->db->real_escape_string($g->saved_int01) . '" AND "' . $g->db->real_escape_string($g->saved_int02) . '"';
 $sql .= ' ORDER BY `time`';
 
-$g->array = BankingTransactionForBalances::find_by_sql($sql);
+$g->array = banking_transaction_for_balances::find_by_sql($sql);
 
 if (!$g->array || !empty($g->message)) {
 

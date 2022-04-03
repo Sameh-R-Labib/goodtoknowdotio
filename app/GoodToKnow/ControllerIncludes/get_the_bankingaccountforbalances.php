@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
@@ -22,7 +22,7 @@ $_SESSION['saved_int01'] = $chosen_id;
  * 2) Retrieve the banking_acct_for_balances object with that id from the database.
  */
 
-$g->object = BankingAcctForBalances::find_by_id($chosen_id);
+$g->object = banking_acct_for_balances::find_by_id($chosen_id);
 
 if (!$g->object) {
 

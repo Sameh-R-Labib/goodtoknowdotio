@@ -8,7 +8,6 @@
   },
   "autoload": {
     "psr-4": {
-      "Codecourse\\": "app/Codecourse",
       "GoodToKnow\\": "app/GoodToKnow"
     },
     "config": {

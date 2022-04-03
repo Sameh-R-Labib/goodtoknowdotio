@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class annul_a_banking_acct_for_balances_delete
@@ -44,7 +44,7 @@ class annul_a_banking_acct_for_balances_delete
 
         get_db();
 
-        $g->object = BankingAcctForBalances::find_by_id($g->saved_int01);
+        $g->object = banking_acct_for_balances::find_by_id($g->saved_int01);
 
         if (!$g->object) {
 

@@ -14,7 +14,7 @@ class annul_a_banking_acct_for_balances_processor
         /**
          * 1) Determines the id of the banking_acct_for_balances record from 'choice' and
          *    stores it in $_SESSION['saved_int01'].
-         * 2) Retrieve the BankingAcctForBalances object with that id from the database.
+         * 2) Retrieve the banking_acct_for_balances object with that id from the database.
          *    And, format its attributes for easy viewing.
          * 3) Make sure this object belongs to the user.
          * 4) Presents a form containing data from the record and asking for permission to delete.

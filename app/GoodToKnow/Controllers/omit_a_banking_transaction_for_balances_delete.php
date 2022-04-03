@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
@@ -43,10 +43,10 @@ class omit_a_banking_transaction_for_balances_delete
          */
 
         /**
-         * We need to know what the currency is. To do this we need the BankingAcctForBalances object.
+         * We need to know what the currency is. To do this we need the banking_acct_for_balances object.
          */
 
-        $g->bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
+        $g->bank = banking_acct_for_balances::find_by_id($g->object->bank_id);
 
         if (!$g->bank) {
 

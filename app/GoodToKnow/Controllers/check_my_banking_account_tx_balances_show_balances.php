@@ -4,8 +4,8 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-use GoodToKnow\Models\BankingAcctForBalances;
-use GoodToKnow\Models\BankingTransactionForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
+use GoodToKnow\Models\banking_transaction_for_balances;
 
 class check_my_banking_account_tx_balances_show_balances
 {
@@ -13,23 +13,23 @@ class check_my_banking_account_tx_balances_show_balances
     {
         /**
          * This function will:
-         * 1) Get (from the database) the BankingAcctForBalances object.
+         * 1) Get (from the database) the banking_acct_for_balances object.
          * 1b) Verify that the account belongs to the user. This is redundant for
          *     the "See Transactions" feature but is needed when Create or Edit use
          *     this route handler.
-         * 2) Get (from the database) all the BankingTransactionForBalances which
+         * 2) Get (from the database) all the banking_transaction_for_balances which
          *    have a time stamp greater than the start time for the account. Note:
          *    it can't be equal to the start time. Also: make sure the transactions
          *    are ordered by time increasing. Obviously, these transactions must be
          *    for the user who is requesting this stuff. Also, these transactions must
-         *    be for the currently chosen BankingAcctForBalances.
-         * 3) Augment our data set with a running total in each BankingTransactionForBalances
-         *    object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         *    be for the currently chosen banking_acct_for_balances.
+         * 3) Augment our data set with a running total in each banking_transaction_for_balances
+         *    object. This gets assigned to each banking_transaction_for_balances object's balance field.
          * 3b) reset_feature_session_vars()
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
          *    will be wrong if admin has deleted transactions older than 90 days and the start
-         *    time for the BankingAcctForBalances is set to a time older than 90 days.
-         *    Also, show the account name for BankingAcctForBalances at the top of the ledger.
+         *    time for the banking_acct_for_balances is set to a time older than 90 days.
+         *    Also, show the account name for banking_acct_for_balances at the top of the ledger.
          *    Also, transform field data to a more human friendly format.
          *
          *    Reverse the order of the transactions before displaying them.
@@ -37,7 +37,7 @@ class check_my_banking_account_tx_balances_show_balances
 
 
         global $g;
-        // $g->saved_int01 id of BankingAcctForBalances record
+        // $g->saved_int01 id of banking_acct_for_balances record
 
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
@@ -47,10 +47,10 @@ class check_my_banking_account_tx_balances_show_balances
 
 
         /**
-         * 1) Get (from the database) the BankingAcctForBalances object.
+         * 1) Get (from the database) the banking_acct_for_balances object.
          */
 
-        $g->account = BankingAcctForBalances::find_by_id($g->saved_int01);
+        $g->account = banking_acct_for_balances::find_by_id($g->saved_int01);
 
         if (!$g->account) {
 
@@ -73,12 +73,12 @@ class check_my_banking_account_tx_balances_show_balances
 
 
         /**
-         * 2) Get (from the database) all the BankingTransactionForBalances which
+         * 2) Get (from the database) all the banking_transaction_for_balances which
          * have a time stamp greater than the start time for the account. Note:
          * it can't be equal to the start time. Also: make sure the transactions
          * are ordered by time increasing. Obviously, these transactions must be
          * for the user who is requesting this stuff. Also, these transactions must
-         * be for the currently chosen BankingAcctForBalances.
+         * be for the currently chosen banking_acct_for_balances.
          */
 
         $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
@@ -86,7 +86,7 @@ class check_my_banking_account_tx_balances_show_balances
         $sql .= ' AND `time` > ' . $g->db->real_escape_string($g->account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
-        $g->array = BankingTransactionForBalances::find_by_sql($sql);
+        $g->array = banking_transaction_for_balances::find_by_sql($sql);
 
         if (!$g->array || !empty($g->message)) {
 
@@ -96,8 +96,8 @@ class check_my_banking_account_tx_balances_show_balances
 
 
         /**
-         * 3) Augment our data set with a running total in each BankingTransactionForBalances
-         * object. This gets assigned to each BankingTransactionForBalances object's balance field.
+         * 3) Augment our data set with a running total in each banking_transaction_for_balances
+         * object. This gets assigned to each banking_transaction_for_balances object's balance field.
          */
 
         $running_total = (float)$g->account->start_balance;
@@ -129,16 +129,16 @@ class check_my_banking_account_tx_balances_show_balances
         /**
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
          * will be wrong if admin has deleted transactions older than 90 days and the start
-         * time for the BankingAcctForBalances is set to a time older than 90 days.
-         * Also, show the account name for BankingAcctForBalances at the top of the ledger.
+         * time for the banking_acct_for_balances is set to a time older than 90 days.
+         * Also, show the account name for banking_acct_for_balances at the top of the ledger.
          * Also, transform field data to a more human friendly format.
          *
-         * BankingTransactionForBalances fields in need of transforming:
+         * banking_transaction_for_balances fields in need of transforming:
          * - amount [comma separator for thousands]
          * - time [human-readable time]
          * - balance [comma separator for thousands]
          *
-         * BankingAcctForBalances fields in need of transformation.
+         * banking_acct_for_balances fields in need of transformation.
          * - start_time [human-readable time]
          * - start_balance [comma separator for thousands]
          *

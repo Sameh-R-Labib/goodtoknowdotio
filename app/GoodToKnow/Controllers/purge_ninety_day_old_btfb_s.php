@@ -7,12 +7,12 @@ class purge_ninety_day_old_btfb_s
     function page()
     {
         /**
-         * This is for deleting the BankingTransactionForBalances which are older
+         * This is for deleting the banking_transaction_for_balances which are older
          * than 90 days.
          *
          * Here is exactly what it will do:
          * 1) Determine the unix time stamp for 90 days ago.
-         * 2) Delete the BankingTransactionForBalances which are older than 90 days.
+         * 2) Delete the banking_transaction_for_balances which are older than 90 days.
          * 3) Set a confirmation message in the session.
          * 4) Redirect to home page.
          */
@@ -31,7 +31,7 @@ class purge_ninety_day_old_btfb_s
 
 
         /**
-         * 2) Delete the BankingTransactionForBalances which are older than 90 days.
+         * 2) Delete the banking_transaction_for_balances which are older than 90 days.
          */
 
         $num_affected_rows = 0;
@@ -65,7 +65,7 @@ class purge_ninety_day_old_btfb_s
          * 4) Redirect to home page.
          */
 
-        breakout(" The purge of BankingTransactionForBalances older than 90 days has deleted <b>" . $num_affected_rows .
+        breakout(" The purge of banking_transaction_for_balances older than 90 days has deleted <b>" . $num_affected_rows .
             "</b> records. ");
     }
 }

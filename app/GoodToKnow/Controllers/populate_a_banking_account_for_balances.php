@@ -7,9 +7,9 @@ class populate_a_banking_account_for_balances
     function page()
     {
         /**
-         * This feature is for editing/updating a BankingAcctForBalances record.
+         * This feature is for editing/updating a banking_acct_for_balances record.
          *
-         * This route is for presenting a form for getting the user to tell us which BankingAcctForBalances
+         * This route is for presenting a form for getting the user to tell us which banking_acct_for_balances
          * record he wants to edit. It will present a series of radio buttons to choose from.
          */
 

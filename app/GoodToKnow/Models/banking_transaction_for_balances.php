@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class BankingTransactionForBalances extends GoodObject
+class banking_transaction_for_balances extends GoodObject
 {
     /**
      * @var string

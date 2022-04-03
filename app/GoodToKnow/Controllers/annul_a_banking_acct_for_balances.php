@@ -10,7 +10,7 @@ class annul_a_banking_acct_for_balances
 
         /**
          * Presenting a form for getting the user to tell us
-         * which BankingAcctForBalances record he wants to delete.
+         * which banking_acct_for_balances record he wants to delete.
          * It will present a series of radio buttons to choose from.
          */
 

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -104,7 +104,7 @@ class generate_a_banking_account_for_balances_processor
 
 
         /**
-         * Create a BankingAcctForBalances array for the record.
+         * Create a banking_acct_for_balances array for the record.
          */
 
         $array_record = ['user_id' => $g->user_id, 'acct_name' => $acct_name, 'start_time' => $g->time,
@@ -112,10 +112,10 @@ class generate_a_banking_account_for_balances_processor
 
 
         /**
-         * Make the array into an in memory BankingAcctForBalances object for the record.
+         * Make the array into an in memory banking_acct_for_balances object for the record.
          */
 
-        $object = BankingAcctForBalances::array_to_object($array_record);
+        $object = banking_acct_for_balances::array_to_object($array_record);
 
 
         /**

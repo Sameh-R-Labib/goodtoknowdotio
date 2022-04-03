@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_bank_accounts;
 use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
@@ -45,10 +45,10 @@ class revamp_a_banking_transaction_for_balances_edit
         /**
          * Make it so that if price_point is fiat then price_point has only two decimal places.
          *
-         * But first we need to discern the currency from the BankingAcctForBalances.
+         * But first we need to discern the currency from the banking_acct_for_balances.
          */
 
-        $g->bank = BankingAcctForBalances::find_by_id($g->object->bank_id);
+        $g->bank = banking_acct_for_balances::find_by_id($g->object->bank_id);
 
         if (!$g->bank) {
 

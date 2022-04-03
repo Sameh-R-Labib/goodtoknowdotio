@@ -24,7 +24,7 @@ class generate_a_banking_account_for_balances
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->html_title = 'Create a New BankingAcctForBalances';
+        $g->html_title = 'Create a New banking_acct_for_balances';
 
 
         /**

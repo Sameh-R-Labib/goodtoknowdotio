@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\get_html_select_box;
 
 class transfer_an_amount
@@ -31,18 +31,18 @@ class transfer_an_amount
          * Get the html for two (2) form's select boxes.
          * One is for sending_account.
          * Another is for receiving_account.
-         * To understand how this works see BuildingABankingTransactionForBalances.
+         * To understand how this works see BuildingAbanking_transaction_for_balances.
          */
 
         get_db();
 
         // $g->user_id is the id of the user.
 
-        // First I need to get all the BankingAcctForBalances object for this user.
+        // First I need to get all the banking_acct_for_balances object for this user.
 
         $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 
-        $array_of_objects = BankingAcctForBalances::find_by_sql($sql);
+        $array_of_objects = banking_acct_for_balances::find_by_sql($sql);
 
         if (!$array_of_objects || !empty($g->message)) {
 

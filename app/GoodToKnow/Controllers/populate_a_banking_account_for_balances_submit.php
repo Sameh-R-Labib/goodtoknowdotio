@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\BankingAcctForBalances;
+use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -119,7 +119,7 @@ class populate_a_banking_account_for_balances_submit
 
         get_db();
 
-        $object = BankingAcctForBalances::find_by_id($g->saved_int01);
+        $object = banking_acct_for_balances::find_by_id($g->saved_int01);
 
         if (!$object) {
 

@@ -10,10 +10,10 @@ class omit_a_banking_transaction_for_balances_choose_record
     {
         /**
          * This function will:
-         *  1) Retrieve the user's BankingTransactionForBalances within the time range.
+         *  1) Retrieve the user's banking_transaction_for_balances within the time range.
          *  2) Present them as choices.
          *
-         * The ultimate goal is to present a BankingTransactionForBalances for deletion.
+         * The ultimate goal is to present a banking_transaction_for_balances for deletion.
          */
 
 

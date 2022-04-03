@@ -7,20 +7,20 @@ namespace GoodToKnow\Models;
 use mysqli;
 
 /**
- * Class AppState
+ * Class app_state
  * @package GoodToKnow\Models
  *
  * Gtk.io is an app which gives a response to an HTTP request.
  *
  * routehandler.php is the PHP script for Gtk.io.
  *
- *  $g (where $g is an AppState object) is created by routehandler.php.
+ *  $g (where $g is an app_state object) is created by routehandler.php.
  *
- * An AppState object wraps just about all the vars we would want to pass around as globals into one container.
+ * An app_state object wraps just about all the vars we would want to pass around as globals into one container.
  * This makes it more convenient to declare globals because we won't have to declare each one separately.
  * Simply, declaring global $g within a file or function gives access to all these vars.
  */
-class AppState
+class app_state
 {
     /**
      * The system message which is to be displayed.
@@ -760,7 +760,7 @@ class AppState
 
 
     /**
-     * AppState constructor.
+     * app_state constructor.
      */
     function __construct()
     {
@@ -870,7 +870,7 @@ class AppState
          *
          * In other words:  This is the central home base place where we initialize app state globals.
          *
-         * Our standard practice: $g (an AppState object), and also with all globals in general, shall be declared
+         * Our standard practice: $g (an app_state object), and also with all globals in general, shall be declared
          *                        global in every file that uses that global.
          */
 
