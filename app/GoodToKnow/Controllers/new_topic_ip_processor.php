@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\community_to_topic;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\before_after_form_field_prep;
 use function \GoodToKnow\ControllerHelpers\get_sequence_number_in_case_before;
@@ -37,7 +37,7 @@ class new_topic_ip_processor
          * Besides, we want a fresh copy of special_topic_array.
          */
 
-        $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
+        $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
 
         if (!$g->special_topic_array) {
 
@@ -76,7 +76,7 @@ class new_topic_ip_processor
 
         // Determine the sequence number for the new topic
 
-        $topic_objects_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
+        $topic_objects_array = community_to_topic::get_array_of_topic_objects_for_a_community($g->community_id);
 
         if (!$topic_objects_array) {
 

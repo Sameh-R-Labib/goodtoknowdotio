@@ -2,9 +2,9 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 use GoodToKnow\Models\User;
-use GoodToKnow\Models\UserToCommunity;
+use GoodToKnow\Models\user_to_community;
 
 class give_coms_choices
 {
@@ -56,7 +56,7 @@ class give_coms_choices
 
         // First get all the communities the user DOES belong to.
 
-        $g->coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
+        $g->coms_user_belongs_to = user_to_community::coms_user_belongs_to($user_id);
 
         if ($g->coms_user_belongs_to === false) {
 
@@ -67,7 +67,7 @@ class give_coms_choices
         // Second get all the communities that exist in this system.
         // By "this system" I mean this instance of the app.
 
-        $coms_in_this_system = Community::find_all();
+        $coms_in_this_system = community::find_all();
 
         if ($coms_in_this_system === false) {
 
@@ -78,7 +78,7 @@ class give_coms_choices
 
         // Get communities user DOES NOT belong to.
 
-        $g->coms_user_does_not_belong_to = UserToCommunity::coms_user_does_not_belong_to($coms_in_this_system);
+        $g->coms_user_does_not_belong_to = user_to_community::coms_user_does_not_belong_to($coms_in_this_system);
 
 
         // Redirect if no communities user doesn't belong to.

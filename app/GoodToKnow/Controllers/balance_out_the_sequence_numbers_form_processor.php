@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\TopicToPost;
 
 class balance_out_the_sequence_numbers_form_processor
@@ -50,11 +50,11 @@ class balance_out_the_sequence_numbers_form_processor
 
         get_db();
 
-        if ($g->thing_type === 'Community') {
+        if ($g->thing_type === 'community') {
 
             // Get all topics for community.
 
-            $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
+            $result = community_to_topic::get_array_of_topic_objects_for_a_community($g->community_id);
 
             if (!$result) {
 
@@ -102,7 +102,7 @@ class balance_out_the_sequence_numbers_form_processor
 
         foreach ($result as $object) {
 
-            if ($g->thing_type === 'Community') {
+            if ($g->thing_type === 'community') {
 
                 $short = substr($object->topic_name, 0, 38);
 

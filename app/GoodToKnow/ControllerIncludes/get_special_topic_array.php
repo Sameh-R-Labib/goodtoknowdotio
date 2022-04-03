@@ -1,12 +1,12 @@
 <?php
 
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\community_to_topic;
 
 
 global $g;
 
 
-$g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
+$g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
 
 
 if ($g->special_topic_array == false) $g->special_topic_array = [];

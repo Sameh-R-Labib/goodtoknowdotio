@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 
 class new_community_save
 {
@@ -19,7 +19,7 @@ class new_community_save
         $community_as_array = ['community_name' => $g->saved_str01, 'community_description' => $g->saved_str02];
 
 
-        $community = Community::array_to_object($community_as_array);
+        $community = community::array_to_object($community_as_array);
 
 
         get_db();

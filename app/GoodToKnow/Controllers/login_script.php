@@ -2,9 +2,9 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\UserToCommunity;
-use GoodToKnow\Models\Community;
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\user_to_community;
+use GoodToKnow\Models\community;
+use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\User;
 use function GoodToKnow\ControllerHelpers\is_password_syntactically;
 use function GoodToKnow\ControllerHelpers\is_username_syntactically;
@@ -61,17 +61,17 @@ class login_script
          * Put the community_name which corresponds with
          * community_id in the session.
          */
-        $community_object = Community::find_by_id($user->id_of_default_community);
+        $community_object = community::find_by_id($user->id_of_default_community);
 
         $_SESSION['community_name'] = $community_object->community_name;
 
         $_SESSION['community_description'] = $community_object->community_description;
 
         /**
-         * I need to use a method of UserToCommunity to
+         * I need to use a method of user_to_community to
          * find out which communities this user belongs to.
          * Then I'll use that information along with information
-         * from the communities table to be able to have
+         * from the community table to be able to have
          * an array of the communities corresponding
          * to the current user.
          *
@@ -80,7 +80,7 @@ class login_script
          *  - Key is a community id
          *  - Value is a community name
          */
-        $g->special_community_array = UserToCommunity::find_communities_of_user($user->id);
+        $g->special_community_array = user_to_community::find_communities_of_user($user->id);
 
         if ($g->special_community_array === false) {
 
@@ -107,7 +107,7 @@ class login_script
          * Find and save in session a value for special_topic_array.
          */
 
-        $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($user->id_of_default_community);
+        $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($user->id_of_default_community);
 
         if (!$g->special_topic_array) {
 

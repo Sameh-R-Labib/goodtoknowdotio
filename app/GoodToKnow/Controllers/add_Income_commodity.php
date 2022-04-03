@@ -11,7 +11,7 @@ class add_income_commodity
          * ====================
          *
          * Add Income Commodity makes it convenient to both create a TaxableIncomeEvent
-         * and a Community record. The user only needs to fill out one form.
+         * and a community record. The user only needs to fill out one form.
          */
 
         global $g;

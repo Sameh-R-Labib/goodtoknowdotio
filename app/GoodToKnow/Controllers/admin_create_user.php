@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
-use GoodToKnow\Models\UserToCommunity;
+use GoodToKnow\Models\user_to_community;
 use function GoodToKnow\ControllerHelpers\date_form_field_prep;
 use function GoodToKnow\ControllerHelpers\password_for_regandchange_prep;
 use function GoodToKnow\ControllerHelpers\race_form_field_prep;
@@ -118,19 +118,19 @@ class admin_create_user
 
         $array_of_user_to_community_row_data = ['user_id' => $new_user_object->id, 'community_id' => $g->saved_int01];
 
-        $new_user_to_community_object = UserToCommunity::array_to_object($array_of_user_to_community_row_data);
+        $new_user_to_community_object = user_to_community::array_to_object($array_of_user_to_community_row_data);
 
         $consequence_of_save = $new_user_to_community_object->save();
 
         if (!$consequence_of_save) {
 
-            breakout(' The save method for UserToCommunity returned false. ');
+            breakout(' The save method for user_to_community returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for UserToCommunity did not return false but it did send back a message.
+            breakout(' The save method for user_to_community did not return false but it did send back a message.
              Therefore, it probably did not create the association for your account. ');
 
         }

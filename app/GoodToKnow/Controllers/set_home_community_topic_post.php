@@ -2,8 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\community;
+use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\Topic;
 use GoodToKnow\Models\TopicToPost;
@@ -21,7 +21,7 @@ class set_home_community_topic_post
          * It does its thing then redirects back to the home page.
          *
          * home is the route for displaying a blog resource.
-         * A blog resource is either a Community, a Topic or a Post.
+         * A blog resource is either a community, a Topic or a Post.
          *
          * This route sets up the session so that it is loads data for
          * a particular blog resource.  Then it redirects to home page.
@@ -61,10 +61,9 @@ class set_home_community_topic_post
         get_db();
 
 
-
         /**
          * Figure out which type of resource is being requested.
-         * Is it a Community, a Topic or a Post?
+         * Is it a community, a Topic or a Post?
          */
 
         if ($topic_id == 0) {
@@ -103,15 +102,14 @@ class set_home_community_topic_post
         }
 
 
-
         /**
          * This section is for these types of resources:
          *
-         *      Community, Topic, Post
+         *      community, Topic, Post
          */
 
 
-        // Breakout if the Community does not belong to the user.
+        // Breakout if the community does not belong to the user.
 
         if (!array_key_exists($community_id, $g->special_community_array)) {
 
@@ -122,7 +120,7 @@ class set_home_community_topic_post
 
         // Get and store the special topic array.
 
-        $special_topic_array = CommunityToTopic::get_topics_array_for_a_community($community_id);
+        $special_topic_array = community_to_topic::get_topics_array_for_a_community($community_id);
 
         if (!$special_topic_array) {
 
@@ -145,7 +143,7 @@ class set_home_community_topic_post
 
         // Get the community object.
 
-        $community_object = Community::find_by_id($community_id);
+        $community_object = community::find_by_id($community_id);
 
 
         // Store the community name and community description in the session.

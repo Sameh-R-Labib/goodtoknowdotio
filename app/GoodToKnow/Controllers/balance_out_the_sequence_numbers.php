@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\TopicToPost;
 
 class balance_out_the_sequence_numbers
@@ -32,7 +32,7 @@ class balance_out_the_sequence_numbers
 
         $g->thing_type = ucfirst($g->type_of_resource_requested);
 
-        if ($g->thing_type === 'Community') {
+        if ($g->thing_type === 'community') {
 
             $g->thing_name = $g->community_name;
 
@@ -50,11 +50,11 @@ class balance_out_the_sequence_numbers
 
         get_db();
 
-        if ($g->thing_type === 'Community') {
+        if ($g->thing_type === 'community') {
 
             // Get all topics for community.
 
-            $g->result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
+            $g->result = community_to_topic::get_array_of_topic_objects_for_a_community($g->community_id);
 
             if (!$g->result) {
 
@@ -94,7 +94,7 @@ class balance_out_the_sequence_numbers
          * dealing with posts.
          */
 
-        if ($g->thing_type === 'Community') {
+        if ($g->thing_type === 'community') {
 
             // Assemble $g->fields for topic records. One html line for each record.
             foreach ($g->result as $object) {

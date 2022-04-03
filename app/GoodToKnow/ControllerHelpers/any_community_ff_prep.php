@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 
 /**
  * @return int
@@ -23,7 +23,7 @@ function any_community_ff_prep(): int
      * Make sure the submitted id is one of the existing community ids.
      */
 
-    $community_array = Community::find_all();
+    $community_array = community::find_all();
 
     $is_found = false;
 

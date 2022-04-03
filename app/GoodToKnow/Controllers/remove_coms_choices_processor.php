@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\UserToCommunity;
+use GoodToKnow\Models\user_to_community;
 
 class remove_coms_choices_processor
 {
@@ -39,13 +39,13 @@ class remove_coms_choices_processor
          * and any of the comm ids found in the $g->submitted_community_ids_array.
          *
          * To accomplish this:
-         *   1) I will retrieve the pertinent UserToCommunity objects.
+         *   1) I will retrieve the pertinent user_to_community objects.
          *   2) One-by-one I'll delete them.
          */
 
         /**
          * $usertocommunity_objects_array
-         *   will hold the UserToCommunity objects I retrieve from the database.
+         *   will hold the user_to_community objects I retrieve from the database.
          */
 
         $usertocommunity_objects_array = [];
@@ -55,7 +55,7 @@ class remove_coms_choices_processor
         foreach ($g->submitted_community_ids_array as $a_community_id) {
 
             /**
-             * Retrieve and add the UserToCommunity object
+             * Retrieve and add the user_to_community object
              * whose user_id == $g->saved_int01 and community_id == $a_community_id
              */
 
@@ -65,7 +65,7 @@ class remove_coms_choices_processor
                 '" AND `community_id` = "' . $g->db->real_escape_string($a_community_id) .
                 '" LIMIT 1';
 
-            $array_with_one_element = UserToCommunity::find_by_sql($sql);
+            $array_with_one_element = user_to_community::find_by_sql($sql);
 
             if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
 
@@ -79,7 +79,7 @@ class remove_coms_choices_processor
 
         /**
          * So at this point we should have a $usertocommunity_objects_array
-         * whereupon we can iterate and delete each UserToCommunity object
+         * whereupon we can iterate and delete each user_to_community object
          * from the db table user_to_community.
          */
 
@@ -89,7 +89,7 @@ class remove_coms_choices_processor
 
             if (!$result_of_delete) {
 
-                breakout(' Failed to delete User To Community. ');
+                breakout(' Failed to delete user_to_community. ');
 
             }
 

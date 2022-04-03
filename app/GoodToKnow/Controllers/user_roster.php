@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 use GoodToKnow\Models\ReadableUser;
 use GoodToKnow\Models\User;
 
@@ -58,7 +58,7 @@ class user_roster
 
         $community_values_array = [];
 
-        $array_of_all_community_objects = Community::find_all();
+        $array_of_all_community_objects = community::find_all();
 
         if ($array_of_all_community_objects === false || empty($array_of_all_community_objects)) {
 

@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class kommunity_description_editor_processor
@@ -28,7 +28,7 @@ class kommunity_description_editor_processor
 
         get_db();
 
-        $community = Community::find_by_community_name($submitted_community_name);
+        $community = community::find_by_community_name($submitted_community_name);
 
         if (!$community) {
 

@@ -3,8 +3,8 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
-use GoodToKnow\Models\UserToCommunity;
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\user_to_community;
+use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\Post;
 use GoodToKnow\Models\TopicToPost;
 
@@ -154,7 +154,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->special_community_array = UserToCommunity::find_communities_of_user($g->user_id);
+            $g->special_community_array = user_to_community::find_communities_of_user($g->user_id);
 
             if ($g->special_community_array === false) {
 
@@ -180,7 +180,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->special_topic_array = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
+            $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
 
             if ($g->special_topic_array === false) $g->special_topic_array = [];
 

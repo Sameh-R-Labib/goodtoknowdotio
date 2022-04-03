@@ -4,7 +4,7 @@ namespace GoodToKnow\Models;
 
 use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
 
-class CommunityToTopic extends GoodObject
+class community_to_topic extends GoodObject
 {
     /**
      * @var string
@@ -43,11 +43,11 @@ class CommunityToTopic extends GoodObject
         $sql = 'SELECT * FROM `community_to_topic`
         WHERE `topic_id` = "' . $g->db->real_escape_string($topic_id) . '" LIMIT 1';
 
-        $array_of_objects = CommunityToTopic::find_by_sql($sql);
+        $array_of_objects = community_to_topic::find_by_sql($sql);
 
         if (!$array_of_objects || !empty($g->message)) {
 
-            $g->message .= ' derive_community_id says: Failed to get a CommunityToTopic object. ';
+            $g->message .= ' derive_community_id says: Failed to get a community_to_topic object. ';
 
             return false;
 
@@ -78,8 +78,8 @@ class CommunityToTopic extends GoodObject
 
         global $g;
 
-        // get (in array) all the CommunityToTopic objects with a particular $community_id.
-        $array_of_CommunityToTopic = [];
+        // get (in array) all the community_to_topic objects with a particular $community_id.
+        $array_of_community_to_topic = [];
 
         $count = 0;
 
@@ -116,9 +116,9 @@ class CommunityToTopic extends GoodObject
 
                 } else {
 
-                    while ($x = $result->fetch_object('\GoodToKnow\Models\CommunityToTopic')) {
+                    while ($x = $result->fetch_object('\GoodToKnow\Models\community_to_topic')) {
 
-                        $array_of_CommunityToTopic[] = $x;
+                        $array_of_community_to_topic[] = $x;
 
                         $count += 1;
                     }
@@ -131,7 +131,7 @@ class CommunityToTopic extends GoodObject
             }
         } catch (\Exception $e) {
 
-            $g->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
+            $g->message .= ' community_to_topic::get_array_of_topic_objects_for_a_community() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -140,18 +140,18 @@ class CommunityToTopic extends GoodObject
 
         if ($count < 1) {
 
-            $g->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
+            $g->message .= ' community_to_topic::get_array_of_topic_objects_for_a_community() says: Errno 17. ';
 
             return false;
 
         }
 
 
-        // get (in array) all the topics listed in $array_of_CommunityToTopic.
+        // get (in array) all the topics listed in $array_of_community_to_topic.
 
         $array_of_Topics = [];
 
-        foreach ($array_of_CommunityToTopic as $item) {
+        foreach ($array_of_community_to_topic as $item) {
 
             $array_of_Topics[] = Topic::find_by_id($item->topic_id);
 
@@ -159,7 +159,7 @@ class CommunityToTopic extends GoodObject
 
         if (empty($array_of_Topics)) {
 
-            $g->message .= ' CommunityToTopic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
+            $g->message .= ' community_to_topic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
 
             return false;
 
@@ -183,7 +183,7 @@ class CommunityToTopic extends GoodObject
          * This method gets a $special_topics_array (if you know what I mean.)
          */
 
-        $topics_array = CommunityToTopic::get_array_of_topic_objects_for_a_community($community_id);
+        $topics_array = community_to_topic::get_array_of_topic_objects_for_a_community($community_id);
 
         if (empty($topics_array)) {
 

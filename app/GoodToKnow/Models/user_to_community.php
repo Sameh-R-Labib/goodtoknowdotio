@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class UserToCommunity extends GoodObject
+class user_to_community extends GoodObject
 {
     /**
      * @var string
@@ -52,7 +52,7 @@ class UserToCommunity extends GoodObject
 
 
         /**
-         * First get the UserToCommunity objects which belong to the user.
+         * First get the user_to_community objects which belong to the user.
          */
 
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
@@ -61,7 +61,7 @@ class UserToCommunity extends GoodObject
 
         if (!$user_to_community_array) {
 
-            $g->message .= " UserToCommunity::coms_user_belongs_to() found no communities for the specified user. ";
+            $g->message .= " user_to_community::coms_user_belongs_to() found no communities for the specified user. ";
 
             return $array_of_coms_for_this_user;
 
@@ -69,14 +69,14 @@ class UserToCommunity extends GoodObject
 
 
         /**
-         * Second get the Community objects which belong to the user.
+         * Second get the community objects which belong to the user.
          */
 
         foreach ($user_to_community_array as $user_to_community_object) {
             // Add a community object to $array_of_coms_for_this_user.
-            // Obviously this community which we will add will be the one specified by the UserToCommunity object.
+            // Obviously this community which we will add will be the one specified by the user_to_community object.
 
-            $community = Community::find_by_id($user_to_community_object->community_id);
+            $community = community::find_by_id($user_to_community_object->community_id);
 
             if ($community === false) {
 
@@ -91,7 +91,7 @@ class UserToCommunity extends GoodObject
 
         if (empty($array_of_coms_for_this_user)) {
 
-            $g->message .= " UserToCommunity::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
+            $g->message .= " user_to_community::coms_user_belongs_to() says: Unexpected empty array_of_coms_for_this_user. ";
 
             return false;
 
@@ -110,7 +110,7 @@ class UserToCommunity extends GoodObject
     public static function coms_user_does_not_belong_to(array $coms_in_this_system): array
     {
         /**
-         * Returns an array of Community objects which the user doesn't belong to.
+         * Returns an array of community objects which the user doesn't belong to.
          */
 
         $coms_user_does_not_belong_to = [];
@@ -176,7 +176,7 @@ class UserToCommunity extends GoodObject
 
         $sql = 'SELECT * FROM user_to_community WHERE `user_id`=' . $user_id;
 
-        $array_of_user_to_community_objects = UserToCommunity::find_by_sql($sql);
+        $array_of_user_to_community_objects = user_to_community::find_by_sql($sql);
 
         if (!$array_of_user_to_community_objects) {
 
@@ -196,10 +196,10 @@ class UserToCommunity extends GoodObject
         foreach ($array_of_user_to_community_objects as $object) {
 
             /**
-             * Talking about the right side of the assignment statement First we're getting a Community object.
+             * Talking about the right side of the assignment statement First we're getting a community object.
              */
 
-            $special_community_array[$object->community_id] = Community::find_by_id($object->community_id);
+            $special_community_array[$object->community_id] = community::find_by_id($object->community_id);
 
             if (!$special_community_array[$object->community_id]) {
 

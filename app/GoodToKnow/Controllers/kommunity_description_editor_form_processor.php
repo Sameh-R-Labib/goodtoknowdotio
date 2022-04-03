@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class kommunity_description_editor_form_processor
@@ -28,12 +28,12 @@ class kommunity_description_editor_form_processor
 
 
         /**
-         *  4) Get a copy of the Community object.
+         *  4) Get a copy of the community object.
          */
 
         get_db();
 
-        $community_object = Community::find_by_id($g->saved_int01);
+        $community_object = community::find_by_id($g->saved_int01);
 
         if (!$community_object) {
 
@@ -43,7 +43,7 @@ class kommunity_description_editor_form_processor
 
 
         /**
-         *  6) Replace the Community's current name and description with the new one.
+         *  6) Replace the community's current name and description with the new one.
          */
 
         $community_object->community_name = $community_name;
@@ -52,7 +52,7 @@ class kommunity_description_editor_form_processor
 
 
         /**
-         *  7) Update the database with this Community object.
+         *  7) Update the database with this community object.
          */
 
         $result = $community_object->save();

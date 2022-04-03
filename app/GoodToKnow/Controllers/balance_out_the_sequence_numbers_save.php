@@ -11,9 +11,9 @@ class balance_out_the_sequence_numbers_save
         /**
          * $_SESSION['saved_arr01'] contains the records which have had their sequence numbers modified.
          * The purpose of this route is to:
-         *      A) update the Topics table if we're in a Community
+         *      A) update the topic table if we're in a community
          *      OR
-         *      B) update the Posts table if we're in a Topic.
+         *      B) update the post table if we're in a Topic.
          * We are to update using the records found in the array $_SESSION['saved_arr01'].
          * STEPS:
          *  1) Update the database using the array we have.

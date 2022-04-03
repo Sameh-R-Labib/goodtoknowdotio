@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 
 class admin_pass_code_generation_form
 {
@@ -27,9 +27,9 @@ class admin_pass_code_generation_form
         get_db();
 
 
-        // Community::find_all() should return the array we are looking for (see above)
+        // community::find_all() should return the array we are looking for (see above)
 
-        $g->community_array = Community::find_all();
+        $g->community_array = community::find_all();
 
 
         $g->html_title = 'Admin Pass-Code Generation Form';

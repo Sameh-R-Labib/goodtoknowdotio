@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Community;
+use GoodToKnow\Models\community;
 
 class kommunity_description_editor_form
 {
@@ -18,17 +18,17 @@ class kommunity_description_editor_form
 
         /**
          * Goals for this function:
-         *  1) Retrieve the Community object for the community. I'm talking about the Community
+         *  1) Retrieve the community object for the community. I'm talking about the community
          *     whose description the admin wants to edit.
          *  2) Present a (pre-filled with current description) form for editing.
          */
 
 
-        // 1) Retrieve the Community object for the community whose description the admin wants to edit.
+        // 1) Retrieve the community object for the community whose description the admin wants to edit.
 
         get_db();
 
-        $g->community_object = Community::find_by_id($g->saved_int01);
+        $g->community_object = community::find_by_id($g->saved_int01);
 
         if (!$g->community_object) {
 

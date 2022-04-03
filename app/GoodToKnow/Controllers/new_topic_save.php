@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\CommunityToTopic;
+use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\Topic;
 
 class new_topic_save
@@ -20,10 +20,10 @@ class new_topic_save
 
         /**
          * Create some variables and their values which will be needed for the two objects
-         * we'll be saving. Those two objects are Topic and CommunityToTopic.
+         * we'll be saving. Those two objects are Topic and community_to_topic.
          *
          * Topic $fields = ['id', 'sequence_number', 'topic_name', 'topic_description']
-         * CommunityToTopic $fields = ['id', 'community_id', 'topic_id']
+         * community_to_topic $fields = ['id', 'community_id', 'topic_id']
          */
 
         $topic_as_array = ['sequence_number' => $g->saved_int01, 'topic_name' => $g->saved_str01,
@@ -40,7 +40,7 @@ class new_topic_save
 
         get_db();
 
-        $result = CommunityToTopic::get_array_of_topic_objects_for_a_community($g->community_id);
+        $result = community_to_topic::get_array_of_topic_objects_for_a_community($g->community_id);
 
         $sequence_number_already_exists_in_db = false;
 
@@ -78,17 +78,17 @@ class new_topic_save
         }
 
 
-        // Assemble the CommunityToTopic object
+        // Assemble the community_to_topic object
 
         $communitytotopic_as_array = ['community_id' => $g->community_id, 'topic_id' => $topic->id];
 
-        $communitytotopic = CommunityToTopic::array_to_object($communitytotopic_as_array);
+        $communitytotopic = community_to_topic::array_to_object($communitytotopic_as_array);
 
         $result = $communitytotopic->save();
 
         if (!$result) {
 
-            breakout(' new_topic_save says: Unexpected save was unable to save the CommunityToTopic. ');
+            breakout(' new_topic_save says: Unexpected save was unable to save the community_to_topic. ');
 
         }
 
@@ -97,7 +97,7 @@ class new_topic_save
          * Save a fresh copy of special_topic_array
          */
 
-        $_SESSION['special_topic_array'] = CommunityToTopic::get_topics_array_for_a_community($g->community_id);
+        $_SESSION['special_topic_array'] = community_to_topic::get_topics_array_for_a_community($g->community_id);
 
         $_SESSION['last_refresh_topics'] = time();
 

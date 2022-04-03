@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\User;
-use GoodToKnow\Models\UserToCommunity;
+use GoodToKnow\Models\user_to_community;
 
 class remove_coms_choices
 {
@@ -53,7 +53,7 @@ class remove_coms_choices
          * 3) Get all the communities the user belongs to.
          */
 
-        $g->coms_user_belongs_to = UserToCommunity::coms_user_belongs_to($user_id);
+        $g->coms_user_belongs_to = user_to_community::coms_user_belongs_to($user_id);
 
         if ($g->coms_user_belongs_to === false) {
 

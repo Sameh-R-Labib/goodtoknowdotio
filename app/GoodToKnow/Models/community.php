@@ -3,7 +3,7 @@
 namespace GoodToKnow\Models;
 
 
-class Community extends GoodObject
+class community extends GoodObject
 {
     /**
      * @var string
@@ -47,16 +47,16 @@ class Community extends GoodObject
         $sql = 'SELECT * FROM `communities`
                 WHERE `community_name` = "' . $g->db->real_escape_string($community_name) . '" LIMIT 1';
 
-        $array_of_Community_objects = parent::find_by_sql($sql);
+        $array_of_community_objects = parent::find_by_sql($sql);
 
         $temp_error = trim($g->message);
 
-        if (!$array_of_Community_objects || !empty($temp_error)) {
+        if (!$array_of_community_objects || !empty($temp_error)) {
 
             return false;
 
         }
 
-        return array_shift($array_of_Community_objects);
+        return array_shift($array_of_community_objects);
     }
 }
