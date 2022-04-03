@@ -18,7 +18,7 @@ class recurring_payment_see_my_records
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         /**
@@ -31,7 +31,7 @@ class recurring_payment_see_my_records
 
         $g->array_of_recurring_payment_objects = recurring_payment::find_by_sql($sql);
 
-        if (!$g->array_of_recurring_payment_objects || !empty($g->message)) {
+        if (!$g->array_of_recurring_payment_objects) {
 
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯ ');
 

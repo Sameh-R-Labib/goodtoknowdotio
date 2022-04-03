@@ -25,7 +25,7 @@ $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);
 
 $g->array = commodity_sold::find_by_sql($sql);
 
-if (!$g->array || !empty($g->message)) {
+if (!$g->array) {
 
     breakout(" For <b>{$g->tax_year}</b> I could NOT find any commodity_sold(s/plural) ¯\_(ツ)_/¯. ");
 

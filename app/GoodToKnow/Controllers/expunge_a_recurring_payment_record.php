@@ -31,7 +31,7 @@ class expunge_a_recurring_payment_record
 
         $g->array_of_recurring_payment_objects = recurring_payment::find_by_sql($sql);
 
-        if (!$g->array_of_recurring_payment_objects || !empty($g->message)) {
+        if (!$g->array_of_recurring_payment_objects) {
 
             breakout(' I could NOT find any recurring payments ¯\_(ツ)_/¯. ');
 

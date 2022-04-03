@@ -15,7 +15,7 @@ $sql = 'SELECT * FROM `commodity` WHERE `user_id` = "' . $g->db->real_escape_str
 
 $g->array_of_commodity_objects = commodity::find_by_sql($sql);
 
-if (!$g->array_of_commodity_objects || !empty($g->message)) {
+if (!$g->array_of_commodity_objects) {
 
     breakout(' I could NOT find any commodity records ¯\_(ツ)_/¯. ');
 

@@ -25,7 +25,7 @@ $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);
 
 $g->array = taxable_income_event::find_by_sql($sql);
 
-if (!$g->array || !empty($g->message)) {
+if (!$g->array) {
 
     breakout(" For <b>{$g->tax_year}</b> I could NOT find any taxable income events. ");
 

@@ -15,7 +15,7 @@ class see_one_years_possible_tax_deductions_year_filter
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         get_db();

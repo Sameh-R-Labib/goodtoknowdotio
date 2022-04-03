@@ -32,7 +32,7 @@ $sql = 'SELECT * FROM `topic_to_post`
 
 $array_of_objects = topic_to_post::find_by_sql($sql);
 
-if (!$array_of_objects || !empty($g->message)) {
+if (!$array_of_objects) {
 
     breakout(' Unexpectedly failed to get a topic_to_post object to delete. ');
 

@@ -44,7 +44,7 @@ class transfer_an_amount
 
         $array_of_objects = banking_acct_for_balances::find_by_sql($sql);
 
-        if (!$array_of_objects || !empty($g->message)) {
+        if (!$array_of_objects) {
 
             breakout(' I could NOT find any banking acct for balances ¯\_(ツ)_/¯ ');
 

@@ -45,7 +45,7 @@ class topic_to_post extends good_object
 
         $array_of_objects = topic_to_post::find_by_sql($sql);
 
-        if (!$array_of_objects || !empty($g->message)) {
+        if (!$array_of_objects) {
 
             $g->message .= ' derive_topic_id says: Failed to get a topic_to_post object. ';
             return false;

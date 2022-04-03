@@ -224,7 +224,7 @@ class user extends good_object
 
         $array_of_user_objects = parent::find_by_sql($sql);
 
-        if (!$array_of_user_objects || !empty($g->message)) {
+        if (!$array_of_user_objects) {
 
             return false;
 

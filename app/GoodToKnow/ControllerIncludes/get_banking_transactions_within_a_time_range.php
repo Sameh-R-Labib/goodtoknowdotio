@@ -19,7 +19,7 @@ $sql .= ' ORDER BY `time`';
 
 $g->array = banking_transaction_for_balances::find_by_sql($sql);
 
-if (!$g->array || !empty($g->message)) {
+if (!$g->array) {
 
     breakout(' I could NOT find any banking transaction for balances records ¯\_(ツ)_/¯ ');
 

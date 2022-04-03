@@ -15,7 +15,7 @@ class gawk_at_all_taxable_income_events
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         $g->html_title = 'Which year received?';

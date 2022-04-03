@@ -13,6 +13,10 @@ function fix_michelf(string &$html)
 
 
 /**
+ * Gtk.io uses this one for Read / Show features
+ * because these features may carry over a message
+ * from the feature which may have run before it.
+ *
  * @return void
  */
 function kick_out_loggedoutusers()

@@ -45,7 +45,7 @@ class community_to_topic extends good_object
 
         $array_of_objects = community_to_topic::find_by_sql($sql);
 
-        if (!$array_of_objects || !empty($g->message)) {
+        if (!$array_of_objects) {
 
             $g->message .= ' derive_community_id says: Failed to get a community_to_topic object. ';
 

@@ -60,7 +60,7 @@ class change_password_processor
 
         $is_saved = $user_object->save();
 
-        if (!$is_saved || !empty($g->message)) {
+        if (!$is_saved) {
 
             breakout(' Failed to update your record. ');
 

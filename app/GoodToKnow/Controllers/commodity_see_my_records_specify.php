@@ -19,7 +19,7 @@ class commodity_see_my_records_specify
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         $g->html_title = 'Specify Which Records';

@@ -28,7 +28,7 @@ class forget_a_task
 
         $g->array = task::find_by_sql($sql);
 
-        if (!$g->array || !empty($g->message)) {
+        if (!$g->array) {
 
             breakout(' I could NOT find any tasks ¯\_(ツ)_/¯ ');
 

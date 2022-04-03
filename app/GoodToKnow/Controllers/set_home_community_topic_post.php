@@ -45,7 +45,7 @@ class set_home_community_topic_post
 
         // Abort if necessary.
 
-        if (!$g->is_logged_in || !empty($g->message)) {
+        if (!$g->is_logged_in) {
 
             $_SESSION['message'] = $g->message;
 

@@ -88,7 +88,7 @@ class check_my_banking_account_tx_balances_show_balances
 
         $g->array = banking_transaction_for_balances::find_by_sql($sql);
 
-        if (!$g->array || !empty($g->message)) {
+        if (!$g->array) {
 
             breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
 

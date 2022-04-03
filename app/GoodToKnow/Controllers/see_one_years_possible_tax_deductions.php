@@ -15,7 +15,7 @@ class see_one_years_possible_tax_deductions
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         $g->html_title = 'Which year_paid for showing possible_tax_deduction(s/plural)?';

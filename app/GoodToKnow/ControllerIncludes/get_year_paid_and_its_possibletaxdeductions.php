@@ -25,7 +25,7 @@ $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);
 
 $g->array = possible_tax_deduction::find_by_sql($sql);
 
-if (!$g->array || !empty($g->message)) {
+if (!$g->array) {
 
     breakout(" For <b>{$g->year_paid}</b> I could NOT find any Possible Tax Deductions. ");
 
