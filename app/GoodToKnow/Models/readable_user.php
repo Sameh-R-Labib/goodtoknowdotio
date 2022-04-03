@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class ReadableUser
+class readable_user
 {
     /**
      * @var int

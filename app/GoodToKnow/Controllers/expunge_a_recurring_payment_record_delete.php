@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\RecurringPayment;
+use GoodToKnow\Models\recurring_payment;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class expunge_a_recurring_payment_record_delete
@@ -42,7 +42,7 @@ class expunge_a_recurring_payment_record_delete
 
         get_db();
 
-        $object = RecurringPayment::find_by_id($g->saved_int01);
+        $object = recurring_payment::find_by_id($g->saved_int01);
 
         if (!$object) {
 

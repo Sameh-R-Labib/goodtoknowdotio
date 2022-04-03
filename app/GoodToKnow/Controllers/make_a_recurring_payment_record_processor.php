@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\RecurringPayment;
+use GoodToKnow\Models\recurring_payment;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -105,7 +105,7 @@ class make_a_recurring_payment_record_processor
 
 
         /**
-         * Create a RecurringPayment array for the record.
+         * Create a recurring_payment array for the record.
          */
 
 
@@ -114,10 +114,10 @@ class make_a_recurring_payment_record_processor
 
 
         /**
-         * Make the array into an in memory RecurringPayment object for the record.
+         * Make the array into an in memory recurring_payment object for the record.
          */
 
-        $recurring_payment_object = RecurringPayment::array_to_object($array_recurring_payment_record);
+        $recurring_payment_object = recurring_payment::array_to_object($array_recurring_payment_record);
 
 
         /**
@@ -130,14 +130,14 @@ class make_a_recurring_payment_record_processor
 
         if (!$result) {
 
-            breakout(' The save method for RecurringPayment returned false. ');
+            breakout(' The save method for recurring_payment returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for RecurringPayment did not return false but it did send back a message.
-             Therefore, it probably did not create the RecurringPayment record. ');
+            breakout(' The save method for recurring_payment did not return false but it did send back a message.
+             Therefore, it probably did not create the recurring_payment record. ');
 
         }
 

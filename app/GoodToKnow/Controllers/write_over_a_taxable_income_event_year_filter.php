@@ -10,7 +10,7 @@ class write_over_a_taxable_income_event_year_filter
     {
         /**
          * 1) Validate the submitted year_received.
-         * 2) Present the TaxableIncomeEvent(s/plural) which fall in that year as radio buttons.
+         * 2) Present the taxable_income_event(s/plural) which fall in that year as radio buttons.
          */
 
 

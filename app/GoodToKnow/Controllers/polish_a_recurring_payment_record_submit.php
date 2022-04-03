@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\RecurringPayment;
+use GoodToKnow\Models\recurring_payment;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
@@ -118,7 +118,7 @@ class polish_a_recurring_payment_record_submit
 
         get_db();
 
-        $object = RecurringPayment::find_by_id($g->saved_int01);
+        $object = recurring_payment::find_by_id($g->saved_int01);
 
         if (!$object) {
 

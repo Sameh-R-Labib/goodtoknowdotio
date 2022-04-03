@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TaxableIncomeEvent;
+use GoodToKnow\Models\taxable_income_event;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class nuke_a_taxable_income_event_confirmation
@@ -42,7 +42,7 @@ class nuke_a_taxable_income_event_confirmation
 
         get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($g->saved_int01);
+        $object = taxable_income_event::find_by_id($g->saved_int01);
 
         if (!$object) {
 

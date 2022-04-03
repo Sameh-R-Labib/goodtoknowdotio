@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
-use GoodToKnow\Models\RecurringPayment;
+use GoodToKnow\Models\recurring_payment;
 
 class recurring_payment_see_my_records
 {
@@ -22,14 +22,14 @@ class recurring_payment_see_my_records
 
 
         /**
-         * Get an array of RecurringPayment objects for the user who has id == $user_id.
+         * Get an array of recurring_payment objects for the user who has id == $user_id.
          */
 
         get_db();
 
         $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
 
-        $g->array_of_recurring_payment_objects = RecurringPayment::find_by_sql($sql);
+        $g->array_of_recurring_payment_objects = recurring_payment::find_by_sql($sql);
 
         if (!$g->array_of_recurring_payment_objects || !empty($g->message)) {
 

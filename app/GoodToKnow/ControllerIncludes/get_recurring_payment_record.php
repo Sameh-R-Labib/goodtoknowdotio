@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\RecurringPayment;
+use GoodToKnow\Models\recurring_payment;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
@@ -19,10 +19,10 @@ $_SESSION['saved_int01'] = $chosen_id;
 
 
 /**
- * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
+ * 2) Retrieve the recurring_payment object with that id from the database. And, format its attributes for easy viewing.
  */
 
-$g->recurring_payment_object = RecurringPayment::find_by_id($chosen_id);
+$g->recurring_payment_object = recurring_payment::find_by_id($chosen_id);
 
 if (!$g->recurring_payment_object) {
 

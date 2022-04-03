@@ -11,7 +11,7 @@ class expunge_a_recurring_payment_record_processor
     {
         /**
          * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
-         * 2) Retrieve the RecurringPayment object with that id from the database. And, format its attributes for easy viewing.
+         * 2) Retrieve the recurring_payment object with that id from the database. And, format its attributes for easy viewing.
          * 3) Make sure this object belongs to the user.
          * 4) Presents a form containing data from the record and asking for confirmation to delete.
          */

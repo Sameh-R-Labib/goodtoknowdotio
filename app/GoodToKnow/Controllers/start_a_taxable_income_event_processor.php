@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TaxableIncomeEvent;
+use GoodToKnow\Models\taxable_income_event;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -127,7 +127,7 @@ class start_a_taxable_income_event_processor
          * Make the array into an in memory taxable_income_event object for the record.
          */
 
-        $object = TaxableIncomeEvent::array_to_object($array_record);
+        $object = taxable_income_event::array_to_object($array_record);
 
 
         /**
@@ -140,14 +140,14 @@ class start_a_taxable_income_event_processor
 
         if (!$result) {
 
-            breakout(' The save method for TaxableIncomeEvent returned false. ');
+            breakout(' The save method for taxable_income_event returned false. ');
 
         }
 
         if (!empty($g->message)) {
 
-            breakout(' The save method for TaxableIncomeEvent did not return false but it did send
-            back a message. Therefore, it probably did not create the TaxableIncomeEvent record. ');
+            breakout(' The save method for taxable_income_event did not return false but it did send
+            back a message. Therefore, it probably did not create the taxable_income_event record. ');
 
         }
 

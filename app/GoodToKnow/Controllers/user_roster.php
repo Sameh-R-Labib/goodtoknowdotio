@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community;
-use GoodToKnow\Models\ReadableUser;
+use GoodToKnow\Models\readable_user;
 use GoodToKnow\Models\User;
 
 class user_roster
@@ -48,13 +48,13 @@ class user_roster
          */
 
 
-        // We need to have an array of a different object type called ReadableUser.
+        // We need to have an array of a different object type called readable_user.
 
 
         // $community_values_array is a helper for finding $g->readable_user_objects_array
 
 
-        // Assign $community_values_array. $community_values_array is described in class ReadableUser.
+        // Assign $community_values_array. $community_values_array is described in class readable_user.
 
         $community_values_array = [];
 
@@ -77,7 +77,7 @@ class user_roster
 
         foreach ($user_objects_array as $user) {
 
-            $g->readable_user_objects_array[] = new ReadableUser($user, $community_values_array);
+            $g->readable_user_objects_array[] = new readable_user($user, $community_values_array);
 
         }
 

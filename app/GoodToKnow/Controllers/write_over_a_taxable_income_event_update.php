@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\TaxableIncomeEvent;
+use GoodToKnow\Models\taxable_income_event;
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
@@ -153,7 +153,7 @@ class write_over_a_taxable_income_event_update
 
         get_db();
 
-        $object = TaxableIncomeEvent::find_by_id($g->saved_int01);
+        $object = taxable_income_event::find_by_id($g->saved_int01);
 
         if (!$object) {
 

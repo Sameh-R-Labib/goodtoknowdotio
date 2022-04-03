@@ -10,7 +10,7 @@ class add_income_commodity
          * Add Income Commodity
          * ====================
          *
-         * Add Income Commodity makes it convenient to both create a TaxableIncomeEvent
+         * Add Income Commodity makes it convenient to both create a taxable_income_event
          * and a community record. The user only needs to fill out one form.
          */
 
