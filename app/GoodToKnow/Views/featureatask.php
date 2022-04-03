@@ -3,7 +3,7 @@
     <form action="/ax1/feature_a_task_edit/page" method="post">
         <h1>Edit a Task</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Task?</p>
+        <p>Which task?</p>
         <section>
             <?php foreach ($g->array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

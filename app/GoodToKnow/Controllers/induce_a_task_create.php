@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-use GoodToKnow\Models\Task;
+use GoodToKnow\Models\task;
 
 class induce_a_task_create
 {
@@ -113,7 +113,7 @@ class induce_a_task_create
 
         // In memory object.
 
-        $object = Task::array_to_object($array_record);
+        $object = task::array_to_object($array_record);
 
         get_db();
 

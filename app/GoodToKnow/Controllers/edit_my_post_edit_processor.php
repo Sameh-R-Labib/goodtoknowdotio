@@ -18,7 +18,7 @@ class edit_my_post_edit_processor
         global $g;
         // $g->saved_str01 is path for markdown file
         // $g->saved_str02 path for html file
-        // $g->saved_int01 id of edited post's Topic
+        // $g->saved_int01 id of edited post's topic
         // $g->saved_int02 id of edited post
 
 

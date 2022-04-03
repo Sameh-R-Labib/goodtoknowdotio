@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\topic;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class topic_description_editor_form_processor
@@ -29,12 +29,12 @@ class topic_description_editor_form_processor
 
 
         /**
-         *  Get a copy of the Topic object.
+         *  Get a copy of the topic object.
          */
 
         get_db();
 
-        $topic_object = Topic::find_by_id($g->saved_int01);
+        $topic_object = topic::find_by_id($g->saved_int01);
 
         if (!$topic_object) {
 
@@ -44,7 +44,7 @@ class topic_description_editor_form_processor
 
 
         /**
-         *  Replace some of the Topic's current values.
+         *  Replace some of the topic's current values.
          */
 
         $topic_object->topic_name = $topic_name;
@@ -53,7 +53,7 @@ class topic_description_editor_form_processor
 
 
         /**
-         *  Update the database with this Topic object.
+         *  Update the database with this topic object.
          */
 
         $result = $topic_object->save();

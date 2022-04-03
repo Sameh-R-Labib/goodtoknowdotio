@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
 use GoodToKnow\Models\post;
-use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\topic;
 use GoodToKnow\Models\topic_to_post;
 use GoodToKnow\Models\User;
 
@@ -21,7 +21,7 @@ class set_home_community_topic_post
          * It does its thing then redirects back to the home page.
          *
          * home is the route for displaying a blog resource.
-         * A blog resource is either a community, a Topic or a post.
+         * A blog resource is either a community, a topic or a post.
          *
          * This route sets up the session so that it is loads data for
          * a particular blog resource.  Then it redirects to home page.
@@ -63,7 +63,7 @@ class set_home_community_topic_post
 
         /**
          * Figure out which type of resource is being requested.
-         * Is it a community, a Topic or a post?
+         * Is it a community, a topic or a post?
          */
 
         if ($topic_id == 0) {
@@ -105,7 +105,7 @@ class set_home_community_topic_post
         /**
          * This section is for these types of resources:
          *
-         *      community, Topic, post
+         *      community, topic, post
          */
 
 
@@ -167,7 +167,7 @@ class set_home_community_topic_post
         /**
          * This section is for these types of resources:
          *
-         *      Topic, post
+         *      topic, post
          */
 
 
@@ -177,12 +177,12 @@ class set_home_community_topic_post
 
         if ($type_of_resource_requested == 'topic' or $type_of_resource_requested == 'post') {
 
-            // Get the Topic object.
+            // Get the topic object.
 
-            $topic_object = Topic::find_by_id($topic_id);
+            $topic_object = topic::find_by_id($topic_id);
 
 
-            // Store the Topic name and description.
+            // Store the topic name and description.
 
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;

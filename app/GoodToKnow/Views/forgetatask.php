@@ -1,9 +1,9 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/ForgetATaskProcessor/page" method="post">
+    <form action="/ax1/forget_a_task_processor/page" method="post">
         <h1>Delete a Task</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Task?</p>
+        <p>Which task?</p>
         <section>
             <?php foreach ($g->array as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\topic;
 use GoodToKnow\Models\topic_to_post;
 use GoodToKnow\Models\User;
 
@@ -21,7 +21,7 @@ class transfer_post_ownership_get_post
          * For step (3):
          * Based on the submitted post id the script will derive and present:
          *  - community name
-         *  - Topic name
+         *  - topic name
          *  - Blog Post title | extensionfortitle
          *  - Author username
          */
@@ -88,7 +88,7 @@ class transfer_post_ownership_get_post
 
         // Find the topic name based on $derived_topic_id
 
-        $topic_object = Topic::find_by_id($derived_topic_id);
+        $topic_object = topic::find_by_id($derived_topic_id);
 
         if ($topic_object === false) {
 

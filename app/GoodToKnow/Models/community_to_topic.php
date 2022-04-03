@@ -149,15 +149,15 @@ class community_to_topic extends good_object
 
         // get (in array) all the topics listed in $array_of_community_to_topic.
 
-        $array_of_Topics = [];
+        $array_of_topics = [];
 
         foreach ($array_of_community_to_topic as $item) {
 
-            $array_of_Topics[] = Topic::find_by_id($item->topic_id);
+            $array_of_topics[] = topic::find_by_id($item->topic_id);
 
         }
 
-        if (empty($array_of_Topics)) {
+        if (empty($array_of_topics)) {
 
             $g->message .= ' community_to_topic::get_array_of_topic_objects_for_a_community()() says: Errno 18. ';
 
@@ -167,9 +167,9 @@ class community_to_topic extends good_object
 
         require_once CONTROLLERHELPERS . DIRSEP . 'order_by_sequence_number.php';
 
-        order_by_sequence_number($array_of_Topics);
+        order_by_sequence_number($array_of_topics);
 
-        return $array_of_Topics;
+        return $array_of_topics;
     }
 
 

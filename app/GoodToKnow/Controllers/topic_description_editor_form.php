@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\topic;
 
 class topic_description_editor_form
 {
@@ -25,7 +25,7 @@ class topic_description_editor_form
 
         get_db();
 
-        $g->topic_object = Topic::find_by_id($g->saved_int01);
+        $g->topic_object = topic::find_by_id($g->saved_int01);
 
         if (!$g->topic_object) {
 

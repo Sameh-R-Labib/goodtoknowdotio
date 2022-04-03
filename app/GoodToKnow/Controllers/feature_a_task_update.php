@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-use GoodToKnow\Models\Task;
+use GoodToKnow\Models\task;
 
 class feature_a_task_update
 {
@@ -131,7 +131,7 @@ class feature_a_task_update
 
         get_db();
 
-        $object = Task::find_by_id($g->saved_int01);
+        $object = task::find_by_id($g->saved_int01);
 
         if (!$object) {
 
@@ -173,7 +173,7 @@ class feature_a_task_update
 
 
         /**
-         * We want to reassure the user that the Task has been edited.
+         * We want to reassure the user that the task has been edited.
          * So, we are going to hook into the "See Tasks" feature.
          */
 

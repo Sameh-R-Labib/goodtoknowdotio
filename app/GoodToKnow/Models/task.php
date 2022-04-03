@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class Task extends good_object
+class task extends good_object
 {
     /**
      * @var string

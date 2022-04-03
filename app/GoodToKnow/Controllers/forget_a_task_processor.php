@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 
-class ForgetATaskProcessor
+class forget_a_task_processor
 {
     function page()
     {

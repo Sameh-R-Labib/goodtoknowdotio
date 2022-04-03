@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\topic;
 
 class new_topic_save
 {
@@ -20,16 +20,16 @@ class new_topic_save
 
         /**
          * Create some variables and their values which will be needed for the two objects
-         * we'll be saving. Those two objects are Topic and community_to_topic.
+         * we'll be saving. Those two objects are topic and community_to_topic.
          *
-         * Topic $fields = ['id', 'sequence_number', 'topic_name', 'topic_description']
+         * topic $fields = ['id', 'sequence_number', 'topic_name', 'topic_description']
          * community_to_topic $fields = ['id', 'community_id', 'topic_id']
          */
 
         $topic_as_array = ['sequence_number' => $g->saved_int01, 'topic_name' => $g->saved_str01,
             'topic_description' => $g->saved_str02];
 
-        $topic = Topic::array_to_object($topic_as_array);
+        $topic = topic::array_to_object($topic_as_array);
 
 
         // Verify that our sequence number hasn't been taken.
@@ -67,7 +67,7 @@ class new_topic_save
         }
 
 
-        // Save the new Topic
+        // Save the new topic
 
         $result = $topic->save();
 

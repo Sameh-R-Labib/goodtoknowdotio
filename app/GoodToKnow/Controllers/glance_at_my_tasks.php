@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Task;
+use GoodToKnow\Models\task;
 use function GoodToKnow\ControllerHelpers\get_proximity_task_label;
 use function GoodToKnow\ControllerHelpers\get_readable_date;
 
@@ -29,7 +29,7 @@ class glance_at_my_tasks
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
 
-        $g->array = Task::find_by_sql($sql);
+        $g->array = task::find_by_sql($sql);
 
         if (!$g->array || !empty($g->message)) {
 
@@ -67,7 +67,7 @@ class glance_at_my_tasks
 
         $g->show_poof = true;
 
-        $g->message .= ' ʘ‿ʘ at your Tasks. ';
+        $g->message .= ' ʘ‿ʘ at your tasks. ';
 
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
     }

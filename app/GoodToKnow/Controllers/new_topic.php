@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class NewTopic
+class new_topic
 {
     function page()
     {

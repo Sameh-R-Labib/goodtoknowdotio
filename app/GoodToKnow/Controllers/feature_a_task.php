@@ -2,14 +2,14 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Task;
+use GoodToKnow\Models\task;
 
 class feature_a_task
 {
     function page()
     {
         /**
-         * Present the Task(s/plural) as radio buttons.
+         * Present the task(s/plural) as radio buttons.
          */
 
 
@@ -22,11 +22,11 @@ class feature_a_task
         get_db();
 
 
-        // Get an array of Task objects for this user.
+        // Get an array of task objects for this user.
 
         $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
 
-        $g->array = Task::find_by_sql($sql);
+        $g->array = task::find_by_sql($sql);
 
         if (!$g->array || !empty($g->message)) {
 

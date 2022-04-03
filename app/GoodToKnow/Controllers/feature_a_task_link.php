@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Task;
+use GoodToKnow\Models\task;
 use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 
 class feature_a_task_link
@@ -34,7 +34,7 @@ class feature_a_task_link
 
         $_SESSION['saved_int01'] = $id;
 
-        $g->object = Task::find_by_id($id);
+        $g->object = task::find_by_id($id);
 
         if (!$g->object) {
 

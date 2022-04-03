@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\Topic;
+use GoodToKnow\Models\topic;
 
 class balance_out_the_sequence_numbers_save
 {
@@ -13,7 +13,7 @@ class balance_out_the_sequence_numbers_save
          * The purpose of this route is to:
          *      A) update the topic table if we're in a community
          *      OR
-         *      B) update the post table if we're in a Topic.
+         *      B) update the post table if we're in a topic.
          * We are to update using the records found in the array $_SESSION['saved_arr01'].
          * STEPS:
          *  1) Update the database using the array we have.
