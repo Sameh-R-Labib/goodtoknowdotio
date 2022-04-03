@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\order_them_from_most_recent_to_oldest;
 
 
-class MessageToUser extends GoodObject
+class MessageToUser extends good_object
 {
     /**
      * @var string
@@ -59,7 +59,7 @@ class MessageToUser extends GoodObject
             }
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $g->message .= ' good_object count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
 
             return false;
 

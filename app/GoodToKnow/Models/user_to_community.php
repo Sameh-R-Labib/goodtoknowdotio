@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class user_to_community extends GoodObject
+class user_to_community extends good_object
 {
     /**
      * @var string

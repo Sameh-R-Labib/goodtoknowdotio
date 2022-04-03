@@ -70,7 +70,7 @@ class admin_create_user
 
         $hash_of_submitted_password = password_hash($submitted_password, PASSWORD_DEFAULT);
 
-        // See steps in GoodObject for storing a new object.
+        // See steps in good_object for storing a new object.
 
 
         // First step:

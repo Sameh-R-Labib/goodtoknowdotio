@@ -24,7 +24,7 @@ namespace GoodToKnow\Models;
 use Exception;
 
 
-abstract class GoodObject
+abstract class good_object
 {
 // ATTRIBUTES (all are dummies/abstract)
 
@@ -126,9 +126,9 @@ abstract class GoodObject
      * saved / created to the database then Do NOT assign a value for 'id'.
      *
      * @param array $array
-     * @return GoodObject
+     * @return good_object
      */
-    public static function array_to_object(array $array): GoodObject
+    public static function array_to_object(array $array): good_object
     {
         $object_in_memory = new static();
 
@@ -184,7 +184,7 @@ abstract class GoodObject
 
         if ($this->id) {
 
-            $g->message .= ' GoodObject create() method says: Whichever code is calling create() is trying
+            $g->message .= ' good_object create() method says: Whichever code is calling create() is trying
             to insert a new table row using an object which already exists in the table. We know this
             because that object already has an id. ';
 
@@ -232,7 +232,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -248,7 +248,7 @@ abstract class GoodObject
 
         } else {
 
-            $g->message .= ' The GoodObject create() method failed to insert a row. ';
+            $g->message .= ' The good_object create() method failed to insert a row. ';
 
             return false;
 
@@ -329,7 +329,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -341,7 +341,7 @@ abstract class GoodObject
 
         } else {
 
-            $g->message .= ' GoodObject insert_multiple_objects() failed to insert any rows. ';
+            $g->message .= ' good_object insert_multiple_objects() failed to insert any rows. ';
 
             return false;
 
@@ -458,7 +458,7 @@ abstract class GoodObject
             }
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
+            $g->message .= ' good_object count_all() caught a thrown exception: ' . $e->getMessage() . ' ';
 
             return false;
 
@@ -491,7 +491,7 @@ abstract class GoodObject
 
 
     /**
-     * Gives me a GoodObject for the id specified.
+     * Gives me a good_object for the id specified.
      *
      * @param $id
      * @return bool|mixed
@@ -532,14 +532,14 @@ abstract class GoodObject
 
             if (!empty(trim($query_error))) {
 
-                $g->message .= ' GoodObject find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' good_object find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -578,7 +578,7 @@ abstract class GoodObject
 
         if ($this->id < 1 || !is_numeric($this->id)) {
 
-            $g->message .= 'GoodObject update() says: Whichever code is calling this method is trying
+            $g->message .= 'good_object update() says: Whichever code is calling this method is trying
             to update a table row using an object which has a negative or non-numeric id. ';
 
             return false;
@@ -635,7 +635,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -651,7 +651,7 @@ abstract class GoodObject
 
         } else {
 
-            $g->message .= " GoodObject update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
+            $g->message .= " good_object update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
 
             return false;
 
@@ -691,7 +691,7 @@ abstract class GoodObject
 
         } catch (Exception $e) {
 
-            $g->message .= ' GoodObject delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -701,7 +701,7 @@ abstract class GoodObject
 
         } else {
 
-            $g->message .= ' GoodObject delete() FAILED to delete a row. ';
+            $g->message .= ' good_object delete() FAILED to delete a row. ';
 
             return false;
 

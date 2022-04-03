@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class TaxableIncomeEvent extends GoodObject
+class TaxableIncomeEvent extends good_object
 {
     /**
      * @var string

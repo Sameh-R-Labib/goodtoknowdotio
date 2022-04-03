@@ -17,7 +17,7 @@ class member_mem_ed_form_proc
          *  4) Get a copy of the User object for the member.
          *  5) Makes sure the comment is escaped for suitability
          *     to being included in an sql statement. This may be
-         *     taken care of automatically by the GoodObject class
+         *     taken care of automatically by the good_object class
          *     function I'll be using but make sure.
          *  6) Replace the User's current comment with the new one.
          *  7) Update the database with this User object.
@@ -59,7 +59,7 @@ class member_mem_ed_form_proc
 
         /**
          * 5) Makes sure the comment is escaped for suitability to being included in an sql statement. This may be
-         *    taken care of automatically by the GoodObject class function I'll be using but make sure.
+         *    taken care of automatically by the good_object class function I'll be using but make sure.
          *
          * Yes this is t.c.o. automatically. So, don't worry about it!
          */

@@ -4,7 +4,7 @@ namespace GoodToKnow\Models;
 
 use function GoodToKnow\ControllerHelpers\order_by_sequence_number;
 
-class TopicToPost extends GoodObject
+class TopicToPost extends good_object
 {
     /**
      * @var string

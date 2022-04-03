@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class Topic extends GoodObject
+class Topic extends good_object
 {
     /**
      * @var string

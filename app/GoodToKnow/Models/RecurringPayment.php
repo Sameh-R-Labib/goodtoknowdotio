@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class RecurringPayment extends GoodObject
+class RecurringPayment extends good_object
 {
     /**
      * @var string

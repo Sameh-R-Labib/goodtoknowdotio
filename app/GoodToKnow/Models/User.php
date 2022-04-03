@@ -4,7 +4,7 @@ namespace GoodToKnow\Models;
 
 use stdClass;
 
-class User extends GoodObject
+class User extends good_object
 {
     /**
      * @var string

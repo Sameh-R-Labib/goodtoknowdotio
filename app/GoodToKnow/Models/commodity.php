@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Models;
 
-class commodity extends GoodObject
+class commodity extends good_object
 {
     /**
      * @var string
