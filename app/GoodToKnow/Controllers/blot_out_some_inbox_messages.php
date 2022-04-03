@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\message_to_user;
 
 class blot_out_some_inbox_messages
 {
@@ -22,7 +22,7 @@ class blot_out_some_inbox_messages
 
         $g->db = get_db();
 
-        $g->inbox_messages_array = MessageToUser::get_array_of_message_objects_for_a_user($g->user_id);
+        $g->inbox_messages_array = message_to_user::get_array_of_message_objects_for_a_user($g->user_id);
 
         if ($g->inbox_messages_array === false) {
 
@@ -35,7 +35,7 @@ class blot_out_some_inbox_messages
          * Replace (in each Message) the user_id and created with a username and a datetime.
          */
 
-        $return = MessageToUser::replace_attributes($g->inbox_messages_array);
+        $return = message_to_user::replace_attributes($g->inbox_messages_array);
 
         if ($return === false) {
 

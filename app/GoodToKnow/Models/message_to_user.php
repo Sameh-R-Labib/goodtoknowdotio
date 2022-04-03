@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\order_them_from_most_recent_to_oldest;
 
 
-class MessageToUser extends good_object
+class message_to_user extends good_object
 {
     /**
      * @var string
@@ -114,7 +114,7 @@ class MessageToUser extends good_object
             }
         } catch (Exception $e) {
 
-            $g->message .= ' MessageToUser delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' message_to_user delete_all_having_particular_message_id() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -157,7 +157,7 @@ class MessageToUser extends good_object
             }
         } catch (Exception $e) {
 
-            $g->message .= ' MessageToUser delete_all_particular() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' message_to_user delete_all_particular() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -181,9 +181,9 @@ class MessageToUser extends good_object
 
         global $g;
 
-        // get (in array) all the MessageToUser objects with a particular $user_id.
+        // get (in array) all the message_to_user objects with a particular $user_id.
 
-        $array_of_MessageToUser = [];
+        $array_of_message_to_user = [];
 
         $count = 0;
 
@@ -219,9 +219,9 @@ class MessageToUser extends good_object
                     return false;
 
                 } else {
-                    while ($x = $result->fetch_object('\GoodToKnow\Models\MessageToUser')) {
+                    while ($x = $result->fetch_object('\GoodToKnow\Models\message_to_user')) {
 
-                        $array_of_MessageToUser[] = $x;
+                        $array_of_message_to_user[] = $x;
 
                         $count += 1;
 
@@ -234,7 +234,7 @@ class MessageToUser extends good_object
             }
         } catch (Exception $e) {
 
-            $g->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
+            $g->message .= ' message_to_user::get_array_of_message_objects_for_a_user() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
@@ -242,7 +242,7 @@ class MessageToUser extends good_object
 
         if ($count < 1) {
 
-            $g->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 87. ';
+            $g->message .= ' message_to_user::get_array_of_message_objects_for_a_user() says: Errno 87. ';
 
             return false;
 
@@ -250,13 +250,13 @@ class MessageToUser extends good_object
 
 
         /**
-         * Now we have all the MessageToUser objects for the user.
+         * Now we have all the message_to_user objects for the user.
          * But what we want is the Message objects for the user.
          */
 
         $array_of_Messages = [];
 
-        foreach ($array_of_MessageToUser as $item) {
+        foreach ($array_of_message_to_user as $item) {
 
             $array_of_Messages[] = Message::find_by_id($item->message_id);
 
@@ -264,7 +264,7 @@ class MessageToUser extends good_object
 
         if (empty($array_of_Messages)) {
 
-            $g->message .= ' MessageToUser::get_array_of_message_objects_for_a_user() says: Errno 88. ';
+            $g->message .= ' message_to_user::get_array_of_message_objects_for_a_user() says: Errno 88. ';
 
             return false;
 
@@ -302,7 +302,7 @@ class MessageToUser extends good_object
 
             if ($message_object->user_id === false) {
 
-                $g->message .= " MessageToUser::replace_attributes says: get_username failed. ";
+                $g->message .= " message_to_user::replace_attributes says: get_username failed. ";
 
                 return false;
 

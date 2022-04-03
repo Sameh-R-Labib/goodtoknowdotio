@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\message_to_user;
 
 class write_to_admin_processor
 {
@@ -54,7 +54,7 @@ class write_to_admin_processor
          * Call array_to_object($array) to create the object in memory.
          */
 
-        $message_to_user_object = MessageToUser::array_to_object($message_to_user_array);
+        $message_to_user_object = message_to_user::array_to_object($message_to_user_array);
 
 
         /**

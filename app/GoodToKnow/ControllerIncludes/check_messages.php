@@ -1,6 +1,6 @@
 <?php
 
-use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\message_to_user;
 
 
 global $g;
@@ -10,7 +10,7 @@ if ($g->when_last_checked_messages === null) {
 
     db_connect_if_not_connected();
 
-    $quantity = MessageToUser::user_message_quantity($g->user_id);
+    $quantity = message_to_user::user_message_quantity($g->user_id);
 
     if ($quantity === false) {
 
@@ -35,7 +35,7 @@ if ($g->when_last_checked_messages === null) {
 
         db_connect_if_not_connected();
 
-        $quantity = MessageToUser::user_message_quantity($g->user_id);
+        $quantity = message_to_user::user_message_quantity($g->user_id);
 
         if ($quantity === false) {
 

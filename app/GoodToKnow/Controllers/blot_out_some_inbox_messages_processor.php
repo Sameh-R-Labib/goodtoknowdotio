@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\message_to_user;
 use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
 
 
@@ -50,9 +50,9 @@ class blot_out_some_inbox_messages_processor
 
         foreach ($submitted_message_ids_array as $id) {
 
-            // Only delete the MessageToUser record. Do Not delete the Message record since it may be needed by another user.
+            // Only delete the message_to_user record. Do Not delete the Message record since it may be needed by another user.
 
-            $return = MessageToUser::delete_all_particular($id, $g->user_id);
+            $return = message_to_user::delete_all_particular($id, $g->user_id);
 
             if ($return === false) {
 

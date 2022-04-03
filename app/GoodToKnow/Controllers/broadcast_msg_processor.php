@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\MessageToUser;
+use GoodToKnow\Models\message_to_user;
 use GoodToKnow\Models\User;
 
 class broadcast_msg_processor
@@ -35,7 +35,7 @@ class broadcast_msg_processor
 
 
         /**
-         * Create an array of MessageToUser objects
+         * Create an array of message_to_user objects
          * One for each user in the system.
          */
 
@@ -49,8 +49,8 @@ class broadcast_msg_processor
 
 
         /**
-         * Iterate over the array of user objects to build the array of MessageToUser objects.
-         * Each MessageToUser object will hold a user id and the id of the message we created above.
+         * Iterate over the array of user objects to build the array of message_to_user objects.
+         * Each message_to_user object will hold a user id and the id of the message we created above.
          *
          * The id of the message crated above is found in $g->message_object->id.
          */
@@ -61,20 +61,20 @@ class broadcast_msg_processor
 
             $messagetouser_object_as_array = ['message_id' => $g->message_object->id, 'user_id' => $user_object->id];
 
-            $array_of_messagetouser_objects[] = MessageToUser::array_to_object($messagetouser_object_as_array);
+            $array_of_messagetouser_objects[] = message_to_user::array_to_object($messagetouser_object_as_array);
 
         }
 
 
         /**
-         * Save all these MessageToUser objects in the database.
+         * Save all these message_to_user objects in the database.
          */
 
-        $result = MessageToUser::insert_multiple_objects($array_of_messagetouser_objects);
+        $result = message_to_user::insert_multiple_objects($array_of_messagetouser_objects);
 
         if (!$result) {
 
-            breakout(' In broadcast_msg_processor encountered unexpected the fact that MessageToUser::insert_multiple_objects
+            breakout(' In broadcast_msg_processor encountered unexpected the fact that message_to_user::insert_multiple_objects
              was unable to save message_to_user records for the message and all users. ');
 
         }

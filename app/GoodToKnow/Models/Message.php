@@ -48,9 +48,9 @@ class Message extends good_object
 
         /**
          * Actually it will delete both the message records
-         * and their corresponding MessageToUser records.
+         * and their corresponding message_to_user records.
          *   1) Find all old messages.
-         *   2) Delete all MessageToUser records which correspond to found messages.
+         *   2) Delete all message_to_user records which correspond to found messages.
          *   3) Delete the old messages.
          *   4) Return true or false.
          */
@@ -91,12 +91,12 @@ class Message extends good_object
 
 
         /**
-         * 2) Delete all MessageToUser records which correspond to found messages.
+         * 2) Delete all message_to_user records which correspond to found messages.
          */
 
         foreach ($array_of_found_messages as $found_message) {
 
-            $result = MessageToUser::delete_all_having_particular_message_id($found_message->id);
+            $result = message_to_user::delete_all_having_particular_message_id($found_message->id);
 
             if ($result === false) {
 
