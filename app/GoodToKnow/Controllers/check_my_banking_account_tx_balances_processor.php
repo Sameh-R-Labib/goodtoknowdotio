@@ -14,7 +14,7 @@ class check_my_banking_account_tx_balances_processor
          */
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         get_db();

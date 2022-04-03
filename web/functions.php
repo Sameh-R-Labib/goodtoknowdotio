@@ -13,6 +13,21 @@ function fix_michelf(string &$html)
 
 
 /**
+ * @return void
+ */
+function kick_out_loggedoutusers()
+{
+    global $g;
+
+    if (!$g->is_logged_in) {
+
+        breakout(' Your session has expired. ');
+
+    }
+}
+
+
+/**
  * Overall perspective:
  *  -- kick_out_loggedoutusers_or_if_there_is_error_msg is NOT used on the home page. However, it is used on most of the other pages.
  *  -- If there is no session file then $g->is_logged_in will be null (and thus breakout will happen.)
@@ -27,7 +42,7 @@ function kick_out_loggedoutusers_or_if_there_is_error_msg()
 
     if (!$g->is_logged_in || !empty($g->message)) {
 
-        breakout(' Log back in because your session has expired. ');
+        breakout(' Either your session expired or an error message was generated. ');
 
     }
 }
@@ -42,7 +57,7 @@ function kick_out_nonadmins_or_if_there_is_error_msg()
 
     if (!$g->is_logged_in || !$g->is_admin || !empty($g->message)) {
 
-        breakout(' You are not authorized. ');
+        breakout(' Either you are not authorized, your session expired or an error message was generated. ');
 
     }
 }

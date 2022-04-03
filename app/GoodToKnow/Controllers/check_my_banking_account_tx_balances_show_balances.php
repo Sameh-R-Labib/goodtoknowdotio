@@ -40,7 +40,7 @@ class check_my_banking_account_tx_balances_show_balances
         // $g->saved_int01 id of banking_acct_for_balances record
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusers();
 
 
         $g->db = get_db();
