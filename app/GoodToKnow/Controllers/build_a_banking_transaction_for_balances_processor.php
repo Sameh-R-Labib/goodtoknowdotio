@@ -140,6 +140,13 @@ class build_a_banking_transaction_for_balances_processor
 
 
         /**
+         * Add confirmation to message.
+         */
+
+        $g->message .= " Your transaction was saved. ";
+
+
+        /**
          * We want to reassure the user that the transaction has been saved.
          * So, we are going to hook into the "See Transactions" feature.
          */
