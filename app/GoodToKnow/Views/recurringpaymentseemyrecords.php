@@ -11,7 +11,7 @@
             <?php foreach ($g->array_of_recurring_payment_objects as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
                 <p>🕒: <?= $object->time ?> — <b><?= $object->currency ?><?= $object->amount_paid ?></b>
-                    <?= $object->comment ?></p>
+                    — <?= $object->comment ?></p>
                 <?php if ($key != $last): ?>
                     <hr>
                 <?php endif; ?>
