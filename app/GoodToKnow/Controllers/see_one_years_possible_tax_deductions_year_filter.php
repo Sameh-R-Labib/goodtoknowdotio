@@ -18,7 +18,7 @@ class see_one_years_possible_tax_deductions_year_filter
          * Debug Code
          */
         echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$: </p>\n<pre>";
+        echo "<pre>";
         echo $g->message;
         echo "</pre>\n";
         die("<p>End debug</p>\n");
