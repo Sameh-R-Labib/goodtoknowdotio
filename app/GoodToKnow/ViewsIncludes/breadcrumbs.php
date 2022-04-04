@@ -58,7 +58,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/c_p_commodities/page\">Commodity</a>";
         break;
     case 'c_p_tax_deductions':
-        echo "<a href=\"/ax1/c_p_tax_deductions/page\">Possible Tax Deductions</a>";
+        echo "<a href=\"/ax1/c_p_tax_deductions/page\">Possible Tax Deduction</a>";
         break;
     case 'c_p_to_do_list':
         echo "<a href=\"/ax1/c_p_to_do_list/page\">Task</a>";
