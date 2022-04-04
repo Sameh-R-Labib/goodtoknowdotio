@@ -63,6 +63,6 @@ class annul_a_banking_acct_for_balances_delete
 
         // Report successful deletion of post.
 
-        breakout(' I deleted the 🏦ing 📒 for ⚖️s. ');
+        breakout(' I deleted the banking account. ');
     }
 }
