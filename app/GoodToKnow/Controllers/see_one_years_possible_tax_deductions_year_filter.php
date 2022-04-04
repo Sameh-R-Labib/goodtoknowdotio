@@ -14,15 +14,6 @@ class see_one_years_possible_tax_deductions_year_filter
 
         global $g;
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<pre>";
-        echo $g->message;
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
 
         kick_out_loggedoutusers();
 
