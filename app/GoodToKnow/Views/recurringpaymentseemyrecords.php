@@ -4,7 +4,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <h1>Last Payment for a RP</h1>
+        <h1>Last Payment You Made Towards a Recurring Payment</h1>
         <hr>
         <?php if (!empty($g->array_of_recurring_payment_objects)): ?>
             <?php $last = count($g->array_of_recurring_payment_objects) - 1; ?>
