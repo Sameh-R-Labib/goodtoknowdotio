@@ -64,7 +64,7 @@ class conceive_a_possible_tax_deduction_processor
          * Wrap it up.
          */
 
-        $g->message .= ' Your new tax write-off has just been created 👍🏽 ';
+        $g->message .= ' Your new possible tax deduction was created 👍🏽 ';
 
         reset_feature_session_vars();
 
