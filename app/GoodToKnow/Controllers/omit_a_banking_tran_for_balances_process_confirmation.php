@@ -61,6 +61,6 @@ class omit_a_banking_tran_for_balances_process_confirmation
 
         // Report successful deletion of post.
 
-        breakout(' Your bank transaction has just been deleted. ');
+        breakout(' Your bank transaction got deleted. ');
     }
 }
