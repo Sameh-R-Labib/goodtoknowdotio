@@ -724,7 +724,7 @@ h2 + p {
 #inboxlink {
     opacity: 1;
     /* opacity: 0.65; */
-    background-color: #bababa;
+    background-color: rgba(230, 240, 225, 1);
     width: 235px;
     height: 57px;
     margin: auto;
