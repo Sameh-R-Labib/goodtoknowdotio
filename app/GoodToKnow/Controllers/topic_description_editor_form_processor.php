@@ -69,7 +69,7 @@ class topic_description_editor_form_processor
          * Report success.
          */
 
-        breakout(" I have updated $g->saved_str01's record. ");
+        breakout(" I have updated <b>$g->saved_str01</b>'s record. ");
 
     }
 

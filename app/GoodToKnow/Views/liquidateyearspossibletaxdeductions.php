@@ -6,14 +6,14 @@
             2018, 2017 or 2016 because that is what our users' are promised.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
-    <p>Which year_paid's records do you want to delete?</p>
-    <section>
-        <p>
-            <label for="year_paid">Year these expenditure were paid: </label>
-            <input id="year_paid" name="year_paid" type="text" value="" required minlength="4" maxlength="6"
-                   size="6" placeholder="2018">
-        </p>
-    </section>
-    <?php require SUBMITABORT; ?>
+        <p>Which year_paid's records do you want to delete?</p>
+        <section>
+            <p>
+                <label for="year_paid">Year this was paid: </label>
+                <input id="year_paid" name="year_paid" type="text" value="" required minlength="4" maxlength="6"
+                       size="6" placeholder="2018">
+            </p>
+        </section>
+        <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

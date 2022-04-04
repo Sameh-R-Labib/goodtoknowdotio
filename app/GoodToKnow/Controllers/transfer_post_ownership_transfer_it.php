@@ -73,6 +73,6 @@ class transfer_post_ownership_transfer_it
 
         // Report success.
 
-        breakout(" I've updated \"{$g->post_object->title}\" post's record to belong to <b>{$username}</b>. ");
+        breakout(" I've updated <b>\"{$g->post_object->title}\"</b> post's record to belong to <b>{$username}</b>. ");
     }
 }
