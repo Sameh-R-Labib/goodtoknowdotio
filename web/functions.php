@@ -215,7 +215,7 @@ function get_db()
 
     $g->db = db_connect();
 
-    if (!empty($g->message) || $g->db === false) {
+    if ($g->db === false) {
 
         breakout(' I was unable to connect to the database. ');
 
