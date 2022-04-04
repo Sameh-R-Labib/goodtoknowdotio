@@ -6,15 +6,15 @@
         promised. ❌ No warning will be given or safety measure will be applied if you supply the wrong year.</span>
         </p>
         <p></p>
-        <p>Which year_received's records do you want to delete?</p>
         <?php require SESSIONMESSAGE; ?>
-    <section>
-        <p>
-            <label for="year_received">Year these incomes ware received: </label>
-            <input id="year_received" name="year_received" type="text" value="" required minlength="4" maxlength="6"
-                   size="6" placeholder="2018">
-        </p>
-    </section>
-    <?php require SUBMITABORT; ?>
+        <p>Which year_received's records do you want to delete?</p>
+        <section>
+            <p>
+                <label for="year_received">Year these incomes ware received: </label>
+                <input id="year_received" name="year_received" type="text" value="" required minlength="4" maxlength="6"
+                       size="6" placeholder="2018">
+            </p>
+        </section>
+        <?php require SUBMITABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

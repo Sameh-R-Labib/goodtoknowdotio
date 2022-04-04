@@ -4,8 +4,8 @@
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">Here the <em>tax year</em> is defined as the year you sold the commodity.</span>
         </p>
-        <p>Which <em>tax year</em>?</p>
         <?php require SESSIONMESSAGE; ?>
+        <p>Which <em>tax year</em>?</p>
         <section>
             <p>
                 <label for="tax_year">Tax Year: </label>

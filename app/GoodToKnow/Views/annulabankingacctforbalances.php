@@ -2,8 +2,8 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/annul_a_banking_acct_for_balances_processor/page" method="post">
         <h1>Delete a Bank Account for Ledger</h1>
-        <p>Which Bank Account for Balances?</p>
         <?php require SESSIONMESSAGE; ?>
+        <p>Which Bank Account for Balances?</p>
         <section>
             <?php foreach ($g->array_of_objects as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

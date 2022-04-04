@@ -2,8 +2,8 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/check_my_banking_account_tx_balances_processor/page" method="post">
         <h1>See Transactions</h1>
-        <p>Which one?</p>
         <?php require SESSIONMESSAGE; ?>
+        <p>Which one?</p>
         <section>
             <?php foreach ($g->array_of_objects as $key => $object): ?>
                 <label for="c<?= $key ?>" class="radio">

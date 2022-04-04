@@ -7,8 +7,8 @@
                 measure will be applied if you supply the wrong year.</span>
         </p>
         <p></p>
-        <p>Which year's records do you want to delete?</p>
         <?php require SESSIONMESSAGE; ?>
+        <p>Which year's records do you want to delete?</p>
         <section>
             <p>
                 <label for="tax_year">Year: </label>

@@ -5,8 +5,8 @@
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">These are the topics in your current community.</span>
         </p>
-        <p>From which topic?</p>
         <?php require SESSIONMESSAGE; ?>
+        <p>From which topic?</p>
         <section>
             <?php foreach ($g->special_topic_array as $key => $value): ?>
                 <label for="choice-<?= $key ?>" class="radio">
