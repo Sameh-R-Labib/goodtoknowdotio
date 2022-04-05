@@ -21,7 +21,7 @@ class c_p_taxable_income
         $g->html_title = 'Taxable Income Event';
 
 
-        $g->message .= ' Manage taxable income. ';
+        $g->message .= ' A feature for recording your taxable income events. ';
 
 
         require VIEWS . DIRSEP . 'cptaxableincome.php';
