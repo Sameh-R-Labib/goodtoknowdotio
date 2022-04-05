@@ -49,10 +49,10 @@ class gawk_at_all_taxable_income_events_year_filter
         }
 
 
-        $g->message .= " Here is one year of your taxable income event records. ";
+        $g->message .= " Here is one year of your taxable income events. ";
 
 
-        $g->html_title = "One year of your taxable income event records";
+        $g->html_title = "One year of your taxable income events";
 
 
         $g->page = 'gawk_at_all_taxable_income_events';
