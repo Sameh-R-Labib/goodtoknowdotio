@@ -12,7 +12,7 @@
                 <h2 class="topofpage"><?= $object->label ?></h2>
                 <p><em><?= $object->year_received ?> — <?= $object->time ?></em> —
                     <b><?= $object->currency ?>&nbsp;<?= $object->amount ?></b> —
-                    <?= $object->currency ?> price: <?= $object->fiat ?>&nbsp;<?= $object->price ?> —
+                    <?= $object->currency ?> price: <?= $object->fiat ?>&nbsp;<?= $object->price ?> .
                     <?= $object->comment ?>
                 </p>
                 <?php if ($key != $last): ?>
