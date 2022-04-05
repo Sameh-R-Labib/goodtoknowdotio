@@ -34,7 +34,7 @@ class see_one_years_possible_tax_deductions_year_filter
 
         }
 
-        $g->message .= " Here are $g->year_paid's possible tax deductions. ";
+        $g->message .= " Here are <b>$g->year_paid</b>'s possible tax deductions. ";
 
         $g->html_title = "$g->year_paid's possible tax deductions.";
 

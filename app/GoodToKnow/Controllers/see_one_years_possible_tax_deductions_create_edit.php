@@ -1,0 +1,54 @@
+<?php
+
+namespace GoodToKnow\Controllers;
+
+use GoodToKnow\Models\possible_tax_deduction;
+
+class see_one_years_possible_tax_deductions_create_edit
+{
+    function page()
+    {
+        global $g;
+
+
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
+        $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $g->db->real_escape_string($g->saved_int02);
+        $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);
+
+        $g->array = possible_tax_deduction::find_by_sql($sql);
+
+        if (!$g->array) {
+
+            breakout(" For <b>$g->saved_int02</b> I could NOT find any Possible Tax Deductions. ");
+
+        }
+
+
+        /**
+         * Loop through the array and replace attributes with more readable ones.
+         */
+
+        foreach ($g->array as $item) {
+
+            $item->comment = nl2br($item->comment, false);
+
+        }
+
+        $g->message .= " Here are <b>$g->saved_int02</b>'s possible tax deductions. ";
+
+        $g->html_title = "$g->saved_int02's possible tax deductions.";
+
+        $g->page = 'see_one_years_possible_tax_deductions';
+
+        $g->show_poof = true;
+
+        $g->year_paid = $g->saved_int02;
+
+        require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
+    }
+}
