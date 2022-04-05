@@ -10,9 +10,9 @@
             <?php $last = count($g->array) - 1; ?>
             <?php foreach ($g->array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
-                <p><em><?= $object->year_received ?> — <?= $object->time ?></em>
-                    <b><?= $object->currency ?>&nbsp;<?= $object->amount ?></b>
-                    Value of unit: <?= $object->fiat ?>&nbsp;<?= $object->price ?>
+                <p><em><?= $object->year_received ?> — <?= $object->time ?></em> —
+                    <b><?= $object->currency ?>&nbsp;<?= $object->amount ?></b> —
+                    <?= $object->currency ?> price: <?= $object->fiat ?>&nbsp;<?= $object->price ?> —
                     <?= $object->comment ?>
                 </p>
                 <?php if ($key != $last): ?>
