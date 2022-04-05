@@ -62,6 +62,6 @@ class forget_a_task_delete
 
         // Report successful deletion of post.
 
-        breakout(' I deleted the task. ');
+        breakout(' I <b>deleted</b> the task. ');
     }
 }

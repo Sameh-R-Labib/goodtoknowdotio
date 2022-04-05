@@ -62,6 +62,6 @@ class delete_a_commodity_record_delete
 
         // Report successful deletion of post.
 
-        breakout(' I have deleted the commodity record. ');
+        breakout(' I\'ve <b>deleted</b> the commodity record. ');
     }
 }

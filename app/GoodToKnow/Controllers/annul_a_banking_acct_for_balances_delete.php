@@ -48,7 +48,7 @@ class annul_a_banking_acct_for_balances_delete
 
         if (!$g->object) {
 
-            breakout(' I was not able to find the record so I have aborted. ');
+            breakout(' I was not able to find the record so I aborted. ');
 
         }
 
@@ -63,6 +63,6 @@ class annul_a_banking_acct_for_balances_delete
 
         // Report successful deletion of post.
 
-        breakout(' I deleted the banking account. ');
+        breakout(' I <b>deleted</b> the banking account. ');
     }
 }

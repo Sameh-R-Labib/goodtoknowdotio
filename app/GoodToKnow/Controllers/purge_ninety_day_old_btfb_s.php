@@ -65,7 +65,7 @@ class purge_ninety_day_old_btfb_s
          * 4) Redirect to home page.
          */
 
-        breakout(" The purge of banking_transaction_for_balances older than 90 days has deleted <b>" . $num_affected_rows .
+        breakout(" The purge of banking_transaction_for_balances older than 90 days has <b>deleted " . $num_affected_rows .
             "</b> records. ");
     }
 }

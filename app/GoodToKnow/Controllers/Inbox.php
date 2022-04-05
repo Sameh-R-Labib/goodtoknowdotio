@@ -46,7 +46,7 @@ class inbox
         }
 
 
-        $g->message .= ' 90 day old messages will be deleted by admin. ';
+        $g->message .= ' 90 day old messages will be <b>deleted</b> by admin. ';
 
 
         require VIEWS . DIRSEP . 'inbox.php';

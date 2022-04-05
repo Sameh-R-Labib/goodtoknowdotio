@@ -61,6 +61,6 @@ class expunge_a_recurring_payment_record_delete
 
         // Report successful deletion of post.
 
-        breakout(' Your recurring payment has just been deleted. ');
+        breakout(' Your recurring payment has just been <b>deleted</b>. ');
     }
 }

@@ -68,6 +68,6 @@ class kommunity_description_editor_form_processor
          * Report success.
          */
 
-        breakout(" I have updated <b>$g->saved_str01</b>'s record. ");
+        breakout(" I updated <b>$g->saved_str01</b>'s record. ");
     }
 }

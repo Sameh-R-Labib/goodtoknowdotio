@@ -76,4 +76,4 @@ if (!$result) {
 
 // Report successful deletion of post.
 
-breakout(' I just deleted your post. ');
+breakout(' I just <b>deleted</b> your post. ');

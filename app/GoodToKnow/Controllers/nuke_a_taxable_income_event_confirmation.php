@@ -61,6 +61,6 @@ class nuke_a_taxable_income_event_confirmation
 
         // Report successful deletion of post.
 
-        breakout(' I have deleted the taxable income record. ');
+        breakout(' I <b>deleted</b> the Taxable Income Event. ');
     }
 }

@@ -61,6 +61,6 @@ class drop_a_commodity_sold_confirmation
 
         // Report successful deletion of post.
 
-        breakout(' Your commodity sold has just been deleted. ');
+        breakout(' Your commodity sold has just been <b>deleted</b>. ');
     }
 }
