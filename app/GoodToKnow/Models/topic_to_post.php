@@ -41,7 +41,7 @@ class topic_to_post extends good_object
         global $g;
 
         $sql = 'SELECT * FROM `topic_to_post`
-        WHERE `post_id` = "' . $g->db->real_escape_string($post_id) . '" LIMIT 1';
+        WHERE `post_id` = "' . $g->db->real_escape_string((string)$post_id) . '" LIMIT 1';
 
         $array_of_objects = topic_to_post::find_by_sql($sql);
 

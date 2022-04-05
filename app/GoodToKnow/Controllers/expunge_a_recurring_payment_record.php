@@ -27,7 +27,7 @@ class expunge_a_recurring_payment_record
          * Get an array of recurring_payment objects belonging to the current user.
          */
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
 
         $g->array_of_recurring_payment_objects = recurring_payment::find_by_sql($sql);
 

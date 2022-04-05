@@ -11,7 +11,7 @@ global $g;
  * belonging to the current user.
  */
 
-$sql = 'SELECT * FROM `commodity` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '" ORDER BY `time` ASC';
+$sql = 'SELECT * FROM `commodity` WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '" ORDER BY `time` ASC';
 
 $g->array_of_commodity_objects = commodity::find_by_sql($sql);
 

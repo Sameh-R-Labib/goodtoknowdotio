@@ -61,8 +61,8 @@ class remove_coms_choices_processor
 
             $sql = 'SELECT *
                     FROM `user_to_community`
-                    WHERE `user_id` = "' . $g->db->real_escape_string($g->saved_int01) .
-                '" AND `community_id` = "' . $g->db->real_escape_string($a_community_id) .
+                    WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->saved_int01) .
+                '" AND `community_id` = "' . $g->db->real_escape_string((string)$a_community_id) .
                 '" LIMIT 1';
 
             $array_with_one_element = user_to_community::find_by_sql($sql);

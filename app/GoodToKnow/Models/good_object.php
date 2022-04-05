@@ -501,7 +501,7 @@ abstract class good_object
         global $g;
 
         $result_array = static::find_by_sql("SELECT * FROM " . static::$table_name . "
-			WHERE `id`=" . $g->db->real_escape_string($id) . " LIMIT 1");
+			WHERE `id`=" . $g->db->real_escape_string((string)$id) . " LIMIT 1");
 
         return !empty($result_array) ? array_shift($result_array) : false;
     }
@@ -618,7 +618,7 @@ abstract class good_object
 
             $sql = "UPDATE " . static::$table_name . " SET ";
             $sql .= join(", ", $attribute_pairs);
-            $sql .= " WHERE `id`=" . $g->db->real_escape_string($this->id) . " LIMIT 1";
+            $sql .= " WHERE `id`=" . $g->db->real_escape_string((string)$this->id) . " LIMIT 1";
 
             $g->db->query($sql);
 
@@ -671,7 +671,7 @@ abstract class good_object
         $num_affected_rows = 0;
 
         $sql = "DELETE FROM " . static::$table_name . " ";
-        $sql .= "WHERE `id`=" . $g->db->real_escape_string($this->id);
+        $sql .= "WHERE `id`=" . $g->db->real_escape_string((string)$this->id);
         $sql .= " LIMIT 1";
 
         try {

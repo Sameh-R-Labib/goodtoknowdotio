@@ -31,6 +31,9 @@ class start_a_taxable_income_event_processor
 
         $g->tax_year = integer_form_field_prep('year_received', 1992, 965535);
 
+        // For viewing the records we need this
+        $_SESSION['saved_int02'] = $g->tax_year;
+
 
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
 
@@ -158,15 +161,13 @@ class start_a_taxable_income_event_processor
 
         $g->message .= ' A Taxable Income Event was created 👍🏿. ';
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the taxable income record has been saved.
          * So, we are going to hook into the "See a Year's Taxable Income Events" feature.
          */
 
-        redirect_to("/ax1/gawk_at_all_taxable_income_events/page");
+        redirect_to("/ax1/gawk_at_all_taxable_income_events_create_edit/page");
 
     }
 }

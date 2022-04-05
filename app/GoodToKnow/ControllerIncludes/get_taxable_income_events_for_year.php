@@ -21,7 +21,7 @@ $g->tax_year = integer_form_field_prep('year_received', 1992, 65535);
  */
 
 $sql = 'SELECT * FROM `taxable_income_event` WHERE `year_received` = ' . $g->db->real_escape_string((string)$g->tax_year);
-$sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);
+$sql .= ' AND `user_id` = ' . $g->db->real_escape_string((string)$g->user_id);
 
 $g->array = taxable_income_event::find_by_sql($sql);
 

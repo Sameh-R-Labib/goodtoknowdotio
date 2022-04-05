@@ -10,7 +10,7 @@ global $g;
  * Get an array of banking_acct_for_balances objects belonging to the current user.
  */
 
-$sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
+$sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
 
 $g->array_of_objects = banking_acct_for_balances::find_by_sql($sql);
 

@@ -41,7 +41,7 @@ class liquidate_years_possible_tax_deductions_get_year
 
         $sql = 'DELETE FROM `possible_tax_deduction` WHERE `year_paid` = ';
 
-        $sql .= $g->db->real_escape_string($year_paid);
+        $sql .= $g->db->real_escape_string((string)$year_paid);
 
         try {
 

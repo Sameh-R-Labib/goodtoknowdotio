@@ -27,8 +27,8 @@ if (!$result) {
 // Delete the topic_to_post record
 
 $sql = 'SELECT * FROM `topic_to_post`
-        WHERE `topic_id` = "' . $g->db->real_escape_string($g->saved_int01) . '" AND `post_id` = "' .
-    $g->db->real_escape_string($g->saved_int02) . '" LIMIT 1';
+        WHERE `topic_id` = "' . $g->db->real_escape_string((string)$g->saved_int01) . '" AND `post_id` = "' .
+    $g->db->real_escape_string((string)$g->saved_int02) . '" LIMIT 1';
 
 $array_of_objects = topic_to_post::find_by_sql($sql);
 

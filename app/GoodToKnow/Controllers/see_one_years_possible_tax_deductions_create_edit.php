@@ -17,8 +17,8 @@ class see_one_years_possible_tax_deductions_create_edit
         get_db();
 
 
-        $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $g->db->real_escape_string($g->saved_int02);
-        $sql .= ' AND `user_id` = ' . $g->db->real_escape_string($g->user_id);
+        $sql = 'SELECT * FROM `possible_tax_deduction` WHERE `year_paid` = ' . $g->db->real_escape_string((string)$g->saved_int02);
+        $sql .= ' AND `user_id` = ' . $g->db->real_escape_string((string)$g->user_id);
 
         $g->array = possible_tax_deduction::find_by_sql($sql);
 

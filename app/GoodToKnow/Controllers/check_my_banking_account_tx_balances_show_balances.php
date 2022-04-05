@@ -81,9 +81,9 @@ class check_my_banking_account_tx_balances_show_balances
          * be for the currently chosen banking_acct_for_balances.
          */
 
-        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $g->db->real_escape_string($g->user_id);
-        $sql .= ' AND `bank_id` = ' . $g->db->real_escape_string($g->account->id);
-        $sql .= ' AND `time` > ' . $g->db->real_escape_string($g->account->start_time);
+        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $g->db->real_escape_string((string)$g->user_id);
+        $sql .= ' AND `bank_id` = ' . $g->db->real_escape_string((string)$g->account->id);
+        $sql .= ' AND `time` > ' . $g->db->real_escape_string((string)$g->account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
         $g->array = banking_transaction_for_balances::find_by_sql($sql);

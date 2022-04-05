@@ -27,7 +27,7 @@ class recurring_payment_see_my_records
 
         get_db();
 
-        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
+        $sql = 'SELECT * FROM `recurring_payment` WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
 
         $g->array_of_recurring_payment_objects = recurring_payment::find_by_sql($sql);
 

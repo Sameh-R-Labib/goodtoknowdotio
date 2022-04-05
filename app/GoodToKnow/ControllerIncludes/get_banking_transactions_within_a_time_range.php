@@ -14,7 +14,7 @@ global $g;
  */
 
 $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string($g->user_id) . '"';
-$sql .= ' AND `time` BETWEEN "' . $g->db->real_escape_string($g->saved_int01) . '" AND "' . $g->db->real_escape_string($g->saved_int02) . '"';
+$sql .= ' AND `time` BETWEEN "' . $g->db->real_escape_string((string)$g->saved_int01) . '" AND "' . $g->db->real_escape_string((string)$g->saved_int02) . '"';
 $sql .= ' ORDER BY `time`';
 
 $g->array = banking_transaction_for_balances::find_by_sql($sql);

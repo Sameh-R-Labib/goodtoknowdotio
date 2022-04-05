@@ -41,7 +41,7 @@ class community_to_topic extends good_object
         global $g;
 
         $sql = 'SELECT * FROM `community_to_topic`
-        WHERE `topic_id` = "' . $g->db->real_escape_string($topic_id) . '" LIMIT 1';
+        WHERE `topic_id` = "' . $g->db->real_escape_string((string)$topic_id) . '" LIMIT 1';
 
         $array_of_objects = community_to_topic::find_by_sql($sql);
 

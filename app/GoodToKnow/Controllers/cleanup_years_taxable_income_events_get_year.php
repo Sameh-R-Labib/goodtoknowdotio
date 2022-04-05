@@ -40,7 +40,7 @@ class cleanup_years_taxable_income_events_get_year
         $num_affected_rows = 0;
 
         $sql = 'DELETE FROM `taxable_income_event` WHERE `year_received` = ';
-        $sql .= $g->db->real_escape_string($g->tax_year);
+        $sql .= $g->db->real_escape_string((string)$g->tax_year);
 
         try {
 

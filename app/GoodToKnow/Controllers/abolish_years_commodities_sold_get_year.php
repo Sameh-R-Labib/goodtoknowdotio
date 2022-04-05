@@ -38,7 +38,7 @@ class abolish_years_commodities_sold_get_year
         $num_affected_rows = 0;
 
         $sql = 'DELETE FROM `commodities_sold` WHERE `tax_year` = ';
-        $sql .= $g->db->real_escape_string($tax_year);
+        $sql .= $g->db->real_escape_string((string)$tax_year);
 
         try {
 
