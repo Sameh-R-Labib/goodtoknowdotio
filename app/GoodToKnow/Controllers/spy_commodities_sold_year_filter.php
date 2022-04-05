@@ -54,7 +54,7 @@ class spy_commodities_sold_year_filter
          * Prep the view.
          */
 
-        $g->message .= " Here is one year's commodities sold records. ";
+        $g->message .= " Here's one year of Commodity Sold. ";
 
         $g->html_title = "One year's commodities sold records";
 

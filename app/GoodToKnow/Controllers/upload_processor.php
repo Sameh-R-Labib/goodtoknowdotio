@@ -80,6 +80,8 @@ class upload_processor
          * Or kick ot if upload is NOT an image.
          */
 
+        $image_file_mime_type = '';
+
         if ($check !== false) {
 
             $image_file_mime_type = $check["mime"];
@@ -149,7 +151,7 @@ class upload_processor
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
             $g->message .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
-            file. Here is the link: " . $a_link_entire_embed . ". ";
+            file. Here's the link: " . $a_link_entire_embed . ". ";
 
         } else {
 
