@@ -40,6 +40,9 @@ class alter_a_possible_tax_deduction_update
 
         $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
+        // For viewing the records we need this
+        $_SESSION['saved_int02'] = $edited_year_paid;
+
         $edited_comment = standard_form_field_prep('comment', 0, 1800);
 
 
@@ -87,15 +90,13 @@ class alter_a_possible_tax_deduction_update
 
         $g->message .= " I've updated <b>{$g->object->label}</b>. ";
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the tax deduction record has been updated.
          * So, we are going to hook into the "1 Year's Possible Tax Deductions" feature.
          */
 
-        redirect_to("/ax1/see_one_years_possible_tax_deductions/page");
+        redirect_to("/ax1/see_one_years_possible_tax_deductions_create_edit/page");
 
     }
 }

@@ -39,8 +39,6 @@ class see_one_years_possible_tax_deductions_create_edit
 
         }
 
-        $g->message .= " Here are <b>$g->saved_int02</b>'s possible tax deductions. ";
-
         $g->html_title = "$g->saved_int02's possible tax deductions.";
 
         $g->page = 'see_one_years_possible_tax_deductions';
@@ -49,6 +47,14 @@ class see_one_years_possible_tax_deductions_create_edit
 
         $g->year_paid = $g->saved_int02;
 
+
+        /**
+         * This is similar to doing a breakout but there is no redirect,
+         * and it does not present the home page itself.
+         */
+
+        $g->message .= " Here are <b>$g->saved_int02</b>'s possible tax deductions. ";
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }
 }
