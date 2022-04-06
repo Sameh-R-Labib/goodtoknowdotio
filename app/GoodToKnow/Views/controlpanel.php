@@ -13,6 +13,6 @@
             <a class="orangebtn" href="/ax1/c_p_commodities/page">Commodity</a>
             <a class="blackbtn" href="/ax1/c_p_capital_gains/page">Commodity Sold</a>
             <a class="greenbtn" href="/ax1/proclamation/page">Proclamation</a></p>
-    </div>
+    </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

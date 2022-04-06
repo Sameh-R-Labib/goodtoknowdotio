@@ -17,6 +17,6 @@
             <a class="clearbtn" href="/ax1/c_p_accounts/page">User Management</a>
             <a class="greenbtn" href="/ax1/c_p_purges/page">System Maintenance</a>
         </p>
-    </div>
+    </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

@@ -11,6 +11,6 @@
             where your session expired while you were using this app. Or, it is a serious mistake in the app's
             logic.</p>
         <p>If the former then just go back and log in. If its the later then please notify the admin.</p>
-    </div>
+    </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

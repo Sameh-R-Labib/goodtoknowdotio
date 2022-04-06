@@ -4,6 +4,6 @@
     <!-- maincontent -->
     <div id="maincontent">
         <?php require COLLAGE; ?>
-    </div>
+    </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
