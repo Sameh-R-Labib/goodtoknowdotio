@@ -23,9 +23,9 @@ function kick_out_loggedoutusers()
 {
     global $g;
 
-    if (!$g->is_logged_in) {
+    if (!$g->is_logged_in or $_SESSION['agree_to_tos'] !== 'agree') {
 
-        breakout(' Your session has expired. ');
+        breakout(' Either your session has expired or you didn\'t agree to the T.O.S. ');
 
     }
 }
@@ -44,7 +44,7 @@ function kick_out_loggedoutusers_or_if_there_is_error_msg()
 {
     global $g;
 
-    if (!$g->is_logged_in || !empty($g->message)) {
+    if (!$g->is_logged_in || !empty($g->message) || $_SESSION['agree_to_tos'] !== 'agree') {
 
         breakout(' Either your session expired or an error message was generated. ');
 
@@ -59,9 +59,9 @@ function kick_out_nonadmins_or_if_there_is_error_msg()
 {
     global $g;
 
-    if (!$g->is_logged_in || !$g->is_admin || !empty($g->message)) {
+    if (!$g->is_logged_in || !$g->is_admin || !empty($g->message) || $_SESSION['agree_to_tos'] !== 'agree') {
 
-        breakout(' Either you are not authorized, your session expired or an error message was generated. ');
+        breakout(' Either you\'re not authorized, your session expired, there\'s an error message, or you didn\'t agree to the T.O.S. ');
 
     }
 }

@@ -6,9 +6,6 @@ class login_script_processor
 {
     function page()
     {
-        kick_out_loggedoutusers();
-
-
         /**
          * Make sure that a form was submitted.
          */
@@ -21,6 +18,7 @@ class login_script_processor
 
         if ($_POST['choice'] === 'agree') {
 
+            $_SESSION['agree_to_tos'] = 'agree';
             breakout(' Welcome back! ');
 
         } else {
