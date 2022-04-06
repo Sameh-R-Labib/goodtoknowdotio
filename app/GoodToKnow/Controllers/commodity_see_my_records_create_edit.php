@@ -30,13 +30,13 @@ class commodity_see_my_records_create_edit
          * Establish values for $g->begin and $g->end based on the time
          * of purchase the user specified (which we stored in $g->saved_int02.)
          *
-         * The time range will be for months before and after the time of purchase.
-         * Four months is 10512000 seconds.
+         * The time range will be one month before and after the time of purchase.
+         * One month is 2628000 seconds.
          */
 
-        $g->begin = $g->saved_int02 - 10512000;
+        $g->begin = $g->saved_int02 - 2628000;
 
-        $g->end = $g->saved_int02 + 10512000;
+        $g->end = $g->saved_int02 + 2628000;
 
 
         /**
