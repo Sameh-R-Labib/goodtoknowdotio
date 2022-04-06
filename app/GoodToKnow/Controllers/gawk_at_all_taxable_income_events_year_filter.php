@@ -49,9 +49,6 @@ class gawk_at_all_taxable_income_events_year_filter
         }
 
 
-        $g->message .= " Here's one year of taxable income. ";
-
-
         $g->html_title = "One year of your taxable income events";
 
 
