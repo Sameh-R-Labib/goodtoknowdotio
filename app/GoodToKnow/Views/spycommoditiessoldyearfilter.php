@@ -18,15 +18,15 @@
                     <br>
                     <b>Amount of C Sold: </b><?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
                     <b>Label of C Record From Which C Was Sold: </b><?= $object->commodity_label ?><br>
-                    <b>Tax Year: </b><?= $object->tax_year ?></p>
-                <b>Net Profit: </b><?= $object->currency_transacted ?>
-                <?php if ($object->profit < 0): ?>
-                    🔥(
-                <?php endif; ?>
-                <?= $object->profit ?>
-                <?php if ($object->profit < 0): ?>
-                    )🔥
-                <?php endif; ?>
+                    <b>Tax Year: </b><?= $object->tax_year ?><br>
+                    <b>Net Profit: </b><?= $object->currency_transacted ?>
+                    <?php if ($object->profit < 0): ?>
+                        🔥(
+                    <?php endif; ?>
+                    <?= $object->profit ?>
+                    <?php if ($object->profit < 0): ?>
+                        )🔥
+                    <?php endif; ?>
                 </p>
                 <?php if ($key != $last): ?>
                     <hr>
