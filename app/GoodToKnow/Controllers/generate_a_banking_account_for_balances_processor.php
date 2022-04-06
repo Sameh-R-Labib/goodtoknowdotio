@@ -146,8 +146,6 @@ class generate_a_banking_account_for_balances_processor
 
         $g->message .= ' Your new bank account has just been created 👍🏽 ';
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the banking account has been saved.

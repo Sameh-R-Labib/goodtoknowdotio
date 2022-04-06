@@ -3,9 +3,8 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\make_commodity_readable;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
-class commodity_see_my_records
+class commodity_see_my_records_create_edit
 {
     function page()
     {
@@ -19,21 +18,25 @@ class commodity_see_my_records
 
 
         /**
-         * Get data from $_POST array.
+         * Establish a value for $commodity_symbol. $commodity_symbol is the
+         * symbol for the commodity associated with the commodity record which
+         * was created or edited.
          */
 
-        // Get $commodity_symbol
+        $commodity_symbol = $g->saved_str01;
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $commodity_symbol = standard_form_field_prep('commodity_symbol', 1, 15);
+        /**
+         * Establish values for $g->begin and $g->end based on the time
+         * of purchase the user specified (which we stored in $g->saved_int02.)
+         *
+         * The time range will be for months before and after the time of purchase.
+         * Four months is 10512000 seconds.
+         */
 
-        // + + + Get $g->begin and $g->end (which are timestamps) based on submitted:
-        // `timezone` `begin_date` `begin_hour` `begin_minute` `begin_second` `end_date` `end_hour` `end_minute` `end_second`
+        $g->begin = $g->saved_int02 - 10512000;
 
-        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_begin_and_end_epochs.php';
-
-        // + + +
+        $g->end = $g->saved_int02 + 10512000;
 
 
         /**

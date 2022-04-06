@@ -148,8 +148,6 @@ class make_a_recurring_payment_record_processor
 
         $g->message .= ' A recurring payment record was created 👍. ';
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the recurring payment has been saved.

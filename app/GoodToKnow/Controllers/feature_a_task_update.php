@@ -170,8 +170,6 @@ class feature_a_task_update
 
         $g->message .= " I've updated <b>$object->label</b>. ";
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the task has been edited.

@@ -76,6 +76,11 @@ class edit_a_commodity_record_submit
         // - - -
 
 
+        // For viewing the records we need these
+        $_SESSION['saved_int02'] = (int)$g->time;
+        $_SESSION['saved_str01'] = $commodity;
+
+
         // comment
 
         $comment = standard_form_field_prep('comment', 0, 1800);
@@ -193,15 +198,13 @@ class edit_a_commodity_record_submit
 
         $g->message .= " I've updated address <b>{$g->commodity_object->address}</b>'s record. ";
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the commodity record has been saved.
          * So, we are going to hook into the "See Commodities" feature.
          */
 
-        redirect_to("/ax1/commodity_see_my_records_specify/page");
+        redirect_to("/ax1/commodity_see_my_records_create_edit/page");
 
     }
 }

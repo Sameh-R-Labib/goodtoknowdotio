@@ -158,8 +158,6 @@ class populate_a_banking_account_for_balances_submit
 
         $g->message .= " I've updated the record for bank account <b>$object->acct_name</b>. ";
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the banking account has been saved.

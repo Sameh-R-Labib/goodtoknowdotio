@@ -139,8 +139,6 @@ class induce_a_task_create
 
         $g->message .= ' A <b>task</b> record was created 👍. ';
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the task has been saved.

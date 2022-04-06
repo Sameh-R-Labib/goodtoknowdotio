@@ -24,7 +24,7 @@ class edit_a_commodity_record
         get_db();
 
 
-        require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_records_of_the_user.php';
+        require CONTROLLERINCLUDES . DIRSEP . 'get_all_commodity_records_of_the_user.php';
 
 
         /**

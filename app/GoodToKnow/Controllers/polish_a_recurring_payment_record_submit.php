@@ -157,8 +157,6 @@ class polish_a_recurring_payment_record_submit
 
         $g->message .= " I've updated <b>$object->label</b>. ";
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the recurring payment has been updated.
