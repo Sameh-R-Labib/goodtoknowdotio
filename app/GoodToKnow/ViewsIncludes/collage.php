@@ -1,6 +1,9 @@
 <h1>Proclamation</h1>
 <h2>Terms of Service</h2>
-<p>"source code" can be found at
+<p>"this software" means the source code and its implementation.<br>
+    "Gtk.io" is a nickname for the codebase for this software.<br>
+    "goodtoknowdotio" is the name of the codebase for this software.<br>
+    "source code" can be found at
     <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio">https://github.com/Sameh-R-Labib/goodtoknowdotio</a><br>
     "you" means the user.<br>
     "the owner" means Sameh Ramzy Labib and his immediate family.</p>
