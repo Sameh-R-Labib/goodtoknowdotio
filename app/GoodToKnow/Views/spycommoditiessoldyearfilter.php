@@ -10,16 +10,16 @@
             <?php $last = count($g->array) - 1; ?>
             <?php foreach ($g->array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->commodity_type ?>&nbsp;Sold <?= $object->time_sold ?></h2>
-                <p><b>Time Sold: </b><?= $object->time_sold ?><br>
-                    <b>Time Bought: </b><?= $object->time_bought ?><br>
-                    <b>Price Per C Unit Bought: </b><?= $object->currency_transacted ?>
+                <p>Time Sold: <?= $object->time_sold ?><br>
+                    Time Bought: <?= $object->time_bought ?><br>
+                    Price Per C Unit Bought: <?= $object->currency_transacted ?>
                     &nbsp;<?= $object->price_bought ?><br>
-                    <b>Price Per C Unit Sold: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?>
+                    Price Per C Unit Sold: <?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?>
                     <br>
-                    <b>Amount of C Sold: </b><?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
-                    <b>Label of C Record From Which C Was Sold: </b><?= $object->commodity_label ?><br>
-                    <b>Tax Year: </b><?= $object->tax_year ?><br>
-                    <b>Net Profit: </b><?= $object->currency_transacted ?>
+                    Amount of C Sold: <?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
+                    Label of C Record From Which C Was Sold: <?= $object->commodity_label ?><br>
+                    Tax Year: <?= $object->tax_year ?><br>
+                    Net Profit: <?= $object->currency_transacted ?>
                     <?php if ($object->profit < 0): ?>
                         🔥(
                     <?php endif; ?>
