@@ -10,22 +10,23 @@
             <?php $last = count($g->array) - 1; ?>
             <?php foreach ($g->array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->commodity_type ?>&nbsp;Sold <?= $object->time_sold ?></h2>
-                <p><b>Time Sold: </b><?= $object->time_sold ?></p>
-                <p><b>Time Bought: </b><?= $object->time_bought ?></p>
-                <p><b>Price Per C Unit Bought: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->price_bought ?>
-                </p>
-                <p><b>Price Per C Unit Sold: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?></p>
-                <p><b>Amount of C Sold: </b><?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?></p>
-                <p><b>Label of C Record From Which C Was Sold: </b><?= $object->commodity_label ?></p>
-                <p><b>Tax Year: </b><?= $object->tax_year ?></p>
-                <p><b>Net Profit: </b><?= $object->currency_transacted ?>
-                    <?php if ($object->profit < 0): ?>
-                        🔥(
-                    <?php endif; ?>
-                    <?= $object->profit ?>
-                    <?php if ($object->profit < 0): ?>
-                        )🔥
-                    <?php endif; ?>
+                <p><b>Time Sold: </b><?= $object->time_sold ?><br>
+                    <b>Time Bought: </b><?= $object->time_bought ?><br>
+                    <b>Price Per C Unit Bought: </b><?= $object->currency_transacted ?>
+                    &nbsp;<?= $object->price_bought ?><br>
+                    <b>Price Per C Unit Sold: </b><?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?>
+                    <br>
+                    <b>Amount of C Sold: </b><?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
+                    <b>Label of C Record From Which C Was Sold: </b><?= $object->commodity_label ?><br>
+                    <b>Tax Year: </b><?= $object->tax_year ?></p>
+                <b>Net Profit: </b><?= $object->currency_transacted ?>
+                <?php if ($object->profit < 0): ?>
+                    🔥(
+                <?php endif; ?>
+                <?= $object->profit ?>
+                <?php if ($object->profit < 0): ?>
+                    )🔥
+                <?php endif; ?>
                 </p>
                 <?php if ($key != $last): ?>
                     <hr>
