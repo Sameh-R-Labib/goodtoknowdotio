@@ -8,6 +8,8 @@ class infinite_loop_prevent
     {
         global $g;
 
+        $_SESSION = [];
+        session_destroy();
 
         $g->html_title = 'For Infinite Loop Prevention';
 
