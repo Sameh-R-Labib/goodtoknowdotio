@@ -69,10 +69,10 @@ class edit_my_post_direct
          * the id of the post in the session.
          */
 
-        $_SESSION['saved_int02'] = $g->post_id;
+        $_SESSION['saved_int02'] = (int)$g->post_id;
 
         // Let's do the same for the topic
-        $_SESSION['saved_int01'] = $g->topic_id;
+        $_SESSION['saved_int01'] = (int)$g->topic_id;
 
 
         /**

@@ -39,7 +39,7 @@ class edit_post_title_direct
          * Store the post id in $_SESSION['saved_int02'].
          */
 
-        $_SESSION['saved_int02'] = $g->post_id;
+        $_SESSION['saved_int02'] = (int)$g->post_id;
 
 
         /**

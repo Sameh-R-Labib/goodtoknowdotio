@@ -183,7 +183,7 @@ class create_new_post_save
          * so the user can add content to the post.
          */
 
-        $_SESSION['saved_int02'] = $post->id;
+        $_SESSION['saved_int02'] = (int)$post->id;
 
         $g->html_title = 'Editor';
 

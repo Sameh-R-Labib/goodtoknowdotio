@@ -111,7 +111,7 @@ class new_topic_ip_processor
 
         }
 
-        $_SESSION['saved_int01'] = $sequence_number;
+        $_SESSION['saved_int01'] = (int)$sequence_number;
 
         redirect_to("/ax1/new_topic_name/page");
     }

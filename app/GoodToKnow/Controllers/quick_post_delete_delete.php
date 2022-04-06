@@ -29,7 +29,7 @@ class quick_post_delete_delete
 
         $_SESSION['saved_str02'] = $g->post_object->html_file;
 
-        $_SESSION['saved_int02'] = $g->chosen_post_id;
+        $_SESSION['saved_int02'] = (int)$g->chosen_post_id;
 
 
         // We need this in the view.

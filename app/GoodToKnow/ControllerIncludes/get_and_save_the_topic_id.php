@@ -18,4 +18,4 @@ if (!array_key_exists($g->chosen_topic_id, $g->special_topic_array)) {
 }
 
 
-$_SESSION['saved_int01'] = $g->chosen_topic_id;
+$_SESSION['saved_int01'] = (int)$g->chosen_topic_id;

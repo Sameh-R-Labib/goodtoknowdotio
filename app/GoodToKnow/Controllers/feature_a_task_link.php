@@ -32,7 +32,7 @@ class feature_a_task_link
         get_db();
 
 
-        $_SESSION['saved_int01'] = $id;
+        $_SESSION['saved_int01'] = (int)$id;
 
         $g->object = task::find_by_id($id);
 

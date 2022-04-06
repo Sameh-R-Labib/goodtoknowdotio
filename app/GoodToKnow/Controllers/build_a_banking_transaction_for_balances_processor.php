@@ -151,7 +151,7 @@ class build_a_banking_transaction_for_balances_processor
          * So, we are going to hook into the "See Transactions" feature.
          */
 
-        $_SESSION['saved_int01'] = $bank_id;
+        $_SESSION['saved_int01'] = (int)$bank_id;
 
         redirect_to("/ax1/check_my_banking_account_tx_balances_show_balances/page");
     }

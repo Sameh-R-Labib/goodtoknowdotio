@@ -34,7 +34,7 @@ class transfer_post_ownership_processor
          * Save it in the session
          */
 
-        $_SESSION['saved_int01'] = $g->chosen_topic_id;
+        $_SESSION['saved_int01'] = (int)$g->chosen_topic_id;
 
 
         redirect_to("/ax1/transfer_post_ownership_choose_post/page");

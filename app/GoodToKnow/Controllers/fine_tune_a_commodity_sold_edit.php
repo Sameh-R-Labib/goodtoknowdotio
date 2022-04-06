@@ -38,7 +38,7 @@ class fine_tune_a_commodity_sold_edit
 
         /**
          * This type of record has a field called `time_bought` and a field called `time_sold`. We are Not going to
-         * pre-populate form fields with them. Instead we derive the arrays called $g->time_bought and $g->time_sold
+         * pre-populate form fields with them. Instead, we derive the arrays called $g->time_bought and $g->time_sold
          * from them and use the derived arrays to pre-populate the corresponding fields in the form which we present below.
          */
 

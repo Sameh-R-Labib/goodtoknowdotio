@@ -29,7 +29,7 @@ class create_new_post_direct
         }
 
 
-        $_SESSION['saved_int01'] = $g->topic_id;
+        $_SESSION['saved_int01'] = (int)$g->topic_id;
 
 
         /**
