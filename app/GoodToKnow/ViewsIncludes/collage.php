@@ -1,4 +1,27 @@
 <h1>Proclamation</h1>
+<h2>Terms of Service</h2>
+<p>"you" means the user.<br>
+    "the owner" means Sameh Ramzy Labib and his immediate family.</p>
+<p>These are the rules and guidelines that users or visitors of this website must agree to in order to use this website
+    or app.</p>
+<ul>
+    <li>Do not steal the source code. See the license. This software is owned by Sameh Ramzy Labib and his immediate
+        family. Please see the License documents that come with the software,
+    </li>
+    <li>You agree to indemnify the software owners of any liability associated with your use of the software.
+        In other words you secure the owner against legal liability for their actions.
+    </li>
+    <li>Similar to the previous list item, you agree to indemnify anyone else who runs the codebase of this software
+        service.
+    </li>
+    <li>
+        You assume that the information you store in this software can be revealed to the public. Therefore,
+        do not use this website to store information which can have negative repercussions upon you.
+    </li>
+    <li>The administrator of this website reserves the right to remove you from this service without giving a reason.
+    </li>
+    <li>Any content you generate becomes the intellectual property of the person hosting this software.</li>
+</ul>
 <h2>Beliefs</h2>
 <p>We believe our world is too complicated and is too evil. Gtk.io is software which collates the pieces
     of information which we need to find when we need to find them. Hopefully, achieving the goal of organizing

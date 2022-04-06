@@ -32,7 +32,7 @@ class login_script
 
         self::store_application_state($user);
 
-        breakout(' Logout once a day so that your session will Not expire. ');
+        require VIEWS . DIRSEP . 'loginscript.php';
     }
 
     /**
