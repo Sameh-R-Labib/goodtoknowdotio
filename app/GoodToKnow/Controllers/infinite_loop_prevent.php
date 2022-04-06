@@ -8,6 +8,8 @@ class infinite_loop_prevent
     {
         global $g;
 
+        // Destroying the session is helpful when the developer makes
+        // changes to the code which trap a logged-in user.
         $_SESSION = [];
         session_destroy();
 
