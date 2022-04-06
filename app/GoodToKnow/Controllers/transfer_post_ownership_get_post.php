@@ -42,7 +42,7 @@ class transfer_post_ownership_get_post
 
         // (2) stores the post's id in the session
 
-        $_SESSION['saved_int02'] = (int)$g->chosen_post_id;
+        $_SESSION['saved_int02'] = $g->chosen_post_id;
 
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.

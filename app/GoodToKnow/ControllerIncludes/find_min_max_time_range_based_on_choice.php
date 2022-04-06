@@ -65,6 +65,6 @@ switch ($choice) {
  * 3) Store the min and max in session variables.
  */
 
-$_SESSION['saved_int01'] = (int)$min;
+$_SESSION['saved_int01'] = $min;
 
-$_SESSION['saved_int02'] = (int)$max;
+$_SESSION['saved_int02'] = $max;

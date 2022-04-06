@@ -49,7 +49,7 @@ class topic_description_editor_processor
          * 2) Save the topic id in the session.
          */
 
-        $_SESSION['saved_int01'] = (int)$g->chosen_topic_id;
+        $_SESSION['saved_int01'] = $g->chosen_topic_id;
 
 
         /**

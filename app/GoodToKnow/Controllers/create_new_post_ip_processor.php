@@ -111,7 +111,7 @@ class create_new_post_ip_processor
 
         }
 
-        $_SESSION['saved_int02'] = (int)$sequence_number;
+        $_SESSION['saved_int02'] = $sequence_number;
 
         redirect_to("/ax1/create_new_post_title/page");
     }

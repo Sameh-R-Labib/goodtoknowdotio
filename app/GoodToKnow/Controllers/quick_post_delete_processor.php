@@ -34,7 +34,7 @@ class quick_post_delete_processor
          * Save it in the session
          */
 
-        $_SESSION['saved_int01'] = (int)$g->chosen_topic_id;
+        $_SESSION['saved_int01'] = $g->chosen_topic_id;
 
 
         redirect_to("/ax1/quick_post_delete_choose_post/page");

@@ -29,7 +29,7 @@ class conceive_a_possible_tax_deduction_processor
         $year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
         // For viewing the records we need this
-        $_SESSION['saved_int02'] = (int)$year_paid;
+        $_SESSION['saved_int02'] = $year_paid;
 
         $comment = standard_form_field_prep('comment', 0, 1800);
 
@@ -67,7 +67,7 @@ class conceive_a_possible_tax_deduction_processor
          * Wrap it up.
          */
 
-        $g->message .= ' Your new possible tax deduction was created 👍🏽 ';
+        $g->message .= ' Your new Possible Tax Deduction was created 👍🏽 ';
 
 
         /**

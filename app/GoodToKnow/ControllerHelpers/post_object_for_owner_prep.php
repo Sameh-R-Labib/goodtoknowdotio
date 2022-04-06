@@ -39,7 +39,7 @@ function post_object_for_owner_prep(string $field_name): object
     }
 
 
-    $_SESSION['saved_int02'] = (int)$g->chosen_post_id;
+    $_SESSION['saved_int02'] = $g->chosen_post_id;
 
 
     return $g->post_object;

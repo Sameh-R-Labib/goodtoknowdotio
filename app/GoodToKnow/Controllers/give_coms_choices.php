@@ -47,7 +47,7 @@ class give_coms_choices
          * 2) Save the id in the session in saved_int01.
          */
 
-        $_SESSION['saved_int01'] = (int)$user_id;
+        $_SESSION['saved_int01'] = $user_id;
 
 
         /**

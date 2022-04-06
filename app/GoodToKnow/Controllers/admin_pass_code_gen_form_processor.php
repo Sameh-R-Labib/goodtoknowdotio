@@ -25,7 +25,7 @@ class admin_pass_code_gen_form_processor
 
         $community_id = any_community_ff_prep();
 
-        $_SESSION['saved_int01'] = (int)$community_id;
+        $_SESSION['saved_int01'] = $community_id;
 
 
         /**

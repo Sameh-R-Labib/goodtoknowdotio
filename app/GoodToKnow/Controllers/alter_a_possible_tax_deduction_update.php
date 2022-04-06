@@ -41,7 +41,7 @@ class alter_a_possible_tax_deduction_update
         $edited_year_paid = integer_form_field_prep('year_paid', 1992, 65535);
 
         // For viewing the records we need this
-        $_SESSION['saved_int02'] = (int)$edited_year_paid;
+        $_SESSION['saved_int02'] = $edited_year_paid;
 
         $edited_comment = standard_form_field_prep('comment', 0, 1800);
 

@@ -125,9 +125,7 @@ class father_a_commodity_sold_processor
          * Wrap it up.
          */
 
-        $g->message .= ' Your new commodity sold has just been created 👍🏿 ';
-
-        reset_feature_session_vars();
+        $g->message .= ' Your new Commodity Sold has just been created 👍🏿 ';
 
 
         /**
@@ -135,7 +133,7 @@ class father_a_commodity_sold_processor
          * So, we are going to hook into the "See a Year's Commodity Sold Records" feature.
          */
 
-        redirect_to("/ax1/spy_commodities_sold/page");
+        redirect_to("/ax1/spy_commodities_sold_create_edit/page");
 
     }
 }

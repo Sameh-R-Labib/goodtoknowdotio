@@ -53,7 +53,7 @@ class see_one_years_possible_tax_deductions_create_edit
          * and it does not present the home page itself.
          */
 
-        $g->message .= " Here are <b>$g->saved_int02</b>'s possible tax deductions. ";
+        $g->message .= " Here are <b>$g->saved_int02</b>'s Possible Tax Deductions. ";
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }

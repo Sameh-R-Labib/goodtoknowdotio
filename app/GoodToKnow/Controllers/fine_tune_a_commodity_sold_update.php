@@ -147,15 +147,13 @@ class fine_tune_a_commodity_sold_update
 
         $g->message .= " I've updated <b>$object->commodity_label</b>. ";
 
-        reset_feature_session_vars();
-
 
         /**
          * We want to reassure the user that the commodity sold record has been updated.
          * So, we are going to hook into the "See a Year's Commodity Sold Records" feature.
          */
 
-        redirect_to("/ax1/spy_commodities_sold/page");
+        redirect_to("/ax1/spy_commodities_sold_create_edit/page");
 
     }
 }

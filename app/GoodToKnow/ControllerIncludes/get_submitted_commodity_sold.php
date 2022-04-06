@@ -83,6 +83,9 @@ $g->commodity_label = commodity_address_form_field_prep('commodity_label');
 
 $g->tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
+// For viewing the records we need this
+$_SESSION['saved_int02'] = $g->tax_year;
+
 
 /**
  * Get $g->profit

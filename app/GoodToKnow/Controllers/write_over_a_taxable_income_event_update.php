@@ -49,7 +49,7 @@ class write_over_a_taxable_income_event_update
         $g->tax_year = integer_form_field_prep('year_received', 1992, 65535);
 
         // For viewing the records we need this
-        $_SESSION['saved_int02'] = (int)$g->tax_year;
+        $_SESSION['saved_int02'] = $g->tax_year;
 
 
         // comment
