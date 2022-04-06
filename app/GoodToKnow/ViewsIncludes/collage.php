@@ -1,6 +1,8 @@
 <h1>Proclamation</h1>
 <h2>Terms of Service</h2>
-<p>"you" means the user.<br>
+<p>"source code" can be found at
+    <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio">https://github.com/Sameh-R-Labib/goodtoknowdotio</a><br>
+    "you" means the user.<br>
     "the owner" means Sameh Ramzy Labib and his immediate family.</p>
 <p>These are the rules and guidelines that users or visitors of this website must agree to in order to use this website
     or app.</p>
