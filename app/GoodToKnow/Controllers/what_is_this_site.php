@@ -29,7 +29,7 @@ class what_is_this_site
         $g->show_poof = true;
 
         $g->message = " Read and decide if you'd like to use this. ";
-
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'whatisthissite.php';
     }
 }

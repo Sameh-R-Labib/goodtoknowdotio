@@ -67,8 +67,7 @@ class recurring_payment_see_my_records
 
 
         $g->message .= " Here are your recurring transactions. ";
-
-
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'recurringpaymentseemyrecords.php';
     }
 }

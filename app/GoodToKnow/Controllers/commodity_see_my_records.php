@@ -98,7 +98,7 @@ class commodity_see_my_records
         $g->show_poof = true;
 
         $g->message .= ' Here are your commodity records. ';
-
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'commodityseemyrecords.php';
     }
 }

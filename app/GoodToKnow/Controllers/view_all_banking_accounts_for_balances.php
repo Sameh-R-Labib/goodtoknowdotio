@@ -53,7 +53,7 @@ class view_all_banking_accounts_for_balances
         $g->page = 'view_all_banking_accounts_for_balances';
 
         $g->message .= " Here are all your bank accounts. ";
-
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'viewallbankingaccountsforbalances.php';
     }
 }

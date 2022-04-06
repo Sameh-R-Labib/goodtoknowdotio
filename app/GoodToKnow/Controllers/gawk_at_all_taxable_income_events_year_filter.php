@@ -61,6 +61,8 @@ class gawk_at_all_taxable_income_events_year_filter
         $g->show_poof = true;
 
 
+        $g->message .= " Here's one year of taxable income. ";
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'gawkatalltaxableincomeeventsyearfilter.php';
     }
 }

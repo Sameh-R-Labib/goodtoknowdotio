@@ -54,14 +54,14 @@ class spy_commodities_sold_year_filter
          * Prep the view.
          */
 
-        $g->message .= " Here's one year of Commodity Sold. ";
-
         $g->html_title = "One year's commodities sold records";
 
         $g->page = 'spy_commodities_sold_year_filter';
 
         $g->show_poof = true;
 
+        $g->message .= " Here's one year of Commodity Sold. ";
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'spycommoditiessoldyearfilter.php';
     }
 }

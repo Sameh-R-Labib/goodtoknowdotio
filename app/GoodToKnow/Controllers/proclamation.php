@@ -22,8 +22,7 @@ class proclamation
 
 
         $g->message .= ' What the proponents of the Gtk.io project believe in and pursue. ';
-
-
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'proclamation.php';
     }
 }

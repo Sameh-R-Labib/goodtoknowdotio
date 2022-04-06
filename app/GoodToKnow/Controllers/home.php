@@ -66,7 +66,7 @@ class home
 
         $g->page = "home";
 
-
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'home.php';
     }
 

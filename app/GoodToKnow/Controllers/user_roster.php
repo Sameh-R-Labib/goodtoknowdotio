@@ -81,8 +81,9 @@ class user_roster
 
         }
 
-        $g->message .= " I have generated the User Roster (<em>shown below.</em>) ";
 
+        $g->message .= " I have generated the User Roster (<em>shown below.</em>) ";
+        reset_feature_session_vars();
         require VIEWS . DIRSEP . 'userroster.php';
     }
 }
