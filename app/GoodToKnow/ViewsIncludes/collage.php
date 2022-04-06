@@ -6,7 +6,7 @@
     or app.</p>
 <ul>
     <li>Do not steal the source code. See the license. This software is owned by Sameh Ramzy Labib and his immediate
-        family. Please see the License documents that come with the software,
+        family. Please see the license documents which come with the source code of the software.
     </li>
     <li>You agree to indemnify the software owners of any liability associated with your use of the software.
         In other words you secure the owner against legal liability for their actions.
