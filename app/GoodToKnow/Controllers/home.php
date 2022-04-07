@@ -29,17 +29,17 @@ class home
 
 
         /**
-         * home should always present a message.
-         */
-        self::put_together_a_good_sessionmessage();
-
-
-        /**
          * Announce something about the quantity of inbox messages.
          *
          * This, also, gets appended to the session message.
          */
         require CONTROLLERINCLUDES . DIRSEP . 'check_messages.php';
+
+
+        /**
+         * home should always present a message.
+         */
+        self::put_together_a_good_sessionmessage();
 
 
         /**
@@ -81,6 +81,7 @@ class home
                 $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
             }
             $g->message .= '<br><br><a class="orangebtn" href="">Only Admin can Add Topics</a> ';
+            $g->message .= $g->messages_button;
 
         } elseif ($g->type_of_resource_requested === 'topic') {
 
@@ -89,6 +90,7 @@ class home
             }
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
+            $g->message .= $g->messages_button;
 
         } else {
 
@@ -96,11 +98,12 @@ class home
                 $g->message .= ' ' . $g->post_full_name . ' ';
             }
             if ($g->author_id == $g->user_id) {
-
                 $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
                 $g->message .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
                 $g->message .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
-
+                $g->message .= $g->messages_button;
+            } else {
+                $g->message .= '<br><br>' . $g->messages_button;
             }
 
         }
