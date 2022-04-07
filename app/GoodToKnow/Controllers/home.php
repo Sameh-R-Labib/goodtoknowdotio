@@ -77,64 +77,33 @@ class home
 
         if ($g->type_of_resource_requested === 'community') {
 
-            if (!empty(trim($g->community_description))) {
-
-                if (empty(trim($g->message))) {
-
-                    $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
-
-                }
-
+            if (!empty(trim($g->community_description)) and empty(trim($g->message))) {
+                $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
             }
+            $g->message .= '<br><br><a class="orangebtn" href="">Only Admin can Add Topics</a> ';
 
         } elseif ($g->type_of_resource_requested === 'topic') {
 
-            if (!empty(trim($g->topic_description))) {
-
-                if (empty(trim($g->message))) {
-                    $g->message .= ' ' . nl2br($g->topic_description, false) . ' ';
-                }
-
+            if (!empty(trim($g->topic_description)) and empty(trim($g->message))) {
+                $g->message .= ' ' . nl2br($g->topic_description, false) . ' ';
             }
-
-        } else {
-
-            if (!empty(trim($g->post_full_name))) {
-
-                if (empty(trim($g->message))) {
-
-                    $g->message .= ' ' . $g->post_full_name . ' ';
-
-                }
-
-            }
-
-        }
-
-
-        if ($g->type_of_resource_requested == 'community') {
-
-            $g->message .= '<br><br><a class="orangebtn" href="">Only Admin can Add Topics</a> ';
-
-        }
-
-
-        if ($g->type_of_resource_requested == 'topic') {
-
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
 
+        } else {
+
+            if (!empty(trim($g->post_full_name)) and empty(trim($g->message))) {
+                $g->message .= ' ' . $g->post_full_name . ' ';
+            }
+            if ($g->author_id == $g->user_id) {
+
+                $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
+                $g->message .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
+                $g->message .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
+
+            }
+
         }
-
-
-        if ($g->type_of_resource_requested == 'post' and $g->author_id == $g->user_id) {
-
-            $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
-            $g->message .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
-            $g->message .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
-
-        }
-
     }
 
 
