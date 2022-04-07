@@ -90,6 +90,7 @@ class home
             }
             $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->message .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
+            if ($g->is_admin) $g->message .= ' <a class="purplebtn" href="/ax1/move_post/page">Move a 📄</a> ';
             $g->message .= $g->messages_button;
 
         } else {
