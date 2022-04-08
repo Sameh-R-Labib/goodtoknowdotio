@@ -13,7 +13,7 @@ class transfer_post_ownership_get_post
     function page()
     {
         /**
-         * This route will (1) determine which post the admin chose to do a transfer of ownership to,
+         * This route will (1) determine which post the Admin chose to do a transfer of ownership to,
          * (2) stores the post's id in the session, and
          * (3) presents a form asking the user if he
          * is sure this is the post he wants to transfer the ownership of.
@@ -28,7 +28,6 @@ class transfer_post_ownership_get_post
 
 
         global $g;
-        global $post_object;
 
 
         kick_out_nonadmins_or_if_there_is_error_msg();
@@ -47,7 +46,7 @@ class transfer_post_ownership_get_post
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.
 
-        $g->long_title_of_post = $post_object->title . " | " . $post_object->extensionfortitle;
+        $g->long_title_of_post = $g->post_object->title . " | " . $g->post_object->extensionfortitle;
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
@@ -101,7 +100,7 @@ class transfer_post_ownership_get_post
 
         // Find the author's username.
 
-        $user_object = user::find_by_id($post_object->user_id);
+        $user_object = user::find_by_id($g->post_object->user_id);
 
         if ($user_object === false) {
 

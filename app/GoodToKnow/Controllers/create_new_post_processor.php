@@ -21,7 +21,7 @@ class create_new_post_processor
         /**
          * Redirect
          *
-         * Where we redirect depends on whether or not there is one or more post in the chosen topic.
+         * Where we redirect depends on whether there is one or more post in the chosen topic.
          */
 
         get_db();

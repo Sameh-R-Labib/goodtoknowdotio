@@ -18,4 +18,4 @@ if (empty($g->special_topic_array)) {
 
 }
 
-$g->html_title = 'Which topic is your post in?';
+$g->html_title = 'Which topic?';
