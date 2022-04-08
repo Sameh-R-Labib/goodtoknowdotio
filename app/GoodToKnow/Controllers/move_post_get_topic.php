@@ -54,6 +54,17 @@ class move_post_get_topic
 
         $topictopost_as_array = ['topic_id' => $chosen_topic_id, 'post_id' => $g->saved_int01];
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$topictopost_as_array: </p>\n<pre>";
+        var_dump($topictopost_as_array);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
         $topictopost = topic_to_post::array_to_object($topictopost_as_array);
 
         $result = $topictopost->save();
