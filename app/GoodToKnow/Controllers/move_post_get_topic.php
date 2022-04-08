@@ -64,6 +64,17 @@ class move_post_get_topic
 
         }
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$result: </p>\n<pre>";
+        var_dump($result);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
         // Secondly: Delete the old record. The old record has topic id $g->topic_id and post id $g->saved_int01.
 
         $sql = 'SELECT * FROM `topic_to_post`
