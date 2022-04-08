@@ -108,6 +108,18 @@ abstract class good_object
 
         $clean_attributes = [];
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        $a = $this->attributes();
+        echo "<p>Var_dump \$a: </p>\n<pre>";
+        var_dump($a);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+
         foreach ($this->attributes() as $key => $value) {
 
             $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
