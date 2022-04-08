@@ -66,8 +66,47 @@ class move_post_get_topic
 
         // Secondly: Delete the old record. The old record has topic id $g->topic_id and post id $g->saved_int01.
 
+        $sql = 'SELECT * FROM `topic_to_post`
+        WHERE `topic_id` = "' . $g->db->real_escape_string((string)$g->topic_id) . '" AND `post_id` = "' .
+            $g->db->real_escape_string((string)$g->saved_int01) . '" LIMIT 1';
+
+        $array_of_objects = topic_to_post::find_by_sql($sql);
+
+        if (!$array_of_objects) {
+
+            breakout(' move_post_get_topic: Unexpectedly failed to get a topic_to_post object to delete. ');
+
+        }
+
+        $topictopost_object = array_shift($array_of_objects);
+
+        if (!is_object($topictopost_object)) {
+
+            breakout(' move_post_get_topic: Unexpectedly return value is not an object. ');
+
+        }
+
+        $topictopost_object = array_shift($array_of_objects);
+
+        if (!is_object($topictopost_object)) {
+
+            breakout(' move_post_get_topic: Unexpectedly return value is not an object. ');
+
+        }
+
+        $result = $topictopost_object->delete();
+
+        if (!$result) {
+
+            breakout(' move_post_get_topic: Unexpectedly could not delete the topic_to_post object. ');
+
+        }
+
+
         /**
-         * I'll be back after I code the function which does that.
+         * Hooray!
          */
+
+        breakout(' I moved the post to another topic. ');
     }
 }

@@ -8,7 +8,7 @@ class quick_post_delete
     {
         /**
          * This is the first in a series of routes aimed at deleting a preexisting author's
-         * post (where the logged in user is the admin.)
+         * post (where the logged-in user is the admin.)
          */
 
         /**
