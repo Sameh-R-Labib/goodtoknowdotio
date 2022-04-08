@@ -110,7 +110,7 @@ abstract class good_object
 
         foreach ($this->attributes() as $key => $value) {
 
-            $clean_attributes[$key] = $g->db->real_escape_string($value);
+            $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
 
         }
 
