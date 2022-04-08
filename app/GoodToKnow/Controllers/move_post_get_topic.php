@@ -56,6 +56,16 @@ class move_post_get_topic
 
         $topictopost = topic_to_post::array_to_object($topictopost_as_array);
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$topictopost: </p>\n<pre>";
+        var_dump($topictopost);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
         $result = $topictopost->save();
 
         if (!$result) {
