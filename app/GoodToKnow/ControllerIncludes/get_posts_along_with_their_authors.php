@@ -17,31 +17,11 @@ if (!$g->array_of_post_objects) {
 
 
 /**
- * Debug Code
- */
-echo "\n<p>Begin debug</p>\n";
-echo "<p>Var_dump \$g->array_of_post_objects: </p>\n<pre>";
-var_dump($g->array_of_post_objects);
-echo "</pre>\n";
-die("<p>End debug</p>\n");
-
-
-/**
  * Generate an array of author usernames. Each array element's value is a username which
  * is the username corresponding to the user_id of the corresponding element in the $g->array_of_post_objects.
  */
 
 $g->array_of_author_usernames = topic_to_post::get_author_usernames($g->array_of_post_objects);
-
-
-/**
- * Debug Code
- */
-echo "\n<p>Begin debug</p>\n";
-echo "<p>Var_dump \$g->array_of_author_usernames: </p>\n<pre>";
-var_dump($g->array_of_author_usernames);
-echo "</pre>\n";
-die("<p>End debug</p>\n");
 
 
 if (!$g->array_of_author_usernames) {
