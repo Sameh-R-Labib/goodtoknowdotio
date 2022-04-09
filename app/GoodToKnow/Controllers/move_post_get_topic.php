@@ -89,14 +89,6 @@ class move_post_get_topic
 
         }
 
-        $topictopost_object = array_shift($array_of_objects);
-
-        if (!is_object($topictopost_object)) {
-
-            breakout(' move_post_get_topic: Unexpectedly return value is not an object. ');
-
-        }
-
         $result = $topictopost_object->delete();
 
         if (!$result) {
