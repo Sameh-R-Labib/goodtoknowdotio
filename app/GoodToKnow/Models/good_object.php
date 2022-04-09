@@ -115,6 +115,9 @@ abstract class good_object
 
                 $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
 
+            } else {
+
+                $clean_attributes[$key] = $value;
             }
 
         }
