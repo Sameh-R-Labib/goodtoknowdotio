@@ -204,6 +204,11 @@ abstract class good_object
 
         }
 
+        /**
+         * Debug
+         */
+        die('we made it into create');
+
         try {
             // Get an array of this object's attributes.
             // Yes, id will be included in this array as will
