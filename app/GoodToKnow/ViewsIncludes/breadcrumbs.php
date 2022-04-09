@@ -6,10 +6,10 @@ switch ($g->page) {
     case 'inbox':
         echo "<a href=\"/ax1/inbox/page\">Inbox</a>";
         break;
-    case 'Admin':
+    case 'admin':
         echo "<a href=\"/ax1/admin_home/page\">Admin Home</a>";
         break;
-    case 'CP':
+    case 'cp':
         echo "<a href=\"/ax1/control_panel/page\">Control Panel</a>";
         break;
     case 'user_roster':
@@ -18,7 +18,7 @@ switch ($g->page) {
     case 'commodity_see_my_records':
         echo "<a href=\"/ax1/commodity_see_my_records_specify/page\">List My Commodity Records</a>";
         break;
-    case 'About':
+    case 'about':
         echo "What is this site?";
         break;
     case 'recurring_payment_see_my_records':

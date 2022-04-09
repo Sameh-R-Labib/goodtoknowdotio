@@ -19,7 +19,7 @@ class control_panel
         $g->html_title = 'Control Panel';
 
 
-        $g->page = 'CP';
+        $g->page = 'cp';
 
 
         $g->show_poof = true;

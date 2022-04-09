@@ -24,7 +24,7 @@ class what_is_this_site
 
         $g->html_title = 'What is this site?';
 
-        $g->page = 'About';
+        $g->page = 'about';
 
         $g->show_poof = true;
 
