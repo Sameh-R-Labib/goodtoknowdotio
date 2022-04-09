@@ -115,7 +115,7 @@ abstract class good_object
         echo "\n<p>Begin debug</p>\n";
 
         foreach ($this->attributes() as $key => $value) {
-            echo '$key is ' . $key . '$value is ' . $value . 'string value is ' . (string)$value . "\n\n";
+            echo '$key is ' . $key . ' ** $value is ' . $value . ' ** string value is ' . (string)$value . "\n\n";
         }
 
         echo "<p>Var_dump \$this->attributes(): </p>\n<pre>";
