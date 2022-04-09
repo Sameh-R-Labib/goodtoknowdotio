@@ -109,20 +109,13 @@ abstract class good_object
         $clean_attributes = [];
 
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        $a = $this->attributes();
-        echo "<p>Var_dump \$a: </p>\n<pre>";
-        var_dump($a);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
         foreach ($this->attributes() as $key => $value) {
 
-            $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
+            if (!is_null($value)) {
+
+                $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
+
+            }
 
         }
 
@@ -211,6 +204,16 @@ abstract class good_object
             // assigned a value then an empty string will be its value.
 
             $attributes = $this->sanitized_attributes();
+
+
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Begin debug</p>\n";
+            echo "<p>This is what the array looks like after sanitization: </p>\n<pre>";
+            var_dump($attributes);
+            echo "</pre>\n";
+            die("<p>End debug</p>\n");
 
 
             // Pop off the first element
