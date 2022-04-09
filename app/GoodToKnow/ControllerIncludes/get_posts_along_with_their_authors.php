@@ -22,6 +22,17 @@ if (!$g->array_of_post_objects) {
 
 $g->array_of_author_usernames = topic_to_post::get_author_usernames($g->array_of_post_objects);
 
+
+/**
+ * Debug Code
+ */
+echo "\n<p>Begin debug</p>\n";
+echo "<p>Var_dump \$g->array_of_author_usernames: </p>\n<pre>";
+var_dump($g->array_of_author_usernames);
+echo "</pre>\n";
+die("<p>End debug</p>\n");
+
+
 if (!$g->array_of_author_usernames) {
 
     breakout(' Anomalous condition: Supposedly we have posts but do not have any authors. ');
