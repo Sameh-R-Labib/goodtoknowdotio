@@ -108,29 +108,6 @@ abstract class good_object
 
         $clean_attributes = [];
 
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-
-        foreach ($this->attributes() as $key => $value) {
-            echo 'key is ' . $key . ' ** $value is ' . $value . ' ** string value is ' . (string)$value . "<br><br>\n\n";
-            echo "<p>Var_dump \$value: </p>\n<pre>";
-            var_dump($value);
-            echo "</pre>\n";
-            echo "<p>Var_dump (string)\$value: </p>\n<pre>";
-            var_dump((string)$value);
-            echo "</pre>\n";
-        }
-
-        echo "<p>============ </p>\n";
-        echo "<p>Var_dump \$this->attributes(): </p>\n<pre>";
-        var_dump($this->attributes());
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
         foreach ($this->attributes() as $key => $value) {
 
             if (!is_null($value)) {
