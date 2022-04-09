@@ -6,6 +6,17 @@ use GoodToKnow\Models\topic_to_post;
 global $g;
 // $g->saved_int01 id of topic
 
+
+/**
+ * Debug Code
+ */
+echo "\n<p>Begin debug</p>\n";
+echo "<p>Var_dump \$g->saved_int01: </p>\n<pre>";
+var_dump($g->saved_int01);
+echo "</pre>\n";
+die("<p>End debug</p>\n");
+
+
 $g->array_of_post_objects = topic_to_post::get_posts_array_for_a_topic($g->saved_int01);
 
 if (!$g->array_of_post_objects) {
