@@ -113,11 +113,13 @@ abstract class good_object
 
             if (!is_null($value)) {
 
-                $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
+                /*$clean_attributes[$key] = $g->db->real_escape_string((string)$value);*/
+                $clean_attributes[$key] = 'in the top of if';
 
             } else {
 
-                $clean_attributes[$key] = $value;
+                /*$clean_attributes[$key] = $value;*/
+                $clean_attributes[$key] = 'in the bottom of if';
             }
 
         }
