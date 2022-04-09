@@ -110,15 +110,7 @@ abstract class good_object
 
         foreach ($this->attributes() as $key => $value) {
 
-            if (!is_null($value)) {
-
                 $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
-
-            } else {
-
-                $clean_attributes[$key] = $value;
-
-            }
 
         }
 
@@ -207,16 +199,6 @@ abstract class good_object
             // assigned a value then an empty string will be its value.
 
             $attributes = $this->sanitized_attributes();
-
-
-            /**
-             * Debug Code
-             */
-            echo "\n<p>Begin debug</p>\n";
-            echo "<p>This is what the array looks like after sanitization: </p>\n<pre>";
-            var_dump($attributes);
-            echo "</pre>\n";
-            die("<p>End debug</p>\n");
 
 
             // Pop off the first element

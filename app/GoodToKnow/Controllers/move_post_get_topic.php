@@ -15,6 +15,9 @@ class move_post_get_topic
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        get_db();
+
+
         /**
          * Get submitted topic id.
          */
