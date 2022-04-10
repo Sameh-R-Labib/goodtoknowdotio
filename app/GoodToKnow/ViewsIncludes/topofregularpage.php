@@ -15,3 +15,4 @@
     <title><?= $g->html_title ?></title>
 </head>
 <body>
+<main>
