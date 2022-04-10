@@ -648,7 +648,7 @@ h2 + p {
     padding: 1px 0 1px 0;
     margin: auto;
     clear: both;
-    border-radius: 1em 1em 1em 1em;
+    border-radius: .1em .1em .5em .5em;
 }
 
 #sendmessage {
