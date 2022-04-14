@@ -686,7 +686,7 @@ h2 + p {
 }
 
 #the-buttons {
-    /*background-color: rgba(233, 243, 255, 1);*/
+    background-color: rgba(233, 243, 255, 1);
     /* opacity: 0.97; */
     float: left;
     width: 893px;
