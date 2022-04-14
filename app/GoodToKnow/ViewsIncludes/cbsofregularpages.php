@@ -1,3 +1,4 @@
+<?php global $g; ?>
 <!-- communities -->
 <button type="button" class="collapsible">🧑🏿‍🤝‍🧑🏽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,7 +27,7 @@
             <?php require SESSIONMESSAGE; ?>
         </div>
         <div id="the-buttons">
-            Put the buttons here.
+            <p><?= $g->the_buttons ?></p>
         </div>
     </div>
 </div>

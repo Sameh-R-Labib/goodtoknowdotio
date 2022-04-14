@@ -760,6 +760,12 @@ class app_state
 
 
     /**
+     * @var string
+     */
+    public $the_buttons;
+
+
+    /**
      * app_state constructor.
      */
     function __construct()
@@ -980,6 +986,8 @@ class app_state
         $this->community_array = [];
 
         $this->messages_button = '';
+
+        $this->the_buttons = '';
 
         $this->account = '';
 

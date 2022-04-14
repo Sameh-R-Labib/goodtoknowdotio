@@ -80,18 +80,18 @@ class home
             if (!empty(trim($g->community_description)) and empty(trim($g->message))) {
                 $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
             }
-            $g->message .= '<br><br><a class="orangebtn" href="">Admin Adds Topics</a> ';
-            $g->message .= $g->messages_button;
+            $g->the_buttons .= '<a class="orangebtn" href="">Admin Adds Topics</a> ';
+            $g->the_buttons .= $g->messages_button;
 
         } elseif ($g->type_of_resource_requested === 'topic') {
 
             if (!empty(trim($g->topic_description)) and empty(trim($g->message))) {
                 $g->message .= ' ' . nl2br($g->topic_description, false) . ' ';
             }
-            $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
-            $g->message .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
-            if ($g->is_admin) $g->message .= ' <a class="purplebtn" href="/ax1/move_post/page">Move a 📄</a> ';
-            $g->message .= $g->messages_button;
+            $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
+            $g->the_buttons .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
+            if ($g->is_admin) $g->the_buttons .= ' <a class="purplebtn" href="/ax1/move_post/page">Move a 📄</a> ';
+            $g->the_buttons .= $g->messages_button;
 
         } else {
 
@@ -99,12 +99,12 @@ class home
                 $g->message .= ' ' . $g->post_full_name . ' ';
             }
             if ($g->author_id == $g->user_id) {
-                $g->message .= '<br><br><a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
-                $g->message .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
-                $g->message .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
-                $g->message .= $g->messages_button;
+                $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
+                $g->the_buttons .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
+                $g->the_buttons .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
+                $g->the_buttons .= $g->messages_button;
             } else {
-                $g->message .= '<br><br>' . $g->messages_button;
+                $g->the_buttons .= $g->messages_button;
             }
 
         }
