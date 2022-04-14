@@ -669,7 +669,7 @@ h2 + p {
 }
 
 #scriptmessage {
-    background-color: rgba(233, 243, 255, 1);
+    /*background-color: rgba(233, 243, 255, 1);*/
     width: 891px;
     height: 157px;
     margin: auto;
@@ -681,12 +681,12 @@ h2 + p {
     /* opacity: 0.97; */
     float: left;
     width: 893px;
-    height: 109px;
+    height: 145px;
     /*padding: 12px;*/
 }
 
 #the-buttons {
-    background-color: rgba(233, 243, 255, 1);
+    /*background-color: rgba(233, 243, 255, 1);*/
     /* opacity: 0.97; */
     float: left;
     width: 893px;
