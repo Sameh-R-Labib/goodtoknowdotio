@@ -677,7 +677,7 @@ h2 + p {
 }
 
 #the-message {
-    background-color: rgba(230, 10, 225, 1);
+    background-color: rgba(233, 243, 255, 1);
     /* opacity: 0.97; */
     float: left;
     width: 893px;
@@ -686,13 +686,12 @@ h2 + p {
 }
 
 #the-buttons {
-    background-color: rgba(10, 240, 225, 1);
+    background-color: rgba(233, 243, 255, 1);
     /* opacity: 0.97; */
     float: left;
-    width: auto;
-    height: 55px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    width: 893px;
+    height: 48px; /*but the paragraph's height will cause it to bleed downward*/
+    /*padding: 12px;*/
 }
 
 #leftsodiv {
