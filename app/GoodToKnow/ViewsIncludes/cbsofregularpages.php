@@ -22,6 +22,11 @@
         </div>
     </div>
     <div id="scriptmessage">
-        <?php require SESSIONMESSAGE; ?>
+        <div id="the-message">
+            <?php require SESSIONMESSAGE; ?>
+        </div>
+        <div id="the-buttons">
+            Put the buttons here.
+        </div>
     </div>
 </div>

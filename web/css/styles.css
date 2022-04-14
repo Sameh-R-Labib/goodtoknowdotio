@@ -676,6 +676,24 @@ h2 + p {
     float: left;
 }
 
+#the-message {
+    background-color: rgba(230, 10, 225, 1);
+    /* opacity: 0.97; */
+    float: left;
+    /*width: 108px;
+    height: 85px;
+    padding: 12px;*/
+}
+
+#the-buttons {
+    background-color: rgba(10, 240, 225, 1);
+    /* opacity: 0.97; */
+    float: left;
+    /*width: 108px;
+    height: 85px;
+    padding: 12px;*/
+}
+
 #leftsodiv {
     background: rgba(255, 255, 255, 0.01);
     width: 132px;
