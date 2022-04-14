@@ -680,10 +680,9 @@ h2 + p {
     background-color: rgba(230, 10, 225, 1);
     /* opacity: 0.97; */
     float: left;
-    width: 110px;
-    /*width: 108px;
+    width: 893px;
     height: 85px;
-    padding: 12px;*/
+    padding: 12px;
 }
 
 #the-buttons {
@@ -691,8 +690,8 @@ h2 + p {
     /* opacity: 0.97; */
     float: left;
     /*width: 108px;
-    height: 85px;
-    padding: 12px;*/
+    height: 85px;*/
+    padding: 12px;
 }
 
 #leftsodiv {
