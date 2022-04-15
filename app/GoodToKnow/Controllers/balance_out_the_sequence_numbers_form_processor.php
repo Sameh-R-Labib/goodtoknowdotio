@@ -31,7 +31,7 @@ class balance_out_the_sequence_numbers_form_processor
 
         kick_out_nonadmins_or_if_there_is_error_msg();
 
-        $g->thing_type = ucfirst($g->type_of_resource_requested);
+        $g->thing_type = $g->type_of_resource_requested;
 
 
         /**
