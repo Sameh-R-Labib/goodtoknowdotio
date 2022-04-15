@@ -146,12 +146,19 @@ a.save {
     cursor: pointer;
 }
 
-a.no-frills-link, a.no-frills-link:visited, a.no-frills-link:hover, a.no-frills-link:active {
-    color: black;
-    padding: 4px 14px;
+a.no-frills-link:link, a.no-frills-link:visited, a.no-frills-link:hover, a.no-frills-link:active {
+    padding: 0;
     text-decoration: underline;
     background-color: transparent;
     border-radius: 0;
+}
+
+a.no-frills-link:link, a.no-frills-link:visited {
+    color: blue;
+}
+
+a.no-frills-link:hover, a.no-frills-link:active {
+    color: rebeccapurple;
 }
 
 .tooltip {
