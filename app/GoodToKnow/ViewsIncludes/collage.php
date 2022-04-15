@@ -10,6 +10,11 @@
 <p>These are the rules and guidelines that users or visitors of this website must agree to in order to use this website
     or app.</p>
 <ul>
+    <li>Browser cookies are used in this site. Your continued use of this website shows that you consent to the site's
+        use of browser cookies.
+    </li>
+    <li>Do not using this software for illegal activities.</li>
+    <li>Do not spam other users.</li>
     <li>Do not steal the source code. See the license. This software is owned by Sameh Ramzy Labib and his immediate
         family. Please see the license documents which come with the source code of the software.
     </li>
