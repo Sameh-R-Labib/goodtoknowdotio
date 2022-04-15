@@ -4,7 +4,7 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Software Description</h1>
-        <p>Also, see the <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</p>
+        <p>Also, see <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</p>
         <p>This site is an instance of the GoodToKnow.io web app software. The code is GPLv3 Affero licensed FLOSS
             software. The primary use for this software is to facilitate the parsing and sharing of practical useful
             information via blog posts to be shared amongst family and a closed circle of acquaintances. The
