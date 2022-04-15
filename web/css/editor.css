@@ -146,8 +146,12 @@ a.save {
     cursor: pointer;
 }
 
-a.no-frills-link {
+a.no-frills-link, a.no-frills-link:visited, a.no-frills-link:hover, a.no-frills-link:active {
+    color: black;
+    padding: 4px 14px;
     text-decoration: underline;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 .tooltip {
