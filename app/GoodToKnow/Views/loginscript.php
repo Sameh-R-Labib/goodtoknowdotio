@@ -5,7 +5,8 @@
         <section>
             <label class="checkbox">
                 <input type="checkbox" name="choice" value="agree">
-                I agree to the <a href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>.
+                I agree to the <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of
+                    Service</a>.
             </label>
         </section>
         <?php require SUBMITABORT; ?>

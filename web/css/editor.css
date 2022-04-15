@@ -146,6 +146,10 @@ a.save {
     cursor: pointer;
 }
 
+a.no-frills-link {
+    text-decoration: underline;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
