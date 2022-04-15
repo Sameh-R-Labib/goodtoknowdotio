@@ -235,7 +235,7 @@ a:active {
 }
 
 a.cross {
-    background-color: #f6ba35;
+    background-color: #fac350;
     opacity: 1;
     cursor: pointer;
     border-radius: 4px;
@@ -247,7 +247,7 @@ a.cross {
 }
 
 a.cross:hover, a.cross:active {
-    background-color: goldenrod;
+    background-color: blueviolet;
 }
 
 a.clearbtn:link, a.clearbtn:visited {
