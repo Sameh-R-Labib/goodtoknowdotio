@@ -9,7 +9,11 @@ class proclamation
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        if (!empty($g->message)) {
+
+            breakout(' Task aborted because an error message was generated. ');
+
+        }
 
 
         $g->page = 'proclamation';
