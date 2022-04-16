@@ -28,12 +28,30 @@ class find_too_close_sequence_numbers
          * Get all the communities in the system.
          */
 
-        $coms_in_this_system = community::find_all();
+        $g->coms_in_this_system = community::find_all();
 
-        if ($coms_in_this_system === false) {
+        if (!$g->coms_in_this_system) {
 
             breakout(' Unable to retrieve communities. ');
 
         }
+
+
+        /**
+         * Loop through the communities and record the ones whose
+         * topics are jammed too close to each other.
+         */
+
+        foreach ($g->coms_in_this_system as $community) {
+
+            self::record_community_if_its_topics_are_jammed_too_close($community);
+
+        }
+
+
+        /**
+         * Loop through all the communities. For each community loop through its topics
+         * and record the topics whose posts are jammed too close to each other.
+         */
     }
 }
