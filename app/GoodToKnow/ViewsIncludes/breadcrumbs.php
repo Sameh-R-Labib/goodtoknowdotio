@@ -81,6 +81,9 @@ switch ($g->page) {
     case 'proclamation':
         echo "<a href=\"/ax1/proclamation/page\">Proclamation</a>";
         break;
+    case 'find_too_close_sequence_numbers':
+        echo "<a href=\"/ax1/find_too_close_sequence_numbers/page\">Find Too Close Sequence Numbers</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;
