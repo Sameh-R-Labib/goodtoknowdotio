@@ -129,7 +129,7 @@ class find_too_close_sequence_numbers
     /**
      *
      */
-    private static function record_community_if_its_topics_are_jammed_too_close(int $community, array &$line_item_for_report)
+    private static function record_community_if_its_topics_are_jammed_too_close(object $community, array &$line_item_for_report)
     {
 
     }
