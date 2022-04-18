@@ -24,7 +24,7 @@ class kommunity_description_editor_form
          */
 
 
-        // 1) Retrieve the community object for the community whose description the admin wants to edit.
+        // 1) Retrieve the community object for the community whose description Admin wants to edit.
 
         get_db();
 

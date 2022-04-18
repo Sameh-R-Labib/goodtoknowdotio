@@ -19,7 +19,7 @@
         </p>
         <p>
             <label for="price_sold">Price Per Unit — Sold <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to list of
+                tooltip-top">If the amounts should have 2 decimal places ask Admin to add your currency to list of
                             fiat.</span></span>: </label>
             <input id="price_sold" name="price_sold" type="text" value="<?= $g->saved_arr01['price_sold'] ?>"
                    required minlength="1" maxlength="33" size="33" placeholder="150.33">
@@ -34,7 +34,7 @@
         </p>
         <p>
             <label for="commodity_amount">Amount Sold <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts should have 2 decimal places ask admin to add your currency to the list of
+                tooltip-top">If the amounts should have 2 decimal places ask Admin to add your currency to the list of
                             fiat.</span></span>: </label>
             <input id="commodity_amount" name="commodity_amount" type="text"
                    value="<?= $g->saved_arr01['commodity_amount'] ?>"

@@ -4,5 +4,5 @@
 <?php elseif ($g->is_guest): ?>
     <p>✊🤬😭&#x2192;☭Ⓐ</p>
 <?php else: ?>
-    <p><a href="/ax1/write_to_admin/page">💬 👔 admin</a></p>
+    <p><a href="/ax1/write_to_admin/page">💬 Admin</a></p>
 <?php endif; ?>

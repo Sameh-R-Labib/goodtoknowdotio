@@ -27,7 +27,7 @@ class check_my_banking_account_tx_balances_show_balances
          *    object. This gets assigned to each banking_transaction_for_balances object's balance field.
          * 3b) reset_feature_session_vars()
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
-         *    will be wrong if admin has deleted transactions older than 90 days and the start
+         *    will be wrong if Admin has deleted transactions older than 90 days and the start
          *    time for the banking_acct_for_balances is set to a time older than 90 days.
          *    Also, show the account name for banking_acct_for_balances at the top of the ledger.
          *    Also, transform field data to a more human friendly format.
@@ -128,7 +128,7 @@ class check_my_banking_account_tx_balances_show_balances
 
         /**
          * 4) Display our data set as a ledger. Note: Inform the user that the balances
-         * will be wrong if admin has deleted transactions older than 90 days and the start
+         * will be wrong if Admin has deleted transactions older than 90 days and the start
          * time for the banking_acct_for_balances is set to a time older than 90 days.
          * Also, show the account name for banking_acct_for_balances at the top of the ledger.
          * Also, transform field data to a more human friendly format.
