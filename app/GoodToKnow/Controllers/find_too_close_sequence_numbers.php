@@ -85,45 +85,45 @@ class find_too_close_sequence_numbers
 
             }
 
+        }
 
-            /**
-             * Show a view which either,
-             * - shows the items (communities or topics) which need fixing
-             * Or,
-             * - stated that all item containers have well spaced content.
-             */
 
-            $g->output = '';
+        /**
+         * Show a view which either,
+         * - shows the items (communities or topics) which need fixing
+         * Or,
+         * - stated that all item containers have well spaced content.
+         */
 
-            if (!empty($line_item_for_report)) {
+        $g->output = '';
 
-                foreach ($line_item_for_report as $item) {
+        if (!empty($line_item_for_report)) {
 
-                    $g->output .= $item . "\n <br><br>";
+            foreach ($line_item_for_report as $item) {
 
-                }
-            } else {
-
-                $g->output .= "All item containers have well spaced content.";
+                $g->output .= $item . "\n <br><br>";
 
             }
+        } else {
 
-            $g->output = rtrim($g->output, "<br>");
-
-
-            // Typical vars for a regular page.
-
-            $g->html_title = 'Items with jammed content';
-
-            $g->page = 'find_too_close_sequence_numbers';
-
-            $g->show_poof = true;
-
-            $g->message .= " If you see items on this page then you need to fix the sequence numbers of what's contained in them. ";
-            reset_feature_session_vars();
-            require VIEWS . DIRSEP . 'findtooclosesequencenumbers.php';
+            $g->output .= "All item containers have well spaced content.";
 
         }
+
+        $g->output = rtrim($g->output, "<br>");
+
+
+        // Typical vars for a regular page.
+
+        $g->html_title = 'Items with jammed content';
+
+        $g->page = 'find_too_close_sequence_numbers';
+
+        $g->show_poof = true;
+
+        $g->message .= " If you see items on this page then you need to fix the sequence numbers of what's contained in them. ";
+        reset_feature_session_vars();
+        require VIEWS . DIRSEP . 'findtooclosesequencenumbers.php';
 
     }
 
