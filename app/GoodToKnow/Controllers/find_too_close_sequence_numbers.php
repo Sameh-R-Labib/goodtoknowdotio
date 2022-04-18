@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\community;
 use GoodToKnow\Models\community_to_topic;
+use GoodToKnow\Models\topic_to_post;
 
 class find_too_close_sequence_numbers
 {
@@ -80,7 +81,7 @@ class find_too_close_sequence_numbers
 
             foreach ($topics_in_this_community as $topic) {
 
-                self::record_topic_if_its_posts_are_jammed_too_close($topic, $line_item_for_report);
+                self::record_topic_if_its_posts_are_jammed_too_close($community, $topic, $line_item_for_report);
 
             }
 
@@ -141,7 +142,7 @@ class find_too_close_sequence_numbers
 
 
         // We want the script to keep going even if $topics_in_this_community === false
-        // Also, we want to exit if there is only one topic in the community.
+        // Also, we want to exit if there is only one topic in this community.
 
         if (!$topics_in_this_community or count($topics_in_this_community) == 1) {
 
@@ -167,7 +168,6 @@ class find_too_close_sequence_numbers
             } else {
 
                 // not last element
-
                 /**
                  * $x is the sequence number of the current element / topic.
                  * $y is the sequence number of the next element / topic.
@@ -191,6 +191,67 @@ class find_too_close_sequence_numbers
 
 
     /**
-     * next function
+     * @param object $community
+     * @param object $topic
+     * @param array $line_item_for_report
+     * @return void
      */
+    private static function record_topic_if_its_posts_are_jammed_too_close(object $community, object $topic, array &$line_item_for_report): void
+    {
+        /**
+         * Get all the posts in the topic.
+         */
+
+
+        $posts_in_this_topic = topic_to_post::get_posts_array_for_a_topic((int)$topic->id);
+
+
+        // We want the script to keep going even if $posts_in_this_topic === false
+        // Also, we want to exit if there is only one post in this topic.
+
+        if (!$posts_in_this_topic or count($posts_in_this_topic) == 1) {
+
+            return;
+
+        }
+
+
+        /**
+         * Iterate over all array elements except the last.
+         */
+
+        $keys = array_keys($posts_in_this_topic);
+        $last_key = end($keys);
+
+        foreach ($posts_in_this_topic as $key => $value) {
+
+            if ($key == $last_key) {
+
+                // last element
+                return;
+
+            } else {
+
+                // not last element
+                /**
+                 * $x is the sequence number of the current element / post.
+                 * $y is the sequence number of the next element / post.
+                 */
+
+                $x = $value->sequence_number;
+                $y = $posts_in_this_topic[$key + 1]->sequence_number;
+
+                if ($y - $x < 800) {
+
+                    // record the identity of this community and stop looking in this community
+                    $line_item_for_report[] = $community->community_name . ' → ' . $topic->topic_name;
+                    return;
+
+                }
+
+            }
+
+        }
+
+    }
 }
