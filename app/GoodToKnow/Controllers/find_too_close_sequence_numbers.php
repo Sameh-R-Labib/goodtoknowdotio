@@ -121,7 +121,7 @@ class find_too_close_sequence_numbers
 
         $g->show_poof = true;
 
-        $g->message .= " If you see items on this page then you need to fix the sequence numbers of what's contained in them. ";
+        $g->message .= " If you see communities / topics listed here then fix the sequence numbers of what they contain. ";
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'findtooclosesequencenumbers.php';
 
