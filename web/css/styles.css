@@ -648,7 +648,7 @@ h2 + p {
 
 #footerbar {
     /* Opacity is the 4th parameter in background-color */
-    background-color: #f1e5ff;
+    background-color: #f0e0f0;
     /* opacity: 0.86; */
     position: static;
     width: 1024px;
@@ -661,7 +661,7 @@ h2 + p {
 #sendmessage {
     opacity: 1;
     /* opacity: 0.64; */
-    background-color: #f1e5ff;
+    background-color: #f0e0f0;
     width: 258px;
     height: 57px;
     margin: auto;
