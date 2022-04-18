@@ -129,9 +129,23 @@ class find_too_close_sequence_numbers
     /**
      *
      */
-    private static function record_community_if_its_topics_are_jammed_too_close(object $community, array &$line_item_for_report)
+    private static function record_community_if_its_topics_are_jammed_too_close(object $community, array &$line_item_for_report): void
     {
+        /**
+         * Get all the topics in the community.
+         */
 
+        $topics_in_this_community = community_to_topic::get_array_of_topic_objects_for_a_community((int)$community->id);
+
+
+        // We want the script to keep going even if $topics_in_this_community === false
+        // Also, we want to exit if there is only one topic in the community.
+
+        if (!$topics_in_this_community or count($topics_in_this_community) == 1) {
+
+            return;
+
+        }
     }
 
 }
