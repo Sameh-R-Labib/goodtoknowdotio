@@ -127,7 +127,9 @@ class find_too_close_sequence_numbers
     }
 
     /**
-     *
+     * @param object $community
+     * @param array $line_item_for_report
+     * @return void
      */
     private static function record_community_if_its_topics_are_jammed_too_close(object $community, array &$line_item_for_report): void
     {
@@ -146,6 +148,49 @@ class find_too_close_sequence_numbers
             return;
 
         }
+
+
+        /**
+         * Iterate over all array elements except the last.
+         */
+
+        $keys = array_keys($topics_in_this_community);
+        $last_key = end($keys);
+
+        foreach ($topics_in_this_community as $key => $value) {
+
+            if ($key == $last_key) {
+
+                // last element
+                return;
+
+            } else {
+
+                // not last element
+
+                /**
+                 * $x is the sequence number of the current element / topic.
+                 * $y is the sequence number of the next element / topic.
+                 */
+
+                $x = $value->sequence_number;
+                $y = $topics_in_this_community[$key + 1]->sequence_number;
+
+                if ($y - $x < 800) {
+
+                    // record the identity of this community and stop looking in this community
+                    $line_item_for_report[] = $community->community_name;
+                    return;
+
+                }
+
+            }
+
+        }
     }
 
+
+    /**
+     * next function
+     */
 }
