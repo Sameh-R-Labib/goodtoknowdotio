@@ -10,7 +10,7 @@
         <p>You've arrived at this page because something went wrong. Either it is a simple anomaly
             where your session expired while you were using this app. Or, it is a serious mistake in the app's
             logic.</p>
-        <p>If the former then just go back and log in. If its the later then please notify the admin.</p>
+        <p>If the former then just go back and log in. If it's the later then please notify Admin.</p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

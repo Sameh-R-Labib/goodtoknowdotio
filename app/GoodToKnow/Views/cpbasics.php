@@ -14,7 +14,7 @@
             <a class="purplebtn" href="/ax1/default_time_zone/page">Switch Timezone</a>
             <a class="greenbtn" href="/ax1/change_password/page">Change Passphrase</a><br><br><br>
             <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">To have a new topic (or community) added you
-                    need to ask admin.</span></span></p>
+                    need to ask Admin.</span></span></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

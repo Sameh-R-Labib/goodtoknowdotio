@@ -11,7 +11,7 @@ class control_panel
 
         if (!$g->is_logged_in or $g->is_admin) {
 
-            breakout(' Hey, either your session timed out or you are an admin and do not belong here in this CP. ');
+            breakout(' Hey, either your session timed out or you are Admin and do not belong here in this CP. ');
 
         }
 

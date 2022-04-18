@@ -18,7 +18,7 @@ class suspend_account_suspend
         /**
          * Goals for this function:
          *  1) Retrieve the user object for the member
-         *     whose is_suspended field the admin wants to edit.
+         *     whose is_suspended field Admin wants to edit.
          *  2) Change the value of is_suspended to 1.
          *  3) Save changes to user object. In other words update the user record in the database.
          *  4) Show a message indicating we've successfully suspended the user's account.
@@ -27,7 +27,7 @@ class suspend_account_suspend
 
         /**
          * 1) Retrieve the user object for the member
-         *     whose is_suspended field the admin wants to edit.
+         *     whose is_suspended field Admin wants to edit.
          */
 
         get_db();

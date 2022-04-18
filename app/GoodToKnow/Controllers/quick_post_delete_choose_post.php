@@ -7,7 +7,7 @@ class quick_post_delete_choose_post
     function page()
     {
         /**
-         * The goal is to present a form with radio buttons for admin to choose the post to delete. We are ONLY
+         * The goal is to present a form with radio buttons for Admin to choose the post to delete. We are ONLY
          * presenting posts found in the topic which was already selected. If we can't find any posts then we'll
          * store a session message and redirect back home.
          *

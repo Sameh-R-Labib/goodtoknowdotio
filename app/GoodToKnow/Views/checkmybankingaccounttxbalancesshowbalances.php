@@ -15,7 +15,7 @@
             <tr>
                 <td><b>Starting balance: </b><?= $g->account->currency ?>&nbsp;<?= $g->account->start_balance ?></td>
                 <td><span class="tooltip">ℹ️
-                        <span class="tooltiptext tooltip-top">Balance will be incorrect if admin has purged transactions
+                        <span class="tooltiptext tooltip-top">Balance will be incorrect if Admin has purged transactions
                             older than 90 days and the start_time for this account is older than 90 days.</span>
                     </span></td>
             </tr>

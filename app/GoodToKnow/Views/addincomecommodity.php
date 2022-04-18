@@ -29,7 +29,7 @@
             </p>
             <p>
                 <label for="amount">Amount of Remuneration <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts to be displayed should have 2 instead of 8 decimal places then ask the admin
+                tooltip-top">If the amounts to be displayed should have 2 instead of 8 decimal places then ask Admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="amount" name="amount" type="text" value="<?= $g->saved_arr01['amount'] ?>" required
                        minlength="1" maxlength="33" size="33" placeholder=".0100600300440002">
@@ -43,7 +43,7 @@
             </p>
             <p>
                 <label for="price">Commodity's Price at Time of Remuneration <span class="tooltip">ℹ️<span class="tooltiptext
-                tooltip-top">If the amounts for currency should have a different number of decimal places then ask the admin
+                tooltip-top">If the amounts for currency should have a different number of decimal places then ask Admin
                         to fix this.</span></span>: </label>
                 <input id="price" name="price" type="text" placeholder="0.00" spellcheck="false"
                        value="<?= $g->saved_arr01['price'] ?>" size="33" minlength="1" maxlength="33">

@@ -10,7 +10,7 @@ class purge_old_messages
          * This is the first in a sequence of routes for deleting the messages which are older
          * than a specified time.
          *
-         * This first route will present a form in which the admin will enter the time at
+         * This first route will present a form in which Admin will enter the time at
          * which all older messages will be deleted.
          *
          * The time will be entered as a date. The assumption is that all messages

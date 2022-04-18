@@ -7,7 +7,7 @@ class quick_post_delete_delete
     function page()
     {
         /**
-         * This route will simply determine which post the admin chose to delete, stores the
+         * This route will simply determine which post Admin chose to delete, stores the
          * post's info in the session, and presents a form asking the user if he is sure he
          * wants to delete the post.
          */

@@ -7,7 +7,7 @@ class cleanup_years_taxable_income_events
     function page()
     {
         /**
-         * Note: It's an admin script.
+         * Note: It's an Admin script.
          */
 
 

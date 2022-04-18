@@ -17,14 +17,14 @@ class member_memo_editor_form
 
         /**
          * Goals for this function:
-         *  1) Retrieve the user object for the member whose memo the admin wants to edit.
+         *  1) Retrieve the user object for the member whose memo the Admin wants to edit.
          *  2) Save the id of the user in the session.
          *  3) Present a (pre-filled with current memo) form for editing the memo.
          */
 
 
         /**
-         *  1) Retrieve the user object for the member whose memo the admin wants to edit.
+         *  1) Retrieve the user object for the member whose memo the Admin wants to edit.
          *  2) Save the id of the user in the session.
          */
 

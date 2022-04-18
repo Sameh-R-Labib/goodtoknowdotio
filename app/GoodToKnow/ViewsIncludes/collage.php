@@ -28,7 +28,7 @@
         You assume that the information you store in this software can be revealed to the public. Therefore,
         do not use this website to store information which can have negative repercussions upon you.
     </li>
-    <li>The administrator of this website reserves the right to remove you from this service without giving a reason.
+    <li>The Admin of this website reserves the right to remove you from this service without giving a reason.
     </li>
     <li>Any content you generate becomes the intellectual property of the person hosting this software.</li>
 </ul>

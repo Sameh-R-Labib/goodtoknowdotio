@@ -7,7 +7,7 @@ class abolish_years_commodities_sold
     function page()
     {
         /**
-         * Note: It's an admin script.
+         * Note: It's an Admin script.
          */
 
         global $g;
