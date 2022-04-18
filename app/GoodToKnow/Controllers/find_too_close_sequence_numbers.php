@@ -25,7 +25,7 @@ class find_too_close_sequence_numbers
         get_db();
 
 
-        $g->line_item_for_report = [];
+        $line_item_for_report = [];
 
 
         /**
@@ -48,7 +48,7 @@ class find_too_close_sequence_numbers
 
         foreach ($coms_in_this_system as $community) {
 
-            self::record_community_if_its_topics_are_jammed_too_close($community);
+            self::record_community_if_its_topics_are_jammed_too_close($community, $line_item_for_report);
 
         }
 
@@ -62,7 +62,7 @@ class find_too_close_sequence_numbers
 
             // First find all the topics in this community.
 
-            $topics_in_this_community = community_to_topic::get_array_of_topic_objects_for_a_community($community->id);
+            $topics_in_this_community = community_to_topic::get_array_of_topic_objects_for_a_community((int)$community->id);
 
 
             // We want the script to keep going even if $topics_in_this_community === false
@@ -80,7 +80,7 @@ class find_too_close_sequence_numbers
 
             foreach ($topics_in_this_community as $topic) {
 
-                self::record_topic_if_its_posts_are_jammed_too_close($topic);
+                self::record_topic_if_its_posts_are_jammed_too_close($topic, $line_item_for_report);
 
             }
 
@@ -94,9 +94,9 @@ class find_too_close_sequence_numbers
 
             $g->output = '';
 
-            if (!empty($g->line_item_for_report)) {
+            if (!empty($line_item_for_report)) {
 
-                foreach ($g->line_item_for_report as $item) {
+                foreach ($line_item_for_report as $item) {
 
                     $g->output .= $item . "\n <br><br>";
 
@@ -127,7 +127,11 @@ class find_too_close_sequence_numbers
     }
 
     /**
-     * Another class function.
+     *
      */
+    private static function record_community_if_its_topics_are_jammed_too_close(int $community, array &$line_item_for_report)
+    {
+
+    }
 
 }
