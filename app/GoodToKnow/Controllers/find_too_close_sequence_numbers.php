@@ -176,7 +176,7 @@ class find_too_close_sequence_numbers
                 $x = $value->sequence_number;
                 $y = $topics_in_this_community[$key + 1]->sequence_number;
 
-                if ($y - $x < 800) {
+                if ($y - $x < 600) {
 
                     // record the identity of this community and stop looking in this community
                     $line_item_for_report[] = $community->community_name;
@@ -241,7 +241,7 @@ class find_too_close_sequence_numbers
                 $x = $value->sequence_number;
                 $y = $posts_in_this_topic[$key + 1]->sequence_number;
 
-                if ($y - $x < 800) {
+                if ($y - $x < 600) {
 
                     // record the identity of this community and stop looking in this community
                     $line_item_for_report[] = $community->community_name . ' → ' . $topic->topic_name;
