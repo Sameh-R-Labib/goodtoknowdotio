@@ -67,7 +67,7 @@ class glance_at_my_tasks
 
         $g->show_poof = true;
 
-        $g->message .= ' ʘ‿ʘ at your tasks. ';
+        $g->message .= ' ʘ‿ʘ your tasks. ';
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'glanceatmytasks.php';
     }
