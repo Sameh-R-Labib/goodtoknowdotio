@@ -31,6 +31,15 @@ function object_having_lowest_sequence_number(array &$array_of_objects)
 
     if ($key_of_lowest === -1) {
 
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$array_of_objects: </p>\n<pre>";
+        var_dump($array_of_objects);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
         breakout(' Error 124212. ');
 
     }
