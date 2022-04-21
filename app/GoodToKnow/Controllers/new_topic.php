@@ -9,9 +9,9 @@ class new_topic
         /**
          * We need to determine whether the community has any topics.
          * If it has no topics then we assign the sequence number for the new topic
-         * a value of 10500000 and redirect to where we ask for the name of the topic.
-         * If the community has one or more topics, then we redirect to where we as for the
-         * insertion point.
+         * a value of FIRSTMIDDLESEQNUM and redirect to where we ask for the name of the topic.
+         * If the community has one or more topics, then we redirect to where we ask
+         * for the insertion point.
          */
 
 
@@ -35,7 +35,7 @@ class new_topic
 
 
         if ($is_empty) {
-            $_SESSION['saved_int01'] = 10000;
+            $_SESSION['saved_int01'] = FIRSTMIDDLESEQNUM;
             redirect_to("/ax1/new_topic_name/page");
         } else {
             redirect_to("/ax1/new_topic_insert_point/page");

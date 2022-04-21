@@ -59,7 +59,7 @@ class create_new_post_direct
 
             // There are NO posts in our topic
 
-            $_SESSION['saved_int02'] = 10000;
+            $_SESSION['saved_int02'] = FIRSTMIDDLESEQNUM;
 
             redirect_to("/ax1/create_new_post_title/page");
 
