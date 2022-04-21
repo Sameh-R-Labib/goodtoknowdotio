@@ -4,7 +4,7 @@
         <h2>Adjust Sequence Numbers</h2>
         <?php require SESSIONMESSAGE; ?>
         <p><b><?= $g->thing_type ?>:</b> <?= $g->thing_name ?></p>
-        <p><b>range:</b> 0 - 40000000</p>
+        <p><b>range:</b> 0 - <?= UPPERLIMITSEQNUM ?></p>
         <section>
             <?= $g->fields ?>
         </section>

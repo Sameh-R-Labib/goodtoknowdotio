@@ -3,6 +3,8 @@
 const DIRSEP = DIRECTORY_SEPARATOR;
 const WEB_DIR = PROJ_ROOT . DIRSEP . 'web';
 const VENDOR_DIR = PROJ_ROOT . DIRSEP . 'vendor';
+const UPPERLIMITSEQNUM = 40000000;
+
 
 /**
  * Here I can define constants for the location

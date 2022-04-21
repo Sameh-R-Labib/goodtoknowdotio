@@ -14,7 +14,7 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
      * object's sequence number.
      */
 
-    $sequence_number_of_currently_trailing_object = 40000000;
+    $sequence_number_of_currently_trailing_object = UPPERLIMITSEQNUM;
 
 
     /**

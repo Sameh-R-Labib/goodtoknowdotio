@@ -22,11 +22,11 @@ function get_sequence_number_in_case_after(array $array_of_objects, int $point_o
      * object is the last object (since here we are looking to place the new object AFTER the point of reference object.)
      */
 
-    if ($point_of_reference_sequence_number === 40000000) breakout(' Please choose another place to put the new object. ');
+    if ($point_of_reference_sequence_number === UPPERLIMITSEQNUM) breakout(' Please choose another place to put the new object. ');
 
 
     /**
-     * If there are no objects after the point of reference object then we will assume a value of 40000000
+     * If there are no objects after the point of reference object then we will assume a value of UPPERLIMITSEQNUM
      * for the currently next object.
      */
 
@@ -45,7 +45,7 @@ function get_sequence_number_in_case_after(array $array_of_objects, int $point_o
 
     if (!$there_is_an_object_after_the_por_object) {
 
-        $sequence_number_of_currently_following_object = 40000000;
+        $sequence_number_of_currently_following_object = UPPERLIMITSEQNUM;
 
     } else {
 
