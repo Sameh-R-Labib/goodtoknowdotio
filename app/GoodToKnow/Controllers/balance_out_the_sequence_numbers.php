@@ -82,7 +82,7 @@ class balance_out_the_sequence_numbers
          * We need to put together the HTML for the form fields.
          * Each form field row will look like this:
          *   [text input for a sequence number] [The name of the topic or post]
-         * When formulating each test input field we will be using a trick to
+         * When formulating each text input field we will be using a trick to
          * make the submitted form easier to process. Usually the name of the field
          * results in a post variable of the same name. For example if we have 10
          * text input fields with 10 different names we end up with 10 post variables.
@@ -91,7 +91,7 @@ class balance_out_the_sequence_numbers
          *
          * To start off we need separate loops for our two types records (one loop will
          * be used if we are dealing with topics and another loop will be used if we are
-         * dealing with posts.
+         * dealing with posts.)
          */
 
         if ($g->thing_type === 'community') {
