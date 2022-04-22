@@ -102,7 +102,7 @@ class balance_out_the_sequence_numbers
                 // $object is current record
                 $g->fields .= "<p><label for=\"animal{$object->id}\"><b>⇰</b> </label>\n";
                 $g->fields .= "<input type=\"text\" value=\"{$object->sequence_number}\"";
-                $g->fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"9\" required > ";
+                $g->fields .= "name=\"animal[{$object->id}]\" id=\"animal{$object->id}\" size=\"11\" required > ";
                 $g->fields .= $object->topic_name;
                 $g->fields .= "</p>\n";
 
