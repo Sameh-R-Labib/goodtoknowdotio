@@ -52,6 +52,6 @@ class balance_out_the_sequence_numbers_save
          * Report success.
          */
 
-        breakout(" Success or failure? Either way, The script has reached its end. ");
+        breakout(" Success or failure?! Either way, the script has ended. ");
     }
 }

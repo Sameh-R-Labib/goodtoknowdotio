@@ -18,7 +18,7 @@ class balance_out_the_sequence_numbers_form_processor
          * 3) Replace the sequence_number of each record in $result with its corresponding one from $_POST["animal"].
          * 4) Save $result to the session.
          * 5) Present the relevant parts of $result in a view of the type with round corners.
-         * 6) Present a Save button and a Abort button.
+         * 6) Present a Save button and an Abort button.
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
@@ -117,7 +117,7 @@ class balance_out_the_sequence_numbers_form_processor
 
 
         /**
-         * 6) Present a Save button and a Abort button.
+         * 6) Present a Save button and an Abort button.
          *    **These buttons will be link buttons instead of form submit buttons.**
          */
 
