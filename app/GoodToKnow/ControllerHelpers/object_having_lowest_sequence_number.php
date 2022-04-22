@@ -43,11 +43,18 @@ function object_having_lowest_sequence_number(array &$array_of_objects)
 
         }
 
+        if ((int)$object->sequence_number == $lowest_sequence_number) {
+
+            breakout(' This should never happen. If it happened because of code or because of data
+            (direct manipulation) then do something to remedy this situation. ');
+
+        }
+
         if ($object->sequence_number <= $lowest_sequence_number) {
 
             $key_of_lowest = $key;
 
-            $lowest_sequence_number = $object->sequence_number;
+            $lowest_sequence_number = (int)$object->sequence_number;
 
         }
     }
