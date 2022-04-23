@@ -8,6 +8,7 @@
         <?= $g->present ?>
         <!-- Present link buttons for Save and Abort -->
         <p><a class="save" href="/ax1/balance_out_the_sequence_numbers_save/page">Save</a>
+            <a class="modify" href="/ax1/balance_out_the_sequence_numbers_modify/page">Modify</a>
             <a class="abort" href="/ax1/clear_session_vars/page">Abort</a></p>
     </form>
 <?php require BOTTOMOFPAGES; ?>

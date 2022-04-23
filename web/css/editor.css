@@ -133,9 +133,20 @@ a.save:hover, a.save:active {
     background-color: goldenrod;
 }
 
+a.modify:hover, a.modify:active {
+    background-color: yellow;
+}
+
 a.abort {
     margin-left: 252px;
     opacity: 0.35;
+    cursor: pointer;
+}
+
+a.modify {
+    background-color: #21558b;
+    margin-left: 12px;
+    opacity: 1;
     cursor: pointer;
 }
 
