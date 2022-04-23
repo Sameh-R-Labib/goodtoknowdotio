@@ -41,25 +41,18 @@ class balance_out_the_sequence_numbers_form_processor
          *    String is the type of value of all form submits.
          */
 
-        // √s ok
         $animal_arr = $_POST["animal"];
 
-
+        // Some validation of form data
         foreach ($animal_arr as $key => $value) {
-            /**
-             * Debug Code
-             */
-            echo "\n<p>Begin debug</p>\n";
-            echo "<p>Var_dump \$key: </p>\n<pre>";
-            var_dump($key);
-            echo "<p>Var_dump \$value: </p>\n<pre>";
-            var_dump($value);
-            echo "</pre>\n";
+
+            if (!is_int($key) or !is_numeric($value) or $value != (int)$value) {
+
+                breakout(' Error: 5663333');
+
+            }
+            
         }
-        /**
-         * Debug Code
-         */
-        die("<p>End debug</p>\n");
 
 
         /**
