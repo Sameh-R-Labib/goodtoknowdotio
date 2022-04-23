@@ -45,6 +45,20 @@ class balance_out_the_sequence_numbers_form_processor
         $animal_arr = $_POST["animal"];
 
         /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$animal_arr: </p>\n<pre>";
+        var_dump($animal_arr);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
+        foreach ($animal_arr as $key => $value) {
+            
+        }
+
+
+        /**
          * 2) Retrieve the same $result set which was retrieved in the previous route.
          */
 
