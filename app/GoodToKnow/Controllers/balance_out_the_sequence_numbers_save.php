@@ -33,6 +33,21 @@ class balance_out_the_sequence_numbers_save
 
 
         /**
+         * NEVER AGAIN will we have an out of range sequence number.
+         */
+
+        foreach ($g->saved_arr01 as $item) {
+
+            if ((int)$item->sequence_number <= 0 or (int)$item->sequence_number >= UPPERLIMITSEQNUM) {
+
+                breakout(" FAILURE: You tried to save an out of range sequence number. ");
+
+            }
+
+        }
+
+
+        /**
          * 1, 2, 3) All steps in one section of code.
          */
 

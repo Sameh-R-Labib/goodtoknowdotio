@@ -87,6 +87,13 @@ class balance_out_the_sequence_numbers_form_processor
             // the $animal_arr element whose key is the same as the id of the object.
             $object->sequence_number = $animal_arr[$object->id];
 
+            // While we're at it, add a warning if the sequence number is out of range.
+            if ((int)$object->sequence_number <= 0 or (int)$object->sequence_number >= UPPERLIMITSEQNUM) {
+
+                $g->message .= ' WARNING: One or more sequence numbers are out of range. ';
+
+            }
+
         }
 
 
