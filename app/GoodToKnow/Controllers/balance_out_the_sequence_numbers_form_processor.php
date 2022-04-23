@@ -44,18 +44,22 @@ class balance_out_the_sequence_numbers_form_processor
         // √s ok
         $animal_arr = $_POST["animal"];
 
+
+        foreach ($animal_arr as $key => $value) {
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Begin debug</p>\n";
+            echo "<p>Var_dump \$key: </p>\n<pre>";
+            var_dump($key);
+            echo "<p>Var_dump \$value: </p>\n<pre>";
+            var_dump($value);
+            echo "</pre>\n";
+        }
         /**
          * Debug Code
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$animal_arr: </p>\n<pre>";
-        var_dump($animal_arr);
-        echo "</pre>\n";
         die("<p>End debug</p>\n");
-
-        foreach ($animal_arr as $key => $value) {
-            
-        }
 
 
         /**
