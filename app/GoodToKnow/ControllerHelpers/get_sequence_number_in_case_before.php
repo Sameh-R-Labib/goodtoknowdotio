@@ -20,6 +20,8 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
     /**
      * Obviously, there can't be a sequence number to be gotten in the case where our point of reference
      * object is the first object (since here we are looking to place the new object BEFORE the point of reference object.)
+     *
+     * Anyways, Gtk.io will never be assigning 0 as a sequence number.
      */
 
     if ($point_of_reference_sequence_number === 0) breakout(' Please choose a different place to put the new object. ');
@@ -48,6 +50,7 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
         $sequence_number_of_currently_trailing_object = 0;
 
     } else {
+
         $reversed = array_reverse($array_of_objects);
 
         foreach ($reversed as $object) {
@@ -75,4 +78,5 @@ function get_sequence_number_in_case_before(array $array_of_objects, int $point_
     }
 
     return $point_of_reference_sequence_number - $decrease;
+
 }

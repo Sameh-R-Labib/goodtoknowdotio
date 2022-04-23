@@ -74,4 +74,5 @@ function get_sequence_number_in_case_after(array $array_of_objects, int $point_o
     }
 
     return $point_of_reference_sequence_number + $increase;
+    
 }
