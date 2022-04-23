@@ -134,7 +134,7 @@ a.save:hover, a.save:active {
 }
 
 a.modify:hover, a.modify:active {
-    background-color: yellow;
+    background-color: darkcyan;
 }
 
 a.abort {
