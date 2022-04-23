@@ -41,9 +41,9 @@ class balance_out_the_sequence_numbers_save
         // We will call the save function on each object.
         // It doesn't matter which type of object it is
         // since every type of object has a save() method.
-        foreach ($_SESSION['saved_arr01'] as $item) {
+        foreach ($g->saved_arr01 as $item) {
 
-            $result = $item->save();
+            $item->save();
 
         }
 
