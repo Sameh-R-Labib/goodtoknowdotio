@@ -102,10 +102,8 @@ class home
                 $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
                 $g->the_buttons .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
                 $g->the_buttons .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
-                $g->the_buttons .= $g->messages_button;
-            } else {
-                $g->the_buttons .= $g->messages_button;
             }
+            $g->the_buttons .= $g->messages_button;
 
         }
     }
