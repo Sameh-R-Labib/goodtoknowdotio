@@ -81,7 +81,6 @@ class home
                 $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
             }
             $g->the_buttons .= '<a class="orangebtn" href="">Admin Adds Topics</a> ';
-            $g->the_buttons .= $g->messages_button;
 
         } elseif ($g->type_of_resource_requested === 'topic') {
 
@@ -91,7 +90,6 @@ class home
             $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->the_buttons .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
             if ($g->is_admin) $g->the_buttons .= ' <a class="purplebtn" href="/ax1/move_post/page">Move a 📄</a> ';
-            $g->the_buttons .= $g->messages_button;
 
         } else {
 
@@ -103,9 +101,9 @@ class home
                 $g->the_buttons .= ' <a class="purplebtn" href="/ax1/edit_my_post_direct/page">Edit Content of 📄</a> ';
                 $g->the_buttons .= ' <a class="orangebtn" href="/ax1/edit_post_title_direct/page">Edit Title of 📄</a> ';
             }
-            $g->the_buttons .= $g->messages_button;
 
         }
+        $g->the_buttons .= $g->messages_button;
     }
 
 
