@@ -73,10 +73,10 @@ switch ($g->page) {
         echo "<a href=\"/ax1/c_p_purges/page\">System Maintenance</a>";
         break;
     case 'c_p_accounts':
-        echo "<a href=\"/ax1/c_p_accounts/page\">Account</a>";
+        echo "<a href=\"/ax1/c_p_accounts/page\">User Management</a>";
         break;
     case 'c_p_postings':
-        echo "<a href=\"/ax1/c_p_postings/page\">Blog Post</a>";
+        echo "<a href=\"/ax1/c_p_postings/page\">Blog Management</a>";
         break;
     case 'proclamation':
         echo "<a href=\"/ax1/proclamation/page\">Proclamation</a>";
