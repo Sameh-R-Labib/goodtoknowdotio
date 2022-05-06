@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Models;
 
+use Exception;
 use stdClass;
 
 class user extends good_object
@@ -105,7 +106,7 @@ class user extends good_object
         }
 
         // Otherwise, return control over to where the function was called.
-        // At this point we've checked and we know the user is not suspended and the function did not bonk-out.
+        // At this point we've checked, and we know the user is not suspended and the function did not bonk-out.
 
         return true;
     }
@@ -114,14 +115,14 @@ class user extends good_object
     /**
      * @param string $username
      * @param string $password
-     * @return bool|object|stdClass
+     * @return false|mixed|object|stdClass|null
      */
     public static function authenticate(string $username, string $password)
     {
         global $g;
 
         /**
-         * What you see here could have been done using the find_by_sql
+         * What you see here could have been done using the find_by_sql,
          * but I chose to do this explicitly using a prepared statement since
          * that helps rebuff sql injection attacks.
          */
@@ -163,7 +164,7 @@ class user extends good_object
 
                 }
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $g->message .= ' user::authenticate() caught a thrown exception: ' .
                 htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
@@ -213,7 +214,7 @@ class user extends good_object
     public static function find_by_username(string $username)
     {
         /**
-         * You give it a username and it returns the
+         * You give it a username, and it returns the
          * corresponding user object or false.
          */
 
