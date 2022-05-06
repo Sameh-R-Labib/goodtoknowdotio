@@ -37,13 +37,31 @@ class offline_the_system
 
         $status_object = status::find_by_id(1);
 
+        if (!$status_object) {
+
+            breakout(' ERROR: The status object could not be found. ');
+
+        }
+
+
         /**
-         * Debug Code
+         * There are very specific / valid values for status name and status message.
+         * So, let's stop here if these are invalid.
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$status_object: </p>\n<pre>";
-        var_dump($status_object);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
+
+        if ($status_object->name !== 'normal' and $status_object->name !== 'offline') {
+
+            breakout(' ERROR: The status name is invalid. ');
+
+        }
+
+        if ($status_object->message !== 'The system is operating with normal status.' and
+            $status_object->message !== 'The system is operating with offline status.') {
+
+            breakout(' ERROR: The status message is invalid. ');
+
+        }
+
+
     }
 }
