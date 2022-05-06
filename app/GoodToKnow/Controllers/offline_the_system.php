@@ -63,5 +63,31 @@ class offline_the_system
         }
 
 
+        /**
+         * So, we have a valid $status_object.
+         * And, the $status_object reflects the status stored in the database.
+         *
+         *
+         * WHAT TO DO NOW?
+         * ===============
+         *
+         * We should:
+         *  - display a form for Admin to see and act upon
+         *  - the form tells Admin what the current mode is
+         *  - the form asks Admin if he wants to switch to the other mode
+         *
+         * The input fields are radio type. The choice is yes or no.
+         */
+
+        // we need this for the view
+
+        $g->current_status = $status_object->name;
+
+
+        $g->html_title = 'Switch status?';
+
+
+        require VIEWS . DIRSEP . 'offlinethesystem.php';
+
     }
 }
