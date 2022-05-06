@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\status;
+
 class offline_the_system
 {
     function page()
@@ -19,5 +21,29 @@ class offline_the_system
          * This gives Admin the opportunity to do maintenance on the system
          * without bothering with user activity which may cause anomalies.
          */
+
+        global $g;
+
+
+        kick_out_nonadmins_or_if_there_is_error_msg();
+
+
+        get_db();
+
+
+        /**
+         * Firstly, we need to get the current status object.
+         */
+
+        $status_object = status::find_by_id(1);
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$status_object: </p>\n<pre>";
+        var_dump($status_object);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
     }
 }
