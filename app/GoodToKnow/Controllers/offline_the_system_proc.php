@@ -111,7 +111,7 @@ class offline_the_system_proc
          * Report success.
          */
 
-        breakout(" The system status has been toggled over to <b>$status_object->name</b> 👌. ");
+        breakout(" The system status has been toggled over to <b>$status_object->name</b> 👌🏽. ");
 
     }
 }
