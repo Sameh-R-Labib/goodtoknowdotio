@@ -159,7 +159,7 @@ class feature_a_task_update
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated object (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I failed at saving the updated object (most likely because you did not make any changes to it.) ');
 
         }
 
@@ -177,5 +177,6 @@ class feature_a_task_update
          */
 
         redirect_to("/ax1/glance_at_my_tasks/page");
+        
     }
 }
