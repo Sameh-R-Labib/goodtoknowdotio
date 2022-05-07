@@ -3,6 +3,9 @@
     <form action="/ax1/offline_the_system_proc/page" method="post">
         <h1><?= $g->html_title ?></h1>
         <?php require SESSIONMESSAGE; ?>
+        <p class="tooltip">ℹ️
+            <span class="tooltiptext tooltip-top">An offline Gtk.io only permits Admin to be logged in and active.</span>
+        </p>
         <p>The current system status is: "<?= $g->current_status ?>".<br>
             Do you want to switch to the other status?</p>
         <section>
