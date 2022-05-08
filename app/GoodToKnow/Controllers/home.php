@@ -313,5 +313,7 @@ class home
             redirect_to("/ax1/login_form/page");
 
         }
+
+        offline_enforcement();
     }
 }
