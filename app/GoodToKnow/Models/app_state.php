@@ -232,6 +232,12 @@ class app_state
 
 
     /**
+     * @var int
+     */
+    public $when_last_checked_system_status_offline;
+
+
+    /**
      * @var int|null
      */
     public $messages_last_quantity;
@@ -838,6 +844,8 @@ class app_state
         $this->author_id = (isset($_SESSION['author_id'])) ? $_SESSION['author_id'] : 0;
 
         $this->when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 1554825315;
+
+        $this->when_last_checked_system_status_offline = (isset($_SESSION['when_last_checked_system_status_offline'])) ? $_SESSION['when_last_checked_system_status_offline'] : 1554825315;
 
         $this->messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
 
