@@ -78,7 +78,7 @@ class alter_a_possible_tax_deduction_update
 
         if ($result === false) {
 
-            breakout(' I aborted because I failed at saving the updated object (most likely because you didn\'t make any
+            breakout(' I aborted because I failed at saving the updated object (most likely because you did not make any
             changes to it.) ');
 
         }

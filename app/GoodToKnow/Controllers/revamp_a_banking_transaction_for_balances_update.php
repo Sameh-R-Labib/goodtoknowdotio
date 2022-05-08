@@ -147,7 +147,7 @@ class revamp_a_banking_transaction_for_balances_update
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated object (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I failed at saving the updated object (most likely because you did not make any changes to it.) ');
 
         }
 

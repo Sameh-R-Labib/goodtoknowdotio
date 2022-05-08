@@ -19,7 +19,7 @@ function before_after_form_field_prep(string $field_name): string
 
     if ($choice !== "before" && $choice !== "after") {
 
-        breakout(' You didn\'t enter a before/after choice. ');
+        breakout(' You did not enter a before/after choice. ');
 
     }
 

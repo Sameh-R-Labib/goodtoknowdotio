@@ -147,7 +147,7 @@ class populate_a_banking_account_for_balances_submit
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated banking account for balances (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I failed at saving the updated banking account for balances (most likely because you did not make any changes to it.) ');
 
         }
 

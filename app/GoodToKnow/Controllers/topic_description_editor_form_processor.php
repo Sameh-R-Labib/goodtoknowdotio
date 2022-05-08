@@ -60,7 +60,7 @@ class topic_description_editor_form_processor
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated topic object (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I failed at saving the updated topic object (most likely because you did not make any changes to it.) ');
 
         }
 

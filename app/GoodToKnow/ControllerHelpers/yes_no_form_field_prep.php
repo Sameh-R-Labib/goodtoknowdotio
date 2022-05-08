@@ -19,7 +19,7 @@ function yes_no_form_field_prep(string $field_name): string
 
     if ($choice != "yes" && $choice != "no") {
 
-        breakout(' You didn\'t enter a yes/no choice. ');
+        breakout(' You did not enter a yes/no choice. ');
 
     }
 

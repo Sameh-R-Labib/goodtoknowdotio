@@ -146,7 +146,7 @@ class polish_a_recurring_payment_record_submit
 
         if ($result === false) {
 
-            breakout(' I failed at saving the updated Recurring Payment (most likely because you didn\'t make any changes to it.) ');
+            breakout(' I failed at saving the updated Recurring Payment (most likely because you did not make any changes to it.) ');
 
         }
 
