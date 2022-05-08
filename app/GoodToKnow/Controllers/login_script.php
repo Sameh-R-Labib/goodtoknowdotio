@@ -150,6 +150,7 @@ class login_script
 
             $g->message .= " No active account exists for this username. ";
             $_SESSION['message'] = $g->message;
+            $g->is_logged_in = false;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 

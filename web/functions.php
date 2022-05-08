@@ -1,5 +1,7 @@
 <?php
 
+use GoodToKnow\Models\status;
+
 /**
  * @param string $html
  */
@@ -13,9 +15,71 @@ function fix_michelf(string &$html)
 
 
 /**
- * Gtk.io uses this one for Read / Show features
- * because these features may carry over a message
- * from the feature which may have run before it.
+ * @return void
+ */
+function offline_enforcement()
+{
+    global $g;
+
+    $elapsed_time = time() - $g->when_last_checked_system_status_offline;
+
+    if ($elapsed_time > 400 and !$g->is_admin) {
+
+        /**
+         * Enforce offline status.
+         */
+
+        $g->when_last_checked_system_status_offline = time();
+
+        $_SESSION['when_last_checked_system_status_offline'] = $g->when_last_checked_system_status_offline;
+
+        db_connect_if_not_connected();
+
+
+        /**
+         * Get the system status object.
+         */
+
+        $status_object = status::find_by_id(1);
+
+        if (!$status_object) {
+
+            breakout(' ERROR: 581471547. ');
+
+        }
+
+        if ($status_object->name !== 'normal' and $status_object->name !== 'offline') {
+
+            breakout(' ERROR: 1471 The status name is invalid. ');
+
+        }
+
+        if ($status_object->message !== 'The system is operating with normal status.' and
+            $status_object->message !== 'The system is operating with offline status.') {
+
+            breakout(' ERROR: 1471 The status message is invalid. ');
+
+        }
+
+
+        /**
+         * Kick out the user.
+         */
+
+        if ($status_object->name == 'offline') {
+
+            redirect_to("/ax1/logout/page");
+
+        }
+    }
+}
+
+
+/**
+ * Gtk.io uses this particular kick out function for
+ * Read / Show features because these features may
+ * carry over a message from the feature which may
+ * have run before it.
  *
  * @return void
  */
@@ -25,9 +89,11 @@ function kick_out_loggedoutusers()
 
     if (!$g->is_logged_in or $_SESSION['agree_to_tos'] !== 'agree') {
 
-        breakout(' Either your session has expired or you didn\'t agree to the T.O.S. ');
+        breakout(' Either your session has expired or you did not agree to the T.O.S. ');
 
     }
+
+    offline_enforcement();
 }
 
 
@@ -39,6 +105,8 @@ function kick_out_loggedoutusers()
  * Breakout just means control is handed over to the home page.
  * In the case where there is no session file the home page will log out the user.
  * In the case where there is a message the home page will show that message.
+ *
+ * Also: offline_enforcement().
  */
 function kick_out_loggedoutusers_or_if_there_is_error_msg()
 {
@@ -49,6 +117,8 @@ function kick_out_loggedoutusers_or_if_there_is_error_msg()
         breakout(' Either your session expired or an error message was generated. ');
 
     }
+
+    offline_enforcement();
 }
 
 

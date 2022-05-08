@@ -9,9 +9,6 @@ class offline_the_system_proc
 {
     function page()
     {
-        global $g;
-
-
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
