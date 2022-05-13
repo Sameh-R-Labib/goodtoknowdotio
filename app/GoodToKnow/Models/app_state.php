@@ -23,6 +23,12 @@ use mysqli;
 class app_state
 {
     /**
+     * @var string
+     */
+    public $controller_name;
+
+
+    /**
      * The system message which is to be displayed.
      *
      * @var string

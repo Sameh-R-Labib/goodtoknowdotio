@@ -106,7 +106,7 @@ if (!empty($_SERVER['PATH_INFO'])) {
 
 // Default controller
 
-$controller_name = 'home';
+$g->controller_name = 'home';
 
 
 if (!empty($route_segments_array[0])) {
@@ -116,14 +116,14 @@ if (!empty($route_segments_array[0])) {
 
     if (file_exists($file_path_to_controller)) {
 
-        $controller_name = $route_segments_array[0];
+        $g->controller_name = $route_segments_array[0];
         unset($route_segments_array[0]);
 
     }
 
 }
 
-$fully_qualified_controller_name = 'GoodToKnow\Controllers\\' . $controller_name;
+$fully_qualified_controller_name = 'GoodToKnow\Controllers\\' . $g->controller_name;
 
 $controller_object = new $fully_qualified_controller_name;
 

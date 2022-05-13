@@ -202,9 +202,8 @@ class login_script
 
             $g->message .= " I don't know exactly why you ended up on this page but what I do know is that
              you submitted your username and password to log in although the session already considers you logged in. ";
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
+
+            breakout('');
 
         }
 

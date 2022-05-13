@@ -72,10 +72,7 @@ class set_home_community_topic_post
 
             if ($post_id != 0) {
 
-                $g->message .= " Your resource request is defective. (errno 1) ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" Your resource request is defective. (errno 1) ");
 
             }
 
@@ -98,10 +95,7 @@ class set_home_community_topic_post
 
             } else {
 
-                $g->message .= " Anomalous situation #2954. ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" Anomalous situation #2954. ");
 
             }
 
@@ -119,10 +113,7 @@ class set_home_community_topic_post
 
         if (!array_key_exists($community_id, $g->special_community_array)) {
 
-            $g->message .= " Invalid community_id. ";
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
+            breakout(" Invalid community_id. ");
 
         }
 
@@ -145,10 +136,7 @@ class set_home_community_topic_post
 
         if ($topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
 
-            $g->message .= " Your resource request is defective.  (errno 6) ";
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
+            breakout(" Your resource request is defective.  (errno 6) ");
 
         }
 
@@ -159,10 +147,7 @@ class set_home_community_topic_post
 
         if (!$community_object) {
 
-            $g->message .= " I could not get the community object. ";
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
+            breakout(" I could not get the community object. ");
 
         }
 
@@ -204,10 +189,7 @@ class set_home_community_topic_post
 
             if (!$topic_object) {
 
-                $g->message .= " I could not get the topic object. ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" I could not get the topic object. ");
 
             }
 
@@ -251,10 +233,7 @@ class set_home_community_topic_post
 
             if (!array_key_exists($post_id, $special_post_array)) {
 
-                $g->message .= " Your resource request is defective.  (errno 4) ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" Your resource request is defective.  (errno 4) ");
 
             }
 
@@ -265,10 +244,7 @@ class set_home_community_topic_post
 
             if (!$post_object) {
 
-                $g->message .= " set_home_community_topic_post says: Error 58498. ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" set_home_community_topic_post says: Error 58498. ");
 
             }
 
@@ -276,10 +252,7 @@ class set_home_community_topic_post
 
             if ($post_content === false) {
 
-                $g->message .= " Unable to read the post's html source file. ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" Unable to read the post's html source file. ");
 
             }
 
@@ -311,10 +284,7 @@ class set_home_community_topic_post
 
             if ($post_author_object === false) {
 
-                $g->message .= " Unable to get the post author object from the database. ";
-                $_SESSION['message'] = $g->message;
-                reset_feature_session_vars();
-                redirect_to("/ax1/infinite_loop_prevent/page");
+                breakout(" Unable to get the post author object from the database. ");
 
             }
 

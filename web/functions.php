@@ -43,15 +43,11 @@ function offline_enforcement()
         $status_object = status::find_by_id(1);
 
         if (!$status_object) {
-
             breakout(' ERROR: 581471547. ');
-
         }
 
         if ($status_object->name !== 'normal' and $status_object->name !== 'offline') {
-
             breakout(' ERROR: 1471 The status name is invalid. ');
-
         }
 
         if ($status_object->message !== 'The system is operating with normal status.' and
@@ -113,9 +109,7 @@ function kick_out_loggedoutusers_or_if_there_is_error_msg()
     global $g;
 
     if (!$g->is_logged_in || !empty($g->message) || $_SESSION['agree_to_tos'] !== 'agree') {
-
         breakout(' Either your session expired or an error message was generated. ');
-
     }
 
     offline_enforcement();
@@ -130,9 +124,7 @@ function kick_out_nonadmins_or_if_there_is_error_msg()
     global $g;
 
     if (!$g->is_logged_in || !$g->is_admin || !empty($g->message) || $_SESSION['agree_to_tos'] !== 'agree') {
-
         breakout(' Either you\'re not authorized, your session expired, there\'s an error message, or you did not agree to the T.O.S. ');
-
     }
 }
 
@@ -186,10 +178,8 @@ function redirect_to(string $location)
     $_SESSION['message'] = $g->message;
 
     if ($location !== '') {
-
         header("Location: $location");
         exit;
-
     }
 }
 
@@ -212,9 +202,15 @@ function breakout(string $newMessage)
      */
     global $g;
 
-    $g->message .= $newMessage;
-    reset_feature_session_vars();
-    redirect_to("/ax1/home/page");
+    if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post') {
+        $g->message .= $newMessage;
+        reset_feature_session_vars();
+        redirect_to("/ax1/infinite_loop_prevent/page");
+    } else {
+        $g->message .= $newMessage;
+        reset_feature_session_vars();
+        redirect_to("/ax1/home/page");
+    }
 }
 
 
@@ -226,19 +222,13 @@ function size_as_text(int $size): string
 {
     // takes a size in bytes and returns a more use friendly equivalent
     if ($size < 1024) {
-
         return "$size bytes";
-
     } elseif ($size < 1048576) {
-
         $size_kb = round($size / 1024);
         return "$size_kb KB";
-
     } else {
-
         $size_mb = round($size / 1048576, 1);
         return "$size_mb MB";
-
     }
 }
 
@@ -255,10 +245,8 @@ function db_connect()
         $g->db = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
         if ($g->db->connect_error) {
-
             $g->message .= ' ' . htmlspecialchars($g->db->connect_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
             return false;
-
         }
 
         $g->db->set_charset('utf8mb4');
@@ -286,9 +274,7 @@ function get_db()
     $g->db = db_connect();
 
     if ($g->db === false) {
-
         breakout(' I was unable to connect to the database. ');
-
     }
 
     return $g->db;
@@ -296,26 +282,16 @@ function get_db()
 
 /**
  * We use db_connect_if_not_connected() rather than get_db()
- * when we:
- *  A. want redirection upon failure to be to /ax1/infinite_loop_prevent/page.
- *  B. want to connect ONLY IF we don't already have a connection.
+ * when we want to connect ONLY IF we don't already have a connection.
  */
 function db_connect_if_not_connected()
 {
     global $g;
 
     if (is_null($g->db)) {
-
         $g->db = db_connect();
-
         if ($g->db === false) {
-
-            $g->message .= " Failed to connect to the database. ";
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
-
+            breakout(" Failed to connect to the database. ");
         }
-
     }
 }

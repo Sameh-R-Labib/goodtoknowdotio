@@ -14,10 +14,7 @@ if ($g->when_last_checked_messages === null) {
 
     if ($quantity === false) {
 
-        $g->message .= " Failed to get quantity of messages. ";
-        $_SESSION['message'] = $g->message;
-        reset_feature_session_vars();
-        redirect_to("/ax1/infinite_loop_prevent/page");
+        breakout(" Failed to get quantity of messages. ");
 
     }
 
@@ -39,10 +36,7 @@ if ($g->when_last_checked_messages === null) {
 
         if ($quantity === false) {
 
-            $g->message .= " Failed to get quantity of messages. ";
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
+            breakout(" Failed to get quantity of messages. ");
 
         }
 

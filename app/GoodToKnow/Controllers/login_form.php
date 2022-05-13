@@ -21,9 +21,7 @@ class login_form
 
         if ($g->is_logged_in) {
 
-            $_SESSION['message'] = $g->message;
-            reset_feature_session_vars();
-            redirect_to("/ax1/infinite_loop_prevent/page");
+            breakout('');
 
         }
 
