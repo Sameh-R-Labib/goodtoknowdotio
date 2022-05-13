@@ -3,6 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
+        <p><a href="/ax1/set_system_wide_alert/page">Set System-wide Alert</a></p>
         <p><a href="/ax1/offline_the_system/page">Offline The System</a></p>
         <p><a href="/ax1/download_the_database/page">Download The Database</a></p>
         <p><a href="/ax1/purge_old_messages/page">Purge Old Email Messages</a></p>
