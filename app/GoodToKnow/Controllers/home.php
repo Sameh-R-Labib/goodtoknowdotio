@@ -83,7 +83,7 @@ class home
 
         $g->message .= "\n<br>🚷 <b>$elapsed_time</b> 🚷 ";
 
-        if ($elapsed_time > 220) {
+        if ($elapsed_time > 120) {
 
             $g->when_last_checked_system_alert = time();
 
@@ -322,7 +322,7 @@ class home
 
         $elapsed_time = time() - $g->when_last_checked_suspend;
 
-        if ($elapsed_time > 400) {
+        if ($elapsed_time > 120) {
 
             $g->when_last_checked_suspend = time();
 
