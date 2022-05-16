@@ -81,7 +81,7 @@ class home
 
         $elapsed_time = time() - $g->when_last_checked_system_alert;
 
-        if ($elapsed_time > 400) {
+        if ($elapsed_time > 320) {
 
             $g->when_last_checked_system_alert = time();
 
