@@ -9,6 +9,14 @@
         <p>The current alert name is: <b><?= $g->current_alert_name ?></b>.<br>
             Here, you can modify the database alert record.</p>
         <section>
+            <label for="system_alert" class="radio">
+                <input type="radio" id="system_alert" name="choice" value="system_alert">
+                system_alert<br>
+            </label>
+            <label for="no_alert" class="radio">
+                <input type="radio" id="no_alert" name="choice" value="no_alert">
+                no_alert
+            </label>
 
         </section>
         <?php require SUBMITABORT; ?>
