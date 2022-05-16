@@ -244,6 +244,12 @@ class app_state
 
 
     /**
+     * @var int
+     */
+    public $when_last_checked_system_alert;
+
+
+    /**
      * @var int|null
      */
     public $messages_last_quantity;
@@ -852,6 +858,8 @@ class app_state
         $this->when_last_checked_suspend = (isset($_SESSION['when_last_checked_suspend'])) ? $_SESSION['when_last_checked_suspend'] : 1554825315;
 
         $this->when_last_checked_system_status_offline = (isset($_SESSION['when_last_checked_system_status_offline'])) ? $_SESSION['when_last_checked_system_status_offline'] : 1554825315;
+
+        $this->when_last_checked_system_alert = (isset($_SESSION['when_last_checked_system_alert'])) ? $_SESSION['when_last_checked_system_alert'] : 1554825315;
 
         $this->messages_last_quantity = (isset($_SESSION['messages_last_quantity'])) ? $_SESSION['messages_last_quantity'] : null;
 
