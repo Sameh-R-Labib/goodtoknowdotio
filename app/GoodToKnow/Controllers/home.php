@@ -81,8 +81,6 @@ class home
 
         $elapsed_time = time() - $g->when_last_checked_system_alert;
 
-        $g->message .= "\n<br>🚷 <b>$elapsed_time</b> 🚷 ";
-
         if ($elapsed_time > 120) {
 
             $g->when_last_checked_system_alert = time();
