@@ -4,10 +4,10 @@
         <h1><?= $g->html_title ?></h1>
         <?php require SESSIONMESSAGE; ?>
         <p class="tooltip">ℹ️
-            <span class="tooltiptext tooltip-top">The system-wide alert system enables Admin to make announcements.</span>
+            <span class="tooltiptext tooltip-top">The alert system makes it possible for Admin to make announcements.</span>
         </p>
         <p>The current alert name is: <b><?= $g->current_alert_name ?></b>.<br>
-            Here, you can modify the alert record which is stored in the database.</p>
+            Here, you can modify the database alert record.</p>
         <section>
 
         </section>
