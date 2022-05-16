@@ -10,18 +10,18 @@
         <section>
             <p>name:
                 <label for="system_alert" class="radio">
-                    <input type="radio" id="system_alert" name="choice" value="system_alert" checked>
+                    <input type="radio" id="system_alert" name="name" value="system_alert" checked>
                     system_alert<br>
                 </label>
                 <label for="no_alert" class="radio">
-                    <input type="radio" id="no_alert" name="choice" value="no_alert">
+                    <input type="radio" id="no_alert" name="name" value="no_alert">
                     no_alert
                 </label>
             </p>
             <p>
                 <label for="message">message:<br></label>
                 <input id="message" name="message" type="text" value="" required
-                       placeholder="When no_alert, it could be the word none"
+                       placeholder="When no_alert, I suggest the word none"
                        minlength="4" maxlength="230" size="67" spellcheck="true">
             </p>
         </section>

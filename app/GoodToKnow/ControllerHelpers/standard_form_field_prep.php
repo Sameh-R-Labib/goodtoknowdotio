@@ -12,7 +12,7 @@ function standard_form_field_prep(string $field_name, int $min_length, int $max_
 {
     /**
      * Warning: Since this will apply htmlspecialchars() then it is not appropriate to
-     * use this for submitted markdown. The markdown parser will (if desired) convert html
+     * use this for submitted markdown. The Markdown parser will (if desired) convert html
      * special characters while it produces the html.
      */
 
