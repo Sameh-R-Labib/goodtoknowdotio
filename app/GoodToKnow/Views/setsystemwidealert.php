@@ -21,8 +21,8 @@
             <p>
                 <label for="message">message:<br></label>
                 <input id="message" name="message" type="text" value="" required
-                       placeholder="Could be: no alert message"
-                       minlength="1" maxlength="230" size="59" spellcheck="true">
+                       placeholder="Could be: none"
+                       minlength="4" maxlength="230" size="67" spellcheck="true">
             </p>
         </section>
         <?php require SUBMITABORT; ?>
