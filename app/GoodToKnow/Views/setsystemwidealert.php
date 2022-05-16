@@ -6,7 +6,7 @@
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">The system-wide alert system enables Admin to make announcements.</span>
         </p>
-        <p>The current alert name is: <b><?= $g->current_status ?></b>.<br>
+        <p>The current alert name is: <b><?= $g->current_alert_name ?></b>.<br>
             Here, you can modify the alert record which is stored in the database.</p>
         <section>
 
