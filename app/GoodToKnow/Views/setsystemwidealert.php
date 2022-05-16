@@ -6,7 +6,7 @@
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">The alert system makes it possible for Admin to make announcements.</span>
         </p>
-        <p>Now, the alert name is: <b><?= $g->current_alert_name ?></b>. You are here to modify the alert.</p>
+        <p>Currently, name is <b><?= $g->current_alert_name ?></b>.</p>
         <section>
             <p>name:
                 <label for="system_alert" class="radio">
