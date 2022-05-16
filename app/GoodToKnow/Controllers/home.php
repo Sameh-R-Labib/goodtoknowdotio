@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\status;
 use GoodToKnow\Models\user;
 use GoodToKnow\Models\user_to_community;
 use GoodToKnow\Models\community_to_topic;
@@ -39,7 +40,10 @@ class home
         /**
          * home should always present a message.
          */
-        self::put_together_a_good_sessionmessage();
+        self::put_together_message_and_buttons();
+
+
+        self::add_alert_to_message();
 
 
         /**
@@ -71,7 +75,45 @@ class home
     }
 
 
-    private static function put_together_a_good_sessionmessage()
+    private static function add_alert_to_message()
+    {
+        global $g;
+
+        $elapsed_time = time() - $g->when_last_checked_system_alert;
+
+        if ($elapsed_time > 400) {
+
+            $g->when_last_checked_system_alert = time();
+
+            $_SESSION['when_last_checked_system_alert'] = $g->when_last_checked_system_alert;
+
+            db_connect_if_not_connected();
+
+            $status_object = status::find_by_id(2);
+
+            if (!$status_object) {
+
+                breakout(' ERROR 22038626: The status object could not be found. ');
+
+            }
+
+            if ($status_object->name !== 'system_alert' and $status_object->name !== 'no_alert') {
+
+                breakout(' ERROR 322484: The status name is invalid. ');
+
+            }
+
+            if ($status_object->name == 'system_alert') {
+
+                $g->message .= "\n<br><br><b>$status_object->message</b> ";
+
+            }
+
+        }
+    }
+
+
+    private static function put_together_message_and_buttons()
     {
         global $g;
 
