@@ -105,7 +105,7 @@ class home
 
             if ($status_object->name == 'system_alert') {
 
-                $g->message .= "\n<br><span font-size: larger>🚷 🚷 🚷 <b>$status_object->message</b> 🚷 🚷 🚷</span> ";
+                $g->message .= "\n<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🚷 🚷 🚷 <b>$status_object->message</b> 🚷 🚷 🚷 ";
 
             }
 
