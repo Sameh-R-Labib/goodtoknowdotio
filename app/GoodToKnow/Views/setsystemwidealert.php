@@ -6,18 +6,24 @@
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">The alert system makes it possible for Admin to make announcements.</span>
         </p>
-        <p>The current alert name is: <b><?= $g->current_alert_name ?></b>.<br>
-            Here, you can modify the database alert record.</p>
+        <p>Now, the alert name is: <b><?= $g->current_alert_name ?></b>. You are here to modify the alert.</p>
         <section>
-            <label for="system_alert" class="radio">
-                <input type="radio" id="system_alert" name="choice" value="system_alert">
-                system_alert<br>
-            </label>
-            <label for="no_alert" class="radio">
-                <input type="radio" id="no_alert" name="choice" value="no_alert">
-                no_alert
-            </label>
-
+            <p>name:
+                <label for="system_alert" class="radio">
+                    <input type="radio" id="system_alert" name="choice" value="system_alert" checked>
+                    system_alert<br>
+                </label>
+                <label for="no_alert" class="radio">
+                    <input type="radio" id="no_alert" name="choice" value="no_alert">
+                    no_alert
+                </label>
+            </p>
+            <p>
+                <label for="message">message: </label>
+                <input id="message" name="message" type="text" value="" required
+                       placeholder="Could be: no alert message"
+                       minlength="1" maxlength="230" size="80" spellcheck="true">
+            </p>
         </section>
         <?php require SUBMITABORT; ?>
     </form>
