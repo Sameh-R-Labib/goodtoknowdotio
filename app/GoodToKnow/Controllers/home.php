@@ -105,7 +105,7 @@ class home
 
             if ($status_object->name == 'system_alert') {
 
-                $g->message .= "\n<br><span class=\"blinking\">🚷 <b>$status_object->message</b> </span> ";
+                $g->message .= "\n<br><span class=\"blinking\">🚷 $status_object->message </span> ";
 
             }
 
