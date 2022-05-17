@@ -107,7 +107,7 @@ class home
 
                 $g->message .= "\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style=\"font-size:18px;\">🚷 🚷 🚷 <b>$status_object->message</b> 🚷 🚷 🚷</span> ";
+                <span style=\"font-size:25px;\">🚷 🚷 🚷 <b>$status_object->message</b> 🚷 🚷 🚷</span> ";
 
             }
 
