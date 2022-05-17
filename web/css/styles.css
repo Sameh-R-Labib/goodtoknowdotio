@@ -146,7 +146,7 @@ main {
     width: fit-content;
     margin: 0 auto;
     border-radius: .1em .1em .5em .5em;
-    box-shadow: 0 7px 14px 2px rgba(0, 0, 25, .9);
+    box-shadow: 0 7px 44px 3px rgba(0, 0, 25, 30%);
 }
 
 /* Style the button that is used to open and close the collapsible content */
