@@ -869,3 +869,31 @@ h2 + p {
     border-style: solid;
     border-color: transparent transparent transparent #555;
 }
+
+
+/* Set the size, colour, font properties for the blinking text */
+.blinking {
+    animation: blinkingText 1s infinite;
+    font-family: futura, serif;
+    font-style: italic;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background-color: #fc030b;
+}
+
+/* Specifies the animation and transparency for the blinking text */
+@keyframes blinkingText {
+
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
