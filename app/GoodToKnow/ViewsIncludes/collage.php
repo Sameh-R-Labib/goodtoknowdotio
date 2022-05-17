@@ -39,7 +39,7 @@
     evil found in the world.</p>
 <h2>Instruction to users</h2>
 <p>When writing a post, let it be your goal to concisely write and thus help the person reading wrap their head
-    around the subject matter.</p>
+    around the subject.</p>
 <h2>Photo Gallery</h2>
 <figure>
     <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
@@ -104,5 +104,20 @@
 <figure>
     <img class="photo" alt="Film: The Panama Deception" src="/usattack.png">
     <figcaption>Documentary war film showing actual footage of the Panama invasion called The Panama Deception
+    </figcaption>
+</figure>
+<figure>
+    <img class="photo" alt="Film: The Panama Deception" src="/accept_our_limits.png">
+    <figcaption>Being self-aware.
+    </figcaption>
+</figure>
+<figure>
+    <img class="photo" alt="Film: The Panama Deception" src="/same_person.png">
+    <figcaption>Monogamy
+    </figcaption>
+</figure>
+<figure>
+    <img class="photo" alt="Film: The Panama Deception" src="/enjoy_differences.png">
+    <figcaption>Love and marriage go together like a horse and carriage.
     </figcaption>
 </figure>
