@@ -81,7 +81,7 @@ class home
 
         $elapsed_time = time() - $g->when_last_checked_system_alert;
 
-        if ($elapsed_time > 82) {
+        if ($elapsed_time > 52) {
 
             $g->when_last_checked_system_alert = time();
 
@@ -106,7 +106,7 @@ class home
             if ($status_object->name == 'system_alert') {
 
                 $g->message .= "\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style=\"font-size:25px;\">🚷 🚷 🚷 <b>$status_object->message</b> 🚷 🚷 🚷</span> ";
+                <span style=\"font-size:25px;color:red\">🚷 🚷 🚷 <b>$status_object->message</b> 🚷 🚷 🚷</span> ";
 
             }
 
@@ -321,7 +321,7 @@ class home
 
         $elapsed_time = time() - $g->when_last_checked_suspend;
 
-        if ($elapsed_time > 82) {
+        if ($elapsed_time > 52) {
 
             $g->when_last_checked_suspend = time();
 

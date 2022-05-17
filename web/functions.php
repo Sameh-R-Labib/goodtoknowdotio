@@ -23,7 +23,7 @@ function offline_enforcement()
 
     $elapsed_time = time() - $g->when_last_checked_system_status_offline;
 
-    if ($elapsed_time > 82 and !$g->is_admin) {
+    if ($elapsed_time > 52 and !$g->is_admin) {
 
         /**
          * Enforce offline status.
