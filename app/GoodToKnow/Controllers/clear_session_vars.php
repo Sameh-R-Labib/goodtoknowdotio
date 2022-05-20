@@ -8,6 +8,6 @@ class clear_session_vars
 {
     function page()
     {
-        breakout(' Task aborted. ');
+        breakout(' You are back on the home page. ');
     }
 }

@@ -1,12 +1,14 @@
-<?php
-
-global $g;
-
-/**
- * Debug Code
- */
-echo "\n<p>Begin debug</p>\n";
-echo "<p>Var_dump \$g->coms_user_does_not_belong_to: </p>\n<pre>";
-var_dump($g->coms_user_does_not_belong_to);
-echo "</pre>\n";
-die("<p>End debug</p>\n");
+<?php global $g; ?>
+<?php require TOPFORFORMPAGES; ?>
+    <!-- I will use form tags only for style css issues -->
+    <form>
+        <h2>Discover Other Communities</h2>
+        <?php require SESSIONMESSAGE; ?>
+        <p>These are communities on this Gtk.io system which you can ask to join:</p>
+        <?php foreach ($g->coms_user_does_not_belong_to as $community): ?>
+            <p><b><?= $community->community_name ?></b> ― <?= $community->community_description ?></p>
+        <?php endforeach; ?>
+        <!-- Button to dismiss this view -->
+        <p><a class="modify" href="/ax1/clear_session_vars/page">Home</a></p>
+    </form>
+<?php require BOTTOMOFPAGES; ?>
