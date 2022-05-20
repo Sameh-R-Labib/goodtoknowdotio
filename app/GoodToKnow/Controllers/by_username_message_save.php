@@ -62,7 +62,7 @@ class by_username_message_save
 
         if (!$target_user_object) {
 
-            breakout(' Unexpectedly unable to retrieve target user\'s object. ');
+            breakout(' Unexpectedly unable to retrieve target user object. ');
 
         }
 

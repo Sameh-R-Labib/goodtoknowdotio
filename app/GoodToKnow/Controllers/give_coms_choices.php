@@ -81,11 +81,11 @@ class give_coms_choices
         $g->coms_user_does_not_belong_to = user_to_community::coms_user_does_not_belong_to($coms_in_this_system);
 
 
-        // Redirect if no communities user doesn't belong to.
+        // Redirect if there are no communities which user doesn't belong to.
 
         if (empty($g->coms_user_does_not_belong_to)) {
 
-            breakout(' This user belongs to all communities. So, there\'s no need to do anything. ');
+            breakout(' This user belongs to all communities. Therefore, there is no need to do anything. ');
 
         }
 

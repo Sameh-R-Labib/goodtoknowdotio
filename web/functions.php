@@ -124,7 +124,7 @@ function kick_out_nonadmins_or_if_there_is_error_msg()
     global $g;
 
     if (!$g->is_logged_in || !$g->is_admin || !empty($g->message) || $_SESSION['agree_to_tos'] !== 'agree') {
-        breakout(' Either you\'re not authorized, your session expired, there\'s an error message, or you did not agree to the T.O.S. ');
+        breakout(' Either you\'re not authorized, your session expired, there is an error message, or you did not agree to the T.O.S. ');
     }
 }
 
