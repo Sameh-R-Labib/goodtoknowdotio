@@ -7,7 +7,7 @@
         <p>These are communities on this Gtk.io system which you can ask to join:</p>
         <ul>
             <?php foreach ($g->coms_user_does_not_belong_to as $community): ?>
-                <li><b><?= $community->community_name ?></b> ― <?= $community->community_description ?></li>
+                <li><em><?= $community->community_name ?></em> ― <?= $community->community_description ?></li>
             <?php endforeach; ?>
         </ul>
         <!-- Button to dismiss this view -->
