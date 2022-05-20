@@ -20,6 +20,9 @@ class discover_other_communities
         global $g;
 
 
+        kick_out_loggedoutusers_or_if_there_is_error_msg();
+
+
         /**
          * Q: What is the id of the user?
          * A: $g->user_id
