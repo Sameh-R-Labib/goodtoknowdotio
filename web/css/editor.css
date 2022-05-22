@@ -173,18 +173,21 @@ a.no-frills-link:hover, a.no-frills-link:active {
 }
 
 .choose {
+    display: block;
+    margin-left: 41px;
+    margin-right: 41px;
     -moz-box-shadow: inset 21px 0px 19px -20px #bee2f9;
     -webkit-box-shadow: inset 21px 0px 19px -20px #bee2f9;
     box-shadow: inset 21px 0px 19px -20px #bee2f9;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf));
-    background: -moz-linear-gradient(top left, red, rgba(255, 0, 0, 0));
+    background: -moz-linear-gradient(top left, blue, rgba(0, 0, 255, 0));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
     background-color: #63b8ee;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     text-indent: 0px;
-    display: inline-block;
+    /*display: inline-block;*/
     color: #14396a;
     font-family: Arial, serif;
     font-size: 15px;
