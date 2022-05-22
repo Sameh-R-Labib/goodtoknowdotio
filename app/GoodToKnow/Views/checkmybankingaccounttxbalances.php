@@ -6,7 +6,7 @@
         <p>Which one?</p>
         <section>
             <?php foreach ($g->array_of_objects as $key => $object): ?>
-                <a href="#" class="choose">Word</a><br>
+                <a href="#" class="choose">Word</a>
                 <label for="c<?= $key ?>" class="radio">
                     <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
                     <?= $object->acct_name ?>
