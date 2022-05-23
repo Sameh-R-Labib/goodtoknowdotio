@@ -11,6 +11,6 @@
                    href="/ax1/check_my_banking_account_tx_balances_processor/page/<?= $object->id ?>"><?= $object->acct_name ?></a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>
