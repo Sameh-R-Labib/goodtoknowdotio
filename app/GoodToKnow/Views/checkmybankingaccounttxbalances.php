@@ -9,6 +9,7 @@
             <?php foreach ($g->array_of_objects as $object): ?>
                 <a class="choose"
                    href="/ax1/check_my_banking_account_tx_balances_processor/page/<?= $object->id ?>"><?= $object->acct_name ?></a>
+                <br>
             <?php endforeach; ?>
         </section>
         <?php require ABORT; ?>
