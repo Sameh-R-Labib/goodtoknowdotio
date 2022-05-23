@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 class add_income_commodity_redo
 {
-    public function page()
+    function page()
     {
         global $g;
 

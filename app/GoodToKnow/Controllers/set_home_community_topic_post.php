@@ -11,7 +11,7 @@ use GoodToKnow\Models\user;
 
 class set_home_community_topic_post
 {
-    public function page(int $community_id = 0, int $topic_id = 0, int $post_id = 0)
+    function page(int $community_id = 0, int $topic_id = 0, int $post_id = 0)
     {
         /**
          * DESCRIPTION

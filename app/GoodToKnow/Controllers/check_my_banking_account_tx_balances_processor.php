@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 class check_my_banking_account_tx_balances_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted banking_acct_for_balances record id in the session.
@@ -13,11 +13,16 @@ class check_my_banking_account_tx_balances_processor
          * 4) Redirect to next piece of code.
          */
 
+        global $g;
+
 
         kick_out_loggedoutusers();
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
