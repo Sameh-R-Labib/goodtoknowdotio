@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class populate_a_banking_account_for_balances_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -24,6 +24,9 @@ class populate_a_banking_account_for_balances_processor
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         $g->html_title = 'Edit the banking_acct_for_balances record';
