@@ -5,13 +5,16 @@ namespace GoodToKnow\ControllerHelpers;
 use GoodToKnow\Models\community;
 
 
+/**
+ * @return void
+ */
 function any_community_validate_page_parameter()
 {
     /**
      * This function validates $g->id. $g->id is supposed to be a valid
      * community id. $g->id comes from a page() parameter.
      *
-     * If $g->id this function causes a breakout.
+     * If $g->id is invalid then this function causes a breakout.
      */
 
 

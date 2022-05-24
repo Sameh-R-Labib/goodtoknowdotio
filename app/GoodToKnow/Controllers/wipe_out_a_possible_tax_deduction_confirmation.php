@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 
 class wipe_out_a_possible_tax_deduction_confirmation
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * Here we will read the choice of whether
@@ -23,17 +23,16 @@ class wipe_out_a_possible_tax_deduction_confirmation
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        $g->answer = $answer;
+
+
         /**
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+        if ($g->answer == "no") {
 
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
-
-            breakout(' Nothing was deleted. ');
+            breakout(' Message: 26252425 Nothing was deleted. ');
 
         }
 
