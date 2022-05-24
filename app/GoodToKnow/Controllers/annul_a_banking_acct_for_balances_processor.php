@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class annul_a_banking_acct_for_balances_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -20,11 +20,16 @@ class annul_a_banking_acct_for_balances_processor
          * 4) Presents a form containing data from the record and asking for permission to delete.
          */
 
+        global $g;
+
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
