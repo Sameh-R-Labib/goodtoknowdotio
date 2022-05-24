@@ -195,7 +195,7 @@ a.no-frills-link:hover, a.no-frills-link:active {
     font-style: normal;
     height: 36px;
     line-height: 36px;
-    width: 86px;
+    width: auto;
     text-decoration: none;
     text-align: center;
     text-shadow: 2px 2px 0 #7cacde;
