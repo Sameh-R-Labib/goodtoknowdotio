@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class polish_a_recurring_payment_record_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted recurring_payment record id in the session.
@@ -24,6 +24,9 @@ class polish_a_recurring_payment_record_processor
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         $g->html_title = 'Edit the recurring_payment record';
