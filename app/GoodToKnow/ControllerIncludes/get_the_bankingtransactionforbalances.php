@@ -1,6 +1,7 @@
 <?php
 
 use GoodToKnow\Models\banking_transaction_for_balances;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $g;
@@ -10,14 +11,18 @@ global $g;
  * 1) Store the submitted banking_transaction_for_balances record id in the session.
  */
 
-$_SESSION['saved_int01'] = (int)$g->id;
+require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+
+$chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+$_SESSION['saved_int01'] = $chosen_id;
 
 
 /**
  * 2) Retrieve the banking_transaction_for_balances object with that id from the database.
  */
 
-$g->object = banking_transaction_for_balances::find_by_id($g->id);
+$g->object = banking_transaction_for_balances::find_by_id($chosen_id);
 
 if (!$g->object) {
 
