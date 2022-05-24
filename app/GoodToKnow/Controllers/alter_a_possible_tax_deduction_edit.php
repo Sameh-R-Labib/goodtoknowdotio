@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 class alter_a_possible_tax_deduction_edit
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -20,6 +20,9 @@ class alter_a_possible_tax_deduction_edit
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         $g->html_title = 'Edit the possible_tax_deduction record';
