@@ -172,7 +172,7 @@ a.no-frills-link:hover, a.no-frills-link:active {
     color: rebeccapurple;
 }
 
-.choose {
+.choose:link, .choose:visited {
     display: block;
     margin-left: 41px;
     margin-right: 41px;
