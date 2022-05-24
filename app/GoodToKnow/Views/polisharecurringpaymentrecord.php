@@ -5,7 +5,7 @@
         <?php require SESSIONMESSAGE; ?>
         <p>Which Recurring Payment Record?</p>
         <section>
-            <?php foreach ($g->array_of_recurring_payment_objects as $key => $rp_object): ?>
+            <?php foreach ($g->array_of_recurring_payment_objects as $rp_object): ?>
                 <a href="/ax1/polish_a_recurring_payment_record_processor/page/<?= $rp_object->id ?>"
                    class="choose"><?= $rp_object->label ?></a>
             <?php endforeach; ?>

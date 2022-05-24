@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class expunge_a_recurring_payment_record_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
@@ -24,6 +24,9 @@ class expunge_a_recurring_payment_record_processor
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_recurring_payment_record.php';

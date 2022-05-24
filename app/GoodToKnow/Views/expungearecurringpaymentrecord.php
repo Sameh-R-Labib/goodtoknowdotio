@@ -1,17 +1,15 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/expunge_a_recurring_payment_record_processor/page" method="post">
+    <form>
         <h1>Delete a Recurring Payment</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Recurring Payment Record?</p>
         <section>
-            <?php foreach ($g->array_of_recurring_payment_objects as $key => $rp_object): ?>
-                <label for="c<?= $key ?>" class="radio">
-                    <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $rp_object->id ?>">
-                    <?= $rp_object->label ?>
-                </label>
+            <?php foreach ($g->array_of_recurring_payment_objects as $rp_object): ?>
+                <a href="/ax1/expunge_a_recurring_payment_record_processor/page/<?= $rp_object->id ?>"
+                   class="choose"><?= $rp_object->label ?></a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>
