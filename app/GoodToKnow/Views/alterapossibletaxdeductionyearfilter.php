@@ -3,7 +3,7 @@
     <form>
         <h1>Edit a Possible Tax Deduction</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which one?</p>
+        <p>Which Possible Tax Deduction?</p>
         <section>
             <?php foreach ($g->array as $object): ?>
                 <a href="/ax1/alter_a_possible_tax_deduction_edit/page/<?= $object->id ?>"

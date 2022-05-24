@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 class wipe_out_a_possible_tax_deduction_delete
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted possible_tax_deduction record id in the session.
@@ -22,6 +22,9 @@ class wipe_out_a_possible_tax_deduction_delete
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_possibletaxdeduction.php';

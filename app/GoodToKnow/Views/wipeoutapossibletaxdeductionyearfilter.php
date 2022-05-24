@@ -1,17 +1,15 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/wipe_out_a_possible_tax_deduction_delete/page" method="post">
+    <form>
         <h1>Delete a Possible Tax Deduction</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Possible Tax Deduction?</p>
         <section>
-            <?php foreach ($g->array as $key => $object): ?>
-                <label for="c<?= $key ?>" class="radio">
-                    <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
-                    <b><?= $object->label ?></b> [<?= $object->year_paid ?>]<br>
-                </label>
+            <?php foreach ($g->array as $object): ?>
+                <a href="/ax1/wipe_out_a_possible_tax_deduction_delete/page/<?= $object->id ?>"
+                   class="choose"><?= $object->label ?> [<?= $object->year_paid ?>]</a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>
