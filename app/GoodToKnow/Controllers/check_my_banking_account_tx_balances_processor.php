@@ -29,16 +29,6 @@ class check_my_banking_account_tx_balances_processor
 
 
         /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$: </p>\n<pre>";
-        var_dump();
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
-
-
-        /**
          * 4) Redirect to next piece of code.
          */
 
