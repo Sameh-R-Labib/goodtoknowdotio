@@ -7,9 +7,8 @@
         <p>Which one?</p>
         <section>
             <?php foreach ($g->array_of_objects as $object): ?>
-                <a href="/ax1/check_my_banking_account_tx_balances_processor/page/<?= $object->id ?>"
-                   class="choose"><?= $object->acct_name ?></a>
-                <br>
+                <div href="/ax1/check_my_banking_account_tx_balances_processor/page/<?= $object->id ?>"
+                     class="choose"><?= $object->acct_name ?></div>
             <?php endforeach; ?>
         </section>
         <?php require ABORT; ?>
