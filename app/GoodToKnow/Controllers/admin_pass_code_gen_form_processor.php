@@ -2,11 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\any_community_ff_prep;
+use function GoodToKnow\ControllerHelpers\any_community_validate_page_parameter;
 
 class admin_pass_code_gen_form_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -17,15 +17,18 @@ class admin_pass_code_gen_form_processor
         get_db();
 
 
+        $g->id = $id;
+
+
         /**
          * Save choice in the session
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'any_community_ff_prep.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'any_community_validate_page_parameter.php';
 
-        $community_id = any_community_ff_prep();
+        any_community_validate_page_parameter();
 
-        $_SESSION['saved_int01'] = $community_id;
+        $_SESSION['saved_int01'] = $g->id;
 
 
         /**
