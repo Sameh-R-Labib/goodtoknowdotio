@@ -26,6 +26,9 @@ class annul_a_banking_acct_for_balances_delete
         $g->answer = $answer;
 
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
         yes_no_parameter_validation();
 
 

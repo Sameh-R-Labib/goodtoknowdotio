@@ -26,6 +26,9 @@ class wipe_out_a_possible_tax_deduction_confirmation
         $g->answer = $answer;
 
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
         yes_no_parameter_validation();
 
 
