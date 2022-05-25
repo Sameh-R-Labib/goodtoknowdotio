@@ -3,15 +3,15 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\banking_acct_for_balances;
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class annul_a_banking_acct_for_balances_delete
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * Here we will Read the choice of whether
-         * or not to delete the banking_acct_for_balances record. If 'yes' then
+         * to delete the banking_acct_for_balances record. If 'yes' then
          * delete it. On the other hand if 'no' then reset
          * some session variables and redirect to the home page.
          */
@@ -23,17 +23,19 @@ class annul_a_banking_acct_for_balances_delete
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        $g->answer = $answer;
+
+
+        yes_no_parameter_validation();
+
+
         /**
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+        if ($g->answer == "no") {
 
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
-
-            breakout(' Nothing was deleted. ');
+            breakout(' Message: 85258525 Nothing was deleted. ');
 
         }
 
@@ -56,7 +58,7 @@ class annul_a_banking_acct_for_balances_delete
 
         if (!$result) {
 
-            breakout(' Unexpectedly I could not delete the record. ');
+            breakout(' Error: 41234432 Unexpectedly I could not delete the record. ');
 
         }
 

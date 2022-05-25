@@ -3,7 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\possible_tax_deduction;
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class wipe_out_a_possible_tax_deduction_confirmation
 {
@@ -24,6 +24,9 @@ class wipe_out_a_possible_tax_deduction_confirmation
 
 
         $g->answer = $answer;
+
+
+        yes_no_parameter_validation();
 
 
         /**
