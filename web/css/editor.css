@@ -174,7 +174,7 @@ a.no-frills-link:hover, a.no-frills-link:active {
 
 .choose:link, .choose:visited {
     display: block;
-    padding: 4px 14px;
+    margin-bottom: 15px;
     margin-left: 41px;
     margin-right: 41px;
     -moz-box-shadow: inset 21px 0px 19px -20px #bee2f9;
