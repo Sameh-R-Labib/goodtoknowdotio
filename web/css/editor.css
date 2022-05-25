@@ -174,9 +174,9 @@ a.no-frills-link:hover, a.no-frills-link:active {
 
 .choose:link, .choose:visited {
     display: block;
-    margin-bottom: 15px;
-    margin-left: 41px;
-    margin-right: 41px;
+    margin-bottom: 7px;
+    margin-left: 51px;
+    margin-right: 22px;
     -moz-box-shadow: inset 21px 0px 19px -20px #bee2f9;
     -webkit-box-shadow: inset 21px 0px 19px -20px #bee2f9;
     box-shadow: inset 21px 0px 19px -20px #bee2f9;
@@ -196,7 +196,7 @@ a.no-frills-link:hover, a.no-frills-link:active {
     font-style: normal;
     height: 36px;
     line-height: 36px;
-    width: auto;
+    width: max-content;
     text-decoration: none;
     text-align: center;
     text-shadow: 2px 2px 0 #7cacde;
