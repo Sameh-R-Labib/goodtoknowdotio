@@ -8,6 +8,6 @@
         <a href="/ax1/quick_post_delete_del_proc/page/yes" class="choose">Yes</a>
         <a href="/ax1/quick_post_delete_del_proc/page/no" class="choose">No</a>
     </section>
-    <?php require SUBMITABORT; ?>
+    <?php require ABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>
