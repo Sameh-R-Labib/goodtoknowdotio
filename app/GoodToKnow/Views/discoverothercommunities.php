@@ -11,6 +11,6 @@
             <?php endforeach; ?>
         </ul>
         <!-- Button to dismiss this view -->
-        <p><a class="modify" href="/ax1/clear_session_vars/page">Home</a></p>
+        <p><a class="modify" href="/ax1/clear_session_vars/page">Blog</a></p>
     </form>
 <?php require BOTTOMOFPAGES; ?>
