@@ -2,11 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class transfer_post_ownership_get_username
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * This will process the confirmation form and generate a form whereby Admin can supply the username of the
@@ -26,11 +26,22 @@ class transfer_post_ownership_get_username
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
 
-        $choice = yes_no_form_field_prep('choice');
+        $g->answer = $answer;
 
-        if ($choice == "no") {
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
+        yes_no_parameter_validation();
+
+
+        /**
+         * Do nothing if Admin changed mind.
+         */
+
+
+        if ($g->answer == "no") {
 
             breakout(' You changed your mind about transferring ownership of the post. ');
 
