@@ -3,14 +3,14 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\banking_transaction_for_balances;
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class omit_a_banking_tran_for_balances_process_confirmation
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
-         * Here we will read the choice of whether or not to delete the record. If yes then
+         * Here we will read the choice of whether to delete the record. If yes then
          * delete it. On the other hand if no then reset some session variables and redirect to the home page.
          */
 
@@ -21,15 +21,20 @@ class omit_a_banking_tran_for_balances_process_confirmation
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        $g->answer = $answer;
+
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
+        yes_no_parameter_validation();
+
+
         /**
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
-
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
+        if ($g->answer == "no") {
 
             breakout(' Nothing was deleted. ');
 
