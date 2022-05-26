@@ -3,7 +3,6 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\commodity;
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
 use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class delete_a_commodity_record_delete
