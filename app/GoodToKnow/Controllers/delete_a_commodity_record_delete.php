@@ -33,7 +33,7 @@ class delete_a_commodity_record_delete
          * Do nothing if user changed mind.
          */
 
-        if ($g->answer) {
+        if ($g->answer == "no") {
 
             breakout(' Nothing was deleted. ');
 
