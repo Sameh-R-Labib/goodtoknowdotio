@@ -2,11 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class author_deletes_own_post_del_proc
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * Here we will read the choice of whether to delete the post. If yes then
@@ -16,7 +16,13 @@ class author_deletes_own_post_del_proc
          */
 
 
+        global $g;
+
+
         kick_out_loggedoutusers_or_if_there_is_error_msg();
+
+
+        $g->answer = $answer;
 
 
         get_db();
@@ -26,11 +32,14 @@ class author_deletes_own_post_del_proc
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
 
-        $choice = yes_no_form_field_prep('choice');
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
 
-        if ($choice == "no") {
+
+        yes_no_parameter_validation();
+
+
+        if ($g->answer == "no") {
 
             breakout(' You changed your mind about deleting the post. So, none was deleted. ');
 
