@@ -2,11 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class quick_post_delete_del_proc
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * Here we will read the choice of whether to delete the post. If yes then
@@ -16,22 +16,32 @@ class quick_post_delete_del_proc
          */
 
 
+        global $g;
+
+
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         get_db();
 
 
+        $g->answer = $answer;
+
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
+        yes_no_parameter_validation();
+
+
         /**
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
+        if ($g->answer == "no") {
 
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
             breakout(' Nothing was changed. ');
+
         }
 
 
