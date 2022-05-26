@@ -38,7 +38,7 @@ class wipe_out_a_possible_tax_deduction_confirmation
 
         if ($g->answer == "no") {
 
-            breakout(' Message: 26252425 Nothing was deleted. ');
+            breakout(' Nothing was deleted. ');
 
         }
 

@@ -4,10 +4,11 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\commodity;
 use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class delete_a_commodity_record_delete
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * Here we will read the choice of whether to delete the commodity record. If yes then delete it.
@@ -21,15 +22,18 @@ class delete_a_commodity_record_delete
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        $g->answer = $answer;
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+        yes_no_parameter_validation();
+
+
         /**
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
-
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
+        if ($g->answer) {
 
             breakout(' Nothing was deleted. ');
 
