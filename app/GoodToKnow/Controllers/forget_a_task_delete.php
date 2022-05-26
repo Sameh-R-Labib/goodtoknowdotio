@@ -3,12 +3,11 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\task;
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class forget_a_task_delete
 {
-    function page()
+    function page(string $answer = 'no')
     {
         /**
          * Here we will Read the choice of whether to delete the task record. If 'yes' then delete it.
@@ -22,15 +21,20 @@ class forget_a_task_delete
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        $g->answer = $answer;
+
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
+        yes_no_parameter_validation();
+
+
         /**
          * yes/no
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
-
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
+        if ($g->answer == "no") {
 
             breakout(' Nothing was deleted. ');
 
