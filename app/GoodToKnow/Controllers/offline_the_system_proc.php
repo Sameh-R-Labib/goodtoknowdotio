@@ -3,27 +3,37 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\status;
-use function GoodToKnow\ControllerHelpers\yes_no_form_field_prep;
+use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
 class offline_the_system_proc
 {
-    function page()
+    function page(string $answer = 'no')
     {
+
+
+        global $g;
+
+
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         get_db();
 
 
+        $g->answer = $answer;
+
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_parameter_validation.php';
+
+
+        yes_no_parameter_validation();
+
+
         /**
          * Do nothing if user changed mind.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'yes_no_form_field_prep.php';
-
-        $choice = yes_no_form_field_prep('choice');
-
-        if ($choice == "no") {
+        if ($g->answer == "no") {
 
             breakout(' You backed out. ');
 
