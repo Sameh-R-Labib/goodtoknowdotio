@@ -1,21 +1,16 @@
 <?php
 
 use GoodToKnow\Models\task;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 
 global $g;
 
 
 /**
- * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
+ * 1) Determines the id of the task record and stores it in $_SESSION['saved_int01'].
  */
 
-require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-$chosen_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-$_SESSION['saved_int01'] = $chosen_id;
+$_SESSION['saved_int01'] = (int)$g->id;
 
 
 /**
@@ -23,11 +18,11 @@ $_SESSION['saved_int01'] = $chosen_id;
  *    And, format its attributes for easy viewing.
  */
 
-$g->object = task::find_by_id($chosen_id);
+$g->object = task::find_by_id($g->id);
 
 if (!$g->object) {
 
-    breakout(' Unexpectedly, I could not find that task. ');
+    breakout(' Err: 662466 Unexpectedly, I could not find that task. ');
 
 }
 

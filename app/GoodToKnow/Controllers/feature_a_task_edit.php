@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\get_date_h_m_s_from_a_timestamp;
 
 class feature_a_task_edit
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted task id in the session.
@@ -26,6 +26,9 @@ class feature_a_task_edit
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
