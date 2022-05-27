@@ -30,7 +30,7 @@ class move_post_get_post
 
         if (!is_int($g->id) or $g->id < 1) {
 
-            breakout(' Error 5868843: Post id is either not int or is negative int. ');
+            breakout(' Error 9868843: Post id is either not int or is negative int. ');
 
         }
 
