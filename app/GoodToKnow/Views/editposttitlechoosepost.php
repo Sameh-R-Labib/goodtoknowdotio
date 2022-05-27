@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/edit_post_title_editor/page" method="post">
+    <form>
         <h2>Which post?</h2>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">⚠️ there`s a limit on size of posts.</span>
@@ -8,12 +8,10 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <?php foreach ($g->special_post_array as $key => $value): ?>
-                <label for="choice-<?= $key ?>" class="radio">
-                    <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
-                    <?= $value ?>
-                </label>
+                <a href="/ax1/edit_post_title_editor/page/<?= $key ?>"
+                   class="choose"><?= $value ?></a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>
