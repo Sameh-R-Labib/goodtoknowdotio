@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class drop_a_commodity_sold_delete
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -16,6 +16,9 @@ class drop_a_commodity_sold_delete
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_commodity_sold.php';
