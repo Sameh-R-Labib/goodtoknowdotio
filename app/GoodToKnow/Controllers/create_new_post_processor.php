@@ -6,7 +6,7 @@ use GoodToKnow\Models\topic_to_post;
 
 class create_new_post_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -14,7 +14,10 @@ class create_new_post_processor
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        // $_SESSION['saved_int01'] will acquire $g->chosen_topic_id in get_and_save_the_topic_id.php
+        $g->id = $id;
+
+
+        // $_SESSION['saved_int01'] will acquire $g->id in get_and_save_the_topic_id.php
         require CONTROLLERINCLUDES . DIRSEP . 'get_and_save_the_topic_id.php';
 
 
@@ -26,7 +29,7 @@ class create_new_post_processor
 
         get_db();
 
-        $posts = topic_to_post::get_posts_array_for_a_topic($g->chosen_topic_id);
+        $posts = topic_to_post::get_posts_array_for_a_topic($g->id);
 
         if ($posts == false) $posts = [];
 
