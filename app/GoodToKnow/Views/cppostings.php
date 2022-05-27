@@ -11,7 +11,7 @@
         <p><a href="/ax1/topic_description_editor/page">Edit A Topic</a></p>
         <p><a href="/ax1/quick_post_delete/page">Delete Any Post</a></p>
         <p><a href="/ax1/transfer_post_ownership/page">Transfer Post Ownership</a>
-        <p><a href="/ax1/move_a_post_instruct/page">Move A Post</a></p>
+        <p><a href="/ax1/move_post_instruct/page">Move A Post</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>

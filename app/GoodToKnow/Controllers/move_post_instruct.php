@@ -2,7 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
-class move_a_post_instruct
+class move_post_instruct
 {
     function page()
     {
@@ -14,6 +14,6 @@ class move_a_post_instruct
 
         $g->html_title = 'Instruction';
 
-        require VIEWS . DIRSEP . 'moveapostinstruct.php';
+        require VIEWS . DIRSEP . 'movepostinstruct.php';
     }
 }

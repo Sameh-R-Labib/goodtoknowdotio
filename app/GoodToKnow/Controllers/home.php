@@ -131,7 +131,7 @@ class home
             }
             $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->the_buttons .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
-            if ($g->is_admin) $g->the_buttons .= ' <a class="purplebtn" href="/ax1/move_post/page">Move a 📄</a> ';
+            if ($g->is_admin) $g->the_buttons .= ' <a class="purplebtn" href="/ax1/move_post/page">Move a Post</a> ';
 
         } else {
 
