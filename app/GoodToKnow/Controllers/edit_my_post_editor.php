@@ -2,11 +2,11 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\post_object_for_owner_prep;
+use function GoodToKnow\ControllerHelpers\post_object_for_owner_get_based_on_parameter;
 
 class edit_my_post_editor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -17,14 +17,22 @@ class edit_my_post_editor
         get_db();
 
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_prep.php';
+        $g->id = $id;
 
-        post_object_for_owner_prep('choice');
+
+        /**
+         * $g->post_object will be gotten when post_object_for_owner_get_based_on_parameter()
+         * is called.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'post_object_for_owner_get_based_on_parameter.php';
+
+        post_object_for_owner_get_based_on_parameter();
 
 
         /**
          * We may need the post id too!
-         * Function post_object_for_owner_prep will have saved that to $_SESSION['saved_int02'].
+         * Function post_object_for_owner_get_based_on_parameter will have saved that to $_SESSION['saved_int02'].
          */
 
 
