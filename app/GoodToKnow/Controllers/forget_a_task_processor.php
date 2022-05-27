@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\get_readable_time;
 
 class forget_a_task_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Determines the id of the task record from 'choice' and stores it in $_SESSION['saved_int01'].
@@ -23,6 +23,9 @@ class forget_a_task_processor
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_task.php';
