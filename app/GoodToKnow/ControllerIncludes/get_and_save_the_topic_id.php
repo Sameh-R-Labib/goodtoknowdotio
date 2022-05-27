@@ -10,19 +10,6 @@ global $g;
  */
 
 
-/**
- * Debug Code
- */
-echo "\n<p>Begin debug</p>\n";
-echo "<p>Var_dump \$g->id: </p>\n<pre>";
-var_dump($g->id);
-echo "</pre>\n";
-echo "<p>Var_dump \$g->special_topic_array: </p>\n<pre>";
-var_dump($g->special_topic_array);
-echo "</pre>\n";
-die("<p>End debug</p>\n");
-
-
 if (!array_key_exists($g->id, $g->special_topic_array)) {
 
     breakout(' Unexpected error 18391: topic id not found in topic array. ');
