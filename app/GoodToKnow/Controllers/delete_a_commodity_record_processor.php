@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\make_commodity_readable;
 
 class delete_a_commodity_record_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Determines the id of the commodity record from 'choice' and stores it in $_SESSION['saved_int01'].
@@ -23,6 +23,9 @@ class delete_a_commodity_record_processor
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_commodity_record_of_user.php';
