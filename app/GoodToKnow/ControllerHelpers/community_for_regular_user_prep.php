@@ -1,5 +1,7 @@
 <?php
 
+namespace GoodToKnow\ControllerHelpers;
+
 use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 /**

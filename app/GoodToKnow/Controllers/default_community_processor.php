@@ -2,11 +2,12 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\community_for_regular_user_parameter;
 use GoodToKnow\Models\user;
 
 class default_community_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -14,9 +15,12 @@ class default_community_processor
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'community_for_regular_user_prep.php';
+        $g->id = $id;
 
-        $chosen_id = community_for_regular_user_prep('choice');
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'community_for_regular_user_parameter.php';
+
+        community_for_regular_user_parameter();
 
 
         /**
@@ -37,7 +41,7 @@ class default_community_processor
 
         }
 
-        $user_object->id_of_default_community = $chosen_id;
+        $user_object->id_of_default_community = $g->id;
 
         $was_updated = $user_object->save();
 
@@ -50,6 +54,6 @@ class default_community_processor
 
         // User can know his default community by logging out then in.
 
-        breakout(" Your default community has been changed to {$g->special_community_array[$chosen_id]}. ");
+        breakout(" Your default community has been changed to {$g->special_community_array[$g->id]}. ");
     }
 }
