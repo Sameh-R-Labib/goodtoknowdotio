@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class edit_a_commodity_record_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted commodity record id in the session.
@@ -24,6 +24,9 @@ class edit_a_commodity_record_processor
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         $g->html_title = 'Edit the commodity record';
