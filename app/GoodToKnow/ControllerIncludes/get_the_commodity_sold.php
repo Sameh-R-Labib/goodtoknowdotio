@@ -10,7 +10,13 @@ global $g;
  * 1) Store the submitted commodities_sold id in the session.
  */
 
-$_SESSION['saved_int01'] = (int)$g->id;
+if (!is_int($g->id) or $g->id < 1) {
+
+    breakout(' Error 586113: Commodity id is either not int or is negative int. ');
+
+}
+
+$_SESSION['saved_int01'] = $g->id;
 
 
 /**

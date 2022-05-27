@@ -10,7 +10,13 @@ global $g;
  * 1) Determines the id of the recurring_payment record from 'choice' and stores it in $_SESSION['saved_int01'].
  */
 
-$_SESSION['saved_int01'] = (int)$g->id;
+if (!is_int($g->id) or $g->id < 1) {
+
+    breakout(' Error 22443: recurring_payment id is either not int or is negative int. ');
+
+}
+
+$_SESSION['saved_int01'] = $g->id;
 
 
 /**

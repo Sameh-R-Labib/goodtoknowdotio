@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class move_post_get_post
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * This route will:
@@ -25,14 +25,22 @@ class move_post_get_post
         get_db();
 
 
+        $g->id = $id;
+
+
+        if (!is_int($g->id) or $g->id < 1) {
+
+            breakout(' Error 5868843: Post id is either not int or is negative int. ');
+
+        }
+
+
         /**
          * determine which post was chosen
          * AND store that post id in the session
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $_SESSION['saved_int01'] = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+        $_SESSION['saved_int01'] = $g->id;
 
 
         /**

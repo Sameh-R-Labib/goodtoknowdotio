@@ -6,11 +6,24 @@ use GoodToKnow\Models\task;
 global $g;
 
 
+if (!is_int($g->id) or $g->id < 1) {
+
+    breakout(' Error 33843: Task id is either not int or is negative int. ');
+
+}
+
+
 /**
  * 1) Determines the id of the task record and stores it in $_SESSION['saved_int01'].
  */
 
-$_SESSION['saved_int01'] = (int)$g->id;
+if (!is_int($g->id) or $g->id < 1) {
+
+    breakout(' Error 687113: task id is either not int or is negative int. ');
+
+}
+
+$_SESSION['saved_int01'] = $g->id;
 
 
 /**
