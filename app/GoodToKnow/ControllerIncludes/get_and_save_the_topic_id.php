@@ -10,7 +10,7 @@ global $g;
  */
 
 
-if (!array_key_exists((int)$g->id, $g->special_topic_array)) {
+if (!array_key_exists($g->id, $g->special_topic_array)) {
 
     breakout(' Unexpected error 18391: topic id not found in topic array. ');
 
