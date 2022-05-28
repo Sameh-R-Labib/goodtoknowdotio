@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class write_over_a_taxable_income_event_edit
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted taxable_income_event id in the session.
@@ -24,6 +24,9 @@ class write_over_a_taxable_income_event_edit
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         $g->html_title = 'Edit the taxable income event\'s record';
