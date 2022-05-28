@@ -3,11 +3,10 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\topic_to_post;
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class move_post_get_topic
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -18,15 +17,14 @@ class move_post_get_topic
         get_db();
 
 
+        $g->id = $id;
+
+
         /**
-         * Get submitted topic id.
+         * Get submitted topic id. Actually, we have it; However, we just need to validate it.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
-
-        $chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
-
-        if (!array_key_exists($chosen_topic_id, $g->special_topic_array)) {
+        if (!array_key_exists($g->id, $g->special_topic_array)) {
 
             breakout(' 🚷 This should never happen: Topic id not found in topic array. ');
 
@@ -38,9 +36,10 @@ class move_post_get_topic
          * by attempting to assign the same topic.
          */
 
-        if ($g->topic_id == $chosen_topic_id) {
+        if ($g->topic_id == $g->id) {
 
             breakout(' 🚷 You messed up: you tried to reassign the original topic. ');
+
         }
 
 
@@ -55,7 +54,7 @@ class move_post_get_topic
 
         // Firstly: Create a new record using topic id $chosen_topic_id and post id $g->saved_int01.
 
-        $topictopost_as_array = ['topic_id' => $chosen_topic_id, 'post_id' => $g->saved_int01];
+        $topictopost_as_array = ['topic_id' => $g->id, 'post_id' => $g->saved_int01];
 
         $topictopost = topic_to_post::array_to_object($topictopost_as_array);
 

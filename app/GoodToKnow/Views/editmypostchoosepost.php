@@ -8,8 +8,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <?php foreach ($g->special_post_array as $key => $value): ?>
-                <a href="/ax1/edit_my_post_editor/page/<?= $key ?>"
-                   class="choose"><?= $value ?></a>
+                <a href="/ax1/edit_my_post_editor/page/<?= $key ?>" class="choose"><?= $value ?></a>
             <?php endforeach; ?>
         </section>
         <?php require ABORT; ?>

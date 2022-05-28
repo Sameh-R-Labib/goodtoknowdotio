@@ -5,7 +5,7 @@
         <?php require SESSIONMESSAGE; ?>
         <p>Which community do I want this user to become a member of?</p>
         <section>
-            <?php foreach ($g->community_array as $key => $value): ?>
+            <?php foreach ($g->community_array as $value): ?>
                 <a href="/ax1/admin_pass_code_gen_form_processor/page/<?= $value->id ?>"
                    class="choose"><?= $value->community_name ?></a>
             <?php endforeach; ?>
