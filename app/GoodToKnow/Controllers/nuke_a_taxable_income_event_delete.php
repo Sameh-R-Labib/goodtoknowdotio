@@ -7,7 +7,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class nuke_a_taxable_income_event_delete
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted taxable_income_event record id in the session.
@@ -25,6 +25,9 @@ class nuke_a_taxable_income_event_delete
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_taxableincomeevent.php';
