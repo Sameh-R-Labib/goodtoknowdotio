@@ -8,17 +8,11 @@ global $g;
  * 1) Validate the submitted choice of time range (A,B,C,D,E.)
  */
 
-use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
-
-require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
-
-$choice = standard_form_field_prep('choice', 1, 1);
-
 $values = ['A', 'B', 'C', 'D', 'E'];
 
-if (!in_array($choice, $values)) {
+if (!in_array($g->s, $values)) {
 
-    breakout(' You choice is invalid. ');
+    breakout(' You choice is invalid or you did not make one. ');
 
 }
 
@@ -30,7 +24,7 @@ if (!in_array($choice, $values)) {
 $min = 0;
 $max = 0;
 
-switch ($choice) {
+switch ($g->s) {
     case 'A':
         // Last 30 days
         $min = time() - 2592000;
@@ -57,7 +51,7 @@ switch ($choice) {
         $max = time() + 315569520;
         break;
     default:
-        breakout(' Unexpectedly the switch statement failed. ');
+        breakout(' Err: 28218 Unexpectedly the switch statement failed. ');
 }
 
 
