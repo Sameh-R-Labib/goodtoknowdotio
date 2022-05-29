@@ -1,17 +1,15 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/omit_a_banking_transaction_for_balances_delete/page" method="post">
+    <form>
         <h1>Delete a Bank Transaction for Balances</h1>
         <?php require SESSIONMESSAGE; ?>
         <p>Which Bank Transaction For Balances?</p>
         <section>
-            <?php foreach ($g->array as $key => $object): ?>
-                <label for="c<?= $key ?>" class="radio">
-                    <input type="radio" id="c<?= $key ?>" name="choice" value="<?= $object->id ?>">
-                    <b><?= $object->label ?></b> <?= $object->time ?>
-                </label>
+            <?php foreach ($g->array as $object): ?>
+                <a href="/ax1/omit_a_banking_transaction_for_balances_delete/page/<?= $object->id ?>" class="choose">
+                    <b><?= $object->label ?></b> <?= $object->time ?></a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>

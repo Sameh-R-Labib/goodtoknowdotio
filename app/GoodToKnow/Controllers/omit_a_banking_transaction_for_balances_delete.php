@@ -8,7 +8,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class omit_a_banking_transaction_for_balances_delete
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted banking_transaction_for_balances record id in the session.
@@ -26,6 +26,9 @@ class omit_a_banking_transaction_for_balances_delete
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
