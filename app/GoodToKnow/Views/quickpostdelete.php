@@ -1,7 +1,7 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/quick_post_delete_processor/page" method="post">
-        <h1>Delete Any 📄</h1>
+    <form>
+        <h1>Delete Any Post</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">These are only topics from within the current community.</span>
         </p>
@@ -9,12 +9,9 @@
         <p>In which topic?</p>
         <section>
             <?php foreach ($g->special_topic_array as $key => $value): ?>
-                <label for="choice-<?= $key ?>" class="radio">
-                    <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
-                    <?= $value ?>
-                </label>
+                <a href="/ax1/quick_post_delete_processor/page/<?= $key ?>" class="choose"> <?= $value ?></a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>

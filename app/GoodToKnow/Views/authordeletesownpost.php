@@ -9,8 +9,7 @@
         <p>From which topic?</p>
         <section>
             <?php foreach ($g->special_topic_array as $key => $value): ?>
-                <a href="/ax1/author_deletes_own_post_processor/page/<?= $key ?>"
-                   class="choose"><?= $value ?></a>
+                <a href="/ax1/author_deletes_own_post_processor/page/<?= $key ?>" class="choose"><?= $value ?></a>
             <?php endforeach; ?>
         </section>
         <?php require ABORT; ?>

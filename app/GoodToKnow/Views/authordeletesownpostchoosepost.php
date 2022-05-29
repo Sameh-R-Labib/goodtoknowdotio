@@ -5,8 +5,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <?php foreach ($g->special_post_array as $key => $value): ?>
-                <a href="/ax1/author_deletes_own_post_delete/page/<?= $key ?>"
-                   class="choose"><?= $value ?></a>
+                <a href="/ax1/author_deletes_own_post_delete/page/<?= $key ?>" class="choose"><?= $value ?></a>
             <?php endforeach; ?>
         </section>
         <?php require ABORT; ?>

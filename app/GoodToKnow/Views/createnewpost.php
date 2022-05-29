@@ -9,8 +9,7 @@
         <p>Which <em>topic</em> do you want the new <em>post</em> to live in?</p>
         <section>
             <?php foreach ($g->special_topic_array as $key => $value): ?>
-                <a href="/ax1/create_new_post_processor/page/<?= $key ?>"
-                   class="choose"><?= $value ?></a>
+                <a href="/ax1/create_new_post_processor/page/<?= $key ?>" class="choose"><?= $value ?></a>
             <?php endforeach; ?>
         </section>
         <?php require ABORT; ?>
