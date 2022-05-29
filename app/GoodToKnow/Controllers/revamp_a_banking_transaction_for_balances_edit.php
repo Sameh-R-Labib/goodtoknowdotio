@@ -9,7 +9,7 @@ use function GoodToKnow\ControllerHelpers\readable_amount_no_commas;
 
 class revamp_a_banking_transaction_for_balances_edit
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * 1) Store the submitted banking_transaction_for_balances record id in the session.
@@ -29,6 +29,9 @@ class revamp_a_banking_transaction_for_balances_edit
 
 
         get_db();
+
+
+        $g->id = $id;
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingtransactionforbalances.php';
