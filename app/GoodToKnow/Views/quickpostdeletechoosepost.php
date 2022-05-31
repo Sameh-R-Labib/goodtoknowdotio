@@ -1,19 +1,16 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-<form action="/ax1/quick_post_delete_delete/page" method="post">
+<form>
     <h1>Delete a Blog Post</h1>
     <?php require SESSIONMESSAGE; ?>
     <p>Which post do you want to delete?</p>
     <section>
         <?php foreach ($g->array_of_post_objects as $key => $post_object): ?>
-            <label for="choice-<?= $key ?>" class="radio">
-                <input type="radio" id="choice-<?= $key ?>" name="choice"
-                       value="<?= $post_object->id ?>">
+            <a href="/ax1/quick_post_delete_delete/page/<?= $post_object->id ?>" class="choose">
                 <?= $post_object->title . " | " . $post_object->extensionfortitle . " [" .
-                $g->array_of_author_usernames[$key] . " ]" ?>
-            </label>
+                $g->array_of_author_usernames[$key] . " ]" ?></a>
         <?php endforeach; ?>
     </section>
-    <?php require SUBMITABORT; ?>
+    <?php require ABORT; ?>
 </form>
 <?php require BOTTOMOFPAGES; ?>

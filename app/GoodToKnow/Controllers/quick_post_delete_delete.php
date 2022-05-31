@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 class quick_post_delete_delete
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * This route will simply determine which post Admin chose to delete, stores the
@@ -22,6 +22,9 @@ class quick_post_delete_delete
         get_db();
 
 
+        $g->id = $id;
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 
@@ -29,7 +32,7 @@ class quick_post_delete_delete
 
         $_SESSION['saved_str02'] = $g->post_object->html_file;
 
-        $_SESSION['saved_int02'] = $g->chosen_post_id;
+        $_SESSION['saved_int02'] = $g->id;
 
 
         // We need this in the view.
