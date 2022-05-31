@@ -1,20 +1,18 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/topic_description_editor_processor/page" method="post">
+    <form>
         <h1>Topic Description Editor</h1>
         <p class="tooltip">ℹ️
             <span class="tooltiptext tooltip-top">This is only for topics in current community</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which topic is the one whose description it is that you want to edit?</p>
+        <p>Which topic is the one that you want to edit?</p>
         <section>
             <?php foreach ($g->special_topic_array as $key => $value): ?>
-                <label for="choice-<?= $key ?>" class="radio">
-                    <input type="radio" id="choice-<?= $key ?>" name="choice" value="<?= $key ?>">
-                    <?= $value ?>
-                </label>
+                <a href="/ax1/topic_description_editor_processor/page/<?= $key ?>" class="choose">
+                    <?= $value ?></a>
             <?php endforeach; ?>
         </section>
-        <?php require SUBMITABORT; ?>
+        <?php require ABORT; ?>
     </form>
 <?php require BOTTOMOFPAGES; ?>

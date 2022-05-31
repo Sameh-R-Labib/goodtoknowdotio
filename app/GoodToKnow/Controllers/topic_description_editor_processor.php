@@ -6,7 +6,7 @@ use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 
 class topic_description_editor_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * Essentially what this function will do is it will process the form where Admin
@@ -27,20 +27,26 @@ class topic_description_editor_processor
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
+        $g->id = $id;
+
+
         /**
          * 1) Validate the submission.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
 
-        $g->chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+        if (!is_int($g->id) or $g->id < 1) {
+
+            breakout(' Error 12223: Topic id is either not int or is negative int. ');
+
+        }
 
 
-        // Make sure $g->chosen_topic_id is among the ids of $g->special_topic_array
+        // Make sure $g->id is among the ids of $g->special_topic_array
 
-        if (!array_key_exists($g->chosen_topic_id, $g->special_topic_array)) {
+        if (!array_key_exists($g->id, $g->special_topic_array)) {
 
-            breakout(' I\'ve encountered an unexpected error namely the topic id was not found in topic array. ');
+            breakout(' I encountered an unexpected error namely the topic id was not found in topic array. ');
 
         }
 
@@ -49,14 +55,14 @@ class topic_description_editor_processor
          * 2) Save the topic id in the session.
          */
 
-        $_SESSION['saved_int01'] = $g->chosen_topic_id;
+        $_SESSION['saved_int01'] = $g->id;
 
 
         /**
          * 3) Save the topic name in the session (we know what that is from the $g->special_topic_array.)
          */
 
-        $_SESSION['saved_str01'] = $g->special_topic_array[$g->chosen_topic_id];
+        $_SESSION['saved_str01'] = $g->special_topic_array[$g->id];
 
 
         /**
