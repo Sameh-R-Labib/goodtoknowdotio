@@ -10,7 +10,7 @@ use GoodToKnow\Models\user;
 
 class transfer_post_ownership_get_post
 {
-    function page()
+    function page(int $id = 0)
     {
         /**
          * This route will (1) determine which post the Admin chose to do a transfer of ownership to,
@@ -36,12 +36,15 @@ class transfer_post_ownership_get_post
         get_db();
 
 
+        $g->id = $id;
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'admin_get_post.php';
 
 
         // (2) stores the post's id in the session
 
-        $_SESSION['saved_int02'] = $g->chosen_post_id;
+        $_SESSION['saved_int02'] = $g->id;
 
 
         // (3) presents a form asking the user if he is sure this is the post he wants to transfer the ownership of.
@@ -50,9 +53,9 @@ class transfer_post_ownership_get_post
 
 
         // Find the community name based on the post id. First derive the topic id from the post id.
-        // Blog Post id is $g->chosen_post_id
+        // Blog Post id is $g->id
 
-        $derived_topic_id = topic_to_post::derive_topic_id($g->chosen_post_id);
+        $derived_topic_id = topic_to_post::derive_topic_id($g->id);
 
         if ($derived_topic_id === false) {
 
