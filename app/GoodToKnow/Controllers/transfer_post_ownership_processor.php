@@ -2,11 +2,9 @@
 
 namespace GoodToKnow\Controllers;
 
-use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
-
 class transfer_post_ownership_processor
 {
-    function page()
+    function page(int $id = 0)
     {
         global $g;
 
@@ -14,16 +12,21 @@ class transfer_post_ownership_processor
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'integer_form_field_prep.php';
+        $g->id = $id;
 
-        $g->chosen_topic_id = integer_form_field_prep('choice', 1, PHP_INT_MAX);
+
+        if (!is_int($g->id) or $g->id < 1) {
+
+            breakout(' Error 54413: Topic id is either not int or is negative int. ');
+
+        }
 
 
         /**
          * Make sure $g->chosen_topic_id is among the ids of $g->special_topic_array
          */
 
-        if (!array_key_exists($g->chosen_topic_id, $g->special_topic_array)) {
+        if (!array_key_exists($g->id, $g->special_topic_array)) {
 
             breakout(' Unexpected error: topic id not found in topic array. ');
 
@@ -34,7 +37,7 @@ class transfer_post_ownership_processor
          * Save it in the session
          */
 
-        $_SESSION['saved_int01'] = $g->chosen_topic_id;
+        $_SESSION['saved_int01'] = $g->id;
 
 
         redirect_to("/ax1/transfer_post_ownership_choose_post/page");
