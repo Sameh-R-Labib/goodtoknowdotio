@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\ControllerHelpers;
 
+use GoodToKnow\Models\banking_acct_for_balances;
+
 /**
  * @param object $account
  * @return void
@@ -17,6 +19,9 @@ function reset_bank_account(object $account)
      */
 
 
+    global $g;
+
+
     /**
      * Stop if $account->start_time reflects a time which is less
      * than 38 days old.
@@ -30,7 +35,14 @@ function reset_bank_account(object $account)
 
 
     /**
-     *
+     * Create an alternate account object called $reset.
+     * $reset will store the values which I will later use
+     * to update $account with.
      */
 
+    $array_record = ['user_id' => $g->user_id, 'acct_name' => $account->acct_name, 'start_time' => $account->start_time,
+        'start_balance' => $account->start_balance, 'currency' => $account->currency, 'comment' => $account->comment];
+
+    $reset = banking_acct_for_balances::array_to_object($array_record);
+    
 }
