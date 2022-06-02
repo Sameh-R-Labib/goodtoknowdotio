@@ -36,13 +36,10 @@ class reset_all_b_accounts
 
         // $g->array_of_objects is what I got.
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$g->array_of_objects: </p>\n<pre>";
-        var_dump($g->array_of_objects);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
+        foreach ($g->array_of_objects as $account) {
+
+            // Call the function which resets an account on $account.
+            
+        }
     }
 }
