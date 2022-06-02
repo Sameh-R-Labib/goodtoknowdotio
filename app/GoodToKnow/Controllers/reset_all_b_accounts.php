@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use function GoodToKnow\ControllerHelpers\reset_bank_account;
+
 class reset_all_b_accounts
 {
     function page()
@@ -36,10 +38,18 @@ class reset_all_b_accounts
 
         // $g->array_of_objects is what I got.
 
+        
+        /**
+         * Reset the accounts.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'reset_bank_account.php';
+
         foreach ($g->array_of_objects as $account) {
 
             // Call the function which resets an account on $account.
-            
+            reset_bank_account($account);
+
         }
     }
 }

@@ -40,9 +40,29 @@ function reset_bank_account(object $account)
      * to update $account with.
      */
 
-    $array_record = ['user_id' => $g->user_id, 'acct_name' => $account->acct_name, 'start_time' => $account->start_time,
+    $array_record = ['user_id' => $account->user_id, 'acct_name' => $account->acct_name, 'start_time' => $account->start_time,
         'start_balance' => $account->start_balance, 'currency' => $account->currency, 'comment' => $account->comment];
 
     $reset = banking_acct_for_balances::array_to_object($array_record);
-    
+
+
+    /**
+     * Debug Code
+     */
+    echo "\n<p>Begin debug</p>\n";
+    echo "<p>Var_dump \$account: </p>\n<pre>";
+    var_dump($account);
+    echo "</pre>\n";
+    echo "<p>Var_dump \$reset: </p>\n<pre>";
+    var_dump($reset);
+    echo "</pre>\n";
+    die("<p>End debug</p>\n");
+
+
+    /**
+     * Set $reset->start_time back 38 days from now.
+     */
+
+    $reset->start_time = time() - 3283200;
+
 }
