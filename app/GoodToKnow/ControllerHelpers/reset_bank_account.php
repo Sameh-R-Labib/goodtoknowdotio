@@ -16,4 +16,21 @@ function reset_bank_account(object $account)
      * database record of $account.
      */
 
+
+    /**
+     * Stop if $account->start_time reflects a time which is less
+     * than 38 days old.
+     *
+     * 38 days is 3283200 seconds.
+     */
+
+    $difference = time() - (int)$account->start_time;
+
+    if ($difference > 3283200) return;
+
+
+    /**
+     *
+     */
+
 }
