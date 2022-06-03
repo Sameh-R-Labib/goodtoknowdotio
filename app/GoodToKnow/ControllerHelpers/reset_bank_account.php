@@ -53,4 +53,20 @@ function reset_bank_account(object $account)
 
     $reset->start_time = time() - 3283200;
 
+
+    /**
+     * At this point we have a preliminary start_time for the new record.
+     * However, we do not want the start time to be the same time as any
+     * of the transaction times.
+     */
+
+
+    /**
+     * I want to get a set of transactions like the ones which would be
+     * displayed when a user uses the feature named "See Transactions".
+     * This set of transactions includes a running balance.
+     * The transactions should have field values which are the same as
+     * their database records as opposed to being formatted for viewing.
+     */
+
 }
