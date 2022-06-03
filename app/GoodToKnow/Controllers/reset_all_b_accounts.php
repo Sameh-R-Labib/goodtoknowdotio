@@ -47,7 +47,6 @@ class reset_all_b_accounts
 
         foreach ($g->array_of_objects as $account) {
 
-            // Call the function which resets an account on $account.
             reset_bank_account($account);
 
         }

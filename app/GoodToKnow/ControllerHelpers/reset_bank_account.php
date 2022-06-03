@@ -48,19 +48,6 @@ function reset_bank_account(object $account)
 
 
     /**
-     * Debug Code
-     */
-    echo "\n<p>Begin debug</p>\n";
-    echo "<p>Var_dump \$account: </p>\n<pre>";
-    var_dump($account);
-    echo "</pre>\n";
-    echo "<p>Var_dump \$reset: </p>\n<pre>";
-    var_dump($reset);
-    echo "</pre>\n";
-    die("<p>End debug</p>\n");
-
-
-    /**
      * Set $reset->start_time back 38 days from now.
      */
 
