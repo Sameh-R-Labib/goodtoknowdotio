@@ -31,14 +31,7 @@ function reset_bank_account(object $account)
 
     $difference = time() - (int)$account->start_time;
 
-
-    /**
-     * Debug Code
-     *
-     * Temporarily, comment out the line which follows.
-     */
-
-    /*if ($difference > 3283200) return;*/
+    if ($difference < 3283200) return;
 
 
     /**
