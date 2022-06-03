@@ -38,7 +38,7 @@ class reset_all_b_accounts
 
         // $g->array_of_objects is what I got.
 
-        
+
         /**
          * Reset the accounts.
          */
@@ -46,6 +46,15 @@ class reset_all_b_accounts
         require_once CONTROLLERHELPERS . DIRSEP . 'reset_bank_account.php';
 
         foreach ($g->array_of_objects as $account) {
+
+            /**
+             * Debug Code
+             */
+            echo "\n<p>Begin debug</p>\n";
+            echo "<p>Var_dump \$account: </p>\n<pre>";
+            var_dump($account);
+            echo "</pre>\n";
+            die("<p>End debug</p>\n");
 
             // Call the function which resets an account on $account.
             reset_bank_account($account);
