@@ -34,15 +34,11 @@ function reset_bank_account(object $account)
 
     /**
      * Debug Code
+     *
+     * Temporarily, comment out the line which follows.
      */
-    echo "\n<p>Begin debug</p>\n";
-    echo "<p>Var_dump \$difference: </p>\n<pre>";
-    var_dump($difference);
-    echo "</pre>\n";
-    die("<p>We made it as far as $difference</p>\n");
-    
 
-    if ($difference > 3283200) return;
+    /*if ($difference > 3283200) return;*/
 
 
     /**
