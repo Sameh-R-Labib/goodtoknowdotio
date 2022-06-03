@@ -31,6 +31,17 @@ function reset_bank_account(object $account)
 
     $difference = time() - (int)$account->start_time;
 
+
+    /**
+     * Debug Code
+     */
+    echo "\n<p>Begin debug</p>\n";
+    echo "<p>Var_dump \$difference: </p>\n<pre>";
+    var_dump($difference);
+    echo "</pre>\n";
+    die("<p>We made it as far as $difference</p>\n");
+    
+
     if ($difference > 3283200) return;
 
 
@@ -42,16 +53,6 @@ function reset_bank_account(object $account)
 
     $array_record = ['user_id' => $account->user_id, 'acct_name' => $account->acct_name, 'start_time' => $account->start_time,
         'start_balance' => $account->start_balance, 'currency' => $account->currency, 'comment' => $account->comment];
-
-
-    /**
-     * Debug Code
-     */
-    echo "\n<p>Begin debug</p>\n";
-    echo "<p>Var_dump \$array_record: </p>\n<pre>";
-    var_dump($array_record);
-    echo "</pre>\n";
-    die("<p>We made it as far as $array_record</p>\n");
 
 
     $reset = banking_acct_for_balances::array_to_object($array_record);
