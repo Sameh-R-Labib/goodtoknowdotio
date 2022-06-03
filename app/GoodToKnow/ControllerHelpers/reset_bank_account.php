@@ -11,6 +11,16 @@ use GoodToKnow\Models\banking_acct_for_balances;
 function reset_bank_account(object $account)
 {
     /**
+     * Debug Code
+     */
+    echo "\n<p>Begin debug</p>\n";
+    echo "<p>Var_dump \$account: </p>\n<pre>";
+    var_dump($account);
+    echo "</pre>\n";
+    die("<p>We made it inside the function</p>\n");
+
+
+    /**
      * Reset the start_time and start_balance of object $account.
      * Make start_time and start_balance reflect a point in the
      * account's history where start_time is closer to time().
