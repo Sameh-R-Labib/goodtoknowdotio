@@ -50,5 +50,8 @@ class reset_all_b_accounts
             reset_bank_account($account);
 
         }
+
+        breakout(' I reset the bank accounts. ');
+        
     }
 }
