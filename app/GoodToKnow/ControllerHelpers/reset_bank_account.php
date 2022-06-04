@@ -161,6 +161,23 @@ function reset_bank_account(object $account)
 
     }
 
+
+    /**
+     * Update the bank account record in the database.
+     */
+
+    $account->start_time = $reset->start_time;
+
+    $account->start_balance = $reset->start_balance;
+
+    $result = $account->save();
+
+    if ($result === false) {
+
+        breakout(' Err: 474383 I failed at saving the updated banking account for balances. ');
+
+    }
+
 }
 
 
