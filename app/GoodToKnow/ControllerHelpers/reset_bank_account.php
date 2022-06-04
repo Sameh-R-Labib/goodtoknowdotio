@@ -127,4 +127,29 @@ function reset_bank_account(object $account)
      * in $array of transactions.
      */
 
+    while (found_same_time_in_a_transaction($reset->start_time, $array)) {
+
+        $reset->start_time++;
+
+    }
+
+
+    /**
+     * So, now we know:
+     *  - $array has at least one transaction object.
+     *  - $reset->start_time is not the same time value as found in any of the transaction time values.
+     */
+
+}
+
+/**
+ * @param int $start_time
+ * @param array $array
+ * @return bool
+ */
+function found_same_time_in_a_transaction(int $start_time, array $array): bool
+{
+    foreach ($array as $transaction) if ((int)$transaction->time == $start_time) return true;
+
+    return false;
 }
