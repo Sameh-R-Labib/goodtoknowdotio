@@ -151,17 +151,35 @@ function reset_bank_account(object $account)
      * A: Then, $reset->start_balance should be set to $account->start_balance.
      */
 
-    if (there_are_no_transactions_before_reset_start_time()) {
+    if (there_are_no_transactions_before_reset_start_time($reset->start_time, $array)) {
 
         $reset->start_balance = $account->start_balance;
 
     } else {
 
         $reset->start_balance = the_balance_of_last_transaction_before_reset_start_time();
-        
+
     }
 
 }
+
+
+/**
+ * @param int $start_time
+ * @param array $array
+ * @return bool
+ */
+function there_are_no_transactions_before_reset_start_time(int $start_time, array $array): bool
+{
+    foreach ($array as $transaction) {
+
+        if ($transaction->time < $start_time) return false;
+
+    }
+
+    return true;
+}
+
 
 /**
  * @param int $start_time
