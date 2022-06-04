@@ -32,7 +32,7 @@ function reset_bank_account(object $account)
 
     $difference = time() - (int)$account->start_time;
 
-    if ($difference < 3283200) return;
+    if ($difference <= 3283200) return;
 
 
     /**
@@ -81,7 +81,21 @@ function reset_bank_account(object $account)
 
     if (!$array) {
 
-        breakout(' Err: 66865 I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
+        /**
+         * Then start_time should be set to $reset->start_time and start_balance should not be changed.
+         */
+
+        $account->start_time = $reset->start_time;
+
+        $result = $account->save();
+
+        if ($result === false) {
+
+            breakout(' Err: 654323 I failed at saving the updated banking account for balances. ');
+
+        }
+
+        return;
 
     }
 
@@ -105,5 +119,12 @@ function reset_bank_account(object $account)
         }
 
     }
+
+
+    /**
+     * Keep adjusting upwards by 1 second the $reset->start_time
+     * until it is not equal to any of the transaction time values
+     * in $array of transactions.
+     */
 
 }
