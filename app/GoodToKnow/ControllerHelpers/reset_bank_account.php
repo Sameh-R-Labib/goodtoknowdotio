@@ -3,6 +3,7 @@
 namespace GoodToKnow\ControllerHelpers;
 
 use GoodToKnow\Models\banking_acct_for_balances;
+use GoodToKnow\Models\banking_transaction_for_balances;
 
 /**
  * @param object $account
@@ -70,5 +71,39 @@ function reset_bank_account(object $account)
      * their database records as opposed to being formatted for viewing.
      * Also, order them from oldest to newest.
      */
+
+    $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $g->db->real_escape_string((string)$g->user_id);
+    $sql .= ' AND `bank_id` = ' . $g->db->real_escape_string((string)$account->id);
+    $sql .= ' AND `time` > ' . $g->db->real_escape_string((string)$account->start_time);
+    $sql .= ' ORDER BY `time` ASC';
+
+    $array = banking_transaction_for_balances::find_by_sql($sql);
+
+    if (!$array) {
+
+        breakout(' Err: 66865 I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
+
+    }
+
+    // Augment our data set with a running total in each banking_transaction_for_balances
+    // object. This gets assigned to each banking_transaction_for_balances object's balance field.
+
+    $running_total = (float)$account->start_balance;
+
+    foreach ($array as $transaction) {
+
+        $running_total += (float)$transaction->amount;
+
+        if (abs($running_total) >= 0.0000000000000001) {
+
+            $transaction->balance = $running_total;
+
+        } else {
+
+            $transaction->balance = 0.0;
+
+        }
+
+    }
 
 }
