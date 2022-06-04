@@ -135,9 +135,20 @@ function reset_bank_account(object $account)
 
 
     /**
-     * So, now we know:
+     * Now we know:
      *  - $array has at least one transaction object.
      *  - $reset->start_time is not the same time value as found in any of the transaction time values.
+     *
+     * Now, we have the final value for $reset->start_time.
+     * Now, we need to figure out what the $reset->start_balance is to be.
+     *
+     * Ideally, $reset->start_balance should be made equal to
+     * the transaction balance of the last transaction before
+     * $reset->start_time.
+     *
+     * Q: But, what if there are no transactions in $array which
+     *    come before $reset->start_time?
+     * A: Then, $reset->start_balance should be set to $account->start_balance.
      */
 
 }
