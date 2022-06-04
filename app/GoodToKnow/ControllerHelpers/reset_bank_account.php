@@ -157,10 +157,32 @@ function reset_bank_account(object $account)
 
     } else {
 
-        $reset->start_balance = the_balance_of_last_transaction_before_reset_start_time();
+        $reset->start_balance = the_balance_of_last_transaction_before_reset_start_time($reset->start_time, $array);
 
     }
 
+}
+
+
+/**
+ * @param int $start_time
+ * @param array $array
+ * @return float
+ */
+function the_balance_of_last_transaction_before_reset_start_time(int $reset_start_time, array $array): float
+{
+    $key_of_last_transaction_before_start_time = 0;
+
+    foreach ($array as $key => $value) {
+
+        if ($value->start_time < $reset_start_time) {
+            $key_of_last_transaction_before_start_time = $key;
+        } else {
+            break;
+        }
+    }
+
+    return $array[$key_of_last_transaction_before_start_time]->balance;
 }
 
 
