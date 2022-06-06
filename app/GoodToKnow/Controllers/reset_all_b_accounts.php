@@ -47,11 +47,32 @@ class reset_all_b_accounts
 
         foreach ($g->array_of_objects as $account) {
 
+            /**
+             * Debug
+             */
+
+            $start_time_readable = date('m/d/Y h:i:sa T', $account->start_time);
+
+            echo "\n";
+
+            echo <<<ROI
+<p>id: $account->id acct_name: $account->acct_name<br>
+start_time as timestamp: $account->start_time (as human readable) $start_time_readable<br>
+start_balance: $account->start_balance</p>
+ROI;
+
+            echo "\n";
+
             reset_bank_account($account);
 
         }
 
-        breakout(' I reset the bank accounts. ');
-        
+
+        /**
+         * Debug
+         */
+
+        /*breakout(' I reset the bank accounts. ');*/
+
     }
 }
