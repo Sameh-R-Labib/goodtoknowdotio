@@ -293,7 +293,7 @@ function the_balance_of_last_transaction_before_reset_start_time(int $reset_star
 
     foreach ($array as $key => $value) {
 
-        if ($value->start_time < $reset_start_time) {
+        if ($value->time < $reset_start_time) {
             $key_of_last_transaction_before_start_time = $key;
         } else {
             break;
