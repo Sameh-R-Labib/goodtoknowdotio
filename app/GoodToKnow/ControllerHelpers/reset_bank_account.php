@@ -33,20 +33,6 @@ function reset_bank_account(object $account)
     $difference = time() - (int)$account->start_time;
 
 
-    /**
-     * Debug
-     */
-
-    echo "\n";
-
-    echo <<<ROI
-<p>The difference between time() and account start time is $difference.<br>
-If $difference <= 3283200 then this account will not be changed.</p>
-ROI;
-
-    echo "\n";
-
-
     if ($difference <= 3283200) return;
 
 
@@ -68,21 +54,6 @@ ROI;
      */
 
     $reset->start_time = time() - 3283200;
-
-
-    /**
-     * Debug
-     */
-
-    $reset_start_time_readable = date('m/d/Y h:i:sa T', $reset->start_time);
-
-    echo "\n";
-
-    echo <<<ROI
-<p>The reset time is being initially set to $reset->start_time aka $reset_start_time_readable</p>
-ROI;
-
-    echo "\n";
 
 
     /**
@@ -115,30 +86,16 @@ ROI;
          * Then start_time should be set to $reset->start_time and start_balance should not be changed.
          */
 
-        /**
-         * Debug
-         */
 
-        $reset_start_time_readable = date('m/d/Y h:i:sa T', $reset->start_time);
+        $account->start_time = $reset->start_time;
 
-        echo "\n";
+        $result = $account->save();
 
-        echo <<<ROI
-<p>There were no transactions in the old data set so only the start_time is reset $reset->start_time aka $reset_start_time_readable</p>
-ROI;
+        if ($result === false) {
 
-        echo "\n<hr>\n";
+            breakout(' Err: 654323 I failed at saving the updated banking account for balances. ');
 
-
-//        $account->start_time = $reset->start_time;
-//
-//        $result = $account->save();
-//
-//        if ($result === false) {
-//
-//            breakout(' Err: 654323 I failed at saving the updated banking account for balances. ');
-//
-//        }
+        }
 
         return;
 
@@ -167,18 +124,6 @@ ROI;
 
 
     /**
-     * Debug
-     */
-
-    echo "\n<p>Here are the old transactions</p>\n";
-
-    echo "<p>Print_r \$array: </p>\n<pre>";
-    print_r($array);
-    echo "</pre>\n";
-    echo("<p>End of old transactions</p>\n");
-
-
-    /**
      * Keep adjusting upwards by 1 second the $reset->start_time
      * until it is not equal to any of the transaction time values
      * in $array of transactions.
@@ -187,17 +132,6 @@ ROI;
     while (found_same_time_in_a_transaction($reset->start_time, $array)) {
 
         $reset->start_time++;
-
-        /**
-         * Debug
-         */
-
-        echo "\n<p>I bumped up reset start_time</p>\n";
-
-        echo "<p>Print_r \$reset->start_time: </p>\n<pre>";
-        print_r($reset->start_time);
-        echo "</pre>\n";
-        echo("<p>End of old transactions</p>\n");
 
     }
 
@@ -223,22 +157,9 @@ ROI;
 
         $reset->start_balance = $account->start_balance;
 
-        /**
-         * Debug
-         */
-
-        echo "\n<p>There were no transactions before reset time so the reset start_balance is the old one.</p>\n";
-
     } else {
 
         $reset->start_balance = the_balance_of_last_transaction_before_reset_start_time($reset->start_time, $array);
-
-        /**
-         * Debug
-         */
-
-        echo "\n<p>There were some transactions before reset time so the reset start_balance is the balance of last
-         transaction before reset start_time. It is $reset->start_balance.</p>\n";
 
     }
 
@@ -251,33 +172,14 @@ ROI;
 
     $account->start_balance = $reset->start_balance;
 
-    /**
-     * Debug
-     */
 
-    echo "\n<p>Here is what the new account looks like</p>\n";
+    $result = $account->save();
 
-    $start_time_readable = date('m/d/Y h:i:sa T', $account->start_time);
+    if ($result === false) {
 
-    echo "\n";
+        breakout(' Err: 474383 I failed at saving the updated banking account for balances. ');
 
-    echo <<<ROI
-<p>id: $account->id acct_name: $account->acct_name<br>
-start_time as timestamp: $account->start_time (as human readable) $start_time_readable<br>
-start_balance: $account->start_balance</p>
-
-<hr>
-ROI;
-
-    echo "\n";
-
-//    $result = $account->save();
-//
-//    if ($result === false) {
-//
-//        breakout(' Err: 474383 I failed at saving the updated banking account for balances. ');
-//
-//    }
+    }
 
 }
 
