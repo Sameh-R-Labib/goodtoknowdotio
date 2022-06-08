@@ -102,11 +102,6 @@
     <figcaption>Chris Hedges (book author who speaks against corruption in government)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Chelsea Manning" src="/cmann.png">
-    <figcaption>Soldier with a conscience who felt compelled to be a whistleblower.
-    </figcaption>
-</figure>
-<figure>
     <img class="photo" alt="Film: The Panama Deception" src="/usattack.png">
     <figcaption>Documentary war film showing actual footage of the Panama invasion called The Panama Deception
     </figcaption>
