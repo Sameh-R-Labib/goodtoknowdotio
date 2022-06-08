@@ -103,7 +103,7 @@
 </figure>
 <figure>
     <img class="photo" alt="Chelsea Manning" src="/cmann.png">
-    <figcaption>Soldier who felt compelled to become a whistleblower.
+    <figcaption>Soldier with a conscience who felt compelled to be a whistleblower.
     </figcaption>
 </figure>
 <figure>
