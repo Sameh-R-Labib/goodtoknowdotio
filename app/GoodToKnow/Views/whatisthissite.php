@@ -32,13 +32,6 @@
             <li>taxable income events</li>
             <li>taxable gain on owned commodities</li>
         </ul>
-        <p>
-            In other words you get to:
-        </p>
-        <ol>
-            <li>create and share blog posts</li>
-            <li>keep track of personal records</li>
-        </ol>
         <blockquote>
             GoodToKnow.io instances are run by (at least) one Admin who's in charge of (among other things)
             adding communities, adding topics, adding users, and approving content.
