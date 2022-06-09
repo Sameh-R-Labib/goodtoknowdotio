@@ -8,7 +8,10 @@
             Also, see <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>
         </p>
         <p>
-            <i>Sameh R. Labib is the author of this document and the owner of the GoodToKnow.io web app software.</i>
+            <i>Sameh R. Labib is the original author of this document and is the owner of the GoodToKnow.io web app
+                software.</i>
+            This document may be edited by others in the future. That is why he may refer to himself in the third
+            person.
         </p>
         <p>
             This site is an instance of the GoodToKnow.io web app software. GoodToKnow.io web app code is GPLv3 Affero
