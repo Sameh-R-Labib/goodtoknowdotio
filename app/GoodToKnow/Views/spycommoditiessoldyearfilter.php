@@ -18,7 +18,6 @@
                     <br>
                     Amount of C Sold: <?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
                     Label of C Record From Which C Was Sold: <?= $object->commodity_label ?><br>
-                    Tax Year: <?= $object->tax_year ?><br>
                     Net Profit: <?= $object->currency_transacted ?>
                     <?php if ($object->profit < 0): ?>
                         🔥(
