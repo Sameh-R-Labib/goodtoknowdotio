@@ -21,7 +21,10 @@
         <ul>
             <li>recurring payments</li>
             <li>banking transactions</li>
-            <li>recurring to-do list items</li>
+            <li>tasks</li>
+            <li>tax deductions</li>
+            <li>taxable income events</li>
+            <li>taxable gain on owned commodities</li>
         </ul>
         <p>
             In other words you get to:
