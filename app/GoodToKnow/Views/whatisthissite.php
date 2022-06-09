@@ -51,8 +51,12 @@
             </a>
             and / or you could contact an Admin and try to persuade him / her to help you set it up.
         </p>
+        <p>Sameh R. Labib is an Admin for the <a href="https://goodtoknow.io">https://goodtoknow.io</a> instance of the
+            GoodToKnow.io web app software. Sam also has a Discord channel named goodtoknow.io which he may allow you to
+            join.
+        </p>
         <p>
-            Thanks and be good to one another. &mdash; <i>Sameh R. Labib</i>
+            Be good to one another. &mdash; <i>Sameh R. Labib</i>
         </p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
