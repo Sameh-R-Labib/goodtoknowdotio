@@ -17,13 +17,19 @@
             The users are assigned communities in
             order to limit each user to the blog posts he / she is interested in. Additionally, (on a user-by-user
             basis) GoodToKnow.io web app has features for keeping track of things which a prudent person would want to
-            keep track of in their personal life such as recurring payments, banking transactions and recurring to-do
-            list items. In other words you get to:
-        </p>
+            keep track of in their personal life such as:</p>
         <ul>
+            <li>recurring payments</li>
+            <li>banking transactions</li>
+            <li>recurring to-do list items</li>
+        </ul>
+        <p>
+            In other words you get to:
+        </p>
+        <ol>
             <li>create and share blog posts</li>
             <li>keep track of personal records</li>
-        </ul>
+        </ol>
         <blockquote>
             GoodToKnow.io instances are run by (at least) one Admin who's in charge of (among other things)
             adding communities, adding topics, adding users, and approving content.
