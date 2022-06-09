@@ -15,11 +15,9 @@
             The primary use for this software is to facilitate the parsing and sharing of practical useful information
             via blog posts and database records amongst family and close friends. The users are assigned communities in
             order to limit each user to the blog posts he / she is interested in. Additionally, (on a user-by-user
-            basis)
-            GoodToKnow.io web app has features for keeping track of things which a prudent person would want to
+            basis) GoodToKnow.io web app has features for keeping track of things which a prudent person would want to
             keep track of in their personal life such as recurring payments, banking transactions and recurring to-do
-            list
-            items. In other words you get to:
+            list items. In other words you get to:
         </p>
         <ul>
             <li>create and share blog posts</li>
@@ -33,7 +31,9 @@
             If you stumble across a different GoodToKnow.io instance (having a different URL) you can ask its Admin to
             join it.
             Otherwise, if you'd like to create your own instance you can either use the source code yourself found at
-            <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
+            <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">
+                https://github.com/Sameh-R-Labib/goodtoknowdotio
+            </a>
             and / or you could contact an Admin and try to persuade him / her to help you set it up. You'll find the
             email address of each instance's Admin on the login page / form.
         </p>
