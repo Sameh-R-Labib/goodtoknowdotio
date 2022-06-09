@@ -5,7 +5,7 @@
     <div id="maincontent">
         <h1>Software Description</h1>
         <p>
-            See: <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>
+            See: <a class="no-frills-link" href="/ax1/proclamation/page">Terms Of Service</a>
         </p>
         <p>
             <i>Sameh R. Labib is the original author of this document and is the owner of the GoodToKnow.io web app

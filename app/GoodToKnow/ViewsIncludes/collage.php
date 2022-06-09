@@ -1,6 +1,6 @@
 <h1>Proclamation</h1>
 <p>
-    See: <a class="no-frills-link" href="/ax1/what_is_this_site/page" target="_blank">What Is This Site?</a>
+    See: <a class="no-frills-link" href="/ax1/what_is_this_site/page">What Is This Site?</a>
 </p>
 <h2>Terms of Service</h2>
 <p>"this software" means the source code and its implementation.<br>
