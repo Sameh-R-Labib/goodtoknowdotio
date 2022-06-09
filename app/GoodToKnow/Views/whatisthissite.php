@@ -4,16 +4,25 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Software Description</h1>
-        <p>Also, see <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a></p>
-        <p>This site is an instance of the GoodToKnow.io web app software. The code is GPLv3 Affero licensed FLOSS
-            software. The primary use for this software is to facilitate the parsing and sharing of practical useful
-            information via blog posts to be shared amongst family and a closed circle of acquaintances. The
-            users are divided into communities in order to control who has access to which blog posts.
+        <p>
+            Also, see <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>
+        </p>
+        <p>
+            This site is an instance of the GoodToKnow.io web app software. GoodToKnow.io web app code is GPLv3 Affero
+            licensed FLOSS software.
+        </p>
+        <p>
+            The primary use for this software is to facilitate the parsing and sharing of practical useful information
+            via blog posts and database records amongst family and close friends. The
+            users are divided into communities in order to limit which blog posts each user has access to.
             Additionally, (on a user-by-user basis) it has features for tracking things which one would normally
             track in one's personal life such as recurring payments, banking transactions and recurring to-do list
-            items. In other words you get to create and share blog posts, and you get to keep track of personal
-            records.
+            items. In other words you get to , and you get to:
         </p>
+        <ul>
+            <li>create and share blog posts</li>
+            <li>keep track of personal records</li>
+        </ul>
         <blockquote>
             GoodToKnow.io instances are run by (at least) one Admin who's in charge of (among other things)
             adding communities, adding topics, adding users, and approving content.
