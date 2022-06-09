@@ -26,8 +26,23 @@ class login_form
         }
 
 
-        $g->html_title = 'GoodToKnow.io';
+        /**
+         * At this point:
+         *   The user may have a session (although he / she is not logged in.)
+         *   So, lets destroy the session (We still have the session message stored in $g->message.)
+         *
+         *  Doing this helps prevent infinite loops.
+         */
 
+        $_SESSION = [];
+        session_destroy();
+
+
+        /**
+         * View the form
+         */
+
+        $g->html_title = 'GoodToKnow.io';
 
         require VIEWS . DIRSEP . 'loginform.php';
     }
