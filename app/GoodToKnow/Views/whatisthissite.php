@@ -8,6 +8,9 @@
             Also, see <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>
         </p>
         <p>
+            <i>Sameh R. Labib is the author of this document and the owner of the GoodToKnow.io web app software.</i>
+        </p>
+        <p>
             This site is an instance of the GoodToKnow.io web app software. GoodToKnow.io web app code is GPLv3 Affero
             licensed FLOSS software.
         </p>
