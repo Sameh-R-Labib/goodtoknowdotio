@@ -21,11 +21,11 @@
             <li>share of practical useful information via blog posts</li>
             <li>maintain ones own personal records</li>
         </ol>
-        <p>It is intended to be used for sharing amongst family and friends.
-            The users are assigned communities in order to limit each user to the blog posts he / she is interested in.
+        <p>The blog portion of the GoodToKnow.io web app software is for sharing information amongst family and friends.
+            Members are assigned communities in order to limit each member to posts he / she is interested in.
         </p>
         <p>
-            On a user-by-user basis, GoodToKnow.io web app has features for keeping track of things which a prudent
+            On a member-by-member basis, GoodToKnow.io web app has features for keeping track of things which a prudent
             person would want to keep track of in their personal life such as:</p>
         <ul>
             <li>recurring payments</li>
@@ -37,7 +37,7 @@
         </ul>
         <blockquote>
             GoodToKnow.io instances are run by (at least) one Admin who's in charge of (among other things)
-            adding communities, adding topics, adding users, and approving content. You'll find the
+            adding communities, adding topics, adding members, and approving content. You'll find the
             email address of each instance's Admin on the login page / form. However, if you
             become a member you will be able to contact Admin using the internal messaging system.
         </blockquote>
