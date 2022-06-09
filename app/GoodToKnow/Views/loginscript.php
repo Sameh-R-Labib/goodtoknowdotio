@@ -5,7 +5,7 @@
         <section>
             <label class="checkbox">
                 <input type="checkbox" name="choice" value="agree">
-                I accept and agree to the <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms
+                I have read and I agree to the <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms
                     Of Service</a>.
             </label>
         </section>
