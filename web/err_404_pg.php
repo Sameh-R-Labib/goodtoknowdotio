@@ -40,8 +40,8 @@ const ABORT = VIEWSINCLUDES . DIRSEP . 'abort.php';
 const HEADINGONE = VIEWSINCLUDES . DIRSEP . 'headingone.php';
 const TIMEFORMFIELD = VIEWSINCLUDES . DIRSEP . 'timeformfield.php';
 const TIMENEXTANDLASTFORMFIELDS = VIEWSINCLUDES . DIRSEP . 'timenextandlastformfields.php';
-const TIMENEXTANDLASTFORMFIELDSPREFILLED = VIEWSINCLUDES . DIRSEP . 'timenextandlastformfieldsprefilled.php';
 const TIMEBOUGHTSOLD = VIEWSINCLUDES . DIRSEP . 'timeboughtsold.php';
+const USERCPBUTTONS = VIEWSINCLUDES . DIRSEP . 'usercpbuttons.php';
 
 
 // Trick to get PhpStorm not to show as error.
