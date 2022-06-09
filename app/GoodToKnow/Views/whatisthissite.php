@@ -5,7 +5,7 @@
     <div id="maincontent">
         <h1>Software Description</h1>
         <p>
-            Also, see <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>
+            See: <a class="no-frills-link" href="/ax1/proclamation/page" target="_blank">Terms Of Service</a>
         </p>
         <p>
             <i>Sameh R. Labib is the original author of this document and is the owner of the GoodToKnow.io web app
@@ -52,16 +52,16 @@
         <p>
             If you'd like to create your own instance of a GoodToKnow.io web app you can either use the source code
             yourself found at
-            <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">
+            <a class="no-frills-link" href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">
                 https://github.com/Sameh-R-Labib/goodtoknowdotio
             </a>
             and / or you could contact an Admin and try to persuade him / her to help you set it up. You will
             need to configure the server to run this software. Sameh R. Labib's instance has the documentation.
             Sam suggests you join his instance.
         </p>
-        <p>Sameh R. Labib is an Admin for the <a href="https://goodtoknow.io">https://goodtoknow.io</a> instance of the
-            GoodToKnow.io web app software. Sam also has a Discord channel named goodtoknow.io which he may allow you to
-            join.
+        <p>Sameh R. Labib is an Admin for the <a class="no-frills-link" href="https://goodtoknow.io">https://goodtoknow.io</a>
+            instance of the GoodToKnow.io web app software. Sam also has a Discord channel named goodtoknow.io which he
+            may allow you to join.
         </p>
         <p>
             Be good to one another. &mdash; <i>Sameh R. Labib</i>
