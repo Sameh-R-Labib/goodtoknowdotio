@@ -34,7 +34,9 @@
         </ul>
         <blockquote>
             GoodToKnow.io instances are run by (at least) one Admin who's in charge of (among other things)
-            adding communities, adding topics, adding users, and approving content.
+            adding communities, adding topics, adding users, and approving content. You'll find the
+            email address of each instance's Admin on the login page / form. However, if you
+            become a member you will be able to contact Admin using the internal messaging system.
         </blockquote>
         <p>To become a member of this GoodToKnow.io instance you need to ask its Admin for an account. The Admin
             will consider whether you are suitable for membership based on trust and purpose.</p>
@@ -47,8 +49,7 @@
             <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">
                 https://github.com/Sameh-R-Labib/goodtoknowdotio
             </a>
-            and / or you could contact an Admin and try to persuade him / her to help you set it up. You'll find the
-            email address of each instance's Admin on the login page / form.
+            and / or you could contact an Admin and try to persuade him / her to help you set it up.
         </p>
         <p>
             Thanks and be good to one another. &mdash; <i>Sameh R. Labib</i>
