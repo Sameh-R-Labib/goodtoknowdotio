@@ -33,8 +33,7 @@
             Otherwise, if you'd like to create your own instance you can either use the source code yourself found at
             <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">https://github.com/Sameh-R-Labib/goodtoknowdotio</a>
             and / or you could contact an Admin and try to persuade him / her to help you set it up. You'll find the
-            email
-            address of each instance's Admin on the login page/form.
+            email address of each instance's Admin on the login page / form.
         </p>
         <p>
             Thanks and be good to one another. &mdash; <i>Sameh R. Labib</i>
