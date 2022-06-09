@@ -36,10 +36,14 @@
             GoodToKnow.io instances are run by (at least) one Admin who's in charge of (among other things)
             adding communities, adding topics, adding users, and approving content.
         </blockquote>
-        <p>If you'd like to become a member of this GoodToKnow.io instance then contact its Admin.
-            If you stumble across a different GoodToKnow.io instance (having a different URL) you can ask its Admin to
-            join it.
-            Otherwise, if you'd like to create your own instance you can either use the source code yourself found at
+        <p>To become a member of this GoodToKnow.io instance you need to ask its Admin for an account. The Admin
+            will consider whether you are suitable for membership based on trust and purpose.</p>
+        <p>
+            There may be other instances of GoodToKnow.io web app on the Internet. You may be able to join them too!
+        </p>
+        <p>
+            If you'd like to create your own instance of a GoodToKnow.io web app you can either use the source code
+            yourself found at
             <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">
                 https://github.com/Sameh-R-Labib/goodtoknowdotio
             </a>
