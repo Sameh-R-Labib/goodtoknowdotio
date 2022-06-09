@@ -52,7 +52,9 @@
             <a href="https://github.com/Sameh-R-Labib/goodtoknowdotio" target="_blank">
                 https://github.com/Sameh-R-Labib/goodtoknowdotio
             </a>
-            and / or you could contact an Admin and try to persuade him / her to help you set it up.
+            and / or you could contact an Admin and try to persuade him / her to help you set it up. You will
+            need to configure the server to run this software. Sameh R. Labib's instance has the documentation.
+            Sam suggests you join his instance.
         </p>
         <p>Sameh R. Labib is an Admin for the <a href="https://goodtoknow.io">https://goodtoknow.io</a> instance of the
             GoodToKnow.io web app software. Sam also has a Discord channel named goodtoknow.io which he may allow you to
