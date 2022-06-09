@@ -14,10 +14,9 @@
         <p>
             The primary use for this software is to facilitate the parsing and sharing of practical useful information
             via blog posts and database records. It's intended to be used for sharing amongst family and friends.
-            The users are assigned communities in
-            order to limit each user to the blog posts he / she is interested in. Additionally, (on a user-by-user
-            basis) GoodToKnow.io web app has features for keeping track of things which a prudent person would want to
-            keep track of in their personal life such as:</p>
+            The users are assigned communities in order to limit each user to the blog posts he / she is interested in.
+            On a user-by-user basis, GoodToKnow.io web app has features for keeping track of things which a prudent
+            person would want to keep track of in their personal life such as:</p>
         <ul>
             <li>recurring payments</li>
             <li>banking transactions</li>
