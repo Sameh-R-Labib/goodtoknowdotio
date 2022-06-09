@@ -9,7 +9,7 @@
         <?php if (!empty($g->array)): ?>
             <?php $last = count($g->array) - 1; ?>
             <?php foreach ($g->array as $key => $object): ?>
-                <h2 class="topofpage"><?= $object->commodity_type ?>&nbsp;Sold <?= $object->time_sold ?></h2>
+                <h2 class="topofpage"><?= $object->commodity_type ?></h2>
                 <p>Time Sold: <?= $object->time_sold ?><br>
                     Time Bought: <?= $object->time_bought ?><br>
                     Price Per C Unit Bought: <?= $object->currency_transacted ?>
