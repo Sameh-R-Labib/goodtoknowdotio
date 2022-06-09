@@ -349,7 +349,7 @@ class home
 
             $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
-            redirect_to("/ax1/login_form/page");
+            redirect_to("/ax1/logout/page");
 
         }
 
