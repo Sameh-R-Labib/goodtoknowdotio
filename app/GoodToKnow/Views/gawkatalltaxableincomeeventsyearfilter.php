@@ -10,7 +10,7 @@
             <?php $last = count($g->array) - 1; ?>
             <?php foreach ($g->array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->label ?></h2>
-                <p><em><?= $object->time ?></em>
+                <p><em><?= $object->time ?></em> ζ
                     <b><?= $object->currency ?>&nbsp;<?= $object->amount ?></b> ζ
                     <?= $object->currency ?> price: <?= $object->fiat ?>&nbsp;<?= $object->price ?> .
                     <?= $object->comment ?>
