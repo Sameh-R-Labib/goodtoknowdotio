@@ -28,7 +28,7 @@ class topic_description_editor
 
         if (empty($g->special_topic_array)) {
 
-            breakout(' Aborted because you can\'t create a post in a community which has no topics. ');
+            breakout(' Aborted because you can not create a post in a community which has no topics. ');
 
         }
 

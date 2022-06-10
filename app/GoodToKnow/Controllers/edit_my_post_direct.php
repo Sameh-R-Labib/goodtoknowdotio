@@ -55,7 +55,7 @@ class edit_my_post_direct
 
         if ($g->post_object->user_id != $g->user_id) {
 
-            breakout(' You can\'t edit or delete this post. ');
+            breakout(' You can not edit or delete this post. ');
 
         }
 
