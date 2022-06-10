@@ -40,7 +40,7 @@ class create_new_post_direct
         /**
          * Redirect
          *
-         * Where we redirect depends on whether or not there is one or more post in the chosen topic.
+         * Where we redirect depends on whether there is one or more post in the chosen topic.
          */
 
         get_db();
@@ -50,7 +50,7 @@ class create_new_post_direct
 
         // The rest of this is the same as in create_new_post_processor
 
-        if ($posts == false) $posts = [];
+        if (!$posts) $posts = [];
 
         $count = count($posts);
 
