@@ -92,6 +92,9 @@ class check_my_banking_account_tx_balances_show_balances
 
             $g->message .= " I could NOT find any bank account transactions ¯\_(ツ)_/¯. ";
 
+            // We need this to not error out.
+            $g->array = [];
+
         }
 
 
