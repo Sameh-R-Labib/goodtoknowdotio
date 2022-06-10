@@ -201,6 +201,12 @@ main {
     margin-bottom: 26px;
 }
 
+img.in-paragraph {
+    display: inline-block;
+    margin-top: 19px;
+    margin-bottom: 26px;
+}
+
 img.photo {
     max-width: 847px;
     display: block;
