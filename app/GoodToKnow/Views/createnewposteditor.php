@@ -1,3 +1,4 @@
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
 <form action="/ax1/create_new_post_edit_processor/page" method="post">
     <h2><a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">📒 Markdown</a>
@@ -18,7 +19,9 @@
         <p>
             <label for="textarea"></label>
             <textarea id="textarea" spellcheck="false" name="markdown" rows="32"
-                      cols="67" wrap="soft">#</textarea>
+                      cols="67" wrap="soft">#<?= $g->saved_str01 ?>
+
+##heading 2</textarea>
         </p>
     </section>
     <?php require SUBMITABORT; ?>
