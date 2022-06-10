@@ -3,7 +3,7 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <p><a href="/rockadily.php">PhpInfo</a></p>
+        <p><a target="_blank" href="/rockadily.php">PhpInfo</a></p>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
