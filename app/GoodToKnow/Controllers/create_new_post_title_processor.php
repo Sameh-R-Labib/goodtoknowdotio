@@ -22,16 +22,9 @@ class create_new_post_title_processor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $main_title = standard_form_field_prep('main_title', 1, 200);
+        $_SESSION['saved_str01'] = standard_form_field_prep('main_title', 1, 200);
 
-        $title_extension = standard_form_field_prep('title_extension', 0, 200);
-
-
-        // Add to session
-
-        $_SESSION['saved_str01'] = $main_title;
-
-        $_SESSION['saved_str02'] = $title_extension;
+        $_SESSION['saved_str02'] = standard_form_field_prep('title_extension', 0, 200);
 
 
         // Redirect
