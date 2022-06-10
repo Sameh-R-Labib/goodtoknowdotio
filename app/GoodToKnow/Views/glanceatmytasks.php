@@ -8,7 +8,7 @@
         <?php if (!empty($g->array)): ?>
             <?php foreach ($g->array as $object): ?>
                 <p><a class="cross" href="/ax1/feature_a_task_link/page/<?= $object->id ?>">✎</a>
-                    <em><?= $object->label ?></em> ◜ <?= $object->next ?> ⇁ <?= $object->cycle_type ?></p>
+                    <?= $object->label ?> ◜ <em><?= $object->next ?></em> ⇁ <?= $object->cycle_type ?></p>
             <?php endforeach; ?>
         <?php else: ?>
             <p>There are no to-do tasks.</p>
