@@ -197,14 +197,11 @@ main {
 
 #maincontent img {
     max-width: 847px;
-    margin-top: 19px;
-    margin-bottom: 26px;
 }
 
 img.in-paragraph {
-    display: inline-block;
-    margin-top: 19px;
-    margin-bottom: 26px;
+    margin-top: -27px;
+    margin-bottom: -20px;
 }
 
 img.photo {
