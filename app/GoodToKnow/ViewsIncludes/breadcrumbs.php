@@ -95,6 +95,10 @@ switch ($g->page) {
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/c_p_purges/page\">System Maintenance</a>";
         break;
+    case 'c_p_server':
+        echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
+        echo "<a href=\"/ax1/c_p_server/page\">Server</a>";
+        break;
     case 'c_p_accounts':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/c_p_accounts/page\">User Management</a>";
