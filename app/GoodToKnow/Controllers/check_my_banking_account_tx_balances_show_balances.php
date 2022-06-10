@@ -181,7 +181,7 @@ class check_my_banking_account_tx_balances_show_balances
         $g->show_poof = true;
 
 
-        $g->message .= ' Here are your transactions and their balances. ';
+        $g->message .= ' Here are your transactions. ';
 
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';
