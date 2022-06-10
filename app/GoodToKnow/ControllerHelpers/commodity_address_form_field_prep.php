@@ -36,7 +36,7 @@ function commodity_address_form_field_prep(string $field_name): string
 
     $found = false;
 
-    $array_of_html_chars = ['&', '"', '\'', '<', '>'];
+    $array_of_html_chars = ['&', '"', '<', '>'];
 
     $array = str_split($string_for_return);
 
