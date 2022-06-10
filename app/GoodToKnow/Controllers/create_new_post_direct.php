@@ -9,6 +9,11 @@ class create_new_post_direct
     function page()
     {
         /**
+         * create_new_post_direct enables the user to create a post without
+         * needing to specify a topic. It assumes type_of_resource_requested
+         * is topic. Then it uses (int)$g->topic_id instead of asking the
+         * user to specify which topic he / she wants the new post to live in.
+         *
          * create_new_post_direct is similar to create_new_post_processor
          */
 
@@ -19,7 +24,7 @@ class create_new_post_direct
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
         /**
-         * Error out if we are not at the topic level because.
+         * Error out if we are not at the topic level.
          */
 
         if ($g->type_of_resource_requested != 'topic') {
