@@ -90,7 +90,7 @@ class check_my_banking_account_tx_balances_show_balances
 
         if (!$g->array) {
 
-            breakout(' I could NOT find any bank account transactions ¯\_(ツ)_/¯ ');
+            $g->message .= " I could NOT find any bank account transactions ¯\_(ツ)_/¯. ";
 
         }
 
