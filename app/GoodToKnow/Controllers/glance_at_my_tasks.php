@@ -50,7 +50,6 @@ class glance_at_my_tasks
         foreach ($g->array as $object) {
 
             $object->label = get_proximity_task_label($object->label, $object->next);
-            $object->last = get_readable_date($object->last);
             $object->next = get_readable_date($object->next);
             $object->comment = nl2br($object->comment, false);
 
