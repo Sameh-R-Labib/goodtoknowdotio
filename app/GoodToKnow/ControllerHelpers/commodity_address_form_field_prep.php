@@ -51,7 +51,7 @@ function commodity_address_form_field_prep(string $field_name): string
 
     if ($found) {
 
-        breakout(' I can\'t use this address because it has an HTML special character. ');
+        breakout(' I can not use this address because it has an HTML special character. ');
 
     }
 

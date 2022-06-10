@@ -34,7 +34,7 @@ function post_object_for_owner_prep(string $field_name): object
 
     if ($g->post_object->user_id != $g->user_id) {
 
-        breakout(' You can\'t edit or delete this post. ');
+        breakout(' You can not edit or delete this post. ');
 
     }
 
