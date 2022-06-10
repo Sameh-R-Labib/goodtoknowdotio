@@ -21,6 +21,7 @@
             <textarea id="textarea" spellcheck="false" name="markdown" rows="32"
                       cols="67" wrap="soft">#<?= $g->saved_str01 ?>
 
+
                 Lorem epsum.
 
 ##heading 2</textarea>
