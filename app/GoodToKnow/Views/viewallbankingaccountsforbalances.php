@@ -11,8 +11,8 @@
             <?php foreach ($g->array_of_objects as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->acct_name ?></h2>
                 <p>
-                    <b>When: </b><?= $object->start_time ?><br>
-                    <b>Balance: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?><br>
+                    <b>Starting Point Time: </b><?= $object->start_time ?><br>
+                    <b>Starting Point Balance: </b><?= $object->currency ?>&nbsp;<?= $object->start_balance ?><br>
                     <b>Comment: </b><?= $object->comment ?>
                 </p>
                 <?php if ($key != $last): ?>
