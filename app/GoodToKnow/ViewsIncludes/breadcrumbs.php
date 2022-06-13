@@ -71,6 +71,10 @@ switch ($g->page) {
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/c_p_banking_accounts/page\">Bank Account</a>";
         break;
+    case 'c_p_banking_observers':
+        echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
+        echo "<a href=\"/ax1/c_p_banking_observers/page\">Bank Observer</a>";
+        break;
     case 'c_p_commodities':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/c_p_commodities/page\">Commodity</a>";
