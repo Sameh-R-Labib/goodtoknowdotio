@@ -29,7 +29,7 @@ class produce_a_bank_acct_observer_processor
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';
 
-        $observer_username = standard_form_field_prep('username', 7, 12);
+        $observer_username = standard_form_field_prep('observer_username', 7, 12);
 
 
         /**
