@@ -37,5 +37,11 @@ class produce_a_bank_acct_observer_read_b_acct_id
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_the_bankingaccountforbalances.php';
 
+
+        /**
+         * Create and save a bank_account_observer which ties together
+         * the three types of id found in a bank_account_observer.
+         */
+
     }
 }
