@@ -51,6 +51,17 @@ class produce_a_bank_acct_observer_processor
         $_SESSION['saved_str01'] = $observer_username;
 
 
+        /**
+         * Compose the banking objects view.
+         * The user will be presented with (to choose from) buttons for his / her bank accounts
+         */
+
+
+        /**
+         * Summon the view.
+         */
+
+
         $g->html_title = "Choose Bank Account";
 
         require VIEWS . DIRSEP . 'produceabankacctobserverprocessor.php';
