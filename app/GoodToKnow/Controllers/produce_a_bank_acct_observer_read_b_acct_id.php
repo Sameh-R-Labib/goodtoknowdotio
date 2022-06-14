@@ -2,6 +2,9 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\bank_account_observer;
+use GoodToKnow\Models\user;
+
 class produce_a_bank_acct_observer_read_b_acct_id
 {
     function page(int $id = 0)
@@ -30,7 +33,7 @@ class produce_a_bank_acct_observer_read_b_acct_id
 
         /**
          * This statement gets us:
-         *   - $_SESSION['saved_int01'] = $g->id  // is the submitted banking_acct_for_balances record id
+         *   - $_SESSION['saved_int01'] is the validated and submitted banking_acct_for_balances record id
          *   - $g->object // is the banking_acct_for_balances object
          *   - Makes sure this banking_acct_for_balances object belongs to the user.
          */
@@ -39,9 +42,42 @@ class produce_a_bank_acct_observer_read_b_acct_id
 
 
         /**
+         * We need the observer_id.
+         */
+
+        $g->user_object = user::find_by_username($g->saved_str01);
+
+        if (!$g->user_object) {
+
+            breakout(' Unexpected unable to retrieve target user object. ');
+
+        }
+
+
+        /**
          * Create and save a bank_account_observer which ties together
          * the three types of id found in a bank_account_observer.
          */
+
+        $bank_account_observer_array = ['observer_id' => $g->user_object->id, 'owner_id' => $g->user_id,
+            'account_id' => $_SESSION['saved_int01']];
+
+        $bank_account_observer_object = bank_account_observer::array_to_object($bank_account_observer_array);
+
+        $result = $bank_account_observer_object->save();
+
+        if (!$result) {
+
+            breakout(' Unexpected I was unable to save the bank_account_observer. ');
+
+        }
+
+
+        /**
+         * Report success.
+         */
+
+        breakout(" The bank_account_observer for {$g->object->acct_name} has been created 👌. ");
 
     }
 }

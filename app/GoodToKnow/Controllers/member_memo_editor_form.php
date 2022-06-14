@@ -34,7 +34,7 @@ class member_memo_editor_form
 
         if (!$g->user_object) {
 
-            breakout(' Unexpected unable to retrieve target user\'s object. ');
+            breakout(' Unexpected unable to retrieve target user object. ');
 
         }
 
