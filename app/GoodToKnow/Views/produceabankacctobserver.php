@@ -10,8 +10,7 @@
             <p>
                 <label for="observer_username">U/N of Observer: </label>
                 <input id="observer_username" name="observer_username" type="text" required minlength="7" maxlength="12"
-                       size="12"
-                       spellcheck="false">
+                       size="12" spellcheck="false">
             </p>
         </section>
         <?php require SUBMITABORT; ?>

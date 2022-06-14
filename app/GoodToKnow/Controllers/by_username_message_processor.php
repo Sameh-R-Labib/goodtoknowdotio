@@ -2,7 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\user;
 use function GoodToKnow\ControllerHelpers\is_username_syntactandexists;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
