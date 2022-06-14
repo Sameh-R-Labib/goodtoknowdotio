@@ -57,6 +57,12 @@ class produce_a_bank_acct_observer_processor
          */
 
 
+        get_db();
+
+
+        require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
+
+
         /**
          * Summon the view.
          */
