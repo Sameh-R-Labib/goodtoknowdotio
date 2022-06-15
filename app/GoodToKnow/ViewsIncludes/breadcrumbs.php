@@ -35,6 +35,10 @@ switch ($g->page) {
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/view_all_banking_accounts_for_balances/page\">Bank Accounts And Their Starting Balances</a>";
         break;
+    case 'show_all_bank_acct_observers':
+        echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
+        echo "<a href=\"/ax1/show_all_bank_acct_observers/page\">Bank Account Observers You Own</a>";
+        break;
     case 'check_my_banking_account_tx_balances':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/check_my_banking_account_tx_balances/page\">See Transactions</a>";
