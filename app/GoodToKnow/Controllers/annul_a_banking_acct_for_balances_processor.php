@@ -9,8 +9,6 @@ class annul_a_banking_acct_for_balances_processor
 {
     function page(int $id = 0)
     {
-        global $g;
-
         /**
          * 1) Determines the id of the banking_acct_for_balances record from 'choice' and
          *    stores it in $_SESSION['saved_int01'].
