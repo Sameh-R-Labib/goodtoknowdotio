@@ -68,6 +68,10 @@ class destroy_a_bank_acct_observer_delete
 
         // Report successful deletion of post.
 
-        breakout(' I <b>deleted</b> the bank account observer. ');
+        $g->message .= " I <b>deleted</b> the bank account observer. ";
+
+        reset_feature_session_vars();
+
+        redirect_to("/ax1/show_all_bank_acct_observers/page");
     }
 }
