@@ -77,7 +77,8 @@ class produce_a_bank_acct_observer_read_b_acct_id
          * Report success.
          */
 
-        breakout(" The bank_account_observer for {$g->object->acct_name} has been created 👌. ");
+        $g->message .= " The bank_account_observer for {$g->object->acct_name} has been created 👌. ";
 
+        redirect_to("/ax1/show_all_bank_acct_observers/page");
     }
 }
