@@ -2,16 +2,16 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\banking_acct_for_balances;
+use GoodToKnow\Models\bank_account_observer;
 use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
-class annul_a_banking_acct_for_balances_delete
+class destroy_a_bank_acct_observer_delete
 {
     function page(string $answer = 'no')
     {
         /**
          * Here we will Read $answer which is the choice of whether
-         * to delete the banking_acct_for_balances record. If 'yes' then
+         * to delete the bank_account_observer record. If 'yes' then
          * delete it. On the other hand if 'no' then reset
          * some session variables and redirect to the home page.
          */
@@ -38,7 +38,7 @@ class annul_a_banking_acct_for_balances_delete
 
         if ($g->answer == "no") {
 
-            breakout(' Message: 85258525 Nothing was deleted. ');
+            breakout(' Message: 7258525 Nothing was deleted. ');
 
         }
 
@@ -49,7 +49,7 @@ class annul_a_banking_acct_for_balances_delete
 
         get_db();
 
-        $g->object = banking_acct_for_balances::find_by_id($g->saved_int01);
+        $g->object = bank_account_observer::find_by_id($g->saved_int01);
 
         if (!$g->object) {
 
@@ -61,13 +61,13 @@ class annul_a_banking_acct_for_balances_delete
 
         if (!$result) {
 
-            breakout(' Error: 41234432 Unexpectedly I could not delete the record. ');
+            breakout(' Error: 41232 Unexpectedly I could not delete the record. ');
 
         }
 
 
         // Report successful deletion of post.
 
-        breakout(' I <b>deleted</b> the banking account. ');
+        breakout(' I <b>deleted</b> the bank account observer. ');
     }
 }

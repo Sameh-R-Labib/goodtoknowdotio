@@ -10,7 +10,7 @@ class annul_a_banking_acct_for_balances_processor
     function page(int $id = 0)
     {
         /**
-         * 1) Determines the id of the banking_acct_for_balances record from 'choice' and
+         * 1) Determines the id of the banking_acct_for_balances record from $id and
          *    stores it in $_SESSION['saved_int01'].
          * 2) Retrieve the banking_acct_for_balances object with that id from the database.
          *    And, format its attributes for easy viewing.

@@ -12,7 +12,7 @@ global $g;
 
 if (!is_int($g->id) or $g->id < 1) {
 
-    breakout(' Error 5242822: banking_acct_for_balances id is either not int or is negative int. ');
+    breakout(' Error 5242822: banking_acct_for_balances id is either not int or is less than one. ');
 
 }
 
