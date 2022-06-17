@@ -9,10 +9,10 @@ class check_my_banking_account_tx_balances
         /**
          * About this feature:
          *  check_my_banking_account_tx_balances is a feature for  showing you a ledger with balances for one of
-         *  your banking accounts and its transactions.
+         *  your (or one you are observer on) banking accounts and its transactions.
          *
-         * About this function:
-         *  It will present to you a selection of your banking  accounts so you can choose one.
+         * About this route:
+         *  It will present to you a selection of your banking  accounts, so you can choose one.
          */
 
 
@@ -26,6 +26,9 @@ class check_my_banking_account_tx_balances
 
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
+
+
+        require CONTROLLERINCLUDES . DIRSEP . 'get_bank_accounts_current_user_is_observer_of.php';
 
 
         $g->html_title = 'Which banking account for balances?';
