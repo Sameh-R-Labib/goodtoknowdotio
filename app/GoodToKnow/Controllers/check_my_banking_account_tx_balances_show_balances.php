@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\bank_account_observer;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 use GoodToKnow\Models\banking_acct_for_balances;
@@ -60,12 +61,26 @@ class check_my_banking_account_tx_balances_show_balances
 
 
         /**
+         * Is the current user an observer of this bank account?
+         */
+
+        $is_observer_of_this_bank_account = false;
+
+        $sql = 'SELECT * FROM `bank_account_observer` WHERE `observer_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
+        $sql .= ' AND `account_id` = "' . $g->db->real_escape_string((string)$g->saved_int01) . '"';
+
+        $temp_observer_object = bank_account_observer::find_by_sql($sql);
+
+        if (!empty($temp_observer_object)) $is_observer_of_this_bank_account = true;
+
+
+        /**
          * 1b) Verify that the account belongs to the user. This is redundant for
          *     the "See Transactions" feature but is needed when Create or Edit use
          *     this route handler.
          */
 
-        if ($g->account->user_id != $g->user_id) {
+        if ($g->account->user_id != $g->user_id and !$is_observer_of_this_bank_account) {
 
             breakout(' Error 68804576. ');
 
