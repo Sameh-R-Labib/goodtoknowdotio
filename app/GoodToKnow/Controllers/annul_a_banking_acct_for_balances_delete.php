@@ -39,7 +39,7 @@ class annul_a_banking_acct_for_balances_delete
 
         if ($found_object) {
 
-            breakout(' Error: First you must delete all the bank account observers 🚷. ');
+            breakout(' Error: First you must delete all the bank account observers for this bank account 🚷. ');
 
         }
 
