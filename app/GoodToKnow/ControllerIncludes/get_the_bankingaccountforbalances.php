@@ -40,7 +40,7 @@ if (!$g->object) {
 $is_observer_of_this_bank_account = false;
 
 $sql = 'SELECT * FROM `bank_account_observer` WHERE `observer_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
-$sql .= ' AND WHERE `account_id` = "' . $g->db->real_escape_string((string)$g->id) . '"';
+$sql .= ' AND `account_id` = "' . $g->db->real_escape_string((string)$g->id) . '"';
 
 $temp_observer_object = bank_account_observer::find_by_sql($sql);
 
