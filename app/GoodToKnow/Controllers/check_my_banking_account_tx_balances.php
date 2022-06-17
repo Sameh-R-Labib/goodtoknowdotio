@@ -25,6 +25,11 @@ class check_my_banking_account_tx_balances
         get_db();
 
 
+        // This flag helps with avoid a premature breakout() in get_bankingaccountsforbalances.php
+        // when used in check_my_banking_account_tx_balances.
+        $g->is_show_bank_account_transactions = true;
+
+
         require CONTROLLERINCLUDES . DIRSEP . 'get_bankingaccountsforbalances.php';
 
 
