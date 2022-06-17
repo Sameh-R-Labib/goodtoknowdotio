@@ -91,13 +91,13 @@ class check_my_banking_account_tx_balances_show_balances
          * 2) Get (from the database) all the banking_transaction_for_balances which
          * have a time stamp greater than the start time for the account. Note:
          * it can't be equal to the start time. Also: make sure the transactions
-         * are ordered by time increasing. Obviously, these transactions must be
-         * for the user who is requesting this stuff. Also, these transactions must
-         * be for the currently chosen banking_acct_for_balances.
+         * are ordered by time increasing. These transactions don't have to be
+         * for the user who is requesting this stuff because he /sh may be just an
+         * observer. However, these transactions must be for the currently chosen
+         * banking_acct_for_balances.
          */
 
-        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `user_id` = ' . $g->db->real_escape_string((string)$g->user_id);
-        $sql .= ' AND `bank_id` = ' . $g->db->real_escape_string((string)$g->account->id);
+        $sql = 'SELECT * FROM `banking_transaction_for_balances` WHERE `bank_id` = ' . $g->db->real_escape_string((string)$g->account->id);
         $sql .= ' AND `time` > ' . $g->db->real_escape_string((string)$g->account->start_time);
         $sql .= ' ORDER BY `time` ASC';
 
