@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\bank_account_observer;
 use GoodToKnow\Models\banking_acct_for_balances;
 use function GoodToKnow\ControllerHelpers\yes_no_parameter_validation;
 
@@ -21,6 +22,26 @@ class annul_a_banking_acct_for_balances_delete
 
 
         kick_out_loggedoutusers_or_if_there_is_error_msg();
+
+
+        get_db();
+
+
+        /**
+         * Stop if the banking_acct_for_balances identified by
+         * id = saved_int01 has any associated bank_account_observer.
+         */
+
+        $sql = 'SELECT * FROM `bank_account_observer` WHERE `owner_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
+        $sql .= ' AND `account_id` = "' . $g->db->real_escape_string((string)$g->saved_int01) . '"';
+
+        $found_object = bank_account_observer::find_by_sql($sql);
+
+        if ($found_object) {
+
+            breakout(' Error: First you must delete all the bank account observers 🚷. ');
+
+        }
 
 
         $g->answer = $answer;
@@ -46,8 +67,6 @@ class annul_a_banking_acct_for_balances_delete
         /**
          * Delete the record.
          */
-
-        get_db();
 
         $g->object = banking_acct_for_balances::find_by_id($g->saved_int01);
 
