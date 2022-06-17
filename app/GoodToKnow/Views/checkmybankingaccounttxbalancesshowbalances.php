@@ -19,6 +19,10 @@
                             older than 90 days and the start_time for this account is older than 90 days.</span>
                     </span></td>
             </tr>
+            <tr>
+                <td><b>Comment: </b><?= $g->account->comment ?></td>
+                <td>&nbsp;</td>
+            </tr>
         </table>
         <table>
             <tr>
