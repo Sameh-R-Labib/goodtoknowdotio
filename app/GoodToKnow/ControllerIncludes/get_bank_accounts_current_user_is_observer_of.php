@@ -24,11 +24,16 @@ $array_of_bank_account_observer = bank_account_observer::find_by_sql($sql);
  * the current user is an observer of.
  */
 
-foreach ($array_of_bank_account_observer as $key => $observer_object) {
+if ($array_of_bank_account_observer) {
 
-    $temp[$key] = banking_acct_for_balances::find_by_id($observer_object->account_id);
-    if (!$temp[$key]) breakout(" Fatal error 221965. ");
+    foreach ($array_of_bank_account_observer as $key => $observer_object) {
 
-    $g->array_of_objects[] = $temp[$key];
+        $temp[$key] = banking_acct_for_balances::find_by_id($observer_object->account_id);
+        if (!$temp[$key]) breakout(" Fatal error 221965. ");
 
+        $g->array_of_objects[] = $temp[$key];
+
+    }
+    
 }
+
