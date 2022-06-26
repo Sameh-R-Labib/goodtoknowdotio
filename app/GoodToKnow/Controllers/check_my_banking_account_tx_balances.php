@@ -36,6 +36,10 @@ class check_my_banking_account_tx_balances
         require CONTROLLERINCLUDES . DIRSEP . 'get_bank_accounts_current_user_is_observer_of.php';
 
 
+        // We need this.
+        if (!$g->array_of_objects) breakout(" You have no bank accounts to look at! ");
+
+
         $g->html_title = 'Which banking account for balances?';
 
 
