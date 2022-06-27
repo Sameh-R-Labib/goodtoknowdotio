@@ -707,7 +707,7 @@ h2 + p {
     /* opacity: 0.97; */
     float: left;
     width: 892px;
-    height: 100px;
+    height: 64px;
     /*padding: 12px;*/
 }
 
@@ -723,7 +723,7 @@ h2 + p {
 #leftsodiv {
     background: rgba(255, 255, 255, 0.01);
     width: 132px;
-    height: 157px;
+    height: 164px;
     margin: auto;
     float: left;
 }
@@ -762,11 +762,8 @@ h2 + p {
     /* opacity: 0.97; */
     float: left;
     width: 119px;
-    height: 95px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
+    height: 102px;
+    padding: 0 5px 14px 8px;
 }
 
 .small-time {
