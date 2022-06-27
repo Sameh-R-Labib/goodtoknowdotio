@@ -707,7 +707,7 @@ h2 + p {
     /* opacity: 0.97; */
     float: left;
     width: 892px;
-    height: 64px;
+    height: 100px;
     /*padding: 12px;*/
 }
 
@@ -716,7 +716,7 @@ h2 + p {
     /* opacity: 0.97; */
     float: left;
     width: 892px;
-    height: 57px; /*but the paragraph's height will cause it to bleed downward*/
+    height: 64px; /*but the paragraph's height will cause it to bleed downward*/
     /*padding: 12px;*/
 }
 
