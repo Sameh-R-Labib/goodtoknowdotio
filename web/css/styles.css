@@ -761,9 +761,12 @@ h2 + p {
     background-color: rgba(230, 240, 225, 1);
     /* opacity: 0.97; */
     float: left;
-    width: 108px;
-    height: 85px;
-    padding: 12px;
+    width: 119px;
+    height: 95px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .small-time {
