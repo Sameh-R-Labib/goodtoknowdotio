@@ -3,8 +3,8 @@
     <section>
         <p>
             <label for="acct_name">Bank Account Name: </label>
-            <input id="acct_name" name="acct_name" type="text" required minlength="3" maxlength="26"
-                   size="27" spellcheck="false" placeholder="Personal Credit Card"
+            <input id="acct_name" name="acct_name" type="text" required minlength="3" maxlength="30"
+                   size="31" spellcheck="false" placeholder="Personal Credit Card"
                    value="<?= $g->saved_arr01['acct_name'] ?>">
         </p>
         <hr>
