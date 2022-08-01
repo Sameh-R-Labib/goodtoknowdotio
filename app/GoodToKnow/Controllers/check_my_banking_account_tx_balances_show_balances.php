@@ -105,7 +105,7 @@ class check_my_banking_account_tx_balances_show_balances
 
         if (!$g->array) {
 
-            $g->message .= " I could NOT find any bank account transactions ¯\_(ツ)_/¯. ";
+            $g->message .= " No transactions ¯\_(ツ)_/¯. ";
 
             // We need this to not error out.
             $g->array = [];
@@ -196,7 +196,7 @@ class check_my_banking_account_tx_balances_show_balances
         $g->show_poof = true;
 
 
-        $g->message .= ' Here are your transactions. ';
+        $g->message .= ' Balances view of account. ';
 
 
         require VIEWS . DIRSEP . 'checkmybankingaccounttxbalancesshowbalances.php';
