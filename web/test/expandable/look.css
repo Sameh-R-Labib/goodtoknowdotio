@@ -21,6 +21,7 @@ body {
 
 html {
     height: 100%;
+    margin: 0;
 }
 
 main {
@@ -79,7 +80,7 @@ main {
     background-color: palegoldenrod;
     position: static;
     width: 1024px;
-    height: 100%;
+    height: 100vh;
     margin: auto;
     left: 0;
     right: 0;
