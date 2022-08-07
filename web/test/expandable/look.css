@@ -87,11 +87,12 @@ main {
 }
 
 #footerbar {
-    background-color: rgba(233, 243, 255, 1);
-    position: static;
+    background-color: rgba(233, 143, 255, 1);
+    position: absolute;
+    bottom: 0;
     width: 1024px;
-    padding: 1px 0 1px 0;
     margin: auto;
+    left: 0;
+    right: 0;
     clear: both;
-    border-radius: .1em .1em .5em .5em;
 }
