@@ -52,10 +52,10 @@ main {
 }
 
 #breadcrumbs {
-    background-color: #fffbf7;
+    background-color: rgba(80, 100, 255, 1);
     position: static;
     width: 1024px;
-    height: 62px;
+    height: 122px;
     margin: auto;
     clear: both;
 }
