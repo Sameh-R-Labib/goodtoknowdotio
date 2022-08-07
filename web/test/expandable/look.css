@@ -41,14 +41,14 @@ main {
 }
 
 #communities {
-    background-color: #ffa830;
-    padding: 0;
-    clear: both;
-    width: 1024px;
+    background-color: rgba(100, 0, 255, 1);
     position: absolute;
+    width: 1024px;
+    padding: 0;
+    margin: auto;
     left: 0;
     right: 0;
-    margin: auto;
+    clear: both;
 }
 
 #breadcrumbs {
