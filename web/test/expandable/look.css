@@ -1,0 +1,100 @@
+body {
+    -webkit-background-size: auto 100%;
+    -moz-background-size: auto 100%;
+    -o-background-size: auto 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: -moz-linear-gradient(0deg, rgba(189, 242, 255, 1) 65%, rgba(250, 175, 206, .4) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgba(189, 242, 255, 1) 65%, rgba(250, 175, 206, .4) 100%);
+    background-image: linear-gradient(0deg, rgba(189, 242, 255, 1) 65%, rgba(250, 175, 206, .4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3333ff", endColorstr="#e6f3e5", GradientType=1);
+    margin: 0;
+    left: 0;
+    top: 0;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-variant-numeric: lining-nums proportional-nums;
+    line-height: 1.6;
+}
+
+main {
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: .1em .1em .5em .5em;
+    box-shadow: 0 7px 44px 3px rgba(0, 0, 25, 30%);
+}
+
+#topbar {
+    background-color: rgba(255, 255, 255, 1);
+    position: static;
+    width: 1024px;
+    height: 57px;
+    margin: auto;
+    clear: both;
+}
+
+#communities {
+    opacity: 1;
+    z-index: 3;
+    background-color: #ffa830;
+    padding: 0;
+    clear: both;
+    width: 1024px;
+
+    /* To center the div
+        Trick from: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#breadcrumbs {
+    line-height: 1;
+    opacity: 1;
+    /* opacity: 0.7; */
+    background-color: #fffbf7;
+    position: static;
+    width: 1024px;
+    height: 62px;
+    padding: 1px 0 1px 0;
+    margin: auto;
+    clear: both;
+}
+
+#scriptoutput {
+
+    /* opacity is determined by 4th parameter of background */
+    background: rgba(255, 255, 255, 1);
+
+    position: static;
+    width: 1024px;
+    height: 157px;
+    margin: auto;
+    clear: both;
+}
+
+#maincontent {
+    background-color: white;
+    position: static;
+    height: 65.9vh;
+    width: 1024px;
+    padding: 13px 0 83px 0;
+    margin: auto;
+    clear: both;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#footerbar {
+    /* Opacity is the 4th parameter in background-color */
+    background-color: rgba(233, 243, 255, 1);
+    /* opacity: 0.86; */
+    position: static;
+    width: 1024px;
+    padding: 1px 0 1px 0;
+    margin: auto;
+    clear: both;
+    border-radius: .1em .1em .5em .5em;
+}
