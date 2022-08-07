@@ -26,7 +26,7 @@ main {
 }
 
 #topbar {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 255, 100, 1);
     position: static;
     width: 1024px;
     height: 57px;
@@ -46,19 +46,16 @@ main {
 }
 
 #breadcrumbs {
-    line-height: 1;
-    opacity: 1;
     background-color: #fffbf7;
     position: static;
     width: 1024px;
     height: 62px;
-    padding: 1px 0 1px 0;
     margin: auto;
     clear: both;
 }
 
 #scriptoutput {
-    background: rgba(255, 255, 255, 1);
+    background-color: #399b37;
     position: static;
     width: 1024px;
     height: 157px;
@@ -67,11 +64,10 @@ main {
 }
 
 #maincontent {
-    background-color: white;
+    background-color: palegoldenrod;
     position: static;
-    height: 65.9vh;
+    height: 45.9vh;
     width: 1024px;
-    padding: 13px 0 83px 0;
     margin: auto;
     clear: both;
     overflow-y: scroll;
