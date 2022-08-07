@@ -42,7 +42,7 @@ main {
 
 #communities {
     background-color: rgba(100, 0, 255, 1);
-    position: absolute;
+    position: static;
     width: 1024px;
     padding: 0;
     margin: auto;
