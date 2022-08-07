@@ -78,9 +78,10 @@ main {
 #maincontent {
     background-color: palegoldenrod;
     position: static;
-    height: 45.9vh;
     width: 1024px;
     margin: auto;
+    left: 0;
+    right: 0;
     clear: both;
     overflow-y: scroll;
     overflow-x: hidden;
