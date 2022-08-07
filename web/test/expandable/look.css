@@ -37,6 +37,8 @@ main {
     width: 1024px;
     height: 57px;
     margin: auto;
+    left: 0;
+    right: 0;
     clear: both;
 }
 
@@ -55,7 +57,7 @@ main {
     background-color: rgba(80, 100, 255, 1);
     position: static;
     width: 1024px;
-    height: 142px;
+    height: 118px;
     margin: auto;
     left: 0;
     right: 0;
@@ -63,11 +65,13 @@ main {
 }
 
 #scriptoutput {
-    background-color: #399b37;
+    background-color: rgba(80, 200, 55, 1);
     position: static;
     width: 1024px;
     height: 157px;
     margin: auto;
+    left: 0;
+    right: 0;
     clear: both;
 }
 
