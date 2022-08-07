@@ -35,15 +35,10 @@ main {
 }
 
 #communities {
-    opacity: 1;
-    z-index: 3;
     background-color: #ffa830;
     padding: 0;
     clear: both;
     width: 1024px;
-
-    /* To center the div
-        Trick from: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ */
     position: absolute;
     left: 0;
     right: 0;
@@ -53,7 +48,6 @@ main {
 #breadcrumbs {
     line-height: 1;
     opacity: 1;
-    /* opacity: 0.7; */
     background-color: #fffbf7;
     position: static;
     width: 1024px;
@@ -64,10 +58,7 @@ main {
 }
 
 #scriptoutput {
-
-    /* opacity is determined by 4th parameter of background */
     background: rgba(255, 255, 255, 1);
-
     position: static;
     width: 1024px;
     height: 157px;
@@ -88,9 +79,7 @@ main {
 }
 
 #footerbar {
-    /* Opacity is the 4th parameter in background-color */
     background-color: rgba(233, 243, 255, 1);
-    /* opacity: 0.86; */
     position: static;
     width: 1024px;
     padding: 1px 0 1px 0;
