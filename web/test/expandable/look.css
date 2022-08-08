@@ -78,6 +78,7 @@ main {
 
 #maincontent {
     background-color: palegoldenrod;
+    z-index: 4;
     position: absolute;
     width: 1024px;
     margin: auto;
