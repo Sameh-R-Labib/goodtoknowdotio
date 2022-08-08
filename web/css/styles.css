@@ -660,6 +660,12 @@ h2 + p {
     overflow-x: hidden;
 }
 
+/* position: absolute usually establishes the element in a fixed location
+ relative to the window. However, since we have our footerbar and maincontent
+ inside of element main (and main is special) the absolute position is
+  relative to main. If instead of main we had some class div that div would
+  need to be position relative to have the same effect. */
+
 #footerbar {
     background-color: rgba(233, 243, 255, 1);
     position: absolute;
