@@ -37,7 +37,7 @@ main {
     position: static;
     width: 1024px;
     height: 57px;
-    margin: auto;
+    margin: 0 auto;
     clear: both;
 }
 
@@ -46,7 +46,7 @@ main {
     position: static;
     width: 1024px;
     padding: 0;
-    margin: auto;
+    margin: 0 auto;
     clear: both;
 }
 
@@ -55,7 +55,7 @@ main {
     position: static;
     width: 1024px;
     height: 118px;
-    margin: auto;
+    margin: 0 auto;
     clear: both;
 }
 
@@ -64,7 +64,7 @@ main {
     position: static;
     width: 1024px;
     height: 157px;
-    margin: auto;
+    margin: 0 auto;
     clear: both;
 }
 
@@ -73,7 +73,7 @@ main {
     z-index: 4;
     position: absolute;
     width: 1024px;
-    margin: auto;
+    margin: 0 auto;
     left: 0;
     right: 0;
     top: 389px;
@@ -88,7 +88,7 @@ main {
     position: absolute;
     bottom: 0;
     width: 1024px;
-    margin: auto;
+    margin: 0 auto;
     left: 0;
     right: 0;
     clear: both;
