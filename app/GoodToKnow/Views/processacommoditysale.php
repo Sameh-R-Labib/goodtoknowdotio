@@ -26,8 +26,15 @@
                 <label for="tax_year">Tax Year <span class="tooltip">ℹ️
                 <span class="tooltiptext tooltip-top"><em>Tax Year</em> is usually the year you sold the
                     commodity.</span></span>: </label>
-                <input id="tax_year" name="tax_year" type="text" value="<?= $g->saved_arr01['tax_year'] ?>"
+                <input id="tax_year" name="tax_year" type="text" value=""
                        required minlength="4" maxlength="6" size="6" placeholder="2018">
+            </p>
+            <p>
+                <label for="currency">Currency Used to Price the Commodity <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">Do not change the currency type after you create this record unless you are sure the new
+                        type uses same number of decimal places.</span></span>: </label>
+                <input id="currency" name="currency" type="text" placeholder="$, £, ¥, €"
+                       value="" required size="15" minlength="1" maxlength="15">
             </p>
         </section>
         <?php require SUBMITABORT; ?>

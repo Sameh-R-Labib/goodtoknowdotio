@@ -25,6 +25,17 @@ class process_a_commodity_sale
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
+        /**
+         * Because we are re-using the code for generating time fields we need this:
+         */
+
+        $g->saved_arr01['date'] = '';
+        $g->saved_arr01['hour'] = '';
+        $g->saved_arr01['minute'] = '';
+        $g->saved_arr01['second'] = '';
+        $g->saved_arr01['timezone'] = $g->timezone; // user's default timezone
+
+
         $g->html_title = 'Process A Commodity Sale';
 
 
