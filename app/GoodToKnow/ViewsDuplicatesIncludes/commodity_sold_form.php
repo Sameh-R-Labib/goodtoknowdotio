@@ -56,7 +56,7 @@
         </p>
         <p>
             <label for="tax_year">Year <span class="tooltip">ℹ️
-                <span class="tooltiptext tooltip-top">Here the <em>tax year</em> is defined as the year you sold the
+                <span class="tooltiptext tooltip-top"><em>Tax Year</em> is usually the year you sold the
                     commodity.</span></span>: </label>
             <input id="tax_year" name="tax_year" type="text" value="<?= $g->saved_arr01['tax_year'] ?>"
                    required minlength="4" maxlength="6" size="6" placeholder="2018">
