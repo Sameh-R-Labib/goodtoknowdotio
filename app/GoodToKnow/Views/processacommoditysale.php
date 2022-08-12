@@ -43,6 +43,11 @@
                 <input id="price_sold" name="price_sold" type="text" value=">" required minlength="1" maxlength="33"
                        size="33" placeholder="150.33">
             </p>
+            <p>
+                <label for="reason">Reason For Selling: </label>
+                <input id="reason" name="reason" type="text" value="" required minlength="3" maxlength="54"
+                       size="54" spellcheck="false" placeholder="for moving BTC on the blockchain.">
+            </p>
         </section>
         <?php require SUBMITABORT; ?>
     </form>
