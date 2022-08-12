@@ -36,6 +36,13 @@
                 <input id="currency" name="currency" type="text" placeholder="$, £, ¥, €"
                        value="" required size="15" minlength="1" maxlength="15">
             </p>
+            <p>
+                <label for="price_sold">Price Per Unit — Sold <span class="tooltip">ℹ️<span class="tooltiptext
+                tooltip-top">If the amounts should have 2 decimal places ask Admin to add your currency to list of
+                            fiat.</span></span>: </label>
+                <input id="price_sold" name="price_sold" type="text" value=">" required minlength="1" maxlength="33"
+                       size="33" placeholder="150.33">
+            </p>
         </section>
         <?php require SUBMITABORT; ?>
     </form>
