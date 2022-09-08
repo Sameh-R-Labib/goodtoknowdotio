@@ -38,6 +38,9 @@ class process_a_commodity_sale_form_processor
         // Get tax_year. This is the tax year in which the commodity was sole.
         $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
 
+        // Get currency. This is the currency used to price the commodity.
+        $currency = standard_form_field_prep('currency', 1, 15);
+
         // Get
     }
 }
