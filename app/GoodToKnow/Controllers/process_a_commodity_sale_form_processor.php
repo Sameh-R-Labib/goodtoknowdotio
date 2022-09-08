@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\float_form_field_prep;
+use function GoodToKnow\ControllerHelpers\integer_form_field_prep;
 use function GoodToKnow\ControllerHelpers\standard_form_field_prep;
 
 class process_a_commodity_sale_form_processor
@@ -34,6 +35,9 @@ class process_a_commodity_sale_form_processor
         $time = (int)$g->time;
         // - - -
 
-        //
+        // Get tax_year. This is the tax year in which the commodity was sole.
+        $tax_year = integer_form_field_prep('tax_year', 1992, 65535);
+
+        // Get
     }
 }
