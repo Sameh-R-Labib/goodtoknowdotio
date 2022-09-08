@@ -27,5 +27,13 @@ class process_a_commodity_sale_form_processor
         // Get amount. This is the amount of commodity sold.
         // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
         $amount = float_form_field_prep('amount', -0.0000000000000001, 99999999999999.99);
+
+        // Get time. This is the time when the commodity was sold.
+        // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
+        require CONTROLLERINCLUDES . DIRSEP . 'figure_out_time_epoch.php';
+        $time = (int)$g->time;
+        // - - -
+
+        //
     }
 }
