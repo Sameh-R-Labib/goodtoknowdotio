@@ -41,6 +41,10 @@ class process_a_commodity_sale_form_processor
         // Get currency. This is the currency used to price the commodity.
         $currency = standard_form_field_prep('currency', 1, 15);
 
+        // Get price_sold. This is the price of a unit of the commodity at the time of sale.
+        // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
+        $price_sold = float_form_field_prep('price_sold', -0.0000000000000001, 99999999999999.99);
+
         // Get
     }
 }
