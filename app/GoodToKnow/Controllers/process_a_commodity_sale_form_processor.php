@@ -48,5 +48,17 @@ class process_a_commodity_sale_form_processor
         // Get reason. This is the reason for selling.
         // Which looks like: "for moving BTC on the blockchain."
         $reason = standard_form_field_prep('reason', 3, 54);
+
+        // Store the submitted data in the session.
+        $_SESSION['saved_arr01']['commodity'] = $commodity;
+        $_SESSION['saved_arr01']['amount'] = $amount;
+        $_SESSION['saved_arr01']['time'] = $time;
+        $_SESSION['saved_arr01']['tax_year'] = $tax_year;
+        $_SESSION['saved_arr01']['currency'] = $currency;
+        $_SESSION['saved_arr01']['price_sold'] = $price_sold;
+        $_SESSION['saved_arr01']['reason'] = $reason;
+
+        // Redirect because we've done enough here.
+        redirect_to("/ax1/process_a_commodity_sale_generate_changes/page");
     }
 }
