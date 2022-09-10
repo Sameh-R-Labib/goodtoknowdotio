@@ -45,6 +45,8 @@ class process_a_commodity_sale_form_processor
         // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
         $price_sold = float_form_field_prep('price_sold', -0.0000000000000001, 99999999999999.99);
 
-        // Get
+        // Get reason. This is the reason for selling.
+        // Which looks like: "for moving BTC on the blockchain."
+        $reason = standard_form_field_prep('reason', 3, 54);
     }
 }
