@@ -14,6 +14,8 @@ class process_a_commodity_sale_generate_changes
         global $g;
 
         // Debug.
+        echo "<p>Var_dump \$g->saved_arr01: </p>\n<pre>";
         var_dump($g->saved_arr01);
+        echo "</pre>\n";
     }
 }
