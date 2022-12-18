@@ -19,7 +19,7 @@ class process_a_commodity_sale_form_processor
 
 
         /**
-         * 1. Read and store the submitted data.
+         * Read and store the submitted data.
          */
 
         // Get commodity. This is the type of commodity which got sold.
