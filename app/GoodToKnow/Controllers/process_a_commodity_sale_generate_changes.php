@@ -25,5 +25,16 @@ class process_a_commodity_sale_generate_changes
          */
 
         global $g;
+
+
+        /**
+         * Create an empty array.
+         *
+         * This array will be used to aggregate and hold
+         * the commodity_sold objects which we will create
+         * in memory for now (as opposed to in the database.)
+         */
+
+        $new_commodity_sold_objects_arr = [];
     }
 }
