@@ -36,5 +36,12 @@ class process_a_commodity_sale_generate_changes
          */
 
         $new_commodity_sold_objects_arr = [];
+
+
+        /**
+         * Get all the commodity objects which satisfy the following conditions:
+         *  1. belong to the current user
+         *  2. are of type $g->saved_arr01["commodity"]
+         */
     }
 }
