@@ -39,9 +39,17 @@ class process_a_commodity_sale_generate_changes
 
 
         /**
+         * $g->array_of_commodity_objects (is the temporary holding area ... $new_commodity_sold_objects_arr
+         * will be the variable which will hold the objects we intend to have.)
+         *
          * Get all the commodity objects which satisfy the following conditions:
          *  1. belong to the current user
          *  2. are of type $g->saved_arr01["commodity"]
          */
+
+        // Get all (and I mean ALL) user's commodity records from database.
+        // The result will be received sorted by time.
+
+        require CONTROLLERINCLUDES . DIRSEP . 'get_all_commodity_records_of_the_user.php';
     }
 }
