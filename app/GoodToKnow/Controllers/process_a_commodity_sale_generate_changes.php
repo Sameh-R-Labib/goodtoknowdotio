@@ -27,6 +27,12 @@ class process_a_commodity_sale_generate_changes
         global $g;
 
 
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         /**
          * Create an empty array.
          *
