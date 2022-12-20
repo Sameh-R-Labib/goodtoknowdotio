@@ -81,12 +81,17 @@ class process_a_commodity_sale_generate_changes
         }
 
         /**
-         * Debug Code
+         * Progress Report
+         *
+         *  We got
+         *     $new_commodity_sold_objects_arr
+         *
+         *  It is an array of the commodity objects which we will alter in a way to make the objects reflect the fact that
+         *  a particular amount of commodity was sold by the user. That sold amount will be take out of these objects in
+         *  a particular distribution. We will take the most out of the older objects. Eventually, either we will have
+         *  exhausted the amount or we will have gone through all the objects still have some amount left over (in which
+         *  case that is an error state.)
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$new_commodity_sold_objects_arr: </p>\n<pre>";
-        var_dump($new_commodity_sold_objects_arr);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
+
     }
 }
