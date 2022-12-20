@@ -39,17 +39,48 @@ class process_a_commodity_sale_generate_changes
 
 
         /**
+         * FYI:
          * $g->array_of_commodity_objects (is the temporary holding area ... $new_commodity_sold_objects_arr
          * will be the variable which will hold the objects we intend to have.)
          *
+         * Goal:
          * Get all the commodity objects which satisfy the following conditions:
          *  1. belong to the current user
          *  2. are of type $g->saved_arr01["commodity"]
+         *  3. have a nonzero value for current_balance
          */
 
+
         // Get all (and I mean ALL) user's commodity records from database.
-        // The result will be received sorted by time.
+        // FYI: The result will be received sorted by time.
+        // FYI: $g->array_of_commodity_objects is result of the included code below.
 
         require CONTROLLERINCLUDES . DIRSEP . 'get_all_commodity_records_of_the_user.php';
+
+
+        // Iterate over $g->array_of_commodity_objects
+        // and store the compliant objects in
+        // $new_commodity_sold_objects_arr
+        // A compliant commodity object is one which:
+        //  A. is of type $g->saved_arr01["commodity"]
+        //  B. has a nonzero value for current_balance
+
+        foreach ($g->array_of_commodity_objects as $commodity_object) {
+
+            if ($commodity_object->comodity == $g->saved_arr01["commodity"] and $commodity_object->current_balance != 0) {
+
+                $new_commodity_sold_objects_arr[] = $commodity_object;
+
+            }
+        }
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$new_commodity_sold_objects_arr: </p>\n<pre>";
+        var_dump($new_commodity_sold_objects_arr);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
     }
 }
