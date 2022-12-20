@@ -73,7 +73,7 @@ class process_a_commodity_sale_generate_changes
 
         foreach ($g->array_of_commodity_objects as $commodity_object) {
 
-            if ($commodity_object->comodity == $g->saved_arr01["commodity"] and $commodity_object->current_balance != 0) {
+            if ($commodity_object->commodity == $g->saved_arr01["commodity"] and $commodity_object->current_balance != 0) {
 
                 $new_commodity_sold_objects_arr[] = $commodity_object;
 
