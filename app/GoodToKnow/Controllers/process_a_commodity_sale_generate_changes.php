@@ -34,6 +34,20 @@ class process_a_commodity_sale_generate_changes
 
 
         /**
+         * $sold_remaining variable holds the amount of commodity remaining to
+         * be removed from the user's stash of commodity.
+         *
+         * Initialize $sold_remaining.
+         */
+
+        // FYI: The previous route made sure the amount was greater than a particular
+        // FYI: value so that the manipulations we will do will change things and
+        // FYI: thus assist in preventing an infinite loop from occurring.
+
+        $sold_remaining = $g->saved_arr01["amount"];
+
+
+        /**
          * Create an empty array.
          *
          * This array will be used to aggregate and hold
@@ -87,7 +101,7 @@ class process_a_commodity_sale_generate_changes
          *     $new_commodity_sold_objects_arr
          *
          *  It is an array of the commodity objects which we will alter in a way to make the objects reflect the fact that
-         *  a particular amount of commodity was sold by the user. That sold amount will be take out of these objects in
+         *  a particular amount of commodity was sold by the user. That sold amount will be taken out of these objects in
          *  a particular distribution. We will take the most out of the older objects. Eventually, either we will have
          *  exhausted the amount or we will have gone through all the objects still have some amount left over (in which
          *  case that is an error state.)

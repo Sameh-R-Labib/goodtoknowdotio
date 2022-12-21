@@ -29,7 +29,21 @@ class process_a_commodity_sale_form_processor
         // Get amount. This is the amount of commodity sold.
         // I used -0.0000000000000001 instead of 0.0 to avoid float comparison with zero.
         require_once CONTROLLERHELPERS . DIRSEP . 'float_form_field_prep.php';
-        $amount = float_form_field_prep('amount', -0.0000000000000001, 99999999999999.99);
+
+        if ($commodity == 'BTC' or $commodity == 'OXT') {
+
+            $amount = float_form_field_prep('amount', 0.00000001, 99999999999999.99);
+
+        } elseif ($commodity == 'BAT') {
+
+            $amount = float_form_field_prep('amount', 0.00000000000001, 99999999999999.99);
+
+        } else {
+
+            $amount = float_form_field_prep('amount', 0.01, 99999999999999.99);
+
+        }
+
 
         // Get time. This is the time when the commodity was sold.
         // - - - Get $g->time (which is a timestamp) based on submitted `timezone` `date` `hour` `minute` `second`
