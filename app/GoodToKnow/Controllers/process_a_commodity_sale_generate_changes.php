@@ -125,5 +125,13 @@ class process_a_commodity_sale_generate_changes
 
         $generated_commodity_sold_objects = [];
 
+
+        /**
+         * Main Loop
+         * =========
+         *
+         * We will iterate over $user_nonzero_commodities[] and do stuff (possibly exiting the loop before finishing.)
+         */
+
     }
 }
