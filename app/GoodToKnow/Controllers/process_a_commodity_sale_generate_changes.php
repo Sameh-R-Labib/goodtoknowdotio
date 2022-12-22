@@ -55,12 +55,12 @@ class process_a_commodity_sale_generate_changes
          * in memory for now (as opposed to in the database.)
          */
 
-        $new_commodity_sold_objects_arr = [];
+        $user_nonzero_commodities = [];
 
 
         /**
          * FYI:
-         * $g->array_of_commodity_objects (is the temporary holding area ... $new_commodity_sold_objects_arr
+         * $g->array_of_commodity_objects (is the temporary holding area ... $user_nonzero_commodities
          * will be the variable which will hold the objects we intend to have.)
          *
          * Goal:
@@ -80,7 +80,7 @@ class process_a_commodity_sale_generate_changes
 
         // Iterate over $g->array_of_commodity_objects
         // and store the compliant objects in
-        // $new_commodity_sold_objects_arr
+        // $user_nonzero_commodities
         // A compliant commodity object is one which:
         //  A. is of type $g->saved_arr01["commodity"]
         //  B. has a nonzero value for current_balance
@@ -89,7 +89,7 @@ class process_a_commodity_sale_generate_changes
 
             if ($commodity_object->commodity == $g->saved_arr01["commodity"] and $commodity_object->current_balance != 0) {
 
-                $new_commodity_sold_objects_arr[] = $commodity_object;
+                $user_nonzero_commodities[] = $commodity_object;
 
             }
         }
@@ -98,11 +98,15 @@ class process_a_commodity_sale_generate_changes
          * Progress Report
          *
          *  We got
-         *     $new_commodity_sold_objects_arr
+         *     $g->db
+         *     $g->saved_arr01
+         *     $sold_remaining
+         *     $user_nonzero_commodities[]
          *
-         *  It is an array of the commodity objects which we will alter in a way to make the objects reflect the fact that
-         *  a particular amount of commodity was sold by the user. That sold amount will be taken out of these objects in
-         *  a particular distribution. We will take the most out of the older objects. Eventually, either we will have
+         *  $user_nonzero_commodities[] is an array of the commodity objects which we will (metaphorically speaking)
+         *  alter in a way to make the objects reflect the fact that a particular amount of commodity
+         *  (namely $g->saved_arr01["amount"]) was sold by the user. That sold amount will be taken out of these objects
+         *  in a particular distribution. We will take the most out of the older objects. Eventually, either we will have
          *  exhausted the amount or we will have gone through all the objects still have some amount left over (in which
          *  case that is an error state.)
          */
