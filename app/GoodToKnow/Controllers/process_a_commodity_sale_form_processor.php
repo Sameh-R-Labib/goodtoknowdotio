@@ -36,7 +36,9 @@ class process_a_commodity_sale_form_processor
 
         } elseif ($commodity == 'BAT') {
 
-            $amount = float_form_field_prep('amount', 0.00000000000001, 99999999999999.99);
+            // I'm being conservative with the min and max because the other numbers in
+            // the impending calculations also can have extreme precision numbers.
+            $amount = float_form_field_prep('amount', 0.00000000001, 9999999999.99);
 
         } else {
 
