@@ -98,10 +98,10 @@ class process_a_commodity_sale_generate_changes
          * Progress Report
          *
          *  We got
-         *     $g->db
-         *     $g->saved_arr01
-         *     $sold_remaining
-         *     $user_nonzero_commodities[]
+         *     $g->db                         // database connection
+         *     $g->saved_arr01                // submitted form data
+         *     $sold_remaining                // holds the amount of commodity to expense
+         *     $user_nonzero_commodities[]    // pool of commodity objects to expense from
          *
          *  $user_nonzero_commodities[] is an array of the commodity objects which we will (metaphorically speaking)
          *  alter in a way to make the objects reflect the fact that a particular amount of commodity
