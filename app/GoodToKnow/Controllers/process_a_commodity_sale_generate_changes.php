@@ -111,5 +111,19 @@ class process_a_commodity_sale_generate_changes
          *  case that is an error state.)
          */
 
+
+        /**
+         * Initialize the array which has the changed objects.
+         */
+
+        $changed_commodities = [];
+
+
+        /**
+         * Initialize the array which has the generated commodity_sold objects.
+         */
+
+        $generated_commodity_sold_objects = [];
+
     }
 }
