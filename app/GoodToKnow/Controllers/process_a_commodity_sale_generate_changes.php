@@ -133,5 +133,34 @@ class process_a_commodity_sale_generate_changes
          * We will iterate over $user_nonzero_commodities[] and do stuff (possibly exiting the loop before finishing.)
          */
 
+        foreach ($user_nonzero_commodities as $nonzero_commodity) {
+
+            // Exit the loop is $sold_remaining is insufficient to deduct from a commodity object. In other words
+            // $sold_remaining is too small. Whether $sold_remaining is too small or not depends on the type of
+            // commodity (namely $g->saved_arr01["commodity"]).
+
+            if ($g->saved_arr01["commodity"] == 'BTC' or $g->saved_arr01["commodity"] == 'OXT') {
+
+                if ($sold_remaining < 0.00000001) break;
+
+            } elseif ($g->saved_arr01["commodity"] == 'BAT') {
+
+                if ($sold_remaining < 0.00000000001) break;
+
+            } else {
+
+                if ($sold_remaining < 0.01) break;
+
+            }
+
+
+            /**
+             * Here we are inside the foreach loop.
+             */
+        }
+
+        /**
+         * Here we are outside the foreach loop.
+         */
     }
 }
