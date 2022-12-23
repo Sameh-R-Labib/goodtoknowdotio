@@ -94,6 +94,16 @@ class process_a_commodity_sale_generate_changes
             }
         }
 
+
+        // Break out if we didn't find any commodity objects to do what we want to do to them.
+
+        if (empty($user_nonzero_commodities)) {
+
+            breakout(' I can not expense the commodity you sold because there are no commodity records to expense from. ');
+
+        }
+
+
         /**
          * Progress Report
          *
@@ -155,8 +165,18 @@ class process_a_commodity_sale_generate_changes
 
 
             /**
-             * Here we are inside the foreach loop.
+             * Fork in the road.
              */
+
+            if ($sold_remaining <= $nonzero_commodity["current_balance"]) {
+
+                // Do one thing.
+
+            } else {
+
+                // Do another.
+
+            }
         }
 
         /**
