@@ -170,7 +170,35 @@ class process_a_commodity_sale_generate_changes
 
             if ($sold_remaining <= $nonzero_commodity["current_balance"]) {
 
-                // Do one thing.
+                // Expense the $sold_remaining from the current Commodity record and adjust all other
+                // fields of the Commodity record to reflect this fact.
+                $nonzero_commodity["current_balance"] = $nonzero_commodity["current_balance"] - $sold_remaining;
+
+                // Modify the comment field of the commodity object.
+                $nonzero_commodity["comment"] .= "\n" . $sold_remaining . " sold " . 'The time based on $g->saved_arr01["time"]'
+                    . " rate " . 'The unit cost based on $g->saved_arr01["currency"] and $g->saved_arr01["price_sold"]'
+                    . " " . $g->saved_arr01["reason"] . '.';
+
+                // Zero out $sold_remaining.
+                $sold_remaining = 0.0;
+
+                // Add the commodity to our array of changed commodities.
+                $changed_commodities[] = $nonzero_commodity;
+
+
+                // Create the associated commodity_sold object and add it to $generated_commodity_sold_objects array.
+                // For this commodity_sold, what is the value of each of its attributes?
+                // user_id:
+                // time_bought:
+                // time_sold:
+                // price_bought:
+                // price_sold:
+                // currency_transacted:
+                // commodity_amount:
+                // commodity_type:
+                // commodity_label:
+                // tax_year:
+                // profit:
 
             } else {
 
