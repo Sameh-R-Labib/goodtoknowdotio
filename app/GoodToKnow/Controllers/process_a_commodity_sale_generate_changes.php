@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\get_readable_time;
+use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class process_a_commodity_sale_generate_changes
 {
@@ -171,6 +172,7 @@ class process_a_commodity_sale_generate_changes
              */
 
             require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+            require CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
             if ($sold_remaining <= $nonzero_commodity["current_balance"]) {
 
@@ -181,7 +183,7 @@ class process_a_commodity_sale_generate_changes
                 // Modify the comment field of the commodity object.
                 $nonzero_commodity["comment"] .= "\n" . $sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
-                    . 'The unit cost based on $g->saved_arr01["currency"] and $g->saved_arr01["price_sold"]'
+                    . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
 
                 // Zero out $sold_remaining.
