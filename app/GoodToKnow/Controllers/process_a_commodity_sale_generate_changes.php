@@ -180,7 +180,8 @@ class process_a_commodity_sale_generate_changes
 
                 // Modify the comment field of the commodity object.
                 $nonzero_commodity["comment"] .= "\n" . $sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
-                    . " rate " . 'The unit cost based on $g->saved_arr01["currency"] and $g->saved_arr01["price_sold"]'
+                    . " rate " . $g->saved_arr01["currency"]
+                    . 'The unit cost based on $g->saved_arr01["currency"] and $g->saved_arr01["price_sold"]'
                     . " " . $g->saved_arr01["reason"] . '.';
 
                 // Zero out $sold_remaining.

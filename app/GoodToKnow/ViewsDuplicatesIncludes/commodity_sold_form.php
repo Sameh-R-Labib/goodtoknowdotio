@@ -15,14 +15,14 @@
         <p>
             <label for="price_bought">Price Per Unit — Bought: </label>
             <input id="price_bought" name="price_bought" type="text" value="<?= $g->saved_arr01['price_bought'] ?>"
-                   required minlength="1" maxlength="33" size="33" placeholder="150.33">
+                   required minlength="1" maxlength="33" size="33" placeholder="35000.00">
         </p>
         <p>
             <label for="price_sold">Price Per Unit — Sold <span class="tooltip">ℹ️<span class="tooltiptext
                 tooltip-top">If the amounts should have 2 decimal places ask Admin to add your currency to list of
                             fiat.</span></span>: </label>
             <input id="price_sold" name="price_sold" type="text" value="<?= $g->saved_arr01['price_sold'] ?>"
-                   required minlength="1" maxlength="33" size="33" placeholder="150.33">
+                   required minlength="1" maxlength="33" size="33" placeholder="35000.00">
         </p>
         <p>
             <label for="currency_transacted">Priced In — Fiat <span class="tooltip">ℹ️<span class="tooltiptext
@@ -38,7 +38,7 @@
                             fiat.</span></span>: </label>
             <input id="commodity_amount" name="commodity_amount" type="text"
                    value="<?= $g->saved_arr01['commodity_amount'] ?>"
-                   required minlength="1" maxlength="33" size="33" placeholder="150.33">
+                   required minlength="1" maxlength="33" size="33" placeholder="35000.00">
         </p>
         <p>
             <label for="commodity_type">Type <span class="tooltip">ℹ️<span class="tooltiptext
@@ -64,7 +64,7 @@
         <p>
             <label for="profit">Profit — Fiat: </label>
             <input id="profit" name="profit" type="text" value="<?= $g->saved_arr01['profit'] ?>"
-                   required minlength="1" maxlength="33" size="33" placeholder="150.33">
+                   required minlength="1" maxlength="33" size="33" placeholder="35000.00">
         </p>
     </section>
 <?php include 'a_form_bottom.php'; ?>

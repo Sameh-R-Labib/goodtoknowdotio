@@ -41,7 +41,7 @@
                 tooltip-top">If the amounts should have 2 decimal places ask Admin to add your currency to list of
                             fiat.</span></span>: </label>
                 <input id="price_sold" name="price_sold" type="text" value="" required minlength="1" maxlength="33"
-                       size="33" placeholder="150.33">
+                       size="33" placeholder="35000.00">
             </p>
             <p>
                 <label for="reason">Reason For Selling: </label>
