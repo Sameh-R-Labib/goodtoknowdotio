@@ -186,6 +186,9 @@ class process_a_commodity_sale_generate_changes
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
 
+                // We need this.
+                $amount_sold_now = $sold_remaining;
+
                 // Zero out $sold_remaining.
                 $sold_remaining = 0.0;
 
@@ -194,18 +197,20 @@ class process_a_commodity_sale_generate_changes
 
 
                 // Create the associated commodity_sold object and add it to $generated_commodity_sold_objects array.
-                // For this commodity_sold, what is the value of each of its attributes?
-                // user_id:
-                // time_bought:
-                // time_sold:
-                // price_bought:
-                // price_sold:
-                // currency_transacted:
-                // commodity_amount:
-                // commodity_type:
-                // commodity_label:
-                // tax_year:
-                // profit:
+                // Attributes:
+                // ===========
+                // user_id:               The current user's id
+                // time_bought:           $nonzero_commodity["time"]
+                // time_sold:             $g->saved_arr01["time"]
+                // price_bought:          $nonzero_commodity["price_point"]
+                // price_sold:            $g->saved_arr01["price_sold"]
+                // currency_transacted:   $g->saved_arr01["currency"]
+                //                   However, verify that $g->saved_arr01["currency"] == $nonzero_commodity["currency"]
+                // commodity_amount:      $amount_sold_now
+                // commodity_type:        $g->saved_arr01["commodity"]
+                // commodity_label:       $nonzero_commodity["address"]
+                // tax_year:              $g->saved_arr01["tax_year"]
+                // profit:                Calculate: (price sold x amount sold) - (price bought x amount sold)
 
             } else {
 
