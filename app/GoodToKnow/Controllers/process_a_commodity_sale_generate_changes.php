@@ -199,7 +199,7 @@ class process_a_commodity_sale_generate_changes
                 // Create the associated commodity_sold object and add it to $generated_commodity_sold_objects array.
                 // Attributes:
                 // ===========
-                // user_id:               The current user's id
+                // user_id:               $g->user_id
                 // time_bought:           $nonzero_commodity["time"]
                 // time_sold:             $g->saved_arr01["time"]
                 // price_bought:          $nonzero_commodity["price_point"]
@@ -211,6 +211,26 @@ class process_a_commodity_sale_generate_changes
                 // commodity_label:       $nonzero_commodity["address"]
                 // tax_year:              $g->saved_arr01["tax_year"]
                 // profit:                Calculate: (price sold x amount sold) - (price bought x amount sold)
+
+                // Verify this
+                if ($g->saved_arr01["currency"] != $nonzero_commodity["currency"]) {
+
+                    breakout(' I can not expense the commodity you sold because there is a mismatch in type of currency
+                    used to price the commodity between the sale and purchase records. ');
+
+                }
+
+                // Figure this out right here, so I can use it later.
+                $profit_for_this_commodity_sold = (float)$amount_sold_now * ((float)$g->saved_arr01["price_sold"]
+                        - (float)$nonzero_commodity["price_point"]);
+
+                // Compose the commodity_sold array.
+                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity["time"],
+                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity["price_point"],
+                    'price_sold' => $g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
+                    'commodity_amount' => $amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
+                    'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
+                    'profit' => $profit_for_this_commodity_sold];
 
             } else {
 
