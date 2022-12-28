@@ -168,7 +168,6 @@ class process_a_commodity_sale_generate_changes
             }
 
 
-
             /**
              * Fork in the road.
              */
@@ -234,21 +233,17 @@ class process_a_commodity_sale_generate_changes
             } else {
 
 
-                // Here, $sold_remaining is greater than the amount remaining in the current commodity record.
+                // $sold_remaining is greater than amount remaining in current commodity record.
 
                 // Take out the current_balance in the commodity.
                 // Also, reflect that this has happened in $sold_remaining.
-                $sold_remaining = $sold_remaining - $nonzero_commodity["current_balance"];
-                $save_it_before_i_change_it = $nonzero_commodity["current_balance"];
-                $nonzero_commodity["current_balance"] = 0.0;
-
-                // Adjust the commodity's other fields to reflect this.
-
-                // Modify the comment field of the commodity object.
-                $nonzero_commodity["comment"] .= "\n" . $save_it_before_i_change_it . " sold " . get_readable_time($g->saved_arr01["time"])
+                $nonzero_commodity["comment"] .= "\n" . $nonzero_commodity["current_balance"] . " sold "
+                    . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
+                $sold_remaining = $sold_remaining - $nonzero_commodity["current_balance"];
+                $nonzero_commodity["current_balance"] = 0.0;
 
             }
         }
