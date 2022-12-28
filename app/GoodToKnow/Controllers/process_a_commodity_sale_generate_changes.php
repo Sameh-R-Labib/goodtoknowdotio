@@ -236,8 +236,12 @@ class process_a_commodity_sale_generate_changes
 
                 // Here, $sold_remaining is greater than the amount remaining in the current commodity record.
 
-                // Expense the $sold_remaining from the current Commodity record and adjust all other fields
-                // of the Commodity record to reflect this fact.
+                // Take out the current_balance in the commodity.
+                // Also, reflect that this has happened in $sold_remaining.
+                $sold_remaining = $sold_remaining - $nonzero_commodity["current_balance"];
+                $nonzero_commodity["current_balance"] = 0.0;
+
+                // Adjust the commodity's other fields to reflect this.
 
             }
         }
