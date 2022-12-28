@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\commodity_sold;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
@@ -231,6 +232,9 @@ class process_a_commodity_sale_generate_changes
                     'commodity_amount' => $amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
                     'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
+
+                // Create the commodity_sold and add it to $generated_commodity_sold_objects array.
+                $generated_commodity_sold_objects[] = commodity_sold::array_to_object($commodity_sold_arr);
 
             } else {
 
