@@ -168,14 +168,18 @@ class process_a_commodity_sale_generate_changes
             }
 
 
+
             /**
              * Fork in the road.
              */
 
+
             require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
             require CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
+
             if ($sold_remaining <= $nonzero_commodity["current_balance"]) {
+
 
                 // Expense the $sold_remaining from the current Commodity record and adjust all other
                 // fields of the Commodity record to reflect this fact.
@@ -196,22 +200,7 @@ class process_a_commodity_sale_generate_changes
                 // Add the commodity to our array of changed commodities.
                 $changed_commodities[] = $nonzero_commodity;
 
-
                 // Create the associated commodity_sold object and add it to $generated_commodity_sold_objects array.
-                // Attributes:
-                // ===========
-                // user_id:               $g->user_id
-                // time_bought:           $nonzero_commodity["time"]
-                // time_sold:             $g->saved_arr01["time"]
-                // price_bought:          $nonzero_commodity["price_point"]
-                // price_sold:            $g->saved_arr01["price_sold"]
-                // currency_transacted:   $g->saved_arr01["currency"]
-                //                   However, verify that $g->saved_arr01["currency"] == $nonzero_commodity["currency"]
-                // commodity_amount:      $amount_sold_now
-                // commodity_type:        $g->saved_arr01["commodity"]
-                // commodity_label:       $nonzero_commodity["address"]
-                // tax_year:              $g->saved_arr01["tax_year"]
-                // profit:                Calculate: (price sold x amount sold) - (price bought x amount sold)
 
                 // Verify this
                 if ($g->saved_arr01["currency"] != $nonzero_commodity["currency"]) {
@@ -222,6 +211,8 @@ class process_a_commodity_sale_generate_changes
                 }
 
                 // Figure this out right here, so I can use it later.
+                // profit = (price sold x amount sold) - (price bought x amount sold)
+                // (aka) profit = amount sold x (price sold - price bought)
                 $profit_for_this_commodity_sold = (float)$amount_sold_now * ((float)$g->saved_arr01["price_sold"]
                         - (float)$nonzero_commodity["price_point"]);
 
@@ -236,9 +227,17 @@ class process_a_commodity_sale_generate_changes
                 // Create the commodity_sold and add it to $generated_commodity_sold_objects array.
                 $generated_commodity_sold_objects[] = commodity_sold::array_to_object($commodity_sold_arr);
 
+                // We don’t need to go to the next Commodity record.
+                break;
+
+
             } else {
 
-                // Do another.
+
+                // Here, $sold_remaining is greater than the amount remaining in the current commodity record.
+
+                // Expense the $sold_remaining from the current Commodity record and adjust all other fields
+                // of the Commodity record to reflect this fact.
 
             }
         }
