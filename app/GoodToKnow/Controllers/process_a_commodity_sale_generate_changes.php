@@ -48,7 +48,7 @@ class process_a_commodity_sale_generate_changes
         // FYI: value so that the manipulations we will do will change things and
         // FYI: thus assist in preventing an infinite loop from occurring.
 
-        $sold_remaining = $g->saved_arr01["amount"];
+        $sold_remaining = (float)$g->saved_arr01["amount"];
 
 
         /**
@@ -147,7 +147,10 @@ class process_a_commodity_sale_generate_changes
          * We will iterate over $user_nonzero_commodities[] and do stuff (possibly exiting the loop before finishing.)
          */
 
-        foreach ($user_nonzero_commodities as $nonzero_commodity) {
+        $array_keys = array_keys($user_nonzero_commodities);
+        $last_key = array_pop($array_keys);
+
+        foreach ($user_nonzero_commodities as $key => $nonzero_commodity) {
 
             // Exit the loop is $sold_remaining is insufficient to deduct from a commodity object. In other words
             // $sold_remaining is too small. Whether $sold_remaining is too small or not depends on the type of
@@ -234,6 +237,14 @@ class process_a_commodity_sale_generate_changes
 
 
                 // $sold_remaining is greater than amount remaining in current commodity record.
+
+                // Error out if we would still have some commodity to expense after the current iteration of the loop
+                // and yet there would be no more commodity records from which to expense.
+                if ($key == $last_key) {
+
+                    breakout(" You dont have enough commodity to expense from. ");
+
+                }
 
                 // Take out the current_balance in the commodity.
                 // Also, reflect that this has happened in $sold_remaining.
