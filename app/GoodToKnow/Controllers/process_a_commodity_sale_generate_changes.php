@@ -284,7 +284,7 @@ class process_a_commodity_sale_generate_changes
                     'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
-                // Create the commodity_sold and add it to $g->array array.
+                // Create the commodity_sold and add it to $g->array.
                 $g->array[] = commodity_sold::array_to_object($commodity_sold_arr);
 
             }
@@ -296,7 +296,14 @@ class process_a_commodity_sale_generate_changes
          */
 
         /**
-         * Show the view.
+         * Present the view.
+         *
+         * Present a Save button and an Abort button.
+         * **These buttons will be link buttons instead of form submit buttons.**
          */
+
+        $g->html_title = 'preview changes';
+
+        require VIEWS . DIRSEP . 'processacommoditysalegeneratechanges.php';
     }
 }
