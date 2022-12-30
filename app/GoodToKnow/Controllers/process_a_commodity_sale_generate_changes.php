@@ -290,8 +290,13 @@ class process_a_commodity_sale_generate_changes
             }
         }
 
+
         /**
-         * Here we are outside the foreach loop.
+         * Outside the loop.
+         */
+
+        /**
+         * Show the view.
          */
     }
 }
