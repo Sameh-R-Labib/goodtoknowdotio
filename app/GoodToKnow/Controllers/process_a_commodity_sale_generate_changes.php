@@ -130,14 +130,14 @@ class process_a_commodity_sale_generate_changes
          * Initialize the array which has the changed objects.
          */
 
-        $changed_commodities = [];
+        $g->array_of_commodity_objects = [];
 
 
         /**
          * Initialize the array which has the generated commodity_sold objects.
          */
 
-        $generated_commodity_sold_objects = [];
+        $g->array = [];
 
 
         /**
@@ -200,9 +200,9 @@ class process_a_commodity_sale_generate_changes
                 $sold_remaining = 0.0;
 
                 // Add the commodity to our array of changed commodities.
-                $changed_commodities[] = $nonzero_commodity;
+                $g->array_of_commodity_objects[] = $nonzero_commodity;
 
-                // Create the associated commodity_sold object and add it to $generated_commodity_sold_objects array.
+                // Create the associated commodity_sold object and add it to $g->array array.
 
                 // Verify this
                 if ($g->saved_arr01["currency"] != $nonzero_commodity["currency"]) {
@@ -226,8 +226,8 @@ class process_a_commodity_sale_generate_changes
                     'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
-                // Create the commodity_sold and add it to $generated_commodity_sold_objects array.
-                $generated_commodity_sold_objects[] = commodity_sold::array_to_object($commodity_sold_arr);
+                // Create the commodity_sold and add it to $g->array array.
+                $g->array[] = commodity_sold::array_to_object($commodity_sold_arr);
 
                 // We don’t need to go to the next Commodity record.
                 break;
@@ -258,9 +258,9 @@ class process_a_commodity_sale_generate_changes
                 $nonzero_commodity["current_balance"] = 0.0;
 
                 // Add the commodity to our array of changed commodities.
-                $changed_commodities[] = $nonzero_commodity;
+                $g->array_of_commodity_objects[] = $nonzero_commodity;
 
-                // Create the associated commodity_sold object and add it to $generated_commodity_sold_objects array.
+                // Create the associated commodity_sold object and add it to $g->array array.
 
                 // Figure this out right here, so I can use it later.
                 // profit = (price sold x amount sold) - (price bought x amount sold)
@@ -284,8 +284,8 @@ class process_a_commodity_sale_generate_changes
                     'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
-                // Create the commodity_sold and add it to $generated_commodity_sold_objects array.
-                $generated_commodity_sold_objects[] = commodity_sold::array_to_object($commodity_sold_arr);
+                // Create the commodity_sold and add it to $g->array array.
+                $g->array[] = commodity_sold::array_to_object($commodity_sold_arr);
 
             }
         }
