@@ -38,17 +38,17 @@ class process_a_commodity_sale_generate_changes
 
 
         /**
-         * $sold_remaining variable holds the amount of commodity remaining to
+         * $g->sold_remaining variable holds the amount of commodity remaining to
          * be removed from the user's stash of commodity.
          *
-         * Initialize $sold_remaining.
+         * Initialize $g->sold_remaining.
          */
 
         // FYI: The previous route made sure the amount was greater than a particular
         // FYI: value so that the manipulations we will do will change things and
         // FYI: thus assist in preventing an infinite loop from occurring.
 
-        $sold_remaining = (float)$g->saved_arr01["amount"];
+        $g->sold_remaining = (float)$g->saved_arr01["amount"];
 
 
         /**
@@ -114,7 +114,7 @@ class process_a_commodity_sale_generate_changes
          *  We got
          *     $g->db                         // database connection
          *     $g->saved_arr01                // submitted form data
-         *     $sold_remaining                // holds the amount of commodity to expense
+         *     $g->sold_remaining                // holds the amount of commodity to expense
          *     $user_nonzero_commodities[]    // pool of commodity objects to expense from
          *
          *  $user_nonzero_commodities[] is an array of the commodity objects which we will (metaphorically speaking)
@@ -152,21 +152,21 @@ class process_a_commodity_sale_generate_changes
 
         foreach ($user_nonzero_commodities as $key => $nonzero_commodity) {
 
-            // Exit the loop is $sold_remaining is insufficient to deduct from a commodity object. In other words
-            // $sold_remaining is too small. Whether $sold_remaining is too small or not depends on the type of
+            // Exit the loop is $g->sold_remaining is insufficient to deduct from a commodity object. In other words
+            // $g->sold_remaining is too small. Whether $g->sold_remaining is too small or not depends on the type of
             // commodity (namely $g->saved_arr01["commodity"]).
 
             if ($g->saved_arr01["commodity"] == 'BTC' or $g->saved_arr01["commodity"] == 'OXT') {
 
-                if ($sold_remaining < 0.00000001) break;
+                if ($g->sold_remaining < 0.00000001) break;
 
             } elseif ($g->saved_arr01["commodity"] == 'BAT') {
 
-                if ($sold_remaining < 0.00000000001) break;
+                if ($g->sold_remaining < 0.00000000001) break;
 
             } else {
 
-                if ($sold_remaining < 0.01) break;
+                if ($g->sold_remaining < 0.01) break;
 
             }
 
@@ -180,24 +180,24 @@ class process_a_commodity_sale_generate_changes
             require CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-            if ($sold_remaining <= $nonzero_commodity["current_balance"]) {
+            if ($g->sold_remaining <= $nonzero_commodity["current_balance"]) {
 
 
-                // Expense the $sold_remaining from the current Commodity record and adjust all other
+                // Expense the $g->sold_remaining from the current Commodity record and adjust all other
                 // fields of the Commodity record to reflect this fact.
-                $nonzero_commodity["current_balance"] = $nonzero_commodity["current_balance"] - $sold_remaining;
+                $nonzero_commodity["current_balance"] = $nonzero_commodity["current_balance"] - $g->sold_remaining;
 
                 // Modify the comment field of the commodity object.
-                $nonzero_commodity["comment"] .= "\n" . $sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
+                $nonzero_commodity["comment"] .= "\n" . $g->sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
 
                 // We need this.
-                $amount_sold_now = $sold_remaining;
+                $amount_sold_now = $g->sold_remaining;
 
-                // Zero out $sold_remaining.
-                $sold_remaining = 0.0;
+                // Zero out $g->sold_remaining.
+                $g->sold_remaining = 0.0;
 
                 // Add the commodity to our array of changed commodities.
                 $g->array_of_commodity_objects[] = $nonzero_commodity;
@@ -236,7 +236,7 @@ class process_a_commodity_sale_generate_changes
             } else {
 
 
-                // $sold_remaining is greater than amount remaining in current commodity record.
+                // $g->sold_remaining is greater than amount remaining in current commodity record.
 
                 // Error out if we would still have some commodity to expense after the current iteration of the loop
                 // and yet there would be no more commodity records from which to expense.
@@ -247,14 +247,14 @@ class process_a_commodity_sale_generate_changes
                 }
 
                 // Take out the current_balance in the commodity.
-                // Also, reflect that this has happened in $sold_remaining.
+                // Also, reflect that this has happened in $g->sold_remaining.
                 $nonzero_commodity["comment"] .= "\n" . $nonzero_commodity["current_balance"] . " sold "
                     . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
                 $amount_sold_now = $nonzero_commodity["current_balance"];
-                $sold_remaining = $sold_remaining - $nonzero_commodity["current_balance"];
+                $g->sold_remaining = $g->sold_remaining - $nonzero_commodity["current_balance"];
                 $nonzero_commodity["current_balance"] = 0.0;
 
                 // Add the commodity to our array of changed commodities.
