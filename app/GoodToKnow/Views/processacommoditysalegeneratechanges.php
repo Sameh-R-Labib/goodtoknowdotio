@@ -7,7 +7,8 @@
         <p><b>What you see is what will be saved:</b></p>
         <h2>That Which Will Not Be Expensed</h2>
         <p><b>Sold Remaining: </b><?= $g->saved_arr01["commodity"] ?><?= $g->sold_remaining ?></p>
-
+        <?php foreach ($g->array_of_commodity_objects as $key => $commodity): ?>
+        <?php endforeach; ?>
         <!-- Present link buttons for Save and Abort -->
         <p><a class="save" href="/ax1/process_a_commodity_sale_generate_changes_save/page">Save</a>
             <a class="abort" href="/ax1/clear_session_vars/page">Abort</a></p>

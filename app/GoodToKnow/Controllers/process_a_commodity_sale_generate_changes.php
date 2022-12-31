@@ -202,7 +202,7 @@ class process_a_commodity_sale_generate_changes
                 // Add the commodity to our array of changed commodities.
                 $g->array_of_commodity_objects[] = $nonzero_commodity;
 
-                // Create the associated commodity_sold object and add it to $g->array array.
+                // Create the associated commodity_sold object and add it to $g->array.
 
                 // Verify this
                 if ($g->saved_arr01["currency"] != $nonzero_commodity["currency"]) {
