@@ -4,6 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\commodity_sold;
 use function GoodToKnow\ControllerHelpers\get_readable_time;
+use function GoodToKnow\ControllerHelpers\make_commodity_readable;
 use function GoodToKnow\ControllerHelpers\readable_amount_of_money;
 
 class process_a_commodity_sale_generate_changes
@@ -294,6 +295,23 @@ class process_a_commodity_sale_generate_changes
         /**
          * Outside the loop.
          */
+
+
+        /**
+         * Loop through the array and replace some attributes with more readable versions of themselves.
+         * And apply htmlspecialchars if necessary.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+
+        foreach ($g->array_of_commodity_objects as $g->commodity_object) {
+
+            make_commodity_readable();
+
+        }
+
 
         /**
          * Present the view.
