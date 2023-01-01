@@ -227,7 +227,7 @@ class process_a_commodity_sale_generate_changes
                     'commodity_label' => $nonzero_commodity->address, 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
-                // Create the commodity_sold and add it to $g->array array.
+                // Create the commodity_sold and add it to $g->array.
                 $g->array[] = commodity_sold::array_to_object($commodity_sold_arr);
 
                 // We don’t need to go to the next Commodity record.
