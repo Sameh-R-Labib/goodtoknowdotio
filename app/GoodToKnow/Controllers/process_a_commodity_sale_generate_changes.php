@@ -303,8 +303,6 @@ class process_a_commodity_sale_generate_changes
          */
 
         require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
-        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
         foreach ($g->array_of_commodity_objects as $g->commodity_object) {
 
