@@ -181,15 +181,15 @@ class process_a_commodity_sale_generate_changes
             require CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
 
 
-            if ($g->sold_remaining <= $nonzero_commodity["current_balance"]) {
+            if ($g->sold_remaining <= $nonzero_commodity->current_balance) {
 
 
                 // Expense the $g->sold_remaining from the current Commodity record and adjust all other
                 // fields of the Commodity record to reflect this fact.
-                $nonzero_commodity["current_balance"] = $nonzero_commodity["current_balance"] - $g->sold_remaining;
+                $nonzero_commodity->current_balance = $nonzero_commodity->current_balance - $g->sold_remaining;
 
                 // Modify the comment field of the commodity object.
-                $nonzero_commodity["comment"] .= "\n" . $g->sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
+                $nonzero_commodity->comment .= "\n" . $g->sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
@@ -206,7 +206,7 @@ class process_a_commodity_sale_generate_changes
                 // Create the associated commodity_sold object and add it to $g->array.
 
                 // Verify this
-                if ($g->saved_arr01["currency"] != $nonzero_commodity["currency"]) {
+                if ($g->saved_arr01["currency"] != $nonzero_commodity->currency) {
 
                     breakout(' I can not expense the commodity you sold because there is a mismatch in type of currency
                     used to price the commodity between the sale and purchase records. ');
@@ -217,14 +217,14 @@ class process_a_commodity_sale_generate_changes
                 // profit = (price sold x amount sold) - (price bought x amount sold)
                 // (aka) profit = amount sold x (price sold - price bought)
                 $profit_for_this_commodity_sold = (float)$amount_sold_now * ((float)$g->saved_arr01["price_sold"]
-                        - (float)$nonzero_commodity["price_point"]);
+                        - (float)$nonzero_commodity->price_point);
 
                 // Compose the commodity_sold array.
-                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity["time"],
-                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity["price_point"],
+                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity->time,
+                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity->price_point,
                     'price_sold' => $g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
                     'commodity_amount' => $amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
-                    'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
+                    'commodity_label' => $nonzero_commodity->address, 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
                 // Create the commodity_sold and add it to $g->array array.
@@ -249,28 +249,28 @@ class process_a_commodity_sale_generate_changes
 
                 // Take out the current_balance in the commodity.
                 // Also, reflect that this has happened in $g->sold_remaining.
-                $nonzero_commodity["comment"] .= "\n" . $nonzero_commodity["current_balance"] . " sold "
+                $nonzero_commodity->comment .= "\n" . $nonzero_commodity->current_balance . " sold "
                     . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
-                $amount_sold_now = $nonzero_commodity["current_balance"];
-                $g->sold_remaining = $g->sold_remaining - $nonzero_commodity["current_balance"];
-                $nonzero_commodity["current_balance"] = 0.0;
+                $amount_sold_now = $nonzero_commodity->current_balance;
+                $g->sold_remaining = $g->sold_remaining - $nonzero_commodity->current_balance;
+                $nonzero_commodity->current_balance = 0.0;
 
                 // Add the commodity to our array of changed commodities.
                 $g->array_of_commodity_objects[] = $nonzero_commodity;
 
-                // Create the associated commodity_sold object and add it to $g->array array.
+                // Create the associated commodity_sold object and add it to $g->array.
 
                 // Figure this out right here, so I can use it later.
                 // profit = (price sold x amount sold) - (price bought x amount sold)
                 // (aka) profit = amount sold x (price sold - price bought)
                 $profit_for_this_commodity_sold = (float)$amount_sold_now * ((float)$g->saved_arr01["price_sold"]
-                        - (float)$nonzero_commodity["price_point"]);
+                        - (float)$nonzero_commodity->price_point);
 
                 // Verify this
-                if ($g->saved_arr01["currency"] != $nonzero_commodity["currency"]) {
+                if ($g->saved_arr01["currency"] != $nonzero_commodity->currency) {
 
                     breakout(' I can not expense the commodity you sold because there is a mismatch in type of currency
                     used to price the commodity between the sale and purchase records. ');
@@ -278,11 +278,11 @@ class process_a_commodity_sale_generate_changes
                 }
 
                 // Compose the commodity_sold array.
-                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity["time"],
-                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity["price_point"],
+                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity->time,
+                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity->price_point,
                     'price_sold' => $g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
                     'commodity_amount' => $amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
-                    'commodity_label' => $nonzero_commodity["address"], 'tax_year' => $g->saved_arr01["tax_year"],
+                    'commodity_label' => $nonzero_commodity->address, 'tax_year' => $g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
                 // Create the commodity_sold and add it to $g->array.
