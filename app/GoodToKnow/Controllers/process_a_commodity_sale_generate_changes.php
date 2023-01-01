@@ -320,8 +320,6 @@ class process_a_commodity_sale_generate_changes
          *   'time_bought', 'time_sold', 'price_bought', 'price_sold', 'commodity_amount', 'profit'.
          */
 
-        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-
 
         foreach ($g->array as $item) {
 
