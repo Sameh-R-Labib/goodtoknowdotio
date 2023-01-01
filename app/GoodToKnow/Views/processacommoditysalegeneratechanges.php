@@ -17,7 +17,25 @@
                 <b>Current Balance: </b><?= $commodity->commodity ?>&nbsp;<?= $commodity->current_balance ?><br>
                 <?= $commodity->comment ?></p>
             <h2>#<?= $key ?> Commodity Sold</h2>
-
+            <p>Time Sold: <?= $g->array[$key]->time_sold ?><br>
+                Time Bought: <?= $g->array[$key]->time_bought ?><br>
+                Price Per C Unit Bought: <?= $g->array[$key]->currency_transacted ?>
+                &nbsp;<?= $g->array[$key]->price_bought ?><br>
+                Price Per C Unit Sold: <?= $g->array[$key]->currency_transacted ?>
+                &nbsp;<?= $g->array[$key]->price_sold ?>
+                <br>
+                Amount of C Sold: <?= $g->array[$key]->commodity_type ?>&nbsp;<?= $g->array[$key]->commodity_amount ?>
+                <br>
+                Label of C Record From Which C Was Sold: <?= $g->array[$key]->commodity_label ?><br>
+                Net Profit: <?= $g->array[$key]->currency_transacted ?>
+                <?php if ($g->array[$key]->profit < 0): ?>
+                    🔥(
+                <?php endif; ?>
+                <?= $g->array[$key]->profit ?>
+                <?php if ($g->array[$key]->profit < 0): ?>
+                    )🔥
+                <?php endif; ?>
+            </p>
         <?php endforeach; ?>
         <!-- Present link buttons for Save and Abort -->
         <p><a class="save" href="/ax1/process_a_commodity_sale_generate_changes_save/page">Save</a>
