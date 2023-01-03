@@ -15,11 +15,31 @@ class process_a_commodity_sale_save
          */
 
 
+        global $g;
+
+
+        kick_out_loggedoutusers();
+
+
+        get_db();
+
+
         /**
          * Make sure the commodity and commodity_sold records are in a state which
          * is appropriate to be saved to the database before saving them. As you may
          * recall, these records were modified to be presentable in the confirmation
          * view. The code for accomplishing this should be in the previous route.
          */
+
+        //$g->saved_arr02
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$g->saved_arr02: </p>\n<pre>";
+        var_dump($g->saved_arr02);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
     }
 }

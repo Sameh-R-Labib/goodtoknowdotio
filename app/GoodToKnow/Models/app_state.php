@@ -292,6 +292,18 @@ class app_state
 
 
     /**
+     * @var array
+     */
+    public $saved_arr02;
+
+
+    /**
+     * @var array
+     */
+    public $saved_arr03;
+
+
+    /**
      * @var bool
      */
     public $is_logged_in;
@@ -878,6 +890,10 @@ class app_state
         $this->saved_int02 = (isset($_SESSION['saved_int02'])) ? $_SESSION['saved_int02'] : 0;
 
         $this->saved_arr01 = (isset($_SESSION['saved_arr01'])) ? $_SESSION['saved_arr01'] : [];
+
+        $this->saved_arr02 = (isset($_SESSION['saved_arr02'])) ? $_SESSION['saved_arr02'] : [];
+
+        $this->saved_arr03 = (isset($_SESSION['saved_arr03'])) ? $_SESSION['saved_arr03'] : [];
 
 
         /**
