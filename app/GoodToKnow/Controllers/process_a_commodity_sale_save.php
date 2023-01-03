@@ -31,14 +31,18 @@ class process_a_commodity_sale_save
          * view. The code for accomplishing this should be in the previous route.
          */
 
-        //$g->saved_arr02
+        //$g->saved_arr02 commodity
+        //$g->saved_arr03 commodity_sold
 
         /**
          * Debug Code
          */
         echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$g->saved_arr02: </p>\n<pre>";
+        echo "<p>commodity \$g->saved_arr02: </p>\n<pre>";
         var_dump($g->saved_arr02);
+        echo "</pre>\n";
+        echo "<p>commodity_sold \$g->saved_arr03: </p>\n<pre>";
+        var_dump($g->saved_arr03);
         echo "</pre>\n";
         die("<p>End debug</p>\n");
     }

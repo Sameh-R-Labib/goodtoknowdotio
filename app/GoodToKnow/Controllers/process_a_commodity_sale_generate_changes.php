@@ -305,6 +305,17 @@ class process_a_commodity_sale_generate_changes
 
 
         /**
+         * In two array session variables, store the commodity and commodity_sold
+         * records before they are made readable. We will need these two arrays
+         * in the next route. This is the data which gets stored in the database.
+         * It must be in raw form.
+         */
+
+        $_SESSION["saved_arr02"] = $g->array_of_commodity_objects;
+        $_SESSION["saved_arr03"] = $g->array;
+
+
+        /**
          * Loop through the array and replace some attributes with more readable versions of themselves.
          * And apply htmlspecialchars if necessary.
          */
