@@ -6,7 +6,7 @@
         <?php require SESSIONMESSAGE; ?>
         <p><b>What you see is what will be saved:</b></p>
         <h2>That Which Will Not Be Expensed</h2>
-        <p><b>Sold Remaining: </b><?= $g->saved_arr01["commodity"] ?><?= $g->sold_remaining ?></p>
+        <p><b>Sold Remaining: </b><?= $g->saved_arr01["commodity"] ?> <?= $g->sold_remaining ?></p>
         <?php foreach ($g->array_of_commodity_objects as $key => $commodity): ?>
             <h2>#<?= $key ?> Commodity</h2>
             <p><b>Time of purchase: </b><?= $commodity->time ?><br>

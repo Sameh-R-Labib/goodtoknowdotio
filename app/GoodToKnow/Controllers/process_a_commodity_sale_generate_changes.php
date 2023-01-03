@@ -193,7 +193,8 @@ class process_a_commodity_sale_generate_changes
                 $nonzero_commodity->current_balance = $nonzero_commodity->current_balance - $g->sold_remaining;
 
                 // Modify the comment field of the commodity object.
-                $nonzero_commodity->comment .= "\n" . $g->sold_remaining . " sold " . get_readable_time($g->saved_arr01["time"])
+                $nonzero_commodity->comment .= "\n" . readable_amount_of_money($g->saved_arr01["commodity"], $g->sold_remaining)
+                    . " sold " . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
                     . " " . $g->saved_arr01["reason"] . '.';
@@ -253,7 +254,9 @@ class process_a_commodity_sale_generate_changes
 
                 // Take out the current_balance in the commodity.
                 // Also, reflect that this has happened in $g->sold_remaining.
-                $nonzero_commodity->comment .= "\n" . $nonzero_commodity->current_balance . " sold "
+                $nonzero_commodity->comment .= "\n"
+                    . readable_amount_of_money($g->saved_arr01["commodity"], $nonzero_commodity->current_balance)
+                    . " sold "
                     . get_readable_time($g->saved_arr01["time"])
                     . " rate " . $g->saved_arr01["currency"]
                     . readable_amount_of_money($g->saved_arr01["currency"], $g->saved_arr01["price_sold"])
