@@ -38,7 +38,7 @@
             </p>
         <?php endforeach; ?>
         <!-- Present link buttons for Save and Abort -->
-        <p><a class="save" href="/ax1/process_a_commodity_sale_generate_changes_save/page">Save</a>
+        <p><a class="save" href="/ax1/process_a_commodity_sale_save/page">Save</a>
             <a class="abort" href="/ax1/clear_session_vars/page">Abort</a></p>
     </form>
 <?php require BOTTOMOFPAGES; ?>
