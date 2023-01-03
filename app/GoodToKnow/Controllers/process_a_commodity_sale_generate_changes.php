@@ -39,6 +39,15 @@ class process_a_commodity_sale_generate_changes
 
 
         /**
+         * These should be outside the loop. So, I'm putting them here.
+         */
+
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
+
+
+        /**
          * $g->sold_remaining variable holds the amount of commodity remaining to
          * be removed from the user's stash of commodity.
          *
@@ -176,11 +185,6 @@ class process_a_commodity_sale_generate_changes
              * Fork in the road.
              */
 
-
-            require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-            require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-
-
             if ($g->sold_remaining <= $nonzero_commodity->current_balance) {
 
 
@@ -301,8 +305,6 @@ class process_a_commodity_sale_generate_changes
          * Loop through the array and replace some attributes with more readable versions of themselves.
          * And apply htmlspecialchars if necessary.
          */
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
 
         foreach ($g->array_of_commodity_objects as $g->commodity_object) {
 
