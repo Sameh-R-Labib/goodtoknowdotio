@@ -87,6 +87,6 @@ class process_a_commodity_sale_save
          */
 
 
-        breakout("Testing: look at the result read from the database via other features. ");
+        breakout(" Testing: look at the result read from the database via other features. ");
     }
 }
