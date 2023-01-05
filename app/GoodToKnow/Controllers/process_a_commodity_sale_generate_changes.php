@@ -225,11 +225,11 @@ class process_a_commodity_sale_generate_changes
                         - (float)$nonzero_commodity->price_point);
 
                 // Compose the commodity_sold array.
-                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity->time,
-                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity->price_point,
-                    'price_sold' => $g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
-                    'commodity_amount' => $amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
-                    'commodity_label' => $nonzero_commodity->address, 'tax_year' => $g->saved_arr01["tax_year"],
+                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => (int)$nonzero_commodity->time,
+                    'time_sold' => (int)$g->saved_arr01["time"], 'price_bought' => (float)$nonzero_commodity->price_point,
+                    'price_sold' => (float)$g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
+                    'commodity_amount' => (float)$amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
+                    'commodity_label' => $nonzero_commodity->address, 'tax_year' => (int)$g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
                 // Create the commodity_sold and add it to $g->array.
@@ -285,11 +285,11 @@ class process_a_commodity_sale_generate_changes
                 }
 
                 // Compose the commodity_sold array.
-                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => $nonzero_commodity->time,
-                    'time_sold' => $g->saved_arr01["time"], 'price_bought' => $nonzero_commodity->price_point,
-                    'price_sold' => $g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
-                    'commodity_amount' => $amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
-                    'commodity_label' => $nonzero_commodity->address, 'tax_year' => $g->saved_arr01["tax_year"],
+                $commodity_sold_arr = ['user_id' => $g->user_id, 'time_bought' => (int)$nonzero_commodity->time,
+                    'time_sold' => (int)$g->saved_arr01["time"], 'price_bought' => (float)$nonzero_commodity->price_point,
+                    'price_sold' => (float)$g->saved_arr01["price_sold"], 'currency_transacted' => $g->saved_arr01["currency"],
+                    'commodity_amount' => (float)$amount_sold_now, 'commodity_type' => $g->saved_arr01["commodity"],
+                    'commodity_label' => $nonzero_commodity->address, 'tax_year' => (int)$g->saved_arr01["tax_year"],
                     'profit' => $profit_for_this_commodity_sold];
 
                 // Create the commodity_sold and add it to $g->array.
