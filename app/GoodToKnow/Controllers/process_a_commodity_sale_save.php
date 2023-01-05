@@ -33,5 +33,56 @@ class process_a_commodity_sale_save
         //$g->saved_arr02 has commodity
         //$g->saved_arr03 has commodity_sold
 
+
+        /**
+         * Update the database with the modified commodity objects.
+         */
+
+        foreach ($g->saved_arr02 as $commodity) {
+
+            $result = $commodity->save();
+
+            if (!$result) {
+
+                breakout(' The save method for commodity returned false. ');
+
+            }
+
+            if (!empty($g->message)) {
+
+                breakout(' The save method for commodity did not return false but it did send back a message.
+             Therefore, it probably did not create the commodity record. ');
+
+            }
+
+        }
+
+
+        /**
+         * Save to the database the new commodity_sold objects.
+         */
+
+        foreach ($g->saved_arr03 as $commodity_sold) {
+
+            $result = $commodity_sold->save();
+
+            if (!$result) {
+
+                breakout(' The save method for commodity_sold returned false. ');
+
+            }
+
+            if (!empty($g->message)) {
+
+                breakout(' The save method for commodity_sold did not return false but it did send
+            back a message. Therefore, it probably did not create the commodity_sold record. ');
+
+            }
+
+        }
+
+        /**
+         * Outside both foreach loops.
+         */
     }
 }
