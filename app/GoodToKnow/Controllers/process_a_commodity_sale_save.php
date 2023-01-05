@@ -81,8 +81,12 @@ class process_a_commodity_sale_save
 
         }
 
+
         /**
          * Outside both foreach loops.
          */
+
+
+        breakout("Testing: look at the result read from the database via other features. ");
     }
 }
