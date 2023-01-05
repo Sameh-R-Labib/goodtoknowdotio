@@ -25,25 +25,13 @@ class process_a_commodity_sale_save
 
 
         /**
-         * Make sure the commodity and commodity_sold records are in a state which
-         * is appropriate to be saved to the database before saving them. As you may
-         * recall, these records were modified to be presentable in the confirmation
-         * view. The code for accomplishing this should be in the previous route.
+         * The commodity and commodity_sold records are (now) in a state which is appropriate
+         * to be saved to the database although at one point in time in the previous route,
+         * these records were modified to be human-readable for the confirmation view.
          */
 
-        //$g->saved_arr02 commodity
-        //$g->saved_arr03 commodity_sold
+        //$g->saved_arr02 has commodity
+        //$g->saved_arr03 has commodity_sold
 
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>commodity \$g->saved_arr02: </p>\n<pre>";
-        var_dump($g->saved_arr02);
-        echo "</pre>\n";
-        echo "<p>commodity_sold \$g->saved_arr03: </p>\n<pre>";
-        var_dump($g->saved_arr03);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
     }
 }
