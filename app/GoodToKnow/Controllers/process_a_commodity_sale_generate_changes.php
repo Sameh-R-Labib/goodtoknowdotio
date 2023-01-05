@@ -311,8 +311,23 @@ class process_a_commodity_sale_generate_changes
          * It must be in raw form.
          */
 
-        $_SESSION["saved_arr02"] = $g->array_of_commodity_objects;
-        $_SESSION["saved_arr03"] = $g->array;
+        // If PHP caused this statement:
+        /*$_SESSION["saved_arr02"] = $g->array_of_commodity_objects;*/
+        // to make duplicates of the objects then we wouldn't need what I'm about to do.
+        foreach ($g->array_of_commodity_objects as $commodity_object) {
+
+            $_SESSION["saved_arr02"][] = clone $commodity_object;
+
+        }
+
+        // If PHP caused this statement:
+        /*$_SESSION["saved_arr03"] = $g->array;*/
+        // to make duplicates of the objects then we wouldn't need what I'm about to do.
+        foreach ($g->array as $object) {
+
+            $_SESSION["saved_arr03"][] = clone $object;
+
+        }
 
 
         /**
