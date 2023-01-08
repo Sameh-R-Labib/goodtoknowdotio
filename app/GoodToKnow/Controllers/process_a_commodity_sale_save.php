@@ -2,6 +2,9 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\commodity;
+use GoodToKnow\Models\commodity_sold;
+
 class process_a_commodity_sale_save
 {
     function page()
@@ -83,10 +86,36 @@ class process_a_commodity_sale_save
 
 
         /**
-         * Outside both foreach loops.
+         * We've caused the database to reflect changes and additions.
+         * Q: Now, what?
+         * A: Read both the commodity records and the commodity_sold
+         * records from the database and show them to the user along
+         * with a “mission accomplished” session message.
          */
 
+        /**
+         * For the commodity records
+         */
+        $g->commodity_from_db = [];
+        foreach ($g->saved_arr02 as $commodity) {
+            if (!$g->commodity_from_db[] = commodity::find_by_id($commodity->id)) {
+                breakout(" Unexpectedly could not find this commodity record in database. ");
+            }
+        }
 
-        breakout(" Testing: look at the result read from the database via other features. ");
+        /**
+         * For the commodity_sold records
+         */
+        $g->commodity_sold_from_db = [];
+        foreach ($g->saved_arr03 as $commodity_sold) {
+            if (!$g->commodity_sold_from_db[] = commodity_sold::find_by_id($commodity_sold->id)) {
+                breakout(" Unexpectedly could not find this commodity_sold record in database. ");
+            }
+        }
+
+        /**
+         * ... show them to the user along with a “mission accomplished” session message.
+         */
+
     }
 }
