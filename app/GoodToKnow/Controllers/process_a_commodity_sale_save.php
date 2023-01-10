@@ -29,6 +29,10 @@ class process_a_commodity_sale_save
 
         get_db();
 
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
+        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
+
 
         /**
          * The commodity and commodity_sold records are (now) in a state which is appropriate
@@ -122,9 +126,6 @@ class process_a_commodity_sale_save
          */
 
         // For commodity objects
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'make_commodity_readable.php';
-
         foreach ($g->commodity_from_db as $g->commodity_object) {
 
             make_commodity_readable();
@@ -132,10 +133,6 @@ class process_a_commodity_sale_save
         }
 
         // For commodity_sold objects
-
-        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_time.php';
-        require_once CONTROLLERHELPERS . DIRSEP . 'readable_amount_of_money.php';
-
         foreach ($g->commodity_sold_from_db as $item) {
 
             $item->time_bought = get_readable_time($item->time_bought);
