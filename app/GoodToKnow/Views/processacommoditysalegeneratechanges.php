@@ -12,7 +12,7 @@
             <p><b>Time of purchase: </b><?= $commodity->time ?><br>
                 <b>Address / Label: </b><?= $commodity->address ?><br>
                 <b>Price of 1<?= $commodity->commodity ?> at 🕒 of purchase: </b><?= $commodity->currency ?>
-                &nbsp;<?= $commodity->price_point ?><br>
+                <?= $commodity->price_point ?><br>
                 <b>Initial Balance: </b><?= $commodity->commodity ?>&nbsp;<?= $commodity->initial_balance ?><br>
                 <b>Current Balance: </b><?= $commodity->commodity ?>&nbsp;<?= $commodity->current_balance ?><br>
                 <?= $commodity->comment ?></p>
@@ -20,9 +20,9 @@
             <p>Time Sold: <?= $g->array[$key]->time_sold ?><br>
                 Time Bought: <?= $g->array[$key]->time_bought ?><br>
                 Price Per C Unit Bought: <?= $g->array[$key]->currency_transacted ?>
-                &nbsp;<?= $g->array[$key]->price_bought ?><br>
+                <?= $g->array[$key]->price_bought ?><br>
                 Price Per C Unit Sold: <?= $g->array[$key]->currency_transacted ?>
-                &nbsp;<?= $g->array[$key]->price_sold ?>
+                <?= $g->array[$key]->price_sold ?>
                 <br>
                 Amount of C Sold: <?= $g->array[$key]->commodity_type ?>&nbsp;<?= $g->array[$key]->commodity_amount ?>
                 <br>
