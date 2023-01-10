@@ -123,6 +123,10 @@ switch ($g->page) {
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
         echo "<a href=\"/ax1/find_too_close_sequence_numbers/page\">Find Too Close Sequence Numbers</a>";
         break;
+    case 'process_a_commodity_sale_save':
+        echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
+        echo "<a href=\"/ax1/process_a_commodity_sale/page\">Process A Commodity Sale</a>";
+        break;
     default:
         require CURRENTCOMMUNITY;
         require CURRENTTOPIC;

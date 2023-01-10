@@ -114,8 +114,23 @@ class process_a_commodity_sale_save
         }
 
         /**
-         * ... show them to the user along with a “mission accomplished” session message.
+         * $g->commodity_from_db
+         * $g->commodity_sold_from_db
+         *
+         * ... show them to the user along with
+         * a “mission accomplished” session message.
+         *
+         * The view will be that of a regular page (not a form page.)
          */
 
+        $g->html_title = "Saved Commodity and Commodity Sold Records";
+
+        $g->page = 'process_a_commodity_sale_save';
+
+        $g->show_poof = true;
+
+        $g->message .= " Here's data you saved shown after being retrieved from the database. ";
+        reset_feature_session_vars();
+        require VIEWS . DIRSEP . 'processacommoditysalesave.php';
     }
 }
