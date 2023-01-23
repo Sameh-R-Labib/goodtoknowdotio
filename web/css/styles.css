@@ -130,9 +130,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-image: -moz-linear-gradient(0deg, rgba(215, 230, 233, 1) 65%, rgba(225, 225, 250, .4) 100%);
-    background-image: -webkit-linear-gradient(0deg, rgba(215, 230, 233, 1) 65%, rgba(225, 225, 250, .4) 100%);
-    background-image: linear-gradient(0deg, rgba(215, 230, 233, 1) 65%, rgba(225, 225, 250, .4) 100%);
+    /*background-image: -moz-linear-gradient(0deg, rgba(215, 230, 233, 1) 65%, rgba(225, 225, 250, .4) 100%);*/
+    /*background-image: -webkit-linear-gradient(0deg, rgba(215, 230, 233, 1) 65%, rgba(225, 225, 250, .4) 100%);*/
+    /*background-image: linear-gradient(0deg, rgba(215, 230, 233, 1) 65%, rgba(225, 225, 250, .4) 100%);*/
+    background-image: -moz-linear-gradient(0deg, rgba(215, 215, 215, 1) 65%, rgba(215, 215, 215, .4) 100%);
+    background-image: -webkit-linear-gradient(0deg, rgba(215, 215, 215, 1) 65%, rgba(215, 215, 215, .4) 100%);
+    background-image: linear-gradient(0deg, rgba(215, 215, 215, 1) 65%, rgba(215, 215, 215, .4) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3333ff", endColorstr="#e6f3e5", GradientType=1);
     height: 100%;
     margin: 0;
