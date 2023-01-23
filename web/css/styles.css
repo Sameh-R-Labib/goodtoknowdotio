@@ -693,7 +693,7 @@ h2 + p {
     text-align: center;
     opacity: 1;
     /* opacity: 0.65; */
-    background-color: rgba(230, 240, 225, 1);
+    /*background-color: rgba(230, 240, 225, 1);*/
     width: 235px;
     height: 57px;
     margin: auto;
@@ -775,7 +775,7 @@ h2 + p {
 }
 
 #admindiv {
-    background-color: rgba(230, 240, 225, 1);
+    /*background-color: rgba(230, 240, 225, 1);*/
     /* opacity: 0.97; */
     float: left;
     width: 119px;
