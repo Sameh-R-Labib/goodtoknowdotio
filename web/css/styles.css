@@ -682,7 +682,7 @@ h2 + p {
 #sendmessage {
     text-align: center;
     opacity: 1;
-    background-color: #f0e0f0;
+    /*background-color: #f0e0f0;*/
     width: 258px;
     height: 57px;
     margin: auto;
