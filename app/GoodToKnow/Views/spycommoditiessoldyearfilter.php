@@ -10,16 +10,17 @@
             <?php $last = count($g->array) - 1; ?>
             <?php foreach ($g->array as $key => $object): ?>
                 <h2 class="topofpage"><?= $object->commodity_type ?></h2>
-                <p>Time Sold: <?= $object->time_sold ?><br>
-                    Time Bought: <?= $object->time_bought ?><br>
+                <p>
                     Price Per C Unit Bought: <?= $object->currency_transacted ?>
                     &nbsp;<?= $object->price_bought ?><br>
-                    Purchase Amount: <?= (float)$object->price_bought * (float)$object->commodity_amount ?><br>
                     Price Per C Unit Sold: <?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?>
                     <br>
                     Amount of C Sold: <?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
-                    Sale Amount: <?= (float)$object->price_sold * (float)$object->commodity_amount ?><br>
                     Label of C Record From Which C Was Sold: <?= $object->commodity_label ?><br>
+                    Time Bought: <?= $object->time_bought ?><br>
+                    Time Sold: <?= $object->time_sold ?><br>
+                    Purchase Amount: <?= $object->purchase ?><br>
+                    Sale Amount: <?= $object->sale ?><br>
                     Net Profit: <?= $object->currency_transacted ?>
                     <?php if ($object->profit < 0): ?>
                         🔥(
