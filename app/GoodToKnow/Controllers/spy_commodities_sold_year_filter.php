@@ -42,8 +42,8 @@ class spy_commodities_sold_year_filter
 
             $item->purchase = (float)$item->price_bought * (float)$item->commodity_amount;
             $item->sale = (float)$item->price_sold * (float)$item->commodity_amount;
-            $item->purchase = readable_amount_of_money($item->purchase);
-            $item->sale = readable_amount_of_money($item->sale);
+            $item->purchase = readable_amount_of_money($item->currency_transacted, $item->purchase);
+            $item->sale = readable_amount_of_money($item->currency_transacted, $item->sale);
             $item->time_bought = get_readable_time($item->time_bought);
             $item->time_sold = get_readable_time($item->time_sold);
             $item->price_bought = readable_amount_of_money($item->currency_transacted, $item->price_bought);
