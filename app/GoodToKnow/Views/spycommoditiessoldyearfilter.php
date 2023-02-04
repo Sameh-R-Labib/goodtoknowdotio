@@ -14,9 +14,11 @@
                     Time Bought: <?= $object->time_bought ?><br>
                     Price Per C Unit Bought: <?= $object->currency_transacted ?>
                     &nbsp;<?= $object->price_bought ?><br>
+                    Purchase Amount: <?= $object->price_bought * $object->commodity_amount ?><br>
                     Price Per C Unit Sold: <?= $object->currency_transacted ?>&nbsp;<?= $object->price_sold ?>
                     <br>
                     Amount of C Sold: <?= $object->commodity_type ?>&nbsp;<?= $object->commodity_amount ?><br>
+                    Sale Amount: <?= $object->price_sold * $object->commodity_amount ?><br>
                     Label of C Record From Which C Was Sold: <?= $object->commodity_label ?><br>
                     Net Profit: <?= $object->currency_transacted ?>
                     <?php if ($object->profit < 0): ?>
