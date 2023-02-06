@@ -4,7 +4,7 @@
     <a class="purplebtn" href="/ax1/c_p_banking_observers/page">Bank Observer</a>
     <a class="clearbtn" href="/ax1/c_p_to_do_list/page">Task</a>
     <a class="purplebtn" href="/ax1/c_p_recurring_payments/page">Recurring Payment</a>
-    <a class="clearbtn" href="/ax1/c_p_tax_deductions/page">Possible Tax Deduction</a>
+    <a class="clearbtn" href="/ax1/c_p_tax_deductions/page">Tax Deduction</a>
     <a class="purplebtn" href="/ax1/c_p_taxable_income/page">Taxable Income Event</a>
     <a class="orangebtn" href="/ax1/c_p_commodities/page">Commodity</a>
     <a class="blackbtn" href="/ax1/c_p_capital_gains/page">Commodity Sold</a>

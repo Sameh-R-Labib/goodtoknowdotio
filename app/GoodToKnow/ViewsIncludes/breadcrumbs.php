@@ -45,7 +45,7 @@ switch ($g->page) {
         break;
     case 'see_one_years_possible_tax_deductions':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
-        echo "<a href=\"/ax1/see_one_years_possible_tax_deductions/page\">1 Year's Possible Tax Deductions</a>";
+        echo "<a href=\"/ax1/see_one_years_possible_tax_deductions/page\">1 Year's Tax Deductions</a>";
         break;
     case 'glance_at_my_tasks':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
@@ -85,7 +85,7 @@ switch ($g->page) {
         break;
     case 'c_p_tax_deductions':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";
-        echo "<a href=\"/ax1/c_p_tax_deductions/page\">Possible Tax Deduction</a>";
+        echo "<a href=\"/ax1/c_p_tax_deductions/page\">Tax Deduction</a>";
         break;
     case 'c_p_to_do_list':
         echo "<a href=\"/ax1/home/page\">Blog</a>" . " ≬ ";

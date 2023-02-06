@@ -67,12 +67,12 @@ class conceive_a_possible_tax_deduction_processor
          * Wrap it up.
          */
 
-        $g->message .= ' Your new Possible Tax Deduction was created 👍🏽 ';
+        $g->message .= ' Your new Tax Deduction was created 👍🏽 ';
 
 
         /**
          * We want to reassure the user that the tax deduction record has been saved.
-         * So, we are going to hook into the "1 Year's Possible Tax Deductions" feature.
+         * So, we are going to hook into the "1 Year's Tax Deductions" feature.
          */
 
         redirect_to("/ax1/see_one_years_possible_tax_deductions_create_edit/page");

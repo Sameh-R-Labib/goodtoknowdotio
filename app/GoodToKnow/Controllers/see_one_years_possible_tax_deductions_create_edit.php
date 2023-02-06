@@ -24,7 +24,7 @@ class see_one_years_possible_tax_deductions_create_edit
 
         if (!$g->array) {
 
-            breakout(" For <b>$g->saved_int02</b> I could NOT find any Possible Tax Deductions. ");
+            breakout(" For <b>$g->saved_int02</b> I could NOT find any Tax Deductions. ");
 
         }
 
@@ -53,7 +53,7 @@ class see_one_years_possible_tax_deductions_create_edit
          * and it does not present the home page itself.
          */
 
-        $g->message .= " Here are <b>$g->saved_int02</b>'s Possible Tax Deductions. ";
+        $g->message .= " Here are <b>$g->saved_int02</b>'s Tax Deductions. ";
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'seeoneyearspossibletaxdeductionsyearfilter.php';
     }

@@ -68,6 +68,6 @@ class wipe_out_a_possible_tax_deduction_confirmation
 
         // Report successful deletion of post.
 
-        breakout(' I <b>deleted</b> the Possible Tax Deduction. ');
+        breakout(' I <b>deleted</b> the Tax Deduction. ');
     }
 }

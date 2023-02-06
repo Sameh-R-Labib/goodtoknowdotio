@@ -1,9 +1,9 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form>
-        <h1>Edit a Possible Tax Deduction</h1>
+        <h1>Edit a Tax Deduction</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Possible Tax Deduction?</p>
+        <p>Which Tax Deduction?</p>
         <section>
             <?php foreach ($g->array as $object): ?>
                 <a href="/ax1/alter_a_possible_tax_deduction_edit/page/<?= $object->id ?>"

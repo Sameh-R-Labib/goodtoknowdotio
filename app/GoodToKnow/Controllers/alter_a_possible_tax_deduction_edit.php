@@ -56,7 +56,7 @@ class alter_a_possible_tax_deduction_edit
 
 
         $g->action = '/ax1/alter_a_possible_tax_deduction_update/page';
-        $g->heading_one = 'Edit a Possible Tax Deduction';
+        $g->heading_one = 'Edit a Tax Deduction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'possible_tax_deduction_form.php';
     }
 }

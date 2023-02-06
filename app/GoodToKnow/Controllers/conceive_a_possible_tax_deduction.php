@@ -27,7 +27,7 @@ class conceive_a_possible_tax_deduction
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->html_title = 'Create a New Possible Tax Deduction';
+        $g->html_title = 'Create a New Tax Deduction';
 
 
         /**
@@ -53,7 +53,7 @@ class conceive_a_possible_tax_deduction
 
 
         $g->action = '/ax1/conceive_a_possible_tax_deduction_processor/page';
-        $g->heading_one = 'Create a Possible Tax Deduction';
+        $g->heading_one = 'Create a Tax Deduction';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'possible_tax_deduction_form.php';
     }
 }
