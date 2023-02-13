@@ -5,6 +5,6 @@
 <?php elseif ($g->is_guest): ?>
     <p>✊🤬😭&#x2192;☭Ⓐ</p>
 <?php else: ?>
-    <p><a href="/ax1/write_to_admin/page"><img src="/anon_admin.png" alt="message admin" height="24" width="24"></a>
+    <p><a href="/ax1/write_to_admin/page"><img src="/anon_admin.png" alt="message admin" height="26" width="26"></a>
     </p>
 <?php endif; ?>
