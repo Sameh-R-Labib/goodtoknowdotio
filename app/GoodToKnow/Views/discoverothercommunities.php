@@ -11,7 +11,7 @@
             <?php endforeach; ?>
         </ul>
         <!-- Button to dismiss this view -->
-        <p><a class="no-frills-link" href="/ax1/clear_session_vars/page"><img src="/blog_home.gif" alt="blog home"
+        <p><a class="no-frills-link" href="/ax1/clear_session_vars/page"><img src="/img/blog_home.gif" alt="blog home"
                                                                               height="25" width="25"></a></p>
     </form>
 <?php require BOTTOMOFPAGES; ?>

@@ -46,7 +46,7 @@
 <h2>Photo Gallery</h2>
 <figure>
     <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
-        <img class="photo" alt="Badge" src="/1944235.png" title="Membership Badge">
+        <img class="photo" alt="Badge" src="/img/1944235.png" title="Membership Badge">
     </a>
     <figcaption>My Membership Badge</figcaption>
 </figure>
@@ -57,75 +57,75 @@
     <figcaption>I joined the FSF because I use the GNU Affero version 3 license</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Albert Einstein" src="/thosewhosaidno.jpeg">
+    <img class="photo" alt="Albert Einstein" src="/img/thosewhosaidno.jpeg">
     <figcaption>Eccentric Scientist Albert Einstein</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Richard M. Stallman and Julian Assange" src="/0_eT5LwH4rOihgpThm.jpeg">
+    <img class="photo" alt="Richard M. Stallman and Julian Assange" src="/img/0_eT5LwH4rOihgpThm.jpeg">
     <figcaption>Richard M. Stallman and Julian Assange holding up a picture of Edward Snowden</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Aaron Swartz" src="/Aaron-Swartz.jpg">
+    <img class="photo" alt="Aaron Swartz" src="/img/Aaron-Swartz.jpg">
     <figcaption>Aaron Swartz (was punished for returning free access to knowledge to <em>its people</em>)
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Ross Ulbricht" src="/Ross-Ulbricht2.jpg">
+    <img class="photo" alt="Ross Ulbricht" src="/img/Ross-Ulbricht2.jpg">
     <figcaption>Ross Ulbricht (whose mistrial gave him a double life sentence plus forty years without the
         possibility of parole)
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Edward Snowden" src="/edward_snowden.jpg">
+    <img class="photo" alt="Edward Snowden" src="/img/edward_snowden.jpg">
     <figcaption>Edward Snowden (CIA whistle blower living in exile)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Andreas Antonopoulos" src="/andreas_antonopoulos.jpg">
+    <img class="photo" alt="Andreas Antonopoulos" src="/img/andreas_antonopoulos.jpg">
     <figcaption>Andreas Antonopoulos (Bitcoin evangelist)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Richard D. Wolf" src="/richard_d_wolff.jpg">
+    <img class="photo" alt="Richard D. Wolf" src="/img/richard_d_wolff.jpg">
     <figcaption>Richard D. Wolf professor of economics (explains what Capitalism can learn from Carl Marx)
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Stacey Abrams" src="/stacey_abrams.jpg" height="372" width="655">
+    <img class="photo" alt="Stacey Abrams" src="/img/stacey_abrams.jpg" height="372" width="655">
     <figcaption>Stacey Abrams (represents to me being a victim of voter suppression)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Abby Martin" src="/AbbyMartinVenezuela.jpg">
+    <img class="photo" alt="Abby Martin" src="/img/AbbyMartinVenezuela.jpg">
     <figcaption>Abby Martin (reporter who speaks up about US interventionism in South American)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Bernie Sanders" src="/burnie_sanders.jpg">
+    <img class="photo" alt="Bernie Sanders" src="/img/burnie_sanders.jpg">
     <figcaption>Bernie Sanders (opposes overspending on the military industrial complex)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Chris Hedges" src="/chris_hedges.jpg">
+    <img class="photo" alt="Chris Hedges" src="/img/chris_hedges.jpg">
     <figcaption>Chris Hedges (book author who speaks against corruption in government)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Chelsea Manning" src="/cmann.png">
+    <img class="photo" alt="Chelsea Manning" src="/img/cmann.png">
     <figcaption>Soldier with a conscience who felt compelled to be a whistleblower.
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/usattack.png">
+    <img class="photo" alt="Film: The Panama Deception" src="/img/usattack.png">
     <figcaption>Documentary war film showing actual footage of the Panama invasion called The Panama Deception
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/accept_our_limits.png">
+    <img class="photo" alt="Film: The Panama Deception" src="/img/accept_our_limits.png">
     <figcaption>Being self-aware.
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/same_person.png">
+    <img class="photo" alt="Film: The Panama Deception" src="/img/same_person.png">
     <figcaption>Monogamy
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/enjoy_differences.png">
+    <img class="photo" alt="Film: The Panama Deception" src="/img/enjoy_differences.png">
     <figcaption>Love and marriage go together like a horse and carriage.
     </figcaption>
 </figure>
