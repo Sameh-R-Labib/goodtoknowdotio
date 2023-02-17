@@ -2,8 +2,8 @@
     <form action="/ax1/create_new_post_title_processor/page" method="post">
         <h2>Create a title</h2>
         <p class="tooltip">ⅈ
-            <span class="tooltiptext tooltip-top">The main title is the title which appears in a listing of posts for topic.
-        While title extension is metadata.</span>
+            <span class="tooltiptext tooltip-top">A title is that which appears in a listing of posts.
+        Title extension is metadata.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>
         <section>
