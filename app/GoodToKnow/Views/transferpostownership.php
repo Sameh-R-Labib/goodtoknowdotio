@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
 <form>
     <h1>Transfer Post Ownership</h1>
-    <p class="tooltip">ℹ️
+    <p class="tooltip">ⅈ
         <span class="tooltiptext tooltip-top">Your goal here is to specify which post to transfer ownership of.</span>
     </p>
     <?php require SESSIONMESSAGE; ?>

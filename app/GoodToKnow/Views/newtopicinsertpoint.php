@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/new_topic_ip_processor/page" method="post">
         <h1>Insertion Point</h1>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">This assumes you're adding a new topic to the current community. To add a
             topic to a different community you need to switch to it first.</span>
         </p>

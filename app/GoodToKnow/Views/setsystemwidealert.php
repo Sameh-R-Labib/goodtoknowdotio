@@ -3,7 +3,7 @@
     <form action="/ax1/set_system_wide_alert_proc/page" method="post">
         <h1><?= $g->html_title ?></h1>
         <?php require SESSIONMESSAGE; ?>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">The alert system makes it possible for Admin to make announcements.</span>
         </p>
         <p>Currently, name is <b><?= $g->current_alert_name ?></b>.</p>

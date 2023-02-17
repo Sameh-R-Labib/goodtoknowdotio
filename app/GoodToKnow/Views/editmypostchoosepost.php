@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form>
         <h2>Which post?</h2>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">⚠️ there`s a limit on size of posts.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form>
         <h1>Author Deletes Own Blog Post</h1>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">These are the topics in your current community.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

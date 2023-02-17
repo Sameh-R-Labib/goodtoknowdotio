@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/produce_a_bank_acct_observer_processor/page" method="post">
         <h2>Who will be an observer?</h2>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">A bank_account_observer specifies who
          can observe your bank account and its transactions.</span>
         </p>

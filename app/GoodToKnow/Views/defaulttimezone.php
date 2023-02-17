@@ -5,7 +5,7 @@
         <p>New default timezone</p>
         <section>
             <p>
-                <label for="timezone">PHP Time Zone <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
+                <label for="timezone">PHP Time Zone <span class="tooltip">ⅈ<span class="tooltiptext tooltip-top">See
                             <a href="https://www.php.net/manual/en/timezones.php"
                                target="_blank">www.php.net/manual/en/timezones.php</a></span></span>️:
                 </label>

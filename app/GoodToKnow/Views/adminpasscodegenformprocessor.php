@@ -3,7 +3,7 @@
         <h1>User</h1>
         <?php require SESSIONMESSAGE; ?>
         <h2>Log-in Credentials</h2>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">Two words separated by an underscore.
             The first word (capitalized w/ 4-9 char.) must start with an upper case letter.
             The second word must consist of two digits.</span>
@@ -15,7 +15,7 @@
                        spellcheck="false">
             </p>
         </section>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">10 to 264 characters, 2 digits, 2 or more non-alpha, 2 or
                 more capitals.</span>
         </p>
@@ -67,7 +67,7 @@
                       placeholder="How'd we meet?"></textarea>
         </p>
         <p>
-            <label for="timezone">PHP Time Zone <span class="tooltip">ℹ️<span class="tooltiptext tooltip-top">See
+            <label for="timezone">PHP Time Zone <span class="tooltip">ⅈ<span class="tooltiptext tooltip-top">See
                             <a href="https://www.php.net/manual/en/timezones.php"
                                target="_blank">www.php.net/manual/en/timezones.php</a></span></span>️:
             </label>

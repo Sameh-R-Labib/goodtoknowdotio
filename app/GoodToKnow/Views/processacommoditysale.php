@@ -12,7 +12,7 @@
                        value="" required minlength="1" maxlength="15" size="15">
             </p>
             <p>
-                <label for="amount">Amount of Commodity Sold <span class="tooltip">ℹ️<span class="tooltiptext
+                <label for="amount">Amount of Commodity Sold <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">If the amounts to be displayed should have 2 instead of 8 decimal places then ask Admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="33" size="33"
@@ -23,21 +23,21 @@
             <?php require TIMEFORMFIELD; ?>
             <hr>
             <p>
-                <label for="tax_year">Tax Year <span class="tooltip">ℹ️
+                <label for="tax_year">Tax Year <span class="tooltip">ⅈ
                 <span class="tooltiptext tooltip-top"><em>Tax Year</em> is usually the year you sold the
                     commodity.</span></span>: </label>
                 <input id="tax_year" name="tax_year" type="text" value=""
                        required minlength="4" maxlength="6" size="6" placeholder="2018">
             </p>
             <p>
-                <label for="currency">Currency Used to Price the Commodity <span class="tooltip">ℹ️<span class="tooltiptext
+                <label for="currency">Currency Used to Price the Commodity <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">Do not change the currency type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
                 <input id="currency" name="currency" type="text" placeholder="$, £, ¥, €"
                        value="" required size="15" minlength="1" maxlength="15">
             </p>
             <p>
-                <label for="price_sold">Price Per Unit — Sold <span class="tooltip">ℹ️<span class="tooltiptext
+                <label for="price_sold">Price Per Unit — Sold <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">If the amounts should have 2 decimal places ask Admin to add your currency to list of
                             fiat.</span></span>: </label>
                 <input id="price_sold" name="price_sold" type="text" value="" required minlength="1" maxlength="33"

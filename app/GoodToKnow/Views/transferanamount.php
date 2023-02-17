@@ -15,7 +15,7 @@
             <?php require TIMEFORMFIELD; ?>
             <hr>
             <p>
-                <label for="amount">Amount <span class="tooltip">ℹ️<span class="tooltiptext
+                <label for="amount">Amount <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">If the amounts to be displayed should have 2 instead of 8 decimal places then ask Admin
                         to add your type of currency to the list of known fiat currencies.</span></span>: </label>
                 <input id="amount" name="amount" type="text" value="<?= $g->saved_arr01['amount'] ?>" required

@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/change_password_processor/page" method="post">
         <h1>Change 🔑</h1>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">⚠️ all fields required.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

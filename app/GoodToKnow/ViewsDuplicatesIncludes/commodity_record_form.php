@@ -8,7 +8,7 @@
                    placeholder="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">
         </p>
         <p>
-            <label for="commodity">Commodity Purchased <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="commodity">Commodity Purchased <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">Do not change the commodity type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="commodity" name="commodity" type="text" placeholder="BAT, BTC"
@@ -27,14 +27,14 @@
                    size="33" minlength="1" maxlength="33">
         </p>
         <p>
-            <label for="currency">Currency Used to Purchase the C <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="currency">Currency Used to Purchase the C <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">Do not change the currency type after you create this record unless you are sure the new
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency" name="currency" type="text" placeholder="$, £, ¥, €"
                    value="<?= $g->saved_arr01['currency'] ?>" required size="15" minlength="1" maxlength="15">
         </p>
         <p>
-            <label for="price_point">C's Price at Time of Purchase <span class="tooltip">ℹ️<span class="tooltiptext
+            <label for="price_point">C's Price at Time of Purchase <span class="tooltip">ⅈ<span class="tooltiptext
                 tooltip-top">If the amounts for currency should have a different number of decimal places then ask the admin
                         to fix this.</span></span>: </label>
             <input id="price_point" name="price_point" type="text" placeholder="0.00" spellcheck="false"

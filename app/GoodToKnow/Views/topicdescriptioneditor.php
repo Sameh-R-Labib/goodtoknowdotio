@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form>
         <h1>Topic Description Editor</h1>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">This is only for topics in current community</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

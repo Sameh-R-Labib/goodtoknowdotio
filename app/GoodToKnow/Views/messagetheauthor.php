@@ -6,7 +6,7 @@
         </h2>
         <table>
             <tr>
-                <td><p class="tooltip">ℹ️
+                <td><p class="tooltip">ⅈ
                         <span class="tooltiptext tooltip-top">✅ markdown ✅ emoji 📲️ 1500 bytes.</span>
                     </p></td>
                 <td><?php require URLOFMOSTRECENTUPLOAD; ?></td>

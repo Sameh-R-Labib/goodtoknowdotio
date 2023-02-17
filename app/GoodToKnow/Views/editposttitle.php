@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form>
         <h2>Which topic?</h2>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">Shown below are the topics within your current community.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

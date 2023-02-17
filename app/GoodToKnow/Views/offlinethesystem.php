@@ -3,7 +3,7 @@
     <form>
         <h1><?= $g->html_title ?></h1>
         <?php require SESSIONMESSAGE; ?>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">An offline Gtk.io only permits Admin to be logged in and active.</span>
         </p>
         <p>The current system status is: <b><?= $g->current_status ?></b>.<br>

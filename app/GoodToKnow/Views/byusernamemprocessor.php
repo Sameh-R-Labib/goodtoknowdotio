@@ -7,7 +7,7 @@
         </h2>
         <table>
             <tr>
-                <td><p class="tooltip">ℹ️
+                <td><p class="tooltip">ⅈ
                         <span class="tooltiptext tooltip-top">✅ markdown ✅ emoji ⚖️ max. 1500 bytes.
             ✅ GPG encrypt message w/ receiving user's pub key.</span>
                     </p></td>

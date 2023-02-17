@@ -1,7 +1,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/new_topic_name_processor/page" method="post">
         <h1>Create Topic</h1>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">⚠️ both fields required ✅ emoji</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

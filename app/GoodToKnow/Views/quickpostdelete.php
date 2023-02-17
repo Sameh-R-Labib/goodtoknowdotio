@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form>
         <h1>Delete Any Post</h1>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">These are only topics from within the current community.</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

@@ -2,7 +2,7 @@
 <?php require TOPFORFORMPAGES; ?>
     <form action="/ax1/kommunity_description_editor_form_processor/page" method="post">
         <h2><?= $g->saved_str01 ?>'s Details</h2>
-        <p class="tooltip">ℹ️
+        <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">🚫 markdown ✅ emoji ✅ line-break 📲️ maximum 230 bytes</span>
         </p>
         <?php require SESSIONMESSAGE; ?>

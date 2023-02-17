@@ -1,6 +1,6 @@
 <?php include 'a_form_top.php'; ?>
 <?php global $g; ?>
-    <p class="tooltip">ℹ️
+    <p class="tooltip">ⅈ
         <span class="tooltiptext tooltip-top">Records will be deleted automatically after the fourth year.</span>
     </p>
     <section>

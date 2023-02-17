@@ -6,7 +6,7 @@
     </h2>
     <table>
         <tr>
-            <td><p class="tooltip">ℹ️
+            <td><p class="tooltip">ⅈ
                     <span class="tooltiptext tooltip-top">Limit the scope to context and have it be opinionated.
             For example if the community is about Jabber chat then create posts which
             describe the way we all set up our chat clients.</span>
