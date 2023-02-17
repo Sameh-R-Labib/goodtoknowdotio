@@ -110,7 +110,7 @@ abstract class good_object
 
         foreach ($this->attributes() as $key => $value) {
 
-                $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
+            $clean_attributes[$key] = $g->db->real_escape_string((string)$value);
 
         }
 
@@ -221,7 +221,8 @@ abstract class good_object
 
             if (!empty($query_error)) {
 
-                $g->message .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' The insert failed. The reason given by mysqli is: '
+                    . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
             }
@@ -232,7 +233,8 @@ abstract class good_object
 
         } catch (Exception $e) {
 
-            $g->message .= ' good_object create() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object create() caught a thrown exception: '
+                . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -319,7 +321,8 @@ abstract class good_object
 
             if (!empty($query_error)) {
 
-                $g->message .= ' The insert failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' The insert failed. The reason given by mysqli is: '
+                    . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
@@ -329,7 +332,8 @@ abstract class good_object
 
         } catch (Exception $e) {
 
-            $g->message .= ' good_object insert_multiple_objects() caught an exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object insert_multiple_objects() caught an exception: '
+                . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -411,7 +415,7 @@ abstract class good_object
      * This function takes a database object and saves its
      * data to the database.
      * This function behaves differently depending on whether
-     * or not the database object being saved is new to the database.
+     * the database object being saved is new to the database.
      * This function is a wrapper for update() and create().
      * Basically, it runs update() if isset($this->id).
      * Otherwise, it runs create().
@@ -425,11 +429,9 @@ abstract class good_object
          * values in the object are the same as the values in the database row.
          */
 
-        global $g;
-
         // A database object without an id is one that has never been saved in the database.
 
-        return isset($this->id) ? $this->update($g->db) : $this->create();
+        return isset($this->id) ? $this->update() : $this->create();
     }
 
 
@@ -532,14 +534,16 @@ abstract class good_object
 
             if (!empty(trim($query_error))) {
 
-                $g->message .= ' good_object find_by_sql failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' good_object find_by_sql failed. The reason given by mysqli is: '
+                    . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
             }
         } catch (Exception $e) {
 
-            $g->message .= ' good_object find_by_sql() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object find_by_sql() caught a thrown exception: '
+                . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
             return false;
 
@@ -612,7 +616,7 @@ abstract class good_object
 
             foreach ($attributes as $key => $value) {
 
-                $attribute_pairs[] = "`{$key}`='{$value}'";
+                $attribute_pairs[] = "`$key`='$value'";
 
             }
 
@@ -626,7 +630,8 @@ abstract class good_object
 
             if (!empty(trim($query_error))) {
 
-                $g->message .= ' The update failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' The update failed. The reason given by mysqli is: '
+                    . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
             }
@@ -635,7 +640,8 @@ abstract class good_object
 
         } catch (Exception $e) {
 
-            $g->message .= ' good_object update() threw exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object update() threw exception: '
+                . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
@@ -651,7 +657,7 @@ abstract class good_object
 
         } else {
 
-            $g->message .= " good_object update() FAILED because \$num_affected_rows == {$num_affected_rows}. ";
+            $g->message .= " good_object update() FAILED because \$num_affected_rows == $num_affected_rows. ";
 
             return false;
 
@@ -681,7 +687,8 @@ abstract class good_object
 
             if (!empty(trim($query_error))) {
 
-                $g->message .= ' The delete failed. The reason given by mysqli is: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
+                $g->message .= ' The delete failed. The reason given by mysqli is: '
+                    . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ';
 
                 return false;
 
@@ -691,7 +698,8 @@ abstract class good_object
 
         } catch (Exception $e) {
 
-            $g->message .= ' good_object delete() caught a thrown exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+            $g->message .= ' good_object delete() caught a thrown exception: '
+                . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
 
         }
 
