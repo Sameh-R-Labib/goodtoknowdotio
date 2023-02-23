@@ -269,7 +269,7 @@ a.clearbtn:link, a.clearbtn:visited {
     color: white;
     font-size: 10px;
     font-weight: normal;
-    padding: 3px 13px;
+    padding: 1px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -293,7 +293,7 @@ a.orangebtn:link, a.orangebtn:visited {
     color: white;
     font-size: 10px;
     font-weight: normal;
-    padding: 3px 13px;
+    padding: 1px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -317,7 +317,7 @@ a.purplebtn:link, a.purplebtn:visited {
     color: white;
     font-size: 10px;
     font-weight: normal;
-    padding: 3px 13px;
+    padding: 1px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -341,7 +341,7 @@ a.blackbtn:link, a.blackbtn:visited {
     color: white;
     font-size: 10px;
     font-weight: normal;
-    padding: 3px 13px;
+    padding: 1px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -365,7 +365,7 @@ a.greenbtn:link, a.greenbtn:visited {
     color: white;
     font-size: 10px;
     font-weight: normal;
-    padding: 3px 13px;
+    padding: 1px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
