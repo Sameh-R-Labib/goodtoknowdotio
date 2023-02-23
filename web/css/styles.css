@@ -267,7 +267,7 @@ a.clearbtn:link, a.clearbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/blueclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.88em;
+    font-size: 10px;
     font-weight: normal;
     padding: 3px 13px;
     text-align: center;
@@ -291,7 +291,7 @@ a.orangebtn:link, a.orangebtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/orangeclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.88em;
+    font-size: 10px;
     font-weight: normal;
     padding: 3px 13px;
     text-align: center;
@@ -315,7 +315,7 @@ a.purplebtn:link, a.purplebtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/purpleclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.88em;
+    font-size: 10px;
     font-weight: normal;
     padding: 3px 13px;
     text-align: center;
@@ -339,7 +339,7 @@ a.blackbtn:link, a.blackbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/blackclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.88em;
+    font-size: 10px;
     font-weight: normal;
     padding: 3px 13px;
     text-align: center;
@@ -363,7 +363,7 @@ a.greenbtn:link, a.greenbtn:visited {
     background: rgba(255, 105, 105, 0) url('/clear/seafoamclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     color: white;
-    font-size: 0.88em;
+    font-size: 10px;
     font-weight: normal;
     padding: 3px 13px;
     text-align: center;
