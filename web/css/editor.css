@@ -95,10 +95,10 @@ form {
 }
 
 /* unvisited link */
-a:link {
-    color: red;
-    padding: 4px 14px;
-}
+/*a:link {*/
+/*    color: red;*/
+/*    padding: 4px 14px;*/
+/*}*/
 
 /* visited link */
 a:visited {
@@ -121,6 +121,7 @@ a:link, a:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    padding: 4px 14px;
     border-radius: 4px;
 }
 
