@@ -103,7 +103,6 @@ a:link {
 /* visited link */
 a:visited {
     color: green;
-    padding: 6px 8px;
 }
 
 /* mouse over link */
@@ -191,7 +190,7 @@ a.no-frills-link:hover, a.no-frills-link:active {
     /*display: inline-block;*/
     color: #14396a;
     font-family: Arial, serif;
-    font-size: 15px;
+    font-size: 11px;
     font-weight: bold;
     font-style: normal;
     height: 36px;
