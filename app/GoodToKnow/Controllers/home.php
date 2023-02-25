@@ -122,7 +122,7 @@ class home
             if (!empty(trim($g->community_description)) and empty(trim($g->message))) {
                 $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
             }
-            $g->the_buttons .= '<a class="orangebtn" href="">Admin Adds Topics</a> ';
+            $g->the_buttons .= '<a class="orangebtn" href="/ax1/write_to_admin/page">Admin Adds Topics</a> ';
 
         } elseif ($g->type_of_resource_requested === 'topic') {
 
