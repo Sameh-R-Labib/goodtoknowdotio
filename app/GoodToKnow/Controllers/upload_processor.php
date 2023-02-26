@@ -32,7 +32,7 @@ class upload_processor
          * Start
          */
 
-        $target_dir = IMAGE . "/";
+        $target_dir = IMAGE . DIRSEP;
 
 
         /**
