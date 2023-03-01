@@ -12,25 +12,6 @@
                             older than 90 days and the start_time for this account is older than 90 days.</span>
                     </span><br>
             <b>Comment: </b><?= $g->account->comment ?></p>
-        <table class="not_there">
-            <col width="92%">
-            <col width="10">
-            <tr>
-                <td><b>Starting time: </b><?= $g->account->start_time ?></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><b>Starting balance: </b><?= $g->account->currency ?>&nbsp;<?= $g->account->start_balance ?></td>
-                <td><span class="tooltip">ⅈ
-                        <span class="tooltiptext tooltip-top">Balance will be incorrect if Admin has purged transactions
-                            older than 90 days and the start_time for this account is older than 90 days.</span>
-                    </span></td>
-            </tr>
-            <tr>
-                <td><b>Comment: </b><?= $g->account->comment ?></td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
         <table>
             <tr>
                 <th>time</th>
