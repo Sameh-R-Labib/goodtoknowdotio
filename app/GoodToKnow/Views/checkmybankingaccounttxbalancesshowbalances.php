@@ -5,6 +5,13 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1><?= $g->account->acct_name ?></h1>
+        <p><b>Starting time: </b><?= $g->account->start_time ?><br>
+            <b>Starting balance: </b><?= $g->account->currency ?>&nbsp;<?= $g->account->start_balance ?>
+            <span class="tooltip">ⅈ
+                        <span class="tooltiptext tooltip-top">Balance will be incorrect if Admin has purged transactions
+                            older than 90 days and the start_time for this account is older than 90 days.</span>
+                    </span><br>
+            <b>Comment: </b><?= $g->account->comment ?></p>
         <table class="not_there">
             <col width="92%">
             <col width="10">
