@@ -57,6 +57,8 @@ class upload_processor
         /**
          * Get a string value for the file type based
          * on the file name's extension.
+         *
+         * pathinfo with PATHINFO_EXTENSION simply gets the extension.
          */
 
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
