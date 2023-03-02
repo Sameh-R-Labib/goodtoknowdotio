@@ -78,8 +78,8 @@ class upload_processor
 
 
         /**
-         * Store the results of getimagesize() (i.e. $image_file_mime_type).
-         * Or kick ot if upload is NOT an image.
+         * Store the return value of getimagesize() (i.e. $image_file_mime_type).
+         * Or kick out the user if upload is NOT an image.
          */
 
         $image_file_mime_type = '';
