@@ -18,3 +18,6 @@
 <div class="inner-block">Inline-Block with centered text.</div>
 <div class="inner-block">Inline-Block with centered text.</div>
 <div class="inner-block">Inline-Block with centered text.</div>
+
+<br><br>
+<div class="inner-block">Inline-Block with centered text.</div>
