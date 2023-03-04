@@ -8,3 +8,13 @@
         <br>
     <?php endforeach; ?>
 </p>
+
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
+<div class="inner-block">Inline-Block with centered text.</div>
