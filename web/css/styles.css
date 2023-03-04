@@ -938,3 +938,7 @@ h2 + p {
     display: inline-block;
     box-shadow: 3px 3px 0 grey;
 }
+
+.inner-block-higher {
+    background: mediumslateblue;
+}
