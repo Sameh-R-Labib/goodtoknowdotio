@@ -932,6 +932,7 @@ h2 + p {
     text-align: center;
     vertical-align: middle;
     line-height: normal;
+    margin: 25px 50px 75px 100px;
     padding: 3px 5px;
     background: magenta;
     display: inline-block;
