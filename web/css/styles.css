@@ -972,3 +972,8 @@ h2 + p {
 .inner-block-higher {
     background: whitesmoke;
 }
+
+.cp-btn-section {
+    margin-left: 23px;
+    margin-right: 23px;
+}
