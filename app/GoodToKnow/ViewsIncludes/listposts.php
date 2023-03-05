@@ -3,7 +3,9 @@
     <p><em>[No posts in this topic]</em></p>
 <?php endif; ?>
 <?php foreach ($g->special_post_array as $key => $value): ?>
-    <div class="inner-block"><a
-                href="/ax1/set_home_community_topic_post/page/<?= $g->community_id ?>/<?= $g->topic_id ?>/<?= $key ?>"><?= $value ?></a>
-    </div>
+    <a href="/ax1/set_home_community_topic_post/page/<?= $g->community_id ?>/<?= $g->topic_id ?>/<?= $key ?>">
+        <div class="inner-block">
+            <?= $value ?>
+        </div>
+    </a>
 <?php endforeach; ?>
