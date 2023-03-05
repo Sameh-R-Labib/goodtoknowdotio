@@ -974,6 +974,7 @@ h2 + p {
 }
 
 .cp-btn-section {
+    margin-top: 20px;
     margin-left: 23px;
     margin-right: 23px;
 }
