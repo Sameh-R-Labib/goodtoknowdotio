@@ -3,11 +3,12 @@
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
     <div id="maincontent">
-        <p>
+        <div class="cp-btn-section">
             <a class="greenbtn" href="/ax1/make_a_recurring_payment_record/page">Create</a>
             <a class="purplebtn" href="/ax1/polish_a_recurring_payment_record/page">Edit</a>
             <a class="blackbtn" href="/ax1/recurring_payment_see_my_records/page">Show</a>
-            <a class="orangebtn" href="/ax1/expunge_a_recurring_payment_record/page">Delete</a></p>
+            <a class="orangebtn" href="/ax1/expunge_a_recurring_payment_record/page">Delete</a>
+        </div>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
