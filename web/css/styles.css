@@ -253,6 +253,7 @@ a.cross {
     cursor: pointer;
     border-radius: 9px;
     padding: 0 6px;
+    margin: 5px;
     display: inline-block;
     color: white;
     text-align: center;
