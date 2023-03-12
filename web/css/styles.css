@@ -481,9 +481,7 @@ p {
     font-weight: normal;
     color: #000000;
     line-height: 150%;
-    margin-left: 36px;
-    margin-right: 58px;
-    margin-top: 48px;
+    margin: 33px 58px 15px 36px;
 }
 
 #maincontent h2.topofpage {
