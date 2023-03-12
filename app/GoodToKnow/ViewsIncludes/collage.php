@@ -84,11 +84,6 @@
     <figcaption>Andreas Antonopoulos (Bitcoin evangelist)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Richard D. Wolf" src="/img/richard_d_wolff.jpg">
-    <figcaption>Richard D. Wolf professor of economics (explains what Capitalism can learn from Carl Marx)
-    </figcaption>
-</figure>
-<figure>
     <img class="photo" alt="Stacey Abrams" src="/img/stacey_abrams.jpg" height="372" width="655">
     <figcaption>Stacey Abrams (represents to me being a victim of voter suppression)</figcaption>
 </figure>
