@@ -465,7 +465,7 @@ p {
     line-height: 1.6em;
     font-size: 1.1em;
     font-weight: normal;
-    margin: 1.58em 87px 0.45em 91px;
+    margin: 0.3em 87px 2.8em 91px;
     font-variant-numeric: lining-nums;
 }
 
@@ -481,7 +481,7 @@ p {
     font-weight: normal;
     color: #000000;
     line-height: 150%;
-    margin: 33px 58px 15px 36px;
+    margin: 33px 58px 16px 36px;
 }
 
 #maincontent h2.topofpage {
