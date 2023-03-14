@@ -26,7 +26,7 @@ switch ($g->page) {
         break;
     case 'about':
         echo "<a href=\"/ax1/home/page\"><img src=\"/img/blog_home.gif\" alt=\"blog home\" height=\"18\" width=\"18\"></a>" . " ≬ ";
-        echo "What is this site?";
+        echo "<a href=\"/ax1/what_is_this_site/page\">What is this site?</a>";
         break;
     case 'recurring_payment_see_my_records':
         echo "<a href=\"/ax1/home/page\"><img src=\"/img/blog_home.gif\" alt=\"blog home\" height=\"18\" width=\"18\"></a>" . " ≬ ";
