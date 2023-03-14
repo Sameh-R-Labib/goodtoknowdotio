@@ -7,7 +7,8 @@
         <p>
             See: <a href="/ax1/proclamation/page">Terms Of Service</a>
         </p>
-        <p>On this instance of Gtk.io there is a community named <i>Wisdom</i>.<br>
+        <p>On the developer instance of Gtk.io <a href="https://goodtoknow.io/">https://goodtoknow.io/</a> there is a
+            community named <i>Wisdom</i>.<br>
             See: <i>Wisdom → Quotes → GoodToKnow.io</i>
         </p>
         <p>
