@@ -20,8 +20,7 @@ class what_is_this_site
          * Present the view.
          */
 
-        // We could have put this in app_state.php, but I chose to put it here for efficiency of code execution.
-        if (!$g->is_logged_in) $g->is_guest = true;
+        // is_guest is set appropriately in app_state.php.
 
         $g->html_title = 'What is this site?';
 

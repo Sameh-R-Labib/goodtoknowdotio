@@ -897,16 +897,20 @@ class app_state
 
 
         /**
-         * Simplifies
+         * To Make Things Look More Simple
          */
 
         $this->is_logged_in = !empty($this->user_id);
 
         $this->is_admin = $this->role === 'admin';
 
-        // When set to true it tells some Gtk.io views to show the version of parts of the page which
+        // When is_guest is set to true it tells some Gtk.io views to show the version of parts of the page which
         // non-authenticated users should see and hide the parts which they should not see.
-        $this->is_guest = false;
+        if (!$this->is_logged_in) {
+            $this->is_guest = true;
+        } else {
+            $this->is_guest = false;
+        }
 
 
         /**
