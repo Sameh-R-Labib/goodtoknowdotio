@@ -5,7 +5,8 @@
     <div id="maincontent">
         <h1>Software Description</h1>
         <p>
-            See: <a href="/ax1/proclamation/page">Terms Of Service</a>
+            See: <a href="/ax1/proclamation/page">Terms Of Service</a><br><br>On this instance there is a community
+            named <i>Wisdom</i>. Please read: <i>Wisdom → Quotes → GoodToKnow.io</i>
         </p>
         <p>
             <i>Sameh R. Labib is the original author of this document and is the owner of the GoodToKnow.io web app
