@@ -198,6 +198,9 @@ class set_home_community_topic_post
 
         /**
          * This section is for this type of resource: post
+         *
+         * Assumption: Gtk.io does not allow users to click on direct links to posts.
+         * Users always use the navigation system provided by Gtk.io.
          */
 
         if ($type_of_resource_requested === 'post') {
@@ -230,10 +233,8 @@ class set_home_community_topic_post
 
             $_SESSION['post_full_name'] = $post_object->extensionfortitle . ' [' . $publish_date . ']';
 
-
             // Store post content and its last refresh time.
             $_SESSION['post_content'] = $post_content;
-
             $_SESSION['last_refresh_content'] = time();
 
             // Get and store author information.
