@@ -138,9 +138,7 @@ class set_home_community_topic_post
             $special_topic_array = community_to_topic::get_topics_array_for_a_community($community_id);
 
             if (!$special_topic_array) {
-
                 $special_topic_array = [];
-
             }
 
             $_SESSION['special_topic_array'] = $special_topic_array;
@@ -149,9 +147,7 @@ class set_home_community_topic_post
             $community_object = community::find_by_id($community_id);
 
             if (!$community_object) {
-
                 breakout(" I could not get the community object. ");
-
             }
 
             // Store the community name and community description in the session.
@@ -162,13 +158,12 @@ class set_home_community_topic_post
 
 
         /**
-         * This section is for this type of resource:
+         * This section is for this type of resource: topic
          *
-         *      topic
+         * Assumption: Gtk.io does not allow users to click on direct links to posts.
+         * Users always use the navigation system provided by Gtk.io.
          */
 
-        // We can not assign special_post_array to the session
-        // because Gtk.io does not permit direct links to posts.
         if ($type_of_resource_requested == 'topic') {
 
             // Breakout if the user specified topic id is non-zero and is not in $special_topic_array.
@@ -183,11 +178,9 @@ class set_home_community_topic_post
                 breakout(" I could not get the topic object. ");
             }
 
-
             // Store the topic name and description.
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
-
 
             // Get a fresh copy of $special_post_array.
             $special_post_array = topic_to_post::special_get_posts_array_for_a_topic($topic_id);
@@ -204,11 +197,8 @@ class set_home_community_topic_post
 
 
         /**
-         * This section is for this type of resource:
-         *
-         *      post
+         * This section is for this type of resource: post
          */
-
 
         if ($type_of_resource_requested === 'post') {
 
@@ -246,9 +236,7 @@ class set_home_community_topic_post
 
             $_SESSION['last_refresh_content'] = time();
 
-
             // Get and store author information.
-
             $post_author_object = user::find_by_id($post_object->user_id);
 
             if ($post_author_object === false) {
@@ -256,18 +244,21 @@ class set_home_community_topic_post
             }
 
             $_SESSION['author_username'] = $post_author_object->username;
-
             $_SESSION['author_id'] = (int)$post_author_object->id;
 
         }
 
 
-        // Store the message in the session.
+        /**
+         * Store the message in the session.
+         */
 
         $_SESSION['message'] = $g->message;
 
 
-        // Redirect to home page.
+        /**
+         * Redirect to home page.
+         */
 
         redirect_to("/ax1/home/page");
 
