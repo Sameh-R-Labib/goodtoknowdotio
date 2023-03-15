@@ -141,21 +141,25 @@ class set_home_community_topic_post
         }
 
 
-        // Get the community object.
+        // Get the community object if $type_of_resource_requested == 'community').
 
-        $community_object = community::find_by_id($community_id);
+        if ($type_of_resource_requested == 'community') {
 
-        if (!$community_object) {
+            $community_object = community::find_by_id($community_id);
 
-            breakout(" I could not get the community object. ");
+            if (!$community_object) {
+
+                breakout(" I could not get the community object. ");
+
+            }
+
+
+            // Store the community name and community description in the session.
+
+            $_SESSION['community_name'] = $community_object->community_name;
+            $_SESSION['community_description'] = $community_object->community_description;
 
         }
-
-
-        // Store the community name and community description in the session.
-
-        $_SESSION['community_name'] = $community_object->community_name;
-        $_SESSION['community_description'] = $community_object->community_description;
 
 
         // Store the type of resource requested in the session.
