@@ -108,38 +108,10 @@ class set_home_community_topic_post
          *      community, topic, post
          */
 
-
         // Breakout if the community does not belong to the user.
-
         if (!array_key_exists($community_id, $g->special_community_array)) {
-
             breakout(" Invalid community_id. ");
-
         }
-
-
-        // Get and store the special topic array.
-
-        $special_topic_array = community_to_topic::get_topics_array_for_a_community($community_id);
-
-        if (!$special_topic_array) {
-
-            $special_topic_array = [];
-
-        }
-
-        $_SESSION['special_topic_array'] = $special_topic_array;
-        $_SESSION['last_refresh_topics'] = time();
-
-
-        // Breakout if the user specified topic id is non-zero and is not in $special_topic_array.
-
-        if ($topic_id != 0 && !array_key_exists($topic_id, $special_topic_array)) {
-
-            breakout(" Your resource request is defective.  (errno 6) ");
-
-        }
-
 
         // Get the community object if $type_of_resource_requested == 'community').
         // Ideally, we should get it for every request; However, because of the
@@ -148,17 +120,23 @@ class set_home_community_topic_post
 
         if ($type_of_resource_requested == 'community') {
 
+            // Get and store the special topic array.
+            $special_topic_array = community_to_topic::get_topics_array_for_a_community($community_id);
+
+            if (!$special_topic_array) {
+                $special_topic_array = [];
+            }
+
+            $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['last_refresh_topics'] = time();
+
             $community_object = community::find_by_id($community_id);
 
             if (!$community_object) {
-
                 breakout(" I could not get the community object. ");
-
             }
 
-
             // Store the community name and community description in the session.
-
             $_SESSION['community_name'] = $community_object->community_name;
             $_SESSION['community_description'] = $community_object->community_description;
 
@@ -178,9 +156,9 @@ class set_home_community_topic_post
 
 
         /**
-         * This section is for these types of resources:
+         * This section is for this type of resource:
          *
-         *      topic, post
+         *      topic
          */
 
 
@@ -189,36 +167,32 @@ class set_home_community_topic_post
 
         if ($type_of_resource_requested == 'topic') {
 
-            // Get the topic object.
+            // Breakout if the user specified topic id is non-zero and is not in $special_topic_array.
+            if ($topic_id != 0 && !array_key_exists($topic_id, $_SESSION['special_topic_array'])) {
+                breakout(" Your resource request is defective.  (errno 6) ");
+            }
 
+            // Get the topic object.
             $topic_object = topic::find_by_id($topic_id);
 
             if (!$topic_object) {
-
                 breakout(" I could not get the topic object. ");
-
             }
 
 
             // Store the topic name and description.
-
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
 
 
             // Get a fresh copy of $special_post_array.
-
             $special_post_array = topic_to_post::special_get_posts_array_for_a_topic($topic_id);
 
             if (!$special_post_array) {
-
                 $special_post_array = [];
-
             }
 
-
             // Store the special post array.
-
             $_SESSION['special_post_array'] = $special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
