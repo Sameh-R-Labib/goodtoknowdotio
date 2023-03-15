@@ -184,11 +184,10 @@ class set_home_community_topic_post
          */
 
 
-        // Defining $special_post_array outside any if statement to make sure it is defined.
+        // We can not assign special_post_array to the session
+        // because Gtk.io does not permit direct links to posts.
 
-        $special_post_array = [];
-
-        if ($type_of_resource_requested == 'topic' or $type_of_resource_requested == 'post') {
+        if ($type_of_resource_requested == 'topic') {
 
             // Get the topic object.
 
@@ -238,7 +237,7 @@ class set_home_community_topic_post
 
             // Breakout if the post id is not in the special post array.
 
-            if (!array_key_exists($post_id, $special_post_array)) {
+            if (!array_key_exists($post_id, $_SESSION['special_post_array'])) {
 
                 breakout(" Your resource request is defective.  (errno 4) ");
 
