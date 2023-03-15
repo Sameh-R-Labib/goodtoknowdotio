@@ -142,6 +142,9 @@ class set_home_community_topic_post
 
 
         // Get the community object if $type_of_resource_requested == 'community').
+        // Ideally, we should get it for every request; However, because of the
+        // current way navigation works does not facilitate direct links to post
+        // then this code is acceptable and saves some steps.
 
         if ($type_of_resource_requested == 'community') {
 
