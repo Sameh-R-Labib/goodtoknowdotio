@@ -109,14 +109,28 @@ class set_home_community_topic_post
          */
 
         // Breakout if the community does not belong to the user.
+
         if (!array_key_exists($community_id, $g->special_community_array)) {
+
             breakout(" Invalid community_id. ");
+
         }
 
-        // Get the community object if $type_of_resource_requested == 'community').
-        // Ideally, we should get it for every request; However, because of the
-        // current way navigation works does not facilitate direct links to post
-        // then this code is acceptable and saves some steps.
+        // Store the type of resource requested in the session.
+        $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
+
+        // Store the id of each.
+        $_SESSION['community_id'] = $community_id;
+        $_SESSION['topic_id'] = $topic_id;
+        $_SESSION['post_id'] = $post_id;
+
+
+        /**
+         * Get the community object if $type_of_resource_requested == 'community').
+         * Ideally, we should get it for every request; However, because of the
+         * current way navigation works does not facilitate direct links to post
+         * then this code is acceptable and saves some steps.
+         */
 
         if ($type_of_resource_requested == 'community') {
 
@@ -124,7 +138,9 @@ class set_home_community_topic_post
             $special_topic_array = community_to_topic::get_topics_array_for_a_community($community_id);
 
             if (!$special_topic_array) {
+
                 $special_topic_array = [];
+
             }
 
             $_SESSION['special_topic_array'] = $special_topic_array;
@@ -133,7 +149,9 @@ class set_home_community_topic_post
             $community_object = community::find_by_id($community_id);
 
             if (!$community_object) {
+
                 breakout(" I could not get the community object. ");
+
             }
 
             // Store the community name and community description in the session.
@@ -143,28 +161,14 @@ class set_home_community_topic_post
         }
 
 
-        // Store the type of resource requested in the session.
-
-        $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
-
-
-        // Store the id of each.
-
-        $_SESSION['community_id'] = $community_id;
-        $_SESSION['topic_id'] = $topic_id;
-        $_SESSION['post_id'] = $post_id;
-
-
         /**
          * This section is for this type of resource:
          *
          *      topic
          */
 
-
         // We can not assign special_post_array to the session
         // because Gtk.io does not permit direct links to posts.
-
         if ($type_of_resource_requested == 'topic') {
 
             // Breakout if the user specified topic id is non-zero and is not in $special_topic_array.
@@ -208,42 +212,28 @@ class set_home_community_topic_post
 
         if ($type_of_resource_requested === 'post') {
 
-
             // Breakout if the post id is not in the special post array.
-
             if (!array_key_exists($post_id, $_SESSION['special_post_array'])) {
-
                 breakout(" Your resource request is defective.  (errno 4) ");
-
             }
 
-
             // Get the post object and its content.
-
             $post_object = post::find_by_id($post_id);
 
             if (!$post_object) {
-
                 breakout(" set_home_community_topic_post says: Error 58498. ");
-
             }
 
             $post_content = file_get_contents($post_object->html_file);
 
             if ($post_content === false) {
-
                 breakout(" Unable to read the post's html source file. ");
-
             }
 
-
             // Store the post name in the session.
-
             $_SESSION['post_name'] = $post_object->title;
 
-
             // Generate a publishing date for the post and store the post's full name.
-
             $epoch_time = (int)$post_object->created;
 
             $publish_date = date("m/d/Y", $epoch_time);
@@ -252,7 +242,6 @@ class set_home_community_topic_post
 
 
             // Store post content and its last refresh time.
-
             $_SESSION['post_content'] = $post_content;
 
             $_SESSION['last_refresh_content'] = time();
@@ -263,9 +252,7 @@ class set_home_community_topic_post
             $post_author_object = user::find_by_id($post_object->user_id);
 
             if ($post_author_object === false) {
-
                 breakout(" Unable to get the post author object from the database. ");
-
             }
 
             $_SESSION['author_username'] = $post_author_object->username;
