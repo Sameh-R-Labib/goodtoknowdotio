@@ -225,55 +225,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->post_object = post::find_by_id($g->post_id);
-
-            if ($g->post_object === false) {
-
-                $g->post_content = "[Missing Post Record]";
-                $_SESSION['post_content'] = $g->post_content;
-                $g->message .= " The home page says it's unable to get the current post (but that's okay if you've just deleted it.) ";
-
-            } else {
-
-                $g->post_content = file_get_contents($g->post_object->html_file);
-
-                if ($g->post_content === false) {
-
-                    $g->post_content = '[Missing Post Content]';
-                    $_SESSION['post_content'] = $g->post_content;
-                    $g->message .= " Unable to read the post's file. ";
-
-                }
-
-                /**
-                 * You'll notice more than usual amount of things are being
-                 * refreshed for a post. I'm doing this to take advantage of
-                 * the fact we've retrieved the post object from the database.
-                 * As for communities and topics not so much can be efficiently
-                 * refreshed.
-                 */
-                $g->post_name = $g->post_object->title;
-                $epoch_time = (int)$g->post_object->created;
-                $publish_date = date("m/d/Y", $epoch_time);
-                $g->post_full_name = $g->post_object->extensionfortitle . 'TEST' . ' <span class="small-time">[' . $publish_date . ']</span>';
-                $_SESSION['post_name'] = $g->post_name;
-                $_SESSION['post_full_name'] = $g->post_full_name;
-                $_SESSION['post_content'] = $g->post_content;
-
-            }
-
-            if (empty(trim($g->post_content))) {
-
-                $g->post_content = '<p><em>[No post content]</em></p>';
-
-            }
-
-            /**
-             * Whether (or not) we were able to get the post object and post content
-             * we reset the clock since we did something for refreshing the post.
-             */
-            $g->last_refresh_content = time();
-            $_SESSION['last_refresh_content'] = $g->last_refresh_content;
+            require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_post_request.php';
 
         }
 

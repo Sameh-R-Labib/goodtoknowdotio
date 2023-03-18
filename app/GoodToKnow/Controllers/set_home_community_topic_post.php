@@ -152,47 +152,7 @@ class set_home_community_topic_post
 
         if ($g->type_of_resource_requested === 'post') {
 
-            // Breakout if the post id is not in the special post array.
-            if (!array_key_exists($g->post_id, $_SESSION['special_post_array'])) {
-                breakout(" Your resource request is defective.  (errno 4) ");
-            }
-
-            // Get the post object and its content.
-            $post_object = post::find_by_id($g->post_id);
-
-            if (!$post_object) {
-                breakout(" set_home_community_topic_post says: Error 58498. ");
-            }
-
-            $g->post_content = file_get_contents($post_object->html_file);
-
-            if ($g->post_content === false) {
-                breakout(" Unable to read the post's html source file. ");
-            }
-
-            // Store the post name in the session.
-            $_SESSION['post_name'] = $post_object->title;
-
-            // Generate a publishing date for the post and store the post's full name.
-            $epoch_time = (int)$post_object->created;
-
-            $publish_date = date("m/d/Y", $epoch_time);
-
-            $_SESSION['post_full_name'] = $post_object->extensionfortitle . ' [' . $publish_date . ']';
-
-            // Store post content and its last refresh time.
-            $_SESSION['post_content'] = $g->post_content;
-            $_SESSION['last_refresh_content'] = time();
-
-            // Get and store author information.
-            $post_author_object = user::find_by_id($post_object->user_id);
-
-            if ($post_author_object === false) {
-                breakout(" Unable to get the post author object from the database. ");
-            }
-
-            $_SESSION['author_username'] = $post_author_object->username;
-            $_SESSION['author_id'] = (int)$post_author_object->id;
+            require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_post_request.php';
 
         }
 
