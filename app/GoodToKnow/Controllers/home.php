@@ -208,13 +208,8 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->topic_id);
+            require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_topic_request.php';
 
-            if ($g->special_post_array === false) $g->special_post_array = [];
-
-            $_SESSION['special_post_array'] = $g->special_post_array;
-            $g->last_refresh_posts = time();
-            $_SESSION['last_refresh_posts'] = $g->last_refresh_posts;
         }
 
 

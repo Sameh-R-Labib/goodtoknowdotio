@@ -40,3 +40,5 @@ if (!$community_object) {
 
 $_SESSION['community_name'] = $community_object->community_name;
 $_SESSION['community_description'] = $community_object->community_description;
+$g->community_name = $community_object->community_name;
+$g->community_description = $community_object->community_description;
