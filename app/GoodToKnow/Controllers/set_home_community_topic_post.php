@@ -43,6 +43,14 @@ class set_home_community_topic_post
         global $g;
 
 
+        // We want most of the variables to be global,
+        // so we can access them in include files.
+
+        $g->topic_id = $topic_id;
+        $g->community_id = $community_id;
+        $g->post_id = $post_id;
+
+
         // Abort if necessary.
 
         if (!$g->is_logged_in) {
@@ -66,11 +74,11 @@ class set_home_community_topic_post
          * Is it a community, a topic or a post?
          */
 
-        if ($topic_id == 0) {
+        if ($g->topic_id == 0) {
 
-            $type_of_resource_requested = 'community';
+            $g->type_of_resource_requested = 'community';
 
-            if ($post_id != 0) {
+            if ($g->post_id != 0) {
 
                 breakout(" Your resource request is defective. (errno 1) ");
 
@@ -78,20 +86,20 @@ class set_home_community_topic_post
 
         } else {
 
-            $type_of_resource_requested = 'topic_or_post';
+            $g->type_of_resource_requested = 'topic_or_post';
 
         }
 
 
-        if ($type_of_resource_requested === 'topic_or_post') {
+        if ($g->type_of_resource_requested === 'topic_or_post') {
 
-            if ($post_id === 0 && $topic_id !== 0) {
+            if ($g->post_id === 0 && $g->topic_id !== 0) {
 
-                $type_of_resource_requested = 'topic';
+                $g->type_of_resource_requested = 'topic';
 
-            } elseif ($post_id !== 0 && $topic_id !== 0) {
+            } elseif ($g->post_id !== 0 && $g->topic_id !== 0) {
 
-                $type_of_resource_requested = 'post';
+                $g->type_of_resource_requested = 'post';
 
             } else {
 
@@ -110,41 +118,41 @@ class set_home_community_topic_post
 
         // Breakout if the community does not belong to the user.
 
-        if (!array_key_exists($community_id, $g->special_community_array)) {
+        if (!array_key_exists($g->community_id, $g->special_community_array)) {
 
             breakout(" Invalid community_id. ");
 
         }
 
         // Store the type of resource requested in the session.
-        $_SESSION['type_of_resource_requested'] = $type_of_resource_requested;
+        $_SESSION['type_of_resource_requested'] = $g->type_of_resource_requested;
 
         // Store the id of each.
-        $_SESSION['community_id'] = $community_id;
-        $_SESSION['topic_id'] = $topic_id;
-        $_SESSION['post_id'] = $post_id;
+        $_SESSION['community_id'] = $g->community_id;
+        $_SESSION['topic_id'] = $g->topic_id;
+        $_SESSION['post_id'] = $g->post_id;
 
 
         /**
-         * Get the community object if $type_of_resource_requested == 'community').
+         * Get the community object if $g->type_of_resource_requested == 'community').
          * Ideally, we should get it for every request; However, because of the
          * current way navigation works does not facilitate direct links to post
          * then this code is acceptable and saves some steps.
          */
 
-        if ($type_of_resource_requested == 'community') {
+        if ($g->type_of_resource_requested == 'community') {
 
             // Get and store the special topic array.
-            $special_topic_array = community_to_topic::get_topics_array_for_a_community($community_id);
+            $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
 
-            if (!$special_topic_array) {
-                $special_topic_array = [];
+            if (!$g->special_topic_array) {
+                $g->special_topic_array = [];
             }
 
-            $_SESSION['special_topic_array'] = $special_topic_array;
+            $_SESSION['special_topic_array'] = $g->special_topic_array;
             $_SESSION['last_refresh_topics'] = time();
 
-            $community_object = community::find_by_id($community_id);
+            $community_object = community::find_by_id($g->community_id);
 
             if (!$community_object) {
                 breakout(" I could not get the community object. ");
@@ -164,15 +172,15 @@ class set_home_community_topic_post
          * Users always use the navigation system provided by Gtk.io.
          */
 
-        if ($type_of_resource_requested == 'topic') {
+        if ($g->type_of_resource_requested == 'topic') {
 
-            // Breakout if the user specified topic id is non-zero and is not in $special_topic_array.
-            if ($topic_id != 0 && !array_key_exists($topic_id, $_SESSION['special_topic_array'])) {
+            // Breakout if the user specified topic id is non-zero and is not in $g->special_topic_array.
+            if ($g->topic_id != 0 && !array_key_exists($g->topic_id, $_SESSION['special_topic_array'])) {
                 breakout(" Your resource request is defective.  (errno 6) ");
             }
 
             // Get the topic object.
-            $topic_object = topic::find_by_id($topic_id);
+            $topic_object = topic::find_by_id($g->topic_id);
 
             if (!$topic_object) {
                 breakout(" I could not get the topic object. ");
@@ -182,15 +190,15 @@ class set_home_community_topic_post
             $_SESSION['topic_name'] = $topic_object->topic_name;
             $_SESSION['topic_description'] = $topic_object->topic_description;
 
-            // Get a fresh copy of $special_post_array.
-            $special_post_array = topic_to_post::special_get_posts_array_for_a_topic($topic_id);
+            // Get a fresh copy of $g->special_post_array.
+            $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->topic_id);
 
-            if (!$special_post_array) {
-                $special_post_array = [];
+            if (!$g->special_post_array) {
+                $g->special_post_array = [];
             }
 
             // Store the special post array.
-            $_SESSION['special_post_array'] = $special_post_array;
+            $_SESSION['special_post_array'] = $g->special_post_array;
             $_SESSION['last_refresh_posts'] = time();
 
         }
@@ -203,23 +211,23 @@ class set_home_community_topic_post
          * Users always use the navigation system provided by Gtk.io.
          */
 
-        if ($type_of_resource_requested === 'post') {
+        if ($g->type_of_resource_requested === 'post') {
 
             // Breakout if the post id is not in the special post array.
-            if (!array_key_exists($post_id, $_SESSION['special_post_array'])) {
+            if (!array_key_exists($g->post_id, $_SESSION['special_post_array'])) {
                 breakout(" Your resource request is defective.  (errno 4) ");
             }
 
             // Get the post object and its content.
-            $post_object = post::find_by_id($post_id);
+            $post_object = post::find_by_id($g->post_id);
 
             if (!$post_object) {
                 breakout(" set_home_community_topic_post says: Error 58498. ");
             }
 
-            $post_content = file_get_contents($post_object->html_file);
+            $g->post_content = file_get_contents($post_object->html_file);
 
-            if ($post_content === false) {
+            if ($g->post_content === false) {
                 breakout(" Unable to read the post's html source file. ");
             }
 
@@ -234,7 +242,7 @@ class set_home_community_topic_post
             $_SESSION['post_full_name'] = $post_object->extensionfortitle . ' [' . $publish_date . ']';
 
             // Store post content and its last refresh time.
-            $_SESSION['post_content'] = $post_content;
+            $_SESSION['post_content'] = $g->post_content;
             $_SESSION['last_refresh_content'] = time();
 
             // Get and store author information.
