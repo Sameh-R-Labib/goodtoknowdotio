@@ -124,25 +124,7 @@ class set_home_community_topic_post
 
         if ($g->type_of_resource_requested == 'community') {
 
-            // Get and store the special topic array.
-            $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
-
-            if (!$g->special_topic_array) {
-                $g->special_topic_array = [];
-            }
-
-            $_SESSION['special_topic_array'] = $g->special_topic_array;
-            $_SESSION['last_refresh_topics'] = time();
-
-            $community_object = community::find_by_id($g->community_id);
-
-            if (!$community_object) {
-                breakout(" I could not get the community object. ");
-            }
-
-            // Store the community name and community description in the session.
-            $_SESSION['community_name'] = $community_object->community_name;
-            $_SESSION['community_description'] = $community_object->community_description;
+            require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_community_request.php';
 
         }
 

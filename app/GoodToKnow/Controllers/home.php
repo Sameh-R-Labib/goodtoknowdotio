@@ -191,13 +191,7 @@ class home
 
             db_connect_if_not_connected();
 
-            $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
-
-            if ($g->special_topic_array === false) $g->special_topic_array = [];
-
-            $_SESSION['special_topic_array'] = $g->special_topic_array;
-            $g->last_refresh_topics = time();
-            $_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
+            require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_community_request.php';
 
         }
 
