@@ -1,5 +1,7 @@
 <?php
 
+use GoodToKnow\Models\community_to_topic;
+
 /**
  * This is to be used in routes:
  * - home
@@ -15,3 +17,6 @@
  */
 
 global $g;
+
+// Get and store the special topic array.
+$g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
