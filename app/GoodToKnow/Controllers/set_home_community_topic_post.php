@@ -77,34 +77,16 @@ class set_home_community_topic_post
         if ($g->topic_id == 0) {
 
             $g->type_of_resource_requested = 'community';
-
             if ($g->post_id != 0) {
-
                 breakout(" Your resource request is defective. (errno 1) ");
-
             }
 
         } else {
 
-            $g->type_of_resource_requested = 'topic_or_post';
-
-        }
-
-
-        if ($g->type_of_resource_requested === 'topic_or_post') {
-
-            if ($g->post_id === 0 && $g->topic_id !== 0) {
-
+            if ($g->post_id === 0) {
                 $g->type_of_resource_requested = 'topic';
-
-            } elseif ($g->post_id !== 0 && $g->topic_id !== 0) {
-
-                $g->type_of_resource_requested = 'post';
-
             } else {
-
-                breakout(" Anomalous situation #2954. ");
-
+                $g->type_of_resource_requested = 'post';
             }
 
         }
