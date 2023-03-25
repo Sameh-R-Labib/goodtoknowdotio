@@ -31,7 +31,7 @@ class create_new_post_processor
 
         $posts = topic_to_post::get_posts_array_for_a_topic($g->id);
 
-        if ($posts == false) $posts = [];
+        if (!$posts) $posts = [];
 
         $count = count($posts);
 
