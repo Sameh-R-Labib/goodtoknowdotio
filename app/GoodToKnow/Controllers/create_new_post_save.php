@@ -157,7 +157,8 @@ class create_new_post_save
 
 
         /**
-         * Refresh special_post_array if ($g->type_of_resource_requested === 'topic')
+         * Refresh special_post_array if
+         * ($g->type_of_resource_requested === 'topic' || $g->type_of_resource_requested === 'post')
          */
 
         if ($g->type_of_resource_requested === 'topic' || $g->type_of_resource_requested === 'post') {
