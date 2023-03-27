@@ -53,7 +53,7 @@ class create_new_post_save
 
         $sequence_number_already_exists_in_db = false;
 
-        if ($result != false) {
+        if ($result) {
 
             foreach ($result as $object) {
 
