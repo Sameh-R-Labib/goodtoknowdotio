@@ -46,7 +46,7 @@
             <p>
                 <label for="reason">Reason For Selling: </label>
                 <input id="reason" name="reason" type="text" value="" required minlength="3" maxlength="54"
-                       size="54" spellcheck="false" placeholder="blockchain transaction fee">
+                       size="54" spellcheck="false" placeholder="blockchain fee (no period at end)">
             </p>
         </section>
         <?php require SUBMITABORT; ?>
