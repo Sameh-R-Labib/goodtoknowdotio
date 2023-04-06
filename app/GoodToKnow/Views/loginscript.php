@@ -4,7 +4,7 @@
         <?php require SESSIONMESSAGE; ?>
         <section>
             <label class="checkbox">
-                <input type="checkbox" name="choice" value="agree">
+                <input type="checkbox" required name="choice" value="agree">
                 I have read and I agree to the <a class="no-frills-link" href="/ax1/proclamation/page">Terms
                     Of Service</a>.
             </label>
