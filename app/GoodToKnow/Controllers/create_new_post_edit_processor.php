@@ -110,7 +110,7 @@ class create_new_post_edit_processor
 
         // time <-- time()
 
-        // name <-- actually what's important is its components.
+        // name <-- actually what's important is its components (which are described directly below.)
 
         // name component: community name <-- $g->community_name
 
