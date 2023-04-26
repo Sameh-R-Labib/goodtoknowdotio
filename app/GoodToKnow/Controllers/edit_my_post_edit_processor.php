@@ -111,6 +111,16 @@ class edit_my_post_edit_processor
         // name component: topic name <-- I'll need to derive that based on $g->saved_int01
         //                                $topic_object->topic_name
 
+
+        /**
+         * Debug Code
+         */
+        echo "\n<p>Begin debug</p>\n";
+        echo "<p>Var_dump \$g->saved_int01: </p>\n<pre>";
+        var_dump($g->saved_int01);
+        echo "</pre>\n";
+        die("<p>End debug</p>\n");
+
         $topic_object = topic::find_by_id($g->saved_int01);
 
         if (!$topic_object) {
