@@ -111,6 +111,14 @@ class edit_my_post_edit_processor
         // name component: topic name <-- I'll need to derive that based on $g->saved_int01
         //                                $topic_object->topic_name
 
+        $topic_object = topic::find_by_id($g->saved_int01);
+
+        if (!$topic_object) {
+
+            breakout(' I was unexpectedly unable to retrieve the topic\'s object. ');
+
+        }
+
 
         /**
          * Debug Code
@@ -119,15 +127,8 @@ class edit_my_post_edit_processor
         echo "<p>Var_dump \$g->saved_int01: </p>\n<pre>";
         var_dump($g->saved_int01);
         echo "</pre>\n";
-        die("<p>End debug</p>\n");
+        die("<p>The program survived line 114.</p>\n");
 
-        $topic_object = topic::find_by_id($g->saved_int01);
-
-        if (!$topic_object) {
-
-            breakout(' I was unexpectedly unable to retrieve the topic\'s object. ');
-
-        }
 
         // name component: post name <-- THERE IS A PROBLEM HERE: WE DON'T HAVE THE TITLE OF THE POST
         // So we get the post object, so we can use its 'title'.
