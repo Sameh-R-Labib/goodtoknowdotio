@@ -115,12 +115,6 @@ class edit_my_post_edit_processor
         // name component: topic name <-- I'll need to derive that based on $g->saved_int01
         //                                $topic_object->topic_name
 
-
-        // Debug start
-        $g->saved_int01 = (string)$g->saved_int01;
-        // Debug stop
-
-
         $topic_object = topic::find_by_id($g->saved_int01);
 
         if (!$topic_object) {
@@ -128,16 +122,6 @@ class edit_my_post_edit_processor
             breakout(' I was unexpectedly unable to retrieve the topic\'s object. ');
 
         }
-
-
-        /**
-         * Debug Code
-         */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$g->saved_int01: </p>\n<pre>";
-        var_dump($g->saved_int01);
-        echo "</pre>\n";
-        die("<p>The program survived line 114.</p>\n");
 
 
         // name component: post name <-- THERE IS A PROBLEM HERE: WE DON'T HAVE THE TITLE OF THE POST
