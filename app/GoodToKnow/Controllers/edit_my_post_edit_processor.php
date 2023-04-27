@@ -25,6 +25,10 @@ class edit_my_post_edit_processor
         // $g->saved_int02 id of edited post
 
 
+        // We need this
+        get_db();
+
+
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
@@ -138,8 +142,6 @@ class edit_my_post_edit_processor
 
         // name component: post name <-- THERE IS A PROBLEM HERE: WE DON'T HAVE THE TITLE OF THE POST
         // So we get the post object, so we can use its 'title'.
-
-        get_db();
 
         $post = post::find_by_id($g->saved_int02);
 
