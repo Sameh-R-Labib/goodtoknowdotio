@@ -111,6 +111,12 @@ class edit_my_post_edit_processor
         // name component: topic name <-- I'll need to derive that based on $g->saved_int01
         //                                $topic_object->topic_name
 
+
+        // Debug start
+        $g->saved_int01 = (string)$g->saved_int01;
+        // Debug stop
+
+
         $topic_object = topic::find_by_id($g->saved_int01);
 
         if (!$topic_object) {
