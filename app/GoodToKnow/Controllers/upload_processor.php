@@ -166,19 +166,14 @@ class upload_processor
             $g->message .= " The file " . CLASSICFILENAME . " has been uploaded and it is an {$image_file_mime_type}
             file. Here's the link: " . $a_link_entire_embed . ". ";
 
+            $_SESSION['url_of_most_recent_upload'] = $a_link_href_content;
+
+            breakout('');
+
         } else {
 
-            $g->message .= " Sorry, there was an error uploading your file. ";
+            breakout(' Error 5890242. ');
 
         }
-
-
-        /**
-         * Report outcome of this process.
-         */
-
-        $_SESSION['url_of_most_recent_upload'] = $a_link_href_content;
-
-        breakout('');
     }
 }
