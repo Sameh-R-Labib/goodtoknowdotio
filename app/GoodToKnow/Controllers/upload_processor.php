@@ -66,7 +66,7 @@ class upload_processor
 
         /**
          * Run the getimagesize function on the temporarily uploaded file.
-         * Doing so it will either return false if that file is not an image file
+         * Doing so it will either return false if that file is not an image file,
          * or it will return an array which contains some useful information about
          * the file including its mime type.
          *
@@ -127,6 +127,16 @@ class upload_processor
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
 
             breakout(' Only JPG, JPEG, PNG & GIF files are allowed. ');
+
+        }
+
+        // This strpos() function call will return 0 if the file is a valid image.
+        // Thus, $is_image will be true if the file is a valid image. Otherwise, $is_image will be false.
+        $is_image = (strpos($image_file_mime_type, 'image/') === 0);
+
+        if (!$is_image) {
+
+            breakout(' Error 0076810. ');
 
         }
 
