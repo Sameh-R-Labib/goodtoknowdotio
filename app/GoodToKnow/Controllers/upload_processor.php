@@ -130,8 +130,9 @@ class upload_processor
 
         }
 
-        // This strpos() function call will return 0 if the file is a valid image.
-        // Thus, $is_image will be true if the file is a valid image. Otherwise, $is_image will be false.
+        // This strpos() function call will return 0 if the file mime type starts with 'image/'. Otherwise, it will
+        // return false.
+        // Thus, $is_image will be true if the file mime type starts with 'image/'. Otherwise, $is_image will be false.
         $is_image = (strpos($image_file_mime_type, 'image/') === 0);
 
         if (!$is_image) {
