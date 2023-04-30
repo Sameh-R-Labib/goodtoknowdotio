@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\changed_content;
+
 class upload_processor
 {
     function page()
@@ -167,6 +169,42 @@ class upload_processor
             file. Here's the link: " . $a_link_entire_embed . ". ";
 
             $_SESSION['url_of_most_recent_upload'] = $a_link_href_content;
+
+
+            /**
+             * Here, create and save a new changed_content.
+             * This changed_content object creates a historical record of the fact that a
+             * new upload image file was created. This is part of a system which enables the administrator
+             * to monitor new content.
+             *
+             * First, I will make sure I have all the pieces of information needed to build
+             * the changed_content object.
+             */
+
+            // id <-- will be generated automatically.
+
+            // time <-- time()
+
+            // name <-- $a_link_entire_embed
+
+            // type <-- 'image_upload'
+
+            // post_id <-- 0
+
+            // expires <-- time() + 3024000  (that is 35 days away from now.)
+
+            $changed_content_array = ['time' => time(), 'name' => $a_link_entire_embed, 'type' => 'image_upload', 'post_id' => 0,
+                'expires' => time() + 3024000];
+
+            $changed_content_object = changed_content::array_to_object($changed_content_array);
+
+            $result = $changed_content_object->save();
+
+            if (!$result) {
+
+                breakout(' Unexpected I was unable to save the new changed_content object. ');
+
+            }
 
             breakout('');
 
