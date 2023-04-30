@@ -116,6 +116,10 @@ switch ($g->page) {
         echo "<a href=\"/ax1/home/page\"><img src=\"/img/blog_home.gif\" alt=\"blog home\" height=\"18\" width=\"18\"></a>" . " ≬ ";
         echo "<a href=\"/ax1/c_p_postings/page\">Blog Management</a>";
         break;
+    case 'c_p_changed_content':
+        echo "<a href=\"/ax1/home/page\"><img src=\"/img/blog_home.gif\" alt=\"blog home\" height=\"18\" width=\"18\"></a>" . " ≬ ";
+        echo "<a href=\"/ax1/c_p_changed_content/page\">Changed Content</a>";
+        break;
     case 'proclamation':
         echo "<a href=\"/ax1/home/page\"><img src=\"/img/blog_home.gif\" alt=\"blog home\" height=\"18\" width=\"18\"></a>" . " ≬ ";
         echo "<a href=\"/ax1/proclamation/page\">Proclamation</a>";
