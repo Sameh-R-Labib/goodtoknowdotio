@@ -193,6 +193,8 @@ class upload_processor
 
             // expires <-- time() + 3024000  (that is 35 days away from now.)
 
+            get_db();
+
             $changed_content_array = ['time' => time(), 'name' => $a_link_entire_embed, 'type' => 'image_upload', 'post_id' => 0,
                 'expires' => time() + 3024000];
 
