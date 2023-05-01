@@ -19,18 +19,23 @@ class changed_posts_and_images_list
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
-        $g->page = 'changed_posts_and_images';
+        /**
+         * Generate the data which will be shown to the user.
+         */
 
+
+        /**
+         * Display the output.
+         */
+
+        $g->page = 'changed_posts_and_images';
 
         $g->show_poof = true;
 
-
         $g->html_title = 'Changed Posts and Uploaded Images';
-
 
         $g->message .= " Here's a list of new posts, changed posts, and uploaded images. Make sure to cull the
          changed_content database table every once in a while. ";
-
 
         require VIEWS . DIRSEP . 'changedpostsandimageslist.php';
     }
