@@ -20,5 +20,18 @@ class changed_posts_and_images_list
 
 
         $g->page = 'changed_posts_and_images';
+
+
+        $g->show_poof = true;
+
+
+        $g->html_title = 'Changed Posts and Uploaded Images';
+
+
+        $g->message .= " Here's a list of new posts, changed posts, and uploaded images. Make sure to cull the
+         changed_content database table every once in a while. ";
+
+
+        require VIEWS . DIRSEP . 'changedpostsandimageslist.php';
     }
 }
