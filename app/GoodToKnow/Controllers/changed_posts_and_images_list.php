@@ -54,9 +54,10 @@ class changed_posts_and_images_list
 
         $g->html_title = 'Changed Posts and Uploaded Images';
 
-        $g->message .= " Here's a list of new posts, changed posts, and uploaded images. Make sure to cull the
-         changed_content database table every once in a while. ";
-
+        $g->message .= " Here's changed content. Cull it every so often. ";
+        // I'm commenting this out since no session feature variables were set for this feature.
+        // But, I'm mentioning it here to set a n example showing this is where it would belong.
+        /*reset_feature_session_vars();*/
         require VIEWS . DIRSEP . 'changedpostsandimageslist.php';
     }
 }
