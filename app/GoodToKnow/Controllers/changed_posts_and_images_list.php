@@ -27,6 +27,8 @@ class changed_posts_and_images_list
          */
 
         // Retrieve all the changed_content objects stored in the database table.
+        get_db();
+
         $g->cc_objects = changed_content::find_all();
 
         if ($g->cc_objects === false) {
