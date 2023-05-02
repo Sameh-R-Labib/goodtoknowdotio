@@ -2,6 +2,9 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\changed_content;
+use function GoodToKnow\ControllerHelpers\get_readable_date;
+
 class changed_posts_and_images_list
 {
     function page()
@@ -22,6 +25,23 @@ class changed_posts_and_images_list
         /**
          * Generate the data which will be shown to the user.
          */
+
+        // Retrieve all the changed_content objects stored in the database table.
+        $g->cc_objects = changed_content::find_all();
+
+        if ($g->cc_objects === false) {
+            breakout(' Unable to retrieve changed_content objects. ');
+        }
+
+        // Loop through the array and replace some attributes with more readable versions of themselves.
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
+
+        foreach ($g->cc_objects as $cc_object) {
+
+            $cc_object->time = get_readable_date($cc_object->time);
+            $cc_object->expires = get_readable_date($cc_object->expires);
+
+        }
 
 
         /**
