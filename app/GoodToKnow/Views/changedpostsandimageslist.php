@@ -7,7 +7,7 @@
         <?php if (!empty($g->cc_objects)): ?>
             <p>
                 <?php foreach ($g->cc_objects as $cc_object): ?>
-                    🕒 <?= $cc_object->time ?> ⏳ <?= $cc_object->expires ?> 🔍 <?= $cc_object->name ?><br>
+                    🕒 <?= $cc_object->time ?> ⏳ <?= $cc_object->expires ?><br>🔍 <?= $cc_object->name ?><br><br>
                 <?php endforeach; ?>
             </p>
         <?php else: ?>
