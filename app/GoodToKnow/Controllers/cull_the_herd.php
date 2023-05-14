@@ -9,15 +9,47 @@ class cull_the_herd
     function page()
     {
         /**
-         * This route will delete expired and  older duplicates changed_content objects from the changed_content
+         * This route will delete expired and older duplicate changed_content objects from the changed_content
          * database table.
          */
+
+
+        global $g;
 
 
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
         get_db();
+
+
+        /**
+         * Delete expired table rows from the changed_content database table.
+         */
+
+        $num_affected_rows = 0;
+
+        $sql = 'DELETE FROM `changed_content` WHERE `expires` < ';
+        $sql .= $g->db->real_escape_string((string)time());
+
+        try {
+            $g->db->query($sql);
+
+            $query_error = $g->db->error;
+
+            if (!empty(trim($query_error))) {
+                breakout(' The delete failed because: ' . htmlspecialchars($query_error, ENT_NOQUOTES | ENT_HTML5) . ' ');
+            }
+
+            $num_affected_rows = $g->db->affected_rows;
+
+        } catch (\Exception $e) {
+            $g->message .= ' cull_the_herd delete() exception: ' . htmlspecialchars($e->getMessage(), ENT_NOQUOTES | ENT_HTML5) . ' ';
+        }
+
+        if (!empty($g->message)) {
+            breakout('');
+        }
 
 
         /**
@@ -38,5 +70,12 @@ class cull_the_herd
             breakout(' There are no changed_content objects in the system. ');
 
         }
+
+
+        /**
+         * Redirect and give a message explaining what was accomplished.
+         */
+
+        breakout(" The cull process deleted " . $num_affected_rows . " expired and removed duplicate records. ");
     }
 }
