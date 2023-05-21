@@ -14,12 +14,10 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-window.addEventListener('load', function () {
-    // Set the desired width and height for the window
-    let desiredWidth = 800;
-    let desiredHeight = 600;
-
-    // Resize the window using the resizeTo() method
+var resizeButton = document.querySelector('.resize-button');
+resizeButton.addEventListener('click', function () {
+    var desiredWidth = 800;
+    var desiredHeight = 600;
     window.resizeTo(desiredWidth, desiredHeight);
 });
 
