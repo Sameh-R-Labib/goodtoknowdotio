@@ -16,7 +16,7 @@ for (i = 0; i < coll.length; i++) {
 
 var openWindowButton = document.querySelector('.open-window-button');
 openWindowButton.addEventListener('click', function () {
-    var desiredWidth = 1500;
+    var desiredWidth = 1200;
     var desiredHeight = 1700;
     var windowFeatures = 'width=' + desiredWidth + ',height=' + desiredHeight;
     window.open('https://goodtoknow.io/ax1', '_blank', windowFeatures);
