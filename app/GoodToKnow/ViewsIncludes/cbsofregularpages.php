@@ -13,7 +13,8 @@
 </div>
 <!-- breadcrumbs -->
 <div id="breadcrumbs">
-    <p><span style="font-size:16px;">⚓️</span>&nbsp;&nbsp;<?php require BREADCRUMBS; ?>
+    <p><span style="font-size:16px;">⚓️</span>&nbsp;&nbsp;<button class="open-window-button">🪟</button>
+        ≬ <?php require BREADCRUMBS; ?>
     </p>
 </div>
 <!-- scriptoutput -->
