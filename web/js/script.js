@@ -14,10 +14,11 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-var resizeButton = document.querySelector('.resize-button');
-resizeButton.addEventListener('click', function () {
+var openWindowButton = document.querySelector('.open-window-button');
+openWindowButton.addEventListener('click', function () {
     var desiredWidth = 800;
     var desiredHeight = 600;
-    window.resizeTo(desiredWidth, desiredHeight);
+    var windowFeatures = 'width=' + desiredWidth + ',height=' + desiredHeight;
+    window.open('https://goodtoknow.io/ax1', '_blank', windowFeatures);
 });
 

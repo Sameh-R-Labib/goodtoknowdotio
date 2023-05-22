@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php if (!empty($g->message)): ?>
     <p>
-        <button class="resize-button">Resize Window</button>
+        <button class="open-window-button">Open New Window</button>
         👨🏽‍🦱:&nbsp;&nbsp;<?= $g->message ?></p>
 <?php endif; ?>
