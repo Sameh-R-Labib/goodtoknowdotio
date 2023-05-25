@@ -90,7 +90,25 @@ class cull_the_herd
          *     what the proper thing should be.
          */
 
-        // new code goes here
+        // Determine $key_of_last.
+        $key_of_last = count($array_of_objects) - 1;
+
+        foreach ($array_of_objects as $key => $the_current_object) {
+
+            if ($key != $key_of_last) {
+
+                // Go through the rest of the objects looking for a duplicate which is newer.
+                $i = $key + 1;
+                do {
+                    // Do the comparison.
+
+                    // Increment $i.
+                    $i++;
+                } while ($i <= $key_of_last);
+
+            }
+
+        }
 
 
         /**
