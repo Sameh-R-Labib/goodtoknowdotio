@@ -67,15 +67,37 @@ class cull_the_herd
         // Handling the case where NO old messages exist
         if (empty($array_of_objects)) {
 
-            breakout(' There are no changed_content objects in the system. ');
+            breakout(" The cull process deleted " . $num_affected_rows . " expired records.
+            After removal of expired records, there were no changed_content objects to be found. ");
 
         }
+
+
+        /**
+         * Remove Duplicate Records
+         * ========================
+         *
+         *     The goal here is to delete the database table rows which correspond
+         *     to objects within $array_of_objects which are duplicates. We want
+         *     the newer database table rows to remain when a duplicate is found.
+         *
+         * How This Gets Done
+         * ==================
+         *     Have a foreach loop which traverses $array_of_objects.
+         *     In each iteration we compare the current object with the
+         *     rest of the objects. As soon as a duplicate is found we
+         *     do the proper thing. I will be using a flowchart to determine
+         *     what the proper thing should be.
+         */
+
+        // new code goes here
 
 
         /**
          * Redirect and give a message explaining what was accomplished.
          */
 
-        breakout(" The cull process deleted " . $num_affected_rows . " expired and removed duplicate records. ");
+        breakout(" The cull process deleted " . $num_affected_rows . " expired records. Additionally, the duplicate
+         records have been removed. ");
     }
 }
