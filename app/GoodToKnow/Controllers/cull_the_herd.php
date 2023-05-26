@@ -88,6 +88,12 @@ class cull_the_herd
          *     rest of the objects. As soon as a duplicate is found we
          *     do the proper thing. I will be using a flowchart to determine
          *     what the proper thing should be.
+         *
+         * Note Regarding PHP
+         * ==================
+         *     break will stop the current loop (or pass an integer to tell it how
+         *     many loops to break from). continue will stop the current iteration
+         *     and start the next one.
          */
 
         // Determine $key_of_last.
@@ -95,12 +101,23 @@ class cull_the_herd
 
         foreach ($array_of_objects as $key => $the_current_object) {
 
+            // We don't eliminate duplicates when the type is image_upload.
+            if ($the_current_object->type == 'image_upload') continue;
+
             if ($key != $key_of_last) {
 
                 // Go through the rest of the objects looking for a duplicate which is newer.
                 $i = $key + 1;
                 do {
                     // Do the comparison.
+
+                    // Compare $the_current_object with $array_of_objects[$i] to see if they are duplicates.
+                    // We've already eliminated the possibility the $the_current_object is an image_upload.
+                    if ($the_current_object->name == $array_of_objects[$i]->name) {
+                        // Do something.
+                    } else {
+                        // Do something else.
+                    }
 
                     // Increment $i.
                     $i++;
