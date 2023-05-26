@@ -109,14 +109,18 @@ class cull_the_herd
                 // Go through the rest of the objects looking for a duplicate which is newer.
                 $i = $key + 1;
                 do {
-                    // Do the comparison.
-
-                    // Compare $the_current_object with $array_of_objects[$i] to see if they are duplicates.
                     // We've already eliminated the possibility the $the_current_object is an image_upload.
                     if ($the_current_object->name == $array_of_objects[$i]->name) {
-                        // Do something.
-                    } else {
-                        // Do something else.
+                        // Ask yourself: Should the database table record corresponding to $the_current_object be deleted?
+                        // If yes then delete it and do a continue job on the foreach loop.
+                        // Otherwise, just do a continue job on the do while loop.
+
+                        // The database table record corresponding to $the_current_object should be deleted
+                        // if $array_of_objects[$i]->time > $the_current_object->time
+                        if ((int)$array_of_objects[$i]->time > (int)$the_current_object->time) {
+                            $the_current_object->delete();
+                            break;
+                        }
                     }
 
                     // Increment $i.
