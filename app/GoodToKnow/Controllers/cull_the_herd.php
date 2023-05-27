@@ -48,7 +48,7 @@ class cull_the_herd
         }
 
         if (!empty($g->message)) {
-            breakout('');
+            breakout(' The developer decided the script should terminate here when there is already a message. ');
         }
 
 
@@ -96,6 +96,8 @@ class cull_the_herd
          *     and start the next one.
          */
 
+        $count_of_duplicates = 0;
+
         // Determine $key_of_last.
         $key_of_last = count($array_of_objects) - 1;
 
@@ -119,6 +121,7 @@ class cull_the_herd
                         // if $array_of_objects[$i]->time > $the_current_object->time
                         if ((int)$array_of_objects[$i]->time > (int)$the_current_object->time) {
                             $the_current_object->delete();
+                            $count_of_duplicates++;
                             break;
                         }
                     }
@@ -136,7 +139,6 @@ class cull_the_herd
          * Redirect and give a message explaining what was accomplished.
          */
 
-        breakout(" The cull process deleted " . $num_affected_rows . " expired records. Additionally, the duplicate
-         records have been removed. ");
+        breakout(" The cull process deleted $num_affected_rows expired records and $count_of_duplicates duplicates. ");
     }
 }
