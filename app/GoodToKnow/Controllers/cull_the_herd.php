@@ -54,21 +54,15 @@ class cull_the_herd
 
         /**
          * Get all the changed_content objects from the database table named changed_content.
+         * Breakout if none are found or if there was a problem trying to get them.
          */
 
         $array_of_objects = changed_content::find_all();
 
         if ($array_of_objects === false) {
 
-            breakout(' Unable to retrieve changed_content. ');
-
-        }
-
-        // Handling the case where NO old messages exist
-        if (empty($array_of_objects)) {
-
-            breakout(" The cull process deleted " . $num_affected_rows . " expired records.
-            After removal of expired records, there were no changed_content objects to be found. ");
+            // Either there aren't any or there was an error.
+            breakout(' Unable to retrieve any changed_content. ');
 
         }
 

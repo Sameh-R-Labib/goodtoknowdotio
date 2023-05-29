@@ -2,6 +2,8 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\changed_content;
+
 class pick_off_some
 {
     function page()
@@ -18,5 +20,20 @@ class pick_off_some
 
 
         get_db();
+
+
+        /**
+         * Get all the changed_content objects from the database table named changed_content.
+         * Breakout if none are found or if there was a problem trying to get them.
+         */
+
+        $array_of_objects = changed_content::find_all();
+
+        if ($array_of_objects === false) {
+
+            // Either there aren't any or there was an error.
+            breakout(' Unable to retrieve any changed_content. ');
+
+        }
     }
 }
