@@ -16,6 +16,9 @@ class pick_off_some
          */
 
 
+        global $g;
+
+
         kick_out_nonadmins_or_if_there_is_error_msg();
 
 
@@ -27,9 +30,9 @@ class pick_off_some
          * Breakout if none are found or if there was a problem trying to get them.
          */
 
-        $array_of_objects = changed_content::find_all();
+        $g->array_of_objects = changed_content::find_all();
 
-        if ($array_of_objects === false) {
+        if ($g->array_of_objects === false) {
 
             // Either there aren't any or there was an error.
             breakout(' Unable to retrieve any changed_content. ');
