@@ -50,6 +50,8 @@ class pick_off_some_processor
          * Loop through $submitted_ids_array and delete the changed_content database table rows.
          */
 
+        get_db();
+
         $count = 0;
 
         foreach ($submitted_ids_array as $id_of_a_changed_content) {
