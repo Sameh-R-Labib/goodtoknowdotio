@@ -10,7 +10,7 @@
         <?php foreach ($g->array_of_objects as $key => $value): ?>
             <label class="checkbox">
                 <input type="checkbox" name="choice-<?= $key + 1 ?>" value="<?= $value->id ?>">
-                <?= $value->name ?>
+                <?= $value->time ?> <?= $value->name ?>
             </label>
         <?php endforeach; ?>
     </section>
