@@ -5,7 +5,7 @@
     <p class="tooltip">ⅈ
         <span class="tooltiptext tooltip-top">Feature "Pick Off Some" is a compliment to "Cull The Herd".</span>
     </p>
-    <p>Choose the ones you want to delete.</p>
+    <h2>Choose Ones To Delete</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php foreach ($g->array_of_objects as $key => $value): ?>
