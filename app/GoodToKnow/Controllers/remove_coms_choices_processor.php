@@ -67,7 +67,7 @@ class remove_coms_choices_processor
 
             $array_with_one_element = user_to_community::find_by_sql($sql);
 
-            if (!$array_with_one_element || empty($array_with_one_element) || empty($array_with_one_element[0])) {
+            if (empty($array_with_one_element) || empty($array_with_one_element[0])) {
 
                 breakout(' Error 0819. ');
 
