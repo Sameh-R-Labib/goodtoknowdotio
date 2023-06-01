@@ -2,6 +2,7 @@
 
 namespace GoodToKnow\Controllers;
 
+use GoodToKnow\Models\changed_content;
 use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
 
 class pick_off_some_processor
@@ -45,5 +46,35 @@ class pick_off_some_processor
          */
 
 
+        /**
+         * Loop through $submitted_ids_array and delete the changed_content database table rows.
+         */
+
+        $count = 0;
+
+        foreach ($submitted_ids_array as $id_of_a_changed_content) {
+
+            $changed_content_object = changed_content::find_by_id($id_of_a_changed_content);
+
+            if (!$changed_content_object) {
+                breakout(' Error 91493908. ');
+            }
+
+            $result = $changed_content_object->delete();
+
+            if (!$result) {
+                breakout(' Unexpectedly could not delete post. ');
+            }
+
+            $count++;
+
+        }
+
+
+        /**
+         * Redirect and give a message explaining what was accomplished.
+         */
+
+        breakout(" I deleted $count changed_content rows. ");
     }
 }
