@@ -106,7 +106,7 @@ class cull_the_herd
                 $i = $key + 1;
                 do {
                     // We've already eliminated the possibility the $the_current_object is an image_upload.
-                    if ($the_current_object->name == $array_of_objects[$i]->name) {
+                    if ($the_current_object->post_id == $array_of_objects[$i]->post_id) {
                         // Ask yourself: Should the database table record corresponding to $the_current_object be deleted?
                         // If yes then delete it and do a continue job on the foreach loop.
                         // Otherwise, just do a continue job on the do while loop.
