@@ -38,5 +38,14 @@ class pick_off_some
             breakout(' Unable to retrieve any changed_content. ');
 
         }
+
+
+        /**
+         * Present the changed_content objects as check boxes
+         */
+
+        $g->html_title = 'Delete changed_content Objects';
+
+        require VIEWS . DIRSEP . 'pickoffsome.php';
     }
 }
