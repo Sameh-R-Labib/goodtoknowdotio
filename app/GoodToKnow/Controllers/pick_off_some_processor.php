@@ -35,13 +35,14 @@ class pick_off_some_processor
 
 
         /**
-         * Test
+         * Sample $submitted_ids_array:
+         * array(2) {
+         *   [0]=>
+         *     string(2) "32"
+         *   [1]=>
+         *     string(2) "20"
+         * }
          */
-        echo "\n<p>Begin debug</p>\n";
-        echo "<p>Var_dump \$submitted_ids_array: </p>\n<pre>";
-        var_dump($submitted_ids_array);
-        echo "</pre>\n";
-        die("<p>End debug</p>\n");
 
 
     }
