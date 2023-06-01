@@ -3,6 +3,7 @@
 namespace GoodToKnow\Controllers;
 
 use GoodToKnow\Models\changed_content;
+use function GoodToKnow\ControllerHelpers\get_readable_date;
 
 class pick_off_some
 {
@@ -38,6 +39,23 @@ class pick_off_some
             breakout(' Unable to retrieve any changed_content. ');
 
         }
+
+
+        /**
+         * Make the time field of the changed_content objects human-readable.
+         */
+
+        // Loop through the array and replace some attributes with more readable versions of themselves.
+        require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
+
+        foreach ($g->array_of_objects as $object) {
+
+            $object->time = get_readable_date($object->time);
+
+        }
+
+        // Reverse the order so they show that way.
+        $g->array_of_objects = array_reverse($g->array_of_objects);
 
 
         /**

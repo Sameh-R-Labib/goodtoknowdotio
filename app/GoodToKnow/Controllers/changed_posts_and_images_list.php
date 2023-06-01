@@ -45,7 +45,7 @@ class changed_posts_and_images_list
 
         }
 
-        // Reverse the order so the show that way.
+        // Reverse the order so they show that way.
         $g->cc_objects = array_reverse($g->cc_objects);
 
 
