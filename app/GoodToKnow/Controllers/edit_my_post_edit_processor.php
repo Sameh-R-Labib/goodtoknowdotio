@@ -144,7 +144,8 @@ class edit_my_post_edit_processor
         // expires <-- time() + 3024000  (that is 35 days away from now.)
 
         $changed_content_array = ['time' => time(), 'name' => $name, 'type' => 'blog_post', 'post_id' => $g->saved_int02,
-            'expires' => time() + 3024000];
+            'expires' => time() + 3024000, 'community_id' => $g->community_id, 'topic_id' => $g->saved_int01,
+            'author_username' => $g->user_username];
 
         $changed_content_object = changed_content::array_to_object($changed_content_array);
 

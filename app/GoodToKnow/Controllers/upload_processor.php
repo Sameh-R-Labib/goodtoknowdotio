@@ -196,7 +196,7 @@ class upload_processor
             get_db();
 
             $changed_content_array = ['time' => time(), 'name' => $a_link_entire_embed, 'type' => 'image_upload', 'post_id' => 0,
-                'expires' => time() + 3024000];
+                'expires' => time() + 3024000, 'community_id' => 0, 'topic_id' => 0, 'author_username' => $g->user_username];
 
             $changed_content_object = changed_content::array_to_object($changed_content_array);
 
