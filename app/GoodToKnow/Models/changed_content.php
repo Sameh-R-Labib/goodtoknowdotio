@@ -12,7 +12,7 @@ class changed_content extends good_object
     /**
      * @var array
      */
-    protected static $fields = ['id', 'time', 'name', 'type', 'post_id', 'expires'];
+    protected static $fields = ['id', 'time', 'name', 'type', 'post_id', 'expires', 'community_id', 'topic_id', 'author_username'];
 
     /**
      * @var int
@@ -43,4 +43,19 @@ class changed_content extends good_object
      * @var int
      */
     public $expires;
+
+    /**
+     * @var int
+     */
+    public $community_id;
+
+    /**
+     * @var int
+     */
+    public $topic_id;
+
+    /**
+     * @var string
+     */
+    public $author_username;
 }
