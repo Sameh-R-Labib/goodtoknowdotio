@@ -1,7 +1,7 @@
 <?php require TOPOFREGULARPAGE; ?>
     <!-- adminhometop -->
     <div id="adminhometop">
-        <a href="/ax1"><img src="/img/good1.jpg" alt="GoodToKnow.io" height="57" width="254" style="float: left"></a>
+        <a href="/ax1"><img src="/img/good.jpg" alt="GoodToKnow.io" height="57" width="254" style="float: left"></a>
     </div>
 <?php require CBSOFREGULARPAGES; ?>
     <!-- maincontent -->
