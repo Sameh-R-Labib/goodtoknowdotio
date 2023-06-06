@@ -27,9 +27,7 @@
             <li>No child porn or obscenity.</li>
             <li>No prostitution or sex trafficking.</li>
             <li>No illegal content.</li>
-            <li>Harassing or stalking content: Content that is intended to harass, stalk, or threaten a person is not
-                protected under Section 230.
-            </li>
+            <li>Content that is intended to harass, stalk, or threaten a person is not protected under Section 230.</li>
             <li>Content related to terrorism: Online platforms can be held liable for content that promotes or
                 facilitates terrorism, including content that provides instructions on how to engage in terrorist
                 activities.
