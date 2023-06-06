@@ -3,8 +3,7 @@
     <form>
         <h2>F.Y.I.</h2>
         <?php require SESSIONMESSAGE; ?>
-        <p><b>Disclaimer:</b> this information is not enough to protect you from lawsuits. You should consult with a
-            lawyer.</p>
+        <p><b>Disclaimer:</b> this information is not enough to protect you from lawsuits. Consult with a lawyer.</p>
         <p>There is a law named <b>47 U.S.C. § 230</b> or <b>Section 230</b>. Congress recognized that for user speech
             to thrive on the Internet, it had to protect the services that power users’ speech. That law states:
             "No provider or user of an interactive computer service shall be treated as the publisher or speaker of any
@@ -21,8 +20,8 @@
             distribute. Different approaches to moderating users’ speech allows users to find the places online that
             they like, and avoid places they don’t.</p>
         <h2>Platform Responsibilities</h2>
-        <p>In spite of congress making it easier to host users on a platform. There are things which are not allowed.
-            Here are some of them:</p>
+        <p>In spite of congress making it easier to host users on a platform. Some things which are not allowed.
+            Here's a partial list:</p>
         <ul>
             <li>No copyright infringement</li>
             <li>No child porn or obscenity.</li>
