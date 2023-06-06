@@ -4,9 +4,12 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Changed Content</h1>
-        <p>Note: If you click the link for a post you will be taken to the post. However, once you get there it will
-            appear as if that post is in the community you are already in. The post will not appear to be in its correct
-            community.</p>
+        <p class="tooltip">ⅈ
+            <span class="tooltiptext tooltip-top">If you click the link for a post you will be taken to the post.
+                However, once you get there it will appear as if that post is in the community you are already in. The
+                post will not appear to be in its correct community.</span>
+        </p>
+        <p><b>List</b></p>
         <?php if (!empty($g->cc_objects)): ?>
             <p>
                 <?php foreach ($g->cc_objects as $cc_object): ?>

@@ -12,7 +12,7 @@
             <label class="checkbox">
                 <input type="checkbox" name="choice-<?= $key + 1 ?>" value="<?= $value->id ?>">
                 🕒 <?= $value->time ?> 🙍 <?= $value->author_username ?><br>
-                🔍 <?= $value->name ?>
+                &nbsp;&nbsp;🔍 <?= $value->name ?>
             </label>
         <?php endforeach; ?>
     </section>
