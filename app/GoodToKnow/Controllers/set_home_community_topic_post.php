@@ -114,11 +114,6 @@ class set_home_community_topic_post
         $_SESSION['topic_id'] = $g->topic_id;
         $_SESSION['post_id'] = $g->post_id;
 
-        // We need to do this to avoid anomalies. More specifically we were getting the
-        // wrong community name to show up in breadcrumbs when admin follows links
-        // formed by the changed_content system.
-        $_SESSION['community_name'] = $g->special_community_array[$g->community_id];
-
 
         /**
          * Get the community object if $g->type_of_resource_requested == 'community').
