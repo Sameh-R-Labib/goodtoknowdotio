@@ -76,14 +76,20 @@ class set_home_community_topic_post
 
         if ($g->topic_id == 0) {
 
-            $g->type_of_resource_requested = 'community';
             if ($g->post_id != 0) {
-                breakout(" Your resource request is defective. (errno 1) ");
+                breakout(" Your resource request is defective. (errno 12) ");
             }
+            if ($g->community_id === 0) {
+                breakout(" Your resource request is defective. (errno 34) ");
+            }
+            $g->type_of_resource_requested = 'community';
 
         } else {
 
             if ($g->post_id === 0) {
+                if ($g->community_id === 0) {
+                    breakout(" Your resource request is defective. (errno 21) ");
+                }
                 $g->type_of_resource_requested = 'topic';
             } else {
                 $g->type_of_resource_requested = 'post';
@@ -171,5 +177,5 @@ class set_home_community_topic_post
         redirect_to("/ax1/home/page");
 
     }
-    
+
 }
