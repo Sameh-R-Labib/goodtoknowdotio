@@ -109,7 +109,7 @@ class app_state
 
 
     /**
-     * Id of the current topic.
+     * Identification number of the current topic.
      *
      * @var int|mixed
      */
