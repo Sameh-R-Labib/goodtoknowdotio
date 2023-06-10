@@ -40,7 +40,4 @@ $g->topic_description = $topic_object->topic_description;
 $g->special_post_array = topic_to_post::special_get_posts_array_for_a_topic($g->topic_id);
 if (!$g->special_post_array) $g->special_post_array = [];
 
-// Store the special post array.
-$_SESSION['special_post_array'] = $g->special_post_array;
 $g->last_refresh_posts = time();
-$_SESSION['last_refresh_posts'] = $g->last_refresh_posts;

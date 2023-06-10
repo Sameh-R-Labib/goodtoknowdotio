@@ -42,3 +42,4 @@ $g->community_description = $community_object->community_description;
 $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
 
 if (!$g->special_topic_array) $g->special_topic_array = [];
+$g->last_refresh_topics = time();
