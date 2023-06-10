@@ -21,6 +21,12 @@ use GoodToKnow\Models\community_to_topic;
 global $g;
 
 
+// Breakout if the community does not belong to the user.
+if (!array_key_exists($g->community_id, $g->special_community_array)) {
+    breakout(" Invalid community_id. ");
+}
+
+
 // Get and store the special topic array.
 $g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
 

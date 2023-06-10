@@ -123,21 +123,6 @@ class set_home_community_topic_post
 
 
         /**
-         * This section is for these types of resources:
-         *
-         *      community, topic, post
-         */
-
-        // Breakout if the community does not belong to the user.
-
-        if (!array_key_exists($g->community_id, $g->special_community_array)) {
-
-            breakout(" Invalid community_id. ");
-
-        }
-
-
-        /**
          * Get the community object if $g->type_of_resource_requested == 'community').
          * Ideally, we should get it for every request; However, because of the
          * current way navigation works does not facilitate direct links to post
