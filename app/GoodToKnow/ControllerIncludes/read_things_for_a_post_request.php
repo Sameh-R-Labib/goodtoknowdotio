@@ -20,6 +20,43 @@ use GoodToKnow\Models\user;
 
 global $g;
 
+
+/**
+ * Debug Code
+ */
+echo "\n<p>Begin debug</p>\n";
+echo "<p>Var_dump \$g->special_community_array: </p>\n<pre>";
+var_dump($g->special_community_array);
+echo "</pre>\n";
+echo "<p>Var_dump \$g->special_topic_array: </p>\n<pre>";
+var_dump($g->special_topic_array);
+echo "</pre>\n";
+echo "<p>Var_dump \$g->special_post_array: </p>\n<pre>";
+var_dump($g->special_post_array);
+echo "</pre>\n";
+echo "<p>Var_dump \$g->community_id: </p>\n<pre>";
+var_dump($g->community_id);
+echo "</pre>\n";
+echo "<p>Var_dump \$g->topic_id: </p>\n<pre>";
+var_dump($g->topic_id);
+echo "</pre>\n";
+echo "<p>Var_dump \$g->post_id: </p>\n<pre>";
+var_dump($g->post_id);
+echo "</pre>\n";
+echo "<p>Var_dump \$g->community_name: </p>\n<pre>";
+var_dump($g->community_name);
+echo "</pre>\n";
+echo "</pre>\n";
+echo "<p>Var_dump \$g->topic_name: </p>\n<pre>";
+var_dump($g->topic_name);
+echo "</pre>\n";
+echo "</pre>\n";
+echo "<p>Var_dump \$g->post_full_name: </p>\n<pre>";
+var_dump($g->post_full_name);
+echo "</pre>\n";
+die("<p>End debug</p>\n");
+
+
 // Breakout if the post id is not in the special post array.
 if (!array_key_exists($g->post_id, $_SESSION['special_post_array'])) {
     breakout(" Your resource request is defective.  (errno 114) ");
