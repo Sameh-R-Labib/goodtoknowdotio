@@ -176,6 +176,9 @@ class set_home_community_topic_post
         $_SESSION['topic_id'] = $g->topic_id;
         $_SESSION['post_id'] = $g->post_id;
 
+        $_SESSION['community_name'] = $g->community_name;
+        $_SESSION['community_description'] = $g->community_description;
+
 
         /**
          * Store the message in the session.
