@@ -18,7 +18,7 @@ class set_home_community_topic_post
          * DESCRIPTION
          * ===========
          *
-         * This script runs when a user (on home page) clicks a community, a topic, or a post hyperlink.
+         * This script runs when a user clicks a community, topic, or post hyperlink.
          * It does its thing then redirects back to the home page.
          *
          * home is the route for displaying a blog resource.
@@ -35,7 +35,7 @@ class set_home_community_topic_post
          * This route will establish the type_of_resource_requested, and
          * it will gather data for the resource. It will establish
          * a time of refresh for (special) data so that the home page will
-         * not need to reload them when home is loaded directly after this
+         * not need to reload it when home is loaded directly after this
          * route yet if the home page is loaded directly (like a page refresh)
          * then the special data will be loaded if it has expired.
          */
@@ -71,8 +71,7 @@ class set_home_community_topic_post
 
 
         /**
-         * Figure out which type of resource is being requested.
-         * Is it a community, a topic or a post?
+         * Type of resource being requested: community, topic, post
          */
 
         if ($g->topic_id == 0) {
@@ -101,7 +100,6 @@ class set_home_community_topic_post
 
         /**
          * Refresh $_SESSION['special_community_array']
-         * if the time is right.
          */
 
         $time_since_refresh = time() - $g->last_refresh_communities;  // seconds
@@ -123,10 +121,7 @@ class set_home_community_topic_post
 
 
         /**
-         * Get the community object if $g->type_of_resource_requested == 'community').
-         * Ideally, we should get it for every request; However, because of the
-         * current way navigation works does not facilitate direct links to post
-         * then this code is acceptable and saves some steps.
+         * Community
          */
 
         if ($g->type_of_resource_requested == 'community') {
@@ -137,10 +132,7 @@ class set_home_community_topic_post
 
 
         /**
-         * This section is for this type of resource: topic
-         *
-         * Assumption: Gtk.io does not allow users to click on direct links to posts.
-         * Users always use the navigation system provided by Gtk.io.
+         * Topic
          */
 
         if ($g->type_of_resource_requested == 'topic') {
@@ -152,10 +144,7 @@ class set_home_community_topic_post
 
 
         /**
-         * This section is for this type of resource: post
-         *
-         * Assumption: Gtk.io does not allow users to click on direct links to posts.
-         * Users always use the navigation system provided by Gtk.io.
+         * Post
          */
 
         if ($g->type_of_resource_requested === 'post') {
@@ -166,7 +155,7 @@ class set_home_community_topic_post
 
 
         /**
-         * Delayed until now: update the session variables to reflect what has been requested.
+         * Update the session variables to reflect what has been requested.
          */
 
         // Store the type of resource requested in the session.
