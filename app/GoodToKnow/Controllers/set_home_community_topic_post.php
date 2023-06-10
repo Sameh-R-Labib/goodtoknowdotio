@@ -184,6 +184,11 @@ class set_home_community_topic_post
         $g->last_refresh_topics = time();
         $_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
 
+        if ($g->type_of_resource_requested == 'topic' or $g->type_of_resource_requested == 'post') {
+            $_SESSION['topic_name'] = $g->topic_name;
+            $_SESSION['topic_description'] = $g->topic_description;
+        }
+
 
         /**
          * Store the message in the session.

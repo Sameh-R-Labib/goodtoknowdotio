@@ -33,8 +33,6 @@ if (!$topic_object) {
 }
 
 // Store the topic name and description.
-$_SESSION['topic_name'] = $topic_object->topic_name;
-$_SESSION['topic_description'] = $topic_object->topic_description;
 $g->topic_name = $topic_object->topic_name;
 $g->topic_description = $topic_object->topic_description;
 
