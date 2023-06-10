@@ -179,6 +179,10 @@ class set_home_community_topic_post
         $_SESSION['community_name'] = $g->community_name;
         $_SESSION['community_description'] = $g->community_description;
 
+        $_SESSION['special_topic_array'] = $g->special_topic_array;
+        $g->last_refresh_topics = time();
+        $_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
+
 
         /**
          * Store the message in the session.
