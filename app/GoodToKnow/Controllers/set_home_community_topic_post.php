@@ -8,6 +8,7 @@ use GoodToKnow\Models\post;
 use GoodToKnow\Models\topic;
 use GoodToKnow\Models\topic_to_post;
 use GoodToKnow\Models\user;
+use GoodToKnow\Models\user_to_community;
 
 class set_home_community_topic_post
 {
@@ -99,6 +100,29 @@ class set_home_community_topic_post
 
 
         /**
+         * Refresh $_SESSION['special_community_array']
+         * if the time is right.
+         */
+
+        $time_since_refresh = time() - $g->last_refresh_communities;  // seconds
+
+        if ($time_since_refresh > 23) {
+
+            $g->special_community_array = user_to_community::find_communities_of_user($g->user_id);
+
+            if ($g->special_community_array === false) {
+
+                $g->message .= " Failed to find the array of the user's communities. ";
+
+            }
+
+            $_SESSION['special_community_array'] = $g->special_community_array;
+            $g->last_refresh_communities = time();
+            $_SESSION['last_refresh_communities'] = $g->last_refresh_communities;
+        }
+
+
+        /**
          * This section is for these types of resources:
          *
          *      community, topic, post
@@ -111,14 +135,6 @@ class set_home_community_topic_post
             breakout(" Invalid community_id. ");
 
         }
-
-        // Store the type of resource requested in the session.
-        $_SESSION['type_of_resource_requested'] = $g->type_of_resource_requested;
-
-        // Store the id of each.
-        $_SESSION['community_id'] = $g->community_id;
-        $_SESSION['topic_id'] = $g->topic_id;
-        $_SESSION['post_id'] = $g->post_id;
 
 
         /**
@@ -161,6 +177,19 @@ class set_home_community_topic_post
             require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_post_request.php';
 
         }
+
+
+        /**
+         * Delayed until now: update the session variables to reflect what has been requested.
+         */
+
+        // Store the type of resource requested in the session.
+        $_SESSION['type_of_resource_requested'] = $g->type_of_resource_requested;
+
+        // Store the id of each.
+        $_SESSION['community_id'] = $g->community_id;
+        $_SESSION['topic_id'] = $g->topic_id;
+        $_SESSION['post_id'] = $g->post_id;
 
 
         /**
