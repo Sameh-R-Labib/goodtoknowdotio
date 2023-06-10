@@ -22,8 +22,9 @@ global $g;
 
 // Breakout if the post id is not in the special post array.
 if (!array_key_exists($g->post_id, $_SESSION['special_post_array'])) {
-    breakout(" Your resource request is defective.  (errno 4) ");
+    breakout(" Your resource request is defective.  (errno 114) ");
 }
+
 
 // Get the post object and its content.
 $post_object = post::find_by_id($g->post_id);
@@ -33,31 +34,21 @@ if (!$post_object) {
 }
 
 $g->post_content = file_get_contents($post_object->html_file);
-
 if ($g->post_content === false) {
     breakout(" The home page says it's unable to get the current post (but that's okay if you've just deleted it.) ");
 }
+if (empty(trim($g->post_content))) {
+    $g->post_content = '<p><em>[No post content]</em></p>';
+}
+$g->last_refresh_content = time();
 
-// Store the post name.
-$_SESSION['post_name'] = $post_object->title;
 $g->post_name = $post_object->title;
 
 // Generate a publishing date for the post and store the post's full name.
 $epoch_time = (int)$post_object->created;
 $publish_date = date("m/d/Y", $epoch_time);
 $g->post_full_name = $post_object->extensionfortitle . ' <span class="small-time">[' . $publish_date . ']</span>';
-$_SESSION['post_full_name'] = $g->post_full_name;
 
-// Store post content and its last refresh time.
-$_SESSION['post_content'] = $g->post_content;
-$g->last_refresh_content = time();
-$_SESSION['last_refresh_content'] = $g->last_refresh_content;
-
-if (empty(trim($g->post_content))) {
-
-    $g->post_content = '<p><em>[No post content]</em></p>';
-
-}
 
 // Get and store author information.
 $post_author_object = user::find_by_id($post_object->user_id);
@@ -66,7 +57,5 @@ if ($post_author_object === false) {
     breakout(" Unable to get the post author object from the database. ");
 }
 
-$_SESSION['author_username'] = $post_author_object->username;
-$_SESSION['author_id'] = (int)$post_author_object->id;
 $g->author_username = $post_author_object->username;
 $g->author_id = (int)$post_author_object->id;

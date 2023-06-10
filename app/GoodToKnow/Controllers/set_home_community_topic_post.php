@@ -175,11 +175,29 @@ class set_home_community_topic_post
         $_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
 
         if ($g->type_of_resource_requested == 'topic' or $g->type_of_resource_requested == 'post') {
+
             $_SESSION['topic_name'] = $g->topic_name;
             $_SESSION['topic_description'] = $g->topic_description;
+
             // Store the special post array.
             $_SESSION['special_post_array'] = $g->special_post_array;
             $_SESSION['last_refresh_posts'] = $g->last_refresh_posts;
+
+        }
+
+        if ($g->type_of_resource_requested == 'post') {
+
+            // Store post content and its last refresh time.
+            $_SESSION['post_content'] = $g->post_content;
+            $_SESSION['last_refresh_content'] = $g->last_refresh_content;
+
+            // Store the post name.
+            $_SESSION['post_name'] = $g->post_name;
+            $_SESSION['post_full_name'] = $g->post_full_name;
+
+            $_SESSION['author_username'] = $g->author_username;
+            $_SESSION['author_id'] = $g->author_id;
+
         }
 
 
