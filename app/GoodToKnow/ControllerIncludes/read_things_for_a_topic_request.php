@@ -21,7 +21,7 @@ use GoodToKnow\Models\topic_to_post;
 global $g;
 
 // Breakout if the user specified topic id is non-zero and is not in $g->special_topic_array.
-if ($g->topic_id != 0 && !array_key_exists($g->topic_id, $_SESSION['special_topic_array'])) {
+if (!array_key_exists($g->topic_id, $g->special_topic_array)) {
     breakout(" Your resource request is defective.  (errno 6) ");
 }
 
