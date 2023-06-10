@@ -145,6 +145,7 @@ class set_home_community_topic_post
 
         if ($g->type_of_resource_requested == 'topic') {
 
+            require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_community_request.php';
             require CONTROLLERINCLUDES . DIRSEP . 'read_things_for_a_topic_request.php';
 
         }
