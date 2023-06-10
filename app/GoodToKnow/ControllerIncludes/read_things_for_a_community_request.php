@@ -27,16 +27,6 @@ if (!array_key_exists($g->community_id, $g->special_community_array)) {
 }
 
 
-// Get and store the special topic array.
-$g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
-
-if (!$g->special_topic_array) $g->special_topic_array = [];
-
-$_SESSION['special_topic_array'] = $g->special_topic_array;
-$g->last_refresh_topics = time();
-$_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
-
-
 // Get and store the community community_name and community_description
 $community_object = community::find_by_id($g->community_id);
 
@@ -48,3 +38,13 @@ $_SESSION['community_name'] = $community_object->community_name;
 $_SESSION['community_description'] = $community_object->community_description;
 $g->community_name = $community_object->community_name;
 $g->community_description = $community_object->community_description;
+
+
+// Get and store the special topic array.
+$g->special_topic_array = community_to_topic::get_topics_array_for_a_community($g->community_id);
+
+if (!$g->special_topic_array) $g->special_topic_array = [];
+
+$_SESSION['special_topic_array'] = $g->special_topic_array;
+$g->last_refresh_topics = time();
+$_SESSION['last_refresh_topics'] = $g->last_refresh_topics;
