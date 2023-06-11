@@ -2,12 +2,6 @@
 
 namespace GoodToKnow\Controllers;
 
-use GoodToKnow\Models\community;
-use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\post;
-use GoodToKnow\Models\topic;
-use GoodToKnow\Models\topic_to_post;
-use GoodToKnow\Models\user;
 use GoodToKnow\Models\user_to_community;
 
 class set_home_community_topic_post
