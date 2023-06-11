@@ -4,9 +4,6 @@
     <!-- maincontent -->
     <div id="maincontent">
         <h1>Changed Content</h1>
-        <p class="tooltip">ⅈ
-            <span class="tooltiptext tooltip-top">Posts have incorrect community after following their link.</span>
-        </p>
         <p><b><u>List</u></b></p>
         <?php if (!empty($g->cc_objects)): ?>
             <p>
