@@ -11,9 +11,8 @@
                         <span class="tooltiptext tooltip-top">Incorrect if Admin purged transactions
                             older than 90 days and start_time older than 90.</span>
                     </span><br>
-            <b>Comment: </b><?= $g->account->comment ?></p>
-        <p class="alncenter"><a class="clearbtn" href="/ax1/build_a_banking_transaction_for_balances/page">Create
-                Transaction</a>
+            <b>Comment: </b><?= $g->account->comment ?><br>
+            <a class="clearbtn" href="/ax1/build_a_banking_transaction_for_balances/page">Create Transaction</a>
         </p>
         <table>
             <tr>
