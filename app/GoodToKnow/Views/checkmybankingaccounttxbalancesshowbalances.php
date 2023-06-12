@@ -23,9 +23,9 @@
             <?php foreach ($g->array as $transaction): ?>
                 <tr>
                     <td><?= $transaction->time ?></td>
-                    <td align="right"><?= $transaction->label ?></td>
-                    <td align="right"><?= $transaction->amount ?></td>
-                    <td align="right"><?= $transaction->balance ?></td>
+                    <td class='alnright'><?= $transaction->label ?></td>
+                    <td class='alnright'><?= $transaction->amount ?></td>
+                    <td class='alnright'><?= $transaction->balance ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

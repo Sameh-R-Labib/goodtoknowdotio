@@ -989,3 +989,7 @@ h2 + p {
     border: none;
     cursor: pointer;
 }
+
+.alnright {
+    text-align: right;
+}
