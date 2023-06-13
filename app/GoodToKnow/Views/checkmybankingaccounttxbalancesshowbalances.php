@@ -12,7 +12,8 @@
                             older than 90 days and start_time older than 90.</span>
                     </span><br>
             <b>Comment: </b><?= $g->account->comment ?><br>
-            <a class="clearbtn" href="/ax1/build_a_banking_transaction_for_balances/page">Create Transaction</a>
+            <a class="clearbtn" href="/ax1/build_a_banking_transaction_for_balances/page/<?= $g->account->id ?>">Create
+                Transaction</a>
         </p>
         <table>
             <tr>

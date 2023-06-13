@@ -6,11 +6,15 @@ use function GoodToKnow\ControllerHelpers\get_html_select_box_containing_the_ban
 
 class build_a_banking_transaction_for_balances
 {
-    function page()
+    function page(int $default_bank_id = 0)
     {
         /**
-         * This feature enables any user to create a database record in the
+         * This feature enables the user to create a database record in the
          * banking_transaction_for_balances table.
+         *
+         * The significance of $default_bank_id is that (when specified) it
+         * causes the $preselected_option_value to be the id of a bank which
+         * is to be pre-selected within the drop-down box.
          */
 
 
