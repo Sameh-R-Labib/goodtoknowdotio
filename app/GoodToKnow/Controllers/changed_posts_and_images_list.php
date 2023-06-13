@@ -43,6 +43,14 @@ class changed_posts_and_images_list
             $cc_object->time = get_readable_date($cc_object->time);
             $cc_object->expires = get_readable_date($cc_object->expires);
 
+            if ($cc_object->type == 'image_upload') {
+                $a_link_href_content = SERVER_URL . '/image/' . $cc_object->name;
+                $a_link_href_content = htmlspecialchars($a_link_href_content, ENT_NOQUOTES | ENT_HTML5);
+                $a_link_display_text = SERVER_URL . '/image/' . rawurlencode($cc_object->name);
+                $a_link_display_text = htmlspecialchars($a_link_display_text, ENT_NOQUOTES | ENT_HTML5);
+                $cc_object->name = '<a href="' . $a_link_href_content . '" target="_blank">' . $a_link_display_text . '</a>';
+            }
+
         }
 
         // Reverse the order so they show that way.

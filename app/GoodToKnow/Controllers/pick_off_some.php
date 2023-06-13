@@ -48,9 +48,17 @@ class pick_off_some
         // Loop through the array and replace some attributes with more readable versions of themselves.
         require_once CONTROLLERHELPERS . DIRSEP . 'get_readable_date.php';
 
-        foreach ($g->array_of_objects as $object) {
+        foreach ($g->array_of_objects as $cc_object) {
 
-            $object->time = get_readable_date($object->time);
+            $cc_object->time = get_readable_date($cc_object->time);
+
+            if ($cc_object->type == 'image_upload') {
+                $a_link_href_content = SERVER_URL . '/image/' . $cc_object->name;
+                $a_link_href_content = htmlspecialchars($a_link_href_content, ENT_NOQUOTES | ENT_HTML5);
+                $a_link_display_text = SERVER_URL . '/image/' . rawurlencode($cc_object->name);
+                $a_link_display_text = htmlspecialchars($a_link_display_text, ENT_NOQUOTES | ENT_HTML5);
+                $cc_object->name = '<a href="' . $a_link_href_content . '" target="_blank">' . $a_link_display_text . '</a>';
+            }
 
         }
 
