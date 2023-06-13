@@ -19,8 +19,8 @@
                     Label of C Record From Which C Was Sold: <?= $object->commodity_label ?><br>
                     Time Bought: <?= $object->time_bought ?><br>
                     Time Sold: <?= $object->time_sold ?><br>
-                    Purchase Amount: <?= $object->purchase ?><br>
-                    Sale Amount: <?= $object->sale ?><br>
+                    Purchase Amount Paid: <?= $object->currency_transacted ?> <?= $object->purchase ?><br>
+                    Sale Amount Received: <?= $object->currency_transacted ?> <?= $object->sale ?><br>
                     Net Profit: <?= $object->currency_transacted ?>
                     <?php if ($object->profit < 0): ?>
                         🔥(
