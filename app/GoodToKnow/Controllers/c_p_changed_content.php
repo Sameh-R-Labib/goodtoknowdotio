@@ -21,7 +21,7 @@ class c_p_changed_content
         $g->html_title = 'Changed Content';
 
 
-        $g->message .= " Monitor the blog's changed content. ";
+        $g->message .= " Monitor blog's changed content and delete troublesome uploads. ";
 
 
         require VIEWS . DIRSEP . 'cpchangedcontent.php';
