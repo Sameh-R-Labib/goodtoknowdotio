@@ -38,7 +38,7 @@ class build_a_banking_transaction_for_balances
 
         require CONTROLLERHELPERS . DIRSEP . 'get_html_select_box_containing_the_bank_accounts.php';
 
-        $g->account_type = get_html_select_box_containing_the_bank_accounts($g->user_id, 0);
+        $g->account_type = get_html_select_box_containing_the_bank_accounts($g->user_id, $default_bank_id);
 
 
         /**
