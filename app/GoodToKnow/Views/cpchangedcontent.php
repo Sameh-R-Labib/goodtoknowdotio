@@ -7,7 +7,7 @@
             <a class="purplebtn" href="/ax1/changed_posts_and_images/page">Changed Posts and Uploaded Images</a>
             <a class="orangebtn" href="/ax1/cull_the_herd/page">Cull The Herd</a>
             <a class="blackbtn" href="/ax1/pick_off_some/page">Pick Off Some</a>
-            <a class="greenbtn" href="/ax1/delete_recent_uploads/page">Delete Recently Uploaded Images</a>
+            <a class="greenbtn" href="/ax1/delete_recent_uploads/page">Delete DANGEROUS Recently Uploaded Images</a>
         </div>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
