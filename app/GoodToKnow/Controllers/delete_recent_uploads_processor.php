@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\changed_content;
 use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
 
-class pick_off_some_processor
+class delete_recent_uploads_processor
 {
     function page()
     {
@@ -47,7 +47,10 @@ class pick_off_some_processor
 
 
         /**
-         * Loop through $submitted_ids_array and delete the changed_content database table rows.
+         * Loop through $submitted_ids_array and delete the files associated with the
+         * changed_content database table rows specified by $submitted_ids_array.
+         *
+         * The term id in $submitted_ids_array refers to a changed_content id.
          */
 
         get_db();
@@ -61,6 +64,10 @@ class pick_off_some_processor
             if (!$changed_content_object) {
                 breakout(' Error 91493908. ');
             }
+
+            // Delete the upload file.
+            $did_delete_upload = unlink(IMAGE . DIRSEP . $changed_content_object->name);
+            if (!$did_delete_upload) breakout(' There was a problem with deleting the file. ');
 
             $result = $changed_content_object->delete();
 
@@ -77,6 +84,6 @@ class pick_off_some_processor
          * Redirect and give a message explaining what was accomplished.
          */
 
-        breakout(" I deleted $count changed_content rows. ");
+        breakout(" I deleted $count DANGEROUS uploads. ");
     }
 }
