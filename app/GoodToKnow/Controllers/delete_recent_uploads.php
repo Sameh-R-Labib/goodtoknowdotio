@@ -63,6 +63,5 @@ class delete_recent_uploads
 
         require VIEWS . DIRSEP . 'deleterecentuploads.php';
 
-
     }
 }

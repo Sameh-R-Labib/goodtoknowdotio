@@ -17,4 +17,5 @@
         <?php endforeach; ?>
     </section>
     <?php require SUBMITABORT; ?>
-    <?php require BOTTOMOFPAGES; ?>
+</form>
+<?php require BOTTOMOFPAGES; ?>
