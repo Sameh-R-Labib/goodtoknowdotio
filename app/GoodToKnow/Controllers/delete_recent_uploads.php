@@ -59,7 +59,7 @@ class delete_recent_uploads
         $g->array_of_objects = array_reverse($g->array_of_objects);
 
 
-        $g->html_title = 'Delete Recent Uploads';
+        $g->html_title = 'Delete DANGEROUS Recent Uploads';
 
         require VIEWS . DIRSEP . 'deleterecentuploads.php';
 
