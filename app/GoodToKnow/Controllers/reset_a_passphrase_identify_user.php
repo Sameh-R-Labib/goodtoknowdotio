@@ -4,7 +4,7 @@ namespace GoodToKnow\Controllers;
 
 use function GoodToKnow\ControllerHelpers\username_for_specifying_which_prep;
 
-class member_memo_editor_processor
+class reset_a_passphrase_identify_user
 {
     function page()
     {
@@ -31,6 +31,6 @@ class member_memo_editor_processor
         $_SESSION['saved_str01'] = $submitted_username;
 
 
-        redirect_to("/ax1/member_memo_editor_form/page");
+        redirect_to("/ax1/reset_a_passphrase_enter_a_passphrase/page");
     }
 }
