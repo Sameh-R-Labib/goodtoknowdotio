@@ -7,9 +7,8 @@
         <p>
             See: <a href="/ax1/proclamation/page">Terms Of Service</a>
         </p>
-        <p>On the developer instance of Gtk.io <a href="https://goodtoknow.io/">https://goodtoknow.io/</a> there is a
-            community named <i>Wisdom</i>.<br>
-            See: <i>Wisdom → Quotes → GoodToKnow.io</i>
+        <p>If you are considering running your own instance of this software be sure to read <i>Wisdom → Quotes →
+                GoodToKnow.io</i> on <a href="https://goodtoknow.io/">the developer instance of Gtk.io</a>.
         </p>
         <p>
             <i>Sameh R. Labib is the original author of this document and is the owner of the GoodToKnow.io web app
