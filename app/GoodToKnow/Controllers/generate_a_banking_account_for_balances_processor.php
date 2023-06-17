@@ -58,7 +58,9 @@ class generate_a_banking_account_for_balances_processor
 
         if ($g->is_first_attempt) {
 
-            if ($g->time > time()) {
+            $recent_past_time = time() - 2592000; // 30 days ago
+
+            if ($g->time > time() or $g->time < $recent_past_time) {
 
                 /**
                  * Reset 'is_first_attempt' in the session.

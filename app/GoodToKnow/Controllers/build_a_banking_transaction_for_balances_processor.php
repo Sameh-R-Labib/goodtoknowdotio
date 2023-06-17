@@ -60,7 +60,9 @@ class build_a_banking_transaction_for_balances_processor
 
         if ($g->is_first_attempt) {
 
-            if ($g->time > time()) {
+            $recent_past_time = time() - 1296000; // 15 days ago
+
+            if ($g->time > time() or $g->time < $recent_past_time) {
 
                 /**
                  * Reset 'is_first_attempt' in the session.
