@@ -21,11 +21,11 @@
             licensed FLOSS software.
         </p>
         <p>
-            The primary use for this software is:
+            <b><u>Use Cases</u></b>
         </p>
         <ol>
-            <li>share of practical useful information via blog posts</li>
-            <li>maintain ones own personal records</li>
+            <li>To have a hierarchically organized blogging system.</li>
+            <li>To stay organized via a database system.</li>
         </ol>
         <p>The blog portion of the GoodToKnow.io web app software is for sharing information amongst family and friends.
             Members are assigned communities in order to limit each member to posts he / she is interested in.
