@@ -5,9 +5,6 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\status;
 use GoodToKnow\Models\user;
 use GoodToKnow\Models\user_to_community;
-use GoodToKnow\Models\community_to_topic;
-use GoodToKnow\Models\post;
-use GoodToKnow\Models\topic_to_post;
 
 class home
 {
