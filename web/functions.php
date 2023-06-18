@@ -204,7 +204,8 @@ function breakout(string $newMessage)
      */
     global $g;
 
-    if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post') {
+    if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post'
+        or $g->controller_name == 'cover_page') {
         $g->message .= $newMessage;
         reset_feature_session_vars();
         redirect_to("/ax1/infinite_loop_prevent/page");
