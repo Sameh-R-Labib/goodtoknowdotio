@@ -36,7 +36,7 @@ if ($g->when_last_checked_messages === null) {
 
         if ($quantity === false) {
 
-            breakout(" Failed to get quantity of messages. ");
+            breakout(" Error: failed to get the quantity of messages. ");
 
         }
 
