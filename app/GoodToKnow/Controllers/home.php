@@ -106,14 +106,14 @@ class home
         if ($g->type_of_resource_requested === 'community') {
 
             if (!empty(trim($g->community_description)) and empty(trim($g->message))) {
-                $g->message .= ' ' . nl2br($g->community_description, false) . ' ';
+                $g->message = ' ' . nl2br($g->community_description, false) . ' ';
             }
             $g->the_buttons .= '<a class="orangebtn" href="/ax1/write_to_admin/page">Admin Adds Topics</a> ';
 
         } elseif ($g->type_of_resource_requested === 'topic') {
 
             if (!empty(trim($g->topic_description)) and empty(trim($g->message))) {
-                $g->message .= ' ' . nl2br($g->topic_description, false) . ' ';
+                $g->message = ' ' . nl2br($g->topic_description, false) . ' ';
             }
             $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️ for ⇒</a> ';
             $g->the_buttons .= ' <a class="greenbtn" href="/ax1/create_new_post_direct/page">Create 📄</a> ';
@@ -122,7 +122,7 @@ class home
         } else {
 
             if (!empty(trim($g->post_full_name)) and empty(trim($g->message))) {
-                $g->message .= ' ' . $g->post_full_name . ' ';
+                $g->message = ' ' . $g->post_full_name . ' ';
             }
             if ($g->author_id == $g->user_id) {
                 $g->the_buttons .= '<a class="clearbtn" href="/ax1/upload/page">Upload 🖼️</a> ';
