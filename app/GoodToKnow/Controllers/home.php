@@ -16,36 +16,25 @@ class home
         self::logout_the_user_if_he_is_suspended();
 
 
-        /**
-         * set_home_community_topic_post does set all these vars. However, since the user may
-         * just hit refresh in browser, it's good to refresh these variables (once in a while
-         * on the home page.)
-         *
-         * Not every variable is refreshed. Just the main ones.
-         */
+        // set_home_community_topic_post does set all these vars. However, since the user may
+        // just hit refresh in browser, it's good to refresh these variables (once in a while
+        // on the home page.)
+        //
+        // Not every variable is refreshed. Just the main ones.
         self::refresh_vars_which_may_be_stale();
 
 
-        /**
-         * Announce something about the quantity of inbox messages.
-         *
-         * This, also, gets appended to the session message.
-         */
+        // Announce something about the quantity of inbox messages. This, also, gets appended to the session message.
         require CONTROLLERINCLUDES . DIRSEP . 'check_messages.php';
 
 
-        /**
-         * home should always present a message.
-         */
         self::put_together_message_and_buttons();
 
 
         self::add_alert_to_message();
 
 
-        /**
-         * Sets a few variables and summons the view.
-         */
+        // Sets a few variables and summons the view.
         self::show_the_home_page();
     }
 
@@ -72,7 +61,7 @@ class home
     }
 
 
-    private static function add_alert_to_message()
+    static function add_alert_to_message()
     {
         global $g;
 
@@ -110,7 +99,7 @@ class home
     }
 
 
-    private static function put_together_message_and_buttons()
+    static function put_together_message_and_buttons()
     {
         global $g;
 
@@ -229,7 +218,7 @@ class home
     }
 
 
-    private static function logout_the_user_if_he_is_suspended()
+    static function logout_the_user_if_he_is_suspended()
     {
         /**
          * Logout the user if he is suspended.
@@ -279,7 +268,7 @@ class home
     }
 
 
-    private static function redirect_if_not_logged_in()
+    static function redirect_if_not_logged_in()
     {
         global $g;
 
