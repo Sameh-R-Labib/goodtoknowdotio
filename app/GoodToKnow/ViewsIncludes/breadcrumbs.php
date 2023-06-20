@@ -2,8 +2,6 @@
 
 global $g;
 
-echo "<a href=\"/ax1/home/page\"><img src=\"/img/blog_home.gif\" alt=\"blog home\" height=\"18\" width=\"18\"></a>" . " ≬ ";
-
 switch ($g->page) {
     case 'cover_page':
         echo "<a href=\"/ax1/cover_page/page\">Cover Page</a>";
