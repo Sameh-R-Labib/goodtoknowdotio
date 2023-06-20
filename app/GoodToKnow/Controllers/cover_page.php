@@ -16,5 +16,11 @@ class cover_page
          * present messages and alerts. Also, it will enforce
          * user suspensions and system offline conditions.
          */
+
+
+        home::redirect_if_not_logged_in();
+
+
+        home::logout_the_user_if_he_is_suspended();
     }
 }
