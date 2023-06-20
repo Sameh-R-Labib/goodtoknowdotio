@@ -24,7 +24,7 @@ class home
         self::refresh_vars_which_may_be_stale();
 
 
-        // Announce something about the quantity of inbox messages. This, also, gets appended to the session message.
+        // This creates html button for inbox messages.
         require CONTROLLERINCLUDES . DIRSEP . 'check_messages.php';
 
 

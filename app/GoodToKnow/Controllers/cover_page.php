@@ -18,9 +18,21 @@ class cover_page
          */
 
 
+        global $g;
+
+
         home::redirect_if_not_logged_in();
 
 
         home::logout_the_user_if_he_is_suspended();
+
+
+        // This creates html button for inbox messages.
+        require CONTROLLERINCLUDES . DIRSEP . 'check_messages.php';
+
+
+        // There is a area in the view for showing $g->the_buttons.
+        // Currently, for this route, there is only one button (the $g->messages_button.)
+        $g->the_buttons .= $g->messages_button;
     }
 }
