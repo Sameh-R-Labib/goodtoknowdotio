@@ -51,7 +51,7 @@ class home
         $g->show_poof = false;
 
 
-        $g->html_title = 'GoodToKnow.io';
+        $g->html_title = 'Blog';
 
 
         $g->page = "home";

@@ -34,5 +34,24 @@ class cover_page
         // There is a area in the view for showing $g->the_buttons.
         // Currently, for this route, there is only one button (the $g->messages_button.)
         $g->the_buttons .= $g->messages_button;
+
+
+        home::add_alert_to_message();
+
+
+        // false is JUST to indicate to the view that this is the home page.
+        // The view will still show the author messaging link if home is showing a post.
+        $g->show_poof = true;  // indicates route is not for blog system
+
+
+        $g->html_title = 'Cover Page';
+
+
+        $g->page = "cover_page";
+
+
+        reset_feature_session_vars();
+        require VIEWS . DIRSEP . 'coverpage.php';
+
     }
 }
