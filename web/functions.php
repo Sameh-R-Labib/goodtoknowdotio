@@ -176,8 +176,10 @@ function redirect_to(string $location)
      */
     global $g;
 
-    // passing on the "to display message"
-    $_SESSION['message'] = $g->message;
+    // passing on the "to display message" as long as !($g->store_message === false).
+    // Because we don't want to store something in the session right after it has been
+    // destroyed (if it was just destroyed.
+    if (!($g->store_message === false)) $_SESSION['message'] = $g->message;
 
     if ($location !== '') {
         header("Location: $location");
