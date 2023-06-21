@@ -106,7 +106,7 @@ if (!empty($_SERVER['PATH_INFO'])) {
 
 // Default controller
 
-$g->controller_name = 'home';
+$g->controller_name = 'cover_page';
 
 
 if (!empty($route_segments_array[0])) {
