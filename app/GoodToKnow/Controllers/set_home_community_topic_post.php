@@ -50,8 +50,10 @@ class set_home_community_topic_post
 
         if (!$g->is_logged_in) {
 
+            $g->message .= " Error P4959. ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
-
             redirect_to("/ax1/login_form/page");
 
         }

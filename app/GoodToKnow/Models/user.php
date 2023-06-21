@@ -102,7 +102,10 @@ class user extends good_object
 
             // The current script stops (we redirect to the logout route.)
 
-            redirect_to("/ax1/logout/page");
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
+            $g->message .= " Error H64B51. ";
+            redirect_to("/ax1/login_form/page");
         }
 
         // Otherwise, return control over to where the function was called.

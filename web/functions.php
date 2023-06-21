@@ -64,7 +64,11 @@ function offline_enforcement()
 
         if ($status_object->name == 'offline') {
 
-            redirect_to("/ax1/logout/page");
+            $g->message .= " System running in Offline mode. ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
+            reset_feature_session_vars();
+            redirect_to("/ax1/login_form/page");
 
         }
     }
@@ -176,10 +180,7 @@ function redirect_to(string $location)
      */
     global $g;
 
-    // passing on the "to display message" as long as !($g->store_message === false).
-    // Because we don't want to store something in the session right after it has been
-    // destroyed (if it was just destroyed.
-    if (!($g->store_message === false)) $_SESSION['message'] = $g->message;
+    $_SESSION['message'] = $g->message;
 
     if ($location !== '') {
         header("Location: $location");

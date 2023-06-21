@@ -7,18 +7,18 @@ class logout
     function page()
     {
         /**
-         * The purpose is to destroy the session file
-         * then redirect to the login page.
+         * The reason we have this route in spite of the fact that
+         * we also have a route named login_form is that this route
+         * is for direct links in the view. It makes it unnecessary
+         * to put business logic in the view. Most notably the
+         * logout button loads this route.
          */
 
         global $g;
 
-        // Although /ax1/login_form/page will also clear the session I will clear it here too!
-        $_SESSION = [];
-        session_destroy();
-
-        // We are telling redirect_to() not to store the message in the session.
-        $g->store_message = false;
+        $g->is_logged_in = false;
+        $_SESSION['is_logged_in'] = $g->is_logged_in;
+        reset_feature_session_vars();
         redirect_to("/ax1/login_form/page");
     }
 }

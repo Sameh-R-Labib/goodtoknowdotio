@@ -6,6 +6,9 @@ class login_script_processor
 {
     function page()
     {
+        global $g;
+
+
         /**
          * Make sure that a form was submitted.
          */
@@ -23,7 +26,11 @@ class login_script_processor
 
         } else {
 
-            redirect_to("/ax1/logout/page");
+            $g->message .= " You can't use this app because you did not agree to the TOS. ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
+            reset_feature_session_vars();
+            redirect_to("/ax1/login_form/page");
 
         }
     }

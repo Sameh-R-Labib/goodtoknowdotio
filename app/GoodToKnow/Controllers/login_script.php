@@ -85,6 +85,8 @@ class login_script
         if ($g->special_community_array === false) {
 
             $g->message .= " Failed to find the array of the user's communities. ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -131,6 +133,8 @@ class login_script
         if ($user === false) {
 
             $g->message .= " Authentication failed! ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -147,6 +151,7 @@ class login_script
 
             $g->message .= " No active account exists for this username. ";
             $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -156,6 +161,13 @@ class login_script
          * This counts as a suspension check therefore:
          */
         $_SESSION['when_last_checked_suspend'] = time();
+
+
+        /**
+         * This is the only indication that the user is logged in.
+         */
+        $g->is_logged_in = true;
+        $_SESSION['is_logged_in'] = $g->is_logged_in;
     }
 
 
@@ -180,6 +192,9 @@ class login_script
         if (!is_username_syntactically($submitted_username) ||
             !is_password_syntactically($submitted_password)) {
 
+            $g->message .= " I think you mistyped something. ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -208,6 +223,8 @@ class login_script
         if (!empty($g->message) || $g->db === false) {
 
             $g->message .= ' Database connection failed. ';
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 

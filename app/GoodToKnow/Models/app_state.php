@@ -895,12 +895,12 @@ class app_state
 
         $this->saved_arr03 = (isset($_SESSION['saved_arr03'])) ? $_SESSION['saved_arr03'] : [];
 
+        $this->is_logged_in = (isset($_SESSION['is_logged_in'])) ? $_SESSION['is_logged_in'] : false;
+
 
         /**
          * To Make Things Look More Simple
          */
-
-        $this->is_logged_in = !empty($this->user_id);
 
         $this->is_admin = $this->role === 'admin';
 

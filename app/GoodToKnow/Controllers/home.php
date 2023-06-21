@@ -274,8 +274,11 @@ class home
 
         if (!$g->is_logged_in or $_SESSION['agree_to_tos'] !== 'agree') {
 
+            $g->message .= " Error R951. ";
+            $g->is_logged_in = false;
+            $_SESSION['is_logged_in'] = $g->is_logged_in;
             reset_feature_session_vars();
-            redirect_to("/ax1/logout/page");
+            redirect_to("/ax1/login_form/page");
 
         }
 
