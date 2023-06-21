@@ -50,6 +50,9 @@ class cover_page
         $g->page = "cover_page";
 
 
+        $g->message .= " This is Cover Page (🗒️). ";
+
+
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'coverpage.php';
 
