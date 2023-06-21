@@ -274,7 +274,6 @@ class home
 
         if (!$g->is_logged_in or $_SESSION['agree_to_tos'] !== 'agree') {
 
-            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/logout/page");
 

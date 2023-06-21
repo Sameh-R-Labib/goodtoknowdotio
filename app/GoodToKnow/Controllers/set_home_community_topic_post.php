@@ -50,8 +50,6 @@ class set_home_community_topic_post
 
         if (!$g->is_logged_in) {
 
-            $_SESSION['message'] = $g->message;
-
             reset_feature_session_vars();
 
             redirect_to("/ax1/login_form/page");
@@ -193,13 +191,6 @@ class set_home_community_topic_post
             $_SESSION['author_id'] = $g->author_id;
 
         }
-
-
-        /**
-         * Store the message in the session.
-         */
-
-        $_SESSION['message'] = $g->message;
 
 
         /**

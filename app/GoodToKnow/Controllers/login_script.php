@@ -85,7 +85,6 @@ class login_script
         if ($g->special_community_array === false) {
 
             $g->message .= " Failed to find the array of the user's communities. ";
-            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -112,14 +111,13 @@ class login_script
         if (!$g->special_topic_array) {
 
             $g->message .= " I didn't find any topics for your default community. ";
-            $_SESSION['message'] .= $g->message;
 
-            redirect_to("/ax1/home/page");
+        } else {
+
+            $_SESSION['special_topic_array'] = $g->special_topic_array;
+            $_SESSION['last_refresh_topics'] = time();
 
         }
-
-        $_SESSION['special_topic_array'] = $g->special_topic_array;
-        $_SESSION['last_refresh_topics'] = time();
     }
 
 
@@ -133,7 +131,6 @@ class login_script
         if ($user === false) {
 
             $g->message .= " Authentication failed! ";
-            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -149,7 +146,6 @@ class login_script
         if ($user->is_suspended) {
 
             $g->message .= " No active account exists for this username. ";
-            $_SESSION['message'] = $g->message;
             $g->is_logged_in = false;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
@@ -184,7 +180,6 @@ class login_script
         if (!is_username_syntactically($submitted_username) ||
             !is_password_syntactically($submitted_password)) {
 
-            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 
@@ -213,7 +208,6 @@ class login_script
         if (!empty($g->message) || $g->db === false) {
 
             $g->message .= ' Database connection failed. ';
-            $_SESSION['message'] = $g->message;
             reset_feature_session_vars();
             redirect_to("/ax1/login_form/page");
 

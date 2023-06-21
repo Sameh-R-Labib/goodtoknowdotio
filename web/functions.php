@@ -95,12 +95,12 @@ function kick_out_loggedoutusers()
 
 /**
  * Overall perspective:
- *  -- kick_out_loggedoutusers_or_if_there_is_error_msg is NOT used on the home page. However, it is used on most of the other pages.
+ *  -- kick_out_loggedoutusers_or_if_there_is_error_msg is NOT used on the cover_page page. However, it is used on most of the other pages.
  *  -- If there is no session file then $g->is_logged_in will be null (and thus breakout will happen.)
  *  -- If there is a message then breakout will happen.
- * Breakout just means control is handed over to the home page.
- * In the case where there is no session file the home page will log out the user.
- * In the case where there is a message the home page will show that message.
+ * Breakout just means control is handed over to the cover_page page.
+ * In the case where there is no session file the cover_page page will log out the user.
+ * In the case where there is a message the cover_page page will show that message.
  *
  * Also: offline_enforcement().
  */
@@ -212,7 +212,7 @@ function breakout(string $newMessage)
     } else {
         $g->message .= $newMessage;
         reset_feature_session_vars();
-        redirect_to("/ax1/home/page");
+        redirect_to("/ax1/cover_page/page");
     }
 }
 
