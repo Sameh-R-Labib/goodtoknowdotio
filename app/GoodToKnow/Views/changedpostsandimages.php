@@ -1,3 +1,4 @@
+<?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <!-- I will use form tags only for style css issues -->
     <form>
@@ -41,6 +42,6 @@
             hand in creating or publishing.</p>
         <!-- Present link buttons for Save and Abort -->
         <p><a class="modify" href="/ax1/changed_posts_and_images_list/page">Continue</a>
-            <a class="abort" href="/ax1/clear_session_vars/page">Abort</a></p>
+            <a class="abort" href="/ax1/clear_session_vars/page/<?= $g->controller_name ?>">Abort</a></p>
     </form>
 <?php require BOTTOMOFPAGES; ?>
