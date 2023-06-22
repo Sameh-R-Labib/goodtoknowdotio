@@ -207,18 +207,17 @@ function breakout(string $newMessage)
      */
     global $g;
 
+    $g->message .= $newMessage;
+    reset_feature_session_vars();
+
     if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post'
         or $g->controller_name == 'cover_page') {
-        $g->message .= $newMessage;
-        reset_feature_session_vars();
         redirect_to("/ax1/infinite_loop_prevent/page");
     } elseif ($g->controller_name == 'edit_my_post_edit_processor') {
-        $g->message .= $newMessage;
-        reset_feature_session_vars();
         redirect_to("/ax1/home/page");
+    } elseif ($g->controller_name == 'feature_a_task_link') {
+        redirect_to("/ax1/glance_at_my_tasks/page");
     } else {
-        $g->message .= $newMessage;
-        reset_feature_session_vars();
         redirect_to("/ax1/cover_page/page");
     }
 }
