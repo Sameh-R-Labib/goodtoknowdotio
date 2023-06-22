@@ -212,6 +212,10 @@ function breakout(string $newMessage)
         $g->message .= $newMessage;
         reset_feature_session_vars();
         redirect_to("/ax1/infinite_loop_prevent/page");
+    } elseif ($g->controller_name == 'edit_my_post_edit_processor') {
+        $g->message .= $newMessage;
+        reset_feature_session_vars();
+        redirect_to("/ax1/home/page");
     } else {
         $g->message .= $newMessage;
         reset_feature_session_vars();
