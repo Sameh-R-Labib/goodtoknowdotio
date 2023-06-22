@@ -213,7 +213,7 @@ function breakout(string $newMessage)
     if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post'
         or $g->controller_name == 'cover_page') {
         redirect_to("/ax1/infinite_loop_prevent/page");
-    } elseif ($g->controller_name == 'edit_my_post_edit_processor') {
+    } elseif ($g->controller_name == 'edit_my_post_edit_processor' or $g->controller_name == 'edit_my_post_direct') {
         redirect_to("/ax1/home/page");
     } elseif ($g->controller_name == 'feature_a_task_link') {
         redirect_to("/ax1/glance_at_my_tasks/page");
