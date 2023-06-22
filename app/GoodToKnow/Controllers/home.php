@@ -44,11 +44,13 @@ class home
         global $g;
 
 
-        /**
-         * false is JUST to indicate to the view that this is the home page.
-         * The view will still show the author messaging link if home is showing a post.
-         */
-        $g->show_poof = false;
+        // The convention is to explicitly set $g->show_poof
+        // when the route ends by showing a view.
+        if ($g->type_of_resource_requested === 'post') {
+            $g->show_poof = false;
+        } else {
+            $g->show_poof = true;
+        }
 
 
         $g->html_title = 'Blog';

@@ -133,7 +133,7 @@ class app_state
 
 
     /**
-     * Id of the current post.
+     * Identification number of the current post.
      *
      * @var int|mixed
      */
@@ -224,7 +224,7 @@ class app_state
 
 
     /**
-     * Id of the author of the current post.
+     * Identification number of the author of the current post.
      *
      * @var int|mixed
      */
@@ -382,11 +382,16 @@ class app_state
 
 
     /**
-     * Whether to show a poof rather than what is normally be shown in that space.
-     * What is normally shown is a link to the route for messaging the author
-     * of the current post.
+     * Whether to show a poof rather than a link to
+     * the route for messaging the author of the current post.
      *
-     * $show_poof default is false.
+     * Convention:
+     * ===========
+     * $g->show_poof default is false.
+     * Every route which ends in a view must explicitly set
+     * the correct value for $g->show_poof.
+     * Although show_poof is a session variable we do not use
+     * the session to assign its value.
      *
      * @var bool
      */
@@ -942,6 +947,7 @@ class app_state
         $this->coms_user_belongs_to = [];
         $this->coms_user_does_not_belong_to = [];
 
+        // See the convention stated above.
         $this->show_poof = false;
 
         // Apparently, time is sometimes an int and sometimes an array.

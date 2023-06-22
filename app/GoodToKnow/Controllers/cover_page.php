@@ -39,9 +39,7 @@ class cover_page
         home::add_alert_to_message();
 
 
-        // false is JUST to indicate to the view that this is the home page.
-        // The view will still show the author messaging link if home is showing a post.
-        $g->show_poof = true;  // indicates route is not for blog system
+        $g->show_poof = true;
 
 
         $g->html_title = 'Cover Page';
