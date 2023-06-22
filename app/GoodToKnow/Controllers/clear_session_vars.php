@@ -24,6 +24,6 @@ class clear_session_vars
         }
 
 
-        breakout(" You're back on Blog. ");
+        breakout(" You aborted! ");
     }
 }
