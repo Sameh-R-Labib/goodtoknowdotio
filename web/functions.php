@@ -210,6 +210,12 @@ function breakout(string $newMessage)
     $g->message .= $newMessage;
     reset_feature_session_vars();
 
+    /**
+     * See main comment in clear_session_vars.
+     * It will explain one of the subtleties
+     * of the use of $g->controller_name.
+     */
+
     if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post'
         or $g->controller_name == 'cover_page') {
         redirect_to("/ax1/infinite_loop_prevent/page");
