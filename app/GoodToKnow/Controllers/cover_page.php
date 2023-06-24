@@ -48,7 +48,7 @@ class cover_page
         $g->page = "cover_page";
 
 
-        $g->message .= " This is Cover Page (🗒️). ";
+        $g->message .= " Cover Page … icon is (🗒️). ";
 
 
         reset_feature_session_vars();
