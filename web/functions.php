@@ -225,7 +225,10 @@ function breakout(string $newMessage)
         or $g->controller_name == 'author_deletes_own_post_choose_post' or $g->controller_name == 'edit_post_title_choose_post'
         or $g->controller_name == 'edit_my_post_choose_post') {
         redirect_to("/ax1/home/page");
-    } elseif ($g->controller_name == 'feature_a_task_link') {
+    } elseif ($g->controller_name == 'feature_a_task_link'
+        or $g->controller_name == 'induce_a_task'
+        or $g->controller_name == 'forget_a_task'
+        or $g->controller_name == 'forget_a_task_processor') {
         redirect_to("/ax1/glance_at_my_tasks/page");
     } elseif ($g->controller_name == 'build_a_banking_transaction_for_balances'
         or $g->controller_name == 'revamp_a_banking_transaction_for_balances'
@@ -248,6 +251,31 @@ function breakout(string $newMessage)
         or $g->controller_name == 'destroy_a_bank_acct_observer'
         or $g->controller_name == 'destroy_a_bank_acct_observer_processor') {
         redirect_to("/ax1/c_p_banking_observers/page");
+    } elseif ($g->controller_name == 'make_a_recurring_payment_record'
+        or $g->controller_name == 'polish_a_recurring_payment_record'
+        or $g->controller_name == 'polish_a_recurring_payment_record_processor'
+        or $g->controller_name == 'expunge_a_recurring_payment_record'
+        or $g->controller_name == 'expunge_a_recurring_payment_record_processor') {
+        redirect_to("/ax1/c_p_recurring_payments/page");
+    } elseif ($g->controller_name == 'conceive_a_possible_tax_deduction'
+        or $g->controller_name == 'alter_a_possible_tax_deduction'
+        or $g->controller_name == 'alter_a_possible_tax_deduction_edit'
+        or $g->controller_name == 'alter_a_possible_tax_deduction_year_filter'
+        or $g->controller_name == 'see_one_years_possible_tax_deductions'
+        or $g->controller_name == 'wipe_out_a_possible_tax_deduction'
+        or $g->controller_name == 'wipe_out_a_possible_tax_deduction_year_filter'
+        or $g->controller_name == 'wipe_out_a_possible_tax_deduction_delete') {
+        redirect_to("/ax1/c_p_tax_deductions/page");
+    } elseif ($g->controller_name == 'start_a_taxable_income_event'
+        or $g->controller_name == 'write_over_a_taxable_income_event'
+        or $g->controller_name == 'write_over_a_taxable_income_event_year_filter'
+        or $g->controller_name == 'write_over_a_taxable_income_event_edit'
+        or $g->controller_name == 'gawk_at_all_taxable_income_events'
+        or $g->controller_name == 'nuke_a_taxable_income_event'
+        or $g->controller_name == 'nuke_a_taxable_income_event_year_filter'
+        or $g->controller_name == 'nuke_a_taxable_income_event_delete'
+        or $g->controller_name == 'add_income_commodity') {
+        redirect_to("/ax1/c_p_taxable_income/page");
     } else {
         redirect_to("/ax1/cover_page/page");
     }
