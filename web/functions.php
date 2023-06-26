@@ -220,10 +220,34 @@ function breakout(string $newMessage)
         or $g->controller_name == 'cover_page') {
         redirect_to("/ax1/infinite_loop_prevent/page");
     } elseif ($g->controller_name == 'edit_my_post_edit_processor' or $g->controller_name == 'edit_my_post_direct'
-        or $g->controller_name == 'create_new_post') {
+        or $g->controller_name == 'create_new_post' or $g->controller_name == 'edit_post_title'
+        or $g->controller_name == 'edit_my_post' or $g->controller_name == 'author_deletes_own_post'
+        or $g->controller_name == 'author_deletes_own_post_choose_post' or $g->controller_name == 'edit_post_title_choose_post'
+        or $g->controller_name == 'edit_my_post_choose_post') {
         redirect_to("/ax1/home/page");
     } elseif ($g->controller_name == 'feature_a_task_link') {
         redirect_to("/ax1/glance_at_my_tasks/page");
+    } elseif ($g->controller_name == 'build_a_banking_transaction_for_balances'
+        or $g->controller_name == 'revamp_a_banking_transaction_for_balances'
+        or $g->controller_name == 'revamp_a_banking_transaction_for_balances_choose_record'
+        or $g->controller_name == 'check_my_banking_account_tx_balances'
+        or $g->controller_name == 'omit_a_banking_transaction_for_balances'
+        or $g->controller_name == 'omit_a_banking_transaction_for_balances_choose_record'
+        or $g->controller_name == 'omit_a_banking_transaction_for_balances_delete'
+        or $g->controller_name == 'transfer_an_amount'
+        or $g->controller_name == 'reset_all_b_accounts_instruct') {
+        redirect_to("/ax1/c_p_transactions/page");
+    } elseif ($g->controller_name == 'generate_a_banking_account_for_balances'
+        or $g->controller_name == 'populate_a_banking_account_for_balances'
+        or $g->controller_name == 'populate_a_banking_account_for_balances_processor'
+        or $g->controller_name == 'annul_a_banking_acct_for_balances'
+        or $g->controller_name == 'annul_a_banking_acct_for_balances_processor') {
+        redirect_to("/ax1/c_p_banking_accounts/page");
+    } elseif ($g->controller_name == 'produce_a_bank_acct_observer'
+        or $g->controller_name == 'produce_a_bank_acct_observer_processor'
+        or $g->controller_name == 'destroy_a_bank_acct_observer'
+        or $g->controller_name == 'destroy_a_bank_acct_observer_processor') {
+        redirect_to("/ax1/c_p_banking_observers/page");
     } else {
         redirect_to("/ax1/cover_page/page");
     }
