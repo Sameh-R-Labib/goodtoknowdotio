@@ -216,68 +216,126 @@ function breakout(string $newMessage)
      * of the use of $g->controller_name.
      */
 
-    if ($g->controller_name == 'home' or $g->controller_name == 'set_home_community_topic_post'
-        or $g->controller_name == 'cover_page') {
-        redirect_to("/ax1/infinite_loop_prevent/page");
-    } elseif ($g->controller_name == 'edit_my_post_edit_processor' or $g->controller_name == 'edit_my_post_direct'
-        or $g->controller_name == 'create_new_post' or $g->controller_name == 'edit_post_title'
-        or $g->controller_name == 'edit_my_post' or $g->controller_name == 'author_deletes_own_post'
-        or $g->controller_name == 'author_deletes_own_post_choose_post' or $g->controller_name == 'edit_post_title_choose_post'
-        or $g->controller_name == 'edit_my_post_choose_post') {
-        redirect_to("/ax1/home/page");
-    } elseif ($g->controller_name == 'feature_a_task_link'
-        or $g->controller_name == 'induce_a_task'
-        or $g->controller_name == 'forget_a_task'
-        or $g->controller_name == 'forget_a_task_processor') {
-        redirect_to("/ax1/glance_at_my_tasks/page");
-    } elseif ($g->controller_name == 'build_a_banking_transaction_for_balances'
-        or $g->controller_name == 'revamp_a_banking_transaction_for_balances'
-        or $g->controller_name == 'revamp_a_banking_transaction_for_balances_choose_record'
-        or $g->controller_name == 'check_my_banking_account_tx_balances'
-        or $g->controller_name == 'omit_a_banking_transaction_for_balances'
-        or $g->controller_name == 'omit_a_banking_transaction_for_balances_choose_record'
-        or $g->controller_name == 'omit_a_banking_transaction_for_balances_delete'
-        or $g->controller_name == 'transfer_an_amount'
-        or $g->controller_name == 'reset_all_b_accounts_instruct') {
-        redirect_to("/ax1/c_p_transactions/page");
-    } elseif ($g->controller_name == 'generate_a_banking_account_for_balances'
-        or $g->controller_name == 'populate_a_banking_account_for_balances'
-        or $g->controller_name == 'populate_a_banking_account_for_balances_processor'
-        or $g->controller_name == 'annul_a_banking_acct_for_balances'
-        or $g->controller_name == 'annul_a_banking_acct_for_balances_processor') {
-        redirect_to("/ax1/c_p_banking_accounts/page");
-    } elseif ($g->controller_name == 'produce_a_bank_acct_observer'
-        or $g->controller_name == 'produce_a_bank_acct_observer_processor'
-        or $g->controller_name == 'destroy_a_bank_acct_observer'
-        or $g->controller_name == 'destroy_a_bank_acct_observer_processor') {
-        redirect_to("/ax1/c_p_banking_observers/page");
-    } elseif ($g->controller_name == 'make_a_recurring_payment_record'
-        or $g->controller_name == 'polish_a_recurring_payment_record'
-        or $g->controller_name == 'polish_a_recurring_payment_record_processor'
-        or $g->controller_name == 'expunge_a_recurring_payment_record'
-        or $g->controller_name == 'expunge_a_recurring_payment_record_processor') {
-        redirect_to("/ax1/c_p_recurring_payments/page");
-    } elseif ($g->controller_name == 'conceive_a_possible_tax_deduction'
-        or $g->controller_name == 'alter_a_possible_tax_deduction'
-        or $g->controller_name == 'alter_a_possible_tax_deduction_edit'
-        or $g->controller_name == 'alter_a_possible_tax_deduction_year_filter'
-        or $g->controller_name == 'see_one_years_possible_tax_deductions'
-        or $g->controller_name == 'wipe_out_a_possible_tax_deduction'
-        or $g->controller_name == 'wipe_out_a_possible_tax_deduction_year_filter'
-        or $g->controller_name == 'wipe_out_a_possible_tax_deduction_delete') {
-        redirect_to("/ax1/c_p_tax_deductions/page");
-    } elseif ($g->controller_name == 'start_a_taxable_income_event'
-        or $g->controller_name == 'write_over_a_taxable_income_event'
-        or $g->controller_name == 'write_over_a_taxable_income_event_year_filter'
-        or $g->controller_name == 'write_over_a_taxable_income_event_edit'
-        or $g->controller_name == 'gawk_at_all_taxable_income_events'
-        or $g->controller_name == 'nuke_a_taxable_income_event'
-        or $g->controller_name == 'nuke_a_taxable_income_event_year_filter'
-        or $g->controller_name == 'nuke_a_taxable_income_event_delete'
-        or $g->controller_name == 'add_income_commodity') {
-        redirect_to("/ax1/c_p_taxable_income/page");
-    } else {
-        redirect_to("/ax1/cover_page/page");
+    switch ($g->controller_name) {
+        case 'set_home_community_topic_post':
+        case 'home':
+            redirect_to("/ax1/infinite_loop_prevent/page");
+            break;
+        case 'edit_my_post_edit_processor':
+        case 'edit_my_post_direct':
+        case 'create_new_post':
+        case 'edit_post_title':
+        case 'edit_my_post':
+        case 'author_deletes_own_post':
+        case 'author_deletes_own_post_choose_post':
+        case 'edit_post_title_choose_post':
+        case 'edit_my_post_choose_post':
+            redirect_to("/ax1/home/page");
+            break;
+        case 'feature_a_task_link':
+        case 'induce_a_task':
+        case 'forget_a_task':
+        case 'forget_a_task_processor':
+            redirect_to("/ax1/glance_at_my_tasks/page");
+            break;
+        case 'build_a_banking_transaction_for_balances':
+        case 'revamp_a_banking_transaction_for_balances':
+        case 'revamp_a_banking_transaction_for_balances_choose_record':
+        case 'check_my_banking_account_tx_balances':
+        case 'omit_a_banking_transaction_for_balances':
+        case 'omit_a_banking_transaction_for_balances_choose_record':
+        case 'omit_a_banking_transaction_for_balances_delete':
+        case 'transfer_an_amount':
+        case 'reset_all_b_accounts_instruct':
+            redirect_to("/ax1/c_p_transactions/page");
+            break;
+        case 'generate_a_banking_account_for_balances':
+        case 'populate_a_banking_account_for_balances':
+        case 'populate_a_banking_account_for_balances_processor':
+        case 'annul_a_banking_acct_for_balances':
+        case 'annul_a_banking_acct_for_balances_processor':
+            redirect_to("/ax1/c_p_banking_accounts/page");
+            break;
+        case 'produce_a_bank_acct_observer':
+        case 'produce_a_bank_acct_observer_processor':
+        case 'destroy_a_bank_acct_observer':
+        case 'destroy_a_bank_acct_observer_processor':
+            redirect_to("/ax1/c_p_banking_observers/page");
+            break;
+        case 'make_a_recurring_payment_record':
+        case 'polish_a_recurring_payment_record':
+        case 'polish_a_recurring_payment_record_processor':
+        case 'expunge_a_recurring_payment_record':
+        case 'expunge_a_recurring_payment_record_processor':
+            redirect_to("/ax1/c_p_recurring_payments/page");
+            break;
+        case 'conceive_a_possible_tax_deduction':
+        case 'alter_a_possible_tax_deduction':
+        case 'alter_a_possible_tax_deduction_edit':
+        case 'alter_a_possible_tax_deduction_year_filter':
+        case 'see_one_years_possible_tax_deductions':
+        case 'wipe_out_a_possible_tax_deduction':
+        case 'wipe_out_a_possible_tax_deduction_year_filter':
+        case 'wipe_out_a_possible_tax_deduction_delete':
+            redirect_to("/ax1/c_p_tax_deductions/page");
+            break;
+        case 'start_a_taxable_income_event':
+        case 'write_over_a_taxable_income_event':
+        case 'write_over_a_taxable_income_event_year_filter':
+        case 'write_over_a_taxable_income_event_edit':
+        case 'gawk_at_all_taxable_income_events':
+        case 'nuke_a_taxable_income_event':
+        case 'nuke_a_taxable_income_event_year_filter':
+        case 'nuke_a_taxable_income_event_delete':
+        case 'add_income_commodity':
+            redirect_to("/ax1/c_p_taxable_income/page");
+            break;
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//            redirect_to("/ax1/c_p_transactions/page");
+//            break;
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//            redirect_to("/ax1/c_p_transactions/page");
+//            break;
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//        case 'feature_a_task_link':
+//            redirect_to("/ax1/c_p_transactions/page");
+//            break;
+
+        default:
+            redirect_to("/ax1/cover_page/page");
+
     }
 }
 
