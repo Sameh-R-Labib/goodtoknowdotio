@@ -11,7 +11,7 @@ class admin_pass_code_generation_form
         global $g;
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         /**

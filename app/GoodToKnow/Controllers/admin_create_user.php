@@ -19,7 +19,7 @@ class admin_create_user
         global $g;
         // $g->saved_int01 choice
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
         get_db();
 

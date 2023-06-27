@@ -9,7 +9,7 @@ class pick_off_some_processor
 {
     function page()
     {
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         /**

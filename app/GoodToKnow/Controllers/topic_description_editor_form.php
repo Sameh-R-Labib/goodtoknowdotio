@@ -20,7 +20,7 @@ class topic_description_editor_form
         // $g->saved_str01 is the topic name
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         get_db();

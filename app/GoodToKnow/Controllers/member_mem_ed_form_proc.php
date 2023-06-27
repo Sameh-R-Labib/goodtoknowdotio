@@ -29,7 +29,7 @@ class member_mem_ed_form_proc
         // $g->saved_int01 the member's id
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         /**

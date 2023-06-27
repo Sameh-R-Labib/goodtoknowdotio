@@ -21,7 +21,7 @@ class transfer_post_ownership_transfer_it
         // $g->saved_int02 post id
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

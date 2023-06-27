@@ -18,7 +18,7 @@ class purge_old_messages_processor
          */
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         /**

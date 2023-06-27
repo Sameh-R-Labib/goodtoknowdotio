@@ -18,7 +18,7 @@ class new_topic_name_processor
          */
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         require_once CONTROLLERHELPERS . DIRSEP . 'standard_form_field_prep.php';

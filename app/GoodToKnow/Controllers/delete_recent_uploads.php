@@ -21,7 +21,7 @@ class delete_recent_uploads
         global $g;
 
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         get_db();

@@ -29,7 +29,7 @@ class balance_out_the_sequence_numbers_save
          * Preliminary things to take care of.
          */
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         /**

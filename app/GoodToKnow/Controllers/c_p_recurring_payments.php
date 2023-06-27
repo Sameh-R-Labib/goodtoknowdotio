@@ -9,7 +9,7 @@ class c_p_recurring_payments
         global $g;
 
 
-        kick_out_loggedoutusers_or_if_there_is_error_msg();
+        kick_out_loggedoutusersg();
 
 
         $g->page = 'c_p_recurring_payments';

@@ -13,7 +13,7 @@ class kommunity_description_editor_form_processor
         // $g->saved_str01 the community's name
         // $g->saved_int01 the community's id
 
-        kick_out_nonadmins_or_if_there_is_error_msg();
+        kick_out_nonadmins();
 
 
         /**
