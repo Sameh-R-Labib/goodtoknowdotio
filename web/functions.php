@@ -217,6 +217,11 @@ function breakout(string $newMessage)
      */
 
     switch ($g->controller_name) {
+        case 'blot_out_some_inbox_messages_processor':
+        case 'by_username_message_processor':
+        case 'discover_other_communities':
+            redirect_to("/ax1/c_p_basics/page");
+            break;
         case 'set_home_community_topic_post':
         case 'home':
             redirect_to("/ax1/infinite_loop_prevent/page");
@@ -231,12 +236,16 @@ function breakout(string $newMessage)
         case 'edit_post_title_choose_post':
         case 'edit_my_post_choose_post':
         case 'move_post_instruct':
+        case 'create_new_post_edit_processor':
+        case 'create_new_post_insert_point':
+        case 'edit_my_post_editor':
             redirect_to("/ax1/home/page");
             break;
         case 'feature_a_task_link':
         case 'induce_a_task':
         case 'forget_a_task':
         case 'forget_a_task_processor':
+        case 'feature_a_task_update':
             redirect_to("/ax1/glance_at_my_tasks/page");
             break;
         case 'build_a_banking_transaction_for_balances':
@@ -250,6 +259,7 @@ function breakout(string $newMessage)
         case 'reset_all_b_accounts_instruct':
         case 'transfer_an_amount_form_processor':
         case 'omit_a_banking_tran_for_balances_process_confirmation':
+        case 'build_a_banking_transaction_for_balances_processor':
             redirect_to("/ax1/c_p_transactions/page");
             break;
         case 'generate_a_banking_account_for_balances':
@@ -257,6 +267,7 @@ function breakout(string $newMessage)
         case 'populate_a_banking_account_for_balances_processor':
         case 'annul_a_banking_acct_for_balances':
         case 'annul_a_banking_acct_for_balances_processor':
+        case 'annul_a_banking_acct_for_balances_delete':
             redirect_to("/ax1/c_p_banking_accounts/page");
             break;
         case 'produce_a_bank_acct_observer':
@@ -280,6 +291,7 @@ function breakout(string $newMessage)
         case 'wipe_out_a_possible_tax_deduction':
         case 'wipe_out_a_possible_tax_deduction_year_filter':
         case 'wipe_out_a_possible_tax_deduction_delete':
+        case 'alter_a_possible_tax_deduction_update':
             redirect_to("/ax1/c_p_tax_deductions/page");
             break;
         case 'start_a_taxable_income_event':
@@ -289,6 +301,7 @@ function breakout(string $newMessage)
         case 'gawk_at_all_taxable_income_events':
         case 'nuke_a_taxable_income_event':
         case 'nuke_a_taxable_income_event_year_filter':
+        case 'nuke_a_taxable_income_event_confirmation':
         case 'nuke_a_taxable_income_event_delete':
         case 'add_income_commodity':
             redirect_to("/ax1/c_p_taxable_income/page");
@@ -302,6 +315,7 @@ function breakout(string $newMessage)
             redirect_to("/ax1/c_p_commodities/page");
             break;
         case 'father_a_commodity_sold':
+        case 'father_a_commodity_sold_processor':
         case 'fine_tune_a_commodity_sold':
         case 'fine_tune_a_commodity_sold_year_filter':
         case 'fine_tune_a_commodity_sold_edit':
@@ -310,6 +324,9 @@ function breakout(string $newMessage)
         case 'drop_a_commodity_sold_year_filter':
         case 'drop_a_commodity_sold_delete':
         case 'process_a_commodity_sale':
+        case 'process_a_commodity_sale_save':
+        case 'process_a_commodity_sale_generate_changes':
+        case 'initialize_a_commodity_record_processor':
             redirect_to("/ax1/c_p_capital_gains/page");
             break;
         case 'changed_posts_and_images':
@@ -334,6 +351,8 @@ function breakout(string $newMessage)
         case 'transfer_post_ownership_choose_post':
         case 'transfer_post_ownership_get_post':
         case 'transfer_post_ownership_get_username':
+        case 'balance_out_the_sequence_numbers_save':
+        case 'move_post_get_post':
             redirect_to("/ax1/c_p_postings/page");
             break;
         case 'admin_pass_code_generation_form':
@@ -348,14 +367,18 @@ function breakout(string $newMessage)
         case 'member_memo_editor_form':
         case 'suspend_account':
         case 'unsuspend_account':
+        case 'user_roster':
             redirect_to("/ax1/c_p_accounts/page");
             break;
         case 'set_system_wide_alert':
+        case 'set_system_wide_alert_proc':
         case 'offline_the_system':
+        case 'offline_the_system_proc':
         case 'purge_old_messages':
         case 'liquidate_years_possible_tax_deductions':
         case 'cleanup_years_taxable_income_events':
         case 'abolish_years_commodities_sold':
+        case 'cleanup_years_taxable_income_events_get_year':
             redirect_to("/ax1/c_p_purges/page");
             break;
         default:
