@@ -230,6 +230,7 @@ function breakout(string $newMessage)
         case 'author_deletes_own_post_choose_post':
         case 'edit_post_title_choose_post':
         case 'edit_my_post_choose_post':
+        case 'move_post_instruct':
             redirect_to("/ax1/home/page");
             break;
         case 'feature_a_task_link':
@@ -290,52 +291,73 @@ function breakout(string $newMessage)
         case 'add_income_commodity':
             redirect_to("/ax1/c_p_taxable_income/page");
             break;
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//            redirect_to("/ax1/c_p_transactions/page");
-//            break;
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//            redirect_to("/ax1/c_p_transactions/page");
-//            break;
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//        case 'feature_a_task_link':
-//            redirect_to("/ax1/c_p_transactions/page");
-//            break;
-
+        case 'initialize_a_commodity_record':
+        case 'edit_a_commodity_record':
+        case 'edit_a_commodity_record_processor':
+        case 'commodity_see_my_records_specify':
+        case 'delete_a_commodity_record':
+        case 'delete_a_commodity_record_processor':
+            redirect_to("/ax1/c_p_commodities/page");
+            break;
+        case 'father_a_commodity_sold':
+        case 'fine_tune_a_commodity_sold':
+        case 'fine_tune_a_commodity_sold_year_filter':
+        case 'fine_tune_a_commodity_sold_edit':
+        case 'spy_commodities_sold':
+        case 'drop_a_commodity_sold':
+        case 'drop_a_commodity_sold_year_filter':
+        case 'drop_a_commodity_sold_delete':
+        case 'process_a_commodity_sale':
+            redirect_to("/ax1/c_p_capital_gains/page");
+            break;
+        case 'changed_posts_and_images':
+        case 'pick_off_some':
+        case 'delete_recent_uploads':
+            redirect_to("/ax1/c_p_changed_content/page");
+            break;
+        case 'balance_out_the_sequence_numbers':
+        case 'balance_out_the_sequence_numbers_form_processor':
+        case 'balance_out_the_sequence_numbers_modify':
+        case 'new_community':
+        case 'kommunity_description_editor':
+        case 'kommunity_description_editor_form':
+        case 'new_topic_insert_point':
+        case 'new_topic_name':
+        case 'topic_description_editor':
+        case 'topic_description_editor_form':
+        case 'quick_post_delete':
+        case 'quick_post_delete_choose_post':
+        case 'quick_post_delete_delete':
+        case 'transfer_post_ownership':
+        case 'transfer_post_ownership_choose_post':
+        case 'transfer_post_ownership_get_post':
+        case 'transfer_post_ownership_get_username':
+            redirect_to("/ax1/c_p_postings/page");
+            break;
+        case 'admin_pass_code_generation_form':
+        case 'admin_pass_code_gen_form_processor':
+        case 'reset_a_passphrase':
+        case 'reset_a_passphrase_enter_a_passphrase':
+        case 'give_communities_to_user':
+        case 'give_coms_choices':
+        case 'remove_communities_from_a_user':
+        case 'remove_coms_choices':
+        case 'member_memo_editor':
+        case 'member_memo_editor_form':
+        case 'suspend_account':
+        case 'unsuspend_account':
+            redirect_to("/ax1/c_p_accounts/page");
+            break;
+        case 'set_system_wide_alert':
+        case 'offline_the_system':
+        case 'purge_old_messages':
+        case 'liquidate_years_possible_tax_deductions':
+        case 'cleanup_years_taxable_income_events':
+        case 'abolish_years_commodities_sold':
+            redirect_to("/ax1/c_p_purges/page");
+            break;
         default:
             redirect_to("/ax1/cover_page/page");
-
     }
 }
 
