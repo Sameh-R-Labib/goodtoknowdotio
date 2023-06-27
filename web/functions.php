@@ -249,6 +249,7 @@ function breakout(string $newMessage)
         case 'transfer_an_amount':
         case 'reset_all_b_accounts_instruct':
         case 'transfer_an_amount_form_processor':
+        case 'omit_a_banking_tran_for_balances_process_confirmation':
             redirect_to("/ax1/c_p_transactions/page");
             break;
         case 'generate_a_banking_account_for_balances':
