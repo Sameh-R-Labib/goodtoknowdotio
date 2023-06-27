@@ -12,6 +12,9 @@
         <img class="photo" alt="Kurt's DS-1 Pedal" src="/img/kurt_ds1_pedal.png">
     </figure>
     <figure>
+        <img class="photo" alt="Find A Journey Worthy of Your Heart and Soul" src="/img/find_a_journey_worthy.png">
+    </figure>
+    <figure>
         <img class="photo" alt="Kurt Cobain Grunge" src="/img/kurt_cobain_grunge.png">
     </figure>
     <figure>
