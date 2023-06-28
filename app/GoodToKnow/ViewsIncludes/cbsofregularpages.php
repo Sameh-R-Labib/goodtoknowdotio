@@ -15,7 +15,7 @@
 <div id="breadcrumbs">
     <p><span style="font-size:16px;">⚓️</span>&nbsp;&nbsp;<button class="open-window-button">🪟</button>
         ≬
-        <a href="/ax1/cover_page/page">🗒️</a>
+        <a href="/ax1/cover_page/page">🎶</a>
         ≬
         <a href="/ax1/home/page"><img src="/img/blog_home.gif" alt="blog home" height="18" width="18"></a>
         ≬
