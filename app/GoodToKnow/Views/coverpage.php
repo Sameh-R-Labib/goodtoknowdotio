@@ -4,7 +4,6 @@
 <?php require CBSOFREGULARPAGES; ?>
 <!-- maincontent -->
 <div id="maincontent">
-    <p>Grunge ✌🏾</p>
     <figure>
         <img class="photo" alt="Green Fender Mustang" src="/img/fender_mustang_green.png">
     </figure>
