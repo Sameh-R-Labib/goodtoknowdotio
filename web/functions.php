@@ -347,6 +347,7 @@ function breakout(string $newMessage)
         case 'quick_post_delete':
         case 'quick_post_delete_choose_post':
         case 'quick_post_delete_delete':
+        case 'quick_post_delete_del_proc':
         case 'transfer_post_ownership':
         case 'transfer_post_ownership_choose_post':
         case 'transfer_post_ownership_get_post':
