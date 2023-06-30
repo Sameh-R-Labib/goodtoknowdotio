@@ -52,7 +52,7 @@ class edit_my_post_edit_processor
          */
 
         $parser = new MarkdownExtra;
-        $parser->no_entities = true;
+        $parser->no_entities = true; // So, & stays as & instead of &amp;
         $html = $parser->transform($g->markdown);
 
         // Call to global function

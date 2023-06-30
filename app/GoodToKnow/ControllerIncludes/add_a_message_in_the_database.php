@@ -13,7 +13,7 @@ require_once CONTROLLERHELPERS . DIRSEP . 'markdown_form_field_prep.php';
 $markdown = markdown_form_field_prep('markdown', 1, 1500);
 
 $parser = new MarkdownExtra;
-$parser->no_entities = true;
+$parser->no_entities = true; // So, & stays as & instead of &amp;
 $html = $parser->transform($markdown);
 
 // Call to global function
