@@ -218,7 +218,7 @@ img.photo {
     max-width: 847px;
     display: block;
     margin: 50px auto;
-    padding: 17px 20px;
+    padding: 11px 11px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
