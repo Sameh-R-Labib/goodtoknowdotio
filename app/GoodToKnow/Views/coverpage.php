@@ -5,6 +5,9 @@
 <!-- maincontent -->
 <div id="maincontent">
     <figure>
+        <img class="photo" alt="1993 Concert In Florida" src="/img/kurt_cobain_1993.png">
+    </figure>
+    <figure>
         <img class="photo" alt="Green Fender Mustang" src="/img/fender_mustang_green.png">
     </figure>
     <figure>
