@@ -356,6 +356,7 @@ function breakout(string $newMessage)
         case 'transfer_post_ownership_get_username':
         case 'balance_out_the_sequence_numbers_save':
         case 'move_post_get_post':
+        case 'new_topic_save':
             redirect_to("/ax1/c_p_postings/page");
             break;
         case 'admin_pass_code_generation_form':
