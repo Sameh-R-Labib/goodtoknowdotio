@@ -8,6 +8,9 @@
         <img class="photo" alt="1993 Concert In Florida" src="/img/kurt_cobain_1993.png">
     </figure>
     <figure>
+        <img class="photo" alt="Kurt's Pedals On Stage" src="/img/kurt_cobain_pedals.png">
+    </figure>
+    <figure>
         <img class="photo" alt="Green Fender Mustang" src="/img/fender_mustang_green.png">
     </figure>
     <figure>
