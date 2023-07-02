@@ -382,6 +382,7 @@ function breakout(string $newMessage)
         case 'cleanup_years_taxable_income_events':
         case 'abolish_years_commodities_sold':
         case 'cleanup_years_taxable_income_events_get_year':
+        case 'purge_ninety_day_old_btfb_s':
             redirect_to("/ax1/c_p_purges/page");
             break;
         default:
@@ -389,6 +390,7 @@ function breakout(string $newMessage)
     }
 }
 
+// purge_ninety_day_old_btfb_s/page
 
 /**
  * @param int $size
