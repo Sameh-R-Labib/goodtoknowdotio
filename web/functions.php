@@ -230,6 +230,8 @@ function breakout(string $newMessage)
         case 'edit_my_post_direct':
         case 'create_new_post':
         case 'edit_post_title':
+        case 'edit_post_title_editor_processor':
+        case 'edit_post_title_direct':
         case 'edit_my_post':
         case 'author_deletes_own_post':
         case 'author_deletes_own_post_choose_post':
