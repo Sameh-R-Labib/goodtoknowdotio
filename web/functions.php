@@ -332,6 +332,7 @@ function breakout(string $newMessage)
         case 'changed_posts_and_images':
         case 'pick_off_some':
         case 'delete_recent_uploads':
+        case 'cull_the_herd':
             redirect_to("/ax1/c_p_changed_content/page");
             break;
         case 'balance_out_the_sequence_numbers':
