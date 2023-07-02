@@ -277,21 +277,18 @@ a.clearbtn:link, a.clearbtn:visited {
     cursor: pointer;
     margin: 4px 4px 4px 0;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.clearbtn:hover {
     background: rgba(255, 105, 105, 0) url('/clear/magentaclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.clearbtn:active {
     background: rgba(255, 105, 105, 0) url('/clear/blackclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.orangebtn:link, a.orangebtn:visited {
@@ -307,21 +304,18 @@ a.orangebtn:link, a.orangebtn:visited {
     cursor: pointer;
     margin: 4px 4px 4px 0;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.orangebtn:hover {
     background: rgba(255, 105, 105, 0) url('/clear/yellowclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.orangebtn:active {
     background: rgba(255, 105, 105, 0) url('/clear/greyclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.purplebtn:link, a.purplebtn:visited {
@@ -337,21 +331,18 @@ a.purplebtn:link, a.purplebtn:visited {
     cursor: pointer;
     margin: 4px 4px 4px 0;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.purplebtn:hover {
     background: rgba(255, 105, 105, 0) url('/clear/magentaclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.purplebtn:active {
     background: rgba(255, 105, 105, 0) url('/clear/seafoamclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.blackbtn:link, a.blackbtn:visited {
@@ -367,21 +358,18 @@ a.blackbtn:link, a.blackbtn:visited {
     cursor: pointer;
     margin: 4px 4px 4px 0;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.blackbtn:hover {
     background: rgba(255, 105, 105, 0) url('/clear/greyclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.blackbtn:active {
     background: rgba(255, 105, 105, 0) url('/clear/oceanclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.greenbtn:link, a.greenbtn:visited {
@@ -397,21 +385,18 @@ a.greenbtn:link, a.greenbtn:visited {
     cursor: pointer;
     margin: 4px 4px 4px 0;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.greenbtn:hover {
     background: rgba(255, 105, 105, 0) url('/clear/redclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 a.greenbtn:active {
     background: rgba(255, 105, 105, 0) url('/clear/oceanclear.png') no-repeat 0 0;
     background-size: 100% 100%;
     line-height: 1.6em;
-    letter-spacing: .064em;
 }
 
 code {
@@ -439,7 +424,6 @@ p {
     font-weight: normal;
     line-height: 1.6em;
     font-size: 1.1em;
-    letter-spacing: .064em;
     margin-left: 23px;
     margin-right: 23px;
 }
@@ -584,7 +568,6 @@ table {
     line-height: 1.6em;
     font-size: 1.1em;
     font-weight: normal;
-    letter-spacing: .064em;
     max-width: 900px;
     border-collapse: collapse;
     border: 1px solid #c9c9c9;
