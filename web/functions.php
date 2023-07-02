@@ -390,7 +390,6 @@ function breakout(string $newMessage)
     }
 }
 
-// purge_ninety_day_old_btfb_s/page
 
 /**
  * @param int $size
