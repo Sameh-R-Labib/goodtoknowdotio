@@ -246,6 +246,7 @@ function breakout(string $newMessage)
         case 'forget_a_task':
         case 'forget_a_task_processor':
         case 'feature_a_task_update':
+        case 'feature_a_task':
             redirect_to("/ax1/glance_at_my_tasks/page");
             break;
         case 'build_a_banking_transaction_for_balances':
