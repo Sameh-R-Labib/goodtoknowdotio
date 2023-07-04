@@ -23,7 +23,7 @@
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency" name="currency" type="text"
                    value="<?= $g->saved_arr01['currency'] ?>" required minlength="1" maxlength="15" size="15"
-                   placeholder="$ or BTC or BAT etc.">
+                   placeholder="$, BTC or BAT etc.">
         </p>
         <p>
             <label for="amount">Amount of Those Units <span class="tooltip">ⅈ<span class="tooltiptext
@@ -49,7 +49,7 @@
                         class="tooltip">ⅈ<span
                             class="tooltiptext tooltip-top">Do not change the currency type after you create this record
                         unless you are sure the new type uses same number of decimal places.</span></span>: </label>
-            <input id="fiat" name="fiat" type="text" placeholder="$ or £ or ¥ or € etc."
+            <input id="fiat" name="fiat" type="text" placeholder="$, £, ¥ or € etc."
                    value="<?= $g->saved_arr01['fiat'] ?>" required size="15" minlength="1" maxlength="15">
         </p>
         <p>
