@@ -23,7 +23,7 @@
                         type uses same number of decimal places.</span></span>: </label>
             <input id="currency" name="currency" type="text"
                    value="<?= $g->saved_arr01['currency'] ?>" required minlength="1" maxlength="15" size="15"
-                   placeholder="$ BTC BAT etc.">
+                   placeholder="$ or BTC or BAT etc.">
         </p>
         <p>
             <label for="amount">Amount of Those Units <span class="tooltip">ⅈ<span class="tooltiptext
@@ -33,11 +33,9 @@
                    minlength="1" maxlength="33" size="33" placeholder="500.29">
         </p>
         <p><span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">The two fields below have a different meaning depending on whether the income was in fiat
-                    or in a commodity. If the income was your local fiat then</span></span>
+                tooltip-top">If the type of unit you were paid in is your local currency then</span></span>
             <span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">enter a one (1) for <b>Price</b> and your fiat's symbol for <b>Fiat</b>.
-            Otherwise, you can interpret the field labels literally and fill accordingly</span></span>
+                tooltip-top"> then put its symbol in the 2nd field below and put a 1 in the other field.</span></span>
         </p>
         <p>
             <label for="price">Price of The Unit I Was Paid In<span class="tooltip">ⅈ<span class="tooltiptext
@@ -51,7 +49,7 @@
                         class="tooltip">ⅈ<span
                             class="tooltiptext tooltip-top">Do not change the currency type after you create this record
                         unless you are sure the new type uses same number of decimal places.</span></span>: </label>
-            <input id="fiat" name="fiat" type="text" placeholder="$, £, ¥, €"
+            <input id="fiat" name="fiat" type="text" placeholder="$ or £ or ¥ or € etc."
                    value="<?= $g->saved_arr01['fiat'] ?>" required size="15" minlength="1" maxlength="15">
         </p>
         <p>
