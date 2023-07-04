@@ -42,14 +42,14 @@
                 tooltip-top">"Type of income" means type of currency or commodity you got paid in.</span></span>
         </p>
         <p>
-            <label for="price">Price <span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">If the amounts for currency should have a different number of decimal places then ask the admin
+            <label for="price">Price of Currency<span class="tooltip">ⅈ<span class="tooltiptext
+                tooltip-top">If the currency should be using a different number of decimal places then ask the admin
                         to fix this.</span></span>: </label>
             <input id="price" name="price" type="text" placeholder="1.00" spellcheck="false"
                    value="<?= $g->saved_arr01['price'] ?>" size="33" minlength="1" maxlength="33">
         </p>
         <p>
-            <label for="fiat">Priced In <span
+            <label for="fiat">Currency Used <span
                         class="tooltip">ⅈ<span
                             class="tooltiptext tooltip-top">Do not change the currency type after you create this record
                         unless you are sure the new type uses same number of decimal places.</span></span>: </label>
