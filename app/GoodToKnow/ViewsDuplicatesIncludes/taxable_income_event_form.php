@@ -39,7 +39,7 @@
                 tooltip-top">enter a one (1) for <b>Price</b> and your fiat's symbol for <b>Fiat</b>.
             Otherwise, you can interpret the field labels literally and fill accordingly</span></span>
             <span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">"Type of income" means type of currency or commodity you got paid in.</span></span>
+                tooltip-top">"Currency Used" means the type of currency/commodity you got paid in.</span></span>
         </p>
         <p>
             <label for="price">Price of Currency<span class="tooltip">ⅈ<span class="tooltiptext
