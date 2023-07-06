@@ -241,6 +241,8 @@ function breakout(string $newMessage)
         case 'create_new_post_edit_processor':
         case 'create_new_post_insert_point':
         case 'edit_my_post_editor':
+        case 'upload_processor':
+        case 'upload':
             redirect_to("/ax1/home/page");
             break;
         case 'feature_a_task_link':
