@@ -12,7 +12,7 @@ class banking_acct_for_balances extends good_object
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'acct_name', 'start_time', 'start_balance', 'currency', 'comment'];
+    protected static $fields = ['id', 'user_id', 'acct_name', 'start_time', 'start_balance', 'currency', 'comment', 'visibility'];
 
     /**
      * @var int
@@ -48,4 +48,11 @@ class banking_acct_for_balances extends good_object
      * @var string
      */
     public $comment;
+
+    /**
+     * @var string
+     *
+     * Values can only be 'show' or 'hide'.
+     */
+    public $visibility;
 }
