@@ -110,7 +110,8 @@ class generate_a_banking_account_for_balances_processor
          */
 
         $array_record = ['user_id' => $g->user_id, 'acct_name' => $acct_name, 'start_time' => $g->time,
-            'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment];
+            'start_balance' => $start_balance, 'currency' => $currency, 'comment' => $comment,
+            'visibility' => 'show'];
 
 
         /**
