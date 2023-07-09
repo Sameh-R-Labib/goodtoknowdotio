@@ -9,6 +9,7 @@
             <a class="orangebtn" href="/ax1/view_all_banking_accounts_for_balances/page">Show</a>
             <a class="clearbtn" href="/ax1/annul_a_banking_acct_for_balances/page">Delete</a>
             <a class="purplebtn" href="/ax1/reset_all_b_accounts_instruct/page">Reset All</a>
+            <a class="greenbtn" href="/ax1/hide_bank_accounts/page">Hide Bank Accounts</a>
         </div>
     </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
