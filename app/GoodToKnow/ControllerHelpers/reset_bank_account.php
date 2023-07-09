@@ -15,7 +15,7 @@ function reset_bank_account(object $account)
      * Reset the start_time and start_balance of object $account.
      * Make start_time and start_balance reflect a point in the
      * account's history where start_time is closer to time().
-     * This $reset version of $account will is used to update the
+     * This $reset version of $account is used to update the
      * database record of $account.
      */
 
@@ -43,7 +43,8 @@ function reset_bank_account(object $account)
      */
 
     $array_record = ['user_id' => $account->user_id, 'acct_name' => $account->acct_name, 'start_time' => $account->start_time,
-        'start_balance' => $account->start_balance, 'currency' => $account->currency, 'comment' => $account->comment];
+        'start_balance' => $account->start_balance, 'currency' => $account->currency, 'comment' => $account->comment,
+        'visibility' => $account->visibility];
 
 
     $reset = banking_acct_for_balances::array_to_object($array_record);

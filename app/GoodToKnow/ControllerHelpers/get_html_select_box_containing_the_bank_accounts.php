@@ -44,7 +44,7 @@ function get_html_select_box_containing_the_bank_accounts(int $user_id, int $ban
      */
 
     $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "'
-        . $g->db->real_escape_string((string)$user_id) . " AND `visibility` = 'show'";
+        . $g->db->real_escape_string((string)$user_id) . "\" AND `visibility` = 'show'";
 
     $array_of_objects = banking_acct_for_balances::find_by_sql($sql);
 
