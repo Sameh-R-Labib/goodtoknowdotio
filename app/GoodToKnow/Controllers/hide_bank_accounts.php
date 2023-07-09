@@ -25,6 +25,8 @@ class hide_bank_accounts
          * Get all the banking_acct_for_balances records which are not hidden.
          */
 
+        get_db();
+
         $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "'
             . $g->db->real_escape_string($g->user_id) . "\" AND `visibility` = 'show'";
 
