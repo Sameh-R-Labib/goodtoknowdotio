@@ -273,6 +273,7 @@ function breakout(string $newMessage)
         case 'annul_a_banking_acct_for_balances':
         case 'annul_a_banking_acct_for_balances_processor':
         case 'annul_a_banking_acct_for_balances_delete':
+        case 'hide_bank_accounts':
             redirect_to("/ax1/c_p_banking_accounts/page");
             break;
         case 'produce_a_bank_acct_observer':
