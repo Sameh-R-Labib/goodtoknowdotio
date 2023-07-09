@@ -35,7 +35,8 @@ class transfer_an_amount_redo
 
         // First I need to get all the banking_acct_for_balances object for this user.
 
-        $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
+        $sql = 'SELECT * FROM `banking_acct_for_balances` WHERE `user_id` = "' . $g->db->real_escape_string((string)$g->user_id)
+            . "\" AND `visibility` = 'show'";
 
         $array_of_objects = banking_acct_for_balances::find_by_sql($sql);
 
