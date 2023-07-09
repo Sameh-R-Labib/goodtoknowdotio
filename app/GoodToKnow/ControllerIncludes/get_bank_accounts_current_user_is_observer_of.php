@@ -9,8 +9,8 @@ global $g;
 
 
 /**
- * Get the bank_account_observer objects which have the current
- * user as the observer.
+ * Get the banking_acct_for_balances objects which corresponding with the
+ * bank_account_observer objects which have the current user as the observer.
  */
 
 $sql = 'SELECT * FROM `bank_account_observer` WHERE `observer_id` = "' . $g->db->real_escape_string((string)$g->user_id) . '"';
@@ -31,7 +31,9 @@ if ($array_of_bank_account_observer) {
         $temp[$key] = banking_acct_for_balances::find_by_id($observer_object->account_id);
         if (!$temp[$key]) breakout(" Fatal error 221965. ");
 
-        $g->array_of_objects[] = $temp[$key];
+        if ($temp[$key]->visibility == 'show') {
+            $g->array_of_objects[] = $temp[$key];
+        }
 
     }
     
