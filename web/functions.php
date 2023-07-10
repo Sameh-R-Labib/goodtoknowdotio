@@ -251,6 +251,10 @@ function breakout(string $newMessage)
         case 'forget_a_task_processor':
         case 'feature_a_task_update':
         case 'feature_a_task':
+        case 'hide_tasks':
+        case 'hide_tasks_processor':
+        case 'un_hide_tasks';
+        case 'un_hide_tasks_processor';
             redirect_to("/ax1/glance_at_my_tasks/page");
             break;
         case 'build_a_banking_transaction_for_balances':
@@ -275,6 +279,8 @@ function breakout(string $newMessage)
         case 'annul_a_banking_acct_for_balances_delete':
         case 'hide_bank_accounts':
         case 'hide_bank_accounts_processor':
+        case 'un_hide_bank_accounts':
+        case 'un_hide_bank_accounts_processor':
             redirect_to("/ax1/c_p_banking_accounts/page");
             break;
         case 'produce_a_bank_acct_observer':
