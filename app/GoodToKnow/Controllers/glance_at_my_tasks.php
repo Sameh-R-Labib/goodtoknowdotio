@@ -27,7 +27,9 @@ class glance_at_my_tasks
 
         get_db();
 
-        $sql = 'SELECT * FROM `task` WHERE `user_id` = ' . $g->db->real_escape_string((string)$g->user_id);
+        $sql = 'SELECT * FROM `task` WHERE `user_id` = '
+            . $g->db->real_escape_string((string)$g->user_id)
+            . " AND `visibility` = 'show'";
 
         $g->array = task::find_by_sql($sql);
 

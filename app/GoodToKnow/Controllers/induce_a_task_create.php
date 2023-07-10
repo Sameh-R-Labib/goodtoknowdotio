@@ -108,7 +108,7 @@ class induce_a_task_create
          */
 
         $array_record = ['user_id' => $g->user_id, 'label' => $label, 'last' => $g->last, 'next' => $g->next,
-            'cycle_type' => $cycle_type, 'comment' => $comment];
+            'cycle_type' => $cycle_type, 'comment' => $comment, 'visibility' => 'show'];
 
 
         // In memory object.
