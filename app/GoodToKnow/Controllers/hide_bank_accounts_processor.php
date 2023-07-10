@@ -39,7 +39,7 @@ class hide_bank_accounts_processor
 
             if (!is_numeric($item)) {
 
-                breakout(' Unexpectedly one or more id values turned out to be non-numeric. ');
+                breakout(' Unexpectedly one or more bank account id values turned out to be non-numeric. ');
 
             }
 
