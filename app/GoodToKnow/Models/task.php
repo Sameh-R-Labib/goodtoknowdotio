@@ -12,7 +12,7 @@ class task extends good_object
     /**
      * @var array
      */
-    protected static $fields = ['id', 'user_id', 'label', 'last', 'next', 'cycle_type', 'comment'];
+    protected static $fields = ['id', 'user_id', 'label', 'last', 'next', 'cycle_type', 'comment', 'visibility'];
 
     /**
      * @var int
@@ -48,4 +48,11 @@ class task extends good_object
      * @var string
      */
     public $comment;
+
+    /**
+     * @var string
+     *
+     * Values can only be 'show' or 'hide'.
+     */
+    public $visibility;
 }
