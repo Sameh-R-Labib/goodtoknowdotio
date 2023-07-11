@@ -5,7 +5,7 @@ namespace GoodToKnow\Controllers;
 use GoodToKnow\Models\task;
 use function GoodToKnow\ControllerHelpers\checkbox_section_form_field_prep;
 
-class un_tasks_processor
+class un_hide_tasks_processor
 {
     function page()
     {
