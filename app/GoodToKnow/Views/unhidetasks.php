@@ -1,6 +1,6 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
-    <form action="/ax1/un_tasks_processor/page" method="post">
+    <form action="/ax1/un_hide_tasks_processor/page" method="post">
         <h1>Un-hide Tasks</h1>
         <p class="tooltip">ⅈ
             <span class="tooltiptext tooltip-top">Un-hide the tasks you want to be presented with.</span>
