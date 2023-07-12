@@ -248,6 +248,7 @@ function breakout(string $newMessage)
         case 'feature_a_task_link':
         case 'induce_a_task':
         case 'forget_a_task':
+        case 'forget_a_task_delete':
         case 'forget_a_task_processor':
         case 'feature_a_task_update':
         case 'feature_a_task':
