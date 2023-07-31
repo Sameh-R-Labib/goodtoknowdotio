@@ -8,6 +8,9 @@
         <img class="photo" alt="Kurt liked this photo" src="/img/kurt_liked_this_photo.jpg">
     </figure>
     <figure>
+        <img class="photo" alt="Kurt in a sweater" src="/img/kurt_in_sweater.jpg">
+    </figure>
+    <figure>
         <img class="photo" alt="1993 Concert In Florida" src="/img/kurt_cobain_1993.png">
     </figure>
     <figure>
