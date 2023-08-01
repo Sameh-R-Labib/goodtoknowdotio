@@ -355,6 +355,8 @@ function breakout(string $newMessage)
         case 'new_community':
         case 'kommunity_description_editor':
         case 'kommunity_description_editor_form':
+        case 'kommunity_description_editor_form_processor':
+        case 'kommunity_description_editor_processor':
         case 'new_topic_insert_point':
         case 'new_topic_name':
         case 'topic_description_editor':
