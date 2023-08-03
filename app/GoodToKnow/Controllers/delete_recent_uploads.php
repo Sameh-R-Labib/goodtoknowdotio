@@ -33,7 +33,7 @@ class delete_recent_uploads
 
         if (!$g->array_of_objects) {
 
-            breakout(' I could NOT find any changed_content ¯\_(ツ)_/¯ ');
+            breakout(' I could NOT find any recently uploaded images ¯\_(ツ)_/¯ ');
 
         }
 
