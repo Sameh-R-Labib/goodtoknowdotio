@@ -5,7 +5,7 @@
     <p class="tooltip">ⅈ
         <span class="tooltiptext tooltip-top">It deletes uploads from server's image subdirectory.</span>
     </p>
-    <p><b>Choose Ones To Delete</b></p>
+    <h2>WARNING: This will DELETE the image file.</h2>
     <?php require SESSIONMESSAGE; ?>
     <section>
         <?php foreach ($g->array_of_objects as $key => $value): ?>
