@@ -344,8 +344,11 @@ function breakout(string $newMessage)
             redirect_to("/ax1/c_p_capital_gains/page");
             break;
         case 'changed_posts_and_images':
+        case 'changed_posts_and_images_list':
         case 'pick_off_some':
+        case 'pick_off_some_processor':
         case 'delete_recent_uploads':
+        case 'delete_recent_uploads_processor':
         case 'cull_the_herd':
             redirect_to("/ax1/c_p_changed_content/page");
             break;
