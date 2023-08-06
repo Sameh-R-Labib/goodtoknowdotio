@@ -8,6 +8,9 @@
         <img class="photo" alt="Kurt liked this photo" src="/img/kurt_liked_this_photo.jpg">
     </figure>
     <figure>
+        <img class="photo" alt="Kurt with cat and Francis" src="/img/kurt_cat_francis.jpg">
+    </figure>
+    <figure>
         <img class="photo" alt="Kurt in a sweater" src="/img/kurt_in_sweater.jpg">
     </figure>
     <figure>
