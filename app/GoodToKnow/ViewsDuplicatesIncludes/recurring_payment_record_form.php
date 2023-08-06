@@ -16,8 +16,8 @@
         </p>
         <p>
             <label for="amount_paid">Amount paid <span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
-                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">Contact Admin if you are not seeing the correct number of decimal places.</span></span>:
+            </label>
             <input id="amount_paid" name="amount_paid" type="text" required minlength="1" maxlength="33"
                    size="33" placeholder="108.49" value="<?= $g->saved_arr01['amount_paid'] ?>">
         </p>

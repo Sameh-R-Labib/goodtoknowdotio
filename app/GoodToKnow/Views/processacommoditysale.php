@@ -13,8 +13,8 @@
             </p>
             <p>
                 <label for="amount">Amount of Commodity Sold <span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">If the amounts to be displayed should have 2 instead of 8 decimal places then ask Admin
-                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">Contact Admin if you are not seeing the correct number of decimal places.</span></span>:
+                </label>
                 <input id="amount" name="amount" type="text" value="" required minlength="1" maxlength="33" size="33"
                        placeholder=".0100600300440002">
             </p>

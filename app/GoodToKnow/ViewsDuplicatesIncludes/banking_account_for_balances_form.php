@@ -13,8 +13,8 @@
         <hr>
         <p>
             <label for="start_balance">Starting Point Balance <span class="tooltip">ⅈ<span class="tooltiptext
-                tooltip-top">If the amounts to be displayed should have 2 instead of  8 decimal places then ask the admin
-                        to add your type of currency to the list of known fiat currencies.</span></span>: </label>
+                tooltip-top">Contact Admin if you are not seeing the correct number of decimal places.</span></span>:
+            </label>
             <input id="start_balance" name="start_balance" type="text" required placeholder="-85.14"
                    value="<?= $g->saved_arr01['start_balance'] ?>"
                    size="33" minlength="1" maxlength="33">
