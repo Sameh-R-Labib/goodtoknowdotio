@@ -25,6 +25,6 @@ class clear_session_vars
         }
 
 
-        breakout(" Aborted + Now: ");
+        breakout(" Aborted ");
     }
 }
