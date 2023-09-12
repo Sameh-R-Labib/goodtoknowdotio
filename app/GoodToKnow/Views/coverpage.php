@@ -38,6 +38,9 @@
         <img class="photo" alt="Dave Grohl Nirvana" src="/img/dave_grohl_nirvana.png">
     </figure>
     <figure>
+        <img class="photo" alt="Kurt Staring Down" src="/img/kurt_staring_down.jpg">
+    </figure>
+    <figure>
         <img class="photo" alt="Kurt Cobain Back" src="/img/kurt_cobain_back.png">
     </figure>
 </div><!-- End maincontent -->
