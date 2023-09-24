@@ -45,10 +45,10 @@ function markdown_form_field_prep(string $field_name, int $min_length, int $max_
     $string_for_return = trim($string_for_return);
 
 
-    // Add three newline characters at the end so that (possibly) GitHub won't always mark the
-    // last line as having been edited when I add more text after it.
+    // Add a newline character at the end so that GitHub won't say it is missing.
+    // Additional newlines (beyond one newline) do no more good.
 
-    $string_for_return .= "\n\n\n";
+    $string_for_return .= "\n";
 
 
     // Make sure the string is not too short.
