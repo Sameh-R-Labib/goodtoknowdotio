@@ -235,6 +235,7 @@ function breakout(string $newMessage)
         case 'edit_my_post':
         case 'author_deletes_own_post':
         case 'author_deletes_own_post_choose_post':
+        case 'author_deletes_own_post_del_proc':
         case 'edit_post_title_choose_post':
         case 'edit_my_post_choose_post':
         case 'move_post_instruct':
