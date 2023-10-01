@@ -113,7 +113,7 @@ class upload_processor
          * Check file size.
          */
 
-        if ($_FILES["fileToUpload"]["size"] > 7767168) {
+        if ($_FILES["fileToUpload"]["size"] > 8767168) {
 
             breakout(' Your file is too large. ');
 
