@@ -43,6 +43,9 @@
     <figure>
         <img class="photo" alt="Kurt Cobain Back" src="/img/kurt_cobain_back.png">
     </figure>
+    <figure>
+        <img class="photo" alt="Kurt Cobain Back" src="/img/kurt_art_shirt.png">
+    </figure>
 </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
