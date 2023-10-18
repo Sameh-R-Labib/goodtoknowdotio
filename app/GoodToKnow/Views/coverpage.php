@@ -65,6 +65,9 @@
         <img class="photo" alt="Kurt smashing Guitar 2" src="/img/kurt_smashing_2.jpg">
     </figure>
     <figure>
+        <img class="photo" alt="Baby Chasing Money" src="/img/kurt_with_pacifier_in_mouth.jpg">
+    </figure>
+    <figure>
         <img class="photo" alt="Baby Chasing Money" src="/img/chasing_dollars.jpg">
     </figure>
     <figure>
