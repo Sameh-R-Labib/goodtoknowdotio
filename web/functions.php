@@ -262,6 +262,7 @@ function breakout(string $newMessage)
         case 'build_a_banking_transaction_for_balances':
         case 'revamp_a_banking_transaction_for_balances':
         case 'revamp_a_banking_transaction_for_balances_choose_record':
+        case 'revamp_a_banking_transaction_for_balances_edit':
         case 'check_my_banking_account_tx_balances':
         case 'omit_a_banking_transaction_for_balances':
         case 'omit_a_banking_transaction_for_balances_choose_record':
