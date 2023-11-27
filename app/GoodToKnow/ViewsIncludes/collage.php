@@ -126,6 +126,6 @@
 </figure>
 <figure>
     <img class="photo" alt="Film: The Panama Deception" src="/img/smedley_butler_on_interventionism.jpg">
-    <figcaption>In U.S.A., war is a racket. — Smedley Butler
+    <figcaption>In U.S.A., war is a racket. — Major General Smedley Butler
     </figcaption>
 </figure>
