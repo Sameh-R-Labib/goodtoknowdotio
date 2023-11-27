@@ -45,6 +45,11 @@
     around the subject.</p>
 <h2>Photo Gallery</h2>
 <figure>
+    <img class="photo" alt="Kristi Burke (YouTuber)" src="/img/kristi_burke_debunks_religion.png">
+    <figcaption>Kristi Burke (YouTuber) debunks religion.
+    </figcaption>
+</figure>
+<figure>
     <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
         <img class="photo" alt="Badge" src="/img/1944235.png" title="Membership Badge">
     </a>
