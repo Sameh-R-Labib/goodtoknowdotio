@@ -110,22 +110,22 @@
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/img/accept_our_limits.png">
+    <img class="photo" alt="Letter written by Smedley Butler" src="/img/smedley_butler_on_interventionism.jpg">
+    <figcaption>In U.S.A., war is a racket. — Major General Smedley Butler
+    </figcaption>
+</figure>
+<figure>
+    <img class="photo" alt="Being self-aware" src="/img/accept_our_limits.png">
     <figcaption>Being self-aware.
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/img/same_person.png">
+    <img class="photo" alt="Monogamy" src="/img/same_person.png">
     <figcaption>Monogamy
     </figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/img/enjoy_differences.png">
+    <img class="photo" alt="Love and marriage" src="/img/enjoy_differences.png">
     <figcaption>Love and marriage go together like a horse and carriage.
-    </figcaption>
-</figure>
-<figure>
-    <img class="photo" alt="Film: The Panama Deception" src="/img/smedley_butler_on_interventionism.jpg">
-    <figcaption>In U.S.A., war is a racket. — Major General Smedley Butler
     </figcaption>
 </figure>
