@@ -45,6 +45,10 @@
     around the subject.</p>
 <h2>Photo Gallery</h2>
 <figure>
+    <img class="photo" alt="Albert Einstein" src="/img/thosewhosaidno.jpeg">
+    <figcaption>Eccentric Scientist Albert Einstein</figcaption>
+</figure>
+<figure>
     <img class="photo" alt="Kristi Burke (YouTuber)" src="/img/kristi_burke_debunks_religion.png">
     <figcaption>Kristi Burke (YouTuber) debunks religion.
     </figcaption>
@@ -60,10 +64,6 @@
         <img class="photo" alt="Support freedom" src="//static.fsf.org/fsforg/img/normal-image.png"
              title="Help protect your freedom, join the Free Software Foundation"></a>
     <figcaption>I joined the FSF because I use the GNU Affero version 3 license</figcaption>
-</figure>
-<figure>
-    <img class="photo" alt="Albert Einstein" src="/img/thosewhosaidno.jpeg">
-    <figcaption>Eccentric Scientist Albert Einstein</figcaption>
 </figure>
 <figure>
     <img class="photo" alt="Richard M. Stallman and Julian Assange" src="/img/0_eT5LwH4rOihgpThm.jpeg">
