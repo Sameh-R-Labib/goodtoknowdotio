@@ -124,3 +124,8 @@
     <figcaption>Love and marriage go together like a horse and carriage.
     </figcaption>
 </figure>
+<figure>
+    <img class="photo" alt="Film: The Panama Deception" src="/img/smedley_butler_on_interventionism.jpg">
+    <figcaption>In U.S.A., war is a racket. — Smedley Butler
+    </figcaption>
+</figure>
