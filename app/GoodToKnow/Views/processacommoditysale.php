@@ -3,7 +3,7 @@
     <form action="/ax1/process_a_commodity_sale_form_processor/page" method="post">
         <h1>Process A Commodity Sale</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>This feature makes it convenient to modify Commodity records and create their associated Commodity Sold
+        <p>This feature makes it convenient to modify Commodity records and create their associated Capital Gain
             records when you sell a commodity at a particular point in time.</p>
         <section>
             <p>

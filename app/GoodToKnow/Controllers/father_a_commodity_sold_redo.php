@@ -23,7 +23,7 @@ class father_a_commodity_sold_redo
 
 
         $g->action = '/ax1/father_a_commodity_sold_processor/page';
-        $g->heading_one = 'Create a Commodity Sold Record';
+        $g->heading_one = 'Create a Capital Gain Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }
 }

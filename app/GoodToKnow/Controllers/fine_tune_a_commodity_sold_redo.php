@@ -23,7 +23,7 @@ class fine_tune_a_commodity_sold_redo
 
 
         $g->action = '/ax1/fine_tune_a_commodity_sold_update/page';
-        $g->heading_one = 'Edit a Commodity Sold Record';
+        $g->heading_one = 'Edit a Capital Gain Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
 
     }

@@ -11,7 +11,7 @@ class process_a_commodity_sale
          * ========================
          *
          * Process A Commodity Sale makes it convenient to both modify Commodity
-         * records and create Commodity Sold records when a user makes a sale
+         * records and create Capital Gain records when a user makes a sale
          * of a commodity at a point in time.
          *
          * If you understand how this is done manually you should be able to figure

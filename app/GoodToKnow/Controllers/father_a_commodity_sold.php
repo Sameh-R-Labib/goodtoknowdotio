@@ -17,7 +17,7 @@ class father_a_commodity_sold
         kick_out_loggedoutusers_or_if_there_is_error_msg();
 
 
-        $g->html_title = 'Create a Commodity Sold';
+        $g->html_title = 'Create a Capital Gain';
 
 
         /**
@@ -57,7 +57,7 @@ class father_a_commodity_sold
 
 
         $g->action = '/ax1/father_a_commodity_sold_processor/page';
-        $g->heading_one = 'Create a Commodity Sold Record';
+        $g->heading_one = 'Create a Capital Gain Record';
         require VIEWSDUPLICATESINCLUDES . DIRSEP . 'commodity_sold_form.php';
     }
 }

@@ -33,7 +33,7 @@ class drop_a_commodity_sold_year_filter
         }
 
 
-        $g->html_title = 'Which Commodity Sold?';
+        $g->html_title = 'Which Capital Gain?';
 
         require VIEWS . DIRSEP . 'dropacommoditysoldyearfilter.php';
     }

@@ -125,12 +125,12 @@ class father_a_commodity_sold_processor
          * Wrap it up.
          */
 
-        $g->message .= ' Your new Commodity Sold has just been created 👍🏿 ';
+        $g->message .= ' Your new Capital Gain has just been created 👍🏿 ';
 
 
         /**
          * We want to reassure the user that the commodity sold record has been saved.
-         * So, we are going to hook into the "See a Year's Commodity Sold Records" feature.
+         * So, we are going to hook into the "See a Year's Capital Gain Records" feature.
          */
 
         redirect_to("/ax1/spy_commodities_sold_create_edit/page");

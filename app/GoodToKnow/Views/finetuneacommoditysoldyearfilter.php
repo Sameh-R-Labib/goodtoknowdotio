@@ -1,9 +1,9 @@
 <?php global $g; ?>
 <?php require TOPFORFORMPAGES; ?>
     <form>
-        <h1>Edit a Commodity Sold Record</h1>
+        <h1>Edit a Capital Gain Record</h1>
         <?php require SESSIONMESSAGE; ?>
-        <p>Which Commodity Sold Record?</p>
+        <p>Which Capital Gain Record?</p>
         <section>
             <?php foreach ($g->array as $object): ?>
                 <a href="/ax1/fine_tune_a_commodity_sold_edit/page/<?= $object->id ?>"

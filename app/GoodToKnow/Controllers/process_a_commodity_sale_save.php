@@ -155,7 +155,7 @@ class process_a_commodity_sale_save
          * The view will be that of a regular page (not a form page.)
          */
 
-        $g->html_title = "Saved Commodity and Commodity Sold Records";
+        $g->html_title = "Saved Commodity and Capital Gain Records";
 
         $g->page = 'process_a_commodity_sale_save';
 

@@ -37,7 +37,7 @@ class spy_commodities_sold_year_filter
 
         $g->show_poof = true;
 
-        $g->message .= " Here's one year of Commodity Sold. ";
+        $g->message .= " Here's one year of Capital Gain. ";
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'spycommoditiessoldyearfilter.php';
     }

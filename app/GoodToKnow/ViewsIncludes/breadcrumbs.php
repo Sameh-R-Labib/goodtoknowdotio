@@ -46,7 +46,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/gawk_at_all_taxable_income_events/page\">A Year's Taxable Income Events</a>";
         break;
     case 'spy_commodities_sold_year_filter':
-        echo "<a href=\"/ax1/spy_commodities_sold/page\">One Year's Commodity Sold Records</a>";
+        echo "<a href=\"/ax1/spy_commodities_sold/page\">One Year's Capital Gain Records</a>";
         break;
     case 'c_p_basics':
         echo "<a href=\"/ax1/c_p_basics/page\">Blog And Message</a>";
@@ -76,7 +76,7 @@ switch ($g->page) {
         echo "<a href=\"/ax1/c_p_taxable_income/page\">Taxable Income Event</a>";
         break;
     case 'c_p_capital_gains':
-        echo "<a href=\"/ax1/c_p_capital_gains/page\">Commodity Sold</a>";
+        echo "<a href=\"/ax1/c_p_capital_gains/page\">Capital Gain</a>";
         break;
     case 'c_p_purges':
         echo "<a href=\"/ax1/c_p_purges/page\">System Maintenance</a>";

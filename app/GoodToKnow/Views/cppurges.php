@@ -13,7 +13,7 @@
                 Possible Tax Deductions</a>
             <a class="greenbtn" href="/ax1/cleanup_years_taxable_income_events/page">Purge a Specific Year's Taxable
                 Income Events</a>
-            <a class="clearbtn" href="/ax1/abolish_years_commodities_sold/page">Purge a Specific Year's Commodity Sold
+            <a class="clearbtn" href="/ax1/abolish_years_commodities_sold/page">Purge a Specific Year's Capital Gain
                 Records</a>
         </div>
     </div><!-- End maincontent -->

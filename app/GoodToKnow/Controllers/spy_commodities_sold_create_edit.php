@@ -50,7 +50,7 @@ class spy_commodities_sold_create_edit
          * and it does not present the home page itself.
          */
 
-        $g->message .= " Here are <b>$g->saved_int02</b>'s Commodity Sold. ";
+        $g->message .= " Here are <b>$g->saved_int02</b>'s Capital Gain. ";
         reset_feature_session_vars();
         require VIEWS . DIRSEP . 'spycommoditiessoldyearfilter.php';
     }
