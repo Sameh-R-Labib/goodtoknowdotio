@@ -269,6 +269,7 @@ function breakout(string $newMessage)
         case 'omit_a_banking_transaction_for_balances_delete':
         case 'transfer_an_amount':
         case 'reset_all_b_accounts':
+        case 'reset_all_b_accounts_instruct':
         case 'transfer_an_amount_form_processor':
         case 'omit_a_banking_tran_for_balances_process_confirmation':
         case 'build_a_banking_transaction_for_balances_processor':
