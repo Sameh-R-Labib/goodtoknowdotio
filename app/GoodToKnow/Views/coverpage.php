@@ -11,9 +11,6 @@
         <img class="photo" alt="Mo Ali Talking a Man Out Of Jumping" src="/img/mo_ali_helping_a_man.png">
     </figure>
     <figure>
-        <img class="photo" alt="Kurt On Stage with Green Mustang" src="/img/kurtplayinggreenmustang.jpg">
-    </figure>
-    <figure>
         <img class="photo" alt="Kurt with cat and Francis" src="/img/kurt_cat_francis.jpg">
     </figure>
     <figure>
@@ -27,6 +24,9 @@
     </figure>
     <figure>
         <img class="photo" alt="Kurt's Pedals On Stage" src="/img/kurt_cobain_pedals.png">
+    </figure>
+    <figure>
+        <img class="photo" alt="Kurt On Stage with Green Mustang" src="/img/kurtplayinggreenmustang.jpg">
     </figure>
     <figure>
         <img class="photo" alt="Green Fender Mustang" src="/img/fender_mustang_green.png">
