@@ -5,10 +5,13 @@
 <!-- maincontent -->
 <div id="maincontent">
     <figure>
-        <img class="photo" alt="Kurt liked this photo" src="/img/kurt_liked_this_photo.jpg">
+        <img class="photo" alt="Kurt liked this photo" src="/img/kurtplayinggreenmustang.jpg">
     </figure>
     <figure>
         <img class="photo" alt="Mo Ali Talking a Man Out Of Jumping" src="/img/mo_ali_helping_a_man.png">
+    </figure>
+    <figure>
+        <img class="photo" alt="Kurt On Stage with Green Mustang" src="/img/kurt_cat_francis.jpg">
     </figure>
     <figure>
         <img class="photo" alt="Kurt with cat and Francis" src="/img/kurt_cat_francis.jpg">
