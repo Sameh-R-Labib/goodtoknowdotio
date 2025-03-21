@@ -9,6 +9,8 @@
                 point in time but this commodity sold record which you are creating or editing only represents the</span></span>
         <span class="tooltip">ⅈ <span class="tooltiptext tooltip-top">portion of those 30 BTC which came from one
         particular commodity (purchase) record.</span></span>
+        <span class="tooltip">ⅈ <span class="tooltiptext tooltip-top">WARNING: This script will not make modifications
+                to the associated commodity record.</span></span>
     </p>
     <section>
         <?php require TIMEBOUGHTSOLD; ?>
