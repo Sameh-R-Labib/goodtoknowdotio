@@ -54,24 +54,12 @@
     </figcaption>
 </figure>
 <figure>
-    <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
-        <img class="photo" alt="Badge" src="/img/1944235.png" title="Membership Badge">
-    </a>
-    <figcaption>My Membership Badge</figcaption>
-</figure>
-<figure>
-    <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442">
-        <img class="photo" alt="Support freedom" src="//static.fsf.org/fsforg/img/normal-image.png"
-             title="Help protect your freedom, join the Free Software Foundation"></a>
-    <figcaption>I joined the FSF because I use the GNU Affero version 3 license</figcaption>
-</figure>
-<figure>
     <img class="photo" alt="Richard M. Stallman and Julian Assange" src="/img/0_eT5LwH4rOihgpThm.jpeg">
     <figcaption>Richard M. Stallman and Julian Assange holding up a picture of Edward Snowden</figcaption>
 </figure>
 <figure>
     <img class="photo" alt="Aaron Swartz" src="/img/Aaron-Swartz.jpg">
-    <figcaption>Aaron Swartz (was punished for returning free access to knowledge to <em>its people</em>)
+    <figcaption>Aaron Swartz (punished for returning knowledge to <em>the public</em> which funded it)
     </figcaption>
 </figure>
 <figure>
@@ -89,16 +77,8 @@
     <figcaption>Andreas Antonopoulos (Bitcoin evangelist)</figcaption>
 </figure>
 <figure>
-    <img class="photo" alt="Stacey Abrams" src="/img/stacey_abrams.jpg" height="372" width="655">
-    <figcaption>Stacey Abrams (represents to me being a victim of voter suppression)</figcaption>
-</figure>
-<figure>
     <img class="photo" alt="Abby Martin" src="/img/AbbyMartinVenezuela.jpg">
     <figcaption>Abby Martin (reporter who speaks up about US interventionism in South American)</figcaption>
-</figure>
-<figure>
-    <img class="photo" alt="Bernie Sanders" src="/img/burnie_sanders.jpg">
-    <figcaption>Bernie Sanders (opposes overspending on the military industrial complex)</figcaption>
 </figure>
 <figure>
     <img class="photo" alt="Chris Hedges" src="/img/chris_hedges.jpg">
