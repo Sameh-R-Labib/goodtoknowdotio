@@ -91,6 +91,12 @@
     <figure>
         <img class="photo" alt="Grunge Fans Showing Concern" src="/img/fans_showing_concern.jpg">
     </figure>
+    <figure>
+        <img class="photo" alt="Axl Rose Jesus T-shirt" src="/img/axlroseinjesusshirt.jpg">
+    </figure>
+    <figure>
+        <img class="photo" alt="Eddie Van Halen with a Les Paul" src="/img/eddievanhalenwithlp.jpg">
+    </figure>
 </div><!-- End maincontent -->
 <?php require FOOTERBAR; ?>
 <?php require BOTTOMOFPAGES; ?>
