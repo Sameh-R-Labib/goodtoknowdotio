@@ -92,6 +92,9 @@
         <img class="photo" alt="Grunge Fans Showing Concern" src="/img/fans_showing_concern.jpg">
     </figure>
     <figure>
+        <img class="photo" alt="Kurt Signing His Autograph" src="/img/kurt_cobain_autograph.jpg">
+    </figure>
+    <figure>
         <img class="photo" alt="Axl Rose Jesus T-shirt" src="/img/axlroseinjesusshirt.jpg">
     </figure>
     <figure>
