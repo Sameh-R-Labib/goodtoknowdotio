@@ -33,9 +33,15 @@ DEMO;
         $parser->no_entities = false;
         $html = $parser->transform($g->markdown);
 
+        echo 'before fix_michelf' . "\n <br><br>";
+
+        var_dump($html);
+
         // Call to global function
         fix_michelf($html);
 
+
+        echo 'after fix_michelf' . "\n <br><br>";
 
         var_dump($html);
     }
