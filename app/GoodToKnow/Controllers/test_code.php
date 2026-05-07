@@ -18,6 +18,9 @@ class test_code
 
 
         $g->markdown = <<<DEMO
+
+The less than symbol <
+
 Regular >>
 
 Inline `>>`
