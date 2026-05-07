@@ -21,9 +21,11 @@ class test_code
 
 The less than symbol <
 
-Regular >>
+The greater than symbol >
 
-Inline `>>`
+Regular >>  >
+
+Inline code `>>  >`
 
 Pre example should appear below.
 
