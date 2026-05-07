@@ -19,6 +19,10 @@ class test_code
 
         $g->markdown = <<<DEMO
 
+The ampersand symbol &
+
+The ampersand entity sequence for less than &lt;
+
 The less than symbol <
 
 The greater than symbol >
